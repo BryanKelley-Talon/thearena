@@ -536,9 +536,9 @@
             {
               "type": "stimulus",
               "label": "Part I reps — 11.1",
-              "published": false,
+              "published": true,
               "content_ref": "content/stimulus-11-1.json",
-              "_note": "The sixth activity type, BK-approved 2026-09-18 (Josh's Q2). Sam's requested FIRST build, ahead of timeline/map/matching/board: it is the literal shape of Regents Part I and Sam can fill it from the 42-item tagged MC bank with a rationale per answer — nothing new authored. content_ref is a promise, not a file: Sam cuts it once the type exists."
+              "_note": "Flipped live by Josh 2026-09-19 — content/stimulus-11-1.json confirmed present in public/content/ (Sam released it 2026-09-18, _content-hold/RELEASED-2026-09-18-stimulus-11-1.json). The 09-18 note calling content_ref 'a promise, not a file' predates the release; the file is real now. Container-only flip, no content touched — Sam's stimulus-11-1.json body is untouched."
             }
           ]
         }

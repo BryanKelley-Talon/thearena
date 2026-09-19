@@ -1015,10 +1015,8 @@ function UnitRoom({ course, unit, games, packs, onOpenActivity, onBack }) {
 function EmptyLane({ what }) {
   return (
     <div className="empty">
-      <div className="empty-title">{what} — nothing here yet</div>
-      <p>This lane is wired and waiting. It fills from <code>arena.manifest.json</code> the moment
-         the desk that owns this course publishes into it — no rebuild, no redeploy.</p>
-      <p style={{ color: '#7E766A' }}>Nothing to do here yet is the honest answer.</p>
+      <div className="empty-title">Not open yet.</div>
+      <p>This room fills in as the unit gets taught. Check back once you've covered it in class.</p>
     </div>
   )
 }
