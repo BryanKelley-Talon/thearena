@@ -1289,7 +1289,7 @@ function MatchingSet({ pack, accent }) {
             // No .paired dimming here — unlike a left tile, a right tile is never
             // "used up." Dimming it would read as disabled when it's still a live target.
             return (
-              <button key={r.key} type="button" className={cls}
+              <button key={r.key} type="button" className="mc-choice"
                       disabled={checked || !selectedLeft}
                       onClick={() => pickRight(r.key)}>
                 <span>{r.label}</span>
