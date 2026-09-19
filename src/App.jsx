@@ -1462,7 +1462,12 @@ export default function App() {
                                       const a = (unit.activities || []).filter(isLive)[i]
                                       setActIndex(i); setPack(null)
                                       if (resolves(a?.content_ref)) {
-                                        fetch(`/content/${a.content_ref}`)
+                                        // Same defensive strip as the station/drill fetchers below —
+                                        // a content_ref is written both ways across the manifest
+                                        // ("content/x.json" and bare "x.json"); doubling the prefix
+                                        // was a silent 404 no one had hit until 11.1 went live today.
+                                        const ref = a.content_ref.replace(/^content\//, '')
+                                        fetch(`/content/${ref}`)
                                           .then(r => r.ok ? r.json() : null).then(setPack).catch(() => setPack(null))
                                       }
                                     }}
