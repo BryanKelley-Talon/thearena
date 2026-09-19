@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "meta",
+  "station": {
+    "id": 12,
+    "num": "XII",
+    "name": "The Comeback",
+    "tier": "Meta"
+  },
+  "skill_tags": [],
+  "skill_tag_labels": [
+    "Meta"
+  ],
+  "critical_path": false,
+  "meta": true,
+  "attempts": 2,
+  "reps": [],
+  "note": "Meta station \u2014 'mistakes are the curriculum' in TR's voice. No Regents drill reps. Always listed last. The paper companion is the Comeback Sheet (OUTPUTS/Comeback_Sheet_Master.docx)."
+}

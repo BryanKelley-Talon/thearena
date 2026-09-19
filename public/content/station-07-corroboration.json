@@ -1,0 +1,65 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "CLE",
+  "station": {
+    "id": 7,
+    "num": "VII",
+    "name": "Corroboration",
+    "tier": "Sourcing"
+  },
+  "skill_tags": [
+    3,
+    4
+  ],
+  "skill_tag_labels": [
+    "Document Use",
+    "Explanation"
+  ],
+  "critical_path": false,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        3,
+        5
+      ],
+      "note": "Real NYSED CLE documents (Aug 2025) put in conversation for corroboration.",
+      "prompt": "Use two documents together: explain how they corroborate (support) or complicate each other on the issue of government regulation of business. (Aug 2025 CLE.)",
+      "station_focus": "Drill corroboration: put two documents in conversation and explain what they jointly establish \u2014 the move is synthesis across sources, not summary of each.",
+      "stimulus": [
+        {
+          "kind": "image",
+          "content": "Frank Beard cartoon depicting the Standard Oil monopoly gripping smaller businesses.",
+          "image_ref": "unit05-cle-regbiz-doc1a-beard-cartoon-1884.png",
+          "image_alt": "Frank Beard cartoon depicting the Standard Oil monopoly gripping smaller businesses.",
+          "citation": "Source: Frank Beard, The Judge, July 19, 1884 (adapted)",
+          "provenance": "NYSED Aug 2025 CLE, Document 1a"
+        },
+        {
+          "kind": "image",
+          "content": "J. D. Rockefeller defending large combinations as opening opportunity.",
+          "image_ref": "unit05-cle-regbiz-doc2-rockefeller-1907.png",
+          "image_alt": "J. D. Rockefeller defending large combinations as opening opportunity.",
+          "citation": "Source: J. D. Rockefeller, \u201cOpportunity in America,\u201d Cosmopolitan, September 1, 1907",
+          "provenance": "NYSED Aug 2025 CLE, Document 2"
+        }
+      ],
+      "exemplar": "Read together, these documents corroborate that trusts dominated the late-nineteenth-century economy \u2014 even as they clash on whether that was good. Frank Beard's 1884 cartoon (Doc 1a) shows the Standard Oil monopoly as an octopus strangling smaller businesses and banks, a hostile view of concentrated corporate power. Rockefeller himself (Doc 2), writing in 1907, does not deny that combinations had grown enormous; he defends them, arguing that large enterprises actually opened opportunity for ordinary Americans. The two sources disagree about value but agree on the central fact \u2014 that a few giant combinations controlled key industries \u2014 and that shared factual ground is exactly what made government regulation (antitrust laws, the Sherman Act) the era's defining debate. Corroboration here means using a critic and a defender together to establish the scale of the problem both were responding to.",
+      "compare_focus": "State what the two sources JOINTLY establish (even while disagreeing), then explain why that shared ground matters. Do not summarize each in isolation.",
+      "compare_checklist": [
+        "Did I connect the two documents to a single shared point?",
+        "Did I explain what their agreement/disagreement reveals about the issue?"
+      ]
+    }
+  ]
+}

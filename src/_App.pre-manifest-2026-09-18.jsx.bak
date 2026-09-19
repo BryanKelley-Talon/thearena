@@ -1,0 +1,1221 @@
+// ============================================================
+// THE ARENA — v1.1 shell  (thearena.flashpointhistory.com)
+//
+// A stateless-by-design skills trainer, framed by TR's "Man in the Arena."
+// Reconstructed and wired from the delivered assets (the v1 React shell was
+// reviewed off-repo and not included in the build package):
+//   • arena-main-splash.html      → the frontdoor (TR greeter / quote / how-to)
+//   • arena-landing-splash.html    → the rooms picker (Circuit / Trainer / Recovery)
+//   • StationScreen.v1.1.jsx       → the multi-attempt COMPARE mechanic (below)
+//   • content/station-01, -05 .json → real Regents reps, bound BY REFERENCE
+//   • arena-mcset-schema-amendment.md → the Recovery Room mc_set contract
+//
+// LOCKED decisions honored here (BUILD-ORDER Step 2):
+//   • Canvas = shared #16120E (not the prototype's #0D0B14); shared tokens.
+//   • Sub-brand kept: Barlow Condensed / Outfit + amber. Not rebuilt in serif.
+//   • Nothing depends on saved state — a wiped device lands on a full Arena.
+// ============================================================
+
+import { useState } from 'react'
+import station01 from './content/station-01-contextualization.json'
+import station05 from './content/station-05-sourcing-hipp.json'
+import station08 from './content/station-08-argument-development.json'
+import station09 from './content/station-09-paragraph-construction.json'
+import station11 from './content/station-11-civic-literacy.json'
+
+const ARENA_QUOTE = {
+  text: 'The credit belongs to the man who is actually in the arena… who spends himself in a worthy cause.',
+  cite: 'Theodore Roosevelt · The Sorbonne · 1910',
+}
+const HOME_URL = 'https://flashpointhistory.com'
+
+// ── The six CLE Skill Growth Map skills (handoff §4 crosswalk) ─────────────
+const SKILLS = {
+  1: 'Historical Context',
+  2: 'Thesis',
+  3: 'Document Use',
+  4: 'Explanation',
+  5: 'Outside Evidence',
+  6: 'Civic Principle',
+}
+
+// ── Four tiers of the Circuit (barbell weight classes) ─────────────────────
+const TIERS = {
+  Foundation: { label: 'Foundation', color: '#E8960A' },
+  Evidence:   { label: 'Evidence',   color: '#6BA5B8' },
+  Argument:   { label: 'Argument',   color: '#43D982' },
+  Mastery:    { label: 'Mastery',    color: '#B07CD0' },
+}
+const PLATES = ['Name it', 'Link it', 'Land it']
+
+// ── Bind a curriculum-owned content package onto a shell station ───────────
+// The Circuit points AT content (handoff: "binding by reference"); the shell
+// never absorbs it. rep1 is the everyday on-ramp (stays in the shell); rep2 is
+// the real Regents rep that drops in from the audited package.
+function boundRep(pkg) {
+  // Latest regents rep wins: where the shell renders a single rep, the most
+  // recent administration (June 2026) takes precedence for the August sprint.
+  const regents = (pkg.reps || []).filter(r => r.type === 'regents')
+  return regents.length ? regents[regents.length - 1] : null
+}
+
+const s01 = boundRep(station01)
+const s05 = boundRep(station05)
+const s08 = boundRep(station08)
+const s09 = boundRep(station09)
+const s11 = boundRep(station11)
+
+// ── The 12-station Circuit (the genesis shell; nothing hard-coded) ─────────
+// Stations I and V are BOUND to delivered packages. The other ten ship with
+// their everyday on-ramp rep and flag `pending` — their Regents drill bank
+// loads the moment that unit is audited (handoff §6, queue item 5).
+const STATIONS = [
+  {
+    id: 1, num: 'I', name: 'Contextualization', tier: 'Foundation',
+    color: TIERS.Foundation.color, skillTags: [1], criticalPath: true,
+    tagline: 'Set the scene before you make the point.',
+    plates: PLATES,
+    intro: [
+      'Contextualization is the highest-frequency missed rubric point on the exam — and the easiest to fix. Before you analyze a document or make an argument, you name what was already true: the events, conditions, and pressures that made this moment happen.',
+      'It is the "before this…" sentence. Do it well and a reader who never saw the documents still understands why the argument was happening at all.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'Before you ask for a later curfew, you set the scene: "Over the last month I made every early curfew and my grades went up." That is context — what was already true that makes your ask make sense.',
+    },
+    beats: [
+      { move: 'Name the prior condition', desc: 'A specific event, document, or failure — with a date — that came before this moment. Not a mood ("tensions were high"), a fact.' },
+      { move: 'Build the bridge', desc: 'Connect that condition to why this moment is happening. "Because of… this led to…"' },
+      { move: 'Pass the stranger test', desc: 'Someone who never read the documents should understand why the argument was happening.' },
+    ],
+    // ── bound from station-01-contextualization.json (latest regents rep) ──
+    repNum: s01.rep,
+    practice: { prompt: s01.prompt },
+    stimulus: s01.stimulus,
+    exemplar: s01.exemplar,
+    mastery: s01.compare_checklist,
+    examConnection: {
+      exam: s01.exam_meta.exam,
+      where: s01.exam_meta.part,
+      lookFor: 'A specific prior condition (event/document/date) connected by causal language to why this debate was happening.',
+      missedMove: s01.compare_focus,
+    },
+  },
+  {
+    id: 2, num: 'II', name: 'Causation', tier: 'Foundation',
+    color: TIERS.Foundation.color, skillTags: [4], pending: true,
+    tagline: 'Show why one thing caused another.',
+    plates: PLATES,
+    intro: [
+      'Causation is the explanation move: not just what happened, but why it happened and what it produced. On the exam it feeds the cause-and-effect relationship tasks in Set A.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'You explain why you were late — not just "traffic," but "a crash closed two lanes, so traffic backed up, so I missed the light." Each step causes the next.',
+    },
+    beats: [
+      { move: 'Name the cause', desc: 'The event or condition that starts the chain.' },
+      { move: 'Name the effect', desc: 'What it produced — the outcome.' },
+      { move: 'Link them out loud', desc: 'Use causal words — because, led to, resulted in — so the chain is visible on the page.' },
+    ],
+    practice: { prompt: 'Think of a decision you made this week. In 3–5 sentences, explain what caused you to make it and what it led to. Use "because" and "led to" at least once each.' },
+    exemplar: 'I decided to study at the library instead of home this week because my little brother had friends over every night and I could not focus. That change led to me actually finishing my review sheet two days early, which meant I walked into the quiz calm instead of cramming. The cause — the noise at home — is what produced the effect — a better-prepared quiz — and naming that link is the whole move.',
+    mastery: [
+      'Did I name a specific cause, not just describe a situation?',
+      'Did I name the effect it produced?',
+      'Did I use causal language to link them ("because," "led to")?',
+    ],
+    examConnection: {
+      exam: 'US History & Government (11R)',
+      where: 'Part II CRQ · Set A relationship tasks (cause/effect)',
+      lookFor: 'A cause and an effect joined by an explicit causal link.',
+      missedMove: 'Students list a cause and an effect but never write the sentence that connects them. The link — "this led to that because…" — is the point the scorer is looking for.',
+    },
+  },
+  {
+    id: 3, num: 'III', name: 'Continuity & Change', tier: 'Foundation',
+    color: TIERS.Foundation.color, skillTags: [4], pending: true,
+    tagline: 'What stayed the same, and what turned over.',
+    plates: PLATES,
+    intro: [
+      'Continuity and change asks you to hold two things at once: what persisted across a period and what was different by the end. It feeds the similarity/difference tasks in Set A.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'You describe how your friend group changed since freshman year — some people drifted (change), but you and your two closest friends are still tight (continuity). Both are true.',
+    },
+    beats: [
+      { move: 'Fix the two endpoints', desc: 'Name the "before" and the "after" with dates.' },
+      { move: 'Name one continuity', desc: 'Something that persisted across the whole span.' },
+      { move: 'Name one change', desc: 'Something measurably different by the end — and say what changed it.' },
+    ],
+    practice: { prompt: 'Pick something in your own life over the last three years. In 3–5 sentences, name one thing that stayed the same and one thing that changed — and say what caused the change.' },
+    exemplar: 'Three years ago I played soccer every weekend and I still do today, so my love of the game is a continuity. What changed is that I went from playing just for fun to training seriously for the school team, and the thing that changed it was making varsity tryouts a real goal. Naming both — the constant and the shift, plus what drove the shift — is the move the exam rewards.',
+    mastery: [
+      'Did I fix a clear "before" and "after" with time markers?',
+      'Did I name a real continuity across the whole span?',
+      'Did I name a change AND what caused it?',
+    ],
+    examConnection: {
+      exam: 'US History & Government (11R)',
+      where: 'Part II CRQ · Set A similarity/difference',
+      lookFor: 'One continuity and one change across a defined span, each specific.',
+      missedMove: 'Students describe only change and forget the continuity — or name a change without saying what caused it.',
+    },
+  },
+  {
+    id: 4, num: 'IV', name: 'Turning Points', tier: 'Foundation',
+    color: TIERS.Foundation.color, skillTags: [4], pending: true,
+    tagline: 'Name the moment the direction changed.',
+    plates: PLATES,
+    intro: [
+      'A turning point is an event after which things were measurably different. The skill is proving the "different after" — showing the before and the after, not just asserting importance.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'Getting your driver’s license is a turning point: before it, someone drove you everywhere; after it, you got a job across town you could never have reached. The event changed what was possible.',
+    },
+    beats: [
+      { move: 'State the event', desc: 'The specific moment you are calling a turning point.' },
+      { move: 'Show the "before"', desc: 'How things stood up to that point.' },
+      { move: 'Show the "after"', desc: 'What was measurably different because of it.' },
+    ],
+    practice: { prompt: 'Name a turning point in your own life. In 3–5 sentences, show how things were before it and how they were different after — so the change is provable, not just claimed.' },
+    exemplar: 'Getting my first job last summer was a turning point. Before it, I asked my parents for money for everything and never thought about a budget; after it, I was paying for my own phone and actually saving for a car. The event mattered because you can see the difference on either side of it — that "before and after" is what makes it a turning point instead of just a big day.',
+    mastery: [
+      'Did I name a specific event?',
+      'Did I show the "before" state?',
+      'Did I show a provable "after" the event caused?',
+    ],
+    examConnection: {
+      exam: 'US History & Government (11R)',
+      where: 'Part II CRQ · Set A turning-point lane',
+      lookFor: 'An event with a demonstrated before-and-after difference.',
+      missedMove: 'Students assert an event was "important" without showing the after-state that proves the turn.',
+    },
+  },
+  {
+    id: 5, num: 'V', name: 'Sourcing — HIPP', tier: 'Evidence',
+    color: TIERS.Evidence.color, skillTags: [3],
+    tagline: 'Weigh who made a source, and why.',
+    plates: PLATES,
+    intro: [
+      'Sourcing is reliability. HIPP — Historical context, Intended audience, Purpose, Point of view — asks not just what a source says but how far you can trust it, and for what.',
+      'The scored move is the "so what": naming an element of the source and then saying what that element means for what the source can and cannot prove.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'Your friend who is always trying to sell you something says a party will be "the best ever." You weigh the source: what is their purpose? That instinct is sourcing.',
+    },
+    beats: [
+      { move: 'Name a HIPP element', desc: 'Use the citation line — who made it, when, for whom, and why.' },
+      { move: 'Say what it means for reliability', desc: 'The "so what" sentence: how the purpose or point of view shapes trust.' },
+      { move: 'Say what it can and cannot prove', desc: 'Reliable evidence of one thing is weak evidence of another. Name both.' },
+    ],
+    // ── bound from station-05-sourcing-hipp.json (latest regents rep) ──
+    repNum: s05.rep,
+    practice: { prompt: s05.prompt },
+    stimulus: s05.stimulus,
+    exemplar: s05.exemplar,
+    mastery: s05.compare_checklist,
+    examConnection: {
+      exam: s05.exam_meta.exam,
+      where: s05.exam_meta.part,
+      lookFor: 'A named HIPP element plus what it means for reliability — what the source can and cannot prove.',
+      missedMove: s05.compare_focus,
+    },
+  },
+  {
+    id: 6, num: 'VI', name: 'OPVL', tier: 'Evidence',
+    color: TIERS.Evidence.color, skillTags: [3], pending: true,
+    tagline: 'Origin, Purpose, Value, Limitation.',
+    plates: PLATES,
+    intro: [
+      'OPVL is the IB-style depth cut of sourcing — value and limitation made explicit. Shared with DP History colleagues; it feeds the Set B reliability tasks.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'A restaurant review by the owner has real value (they know the menu cold) and a real limitation (they want you to come in). You can use it — for the right thing.',
+    },
+    beats: [
+      { move: 'Origin & Purpose', desc: 'Who made it, when, and why.' },
+      { move: 'Value', desc: 'What this source is genuinely good evidence for.' },
+      { move: 'Limitation', desc: 'What it cannot tell you — the blind spot built into its origin.' },
+    ],
+    practice: { prompt: 'Pick any source you read this week (a post, an ad, a review). In 3–5 sentences, give its origin and purpose, then one thing it is valuable evidence for and one thing it cannot prove.' },
+    exemplar: 'I read a sneaker review posted by the brand’s own account; its origin is the company and its purpose is to sell the shoe. That gives it value as evidence of how the brand wants the shoe seen — the features they are proud of — but it is a limitation as evidence of whether the shoe actually holds up, because the maker would never post a flaw. Naming the value and the limitation separately is the OPVL move.',
+    mastery: [
+      'Did I state origin AND purpose?',
+      'Did I name a specific value (what it is good evidence for)?',
+      'Did I name a specific limitation tied to its origin?',
+    ],
+    examConnection: {
+      exam: 'US History & Government (11R)',
+      where: 'Part II CRQ · Set B reliability (IB-style)',
+      lookFor: 'Value and limitation each tied to the source’s origin/purpose.',
+      missedMove: 'Students give value OR limitation but not both, or state them without tying them to the source’s origin.',
+    },
+  },
+  {
+    id: 7, num: 'VII', name: 'Corroboration', tier: 'Evidence',
+    color: TIERS.Evidence.color, skillTags: [3, 4], pending: true,
+    tagline: 'Read two documents against each other.',
+    plates: PLATES,
+    intro: [
+      'Corroboration is the multi-document move: where two sources agree, where they conflict, and what that tells you. It feeds Set A and essay complexity.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'Two friends describe the same argument differently. Where their stories line up, you trust it; where they clash, you know to dig. That is corroboration.',
+    },
+    beats: [
+      { move: 'Find the agreement', desc: 'What both documents support.' },
+      { move: 'Find the tension', desc: 'Where they diverge — and why they might.' },
+      { move: 'Say what it means', desc: 'What the pattern of agreement/conflict lets you conclude.' },
+    ],
+    practice: { prompt: 'Think of two sources about one event you saw this week (two people, two posts). In 3–5 sentences, name where they agree, where they differ, and what that lets you conclude.' },
+    exemplar: 'After the game, the school account said the team "fought hard in a close loss," while a player’s post said the refs "gave it away." They agree the team lost and it was close, which I can trust because both sides say it. They differ on why, and the player has a reason to blame the refs — so the safest conclusion is that it was a tight, contested game whose cause is disputed. Weighing the agreement against the conflict is the corroboration move.',
+    mastery: [
+      'Did I name a point of agreement between the two?',
+      'Did I name a point of tension and a reason for it?',
+      'Did I draw a conclusion from the pattern?',
+    ],
+    examConnection: {
+      exam: 'US History & Government (11R)',
+      where: 'Part II CRQ · Set A + essay complexity',
+      lookFor: 'Agreement and tension across two documents, plus a conclusion.',
+      missedMove: 'Students summarize each document separately and never read them against each other.',
+    },
+  },
+  {
+    id: 8, num: 'VIII', name: 'Argument Development', tier: 'Argument',
+    color: TIERS.Argument.color, skillTags: [2], criticalPath: true,
+    tagline: 'A thesis that could be argued against.',
+    plates: PLATES,
+    intro: [
+      'A thesis is a claim someone could disagree with — a position, not a topic. The strongest ones also nod to the counterargument. This is an August critical-path station.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'Convincing your family where to eat, you do not say "food is good." You say "we should get tacos because it is fast, cheap, and everyone can find something" — a claim with reasons.',
+    },
+    beats: [
+      { move: 'Take a position', desc: 'A claim that has a real other side. If no one could disagree, it is not a thesis.' },
+      { move: 'Give the because', desc: 'The reasons that make the claim defensible — your roadmap.' },
+      { move: 'Name the counter', desc: 'Acknowledge the strongest opposing point; it makes your claim stronger, not weaker.' },
+    ],
+    // ── bound from station-08-argument-development.json (latest regents rep) ──
+    repNum: s08.rep,
+    practice: { prompt: s08.prompt },
+    stimulus: s08.stimulus,
+    exemplar: s08.exemplar,
+    mastery: s08.compare_checklist,
+    examConnection: {
+      exam: s08.exam_meta.exam,
+      where: s08.exam_meta.part,
+      lookFor: 'A defensible position with reasons and an acknowledged counterclaim.',
+      missedMove: s08.compare_focus,
+    },
+  },
+  {
+    id: 9, num: 'IX', name: 'Paragraph Construction', tier: 'Argument',
+    color: TIERS.Argument.color, skillTags: [3, 4], criticalPath: true,
+    tagline: 'PEEL — and never skip the Link.',
+    plates: PLATES,
+    intro: [
+      'PEEL — Point, Evidence, Explanation, Link — is the shape of a body paragraph. The Link is the explanation gap: the sentence that says why the evidence proves the point. This is the 2→3 station, an August critical path.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'Arguing for a raise in allowance: you state it (Point), list your chores (Evidence), then — the part people skip — explain why that means you have earned it (Link).',
+    },
+    beats: [
+      { move: 'Point', desc: 'The claim this paragraph proves.' },
+      { move: 'Evidence', desc: 'The specific fact or quote that backs it.' },
+      { move: 'Explain + Link', desc: 'Say what the evidence shows AND tie it back to the point. This "link" sentence is the whole move.' },
+    ],
+    // ── bound from station-09-paragraph-construction.json (latest regents rep) ──
+    repNum: s09.rep,
+    practice: { prompt: s09.prompt },
+    stimulus: s09.stimulus,
+    exemplar: s09.exemplar,
+    mastery: s09.compare_checklist,
+    examConnection: {
+      exam: s09.exam_meta.exam,
+      where: s09.exam_meta.part,
+      lookFor: 'A body paragraph whose final sentence links evidence to the claim.',
+      missedMove: s09.compare_focus,
+    },
+  },
+  {
+    id: 10, num: 'X', name: 'Enduring Issues', tier: 'Mastery',
+    color: TIERS.Mastery.color, skillTags: [4], global: true, pending: true,
+    tagline: 'The problem that keeps coming back.',
+    plates: PLATES,
+    intro: [
+      'An enduring issue is a challenge that shows up across time and place — power, inequality, conflict over resources. This is the Global 10R (GS10R) essay station; it is kept and tagged Global, not on the 11R path.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'Every generation argues about how much freedom teenagers should get. The specifics change; the tug-of-war does not. That is an enduring issue.',
+    },
+    beats: [
+      { move: 'Name the issue', desc: 'State the recurring challenge in plain terms.' },
+      { move: 'Show it repeats', desc: 'Point to it in more than one time or place.' },
+      { move: 'Explain why it endures', desc: 'What keeps bringing it back.' },
+    ],
+    practice: { prompt: 'Name an issue you have seen come up in more than one place or generation. In 3–5 sentences, define it, show two places it appears, and say why it keeps recurring.' },
+    exemplar: 'The tension between privacy and safety is an enduring issue. I see it in my house — my parents want my phone location on "to be safe," and I want it off "to be private" — and I see it in the news whenever cities add cameras. It endures because safety and privacy are both things people genuinely want, and gaining more of one almost always costs some of the other, so no arrangement ever settles it for good.',
+    mastery: [
+      'Did I define the issue clearly?',
+      'Did I show it in at least two settings?',
+      'Did I explain why it keeps recurring?',
+    ],
+    examConnection: {
+      exam: 'Global History & Geography II (10R)',
+      where: 'Enduring Issues Essay (EIE) — Global path',
+      lookFor: 'A recurring issue shown across time/place with a reason it endures.',
+      missedMove: 'Students describe one example instead of proving the issue recurs.',
+    },
+  },
+  {
+    id: 11, num: 'XI', name: 'Civic Literacy', tier: 'Mastery',
+    color: TIERS.Mastery.color, skillTags: [6, 5], criticalPath: true,
+    tagline: 'Name the civic principle out loud.',
+    plates: PLATES,
+    intro: [
+      'Civic Literacy is the 3→4 station: taking a constitutional or civic principle — rule of law, checks and balances, due process — and naming it explicitly, then backing it with outside evidence you already know. An August critical path.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'When you argue "that’s not fair, you didn’t even hear my side," you are naming a principle — due process — without the fancy words. This station gives you the words.',
+    },
+    beats: [
+      { move: 'Name the principle', desc: 'Say it by name: rule of law, checks and balances, federalism, due process, equal protection.' },
+      { move: 'Tie it to the case', desc: 'Show how the principle applies to the situation in front of you.' },
+      { move: 'Add outside evidence', desc: 'Bring in a fact you already know that supports it — the stuff not in the documents.' },
+    ],
+    // ── bound from station-11-civic-literacy.json (latest regents rep) ──
+    repNum: s11.rep,
+    practice: { prompt: s11.prompt },
+    stimulus: s11.stimulus,
+    exemplar: s11.exemplar,
+    mastery: s11.compare_checklist,
+    examConnection: {
+      exam: s11.exam_meta.exam,
+      where: s11.exam_meta.part,
+      lookFor: 'A named civic principle applied to the case, backed by outside evidence.',
+      missedMove: s11.compare_focus,
+    },
+  },
+  {
+    id: 12, num: 'XII', name: 'The Comeback', tier: 'Mastery',
+    color: TIERS.Mastery.color, skillTags: [], meta: true, pending: true,
+    tagline: 'Mistakes are the curriculum.',
+    plates: ['Own it', 'Fix it', 'Bank it'],
+    intro: [
+      'The Comeback is the meta station, in TR’s voice: the whole Arena rests on the idea that a wrong answer you understand is worth more than a right answer you guessed. Here you turn a miss into a rep.',
+      'It is always listed last, and it never gets "finished." The gym is always open.',
+    ],
+    everyday: {
+      label: 'Everyday version',
+      text: 'A missed free throw is not the end — it is information. The players who improve are the ones who watch the miss, name what went wrong, and shoot again the same day.',
+    },
+    beats: [
+      { move: 'Own the miss', desc: 'Name exactly what went wrong — no excuses, no blame. Precision is the point.' },
+      { move: 'Name the fix', desc: 'The one move that would have closed the gap.' },
+      { move: 'Take the rep again', desc: 'Redo it with the fix, same day. That is the comeback.' },
+    ],
+    practice: { prompt: 'Think of a recent mistake — on a quiz, in a game, anywhere. In 3–5 sentences, name exactly what went wrong, the one fix, and how you would take the rep again.' },
+    exemplar: 'On the last quiz I lost points because I answered what the question reminded me of instead of what it actually asked. The specific miss was skipping the word "MOST" in the stem, so I picked a true statement that was not the best answer. The fix is to underline the qualifier before I read the choices. If I took the rep again, I would slow down on the stem first — and that single habit is the comeback.',
+    mastery: [
+      'Did I name the exact miss, not a vague "I did bad"?',
+      'Did I name one specific fix?',
+      'Did I describe taking the rep again?',
+    ],
+    examConnection: {
+      exam: 'All exams — the meta-skill',
+      where: 'Every station · the Comeback Sheet',
+      lookFor: 'A precisely named error, a single fix, and a re-attempt.',
+      missedMove: 'Students label a miss "careless" and move on, instead of naming the exact move that closes the gap.',
+    },
+  },
+]
+
+// ============================================================
+// SHARED BITS
+// ============================================================
+function Barbell({ plateCount, color, size = 'md' }) {
+  const big = size === 'lg'
+  const w = big ? 300 : 132
+  const h = big ? 92 : 52
+  const cx = w / 2
+  const plateH = [0.5, 0.72, 0.94]
+  const plateW = big ? 15 : 8
+  const gap = big ? 20 : 11
+  const barH = big ? 8 : 5
+  const off = big ? 26 : 15
+  const plate = (i, sign) => {
+    const filled = i < plateCount
+    const x = cx + sign * (off + i * (plateW + gap))
+    const ph = h * plateH[i]
+    return (
+      <rect
+        key={`${sign}-${i}`}
+        x={sign > 0 ? x : x - plateW}
+        y={(h - ph) / 2}
+        width={plateW}
+        height={ph}
+        rx={2}
+        fill={filled ? color : '#221D33'}
+        stroke={filled ? color : '#2E2842'}
+        strokeWidth="1"
+        opacity={filled ? 1 : 0.7}
+      />
+    )
+  }
+  return (
+    <svg width={w} height={h} viewBox={`0 0 ${w} ${h}`} role="img" aria-label={`${plateCount} of 3 plates loaded`}>
+      <rect x={cx - (off + 2)} y={(h - barH) / 2} width={2 * (off + 2)} height={barH} rx={barH / 2} fill="#4A4464" />
+      <circle cx={cx} cy={h / 2} r={big ? 6 : 4} fill="#6B6488" />
+      {[0, 1, 2].map(i => plate(i, 1))}
+      {[0, 1, 2].map(i => plate(i, -1))}
+    </svg>
+  )
+}
+
+function ScreenHeader({ label, onBack, color, back = 'The Arena' }) {
+  return (
+    <div className="screen-header" style={{ borderBottom: `1px solid ${color}44` }}>
+      <button className="back-btn" onClick={onBack}>← {back}</button>
+      <div className="screen-header-title" style={{ color }}>{label}</div>
+    </div>
+  )
+}
+
+// ============================================================
+// FRONTDOOR — the TR greeter splash (arena-main-splash.html)
+// ============================================================
+function Frontdoor({ onEnter }) {
+  return (
+    <div className="stage">
+      <div className="toprule" />
+      <img className="tr" src="/images/arena/tr-greeter.png" alt="Theodore Roosevelt standing at the entrance of The Arena" />
+      <div className="fd-wrap">
+        <div className="brand">
+          <img className="badge" src="/images/arena/badge.png" alt="" />
+          <div className="brand-txt">
+            <div className="eyebrow">Flashpoint History</div>
+            <h1>The Arena</h1>
+          </div>
+        </div>
+        <blockquote className="quote">
+          <p>&ldquo;{ARENA_QUOTE.text}&rdquo;</p>
+          <cite>{ARENA_QUOTE.cite}</cite>
+        </blockquote>
+        <p className="purpose">
+          This is where you train the exact skills the Regents tests — on your own time, at your own pace. Not a replacement for class. A place to get stronger between the bells.
+        </p>
+        <div className="how">
+          <div className="how-h">How to use this place</div>
+          <div className="step"><div className="step-n">1</div><div className="step-t">Start in <b>the Circuit</b> — pick a skill, take a rep, load a plate.</div></div>
+          <div className="step"><div className="step-n">2</div><div className="step-t">Stuck mid-essay? Duck into the <b>Trainer&rsquo;s Room</b> for tools.</div></div>
+          <div className="step"><div className="step-n">3</div><div className="step-t">After a test, hit the <b>Recovery Room</b> — five reps and your Comeback Sheet.</div></div>
+        </div>
+        <button className="cta" onClick={onEnter}>Enter the Arena <span className="a">&rarr;</span></button>
+      </div>
+      <div className="foot">Train here. Perform anywhere.</div>
+    </div>
+  )
+}
+
+// ============================================================
+// ROOMS — the picker (arena-landing-splash.html)
+// ============================================================
+const ROOMS = [
+  { key: 'circuit',  name: 'The Circuit',     ac: '#E8960A', head: 'Train the skills', line: '12 stations, four tiers. Load a plate for every rep you own.', cta: 'Enter the Circuit',
+    icon: (<g stroke="currentColor" strokeWidth="2.4" fill="none" strokeLinecap="round"><line x1="15" y1="24" x2="33" y2="24"/><rect x="7" y="16" width="5" height="16" rx="2"/><rect x="12.5" y="19" width="3.5" height="10" rx="1.6"/><rect x="36" y="16" width="5" height="16" rx="2"/><rect x="32" y="19" width="3.5" height="10" rx="1.6"/></g>) },
+  { key: 'trainers', name: "Trainer's Room",  ac: '#B07CD0', head: 'Grab your tools', line: '7 quick references for when you’re stuck mid-essay.', cta: 'Open the Trainer’s Room',
+    icon: (<g stroke="currentColor" strokeWidth="2.4" fill="none" strokeLinecap="round" strokeLinejoin="round"><rect x="12" y="11" width="24" height="29" rx="3"/><rect x="19" y="8" width="10" height="6" rx="2"/><line x1="17" y1="23" x2="31" y2="23"/><line x1="17" y1="29" x2="31" y2="29"/><line x1="17" y1="35" x2="26" y2="35"/></g>) },
+  { key: 'recovery', name: 'Recovery Room',   ac: '#43D982', head: 'Bounce back', line: 'After a test: 5 fast reps and your Comeback Sheet for points back.', cta: 'Enter Recovery',
+    icon: (<g stroke="currentColor" strokeWidth="2.4" fill="none" strokeLinecap="round"><rect x="9" y="9" width="30" height="30" rx="9"/><line x1="24" y1="17" x2="24" y2="31"/><line x1="17" y1="24" x2="31" y2="24"/></g>) },
+]
+
+function Rooms({ onPick, onBack }) {
+  return (
+    <div className="hero">
+      <div className="toprule" />
+      <div className="rooms-head">
+        <div className="eyebrow">Flashpoint History</div>
+        <h1 className="wordmark">The Arena</h1>
+        <div className="rule" />
+        <div className="subtitle">Train here. Perform anywhere.</div>
+        <div className="prompt">Pick your room.</div>
+      </div>
+      <div className="rooms">
+        {ROOMS.map((r, i) => (
+          <button key={r.key} className="room" style={{ '--ac': r.ac, animationDelay: `${0.15 + i * 0.08}s` }} onClick={() => onPick(r.key)} aria-label={r.cta}>
+            <span className="room-bar" />
+            <span className="room-icon"><svg viewBox="0 0 48 48" aria-hidden="true">{r.icon}</svg></span>
+            <span className="room-name">{r.name}</span>
+            <span className="room-head">{r.head}</span>
+            <span className="room-line">{r.line}</span>
+            <span className="room-cta">{r.cta} <span className="arw">&rarr;</span></span>
+          </button>
+        ))}
+      </div>
+      <div className="rooms-foot">
+        <button className="text-link" onClick={onBack}>← Front door</button>
+        <span>The gym is open.</span>
+        <a className="text-link" href={HOME_URL}>Flashpoint Timeline ↩</a>
+      </div>
+    </div>
+  )
+}
+
+// ============================================================
+// THE CIRCUIT — 12 stations + skill filter
+// ============================================================
+function Circuit({ progress, onOpen, onBack }) {
+  const [filter, setFilter] = useState(0) // 0 = all; else a skill id
+  const shown = filter === 0 ? STATIONS : STATIONS.filter(s => s.skillTags.includes(filter))
+  return (
+    <div className="wrap">
+      <ScreenHeader label="The Circuit" onBack={onBack} color="#E8960A" back="Rooms" />
+      <div className="circuit-intro">
+        <h2 style={{ color: '#E8960A' }}>The Circuit</h2>
+        <p>Twelve stations, four tiers. Pick a skill to filter, take the rep, load a plate for every move you own. Nothing here is graded — the plates are yours to earn.</p>
+        <div className="filter-row">
+          <button className={`chip${filter === 0 ? ' on' : ''}`} onClick={() => setFilter(0)}>All skills</button>
+          {Object.entries(SKILLS).map(([id, label]) => (
+            <button key={id} className={`chip${filter === +id ? ' on' : ''}`} onClick={() => setFilter(+id)}>
+              {id} · {label}
+            </button>
+          ))}
+        </div>
+      </div>
+      <div className="station-grid">
+        {shown.map(st => {
+          const saved = progress[st.id] || { mastery: [false, false, false] }
+          const plateCount = saved.mastery.filter(Boolean).length
+          const tier = TIERS[st.tier]
+          return (
+            <button key={st.id} className="station-card" style={{ '--ac': st.color }} onClick={() => onOpen(st.id)}>
+              <span className="station-card-bar" />
+              <div className="station-card-top">
+                <span className="station-card-num">Station {st.num}</span>
+                <span className="tier-badge" style={{ color: tier.color, background: `${tier.color}18`, border: `1px solid ${tier.color}44` }}>{tier.label}</span>
+              </div>
+              <div className="station-card-name">{st.name}</div>
+              <div className="station-card-tagline">{st.tagline}</div>
+              <div className="station-card-skills">
+                {st.skillTags.length
+                  ? st.skillTags.map(t => <span key={t} className="skill-pill">{SKILLS[t]}</span>)
+                  : <span className="skill-pill meta">Meta</span>}
+              </div>
+              <div className="station-card-foot">
+                <Barbell plateCount={plateCount} color={st.color} size="md" />
+                <span className="plate-count">{plateCount}/3</span>
+              </div>
+              {st.pending && <span className="pending-flag">Regents drill loads on audit</span>}
+            </button>
+          )
+        })}
+      </div>
+    </div>
+  )
+}
+
+// ============================================================
+// STATION — StationScreen.v1.1 (multi-attempt compare mechanic)
+// Adapted from assets/arena/StationScreen.v1.1.jsx: props unchanged; added a
+// stimulus render (images-first, from the bound package) and a `pending` note
+// for stations whose Regents drill has not yet been audited in.
+// ============================================================
+function Stimulus({ items, accent }) {
+  if (!items || !items.length) return null
+  return (
+    <div className="stimulus-block">
+      {items.map((doc, i) => (
+        <figure className="stimulus" key={i} style={{ borderColor: `${accent}33` }}>
+          {doc.image_ref && (
+            <img src={`/content/${doc.image_ref}`} alt={doc.image_alt || ''} loading="lazy" />
+          )}
+          {doc.content && (
+            <details className="stimulus-text">
+              <summary>Read the transcription</summary>
+              <p>{doc.content}</p>
+            </details>
+          )}
+          {doc.citation && <figcaption>{doc.citation}</figcaption>}
+        </figure>
+      ))}
+    </div>
+  )
+}
+
+function StationScreen({ stationId, progress, onUpdateProgress, onBack }) {
+  const station = STATIONS.find(s => s.id === stationId)
+  if (!station) return null
+
+  const [attempt1, setAttempt1] = useState('')
+  const [attempt2, setAttempt2] = useState('')
+  const [revealed, setRevealed] = useState(false)
+  const [comparing, setComparing] = useState(false)
+
+  const saved = progress[stationId] || { mastery: [false, false, false] }
+  const mastery = saved.mastery
+  const plateCount = mastery.filter(Boolean).length
+  const prAchieved = plateCount === 3
+  const tierInfo = TIERS[station.tier]
+
+  const canReveal = attempt1.trim().length >= 40
+
+  const toggle = (i) => {
+    const next = [...mastery]
+    next[i] = !next[i]
+    onUpdateProgress(stationId, next)
+  }
+
+  return (
+    <div className="wrap">
+      <ScreenHeader label={`Station ${station.num}`} onBack={onBack} color={station.color} back="The Circuit" />
+      <div className="station-screen">
+        <div className="station-hero">
+          <span className="station-tier-badge" style={{ color: tierInfo.color, background: `${tierInfo.color}18`, border: `1px solid ${tierInfo.color}44` }}>
+            {tierInfo.label}
+          </span>
+          <div className="station-screen-num">Station {station.num}</div>
+          <div className="station-screen-name">{station.name}</div>
+          <div className="station-screen-tagline">{station.tagline}</div>
+        </div>
+
+        <div className="station-barbell-section">
+          <Barbell plateCount={plateCount} color={station.color} size="lg" />
+          <div className="barbell-label-row">
+            {station.plates.map((pl, i) => (
+              <span key={i} className="barbell-label" style={{ color: i < plateCount ? station.color : '#4A4464' }}>{pl}</span>
+            ))}
+          </div>
+          {prAchieved && (
+            <>
+              <div className="pr-rule" style={{ marginTop: 20 }} />
+              <div className="pr-title" style={{ color: station.color }}>THIS WEIGHT IS YOURS</div>
+            </>
+          )}
+        </div>
+
+        <div className="station-intro">
+          {station.intro.map((p, i) => <p key={i}>{p}</p>)}
+        </div>
+
+        <div className="everyday-box">
+          <div className="everyday-label">{station.everyday.label}</div>
+          <div className="everyday-text">{station.everyday.text}</div>
+        </div>
+
+        <div className="beats-section">
+          <div className="beats-title">The Moves</div>
+          {station.beats.map((beat, i) => (
+            <div className="beat-card" key={i}>
+              <div className="beat-move" style={{ color: station.color }}>{beat.move}</div>
+              <div className="beat-desc">{beat.desc}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* ── THE REP — multi-attempt compare ── */}
+        <div className="practice-section">
+          <div className="practice-label">Your Rep</div>
+          {station.pending
+            ? <div className="rep-kind">Rep 1 · Everyday on-ramp — the Regents drill for this unit loads when its package is audited.</div>
+            : <div className="rep-kind on">Rep {station.repNum || 2} · Regents rep — bound from the audited package.</div>}
+          <div className="practice-prompt">{station.practice.prompt}</div>
+          <Stimulus items={station.stimulus} accent={station.color} />
+
+          {!comparing ? (
+            <>
+              <div className="attempt-label" style={{ color: station.color }}>Attempt 1</div>
+              <div className="practice-hint">Aim for 3–5 sentences. Take a real swing — the model stays locked until you do.</div>
+              <textarea className="practice-textarea" placeholder="Write your response here..." value={attempt1} onChange={e => setAttempt1(e.target.value)} />
+
+              {!revealed ? (
+                <div style={{ marginTop: 14 }}>
+                  <button className="arena-btn-primary" disabled={!canReveal} onClick={() => setRevealed(true)}>Reveal the model →</button>
+                  {!canReveal && <div className="reveal-hint">Write your attempt first. There are no shortcuts in the Arena.</div>}
+                </div>
+              ) : (
+                <>
+                  <div className="exemplar-box" style={{ marginTop: 20 }}>
+                    <div className="exemplar-header">Model Response</div>
+                    <div className="exemplar-text">{station.exemplar}</div>
+                  </div>
+                  <div className="compare-focus">
+                    <div className="compare-focus-label">One move to sharpen</div>
+                    <div className="compare-focus-text">{station.examConnection.missedMove}</div>
+                  </div>
+                  <div style={{ marginTop: 6 }}>
+                    <button className="arena-btn-primary" onClick={() => setComparing(true)}>Go again — Attempt 2 →</button>
+                    <div className="reveal-hint">Don&rsquo;t copy the model. Take your own answer again and add the one move above.</div>
+                  </div>
+                </>
+              )}
+            </>
+          ) : (
+            <>
+              <div className="compare-grid">
+                <div>
+                  <div className="attempt-label">Attempt 1</div>
+                  <div className="attempt-readonly">{attempt1}</div>
+                </div>
+                <div>
+                  <div className="attempt-label" style={{ color: station.color }}>Attempt 2</div>
+                  <textarea className="practice-textarea" style={{ minHeight: 160 }} placeholder="Write it again — sharper this time..." value={attempt2} onChange={e => setAttempt2(e.target.value)} />
+                </div>
+              </div>
+              <div className="compare-focus">
+                <div className="compare-focus-label">The one move you&rsquo;re adding</div>
+                <div className="compare-focus-text">{station.examConnection.missedMove}</div>
+              </div>
+              <div className="exemplar-box">
+                <div className="exemplar-header">Model Response</div>
+                <div className="exemplar-text">{station.exemplar}</div>
+                <div className="exemplar-note">Attempt 1, Attempt 2, and the model are all in front of you. Read them together and find the gap that&rsquo;s closing — that gap is the rep.</div>
+              </div>
+            </>
+          )}
+        </div>
+
+        <div className="mastery-section">
+          <div className="mastery-title">Check Your Work</div>
+          {station.mastery.map((item, i) => (
+            <div className="mastery-item" key={i} onClick={() => toggle(i)}>
+              <div className={`mastery-checkbox${mastery[i] ? ' checked' : ''}`} style={mastery[i] ? { borderColor: station.color, background: `${station.color}33` } : {}}>
+                {mastery[i] && <span className="mastery-check-icon" style={{ color: station.color }}>✓</span>}
+              </div>
+              <div className={`mastery-text${mastery[i] ? ' done' : ''}`}>{item}</div>
+            </div>
+          ))}
+        </div>
+
+        <div className="exam-connection">
+          <div className="exam-connection-label">Exam Connection</div>
+          <div className="exam-row"><div className="exam-key">Exam</div><div className="exam-val">{station.examConnection.exam}</div></div>
+          <div className="exam-row"><div className="exam-key">Where</div><div className="exam-val">{station.examConnection.where}</div></div>
+          <div className="exam-row"><div className="exam-key">Scorer looks for</div><div className="exam-val">{station.examConnection.lookFor}</div></div>
+          <div className="exam-missed">
+            <div className="exam-missed-label">Most Missed Move</div>
+            <div className="exam-missed-text">{station.examConnection.missedMove}</div>
+          </div>
+        </div>
+
+        {prAchieved && (
+          <div className="pr-section">
+            <div className="pr-rule" />
+            <div className="pr-title" style={{ color: station.color }}>THIS WEIGHT IS YOURS</div>
+            <div className="pr-sub">Station {station.num} complete. The gym is always open — come back any time.</div>
+          </div>
+        )}
+      </div>
+    </div>
+  )
+}
+
+// ============================================================
+// TRAINER'S ROOM — 7 quick-reference tools (the fix: "6 tools" → "7 tools")
+// ============================================================
+const TOOLS = [
+  { name: 'The 4-Question Source Frame', line: 'Sourcing on demand: Who made it? When? For whom? Why?', model: 'Ask in order — origin, date, audience, purpose — before you trust a word of it.' },
+  { name: 'Thesis Formula', line: 'A claim someone could argue against.', model: '"[Position] because [reason A], [reason B], and [reason C]" — a stance with a roadmap.' },
+  { name: 'PEEL Paragraph Builder', line: 'Point · Evidence · Explain · Link.', model: 'Never skip the Link: the sentence that says why the evidence proves the point.' },
+  { name: 'Causation Connectives', line: 'The words that make a cause visible.', model: 'because · led to · resulted in · as a consequence · which caused' },
+  { name: 'Contextualization Starters', line: 'The "before this…" sentence.', model: '"In the years before this, ___ was already true, which is why ___ happened."' },
+  { name: 'Rubric Translator', line: 'What the scorer is actually counting.', model: 'Turns rubric-speak ("analyze," "evaluate") into the concrete move that earns the point.' },
+  { name: 'Outside Evidence Bank', line: 'The stuff you already know.', model: 'Name a fact NOT in the documents that backs your claim — the move that lifts a 3 to a 4.' },
+]
+
+function Trainers({ onBack }) {
+  return (
+    <div className="wrap">
+      <ScreenHeader label="Trainer's Room" onBack={onBack} color="#B07CD0" back="Rooms" />
+      <div className="circuit-intro">
+        <h2 style={{ color: '#B07CD0' }}>Trainer&rsquo;s Room</h2>
+        <p><b>7 tools</b> for when you&rsquo;re stuck mid-essay. Quick references — complete model sentences, never fill-in-the-blank. Grab one and get back in.</p>
+      </div>
+      <div className="tools-grid">
+        {TOOLS.map((t, i) => (
+          <div className="tool-card" key={i} style={{ '--ac': '#B07CD0' }}>
+            <div className="tool-num">Tool {i + 1} of 7</div>
+            <div className="tool-name">{t.name}</div>
+            <div className="tool-line">{t.line}</div>
+            <div className="tool-model">{t.model}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
+// ============================================================
+// RECOVERY ROOM — stateless click-to-check mc_set trainer
+// Reads mc_set packages BY REFERENCE (arena-mcset-schema-amendment.md). None
+// are audited in yet → clean empty state. Drop an mcset-*.json into src/content/
+// and it appears here automatically.
+// ============================================================
+const MCSET_MODULES = import.meta.glob('./content/mcset-*.json', { eager: true })
+const MC_PACKS = Object.values(MCSET_MODULES)
+  .map(m => m.default || m)
+  .filter(p => p && p.package_type === 'mc_set')
+  .sort((a, b) => (a.unit?.id || '').localeCompare(b.unit?.id || ''))
+
+function McItem({ item }) {
+  const [picked, setPicked] = useState(null)
+  const answered = picked != null
+  return (
+    <div className="mc-item">
+      {item.stimulus && (
+        <figure className="stimulus">
+          {item.stimulus.image_ref && <img src={`/content/${item.stimulus.image_ref}`} alt={item.stimulus.image_alt || ''} loading="lazy" />}
+          {item.stimulus.content && (
+            <details className="stimulus-text"><summary>Read the transcription</summary><p>{item.stimulus.content}</p></details>
+          )}
+          {item.stimulus.citation && <figcaption>{item.stimulus.citation}</figcaption>}
+        </figure>
+      )}
+      <div className="mc-q">{item.n}. {item.question}</div>
+      {item.choices.map(c => {
+        let cls = 'mc-choice'
+        if (answered) {
+          if (c.key === item.correct) cls += ' correct'
+          else if (c.key === picked) cls += ' incorrect'
+          else cls += ' dim'
+        }
+        return (
+          <button key={c.key} className={cls} disabled={answered} onClick={() => setPicked(c.key)}>
+            <b>{c.key}.</b> {c.text}
+          </button>
+        )
+      })}
+      {answered && (
+        <div className="mc-reveal">
+          <div className={picked === item.correct ? 'mc-verdict ok' : 'mc-verdict no'}>
+            {picked === item.correct ? '✓ Correct' : '✗ Review'}
+          </div>
+          <p className="mc-reasoning">{item.reasoning}</p>
+          {item.evidence_line && <p className="mc-evidence"><b>Evidence line:</b> {item.evidence_line}</p>}
+          {picked !== item.correct && item.distractors?.[picked] && (
+            <p className="mc-distractor"><b>Why that one tempts:</b> {item.distractors[picked]}</p>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function Recovery({ onBack }) {
+  const [packId, setPackId] = useState(MC_PACKS[0]?.unit?.id || null)
+  const pack = MC_PACKS.find(p => p.unit?.id === packId) || null
+  return (
+    <div className="wrap">
+      <ScreenHeader label="Recovery Room" onBack={onBack} color="#43D982" back="Rooms" />
+      <div className="circuit-intro">
+        <h2 style={{ color: '#43D982' }}>Recovery Room</h2>
+        <p>After a test: five fast reps to win points back, click-to-check, no score kept. Miss one and it teaches you why. Then copy the evidence line onto your Comeback Sheet in your own hand.</p>
+      </div>
+
+      {MC_PACKS.length === 0 ? (
+        <div className="empty-state">
+          <div className="empty-icon" aria-hidden="true">
+            <svg viewBox="0 0 48 48" width="48" height="48"><g stroke="#43D982" strokeWidth="2.2" fill="none" strokeLinecap="round"><rect x="9" y="9" width="30" height="30" rx="9"/><line x1="24" y1="17" x2="24" y2="31"/><line x1="17" y1="24" x2="31" y2="24"/></g></svg>
+          </div>
+          <div className="empty-title">The Recovery Room is warming up</div>
+          <p className="empty-text">Packs load here as each unit is audited. The moment a unit&rsquo;s <code>mc_set</code> package drops into <code>/content</code>, its five reps appear here — five per unit, 11.1 through 11.11.</p>
+          <p className="empty-sub">Nothing to do here yet is the honest answer. Head to the Circuit and train a skill in the meantime.</p>
+        </div>
+      ) : (
+        <>
+          <div className="pack-row">
+            {MC_PACKS.map(p => (
+              <button key={p.unit.id} className={`chip${p.unit.id === packId ? ' on' : ''}`} onClick={() => setPackId(p.unit.id)}>
+                {p.unit.id} · {p.unit.title}
+              </button>
+            ))}
+          </div>
+          {pack && (
+            <div className="mc-list">
+              {pack.items.map(it => <McItem key={it.n} item={it} />)}
+            </div>
+          )}
+        </>
+      )}
+    </div>
+  )
+}
+
+// ============================================================
+// APP CONTROLLER
+// ============================================================
+const PROGRESS_KEY = 'arena_progress_v1'
+
+export default function App() {
+  const [screen, setScreen] = useState('frontdoor') // frontdoor | rooms | circuit | station | trainers | recovery
+  const [stationId, setStationId] = useState(null)
+
+  // progress = { [stationId]: { mastery: [bool,bool,bool] } } — enriches, never gates.
+  const [progress, setProgress] = useState(() => {
+    try { return JSON.parse(localStorage.getItem(PROGRESS_KEY) || '{}') } catch { return {} }
+  })
+
+  function updateProgress(id, mastery) {
+    setProgress(prev => {
+      const next = { ...prev, [id]: { mastery } }
+      try { localStorage.setItem(PROGRESS_KEY, JSON.stringify(next)) } catch { /* wiped device still works */ }
+      return next
+    })
+  }
+
+  const openStation = (id) => { setStationId(id); setScreen('station') }
+
+  return (
+    <div className="arena-root">
+      <style>{CSS}</style>
+      {screen === 'frontdoor' && <Frontdoor onEnter={() => setScreen('rooms')} />}
+      {screen === 'rooms' && <Rooms onPick={setScreen} onBack={() => setScreen('frontdoor')} />}
+      {screen === 'circuit' && <Circuit progress={progress} onOpen={openStation} onBack={() => setScreen('rooms')} />}
+      {screen === 'station' && <StationScreen stationId={stationId} progress={progress} onUpdateProgress={updateProgress} onBack={() => setScreen('circuit')} />}
+      {screen === 'trainers' && <Trainers onBack={() => setScreen('rooms')} />}
+      {screen === 'recovery' && <Recovery onBack={() => setScreen('rooms')} />}
+    </div>
+  )
+}
+
+// ============================================================
+// CSS — injected once. :root swaps the prototype canvas (#0D0B14) for the
+// SHARED Flashpoint ink (#16120E); Barlow Condensed / Outfit + amber kept.
+// ============================================================
+const CSS = `
+:root{
+  --bg:#16120E;            /* SHARED Flashpoint canvas (was #0D0B14) */
+  --panel:#1C1712;
+  --amber:#C17700; --amber2:#E8960A;
+  --white:#F2EFE8; --dim:#B4AEC6; --dimmer:#8E88A0;
+  --border:#2E2820; --border2:#3A3226;
+  --bg2:#120E0A;
+  --fd:'Barlow Condensed',sans-serif; --fb:'Outfit',sans-serif;
+  --font-display:var(--fd);
+}
+.arena-root{min-height:100svh;background:var(--bg);color:var(--white);font-family:var(--fb)}
+
+/* ── shared header / buttons ── */
+.wrap{max-width:920px;margin:0 auto;padding:0 22px 100px}
+.screen-header{position:sticky;top:0;z-index:10;background:rgba(22,18,14,.92);backdrop-filter:blur(6px);
+  display:flex;align-items:center;gap:16px;padding:16px 0;margin-bottom:8px}
+.back-btn{background:none;border:none;color:var(--dim);font-family:var(--fd);font-weight:600;letter-spacing:.06em;
+  text-transform:uppercase;font-size:14px;cursor:pointer;padding:6px 2px}
+.back-btn:hover{color:var(--white)}
+.screen-header-title{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:22px;margin-left:auto}
+.arena-btn-primary{background:var(--amber);color:var(--bg);border:none;border-radius:4px;font-family:var(--fd);
+  font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:12px 24px;cursor:pointer;transition:all .2s}
+.arena-btn-primary:hover:not(:disabled){background:var(--amber2)}
+.arena-btn-primary:disabled{opacity:.4;cursor:not-allowed}
+.arena-btn-primary:focus-visible{outline:2px solid var(--amber2);outline-offset:2px}
+
+/* ── FRONTDOOR (arena-main-splash) ── */
+.stage{position:relative;min-height:100svh;display:flex;align-items:stretch;overflow:hidden;isolation:isolate;
+ background:linear-gradient(90deg, rgba(22,18,14,.62) 0%, rgba(22,18,14,.34) 34%, rgba(22,18,14,.66) 62%, rgba(22,18,14,.92) 100%),
+  linear-gradient(180deg, rgba(22,18,14,.5), rgba(22,18,14,.5)),
+  url("/images/arena/frontdoor-bg.jpg") center/cover no-repeat;}
+.toprule{position:absolute;top:0;left:0;right:0;height:3px;z-index:5;background:linear-gradient(90deg,transparent,var(--amber),var(--amber),transparent)}
+.tr{position:absolute;bottom:0;left:-2%;height:94vh;max-height:1000px;z-index:1;pointer-events:none;
+ filter:drop-shadow(0 12px 40px rgba(0,0,0,.6));animation:trin 1s .1s both cubic-bezier(.2,.7,.2,1)}
+@keyframes trin{from{opacity:0;transform:translateX(-24px)}to{opacity:1;transform:none}}
+.fd-wrap{margin-left:auto;width:min(560px,50%);z-index:2;display:flex;flex-direction:column;justify-content:center;gap:20px;
+ padding:48px 56px;background:linear-gradient(90deg, transparent, rgba(15,12,9,.55) 16%, rgba(15,12,9,.82));animation:up .8s .2s both cubic-bezier(.2,.7,.2,1)}
+@keyframes up{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.brand{display:flex;align-items:center;gap:16px}
+.badge{width:64px;height:64px;border-radius:50%;border:2px solid var(--amber);flex:none;box-shadow:0 0 24px rgba(193,119,0,.35)}
+.brand-txt .eyebrow{font-family:var(--fd);font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--amber2)}
+.brand-txt h1{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.02em;line-height:.85;font-size:clamp(46px,6vw,68px)}
+.quote{border-left:2px solid var(--amber);padding-left:18px}
+.quote p{font-size:17px;line-height:1.6;font-style:italic;color:rgba(242,239,232,.9)}
+.quote cite{display:block;margin-top:8px;font-family:var(--fd);font-style:normal;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber2)}
+.purpose{font-size:16px;line-height:1.6;color:rgba(242,239,232,.82)}
+.how{border-top:1px solid var(--border);padding-top:18px}
+.how-h{font-family:var(--fd);font-size:12px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--dim);margin-bottom:12px}
+.step{display:flex;gap:13px;align-items:flex-start;margin-bottom:11px}
+.step-n{font-family:var(--fd);font-weight:900;font-size:15px;color:var(--amber);flex:none;width:20px;line-height:1.5}
+.step-t{font-size:14.5px;line-height:1.5;color:rgba(242,239,232,.84)}
+.step-t b{color:var(--white);font-weight:600}
+.cta{margin-top:8px;display:inline-flex;align-items:center;gap:10px;align-self:flex-start;background:var(--amber);color:#120d05;border:none;border-radius:6px;cursor:pointer;
+ font-family:var(--fd);font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:17px;padding:15px 30px;transition:all .2s}
+.cta:hover{background:var(--amber2)}.cta .a{transition:transform .2s}.cta:hover .a{transform:translateX(5px)}
+.cta:focus-visible{outline:2px solid var(--amber2);outline-offset:3px}
+.foot{position:absolute;bottom:16px;left:24px;z-index:3;font-family:var(--fd);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(242,239,232,.45)}
+@media(max-width:860px){
+ .stage{flex-direction:column}
+ .tr{height:52vh;left:auto;right:-8%;opacity:.32;filter:grayscale(1) drop-shadow(0 0 20px #000)}
+ .fd-wrap{width:100%;margin:auto 0 0;padding:34px 22px 60px;background:linear-gradient(180deg, transparent, rgba(15,12,9,.72) 22%, rgba(15,12,9,.94))}
+ .badge{width:54px;height:54px}
+ .foot{display:none}
+}
+
+/* ── ROOMS (arena-landing-splash) ── */
+.hero{min-height:100svh;display:flex;flex-direction:column;position:relative;isolation:isolate;
+  background:
+   radial-gradient(120% 85% at 50% 26%, transparent 42%, rgba(22,18,14,.55) 100%),
+   linear-gradient(180deg, rgba(22,18,14,.86) 0%, rgba(22,18,14,.44) 40%, rgba(22,18,14,.93) 100%),
+   url("/images/arena/rooms-bg.jpg") center/cover no-repeat;}
+.rooms-head{text-align:center;padding:min(9vh,72px) 20px 0}
+.rooms-head .eyebrow{font-family:var(--fd);font-size:13px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--amber2)}
+.wordmark{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.01em;line-height:.86;font-size:clamp(58px,13vw,132px);margin:6px 0 0;text-shadow:0 2px 40px rgba(0,0,0,.6)}
+.rule{width:60px;height:2px;background:var(--amber);margin:18px auto 16px}
+.subtitle{font-family:var(--fd);font-size:clamp(15px,2.4vw,20px);font-weight:400;letter-spacing:.18em;text-transform:uppercase;color:rgba(242,239,232,.82)}
+.prompt{font-family:var(--fb);font-size:15px;color:var(--dim);margin-top:22px}
+.rooms{flex:1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-content:center;width:100%;max-width:1080px;margin:0 auto;padding:32px 22px min(6vh,48px)}
+.room{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:2px;cursor:pointer;text-align:left;
+  background:linear-gradient(180deg, rgba(30,24,18,.92), rgba(20,15,10,.94));border:1px solid var(--border);border-radius:12px;padding:26px 24px 22px;color:var(--white);font-family:var(--fb);
+  overflow:hidden;transition:transform .22s cubic-bezier(.2,.7,.2,1),border-color .22s,box-shadow .22s;box-shadow:0 10px 30px rgba(0,0,0,.35);animation:rise .5s both cubic-bezier(.2,.7,.2,1)}
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+.room-bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--ac);opacity:.9}
+.room-icon{width:44px;height:44px;color:var(--ac);margin-bottom:14px}.room-icon svg{width:100%;height:100%}
+.room-name{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(26px,3.4vw,32px);line-height:1}
+.room-head{font-size:16px;font-weight:600;color:var(--white);margin-top:8px}
+.room-line{font-size:14px;line-height:1.55;color:var(--dim);margin-top:6px;min-height:44px}
+.room-cta{font-family:var(--fd);font-weight:700;letter-spacing:.05em;text-transform:uppercase;font-size:14px;color:var(--ac);margin-top:18px;display:inline-flex;align-items:center;gap:8px}
+.arw{transition:transform .22s}
+.room:hover,.room:focus-visible{transform:translateY(-7px);border-color:var(--ac);box-shadow:0 18px 44px rgba(0,0,0,.5), 0 0 0 1px var(--ac);outline:none}
+.room:hover .arw,.room:focus-visible .arw{transform:translateX(5px)}
+.rooms-foot{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;padding:0 24px min(5vh,34px);font-family:var(--fd);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:rgba(242,239,232,.4)}
+.text-link{background:none;border:none;color:var(--amber2);font-family:var(--fd);letter-spacing:.14em;text-transform:uppercase;font-size:12px;cursor:pointer;text-decoration:none}
+.text-link:hover{color:var(--white)}
+@media (max-width:820px){.rooms{grid-template-columns:1fr;gap:14px;max-width:520px}.room-line{min-height:0}.room{padding:22px 20px}}
+
+/* ── CIRCUIT / TRAINERS / RECOVERY shared intro ── */
+.circuit-intro{padding:14px 0 6px}
+.circuit-intro h2{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(30px,5vw,46px);line-height:1}
+.circuit-intro p{color:var(--dim);font-size:15.5px;line-height:1.6;margin-top:10px;max-width:640px}
+.circuit-intro p b{color:var(--white)}
+.filter-row,.pack-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{background:var(--panel);border:1px solid var(--border2);border-radius:20px;color:var(--dim);font-family:var(--fd);font-weight:600;letter-spacing:.03em;font-size:13px;padding:7px 14px;cursor:pointer;transition:all .18s}
+.chip:hover{color:var(--white);border-color:var(--amber2)}
+.chip.on{background:var(--amber);border-color:var(--amber);color:var(--bg)}
+
+/* ── station grid ── */
+.station-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:24px}
+.station-card{position:relative;text-align:left;background:linear-gradient(180deg,rgba(30,24,18,.9),rgba(20,15,10,.92));border:1px solid var(--border);border-radius:12px;padding:22px 20px 18px;cursor:pointer;color:var(--white);font-family:var(--fb);overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
+.station-card:hover{transform:translateY(-5px);border-color:var(--ac);box-shadow:0 14px 34px rgba(0,0,0,.5),0 0 0 1px var(--ac)}
+.station-card-bar{position:absolute;top:0;left:0;right:0;height:4px;background:var(--ac)}
+.station-card-top{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.station-card-num{font-family:var(--fd);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--dimmer)}
+.tier-badge{font-family:var(--fd);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:10px;padding:3px 9px;border-radius:20px}
+.station-card-name{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.01em;font-size:22px;line-height:1;margin-top:12px}
+.station-card-tagline{color:var(--dim);font-size:13.5px;line-height:1.45;margin-top:8px;min-height:38px}
+.station-card-skills{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.skill-pill{font-family:var(--fb);font-size:11px;color:var(--dim);background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:20px;padding:3px 9px}
+.skill-pill.meta{color:var(--amber2);border-color:rgba(232,150,10,.3)}
+.station-card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:16px}
+.plate-count{font-family:var(--fd);font-weight:700;font-size:13px;color:var(--dimmer)}
+.pending-flag{display:block;margin-top:12px;font-family:var(--fd);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--dimmer);border-top:1px solid var(--border);padding-top:10px}
+@media (max-width:820px){.station-grid{grid-template-columns:1fr 1fr;gap:12px}}
+@media (max-width:560px){.station-grid{grid-template-columns:1fr}}
+
+/* ── station screen ── */
+.station-screen{max-width:720px;margin:0 auto}
+.station-hero{text-align:center;padding:12px 0 8px}
+.station-tier-badge{display:inline-block;font-family:var(--fd);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:11px;padding:4px 12px;border-radius:20px}
+.station-screen-num{font-family:var(--fd);font-weight:700;letter-spacing:.16em;text-transform:uppercase;font-size:12px;color:var(--dimmer);margin-top:14px}
+.station-screen-name{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.01em;font-size:clamp(34px,6vw,52px);line-height:1}
+.station-screen-tagline{color:var(--dim);font-size:16px;margin-top:10px}
+.station-barbell-section{text-align:center;padding:26px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:22px 0}
+.barbell-label-row{display:flex;justify-content:center;gap:26px;margin-top:12px}
+.barbell-label{font-family:var(--fd);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px}
+.pr-rule{height:2px;width:120px;margin:14px auto 0;background:linear-gradient(90deg,transparent,currentColor,transparent);opacity:.5}
+.pr-title{font-family:var(--fd);font-weight:900;letter-spacing:.16em;text-transform:uppercase;font-size:16px;margin-top:12px}
+.pr-sub{color:var(--dim);font-size:14px;margin-top:6px}
+.pr-section{text-align:center;margin-top:30px}
+.station-intro p{color:rgba(242,239,232,.9);font-size:16.5px;line-height:1.7;margin-bottom:14px}
+.everyday-box{background:rgba(232,150,10,.06);border:1px solid rgba(232,150,10,.2);border-radius:8px;padding:18px 20px;margin:8px 0 22px}
+.everyday-label{font-family:var(--fd);font-weight:700;letter-spacing:.14em;text-transform:uppercase;font-size:11px;color:var(--amber2);margin-bottom:8px}
+.everyday-text{font-size:15.5px;line-height:1.6;color:rgba(242,239,232,.9)}
+.beats-section{margin-bottom:26px}
+.beats-title{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:18px;margin-bottom:12px}
+.beat-card{border-left:3px solid var(--border2);padding:4px 0 4px 16px;margin-bottom:14px}
+.beat-move{font-family:var(--fd);font-weight:700;letter-spacing:.04em;text-transform:uppercase;font-size:14px}
+.beat-desc{color:var(--dim);font-size:14.5px;line-height:1.55;margin-top:4px}
+.practice-section{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:24px}
+.practice-label{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:18px}
+.rep-kind{font-family:var(--fd);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--dimmer);margin-top:6px}
+.rep-kind.on{color:var(--amber2)}
+.practice-prompt{font-size:16.5px;line-height:1.65;color:var(--white);margin:12px 0 16px}
+.practice-hint{color:var(--dimmer);font-size:13.5px;font-style:italic;margin-bottom:10px}
+.practice-textarea{width:100%;min-height:150px;background:var(--bg2);border:1px solid var(--border2);border-radius:6px;color:var(--white);font-family:var(--fb);font-size:15px;line-height:1.6;padding:14px;resize:vertical}
+.practice-textarea:focus{outline:none;border-color:var(--amber2)}
+.attempt-label{font-family:var(--fd);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;margin-top:4px}
+.reveal-hint{font-size:13px;color:var(--dimmer);font-style:italic;margin-top:10px}
+.exemplar-box{background:var(--bg2);border:1px solid var(--border2);border-left:3px solid var(--amber2);border-radius:6px;padding:18px 20px;margin-top:14px}
+.exemplar-header{font-family:var(--fd);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:11px;color:var(--amber2);margin-bottom:10px}
+.exemplar-text{font-size:15.5px;line-height:1.7;color:rgba(242,239,232,.92)}
+.exemplar-note{font-size:13px;color:var(--dimmer);font-style:italic;margin-top:12px;border-top:1px solid var(--border);padding-top:12px}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:4px}
+.attempt-readonly{background:var(--bg2);border:1px solid var(--border);border-radius:4px;padding:16px;font-size:15px;line-height:1.7;color:rgba(242,239,232,.62);white-space:pre-wrap;min-height:160px}
+.compare-focus{background:rgba(193,119,0,.06);border:1px solid rgba(193,119,0,.22);border-radius:4px;padding:14px 16px;margin:14px 0}
+.compare-focus-label{font-family:var(--fd);font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.compare-focus-text{font-size:15px;line-height:1.6;color:rgba(242,239,232,.85)}
+@media (max-width:700px){.compare-grid{grid-template-columns:1fr}}
+.mastery-section{margin-bottom:24px}
+.mastery-title{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.06em;font-size:18px;margin-bottom:12px}
+.mastery-item{display:flex;gap:12px;align-items:flex-start;padding:10px 0;cursor:pointer}
+.mastery-checkbox{flex:none;width:24px;height:24px;border:2px solid var(--border2);border-radius:5px;display:flex;align-items:center;justify-content:center;margin-top:1px}
+.mastery-check-icon{font-weight:900;font-size:14px}
+.mastery-text{font-size:15px;line-height:1.55;color:rgba(242,239,232,.9)}
+.mastery-text.done{color:var(--dimmer);text-decoration:line-through}
+.exam-connection{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px 22px}
+.exam-connection-label{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:15px;margin-bottom:14px;color:var(--amber2)}
+.exam-row{display:flex;gap:14px;padding:7px 0;border-bottom:1px solid var(--border);font-size:14.5px}
+.exam-key{flex:none;width:120px;color:var(--dimmer);font-family:var(--fd);letter-spacing:.05em;text-transform:uppercase;font-size:12px;padding-top:2px}
+.exam-val{color:rgba(242,239,232,.9);line-height:1.5}
+.exam-missed{margin-top:14px;background:rgba(193,119,0,.06);border-radius:6px;padding:14px 16px}
+.exam-missed-label{font-family:var(--fd);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:11px;color:var(--amber);margin-bottom:6px}
+.exam-missed-text{font-size:14.5px;line-height:1.6;color:rgba(242,239,232,.85)}
+
+/* ── stimulus (images-first) ── */
+.stimulus-block{margin:8px 0 18px;display:flex;flex-direction:column;gap:14px}
+.stimulus{border:1px solid var(--border2);border-radius:8px;overflow:hidden;background:#0c0a07;margin:0}
+.stimulus img{display:block;width:100%;height:auto}
+.stimulus figcaption{font-size:12.5px;color:var(--dim);padding:10px 14px;border-top:1px solid var(--border);font-style:italic}
+.stimulus-text{padding:10px 14px;border-top:1px solid var(--border)}
+.stimulus-text summary{font-family:var(--fd);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--dimmer);cursor:pointer}
+.stimulus-text p{font-size:14px;line-height:1.6;color:rgba(242,239,232,.82);margin-top:10px}
+
+/* ── trainers ── */
+.tools-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:24px}
+.tool-card{background:linear-gradient(180deg,rgba(30,24,18,.9),rgba(20,15,10,.92));border:1px solid var(--border);border-left:3px solid var(--ac);border-radius:10px;padding:20px 22px}
+.tool-num{font-family:var(--fd);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:11px;color:var(--dimmer)}
+.tool-name{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.01em;font-size:20px;margin-top:8px}
+.tool-line{color:var(--dim);font-size:14px;margin-top:6px}
+.tool-model{background:var(--bg2);border-radius:6px;padding:12px 14px;margin-top:12px;font-size:14.5px;line-height:1.6;color:rgba(242,239,232,.9)}
+@media (max-width:700px){.tools-grid{grid-template-columns:1fr}}
+
+/* ── recovery / empty state ── */
+.empty-state{text-align:center;max-width:560px;margin:40px auto 0;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:44px 32px}
+.empty-icon{opacity:.8;margin-bottom:16px}
+.empty-title{font-family:var(--fd);font-weight:900;text-transform:uppercase;letter-spacing:.04em;font-size:22px}
+.empty-text{color:var(--dim);font-size:15px;line-height:1.65;margin-top:12px}
+.empty-text code{background:var(--bg2);border-radius:4px;padding:1px 6px;font-size:13px;color:var(--amber2)}
+.empty-sub{color:var(--dimmer);font-size:14px;margin-top:14px}
+.mc-list{margin-top:22px;display:flex;flex-direction:column;gap:22px}
+.mc-item{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:22px}
+.mc-q{font-size:16.5px;line-height:1.6;color:var(--white);margin:8px 0 14px;font-weight:500}
+.mc-choice{display:block;width:100%;text-align:left;background:var(--bg2);border:1px solid var(--border2);border-radius:6px;color:rgba(242,239,232,.9);font-family:var(--fb);font-size:15px;line-height:1.5;padding:13px 16px;margin-bottom:9px;cursor:pointer;transition:all .18s}
+.mc-choice:hover:not(:disabled){border-color:var(--amber2)}
+.mc-choice b{margin-right:8px;opacity:.7}
+.mc-choice.correct{border-color:#43D982;background:rgba(67,217,130,.1);color:#9fe9bf}
+.mc-choice.incorrect{border-color:#D65643;background:rgba(214,86,67,.1);color:#e9a99f}
+.mc-choice.dim{opacity:.5}
+.mc-reveal{margin-top:12px;border-top:1px solid var(--border);padding-top:14px}
+.mc-verdict{font-family:var(--fd);font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:12px;margin-bottom:8px}
+.mc-verdict.ok{color:#43D982}.mc-verdict.no{color:#D65643}
+.mc-reasoning{font-size:15px;line-height:1.6;color:rgba(242,239,232,.9)}
+.mc-evidence,.mc-distractor{font-size:14px;line-height:1.6;color:var(--dim);margin-top:10px}
+.mc-evidence b,.mc-distractor b{color:var(--amber2)}
+`

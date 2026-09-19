@@ -1,0 +1,605 @@
+{
+  "_README": "THE ARENA — room manifest. Assembled by Josh (flashpoint) 2026-09-18 from Sam's arena-manifest-us11r-2026-09-02.json and Will's will-pass-2026-09-11 fragment. Conformant to SPEC-arena-ia-and-manifest.md (signed 2026-09-10, amended same day). This file is READ AT RUNTIME: adding a station, a unit room or an activity is an edit here, not a rebuild of the Arena. Station and unit content belongs to the authoring desks; Josh owns only the container fields (id, accent) and never edits a name, label or blurb.",
+  "_assembly_notes": [
+    "guide is null on BOTH doors. BK is the guide on both (ruling C, 2026-09-10); TR is retired from the Arena entirely (ruling 8). Sam's 09-02 manifest predates those rulings and still carried TR — passed through as null rather than kept. The slot stays a data slot; BK is never hardcoded into the shell.",
+    "US11R door status is 'building': all eight of Sam's stations are published:false and his unit-1 label is still a TODO. Flip to 'open' in this file the day he publishes. No code change.",
+    "tier is carried on Sam's stations exactly as he wrote it and is NOT rendered — ruling 4, 2026-09-10 dropped the band. The key stays in the contract.",
+    "splash.intro and both door blurbs are BK's words and are not invented here. They render as a visible placeholder until he supplies them."
+  ],
+  "splash": {
+    "epigraph": {
+      "text": "The credit belongs to the man who is actually in the arena . . . who errs, and comes short again and again, because there is no effort without error and shortcoming.",
+      "cite": "Theodore Roosevelt, “Citizenship in a Republic,” Sorbonne, Paris, 23 April 1910",
+      "_source_record": "DOC_BANK/Arena/text/tr-citizenship-in-a-republic-1910.json on Sam's desk. Named public-domain edition: African and European Addresses, ed. Lawrence F. Abbott, 1910. Filed BEFORE the words were used, per canon §6. Sam's own fetch carried the common misquotation (“who neither know victory nor defeat”); the edition reads “who know neither victory nor defeat.” Written from memory it would have shipped wrong past every green gate.",
+      "_gendered_noun": "“the man who is actually in the arena” is the 1910 text and is never altered. Sam shipped the full credit line deliberately; BK can swap to “There is no effort without error and shortcoming.” with one word. Both options are on the bank record."
+    },
+    "intro": [
+      "Welcome to the Arena.",
+      "That’s where the name comes from. The person who actually steps into the ring — not the one in the stands with an opinion about it. The one down there gets it wrong, over and over, and gets back up. That’s the only way anybody gets good at anything, and it’s how you’re going to get good at this.",
+      "So here’s the deal. Nothing in here is graded. Nothing in here counts against you, ever. This is where you get to be wrong cheaply — as many times as you want — so that when it counts, you’ve already made the mistake and you know what it looks like.",
+      "Pick your door. I’ll be with you the whole way."
+    ],
+    "_authorship": "BK's words, ruled 2026-09-18. Drafted by Sam on BK's own invitation, walked through line by line, taken by BK as his own. The 09-10 ruling that the splash is BK's is NOT overturned — see us11r-curriculum/Out/ruling-2026-09-18-splash-intro-and-door-blurbs.md before assuming a conflict. “So here’s the deal” is BK's own phrase from Unit 0 Document 3."
+  },
+  "courses": [
+    {
+      "id": "global10r",
+      "label": "Global Studies and Geography 10R",
+      "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
+      "accent": "#7FB2D9",
+      "status": "open",
+      "guide": null,
+      "stations": [
+        {
+          "slug": "historical-context",
+          "name": "Historical Context",
+          "tier": null,
+          "published": true,
+          "blurb": "Setting the scene in time and place",
+          "content_ref": null,
+          "skill_lines": [
+            "HC"
+          ],
+          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his."
+        },
+        {
+          "slug": "thesis",
+          "name": "Thesis",
+          "tier": null,
+          "published": true,
+          "blurb": "Arguing why the issue matters, on two sides",
+          "content_ref": null,
+          "skill_lines": [
+            "TH"
+          ],
+          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his."
+        },
+        {
+          "slug": "document-use",
+          "name": "Document Use",
+          "tier": null,
+          "published": true,
+          "blurb": "Evidence taken from the document set and put to work",
+          "content_ref": null,
+          "skill_lines": [
+            "DU"
+          ],
+          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his."
+        },
+        {
+          "slug": "explanation",
+          "name": "Explanation",
+          "tier": null,
+          "published": false,
+          "blurb": "The “so what” — analysis over retelling",
+          "content_ref": null,
+          "skill_lines": [
+            "EX"
+          ],
+          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his."
+        },
+        {
+          "slug": "outside-evidence",
+          "name": "Outside Evidence",
+          "tier": null,
+          "published": false,
+          "blurb": "Named outside knowledge, integrated with the documents",
+          "content_ref": null,
+          "skill_lines": [
+            "OE"
+          ],
+          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his."
+        },
+        {
+          "slug": "enduring-issue",
+          "name": "Enduring Issue",
+          "tier": null,
+          "published": true,
+          "blurb": "Naming and defining one enduring issue",
+          "content_ref": null,
+          "skill_lines": [
+            "EI"
+          ],
+          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his."
+        }
+      ],
+      "units": [
+        {
+          "slug": "unit-1",
+          "label": "The World in 1750",
+          "status": "open",
+          "published": true,
+          "activities": [
+            {
+              "type": "matching",
+              "label": "Eight states, eight regions",
+              "published": true,
+              "content_ref": "gs10r/unit-10.1/packet#p3-states"
+            },
+            {
+              "type": "board",
+              "label": "Asia is blank. Was nothing there?",
+              "published": true,
+              "content_ref": "gs10r/unit-10.1/deck#slide-9"
+            },
+            {
+              "type": "map",
+              "label": "What the 1772 map shows, and what it leaves out",
+              "published": false,
+              "content_ref": "g0626ext-map01",
+              "_hold": "Will holds this at published:false pending the map mechanic answer. BK ruled 2026-09-18: map takes an arbitrary bank raster with author-defined hit regions. Will flips this himself; Josh does not flip another desk's published flag."
+            },
+            {
+              "type": "stimulus",
+              "label": "Part I reps — the 1750 chart",
+              "published": false,
+              "content_ref": "stimulus-gs10r-10-1.json",
+              "_release": "2026-09-22",
+              "_hold": "HELD BY WILL. The four items are on the 10.1 exam; his students sit it Monday 2026-09-21. THE FILE IS DELIBERATELY NOT IN public/ - it lives in builds/thearena/_content-hold/. published:false hides the card but does NOT stop Netlify serving a file from public/ at a guessable URL. Release = copy the file into public/content/ AND flip this flag. Both steps, on or after 2026-09-22."
+            }
+          ]
+        }
+      ],
+      "regents": [],
+      "_label_note": "RULED 2026-09-18 by BK: 'Technically its Global Studies and Geography 10R.' Settles the three-way variant. Was 'Global History & Geography II'. Will reissued the fragment with exactly this one value changed; everything else byte-identical.",
+      "skill_lines": {
+        "_README": "The course's graded skill lines, in the words the student reads on the scoring page. THIS IS THE CROSSWALK: a student sees a line on their grade, and every station and item that drills it declares the same CODE. Five lines are shared across both courses; the sixth is the course's own essay line and the two are NOT interchangeable.",
+        "_contract": "Stations declare skill_lines: [CODE]. Items declare skill_line: CODE. The LABEL is resolved from this list and is never repeated on an item - one place to change a word. A code not in this list is a defect, not a new line.",
+        "lines": [
+          {
+            "code": "HC",
+            "label": "Historical Context",
+            "shared": true
+          },
+          {
+            "code": "TH",
+            "label": "Thesis",
+            "shared": true
+          },
+          {
+            "code": "DU",
+            "label": "Document Use",
+            "shared": true
+          },
+          {
+            "code": "EX",
+            "label": "Explanation",
+            "shared": true
+          },
+          {
+            "code": "OE",
+            "label": "Outside Evidence",
+            "shared": true
+          },
+          {
+            "code": "EI",
+            "label": "Enduring Issue",
+            "shared": false,
+            "essay": "the Enduring Issues Essay"
+          }
+        ]
+      }
+    },
+    {
+      "id": "us11r",
+      "label": "U.S. History & Government · 11R",
+      "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
+      "accent": "#E3B341",
+      "_accent_note": "Adopted from Josh's own token file, builds/thearena/src/tokens/arena-navy.css — --course-us11r, the house gold, measured 9.62:1 on the navy canvas. The skeleton's #C17700 was 11.5's ERA accent out of canon/tokens and would have collided the first time an 11.5 room was built.",
+      "guide": {
+        "name": "BK",
+        "portrait": "images/arena/guide-bk.png",
+        "owner": "words authored by sam (us11r-curriculum) with will (global10r-curriculum) porting; slot, trigger point and display are flashpoint's",
+        "lines": {
+          "door_enter": [
+            "Everything behind this door is practice. None of it goes in the gradebook. That's the point — this is where you get it wrong cheaply.",
+            "This is your Arena. Same moves we work on in class, no grade attached. Take a swing.",
+            "Nothing in here counts against you. Come in, try things, find out what you actually know.",
+            "Welcome in. The work behind this door is the work we do in class — just without anybody keeping score."
+          ],
+          "lane_enter": {
+            "stations": [
+              "Each station is one move. Pick the one you want to get better at — you don't have to go in order.",
+              "One move per station. Start wherever you want to start.",
+              "These are the moves you're graded on in class. In here they're just practice."
+            ],
+            "units": [
+              "These rooms follow the units. Go back into one any time — nothing in here closes.",
+              "Every unit we finish gets a room. They stay open.",
+              "Pick a unit. Everything we've done is still in here."
+            ],
+            "regents": [
+              "This lane is the exam itself — the real thing, in pieces small enough to practice.",
+              "Everything in here came off a real exam. Small pieces, one at a time.",
+              "This is exam practice. Same questions, no pressure attached."
+            ]
+          },
+          "station_enter": {
+            "contextualization": [
+              "Context is the room a document is standing in. Not what it says — what was going on around it.",
+              "This one asks where we are, when we are, and what everybody was arguing about. Before you read a word of the document.",
+              "Historical context: the situation the document was written into. Set the scene, then read."
+            ],
+            "sourcing-hipp": [
+              "Who made this, when, and what did they want from you? That's sourcing.",
+              "Every document was made by somebody with a reason. This station is about finding the reason.",
+              "Read the source line first — the name, the date, the kind of document. It tells you how to read the rest."
+            ],
+            "opvl": [
+              "Origin, purpose, value, limitation. Where it came from, why, what it's good for, and where it runs out.",
+              "Every document is useful for something and useless for something else. This station is about naming both.",
+              "OPVL: what this document can tell you, and what it can't. Both answers count."
+            ],
+            "argument-development": [
+              "A claim that answers the question, in one sentence. That's all a thesis is.",
+              "This station is about taking a position. Not describing — deciding, and saying so.",
+              "Answer the question in a sentence somebody could disagree with. That's the move."
+            ]
+          },
+          "attempt_strong": {
+            "contextualization": [
+              "You set the scene before you touched the document. That's exactly the move.",
+              "That's context — the time, the place, the argument. Well done.",
+              "You gave me the world around it, not a summary of it. That's the hard part, and you did it."
+            ],
+            "sourcing-hipp": [
+              "You used the source line, not just the passage. That's the move.",
+              "You named who made it and what they wanted. That's sourcing done right.",
+              "Good — you read the author's purpose, not only their words."
+            ],
+            "opvl": [
+              "You named what it's good for and where it stops. That's the whole move.",
+              "That's a real limitation — not 'it's biased,' but what the bias actually costs.",
+              "Good. You treated the document as evidence for something specific."
+            ],
+            "argument-development": [
+              "That's a claim, not a summary. Somebody could argue with it — that's what makes it a thesis.",
+              "You answered the question and took a side. That's the move.",
+              "Clear position, one sentence. That's what the essay needs in its first paragraph."
+            ]
+          },
+          "attempt_miss": {
+            "contextualization": [
+              "That's what the document says. The move asks what was happening around it — same year, same place, same argument everybody was having.",
+              "Close. You're inside the document; step outside it. What else was going on then?",
+              "Start with the date and the place, then tell me one thing happening at that moment. That's your context."
+            ],
+            "sourcing-hipp": [
+              "You named the source. Now say what they wanted from whoever was reading it.",
+              "Go back to the line above the passage. Who wrote it, when, and why does that change what it's worth?",
+              "That's the content. Sourcing asks about the person behind it — their position, their purpose, their moment."
+            ],
+            "opvl": [
+              "'Biased' isn't a limitation yet. Say what it keeps you from knowing.",
+              "You've got origin and purpose. Now: what is this document good for — and what would you not trust it about?",
+              "Push one step further. Useful for whom, about what, and what's missing from it?"
+            ],
+            "argument-development": [
+              "That's true, but nobody would argue with it. Take a position somebody could push back on.",
+              "You described what happened. Now tell me what you think about it, in one sentence.",
+              "Answer the question directly. Start with 'because' or 'although' and see what comes out."
+            ]
+          },
+          "station_complete": {
+            "contextualization": [
+              "You can set a scene now. That's the opening sentence of every essay this course asks you to write.",
+              "That's contextualization — the most-missed point on the short essay, and you just practiced it."
+            ],
+            "sourcing-hipp": [
+              "You can size up a document by who made it. That pays on every document question on the exam.",
+              "That's sourcing. From here on, read the source line first — every time."
+            ],
+            "opvl": [
+              "You can say what a document is worth and where it runs out. That's the difference between using evidence and quoting it.",
+              "That's OPVL. It's the move that turns a document into proof."
+            ],
+            "argument-development": [
+              "You can put a claim on the page. Everything else in an essay is holding that sentence up.",
+              "That's a thesis. Every essay you write this year starts with one."
+            ]
+          },
+          "attempt_again": [
+            "Good. Go again — you've got more of it than you think.",
+            "That's how it works. Second look, fresh eyes.",
+            "Round two. Start from the part you were sure about.",
+            "Try it again. You're closer than that last one made it look."
+          ],
+          "idle_nudge": [
+            "Still with me? Start with the source line — it's doing more work than it looks like.",
+            "Take your time. If you're stuck, read it once more and just say what you notice.",
+            "No rush. Pick one thing in front of you and start there.",
+            "Still there? Say the easy part out loud first. The rest usually follows."
+          ],
+          "signoff": [
+            "That's a rep. Nice work.",
+            "Good work. Come back to this one whenever.",
+            "That's the kind of practice that shows up on the test. See you in class.",
+            "Done. That one's in the bank."
+          ]
+        },
+        "_note": "TR is retired from the Arena (BK, 2026-09-10). Voice is BK's words on screen — no audio, none, ever. Lines below are TRANCHE 1, approved by BK 2026-09-18 ('yes to all') off _BRIEFCASE/US11R_ARENA_GUIDE-LINES_TRANCHE-1_DRAFT_2026-09-18.pdf. SHAPE: station_enter, attempt_strong, attempt_miss and station_complete are KEYED BY STATION SLUG — see from-sam-2026-09-18-guide-slot-schema-station_enter-must-be-keyed.md. If Josh keys them differently the words do not change, only where they sit. Only the four stations open on day one are written; the other six follow the unlock calendar. Portrait pending an image file from BK.",
+        "_portrait_note": "BK, 2026-09-18: 'josh has the image already.' Verified on Josh's desk the same day — builds/thearena/public/images/arena/guide-bk.png, 192x192 PNG, written 2026-09-18, an illustrated portrait in the same treatment as the cast-sheet portraits. NOT YET REFERENCED anywhere in the shell: no mention in src/App.jsx or public/arena.manifest.json as of this write, which is why it is named here. PATH: written as the served path; the 09-02 skeleton used a bare filename ('brand_tr-photo.jpg'), so if Josh's resolver wants 'guide-bk.png' instead, that is his call and his one-line change. TWO NOTES, neither blocking: 192x192 is comfortable up to about a 96px slot and will soften above that — if the guide renders larger, it wants a bigger source. And if the portrait is generated art, the standing rule from Sam's 2026-08-31 brief applies to it as it did to TR: art is a depiction, never a document, and it carries a manifest recording the prompt. Josh's asset, Josh's lane — flagged, not decided."
+      },
+      "stations": [
+        {
+          "slug": "historical-context",
+          "name": "Historical Context",
+          "skill_lines": [
+            "HC"
+          ],
+          "tier": "Foundation",
+          "published": true,
+          "opens_at": "11.1",
+          "content_ref": null,
+          "drills": [
+            {
+              "name": "Contextualization",
+              "content_ref": "content/station-01-contextualization.json",
+              "opens_at": "11.1",
+              "published": true,
+              "_was": "Contextualization",
+              "_skill_lines": [
+                "HC"
+              ]
+            }
+          ],
+          "blurb": "What was going on around this document, and why it matters."
+        },
+        {
+          "slug": "thesis",
+          "name": "Thesis",
+          "skill_lines": [
+            "TH"
+          ],
+          "tier": "Argument",
+          "published": true,
+          "opens_at": "11.1",
+          "content_ref": null,
+          "drills": [
+            {
+              "name": "Argument Development",
+              "content_ref": "content/station-08-argument-development.json",
+              "opens_at": "11.1",
+              "published": true,
+              "_was": "Argument Development",
+              "_skill_lines": [
+                "TH"
+              ]
+            }
+          ],
+          "blurb": "Say what you think, in one sentence, before you prove it."
+        },
+        {
+          "slug": "document-use",
+          "name": "Document Use",
+          "skill_lines": [
+            "DU"
+          ],
+          "tier": "Evidence",
+          "published": true,
+          "opens_at": "11.1",
+          "content_ref": null,
+          "drills": [
+            {
+              "name": "Source Use",
+              "content_ref": "content/station-05-sourcing-hipp.json",
+              "opens_at": "11.1",
+              "published": true,
+              "_was": "Sourcing — HIPP",
+              "_skill_lines": [
+                "DU"
+              ]
+            },
+            {
+              "name": "Purpose & Audience",
+              "content_ref": "content/station-06-opvl.json",
+              "opens_at": "11.1",
+              "published": true,
+              "_was": "OPVL",
+              "_skill_lines": [
+                "DU"
+              ]
+            },
+            {
+              "name": "Corroboration",
+              "content_ref": "content/station-07-corroboration.json",
+              "opens_at": "11.2",
+              "published": false,
+              "_was": "Corroboration",
+              "_skill_lines": [
+                "DU",
+                "EX"
+              ]
+            }
+          ],
+          "blurb": "Name the document, pull the detail, make it evidence."
+        },
+        {
+          "slug": "explanation",
+          "name": "Explanation",
+          "skill_lines": [
+            "EX"
+          ],
+          "tier": "Foundation",
+          "published": false,
+          "opens_at": "11.2",
+          "content_ref": null,
+          "drills": [
+            {
+              "name": "Cause and Effect",
+              "content_ref": "content/station-02-causation.json",
+              "opens_at": "11.2",
+              "published": false,
+              "_was": "Causation",
+              "_skill_lines": [
+                "EX"
+              ]
+            },
+            {
+              "name": "Similarity and Difference",
+              "content_ref": "content/station-03-continuity-change.json",
+              "opens_at": "11.2",
+              "published": false,
+              "_was": "Continuity & Change",
+              "_skill_lines": [
+                "EX"
+              ]
+            },
+            {
+              "name": "Turning Point",
+              "content_ref": "content/station-04-turning-points.json",
+              "opens_at": "11.2",
+              "published": false,
+              "_was": "Turning Points",
+              "_skill_lines": [
+                "EX"
+              ]
+            },
+            {
+              "name": "Paragraph Construction",
+              "content_ref": "content/station-09-paragraph-construction.json",
+              "opens_at": "11.2",
+              "published": false,
+              "_was": "Paragraph Construction",
+              "_skill_lines": [
+                "DU",
+                "EX"
+              ]
+            }
+          ],
+          "blurb": "The “so what.” The sentence most people skip."
+        },
+        {
+          "slug": "civic-principle",
+          "name": "Civic Principle",
+          "skill_lines": [
+            "CP"
+          ],
+          "tier": "Mastery",
+          "published": false,
+          "opens_at": "11.3",
+          "content_ref": null,
+          "drills": [
+            {
+              "name": "Civic Literacy",
+              "content_ref": "content/station-11-civic-literacy.json",
+              "opens_at": "11.3",
+              "published": false,
+              "_was": "Civic Literacy",
+              "_skill_lines": [
+                "CP",
+                "OE"
+              ]
+            }
+          ],
+          "blurb": "Name the idea out loud. Don’t make them guess it."
+        },
+        {
+          "slug": "outside-evidence",
+          "name": "Outside Evidence",
+          "skill_lines": [
+            "OE"
+          ],
+          "tier": "Mastery",
+          "published": false,
+          "opens_at": "11.3",
+          "content_ref": null,
+          "drills": [
+            {
+              "name": "Civic Literacy",
+              "content_ref": "content/station-11-civic-literacy.json",
+              "opens_at": "11.3",
+              "published": false,
+              "_was": "Civic Literacy",
+              "_skill_lines": [
+                "CP",
+                "OE"
+              ]
+            }
+          ],
+          "blurb": "What you know that isn’t on the page."
+        }
+      ],
+      "units": [
+        {
+          "slug": "unit-1",
+          "label": "11.1 · Colonial Foundations",
+          "published": true,
+          "activities": [
+            {
+              "type": "scenario_link",
+              "label": "Play it: the Founding",
+              "published": false,
+              "content_ref": "https://founding.flashpointhistory.com",
+              "_note": "BK approved the tile 2026-09-18. Held at false until Sam opens the game and reads it against 11.1's question — 'The thirteen colonies grew. What did that growth cost, and who paid it?' Sam does not vouch for content he has not looked at. Flip is a one-line pass to Josh."
+            },
+            {
+              "type": "stimulus",
+              "label": "Part I reps — 11.1",
+              "published": false,
+              "content_ref": "content/stimulus-11-1.json",
+              "_note": "The sixth activity type, BK-approved 2026-09-18 (Josh's Q2). Sam's requested FIRST build, ahead of timeline/map/matching/board: it is the literal shape of Regents Part I and Sam can fill it from the 42-item tagged MC bank with a rationale per answer — nothing new authored. content_ref is a promise, not a file: Sam cuts it once the type exists."
+            }
+          ]
+        }
+      ],
+      "regents": [
+        {
+          "slug": "the-comeback",
+          "name": "The Comeback",
+          "published": false,
+          "status": "building",
+          "content_ref": "content/station-12-comeback.json",
+          "_note": "Moved out of stations[] into the regents lane on BK's blessing 2026-09-18 — it is recovery-shaped, not one of the moves. The package on Sam's desk currently holds zero reps. Lane ships darkened and labeled under construction per the 2026-09-10 ruling; darkened is honest in September."
+        }
+      ],
+      "_stations_note": "SIX CARDS, 2026-09-18, BK ruled. One card per graded skill line, named with the skill line verbatim as it appears on the scoring page and on the FEEDS THE ESSAY line of every Unit 0 wall card. The ten engineering stations survive as named drills inside the cards; every content_ref is carried forward unchanged and nothing is thrown away. content_ref is null on the CARD and lives on each DRILL — a card with a null content_ref still renders from name, which is Josh's own spec, so this file is safe to merge before the drills array is read by anything. civic-literacy is the one package referenced twice, because it drills CP and OE together and both lines deserve a door with their own name on it.",
+      "_stations_judgment_calls": [
+        "Corroboration sits under Document Use, not Explanation. It carries both lines; the move it drills is reading two documents against each other, which is document work first.",
+        "Paragraph Construction sits under Explanation, not Document Use. Same reasoning inverted: the move it drills is making the evidence do work, which is the Explanation line.",
+        "Causation / Continuity & Change / Turning Points are renamed to Cause and Effect / Similarity and Difference / Turning Point — the three relationship words printed verbatim in the NYSED SEQ prompt students read on every short-essay set. This is the one place a straight collapse to six would have cost something real, and it is why they stay visible as drills.",
+        "No blurbs written. The six cards carry none because the ten never did, and blurb copy is student-facing wording that has not been put to BK."
+      ],
+      "_blurbs_note": "Six card blurbs, RULED by BK 2026-09-18 13:17 EDT, written verbatim as he approved them — one line per card, second person, no station vocabulary, no acronyms. They are addressed to the student, which is why none of them explains what the card 'drills': the drill names inside the card do that. Curly apostrophes and curly quotes are intentional and are the house typography.",
+      "status": "open",
+      "skill_lines": {
+        "_README": "The course's graded skill lines, in the words the student reads on the scoring page. THIS IS THE CROSSWALK: a student sees a line on their grade, and every station and item that drills it declares the same CODE. Five lines are shared across both courses; the sixth is the course's own essay line and the two are NOT interchangeable.",
+        "_contract": "Stations declare skill_lines: [CODE]. Items declare skill_line: CODE. The LABEL is resolved from this list and is never repeated on an item - one place to change a word. A code not in this list is a defect, not a new line.",
+        "lines": [
+          {
+            "code": "HC",
+            "label": "Historical Context",
+            "shared": true
+          },
+          {
+            "code": "TH",
+            "label": "Thesis",
+            "shared": true
+          },
+          {
+            "code": "DU",
+            "label": "Document Use",
+            "shared": true
+          },
+          {
+            "code": "EX",
+            "label": "Explanation",
+            "shared": true
+          },
+          {
+            "code": "OE",
+            "label": "Outside Evidence",
+            "shared": true
+          },
+          {
+            "code": "CP",
+            "label": "Civic Principle",
+            "shared": false,
+            "essay": "the Civic Literacy Essay"
+          }
+        ]
+      },
+      "_josh_container_fields": "id/accent/status/skill_lines are Josh's. Stations, drills, blurbs, guide, units and regents are Sam's, taken verbatim from his 2026-09-18 SIX-CARDS-RULED file. Curly quotes in the blurbs are intentional and must not be straightened."
+    }
+  ]
+}

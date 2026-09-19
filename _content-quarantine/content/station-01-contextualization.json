@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": 1,
+    "num": "I",
+    "name": "Contextualization",
+    "tier": "Foundation"
+  },
+  "skill_tags": [
+    1
+  ],
+  "skill_tag_labels": [
+    "Historical Context"
+  ],
+  "critical_path": true,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        3,
+        5
+      ],
+      "prompt": "Task: Based on your reading and analysis of these documents, apply your social studies knowledge and skills to write a short essay of two or three paragraphs in which you:\n• Describe the historical context surrounding these documents\n• Identify and explain the relationship between the events and/or ideas found in these documents (Cause and Effect, or Similarity/Difference, or Turning Point)\n\nGuidelines: In your short essay, be sure to\n• Develop all aspects of the task\n• Incorporate relevant outside information\n• Support the task with relevant facts and examples\n\nYou are not required to include a separate introduction or conclusion in your short essay of two or three paragraphs.",
+      "exam_meta": {
+        "exam": "US History & Government (11R)",
+        "administration": "January 2026",
+        "part": "Part II — SEQ Set 1",
+        "question_ref": "29"
+      },
+      "stimulus": [
+        {
+          "kind": "image",
+          "content": null,
+          "image_ref": "unit07-seq1-doc1-histstats-chart.png",
+          "image_alt": "Three charts tracking 1929–1933. Unemployment: people (in millions) rising from about 1.5 million in 1929 to nearly 13 million in 1933. Bank Failures: banks (in thousands) climbing from under 1,000 in 1929 to nearly 4,000 in 1933, after a dip in 1932. Average Income and Spending: average yearly income per person and average consumer spending per person both falling, from about $700 and $620 in 1929 to roughly $370 and $360 in 1933.",
+          "citation": "Source: Historical Statistics of the United States (adapted)",
+          "provenance": "NYSED Regents US History & Government, January 2026, Part II"
+        },
+        {
+          "kind": "text",
+          "content": ". . . In every dark hour of our national life a leadership of frankness and vigor has met with that understanding and support of the people themselves which is essential to victory. I am convinced that you will again give that support to leadership in these critical days.\nIn such a spirit on my part and on yours we face our common difficulties. . . .\nFarmers find no markets for their produce; the savings of many years in thousands of families are gone.\nMore important, a host of unemployed citizens face the grim problem of existence, and an equally great number toil with little return. Only a foolish optimist can deny the dark realities of the moment. . . .\nOur greatest primary task is to put people to work. This is no unsolvable problem if we face it wisely and courageously. . . .\nFinally, in our progress toward a resumption of work we require two safeguards against a return of the evils of the old order; there must be a strict supervision of all banking and credits and investments; there must be an end to speculation with other people’s money, and there must be a provision for an adequate but sound currency. . . .",
+          "image_ref": "unit07-seq1-doc2-fdr-inaugural-1933.png",
+          "image_alt": "Text excerpt from President Franklin D. Roosevelt’s First Inaugural Address, March 4, 1933.",
+          "citation": "Source: President Franklin D. Roosevelt, First Inaugural Address, March 4, 1933 (adapted)",
+          "provenance": "NYSED Regents US History & Government, January 2026, Part II"
+        }
+      ],
+      "exemplar": "The historical context surrounding these documents is the Great Depression, the economic collapse that began with the stock market crash of October 1929 and deepened through the winter of 1932–1933. Document 1 shows the collapse in numbers: unemployment climbed from under two million people in 1929 to nearly thirteen million by 1933, almost four thousand banks failed in 1933 alone, and the average American’s yearly income fell by roughly half. President Hoover’s limited response — voluntary cooperation and loans to businesses through the Reconstruction Finance Corporation — failed to reverse the slide, and in November 1932 voters replaced him with Franklin D. Roosevelt in a landslide.\n\nThe relationship between these documents is cause and effect. The economic devastation charted in Document 1 caused the political response in Document 2. Roosevelt’s First Inaugural Address answers each failure in the data directly: because a host of citizens were unemployed, he declared that “our greatest primary task is to put people to work”; because thousands of banks had failed and taken family savings with them, he demanded “strict supervision of all banking and credits and investments.” The conditions in Document 1 are the reason the promises in Document 2 exist — and those promises became the New Deal programs, such as the FDIC and the Civilian Conservation Corps, that Roosevelt launched in his first hundred days.",
+      "compare_focus": "Name the era and the specific conditions — dates and numbers, not a mood — then write the sentence that ties both documents to that same moment. “By 1933, nearly thirteen million were unemployed” beats “times were hard.”",
+      "compare_checklist": [
+        "Did I name the specific period and what caused it, not just say “times were bad”?",
+        "Did I use at least one specific fact — a date, a number, an event — from outside the documents?",
+        "Did I name the relationship type and state it in one clear sentence (“The conditions in Document 1 led to…”)?"
+      ]
+    },
+    {
+      "rep": 3,
+      "type": "regents",
+      "thread_tags": [
+        1,
+        5
+      ],
+      "note": "JUNE 2026 PUSH-UPDATE (2026-07-22): the later-source push promised in the 7/10 bank-first ruling. This rep sources the exam the August student sat — Arena reps from it ARE her compliant review of that test (ruling 2026-07-06). Rep 2 (bank-first) retained; if the shell renders a single regents rep, this one takes precedence for the August sprint — confirm with Josh.",
+      "prompt": "Task: Based on your reading and analysis of these documents, apply your social studies knowledge and skills to write a short essay of two or three paragraphs in which you:\n• Describe the historical context surrounding these documents\n• Identify and explain the relationship between the events and/or ideas found in these documents (Cause and Effect, or Similarity/Difference, or Turning Point)\n\nGuidelines: In your short essay, be sure to\n• Develop all aspects of the task\n• Incorporate relevant outside information\n• Support the task with relevant facts and examples\n\nYou are not required to include a separate introduction or conclusion in your short essay of two or three paragraphs.",
+      "exam_meta": {
+        "exam": "US History & Government (11R)",
+        "administration": "June 2026",
+        "part": "Part II — SEQ Set 1",
+        "question_ref": "29"
+      },
+      "stimulus": [
+        {
+          "kind": "text",
+          "content": ". . . Just as other civil rights legislation has made previously sanctioned discrimination illegal, so too will the passage of the Americans with Disabilities Act of 1988 outlaw protectivist, paternalistic, ignorant discrimination against all persons with disabilities.\nWe, as disabled persons, are here today to ensure for the class of disabled Americans the ordinary daily life that non-disabled Americans too often take for granted: the right to ride a bus or a train; the right to any job for which we are qualified; the right to enter any theater, restaurant or public accommodation; the right to purchase a home or rent an apartment; the right to appropriate communication.\nWhether you have HIV infection, cancer, heart disease, back problems, epilepsy, diabetes, polio, muscular dystrophy, cerebral palsy, multiple sclerosis, are deaf or blind, discrimination affects all of us the same. Simply put, we are here today to say that people in our society have been raised with prejudicial attitudes that have resulted in extreme discrimination against the 42 million persons with disabilities in the United States. . . .",
+          "image_ref": "unit10-0626-seq1-doc1-heumann-1988.png",
+          "image_alt": "Text excerpt from Judith Heumann’s testimony at a 1988 joint House-Senate hearing on discrimination on the basis of disability, arguing for passage of the Americans with Disabilities Act.",
+          "citation": "Source: Judith Heumann, Joint House-Senate Hearing on Discrimination on the Basis of Disability, September 27, 1988",
+          "provenance": "NYSED Regents US History & Government, June 2026, Part II"
+        },
+        {
+          "kind": "text",
+          "content": ". . . Our success with this act proves that we are keeping faith with the spirit of our courageous forefathers who wrote in the Declaration of Independence: “We hold these truths to be self-evident, that all men are created equal, that they are endowed by their Creator with certain unalienable rights.” These words have been our guide for more than two centuries as we’ve labored to form our more perfect union. But tragically, for too many Americans, the blessings of liberty have been limited or even denied. The Civil Rights Act of ’64 took a bold step towards righting that wrong. But the stark fact remained that people with disabilities were still victims of segregation and discrimination, and this was intolerable. Today’s legislation brings us closer to that day when no Americans will ever again be deprived of their basic guarantee of life, liberty, and the pursuit of happiness.\nThis act is powerful in its simplicity. It will ensure that people with disabilities are given the basic guarantees for which they have worked so long and so hard: independence, freedom of choice, control of their lives, the opportunity to blend fully and equally into the rich mosaic of the American mainstream. Legally, it will provide our disabled community with a powerful expansion of protections and then basic civil rights. It will guarantee fair and just access to the fruits of American life which we all must be able to enjoy. . . .",
+          "image_ref": "unit10-0626-seq1-doc2-bush-ada-1990.png",
+          "image_alt": "Text excerpt from President George H. W. Bush’s remarks at the signing of the Americans with Disabilities Act, July 26, 1990.",
+          "citation": "Source: President George H. W. Bush, Remarks at the Signing of the Americans with Disabilities Act, July 26, 1990",
+          "provenance": "NYSED Regents US History & Government, June 2026, Part II"
+        }
+      ],
+      "exemplar": "The historical context surrounding these documents is the disability rights movement of the 1970s and 1980s, which grew directly out of the civil rights era. The Civil Rights Act of 1964 outlawed discrimination based on race, but it offered no protection to Americans with disabilities, who were still routinely denied jobs, schooling, transportation, and entry to public buildings. Disabled activists borrowed the earlier movement’s tools — lobbying, lawsuits, and direct action like the 1977 sit-ins that forced enforcement of Section 504 of the Rehabilitation Act, the first federal law barring disability discrimination in federally funded programs. By 1988, when Judith Heumann — herself a veteran of those campaigns — testified before Congress, roughly 42 million Americans with disabilities were still waiting for the kind of comprehensive civil rights law other groups had won a generation earlier.\n\nThe relationship between these documents is cause and effect. The testimony in Document 1 is part of the organized pressure that caused the law celebrated in Document 2. Heumann told Congress in 1988 that the proposed Americans with Disabilities Act would “outlaw protectivist, paternalistic, ignorant discrimination,” naming the everyday rights — riding a bus, holding a job, entering a restaurant — that non-disabled Americans took for granted. Two years later, President Bush signed that very act, and his own words trace the causal chain: the Civil Rights Act of 1964 “took a bold step,” but people with disabilities “were still victims of segregation and discrimination,” so the ADA finished what the earlier law left undone. The effect reshaped daily American life — wheelchair ramps, accessible buses, workplace accommodations — the ordinary access Heumann had demanded in the hearing room.",
+      "compare_focus": "Name the era and its specific conditions — the civil rights movement’s unfinished business, Section 504, 42 million Americans — then write the one sentence that ties Document 1 to Document 2 with causal language: the testimony was part of the pressure that produced the signing.",
+      "compare_checklist": [
+        "Did I name the specific movement and period, not just say “people were discriminated against”?",
+        "Did I bring at least one outside fact — a law, a date, an event — that is not in either document?",
+        "Did I name the relationship type (cause and effect) and state it in one clear sentence?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "CLE",
+  "station": {
+    "id": 6,
+    "num": "VI",
+    "name": "OPVL",
+    "tier": "Sourcing"
+  },
+  "skill_tags": [
+    3
+  ],
+  "skill_tag_labels": [
+    "Document Use"
+  ],
+  "critical_path": false,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        5,
+        3
+      ],
+      "note": "Real NYSED CLE document (Jan 2026, Doc 2) used for OPVL sourcing depth.",
+      "prompt": "Analyze this document using OPVL (Origin, Purpose, Value, Limitation): who produced it, why, what it is useful for, and where it falls short as evidence. (Jan 2026 CLE, Document 2.)",
+      "station_focus": "Drill OPVL depth: move past 'what it says' to who made it and why, then weigh its value and its limitation as evidence.",
+      "stimulus": [
+        {
+          "kind": "image",
+          "content": "National Prohibition Ratification Map poster with the Anti-Saloon League's statement celebrating ratification.",
+          "image_ref": "unit05-cle-prohibition-doc2-antisaloon-poster-1919.png",
+          "image_alt": "National Prohibition Ratification Map poster with the Anti-Saloon League's statement celebrating ratification.",
+          "citation": "Source: Anti-Saloon League of America, 1919",
+          "provenance": "NYSED Jan 2026 CLE, Document 2"
+        }
+      ],
+      "exemplar": "Origin: this poster was produced in 1919 by the Anti-Saloon League of America, the leading pro-Prohibition pressure group, at the moment the Eighteenth Amendment was being ratified. Purpose: it is celebratory propaganda \u2014 a ratification map designed to show momentum and to rally supporters by presenting national Prohibition as an accomplished moral victory. Value: it is excellent evidence of how the 'dry' movement saw itself and how it built public pressure for the amendment, and it captures the reform energy of the Progressive era. Limitation: precisely because it is advocacy from one side, it cannot be trusted as a neutral account \u2014 it says nothing about the millions of Americans who opposed Prohibition or about the enforcement problems that soon followed, so it must be balanced against sources like Documents 4 and 5.",
+      "compare_focus": "Explicitly separate Value from Limitation \u2014 and tie both to WHO made it and WHY. OPVL is weighing evidence, not summarizing content.",
+      "compare_checklist": [
+        "Did I state the origin and purpose in terms of who and why?",
+        "Did I give both a value AND a limitation as evidence?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+/* ============================================================
+   treatment.css — the cohesion layer.
+   Every slot image (archival photo OR generated backdrop) passes through
+   this uniform treatment so mixed sources read as one world. Cohesion comes
+   from the treatment, not the source (docs/IMAGE-PLAN.md §1).
+
+   Applied by components/ImageSlot.jsx. Written once here; tune via the
+   --treat-intensity variable (0 = untouched, 1 = full duotone).
+   ============================================================ */
+
+:root {
+  --treat-intensity: 0.85; /* global dial for the duotone strength */
+  --treat-scrim: rgba(12, 9, 8, 0.72); /* scrim base, warm near-black */
+}
+
+/* The wrapper composites transparently onto the #16120E / #0c0908 page. */
+.slot {
+  position: relative;
+  overflow: hidden;
+  background: #0c0908; /* holds the frame before the image paints */
+  isolation: isolate;
+}
+
+.slot__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Duotone toward warm blacks + parchment with a single amber accent.
+     Filter approach (chosen for GPU performance over stacked blend layers):
+     desaturate → warm via sepia → nudge hue toward amber → lift contrast. */
+  filter:
+    grayscale(calc(0.35 * var(--treat-intensity)))
+    sepia(calc(0.55 * var(--treat-intensity)))
+    hue-rotate(-12deg)
+    saturate(calc(1 + 0.15 * var(--treat-intensity)))
+    contrast(calc(1 + 0.08 * var(--treat-intensity)))
+    brightness(0.94);
+}
+
+/* Amber soft-light glaze — a single accent wash over the whole image,
+   pinned to the per-slot --accent so each game tints to its own hue. */
+.slot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--accent, #c17700);
+  mix-blend-mode: soft-light;
+  opacity: calc(0.5 * var(--treat-intensity));
+}
+
+/* Dark multiply floor — deepens shadows to the warm near-black field. */
+.slot::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    120% 120% at 50% 30%,
+    transparent 40%,
+    rgba(12, 9, 8, 0.55) 100%
+  );
+  mix-blend-mode: multiply;
+}
+
+/* ── Gradient scrim for text-bearing slots (hero / frontispiece) ──────────
+   bottom→top warm-black fade so overlaid Playfair/Cinzel text keeps ≥4.5:1. */
+.slot--scrim .slot__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    var(--treat-scrim) 0%,
+    rgba(12, 9, 8, 0.45) 32%,
+    transparent 68%
+  );
+}
+
+/* Content overlaid on a scrimmed slot (titles, chapter labels). */
+.slot__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: clamp(20px, 5vw, 56px);
+}
+
+/* ── Variant framing ──────────────────────────────────────────────────── */
+
+/* hero: tall full-bleed banner behind the title screen */
+.slot--hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 62vh;
+}
+
+/* frontispiece: shorter banner behind a chapter title */
+.slot--frontispiece {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  max-height: 340px;
+}
+
+/* portrait: contained, subtle amber rim; portraits already ship on #16120E
+   so they blend into the page rather than sit in a card. */
+.slot--portrait {
+  width: clamp(120px, 34%, 200px);
+  aspect-ratio: 3 / 4;
+  border-radius: 2px;
+  box-shadow:
+    0 0 0 1px rgba(193, 119, 0, 0.35),
+    0 0 22px rgba(193, 119, 0, 0.18),
+    0 18px 40px rgba(0, 0, 0, 0.6);
+}
+.slot--portrait::after {
+  /* portraits get a lighter multiply floor — keep the face readable */
+  background: radial-gradient(120% 120% at 50% 25%, transparent 55%, rgba(12, 9, 8, 0.4) 100%);
+}
+
+/* insert: bordered archival card with a caption slot beneath (source credit) */
+.slot--insert {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: 1px solid #2e1e08;
+  border-top: 3px solid var(--accent, #c17700);
+}
+.slot--insert .slot__img {
+  /* archival evidence gets a gentler treatment so it stays legible-as-document */
+  filter:
+    grayscale(calc(0.2 * var(--treat-intensity)))
+    sepia(calc(0.4 * var(--treat-intensity)))
+    contrast(1.03)
+    brightness(0.96);
+}
+
+.slot-caption {
+  font-family: 'Cinzel', Georgia, serif;
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7a6440;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+/* Placeholder state — amber-on-dark holder, never a broken-image icon. */
+.slot--placeholder .slot__img {
+  filter: none;
+  object-fit: contain;
+  padding: 8%;
+  opacity: 0.6;
+}
+.slot--placeholder::before,
+.slot--placeholder::after {
+  display: none;
+}
+
+/* Respect reduced-motion: no ken-burns drift if a variant ever adds it. */
+@media (prefers-reduced-motion: reduce) {
+  .slot__img {
+    animation: none !important;
+    transition: none !important;
+  }
+}

@@ -1,0 +1,25 @@
+/* ============================================================
+   FLASHPOINT HISTORY — DESIGN TOKENS  (single source of truth)
+   Generated from flashpoint-accent-palette.html. Every game +
+   the landing page imports THIS file. Change a color here, once.
+   All era accents verified >= 4.5:1 against --fp-ink (#16120E).
+   ============================================================ */
+:root {
+  /* — architecture (never changes) — */
+  --fp-ink:        #16120E;  /* near-black canvas            */
+  --fp-parchment:  #EDE3D2;  /* primary text                */
+  --fp-muted:      #A08B6C;  /* secondary / captions        */
+
+  /* — era accents: meta.accent per unit — */
+  --era-11-1:  #D4AF37;  /* 1776 · The Founding          aged gold      8.86:1 */
+  --era-11-2:  #6B9BD1;  /* 1800 · The Fragile Republic  Federal blue   6.42:1 */
+  --era-11-3:  #5AA57B;  /* 1850 · The Last Compromise   antebellum grn 6.30:1 */
+  --era-11-4:  #D17A4A;  /* 1865 · Reconstruction        brick / clay   5.85:1 */
+  --era-11-5:  #C17700;  /* 1900 · Progressive Era       amber (anchor) 5.24:1 */
+  --era-11-6:  #B0A05A;  /* 1917 · A World at War        olive drab     7.12:1 */
+  --era-11-7:  #A8A69C;  /* 1932 · Depression & New Deal dust grey      7.63:1 */
+  --era-11-8:  #D65643;  /* 1942 · The Second World War  wartime crimson 4.68:1 */
+  --era-11-9:  #5B92D1;  /* 1955 · Civil Rights          movement blue  5.75:1 */
+  --era-11-10: #8BAE68;  /* 1968 · Everything at Once    protest green  7.41:1 */
+  --era-11-11: #6BA5B8;  /* 1989 · The Wall Comes Down   steel teal     6.83:1 */
+}

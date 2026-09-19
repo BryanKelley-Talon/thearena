@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": 5,
+    "num": "V",
+    "name": "Sourcing — HIPP",
+    "tier": "Evidence"
+  },
+  "skill_tags": [
+    3
+  ],
+  "skill_tag_labels": [
+    "Document Use"
+  ],
+  "critical_path": false,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        5,
+        1
+      ],
+      "note": "IMAGE PATHWAY PROOF — the package Flashpoint requested to validate image_ref + image_alt before the full batch. Stimulus is a real political cartoon cut from the New Visions bank page (Unit US.05.R.4s, items 15-16 stimulus). Prompt composed in the authentic NYSED Part II sourcing pattern (bank page carried MC); verbatim CRQ swaps in post-audit. Crop bounds derived by whitespace segmentation — BK eyeballs before student use.",
+      "prompt": "Base your answer on the cartoon below and your knowledge of social studies. Explain how the purpose OR point of view of the creator of this cartoon affects its reliability as a source of evidence about the woman suffrage movement.",
+      "exam_meta": {
+        "exam": "US History & Government (11R)",
+        "administration": "New Visions Exam Question Bank — Unit US.05.R.4s (Regents-aligned)",
+        "part": "Part II — CRQ sourcing pattern (Set B reliability)",
+        "question_ref": "Bank items 15-16 stimulus"
+      },
+      "stimulus": [
+        {
+          "kind": "image",
+          "content": "TWO MORE BRIGHT SPOTS ON THE MAP",
+          "image_ref": "station-05-rep2-doc1.png",
+          "image_alt": "Political cartoon titled 'Two More Bright Spots on the Map' showing a map of the United States in which western states that had granted women the right to vote appear as bright, illuminated areas — with Montana and Nevada newly highlighted in 1914 — while most eastern states remain dark.",
+          "citation": "Source: Harry Osborn, Maryland Suffrage News, November 14, 1914 (adapted)",
+          "provenance": "New Visions US History Exam Question Bank, Unit US.05.R.4s, stimulus for items 15-16 (Regents-aligned, NYSED framework)"
+        }
+      ],
+      "exemplar": "The purpose of this cartoon shapes how far it can be trusted. It was published in the Maryland Suffrage News, a newspaper created by the suffrage movement itself, and its purpose was not to report neutrally but to persuade — to celebrate Montana and Nevada as 'bright spots' and present the spread of women's voting rights as light conquering darkness. Because the creator was an advocate whose cause depended on momentum, the cartoon reliably shows how the suffrage movement saw itself and the message it wanted readers to absorb in 1914. It is far less reliable as evidence of how most Americans, or opponents of suffrage, viewed these state victories — an advocacy paper had every reason to present the map as a movement sweeping inevitably eastward, whether or not that outcome was actually certain.",
+      "compare_focus": "Don't stop at naming the element. 'This was made by a suffrage newspaper' earns nothing by itself — write the sentence that says what that fact means for what the cartoon can and cannot prove.",
+      "compare_checklist": [
+        "Did I name a specific HIPP element (purpose or point of view) using the citation line?",
+        "Did I explain what that element means for the document's reliability — the 'so what' sentence?",
+        "Did I say what this source CAN prove as well as what it cannot?"
+      ]
+    }
+  ]
+}

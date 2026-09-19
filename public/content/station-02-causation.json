@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "SEQ",
+  "station": {
+    "id": 2,
+    "num": "II",
+    "name": "Causation",
+    "tier": "Foundation"
+  },
+  "skill_tags": [
+    4
+  ],
+  "skill_tag_labels": [
+    "Explanation"
+  ],
+  "critical_path": false,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        3,
+        5
+      ],
+      "note": "Real NYSED SEQ (Jan 2026 Set 1) \u2014 the relationship bullet, causation lane.",
+      "prompt": "Read and analyze the documents, then identify and explain the CAUSE-AND-EFFECT relationship between the events and/or ideas in Documents 1 and 2. (Jan 2026 SEQ Set 1.)",
+      "station_focus": "Drill the causation move: name a cause, name its effect, and write the sentence that explains HOW the one produced the other \u2014 not just that they are related.",
+      "stimulus": [
+        {
+          "kind": "image",
+          "content": "Charts of unemployment, bank failures, and falling income/spending, 1929\u20131933.",
+          "image_ref": "unit07-seq1-doc1-histstats-chart.png",
+          "image_alt": "Charts of unemployment, bank failures, and falling income/spending, 1929\u20131933.",
+          "citation": "Source: Historical Statistics of the United States (adapted)",
+          "provenance": "NYSED Jan 2026 SEQ Set 1, Doc 1"
+        },
+        {
+          "kind": "image",
+          "content": "FDR First Inaugural excerpt on unemployment and putting people to work.",
+          "image_ref": "unit07-seq1-doc2-fdr-inaugural-1933.png",
+          "image_alt": "FDR First Inaugural excerpt on unemployment and putting people to work.",
+          "citation": "Source: President Franklin D. Roosevelt, First Inaugural Address, March 4, 1933 (adapted)",
+          "provenance": "NYSED Jan 2026 SEQ Set 1, Doc 2"
+        }
+      ],
+      "exemplar": "The stock market crash of 1929 set off a chain of economic collapse: as Document 1 shows, unemployment climbed toward thirteen million and thousands of banks failed while income and spending fell sharply between 1929 and 1933. This economic devastation was the direct cause of the response described in Document 2 \u2014 Franklin Roosevelt took office in 1933 promising vigorous federal action and declaring that the nation's 'greatest primary task is to put people to work.' In other words, the depth of the Depression (cause) produced the demand for an activist federal government and the New Deal (effect); without the collapse of 1929\u20131933, the sweeping federal intervention of 1933 would not have followed.",
+      "compare_focus": "Write the sentence that explains the MECHANISM \u2014 how the cause produced the effect ('this led to\u2026 because\u2026'). Naming two related events is not yet causation.",
+      "compare_checklist": [
+        "Did I name a specific cause and a specific effect?",
+        "Did I explain the mechanism connecting them, not just assert a link?"
+      ]
+    }
+  ]
+}

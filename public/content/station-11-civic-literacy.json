@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "CLE",
+  "station": {
+    "id": 11,
+    "num": "XI",
+    "name": "Civic Literacy",
+    "tier": "CLE Sprint"
+  },
+  "skill_tags": [
+    6,
+    5
+  ],
+  "skill_tag_labels": [
+    "Civic Principle",
+    "Outside Evidence"
+  ],
+  "critical_path": true,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        5,
+        3,
+        1
+      ],
+      "note": "Real NYSED Civic Literacy Essay (Jan 2026, Prohibition) dropped verbatim from the audit catalog. This station drills ONE move of the CLE.",
+      "prompt": "Historical Context: Prohibition. Task: Using information from the documents and your knowledge of United States history, write an essay in which you: • Describe the historical circumstances surrounding this constitutional or civic issue • Explain efforts by individuals, groups, and/or governments to address this constitutional or civic issue • Discuss the impact of the efforts on the United States and/or on American society.",
+      "station_focus": "Drill the 3→4 move: name the civic principle out loud and weave in at least one piece of accurate outside evidence beyond the documents.",
+      "exam_meta": {
+        "exam": "United States History & Government (Framework, 11R)",
+        "administration": "January 2026",
+        "part": "III B — Civic Literacy Essay",
+        "question_ref": "37"
+      },
+      "stimulus": [
+        {
+          "kind": "text",
+          "content": ". . . The prohibition movement was an outgrowth of the temperance crusades of the first half of the nineteenth century. Hard drinking was almost the rule among the Fathers of the Republic. The per capita consumption of spirits in the early days was many times what it is now, and beer drinking was almost unknown. After the War of 1812, there grew up in the New England States a large commerce in West Indian rum, which was consumed extensively, especially in Maine, supplementing the consumption of heavy liquors which were manufactured in those States. Maine alone, in 1827, when her population was 360,000, manufactured 1,333,160 gallons of liquor, and it was sold at retail in nearly every store and tavern. Drunkenness in its worst form, involving disastrous social consequences, was widespread. Sufficient evidence of it was to be found in the number of persons in the jails and poorhouses. . . .",
+          "image_ref": "unit05-cle-prohibition-doc1-amesbrown-1915.png",
+          "image_alt": "A scanned block of printed prose from a 1915 magazine article, tracing the prohibition movement back to the temperance crusades of the early nineteenth century and citing liquor production figures for Maine in 1827.",
+          "citation": "Source: L. Ames Brown, “Prohibition,” The North American Review, November 1915",
+          "provenance": "NYSED released exam, January 2026, Civic Literacy Essay, Document 1",
+          "transcribed": {
+            "on": "2026-09-18",
+            "by": "Sam (us11r-curriculum)",
+            "from": "the crop itself, read page by page — not from memory, not from the catalog",
+            "verbatim": true,
+            "image_still_the_document": false
+          }
+        },
+        {
+          "kind": "image",
+          "content": "NATIONAL PROHIBITION — RATIFICATION MAP\nNumbers Indicate Order in which States have Ratified the National Prohibition Amendment\n\n[A map of the United States. Each state carries a number showing the order in which it ratified. Four states carry no number.]\n\nMap caption: “This map shows on this date, January 31, 1919, that there are yet only four states which have not ratified. Three of these, Pennsylvania, Connecticut and Rhode Island, are expected to ratify at an early date. Even New Jersey may ratify and make the result unanimous.”\n\nSTATEMENT OF THE NATIONAL LEGISLATIVE COMMITTEE OF THE ANTI-SALOON LEAGUE OF AMERICA\n\nThe ratification of the Prohibition amendment to the constitution is the consummation of more than twenty-five years of effort on the part of the Anti-Saloon League, representing as it has the moral and religious forces of the nation. It is the greatest victory for moral reform in America since the Declaration of Independence.\n\nNot less in importance to that which has already been accomplished is the vitally essential task now before the Prohibition forces of securing from Congress and the states proper enforcement legislation and the crystallizing of public sentiment in the large cities and wet districts for complete enforcement of the law.\n\nWith Prohibition assured for this nation, the American anti-liquor forces need to redouble their efforts for the larger task of world Prohibition of the manufacture and sale of all intoxicating beverages.\n\nSigned: James Cannon, Jr., Wayne B. Wheeler, Arthur J. Barton, Ernest H. Cherrington, Legislative Committee. P. A. Baker, General Superintendent. E. C. Dinwiddie, Legislative Superintendent.",
+          "image_ref": "unit05-cle-prohibition-doc2-antisaloon-poster-1919.png",
+          "image_alt": "A 1919 broadside headed National Prohibition Ratification Map. A map of the United States shows each state numbered in the order it ratified the Prohibition amendment, with four eastern states left unnumbered. Below the map, a printed statement of the National Legislative Committee of the Anti-Saloon League of America is signed by four committee members, with two superintendents named at the foot.",
+          "citation": "Source: Anti-Saloon League of America, 1919",
+          "provenance": "NYSED released exam, January 2026, Civic Literacy Essay, Document 2",
+          "transcribed": {
+            "on": "2026-09-18",
+            "by": "Sam (us11r-curriculum)",
+            "from": "the crop itself, read page by page — not from memory, not from the catalog",
+            "verbatim": true,
+            "image_still_the_document": true,
+            "reading_note": "The 1919 impression is damaged at one signature: the scan reads 'Ernest H. Cl.errington'. Transcribed as 'Ernest H. Cherrington', which is the name the broken type is an impression of. This is the ONLY place the transcription departs from the marks on the page, and it is recorded here rather than made silently."
+          }
+        },
+        {
+          "kind": "text",
+          "content": ". . . Over his first three years in the White House Hoover never wavered in his support for Prohibition. In 1929 he signed the “Five and Ten Law” making every liquor violation a felony, and his Justice Department ramped up federal enforcement. “We enormously increased the jail population,” by jailing Prohibition violators Hoover recalled in his memoirs. “We multiplied the fines, padlocking, and confiscations.” Yet all this aggressive action he ascribed [attributed] to his duty as a constitutional officer, not to his actual endorsement. On this basic political question, Hoover declined to share his feelings and refused to act on them. . . .\n\nDuring the 1928 campaign Hoover famously saluted Prohibition as “a great social and economic experiment, noble in motive and far-reaching in purpose.” But three years later, surely the test had been run. . . .\n\nBy early 1932 little doubt remained as to the mood of the electorate. Respondents to a national mail-in survey conducted by The Literary Digest in February and March endorsed repeal of the Eighteenth Amendment by a four-to-one margin. Residents of Ohio, the birthplace of Prohibition, sent in 112,026 ballots for repeal and just 43,284 for keeping the ban on booze. Kansas was the only state to poll in favor of Prohibition. . . .",
+          "image_ref": "unit07-cle-prohibition-doc3-hoover-2016.png",
+          "image_alt": "Excerpt describing President Hoover’s enforcement of Prohibition (the “Five and Ten Law,” 1929).",
+          "citation": "Source: Charles Rappleye, Herbert Hoover in the White House, Simon & Schuster, 2016 (adapted)",
+          "provenance": "NYSED released exam, January 2026, Civic Literacy Essay, Document 3",
+          "transcribed": {
+            "on": "2026-09-18",
+            "by": "Sam (us11r-curriculum)",
+            "from": "the crop itself, read page by page — not from memory, not from the catalog",
+            "verbatim": true,
+            "image_still_the_document": false
+          }
+        },
+        {
+          "kind": "text",
+          "content": ". . . The Women’s Organization for National Prohibition Reform (WONPR) was founded in 1929 to show that not all women supported temperance. New York socialite Pauline Sabin led the charge after hearing Ella Boole, the Brooklyn-based leader of the Women’s Christian Temperance Union, declare that her support for Prohibition represented “the women of America.” On the heels of the successful suffrage campaign that won women the right to vote in 1920, the WONPR, and Sabin in particular, reflected the modern “new woman” of the 1920s. Many members of the WONPR had in fact initially supported the 18th amendment. But they had come to believe that Prohibition had led to a surge in unregulated and particularly underage drinking, as well as a growing sense of distrust for the rule of law. The WONPR’s opposition to Prohibition, just like the 18th amendment itself, was not only about drinking, but about the government’s role in regulating behavior.\n\nThe WONPR did a lot of what we think of now as typical political campaign activities: members attended meetings and gave speeches at rallies, went door-to-door to recruit new supporters, used new technology to spread their message—at the time radio, and lobbied politicians. Wealthy women had founded the organization, and proved able to raise funds even after the Stock Market Crash of 1929 ushered in the Great Depression. From its headquarters in New York City, the organization also gained publicity by organizing events such as a motorcade through New York State. . . .",
+          "image_ref": "unit07-cle-prohibition-doc4-wonpr-seidman.png",
+          "image_alt": "Excerpt on the Women’s Organization for National Prohibition Reform (WONPR) and Pauline Sabin’s opposition to Prohibition.",
+          "citation": "Source: Sarah Seidman, “The New York Women Who Dismantled Prohibition,” Museum of the City of New York, December 15, 2015",
+          "provenance": "NYSED released exam, January 2026, Civic Literacy Essay, Document 4",
+          "transcribed": {
+            "on": "2026-09-18",
+            "by": "Sam (us11r-curriculum)",
+            "from": "the crop itself, read page by page — not from memory, not from the catalog",
+            "verbatim": true,
+            "image_still_the_document": false
+          }
+        },
+        {
+          "kind": "text",
+          "content": ". . . The end of the Prohibition era marked the demise of a moral crusade meant to impose a uniform standard of social behavior in the United States. Unrealistic and unforgiving, Prohibition had allowed a vocal minority to regulate the personal habits of all Americans, especially those who lived and worked in cities like New York. While the desire of the dry crusade to uplift and improve the United States by banning alcohol and the saloon had in some ways been understandable in the Progressive era that spawned the Prohibition movement, the shortcomings of the dry crusade manifested themselves as soon as the dry experiment had begun. Anachronistic [outdated] and unworkable, the Prohibition experiment was ill suited to the diversity and dynamic of the modern United States, which by the 1920s had grown too large and too varied a nation to be governed by an impulse as intrusive as the dry crusade. Despite the force of federal law, the use of authoritarian tactics to enforce it, and the expenditure of millions of dollars a year, in fourteen years Prohibition succeeded neither in changing Americans’ behavior nor in eliminating the problems caused by alcohol abuse. When Prohibition failed, and it did so spectacularly, it revealed the limits of moral reform movements, and specifically the paternalistic, prejudiced, and undemocratic ideals behind the dry crusade. . . .",
+          "image_ref": "unit07-cle-prohibition-doc5-lerner-2007.png",
+          "image_alt": "Excerpt arguing Prohibition was a failed moral crusade that let a minority regulate the habits of all.",
+          "citation": "Source: Michael A. Lerner, Dry Manhattan: Prohibition in New York City, Harvard University Press, 2007",
+          "provenance": "NYSED released exam, January 2026, Civic Literacy Essay, Document 5",
+          "transcribed": {
+            "on": "2026-09-18",
+            "by": "Sam (us11r-curriculum)",
+            "from": "the crop itself, read page by page — not from memory, not from the catalog",
+            "verbatim": true,
+            "image_still_the_document": false
+          }
+        },
+        {
+          "kind": "image",
+          "content": "[Exam introduction] Although President Franklin Roosevelt supported repeal of Prohibition, he wanted to ban the operation of saloons, bars, and taverns in the United States.\n\nThe New York Times · LATE CITY EDITION · NEW YORK, WEDNESDAY, DECEMBER 6, 1933 · TWO CENTS\n\nBanner headline:\nPROHIBITION REPEAL IS RATIFIED AT 5:32 P. M.;\nROOSEVELT ASKS NATION TO BAR THE SALOON;\nNEW YORK CELEBRATES WITH QUIET RESTRAINT\n\nColumn headings across the front page: “State House Bootlegger Is Barred in Maryland” · “CITY TOASTS NEW ERA — Crowds Swamp Licensed Resorts, but the Legal Liquor Is Scarce; CELEBRATION IN STREETS; Marked by Absence of Undue Hilarity and Only Normal Number of Arrests; MANY SPEAKEASIES CLOSE” · “The Repeal Proclamation” · “FINAL ACTION AT CAPITAL — President Proclaims the Nation’s New Policy as Utah Ratifies; PHILLIPS SIGNS DECREE; Orders 21st Amendment in Effect on Receiving Votes of Three Final States” · “RATIFYING BY UTAH ENDS PROHIBITION”",
+          "image_ref": "unit07-cle-prohibition-doc6-nyt-1933.png",
+          "image_alt": "The front page of The New York Times for Wednesday, December 6, 1933, Late City Edition. A three-line banner headline announcing that Prohibition repeal is ratified runs the width of the page, above narrow columns reporting street celebrations in New York, the text of the repeal proclamation, and Utah’s deciding vote.",
+          "citation": "Source: New York Times, December 6, 1933",
+          "provenance": "NYSED released exam, January 2026, Civic Literacy Essay, Document 6",
+          "transcribed": {
+            "on": "2026-09-18",
+            "by": "Sam (us11r-curriculum)",
+            "from": "the crop itself, read page by page — not from memory, not from the catalog",
+            "verbatim": true,
+            "image_still_the_document": true
+          }
+        }
+      ],
+      "exemplar": "The debate over Prohibition turned on a core civic principle: the tension between individual liberty and the government’s police power to legislate morality for the common good. Reformers, building on the temperance crusades of the nineteenth century (Doc 1) and organized by groups like the Anti-Saloon League (Doc 2), secured the Eighteenth Amendment and the Volstead Act (outside information) to ban alcohol nationally. Governments then tried to make the ban real — Hoover’s aggressive federal enforcement (Doc 3) — while opponents such as Pauline Sabin’s WONPR (Doc 4) argued the experiment had failed. Critics concluded that Prohibition let a vocal minority regulate the private habits of all Americans and fueled organized crime (Doc 5), and in December 1933 the Twenty-first Amendment repealed it (Doc 6). The lasting impact was a reaffirmed limit on the government’s power to police personal behavior by constitutional command — the only amendment ever repealed — a civic lesson in how far law can go in enforcing morality on a free and diverse people.",
+      "compare_focus": "Name the civic principle explicitly (liberty vs. the police power / limits of legislating morality) AND add at least one accurate fact not in the documents (e.g., the Volstead Act, the 18th/21st Amendments). Naming the principle is the 3→4 move.",
+      "compare_checklist": [
+        "Did I name a civic/constitutional principle in plain words?",
+        "Did I add at least one accurate outside fact beyond the documents?",
+        "Did I connect the principle to the impact, not just list documents?"
+      ]
+    }
+  ],
+  "transcription_pass": {
+    "on": "2026-09-18",
+    "by": "Sam (us11r-curriculum)",
+    "why": "Josh's content gate, 2026-09-18: this rep carried an image with no transcription, so a student reaching it after the unlock would have seen nothing if the scan did not render. The prior `content` field held a one-line DESCRIPTION of the document, not the document.",
+    "documents_transcribed": 6,
+    "kind_rule": "kind is now accurate per document. text = the scan is a scan of prose and the transcription IS the document. image = the visual carries meaning the words cannot (the ratification map, the newspaper front page), so the loud 'source image' notice still belongs there.",
+    "source": "NYS Regents Examination in United States History and Government, January 2026, Part III B, Civic Literacy Essay"
+  }
+}

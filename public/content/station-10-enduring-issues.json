@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "n/a",
+  "station": {
+    "id": 10,
+    "num": "X",
+    "name": "Enduring Issues",
+    "tier": "Global"
+  },
+  "skill_tags": [],
+  "skill_tag_labels": [
+    "Global 10R only"
+  ],
+  "critical_path": false,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    }
+  ],
+  "note": "Station X is GLOBAL 10R only \u2014 the Enduring Issues Essay. No US11R reps. Rep 2 content is supplied from the GS10R (Global) exam bank, not US11R. Kept in the circuit and tagged Global; not on the 11R critical path."
+}

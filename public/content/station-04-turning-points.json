@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "SEQ",
+  "station": {
+    "id": 4,
+    "num": "IV",
+    "name": "Turning Points",
+    "tier": "Foundation"
+  },
+  "skill_tags": [
+    4
+  ],
+  "skill_tag_labels": [
+    "Explanation"
+  ],
+  "critical_path": false,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        3,
+        2
+      ],
+      "note": "Real NYSED SEQ (Jan 2026 Set 2) \u2014 the relationship bullet, turning-point lane.",
+      "prompt": "Read and analyze the documents, then identify and explain how the development in Documents 1 and 2 was a TURNING POINT. (Jan 2026 SEQ Set 2.)",
+      "station_focus": "Drill the turning-point move: show what was different AFTER the development compared with before, and explain why that shift mattered.",
+      "stimulus": [
+        {
+          "kind": "image",
+          "content": "Treasury Secretary Guthrie's report on the economic impact of the Erie Canal.",
+          "image_ref": "unit03-seq2-doc1-guthrie-eriecanal-1853.png",
+          "image_alt": "Treasury Secretary Guthrie's report on the economic impact of the Erie Canal.",
+          "citation": "Source: James Guthrie, Secretary of the Treasury, \u201cThe Impact of the Erie Canal,\u201d 1853",
+          "provenance": "NYSED Jan 2026 SEQ Set 2, Doc 1"
+        },
+        {
+          "kind": "image",
+          "content": "Map of Great Lakes shipping routes and resources.",
+          "image_ref": "unit03-seq2-doc2-greatlakes-shipping-map.png",
+          "image_alt": "Map of Great Lakes shipping routes and resources.",
+          "citation": "Source: University of Michigan, Department of Geography (adapted)",
+          "provenance": "NYSED Jan 2026 SEQ Set 2, Doc 2"
+        }
+      ],
+      "exemplar": "The building of canals and the opening of Great Lakes navigation marked a turning point in American economic development. As Document 1 explains, once the Erie Canal linked the Great Lakes to the Atlantic, the line of navigable water extended nearly a thousand miles into the interior, and Western states rushed to build similar works so that goods could reach market cheaply. Document 2's map shows the dense shipping network that resulted. Before these improvements the interior was isolated wilderness with 'no market'; afterward it became a settled, commercial region tied to the national economy. That shift \u2014 from isolation to integration \u2014 is why the Transportation Revolution counts as a turning point: it bound the West to the East and accelerated national economic growth.",
+      "compare_focus": "Contrast the 'before' and the 'after,' then explain why the change was significant \u2014 a turning point needs both sides of the pivot.",
+      "compare_checklist": [
+        "Did I describe conditions before AND after the development?",
+        "Did I explain why the shift was significant, not just that it happened?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,320 @@
+{
+  "intro": "Nine questions off real Regents exams and your own Unit 11.1 exam. Nothing here is scored and nothing is saved. Pick the wrong one on purpose if you want to — you will be told what that answer was built to catch.",
+  "items": [
+    {
+      "n": 1,
+      "question": "The situation described in this passage was caused by",
+      "stimulus": {
+        "kind": "text",
+        "content": "Brothers, we must be as one as the English are, or we shall all be destroyed. You know our fathers had plenty of deer and skins and our plains were full of game and turkeys, and our coves and rivers were full of fish.\n\nBut, brothers, since these Englishmen have seized our country, they have cut down the grass with scythes, and the trees with axes. Their cows and horses eat up the grass, and their hogs spoil our bed of clams; and finally we shall all starve to death; therefore, stand not in your own light, I ask you, but resolve to act like men. All the sachems [tribal chiefs] both to the east and the west have joined with us, and we are resolved to fall upon them at a day appointed, and therefore I come secretly to you, cause you can persuade your Indians [Native Americans] to do what you will.",
+        "citation": "Source: Narragansett Chief Miantonomo"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "Native Americans wasting valuable natural resources"
+        },
+        {
+          "key": "2",
+          "text": "European settlement in North America"
+        },
+        {
+          "key": "3",
+          "text": "intermarriage between British settlers and Native Americans"
+        },
+        {
+          "key": "4",
+          "text": "sachems who had ordered the colonists' crops to be destroyed"
+        }
+      ],
+      "correct": "2",
+      "reasoning": "Miantonomo lists what was there before and what happened after the English arrived — deer, game, fish, then scythes, axes, cows, hogs. The cause he names is the settlement itself.",
+      "evidence_line": "But, brothers, since these Englishmen have seized our country, they have cut down the grass with scythes, and the trees with axes.",
+      "distractors": {
+        "1": "It turns his complaint upside down. He says the English use of the land destroyed the game — not that his own people wasted it.",
+        "3": "Intermarriage never appears in the passage. This one tempts because it sounds like colonial-era content.",
+        "4": "The crops being spoiled are Native, not colonial, and the hogs do it — not the sachems. Read who is doing what to whom."
+      }
+    },
+    {
+      "n": 2,
+      "question": "What course of action does Chief Miantonomo support?",
+      "stimulus": {
+        "kind": "text",
+        "content": "Brothers, we must be as one as the English are, or we shall all be destroyed. You know our fathers had plenty of deer and skins and our plains were full of game and turkeys, and our coves and rivers were full of fish.\n\nBut, brothers, since these Englishmen have seized our country, they have cut down the grass with scythes, and the trees with axes. Their cows and horses eat up the grass, and their hogs spoil our bed of clams; and finally we shall all starve to death; therefore, stand not in your own light, I ask you, but resolve to act like men. All the sachems [tribal chiefs] both to the east and the west have joined with us, and we are resolved to fall upon them at a day appointed, and therefore I come secretly to you, cause you can persuade your Indians [Native Americans] to do what you will.",
+        "citation": "Source: Narragansett Chief Miantonomo"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "leaving their land and becoming hunters and gatherers"
+        },
+        {
+          "key": "2",
+          "text": "relocating west of the Appalachian Mountains"
+        },
+        {
+          "key": "3",
+          "text": "forming alliances to fight the colonial settlers"
+        },
+        {
+          "key": "4",
+          "text": "making peace agreements with English settlers"
+        }
+      ],
+      "correct": "3",
+      "reasoning": "The whole speech is an argument for joining together. He opens with it and closes by saying the sachems east and west have already agreed.",
+      "evidence_line": "Brothers, we must be as one as the English are, or we shall all be destroyed.",
+      "distractors": {
+        "1": "He is describing what they are losing, not proposing they live differently.",
+        "2": "Moving west is a later story. Nothing in this passage suggests leaving.",
+        "4": "This is the opposite of what he asks for. He is organizing an attack, not a treaty."
+      }
+    },
+    {
+      "n": 3,
+      "question": "The Fundamental Orders of Connecticut represent an early step in the colonial advance toward",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . It is Ordered, sentenced, and decreed, that there shall be yearly two General Assemblies or Courts, the one the second Thursday in April, the other the second Thursday in September following; the first shall be called the Court of Election, wherein shall be yearly chosen from time to time, so many Magistrates and other public Officers as shall be found requisite [needed]: Whereof one to be chosen Governor for the year ensuing and another be chosen, and no other Magistrate to be chosen for more than one year: provided always there be six chosen besides the Governor, which being chosen and sworn according to an Oath recorded for that purpose, shall have the power to administer justice according to the Laws here established, and for want thereof, according to the Rule of the Word of God; which choice shall be made by all that are admitted freemen and have taken the Oath of Fidelity, and do cohabit within this Jurisdiction having been admitted inhabitants by the major part of the Town wherein they live or the major part of such as shall be then present. . . .",
+        "citation": "Source: Fundamental Orders of Connecticut, Section 1, January 14, 1639"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "representative government"
+        },
+        {
+          "key": "2",
+          "text": "an American monarchy"
+        },
+        {
+          "key": "3",
+          "text": "freedom of speech and of the press"
+        },
+        {
+          "key": "4",
+          "text": "abolition of slavery"
+        }
+      ],
+      "correct": "1",
+      "reasoning": "Read what the document actually sets up: yearly assemblies, a governor and magistrates chosen by the freemen, and a one-year limit on the office. That is people choosing who governs them.",
+      "evidence_line": "the first shall be called the Court of Election, wherein shall be yearly chosen from time to time, so many Magistrates and other public Officers as shall be found requisite",
+      "distractors": {
+        "2": "A monarchy is inherited and for life. This document does the reverse — it elects and it term-limits.",
+        "3": "Speech and press are not mentioned. This tempts because it sounds like an early American right.",
+        "4": "Slavery is not mentioned at all. Do not import what you know about the era into what the document says."
+      }
+    },
+    {
+      "n": 4,
+      "question": "Which colonial development was most similar to the Fundamental Orders of Connecticut?",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . It is Ordered, sentenced, and decreed, that there shall be yearly two General Assemblies or Courts, the one the second Thursday in April, the other the second Thursday in September following; the first shall be called the Court of Election, wherein shall be yearly chosen from time to time, so many Magistrates and other public Officers as shall be found requisite [needed]: Whereof one to be chosen Governor for the year ensuing and another be chosen, and no other Magistrate to be chosen for more than one year: provided always there be six chosen besides the Governor, which being chosen and sworn according to an Oath recorded for that purpose, shall have the power to administer justice according to the Laws here established, and for want thereof, according to the Rule of the Word of God; which choice shall be made by all that are admitted freemen and have taken the Oath of Fidelity, and do cohabit within this Jurisdiction having been admitted inhabitants by the major part of the Town wherein they live or the major part of such as shall be then present. . . .",
+        "citation": "Source: Fundamental Orders of Connecticut, Section 1, January 14, 1639"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "Maryland Toleration Act"
+        },
+        {
+          "key": "2",
+          "text": "Virginia House of Burgesses"
+        },
+        {
+          "key": "3",
+          "text": "Proclamation of 1763"
+        },
+        {
+          "key": "4",
+          "text": "Stamp Act"
+        }
+      ],
+      "correct": "2",
+      "reasoning": "The question asks for the same kind of thing: a colonial body where colonists elect representatives. The House of Burgesses is the other early one.",
+      "evidence_line": "so many Magistrates and other public Officers as shall be found requisite",
+      "distractors": {
+        "1": "Religious toleration, not representation. Both are colonial firsts, which is what makes it tempting.",
+        "3": "A British restriction imposed on colonists — the opposite direction of power.",
+        "4": "Also imposed by Parliament, and 126 years later. Check the date before you check the topic."
+      }
+    },
+    {
+      "n": 5,
+      "question": "Which claim about this group of Native Americans is supported by this passage?",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . Having frequent Occasions to hold public Councils, they have acquired great Order and Decency in conducting them. The old Men sit in the foremost Ranks, the Warriors in the next, and the Women and Children in the hindmost. The Business of the Women is to take exact Notice of what passes, imprint it in their Memories (for they have no Writing), and communicate it to their Children. They are the Records of the Council, and they preserve Traditions of the Stipulations in Treaties 100 Years back; which, when we compare with our Writings, we always find exact. . . .",
+        "citation": "Source: Benjamin Franklin Papers (Wampum Chronicles) before January 7, 1784"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "Acquiring their land is justified."
+        },
+        {
+          "key": "2",
+          "text": "Women play a significant role in their society."
+        },
+        {
+          "key": "3",
+          "text": "Their treaties are preserved in writing."
+        },
+        {
+          "key": "4",
+          "text": "Colonial missionaries need to understand their beliefs."
+        }
+      ],
+      "correct": "2",
+      "reasoning": "Franklin gives the women a job with real weight — they are the record of the council, and he says their record proves accurate against the written one.",
+      "evidence_line": "They are the Records of the Council, and they preserve Traditions of the Stipulations in Treaties 100 Years back; which, when we compare with our Writings, we always find exact.",
+      "distractors": {
+        "1": "The passage is admiring, not justifying. This choice imports the settler argument the passage never makes.",
+        "3": "It says the opposite in plain words — 'for they have no Writing.' The treaties are preserved in memory.",
+        "4": "Missionaries are not in the passage. A choice can be true of the era and still unsupported by the source."
+      }
+    },
+    {
+      "n": 6,
+      "question": "The events described in this account could be considered a turning point in history because",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . Not long before the English came into the Country, happened a great mortality amongst [Native Americans], especially where the English afterwards planted, the East and Northern parts were sore smitten with the Contagion; first by the plague, afterwards when the English came by the small pox, the three Kingdoms or Sagamorships of the Massachusetts were very populous, having under them seven Dukedoms or petti-Sagamorships, but by the plague were brought from 30,000 to 300. There are not many now to the Eastward, the Pequots were destroyed by the English: the Mohawks are about five hundred. . . .",
+        "citation": "Source: John Josselyn, An Account of Two Voyages to New-England, Made during the Years 1638, 1663"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "The author of this account went on to become a powerful English Lord."
+        },
+        {
+          "key": "2",
+          "text": "Native American societies grew strong again after contracting European diseases, resulting in an increase in Native populations at this time."
+        },
+        {
+          "key": "3",
+          "text": "Native Americans in the British colonies experienced a drastic decline in population due to disease and war brought by Europeans."
+        },
+        {
+          "key": "4",
+          "text": "New England colonists repaired relationships with Native Americans soon after the incidents described."
+        }
+      ],
+      "correct": "3",
+      "reasoning": "Josselyn names both causes in one passage — plague and then smallpox, and then the Pequots destroyed by the English. And he gives you the number.",
+      "evidence_line": "the three Kingdoms or Sagamorships of the Massachusetts were very populous . . . but by the plague were brought from 30,000 to 300.",
+      "distractors": {
+        "1": "Nothing about the author's later life is in the account. A choice about the source's author is not automatically about the source.",
+        "2": "It reverses the passage. The numbers go down, not up.",
+        "4": "The same sentence that would have to support this says the Pequots were destroyed by the English."
+      }
+    },
+    {
+      "n": 7,
+      "question": "Based on the information provided in this account, which claim is most plausible?",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . Not long before the English came into the Country, happened a great mortality amongst [Native Americans], especially where the English afterwards planted, the East and Northern parts were sore smitten with the Contagion; first by the plague, afterwards when the English came by the small pox, the three Kingdoms or Sagamorships of the Massachusetts were very populous, having under them seven Dukedoms or petti-Sagamorships, but by the plague were brought from 30,000 to 300. There are not many now to the Eastward, the Pequots were destroyed by the English: the Mohawks are about five hundred. . . .",
+        "citation": "Source: John Josselyn, An Account of Two Voyages to New-England, Made during the Years 1638, 1663"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "Native American peoples were welcoming to European colonists who settled in North America."
+        },
+        {
+          "key": "2",
+          "text": "Native American populations were susceptible to diseases to which they had no previous exposure."
+        },
+        {
+          "key": "3",
+          "text": "European colonists poisoned Native peoples intentionally, decimating their population."
+        },
+        {
+          "key": "4",
+          "text": "Native American civilization was far inferior to European civilization."
+        }
+      ],
+      "correct": "2",
+      "reasoning": "The mortality strikes before the English arrive and again by smallpox when they do. A population dying from a disease the moment it meets it is a population that had never met it.",
+      "evidence_line": "Not long before the English came into the Country, happened a great mortality amongst [Native Americans] . . . afterwards when the English came by the small pox",
+      "distractors": {
+        "1": "Not addressed here. The account is about death rates, not relations.",
+        "3": "This is the one to watch. The account never says poisoning or intent — this choice punishes reading a motive into a source that only reports what happened.",
+        "4": "A value judgment, not a claim a source can support. Be suspicious of any choice that ranks one people above another."
+      }
+    },
+    {
+      "n": 8,
+      "question": "Which statement is best supported by the information in this chart?",
+      "stimulus": {
+        "kind": "text",
+        "content": "Early American Populations (Estimated)\n\nEstimated European Populations      c.1610     c.1700\nEnglish in Virginia                    100     72,000\nFrench in New France                   100     13,000\nSpanish in New Mexico                  500      3,000\n\nEstimated Native Populations        c.1610     c.1700\nPowhatans                           15,000      1,000\nHurons                              20,000       100s\nPueblos                             60,000     14,000",
+        "citation": "Source: Smithsonian National Museum of American History (adapted)"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "There was steady growth of both European and Native American populations."
+        },
+        {
+          "key": "2",
+          "text": "Native Americans aided Europeans for almost 90 years."
+        },
+        {
+          "key": "3",
+          "text": "European colonization had devastating effects on Native Americans."
+        },
+        {
+          "key": "4",
+          "text": "The French and Indian War impacted both Europeans and Native Americans."
+        }
+      ],
+      "correct": "3",
+      "reasoning": "Run the two halves against each other. Every European row rises; every Native row falls, one of them from 20,000 to hundreds.",
+      "evidence_line": "Powhatans 15,000 -> 1,000 · Hurons 20,000 -> 100s · Pueblos 60,000 -> 14,000",
+      "distractors": {
+        "1": "Half right, which is what makes it dangerous. The European rows grow; the Native rows collapse.",
+        "2": "Aid is not something a population table can show. The chart has no column for it.",
+        "4": "The war is not in the chart, and it is fifty years after the last date on it. A chart supports what it measures."
+      }
+    },
+    {
+      "n": 9,
+      "question": "What was a main cause of the population trend shown in this chart?",
+      "stimulus": {
+        "kind": "text",
+        "content": "Early American Populations (Estimated)\n\nEstimated European Populations      c.1610     c.1700\nEnglish in Virginia                    100     72,000\nFrench in New France                   100     13,000\nSpanish in New Mexico                  500      3,000\n\nEstimated Native Populations        c.1610     c.1700\nPowhatans                           15,000      1,000\nHurons                              20,000       100s\nPueblos                             60,000     14,000",
+        "citation": "Source: Smithsonian National Museum of American History (adapted)"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "the use of indentured servants in the early British colonies"
+        },
+        {
+          "key": "2",
+          "text": "disputes between the British and the French over land"
+        },
+        {
+          "key": "3",
+          "text": "the growing numbers of enslaved Africans brought to the American colonies"
+        },
+        {
+          "key": "4",
+          "text": "the diseases and technology brought by Europeans to the Americas"
+        }
+      ],
+      "correct": "4",
+      "reasoning": "The trend to explain is the Native collapse. Disease is what moves numbers that far, that fast, and it arrived with the Europeans whose own numbers are climbing beside it.",
+      "evidence_line": "Powhatans 15,000 -> 1,000",
+      "distractors": {
+        "1": "Indentured servants change the settler population. Ask which line of the chart the choice would explain.",
+        "2": "Colonial rivalry does not produce a collapse of this size, and the chart shows no war.",
+        "3": "The same test: this would add to a column the chart does not have, not subtract from the one that fell."
+      }
+    }
+  ]
+}

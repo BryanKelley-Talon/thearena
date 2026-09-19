@@ -1,0 +1,163 @@
+{
+  "_README": "THE GAMES MANIFEST — one list, two readers. Canonical copy lives here at builds/_shared/games.json. It is copied into flashpoint-landing/public/ and thearena/public/ by builds/_shared/sync-games.sh at build time. Edit THIS file, run the script, rebuild. Never edit a copy in a public/ folder — it is overwritten.",
+  "_why_not_a_runtime_fetch": "The Arena and the landing page are different subdomains, so a single runtime URL would mean a cross-origin request. On a school network that turns a slow or blocked landing site into missing game links inside the Arena. A build-time copy costs a rebuild when a URL changes and cannot fail in front of a student. Revisit if the shop ever wants URL edits without a deploy — Josh, 2026-09-18.",
+  "schema_version": "1.0",
+  "updated": "2026-09-18",
+  "games": [
+    {
+      "id": "us11r-1776",
+      "course": "us11r",
+      "std": "11.1",
+      "year": "1776",
+      "title": "The Question That Started Everything",
+      "period": "1607–1789",
+      "accent": "#7B3F00",
+      "status": "live",
+      "url": "https://founding.flashpointhistory.com"
+    },
+    {
+      "id": "us11r-1800",
+      "course": "us11r",
+      "std": "11.2",
+      "year": "1800",
+      "title": "The Fragile Republic",
+      "period": "1789–1824",
+      "accent": "#6B9BD1",
+      "status": "live",
+      "url": "https://early-republic.flashpointhistory.com"
+    },
+    {
+      "id": "us11r-1850",
+      "course": "us11r",
+      "std": "11.3",
+      "year": "1850",
+      "title": "The Last Compromise",
+      "period": "1820–1861",
+      "accent": "#5AA57B",
+      "status": "live",
+      "url": "https://last-compromise.flashpointhistory.com"
+    },
+    {
+      "id": "us11r-1865",
+      "course": "us11r",
+      "std": "11.4",
+      "year": "1865",
+      "title": "What Freedom Means",
+      "period": "1861–1877",
+      "accent": "#5C3A1E",
+      "status": "next",
+      "url": null
+    },
+    {
+      "id": "us11r-1900",
+      "course": "us11r",
+      "std": "11.5",
+      "year": "1900",
+      "title": "A Nation in Reform",
+      "period": "1877–1920",
+      "accent": "#C17700",
+      "status": "live",
+      "url": "https://progressive-era.flashpointhistory.com"
+    },
+    {
+      "id": "us11r-1917",
+      "course": "us11r",
+      "std": "11.6",
+      "year": "1917",
+      "title": "The Weight of the World",
+      "period": "1898–1920",
+      "accent": "#8B6914",
+      "status": "planned",
+      "url": null
+    },
+    {
+      "id": "us11r-1932",
+      "course": "us11r",
+      "std": "11.7",
+      "year": "1932",
+      "title": "What the Country Owes",
+      "period": "1920–1940",
+      "accent": "#6E6E6E",
+      "status": "planned",
+      "url": null
+    },
+    {
+      "id": "us11r-1942",
+      "course": "us11r",
+      "std": "11.8",
+      "year": "1942",
+      "title": "The Price of Victory",
+      "period": "1939–1945",
+      "accent": "#8B0000",
+      "status": "planned",
+      "url": null
+    },
+    {
+      "id": "us11r-1955",
+      "course": "us11r",
+      "std": "11.9",
+      "year": "1955",
+      "title": "The Long Walk Home",
+      "period": "1945–1968",
+      "accent": "#1A3A5C",
+      "status": "planned",
+      "url": null
+    },
+    {
+      "id": "us11r-1968",
+      "course": "us11r",
+      "std": "11.10",
+      "year": "1968",
+      "title": "Everything at Once",
+      "period": "1964–1975",
+      "accent": "#556B2F",
+      "status": "planned",
+      "url": null
+    },
+    {
+      "id": "us11r-1989",
+      "course": "us11r",
+      "std": "11.11",
+      "year": "1989",
+      "title": "The Wall and What Came After",
+      "period": "1975–present",
+      "accent": "#3E5C6B",
+      "status": "planned",
+      "url": null
+    },
+    {
+      "id": "global10r-1914",
+      "course": "global10r",
+      "std": "10.5",
+      "year": "1914",
+      "title": "A World on Fire",
+      "period": "WWI · Global 10R",
+      "accent": "#B0A05A",
+      "status": "live",
+      "url": "https://wof-global10r.netlify.app",
+      "_move_before_linking": "READ THIS BEFORE WIRING THE GLOBAL 10.5 UNIT ROOM. This game is still on wof-global10r.netlify.app; every other live game is on a flashpointhistory.com subdomain. BK ruled 2026-09-18 that Global games are deferred and 1914 moves onto the domain WITH that set — it is his first game, the original proof of concept, and it goes over with the rest rather than alone. Safe to leave today because nothing links it from the Arena: Will declined a Unit 1 link on 09-11 (1914 is 10.5, not 10.1). The moment a 10.5 room links it, it is live on two surfaces — move it first, then change the url below. One line."
+    },
+    {
+      "id": "global10r-1939",
+      "course": "global10r",
+      "std": "10.6",
+      "year": "1939",
+      "title": "WWII & the Holocaust",
+      "period": "10.5 · Global 10R",
+      "accent": "#D65643",
+      "status": "planned",
+      "url": null
+    },
+    {
+      "id": "global10r-1947",
+      "course": "global10r",
+      "std": "10.7",
+      "year": "1947",
+      "title": "Cold War & Decolonization",
+      "period": "10.6 · Global 10R",
+      "accent": "#6BA5B8",
+      "status": "planned",
+      "url": null
+    }
+  ]
+}

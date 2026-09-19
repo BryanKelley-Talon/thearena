@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "SEQ",
+  "station": {
+    "id": 3,
+    "num": "III",
+    "name": "Continuity & Change",
+    "tier": "Foundation"
+  },
+  "skill_tags": [
+    4
+  ],
+  "skill_tag_labels": [
+    "Explanation"
+  ],
+  "critical_path": false,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        1,
+        3
+      ],
+      "note": "Real NYSED SEQ (Aug 2025 Set 1) \u2014 the relationship bullet, similarity/difference lane.",
+      "prompt": "Read and analyze the documents, then identify and explain a SIMILARITY or DIFFERENCE between the ideas in Documents 1 and 2. (Aug 2025 SEQ Set 1.)",
+      "station_focus": "Drill the similarity/difference move: state what changed or stayed the same across the two documents and explain its significance.",
+      "stimulus": [
+        {
+          "kind": "image",
+          "content": "Declaration of Independence excerpt on unalienable rights and government by consent.",
+          "image_ref": "unit02-seq1-doc1-declaration-1776.png",
+          "image_alt": "Declaration of Independence excerpt on unalienable rights and government by consent.",
+          "citation": "Source: Declaration of Independence, July 4, 1776 (adapted)",
+          "provenance": "NYSED Aug 2025 SEQ Set 1, Doc 1"
+        },
+        {
+          "kind": "image",
+          "content": "Preamble to the U.S. Constitution.",
+          "image_ref": "unit02-seq1-doc2-preamble-1787.png",
+          "image_alt": "Preamble to the U.S. Constitution.",
+          "citation": "Source: Preamble, United States Constitution, 1787",
+          "provenance": "NYSED Aug 2025 SEQ Set 1, Doc 2"
+        }
+      ],
+      "exemplar": "Both founding documents rest on the same core idea \u2014 that government derives its authority from the people \u2014 but they differ in purpose, and that difference is significant. The Declaration of Independence (Doc 1) is a statement of principle justifying revolution: it asserts unalienable rights and the people's right to abolish a destructive government. The Preamble (Doc 2), written eleven years later, shifts from tearing down to building up: it lists the concrete goals of a functioning national government \u2014 union, justice, domestic tranquility, defense, welfare, and liberty. The continuity is popular sovereignty; the change is from justifying independence to establishing a durable framework to govern, showing how the founding generation moved from revolution to construction.",
+      "compare_focus": "Name whether it is a similarity or a difference, then explain WHY it matters \u2014 the significance is the move, not the observation.",
+      "compare_checklist": [
+        "Did I clearly label a similarity or a difference?",
+        "Did I explain its significance rather than just describe both documents?"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": "1.0",
+  "station": {
+    "id": 9,
+    "num": "IX",
+    "name": "Paragraph Construction",
+    "tier": null
+  },
+  "skill_tags": [
+    3,
+    4
+  ],
+  "skill_tag_labels": [
+    "Document Use",
+    "Explanation"
+  ],
+  "critical_path": true,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        3,
+        5
+      ],
+      "prompt": "Task: Based on your reading and analysis of these documents, apply your social studies knowledge and skills to write a short essay of two or three paragraphs in which you:\n• Describe the historical context surrounding Documents 1 and 2\n• Analyze Document 1 and explain how audience, or purpose, or bias, or point of view affects this document’s use as a reliable source of evidence\n\nGuidelines: In your short essay, be sure to\n• Develop all aspects of the task\n• Incorporate relevant outside information\n• Support the task with relevant facts and examples\n\nYou are not required to include a separate introduction or conclusion in your short essay of two or three paragraphs.",
+      "exam_meta": {
+        "exam": "US History & Government (11R)",
+        "administration": "August 2025",
+        "part": "Part II — SEQ Set 2",
+        "question_ref": "30"
+      },
+      "stimulus": [
+        {
+          "kind": "text",
+          "content": "Bruce Craven is responding to one of President Franklin D. Roosevelt’s fireside chats.\n\nJuly 25, 1933\n\nDear Mr. President;\n. . . The forgotten man has been forgotten, if he was ever really remembered. I happen to be an approved attorney for the Federal Land Bank, and on publication of the information about the new loan legislation, the little man came to see me vainly hoping that at last he had been remembered. He is representative of thousands of farmers in North Carolina, owning maybe 50 acres of land and doing all of his own work, and about to lose his farm under a mortgage. But to get the loan he is obliged to pay $20 in advance for appraisals, and another $10 for a survey, and he no more has that much cash than he has the moon. I have written to everyone from Mr. [Treasury Secretary Henry] Morgenthau on down about this, and no one is interested. The prevailing idea seems to be that if a man is that poor, he should stay poor.\nBefore any of this loan and public works legislation was enacted, I wrote you that you ought to put at least one human being in each supervising body, and by that I meant a man who actually knows there is a “little man” in this nation and that he never has had a fair chance, and that he deserves one. I hope yet that somehow you may remember this forgotten little man, who has no one in high places to befriend him.\n\nRespectfully yours,\nBruce Craven\nTrinity, North Carolina",
+          "image_ref": "unit07-seq2-doc1-fdr-levine.png",
+          "image_alt": "Text of a July 25, 1933 letter from attorney Bruce Craven of Trinity, North Carolina, to President Franklin D. Roosevelt, on behalf of “the forgotten little man.”",
+          "citation": "Source: Levine and Levine, The People and the President: America’s Conversation with FDR, Beacon Press, 2002",
+          "provenance": "NYSED Regents US History & Government, August 2025, Part II"
+        },
+        {
+          "kind": "image",
+          "content": null,
+          "image_ref": "unit07-seq2-doc2-batchelor-cartoon-1936.png",
+          "image_alt": "1936 political cartoon titled “Yes, You Remembered Me”: a smiling President Franklin D. Roosevelt, coat labeled F.D.R., shakes hands with a worn farmer in patched work clothes whose pocket holds a paper labeled “The Forgotten Man.”",
+          "citation": "Source: C. D. Batchelor, New York Daily News, October 11, 1936",
+          "provenance": "NYSED Regents US History & Government, August 2025, Part II"
+        }
+      ],
+      "exemplar": "The historical context surrounding these documents is the Great Depression and Franklin D. Roosevelt’s New Deal. By 1933, when Bruce Craven wrote his letter, roughly one in four American workers was unemployed, farm foreclosures were sweeping the countryside, and Roosevelt had just launched the first hundred days of New Deal legislation — including new federal farm loan programs — while explaining the programs directly to citizens through radio fireside chats. By 1936, when the Batchelor cartoon appeared, Roosevelt was running for reelection on the New Deal’s record and won in a historic landslide.\n\nDocument 1 is valuable evidence, but its point of view affects its reliability, and a careful paragraph weighs that. Point: Craven’s letter is a firsthand account, but it is one man’s argument, written to persuade. Evidence: Craven identifies himself as “an approved attorney for the Federal Land Bank” and writes directly to the President on behalf of “the forgotten little man” — the small North Carolina farmer who cannot afford the thirty dollars in fees a federal loan required. Explanation: because Craven’s purpose is to move Roosevelt to act, he selects the most sympathetic case he knows and presents the loan program only through its failures; his audience — the President himself — gives him every reason to sharpen the injustice rather than balance it. Link: this point of view does not make the letter useless — Craven saw the program’s gaps professionally, so it is strong evidence that New Deal loan programs left the poorest farmers behind in 1933 — but it makes the letter an argument rather than a survey, and it should be corroborated with other sources before it stands for the experience of all farmers.",
+      "compare_focus": "The L in PEEL. After your evidence and explanation, write the sentence that links back to the point — what does this evidence prove about the document’s reliability? The link sentence is the move students skip.",
+      "compare_checklist": [
+        "Did my paragraph open with a point — a claim, not a fact?",
+        "Did I quote or cite specific evidence from the document?",
+        "Did I explain how audience, purpose, bias, or point of view shapes what the document shows?",
+        "Did I end with a link sentence that returns to my point?"
+      ]
+    },
+    {
+      "rep": 3,
+      "type": "regents",
+      "thread_tags": [
+        2,
+        4
+      ],
+      "note": "JUNE 2026 PUSH-UPDATE (2026-07-22): the later-source push promised in the 7/10 bank-first ruling. This rep sources the exam the August student sat — Arena reps from it ARE her compliant review of that test (ruling 2026-07-06). Rep 2 (bank-first) retained; if the shell renders a single regents rep, this one takes precedence for the August sprint — confirm with Josh.",
+      "prompt": "Task: Based on your reading and analysis of these documents, apply your social studies knowledge and skills to write a short essay of two or three paragraphs in which you:\n• Describe the historical context surrounding Documents 1 and 2\n• Analyze Document 1 and explain how audience, or purpose, or bias, or point of view affects this document’s use as a reliable source of evidence\n\nGuidelines: In your short essay, be sure to\n• Develop all aspects of the task\n• Incorporate relevant outside information\n• Support the task with relevant facts and examples\n\nYou are not required to include a separate introduction or conclusion in your short essay of two or three paragraphs.",
+      "exam_meta": {
+        "exam": "US History & Government (11R)",
+        "administration": "June 2026",
+        "part": "Part II — SEQ Set 2",
+        "question_ref": "30"
+      },
+      "stimulus": [
+        {
+          "kind": "text",
+          "content": ". . . I believe our ground forces in South Vietnam should be kept to a minimum, consistent with the protection of our installations and property in that country. My concern is that a substantial buildup of U.S. ground troops would be construed by the Communists, and by the world, as a determination on our part to win the war on the ground.\nThis could be a quagmire. It could turn into an open end commitment on our part that would take more and more ground troops, without a realistic hope of ultimate victory.\nI do not think the situation is comparable to Korea. The political posture of the parties involved, and the physical conditions, including terrain, are entirely different. . . .",
+          "image_ref": "unit09-0626-seq2-doc1-clifford-1965.png",
+          "image_alt": "Text of a May 17, 1965 letter from Clark M. Clifford, Chairman of the President’s Intelligence Advisory Board, to President Lyndon Johnson, warning that a ground-troop buildup in Vietnam could become a quagmire.",
+          "citation": "Source: Clark M. Clifford, Chairman of the President’s Intelligence Advisory Board, Letter to President Lyndon Johnson, May 17, 1965",
+          "provenance": "NYSED Regents US History & Government, June 2026, Part II"
+        },
+        {
+          "kind": "text",
+          "content": ". . . Why must young Americans, born into a land exultant with hope and with golden promise, toil and suffer and sometimes die in such a remote and distant place?\nThe answer, like the war itself, is not an easy one, but it echoes clearly from the painful lessons of half a century. Three times in my lifetime, in two World Wars and in Korea, Americans have gone to far lands to fight for freedom. We have learned at a terrible and a brutal cost that retreat does not bring safety and weakness does not bring peace. . . .\nWhat are our goals in that war-strained land?\nFirst, we intend to convince the Communists that we cannot be defeated by force of arms or by superior power. They are not easily convinced. In recent months they have greatly increased their fighting forces and their attacks and the number of incidents. . . .\nI have today ordered to Viet-Nam the Air Mobile Division and certain other forces which will raise our fighting strength from 75,000 to 125,000 men almost immediately. Additional forces will be needed later, and they will be sent as requested.\nThis will make it necessary to increase our active fighting forces by raising the monthly draft call from 17,000 over a period of time to 35,000 per month, and for us to step up our campaign for voluntary enlistments. . . .\nThese steps, like our actions in the past, are carefully measured to do what must be done to bring an end to aggression and a peaceful settlement. . . .\nFor behind our American pledge lies the determination and resources, I believe, of all of the American Nation. . . .",
+          "image_ref": "unit09-0626-seq2-doc2-lbj-1965.png",
+          "image_alt": "Text excerpt from President Lyndon B. Johnson’s July 28, 1965 press conference announcing an increase of United States forces in Vietnam from 75,000 to 125,000 men and a doubling of the monthly draft call.",
+          "citation": "Source: President Lyndon B. Johnson, Press Conference, July 28, 1965",
+          "provenance": "NYSED Regents US History & Government, June 2026, Part II"
+        }
+      ],
+      "exemplar": "The historical context surrounding these documents is the Cold War policy of containment reaching its crisis point in Vietnam in 1965. Since the Truman Doctrine, the United States had committed itself to stopping the spread of communism, fighting a limited war in Korea and, after Vietnam was divided at the 17th parallel, propping up the anti-communist South with aid and advisors. After the Gulf of Tonkin Resolution of 1964 gave President Johnson broad war powers, the question of 1965 was no longer whether to help South Vietnam but whether to Americanize the war with ground troops — the decision both of these documents are about, argued from opposite sides just ten weeks apart.\n\nDocument 1’s reliability turns on its audience, and a careful paragraph weighs that. Point: Clifford’s letter is unusually reliable evidence of what the President was told privately before escalation. Evidence: as Chairman of the President’s Intelligence Advisory Board, Clifford wrote directly and privately to Johnson, warning that a buildup “could be a quagmire … an open end commitment … without a realistic hope of ultimate victory,” and rejecting the comparison to Korea. Explanation: because his audience was the President alone — not voters, not Congress — Clifford had no reason to posture; his job required candid advice, which makes the letter a trustworthy record of the warnings Johnson heard, even though it is still one advisor’s point of view and predicts rather than reports. Link: that is exactly what makes the pairing historically devastating — the private, candid warning in Document 1 makes the public announcement in Document 2, escalating to 125,000 men and a doubled draft call, a decision made with the quagmire named in advance.",
+      "compare_focus": "The L in PEEL. After your evidence and explanation, write the link sentence — what does the audience of this document prove about its reliability? The link is the move students skip.",
+      "compare_checklist": [
+        "Did my reliability paragraph open with a point — a claim about the document, not a summary of it?",
+        "Did I quote or cite specific evidence from Document 1?",
+        "Did I explain how audience, purpose, bias, or point of view shapes the document’s value as evidence?",
+        "Did I end with a link sentence that returns to my point?"
+      ]
+    }
+  ]
+}

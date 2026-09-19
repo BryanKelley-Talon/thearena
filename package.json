@@ -1,0 +1,21 @@
+{
+  "name": "flashpoint-template",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Canonical Flashpoint History game template. Clone this per game; only src/gameData.js changes.",
+  "scripts": {
+    "dev": "vite",
+    "build": "node scripts/gate-content.mjs && vite build",
+    "preview": "vite preview",
+    "gate": "node scripts/gate-content.mjs"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "vite": "^4.5.2"
+  }
+}

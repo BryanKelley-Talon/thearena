@@ -1,0 +1,39 @@
+/* ============================================================
+   THE ARENA — base stylesheet.
+   Design tokens are the single source of truth (BUILD-ORDER Step 0);
+   the Arena rides the SHARED #16120E canvas + tokens, but keeps its own
+   sub-brand type (Barlow Condensed / Outfit) + amber. All component styles
+   live in the injected <style> block in App.jsx.
+   ============================================================ */
+@import './tokens/flashpoint-tokens.css';
+/* Arena sub-brand override — navy/gold/white/grey (BK, 2026-09-18).
+   Loaded AFTER the shared tokens so the games are untouched. */
+@import './tokens/arena-navy.css';
+
+/* Vite #root centering fix — required in every Flashpoint project. */
+#root {
+  max-width: none !important;
+  width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  /* Canvas swapped from the Arena prototype's #0D0B14 to the SHARED Flashpoint
+     ink (#16120E, --fp-ink). Same near-black across every subdomain. */
+  background: var(--arena-canvas, #0B1220);
+  color: var(--arena-white, #F4F6FA);
+  font-family: 'Outfit', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

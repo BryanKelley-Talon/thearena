@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "SEQ",
+  "station": {
+    "id": 5,
+    "num": "V",
+    "name": "Sourcing \u2014 HIPP",
+    "tier": "Sourcing"
+  },
+  "skill_tags": [
+    3
+  ],
+  "skill_tag_labels": [
+    "Document Use"
+  ],
+  "critical_path": false,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        7,
+        5
+      ],
+      "note": "Real NYSED SEQ (Aug 2025 Set 2) \u2014 the sourcing/reliability bullet.",
+      "prompt": "Analyze Document 1 and explain how audience, or purpose, or bias, or point of view affects this document's use as a reliable source of evidence. (Aug 2025 SEQ Set 2.)",
+      "station_focus": "Drill HIPP sourcing: pick ONE of audience / purpose / bias / point of view, identify it specifically, and explain how it affects the document's reliability.",
+      "stimulus": [
+        {
+          "kind": "image",
+          "content": "A farmer's letter to President Roosevelt responding to a fireside chat, describing hardship.",
+          "image_ref": "unit07-seq2-doc1-fdr-levine.png",
+          "image_alt": "A farmer's letter to President Roosevelt responding to a fireside chat, describing hardship.",
+          "citation": "Source: Levine and Levine, The People and the President: America's Conversation with FDR",
+          "provenance": "NYSED Aug 2025 SEQ Set 2, Doc 1"
+        },
+        {
+          "kind": "image",
+          "content": "C. D. Batchelor cartoon, 'Yes, You Remembered Me,' 1936.",
+          "image_ref": "unit07-seq2-doc2-batchelor-cartoon-1936.png",
+          "image_alt": "C. D. Batchelor cartoon, 'Yes, You Remembered Me,' 1936.",
+          "citation": "Source: C. D. Batchelor, New York Daily News, October 11, 1936",
+          "provenance": "NYSED Aug 2025 SEQ Set 2, Doc 2"
+        }
+      ],
+      "exemplar": "The point of view of Document 1 both strengthens and limits its usefulness. Its purpose is a personal appeal: a struggling farmer writing directly to President Roosevelt after a fireside chat, describing his mortgage, his losses, and his sense of being a 'forgotten man.' Because it is a firsthand account from someone living through the Depression, it is valuable evidence of how ordinary Americans experienced hardship and why they turned to the federal government for help. But that same personal, emotional purpose is also a limitation: the writer is advocating for himself, so the letter reflects one man's grievance rather than a balanced economic analysis. A careful historian would use it as strong evidence of public sentiment, but would corroborate its claims about conditions with other sources.",
+      "compare_focus": "Name the specific H-I-P-P element (here, purpose/point of view) and then explain how it makes the source MORE or LESS reliable \u2014 the 'so what' of sourcing.",
+      "compare_checklist": [
+        "Did I name a specific audience, purpose, bias, or point of view?",
+        "Did I explain how it affects reliability, not just identify it?"
+      ]
+    }
+  ]
+}

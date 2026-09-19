@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0",
+  "exam_program": "US11R",
+  "item_type": "CLE",
+  "station": {
+    "id": 9,
+    "num": "IX",
+    "name": "Paragraph Construction",
+    "tier": "CLE Sprint"
+  },
+  "skill_tags": [
+    3,
+    4
+  ],
+  "skill_tag_labels": [
+    "Document Use",
+    "Explanation"
+  ],
+  "critical_path": true,
+  "meta": false,
+  "attempts": 2,
+  "reps": [
+    {
+      "rep": 1,
+      "type": "everyday",
+      "source": "shell",
+      "note": "On-ramp already in the Arena shell. Do not replace."
+    },
+    {
+      "rep": 2,
+      "type": "regents",
+      "thread_tags": [
+        5,
+        3
+      ],
+      "note": "Real NYSED Civic Literacy Essay (Jan 2026, Prohibition) dropped verbatim from the audit catalog. This station drills ONE move of the CLE.",
+      "prompt": "Historical Context: Prohibition. Task: Using information from the documents and your knowledge of United States history, write an essay in which you: • Describe the historical circumstances surrounding this constitutional or civic issue • Explain efforts by individuals, groups, and/or governments to address this constitutional or civic issue • Discuss the impact of the efforts on the United States and/or on American society. [Station IX drill: write ONE PEEL body paragraph using at least two documents.]",
+      "station_focus": "Drill the PEEL body paragraph: Point → Evidence (two named documents) → Explanation (the LINK — the ‘so what’) → tie back to the thesis. The Link is the move students skip.",
+      "exam_meta": {
+        "exam": "United States History & Government (Framework, 11R)",
+        "administration": "January 2026",
+        "part": "III B — Civic Literacy Essay",
+        "question_ref": "37"
+      },
+      "stimulus": [
+        {
+          "kind": "text",
+          "content": ". . . Over his first three years in the White House Hoover never wavered in his support for Prohibition. In 1929 he signed the “Five and Ten Law” making every liquor violation a felony, and his Justice Department ramped up federal enforcement. “We enormously increased the jail population,” by jailing Prohibition violators Hoover recalled in his memoirs. “We multiplied the fines, padlocking, and confiscations.” Yet all this aggressive action he ascribed [attributed] to his duty as a constitutional officer, not to his actual endorsement. On this basic political question, Hoover declined to share his feelings and refused to act on them. . . .\n\nDuring the 1928 campaign Hoover famously saluted Prohibition as “a great social and economic experiment, noble in motive and far-reaching in purpose.” But three years later, surely the test had been run. . . .\n\nBy early 1932 little doubt remained as to the mood of the electorate. Respondents to a national mail-in survey conducted by The Literary Digest in February and March endorsed repeal of the Eighteenth Amendment by a four-to-one margin. Residents of Ohio, the birthplace of Prohibition, sent in 112,026 ballots for repeal and just 43,284 for keeping the ban on booze. Kansas was the only state to poll in favor of Prohibition. . . .",
+          "image_ref": "unit07-cle-prohibition-doc3-hoover-2016.png",
+          "image_alt": "Excerpt describing President Hoover’s enforcement of Prohibition (the “Five and Ten Law,” 1929).",
+          "citation": "Source: Charles Rappleye, Herbert Hoover in the White House, Simon & Schuster, 2016 (adapted)",
+          "provenance": "NYSED released exam, January 2026, Civic Literacy Essay, Document 3",
+          "transcribed": {
+            "on": "2026-09-18",
+            "by": "Sam (us11r-curriculum)",
+            "from": "the crop itself, read page by page — not from memory, not from the catalog",
+            "verbatim": true,
+            "image_still_the_document": false
+          }
+        },
+        {
+          "kind": "text",
+          "content": ". . . The Women’s Organization for National Prohibition Reform (WONPR) was founded in 1929 to show that not all women supported temperance. New York socialite Pauline Sabin led the charge after hearing Ella Boole, the Brooklyn-based leader of the Women’s Christian Temperance Union, declare that her support for Prohibition represented “the women of America.” On the heels of the successful suffrage campaign that won women the right to vote in 1920, the WONPR, and Sabin in particular, reflected the modern “new woman” of the 1920s. Many members of the WONPR had in fact initially supported the 18th amendment. But they had come to believe that Prohibition had led to a surge in unregulated and particularly underage drinking, as well as a growing sense of distrust for the rule of law. The WONPR’s opposition to Prohibition, just like the 18th amendment itself, was not only about drinking, but about the government’s role in regulating behavior.\n\nThe WONPR did a lot of what we think of now as typical political campaign activities: members attended meetings and gave speeches at rallies, went door-to-door to recruit new supporters, used new technology to spread their message—at the time radio, and lobbied politicians. Wealthy women had founded the organization, and proved able to raise funds even after the Stock Market Crash of 1929 ushered in the Great Depression. From its headquarters in New York City, the organization also gained publicity by organizing events such as a motorcade through New York State. . . .",
+          "image_ref": "unit07-cle-prohibition-doc4-wonpr-seidman.png",
+          "image_alt": "Excerpt on the Women’s Organization for National Prohibition Reform (WONPR) and Pauline Sabin’s opposition to Prohibition.",
+          "citation": "Source: Sarah Seidman, “The New York Women Who Dismantled Prohibition,” Museum of the City of New York, December 15, 2015",
+          "provenance": "NYSED released exam, January 2026, Civic Literacy Essay, Document 4",
+          "transcribed": {
+            "on": "2026-09-18",
+            "by": "Sam (us11r-curriculum)",
+            "from": "the crop itself, read page by page — not from memory, not from the catalog",
+            "verbatim": true,
+            "image_still_the_document": false
+          }
+        }
+      ],
+      "exemplar": "Efforts to enforce Prohibition revealed how divisive and ultimately self-defeating the policy had become. President Hoover pressed aggressive federal enforcement, signing the 1929 “Five and Ten Law” that made every liquor violation a felony and multiplying jailings, fines, and confiscations (Doc 3). Yet even as the government intensified enforcement, organized opposition grew: the Women’s Organization for National Prohibition Reform, led by Pauline Sabin, campaigned openly for repeal and drew hundreds of thousands of former supporters away from the “dry” cause (Doc 4). This matters because it shows the central contradiction of Prohibition — the harder the government worked to enforce a moral standard by force of law, the more it manufactured resistance and criminality instead of sobriety, which is exactly why the effort could not be sustained and set the stage for repeal.",
+      "compare_focus": "After you cite the two documents, write the sentence that explains WHY they prove your point (‘this matters because…’). Stopping at the evidence is the 2→3 gap.",
+      "compare_checklist": [
+        "Did I use two documents by name/detail, not just quote them?",
+        "Did I write an explicit Explanation sentence (‘this shows/this matters because…’)?",
+        "Did I tie the paragraph back to my thesis?"
+      ]
+    }
+  ],
+  "transcription_pass": {
+    "on": "2026-09-18",
+    "by": "Sam (us11r-curriculum)",
+    "why": "Josh's content gate, 2026-09-18: this rep carried an image with no transcription, so a student reaching it after the unlock would have seen nothing if the scan did not render. The prior `content` field held a one-line DESCRIPTION of the document, not the document.",
+    "documents_transcribed": 2,
+    "kind_rule": "kind is now accurate per document. text = the scan is a scan of prose and the transcription IS the document. image = the visual carries meaning the words cannot (the ratification map, the newspaper front page), so the loud 'source image' notice still belongs there.",
+    "source": "NYS Regents Examination in United States History and Government, January 2026, Part III B, Civic Literacy Essay"
+  }
+}

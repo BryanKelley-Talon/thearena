@@ -1,0 +1,160 @@
+{
+  "_course": "Global Studies and Geography 10R",
+  "_unit": "10.1 - The World in 1750",
+  "_built": "2026-09-18 by Will (global10r-curriculum)",
+  "_release_hold": "DO NOT PUBLISH BEFORE 2026-09-22. These four items are on the 10.1 exam, which students sit Monday 2026-09-21.",
+  "_licence": "ORIGINAL. The chart was written for this course from the NYSED framework's own language; the items are this desk's. No third-party text, no crop, no image_ref. Sellable, no ShareAlike.",
+  "_held_items": "Eleven more 10.1 items exist and are NOT in this file. Their passages are teach-only (NYSED released exams via New Visions; Fordham Sourcebook). Whether a free public Arena is 'commercial use' is BK's and CJ's ruling, not this desk's.",
+  "_option_keys": "Numbered 1-4, not lettered. The Regents numbers its choices and so does every paper this course prints.",
+  "intro": "The chart from Unit 1, Day 1. Four questions on it - the same move the exam asked for, with the reason showing this time.",
+  "items": [
+    {
+      "n": 1,
+      "skill_line": "Historical Context",
+      "grain": "1a situate in era and region",
+      "question": "Based on the chart, which state is correctly paired with its region in 1750?",
+      "stimulus": {
+        "kind": "text",
+        "content": "Selected states and empires, about 1750\n\nState or empire | Where it was | How much land it held about 1750 | Who governed it\nQing China | East Asia | Very large - most of eastern Asia | Emperor, working through a bureaucracy of trained officials\nMughal Empire | South Asia | Once very large; breaking apart into smaller states by 1750 | Emperor's authority weakening; regional rulers taking power\nOttoman Empire | Southwest Asia, southeastern Europe, and North Africa | Large - reaching across three continents; shrinking at the edges | Sultan; central control weakening\nTokugawa Japan | East Asia | Small - a group of islands | Shogun; tight control over the lords and over travel\nBourbon France | Western Europe | Small next to the great land empires | King; nobles required to attend the royal court\nRussian Empire | Northern Europe and northern Asia | Very large and still expanding eastward | Tsar\nBenin, Ashanti, Dahomey | West Africa | Small to medium states | Kings; wealth drawn from trade",
+        "citation": "Chart written for this course from the NYS Grades 9-12 Social Studies Framework, Key Idea 10.1b. Original - no third-party licence."
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "Ottoman Empire - East Asia"
+        },
+        {
+          "key": "2",
+          "text": "Ashanti - South Asia"
+        },
+        {
+          "key": "3",
+          "text": "Tokugawa Japan - East Asia"
+        },
+        {
+          "key": "4",
+          "text": "Mughal Empire - Western Europe"
+        }
+      ],
+      "correct": "3",
+      "reasoning": "This is skill 1a - situate a source in its era and its region - read straight off the chart, and off the map you built on Day 1. The Tokugawa Japan row says East Asia.",
+      "evidence_line": "Tokugawa Japan | East Asia | Small - a group of islands",
+      "distractors": {
+        "1": "The Ottomans were large, so this pairs them with the largest region on the chart. The row actually says Southwest Asia, southeastern Europe and North Africa - not East Asia.",
+        "2": "Ashanti is on the chart, and so is South Asia, but not in the same row. The chart places Benin, Ashanti and Dahomey in West Africa.",
+        "4": "This picks an empire you remember and a region you remember without checking they came from the same row. The chart places the Mughal Empire in South Asia."
+      }
+    },
+    {
+      "n": 2,
+      "skill_line": "Historical Context",
+      "grain": "1a situate in era and region",
+      "question": "According to the chart, which empire held territory on three continents in 1750?",
+      "stimulus": {
+        "kind": "text",
+        "content": "Selected states and empires, about 1750\n\nState or empire | Where it was | How much land it held about 1750 | Who governed it\nQing China | East Asia | Very large - most of eastern Asia | Emperor, working through a bureaucracy of trained officials\nMughal Empire | South Asia | Once very large; breaking apart into smaller states by 1750 | Emperor's authority weakening; regional rulers taking power\nOttoman Empire | Southwest Asia, southeastern Europe, and North Africa | Large - reaching across three continents; shrinking at the edges | Sultan; central control weakening\nTokugawa Japan | East Asia | Small - a group of islands | Shogun; tight control over the lords and over travel\nBourbon France | Western Europe | Small next to the great land empires | King; nobles required to attend the royal court\nRussian Empire | Northern Europe and northern Asia | Very large and still expanding eastward | Tsar\nBenin, Ashanti, Dahomey | West Africa | Small to medium states | Kings; wealth drawn from trade",
+        "citation": "Chart written for this course from the NYS Grades 9-12 Social Studies Framework, Key Idea 10.1b. Original - no third-party licence."
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "Ottoman Empire"
+        },
+        {
+          "key": "2",
+          "text": "Tokugawa Japan"
+        },
+        {
+          "key": "3",
+          "text": "Kingdom of Benin"
+        },
+        {
+          "key": "4",
+          "text": "Bourbon France"
+        }
+      ],
+      "correct": "1",
+      "reasoning": "The Ottoman row is the only one on the chart naming three continents. This is the fact the Day 1 map task exists to produce.",
+      "evidence_line": "Ottoman Empire | Southwest Asia, southeastern Europe, and North Africa | Large - reaching across three continents",
+      "distractors": {
+        "2": "The chart calls Tokugawa Japan small - a group of islands. One region, not three continents.",
+        "3": "North Africa appears in the correct answer, which pulls students toward the African state on the chart. Benin's row says West Africa - one continent.",
+        "4": "Assumes a European power must be the widest-reaching. The chart says Bourbon France was small next to the great land empires."
+      }
+    },
+    {
+      "n": 3,
+      "skill_line": "Enduring Issue",
+      "grain": "6a match the umbrella",
+      "question": "Which statement about the world in 1750 is best supported by the chart?",
+      "stimulus": {
+        "kind": "text",
+        "content": "Selected states and empires, about 1750\n\nState or empire | Where it was | How much land it held about 1750 | Who governed it\nQing China | East Asia | Very large - most of eastern Asia | Emperor, working through a bureaucracy of trained officials\nMughal Empire | South Asia | Once very large; breaking apart into smaller states by 1750 | Emperor's authority weakening; regional rulers taking power\nOttoman Empire | Southwest Asia, southeastern Europe, and North Africa | Large - reaching across three continents; shrinking at the edges | Sultan; central control weakening\nTokugawa Japan | East Asia | Small - a group of islands | Shogun; tight control over the lords and over travel\nBourbon France | Western Europe | Small next to the great land empires | King; nobles required to attend the royal court\nRussian Empire | Northern Europe and northern Asia | Very large and still expanding eastward | Tsar\nBenin, Ashanti, Dahomey | West Africa | Small to medium states | Kings; wealth drawn from trade",
+        "citation": "Chart written for this course from the NYS Grades 9-12 Social Studies Framework, Key Idea 10.1b. Original - no third-party licence."
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "European states controlled the largest land empires in the world."
+        },
+        {
+          "key": "2",
+          "text": "African states were the largest political units in the world."
+        },
+        {
+          "key": "3",
+          "text": "Most of the world's largest land empires were in Asia."
+        },
+        {
+          "key": "4",
+          "text": "Japan controlled more territory than China."
+        }
+      ],
+      "correct": "3",
+      "reasoning": "Skill 6a - match the umbrella claim. Read the size column down the chart: Qing China very large, the Mughal Empire once very large, the Ottomans large across three continents, Russia very large. That is the answer to the unit's driving question.",
+      "evidence_line": "Qing China | East Asia | Very large - most of eastern Asia",
+      "distractors": {
+        "1": "This is the assumption most tenth graders arrive with, which is exactly why the question is asked. The chart says Bourbon France was small next to the great land empires.",
+        "2": "The chart calls Benin, Ashanti and Dahomey small to medium states.",
+        "4": "Reverses two rows. Qing China is very large; Tokugawa Japan is small - a group of islands."
+      }
+    },
+    {
+      "n": 4,
+      "skill_line": "Enduring Issue",
+      "grain": "6a match the umbrella",
+      "question": "The chart shows the Mughal Empire covering a very large area while Tokugawa Japan covered a small one. Which conclusion is best supported?",
+      "stimulus": {
+        "kind": "text",
+        "content": "Selected states and empires, about 1750\n\nState or empire | Where it was | How much land it held about 1750 | Who governed it\nQing China | East Asia | Very large - most of eastern Asia | Emperor, working through a bureaucracy of trained officials\nMughal Empire | South Asia | Once very large; breaking apart into smaller states by 1750 | Emperor's authority weakening; regional rulers taking power\nOttoman Empire | Southwest Asia, southeastern Europe, and North Africa | Large - reaching across three continents; shrinking at the edges | Sultan; central control weakening\nTokugawa Japan | East Asia | Small - a group of islands | Shogun; tight control over the lords and over travel\nBourbon France | Western Europe | Small next to the great land empires | King; nobles required to attend the royal court\nRussian Empire | Northern Europe and northern Asia | Very large and still expanding eastward | Tsar\nBenin, Ashanti, Dahomey | West Africa | Small to medium states | Kings; wealth drawn from trade",
+        "citation": "Chart written for this course from the NYS Grades 9-12 Social Studies Framework, Key Idea 10.1b. Original - no third-party licence."
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "Only European states had strong central governments."
+        },
+        {
+          "key": "2",
+          "text": "A state's size did not always match how firmly its government controlled it."
+        },
+        {
+          "key": "3",
+          "text": "The largest states were always the most firmly governed."
+        },
+        {
+          "key": "4",
+          "text": "Small states were unable to govern themselves."
+        }
+      ],
+      "correct": "2",
+      "reasoning": "The chart gives you both halves. The Mughal row pairs a very large area with authority weakening; the Tokugawa row pairs a small one with tight control. Size and control are two different columns, and they do not move together.",
+      "evidence_line": "Mughal Empire | Once very large; breaking apart into smaller states by 1750 | Emperor's authority weakening",
+      "distractors": {
+        "1": "The chart gives Qing China a bureaucracy of trained officials and Tokugawa Japan tight control over the lords and over travel. Neither is European.",
+        "3": "This is the conclusion the Mughal row exists to contradict - very large, and authority weakening in the same row.",
+        "4": "The Tokugawa row is the counter-example: small, and tight control over the lords and over travel."
+      }
+    }
+  ]
+}
