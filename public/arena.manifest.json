@@ -114,7 +114,8 @@
               "type": "matching",
               "label": "Eight states, eight regions",
               "published": true,
-              "content_ref": "gs10r/unit-10.1/packet#p3-states"
+              "content_ref": "content/matching-gs10r-10-1.json",
+              "_note": "content_ref pointed at real content 2026-09-19 (Josh) — Will delivered matching-gs10r-10-1.json same morning, in the schema Josh's build needs. Region count is 5, not 8, on purpose: Qing China/Tokugawa Japan share East Asia, Benin/Ashanti/Dahomey share West Africa — documented in the file's own _region_note. Original content, no licence question."
             },
             {
               "type": "board",

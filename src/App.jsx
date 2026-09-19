@@ -1232,12 +1232,15 @@ function MatchingSet({ pack, accent }) {
   const [defenseText, setDefenseText] = useState('')
   const [defenseRevealed, setDefenseRevealed] = useState(false)
 
-  const pairedRightKeys = new Set(Object.values(pairs))
+  // A right key is NOT consumed on pairing — the desk's own spec (Josh, 09-19)
+  // says counts don't have to be 1:1, and Will's first real pack uses that on
+  // purpose (Qing China and Tokugawa Japan both correctly pair to East Asia).
+  // Locking a right tile after one use would make half his content unpairable.
   const allPaired = left.length > 0 && left.every(l => pairs[l.key])
 
   const pickLeft = key => { if (!checked) setSelectedLeft(cur => cur === key ? null : key) }
   const pickRight = key => {
-    if (checked || pairedRightKeys.has(key) || !selectedLeft) return
+    if (checked || !selectedLeft) return
     setPairs(p => ({ ...p, [selectedLeft]: key }))
     setSelectedLeft(null)
   }
@@ -1280,14 +1283,17 @@ function MatchingSet({ pack, accent }) {
         </div>
         <div className="match-col">
           {rightShuffled.map(r => {
-            const taken = pairedRightKeys.has(r.key)
-            let cls = 'mc-choice'
-            if (taken) cls += ' paired'
+            // usedCount is display only — a right tile stays clickable no matter
+            // how many left items already point to it.
+            const usedCount = Object.values(pairs).filter(v => v === r.key).length
+            // No .paired dimming here — unlike a left tile, a right tile is never
+            // "used up." Dimming it would read as disabled when it's still a live target.
             return (
               <button key={r.key} type="button" className={cls}
-                      disabled={checked || taken || !selectedLeft}
+                      disabled={checked || !selectedLeft}
                       onClick={() => pickRight(r.key)}>
                 <span>{r.label}</span>
+                {usedCount > 1 && !checked && <span className="match-tag">{usedCount} paired here</span>}
               </button>
             )
           })}
