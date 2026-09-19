@@ -592,6 +592,15 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
 .counter b{color:var(--gold);font-size:16px;font-family:'Barlow Condensed',sans-serif;
   margin-right:3px}
 
+/* ---------- MATCHING ---------- */
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin-bottom:22px}
+.match-col{display:flex;flex-direction:column;gap:8px}
+.mc-choice.selected{border-color:var(--gold);background:var(--card-lit);
+  box-shadow:inset 0 0 0 1px var(--gold)}
+.mc-choice.paired{opacity:.55;cursor:default}
+.match-tag{font-size:12px;color:var(--gold);font-family:'Barlow Condensed',sans-serif;
+  text-transform:uppercase;letter-spacing:.08em}
+
 /* ---------- INTERIOR BACKDROP ----------
    The gym the front door opens into (BK, 2026-09-19). Fixed so it reads as a
    room you're standing in rather than a scrolling image; dimmed enough that
@@ -620,6 +629,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
   .wrap{padding:20px 16px 56px}
   .doors{grid-template-columns:1fr}
   .grid{grid-template-columns:1fr}
+  .match-cols{grid-template-columns:1fr}
 }
 `
 
@@ -991,9 +1001,10 @@ function UnitRoom({ course, unit, games, packs, onOpenActivity, onBack }) {
                   </a>
                 )
               }
-              // stimulus is the one mechanic built in v2. Everything else is a
-              // card that says so rather than a card that pretends.
-              const playable = a.type === 'stimulus'
+              // stimulus was the one mechanic built in v2. matching joined it
+              // 2026-09-19 (Josh, BK priority: Arena usable before Nation Builder).
+              // Everything else still gets a card that says so rather than one that pretends.
+              const playable = a.type === 'stimulus' || a.type === 'matching'
               return (
                 <button key={i} type="button" className={`card${playable ? '' : ' off'}`}
                         disabled={!playable} tabIndex={playable ? 0 : -1}
@@ -1178,6 +1189,183 @@ function ItemSet({ pack, course, heading }) {
   )
 }
 
+// ============================================================
+// MATCHING — pair them up, then defend one pairing.
+// Second mechanic built (first was stimulus, v2). Same laws: nothing scored,
+// nothing saved, nothing sent anywhere. Click-to-select then click-to-pair —
+// never drag-and-drop, because a kid on a trackpad or a keyboard-only reader
+// gets the same activity a kid with a mouse gets (accessibility floor).
+//
+// content_ref pack shape, for the authoring desk cutting one:
+//   {
+//     "intro": "optional override of the stock instruction line",
+//     "left":  [{ "key": "a", "label": "..." }, ...],
+//     "right": [{ "key": "1", "label": "..." }, ...],   // right column is shuffled on render
+//     "correct":   { "a": "1", "b": "3", ... },          // leftKey -> rightKey
+//     "rationale": { "a": "why this pair, shown after the student defends it" }
+//   }
+// Counts don't have to match 1:1, but the "pair them all" gate requires every
+// LEFT item paired before checking — a right item can be left unused.
+// ============================================================
+function shuffle(arr) {
+  // Per-mount only — there is no saved state to keep consistent across a
+  // reload, and the point is making pairing a real choice, not left-to-right reading.
+  const a = (arr || []).slice()
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[a[i], a[j]] = [a[j], a[i]]
+  }
+  return a
+}
+
+function MatchingSet({ pack, accent }) {
+  const left = pack.left || []
+  const right = pack.right || []
+  const rightShuffled = useMemo(() => shuffle(right), [pack])
+  const correct = pack.correct || {}
+  const rationale = pack.rationale || {}
+
+  const [selectedLeft, setSelectedLeft] = useState(null)
+  const [pairs, setPairs] = useState({})   // leftKey -> rightKey
+  const [checked, setChecked] = useState(false)
+  const [defendKey, setDefendKey] = useState(null)
+  const [defenseText, setDefenseText] = useState('')
+  const [defenseRevealed, setDefenseRevealed] = useState(false)
+
+  const pairedRightKeys = new Set(Object.values(pairs))
+  const allPaired = left.length > 0 && left.every(l => pairs[l.key])
+
+  const pickLeft = key => { if (!checked) setSelectedLeft(cur => cur === key ? null : key) }
+  const pickRight = key => {
+    if (checked || pairedRightKeys.has(key) || !selectedLeft) return
+    setPairs(p => ({ ...p, [selectedLeft]: key }))
+    setSelectedLeft(null)
+  }
+  const unpair = leftKey => {
+    if (checked) return
+    setPairs(p => { const n = { ...p }; delete n[leftKey]; return n })
+  }
+  const rightLabel = key => (right.find(r => r.key === key) || {}).label || key
+
+  const MIN = 20
+  const defenseReady = defenseText.trim().length >= MIN
+
+  return (
+    <div className="matching">
+      <p className="mc-preamble">
+        {pack.intro || 'Pick one on the left, then its match on the right. Nothing here is scored or saved — pair your best guess, then check.'}
+      </p>
+
+      <div className="match-cols">
+        <div className="match-col">
+          {left.map(l => {
+            const isPaired = !!pairs[l.key]
+            let cls = 'mc-choice'
+            if (selectedLeft === l.key) cls += ' selected'
+            if (checked) cls += (correct[l.key] === pairs[l.key]) ? ' correct' : ' incorrect'
+            else if (isPaired) cls += ' paired'
+            return (
+              <button key={l.key} type="button" className={cls} disabled={checked}
+                      onClick={() => isPaired ? unpair(l.key) : pickLeft(l.key)}>
+                <span style={{ display: 'flex', flexDirection: 'column', gap: 4, flex: 1 }}>
+                  <span>{l.label}</span>
+                  {isPaired && !checked && <span className="match-tag">Paired &mdash; tap to redo</span>}
+                </span>
+                {checked && (correct[l.key] === pairs[l.key]
+                  ? <em className="mc-mark">Correct</em>
+                  : <em className="mc-mark">Not this one</em>)}
+              </button>
+            )
+          })}
+        </div>
+        <div className="match-col">
+          {rightShuffled.map(r => {
+            const taken = pairedRightKeys.has(r.key)
+            let cls = 'mc-choice'
+            if (taken) cls += ' paired'
+            return (
+              <button key={r.key} type="button" className={cls}
+                      disabled={checked || taken || !selectedLeft}
+                      onClick={() => pickRight(r.key)}>
+                <span>{r.label}</span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+
+      {!checked ? (
+        <>
+          <button className="rep-go" disabled={!allPaired}
+                  onClick={() => setChecked(true)}>
+            {allPaired ? 'Check my pairs'
+                       : `Pair them all first — ${left.length - Object.keys(pairs).length} to go`}
+          </button>
+          {/* The gate is the mechanic, not friction — same law as the stimulus rep. */}
+          <p className="rep-why">Every one gets paired before any of them gets checked —
+             no picking off the easy ones first.</p>
+        </>
+      ) : (
+        <div className="rep-reveal">
+          <h4>Now defend one</h4>
+          <p className="mc-preamble">Pick one of your pairs — right or wrong — and say why it
+             goes together. A wrong pair is fair game; explaining why you picked it teaches
+             as much as explaining a right one.</p>
+          <div className="mc-choices">
+            {left.filter(l => pairs[l.key]).map(l => (
+              <button key={l.key} type="button"
+                      className={`mc-choice${defendKey === l.key ? ' selected' : ''}`}
+                      onClick={() => { setDefendKey(l.key); setDefenseRevealed(false); setDefenseText('') }}>
+                <b>{l.label}</b> <span>&rarr; {rightLabel(pairs[l.key])}</span>
+              </button>
+            ))}
+          </div>
+
+          {defendKey && (
+            <>
+              <label className="rep-label" htmlFor="match-defense">Your defense</label>
+              <textarea id="match-defense" className="rep-box" rows={4} value={defenseText}
+                onChange={e => setDefenseText(e.target.value)}
+                placeholder="Why does this pair go together? Nothing here is saved or scored." />
+              {!defenseRevealed ? (
+                <button className="rep-go" disabled={!defenseReady}
+                        onClick={() => setDefenseRevealed(true)}>
+                  {defenseReady ? 'Show me the reasoning'
+                                : `Write a bit more first — ${Math.max(0, MIN - defenseText.trim().length)} characters to go`}
+                </button>
+              ) : (
+                <div className="rep-reveal">
+                  <h4>The reasoning</h4>
+                  <p className="rep-exemplar">
+                    {rationale[defendKey] || 'No rationale written for this pair yet.'}
+                  </p>
+                </div>
+              )}
+            </>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}
+
+function MatchingActivity({ course, activity, pack, onBack }) {
+  return (
+    <div className="wrap">
+      <ScreenHeader label={activity.label} onBack={onBack} color={course.accent} back="Back" />
+      <div className="detail" style={{ maxWidth: 760 }}>
+        {!pack || !(pack.left || []).length
+          ? <div className="empty" style={{ textAlign: 'left' }}>
+              <div className="empty-title">This set has no pairs yet</div>
+              <p>The mechanic is built. Its pairs arrive by reference from the desk that
+                 owns this course, as a matching pack named in <code>content_ref</code>.</p>
+            </div>
+          : <MatchingSet pack={pack} accent={course.accent} />}
+      </div>
+    </div>
+  )
+}
+
 function StimulusActivity({ course, activity, pack, onBack }) {
   const items = (pack && pack.items) || []
   return (
@@ -1264,8 +1452,10 @@ export default function App() {
                                             onBack={() => { setStationSlug(null); setDrillIndex(null) }} />
   else if (unit && actIndex != null) {
     const act = (unit.activities || []).filter(isLive)[actIndex]
-    screen = <StimulusActivity course={course} activity={act} pack={pack}
-                               onBack={() => { setActIndex(null); setPack(null) }} />
+    const onActivityBack = () => { setActIndex(null); setPack(null) }
+    screen = act?.type === 'matching'
+      ? <MatchingActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
+      : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
   else if (unit) screen = <UnitRoom course={course} unit={unit} games={games}
                                     onOpenActivity={i => {
