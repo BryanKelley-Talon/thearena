@@ -36,7 +36,7 @@
           "tier": null,
           "published": true,
           "blurb": "Setting the scene in time and place",
-          "content_ref": null,
+          "content_ref": "content/station-gs10r-historical-context.json",
           "skill_lines": [
             "HC"
           ],
@@ -60,7 +60,7 @@
           "tier": null,
           "published": true,
           "blurb": "Evidence taken from the document set and put to work",
-          "content_ref": null,
+          "content_ref": "content/station-gs10r-document-use.json",
           "skill_lines": [
             "DU"
           ],
@@ -96,7 +96,7 @@
           "tier": null,
           "published": true,
           "blurb": "Naming and defining one enduring issue",
-          "content_ref": null,
+          "content_ref": "content/station-10-enduring-issues.json",
           "skill_lines": [
             "EI"
           ],

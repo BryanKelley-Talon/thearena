@@ -66,6 +66,20 @@ function parsePipeTable(text) {
   return { caption, head: rows[0], body: rows.slice(1) }
 }
 
+// Will's GS10R station reps (2026-09-21) write a table as
+// `content: { title, columns, rows }` — an OBJECT in the field every other
+// stimulus uses for text. The station renderer put it straight into a <p>, and
+// React crashed the whole Arena to a blank screen on Enduring Issue. Read that
+// shape too, alongside the two the unit rooms already accepted.
+function tableOf(doc) {
+  const c = doc?.content
+  if (c && typeof c === 'object' && Array.isArray(c.rows))
+    return { caption: c.title, head: c.columns || [], body: c.rows }
+  if (doc?.kind === 'table' && doc.rows)
+    return { caption: doc.caption, head: doc.rows[0], body: doc.rows.slice(1) }
+  return null
+}
+
 function DataTable({ table, caption }) {
   if (!table) return null
   return (
@@ -210,7 +224,8 @@ function StimulusDoc({ doc, accent, i }) {
   // source. The 29 crops sit in _content-quarantine/ until each clears its gates
   // individually; this is what a student sees until then.
   const [broken, setBroken] = useState(false)
-  const hasText = !!doc.content
+  const table = tableOf(doc)
+  const hasText = !table && typeof doc.content === 'string' && !!doc.content
   return (
     <figure className="stimulus" style={{ borderColor: `${accent}44` }}>
       <div className="doc-tag">Document {i + 1}</div>
@@ -229,6 +244,7 @@ function StimulusDoc({ doc, accent, i }) {
             {doc.image_alt && <span>{doc.image_alt}</span>}
             <span>Nothing to read here yet is the honest answer.</span>
           </div>)}
+      {table && <DataTable table={table} />}
       {hasText && (
         <details className="stimulus-text" open>
           <summary>The document</summary>
@@ -255,7 +271,8 @@ function Rep({ rep, station, course, attemptsAllowed }) {
       {rep.exam_meta && (
         <div className="rep-meta">
           {[rep.exam_meta.exam, rep.exam_meta.administration, rep.exam_meta.part,
-            rep.exam_meta.question_ref && `Q${rep.exam_meta.question_ref}`]
+            rep.exam_meta.question_ref &&
+              (/^\d+$/.test(rep.exam_meta.question_ref) ? `Q${rep.exam_meta.question_ref}` : rep.exam_meta.question_ref)]
             .filter(Boolean).join('  ·  ')}
         </div>
       )}
@@ -558,6 +575,13 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
   font-family:Georgia,'Times New Roman',serif}
 .stimulus figcaption{color:#6b5324;font-size:13px;font-style:italic;margin-top:12px;
   border-top:1px solid rgba(60,44,18,.22);padding-top:10px}
+/* A chart on paper takes the paper's ink — the navy-panel greys above wash out
+   on cream (first seen on Enduring Issue rep 2, 2026-09-21). */
+.stimulus .tbl-cap{color:#7a5a15}
+.stimulus .tbl th,.stimulus .tbl td{border-color:rgba(60,44,18,.3)}
+.stimulus .tbl thead th{background:rgba(60,44,18,.12);color:#5a4210}
+.stimulus .tbl tbody th{background:rgba(60,44,18,.07);color:#2c2110}
+.stimulus .tbl tbody td{color:#2c2110}
 .stimulus .doc-scan-note{color:#6b5324;opacity:1}
 .stimulus .doc-held{background:rgba(255,255,255,.4);border-color:rgba(60,44,18,.3)}
 .stimulus .doc-held b{color:#7a5a15}
@@ -1040,9 +1064,7 @@ function EmptyLane({ what }) {
 // ============================================================
 function StimulusFigure({ doc, accent }) {
   if (!doc) return null
-  const table = doc.kind === 'table'
-    ? (doc.rows ? { caption: doc.caption, head: doc.rows[0], body: doc.rows.slice(1) } : parsePipeTable(doc.content))
-    : parsePipeTable(doc.content)
+  const table = tableOf(doc) || parsePipeTable(doc.content)
   return (
     <figure className="stimulus" style={{ borderColor: `${accent}44` }}>
       {doc.image_ref && (
