@@ -1,0 +1,34 @@
+{
+  "_course": "US History & Government 11R",
+  "_unit": "Year-round — Tier A course skill language",
+  "_activity": "Vocab Match — The Six Graded Skills",
+  "_built": "2026-09-21 by Sam (us11r-curriculum)",
+  "_licence": "ORIGINAL. Exact wording copied from US11R_Glossary_v2_2026-09-02, Tier A, so it reads the same everywhere it appears. No new content.",
+  "reusable": true,
+  "intro": "Match each skill line to what it actually asks you to do.",
+  "left": [
+    { "key": "a", "label": "HC — Historical Context" },
+    { "key": "b", "label": "TH — Thesis" },
+    { "key": "c", "label": "DU — Document Use" },
+    { "key": "d", "label": "EX — Explanation" },
+    { "key": "e", "label": "OE — Outside Evidence" },
+    { "key": "f", "label": "CP — Civic Principle" }
+  ],
+  "right": [
+    { "key": "1", "label": "Warm up the document — set the scene before you argue" },
+    { "key": "2", "label": "Take a clear position and hold it" },
+    { "key": "3", "label": "Name it. Pull a specific detail. Use it as evidence" },
+    { "key": "4", "label": "The \"so what.\" Say why each piece of evidence matters" },
+    { "key": "5", "label": "Bring in something from your own knowledge, not in the documents" },
+    { "key": "6", "label": "Name it out loud — don't imply it" }
+  ],
+  "correct": { "a": "1", "b": "2", "c": "3", "d": "4", "e": "5", "f": "6" },
+  "rationale": {
+    "a": "Historical Context sets the scene — the circumstances around the document — before you make an argument.",
+    "b": "Thesis is a clear, held position, not just a topic.",
+    "c": "Document Use means naming a specific detail from a document and using it as evidence, not just gesturing at the source.",
+    "d": "Explanation is the \"so what\" — why the evidence matters, not just that it exists.",
+    "e": "Outside Evidence is knowledge from beyond the documents themselves — what the exam calls \"outside information.\"",
+    "f": "Civic Principle has to be named out loud (\"federalism,\" \"equal protection\") — implying it isn't enough."
+  }
+}

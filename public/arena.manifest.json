@@ -540,6 +540,48 @@
               "published": true,
               "content_ref": "content/stimulus-11-1.json",
               "_note": "Flipped live by Josh 2026-09-19 — content/stimulus-11-1.json confirmed present in public/content/ (Sam released it 2026-09-18, _content-hold/RELEASED-2026-09-18-stimulus-11-1.json). The 09-18 note calling content_ref 'a promise, not a file' predates the release; the file is real now. Container-only flip, no content touched — Sam's stimulus-11-1.json body is untouched."
+            },
+            {
+              "type": "matching",
+              "label": "Match it: Contextualization",
+              "published": true,
+              "content_ref": "content/matching-us11r-11.1-foundation-01-contextualization.json",
+              "_note": "Josh, 2026-09-21 — Sam's Foundation-tier redesign pass, BK-ruled ('love it'). Reshape of the existing blessed exemplar, no new sourcing. See In/pass-sam-2026-09-21-foundation-tier-matching-content.md."
+            },
+            {
+              "type": "matching",
+              "label": "Match it: Causation",
+              "published": true,
+              "content_ref": "content/matching-us11r-11.1-foundation-02-causation.json",
+              "_note": "Josh, 2026-09-21 — Sam's Foundation-tier redesign pass, BK-ruled. Built on Casefile B Docs 6/13/14 and Bacon's Rebellion, 1676."
+            },
+            {
+              "type": "matching",
+              "label": "Match it: Continuity & Change",
+              "published": true,
+              "content_ref": "content/matching-us11r-11.1-foundation-03-continuity-change.json",
+              "_note": "Josh, 2026-09-21 — Sam's Foundation-tier redesign pass, BK-ruled. Docs 17-18 self-government continuity thread."
+            },
+            {
+              "type": "matching",
+              "label": "Match it: Turning Points",
+              "published": true,
+              "content_ref": "content/matching-us11r-11.1-foundation-04-turning-points.json",
+              "_note": "Josh, 2026-09-21 — Sam's Foundation-tier redesign pass, BK-ruled. Bacon's Rebellion + Document 16, Join or Die 1754."
+            },
+            {
+              "type": "matching",
+              "label": "Vocab: The Six Graded Skills",
+              "published": true,
+              "content_ref": "content/matching-us11r-vocab-six-skills.json",
+              "_note": "Josh, 2026-09-21 — Sam's pass. Reusable year-round, not unit-bound; wired here because unit-1 is where students meet it first. Exact wording from US11R_Glossary_v2_2026-09-02."
+            },
+            {
+              "type": "matching",
+              "label": "Vocab: Civic Principles (so far)",
+              "published": true,
+              "content_ref": "content/matching-us11r-11.1-vocab-civic-principles.json",
+              "_note": "Josh, 2026-09-21 — Sam's pass. Only the four principles Unit 1 has actually named by Day 10 (Rule of Law, Consent of the Governed, Representative Government, Sovereignty) — not the full Tier B list."
             }
           ]
         }

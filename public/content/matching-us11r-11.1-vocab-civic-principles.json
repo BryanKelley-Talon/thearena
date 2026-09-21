@@ -1,0 +1,28 @@
+{
+  "_course": "US History & Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "Vocab Match — Civic Principles Named So Far",
+  "_built": "2026-09-21 by Sam (us11r-curriculum)",
+  "_licence": "Definitions for Rule of Law, Consent of the Governed, and Representative Government copied verbatim from US11R_Glossary_v2_2026-09-02, Tier B. \"Sovereignty (self-government)\" definition is Sam's own, matching how Day 4 (Document 5, Identification) taught the term — no glossary entry exists for it under that exact framing.",
+  "scope_note": "Limited on purpose to the four principles Unit 1 has actually named out loud by Day 10 (Rule of Law via Magna Carta/Station 1, Consent of the Governed as a Day 5 Reps term, Representative Government via Document 17, and Sovereignty via Document 5's Identification debut) — not the full 14-principle Tier B list, most of which the course hasn't reached yet.",
+  "intro": "Match each principle to its definition.",
+  "left": [
+    { "key": "a", "label": "Rule of Law" },
+    { "key": "b", "label": "Consent of the Governed" },
+    { "key": "c", "label": "Representative Government" },
+    { "key": "d", "label": "Sovereignty (self-government)" }
+  ],
+  "right": [
+    { "key": "1", "label": "No one is above the law; leaders and citizens alike are bound by it" },
+    { "key": "2", "label": "A government is just only with the agreement of the people it governs" },
+    { "key": "3", "label": "Citizens elect officials to make decisions on their behalf" },
+    { "key": "4", "label": "A people's right to govern themselves, free of outside control" }
+  ],
+  "correct": { "a": "1", "b": "2", "c": "3", "d": "4" },
+  "rationale": {
+    "a": "Rule of Law — even a king is bound by it; Magna Carta is the unit's own example (Station 1).",
+    "b": "Consent of the Governed — a Day 5 Reps term, pointed at directly before Document 6.",
+    "c": "Representative Government — the principle Document 17 #4 names by name on Day 10.",
+    "d": "Sovereignty — the Identification debut on Document 5, Day 4; accept self-government as the working definition taught in class."
+  }
+}
