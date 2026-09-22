@@ -4,7 +4,8 @@
     "guide is null on BOTH doors. BK is the guide on both (ruling C, 2026-09-10); TR is retired from the Arena entirely (ruling 8). Sam's 09-02 manifest predates those rulings and still carried TR — passed through as null rather than kept. The slot stays a data slot; BK is never hardcoded into the shell.",
     "US11R door status is 'building': all eight of Sam's stations are published:false and his unit-1 label is still a TODO. Flip to 'open' in this file the day he publishes. No code change.",
     "tier is carried on Sam's stations exactly as he wrote it and is NOT rendered — ruling 4, 2026-09-10 dropped the band. The key stays in the contract.",
-    "splash.intro and both door blurbs are BK's words and are not invented here. They render as a visible placeholder until he supplies them."
+    "splash.intro and both door blurbs are BK's words and are not invented here. They render as a visible placeholder until he supplies them.",
+    "skills_review[] added 2026-09-22 as a FOURTH lane on both doors, peer to stations/units/regents — a schema amendment to SPEC-arena-ia-and-manifest.md (signed 2026-09-10), on BK's ruling captured in Out/ruling-capture-2026-09-22-arena-skills-review-lane.md. The lane is a LIST from day one because BK is designing for several game 'skins' over the same content pipeline; Skills Review Bowl is the first item in it, not the lane itself. Entries are scenario_link-shaped (a pointer out to a separately built game, nothing absorbed into the shell) and carry published + status on the same rules as every other lane. Review Bowl ships status:'building' — real, deployed and dark — until BK flips that one field."
   ],
   "splash": {
     "epigraph": {
@@ -142,6 +143,18 @@
         }
       ],
       "regents": [],
+      "skills_review": [
+        {
+          "slug": "review-bowl",
+          "type": "scenario_link",
+          "label": "Skills Review Bowl",
+          "blurb": "Season-long football. What you know builds the team.",
+          "url": "https://reviewbowl.flashpointhistory.com",
+          "published": true,
+          "status": "building",
+          "_note": "Its own separately built game (builds/review-bowl), pointed at by URL — nothing absorbed into this shell. DARK to students by status:'building' (spec §3 — darkened, one short word, out of the tab order, never colour alone). published:true means 'this is real and may be named'; status is what keeps it unenterable. Going live is ONE edit — status to 'open' — and nothing else: no redeploy of the game, no second wiring pass. BK's action alone, on his timeline (Josh order 2026-09-22). Same URL on both doors: one game, the course is chosen inside it. NOTE 2026-09-22: the subdomain below is the agreed address but is NOT serving yet — the deploy needs BK's hand (see Out/handoff-code-2026-09-22-skills-review-bowl-arena-integration.md). The tile is dark, so nothing follows this URL until both that deploy and BK's flip have happened."
+        }
+      ],
       "_label_note": "RULED 2026-09-18 by BK: 'Technically its Global Studies and Geography 10R.' Settles the three-way variant. Was 'Global History & Geography II'. Will reissued the fragment with exactly this one value changed; everything else byte-identical.",
       "skill_lines": {
         "_README": "The course's graded skill lines, in the words the student reads on the scoring page. THIS IS THE CROSSWALK: a student sees a line on their grade, and every station and item that drills it declares the same CODE. Five lines are shared across both courses; the sixth is the course's own essay line and the two are NOT interchangeable.",
@@ -594,6 +607,18 @@
           "status": "building",
           "content_ref": "content/station-12-comeback.json",
           "_note": "Moved out of stations[] into the regents lane on BK's blessing 2026-09-18 — it is recovery-shaped, not one of the moves. The package on Sam's desk currently holds zero reps. Lane ships darkened and labeled under construction per the 2026-09-10 ruling; darkened is honest in September."
+        }
+      ],
+      "skills_review": [
+        {
+          "slug": "review-bowl",
+          "type": "scenario_link",
+          "label": "Skills Review Bowl",
+          "blurb": "Season-long football. What you know builds the team.",
+          "url": "https://reviewbowl.flashpointhistory.com",
+          "published": true,
+          "status": "building",
+          "_note": "Its own separately built game (builds/review-bowl), pointed at by URL — nothing absorbed into this shell. DARK to students by status:'building' (spec §3 — darkened, one short word, out of the tab order, never colour alone). published:true means 'this is real and may be named'; status is what keeps it unenterable. Going live is ONE edit — status to 'open' — and nothing else: no redeploy of the game, no second wiring pass. BK's action alone, on his timeline (Josh order 2026-09-22). Same URL on both doors: one game, the course is chosen inside it. NOTE 2026-09-22: the subdomain below is the agreed address but is NOT serving yet — the deploy needs BK's hand (see Out/handoff-code-2026-09-22-skills-review-bowl-arena-integration.md). The tile is dark, so nothing follows this URL until both that deploy and BK's flip have happened."
         }
       ],
       "_stations_note": "SIX CARDS, 2026-09-18, BK ruled. One card per graded skill line, named with the skill line verbatim as it appears on the scoring page and on the FEEDS THE ESSAY line of every Unit 0 wall card. The ten engineering stations survive as named drills inside the cards; every content_ref is carried forward unchanged and nothing is thrown away. content_ref is null on the CARD and lives on each DRILL — a card with a null content_ref still renders from name, which is Josh's own spec, so this file is safe to merge before the drills array is read by anything. civic-literacy is the one package referenced twice, because it drills CP and OE together and both lines deserve a door with their own name on it.",

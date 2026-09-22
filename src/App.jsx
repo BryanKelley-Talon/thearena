@@ -732,6 +732,11 @@ const LANES = [
   { key: 'stations', label: 'Skill Stations', intro: 'One skill at a time. Train the move, not the unit.' },
   { key: 'units',    label: 'Unit Rooms',     intro: 'Everything for one unit, in one place.' },
   { key: 'regents',  label: 'Regents Review', intro: 'The exam itself — its parts, and how to work them.' },
+  // FOURTH LANE, added 2026-09-22 (BK's ruling, Out/ruling-capture-2026-09-22-arena-skills-review-lane.md).
+  // A schema amendment to the signed spec's three. It is a LIST from day one: BK is designing for several
+  // game "skins" over the same content, so this lane holds items, and Skills Review Bowl is the first of them.
+  { key: 'skills_review', label: 'Skills Review',
+    intro: 'Practice that runs the whole year, in a game. Everything taught so far is fair game.' },
 ]
 
 function CourseDoor({ course, onOpenStation, onOpenUnit, onBack }) {
@@ -768,6 +773,7 @@ function CourseDoor({ course, onOpenStation, onOpenUnit, onBack }) {
       {lane === 'stations' && <StationLane course={course} onOpen={onOpenStation} />}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} />}
       {lane === 'regents' && <EmptyLane what="Regents review" />}
+      {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
   )
 }
@@ -950,6 +956,43 @@ function StationScreen({ course, station, onBack, onOpenDrill }) {
           </>
         )}
       </div>
+    </div>
+  )
+}
+
+// ── SKILLS REVIEW LANE ──────────────────────────────────────────────────────
+// Each entry points OUT to a separately built game (scenario_link-shaped); the shell
+// never absorbs one. An entry that is not open renders exactly the way §3 of the signed
+// spec says a building surface must: darkened, carrying ONE SHORT WORD so the meaning is
+// never colour alone, and — because a dead element a kid can tab into is a bug, not a
+// state — as a plain div that is not in the tab order and cannot swallow a keypress.
+function SkillsReviewLane({ course }) {
+  const items = course.skills_review || []
+  if (!items.length) return <EmptyLane what="Skills review" />
+  return (
+    <div className="grid">
+      {items.map((it, i) => {
+        const href = it.url || it.content_ref
+        const open = isLive(it) && resolves(href)
+        if (!open) {
+          return (
+            <div className="card off" key={it.slug || i}>
+              <div className="card-type">Skills review</div>
+              <div className="card-name">{it.label}</div>
+              {it.blurb && <div className="card-blurb">{it.blurb}</div>}
+              <span className="flag building">Under construction</span>
+            </div>
+          )
+        }
+        return (
+          <a className="card" key={it.slug || i} href={href} target="_blank" rel="noopener noreferrer">
+            <div className="card-type">Skills review</div>
+            <div className="card-name">{it.label}</div>
+            {it.blurb && <div className="card-blurb">{it.blurb}</div>}
+            <span className="flag live">Opens the game</span>
+          </a>
+        )
+      })}
     </div>
   )
 }
