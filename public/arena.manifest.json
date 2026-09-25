@@ -29,6 +29,8 @@
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
       "accent": "#7FB2D9",
       "status": "open",
+      "current_unit": "unit-2",
+      "_current_unit_note": "Josh, 2026-09-25 (BK: 'we're in unit 2 now'). Door gauges follow this unit; Unit 1's gauges move to its own page.",
       "guide": null,
       "stations": [
         {
@@ -138,6 +140,22 @@
               "content_ref": "stimulus-gs10r-10-1.json",
               "_release": "2026-09-22",
               "_hold": "HELD BY WILL. The four items are on the 10.1 exam; his students sit it Monday 2026-09-21. THE FILE IS DELIBERATELY NOT IN public/ - it lives in builds/thearena/_content-hold/. published:false hides the card but does NOT stop Netlify serving a file from public/ at a guessable URL. Release = copy the file into public/content/ AND flip this flag. Both steps, on or after 2026-09-22."
+            }
+          ]
+        },
+        {
+          "slug": "unit-2",
+          "label": "Enlightenment, Revolution & Nationalism",
+          "status": "open",
+          "published": true,
+          "brief_ref": "content/brief-gs10r-10.2.json",
+          "_note": "Josh, 2026-09-25. Built from Will's two 10.2 files already on this desk: the Casefile A checkpoint (BK-ruled work order 2026-09-21 — Josh's miss that it waited) and the 10.2 GC brief (2026-09-18). No ladders yet — Will's to author.",
+          "activities": [
+            {
+              "type": "stimulus",
+              "label": "Casefile A · Checkpoint Practice",
+              "published": true,
+              "content_ref": "content/checkpoint-gs10r-10.2-casefileA.json"
             }
           ]
         }

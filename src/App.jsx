@@ -746,9 +746,10 @@ const LANES = [
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack }) {
+function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneIn, setLane }) {
+  // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
-  const [lane, setLane] = useState(firstWithContent)
+  const lane = laneIn || firstWithContent
   // The gauges follow the CURRENT unit (BK, 2026-09-25). Past units' gauges move
   // into their own page under Units, so the list grows as the year goes on.
   const unit = currentUnit(course)
@@ -1178,6 +1179,8 @@ function StimulusBlock({ stimulus, accent }) {
 
 function McItem({ item, accent, n, total, onAnswer, course }) {
   const [picked, setPicked] = useState(null)
+  const [shown, setShown] = useState(0)   // hints opened (optional per item; Will's 10.2 pack carries two)
+  const hints = item.hints || []
   const answered = picked != null
   const right = answered && picked === item.correct
   const choose = k => { if (picked == null) { setPicked(k); onAnswer(k === item.correct) } }
@@ -1189,6 +1192,7 @@ function McItem({ item, accent, n, total, onAnswer, course }) {
           <span className="line-chip">{lineLabel(course, item.skill_line)}</span>
         )}
       </div>
+      {item.document && <div className="doc-tag">{item.document}</div>}
       <StimulusBlock stimulus={item.stimulus} accent={accent} />
       <div className="mc-q">{item.question}</div>
       <div className="mc-choices">
@@ -1210,6 +1214,16 @@ function McItem({ item, accent, n, total, onAnswer, course }) {
           )
         })}
       </div>
+      {!answered && hints.length > 0 && (
+        <div className="hints">
+          {hints.slice(0, shown).map((h, i) => <p key={i} className="hint"><b>Hint {i + 1}</b> {h}</p>)}
+          {shown < hints.length && (
+            <button type="button" className="btn-ghost" onClick={() => setShown(x => x + 1)}>
+              {shown === 0 ? 'Show a hint' : 'Show the second hint'}
+            </button>
+          )}
+        </div>
+      )}
       {answered && (
         <div className="mc-reveal">
           {item.reasoning && <p className="mc-reasoning">{item.reasoning}</p>}
@@ -1570,6 +1584,7 @@ export default function App() {
   const [prog, markDone] = useProgress()
   const [ladderFrom, setLadderFrom] = useState('door')      // where Back from a ladder goes
   const [drillFromLadder, setDrillFromLadder] = useState(false)
+  const [doorLane, setDoorLane] = useState(null)
 
   useEffect(() => {
     fetch(MANIFEST_URL)
@@ -1688,9 +1703,11 @@ export default function App() {
     <CourseDoor
       course={course}
       prog={prog}
+      lane={doorLane}
+      setLane={setDoorLane}
       onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
       onOpenUnit={slug => { setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false) }}
-      onBack={() => { setCourseId(null); setUnitSlug(null); setStationSlug(null) }}
+      onBack={() => { setCourseId(null); setUnitSlug(null); setStationSlug(null); setDoorLane(null) }}
     />
   )
 

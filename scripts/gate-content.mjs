@@ -133,8 +133,12 @@ function checkLadder(f, d, type) {
     // No calendar dates in the Arena — unit dates live in Classroom (Sam, 2026-09-18).
     // Years are content; a month-and-day or a slash date is a schedule.
     const txt = JSON.stringify(Object.fromEntries(Object.entries(d).filter(([k]) => !k.startsWith('_'))))
-    const hit = txt.match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.? \d{1,2}\b|\b\d{1,2}\/\d{1,2}(\/\d{2,4})?\b/)
-    if (hit) fail(f, `unit_brief: looks like a calendar date ('${hit[0]}'). Unit dates live in Classroom, never the Arena.`)
+    // Slash dates (9/28) read as a schedule: fail. Month-day can be history
+    // ("July 14, 1789" in Will's 10.2 brief), so it only warns for a human look.
+    const slash = txt.match(/\b\d{1,2}\/\d{1,2}(\/\d{2,4})?\b/)
+    if (slash) fail(f, `unit_brief: looks like a calendar date ('${slash[0]}'). Unit dates live in Classroom, never the Arena.`)
+    const md = txt.match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.? \d{1,2}\b(?!, ?1[0-9]{3})/)
+    if (md) warn(f, `unit_brief: month-and-day with no historical year ('${md[0]}') — check it is not a class date.`)
   } else {
     fail(f, `ladder type '${type}' has no renderer in the shell.`)
   }

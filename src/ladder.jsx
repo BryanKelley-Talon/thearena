@@ -581,6 +581,7 @@ export function UnitBrief({ brief }) {
         {ex.text && <p className="brief-p">{ex.text}</p>}
         {ex.watch_lead && <p className="brief-lead">{ex.watch_lead}</p>}
         <ul className="watch">{(ex.watch_for || []).map((w, i) => (
+          typeof w === 'string' ? <li key={i}>{w}</li> :
           <li key={i}><span className="cue">{w.cue}</span><span className="arrow" aria-hidden="true">→</span><span className="sr">then</span> <span>{w.move}</span></li>
         ))}</ul>
       </Sec>}
