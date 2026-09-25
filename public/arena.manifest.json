@@ -565,35 +565,35 @@
             },
             {
               "type": "matching",
-              "label": "Match it: Causation",
+              "label": "Causation",
               "published": true,
               "content_ref": "content/matching-us11r-11.1-foundation-02-causation.json",
               "_note": "Josh, 2026-09-21 — Sam's Foundation-tier redesign pass, BK-ruled. Built on Casefile B Docs 6/13/14 and Bacon's Rebellion, 1676."
             },
             {
               "type": "matching",
-              "label": "Match it: Continuity & Change",
+              "label": "Continuity & Change",
               "published": true,
               "content_ref": "content/matching-us11r-11.1-foundation-03-continuity-change.json",
               "_note": "Josh, 2026-09-21 — Sam's Foundation-tier redesign pass, BK-ruled. Docs 17-18 self-government continuity thread."
             },
             {
               "type": "matching",
-              "label": "Match it: Turning Points",
+              "label": "Turning Points",
               "published": true,
               "content_ref": "content/matching-us11r-11.1-foundation-04-turning-points.json",
               "_note": "Josh, 2026-09-21 — Sam's Foundation-tier redesign pass, BK-ruled. Bacon's Rebellion + Document 16, Join or Die 1754."
             },
             {
               "type": "matching",
-              "label": "Vocab: The Six Graded Skills",
+              "label": "The Six Graded Skills",
               "published": true,
               "content_ref": "content/matching-us11r-vocab-six-skills.json",
               "_note": "Josh, 2026-09-21 — Sam's pass. Reusable year-round, not unit-bound; wired here because unit-1 is where students meet it first. Exact wording from US11R_Glossary_v2_2026-09-02."
             },
             {
               "type": "matching",
-              "label": "Vocab: Civic Principles (so far)",
+              "label": "Civic Principles (so far)",
               "published": true,
               "content_ref": "content/matching-us11r-11.1-vocab-civic-principles.json",
               "_note": "Josh, 2026-09-21 — Sam's pass. Only the four principles Unit 1 has actually named by Day 10 (Rule of Law, Consent of the Governed, Representative Government, Sovereignty) — not the full Tier B list."
@@ -675,6 +675,8 @@
       ],
       "_blurbs_note": "Six card blurbs, RULED by BK 2026-09-18 13:17 EDT, written verbatim as he approved them — one line per card, second person, no station vocabulary, no acronyms. They are addressed to the student, which is why none of them explains what the card 'drills': the drill names inside the card do that. Curly apostrophes and curly quotes are intentional and are the house typography.",
       "status": "open",
+      "current_unit": "unit-1",
+      "_current_unit_note": "Josh, 2026-09-25 (BK): the course door's gauges follow this unit. Change it when the next unit opens; the old unit's gauges move to its own page under Units.",
       "skill_lines": {
         "_README": "The course's graded skill lines, in the words the student reads on the scoring page. THIS IS THE CROSSWALK: a student sees a line on their grade, and every station and item that drills it declares the same CODE. Five lines are shared across both courses; the sixth is the course's own essay line and the two are NOT interchangeable.",
         "_contract": "Stations declare skill_lines: [CODE]. Items declare skill_line: CODE. The LABEL is resolved from this list and is never repeated on an item - one place to change a word. A code not in this list is a defect, not a new line.",

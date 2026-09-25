@@ -31,7 +31,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
-  UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen,
+  UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit,
 } from './ladder.jsx'
 
 const HOME_URL = 'https://flashpointhistory.com'
@@ -733,21 +733,25 @@ function Splash({ manifest, onPick }) {
 // COURSE DOOR — three lanes, peer to each other (ruling B)
 // ============================================================
 const LANES = [
-  // BK, 2026-09-25: Units first — it is where a kid does the work (gauges,
-  // ladders, review). Skill Stations renamed "Know Your Skills". Regents Review
-  // lane pulled until spring (the manifest key stays; the shell just doesn't show it).
-  { key: 'units',    label: 'Units',            intro: 'Everything for one unit, in one place.' },
-  { key: 'stations', label: 'Know Your Skills', intro: 'One skill at a time. Train the move, not the unit.' },
-  // FOURTH LANE, added 2026-09-22 (BK's ruling, Out/ruling-capture-2026-09-22-arena-skills-review-lane.md).
-  // A schema amendment to the signed spec's three. It is a LIST from day one: BK is designing for several
-  // game "skins" over the same content, so this lane holds items, and Skills Review Bowl is the first of them.
-  { key: 'skills_review', label: 'Skills Review',
-    intro: 'Practice that runs the whole year, in a game. Everything taught so far is fair game.' },
+  // BK, 2026-09-25. The gauges are front and center: a kid opens the course and
+  // sees their skills. Tap a gauge, climb that skill's ladder (content from the
+  // current unit). Units hold each unit's review brief and test practice.
+  // "Review Activities" holds Review Bowl; the lane never says "game" so a
+  // district filter has no reason to flag it. Regents Review is pulled until spring.
+  { key: 'skills',        src: 'stations',      label: 'Your Skills',
+    intro: 'Start here. Each gauge is one skill you’re graded on. Tap it to climb.' },
+  { key: 'units',         src: 'units',         label: 'Units',
+    intro: 'Review for each unit’s test: what to know, and practice questions.' },
+  { key: 'skills_review', src: 'skills_review', label: 'Review Activities',
+    intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course, onOpenStation, onOpenUnit, onBack }) {
-  const firstWithContent = LANES.find(l => (course[l.key] || []).length)?.key || 'units'
+function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack }) {
+  const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   const [lane, setLane] = useState(firstWithContent)
+  // The gauges follow the CURRENT unit (BK, 2026-09-25). Past units' gauges move
+  // into their own page under Units, so the list grows as the year goes on.
+  const unit = currentUnit(course)
 
   return (
     <div className="wrap">
@@ -755,7 +759,7 @@ function CourseDoor({ course, onOpenStation, onOpenUnit, onBack }) {
 
       <div className="lane-nav" role="tablist" aria-label="Lanes">
         {LANES.map(l => {
-          const count = (course[l.key] || []).length
+          const count = (course[l.src] || []).length
           const sel = lane === l.key
           return (
             <button
@@ -767,7 +771,7 @@ function CourseDoor({ course, onOpenStation, onOpenUnit, onBack }) {
               style={sel ? { background: course.accent, borderColor: course.accent } : undefined}
               onClick={() => setLane(l.key)}
             >
-              {l.label}{count ? ` · ${count}` : ''}
+              {l.label}
             </button>
           )
         })}
@@ -776,7 +780,12 @@ function CourseDoor({ course, onOpenStation, onOpenUnit, onBack }) {
       <GuideSays guide={course.guide} slot="door_enter" />
       <p className="lane-intro">{LANES.find(l => l.key === lane)?.intro}</p>
 
-      {lane === 'stations' && <StationLane course={course} onOpen={onOpenStation} />}
+      {lane === 'skills' && (
+        !unit ? <EmptyLane what="Skills" /> : <>
+          <p className="unit-now"><span className="unit-now-tag">Now</span> {unit.label}</p>
+          <SkillGauges course={course} unit={unit} prog={prog} onOpen={code => onOpenSkill(unit.slug, code)} />
+        </>
+      )}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
@@ -982,7 +991,7 @@ function SkillsReviewLane({ course }) {
         if (!open) {
           return (
             <div className="card off" key={it.slug || i}>
-              <div className="card-type">Skills review</div>
+              <div className="card-type">Review activity</div>
               <div className="card-name">{it.label}</div>
               {it.blurb && <div className="card-blurb">{it.blurb}</div>}
               <span className="flag building">Under construction</span>
@@ -991,10 +1000,10 @@ function SkillsReviewLane({ course }) {
         }
         return (
           <a className="card" key={it.slug || i} href={href} target="_blank" rel="noopener noreferrer">
-            <div className="card-type">Skills review</div>
+            <div className="card-type">Review activity</div>
             <div className="card-name">{it.label}</div>
             {it.blurb && <div className="card-blurb">{it.blurb}</div>}
-            <span className="flag live">Opens the game</span>
+            <span className="flag live">Open</span>
           </a>
         )
       })}
@@ -1034,15 +1043,13 @@ function UnitLane({ course, onOpen }) {
 
 function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOpenReview, onBack }) {
   const acts = (unit.activities || []).filter(isLive)
-  // Resolve a scenario_link's content_ref against the shared games manifest.
-  // A raw https:// ref still works, so nothing already written breaks.
-  const gameFor = ref => (games || []).find(g => g.id === ref) || null
+  const isCurrent = currentUnit(course)?.slug === unit.slug
   return (
     <div className="wrap">
       <ScreenHeader label={unit.label} onBack={onBack} color={course.accent} back={course.label} />
-      {/* ROOM ORDER (build order 2026-09-24): review, then skill gauges, then the
-          activities that were already here. Each section appears only when the
-          manifest gives it something to show. */}
+      {/* ROOM ORDER (BK, 2026-09-25): the unit's review, then its test practice.
+          The current unit's gauges live on the course door; a PAST unit's gauges
+          move here, so every unit keeps its ladders as the year goes on. */}
       {resolves(unit.brief_ref) && (
         <>
           <h3 className="room-section">Review</h3>
@@ -1056,65 +1063,58 @@ function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOp
           </div>
         </>
       )}
-      {roomSkills(course, unit).length > 0 && (
+      <h3 className="room-section">Test practice</h3>
+      {!acts.length
+        ? <EmptyLane what="Activities" />
+        : <TestPractice unit={unit} acts={acts} games={games} onOpenActivity={onOpenActivity} />}
+      {!isCurrent && roomSkills(course, unit).length > 0 && (
         <>
-          <h3 className="room-section">Your skills</h3>
-          <p className="room-sub">Each gauge is a five-level ladder for one graded skill. Pick one to climb it.</p>
+          <h3 className="room-section" style={{ marginTop: 30 }}>Your skills in this unit</h3>
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} />
         </>
       )}
-      <h3 className="room-section">Activities</h3>
-      {!acts.length
-        ? <EmptyLane what="Activities" />
-        : <div className="grid">
-            {acts.map((a, i) => {
-              const t = ACTIVITY_TYPES[a.type]
-              const isScenario = a.type === 'scenario_link'
-              const game = isScenario ? gameFor(a.content_ref) : null
-              const rawUrl = isScenario && /^https?:/.test(a.content_ref || '') ? a.content_ref : null
-              const href = game?.status === 'live' ? game.url : rawUrl
-              // A scenario_link naming a game that is not live yet is not an error
-              // and not a dead link — it is a card that says "not built yet".
-              if (isScenario && !href) {
-                return (
-                  <div className="card off" key={i}>
-                    <div className="card-type">{t?.label}</div>
-                    <div className="card-name">{game?.title || a.label}</div>
-                    <div className="card-blurb">{t?.blurb}</div>
-                    <span className="flag soon">Game not built yet</span>
-                  </div>
-                )
+    </div>
+  )
+}
+
+// Test practice, grouped so a kid can scan it. A unit activity that is already a
+// ladder level (e.g. HC L1 matching) is left out here — it lives on the ladder.
+const PRACTICE_GROUPS = [
+  { key: 'regents', label: 'Regents-style questions', test: a => a.type === 'stimulus' },
+  { key: 'vocab',   label: 'Vocabulary',              test: a => a.type === 'matching' && /vocab/i.test(a.content_ref || '') },
+  { key: 'moves',   label: 'Thinking moves',          test: a => a.type === 'matching' },
+  { key: 'more',    label: 'More',                    test: () => true },
+]
+function TestPractice({ unit, acts, games, onOpenActivity }) {
+  const onLadder = new Set((unit.ladders || []).flatMap(l => (l.levels || []).map(lv => lv.content_ref)).filter(Boolean))
+  const rows = acts.map((a, i) => ({ a, i })).filter(({ a }) => !onLadder.has(a.content_ref))
+  const groups = PRACTICE_GROUPS.map(g => ({ ...g, rows: [] }))
+  for (const r of rows) groups.find(g => g.test(r.a)).rows.push(r)
+  const gameFor = ref => (games || []).find(g => g.id === ref) || null
+  return (
+    <div className="practice">
+      {groups.filter(g => g.rows.length).map(g => (
+        <section key={g.key} className="practice-group">
+          <h4 className="practice-head">{g.label}</h4>
+          <div className="practice-rows">
+            {g.rows.map(({ a, i }) => {
+              if (a.type === 'scenario_link') {
+                const game = gameFor(a.content_ref)
+                const href = game?.status === 'live' ? game.url : (/^https?:/.test(a.content_ref || '') ? a.content_ref : null)
+                return href
+                  ? <a key={i} className="practice-row" href={href} target="_blank" rel="noopener noreferrer">
+                      <span>{a.label}</span><span className="flag live">Open</span></a>
+                  : <div key={i} className="practice-row off"><span>{a.label}</span><span className="flag soon">Coming</span></div>
               }
-              if (href) {
-                return (
-                  <a key={i} className="card" href={href} target="_blank" rel="noopener noreferrer">
-                    <div className="card-type">{t?.label}</div>
-                    <div className="card-name">{a.label}</div>
-                    <div className="card-blurb">
-                      {game ? `${game.year}: ${game.title}` : t?.blurb}
-                    </div>
-                    <span className="flag live">Opens the game</span>
-                  </a>
-                )
-              }
-              // stimulus was the one mechanic built in v2. matching joined it
-              // 2026-09-19 (Josh, BK priority: Arena usable before Nation Builder).
-              // Everything else still gets a card that says so rather than one that pretends.
               const playable = a.type === 'stimulus' || a.type === 'matching'
-              return (
-                <button key={i} type="button" className={`card${playable ? '' : ' off'}`}
-                        disabled={!playable} tabIndex={playable ? 0 : -1}
-                        onClick={() => playable && onOpenActivity(i)}>
-                  <div className="card-type">{t?.label || a.type}</div>
-                  <div className="card-name">{a.label}</div>
-                  <div className="card-blurb">{t?.blurb}</div>
-                  {playable
-                    ? <span className="flag live">Start</span>
-                    : <span className="flag soon">Mechanic not built yet</span>}
-                </button>
-              )
+              return playable
+                ? <button key={i} type="button" className="practice-row" onClick={() => onOpenActivity(i)}>
+                    <span>{a.label}</span><span className="flag live">Start</span></button>
+                : <div key={i} className="practice-row off"><span>{a.label}</span><span className="flag soon">Coming</span></div>
             })}
-          </div>}
+          </div>
+        </section>
+      ))}
     </div>
   )
 }
@@ -1493,6 +1493,29 @@ function ScreenHeader({ label, onBack, color, back }) {
   )
 }
 
+// Under each ladder: the skill's own card (what it is) and its station drills as
+// "More reps", so nothing that lived in the old Skill Stations lane goes missing.
+function SkillExtras({ course, skill, onOpenDrill }) {
+  const st = (course.stations || []).find(s => (s.skill_lines || [])[0] === skill)
+  if (!st) return null
+  const drills = (st.drills || []).map((d, i) => ({ d, i })).filter(({ d }) => d.published && !VOCAB_HELD.has(drillGuideKey(d)))
+  return (
+    <div className="detail" style={{ maxWidth: 820, marginTop: 30 }}>
+      {st.blurb && <p className="skill-about">{st.blurb}</p>}
+      {drills.length > 0 && <>
+        <h3 className="room-section">More reps</h3>
+        <div className="practice-rows">
+          {drills.map(({ d, i }) => (
+            <button key={i} type="button" className="practice-row" onClick={() => onOpenDrill(st.slug, i)}>
+              <span>{d.name || d.label}</span><span className="flag live">Start</span>
+            </button>
+          ))}
+        </div>
+      </>}
+    </div>
+  )
+}
+
 // ============================================================
 // LADDER LEVEL — one screen, five activity types. The renderer is picked by
 // the manifest's `type`; the content arrives by reference, like everything else.
@@ -1545,6 +1568,8 @@ export default function App() {
   const [review, setReview] = useState(false)
   const [briefPack, setBriefPack] = useState(null)
   const [prog, markDone] = useProgress()
+  const [ladderFrom, setLadderFrom] = useState('door')      // where Back from a ladder goes
+  const [drillFromLadder, setDrillFromLadder] = useState(false)
 
   useEffect(() => {
     fetch(MANIFEST_URL)
@@ -1598,7 +1623,7 @@ export default function App() {
   if (!course) screen = <Splash manifest={manifest} onPick={setCourseId} />
   else if (station && drillIndex != null && (station.drills || [])[drillIndex]) {
     screen = <DrillScreen course={course} station={station} drill={station.drills[drillIndex]}
-                          onBack={() => setDrillIndex(null)} />
+                          onBack={() => { setDrillIndex(null); if (drillFromLadder) { setStationSlug(null); setDrillFromLadder(false) } }} />
   }
   else if (station) screen = <StationScreen course={course} station={station}
                                             onOpenDrill={setDrillIndex}
@@ -1613,8 +1638,12 @@ export default function App() {
   else if (unit && skill) {
     screen = (
       <div className="wrap">
-        <ScreenHeader label={unit.label} onBack={() => setSkill(null)} color={course.accent} back={unit.label} />
+        <ScreenHeader label={unit.label} color={course.accent}
+                      onBack={() => { setSkill(null); if (ladderFrom === 'door') setUnitSlug(null) }}
+                      back={ladderFrom === 'door' ? course.label : unit.label} />
         <Ladder course={course} unit={unit} skill={skill} prog={prog} onOpenLevel={openLevel} />
+        <SkillExtras course={course} skill={skill}
+                     onOpenDrill={(slug, i) => { setStationSlug(slug); setDrillIndex(i); setDrillFromLadder(true); window.scrollTo(0, 0) }} />
       </div>
     )
   }
@@ -1639,7 +1668,7 @@ export default function App() {
       : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
   else if (unit) screen = <UnitRoom course={course} unit={unit} games={games} prog={prog}
-                                    onOpenSkill={code => { setSkill(code); window.scrollTo(0, 0) }}
+                                    onOpenSkill={code => { setLadderFrom('unit'); setSkill(code); window.scrollTo(0, 0) }}
                                     onOpenReview={openReview}
                                     onOpenActivity={i => {
                                       const a = (unit.activities || []).filter(isLive)[i]
@@ -1658,7 +1687,8 @@ export default function App() {
   else screen = (
     <CourseDoor
       course={course}
-      onOpenStation={setStationSlug}
+      prog={prog}
+      onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
       onOpenUnit={slug => { setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false) }}
       onBack={() => { setCourseId(null); setUnitSlug(null); setStationSlug(null) }}
     />

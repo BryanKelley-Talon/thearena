@@ -87,6 +87,15 @@ export function roomSkills(course, unit) {
   }).filter(s => s.code)
 }
 
+// The CURRENT unit: the manifest's course.current_unit if set and live, else the
+// latest live unit that has ladders, else the first live unit.
+export function currentUnit(course) {
+  const live = (course?.units || []).filter(u => u.published === true && (u.status ?? 'open') !== 'building')
+  return live.find(u => u.slug === course?.current_unit)
+    || [...live].reverse().find(u => (u.ladders || []).length)
+    || live[0] || null
+}
+
 // A level is playable only if it is published AND its content resolves.
 export const levelOpen = lv => lv?.published === true && typeof lv.content_ref === 'string' && lv.content_ref.length > 0
 
@@ -593,6 +602,24 @@ export function UnitBrief({ brief }) {
 
 // ── STYLES ────────────────────────────────────────────────────────────────
 export const LADDER_STYLES = `
+/* ---------- DOOR + UNIT PAGE ---------- */
+.unit-now{color:var(--white);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;
+  font-size:18px;margin:-6px 0 14px;display:flex;align-items:center;gap:10px}
+.unit-now-tag{background:var(--gold);color:var(--canvas);font-weight:700;font-size:12px;letter-spacing:.12em;
+  padding:3px 8px;border-radius:5px}
+.practice{display:flex;flex-direction:column;gap:18px;max-width:820px}
+.practice-head{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:13px;
+  color:var(--grey);margin:0 0 8px}
+.practice-rows{display:flex;flex-direction:column;gap:8px}
+.practice-row{display:flex;align-items:center;justify-content:space-between;gap:14px;width:100%;text-align:left;
+  padding:14px 16px;border-radius:10px;background:var(--card);border:1px solid var(--edge);color:var(--white);
+  font-family:'Outfit',sans-serif;font-size:17px;cursor:pointer;text-decoration:none}
+.practice-row .flag{margin-top:0;flex:none}
+button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);background:var(--card-lit)}
+.practice-row.off{opacity:.5;cursor:default}
+.skill-about{color:var(--white);font-size:18px;line-height:1.55;padding:14px 16px;border-left:3px solid var(--gold);
+  background:color-mix(in srgb,var(--gold) 8%,transparent);border-radius:0 8px 8px 0;margin:0 0 18px}
+
 /* ---------- GAUGES ---------- */
 .room-section{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;
   font-size:14px;color:var(--gold);margin:6px 0 14px}
