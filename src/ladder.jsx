@@ -104,7 +104,7 @@ export const LEVEL_TYPES = {
   mc_bestfit:     { name: 'Pick the best fit', blurb: 'Four statements. Pick the one that fits best.' },
   sentence_build: { name: 'Build the sentence', blurb: 'Put the context sentence together, one piece at a time.' },
   guided_write:   { name: 'Write it',          blurb: 'Two or three sentences, with the checklist right beside you.' },
-  enrichment:     { name: 'Gold dust',         blurb: 'You already write at a 4. Here is what gets it to a 5.' },
+  enrichment:     { name: 'Gold dust',         blurb: 'Already writing at a 4? Here’s what gets it to a 5.' },
 }
 
 // ── THE GAUGE ─────────────────────────────────────────────────────────────

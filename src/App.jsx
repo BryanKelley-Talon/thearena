@@ -1058,7 +1058,7 @@ function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOp
       {roomSkills(course, unit).length > 0 && (
         <>
           <h3 className="room-section">Your skills</h3>
-          <p className="room-sub">Each gauge is a five-level ladder for one graded skill. Tap one to climb it.</p>
+          <p className="room-sub">Each gauge is a five-level ladder for one graded skill. Pick one to climb it.</p>
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} />
         </>
       )}
