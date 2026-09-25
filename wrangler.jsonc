@@ -1,0 +1,12 @@
+// Cloudflare Workers static-assets config for The Arena (Josh, 2026-09-25).
+// No server code: Cloudflare serves the built dist/ folder and nothing else.
+// Present so `wrangler deploy` skips its framework auto-config, which does
+// not support Vite 4. Netlify ignores this file.
+{
+  "name": "thearena",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application"
+  }
+}
