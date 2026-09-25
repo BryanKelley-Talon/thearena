@@ -1,0 +1,23 @@
+{
+  "_course": "US History & Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "HC Ladder — Level 4 — Guided Writing (short response, checklist visible)",
+  "_skill_lane": "Historical Context (HC)",
+  "_ladder_level": 4,
+  "_built": "2026-09-24 by Sam (us11r-curriculum)",
+  "_revised": "2026-09-25 — added model_response per Josh's format ask",
+  "_licence": "Source is Document 13 (Unit 1 Casefile B), 1705 entry — verbatim, already blessed/approved casefile content. No new sourcing.",
+  "source_document": "Document 13 — How a Law Gets Built (Unit 1 Casefile B)",
+  "source_text": "1705 — Virginia slave codes: all Black, mulatto and Indian enslaved people are declared real property — legally real estate. Forbidden to assault a white person, denied the right to bear arms, denied movement without written permission.",
+  "prompt": "Write 2-3 sentences of historical context for this law.",
+  "sentence_starter": "By the early 1700s, ___",
+  "checklist": [
+    "Did you name the era or decades this fits in?",
+    "Did you name what was happening in Virginia during this period?",
+    "Did you connect it to why this law mattered?"
+  ],
+  "model_response": "By the early 1700s, Virginia's laws had spent decades separating enslaved people from indentured servants, stripping away rights one at a time. The 1705 slave codes finished that process by declaring enslaved people to be real property, not people — which is why this document matters: it shows slavery becoming permanent under the law, not just in practice.",
+  "design_note": "Checklist mirrors the HC Score Guide's MOVE UP language (era, place, tie to the question) already used on Make the Case — same mental model, turned into a before-you-write check instead of an after-the-fact rubric. model_response is revealed by the shell on \"I'm done\" (Josh's spec) — not a submission, a comparison point.",
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

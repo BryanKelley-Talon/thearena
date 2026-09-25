@@ -1,0 +1,43 @@
+{
+  "_course": "US History & Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "HC Ladder — Level 3 — Guided Construction (drag-and-drop sentence build)",
+  "_skill_lane": "Historical Context (HC)",
+  "_ladder_level": 3,
+  "_built": "2026-09-24 by Sam (us11r-curriculum)",
+  "_licence": "ORIGINAL. Extends the Bacon's Rebellion item already approved 2026-09-22 (context-statements-us11r-11.1.json, ctx-02). No new sourcing.",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "In ___, ___, which is why ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "year",
+      "tiles": [
+        {"text": "1676", "correct": true},
+        {"text": "1619", "correct": false},
+        {"text": "1705", "correct": false}
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "what was happening",
+      "tiles": [
+        {"text": "poor white and enslaved Virginians rebelled together against the colony's elite", "correct": true},
+        {"text": "Virginia held its first election", "correct": false},
+        {"text": "Virginia declared independence from England", "correct": false}
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "why it matters",
+      "tiles": [
+        {"text": "colonial law hardened along racial lines in the years that followed", "correct": true},
+        {"text": "slavery ended in Virginia", "correct": false},
+        {"text": "Virginia's governor was removed from office", "correct": false}
+      ]
+    }
+  ],
+  "correct_sentence": "In 1676, poor white and enslaved Virginians rebelled together against the colony's elite, which is why colonial law hardened along racial lines in the years that followed.",
+  "rationale": "Same event as Level 2's ctx-02 item — Bacon's Rebellion, 1676 — now built instead of selected. Tiles shuffle per attempt; distractors are plausible but wrong on date, event, or consequence, not random noise.",
+  "practice_only": true
+}

@@ -22,6 +22,9 @@ const CONTENT = path.resolve('public/content')
 // student, so a problem in it is a note for its desk, not a build failure.
 // Live = the manifest says published AND its course is open.
 const LIVE = new Set()
+// Ladder files carry their own shapes (added 2026-09-25, Josh). The manifest says
+// which type each one is, and the gate checks it against THAT type's contract.
+const LADDER_TYPE = {}
 try {
   const m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8'))
   for (const c of m.courses || []) {
@@ -30,6 +33,16 @@ try {
     for (const u of c.units || []) {
       if (!u.published) continue
       for (const a of u.activities || []) if (a.published && a.content_ref) LIVE.add(String(a.content_ref).replace(/^content\//, ''))
+      for (const l of u.ladders || []) for (const lv of l.levels || []) {
+        if (!lv.content_ref) continue
+        const f = String(lv.content_ref).replace(/^content\//, '')
+        if (!fs.existsSync(path.join(CONTENT, f))) {
+          if (lv.published) { console.error(`  FAIL  manifest\n        ${u.slug} ${l.skill} L${lv.level}: content_ref '${f}' is not in public/content.`); process.exitCode = 1 }
+          continue
+        }
+        if (lv.type !== 'matching') LADDER_TYPE[f] = lv.type
+        if (lv.published) LIVE.add(f)
+      }
     }
   }
 } catch { console.warn('  (no manifest read — treating every package as live)\n') }
@@ -80,11 +93,45 @@ function checkDoc(file, doc, where) {
   }
 }
 
+// One check per ladder type. Each one tests what the shell will actually read,
+// so a missing key fails here instead of rendering as a blank box.
+function checkLadder(f, d, type) {
+  const need = (k, m) => { if (d[k] == null || (typeof d[k] === 'string' && !d[k].trim())) fail(f, m || `${type}: no '${k}'.`) }
+  if (type === 'mc_bestfit') {
+    for (const it of d.items || []) {
+      const keys = Object.keys(it.options || {})
+      if (keys.length < 2) fail(f, `${it.id}: fewer than two options.`)
+      if (!keys.includes(String(it.correct))) fail(f, `${it.id}: correct '${it.correct}' matches no option.`)
+      if (!(it.hints || []).length) warn(f, `${it.id}: no hints — the ladder offers two at L2.`)
+    }
+    if (!(d.items || []).length) fail(f, 'mc_bestfit: no items.')
+  } else if (type === 'sentence_build') {
+    const slots = String(d.sentence_frame || '').split('___').length - 1
+    if (slots !== (d.blanks || []).length) fail(f, `sentence_build: frame has ${slots} blank(s), file has ${(d.blanks || []).length}.`)
+    for (const b of d.blanks || []) {
+      const n = (b.tiles || []).filter(t => t.correct === true).length
+      if (n !== 1) fail(f, `blank ${b.blank_id}: ${n} correct tiles — must be exactly one.`)
+    }
+    need('correct_sentence')
+  } else if (type === 'guided_write') {
+    need('source_text'); need('prompt'); need('model_response', "guided_write: no 'model_response' — 'I'm done' would reveal nothing.")
+    if (!(d.checklist || []).length) fail(f, 'guided_write: no checklist — it is the scaffold at L4.')
+    if (!d.source_document) fail(f, 'guided_write: source text with no source_document pointer (canon 6, quotation provenance).')
+  } else if (type === 'enrichment') {
+    for (const t of d.tidbits || []) if (!t.source_pointer) fail(f, `tidbit ${t.id}: no source_pointer (canon 6, quotation provenance).`)
+    for (const e of d.exemplars || []) if (![4, 5].includes(e.level)) fail(f, `exemplar level '${e.level}' — must be 4 or 5.`)
+    if (!(d.tidbits || []).length && !(d.exemplars || []).length) fail(f, 'enrichment: no tidbits and no exemplars.')
+  } else {
+    fail(f, `ladder type '${type}' has no renderer in the shell.`)
+  }
+}
+
 console.log(`CONTENT GATE — ${LIVE.size} package(s) live and gated; the rest reported as 'dark'\n`)
 for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort()) {
   let d
   try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) }
   catch (e) { fail(f, `not valid JSON - ${e.message}`); continue }
+  if (LADDER_TYPE[f]) { checkLadder(f, d, LADDER_TYPE[f]); continue }
   for (const rep of d.reps || []) {
     const w = `rep${rep.rep}`
     const st = Array.isArray(rep.stimulus) ? rep.stimulus : (rep.stimulus ? [rep.stimulus] : [])
@@ -103,4 +150,4 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
 }
 console.log(`\n${fails} fail (live) - ${warns} warn/dark`)
 if (!fails) console.log('Everything a student can reach today passes.')
-process.exit(fails ? 1 : 0)
+process.exit(fails || process.exitCode ? 1 : 0)

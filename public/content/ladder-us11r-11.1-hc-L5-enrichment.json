@@ -1,0 +1,65 @@
+{
+  "_course": "US History & Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "HC Ladder — Level 5 — Content Enrichment (rewritten per BK's ruling, 2026-09-24)",
+  "_skill_lane": "Historical Context (HC)",
+  "_ladder_level": 5,
+  "_built": "2026-09-25 by Sam (us11r-curriculum)",
+  "_supersedes": "ladder-us11r-11.1-hc-L5-coldwrite.json (2026-09-24) — the timed cold-write version. BK ruled L5 is enrichment, not timed skill practice. See Josh's pass from-josh-2026-09-24-hc-ladder-rulings-and-schema-asks.md for BK's verbatim ruling.",
+  "_licence": "tidbits and exemplars sourced from Document 13 (Unit 1 Casefile B, already approved) and the Threads card (US11R_Regents_Threads_2026-09-19, project canon). No new sourcing.",
+  "design_intent": "Not skill practice — a kid here already writes at a 4. This is the 'gold dust' that shows what turns a 4 into a 5: more content, a wider lens, and a named technique, not more mechanics.",
+  "tidbits": [
+    {
+      "id": "td-01",
+      "text": "Document 13's own timeline shows the 1705 law wasn't a first move — it was the last step in a process that started with John Punch's 1640 sentence and hardened further after Bacon's Rebellion in 1676, when the colony's elite watched poor whites and enslaved people rebel together.",
+      "thread": "Thread 1 — Is There One America? (African Americans arc)",
+      "source_pointer": "Document 13, entries 1640 / 1676 / 1705"
+    },
+    {
+      "id": "td-02",
+      "text": "The same years Virginia was hardening slave law, Native nations in New England were fighting King Philip's War (1675–76) — a separate rebellion, same colonial anxiety about control, on the other side of the 1676 line.",
+      "thread": "Thread 1 — Is There One America? (Native Americans arc)",
+      "source_pointer": "Threads card, Unit 11.1 row — not in Document 13, a wider-lens connection"
+    },
+    {
+      "id": "td-03",
+      "text": "The same colonial world that was defining enslaved people as property was also absorbing married women's legal identity into their husbands' under English coverture law — a different mechanism, the same era's answer to \"who counts as a full legal person.\"",
+      "thread": "Thread 1 — Is There One America? (Women arc)",
+      "source_pointer": "Threads card, Unit 11.1 row — not in Document 13, a wider-lens connection"
+    },
+    {
+      "id": "td-04",
+      "text": "The Threads card's own three-move answer for \"Is There One America?\" questions: name the promise or the principle at stake, show how it was undermined, show how it was partially redeemed (or note that it wasn't, yet). That's the shape a strong answer takes, on any document set, all year.",
+      "thread": "Thread 1 — Is There One America? (the structural move itself)",
+      "source_pointer": "Threads card, standing reference"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "By the early 1700s, Virginia had passed laws making slavery lifelong and hereditary, which explains why the 1705 code called enslaved people real property.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "By the early 1700s, Virginia's colonial assembly had spent decades hardening the legal line between servant and slave — from John Punch's 1640 sentence, through the alliance Bacon's Rebellion showed was possible in 1676, to the 1705 slave codes that stripped enslaved people of any legal standing as people at all — which is why this law reads less like a single decision than the last step in a built system.",
+      "what_changed": "The 4 names the moment. The 5 reaches back — it names two earlier moments (1640, 1676) that explain how the colony got to 1705, so the claim is about a built system, not a single law."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Reach-back",
+      "explanation": "Instead of describing only the document in front of you, name one earlier moment that explains how it got here. It shows you understand a process, not just a date."
+    },
+    {
+      "name": "Naming the system, not just the event",
+      "explanation": "A 5 often swaps \"this law did X\" for \"this was the last step in a system that did X, then Y, then Z.\" Same facts, a higher-level claim."
+    }
+  ],
+  "try_it": {
+    "prompt": "The 1705 law you just read defined enslaved people as property under the law, not people. Where do you still see a live argument today over who fully counts as a person, or a full citizen, under the law?",
+    "status": "Untimed, optional, never scored, never saved — practice reflection only."
+  },
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

@@ -29,6 +29,10 @@
 // ============================================================
 
 import { useState, useEffect, useMemo } from 'react'
+import {
+  LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
+  UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen,
+} from './ladder.jsx'
 
 const HOME_URL = 'https://flashpointhistory.com'
 const MANIFEST_URL = '/arena.manifest.json'
@@ -1027,7 +1031,7 @@ function UnitLane({ course, onOpen }) {
   )
 }
 
-function UnitRoom({ course, unit, games, packs, onOpenActivity, onBack }) {
+function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOpenReview, onBack }) {
   const acts = (unit.activities || []).filter(isLive)
   // Resolve a scenario_link's content_ref against the shared games manifest.
   // A raw https:// ref still works, so nothing already written breaks.
@@ -1035,6 +1039,30 @@ function UnitRoom({ course, unit, games, packs, onOpenActivity, onBack }) {
   return (
     <div className="wrap">
       <ScreenHeader label={unit.label} onBack={onBack} color={course.accent} back={course.label} />
+      {/* ROOM ORDER (build order 2026-09-24): review, then skill gauges, then the
+          activities that were already here. Each section appears only when the
+          manifest gives it something to show. */}
+      {resolves(unit.brief_ref) && (
+        <>
+          <h3 className="room-section">Review</h3>
+          <div className="grid" style={{ marginBottom: 34 }}>
+            <button type="button" className="card" onClick={onOpenReview}>
+              <div className="card-type">Unit review</div>
+              <div className="card-name">What this unit covered</div>
+              <div className="card-blurb">The key facts, the thread it pulls, and a quick check.</div>
+              <span className="flag live">Open</span>
+            </button>
+          </div>
+        </>
+      )}
+      {roomSkills(course, unit).length > 0 && (
+        <>
+          <h3 className="room-section">Your skills</h3>
+          <p className="room-sub">Each gauge is a five-level ladder for one graded skill. Tap one to climb it.</p>
+          <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} />
+        </>
+      )}
+      <h3 className="room-section">Activities</h3>
       {!acts.length
         ? <EmptyLane what="Activities" />
         : <div className="grid">
@@ -1283,7 +1311,7 @@ function shuffle(arr) {
   return a
 }
 
-function MatchingSet({ pack, accent }) {
+function MatchingSet({ pack, accent, onChecked }) {
   const left = pack.left || []
   const right = pack.right || []
   const rightShuffled = useMemo(() => shuffle(right), [pack])
@@ -1368,7 +1396,7 @@ function MatchingSet({ pack, accent }) {
       {!checked ? (
         <>
           <button className="rep-go" disabled={!allPaired}
-                  onClick={() => setChecked(true)}>
+                  onClick={() => { setChecked(true); onChecked && onChecked() }}>
             {allPaired ? 'Check my pairs'
                        : `Pair them all first — ${left.length - Object.keys(pairs).length} to go`}
           </button>
@@ -1465,6 +1493,38 @@ function ScreenHeader({ label, onBack, color, back }) {
 }
 
 // ============================================================
+// LADDER LEVEL — one screen, five activity types. The renderer is picked by
+// the manifest's `type`; the content arrives by reference, like everything else.
+// ============================================================
+function LevelScreen({ course, skillName, lv, pack, onComplete, onBack }) {
+  const t = LEVEL_TYPES[lv?.type]
+  let body
+  if (pack === null) body = <div className="loading">Opening the level&hellip;</div>
+  else if (!pack) body = (
+    <div className="empty" style={{ textAlign: 'left' }}>
+      <div className="empty-title">This level didn&rsquo;t load</div>
+      <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which level it was.</p>
+    </div>
+  )
+  else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} />
+  else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} />
+  else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
+  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} />
+  else if (lv.type === 'enrichment') body = <Enrichment pack={pack} onComplete={onComplete} />
+  else body = <EmptyLane what="This level" />
+  return (
+    <div className="wrap">
+      <ScreenHeader label={skillName} onBack={onBack} color={course.accent} back="The ladder" />
+      <div className="detail" style={{ maxWidth: 860 }}>
+        <div className="card-type">Level {lv?.level}{t ? ` · ${t.name}` : ''}</div>
+        <h2>{lv?.label || t?.name}</h2>
+        {body}
+      </div>
+    </div>
+  )
+}
+
+// ============================================================
 // APP
 // ============================================================
 export default function App() {
@@ -1477,6 +1537,13 @@ export default function App() {
   const [courseId, setCourseId] = useState(null)
   const [unitSlug, setUnitSlug] = useState(null)
   const [stationSlug, setStationSlug] = useState(null)
+  // Ladder navigation. Skill is a skill-line CODE (HC, TH…); level is 1–5.
+  const [skill, setSkill] = useState(null)
+  const [level, setLevel] = useState(null)
+  const [levelPack, setLevelPack] = useState(null)   // undefined-while-loading is `null`; a failed fetch is `false`
+  const [review, setReview] = useState(false)
+  const [briefPack, setBriefPack] = useState(null)
+  const [prog, markDone] = useProgress()
 
   useEffect(() => {
     fetch(MANIFEST_URL)
@@ -1501,6 +1568,20 @@ export default function App() {
     [course, stationSlug]
   )
 
+  const fetchContent = (ref, set) => {
+    set(null)
+    const r = String(ref).replace(/^content\//, '')
+    fetch(`/content/${r}`).then(x => (x.ok ? x.json() : false)).then(set).catch(() => set(false))
+  }
+  const openLevel = n => {
+    const s = roomSkills(course, unit).find(x => x.code === skill)
+    const lv = ladderLevels(s?.ladder).find(l => l.level === n)
+    if (!levelOpen(lv)) return
+    setLevel(n); fetchContent(lv.content_ref, setLevelPack)
+    window.scrollTo(0, 0)
+  }
+  const openReview = () => { setReview(true); fetchContent(unit.brief_ref, setBriefPack); window.scrollTo(0, 0) }
+
   if (error) return (
     <><style>{STYLES}</style>
       <div className="wrap"><div className="empty">
@@ -1521,6 +1602,34 @@ export default function App() {
   else if (station) screen = <StationScreen course={course} station={station}
                                             onOpenDrill={setDrillIndex}
                                             onBack={() => { setStationSlug(null); setDrillIndex(null) }} />
+  else if (unit && skill && level != null) {
+    const s = roomSkills(course, unit).find(x => x.code === skill)
+    const lv = ladderLevels(s?.ladder).find(l => l.level === level)
+    screen = <LevelScreen course={course} skillName={s?.name || skill} lv={lv} pack={levelPack}
+                          onComplete={() => markDone(course, unit, skill, level)}
+                          onBack={() => { setLevel(null); setLevelPack(null) }} />
+  }
+  else if (unit && skill) {
+    screen = (
+      <div className="wrap">
+        <ScreenHeader label={unit.label} onBack={() => setSkill(null)} color={course.accent} back={unit.label} />
+        <Ladder course={course} unit={unit} skill={skill} prog={prog} onOpenLevel={openLevel} />
+      </div>
+    )
+  }
+  else if (unit && review) {
+    screen = (
+      <div className="wrap">
+        <ScreenHeader label="Unit review" onBack={() => { setReview(false); setBriefPack(null) }} color={course.accent} back={unit.label} />
+        <div className="detail" style={{ maxWidth: 900 }}>
+          <h2>{briefPack?.title || unit.label}</h2>
+          {briefPack === null && <div className="loading">Opening the review&hellip;</div>}
+          {briefPack === false && <EmptyLane what="Unit review" />}
+          {briefPack && <UnitBrief brief={briefPack} />}
+        </div>
+      </div>
+    )
+  }
   else if (unit && actIndex != null) {
     const act = (unit.activities || []).filter(isLive)[actIndex]
     const onActivityBack = () => { setActIndex(null); setPack(null) }
@@ -1528,7 +1637,9 @@ export default function App() {
       ? <MatchingActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
       : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
-  else if (unit) screen = <UnitRoom course={course} unit={unit} games={games}
+  else if (unit) screen = <UnitRoom course={course} unit={unit} games={games} prog={prog}
+                                    onOpenSkill={code => { setSkill(code); window.scrollTo(0, 0) }}
+                                    onOpenReview={openReview}
                                     onOpenActivity={i => {
                                       const a = (unit.activities || []).filter(isLive)[i]
                                       setActIndex(i); setPack(null)
@@ -1542,19 +1653,19 @@ export default function App() {
                                           .then(r => r.ok ? r.json() : null).then(setPack).catch(() => setPack(null))
                                       }
                                     }}
-                                    onBack={() => setUnitSlug(null)} />
+                                    onBack={() => { setUnitSlug(null); setSkill(null); setLevel(null); setReview(false) }} />
   else screen = (
     <CourseDoor
       course={course}
       onOpenStation={setStationSlug}
-      onOpenUnit={setUnitSlug}
+      onOpenUnit={slug => { setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false) }}
       onBack={() => { setCourseId(null); setUnitSlug(null); setStationSlug(null) }}
     />
   )
 
   return (
     <>
-      <style>{STYLES}</style>
+      <style>{STYLES + LADDER_STYLES}</style>
       <div className={course ? 'app-interior' : undefined}>
         {screen}
         <div className="wrap" style={{ paddingTop: 0, paddingBottom: 28 }}>

@@ -596,6 +596,49 @@
               "content_ref": "content/matching-us11r-11.1-vocab-civic-principles.json",
               "_note": "Josh, 2026-09-21 — Sam's pass. Only the four principles Unit 1 has actually named by Day 10 (Rule of Law, Consent of the Governed, Representative Government, Sovereignty) — not the full Tier B list."
             }
+          ],
+          "_ladders_note": "Josh, 2026-09-25. BK ruled 2026-09-24: the ladder lives in the unit room, one L1-L5 ladder per skill lane, ported from the unit's casefile; L5 is enrichment, not a timed write. HC is the pilot (Sam's passes 09-24 and 09-25, BK-approved). Labels are container text drawn from each file's own activity line. TH and DU have no ladder yet, so their gauges open a ladder that reads 'Coming' on every level. Sam's dead file ladder-us11r-11.1-hc-L5-coldwrite.json is NOT wired.",
+          "ladders": [
+            {
+              "skill": "HC",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "What each development established",
+                  "content_ref": "content/matching-us11r-11.1-foundation-01-contextualization.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Best context statement",
+                  "content_ref": "content/context-statements-us11r-11.1.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Bacon’s Rebellion, 1676",
+                  "content_ref": "content/ladder-us11r-11.1-hc-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "The 1705 Virginia slave codes",
+                  "content_ref": "content/ladder-us11r-11.1-hc-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5",
+                  "content_ref": "content/ladder-us11r-11.1-hc-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            }
           ]
         }
       ],
