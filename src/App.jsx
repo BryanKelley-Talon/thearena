@@ -733,9 +733,11 @@ function Splash({ manifest, onPick }) {
 // COURSE DOOR — three lanes, peer to each other (ruling B)
 // ============================================================
 const LANES = [
-  { key: 'stations', label: 'Skill Stations', intro: 'One skill at a time. Train the move, not the unit.' },
-  { key: 'units',    label: 'Unit Rooms',     intro: 'Everything for one unit, in one place.' },
-  { key: 'regents',  label: 'Regents Review', intro: 'The exam itself — its parts, and how to work them.' },
+  // BK, 2026-09-25: Units first — it is where a kid does the work (gauges,
+  // ladders, review). Skill Stations renamed "Know Your Skills". Regents Review
+  // lane pulled until spring (the manifest key stays; the shell just doesn't show it).
+  { key: 'units',    label: 'Units',            intro: 'Everything for one unit, in one place.' },
+  { key: 'stations', label: 'Know Your Skills', intro: 'One skill at a time. Train the move, not the unit.' },
   // FOURTH LANE, added 2026-09-22 (BK's ruling, Out/ruling-capture-2026-09-22-arena-skills-review-lane.md).
   // A schema amendment to the signed spec's three. It is a LIST from day one: BK is designing for several
   // game "skins" over the same content, so this lane holds items, and Skills Review Bowl is the first of them.
@@ -744,7 +746,7 @@ const LANES = [
 ]
 
 function CourseDoor({ course, onOpenStation, onOpenUnit, onBack }) {
-  const firstWithContent = LANES.find(l => (course[l.key] || []).length)?.key || 'stations'
+  const firstWithContent = LANES.find(l => (course[l.key] || []).length)?.key || 'units'
   const [lane, setLane] = useState(firstWithContent)
 
   return (
@@ -776,7 +778,6 @@ function CourseDoor({ course, onOpenStation, onOpenUnit, onBack }) {
 
       {lane === 'stations' && <StationLane course={course} onOpen={onOpenStation} />}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} />}
-      {lane === 'regents' && <EmptyLane what="Regents review" />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
   )
