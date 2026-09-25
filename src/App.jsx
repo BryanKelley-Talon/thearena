@@ -438,6 +438,12 @@ a.door:hover{background:var(--card-lit);border-color:var(--gold);transform:trans
 .flag.soon{color:var(--grey);border-color:#3B4B62;background:#16202F}
 .flag.live{color:var(--canvas);border-color:var(--gold);background:var(--gold);font-weight:700}
 
+/* ---------- BOTTOM BACK ---------- */
+.bottom-back{margin-top:34px;padding-top:18px;border-top:1px solid var(--edge);max-width:860px}
+.bottom-back-btn{background:var(--card);border:1.5px solid var(--arena-choice-edge);color:var(--white);
+  padding:12px 18px;border-radius:9px;font-family:'Outfit',sans-serif;font-size:16px;cursor:pointer}
+.bottom-back-btn:hover{border-color:var(--gold)}
+
 /* ---------- HEADER ---------- */
 .screen-header{display:flex;align-items:center;gap:16px;padding:12px 0 14px;margin-bottom:22px}
 .back-btn{background:none;border:none;color:var(--grey);font-size:16px;cursor:pointer;
@@ -880,6 +886,7 @@ function DrillScreen({ course, station, drill, onBack }) {
           </>
         )}
       </div>
+      <BottomBack onBack={onBack} back={station.name} />
     </div>
   )
 }
@@ -971,6 +978,7 @@ function StationScreen({ course, station, onBack, onOpenDrill }) {
           </>
         )}
       </div>
+      <BottomBack onBack={onBack} back={course.label} />
     </div>
   )
 }
@@ -1074,6 +1082,7 @@ function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOp
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} />
         </>
       )}
+      <BottomBack onBack={onBack} back={course.label} />
     </div>
   )
 }
@@ -1476,6 +1485,7 @@ function MatchingActivity({ course, activity, pack, onBack }) {
             </div>
           : <MatchingSet pack={pack} accent={course.accent} />}
       </div>
+      <BottomBack onBack={onBack} back={'Back'} />
     </div>
   )
 }
@@ -1494,6 +1504,17 @@ function StimulusActivity({ course, activity, pack, onBack }) {
             </div>
           : <ItemSet pack={pack} course={course} />}
       </div>
+      <BottomBack onBack={onBack} back={'Back'} />
+    </div>
+  )
+}
+
+// The same Back, at the bottom of the page (BK, 2026-09-25): a kid who has
+// scrolled through ten questions should not have to scroll back up to leave.
+function BottomBack({ onBack, back }) {
+  return (
+    <div className="bottom-back">
+      <button type="button" className="bottom-back-btn" onClick={() => { onBack(); window.scrollTo(0, 0) }}>&larr; Back to {back === 'Back' ? 'the unit' : back}</button>
     </div>
   )
 }
@@ -1534,7 +1555,7 @@ function SkillExtras({ course, skill, onOpenDrill }) {
 // LADDER LEVEL — one screen, five activity types. The renderer is picked by
 // the manifest's `type`; the content arrives by reference, like everything else.
 // ============================================================
-function LevelScreen({ course, skillName, lv, pack, onComplete, onBack }) {
+function LevelScreen({ course, skillName, lv, pack, source, onComplete, onBack }) {
   const t = LEVEL_TYPES[lv?.type]
   let body
   if (pack === null) body = <div className="loading">Opening the level&hellip;</div>
@@ -1548,7 +1569,15 @@ function LevelScreen({ course, skillName, lv, pack, onComplete, onBack }) {
   else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} />
   else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
   else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} />
-  else if (lv.type === 'enrichment') body = <Enrichment pack={pack} onComplete={onComplete} />
+  else if (lv.type === 'enrichment') body = <>
+    {source?.source_text && (
+      <figure className="stimulus" style={{ borderColor: `${course.accent}44` }}>
+        {source.source_document && <div className="doc-tag">{source.source_document}</div>}
+        <div className="stimulus-text"><p>{source.source_text}</p></div>
+      </figure>
+    )}
+    <Enrichment pack={pack} onComplete={onComplete} />
+  </>
   else body = <EmptyLane what="This level" />
   return (
     <div className="wrap">
@@ -1558,6 +1587,7 @@ function LevelScreen({ course, skillName, lv, pack, onComplete, onBack }) {
         <h2>{lv?.label || t?.name}</h2>
         {body}
       </div>
+      <BottomBack onBack={onBack} back='the ladder' />
     </div>
   )
 }
@@ -1578,7 +1608,8 @@ export default function App() {
   // Ladder navigation. Skill is a skill-line CODE (HC, TH…); level is 1–5.
   const [skill, setSkill] = useState(null)
   const [level, setLevel] = useState(null)
-  const [levelPack, setLevelPack] = useState(null)   // undefined-while-loading is `null`; a failed fetch is `false`
+  const [levelPack, setLevelPack] = useState(null)
+  const [levelSource, setLevelSource] = useState(null)   // undefined-while-loading is `null`; a failed fetch is `false`
   const [review, setReview] = useState(false)
   const [briefPack, setBriefPack] = useState(null)
   const [prog, markDone] = useProgress()
@@ -1619,6 +1650,12 @@ export default function App() {
     const lv = ladderLevels(s?.ladder).find(l => l.level === n)
     if (!levelOpen(lv)) return
     setLevel(n); fetchContent(lv.content_ref, setLevelPack)
+    // BK, 2026-09-25: a kid never works from a document they cannot see. L5 talks
+    // about the ladder's source ("the 1705 law you just read"), so it carries the
+    // same source box L4 shows, read from the ladder's own guided_write level.
+    setLevelSource(null)
+    const src = lv.type === 'enrichment' && ladderLevels(s?.ladder).find(l => l.type === 'guided_write' && levelOpen(l))
+    if (src) fetchContent(src.content_ref, setLevelSource)
     window.scrollTo(0, 0)
   }
   const openReview = () => { setReview(true); fetchContent(unit.brief_ref, setBriefPack); window.scrollTo(0, 0) }
@@ -1646,7 +1683,7 @@ export default function App() {
   else if (unit && skill && level != null) {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
-    screen = <LevelScreen course={course} skillName={s?.name || skill} lv={lv} pack={levelPack}
+    screen = <LevelScreen course={course} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null) }} />
   }
@@ -1659,6 +1696,8 @@ export default function App() {
         <Ladder course={course} unit={unit} skill={skill} prog={prog} onOpenLevel={openLevel} />
         <SkillExtras course={course} skill={skill}
                      onOpenDrill={(slug, i) => { setStationSlug(slug); setDrillIndex(i); setDrillFromLadder(true); window.scrollTo(0, 0) }} />
+        <BottomBack onBack={() => { setSkill(null); if (ladderFrom === 'door') setUnitSlug(null) }}
+                    back={ladderFrom === 'door' ? course.label : unit.label} />
       </div>
     )
   }
@@ -1672,6 +1711,7 @@ export default function App() {
           {briefPack === false && <EmptyLane what="Unit review" />}
           {briefPack && <UnitBrief brief={briefPack} />}
         </div>
+        <BottomBack onBack={() => { setReview(false); setBriefPack(null) }} back={unit.label} />
       </div>
     )
   }

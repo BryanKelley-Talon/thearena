@@ -25,6 +25,7 @@ const LIVE = new Set()
 // Ladder files carry their own shapes (added 2026-09-25, Josh). The manifest says
 // which type each one is, and the gate checks it against THAT type's contract.
 const LADDER_TYPE = {}
+const ENRICH_OK = new Set()   // enrichment files whose ladder has an L4 source the shell shows above them
 try {
   const m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8'))
   for (const c of m.courses || []) {
@@ -47,6 +48,7 @@ try {
         }
         if (lv.type !== 'matching') LADDER_TYPE[f] = lv.type
         if (lv.published) LIVE.add(f)
+        if (lv.type === 'enrichment' && (l.levels || []).some(x => x.type === 'guided_write' && x.published)) ENRICH_OK.add(f)
       }
     }
   }
@@ -144,11 +146,43 @@ function checkLadder(f, d, type) {
   }
 }
 
+// BK, 2026-09-25: "not a fan of any task that requires a student to use a document
+// that they dont see." Any live question or task that points at a document must
+// carry that document on the same screen. Statements that merely mention one
+// (an L5 tidbit citing Document 13) warn, so a human looks.
+const DOC_RX = /\b(this|the|these|both|each|above|following)\s+(document|documents|source|sources|passage|excerpt|chart|map|cartoon|graph|table|image|images|photograph|poster|speech|letter|timeline)\b|\blaw you just read\b|\bDocument\s+\d+|\bDoc\s+\d+/i
+const hasStim = s => {
+  if (!s) return false
+  if (Array.isArray(s)) return s.some(hasStim)
+  if (typeof s === 'string') return s.trim().length > 40
+  if (s.documents) return s.documents.some(hasStim)
+  if (typeof s.content === 'string' && s.content.trim()) return true
+  if (s.content && typeof s.content === 'object') return true
+  if (s.table) return true
+  return !!(s.image_ref && fs.existsSync(path.join(CONTENT, s.image_ref)))
+}
+function checkDocVisible(f, d) {
+  for (const rep of d.reps || []) {
+    const p = [rep.prompt, rep.question, rep.task].filter(Boolean).join(' ')
+    if (DOC_RX.test(p) && !hasStim(rep.stimulus)) fail(f, `rep${rep.rep}: asks about a document it does not show — "${p.slice(0, 70)}"`)
+  }
+  for (const it of d.items || []) {
+    const p = [it.question, it.stem, it.prompt].filter(Boolean).join(' ')
+    if (DOC_RX.test(p) && !hasStim(it.stimulus)) fail(f, `item ${it.n ?? it.id}: asks about a document it does not show — "${p.slice(0, 70)}"`)
+  }
+  if (d.prompt && DOC_RX.test(d.prompt) && !d.source_text) fail(f, `prompt asks about a document it does not show.`)
+  // enrichment try_it: the shell shows the ladder's L4 source above L5, so this is covered
+  // when the ladder has a guided_write level; ENRICH_OK carries that fact in from the manifest.
+  if (d.try_it?.prompt && DOC_RX.test(d.try_it.prompt) && !ENRICH_OK.has(f)) fail(f, `try_it asks about a document the page does not show.`)
+  for (const t of d.tidbits || []) if (DOC_RX.test(t.text || '')) warn(f, `tidbit ${t.id} cites a document by name — check the student can see what it describes.`)
+}
+
 console.log(`CONTENT GATE — ${LIVE.size} package(s) live and gated; the rest reported as 'dark'\n`)
 for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort()) {
   let d
   try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) }
   catch (e) { fail(f, `not valid JSON - ${e.message}`); continue }
+  checkDocVisible(f, d)
   if (LADDER_TYPE[f]) { checkLadder(f, d, LADDER_TYPE[f]); continue }
   for (const rep of d.reps || []) {
     const w = `rep${rep.rep}`
