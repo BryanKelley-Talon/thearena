@@ -593,9 +593,9 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
 .mc-q{color:var(--white);font-size:19.5px;line-height:1.5;margin-bottom:14px;font-weight:500}
 .mc-choices{display:flex;flex-direction:column;gap:8px}
 .mc-choice{display:flex;gap:10px;align-items:flex-start;text-align:left;width:100%;
-  padding:14px 16px;border-radius:9px;background:var(--card-lit);border:1px solid var(--edge);
+  padding:14px 16px;border-radius:9px;background:var(--arena-choice);border:1.5px solid var(--arena-choice-edge);
   color:var(--white);font-family:'Outfit',sans-serif;font-size:16.5px;line-height:1.48;cursor:pointer}
-.mc-choice:hover:not(:disabled){border-color:var(--gold)}
+.mc-choice:hover:not(:disabled){border-color:var(--gold);background:color-mix(in srgb,var(--arena-choice) 88%,var(--gold))}
 .mc-choice b{color:var(--gold);flex:none}
 .mc-choice:disabled{cursor:default}
 /* Right and wrong are carried by a WORD first; colour is the second signal. */
@@ -623,9 +623,9 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
 /* ---------- MATCHING ---------- */
 .match-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;margin-bottom:22px}
 .match-col{display:flex;flex-direction:column;gap:8px}
-.mc-choice.selected{border-color:var(--gold);background:var(--card-lit);
-  box-shadow:inset 0 0 0 1px var(--gold)}
-.mc-choice.paired{opacity:.55;cursor:default}
+.mc-choice.selected{border-color:var(--gold);background:color-mix(in srgb,var(--arena-choice) 80%,var(--gold));
+  box-shadow:inset 0 0 0 2px var(--gold)}
+.mc-choice.paired{opacity:.72;border-style:dashed}
 .match-tag{font-size:12px;color:var(--gold);font-family:'Barlow Condensed',sans-serif;
   text-transform:uppercase;letter-spacing:.08em}
 

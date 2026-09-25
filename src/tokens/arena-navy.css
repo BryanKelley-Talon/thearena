@@ -29,6 +29,12 @@
   --arena-grey:     #8FA0B8;  /* secondary type, captions                  */
   --arena-grey-dim: #6E7F97;  /* disabled / not-yet-taught type            */
 
+  /* Answer choices (BK, 2026-09-25: "it all seems to bleed"). A lighter slate so a
+     choice reads as a button on the card, with an edge that clears WCAG 1.4.11:
+     edge vs card #131C2E = 4.37:1 · white type on fill = 11.2:1.               */
+  --arena-choice:      #243656;
+  --arena-choice-edge: #6882AD;
+
   /* Course accents. Each is distinguishable from the other by LABEL first —
      colour is never the only thing telling the two doors apart (§7.5). */
   --course-global:  #7FB2D9;  /* cool blue   8.02:1 on the navy canvas     */

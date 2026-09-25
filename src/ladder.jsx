@@ -695,7 +695,7 @@ button.rung:hover{background:var(--card-lit);border-color:var(--gold);transform:
 .tile-group legend{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;
   font-size:13px;color:var(--gold);margin-bottom:8px;padding:0}
 .tiles{display:flex;flex-wrap:wrap;gap:8px}
-.tile{padding:11px 15px;border-radius:9px;background:var(--card-lit);border:1px solid var(--edge);color:var(--white);
+.tile{padding:11px 15px;border-radius:9px;background:var(--arena-choice);border:1.5px solid var(--arena-choice-edge);color:var(--white);
   font-family:'Outfit',sans-serif;font-size:16px;line-height:1.4;text-align:left;cursor:pointer;max-width:100%}
 .tile:hover:not(:disabled){border-color:var(--gold)}
 .tile.on{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold);background:color-mix(in srgb,var(--gold) 14%,var(--card-lit))}
