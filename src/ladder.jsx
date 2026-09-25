@@ -217,7 +217,9 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
         <div>
           <h2>{s?.name || skill}</h2>
           <p className="sub" style={{ marginBottom: 6 }}>{statusLine(top)}</p>
-          <p className="ladder-note">Every level is open. Start anywhere — the tag shows a good place to begin.</p>
+          <p className="ladder-note">{levels.some(levelOpen)
+            ? 'Every level is open. Start anywhere — the tag shows a good place to begin.'
+            : 'This ladder isn’t built yet. Its levels open here as they’re added.'}</p>
         </div>
       </div>
       <ol className="ladder">
