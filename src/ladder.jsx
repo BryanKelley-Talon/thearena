@@ -522,61 +522,71 @@ export function Enrichment({ pack, onComplete }) {
 }
 
 // ── UNIT REVIEW (unit_brief) ──────────────────────────────────────────────
-// The unit's Google Classroom content brief, as a review page. Quick Check is
-// questions only — no key, nothing typed, nothing saved. No dates anywhere:
-// unit dates live in Classroom, never the Arena (Sam, 2026-09-18).
+// The unit's Google Classroom content brief, rendered on the page (BK, 2026-09-25:
+// render it directly rather than link a PDF — it reflows at any zoom, reads aloud,
+// and downloads nothing). Headings and wording are the authoring desk's, verbatim.
+// Quick Check shows each answer under its question — BK's ruling 2026-09-25 via Sam,
+// replacing the build order's "questions only". Nothing is typed, nothing is saved.
+// No dates anywhere: unit dates live in Classroom, never the Arena (Sam, 2026-09-18).
+const Sec = ({ h, children }) => (
+  <section className="brief-sec"><h3 className="set-heading">{h}</h3>{children}</section>
+)
 export function UnitBrief({ brief }) {
   if (!brief) return null
-  const ta = brief.thread_anchor || {}
+  const hu = brief.how_to_use, ta = brief.thread_anchor, bg = brief.background
+  const kf = brief.key_facts, ex = brief.exam, tm = brief.three_move, qc = brief.quick_check
+  const cols = kf?.columns || ['Term / Event', 'Key Detail', 'Thread Connection']
   return (
     <div className="brief">
-      {(brief.how_to_use || []).length > 0 && (
-        <section><h3 className="set-heading">How to use this</h3>
-          <ul className="brief-list">{brief.how_to_use.map((x, i) => <li key={i}>{x}</li>)}</ul></section>
-      )}
-      {(ta.primary || ta.secondary) && (
-        <section><h3 className="set-heading">The thread this unit pulls</h3>
-          <div className="anchors">
-            {ta.primary && <article className="anchor primary">
-              <div className="card-type">Main thread</div>
-              <div className="card-name">{ta.primary.name}</div>
-              {ta.primary.question && <p className="anchor-q">{ta.primary.question}</p>}
-              {(ta.primary.points || []).length > 0 && <ul className="brief-list">{ta.primary.points.map((p, i) => <li key={i}>{p}</li>)}</ul>}
-            </article>}
-            {ta.secondary && <article className="anchor">
-              <div className="card-type">Second thread</div>
-              <div className="card-name">{ta.secondary.name}</div>
-              {ta.secondary.question && <p className="anchor-q">{ta.secondary.question}</p>}
-              {ta.secondary.text && <p className="card-blurb">{ta.secondary.text}</p>}
-            </article>}
-          </div>
-        </section>
-      )}
-      {(brief.key_facts || []).length > 0 && (
-        <section><h3 className="set-heading">Key facts</h3>
-          <table className="tbl facts">
-            <thead><tr><th scope="col">Term</th><th scope="col">What to know</th><th scope="col">Thread</th></tr></thead>
-            <tbody>{brief.key_facts.map((f, i) => (
-              <tr key={i}><th scope="row" data-label="Term">{f.term}</th><td data-label="What to know">{f.detail}</td><td data-label="Thread">{f.thread}</td></tr>
-            ))}</tbody>
-          </table>
-        </section>
-      )}
-      {(brief.watch_for || []).length > 0 && (
-        <section><h3 className="set-heading">Watch for</h3>
-          <ul className="brief-list">{brief.watch_for.map((x, i) => <li key={i}>{x}</li>)}</ul></section>
-      )}
-      {(brief.three_move || []).length > 0 && (
-        <section><h3 className="set-heading">The three moves</h3>
-          <ol className="moves">{brief.three_move.map((m, i) => (
-            <li key={i}><b>{m.move}</b>{m.starter && <span className="starter">{m.starter}</span>}</li>
-          ))}</ol></section>
-      )}
-      {(brief.quick_check || []).length > 0 && (
-        <section><h3 className="set-heading">Quick check</h3>
-          <p className="mc-preamble">Answer these in your head or on paper. There’s no key here, and nothing is saved.</p>
-          <ol className="brief-list">{brief.quick_check.map((q, i) => <li key={i}>{q}</li>)}</ol></section>
-      )}
+      {brief.subtitle && <p className="brief-sub">{brief.subtitle}</p>}
+      {hu && <Sec h={hu.heading}>
+        {hu.lead && <p className="brief-p">{hu.lead}</p>}
+        <ol className="brief-list">{(hu.steps || []).map((x, i) => <li key={i}>{x}</li>)}</ol>
+        {hu.connects_to && <p className="brief-note">{hu.connects_to}</p>}
+      </Sec>}
+      {ta && <Sec h={ta.heading}>
+        <article className="anchor primary">
+          <div className="card-name">{ta.label}</div>
+          {ta.question && <p className="anchor-q">{ta.question}</p>}
+          {ta.question_note && <p className="brief-p">{ta.question_note}</p>}
+          {ta.lead && <p className="brief-lead">{ta.lead}</p>}
+          {(ta.points || []).map((p, i) => <p key={i} className="brief-p">{p}</p>)}
+          {ta.after && <p className="brief-p">{ta.after}</p>}
+        </article>
+        {bg && <article className="anchor bg">
+          <div className="card-type">{bg.heading}</div>
+          <p className="brief-p">{bg.text}</p>
+        </article>}
+      </Sec>}
+      {kf && <Sec h={kf.heading}>
+        {kf.note && <p className="brief-note">{kf.note}</p>}
+        <table className="tbl facts">
+          <thead><tr>{cols.map(c => <th key={c} scope="col">{c}</th>)}</tr></thead>
+          <tbody>{(kf.rows || []).map((f, i) => (
+            <tr key={i}><th scope="row" data-label={cols[0]}>{f.term}</th>
+              <td data-label={cols[1]}>{f.detail}</td><td data-label={cols[2]}>{f.thread}</td></tr>
+          ))}</tbody>
+        </table>
+      </Sec>}
+      {ex && <Sec h={ex.heading}>
+        {ex.text && <p className="brief-p">{ex.text}</p>}
+        {ex.watch_lead && <p className="brief-lead">{ex.watch_lead}</p>}
+        <ul className="watch">{(ex.watch_for || []).map((w, i) => (
+          <li key={i}><span className="cue">{w.cue}</span><span className="arrow" aria-hidden="true">→</span><span className="sr">then</span> <span>{w.move}</span></li>
+        ))}</ul>
+      </Sec>}
+      {tm && <Sec h={tm.heading}>
+        {tm.intro && <p className="brief-p">{tm.intro}</p>}
+        <ol className="moves">{(tm.moves || []).map((m, i) => (
+          <li key={i}><b>{m.move}</b>{m.starter && <span className="starter"><em>Starter:</em> {m.starter}</span>}</li>
+        ))}</ol>
+      </Sec>}
+      {qc && <Sec h={qc.heading}>
+        {qc.intro && <p className="brief-note">{qc.intro}</p>}
+        <ol className="qc">{(qc.items || []).map((it, i) => (
+          <li key={i}><p className="qc-q">{it.q}</p>{it.a && <p className="qc-a">{it.a}</p>}</li>
+        ))}</ol>
+      </Sec>}
     </div>
   )
 }
@@ -683,24 +693,45 @@ button.rung:hover{background:var(--card-lit);border-color:var(--gold);transform:
 .enrich section{margin-bottom:10px}
 
 /* ---------- UNIT REVIEW ---------- */
-.brief section{margin-bottom:8px}
-.brief-list{color:var(--white);font-size:17px;line-height:1.6;padding-left:22px}
+.brief{max-width:880px}
+.brief-sub{color:var(--grey);font-size:15.5px;line-height:1.55;margin:-4px 0 6px}
+.brief-sec{margin-bottom:6px}
+.brief-p{color:var(--white);font-size:17px;line-height:1.65;margin:0 0 12px}
+.brief-lead{color:var(--gold-lit);font-size:16px;font-weight:600;margin:4px 0 8px}
+.brief-note{color:var(--white);font-size:16.5px;line-height:1.6;padding:12px 15px;border-left:3px solid var(--gold);
+  background:color-mix(in srgb,var(--gold) 8%,transparent);border-radius:0 8px 8px 0;margin:0 0 14px}
+.brief-list{color:var(--white);font-size:17px;line-height:1.6;padding-left:24px;margin:0 0 12px}
 .brief-list li{margin-bottom:6px}
-.anchors{display:grid;grid-template-columns:1.3fr 1fr;gap:14px}
-.anchor{padding:18px;border-radius:12px;background:var(--card);border:1px solid var(--edge)}
+.anchor{padding:18px 20px;border-radius:12px;background:var(--card);border:1px solid var(--edge);margin-bottom:12px}
 .anchor.primary{border-left:3px solid var(--gold)}
-.anchor-q{color:var(--white);font-size:17.5px;line-height:1.5;font-style:italic;margin:4px 0 10px}
+.anchor .card-name{margin-bottom:6px}
+.anchor.bg .card-type{letter-spacing:.08em;font-size:12px;margin-bottom:8px;line-height:1.4}
+.anchor-q{color:var(--white);font-size:19px;line-height:1.5;font-style:italic;margin:4px 0 8px}
 .facts{min-width:0}
-.moves{padding-left:22px;color:var(--white);font-size:17px;line-height:1.6}
-.moves li{margin-bottom:10px}
-.moves .starter{display:block;color:var(--grey);font-style:italic;font-size:15.5px}
+.facts tbody td,.facts tbody th{font-size:15.5px}
+.watch{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px}
+.watch li{padding:12px 15px;border-radius:10px;background:var(--card);border:1px solid var(--edge);color:var(--white);
+  font-size:16.5px;line-height:1.55}
+.watch .cue{font-weight:600}
+.watch .arrow{color:var(--gold);margin:0 8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.moves{padding-left:24px;color:var(--white);font-size:17px;line-height:1.6}
+.moves li{margin-bottom:14px}
+.moves .starter{display:block;color:var(--grey);font-size:16px;margin-top:4px}
+.moves .starter em{color:var(--gold);font-style:normal;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
+  letter-spacing:.1em;font-size:12px;margin-right:4px}
+.qc{padding-left:0;list-style:none;counter-reset:qc;display:flex;flex-direction:column;gap:12px}
+.qc li{counter-increment:qc;padding:16px 18px;border-radius:12px;background:var(--card);border:1px solid var(--edge)}
+.qc-q{color:var(--white);font-size:17.5px;line-height:1.5;font-weight:600;margin:0 0 10px}
+.qc-q::before{content:counter(qc) ". ";color:var(--gold)}
+.qc-a{color:var(--white);font-size:16.5px;line-height:1.65;margin:0;padding-top:10px;border-top:1px solid var(--edge)}
 
 @media (prefers-reduced-motion:reduce){
   .g-needle{transition:none}
   button.gauge:hover,button.rung:hover{transform:none;box-shadow:inset 0 0 0 1px var(--gold)}
 }
 @media (max-width:760px){
-  .write-grid,.exemplars,.anchors{grid-template-columns:1fr}
+  .write-grid,.exemplars{grid-template-columns:1fr}
   /* Key Facts stacks into cards on narrow screens and at high zoom. */
   .facts thead{position:absolute;left:-9999px}
   .facts,.facts tbody,.facts tr,.facts th,.facts td{display:block;width:100%}

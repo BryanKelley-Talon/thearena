@@ -33,6 +33,11 @@ try {
     for (const u of c.units || []) {
       if (!u.published) continue
       for (const a of u.activities || []) if (a.published && a.content_ref) LIVE.add(String(a.content_ref).replace(/^content\//, ''))
+      if (u.brief_ref) {
+        const f = String(u.brief_ref).replace(/^content\//, '')
+        if (!fs.existsSync(path.join(CONTENT, f))) { console.error(`  FAIL  manifest\n        ${u.slug}: brief_ref '${f}' is not in public/content.`); process.exitCode = 1 }
+        else { LADDER_TYPE[f] = 'unit_brief'; LIVE.add(f) }
+      }
       for (const l of u.ladders || []) for (const lv of l.levels || []) {
         if (!lv.content_ref) continue
         const f = String(lv.content_ref).replace(/^content\//, '')
@@ -121,6 +126,15 @@ function checkLadder(f, d, type) {
     for (const t of d.tidbits || []) if (!t.source_pointer) fail(f, `tidbit ${t.id}: no source_pointer (canon 6, quotation provenance).`)
     for (const e of d.exemplars || []) if (![4, 5].includes(e.level)) fail(f, `exemplar level '${e.level}' — must be 4 or 5.`)
     if (!(d.tidbits || []).length && !(d.exemplars || []).length) fail(f, 'enrichment: no tidbits and no exemplars.')
+  } else if (type === 'unit_brief') {
+    if (!d.title) fail(f, 'unit_brief: no title.')
+    if (!(d.key_facts?.rows || []).length) fail(f, 'unit_brief: no key_facts rows.')
+    for (const [i, it] of (d.quick_check?.items || []).entries()) if (!it.q) fail(f, `quick_check ${i + 1}: no question.`)
+    // No calendar dates in the Arena — unit dates live in Classroom (Sam, 2026-09-18).
+    // Years are content; a month-and-day or a slash date is a schedule.
+    const txt = JSON.stringify(Object.fromEntries(Object.entries(d).filter(([k]) => !k.startsWith('_'))))
+    const hit = txt.match(/\b(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\.? \d{1,2}\b|\b\d{1,2}\/\d{1,2}(\/\d{2,4})?\b/)
+    if (hit) fail(f, `unit_brief: looks like a calendar date ('${hit[0]}'). Unit dates live in Classroom, never the Arena.`)
   } else {
     fail(f, `ladder type '${type}' has no renderer in the shell.`)
   }

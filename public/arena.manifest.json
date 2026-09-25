@@ -539,6 +539,8 @@
           "slug": "unit-1",
           "label": "11.1 · Colonial Foundations",
           "published": true,
+          "brief_ref": "content/brief-us11r-11.1.json",
+          "_brief_note": "Josh, 2026-09-25. Sam's GC content brief v2 (BK-approved), ported verbatim to JSON and rendered on the page — BK: render it directly rather than link a PDF. Letterhead, footer filename and the BK-only revision note are left out. Quick Check shows answers under each question (BK's ruling via Sam, 2026-09-25).",
           "activities": [
             {
               "type": "scenario_link",

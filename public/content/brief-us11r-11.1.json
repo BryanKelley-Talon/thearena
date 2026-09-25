@@ -1,0 +1,143 @@
+{
+  "_course": "US History & Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_source": "Ported verbatim by Josh (flashpoint) 2026-09-25 from Sam's GC_Brief_Unit11-1_US11R_Regents_Review_v2 (BK-approved; pass-sam-2026-09-25-unit11-1-gc-brief-v2.md). Omitted on purpose: the school letterhead line, the footer filename, and the REVISION NOTE marked 'for BK, not part of the student-facing brief'. No wording changed.",
+  "unit": "11.1",
+  "title": "Colonial Foundations",
+  "subtitle": "US History & Government 11R Regents Review · Primary Thread: 1 — Is There One America? · Covers Casefile A and Casefile B · See unit packets for documents",
+  "how_to_use": {
+    "heading": "Part 1 — How to Use This Review",
+    "lead": "Three steps:",
+    "steps": [
+      "Read the Key Facts table (Part 3). Do not memorize — understand the pattern.",
+      "Practice writing a Three-Move Answer sentence using a fact from this unit. Use the starters in Part 5.",
+      "Read the Quick Check (Part 6). Try to answer each question yourself before reading the answer underneath it — then check yourself against it."
+    ],
+    "connects_to": "This brief connects to: Thread 1 (Is There One America?) · 4-Question Frame · Make the Case"
+  },
+  "thread_anchor": {
+    "heading": "Part 2 — Regents Thread Anchor",
+    "label": "Primary Thread 1 — Is There One America?",
+    "question": "\"When the Constitution promises equality, does it mean everyone?\"",
+    "question_note": "This is the earliest entry in the Thread 1 arc — before there is a Constitution to promise anything.",
+    "lead": "How Thread 1 appears in this unit:",
+    "points": [
+      "In 1619, twenty captive Africans sold at Jamestown were classified as indentured servants — the same status as many poor English colonists. The line between the two was not yet built.",
+      "Between 1640 and 1705, colonial law built that line, statute by statute: John Punch sentenced to lifelong servitude (1640) while white servants in the same case were not; children inheriting their mother's enslaved status (1662); and finally the 1705 Virginia slave codes, which declared enslaved people real property — legally real estate, with no legal standing as people at all.",
+      "Bacon's Rebellion (1676) sits in the middle of that process. Poor whites and enslaved people rebelled together against Virginia's elite — and the colony's response afterward hastened the shift toward hardened racial slavery and away from a shared servant class."
+    ],
+    "after": "The same era, by a different mechanism, English coverture law absorbed a married woman's legal identity into her husband's — no property, no contracts, no vote. A different group, the same era's answer to \"who counts as a full legal person.\""
+  },
+  "background": {
+    "heading": "Background — self-governance and limited government (Thread 3 opens formally in Unit 2, not here)",
+    "text": "The Virginia House of Burgesses (1619) and decades of salutary neglect gave colonists real practical self-governance before 1763 — the expectation Thread 3 will later test directly, once there's a government to build. Worth knowing now; not yet a Thread 3 claim."
+  },
+  "key_facts": {
+    "heading": "Part 3 — Key Facts by Block",
+    "note": "Thread connection note: The same year Virginia held its first representative assembly (1619), the first enslaved Africans arrived in Virginia. This tension — freedom claimed for some, bondage imposed on others — runs through every unit in this course.",
+    "columns": [
+      "Term / Event",
+      "Key Detail",
+      "Thread Connection"
+    ],
+    "rows": [
+      {
+        "term": "Virginia House of Burgesses (1619)",
+        "detail": "First representative assembly in English North America. Colonists claimed self-governance as a right of English citizens. Precedent for all future colonial assemblies.",
+        "thread": "Background — self-governance as an early expectation, tested directly by Thread 3 starting in Unit 2"
+      },
+      {
+        "term": "Indentured Servitude vs. Enslavement (1607–1705)",
+        "detail": "Both indentured servants and enslaved Africans were bound labor in the 1600s — worked, bought, sold. The legal line between them was built over ~85 years, not found. By 1705, only one group could be bought, sold, and inherited for life.",
+        "thread": "Thread 1 — the line was built, statute by statute, against people who had no vote in building it"
+      },
+      {
+        "term": "Bacon's Rebellion (1676)",
+        "detail": "Poor whites and enslaved/indentured Black Virginians rebelled together against the colony's elite. Virginia's response afterward hardened colonial law along racial lines in the years that followed.",
+        "thread": "Thread 1 — shows the moment colonial elites chose race over class as the line to defend"
+      },
+      {
+        "term": "Virginia Slave Codes (1705)",
+        "detail": "Declared all Black, Mulatto, and Indian enslaved people real property — legally real estate. Forbidden to assault a white person, denied the right to bear arms, denied movement without written permission.",
+        "thread": "Thread 1 ⚑ — the key document for the African American arc in Unit 11.1"
+      },
+      {
+        "term": "Salutary Neglect (~1607–1763)",
+        "detail": "Britain loosely enforced trade laws and let colonial assemblies govern locally for generations. Ended after the French & Indian War when Britain needed revenue.",
+        "thread": "Background — decades of practical self-rule that made 1763's shift feel like a violation"
+      },
+      {
+        "term": "Triangular Trade / Middle Passage",
+        "detail": "European goods to Africa; enslaved Africans to the Americas; raw materials to Europe. ~300,000 Africans transported to British North America — the economic foundation of the plantation South.",
+        "thread": "Thread 1 — slavery built into the colonial economy, not an afterthought to it"
+      }
+    ]
+  },
+  "exam": {
+    "heading": "Part 4 — Regents Exam Appearances",
+    "text": "Unit 11.1 content appears most frequently in Part I (Multiple Choice) as historical context for the Revolution and constitutional founding. The servant/slave comparison and the 1705 slave codes appear as Thread 1 stimulus material in both Part I and Thread 1 CLE essays.",
+    "watch_lead": "Watch for:",
+    "watch_for": [
+      {
+        "cue": "Charts or passages comparing indentured servitude and slavery",
+        "move": "look for what has no equivalent on the other side; that's the line the law built"
+      },
+      {
+        "cue": "A timeline of colonial laws (1619–1705)",
+        "move": "identify the pattern: rights being removed one at a time, not all at once"
+      },
+      {
+        "cue": "References to Bacon's Rebellion",
+        "move": "connect it to why colonial elites shifted toward race-based slavery afterward"
+      },
+      {
+        "cue": "Passages about colonial assemblies or 'rights of Englishmen'",
+        "move": "background for the Revolution, not yet a Thread 3 claim"
+      }
+    ]
+  },
+  "three_move": {
+    "heading": "Part 5 — Three-Move Answer Practice",
+    "intro": "Write three sentences using the Three-Move Regents Answer framework: (1) Name the promise or principle at stake. (2) Show how it was undermined. (3) Show partial redemption — or note that, this early, there isn't one yet.",
+    "moves": [
+      {
+        "move": "Move 1 — Name the principle colonists claimed for themselves.",
+        "starter": "\"Colonists who settled Virginia beginning in 1607 claimed the rights of English citizens, including representative government through bodies like the House of Burgesses...\""
+      },
+      {
+        "move": "Move 2 — Show how the 1705 slave codes undermined any claim that those rights extended to everyone.",
+        "starter": "\"However, over the same decades colonists were building their own self-government, colonial law was building the opposite for enslaved people — culminating in the 1705 Virginia slave codes, which declared enslaved people real property with no legal standing as people at all...\""
+      },
+      {
+        "move": "Move 3 — Name what remains unresolved.",
+        "starter": "\"Unlike later moments in the Thread 1 arc, Unit 11.1 offers no redemption yet — the contradiction between claimed liberty and legal bondage is simply established here, and it will not be addressed even partially until...\""
+      }
+    ]
+  },
+  "quick_check": {
+    "heading": "Part 6 — Quick Check",
+    "intro": "Try each question yourself before you read the answer underneath it.",
+    "items": [
+      {
+        "q": "What was salutary neglect, and how did it unintentionally prepare colonists for independence?",
+        "a": "Salutary neglect was Britain's loose enforcement of trade laws and hands-off approach to colonial governance, from the 1600s until 1763. By leaving colonial assemblies to govern themselves for generations, Britain let colonists build real practical self-rule — so when Britain reversed course after 1763, colonists experienced it as the loss of something they already had, not the denial of something new."
+      },
+      {
+        "q": "Between 1619 and 1705, what pattern do you see in how colonial law treated enslaved people? Name at least two steps.",
+        "a": "Rights and legal protections were removed one at a time, not all at once. In 1640, John Punch was sentenced to servitude for life while two white servants in the same case received only extra years — the first sign the law was treating Black and white servants differently. In 1662, Virginia ruled a child's status followed the mother's, making enslavement hereditary. By 1705, the process ended with enslaved people declared legal property."
+      },
+      {
+        "q": "Why does Bacon's Rebellion (1676) sit in the middle of that pattern, not outside it?",
+        "a": "In 1676, poor whites and enslaved/indentured Black Virginians rebelled together against the colony's elite. That alliance showed Virginia's elite what the two groups could do if they had shared interests — and the colony's response afterward accelerated the shift toward race-based slavery, deliberately separating groups the law had, until then, treated more similarly."
+      },
+      {
+        "q": "What did the 1705 Virginia slave codes declare enslaved people to legally be? Why does that word choice matter?",
+        "a": "The 1705 codes declared enslaved people to be real property — legally real estate, not people. That word choice matters because it moved slavery from a status a person held, like an indentured servant's temporary contract, to a category of ownership with no legal end and no legal personhood at all."
+      },
+      {
+        "q": "Name the primary Regents Thread for Unit 11.1 and write one sentence connecting the 1705 slave codes to it.",
+        "a": "Thread 1 — Is There One America? The 1705 slave codes are the earliest entry in the Thread 1 arc: the same colonial world claiming the rights of Englishmen for itself defined enslaved people as property under the law, and that contradiction is not resolved anywhere in this unit."
+      }
+    ]
+  }
+}
