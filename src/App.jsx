@@ -1058,7 +1058,7 @@ function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOp
             <button type="button" className="card" onClick={onOpenReview}>
               <div className="card-type">Unit review</div>
               <div className="card-name">What this unit covered</div>
-              <div className="card-blurb">The key facts, the thread it pulls, and a quick check.</div>
+              <div className="card-blurb">The key facts, the big idea, and a quick check.</div>
               <span className="flag live">Open</span>
             </button>
           </div>
