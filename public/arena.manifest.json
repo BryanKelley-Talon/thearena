@@ -136,10 +136,9 @@
             {
               "type": "stimulus",
               "label": "Part I reps — the 1750 chart",
-              "published": false,
-              "content_ref": "stimulus-gs10r-10-1.json",
-              "_release": "2026-09-22",
-              "_hold": "HELD BY WILL. The four items are on the 10.1 exam; his students sit it Monday 2026-09-21. THE FILE IS DELIBERATELY NOT IN public/ - it lives in builds/thearena/_content-hold/. published:false hides the card but does NOT stop Netlify serving a file from public/ at a guessable URL. Release = copy the file into public/content/ AND flip this flag. Both steps, on or after 2026-09-22."
+              "published": true,
+              "content_ref": "content/stimulus-gs10r-10-1.json",
+              "_released": "2026-09-26 by Josh on Will's word (will-pass-2026-09-26-10-2-room-citations-and-10-1-release.md): the 10.1 exam has been given. Now the FULL15 set, filed as-is. Label unchanged (Will's)."
             }
           ]
         },

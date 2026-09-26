@@ -9,7 +9,7 @@ its approval.**
 
 | file | state | why |
 |---|---|---|
-| `stimulus-gs10r-10-1.json` | **HELD to 2026-09-22** | Its four items are on the 10.1 exam. Will's students sit it **Monday 2026-09-21**. Serving the file before Tuesday hands them the exam, card hidden or not. |
+| `RELEASED-2026-09-26-stimulus-gs10r-10-1-4item.json` | **RELEASED — stale record** | The 09-18 four-item hold. Will released the set 2026-09-26; the live file is `public/content/stimulus-gs10r-10-1.json` (his FULL15, filed as-is). |
 | `RELEASED-2026-09-18-stimulus-11-1.json` | **RELEASED — do not re-use this copy** | Approved by BK 2026-09-18. The live file is `public/content/stimulus-11-1.json`. **This copy is kept only as the record of what was held and is now stale** — prefixed RELEASED so no later session reads it as an active hold. Edit the one in `public/content/`. |
 | `bkbook-review.json` | working note | Crop metadata extracted for BK's 2026-09-18 approvals sheet. Not content; not served. |
 
