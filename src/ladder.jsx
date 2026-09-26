@@ -161,7 +161,7 @@ export function GaugeFace({ value = 0, dark = false, size = 160 }) {
         })}
         {!dark && (
           <g className="g-needle" style={{ transform: `rotate(${angleOf(shown)}deg)` }}>
-            <polygon points="50,19.5 51.1,50 50,54.5 48.9,50" />
+            <polygon points="50,17.5 51.8,50 50,55.5 48.2,50" />
           </g>
         )}
         {/* Numbers paint AFTER the needle, with a face-coloured halo, so the needle
@@ -648,7 +648,7 @@ button.gauge:hover{border-color:var(--gold);background:var(--card-lit);transform
 .g-num.on{fill:var(--white);font-size:9px}
 .gauge-face.dark .g-num{fill:#44536B}
 .g-needle{transform-box:view-box;transform-origin:50% 50%;transition:transform .9s cubic-bezier(.2,.8,.25,1.05)}
-.g-needle polygon{fill:var(--white);filter:drop-shadow(0 0 .6px #000)}
+.g-needle polygon{fill:var(--arena-needle);filter:drop-shadow(0 0 .7px #000) drop-shadow(0 0 1.6px color-mix(in srgb,var(--arena-needle) 55%,transparent))}
 .g-hub{fill:#1a1408;stroke:var(--gold);stroke-width:1.3}
 .g-hub-core{fill:#3a2e14}
 .gauge-face.dark .g-hub{stroke:#3B4B62}

@@ -19,9 +19,9 @@
    ============================================================ */
 :root{
   --arena-canvas:   #0B1220;  /* midnight navy — the Arena's ground        */
-  --arena-card:     #131C2E;  /* raised surface                            */
-  --arena-card-lit: #1A2538;  /* hover / active surface                    */
-  --arena-edge:     #22304A;  /* hairline borders                          */
+  --arena-card:     #1B2A47;  /* raised surface                            */
+  --arena-card-lit: #24365A;  /* hover / active surface                    */
+  --arena-edge:     #5E7699;  /* hairline borders                          */
 
   --arena-gold:     #E3B341;  /* the accent. Structure, flags, rules.      */
   --arena-gold-lit: #F5CB63;  /* focus ring + hover gold                   */
@@ -32,11 +32,31 @@
   /* Answer choices (BK, 2026-09-25: "it all seems to bleed"). A lighter slate so a
      choice reads as a button on the card, with an edge that clears WCAG 1.4.11:
      edge vs card #131C2E = 4.37:1 · white type on fill = 11.2:1.               */
-  --arena-choice:      #243656;
-  --arena-choice-edge: #6882AD;
+  --arena-choice:      #2E4877;
+  --arena-choice-edge: #9DB2D4;
 
   /* Course accents. Each is distinguishable from the other by LABEL first —
      colour is never the only thing telling the two doors apart (§7.5). */
   --course-global:  #7FB2D9;  /* cool blue   8.02:1 on the navy canvas     */
   --course-us11r:   #E3B341;  /* the house gold, 9.62:1                    */
+
+  /* POP PASS (BK, 2026-09-26: "make sure the visuals are popped enough off the blue").
+     Before this pass a card sat 1.1:1 against the canvas and was held apart by a
+     hairline only. Now: card vs canvas 1.31:1, every edge >= 3:1 against both the
+     canvas (4.04) and the card (3.26), choices 1.66:1 off the card with a 4.51:1 edge,
+     plus a shadow on everything a kid can tap. Text on card: white 13.2, grey 5.4, gold 7.4. */
+  --arena-lift: 0 1px 0 rgba(255,255,255,.07) inset, 0 4px 14px rgba(0,0,0,.45);
+
+  /* THE NEEDLE (BK, 2026-09-26: Merthiolate orange, "to help make that growth pop").
+     Orange means growth and is used for NOTHING else in the Arena. 6.1:1 on the
+     dark gauge face. The level is also written under every gauge, so colour is
+     never the only signal. */
+  --arena-needle: #FF6A13;
 }
+
+/* Everything a kid can tap sits ON the page, not in it. */
+a.door, button.gauge, button.lane-tab, button.rung, button.card, button.practice-row,
+.mc-choice, .bottom-back-btn, .rep, .mc-item {
+  box-shadow: var(--arena-lift);
+}
+
