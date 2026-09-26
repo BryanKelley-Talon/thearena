@@ -1251,26 +1251,21 @@ function McItem({ item, accent, n, total, onAnswer, course }) {
   )
 }
 
-// RULED 2026-09-18 (BK, via Sam) — closes the streak-vs-score item held since 08-31.
-// Two counters, both SESSION-SCOPED, neither able to decrease:
-//   reps    — every attempt this session. Only increments.
-//   bestRun — the longest correct run this session. A miss ends the CURRENT run;
-//             the DISPLAYED number holds at the best so far and never drops to zero.
-// Session-scoped means no storage at all — not localStorage, not sessionStorage.
-// It lives in this component and is gone when the tab closes. Stricter than
-// "lost if they wipe their history", and squarely inside canon §1.
-// Neither is a point value, a percentage or a rubric grid, so the no-score rule
-// (spec §7.2) is intact and unamended.
-// WHY THERE IS NO RESET: a streak that drops to zero is a ratchet, and it teaches
-// that being wrong destroys what you built. It lands hardest on the kid at a 2 who
-// strings four together and misses the fifth. Do not reintroduce it.
-// Ships SILENT on a miss — a line there would be guide voice, and voice is parked.
-function Counters({ reps, bestRun }) {
+// RULED 2026-09-26 (BK, to Josh) — best run REMOVED. It supersedes the 09-18 ruling
+// (BK, via Sam) that added it. BK: "Remove it. I agree that is where the coaching
+// lives." On a ten-question set, "10 in a row" reads as 10 out of 10: a grade-shaped
+// number, against the no-grade rule Will set for test practice. What stays is reps:
+// every attempt this session, right or wrong. It only goes up and it is SESSION-SCOPED,
+// with no storage at all, so it is gone when the tab closes (canon §1).
+// The space below the set is held for growth coaching (PBIS-style: celebrate growth,
+// connect the skill to the kid's world). Leo works that with BK, with Sam's and
+// Will's input. Josh builds the slot; the words are not Josh's.
+// Do not reintroduce a streak, a percentage or a count of right answers here.
+function Counters({ reps }) {
   if (!reps) return null
   return (
     <div className="counters" role="status" aria-live="polite">
       <span className="counter"><b>{reps}</b> {reps === 1 ? 'rep' : 'reps'} this session</span>
-      {bestRun > 1 && <span className="counter"><b>{bestRun}</b> in a row, best run</span>}
     </div>
   )
 }
@@ -1278,12 +1273,7 @@ function Counters({ reps, bestRun }) {
 function ItemSet({ pack, course, heading }) {
   const items = (pack && pack.items) || []
   const [reps, setReps] = useState(0)
-  const [run, setRun] = useState(0)
-  const [bestRun, setBestRun] = useState(0)
-  const record = correct => {
-    setReps(r => r + 1)
-    setRun(r => { const next = correct ? r + 1 : 0; setBestRun(b => Math.max(b, next)); return next })
-  }
+  const record = () => setReps(r => r + 1)
   if (!items.length) return null
   return (
     <>
@@ -1301,7 +1291,7 @@ function ItemSet({ pack, course, heading }) {
         <McItem key={it.n ?? i} item={it} accent={course.accent} course={course}
                 n={i + 1} total={items.length} onAnswer={record} />
       ))}
-      <Counters reps={reps} bestRun={bestRun} />
+      <Counters reps={reps} />
     </>
   )
 }
