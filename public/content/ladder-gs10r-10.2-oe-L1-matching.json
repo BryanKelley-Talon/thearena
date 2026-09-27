@@ -1,0 +1,106 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Documents and the outside facts that explain them",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04. Stays dark until BK opens Outside Evidence (introduced in Casefile B, Thu 10/1).",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "OE",
+  "skill_label": "Outside Evidence",
+  "level": 1,
+  "type": "matching",
+  "practice_only": true,
+  "intro": "Match each document to an outside fact that helps explain it: something true that isn't in the document itself.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Hobbes, Leviathan, 1651",
+      "hints": [
+        "Hobbes wrote in 1651. What was England going through?",
+        "Look for the civil war."
+      ]
+    },
+    {
+      "key": "b",
+      "label": "Locke, Two Treatises of Government, 1690",
+      "hints": [
+        "Locke wrote to justify a change of king.",
+        "Look for William and Mary."
+      ]
+    },
+    {
+      "key": "c",
+      "label": "Montesquieu, The Spirit of the Laws, 1748",
+      "hints": [
+        "Whose government copied Montesquieu's plan?",
+        "Look for three branches."
+      ]
+    },
+    {
+      "key": "d",
+      "label": "Catherine's government on serfs, 1767",
+      "hints": [
+        "What did Russia's serfs do a few years later?",
+        "Look for Pugachev."
+      ]
+    },
+    {
+      "key": "e",
+      "label": "Wilberforce's speech to Parliament, 1789",
+      "hints": [
+        "Wilberforce wanted to end the slave trade. Did it end?",
+        "Look for 1807."
+      ]
+    },
+    {
+      "key": "f",
+      "label": "Wollstonecraft, A Vindication of the Rights of Woman, 1792",
+      "hints": [
+        "Who could vote under France's new constitution?",
+        "Look for 1791."
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "From 1642 to 1651 England fought a civil war, and in 1649 it executed its king."
+    },
+    {
+      "key": "2",
+      "label": "In 1688 and 1689 England replaced King James II with William and Mary, on Parliament's terms."
+    },
+    {
+      "key": "3",
+      "label": "In 1787 the U.S. Constitution split power into three branches: legislative, executive and judicial."
+    },
+    {
+      "key": "4",
+      "label": "From 1773 to 1775, Pugachev led a huge uprising of Russia's serfs and peasants."
+    },
+    {
+      "key": "5",
+      "label": "In 1807 Britain's Parliament abolished the slave trade."
+    },
+    {
+      "key": "6",
+      "label": "France's constitution of 1791 let only some men vote, and no women."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "6"
+  },
+  "rationale": {
+    "a": "England's civil war, and the execution of its king, is the world Hobbes was writing in. It isn't in his text, so it's outside evidence.",
+    "b": "England's change of king in 1688 and 1689 is what Locke was justifying. The names and dates come from outside the document.",
+    "c": "The U.S. Constitution of 1787 put Montesquieu's plan into practice. It's outside evidence that his idea mattered.",
+    "d": "Pugachev's Rebellion shows how angry the serfs in Document 10 had become. It happened six years after the decree.",
+    "e": "Parliament abolished the slave trade in 1807, eighteen years after Wilberforce's speech. His campaign worked, slowly.",
+    "f": "France's 1791 constitution left women out of the vote. That's what Wollstonecraft was answering."
+  }
+}

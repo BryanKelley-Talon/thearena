@@ -1,0 +1,77 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Locke, and what was happening",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04. Stays dark until BK opens Outside Evidence (introduced in Casefile B, Thu 10/1).",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "OE",
+  "skill_label": "Outside Evidence",
+  "level": 3,
+  "type": "sentence_build",
+  "practice_only": true,
+  "intro": "Build the sentence. Choose the right piece for each blank.",
+  "sentence_frame": "___ argued that power comes from the people, and outside evidence shows why: ___, which meant ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "who",
+      "tiles": [
+        {
+          "text": "Locke",
+          "correct": true
+        },
+        {
+          "text": "Hobbes",
+          "correct": false
+        },
+        {
+          "text": "Catherine the Great",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "the outside fact",
+      "tiles": [
+        {
+          "text": "in 1689 England put William and Mary on the throne on Parliament's terms",
+          "correct": true
+        },
+        {
+          "text": "in 1651 England's civil war came to an end",
+          "correct": false
+        },
+        {
+          "text": "in 1767 Catherine called a commission to write new laws",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "which meant",
+      "tiles": [
+        {
+          "text": "Parliament, not the king, now set the terms of power",
+          "correct": true
+        },
+        {
+          "text": "the king ruled by divine right again",
+          "correct": false
+        },
+        {
+          "text": "England had no government at all",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Locke argued that power comes from the people, and outside evidence shows why: in 1689 England put William and Mary on the throne on Parliament's terms, which meant Parliament, not the king, now set the terms of power.",
+  "hints": [
+    "Hobbes argued for one strong ruler, not power from the people.",
+    "Which event was Locke justifying the year before he published?"
+  ],
+  "rationale": "Outside evidence is a specific fact that isn't in the document and helps explain it. England's change of king in 1689 is what Locke was writing to justify."
+}

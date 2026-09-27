@@ -1,0 +1,66 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "From a 4 to a 5",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "EI",
+  "skill_label": "Enduring Issue",
+  "level": 5,
+  "type": "enrichment",
+  "practice_only": true,
+  "tidbits": [
+    {
+      "id": "td-01",
+      "thread": "Why it endures",
+      "text": "An issue endures because it comes back. Wollstonecraft's claim that rights belong to everyone who can reason returned in 1848 at Seneca Falls, New York, and in the long fight for women's right to vote.",
+      "source_pointer": "Outside the casefile: enrichment"
+    },
+    {
+      "id": "td-02",
+      "thread": "Identity & Nationalism",
+      "text": "One document can show more than one issue. Document 7 also fits Identity & Nationalism: who a people say they are, and who that leaves out. France's rights of man left out women.",
+      "source_pointer": "Six Umbrellas poster; Document 7"
+    },
+    {
+      "id": "td-03",
+      "thread": "Two documents, one problem",
+      "text": "The Regents essay wants the issue shown in more than one document. Document 7 (women) and Document 8 (enslaved Africans) show the same problem: people shut out of rights by those who hold power.",
+      "source_pointer": "Casefile A, Documents 7 and 8"
+    },
+    {
+      "id": "td-04",
+      "thread": "Power & Its Abuse",
+      "text": "Use the poster's words: who holds authority, and what happens to the people who did not choose them. Neither the women of 1792 nor enslaved Africans chose the people who ruled them.",
+      "source_pointer": "Six Umbrellas poster"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "One enduring issue in Document 7 is power and its abuse, because the men who hold power shut women out of rights, and Wollstonecraft says that makes them act like tyrants.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "Power and its abuse, when those who hold authority decide who counts, runs through Documents 7 and 8: Wollstonecraft dares France's lawmakers to prove women lack reason before shutting them out, and Equiano describes being carried away from his home with no say at all. The issue endures because every group left out has had to fight its way in, from Wollstonecraft's 1792 challenge to the women who met at Seneca Falls in 1848.",
+      "what_changed": "The 4 names and explains the issue in one document. The 5 defines it, shows it in two documents, and says why it endures, which is what the Regents essay asks for."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Define before you prove",
+      "explanation": "Say what the problem is in one sentence before you point to a document. Naming isn't explaining."
+    },
+    {
+      "name": "Two documents, one problem",
+      "explanation": "Show the same issue in two documents from different people or places. That's what makes it enduring, not a one-time event."
+    }
+  ],
+  "try_it": {
+    "prompt": "Pick one more group from 10.1 or 10.2 that was shut out by the people who held power. Name the group, and name who held the power over them.",
+    "status": "Untimed, optional, never scored, never saved."
+  },
+  "submitted_to_teacher": false
+}

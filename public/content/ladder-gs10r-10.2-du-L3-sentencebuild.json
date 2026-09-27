@@ -1,0 +1,77 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Montesquieu on power",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "level": 3,
+  "type": "sentence_build",
+  "practice_only": true,
+  "intro": "Build the evidence sentence. Choose the right piece for each blank.",
+  "sentence_frame": "According to ___, ___, which shows ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "who said it",
+      "tiles": [
+        {
+          "text": "Montesquieu",
+          "correct": true
+        },
+        {
+          "text": "Hobbes",
+          "correct": false
+        },
+        {
+          "text": "Catherine the Great",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "the detail",
+      "tiles": [
+        {
+          "text": "when the power to make and enforce laws is united in one person, there can be no liberty",
+          "correct": true
+        },
+        {
+          "text": "life without a strong ruler is a war of everyone against everyone",
+          "correct": false
+        },
+        {
+          "text": "all citizens should be subject to the same laws",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "what it shows",
+      "tiles": [
+        {
+          "text": "he believed power had to be split up to protect freedom",
+          "correct": true
+        },
+        {
+          "text": "he believed one strong king protects liberty best",
+          "correct": false
+        },
+        {
+          "text": "he wanted to end all government",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "According to Montesquieu, when the power to make and enforce laws is united in one person, there can be no liberty, which shows he believed power had to be split up to protect freedom.",
+  "hints": [
+    "Montesquieu is the one who wanted power split into branches.",
+    "The detail and what it shows have to agree: a warning about power in one person's hands."
+  ],
+  "rationale": "Evidence names who said it, gives the exact detail, and says what it shows. The Hobbes and Catherine details are real, but they don't prove this claim."
+}

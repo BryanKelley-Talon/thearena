@@ -1,0 +1,77 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Locke, 1690",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 3,
+  "type": "sentence_build",
+  "practice_only": true,
+  "intro": "Build the sentence. Choose the right piece for each blank.",
+  "sentence_frame": "In ___, just after ___, Locke argued that power comes from the people, which is why ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "year",
+      "tiles": [
+        {
+          "text": "1690",
+          "correct": true
+        },
+        {
+          "text": "1789",
+          "correct": false
+        },
+        {
+          "text": "1651",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "what was happening",
+      "tiles": [
+        {
+          "text": "England forced out one king and installed another on its terms",
+          "correct": true
+        },
+        {
+          "text": "French crowds stormed the Bastille",
+          "correct": false
+        },
+        {
+          "text": "England fought a civil war over who should rule",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "why it matters",
+      "tiles": [
+        {
+          "text": "later revolutionaries used his ideas to overthrow rulers who broke the deal",
+          "correct": true
+        },
+        {
+          "text": "kings began to claim divine right for the first time",
+          "correct": false
+        },
+        {
+          "text": "England went back to absolute monarchy",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "In 1690, just after England forced out one king and installed another on its terms, Locke argued that power comes from the people, which is why later revolutionaries used his ideas to overthrow rulers who broke the deal.",
+  "hints": [
+    "Locke published the year after England replaced its king.",
+    "The storming of the Bastille was 1789, a hundred years later."
+  ],
+  "rationale": "Locke wrote in 1690 to justify England's replacement of one king with another. A century later, revolutionaries in France and beyond picked up his argument."
+}

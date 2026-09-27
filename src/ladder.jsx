@@ -363,6 +363,10 @@ export function SentenceBuild({ pack, onComplete }) {
   // A second check that still isn't right is a retry: the stuck line, once.
   const [stuck, , retryStuck] = useStuck()
   useEffect(() => { if (checked && !allRight && attempt >= 1) retryStuck() }, [checked])
+  // Two hints on request and the desk's reason at the end, the same as step 2
+  // (Will's step 3 files carry both; BK 17:54 said yes to the reason line).
+  const hints = pack?.hints || []
+  const [shown, setShown] = useState(0)
 
   const tryAgain = () => {
     setChosen(c => Object.fromEntries(Object.entries(c).filter(([id]) => isRight(blanks.find(b => String(b.blank_id) === id)))))
@@ -406,6 +410,16 @@ export function SentenceBuild({ pack, onComplete }) {
         </fieldset>
       ))}
 
+      {!allRight && hints.length > 0 && (
+        <div className="hints">
+          {hints.slice(0, shown).map((h, i) => <p key={i} className="hint"><b>Hint {i + 1}</b> {h}</p>)}
+          {shown < hints.length && (
+            <button type="button" className="btn-ghost" onClick={() => setShown(n => n + 1)}>
+              {shown === 0 ? 'Show a hint' : 'Show the second hint'}
+            </button>
+          )}
+        </div>
+      )}
       {!checked && (
         <button type="button" className="rep-go" disabled={!allFilled} onClick={() => setChecked(true)}>
           {allFilled ? 'Check my sentence' : `Fill every blank first — ${blanks.length - Object.keys(chosen).length} to go`}
@@ -422,6 +436,7 @@ export function SentenceBuild({ pack, onComplete }) {
         <div className="rep-reveal" role="status">
           <h4>Your sentence</h4>
           <p className="rep-exemplar">{pack.correct_sentence}</p>
+          {(pack.rationale || pack.reason) && <p className="mc-why">{pack.rationale || pack.reason}</p>}
           <p className="level-done">Step done. Head back to the gauge for the next one.</p>
         </div>
       )}

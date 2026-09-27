@@ -1,0 +1,25 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Catherine's government on serfs, 1767",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 4,
+  "type": "guided_write",
+  "practice_only": true,
+  "source_document": "Document 10 · Catherine's government on serfs · Source: A Source Book for Russian History, G. Vernadsky, trans., Yale University Press, 1972 (adapted)",
+  "source_citation": "Source: A Source Book for Russian History, G. Vernadsky, trans., Yale University Press, 1972 (adapted)",
+  "source_text": "“The Governing Senate . . . has deemed it necessary to make known that the landlords' serfs and peasants . . . owe their landlords proper submission and absolute obedience in all matters . . . . And should . . . any serfs and peasants . . . make bold to submit unlawful petitions [formal written complaints] complaining of their landlords, and especially to petition Her Imperial Majesty personally, then both those who make the complaints and those who write up the petitions shall be punished by the knout [a heavy whip] and forthwith deported to Nerchinsk to penal servitude [forced labor as punishment] for life . . . . it shall be read in all the churches on Sundays and holy days . . . lest anyone pretend ignorance.”",
+  "prompt": "Write 2 to 3 sentences of historical context for this document: when and where, and what led to it.",
+  "sentence_starter": "In 1767, Catherine the Great ___",
+  "checklist": [
+    "Did you say when and where this is happening?",
+    "Did you say what led to it: who ruled Russia, and what she said she believed?",
+    "Did you connect it to why this document matters?"
+  ],
+  "model_response": "In 1767, Catherine the Great ruled Russia as an absolute monarch who read Montesquieu and wrote about equal laws. That same year she called delegates together to write Russia's new laws, while millions of serfs were bound to the land and to their landlords. This decree shows the gap: her government promised equal laws but punished serfs who even complained.",
+  "submitted_to_teacher": false
+}

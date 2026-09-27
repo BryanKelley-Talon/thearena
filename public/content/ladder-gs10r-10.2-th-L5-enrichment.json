@@ -1,0 +1,66 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "From a 4 to a 5",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "level": 5,
+  "type": "enrichment",
+  "practice_only": true,
+  "tidbits": [
+    {
+      "id": "td-01",
+      "thread": "The Regents essay",
+      "text": "On the Enduring Issues Essay, a strong thesis says why the issue matters on two sides: how it affected people, and how it has continued or changed over time.",
+      "source_pointer": "Skill Descriptors, Thesis"
+    },
+    {
+      "id": "td-02",
+      "thread": "Arguable",
+      "text": "A thesis is an answer somebody could argue against. If nobody could disagree with it, it's a fact, not a thesis.",
+      "source_pointer": "Casefile A, Make the Case"
+    },
+    {
+      "id": "td-03",
+      "thread": "Although",
+      "text": "Starting with \"although\" lets a thesis admit the other side and still win: Although Catherine wrote about equal laws, her government punished serfs who complained.",
+      "source_pointer": "Documents 9 and 10"
+    },
+    {
+      "id": "td-04",
+      "thread": "Reach forward",
+      "text": "The same gap between promise and practice came back in revolutionary France, which declared the rights of man and left women out. Wollstonecraft called that tyranny in 1792.",
+      "source_pointer": "Casefile A, Document 7"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "Catherine the Great was not really enlightened, because her government punished serfs who complained even though she wrote about equal laws.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "Although Catherine the Great wrote that all citizens should be subject to the same laws, her government punished serfs for even asking for fairness, which shows Enlightenment ideas could decorate absolute power as easily as challenge it. France's revolutionaries showed the same gap a generation later when they declared the rights of man and left women out.",
+      "what_changed": "The 4 answers the question. The 5 admits the other side with \"although,\" widens the claim to what Enlightenment ideas could be used for, and reaches forward to France."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Admit, then win",
+      "explanation": "Open with \"although\" to name the other side, then make your claim anyway. It shows you've weighed the evidence."
+    },
+    {
+      "name": "Widen the claim",
+      "explanation": "Go from \"Catherine was not enlightened\" to what her case shows about Enlightenment ideas in general. Same evidence, a bigger claim."
+    }
+  ],
+  "try_it": {
+    "prompt": "Write a one-sentence thesis, starting with \"Although,\" that answers: Did Catherine the Great make life better for Russia's people?",
+    "status": "Untimed, optional, never scored, never saved."
+  },
+  "submitted_to_teacher": false
+}

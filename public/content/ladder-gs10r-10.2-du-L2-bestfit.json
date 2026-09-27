@@ -1,0 +1,103 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Best use of the document",
+  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
+  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). RESENT 17:53: documents added on screen per Josh's 17:50 port check (BK 9/25: no task on a document the student can't see). Wording unchanged.",
+  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted). Documents on screen are Casefile A's own excerpts, word for word, with their source lines.",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "level": 2,
+  "type": "mc_bestfit",
+  "_hint_model": "2 escalating hints per item. rationale per item is the reason line (the Arena's BestFit reveal doesn't show it yet; see cover memo).",
+  "items": [
+    {
+      "id": "du-01",
+      "stem": "Claim: Locke believed people could replace a bad government. Which sentence uses Document 2 best?",
+      "options": {
+        "1": "Document 2 is about government.",
+        "2": "In Document 2, Locke says a legislature that seizes absolute power forfeits it and the power passes back to the people, which shows he believed people could take back authority from a government that abuses it.",
+        "3": "Locke wrote about legislatures.",
+        "4": "“They forfeit the power the people had put into their hands.”"
+      },
+      "correct": "2",
+      "hints": [
+        "Strong evidence names the document, pulls a detail and says what it shows.",
+        "A quote with nothing after it is dropped, not used."
+      ],
+      "rationale": "The best sentence names Document 2, pulls the exact detail and says what it proves. The quote on its own is dropped evidence: it never says what it shows.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 2 · Locke on a government that breaks the deal",
+        "citation": "Source: John Locke, Two Treatises of Government, 1690 (adapted)",
+        "content": "“[When] the legislature shall . . . grasp [for] themselves, or put into the hands of any other, an absolute power over their lives, liberties, and estates of the people, . . . they forfeit the power the people had put into their hands for quite contrary ends, and it [passes] to the people, who have a right to resume their original liberty. . . .”"
+      }
+    },
+    {
+      "id": "du-02",
+      "stem": "Claim: Catherine's government did not treat serfs as equals. Which sentence uses Document 10 best?",
+      "options": {
+        "1": "Document 10 talks about serfs.",
+        "2": "Catherine was mean to serfs.",
+        "3": "In Document 10, Catherine's government orders that serfs who complain about their landlords be whipped and sent to forced labor, which shows serfs were not equal under her laws.",
+        "4": "Serfs were peasants in Russia."
+      },
+      "correct": "3",
+      "hints": [
+        "Which choice uses a specific detail from the document?",
+        "Look for the choice that says what happens to serfs who complain."
+      ],
+      "rationale": "The best sentence names the document, gives the exact detail (whipping and forced labor for complaining) and ties it to the claim. The others summarize, guess or give a definition.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 10 · Catherine's government on serfs",
+        "citation": "Source: A Source Book for Russian History, G. Vernadsky, trans., Yale University Press, 1972 (adapted)",
+        "content": "“The Governing Senate . . . has deemed it necessary to make known that the landlords' serfs and peasants . . . owe their landlords proper submission and absolute obedience in all matters . . . . And should . . . any serfs and peasants . . . make bold to submit unlawful petitions [formal written complaints] complaining of their landlords, and especially to petition Her Imperial Majesty personally, then both those who make the complaints and those who write up the petitions shall be punished by the knout [a heavy whip] and forthwith deported to Nerchinsk to penal servitude [forced labor as punishment] for life . . . . it shall be read in all the churches on Sundays and holy days . . . lest anyone pretend ignorance.”"
+      }
+    },
+    {
+      "id": "du-03",
+      "stem": "Which sentence names the source and pulls a specific detail?",
+      "options": {
+        "1": "According to Document 4, Montesquieu warns that when the power to make and enforce laws is united in one person, there can be no liberty.",
+        "2": "Montesquieu says liberty is important.",
+        "3": "The document says power is bad.",
+        "4": "Montesquieu was a French judge."
+      },
+      "correct": "1",
+      "hints": [
+        "Look for a document number and an exact detail.",
+        "One choice is true, but it doesn't come from the document."
+      ],
+      "rationale": "Only the first choice names the document and gives its exact detail. \"Montesquieu was a French judge\" is true, but it's outside information, not evidence from Document 4.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 4 · Montesquieu on powers united in one person",
+        "citation": "Source: Baron de Montesquieu, The Spirit of the Laws, 1748 (adapted)",
+        "content": "“When the legislative and executive powers are united in the same person, or in the same body of magistrates [government officials], there can be no liberty; because apprehensions [fears] may arise, lest the same monarch or senate should enact tyrannical laws to execute them in a tyrannical manner. . . .”"
+      }
+    },
+    {
+      "id": "du-04",
+      "stem": "Which sentence uses evidence instead of summarizing?",
+      "options": {
+        "1": "Document 7 is about women's rights.",
+        "2": "Wollstonecraft wrote a book in 1792.",
+        "3": "In Document 7, Wollstonecraft dares French lawmakers to prove first that women lack reason, which shows she was using the Enlightenment's own logic against them.",
+        "4": "Women should have rights."
+      },
+      "correct": "3",
+      "hints": [
+        "A summary says what a document is about. Evidence uses what it says.",
+        "Which choice has a detail and a \"which shows\"?"
+      ],
+      "rationale": "Evidence pulls a detail and puts it to work. This sentence names Document 7, gives the dare and says what it shows. The others summarize or give an opinion.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 7 · Wollstonecraft on reason and the rights of women",
+        "citation": "Source: Mary Wollstonecraft, A Vindication of the Rights of Woman, 1792 (adapted). Addressed to Talleyrand-Périgord, a member of the French National Assembly.",
+        "content": "“. . . if she be not prepared by education to become the companion of man, she will stop the progress of knowledge. . . . If women are to be excluded . . . prove first . . . that they want [lack] reason, else this flaw in your NEW CONSTITUTION will ever show that man must . . . act like a tyrant. . . .”"
+      }
+    }
+  ]
+}

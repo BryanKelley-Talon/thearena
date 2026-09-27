@@ -1,0 +1,25 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Rousseau, Document 6",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "EX",
+  "skill_label": "Explanation",
+  "level": 4,
+  "type": "guided_write",
+  "practice_only": true,
+  "source_document": "Document 6 · Rousseau distinguishes the general will from the will of all · Source: Jean-Jacques Rousseau, The Social Contract, 1762. Translated by G. D. H. Cole, 1913. Book II, Chapter III.",
+  "source_citation": "Source: Jean-Jacques Rousseau, The Social Contract, 1762. Translated by G. D. H. Cole, 1913. Book II, Chapter III.",
+  "source_text": "“There is often a great deal of difference between the will of all and the general will; the latter takes account only of the common interest, while the former takes private interest into account, and is no more than a sum of particular wills.”",
+  "prompt": "Explain what Rousseau means, and why it matters. Write 2 to 3 sentences using the frame: ___, because ___, which means ___.",
+  "sentence_starter": "Rousseau argues that ___",
+  "checklist": [
+    "Did you say what Rousseau argues, in your own words?",
+    "Did you give the detail from the document (because…)?",
+    "Did you say why it matters (which means…)?"
+  ],
+  "model_response": "Rousseau argues that the general will is different from the will of all, because the will of all only adds up what each person privately wants, while the general will looks at the common interest. This means a majority isn't automatically right: a community has to ask what is good for everyone, not just what most people want.",
+  "submitted_to_teacher": false
+}

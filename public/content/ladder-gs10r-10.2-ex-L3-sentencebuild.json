@@ -1,0 +1,77 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Montesquieu, then and now",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "EX",
+  "skill_label": "Explanation",
+  "level": 3,
+  "type": "sentence_build",
+  "practice_only": true,
+  "intro": "Build the explanation. Choose the right piece for each blank.",
+  "sentence_frame": "___, because ___, which means ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "the claim",
+      "tiles": [
+        {
+          "text": "Montesquieu's idea still matters",
+          "correct": true
+        },
+        {
+          "text": "Hobbes's idea won out in the end",
+          "correct": false
+        },
+        {
+          "text": "Catherine's laws still shape Europe",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "because",
+      "tiles": [
+        {
+          "text": "the U.S. Constitution split power into three branches",
+          "correct": true
+        },
+        {
+          "text": "kings still rule by divine right",
+          "correct": false
+        },
+        {
+          "text": "France kept an absolute king",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "which means",
+      "tiles": [
+        {
+          "text": "no single branch can make, enforce and judge the law alone",
+          "correct": true
+        },
+        {
+          "text": "the president makes all the laws",
+          "correct": false
+        },
+        {
+          "text": "the courts have no power",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Montesquieu's idea still matters, because the U.S. Constitution split power into three branches, which means no single branch can make, enforce and judge the law alone.",
+  "hints": [
+    "This is our Explanation frame: ___, because ___, which means ___.",
+    "Casefile A says it: when you meet the U.S. Constitution in 11R, you're meeting Montesquieu."
+  ],
+  "rationale": "The claim, the reason and the explanation have to agree. Montesquieu's split powers show up in the U.S. Constitution, which means no one branch holds all the power."
+}

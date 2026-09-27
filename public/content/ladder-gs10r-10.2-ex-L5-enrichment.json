@@ -1,0 +1,66 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "From a 4 to a 5",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "EX",
+  "skill_label": "Explanation",
+  "level": 5,
+  "type": "enrichment",
+  "practice_only": true,
+  "tidbits": [
+    {
+      "id": "td-01",
+      "thread": "The hinge",
+      "text": "\"Which means\" is where describing turns into explaining. Everything after it is your thinking, not the author's.",
+      "source_pointer": "The Explanation frame"
+    },
+    {
+      "id": "td-02",
+      "thread": "Reach forward",
+      "text": "In 1793, Robespierre stood before France's National Convention, claimed to speak for the general will, and used that claim to justify executions. You'll read that speech in Casefile B.",
+      "source_pointer": "Casefile A, Day 4"
+    },
+    {
+      "id": "td-03",
+      "thread": "Two sides of one idea",
+      "text": "Rousseau's general will can protect the common good, or it can be turned into a weapon against anyone who disagrees. A 5 explains both.",
+      "source_pointer": "Casefile A, Day 4"
+    },
+    {
+      "id": "td-04",
+      "thread": "Across documents",
+      "text": "Rousseau and Montesquieu feared the same thing from opposite sides: Montesquieu feared one person holding all the power, and the general will can be used to justify exactly that.",
+      "source_pointer": "Casefile A, Documents 4 and 6"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "Rousseau says the general will looks at the common interest, which means a community should do what's good for everyone, not just what most people want.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "Rousseau separates the general will, the common interest, from the will of all, a sum of private wants, which means a majority can be wrong. It also means the idea can be turned around: a leader who claims to speak for the general will can call anyone who disagrees an enemy, which is what Robespierre did in 1793.",
+      "what_changed": "The 4 explains one step. The 5 explains the idea, then explains its danger, so the reader sees why it matters in both directions."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Which means, twice",
+      "explanation": "Chain two explanations: what the evidence means, then what that leads to."
+    },
+    {
+      "name": "Explain the danger",
+      "explanation": "Say what could go wrong with an idea, not just what it promises."
+    }
+  ],
+  "try_it": {
+    "prompt": "Think of a time a group you were in decided something by majority vote. Was it the general will, or just the will of all? How could you tell?",
+    "status": "Untimed, optional, never scored, never saved."
+  },
+  "submitted_to_teacher": false
+}

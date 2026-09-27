@@ -1,0 +1,25 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Was Catherine enlightened?",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "level": 4,
+  "type": "guided_write",
+  "practice_only": true,
+  "source_document": "Documents 9 and 10 · What Catherine wrote, and what her government did · Document 9. Source: Documents of Catherine the Great, W. F. Reddaway, ed., Cambridge University Press (adapted) Document 10. Source: A Source Book for Russian History, G. Vernadsky, trans., Yale University Press, 1972 (adapted)",
+  "source_citation": "Document 9. Source: Documents of Catherine the Great, W. F. Reddaway, ed., Cambridge University Press (adapted) Document 10. Source: A Source Book for Russian History, G. Vernadsky, trans., Yale University Press, 1972 (adapted)",
+  "source_text": "Document 9: “. . . The Laws ought to be so framed, as to secure the Safety of every Citizen as much as possible. . . . The Equality of the Citizens consists in this; that they should all be subject to the same Laws. . . .”  Document 10: “The Governing Senate . . . has deemed it necessary to make known that the landlords' serfs and peasants . . . owe their landlords proper submission and absolute obedience in all matters . . . . And should . . . any serfs and peasants . . . make bold to submit unlawful petitions [formal written complaints] complaining of their landlords, and especially to petition Her Imperial Majesty personally, then both those who make the complaints and those who write up the petitions shall be punished by the knout [a heavy whip] and forthwith deported to Nerchinsk to penal servitude [forced labor as punishment] for life . . . . it shall be read in all the churches on Sundays and holy days . . . lest anyone pretend ignorance.”",
+  "prompt": "Write a 2 to 3 sentence thesis that answers: Was Catherine the Great an enlightened ruler?",
+  "sentence_starter": "Catherine the Great was ___",
+  "checklist": [
+    "Did you answer the question and take a side?",
+    "Did you give a reason somebody could argue with?",
+    "Did you point to what she wrote and what her government did?"
+  ],
+  "model_response": "Catherine the Great was enlightened in her words but not in her actions. In Document 9 she wrote that all citizens should be subject to the same laws, but in Document 10 her government ordered serfs whipped and sent to forced labor just for complaining about their landlords. A ruler who punishes people for asking for fairness was using Enlightenment words to decorate absolute power.",
+  "submitted_to_teacher": false
+}

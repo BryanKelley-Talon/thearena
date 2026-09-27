@@ -1,0 +1,106 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Evidence and what it means",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "EX",
+  "skill_label": "Explanation",
+  "level": 1,
+  "type": "matching",
+  "practice_only": true,
+  "intro": "Match each piece of evidence to what it means. That's the \"so what.\"",
+  "left": [
+    {
+      "key": "a",
+      "label": "Locke: when a legislature grabs absolute power, the power passes back to the people.",
+      "hints": [
+        "What happens to a government that abuses its power?",
+        "Look for the choice about keeping power only while protecting rights."
+      ]
+    },
+    {
+      "key": "b",
+      "label": "Montesquieu: there is no liberty when one person both makes and enforces the laws.",
+      "hints": [
+        "Montesquieu's answer was to divide power.",
+        "Look for \"split.\""
+      ]
+    },
+    {
+      "key": "c",
+      "label": "Rousseau: the general will looks only at the common interest.",
+      "hints": [
+        "The general will isn't just counting votes.",
+        "Look for the choice about a majority."
+      ]
+    },
+    {
+      "key": "d",
+      "label": "Wollstonecraft: prove first that women lack reason, or stop shutting them out.",
+      "hints": [
+        "Wollstonecraft used the philosophes' own idea against them.",
+        "Look for \"reason.\""
+      ]
+    },
+    {
+      "key": "e",
+      "label": "Catherine's government punishes serfs who complain about their landlords.",
+      "hints": [
+        "Catherine wrote about equal laws. Did serfs get them?",
+        "Look for the choice about her promise."
+      ]
+    },
+    {
+      "key": "f",
+      "label": "Hobbes: without a power over everyone, people live in a state of war.",
+      "hints": [
+        "Hobbes thought life without government was war. So what would people do?",
+        "Look for \"strong ruler.\""
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "…which means a government only keeps its power as long as it protects people's rights."
+    },
+    {
+      "key": "2",
+      "label": "…which means the only safe government is one where power is split and each part checks the others."
+    },
+    {
+      "key": "3",
+      "label": "…which means a majority isn't automatically right if it only adds up what each person wants."
+    },
+    {
+      "key": "4",
+      "label": "…which means the Enlightenment's own rule, that rights come from reason, should include women."
+    },
+    {
+      "key": "5",
+      "label": "…which means her promise of equal laws never reached the people at the bottom."
+    },
+    {
+      "key": "6",
+      "label": "…which means people will accept a strong ruler just to escape the fear."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "6"
+  },
+  "rationale": {
+    "a": "If power passes back to the people when a government abuses it, then a government only keeps power while it protects their rights.",
+    "b": "If united power destroys liberty, the fix is to split it so each part checks the others.",
+    "c": "If the general will is about the common interest, then adding up private wants, even a majority's, can still get it wrong.",
+    "d": "The philosophes said rights come from reason. Wollstonecraft's dare means that if women can reason, their rights follow.",
+    "e": "Punishing serfs for complaining means the equal laws Catherine wrote about never reached them.",
+    "f": "If life without government is war, people will trade freedom for safety and accept a strong ruler."
+  }
+}

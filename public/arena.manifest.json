@@ -202,13 +202,14 @@
           "slug": "explanation",
           "name": "Explanation",
           "tier": null,
-          "published": false,
+          "published": true,
           "blurb": "The “so what” — analysis over retelling",
           "content_ref": null,
           "skill_lines": [
             "EX"
           ],
-          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his."
+          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his.",
+          "_published_note": "Opened 2026-09-27 18:11 with its 10.2 ladder: Will's addendum 3 ('open it when it's ported'), BK 18:03 'yes'."
         },
         {
           "slug": "outside-evidence",
@@ -220,7 +221,8 @@
           "skill_lines": [
             "OE"
           ],
-          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his."
+          "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his.",
+          "_dark_note": "Ladder ported 2026-09-27; gauge stays dark until BK opens it (Will addendum 3: introduced in Casefile B Thu 10/1)."
         },
         {
           "slug": "enduring-issue",
@@ -252,8 +254,9 @@
             {
               "type": "board",
               "label": "Asia is blank. Was nothing there?",
-              "published": true,
-              "content_ref": "gs10r/unit-10.1/deck#slide-9"
+              "published": false,
+              "content_ref": "gs10r/unit-10.1/deck#slide-9",
+              "_retired": "Retired 2026-09-27 (BK 18:06, Will's 10.1 pack): its questions travel with the 1772 map activity."
             },
             {
               "type": "map",
@@ -269,7 +272,9 @@
               "content_ref": "content/stimulus-gs10r-10-1.json",
               "_released": "2026-09-26 by Josh on Will's word (will-pass-2026-09-26-10-2-room-citations-and-10-1-release.md): the 10.1 exam has been given. Now the FULL15 set, filed as-is. Label unchanged (Will's)."
             }
-          ]
+          ],
+          "brief_ref": "content/brief-gs10r-10.1.json",
+          "_brief_note": "Will, arena-pack-global10r-10.1.md, BK approved 18:06 ('i agree with all'); ported word for word 18:11."
         },
         {
           "slug": "unit-2",
@@ -289,7 +294,7 @@
           "ladders": [
             {
               "skill": "HC",
-              "_source": "Will, arena-pack-global10r-10.2.md, BK approved 2026-09-27 17:34 ('yes'); ported word for word by Josh 17:46",
+              "_source": "Will, arena-pack-global10r-10.2.md + addenda 1–3, BK approved 17:34 / 17:58 / 18:03; ported word for word by Josh 18:11 (md5 match)",
               "levels": [
                 {
                   "level": 1,
@@ -304,12 +309,33 @@
                   "label": "Best context statement",
                   "content_ref": "content/ladder-gs10r-10.2-hc-L2-bestfit.json",
                   "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Locke, 1690",
+                  "content_ref": "content/ladder-gs10r-10.2-hc-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Catherine's government on serfs, 1767",
+                  "content_ref": "content/ladder-gs10r-10.2-hc-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5",
+                  "content_ref": "content/ladder-gs10r-10.2-hc-L5-enrichment.json",
+                  "published": true
                 }
               ]
             },
             {
               "skill": "TH",
-              "_source": "Will, arena-pack-global10r-10.2.md, BK approved 2026-09-27 17:34 ('yes'); ported word for word by Josh 17:46",
+              "_source": "Will, arena-pack-global10r-10.2.md + addenda 1–3, BK approved 17:34 / 17:58 / 18:03; ported word for word by Josh 18:11 (md5 match)",
               "levels": [
                 {
                   "level": 1,
@@ -324,12 +350,33 @@
                   "label": "Strongest thesis",
                   "content_ref": "content/ladder-gs10r-10.2-th-L2-bestfit.json",
                   "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Did the Enlightenment threaten kings?",
+                  "content_ref": "content/ladder-gs10r-10.2-th-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Was Catherine enlightened?",
+                  "content_ref": "content/ladder-gs10r-10.2-th-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5",
+                  "content_ref": "content/ladder-gs10r-10.2-th-L5-enrichment.json",
+                  "published": true
                 }
               ]
             },
             {
               "skill": "DU",
-              "_source": "Will, arena-pack-global10r-10.2.md, BK approved 2026-09-27 17:34 ('yes'); ported word for word by Josh 17:46",
+              "_source": "Will, arena-pack-global10r-10.2.md + addenda 1–3, BK approved 17:34 / 17:58 / 18:03; ported word for word by Josh 18:11 (md5 match)",
               "levels": [
                 {
                   "level": 1,
@@ -337,13 +384,122 @@
                   "label": "Claims and the evidence that proves them",
                   "content_ref": "content/ladder-gs10r-10.2-du-L1-matching.json",
                   "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Best use of the document",
+                  "content_ref": "content/ladder-gs10r-10.2-du-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Montesquieu on power",
+                  "content_ref": "content/ladder-gs10r-10.2-du-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Locke, Document 2",
+                  "content_ref": "content/ladder-gs10r-10.2-du-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5",
+                  "content_ref": "content/ladder-gs10r-10.2-du-L5-enrichment.json",
+                  "published": true
                 }
-              ],
-              "_held": "Step 2 held at the port 2026-09-27: items name a document the screen does not show (gate: document on screen). Back to Will."
+              ]
+            },
+            {
+              "skill": "EX",
+              "_source": "Will, arena-pack-global10r-10.2.md + addenda 1–3, BK approved 17:34 / 17:58 / 18:03; ported word for word by Josh 18:11 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Evidence and what it means",
+                  "content_ref": "content/ladder-gs10r-10.2-ex-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Explain, don't describe",
+                  "content_ref": "content/ladder-gs10r-10.2-ex-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Montesquieu, then and now",
+                  "content_ref": "content/ladder-gs10r-10.2-ex-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Rousseau, Document 6",
+                  "content_ref": "content/ladder-gs10r-10.2-ex-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5",
+                  "content_ref": "content/ladder-gs10r-10.2-ex-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "OE",
+              "_source": "Will, arena-pack-global10r-10.2.md + addenda 1–3, BK approved 17:34 / 17:58 / 18:03; ported word for word by Josh 18:11 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Documents and the outside facts that explain them",
+                  "content_ref": "content/ladder-gs10r-10.2-oe-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Which one is outside evidence?",
+                  "content_ref": "content/ladder-gs10r-10.2-oe-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Locke, and what was happening",
+                  "content_ref": "content/ladder-gs10r-10.2-oe-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "The slave trade, Document 8",
+                  "content_ref": "content/ladder-gs10r-10.2-oe-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5",
+                  "content_ref": "content/ladder-gs10r-10.2-oe-L5-enrichment.json",
+                  "published": true
+                }
+              ]
             },
             {
               "skill": "EI",
-              "_source": "Will, arena-pack-global10r-10.2.md, BK approved 2026-09-27 17:34 ('yes'); ported word for word by Josh 17:46",
+              "_source": "Will, arena-pack-global10r-10.2.md + addenda 1–3, BK approved 17:34 / 17:58 / 18:03; ported word for word by Josh 18:11 (md5 match)",
               "levels": [
                 {
                   "level": 1,
@@ -351,9 +507,36 @@
                   "label": "The six umbrellas",
                   "content_ref": "content/ladder-gs10r-10.2-ei-L1-matching.json",
                   "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Name it, then explain it",
+                  "content_ref": "content/ladder-gs10r-10.2-ei-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Name it, define it, show it",
+                  "content_ref": "content/ladder-gs10r-10.2-ei-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Wollstonecraft, Document 7",
+                  "content_ref": "content/ladder-gs10r-10.2-ei-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5",
+                  "content_ref": "content/ladder-gs10r-10.2-ei-L5-enrichment.json",
+                  "published": true
                 }
-              ],
-              "_held": "Step 2 held at the port 2026-09-27: items name a document the screen does not show (gate: document on screen). Back to Will."
+              ]
             }
           ]
         }

@@ -1,0 +1,77 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Name it, define it, show it",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "EI",
+  "skill_label": "Enduring Issue",
+  "level": 3,
+  "type": "sentence_build",
+  "practice_only": true,
+  "intro": "Build the enduring issue sentence. Choose the right piece for each blank.",
+  "sentence_frame": "The enduring issue is ___: ___. We see it when ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "name it",
+      "tiles": [
+        {
+          "text": "Power & Its Abuse",
+          "correct": true
+        },
+        {
+          "text": "Technology & Environment",
+          "correct": false
+        },
+        {
+          "text": "A Connected World",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "define it",
+      "tiles": [
+        {
+          "text": "people who hold power use it against people who have no say",
+          "correct": true
+        },
+        {
+          "text": "new tools change the world around people",
+          "correct": false
+        },
+        {
+          "text": "distant places start depending on each other",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "show it",
+      "tiles": [
+        {
+          "text": "Catherine's government punishes serfs who complain about their landlords",
+          "correct": true
+        },
+        {
+          "text": "Catherine calls delegates together to write new laws",
+          "correct": false
+        },
+        {
+          "text": "Europeans trade with the Mughal Empire",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "The enduring issue is Power & Its Abuse: people who hold power use it against people who have no say. We see it when Catherine's government punishes serfs who complain about their landlords.",
+  "hints": [
+    "Each blank has to match the others: the name, the definition and the example.",
+    "Which example shows power used against people with no say?"
+  ],
+  "rationale": "Naming, defining and showing have to line up. Punishing serfs for complaining is power used against people with no say, which is Power & Its Abuse."
+}

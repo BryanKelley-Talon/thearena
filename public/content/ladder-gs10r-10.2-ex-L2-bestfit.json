@@ -1,0 +1,96 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Explain, don't describe",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "EX",
+  "skill_label": "Explanation",
+  "level": 2,
+  "type": "mc_bestfit",
+  "practice_only": true,
+  "_hint_model": "2 escalating hints per item; rationale is the reason line.",
+  "items": [
+    {
+      "id": "ex-01",
+      "stem": "Evidence: Montesquieu warns that when one person both makes and enforces the laws, there can be no liberty. Which sentence explains it best?",
+      "options": {
+        "1": "Montesquieu wrote about liberty.",
+        "2": "Montesquieu says there's no liberty when one person has the power.",
+        "3": "This means a government is only safe when its power is split, so no one person can pass unfair laws and enforce them too.",
+        "4": "Montesquieu was a French judge."
+      },
+      "correct": "3",
+      "hints": [
+        "Two choices just say what he wrote. Which one says why it matters?",
+        "Look for \"this means.\""
+      ],
+      "rationale": "Explaining goes past what the document says to why it matters. The third choice says what Montesquieu's warning means for how a government should be built."
+    },
+    {
+      "id": "ex-02",
+      "stem": "Evidence: Catherine wrote that all citizens should be subject to the same laws, but her government punished serfs who complained about their landlords. Which sentence explains it best?",
+      "options": {
+        "1": "Catherine was the ruler of Russia.",
+        "2": "This means Catherine used Enlightenment words to look fair while keeping absolute power, so the equality she wrote about never reached the serfs.",
+        "3": "Catherine wrote one thing and her government did another.",
+        "4": "Serfs were not happy."
+      },
+      "correct": "2",
+      "hints": [
+        "One choice notices the gap. Which one says what the gap means?",
+        "Look for the choice that says why the gap matters."
+      ],
+      "rationale": "Noticing the gap is describing. Explaining says what it means: her Enlightenment words covered for absolute power."
+    },
+    {
+      "id": "ex-03",
+      "stem": "Evidence: Wollstonecraft dares France's lawmakers to prove women lack reason before shutting them out. Which sentence explains it best?",
+      "options": {
+        "1": "Wollstonecraft wrote in 1792.",
+        "2": "Wollstonecraft wanted lawmakers to prove something.",
+        "3": "Women are important.",
+        "4": "This means she turned the Enlightenment's own idea, that rights come from reason, against the men who left women out."
+      },
+      "correct": "4",
+      "hints": [
+        "Which choice says why her dare matters?",
+        "The philosophes said rights come from reason. What does that do to her argument?"
+      ],
+      "rationale": "The best choice explains why the dare works: it uses the philosophes' own rule against them. The others describe or give an opinion."
+    },
+    {
+      "id": "ex-04",
+      "stem": "Which phrase turns a description into an explanation?",
+      "options": {
+        "1": "and then",
+        "2": "which means",
+        "3": "also",
+        "4": "for example"
+      },
+      "correct": "2",
+      "hints": [
+        "Which phrase tells the reader why something matters?",
+        "Our frame is ___, because ___, which means ___."
+      ],
+      "rationale": "\"Which means\" is the hinge. What comes after it is your explanation: why the evidence matters."
+    },
+    {
+      "id": "ex-05",
+      "stem": "Evidence: Locke says a legislature that grabs absolute power forfeits it, and the power passes back to the people. Which sentence explains it best?",
+      "options": {
+        "1": "Locke says the power goes back to the people.",
+        "2": "Locke lived in England.",
+        "3": "This means Locke gave people a reason to overthrow rulers who abuse power, an idea revolutionaries would use a hundred years later.",
+        "4": "Legislatures make laws."
+      },
+      "correct": "3",
+      "hints": [
+        "The first choice repeats the evidence. Which one goes a step further?",
+        "Look for the choice that says what his idea led to."
+      ],
+      "rationale": "Repeating evidence isn't explaining it. The third choice says what Locke's idea means and what it led to."
+    }
+  ]
+}

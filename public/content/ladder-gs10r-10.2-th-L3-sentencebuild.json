@@ -1,0 +1,77 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Did the Enlightenment threaten kings?",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "level": 3,
+  "type": "sentence_build",
+  "practice_only": true,
+  "intro": "Build the thesis. Choose the right piece for each blank.",
+  "sentence_frame": "___ threatened absolute monarchy, because ___, which meant ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "who or what",
+      "tiles": [
+        {
+          "text": "Enlightenment ideas",
+          "correct": true
+        },
+        {
+          "text": "The divine right of kings",
+          "correct": false
+        },
+        {
+          "text": "Louis XIV's court at Versailles",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "the reason",
+      "tiles": [
+        {
+          "text": "thinkers like Locke argued that power comes from the people",
+          "correct": true
+        },
+        {
+          "text": "the philosophes argued that kings rule by divine right",
+          "correct": false
+        },
+        {
+          "text": "the philosophes wanted to end all government",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "what it meant",
+      "tiles": [
+        {
+          "text": "a ruler who broke the deal could lose the right to rule",
+          "correct": true
+        },
+        {
+          "text": "kings held more power than ever before",
+          "correct": false
+        },
+        {
+          "text": "people had to obey any ruler, no matter what",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Enlightenment ideas threatened absolute monarchy, because thinkers like Locke argued that power comes from the people, which meant a ruler who broke the deal could lose the right to rule.",
+  "hints": [
+    "Divine right was the kings' claim, not the threat to it.",
+    "Locke said power comes from the people. What happens if a ruler breaks their side of the deal?"
+  ],
+  "rationale": "A thesis takes a side and gives a reason. Enlightenment ideas said power comes from the people, so a ruler who abused it could lose it. That's a real threat to kings who claimed divine right."
+}

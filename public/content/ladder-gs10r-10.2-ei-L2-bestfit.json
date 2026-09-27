@@ -1,0 +1,130 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Name it, then explain it",
+  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
+  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). RESENT 17:53: documents added on screen per Josh's 17:50 port check (BK 9/25: no task on a document the student can't see). Wording unchanged.",
+  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted). Documents on screen are Casefile A's own excerpts, word for word, with their source lines.",
+  "skill": "EI",
+  "skill_label": "Enduring Issue",
+  "level": 2,
+  "type": "mc_bestfit",
+  "_hint_model": "2 escalating hints per item. rationale per item is the reason line (the Arena's BestFit reveal doesn't show it yet; see cover memo).",
+  "items": [
+    {
+      "id": "ei2-01",
+      "stem": "What does it mean to explain an enduring issue?",
+      "options": {
+        "1": "Write the name of the issue in capital letters",
+        "2": "Define the problem in one sentence, then show where a document shows it",
+        "3": "Summarize every document",
+        "4": "Say whether you agree with the author"
+      },
+      "correct": "2",
+      "hints": [
+        "Naming the issue is only half.",
+        "The other half has two parts: define it, then point to a document."
+      ],
+      "rationale": "Explaining means defining the problem in one sentence, then showing where a document shows it. Naming is only the first half."
+    },
+    {
+      "id": "ei2-02",
+      "stem": "Which statement best explains the enduring issue in Document 10?",
+      "options": {
+        "1": "Power and its abuse.",
+        "2": "The document is about serfs in Russia.",
+        "3": "Power and its abuse: Catherine's government uses its power to punish serfs who complain, so the people with no say have no way to push back.",
+        "4": "A connected world: Russia traded with Europe."
+      },
+      "correct": "3",
+      "hints": [
+        "One choice only names the issue. One only describes the document.",
+        "Look for the choice that names, defines and points to the document."
+      ],
+      "rationale": "The best answer names the issue, says what the problem is and shows it in Document 10. The first choice only names it, and the last picks an issue the document doesn't show.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 10 · Catherine's government on serfs",
+        "citation": "Source: A Source Book for Russian History, G. Vernadsky, trans., Yale University Press, 1972 (adapted)",
+        "content": "“The Governing Senate . . . has deemed it necessary to make known that the landlords' serfs and peasants . . . owe their landlords proper submission and absolute obedience in all matters . . . . And should . . . any serfs and peasants . . . make bold to submit unlawful petitions [formal written complaints] complaining of their landlords, and especially to petition Her Imperial Majesty personally, then both those who make the complaints and those who write up the petitions shall be punished by the knout [a heavy whip] and forthwith deported to Nerchinsk to penal servitude [forced labor as punishment] for life . . . . it shall be read in all the churches on Sundays and holy days . . . lest anyone pretend ignorance.”"
+      }
+    },
+    {
+      "id": "ei2-03",
+      "stem": "Which statement best explains the enduring issue in Document 7?",
+      "options": {
+        "1": "Human rights.",
+        "2": "Wollstonecraft wrote a book in 1792.",
+        "3": "Technology and environment: new tools were changing France.",
+        "4": "Power and its abuse: men who hold power deny women rights, and Wollstonecraft dares them to prove women lack reason."
+      },
+      "correct": "4",
+      "hints": [
+        "Which choice says what the problem is?",
+        "Which choice points to something Wollstonecraft actually says?"
+      ],
+      "rationale": "The best answer names the issue, defines the problem (women denied rights by the men who hold power) and points to the dare in Document 7. The others only name, describe or miss.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 7 · Wollstonecraft on reason and the rights of women",
+        "citation": "Source: Mary Wollstonecraft, A Vindication of the Rights of Woman, 1792 (adapted). Addressed to Talleyrand-Périgord, a member of the French National Assembly.",
+        "content": "“. . . if she be not prepared by education to become the companion of man, she will stop the progress of knowledge. . . . If women are to be excluded . . . prove first . . . that they want [lack] reason, else this flaw in your NEW CONSTITUTION will ever show that man must . . . act like a tyrant. . . .”"
+      }
+    },
+    {
+      "id": "ei2-04",
+      "stem": "Which statement best explains the enduring issue in Hobbes's Leviathan?",
+      "options": {
+        "1": "Conflict: Hobbes argues that without a strong ruler people fall into a war of everyone against everyone, so fear of fighting pushes them to accept a ruler.",
+        "2": "Conflict.",
+        "3": "Hobbes wrote Leviathan in 1651.",
+        "4": "Wealth and resources: Hobbes was worried about money."
+      },
+      "correct": "1",
+      "hints": [
+        "Only one choice says what the problem is.",
+        "Look for the choice that uses Hobbes's own idea of war."
+      ],
+      "rationale": "The best answer names Conflict, defines it and shows it in Hobbes's argument. \"Conflict.\" alone is only a name.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Hobbes on life without government",
+        "citation": "Source: Thomas Hobbes, Leviathan, 1651 (adapted)",
+        "content": "“During the time men live without a common power to keep them all in awe, they are in that condition which is called war . . . and the life of man, solitary, poor, nasty, brutish, and short.”"
+      }
+    },
+    {
+      "id": "ei2-05",
+      "stem": "Which statement best explains the enduring issue in Document 8, on the slave trade?",
+      "options": {
+        "1": "The slave trade.",
+        "2": "Power and its abuse: traders treated captured Africans as property, and Equiano describes being taken from his home with no chance of returning.",
+        "3": "Wilberforce gave a speech in 1789.",
+        "4": "Technology and environment: ships were a new tool."
+      },
+      "correct": "2",
+      "hints": [
+        "A topic isn't an issue. What's the problem?",
+        "Look for the choice that points to what Equiano describes."
+      ],
+      "rationale": "The best answer names the issue, says what the problem is and shows it in Equiano's account. \"The slave trade\" is a topic, not an explained issue.",
+      "stimulus": {
+        "kind": "text",
+        "documents": [
+          {
+            "kind": "text",
+            "title": "Document 8 · Wilberforce, 1789",
+            "citation": "Source: William Wilberforce, speech to the House of Commons, May 1789, in Cobbett, Parliamentary History of England, vol. 28 (adapted)",
+            "content": "“I confess to you sir, so enormous so dreadful, so irremediable [impossible to fix] did its wickedness appear that my own mind was completely made up for the abolition. A trade founded in iniquity [wrongdoing] . . . must be abolished . . . let the consequences be what they would, I from this time determined that I would never rest till I had effected [achieved] its abolition.”"
+          },
+          {
+            "kind": "text",
+            "title": "Document 8 · Equiano",
+            "citation": "Source: Olaudah Equiano, The Interesting Narrative of the Life of Olaudah Equiano, London, 1794 edition (adapted), via OER Project",
+            "content": "“I now saw myself deprived [robbed] of all chance of returning to my native country . . . . I was soon put down under the decks, and there I received such a salutation [greeting] in my nostrils as I had never experienced in my life . . . . I became so sick and low that I was not able to eat . . . . I inquired [asked] of them what was to be done with us? They gave me to understand we were to be carried to these white people's country to work for them.”"
+          }
+        ]
+      }
+    }
+  ]
+}

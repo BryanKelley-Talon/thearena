@@ -1,0 +1,25 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Wollstonecraft, Document 7",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "EI",
+  "skill_label": "Enduring Issue",
+  "level": 4,
+  "type": "guided_write",
+  "practice_only": true,
+  "source_document": "Document 7 · Wollstonecraft on reason and the rights of women · Source: Mary Wollstonecraft, A Vindication of the Rights of Woman, 1792 (adapted). Addressed to Talleyrand-Périgord, a member of the French National Assembly.",
+  "source_citation": "Source: Mary Wollstonecraft, A Vindication of the Rights of Woman, 1792 (adapted). Addressed to Talleyrand-Périgord, a member of the French National Assembly.",
+  "source_text": "“. . . if she be not prepared by education to become the companion of man, she will stop the progress of knowledge. . . . If women are to be excluded . . . prove first . . . that they want [lack] reason, else this flaw in your NEW CONSTITUTION will ever show that man must . . . act like a tyrant. . . .”",
+  "prompt": "Identify and explain an enduring issue in Document 7. Write 2 to 3 sentences.",
+  "sentence_starter": "One enduring issue in Document 7 is ___",
+  "checklist": [
+    "Did you name the issue?",
+    "Did you define the problem in one sentence?",
+    "Did you show where Document 7 shows it?"
+  ],
+  "model_response": "One enduring issue in Document 7 is power and its abuse. The problem is that the people who hold power decide who gets rights, and they can shut others out. Wollstonecraft shows this when she dares France's lawmakers to prove women lack reason before excluding them, warning that otherwise men \"act like a tyrant.\"",
+  "submitted_to_teacher": false
+}

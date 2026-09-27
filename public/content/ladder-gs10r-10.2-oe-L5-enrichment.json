@@ -1,0 +1,66 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "From a 4 to a 5",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04. Stays dark until BK opens Outside Evidence (introduced in Casefile B, Thu 10/1).",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "OE",
+  "skill_label": "Outside Evidence",
+  "level": 5,
+  "type": "enrichment",
+  "practice_only": true,
+  "tidbits": [
+    {
+      "id": "td-01",
+      "thread": "Specific beats general",
+      "text": "\"In 1807, Parliament abolished the slave trade\" is outside evidence. \"Slavery ended eventually\" is too vague to count.",
+      "source_pointer": "Skill Descriptors, Outside Evidence"
+    },
+    {
+      "id": "td-02",
+      "thread": "Two facts, one gap",
+      "text": "Ending the trade wasn't ending slavery. Slavery itself lasted in the British Empire until an 1833 law ended it, 26 years after the trade was abolished.",
+      "source_pointer": "Outside the casefile: enrichment"
+    },
+    {
+      "id": "td-03",
+      "thread": "Name the person",
+      "text": "Equiano's book sold widely in Britain, and he traveled the country speaking against the slave trade.",
+      "source_pointer": "Outside the casefile: enrichment"
+    },
+    {
+      "id": "td-04",
+      "thread": "Where to find it",
+      "text": "Anything you learned in class that isn't in the document counts, including What You Need to Know and earlier units. In 10.1, West African kingdoms traded captured people to European ships.",
+      "source_pointer": "Unit 10.1"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "In Document 8, Wilberforce vows to end the slave trade, and in 1807 Parliament abolished it.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "In Document 8, Wilberforce vows in 1789 never to rest until the slave trade is abolished, and Equiano gives readers the view from below deck. Their campaign took eighteen years: Parliament abolished the British slave trade in 1807, but slavery itself lasted in the British Empire until 1833, which shows how hard it was to end a system that made so much money.",
+      "what_changed": "The 4 adds one fact. The 5 adds two, puts them in order, and says what the gap between them shows."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Name, date, event",
+      "explanation": "Outside evidence counts when it's specific: a person, a year, a law, an event."
+    },
+    {
+      "name": "Two facts, one gap",
+      "explanation": "Put two outside facts side by side and say what the time between them shows."
+    }
+  ],
+  "try_it": {
+    "prompt": "Name one person or event from 10.1 or 10.2 that you could use as outside evidence for Document 8, and say how it connects.",
+    "status": "Untimed, optional, never scored, never saved."
+  },
+  "submitted_to_teacher": false
+}

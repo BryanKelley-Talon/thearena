@@ -1,0 +1,120 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Which one is outside evidence?",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04. Stays dark until BK opens Outside Evidence (introduced in Casefile B, Thu 10/1).",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "OE",
+  "skill_label": "Outside Evidence",
+  "level": 2,
+  "type": "mc_bestfit",
+  "practice_only": true,
+  "_hint_model": "2 escalating hints per item; rationale is the reason line.",
+  "items": [
+    {
+      "id": "oe-01",
+      "stem": "Which is outside evidence, a fact that isn't in this document, that helps explain it?",
+      "options": {
+        "1": "Locke says power passes back to the people.",
+        "2": "England had just replaced King James II with William and Mary, on Parliament's terms.",
+        "3": "Locke was an important thinker.",
+        "4": "The Tokugawa shogun closed Japan in 1635."
+      },
+      "correct": "2",
+      "hints": [
+        "One choice is already in the document. One is true but has nothing to do with Locke.",
+        "Which fact tells you what was happening in England when Locke wrote?"
+      ],
+      "rationale": "Outside evidence is specific, isn't in the document, and connects to it. England's change of king is what Locke was writing about. Japan's closing is true but doesn't help explain Locke.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 2 · Locke on a government that breaks the deal",
+        "content": "“[When] the legislature shall . . . grasp [for] themselves, or put into the hands of any other, an absolute power over their lives, liberties, and estates of the people, . . . they forfeit the power the people had put into their hands for quite contrary ends, and it [passes] to the people, who have a right to resume their original liberty. . . .”",
+        "citation": "Source: John Locke, Two Treatises of Government, 1690 (adapted)"
+      }
+    },
+    {
+      "id": "oe-02",
+      "stem": "Which is outside evidence that helps explain this document?",
+      "options": {
+        "1": "Montesquieu says there is no liberty when powers are united.",
+        "2": "Government is complicated.",
+        "3": "The U.S. Constitution of 1787 split power into three branches, as Montesquieu urged.",
+        "4": "Benin traded gold and ivory with Europeans."
+      },
+      "correct": "3",
+      "hints": [
+        "The first choice is in the document already.",
+        "Which government put Montesquieu's plan into practice?"
+      ],
+      "rationale": "The U.S. Constitution is a specific fact from outside the document that shows Montesquieu's idea mattered. Benin is true but unconnected.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 4 · Montesquieu on powers united in one person",
+        "content": "“When the legislative and executive powers are united in the same person, or in the same body of magistrates [government officials], there can be no liberty; because apprehensions [fears] may arise, lest the same monarch or senate should enact tyrannical laws to execute them in a tyrannical manner. . . .”",
+        "citation": "Source: Baron de Montesquieu, The Spirit of the Laws, 1748 (adapted)"
+      }
+    },
+    {
+      "id": "oe-03",
+      "stem": "Which is outside evidence that helps explain this document?",
+      "options": {
+        "1": "The decree says serfs who complain will be punished.",
+        "2": "Pugachev's Rebellion, from 1773 to 1775, showed how angry Russia's serfs had become.",
+        "3": "Russia is a big country.",
+        "4": "Louis XIV built Versailles."
+      },
+      "correct": "2",
+      "hints": [
+        "Which choice isn't in the document, but tells you what happened next?",
+        "Look for a name and dates."
+      ],
+      "rationale": "Pugachev's Rebellion is specific, from outside the document, and connected to it: it shows what the decree's harshness led to.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 10 · Catherine's government on serfs",
+        "content": "“The Governing Senate . . . has deemed it necessary to make known that the landlords' serfs and peasants . . . owe their landlords proper submission and absolute obedience in all matters . . . . And should . . . any serfs and peasants . . . make bold to submit unlawful petitions [formal written complaints] complaining of their landlords, and especially to petition Her Imperial Majesty personally, then both those who make the complaints and those who write up the petitions shall be punished by the knout [a heavy whip] and forthwith deported to Nerchinsk to penal servitude [forced labor as punishment] for life . . . . it shall be read in all the churches on Sundays and holy days . . . lest anyone pretend ignorance.”",
+        "citation": "Source: A Source Book for Russian History, G. Vernadsky, trans., Yale University Press, 1972 (adapted)"
+      }
+    },
+    {
+      "id": "oe-04",
+      "stem": "What makes outside evidence strong?",
+      "options": {
+        "1": "It's long",
+        "2": "It repeats the document in new words",
+        "3": "It's specific (a name, a date or an event), accurate, and tied to the document",
+        "4": "It's about any topic from history"
+      },
+      "correct": "3",
+      "hints": [
+        "Outside evidence has to do work, not decorate.",
+        "Think name, date, event, and a connection."
+      ],
+      "rationale": "Strong outside evidence is specific, accurate, and connected to the document. Repeating the document isn't outside evidence at all."
+    },
+    {
+      "id": "oe-05",
+      "stem": "Which is outside evidence that helps explain this document?",
+      "options": {
+        "1": "Wollstonecraft says men who shut women out act like tyrants.",
+        "2": "Women have always been important.",
+        "3": "The Ottoman Empire lost trade to new routes.",
+        "4": "France's constitution of 1791 let only some men vote, and no women."
+      },
+      "correct": "4",
+      "hints": [
+        "One choice is in the document. One is true but unconnected.",
+        "Which fact tells you what Wollstonecraft was answering?"
+      ],
+      "rationale": "France's 1791 constitution is the outside fact Wollstonecraft was answering. It's specific, and it isn't in her text.",
+      "stimulus": {
+        "kind": "text",
+        "title": "Document 7 · Wollstonecraft on reason and the rights of women",
+        "content": "“. . . if she be not prepared by education to become the companion of man, she will stop the progress of knowledge. . . . If women are to be excluded . . . prove first . . . that they want [lack] reason, else this flaw in your NEW CONSTITUTION will ever show that man must . . . act like a tyrant. . . .”",
+        "citation": "Source: Mary Wollstonecraft, A Vindication of the Rights of Woman, 1792 (adapted). Addressed to Talleyrand-Périgord, a member of the French National Assembly."
+      }
+    }
+  ]
+}

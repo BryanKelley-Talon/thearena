@@ -1,25 +1,25 @@
 {
-  "_course": "Global Studies and Geography 10R",
+  "_course": "Global History and Geography 10R",
   "_unit": "10.2",
   "_source": "Ported by Josh (flashpoint) 2026-09-25 from Will's from-will-2026-09-18-contentbrief-gs10r-10-2.json (itself ported verbatim from BK's GC brief). Mapped onto the Arena's six-part review page; strings unchanged except list numbering, which the page draws. Section headings are the house six-part template. Left out: series line, section line, source footer.",
   "unit": "10.2",
   "title": "Enlightenment, Revolution & Nationalism",
-  "subtitle": "Global 10R Regents Review  ·  EI Anchor: Unequal Distribution of Power / Individual Rights  ·  See Modules 4.1 and 4.3 in Materials",
+  "subtitle": "Global 10R Regents Review  ·  Enduring issues: Power & Its Abuse / Human rights  ·  See Modules 4.1 and 4.3 in Materials",
   "how_to_use": {
     "heading": "Part 1 — How to Use This Review",
     "lead": "Three steps:",
     "steps": [
       "Read the Key Facts table (Part 3). Do not memorize — understand the pattern.",
-      "Practice writing one appositive sentence using a fact from this unit as outside information for the \"Unequal Distribution of Power\" enduring issue. Use Module 4.3 in Materials for the formula.",
-      "Complete the Quick Check (Part 6) without looking at the brief. If you cannot answer all five, go back to the relevant block in your unit packet."
+      "Practice writing one appositive sentence using a fact from this unit as outside information for the \"Power & Its Abuse\" enduring issue. Use Module 4.3 in Materials for the formula.",
+      "Complete the Quick Check (Part 6) without looking at the brief. If you cannot answer all five, go back to that day in your 10.2 casefile."
     ],
     "connects_to": "This brief connects to: Module 4.1 (EI Identification) · Module 4.3 (Outside Information) · Module 4.2 (Significance). Review those modules alongside this brief before your next EI essay."
   },
   "thread_anchor": {
     "heading": "Part 2 — Enduring Issue Anchor",
-    "label": "Primary EI: Unequal Distribution of Power",
+    "label": "Primary enduring issue: Power & Its Abuse",
     "question_note": "Every revolution in this unit begins with the same diagnosis: power is concentrated in too few hands (monarchs, slaveholders, colonial rulers), and the people with no power decide to change that. Every revolution also demonstrates that changing who holds power does not automatically fix the problem.",
-    "lead": "How Unequal Distribution of Power appears in this unit:",
+    "lead": "How Power & Its Abuse appears in this unit:",
     "points": [
       "French Estates system: 97% of France (Third Estate) had virtually no political power and bore the tax burden for the other 3%",
       "Haitian Revolution: enslaved people had no power, no rights, no legal personhood — and overthrew their enslavers",
@@ -28,42 +28,42 @@
     ]
   },
   "background": {
-    "heading": "Secondary EI: Individual Rights & Responsibilities",
-    "text": "The Enlightenment redefined rights as natural — not granted by kings. The Declaration of the Rights of Man, the Haitian Declaration of Independence, and the American Declaration of Independence all claim that rights exist regardless of race, class, or birth. This EI is equally strong for this unit."
+    "heading": "Secondary enduring issue: Human rights (part of Power & Its Abuse)",
+    "text": "The Enlightenment redefined rights as natural — not granted by kings. The Declaration of the Rights of Man, the Haitian Declaration of Independence, and the American Declaration of Independence all claim that rights exist regardless of race, class, or birth. This issue is equally strong for this unit."
   },
   "key_facts": {
     "heading": "Part 3 — Key Facts",
-    "note": "EI connection note: The Haitian Revolution (1791–1804) is the strongest piece of outside information this unit provides for any essay about Human Rights Violations or Unequal Distribution of Power. It is one of the most historically significant and most commonly testable events on the Global II Regents.",
+    "note": "Enduring issue connection note: The Haitian Revolution (1791–1804) is the strongest piece of outside information this unit provides for any essay about Power & Its Abuse, including human rights. It is one of the most historically significant and most commonly testable events on the Global II Regents.",
     "columns": [
       "Term / Event",
       "Key Detail",
-      "EI Connection"
+      "Enduring Issue Connection"
     ],
     "rows": [
       {
         "term": "Enlightenment (1700s)",
         "detail": "Philosophers (Locke, Rousseau, Voltaire, Montesquieu) challenged divine right of kings. Natural rights, social contract, separation of powers. Influenced French and American revolutions.",
-        "thread": "Individual Rights: natural rights theory; Unequal Power: challenged monarchy's legitimacy"
+        "thread": "Human rights: natural rights theory; Power & Its Abuse: challenged monarchy's legitimacy"
       },
       {
         "term": "French Revolution (1789–1799)",
         "detail": "Third Estate formed National Assembly. Storming of Bastille (July 14, 1789). Declaration of Rights of Man. Reign of Terror (1793–94). Ended with Napoleon's rise.",
-        "thread": "Unequal Power: estates system; Jan '25 EI Doc 1 — Louis XVI; June '24 CRQ Doc 1 — Bastille painting"
+        "thread": "Power & Its Abuse: estates system; Jan '25 Enduring Issues Essay, Doc 1 — Louis XVI; June '24 CRQ Doc 1 — Bastille painting"
       },
       {
         "term": "Haitian Revolution (1791–1804)",
-        "detail": "Only successful slave revolution in history. Enslaved Haitians inspired by Enlightenment and French Revolution. Toussaint L'Ouverture led. Haiti independent 1804 — first Black republic.",
-        "thread": "Unequal Power: slavery; Human Rights: slave revolt as rights claim; Jan '25 MC Q5–6"
+        "detail": "The only slave revolt in history that led to an independent nation. Enslaved Haitians inspired by Enlightenment and French Revolution. Toussaint L'Ouverture led. Haiti independent 1804 — first Black republic.",
+        "thread": "Power & Its Abuse: slavery; Human rights: slave revolt as rights claim; Jan '25 MC Q5–6"
       },
       {
         "term": "Latin American Independence (1810s–1820s)",
         "detail": "Creoles (Spanish-born in Americas) led independence movements. Simón Bolívar (South America), Miguel Hidalgo (Mexico). Most countries independent by 1825.",
-        "thread": "Unequal Power: colonial system denied creoles political rights; June '25 Map Q5–6"
+        "thread": "Power & Its Abuse: colonial system denied creoles political rights; June '25 Map Q5–6"
       },
       {
         "term": "Napoleon & Congress of Vienna (1815)",
         "detail": "Napoleon spread revolutionary ideals across Europe but also concentrated power. After his defeat, Congress of Vienna (1815) rebalanced European power — conservative reaction to revolution.",
-        "thread": "Conflict & Cooperation: balance of power diplomacy; Unequal Power: restored monarchies"
+        "thread": "A Connected World (cooperation): balance of power diplomacy; Power & Its Abuse: restored monarchies"
       },
       {
         "term": "German & Italian Unification (1860s–1871)",
@@ -82,7 +82,7 @@
       "June '25 MC Q5–6: Latin American independence dates map",
       "June '24 CRQ Set 1: Storming of the Bastille painting (Q29 Historical Circumstances) + Marat's journal about Louis XVI's execution (Q30 Point of View)",
       "June '24 MC Q7–8: Bismarck \"iron and blood\" speech (German Unification)",
-      "Jan '25 EI Essay Doc 1: Louis XVI and the French Revolution"
+      "Jan '25 Enduring Issues Essay, Doc 1: Louis XVI and the French Revolution"
     ]
   },
   "three_move": {
@@ -90,22 +90,22 @@
     "intro": "Write three appositive sentences using Unit 10.2 content as outside information.",
     "moves": [
       {
-        "move": "Unequal Distribution of Power: Use the Haitian Revolution as OI.",
+        "move": "Power & Its Abuse: Use the Haitian Revolution as outside information.",
         "starter": "\"The Haitian Revolution, ...\""
       },
       {
-        "move": "Individual Rights: Use the Declaration of the Rights of Man as OI.",
+        "move": "Human rights: Use the Declaration of the Rights of Man as outside information.",
         "starter": "\"The Declaration of the Rights of Man (1789), ...\""
       },
       {
-        "move": "Unequal Distribution of Power: Use Bismarck's German Unification as OI.",
+        "move": "Power & Its Abuse: Use Bismarck's German Unification as outside information.",
         "starter": "\"The unification of Germany under Otto von Bismarck, ...\""
       }
     ]
   },
   "quick_check": {
     "heading": "Part 6 — Quick Check",
-    "intro": "Answer all five without looking at the brief. If you cannot, open your unit packet to the relevant block.",
+    "intro": "Answer all five without looking at the brief. If you cannot, go back to that day in your 10.2 casefile.",
     "items": [
       {
         "q": "What was the Estates system in France, and why did it create political instability?"
@@ -123,5 +123,96 @@
         "q": "Name one Enlightenment thinker and explain how their idea directly influenced a revolution in this unit."
       }
     ]
-  }
+  },
+  "_status": "APPROVED by BK 2026-09-27 18:09 EDT (\"yes\"), all 22 changes. Full replacement for the live brief-gs10r-10.2.json. Passed to Josh 18:09.",
+  "_changes": [
+    {
+      "was": "Only successful slave revolution in history.",
+      "now": "The only slave revolt in history that led to an independent nation."
+    },
+    {
+      "was": "EI Anchor: Unequal Distribution of Power / Individual Rights",
+      "now": "Enduring issues: Power & Its Abuse / Human rights"
+    },
+    {
+      "was": "go back to the relevant block in your unit packet",
+      "now": "go back to that day in your 10.2 casefile"
+    },
+    {
+      "was": "open your unit packet to the relevant block",
+      "now": "go back to that day in your 10.2 casefile"
+    },
+    {
+      "was": "Primary EI: Unequal Distribution of Power",
+      "now": "Primary enduring issue: Power & Its Abuse"
+    },
+    {
+      "was": "How Unequal Distribution of Power appears in this unit:",
+      "now": "How Power & Its Abuse appears in this unit:"
+    },
+    {
+      "was": "Secondary EI: Individual Rights & Responsibilities",
+      "now": "Secondary enduring issue: Human rights (part of Power & Its Abuse)"
+    },
+    {
+      "was": "This EI is equally strong for this unit.",
+      "now": "This issue is equally strong for this unit."
+    },
+    {
+      "was": "any essay about Human Rights Violations or Unequal Distribution of Power",
+      "now": "any essay about Power & Its Abuse, including human rights"
+    },
+    {
+      "was": "EI connection note:",
+      "now": "Enduring issue connection note:"
+    },
+    {
+      "was": "EI Connection",
+      "now": "Enduring Issue Connection"
+    },
+    {
+      "was": "the \"Unequal Distribution of Power\" enduring issue",
+      "now": "the \"Power & Its Abuse\" enduring issue"
+    },
+    {
+      "was": "Individual Rights: natural rights theory; Unequal Power: challenged monarchy's legitimacy",
+      "now": "Human rights: natural rights theory; Power & Its Abuse: challenged monarchy's legitimacy"
+    },
+    {
+      "was": "Unequal Power: estates system",
+      "now": "Power & Its Abuse: estates system"
+    },
+    {
+      "was": "Unequal Power: slavery; Human Rights: slave revolt as rights claim",
+      "now": "Power & Its Abuse: slavery; Human rights: slave revolt as rights claim"
+    },
+    {
+      "was": "Unequal Power: colonial system denied creoles political rights",
+      "now": "Power & Its Abuse: colonial system denied creoles political rights"
+    },
+    {
+      "was": "Conflict & Cooperation: balance of power diplomacy; Unequal Power: restored monarchies",
+      "now": "A Connected World (cooperation): balance of power diplomacy; Power & Its Abuse: restored monarchies"
+    },
+    {
+      "was": "Jan '25 EI Doc 1",
+      "now": "Jan '25 Enduring Issues Essay, Doc 1"
+    },
+    {
+      "was": "Jan '25 EI Essay Doc 1",
+      "now": "Jan '25 Enduring Issues Essay, Doc 1"
+    },
+    {
+      "was": "Unequal Distribution of Power: Use the Haitian Revolution as OI.",
+      "now": "Power & Its Abuse: Use the Haitian Revolution as outside information."
+    },
+    {
+      "was": "Individual Rights: Use the Declaration of the Rights of Man as OI.",
+      "now": "Human rights: Use the Declaration of the Rights of Man as outside information."
+    },
+    {
+      "was": "Unequal Distribution of Power: Use Bismarck's German Unification as OI.",
+      "now": "Power & Its Abuse: Use Bismarck's German Unification as outside information."
+    }
+  ]
 }

@@ -1,0 +1,25 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Locke, Document 2",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "level": 4,
+  "type": "guided_write",
+  "practice_only": true,
+  "source_document": "Document 2 · Locke on a government that breaks the deal · Source: John Locke, Two Treatises of Government, 1690 (adapted)",
+  "source_citation": "Source: John Locke, Two Treatises of Government, 1690 (adapted)",
+  "source_text": "“[When] the legislature shall . . . grasp [for] themselves, or put into the hands of any other, an absolute power over their lives, liberties, and estates of the people, . . . they forfeit the power the people had put into their hands for quite contrary ends, and it [passes] to the people, who have a right to resume their original liberty. . . .”",
+  "prompt": "Use Document 2 as evidence. In 2 to 3 sentences, answer: What did Locke think people could do about a government that abuses its power?",
+  "sentence_starter": "In Document 2, Locke says ___",
+  "checklist": [
+    "Did you name the document?",
+    "Did you pull a specific detail, in your own words or a short quote?",
+    "Did you say what the detail shows (which shows… or which means…)?"
+  ],
+  "model_response": "In Document 2, Locke says that when a legislature grabs absolute power over people's lives, liberties and estates, it forfeits the power the people gave it. That power passes back to the people, who have a right to resume their original liberty. This shows Locke believed people could take back authority from a government that breaks the deal.",
+  "submitted_to_teacher": false
+}

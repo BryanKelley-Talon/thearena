@@ -1,0 +1,66 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "From a 4 to a 5",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "level": 5,
+  "type": "enrichment",
+  "practice_only": true,
+  "tidbits": [
+    {
+      "id": "td-01",
+      "thread": "Reach back",
+      "text": "Locke published the year after England replaced King James II with William and Mary. His argument helped justify it.",
+      "source_pointer": "Casefile A, Day 2 (the names are outside the casefile)"
+    },
+    {
+      "id": "td-02",
+      "thread": "Reach forward",
+      "text": "About 86 years later, Thomas Jefferson used the same logic in the Declaration of Independence: when a government destroys people's rights, the people may change it or get rid of it.",
+      "source_pointer": "Outside the casefile: enrichment"
+    },
+    {
+      "id": "td-03",
+      "thread": "Pair the documents",
+      "text": "Document 2 says what people may do when power is abused. Document 4, Montesquieu, says how to build a government that can't abuse it. Used together, they make a bigger argument.",
+      "source_pointer": "Casefile A, Documents 2 and 4"
+    },
+    {
+      "id": "td-04",
+      "thread": "Short quote, your words",
+      "text": "A 5 quotes only the few words that do the work, like \"resume their original liberty,\" and explains the rest in its own words.",
+      "source_pointer": "Document 2"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "In Document 2, Locke says a legislature that takes absolute power loses it, and the power goes back to the people, which shows people can take back a bad government.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "In Document 2, Locke argues that a legislature grabbing \"absolute power\" forfeits its authority, which passes back to people with a right to \"resume their original liberty.\" Paired with Montesquieu's warning in Document 4 that united powers destroy liberty, it shows the Enlightenment offered two answers to tyranny: take the power back, or build a government that can't seize it.",
+      "what_changed": "The 4 uses one document well. The 5 quotes only the words that matter and pairs a second document, so the evidence builds a bigger claim."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Short quote, your words",
+      "explanation": "Quote three to six words that carry the idea, then explain them yourself. Long quotes hide your thinking."
+    },
+    {
+      "name": "Pair the documents",
+      "explanation": "Put two documents side by side and say what they show together that neither shows alone."
+    }
+  ],
+  "try_it": {
+    "prompt": "Think of an agreement you've been part of: a team, a job, a club. What would count as the other side breaking the deal, and what would you be allowed to do about it?",
+    "status": "Untimed, optional, never scored, never saved."
+  },
+  "submitted_to_teacher": false
+}

@@ -1,0 +1,163 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.1",
+  "_source": "BK's Google Classroom brief for 10.1 (ported verbatim 2026-09-18, from-will-2026-09-18-contentbrief-gs10r-10-1.json), mapped onto the Arena's six-part review page the same way Josh mapped 10.2. Six changes, listed in _changes, each for BK's yes. Built 2026-09-27 18:05 EDT by Will.",
+  "_status": "APPROVED by BK 2026-09-27 18:06 EDT (\"i agree with all\"), all six changes. Passed to Josh 18:07.",
+  "_changes": [
+    {
+      "where": "Enduring issue names",
+      "was": "Interconnectedness · Technology & Innovation · Unequal Distribution of Power · Conflict & Cooperation · Human Rights Violations · Economic Systems",
+      "now": "A Connected World · Technology & Environment · Power & Its Abuse · Conflict · Power & Its Abuse (human rights) · Wealth & Resources",
+      "why": "The Six Umbrellas posters (BK 9/18) are what kids see on the wall and in the Arena. The old names are the pre-poster taxonomy."
+    },
+    {
+      "where": "Ottoman row",
+      "was": "\"Sick man of Europe\" — once vast, now under pressure.",
+      "now": "Once vast, now under pressure. (A century later, Europeans called it \"the sick man of Europe.\")",
+      "why": "The nickname dates from the 1850s. Attaching it to 1750 is an anachronism a Regents reader would catch."
+    },
+    {
+      "where": "Qing row",
+      "was": "130 million people",
+      "now": "roughly 180 to 200 million people",
+      "why": "Qing China's own registers counted about 177 million in 1749, and most estimates put 1750 near 200 million. 130 million is closer to 1700."
+    },
+    {
+      "where": "Mughal row",
+      "was": "Once controlled 2/3 of Indian subcontinent.",
+      "now": "Once controlled most of the Indian subcontinent.",
+      "why": "At its height under Aurangzeb the empire held nearly all of it. \"Most\" is safe; \"2/3\" undersells it."
+    },
+    {
+      "where": "\"OI\"",
+      "was": "as OI",
+      "now": "as outside information",
+      "why": "Full words on anything a student reads (CARRY-FORWARD §2)."
+    },
+    {
+      "where": "\"unit packet\"",
+      "was": "go back to the relevant block in your unit packet",
+      "now": "go back to that day in your Unit 10.1 materials",
+      "why": "\"Packet\" and \"block\" are retired words on student pages."
+    }
+  ],
+  "unit": "10.1",
+  "title": "The World in 1750",
+  "subtitle": "Global 10R Regents Review  ·  Enduring issues: A Connected World / Technology & Environment  ·  See Modules 4.1 and 4.3 in Materials",
+  "how_to_use": {
+    "heading": "Part 1 — How to Use This Review",
+    "lead": "Three steps:",
+    "steps": [
+      "Read the Key Facts table (Part 3). Do not memorize — understand the pattern.",
+      "Practice writing one appositive sentence using a fact from this unit as outside information for the \"A Connected World\" enduring issue. Use Module 4.3 in Materials for the formula.",
+      "Complete the Quick Check (Part 6) without looking at the brief. If you cannot answer all five, go back to that day in your Unit 10.1 materials."
+    ],
+    "connects_to": "This brief connects to: Module 4.1 (EI Identification) · Module 4.3 (Outside Information) · Module 4.2 (Significance). Review those modules alongside this brief before your next EI essay."
+  },
+  "thread_anchor": {
+    "heading": "Part 2 — Enduring Issue Anchor",
+    "label": "Primary enduring issue: A Connected World",
+    "question_note": "By 1750, no major civilization existed in isolation. Trade routes, religious networks, and imperial expansion had created webs of connection — and vulnerability — across Eurasia, Africa, and the Americas.",
+    "lead": "How A Connected World appears in this unit:",
+    "points": [
+      "Atlantic trade system linked European merchants, African enslaved people, and American colonies in a single economic web — the Triangular Trade",
+      "Silk Road trade routes connected China, Central Asia, Persia, and Europe with goods, ideas, and disease long before 1750",
+      "Tokugawa Japan's deliberate isolation (sakoku) shows that disconnection from global networks was a conscious political choice — and a fragile one",
+      "The Mughal, Ottoman, and Qing empires all managed their connections to European traders differently — with different long-term consequences"
+    ]
+  },
+  "background": {
+    "heading": "Secondary enduring issue: Technology & Environment",
+    "text": "European navigational technology (caravel, compass, astrolabe) enabled the global trade connections of this era. The same technology that created the Atlantic slave trade also created the global exchange of crops, disease, and culture."
+  },
+  "key_facts": {
+    "heading": "Part 3 — Key Facts",
+    "note": "Enduring issue connection note: The contrast between Qing China (managing global connection), Tokugawa Japan (refusing it), and the Mughal Empire (unable to manage it) is a powerful \"three-society\" structure for any essay about A Connected World or Power & Its Abuse.",
+    "columns": [
+      "Term / Event",
+      "Key Detail",
+      "Enduring Issue Connection"
+    ],
+    "rows": [
+      {
+        "term": "Tokugawa Japan (sakoku)",
+        "detail": "From 1635, Japan banned almost all foreign trade and contact. Daimyo required alternate attendance in Edo — sankin-kōtai. Lasted until 1853 (Commodore Perry).",
+        "thread": "A Connected World: shows disconnection as policy choice; Technology & Environment: Japan falls behind Western military tech"
+      },
+      {
+        "term": "Mughal Empire (1750)",
+        "detail": "Once controlled most of the Indian subcontinent. By 1750, fragmented — regional rulers (nawabs) broke away. East India Company exploiting the power vacuum.",
+        "thread": "Power & Its Abuse: fragmentation enabled foreign takeover"
+      },
+      {
+        "term": "Ottoman Empire (1750)",
+        "detail": "Once vast, now under pressure. (A century later, Europeans called it \"the sick man of Europe.\") Controlled SE Europe, Middle East, N. Africa but facing European military superiority and internal revolts.",
+        "thread": "Conflict: managed decline through treaties and reform attempts"
+      },
+      {
+        "term": "Qing China (1750)",
+        "detail": "Height of Qing power — roughly 180 to 200 million people, most prosperous economy on earth. Controlled trade through Canton System: foreigners limited to one port.",
+        "thread": "A Connected World: deliberate management of global trade connection; economic dominance soon challenged"
+      },
+      {
+        "term": "Atlantic Slave Trade",
+        "detail": "Triangular Trade: European goods → Africa; enslaved Africans → Americas; raw materials → Europe. ~12 million Africans transported 1500–1870. Peak in 18th century.",
+        "thread": "Power & Its Abuse (human rights): systemic dehumanization; Wealth & Resources: foundation of plantation economy"
+      },
+      {
+        "term": "European Colonial Holdings",
+        "detail": "Britain, France, Spain, Portugal all held territory in Americas, Africa, and Asia. Competition between powers drove expansion and conflict (Seven Years' War, 1756–63).",
+        "thread": "Conflict: imperial rivalry; Technology & Environment: European military tech enables control"
+      }
+    ]
+  },
+  "exam": {
+    "heading": "Part 4 — Regents Exam Appearances",
+    "text": "Unit 10.1 content appears most frequently in Part I (MC) and as document context for CRQ questions. The Tokugawa passage (Jan '25 Q1–2) is a direct example. Watch for:",
+    "watch_for": [
+      "Passages about daimyo, the shogunate, sakoku, or alternate attendance → Tokugawa control mechanisms",
+      "Maps or passages about trade networks in Asia → Silk Road, Canton System, or EIC expansion",
+      "Passages about the Atlantic slave trade → Triangular Trade, Middle Passage, plantation economies",
+      "CRQ Historical Circumstances questions about imperialism in India → Mughal fragmentation is often the prior condition"
+    ]
+  },
+  "three_move": {
+    "heading": "Part 5 — Appositive Practice",
+    "intro": "Write three appositive sentences using facts from this unit as outside information for a future enduring issue essay.",
+    "moves": [
+      {
+        "move": "A Connected World: Use the Triangular Trade as outside information.",
+        "starter": "\"The Atlantic Triangular Trade, ...\""
+      },
+      {
+        "move": "Technology & Environment: Use European navigational technology as outside information.",
+        "starter": "\"The development of the caravel and magnetic compass, ...\""
+      },
+      {
+        "move": "Power & Its Abuse: Use the East India Company's expansion into the fragmented Mughal Empire as outside information.",
+        "starter": "\"The British East India Company, ...\""
+      }
+    ]
+  },
+  "quick_check": {
+    "heading": "Part 6 — Quick Check",
+    "intro": "Answer all five without looking at the brief. If you cannot, go back to that day in your Unit 10.1 materials.",
+    "items": [
+      {
+        "q": "What was sakoku, and why did Tokugawa Japan adopt it?"
+      },
+      {
+        "q": "What was the sankin-kōtai system, and what was its purpose for the shogun?"
+      },
+      {
+        "q": "Why was the Mughal Empire vulnerable to European expansion by 1750?"
+      },
+      {
+        "q": "What was the Canton System, and which empire used it to control foreign trade?"
+      },
+      {
+        "q": "Name one enduring issue this unit most clearly demonstrates, and explain how the Triangular Trade connects to it."
+      }
+    ]
+  }
+}

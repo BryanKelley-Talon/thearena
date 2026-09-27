@@ -1,0 +1,66 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "From a 4 to a 5",
+  "_built": "2026-09-27 17:56 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 2). Content from 10.2 Casefile A; enrichment facts outside the casefile are marked as such.",
+  "_status": "APPROVED by BK 2026-09-27 17:58 EDT (\"yes\"). Passed to Josh 17:58.",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 5,
+  "type": "enrichment",
+  "practice_only": true,
+  "tidbits": [
+    {
+      "id": "td-01",
+      "thread": "Enlightened despots",
+      "text": "Catherine wasn't the only ruler who read the philosophes and kept the throne. Frederick the Great of Prussia and Joseph II of Austria did too. Historians call them enlightened despots.",
+      "source_pointer": "Outside the casefile: enrichment"
+    },
+    {
+      "id": "td-02",
+      "thread": "Reach forward",
+      "text": "Six years after this decree, a Cossack named Pugachev led a huge uprising of serfs and peasants (1773 to 1775). Catherine crushed it and tightened landlords' control afterward.",
+      "source_pointer": "Outside the casefile: enrichment"
+    },
+    {
+      "id": "td-03",
+      "thread": "Reach forward",
+      "text": "Russia's serfs weren't freed until 1861, almost a hundred years after this decree.",
+      "source_pointer": "Outside the casefile: enrichment"
+    },
+    {
+      "id": "td-04",
+      "thread": "Reach back",
+      "text": "In 10.1, Louis XIV kept his nobles at Versailles so they couldn't challenge him. Catherine needed her nobles too, and many historians argue that giving landlords more power over serfs was how she kept them loyal.",
+      "source_pointer": "Unit 10.1, and Casefile A, Day 6"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "In 1767, Catherine the Great ruled Russia and wrote about equal laws, but her government punished serfs who complained about their landlords.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "In 1767, Catherine the Great, an absolute ruler who read Montesquieu and was having Russia's laws rewritten around equality, issued a decree punishing serfs who even complained. Six years later, Pugachev's Rebellion showed how much anger that gap had built.",
+      "what_changed": "The 4 sets the scene. The 5 names the gap between her words and her actions, then reaches forward to what that gap led to."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Name the gap",
+      "explanation": "When a ruler's words and actions don't match, say so in your context. The gap is often the most important thing on the page."
+    },
+    {
+      "name": "Reach back, or reach forward",
+      "explanation": "Name one earlier event that led here, or one later event this led to. It shows you understand a process, not just a date."
+    }
+  ],
+  "try_it": {
+    "prompt": "Catherine's decree was to be read aloud in every church, every Sunday and holy day. Why would her government want every serf to hear it?",
+    "status": "Untimed, optional, never scored, never saved."
+  },
+  "submitted_to_teacher": false
+}

@@ -1,0 +1,25 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "The slave trade, Document 8",
+  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
+  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04. Stays dark until BK opens Outside Evidence (introduced in Casefile B, Thu 10/1).",
+  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "skill": "OE",
+  "skill_label": "Outside Evidence",
+  "level": 4,
+  "type": "guided_write",
+  "practice_only": true,
+  "source_document": "Document 8 · Two voices from 1789: the slave trade · Wilberforce: Source: William Wilberforce, speech to the House of Commons, May 1789, in Cobbett, Parliamentary History of England, vol. 28 (adapted) · Equiano: Source: Olaudah Equiano, The Interesting Narrative of the Life of Olaudah Equiano, London, 1794 edition (adapted), via OER Project",
+  "source_citation": "Wilberforce. Source: William Wilberforce, speech to the House of Commons, May 1789, in Cobbett, Parliamentary History of England, vol. 28 (adapted) Equiano. Source: Olaudah Equiano, The Interesting Narrative of the Life of Olaudah Equiano, London, 1794 edition (adapted), via OER Project",
+  "source_text": "Wilberforce: “I confess to you sir, so enormous so dreadful, so irremediable [impossible to fix] did its wickedness appear that my own mind was completely made up for the abolition. A trade founded in iniquity [wrongdoing] . . . must be abolished . . . let the consequences be what they would, I from this time determined that I would never rest till I had effected [achieved] its abolition.”  Equiano: “I now saw myself deprived [robbed] of all chance of returning to my native country . . . . I was soon put down under the decks, and there I received such a salutation [greeting] in my nostrils as I had never experienced in my life . . . . I became so sick and low that I was not able to eat . . . . I inquired [asked] of them what was to be done with us? They gave me to understand we were to be carried to these white people's country to work for them.”",
+  "prompt": "Write 2 to 3 sentences about Document 8 that use one piece of outside evidence: a specific fact that isn't in the documents.",
+  "sentence_starter": "In Document 8, ___",
+  "checklist": [
+    "Did you use a detail from Document 8?",
+    "Did you add one specific fact that isn't in the documents: a name, a date or an event?",
+    "Did you connect the outside fact to the document?"
+  ],
+  "model_response": "In Document 8, Wilberforce tells Parliament in 1789 that he will never rest until the slave trade is abolished, and Equiano describes being carried away below deck with no chance of returning home. Their campaign worked, slowly: in 1807, Parliament abolished the British slave trade. Equiano's account was part of what changed minds, because it let British readers hear from a person who had survived the trade.",
+  "submitted_to_teacher": false
+}
