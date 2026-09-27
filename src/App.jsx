@@ -1702,7 +1702,7 @@ function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onCompl
     </div>
   )
   else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} />
-  else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} />
+  else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} />
   else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
   else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} />
   else if (lv.type === 'enrichment') body = <>

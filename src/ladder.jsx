@@ -270,7 +270,7 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
 // escalating hints on request, verdict as a WORD first. The Review Bowl's
 // season/playoff rule is a game rule and stays in the game — the ladder always
 // offers both hints (Josh, 2026-09-24 pass; Sam did not object).
-function BestFitItem({ item, n, total, onAnswered }) {
+function BestFitItem({ item, n, total, onAnswered, Stimulus, accent }) {
   const [picked, setPicked] = useState(null)
   const [shown, setShown] = useState(0)
   const opts = Object.entries(item.options || {}).map(([key, text]) => ({ key, text }))
@@ -281,6 +281,9 @@ function BestFitItem({ item, n, total, onAnswered }) {
   return (
     <div className="mc-item">
       <div className="mc-head"><span className="mc-count">Question {n} of {total}</span></div>
+      {/* A question that points at a document carries it on the same screen (BK, 2026-09-25;
+          the gate enforces it). Same `stimulus` shape as the Part I rooms, source line and all. */}
+      {item.stimulus && Stimulus && <Stimulus stimulus={item.stimulus} accent={accent || '#C9A646'} />}
       <div className="mc-q">{item.stem}</div>
       <div className="mc-choices">
         {opts.map(o => {
@@ -317,7 +320,7 @@ function BestFitItem({ item, n, total, onAnswered }) {
   )
 }
 
-export function BestFit({ pack, onComplete }) {
+export function BestFit({ pack, onComplete, Stimulus, accent }) {
   const items = pack?.items || []
   const [count, setCount] = useState(0)
   const [stuck, noteStuck] = useStuck()
@@ -327,7 +330,7 @@ export function BestFit({ pack, onComplete }) {
       <p className="mc-preamble">Pick the statement that fits best. Stuck? Take a hint — there are two on every question. Nothing here is scored or saved.</p>
       {items.map((it, i) => (
         <div key={it.id || i}>
-          <BestFitItem item={it} n={i + 1} total={items.length} onAnswered={ok => { setCount(c => c + 1); noteStuck(ok, i) }} />
+          <BestFitItem item={it} n={i + 1} total={items.length} Stimulus={Stimulus} accent={accent} onAnswered={ok => { setCount(c => c + 1); noteStuck(ok, i) }} />
           {stuck && stuck.at === i && <CoachSays portrait={BK_PORTRAIT} line={stuck.line} />}
         </div>
       ))}
