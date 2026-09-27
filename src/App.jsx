@@ -30,9 +30,10 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
+import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
-  UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit,
+  UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone,
 } from './ladder.jsx'
 import {
   OFFICE_STYLES, OfficeDoor, OfficeRoom, OfficeTheme, officeVisible, visibleThemes,
@@ -758,6 +759,8 @@ function Splash({ manifest, onPick, onOffice }) {
           {splash.intro.map((para, i) => (
             <p key={i} className={i === 0 ? 'lede' : undefined}>{para}</p>
           ))}
+          {/* Back at the front door after real work this visit: a signoff line. */}
+          {workedThisVisit() && <CoachSays portrait={null} line={signoffLine()} />}
         </div>
       ) : (
         <div className="placeholder">
@@ -852,7 +855,11 @@ function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneI
         })}
       </div>
 
-      <GuideSays guide={course.guide} slot="door_enter" />
+      {/* Growth coaching (Leo's LOCKED bank, BK 10:11): welcome back only when this device
+          holds real progress for this course; otherwise a first-visit line. */}
+      <CoachSays key={`door-${course.id}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
+                 line={welcomeLine(Object.entries(prog || {}).some(([k, v]) => k.startsWith(`${course.id}:`) && Object.values(v || {}).some(a => (a || []).length)),
+                                   course.guide?.lines?.door_enter)} />
       <p className="lane-intro">{LANES.find(l => l.key === lane)?.intro}</p>
 
       {lane === 'skills' && (
@@ -1614,8 +1621,19 @@ function SkillExtras({ course, skill, onOpenDrill }) {
 // LADDER LEVEL — one screen, five activity types. The renderer is picked by
 // the manifest's `type`; the content arrives by reference, like everything else.
 // ============================================================
-function LevelScreen({ course, skillName, lv, pack, source, onComplete, onBack }) {
+function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onComplete: markComplete, onBack }) {
   const t = LEVEL_TYPES[lv?.type]
+  // A set finished: count it for this visit (memory only), and pick the coaching line now,
+  // while we still know whether this finish moved the gauge.
+  const [coachLine, setCoachLine] = useState(null)
+  const onComplete = (...a) => {
+    if (!coachLine) {
+      const reps = (pack?.items || pack?.pairs || pack?.left || []).length || 1
+      noteSetDone(reps)
+      setCoachLine(setDoneLine({ gaugeMoved: (lv?.level || 0) > prevTop }))
+    }
+    return markComplete(...a)
+  }
   let body
   if (pack === null) body = <div className="loading">Opening the level&hellip;</div>
   else if (!pack) body = (
@@ -1645,6 +1663,7 @@ function LevelScreen({ course, skillName, lv, pack, source, onComplete, onBack }
         <div className="card-type">Level {lv?.level}{t ? ` · ${t.name}` : ''}</div>
         <h2>{lv?.label || t?.name}</h2>
         {body}
+        {coachLine && <CoachSays key={coachLine} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'} line={coachLine} />}
       </div>
       <BottomBack onBack={onBack} back={skillName} />
     </div>
@@ -1682,7 +1701,7 @@ export default function App() {
   useEffect(() => {
     fetch(MANIFEST_URL)
       .then(r => { if (!r.ok) throw new Error(`manifest ${r.status}`); return r.json() })
-      .then(setManifest)
+      .then(m => { setCoachBank(m?.coaching); setManifest(m) })
       .catch(e => setError(e.message))
     // Games are a soft dependency: if the list fails, the Arena still opens and
     // scenario_link activities simply do not render. Never a blank Arena.
@@ -1763,7 +1782,8 @@ export default function App() {
   else if (unit && skill && level != null) {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
-    screen = <LevelScreen course={course} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null}
+    const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
+    screen = <LevelScreen course={course} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null) }} />
   }
@@ -1773,6 +1793,9 @@ export default function App() {
         <ScreenHeader label={unit.label} color={course.accent}
                       onBack={() => { setSkill(null); if (ladderFrom === 'door') setUnitSlug(null) }}
                       back={ladderFrom === 'door' ? course.label : unit.label} />
+        {/* The bank's line for this skill, plus the course desk's own station lines for it. */}
+        <CoachSays key={`skill-${course.id}-${skill}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
+                   line={skillLine(skill, course.guide?.lines?.station_enter?.[(course.stations || []).find(x => (x.skill_lines || [])[0] === skill)?.slug] || [])} />
         <Ladder course={course} unit={unit} skill={skill} prog={prog} onOpenLevel={openLevel} />
         <SkillExtras course={course} skill={skill}
                      onOpenDrill={(slug, i) => { setStationSlug(slug); setDrillIndex(i); setDrillFromLadder(true); window.scrollTo(0, 0) }} />

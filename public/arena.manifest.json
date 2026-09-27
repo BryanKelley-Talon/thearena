@@ -927,5 +927,124 @@
     "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B.",
     "_intro_source": "Same ruling, §5, verbatim.",
     "_published": "BK 2026-09-27 10:28: \"2. yes\" (ship the Office tonight; screen labels approved). Live at the end-of-day push."
+  },
+  "coaching": {
+    "_source": "Leo's LOCKED growth-coaching bank v2, BK 2026-09-27 10:11 (\"locked\"), flashpoint/Project Flashpoint/In/ruling-2026-09-27-growth-coaching-bank-LOCKED.md. Every line verbatim. Slots and triggers are Josh's (CONVENTIONS §7).",
+    "_bowl_only": "Lines about a season or a save code belong to Review Bowl, where seasons and codes exist; the Arena never shows them.",
+    "bowl_only": [
+      "Welcome back. Your season's right where you left it.",
+      "Before you go: new code? Screenshot it or write it down."
+    ],
+    "welcome_first": [
+      "Welcome in. Nothing in here is graded. This is where you get better on your own time.",
+      "This is practice. Try things, miss some, figure out what you actually know.",
+      "Every gauge in here is a skill you'll use long after this class. Start anywhere."
+    ],
+    "welcome_back": [
+      "Welcome back. Your season's right where you left it.",
+      "Welcome back. Pick a gauge and move the needle.",
+      "You came back on your own. That's the habit that makes people good at things.",
+      "Welcome back. Every visit is a rep, even a short one."
+    ],
+    "code_restored": [
+      "Code worked. Your season's back. Nothing lost.",
+      "You saved your code and it paid off. That's planning ahead."
+    ],
+    "set_complete": [
+      "That's a set. Every rep builds the skill, right or wrong.",
+      "Missed a few? Good. Now you know exactly what to practice.",
+      "Most people quit a set when it gets hard. You finished it.",
+      "Finished. Take a breath, then decide: same gauge again, or a new one?",
+      "The ones you missed are the ones that'll grow you. Go back for them."
+    ],
+    "set_complete_big": [
+      "That's a lot of reps in one sitting. That's what getting better looks like.",
+      "That's real work today. Your brain earned a break."
+    ],
+    "attempt_again": [
+      "Stuck is part of it. Slow down, read the source line first, then take one more swing.",
+      "Hard means you're at the edge of what you know. That's exactly where growth happens.",
+      "Don't guess faster. Read slower.",
+      "Still stuck? Write down the question and bring it to class. That's not quitting. That's using your resources."
+    ],
+    "idle_nudge": [
+      "Still here? One more rep, then call it a day.",
+      "No rush. A slow rep still counts."
+    ],
+    "gauge_up": [
+      "Your gauge moved. Remember how this felt the first time? That gap is your growth.",
+      "Needle's up. You didn't get lucky. You practiced.",
+      "That's growth you can see. Keep it moving.",
+      "Look at that gauge. Every bit of that, you earned with reps."
+    ],
+    "goal_prompt": [
+      "Pick one gauge you want to move before the unit test. Just one. Now go get it.",
+      "What's one skill you want to own by Friday? Say it out loud. Goals said out loud get done.",
+      "Best version of you, one rep at a time. What's the next one?"
+    ],
+    "by_skill": {
+      "HC": [
+        "A headline with nothing around it is a trap. Context is how you stop getting played.",
+        "Before you believe a clip, ask: when, where, and what led to it? That's the skill you just practiced.",
+        "Every argument you'll ever have makes more sense once you know what happened first."
+      ],
+      "TH": [
+        "Next time somebody says 'trust me,' ask what they're actually claiming. Then ask for proof.",
+        "A good thesis is just a clear answer you're willing to defend. Useful in a job interview too.",
+        "People who say what they think, clearly, get listened to. That's this skill."
+      ],
+      "DU": [
+        "'The article says' isn't evidence. The exact detail is. Find it, then use it.",
+        "Reviews, ads, screenshots, all documents. Somebody made each one for a reason.",
+        "Using evidence well is how you win an argument without raising your voice."
+      ],
+      "EX": [
+        "Knowing something and explaining it are different skills. The second one gets you hired.",
+        "If you can explain it to a friend, you own it.",
+        "'Because… which means…' That's the whole skill. It works on anything you're trying to convince someone of."
+      ],
+      "OE": [
+        "What you already know is evidence. Don't leave it at the door.",
+        "Connecting what you know to what you're reading is how good decisions get made. Anywhere."
+      ],
+      "CP": [
+        "Rights, laws, voting: these aren't history. They're the rules you live under right now.",
+        "Name the principle out loud. Hinting at it isn't the same as saying it. That's true in an essay and in an argument."
+      ],
+      "EI": [
+        "Power, conflict, identity, wealth. They show up in history, and in your group chat, your school and your town.",
+        "An enduring issue is a problem people keep having to solve. You'll solve some of them.",
+        "Naming the issue is half the skill. Explaining it is the other half: what's the problem, and where do you see it?"
+      ]
+    },
+    "habits": [
+      "Showing up is half of it. The other half is what you do once you're there.",
+      "Missed class? This is a good place to catch the skill you missed.",
+      "Some days are hard just getting here. You got here. That counts.",
+      "Ten minutes of real focus beats an hour of half-attention.",
+      "Phone face down for one set. See what happens.",
+      "Ten minutes, three times a week, beats two hours the night before. Same with anything you want to get good at.",
+      "Ask the question in class. Somebody else is wondering the same thing.",
+      "The first ten minutes are where the directions live. Be there for them.",
+      "Getting better isn't about finding it easy. It's about being in it.",
+      "Lost? Say so early. I can fix confused. I can't fix silent.",
+      "A two-line email to a teacher can save you a week of stress.",
+      "Say what you need, clearly and politely. Works in school, works at work.",
+      "Being right only helps your partner if they can follow you.",
+      "Listen first, then answer. It's harder than it sounds and it works everywhere.",
+      "Good teammates make the whole group better. That's a skill too.",
+      "Bad day? Do one set. Small wins count.",
+      "Everybody hits a wall. The ones who get better are the ones who come back.",
+      "Asking for help is a skill, not a weakness."
+    ],
+    "signoff": [
+      "Good work today. Come back when you're ready.",
+      "That's a day. You're a little better than when you walked in.",
+      "Before you go: new code? Screenshot it or write it down."
+    ],
+    "code_new": [
+      "New code. Screenshot it or write it down. It's your whole season.",
+      "Screenshot that code. Future you will thank you."
+    ]
   }
 }
