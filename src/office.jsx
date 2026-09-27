@@ -441,7 +441,8 @@ button.theme-card:hover{background:var(--card-lit);border-color:var(--gold)}
 .office-path{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0;margin:0 0 20px;scroll-margin-top:12px}
 .path-stop{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:12px 14px;text-align:left;
   background:var(--card);border:1px solid var(--edge);border-radius:10px;color:var(--white);cursor:pointer;box-shadow:var(--arena-lift)}
-.path-stop:disabled{opacity:.55;cursor:default;box-shadow:none}
+.path-stop:disabled{cursor:default;box-shadow:none;color:var(--dim);background:color-mix(in srgb,var(--card) 92%,var(--canvas))}
+.path-stop:disabled .stop-mark{border-color:var(--dim)}
 .path-stop.here{border:2px solid var(--arena-needle);background:var(--card-lit)}
 .path-stop.done .stop-mark{background:var(--gold);color:#1a1405}
 .stop-mark{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;
