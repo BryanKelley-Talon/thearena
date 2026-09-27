@@ -1731,7 +1731,7 @@ export default function App() {
                          }}
                          onBack={() => { setOffice(false); window.scrollTo(0, 0) }} />
   }
-  else if (!course) screen = <Splash manifest={manifest} onPick={setCourseId} onOffice={() => { setOffice(true); window.scrollTo(0, 0) }} />
+  else if (!course) screen = <Splash manifest={manifest} onPick={id => { setCourseId(id); window.scrollTo(0, 0) }} onOffice={() => { setOffice(true); window.scrollTo(0, 0) }} />
   else if (station && drillIndex != null && (station.drills || [])[drillIndex]) {
     screen = <DrillScreen course={course} station={station} drill={station.drills[drillIndex]}
                           onBack={() => { setDrillIndex(null); if (drillFromLadder) { setStationSlug(null); setDrillFromLadder(false) } }} />
