@@ -384,12 +384,16 @@ button:active:not(:disabled),a.door:active{transform:scale(.985)}
    asset. The scrim is what guarantees the type keeps its contrast over it. */
 .hero{position:absolute;inset:-28px -20px auto;height:760px;z-index:0;overflow:hidden}
 .hero img{width:100%;height:100%;object-fit:cover;object-position:center 34%;display:block}
+/* SCRIM (BK, 2026-09-27: "see more of the inside of the arena and outside ..
+   transparency can be adjusted"). The strength lives in tokens/arena-navy.css as
+   --scrim-out-*, so it is tuned in one place. Loose type on the photo carries a
+   shadow so it holds contrast at the lighter settings. */
 .hero::after{content:'';position:absolute;inset:0;background:
   linear-gradient(180deg,
-    color-mix(in srgb,var(--canvas) 62%,transparent) 0%,
-    color-mix(in srgb,var(--canvas) 80%,transparent) 34%,
-    color-mix(in srgb,var(--canvas) 96%,transparent) 62%,
-    var(--canvas) 88%)}
+    color-mix(in srgb,var(--canvas) var(--scrim-out-top),transparent) 0%,
+    color-mix(in srgb,var(--canvas) var(--scrim-out-mid),transparent) 34%,
+    color-mix(in srgb,var(--canvas) var(--scrim-out-low),transparent) 62%,
+    var(--canvas) 92%)}
 .splash > *:not(.hero){position:relative;z-index:1}
 .splash-mark{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
   letter-spacing:.34em;font-size:13px;color:var(--gold);margin-bottom:10px;
@@ -411,7 +415,8 @@ button:active:not(:disabled),a.door:active{transform:scale(.985)}
   color:var(--grey);font-size:14.5px;line-height:1.55;backdrop-filter:blur(3px)}
 .placeholder b{color:var(--gold-lit);display:block;margin-bottom:3px;
   font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.09em;font-size:12.5px}
-.epigraph{max-width:700px;margin:0 auto 30px;padding:0 0 0 18px;border-left:2px solid var(--gold);text-align:left}
+.epigraph{max-width:700px;margin:0 auto 30px;padding:10px 16px 10px 18px;border-left:2px solid var(--gold);text-align:left;
+  border-radius:0 10px 10px 0;background:color-mix(in srgb,var(--canvas) 74%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px)}
 .epigraph p{color:var(--grey);font-style:italic;font-size:17.5px;line-height:1.6;margin-bottom:8px}
 .epigraph cite{color:var(--grey);font-style:normal;font-size:12.5px;opacity:.85;display:block}
 
@@ -654,11 +659,21 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
   content:'';position:fixed;inset:0;z-index:-1;
   background:
     linear-gradient(180deg,
-      color-mix(in srgb,var(--canvas) 70%,transparent) 0%,
-      color-mix(in srgb,var(--canvas) 88%,transparent) 55%,
-      var(--canvas) 100%),
+      color-mix(in srgb,var(--canvas) var(--scrim-in-top),transparent) 0%,
+      color-mix(in srgb,var(--canvas) var(--scrim-in-mid),transparent) 55%,
+      color-mix(in srgb,var(--canvas) var(--scrim-in-low),transparent) 100%),
     url('/images/arena/gym-interior-bg.jpg') center 28%/cover no-repeat;
 }
+/* Type that sits straight on the photo (not on a card) gets a soft shadow, so a
+   lighter scrim never costs it contrast. Cards are solid and need none. */
+.app-interior .screen-header, .app-interior h1, .app-interior h2, .app-interior .room-section,
+.app-interior .skill-about, .app-interior .lane-intro, .splash-intro p, .epigraph p, .epigraph cite{
+  text-shadow:0 1px 3px rgba(5,9,18,.9),0 0 18px rgba(5,9,18,.75)}
+/* Longer loose lines sit on a small smoked-glass plate: the photo shows around
+   it, and the line keeps AA contrast whatever the scrim is set to. */
+.app-interior .lane-intro, .app-interior .skill-about{display:inline-block;padding:7px 13px;border-radius:9px;
+  background:color-mix(in srgb,var(--canvas) 78%,transparent);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  color:#B4C2D6}
 
 /* REDUCED MOTION — its own feedback language, not a stripped one.
    Motion cues are replaced by a persistent border-weight + inset shade. */
