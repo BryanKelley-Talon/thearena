@@ -733,5 +733,51 @@
       },
       "_josh_container_fields": "id/accent/status/skill_lines are Josh's. Stations, drills, blurbs, guide, units and regents are Sam's, taken verbatim from his 2026-09-18 SIX-CARDS-RULED file. Curly quotes in the blurbs are intentional and must not be straightened."
     }
-  ]
+  ],
+  "office": {
+    "_README": "BK'S OFFICE — the third splash door, shared by both courses (Leo's order 2026-09-26 23:35, amended 00:31; BK's rulings). Josh built the CONTAINER only, 2026-09-27. Every student-facing word in here is either (a) the building's own wording, given by BK (the Be a Hawk frame), (b) a line BK or Leo's order fixed verbatim (the name, the email line), or (c) marked PLACEHOLDER and waiting on BK's yes in chat. The gate FAILS the build if this section is published while anything under it still carries _placeholder. Hidden unless published:true; a reviewer sees it with ?preview=office.",
+    "published": false,
+    "label": "BK's Office",
+    "blurb": "PLACEHOLDER — door blurb, awaiting BK's wording.",
+    "_placeholder_fields": [
+      "blurb",
+      "intro",
+      "eligibility_line"
+    ],
+    "intro": "PLACEHOLDER — one or two lines welcoming a student into the Office. Leo drafts; BK approves.",
+    "background": "images/office/bks-office-bg.webp",
+    "background_small": "images/office/bks-office-bg-640.webp",
+    "background_alt": "",
+    "_background_note": "Decorative, so empty alt on purpose: nothing a student needs is in the picture. Source: _INBOX/bks-office-background/bks-office-background-FINAL-2026-09-27.png (1024x572, 1.0 MB) converted to WebP (94 KB and a 42 KB phone copy). Clickable eggs come later, from the egg list in the prompt record.",
+    "frame": {
+      "_source": "CPPHS faculty meeting 2026-09-21, via Leo's order. The building's exact wording: do not paraphrase.",
+      "title": "Be a Hawk",
+      "traits": [
+        "Be Kind",
+        "Be Respectful",
+        "Be Responsible",
+        "Be Safe"
+      ],
+      "tagline": "Be Hawk Proud!"
+    },
+    "finish": {
+      "send_line": "send to Mr. Kelley at his school email",
+      "_send_line_note": "Verbatim from BK's ruling 5. The page never prints BK's address or the district domain; the gate fails on either.",
+      "subject_pattern": "{theme} complete",
+      "eligibility_line": "PLACEHOLDER — Hawk-pass eligibility line. Leo's proposal: \"Hawk passes are for CPPHS students.\" BK to rule.",
+      "code_rules": "No identity. Made on the device when the finish screen opens, held in page memory only, never stored and never sent. BK's inbox is the record."
+    },
+    "themes": [
+      {
+        "slug": "2026-09-starting-strong",
+        "month": "2026-09",
+        "month_label": "September",
+        "code_prefix": "SEP26",
+        "title": "Starting the year strong",
+        "_title_source": "Leo's order: theme 1, named by BK.",
+        "published": false,
+        "content_ref": "content/office-2026-09-starting-strong.json"
+      }
+    ]
+  }
 }

@@ -33,6 +33,16 @@ import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
   UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit,
 } from './ladder.jsx'
+import {
+  OFFICE_STYLES, OfficeDoor, OfficeRoom, OfficeTheme, officeVisible, visibleThemes,
+  OFFICE_COURSE, OFFICE_SKILL, officeUnit,
+} from './office.jsx'
+
+// BK's Office stays hidden until the manifest publishes it. A reviewer opens the
+// branch preview with ?preview=office to see it, placeholders and all.
+const PREVIEW_OFFICE = (() => {
+  try { return new URLSearchParams(window.location.search).get('preview') === 'office' } catch { return false }
+})()
 
 const HOME_URL = 'https://flashpointhistory.com'
 const MANIFEST_URL = '/arena.manifest.json'
@@ -670,7 +680,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
 // ============================================================
 // SPLASH — two doors. BK introduces the Arena himself (ruling E).
 // ============================================================
-function Splash({ manifest, onPick }) {
+function Splash({ manifest, onPick, onOffice }) {
   const { splash = {}, courses = [] } = manifest
   // The guide meets a student here first, then again inside. Same face either way.
   const guidePortrait = (courses.find(c => c.guide?.portrait) || {}).guide?.portrait || null
@@ -730,6 +740,10 @@ function Splash({ manifest, onPick }) {
             </Tag>
           )
         })}
+        {/* The third door, shared by both courses (BK via Leo, 2026-09-26). */}
+        {officeVisible(manifest.office, PREVIEW_OFFICE) && (
+          <OfficeDoor office={manifest.office} onOpen={onOffice} preview={PREVIEW_OFFICE} />
+        )}
       </div>
     </div>
   )
@@ -1606,6 +1620,9 @@ export default function App() {
   const [ladderFrom, setLadderFrom] = useState('door')      // where Back from a ladder goes
   const [drillFromLadder, setDrillFromLadder] = useState(false)
   const [doorLane, setDoorLane] = useState(null)
+  const [office, setOffice] = useState(false)
+  const [officeTheme, setOfficeTheme] = useState(null)
+  const [officePack, setOfficePack] = useState(null)
 
   useEffect(() => {
     fetch(MANIFEST_URL)
@@ -1662,7 +1679,25 @@ export default function App() {
   )
 
   let screen
-  if (!course) screen = <Splash manifest={manifest} onPick={setCourseId} />
+  const officeOn = office && officeVisible(manifest.office, PREVIEW_OFFICE)
+  const officeUi = { ScreenHeader, BottomBack, McItem }
+  const theme = officeOn && officeTheme
+    ? visibleThemes(manifest.office, PREVIEW_OFFICE).find(t => t.slug === officeTheme) : null
+  if (officeOn && theme) {
+    screen = <OfficeTheme office={manifest.office} theme={theme} pack={officePack} ui={officeUi}
+                          done={prog?.[`${OFFICE_COURSE.id}:${theme.slug}`]?.[OFFICE_SKILL] || []}
+                          onDone={n => markDone(OFFICE_COURSE, officeUnit(theme), OFFICE_SKILL, n)}
+                          onBack={() => { setOfficeTheme(null); setOfficePack(null); window.scrollTo(0, 0) }} />
+  }
+  else if (officeOn) {
+    screen = <OfficeRoom office={manifest.office} preview={PREVIEW_OFFICE} ui={officeUi}
+                         onOpenTheme={slug => {
+                           const t = visibleThemes(manifest.office, PREVIEW_OFFICE).find(x => x.slug === slug)
+                           setOfficeTheme(slug); fetchContent(t.content_ref, setOfficePack); window.scrollTo(0, 0)
+                         }}
+                         onBack={() => { setOffice(false); window.scrollTo(0, 0) }} />
+  }
+  else if (!course) screen = <Splash manifest={manifest} onPick={setCourseId} onOffice={() => { setOffice(true); window.scrollTo(0, 0) }} />
   else if (station && drillIndex != null && (station.drills || [])[drillIndex]) {
     screen = <DrillScreen course={course} station={station} drill={station.drills[drillIndex]}
                           onBack={() => { setDrillIndex(null); if (drillFromLadder) { setStationSlug(null); setDrillFromLadder(false) } }} />
@@ -1743,7 +1778,10 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES}</style>
+      {PREVIEW_OFFICE && !manifest.office?.published && (
+        <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live. Dashed boxes are placeholders.</div>
+      )}
       <div className={course ? 'app-interior' : undefined}>
         {screen}
         <div className="wrap" style={{ paddingTop: 0, paddingBottom: 28 }}>

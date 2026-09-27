@@ -1,0 +1,227 @@
+{
+  "_README": "BK's Office · theme file · container proof only. Every string a student would read is a PLACEHOLDER until Leo's theme-1 draft is approved by BK in chat and ported here word for word. The shape is the contract: lesson.cards[].trait must be one of the building's four Be words exactly; every practice and mystery item carries two hints, a reason, and a note per wrong choice; news links need filter_checked:true before they show; nothing anywhere names BK's address or the district domain.",
+  "_placeholder": true,
+  "lesson": {
+    "intro": "PLACEHOLDER — one line that opens the lesson.",
+    "cards": [
+      {
+        "trait": "Be Kind",
+        "heading": "PLACEHOLDER — card heading (Be Kind)",
+        "body": "PLACEHOLDER — two or three short sentences for this card. Sorted under Be Kind."
+      },
+      {
+        "trait": "Be Respectful",
+        "heading": "PLACEHOLDER — card heading (Be Respectful)",
+        "body": "PLACEHOLDER — two or three short sentences for this card. Sorted under Be Respectful."
+      },
+      {
+        "trait": "Be Responsible",
+        "heading": "PLACEHOLDER — card heading (Be Responsible)",
+        "body": "PLACEHOLDER — two or three short sentences for this card. Sorted under Be Responsible."
+      },
+      {
+        "trait": "Be Safe",
+        "heading": "PLACEHOLDER — card heading (Be Safe)",
+        "body": "PLACEHOLDER — two or three short sentences for this card. Sorted under Be Safe."
+      }
+    ]
+  },
+  "practice": {
+    "intro": "PLACEHOLDER — one line that opens the practice set.",
+    "items": [
+      {
+        "n": 1,
+        "question": "PLACEHOLDER — Practice question 1. Leo drafts; Sam and Will check; BK approves.",
+        "choices": [
+          {
+            "key": "A",
+            "text": "PLACEHOLDER — choice A"
+          },
+          {
+            "key": "B",
+            "text": "PLACEHOLDER — choice B (the right one in this placeholder)"
+          },
+          {
+            "key": "C",
+            "text": "PLACEHOLDER — choice C"
+          },
+          {
+            "key": "D",
+            "text": "PLACEHOLDER — choice D"
+          }
+        ],
+        "correct": "B",
+        "hints": [
+          "PLACEHOLDER — hint 1",
+          "PLACEHOLDER — hint 2"
+        ],
+        "reasoning": "PLACEHOLDER — the one-line reason B is right.",
+        "distractors": {
+          "A": "PLACEHOLDER — why A tempts",
+          "C": "PLACEHOLDER — why C tempts",
+          "D": "PLACEHOLDER — why D tempts"
+        }
+      },
+      {
+        "n": 2,
+        "question": "PLACEHOLDER — Practice question 2. Leo drafts; Sam and Will check; BK approves.",
+        "choices": [
+          {
+            "key": "A",
+            "text": "PLACEHOLDER — choice A"
+          },
+          {
+            "key": "B",
+            "text": "PLACEHOLDER — choice B (the right one in this placeholder)"
+          },
+          {
+            "key": "C",
+            "text": "PLACEHOLDER — choice C"
+          },
+          {
+            "key": "D",
+            "text": "PLACEHOLDER — choice D"
+          }
+        ],
+        "correct": "B",
+        "hints": [
+          "PLACEHOLDER — hint 1",
+          "PLACEHOLDER — hint 2"
+        ],
+        "reasoning": "PLACEHOLDER — the one-line reason B is right.",
+        "distractors": {
+          "A": "PLACEHOLDER — why A tempts",
+          "C": "PLACEHOLDER — why C tempts",
+          "D": "PLACEHOLDER — why D tempts"
+        }
+      },
+      {
+        "n": 3,
+        "question": "PLACEHOLDER — Practice question 3. Leo drafts; Sam and Will check; BK approves.",
+        "choices": [
+          {
+            "key": "A",
+            "text": "PLACEHOLDER — choice A"
+          },
+          {
+            "key": "B",
+            "text": "PLACEHOLDER — choice B (the right one in this placeholder)"
+          },
+          {
+            "key": "C",
+            "text": "PLACEHOLDER — choice C"
+          },
+          {
+            "key": "D",
+            "text": "PLACEHOLDER — choice D"
+          }
+        ],
+        "correct": "B",
+        "hints": [
+          "PLACEHOLDER — hint 1",
+          "PLACEHOLDER — hint 2"
+        ],
+        "reasoning": "PLACEHOLDER — the one-line reason B is right.",
+        "distractors": {
+          "A": "PLACEHOLDER — why A tempts",
+          "C": "PLACEHOLDER — why C tempts",
+          "D": "PLACEHOLDER — why D tempts"
+        }
+      }
+    ]
+  },
+  "mystery": {
+    "title": "PLACEHOLDER — mystery deep-dive title (\"The case of…\")",
+    "intro": "PLACEHOLDER — the hook: two or three sentences that set up the mystery.",
+    "items": [
+      {
+        "n": 1,
+        "question": "PLACEHOLDER — Mystery question 1. Leo drafts; Sam and Will check; BK approves.",
+        "choices": [
+          {
+            "key": "A",
+            "text": "PLACEHOLDER — choice A"
+          },
+          {
+            "key": "B",
+            "text": "PLACEHOLDER — choice B (the right one in this placeholder)"
+          },
+          {
+            "key": "C",
+            "text": "PLACEHOLDER — choice C"
+          },
+          {
+            "key": "D",
+            "text": "PLACEHOLDER — choice D"
+          }
+        ],
+        "correct": "B",
+        "hints": [
+          "PLACEHOLDER — hint 1",
+          "PLACEHOLDER — hint 2"
+        ],
+        "reasoning": "PLACEHOLDER — the one-line reason B is right.",
+        "distractors": {
+          "A": "PLACEHOLDER — why A tempts",
+          "C": "PLACEHOLDER — why C tempts",
+          "D": "PLACEHOLDER — why D tempts"
+        }
+      },
+      {
+        "n": 2,
+        "question": "PLACEHOLDER — Mystery question 2. Leo drafts; Sam and Will check; BK approves.",
+        "choices": [
+          {
+            "key": "A",
+            "text": "PLACEHOLDER — choice A"
+          },
+          {
+            "key": "B",
+            "text": "PLACEHOLDER — choice B (the right one in this placeholder)"
+          },
+          {
+            "key": "C",
+            "text": "PLACEHOLDER — choice C"
+          },
+          {
+            "key": "D",
+            "text": "PLACEHOLDER — choice D"
+          }
+        ],
+        "correct": "B",
+        "hints": [
+          "PLACEHOLDER — hint 1",
+          "PLACEHOLDER — hint 2"
+        ],
+        "reasoning": "PLACEHOLDER — the one-line reason B is right.",
+        "distractors": {
+          "A": "PLACEHOLDER — why A tempts",
+          "C": "PLACEHOLDER — why C tempts",
+          "D": "PLACEHOLDER — why D tempts"
+        }
+      }
+    ]
+  },
+  "news": [
+    {
+      "title": "PLACEHOLDER — news link title",
+      "source": "PLACEHOLDER — outlet and date",
+      "url": null,
+      "question": "PLACEHOLDER — one question to think about while reading.",
+      "filter_checked": false
+    }
+  ],
+  "bonus": {
+    "title": "PLACEHOLDER — bonus assignment title",
+    "instructions": [
+      "PLACEHOLDER — what to make or write.",
+      "PLACEHOLDER — how long, and what it must include.",
+      "PLACEHOLDER — what to paste into the email (the Completion-points part BK reads)."
+    ],
+    "email_body": [
+      "PLACEHOLDER — the email's first line, in the student's voice.",
+      "PLACEHOLDER — where the bonus work goes in the email."
+    ]
+  },
+  "coaching": []
+}

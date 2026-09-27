@@ -200,6 +200,63 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     if (missing.length) warn(f, `${w}: no distractor note for ${missing.join(', ')} - that is quizzing, not teaching.`)
   }
 }
+
+// ── BK'S OFFICE (added 2026-09-27, Josh; Leo's order of 09-26 and BK's rulings) ──
+// Checked whether or not it is published, so problems surface early. Published
+// problems FAIL; unpublished ones are reported as dark.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  const o = m.office
+  if (o) {
+    const tag = 'office (manifest)'
+    const oFail = (live, f, msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    const PH = /^PLACEHOLDER\b/
+    // Ruling 5: never BK's address, never the district domain. Anywhere.
+    const ADDR = /@|cppasd|\.k12\.|mailto:/i
+    const walk = (v, fn, at = '') => {
+      if (typeof v === 'string') return fn(v, at)
+      if (Array.isArray(v)) return v.forEach((x, i) => walk(x, fn, `${at}[${i}]`))
+      if (v && typeof v === 'object') for (const [k, x] of Object.entries(v)) if (!k.startsWith('_')) walk(x, fn, at ? `${at}.${k}` : k)
+    }
+    const TRAITS = ['Be Kind', 'Be Respectful', 'Be Responsible', 'Be Safe']
+    const live = o.published === true
+    const phO = []
+    walk(o, (str, at) => {
+      if (PH.test(str)) phO.push(at)
+      if (ADDR.test(str)) oFail(true, tag, `${at} names an address or the district domain (ruling 5): "${str.slice(0, 60)}"`)
+    })
+    if (phO.length) oFail(live, tag, `${phO.length} PLACEHOLDER field(s) (${phO.join(', ')}): cannot publish until BK approves the words.`)
+    if (JSON.stringify(o.frame?.traits) !== JSON.stringify(TRAITS) || o.frame?.title !== 'Be a Hawk' || o.frame?.tagline !== 'Be Hawk Proud!')
+      oFail(true, tag, `frame must carry the building's exact wording: Be a Hawk · ${TRAITS.join(' · ')} · "Be Hawk Proud!"`)
+    if (!/school email/.test(o.finish?.send_line || '')) oFail(live, tag, `finish.send_line must be "send to Mr. Kelley at his school email".`)
+    if (!o.background || !fs.existsSync(path.resolve('public', o.background))) oFail(live, tag, `background '${o.background}' is not in public/.`)
+    for (const t of o.themes || []) {
+      const tLive = live && t.published === true
+      const f = String(t.content_ref || '').replace(/^content\//, '')
+      if (!/^\d{4}-\d{2}$/.test(String(t.month))) oFail(tLive, tag, `theme ${t.slug}: month must be YYYY-MM.`)
+      if (!f || !fs.existsSync(path.join(CONTENT, f))) { oFail(tLive, tag, `theme ${t.slug}: content_ref '${f}' is not in public/content.`); continue }
+      const d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8'))
+      const phT = []
+      walk(d, (str, at) => {
+        if (PH.test(str)) phT.push(at)
+        if (ADDR.test(str)) oFail(true, f, `${at} names an address or the district domain (ruling 5).`)
+        if (/\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|score|\bpoints\b|streak|%)/i.test(str) && !/Completion[- ]points/i.test(str)) console.warn(`  warn  ${f}\n        ${at} reads like a score: "${str.slice(0, 60)}". No score in the Office.`), warns++
+      })
+      if (d._placeholder || phT.length) oFail(tLive, f, `theme words not approved yet: _placeholder ${d._placeholder ? 'set' : 'clear'}, ${phT.length} PLACEHOLDER string(s).`)
+      for (const k of ['lesson', 'practice', 'mystery', 'bonus']) if (!d[k]) oFail(tLive, f, `missing the ${k} step.`)
+      for (const [i, c] of (d.lesson?.cards || []).entries()) if (!TRAITS.includes(c.trait)) oFail(tLive, f, `lesson card ${i + 1}: trait '${c.trait}' is not one of the building's four words.`)
+      for (const k of ['practice', 'mystery']) for (const it of d[k]?.items || []) {
+        const w = `${k} item ${it.n ?? '?'}`
+        if (!(it.choices || []).some(c => c.key === it.correct)) oFail(tLive, f, `${w}: correct key matches no choice.`)
+        if ((it.hints || []).length !== 2) oFail(tLive, f, `${w}: needs two hints (CARRY-FORWARD).`)
+        if (!it.reasoning) oFail(tLive, f, `${w}: needs a reason.`)
+      }
+      for (const [i, n] of (d.news || []).entries()) if (n.url && n.filter_checked !== true) oFail(tLive, f, `news ${i + 1}: has a URL but filter_checked is not true. Check it against the school filter first.`)
+    }
+  }
+}
+
 console.log(`\n${fails} fail (live) - ${warns} warn/dark`)
 if (!fails) console.log('Everything a student can reach today passes.')
 process.exit(fails || process.exitCode ? 1 : 0)
