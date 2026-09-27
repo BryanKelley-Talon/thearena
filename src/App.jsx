@@ -653,7 +653,18 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
       color-mix(in srgb,var(--canvas) var(--scrim-in-top),transparent) 0%,
       color-mix(in srgb,var(--canvas) var(--scrim-in-mid),transparent) 55%,
       color-mix(in srgb,var(--canvas) var(--scrim-in-low),transparent) 100%),
-    url('/images/arena/gym-interior-bg.jpg') center 28%/cover no-repeat;
+    url('/images/arena/gym-interior-v2.webp') center 28%/cover no-repeat;
+}
+/* Phones get the 640-wide copy of the same picture (BK's gym v2, 2026-09-27). */
+@media (max-width:700px){
+  .app-interior::before{
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb,var(--canvas) var(--scrim-in-top),transparent) 0%,
+        color-mix(in srgb,var(--canvas) var(--scrim-in-mid),transparent) 55%,
+        color-mix(in srgb,var(--canvas) var(--scrim-in-low),transparent) 100%),
+      url('/images/arena/gym-interior-v2-640.webp') center 28%/cover no-repeat;
+  }
 }
 /* Type that sits straight on the photo (not on a card) gets a soft shadow, so a
    lighter scrim never costs it contrast. Cards are solid and need none. */
