@@ -370,21 +370,14 @@ button:active:not(:disabled),a.door:active{transform:scale(.985)}
 
 /* ---------- SPLASH ---------- */
 .splash{text-align:center;padding-top:34px;position:relative}
-/* The Arena's own front door. A fictional building — chrome, not a Realness
-   asset. The scrim is what guarantees the type keeps its contrast over it. */
-.hero{position:absolute;inset:-28px -20px auto;height:760px;z-index:0;overflow:hidden}
-.hero img{width:100%;height:100%;object-fit:cover;object-position:center 34%;display:block}
-/* SCRIM (BK, 2026-09-27: "see more of the inside of the arena and outside ..
-   transparency can be adjusted"). The strength lives in tokens/arena-navy.css as
-   --scrim-out-*, so it is tuned in one place. Loose type on the photo carries a
-   shadow so it holds contrast at the lighter settings. */
-.hero::after{content:'';position:absolute;inset:0;background:
-  linear-gradient(180deg,
-    color-mix(in srgb,var(--canvas) var(--scrim-out-top),transparent) 0%,
-    color-mix(in srgb,var(--canvas) var(--scrim-out-mid),transparent) 34%,
-    color-mix(in srgb,var(--canvas) var(--scrim-out-low),transparent) 62%,
-    var(--canvas) 92%)}
-.splash > *:not(.hero){position:relative;z-index:1}
+/* The Arena's own front door. A fictional building — chrome, not a Realness asset.
+   BK, 2026-09-27: "we should see the exterior of the arena on that title page."
+   So the building is shown whole, framed like the Office's room, with no scrim over
+   it; the title and every line of type sit BELOW it on the navy, where contrast is
+   never in question. */
+.hero{position:relative;max-width:1100px;margin:0 auto 26px;border-radius:14px;overflow:hidden;
+  border:1px solid var(--edge);box-shadow:var(--arena-lift),0 18px 40px rgba(0,0,0,.45)}
+.hero img{width:100%;height:auto;aspect-ratio:1197/714;object-fit:cover;display:block}
 .splash-mark{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
   letter-spacing:.34em;font-size:13px;color:var(--gold);margin-bottom:10px;
   text-shadow:0 1px 10px var(--canvas)}
@@ -429,6 +422,14 @@ a.door{cursor:pointer}
 a.door:hover{background:var(--card-lit);border-color:var(--gold);transform:translateY(-3px);
   box-shadow:0 10px 30px -12px #0006}
 .door-accent{height:4px;border-radius:2px;width:46px;margin-bottom:14px}
+/* A window into each room (BK, 2026-09-27: "Global and US need one too"). */
+a.door.has-art{padding-top:0;overflow:hidden}
+.door-art{margin:0 -22px 16px;height:118px;overflow:hidden;border-bottom:1px solid var(--edge)}
+.door-art img{width:100%;height:100%;object-fit:cover;display:block}
+/* THE SIGNAL RED (BK, 2026-09-27: option A). Borders on what a kid can walk through
+   or press to move around, and the message banner. Never on an answer choice: a
+   wrong answer keeps its own muted brick and the words "Not this one". */
+a.door, button.lane-tab, button.practice-row, .bottom-back-btn{border:2px solid var(--arena-signal)}
 .door-label{font-family:'Barlow Condensed',sans-serif;font-size:32px;line-height:1.08;
   text-transform:uppercase;color:var(--white);margin-bottom:9px}
 .door-blurb{color:var(--grey);font-size:16.5px;line-height:1.55}
@@ -672,7 +673,6 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
   a.door:hover,.card:hover:not(.card.off){transform:none;border-color:var(--gold);
     box-shadow:inset 0 0 0 1px var(--gold)}
   button:active:not(:disabled),a.door:active{transform:none;box-shadow:inset 0 0 0 2px var(--gold-lit)}
-  .hero img{filter:saturate(.85)}
 }
 @media (max-width:560px){
   .wrap{padding:20px 16px 56px}
@@ -731,11 +731,14 @@ function Splash({ manifest, onPick }) {
           return (
             <Tag
               key={c.id}
-              className={`door${open ? '' : ' building'}`}
+              className={`door${open ? '' : ' building'}${c.door_image ? ' has-art' : ''}`}
               {...(open
                 ? { href: `#/${c.id}`, onClick: e => { e.preventDefault(); onPick(c.id) } }
                 : { 'aria-disabled': 'true' })}
             >
+              {c.door_image && (
+                <div className="door-art" aria-hidden="true"><img src={`/${c.door_image}`} alt="" loading="lazy" /></div>
+              )}
               <div className="door-accent" style={{ background: open ? c.accent : 'var(--dim)' }} />
               <div className="door-label">{c.label}</div>
               {c.blurb && <div className="door-blurb">{c.blurb}</div>}
