@@ -377,7 +377,7 @@ button:active:not(:disabled),a.door:active{transform:scale(.985)}
    never in question. */
 .hero{position:relative;max-width:1100px;margin:0 auto 26px;border-radius:14px;overflow:hidden;
   border:1px solid var(--edge);box-shadow:var(--arena-lift),0 18px 40px rgba(0,0,0,.45)}
-.hero img{width:100%;height:auto;aspect-ratio:1197/714;object-fit:cover;display:block}
+.hero img{width:100%;height:auto;aspect-ratio:1024/572;object-fit:cover;display:block}
 .splash-mark{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
   letter-spacing:.34em;font-size:13px;color:var(--gold);margin-bottom:10px;
   text-shadow:0 1px 10px var(--canvas)}
@@ -692,7 +692,12 @@ function Splash({ manifest, onPick }) {
   return (
     <div className="wrap splash">
       <div className="hero" aria-hidden="true">
-        <img src="/images/arena/frontdoor-bg.jpg" alt="" />
+        {/* v2 (BK, 2026-09-27 01:10): brick and timber to match the rooms, NY flag.
+            v1 (frontdoor-bg.jpg) stays in the repo, unused, until BK approves removing it. */}
+        <picture>
+          <source media="(max-width: 700px)" srcSet="/images/arena/frontdoor-v2-640.webp" />
+          <img src="/images/arena/frontdoor-v2.webp" alt="" />
+        </picture>
       </div>
       <div className="splash-mark">Flashpoint History</div>
       <h1>The Arena</h1>
