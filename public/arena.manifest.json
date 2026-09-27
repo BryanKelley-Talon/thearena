@@ -297,8 +297,8 @@
           "blurb": "Season-long football. What you know builds the team.",
           "url": "https://reviewbowl.flashpointhistory.com",
           "published": true,
-          "status": "building",
-          "_note": "Its own separately built game (builds/review-bowl), pointed at by URL — nothing absorbed into this shell. DARK to students by status:'building' (spec §3 — darkened, one short word, out of the tab order, never colour alone). published:true means 'this is real and may be named'; status is what keeps it unenterable. Going live is ONE edit — status to 'open' — and nothing else: no redeploy of the game, no second wiring pass. BK's action alone, on his timeline (Josh order 2026-09-22). Same URL on both doors: one game, the course is chosen inside it. NOTE 2026-09-22: the subdomain below is the agreed address but is NOT serving yet — the deploy needs BK's hand (see Out/handoff-code-2026-09-22-skills-review-bowl-arena-integration.md). The tile is dark, so nothing follows this URL until both that deploy and BK's flip have happened."
+          "status": "open",
+          "_note": "OPEN for launch night (BK 2026-09-27 10:13: the Bowl ships with the Arena). Its own separately built game (builds/review-bowl) on its own subdomain under flashpointhistory.com (BK 10:02: 'keeps everything under one banner'). Launch order: the Bowl's address answers FIRST, then this Arena ships. If the address ever goes dark, set status back to 'building' and the tile darkens."
         }
       ],
       "_label_note": "BK 2026-09-27 10:28: \"Global History and Geography 10R ( the 10R is specific to our in house language at school)---US History and Government 11R\". Consistent with the state's exam names (asked 10:26); replaces the 09-18 'Global Studies and Geography 10R' ruling.",
@@ -857,8 +857,8 @@
           "blurb": "Season-long football. What you know builds the team.",
           "url": "https://reviewbowl.flashpointhistory.com",
           "published": true,
-          "status": "building",
-          "_note": "Its own separately built game (builds/review-bowl), pointed at by URL — nothing absorbed into this shell. DARK to students by status:'building' (spec §3 — darkened, one short word, out of the tab order, never colour alone). published:true means 'this is real and may be named'; status is what keeps it unenterable. Going live is ONE edit — status to 'open' — and nothing else: no redeploy of the game, no second wiring pass. BK's action alone, on his timeline (Josh order 2026-09-22). Same URL on both doors: one game, the course is chosen inside it. NOTE 2026-09-22: the subdomain below is the agreed address but is NOT serving yet — the deploy needs BK's hand (see Out/handoff-code-2026-09-22-skills-review-bowl-arena-integration.md). The tile is dark, so nothing follows this URL until both that deploy and BK's flip have happened."
+          "status": "open",
+          "_note": "OPEN for launch night (BK 2026-09-27 10:13: the Bowl ships with the Arena). Its own separately built game (builds/review-bowl) on its own subdomain under flashpointhistory.com (BK 10:02: 'keeps everything under one banner'). Launch order: the Bowl's address answers FIRST, then this Arena ships. If the address ever goes dark, set status back to 'building' and the tile darkens."
         }
       ],
       "_stations_note": "SIX CARDS, 2026-09-18, BK ruled. One card per graded skill line, named with the skill line verbatim as it appears on the scoring page and on the FEEDS THE ESSAY line of every Unit 0 wall card. The ten engineering stations survive as named drills inside the cards; every content_ref is carried forward unchanged and nothing is thrown away. content_ref is null on the CARD and lives on each DRILL — a card with a null content_ref still renders from name, which is Josh's own spec, so this file is safe to merge before the drills array is read by anything. civic-literacy is the one package referenced twice, because it drills CP and OE together and both lines deserve a door with their own name on it.",
