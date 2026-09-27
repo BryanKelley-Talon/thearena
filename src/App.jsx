@@ -1829,7 +1829,7 @@ export default function App() {
     <>
       <style>{STYLES + LADDER_STYLES + OFFICE_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
-        <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live. Dashed boxes are placeholders.</div>
+        <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}
       <div className={course ? 'app-interior' : undefined}>
         {screen}
