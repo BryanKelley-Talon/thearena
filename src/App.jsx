@@ -501,6 +501,7 @@ a.door, button.lane-tab, button.practice-row, .bottom-back-btn{border:2px solid 
   border:1px solid var(--edge);color:inherit;font-family:'Outfit',sans-serif;cursor:pointer}
 .card:hover:not(.card.off){background:var(--card-lit);border-color:var(--gold);transform:translateY(-2px)}
 .card.off{opacity:.45;cursor:default}
+a.card{display:block;text-decoration:none}
 .card-name{font-family:'Barlow Condensed',sans-serif;font-size:24px;line-height:1.14;
   text-transform:uppercase;color:var(--white);margin-bottom:8px}
 .card.off .card-name{color:var(--dim)}

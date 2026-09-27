@@ -68,7 +68,7 @@
 }
 
 /* Everything a kid can tap sits ON the page, not in it. */
-a.door, button.gauge, button.lane-tab, button.rung, button.card, button.practice-row,
+a.door, a.card, button.gauge, button.lane-tab, button.rung, button.card, button.practice-row,
 .mc-choice, .bottom-back-btn, .rep, .mc-item {
   box-shadow: var(--arena-lift);
 }
