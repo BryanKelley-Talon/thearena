@@ -1662,7 +1662,7 @@ export default function App() {
   )
 
   let screen
-  if (!course) screen = <Splash manifest={manifest} onPick={setCourseId} />
+  if (!course) screen = <Splash manifest={manifest} onPick={id => { setCourseId(id); window.scrollTo(0, 0) }} />
   else if (station && drillIndex != null && (station.drills || [])[drillIndex]) {
     screen = <DrillScreen course={course} station={station} drill={station.drills[drillIndex]}
                           onBack={() => { setDrillIndex(null); if (drillFromLadder) { setStationSlug(null); setDrillFromLadder(false) } }} />
