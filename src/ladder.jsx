@@ -19,6 +19,7 @@
 // edit plus content files — no code change.
 // ============================================================
 import { useState, useEffect, useMemo } from 'react'
+import { useStuck, CoachSays, BK_PORTRAIT } from './coach.jsx'
 
 // ── PROGRESS (this device only, level numbers only) ───────────────────────
 const PROGRESS_KEY = 'arena_progress_v1'
@@ -180,7 +181,7 @@ export function GaugeFace({ value = 0, dark = false, size = 160 }) {
   )
 }
 
-export const statusLine = top => (top ? `Level ${top} of 5 done` : 'Not started')
+export const statusLine = top => (top ? `Needle at ${top}` : 'Not started')
 
 export function SkillGauges({ course, unit, prog, onOpen }) {
   const skills = roomSkills(course, unit)
@@ -227,8 +228,8 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
           <h2>{s?.name || skill}</h2>
           <p className="sub" style={{ marginBottom: 6 }}>{statusLine(top)}</p>
           <p className="ladder-note">{levels.some(levelOpen)
-            ? 'Every level is open. Start anywhere — the tag shows a good place to begin.'
-            : 'This gauge isn’t built yet. Its levels open here as they’re added.'}</p>
+            ? 'Every step is open. Start anywhere — the tag shows a good place to begin.'
+            : 'This gauge isn’t built yet. Its steps open here as they’re added.'}</p>
         </div>
       </div>
       <ol className="ladder">
@@ -240,7 +241,7 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
             <>
               <span className="rung-n" aria-hidden="true">{lv.level}</span>
               <span className="rung-body">
-                <span className="card-type">Level {lv.level}{t ? ` · ${t.name}` : ''}</span>
+                <span className="card-type">Step {lv.level}{t ? ` · ${t.name}` : ''}</span>
                 <span className="rung-name">{open ? (lv.label || t?.name) : (lv.label || t?.name || 'Not built yet')}</span>
                 {open && t && <span className="card-blurb">{t.blurb}</span>}
               </span>
@@ -276,7 +277,7 @@ function BestFitItem({ item, n, total, onAnswered }) {
   const hints = item.hints || []
   const answered = picked != null
   const right = answered && picked === item.correct
-  const choose = k => { if (picked == null) { setPicked(k); onAnswered() } }
+  const choose = k => { if (picked == null) { setPicked(k); onAnswered(k === item.correct) } }
   return (
     <div className="mc-item">
       <div className="mc-head"><span className="mc-count">Question {n} of {total}</span></div>
@@ -316,14 +317,18 @@ function BestFitItem({ item, n, total, onAnswered }) {
 export function BestFit({ pack, onComplete }) {
   const items = pack?.items || []
   const [count, setCount] = useState(0)
+  const [stuck, noteStuck] = useStuck()
   useEffect(() => { if (items.length && count >= items.length) onComplete() }, [count])
   return (
     <>
       <p className="mc-preamble">Pick the statement that fits best. Stuck? Take a hint — there are two on every question. Nothing here is scored or saved.</p>
       {items.map((it, i) => (
-        <BestFitItem key={it.id || i} item={it} n={i + 1} total={items.length} onAnswered={() => setCount(c => c + 1)} />
+        <div key={it.id || i}>
+          <BestFitItem item={it} n={i + 1} total={items.length} onAnswered={ok => { setCount(c => c + 1); noteStuck(ok, i) }} />
+          {stuck && stuck.at === i && <CoachSays portrait={BK_PORTRAIT} line={stuck.line} />}
+        </div>
       ))}
-      {items.length > 0 && count >= items.length && <p className="level-done" role="status">Level done. Head back to the gauge for the next one.</p>}
+      {items.length > 0 && count >= items.length && <p className="level-done" role="status">Step done. Head back to the gauge for the next one.</p>}
     </>
   )
 }
@@ -349,6 +354,9 @@ export function SentenceBuild({ pack, onComplete }) {
   const allFilled = blanks.length > 0 && blanks.every(b => chosen[b.blank_id])
   const allRight = checked && blanks.every(isRight)
   useEffect(() => { if (allRight) onComplete() }, [allRight])
+  // A second check that still isn't right is a retry: the stuck line, once.
+  const [stuck, , retryStuck] = useStuck()
+  useEffect(() => { if (checked && !allRight && attempt >= 1) retryStuck() }, [checked])
 
   const tryAgain = () => {
     setChosen(c => Object.fromEntries(Object.entries(c).filter(([id]) => isRight(blanks.find(b => String(b.blank_id) === id)))))
@@ -403,11 +411,12 @@ export function SentenceBuild({ pack, onComplete }) {
           <button type="button" className="rep-go" onClick={tryAgain}>Try again</button>
         </div>
       )}
+      {stuck && <CoachSays portrait={BK_PORTRAIT} line={stuck.line} />}
       {allRight && (
         <div className="rep-reveal" role="status">
           <h4>Your sentence</h4>
           <p className="rep-exemplar">{pack.correct_sentence}</p>
-          <p className="level-done">Level done. Head back to the gauge for the next one.</p>
+          <p className="level-done">Step done. Head back to the gauge for the next one.</p>
         </div>
       )}
     </div>
@@ -461,7 +470,7 @@ export function GuidedWrite({ pack, accent, onComplete }) {
           <h4>One strong answer</h4>
           <p className="rep-exemplar">{pack.model_response}</p>
           <p className="rep-focus">Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?</p>
-          <p className="level-done">Level done. Head back to the gauge for the next one.</p>
+          <p className="level-done">Step done. Head back to the gauge for the next one.</p>
         </div>
       )}
     </div>
@@ -525,7 +534,7 @@ export function Enrichment({ pack, onComplete }) {
       )}
       {!done
         ? <button type="button" className="rep-go" onClick={() => { setDone(true); onComplete() }}>I’m done</button>
-        : <p className="level-done" role="status">Level 5 done. That’s every level on this gauge.</p>}
+        : <p className="level-done" role="status">Step 5 done. That’s every step on this gauge.</p>}
     </div>
   )
 }

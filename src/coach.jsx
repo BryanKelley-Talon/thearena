@@ -10,7 +10,7 @@
 //     this visit only, and a reload starts them at zero.
 //   • Lines about a season or a save code are Review Bowl's and never show here.
 // ============================================================
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 let BANK = {}
 export function setCoachBank(b) { BANK = b || {} }
@@ -54,3 +54,19 @@ export function CoachSays({ portrait, line }) {
     </div>
   )
 }
+
+// STUCK (attempt_again): several misses in a row, or a retry. Once per set, never a nag.
+// The streak lives in this set's memory only.
+export function stuckLine() { return pick(BANK.attempt_again) }
+export function useStuck(after = 3) {
+  const streak = useRef(0)
+  const [shown, setShown] = useState(null)      // { line, at }
+  const note = (correct, at = null) => {
+    if (shown) return
+    streak.current = correct ? 0 : streak.current + 1
+    if (streak.current >= after) setShown({ line: stuckLine(), at })
+  }
+  const retry = (at = null) => { if (!shown) setShown({ line: stuckLine(), at }) }
+  return [shown, note, retry]
+}
+export const BK_PORTRAIT = 'images/arena/guide-bk.png'

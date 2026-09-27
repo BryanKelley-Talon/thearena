@@ -30,7 +30,7 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
-import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit } from './coach.jsx'
+import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
   UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone,
@@ -1349,7 +1349,8 @@ function Counters({ reps }) {
 function ItemSet({ pack, course, heading }) {
   const items = (pack && pack.items) || []
   const [reps, setReps] = useState(0)
-  const record = () => setReps(r => r + 1)
+  const [stuck, noteStuck] = useStuck()
+  const record = (ok, i) => { setReps(r => r + 1); noteStuck(ok, i) }
   if (!items.length) return null
   return (
     <>
@@ -1364,8 +1365,11 @@ function ItemSet({ pack, course, heading }) {
             you can be wrong on purpose to find out what the wrong one was for.
           </p>}
       {items.map((it, i) => (
-        <McItem key={it.n ?? i} item={it} accent={course.accent} course={course}
-                n={i + 1} total={items.length} onAnswer={record} />
+        <div key={it.n ?? i}>
+          <McItem item={it} accent={course.accent} course={course}
+                  n={i + 1} total={items.length} onAnswer={ok => record(ok, i)} />
+          {stuck && stuck.at === i && <CoachSays portrait={course.guide?.portrait || BK_PORTRAIT} line={stuck.line} />}
+        </div>
       ))}
       <Counters reps={reps} />
     </>
@@ -1414,6 +1418,8 @@ function MatchingSet({ pack, accent, onChecked }) {
   const [defendKey, setDefendKey] = useState(null)
   const [defenseText, setDefenseText] = useState('')
   const [defenseRevealed, setDefenseRevealed] = useState(false)
+  // Three or more pairs off at the check reads as stuck: the stuck line, once.
+  const [stuck, , retryStuck] = useStuck()
 
   // A right key is NOT consumed on pairing — the desk's own spec (Josh, 09-19)
   // says counts don't have to be 1:1, and Will's first real pack uses that on
@@ -1486,7 +1492,11 @@ function MatchingSet({ pack, accent, onChecked }) {
       {!checked ? (
         <>
           <button className="rep-go" disabled={!allPaired}
-                  onClick={() => { setChecked(true); onChecked && onChecked() }}>
+                  onClick={() => {
+                    setChecked(true)
+                    if (left.filter(l => correct[l.key] !== pairs[l.key]).length >= 3) retryStuck()
+                    onChecked && onChecked()
+                  }}>
             {allPaired ? 'Check my pairs'
                        : `Pair them all first — ${left.length - Object.keys(pairs).length} to go`}
           </button>
@@ -1496,6 +1506,7 @@ function MatchingSet({ pack, accent, onChecked }) {
         </>
       ) : (
         <div className="rep-reveal">
+          {stuck && <CoachSays portrait={BK_PORTRAIT} line={stuck.line} />}
           <h4>Now defend one</h4>
           <p className="mc-preamble">Pick one of your pairs — right or wrong — and say why it
              goes together. A wrong pair is fair game; explaining why you picked it teaches
@@ -1635,11 +1646,11 @@ function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onCompl
     return markComplete(...a)
   }
   let body
-  if (pack === null) body = <div className="loading">Opening the level&hellip;</div>
+  if (pack === null) body = <div className="loading">Opening&hellip;</div>
   else if (!pack) body = (
     <div className="empty" style={{ textAlign: 'left' }}>
-      <div className="empty-title">This level didn&rsquo;t load</div>
-      <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which level it was.</p>
+      <div className="empty-title">This step didn&rsquo;t load</div>
+      <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which step it was.</p>
     </div>
   )
   else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} />
@@ -1655,12 +1666,12 @@ function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onCompl
     )}
     <Enrichment pack={pack} onComplete={onComplete} />
   </>
-  else body = <EmptyLane what="This level" />
+  else body = <EmptyLane what="This step" />
   return (
     <div className="wrap">
       <ScreenHeader label={skillName} onBack={onBack} color={course.accent} back={skillName} />
       <div className="detail" style={{ maxWidth: 860 }}>
-        <div className="card-type">Level {lv?.level}{t ? ` · ${t.name}` : ''}</div>
+        <div className="card-type">Step {lv?.level}{t ? ` · ${t.name}` : ''}</div>
         <h2>{lv?.label || t?.name}</h2>
         {body}
         {coachLine && <CoachSays key={coachLine} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'} line={coachLine} />}
