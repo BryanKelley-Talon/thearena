@@ -34,7 +34,8 @@
       "hints": [
         "Locke says rights exist in the state of nature — he's not questioning whether people HAVE rights. Reread for what he says can go wrong with them.",
         "Look at the words right before “insecure” in the passage — Locke names the problem directly in that sentence."
-      ]
+      ],
+      "reasoning": "Locke says rights in the state of nature are constantly exposed to attack, so enjoying them is unsafe and insecure. People join a society to protect their life, liberty and property."
     },
     {
       "n": 2,
@@ -67,7 +68,8 @@
       "hints": [
         "Locke is describing what happens AFTER a legislature breaks its side of the deal — not what happens to the legislature itself.",
         "The phrase “resume their original liberty” tells you who ends up holding the power."
-      ]
+      ],
+      "reasoning": "Locke says a legislature that grabs absolute power forfeits it. The power passes to the people, who have a right to resume their original liberty."
     },
     {
       "n": 3,
@@ -100,7 +102,8 @@
       "hints": [
         "This is a “where and when” question, not a “what does it say” question — three of the four options aren't even real places/movements from this unit.",
         "Montesquieu is one of the Enlightenment philosophers you've been building a list of all week — check that list."
-      ]
+      ],
+      "reasoning": "Montesquieu was a French writer of the Enlightenment, the European movement that questioned absolute rule. His argument for separating government powers is one of its best-known ideas."
     },
     {
       "n": 4,
@@ -133,7 +136,8 @@
       "hints": [
         "The word “tyrannical” appears twice in this passage — that's the clue to the problem Montesquieu is naming.",
         "He's describing what happens when legislative and executive power sit in the same hands — not a shortage of resources or a religious conflict."
-      ]
+      ],
+      "reasoning": "Montesquieu says that when the power to make laws and the power to enforce them sit with the same person or group, there can be no liberty. They could pass tyrannical laws and enforce them tyrannically."
     },
     {
       "n": 5,
@@ -166,7 +170,8 @@
       "hints": [
         "Find the phrase “common interest” in the passage — that's doing the work in this question.",
         "The “will of all” is described as private interests added up. The general will is described differently — contrast the two clauses."
-      ]
+      ],
+      "reasoning": "Rousseau says the will of all is just private interests added up. The general will looks only at the common interest: what is good for everyone together."
     },
     {
       "n": 6,
@@ -199,7 +204,8 @@
       "hints": [
         "Look for the word “prove” in the passage — Wollstonecraft is issuing a challenge, not making a request.",
         "She's not asking for education to happen first — she's daring her opponents to prove a claim before excluding women."
-      ]
+      ],
+      "reasoning": "Wollstonecraft dares anyone who would shut women out to prove first that women lack reason. Without that proof, she says, excluding them is acting like a tyrant."
     },
     {
       "n": 7,
@@ -232,7 +238,8 @@
       "hints": [
         "Talleyrand-Périgord is named in the source line as the person this letter is addressed TO — what country was he part of?",
         "Wollstonecraft herself was British — she's writing TO a French official, not writing as one."
-      ]
+      ],
+      "reasoning": "Wollstonecraft was a British writer. The source line shows she addressed her book to Talleyrand-Périgord, a member of the French National Assembly."
     },
     {
       "n": 8,
@@ -265,7 +272,8 @@
       "hints": [
         "The passage is about exclusion from reason and rights based on sex — think about which umbrella issue covers unequal treatment and authority.",
         "This isn't about wealth, technology, or global connections — it's about who holds power over whom, and how."
-      ]
+      ],
+      "reasoning": "Wollstonecraft argues that shutting women out of rights is how men act like tyrants. Who holds power over whom, and whether it's used unfairly, is Power and Its Abuse."
     },
     {
       "n": 9,
@@ -298,7 +306,8 @@
       "hints": [
         "The second sentence of the passage defines equality directly — find the word “Equality” in the text.",
         "She's not talking about land or representation — reread the clause right after “consists in this.”"
-      ]
+      ],
+      "reasoning": "Catherine defines it in the passage: the equality of citizens consists in all of them being subject to the same laws."
     },
     {
       "n": 10,
@@ -331,7 +340,9 @@
       "hints": [
         "Catherine the Great is one of the “enlightened” monarchs — you've grouped her with rulers who read the Enlightenment philosophers.",
         "Her country's name gives you half the answer; the movement takes more thought — check your enlightened despots list for the other half."
-      ]
+      ],
+      "reasoning": "Catherine the Great ruled Russia in the 1700s. She read the Enlightenment philosophers and borrowed their ideas for Russia's laws, which is why she's called an enlightened monarch."
     }
-  ]
+  ],
+  "_filled": "2026-09-27 10:53 EDT by Will (global10r-curriculum), on BK's 10:47 order: 'take care of what josh needs please and send to him'. reasoning added to all 10 items (your note #2, 9/26). Same lines as the Bowl's copy."
 }
