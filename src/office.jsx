@@ -18,10 +18,11 @@
 // Ed Law 2-d: what this room remembers is LEVEL NUMBERS ONLY, through the same
 // `arena_progress_v1` store and the same clean() contract as the gauges:
 // { "office:<theme-slug>": { "BK": [1,2,3] } } means lesson, practice and mystery
-// are done. No names, no answers, nothing typed. The finish code is made on the
-// device when the finish screen opens, held in page memory, never stored, never
-// sent. The student sends the email from their own school account. BK's inbox is
-// the record. The Arena knows no one.
+// are done. No names, no answers, nothing typed. The finish code is RETIRED (Leo's
+// ruling 2026-09-27 09:22, BK "yes 1-5"): the finish screen shows one of the theme's
+// three proof questions, picked at random in page memory, and drops it into the email.
+// The Arena never checks the answer; BK reads it. The student sends the email from
+// their own school account. BK's inbox is the record. The Arena knows no one.
 //
 // Josh wrote no student-facing words in the theme. Every such string lives in the
 // manifest or the theme file, and anything still marked PLACEHOLDER renders in a
@@ -59,22 +60,12 @@ export function visibleThemes(office, preview, now = monthNow()) {
     .sort((a, b) => String(b.month).localeCompare(String(a.month)))
 }
 
-// ── THE FINISH CODE ──────────────────────────────────────────────────────
-// No identity. Four random characters from an alphabet with no look-alikes
-// (no 0/O, 1/I/L), plus one check character, after the theme's prefix.
-// Honor system, said plainly: the page is public, so a code proves nothing on
-// its own. The bonus work in the email is what BK reads.
-const ALPHA = '23456789ABCDEFGHJKMNPQRSTUVWXYZ'
-function checkChar(s) {
-  let sum = 0
-  for (let i = 0; i < s.length; i++) sum += (ALPHA.indexOf(s[i]) + 1 || s.charCodeAt(i)) * (i + 1)
-  return ALPHA[sum % ALPHA.length]
-}
-export function makeCode(prefix) {
-  const r = new Uint32Array(4)
-  try { window.crypto.getRandomValues(r) } catch { for (let i = 0; i < 4; i++) r[i] = Math.floor(Math.random() * 1e9) }
-  const body = Array.from(r, n => ALPHA[n % ALPHA.length]).join('')
-  return `${prefix}-${body}-${checkChar(prefix + body)}`
+// ── THE PROOF QUESTION ───────────────────────────────────────────────────
+// One of the theme's three, picked when the finish screen opens. Held in page memory
+// only: leave and come back and you may get a different one. Either is fine.
+export function pickProof(list, random = Math.random) {
+  const qs = (list || []).filter(q => typeof q === 'string' && q.trim())
+  return qs.length ? qs[Math.floor(random() * qs.length)] : null
 }
 
 // Copy to the clipboard without sending anything anywhere. Falls back to a
@@ -235,7 +226,7 @@ export function OfficeTheme({ office, theme, pack, done, onDone, onBack, ui }) {
               {step === 1 && <Lesson lesson={pack.lesson} frame={office.frame} done={isDone(1)} onFinish={() => finish(1)} />}
               {step === 2 && <OfficeSet set={pack.practice} McItem={McItem} done={isDone(2)} onFinish={() => finish(2)} next="the mystery" />}
               {step === 3 && <OfficeSet set={pack.mystery} McItem={McItem} done={isDone(3)} onFinish={() => finish(3)} next="the bonus" titled />}
-              {step === 4 && <Finish office={office} theme={theme} bonus={pack.bonus} coaching={pack.coaching} />}
+              {step === 4 && <Finish office={office} theme={theme} bonus={pack.bonus} coaching={pack.coaching} proof={pack.proof_questions} />}
             </div>
             <aside className="office-aside">
               <NewsLinks news={pack.news} />
@@ -280,6 +271,8 @@ function OfficeSet({ set, McItem, done, onFinish, titled }) {
     <section className="office-panel">
       {titled && set.title ? <T as="h2" className="panel-h">{set.title}</T> : <h2 className="panel-h">{titled ? 'Mystery deep dive' : 'Practice set'}</h2>}
       {set.intro && <T as="p" className="panel-intro">{set.intro}</T>}
+      {/* Leo's porting note 3: "The skill underneath" shows under the hook. */}
+      {set.underneath && <p className="panel-intro underneath"><b>The skill underneath:</b> {set.underneath}</p>}
       {items.map((it, i) => (
         <McItem key={it.n ?? i} item={it} n={i + 1} total={items.length}
                 onAnswer={() => setAnswered(s => new Set(s).add(i))} />
@@ -310,7 +303,9 @@ function NewsLinks({ news }) {
       {list.map((n, i) => {
         // A link shows as a link ONLY when it has a URL and has been checked against
         // the school web filter. Otherwise it is a card with no link at all.
-        const live = n.url && n.filter_checked === true
+        // filter_checked is true, or BK's recorded decision to ship now and check on a
+        // school Chromebook himself (theme 1: "BK ships 09-27; checks Mon 09-28").
+        const live = n.url && (n.filter_checked === true || (typeof n.filter_checked === 'string' && /^BK\b/.test(n.filter_checked)))
         return (
           <div key={i} className="news-card">
             {live
@@ -326,13 +321,16 @@ function NewsLinks({ news }) {
   )
 }
 
-function Finish({ office, theme, bonus, coaching }) {
+function Finish({ office, theme, bonus, coaching, proof }) {
   const f = office.finish || {}
-  // Made once per visit to this screen. Never stored: leave and come back, and
-  // you get a fresh code. Either one is fine; BK reads the work, not the code.
-  const code = useMemo(() => makeCode(theme.code_prefix || 'HAWK'), [theme.code_prefix])
+  const question = useMemo(() => pickProof(proof), [proof])
   const subject = (f.subject_pattern || '{theme} complete').replace('{theme}', theme.title)
-  const body = [...(bonus?.email_body || []), '', `Code: ${code}`].join('\n')
+  // The email, line by line, exactly as ruled: {theme} is the title; {proof} is the
+  // question picked above. A line whose filling is missing is left out, never faked.
+  const body = (f.email_lines || [])
+    .filter(l => !l.includes('{proof}') || question)
+    .map(l => l.replace('{theme}', theme.title).replace('{proof}', question || ''))
+    .join('\n')
   const [copied, setCopied] = useState('')
   const copy = async (what, text) => setCopied((await copyText(text)) ? what : 'fail')
   return (
@@ -345,8 +343,8 @@ function Finish({ office, theme, bonus, coaching }) {
 
       <div className="email-card" aria-labelledby="email-h">
         <h3 id="email-h" className="email-h">Your email</h3>
-        {/* Ruling 5: never BK's address, never the district domain. */}
-        <p className="send-line">{f.send_line}</p>
+        {/* Ruling 5 of the order: never BK's address, never the district domain. */}
+        {f.screen_line && <p className="send-line">{f.screen_line}</p>}
         <div className="email-field">
           <span className="email-label">Subject</span>
           <code className="email-value">{subject}</code>
@@ -357,16 +355,11 @@ function Finish({ office, theme, bonus, coaching }) {
           <pre className="email-value email-body">{body}</pre>
           <button type="button" className="btn-ghost" onClick={() => copy('message', body)}>Copy message</button>
         </div>
-        <div className="email-field">
-          <span className="email-label">Your code</span>
-          <code className="email-value code">{code}</code>
-        </div>
         <p className="copy-status" role="status" aria-live="polite">
           {copied === 'subject' && 'Subject copied.'}
           {copied === 'message' && 'Message copied.'}
           {copied === 'fail' && 'Copy did not work here. Select the text and copy it yourself.'}
         </p>
-        {f.eligibility_line && <T as="p" className="eligibility">{f.eligibility_line}</T>}
       </div>
       {(coaching || []).length > 0 && <p className="coach-line">{coaching[0]}</p>}
     </section>
@@ -486,7 +479,9 @@ a.news-title{color:var(--gold-lit);text-decoration:underline}
 .bonus-steps li{margin-bottom:6px}
 .email-card{background:#FBF3DE;color:#2A2113;border-radius:10px;padding:18px;box-shadow:0 5px 14px rgba(0,0,0,.4)}
 .email-h{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:20px;margin:0 0 4px}
-.send-line{font-size:18px;font-weight:700;margin:0 0 14px}
+.send-line{font-size:17px;font-weight:600;line-height:1.5;margin:0 0 14px}
+.underneath{font-size:16px;color:var(--grey)}
+.underneath b{color:var(--gold)}
 .email-field{display:grid;grid-template-columns:110px minmax(0,1fr) auto;gap:10px;align-items:start;margin-bottom:10px}
 @media (max-width:640px){ .email-field{grid-template-columns:1fr} }
 .email-label{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:14px;color:#5B420E;padding-top:6px}

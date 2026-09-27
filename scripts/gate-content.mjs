@@ -213,7 +213,9 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     const oFail = (live, f, msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
     const PH = /^PLACEHOLDER\b/
     // Ruling 5: never BK's address, never the district domain. Anywhere.
-    const ADDR = /@|cppasd|\.k12\.|mailto:/i
+    // An email address (name@host.tld), the district domain, or a mailto link. A bare
+    // social handle like "@hawk.updates" (theme 1's made-up account) is not an address.
+    const ADDR = /[\w.+-]+@[\w-]+\.[\w.-]+|cppasd|\.k12\.|mailto:/i
     const walk = (v, fn, at = '') => {
       if (typeof v === 'string') return fn(v, at)
       if (Array.isArray(v)) return v.forEach((x, i) => walk(x, fn, `${at}[${i}]`))
@@ -229,7 +231,10 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     if (phO.length) oFail(live, tag, `${phO.length} PLACEHOLDER field(s) (${phO.join(', ')}): cannot publish until BK approves the words.`)
     if (JSON.stringify(o.frame?.traits) !== JSON.stringify(TRAITS) || o.frame?.title !== 'Be a Hawk' || o.frame?.tagline !== 'Be Hawk Proud!')
       oFail(true, tag, `frame must carry the building's exact wording: Be a Hawk · ${TRAITS.join(' · ')} · "Be Hawk Proud!"`)
-    if (!/school email/.test(o.finish?.send_line || '')) oFail(live, tag, `finish.send_line must be "send to Mr. Kelley at his school email".`)
+    // Ruling 2026-09-27 §4: the finish screen names Mr. Kelley and the student's school account, never an address.
+    if (!/Mr\. Kelley/.test(o.finish?.screen_line || '') || !/school account/.test(o.finish?.screen_line || '')) oFail(live, tag, `finish.screen_line must tell the student to send it to Mr. Kelley from their school account (ruling 09-27 §4).`)
+    // Ruling §2-§3: the finish code is retired; the email carries the proof question.
+    if (!(o.finish?.email_lines || []).some(l => l.includes('{proof}'))) oFail(live, tag, `finish.email_lines needs a {proof} line (ruling 09-27 §3).`)
     if (!o.background || !fs.existsSync(path.resolve('public', o.background))) oFail(live, tag, `background '${o.background}' is not in public/.`)
     for (const t of o.themes || []) {
       const tLive = live && t.published === true
@@ -252,7 +257,13 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         if ((it.hints || []).length !== 2) oFail(tLive, f, `${w}: needs two hints (CARRY-FORWARD).`)
         if (!it.reasoning) oFail(tLive, f, `${w}: needs a reason.`)
       }
-      for (const [i, n] of (d.news || []).entries()) if (n.url && n.filter_checked !== true) oFail(tLive, f, `news ${i + 1}: has a URL but filter_checked is not true. Check it against the school filter first.`)
+      // filter_checked: true, or BK's own recorded ship-now decision ("BK ships …; checks …").
+      for (const [i, n] of (d.news || []).entries()) if (n.url && !(n.filter_checked === true || (typeof n.filter_checked === 'string' && /^BK\b/.test(n.filter_checked)))) oFail(tLive, f, `news ${i + 1}: has a URL but no filter check and no BK ship-now record.`)
+      // Proof questions (ruling 09-27 §2): three per theme, questions only. Answers are BK's and never ship.
+      const pq = d.proof_questions || []
+      if (pq.length !== 3 || !pq.every(q => typeof q === 'string' && q.trim())) oFail(tLive, f, `needs exactly three proof questions, as plain strings (ruling 09-27 §2).`)
+      if (/"answers?"\s*:/i.test(JSON.stringify(d.proof_questions || null))) oFail(true, f, `proof questions must not carry answers: those are BK's only.`)
+      for (const it of [...(d.practice?.items || []), ...(d.mystery?.items || [])]) for (const c of it.choices || []) if (c.key !== it.correct && !(it.distractors || {})[c.key]) console.warn(`  warn  ${f}\n        item ${it.n}: no note for wrong choice ${c.key}.`), warns++
     }
   }
 }

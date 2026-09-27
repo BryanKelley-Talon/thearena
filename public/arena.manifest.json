@@ -739,15 +739,11 @@
     }
   ],
   "office": {
-    "_README": "BK'S OFFICE — the third splash door, shared by both courses (Leo's order 2026-09-26 23:35, amended 00:31; BK's rulings). Josh built the CONTAINER only, 2026-09-27. Every student-facing word in here is either (a) the building's own wording, given by BK (the Be a Hawk frame), (b) a line BK or Leo's order fixed verbatim (the name, the email line), or (c) marked PLACEHOLDER and waiting on BK's yes in chat. The gate FAILS the build if this section is published while anything under it still carries _placeholder. Hidden unless published:true; a reviewer sees it with ?preview=office.",
+    "_README": "BK'S OFFICE — the third splash door, shared by both courses (Leo's order 2026-09-26 23:35, amended 00:31; BK's rulings). Josh built the CONTAINER only, 2026-09-27. Every student-facing word in here is either (a) the building's own wording, given by BK (the Be a Hawk frame), (b) a line BK or Leo's order fixed verbatim (the name, the email line), or (c) Leo's LOCKED theme file. Nothing is marked PLACEHOLDER any more. The gate FAILS the build if this section is published while anything under it still carries _placeholder. Hidden unless published:true; a reviewer sees it with ?preview=office.",
     "published": false,
     "label": "BK's Office",
-    "blurb": "Not a course. The stuff that makes the rest of it work. A new theme every month, and a Hawk pass at the end.",
-    "_placeholder_fields": [
-      "intro",
-      "eligibility_line"
-    ],
-    "intro": "PLACEHOLDER — one or two lines welcoming a student into the Office. Leo drafts; BK approves.",
+    "blurb": "Not a course. The stuff that makes the rest of it work. Check back every month for a new theme and another shot at a Hawk Pass.",
+    "intro": "How do we get better, as a person, as a class, as a school? A little at a time. Start here.",
     "background": "images/office/bks-office-bg.webp",
     "background_small": "images/office/bks-office-bg-640.webp",
     "background_alt": "",
@@ -764,24 +760,33 @@
       "tagline": "Be Hawk Proud!"
     },
     "finish": {
-      "send_line": "send to Mr. Kelley at his school email",
-      "_send_line_note": "Verbatim from BK's ruling 5. The page never prints BK's address or the district domain; the gate fails on either.",
+      "_source": "Leo's ruling of 2026-09-27 09:22 (BK 09:20, \"yes 1-5\"), §2-§4, verbatim. The finish code is retired: a proof question replaces it. Ruling 5 of the order still stands: the page never prints BK's address or the district domain; the gate fails on either.",
+      "screen_line": "Finished? Copy the email below and send it to Mr. Kelley from your school account. Hawk Passes are for CPPHS students. If yours is picked, it comes with a note from him and goes into the Friday drawing.",
       "subject_pattern": "{theme} complete",
-      "eligibility_line": "PLACEHOLDER — Hawk-pass eligibility line. Leo's proposal: \"Hawk passes are for CPPHS students.\" BK to rule.",
-      "code_rules": "No identity. Made on the device when the finish screen opens, held in page memory only, never stored and never sent. BK's inbox is the record."
+      "email_lines": [
+        "Mr. Kelley,",
+        "I finished {theme}.",
+        "The trait I worked on most was ____ (Kind, Respectful, Responsible or Safe).",
+        "Here's how I showed it: ____",
+        "{proof} ____",
+        "One thing that would make our class or our school better: ____",
+        "BONUS: ____"
+      ],
+      "_email_note": "Ruling §3, verbatim, with two fillings: {theme} is the theme's title, and {proof} is one of the theme's three proof questions, picked at random when the finish screen opens. The ruling writes that line as \"[Proof question]: ____\"; the colon is dropped because every proof question ends in a question mark. The last line, \"BONUS: ____\", is from the LOCKED theme file (§6). The Arena never checks the answer; BK reads it."
     },
     "themes": [
       {
         "slug": "2026-09-starting-strong",
         "month": "2026-09",
         "month_label": "September",
-        "code_prefix": "SEP26",
         "title": "Starting the year strong",
         "_title_source": "Leo's order: theme 1, named by BK.",
         "published": false,
-        "content_ref": "content/office-2026-09-starting-strong.json"
+        "content_ref": "content/office-2026-09-starting-strong.json",
+        "_locked": "Theme words LOCKED by BK 2026-09-27 10:07; ported word for word by Josh."
       }
     ],
-    "_blurb_source": "BK, 2026-09-27 01:07, option B, verbatim. Names the Hawk pass: BK's eligibility ruling (who can claim one) is still open."
+    "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B.",
+    "_intro_source": "Same ruling, §5, verbatim."
   }
 }
