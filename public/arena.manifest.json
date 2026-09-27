@@ -663,6 +663,14 @@
           ]
         }
       ],
+      "threads": [
+        {
+          "slug": "threads-us11r",
+          "content_ref": "content/threads-us11r.json",
+          "published": true,
+          "_note": "Sam's signed stops (BK 2026-09-27 09:56), byte-identical copy of us11r-curriculum/OUTPUTS/2026-27/Course/threads-us11r.json. Grows with each unit's Arena pack. source_ref never renders."
+        }
+      ],
       "regents": [
         {
           "slug": "the-comeback",

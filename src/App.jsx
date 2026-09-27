@@ -29,6 +29,7 @@
 // ============================================================
 
 import { useState, useEffect, useMemo } from 'react'
+import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
   UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit,
@@ -811,6 +812,10 @@ const LANES = [
     intro: 'Start here. Each gauge is one skill you’re graded on. Tap it to climb.' },
   { key: 'units',         src: 'units',         label: 'Units',
     intro: 'Review for each unit’s test: what to know, and practice questions.' },
+  // BK, 2026-09-27 09:29: the U.S. door's fourth lane ("its own lane"); intro approved 10:25.
+  // `optional`: a course without it (Global) shows no tab at all, not a dead one.
+  { key: 'threads',       src: 'threads',       label: 'Threads', optional: true,
+    intro: 'Seven questions America keeps asking. Follow a thread from unit to unit, and tap any stop to see what happened.' },
   { key: 'skills_review', src: 'skills_review', label: 'Review Activities',
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
@@ -828,7 +833,7 @@ function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneI
       <ScreenHeader label={course.label} onBack={onBack} color={course.accent} back="The Arena" />
 
       <div className="lane-nav" role="tablist" aria-label="Lanes">
-        {LANES.map(l => {
+        {LANES.filter(l => !l.optional || course[l.src]).map(l => {
           const count = (course[l.src] || []).length
           const sel = lane === l.key
           return (
@@ -857,6 +862,7 @@ function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneI
         </>
       )}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} />}
+      {lane === 'threads' && <ThreadsLane course={course} />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
   )
@@ -1827,7 +1833,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

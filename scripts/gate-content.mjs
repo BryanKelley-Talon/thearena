@@ -268,6 +268,33 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   }
 }
 
+// ── THE THREADS MAP (added 2026-09-27, Josh; Sam's signed stops) ─────────────
+// Format only, never content: every stop names a defined thread (and a defined arc),
+// every link resolves, every document carries a citation, and no class dates.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  for (const c of m.courses || []) for (const t of c.threads || []) {
+    const f = String(t.content_ref || '').replace(/^content\//, '')
+    const live = t.published === true
+    const tf = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { tf(`threads file '${f}' is not in public/content.`); continue }
+    const d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8'))
+    const threads = new Set((d.threads || []).map(x => x.id))
+    const arcs = new Set((d.threads || []).flatMap(x => (x.arcs || []).map(a => a.id)))
+    const ids = new Set((d.stops || []).map(x => x.id))
+    for (const st of d.stops || []) {
+      const ts = Array.isArray(st.thread) ? st.thread : [st.thread]
+      for (const x of ts) if (!threads.has(x)) tf(`stop ${st.id}: thread '${x}' is not defined.`)
+      if (st.arc && !arcs.has(st.arc)) tf(`stop ${st.id}: arc '${st.arc}' is not defined.`)
+      for (const l of st.links || []) if (!ids.has(l.to)) tf(`stop ${st.id}: link to '${l.to}' goes nowhere.`)
+      if (st.document && !st.document.citation) tf(`stop ${st.id}: the document has no citation.`)
+      if (!['open', 'building'].includes(st.status)) tf(`stop ${st.id}: status must be open or building.`)
+      if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(JSON.stringify([st.title, st.what_happened]))) tf(`stop ${st.id}: reads like a class date.`)
+    }
+  }
+}
+
 console.log(`\n${fails} fail (live) - ${warns} warn/dark`)
 if (!fails) console.log('Everything a student can reach today passes.')
 process.exit(fails || process.exitCode ? 1 : 0)
