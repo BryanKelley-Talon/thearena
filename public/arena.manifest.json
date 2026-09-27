@@ -211,7 +211,7 @@
         ]
       },
       "door_image": "images/arena/door-global10r.webp",
-      "_door_image_note": "BK's art, generated in Gemini from Josh's prompt (record: _INBOX/arena-door-art/arena-door-art-PROMPT-RECORD.md), received 2026-09-27 01:07. 1024x572 source, stored 640 wide; the door shows the middle strip (the map)."
+      "_door_image_note": "BK's art, generated in Gemini from Josh's prompt (record: _INBOX/arena-door-art/arena-door-art-PROMPT-RECORD.md), received 2026-09-27 01:07. 1024x572 source; the door uses the middle (x150-874, y110-460: the map and what flanks it), stored 640 wide."
     },
     {
       "id": "us11r",
@@ -735,7 +735,7 @@
       },
       "_josh_container_fields": "id/accent/status/skill_lines are Josh's. Stations, drills, blurbs, guide, units and regents are Sam's, taken verbatim from his 2026-09-18 SIX-CARDS-RULED file. Curly quotes in the blurbs are intentional and must not be straightened.",
       "door_image": "images/arena/door-us11r.webp",
-      "_door_image_note": "BK's art, generated in Gemini from Josh's prompt (record: _INBOX/arena-door-art/arena-door-art-PROMPT-RECORD.md), received 2026-09-27 01:07. 1024x572 source, stored 640 wide; the door shows the middle strip (the map)."
+      "_door_image_note": "BK's art, generated in Gemini from Josh's prompt (record: _INBOX/arena-door-art/arena-door-art-PROMPT-RECORD.md), received 2026-09-27 01:07. 1024x572 source; the door uses the middle (x150-874, y110-460: the map and what flanks it), stored 640 wide."
     }
   ]
 }
