@@ -97,7 +97,7 @@ export function OfficeDoor({ office, onOpen, preview }) {
       <div className="office-door-art" aria-hidden="true">
         <img src={`/${office.background_small || office.background}`} alt="" loading="lazy" />
       </div>
-      <div className="door-accent" style={{ background: 'var(--arena-needle)' }} />
+      <div className="door-accent" style={{ background: 'var(--gold)' }} />
       <div className="door-label">{office.label}</div>
       {office.blurb && <T as="div" className="door-blurb">{office.blurb}</T>}
       <span className="flag live">{preview && !office.published ? 'Preview' : 'Open'}</span>
@@ -212,7 +212,8 @@ export function OfficeTheme({ office, theme, pack, done, onDone, onBack, ui }) {
         {pack === false && <div className="empty"><div className="empty-title">This theme is not built yet.</div></div>}
         {pack && <>
           {/* The path. Each stop says in WORDS whether it is done, open or still
-              locked; the orange marks the one you are on, and is never the only signal. */}
+              locked; the gold ring marks the one you are on, and is never the only signal.
+              (Orange is the growth needle's colour and nothing else's, per the token file.) */}
           <ol className="office-path" ref={topRef} aria-label="Theme path">
             {STEPS.map(s => {
               const open = isOpenStep(s.n), d = isDone(s.n), here = step === s.n
@@ -374,7 +375,8 @@ function Finish({ office, theme, bonus, coaching }) {
 
 // ── STYLES ───────────────────────────────────────────────────────────────
 export const OFFICE_STYLES = `
-/* PLACEHOLDER copy: dashed and striped so no one mistakes it for approved words. */
+/* PLACEHOLDER copy: dashed and striped so no one mistakes it for approved words.
+   Reviewer-only marks use the needle orange on purpose: the gate keeps them off main. */
 .ph{outline:2px dashed var(--arena-needle);outline-offset:2px;border-radius:4px;
   background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--arena-needle) 14%,transparent) 10px 20px)}
 .preview-banner{position:relative;z-index:50;background:var(--arena-needle);color:#1a0d02;
@@ -401,7 +403,7 @@ a.door.office-door{padding-top:0;overflow:hidden}
   box-shadow:0 6px 14px rgba(0,0,0,.45);display:flex;flex-direction:column;gap:3px;text-align:left;cursor:pointer}
 .pinned-note:hover{transform:rotate(-1deg) translateY(-2px)}
 .pinned-note .pin{position:absolute;top:-5px;left:50%;width:12px;height:12px;margin-left:-6px;border-radius:50%;
-  background:var(--arena-needle);box-shadow:0 2px 3px rgba(0,0,0,.5)}
+  background:#B8322A;box-shadow:0 2px 3px rgba(0,0,0,.5)}
 .note-month{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;
   font-size:clamp(9px,1vw,12px);color:#6A4B12}
 .note-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(11px,1.45vw,18px);line-height:1.05;color:#2A2113}
@@ -443,11 +445,11 @@ button.theme-card:hover{background:var(--card-lit);border-color:var(--gold)}
   background:var(--card);border:1px solid var(--edge);border-radius:10px;color:var(--white);cursor:pointer;box-shadow:var(--arena-lift)}
 .path-stop:disabled{cursor:default;box-shadow:none;color:var(--dim);background:color-mix(in srgb,var(--card) 92%,var(--canvas))}
 .path-stop:disabled .stop-mark{border-color:var(--dim)}
-.path-stop.here{border:2px solid var(--arena-needle);background:var(--card-lit)}
+.path-stop.here{border:2px solid var(--gold-lit);background:var(--card-lit)}
 .path-stop.done .stop-mark{background:var(--gold);color:#1a1405}
 .stop-mark{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;
   border:2px solid var(--gold);color:var(--gold)}
-.path-stop.here .stop-mark{border-color:var(--arena-needle);color:var(--arena-needle)}
+.path-stop.here .stop-mark{border-color:var(--gold-lit);color:var(--gold-lit)}
 .stop-label{font-family:'Barlow Condensed',sans-serif;font-size:19px;line-height:1.05}
 .stop-state{font-size:12.5px;color:var(--grey);text-transform:uppercase;letter-spacing:.08em}
 @media (max-width:640px){ .office-path{grid-template-columns:repeat(2,1fr)} }
