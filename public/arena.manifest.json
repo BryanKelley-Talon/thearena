@@ -209,7 +209,9 @@
             "essay": "the Enduring Issues Essay"
           }
         ]
-      }
+      },
+      "door_image": "images/arena/door-global10r-interim.webp",
+      "_door_image_note": "INTERIM (Josh, 2026-09-27): a crop of the Arena's own gym picture, cut to avoid the painted words. BK wants each course door to have a window like the Office's. Final art is BK's to generate (prompts in the overnight proof); drop it in and change this path."
     },
     {
       "id": "us11r",
@@ -731,7 +733,9 @@
           }
         ]
       },
-      "_josh_container_fields": "id/accent/status/skill_lines are Josh's. Stations, drills, blurbs, guide, units and regents are Sam's, taken verbatim from his 2026-09-18 SIX-CARDS-RULED file. Curly quotes in the blurbs are intentional and must not be straightened."
+      "_josh_container_fields": "id/accent/status/skill_lines are Josh's. Stations, drills, blurbs, guide, units and regents are Sam's, taken verbatim from his 2026-09-18 SIX-CARDS-RULED file. Curly quotes in the blurbs are intentional and must not be straightened.",
+      "door_image": "images/arena/door-us11r-interim.webp",
+      "_door_image_note": "INTERIM (Josh, 2026-09-27): a crop of the Arena's own gym picture, cut to avoid the painted words. BK wants each course door to have a window like the Office's. Final art is BK's to generate (prompts in the overnight proof); drop it in and change this path."
     }
   ],
   "office": {

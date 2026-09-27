@@ -53,11 +53,17 @@
      never the only signal. */
   --arena-needle: #FF6A13;
 
+  /* THE SIGNAL RED (BK, 2026-09-27: "I like the red", option A). The fifth colour:
+     navy, gold, blue, orange (the needle, growth only), and this. Borders on doors
+     and moving-around buttons, and the message banner. Edge vs card 4.38:1, vs navy
+     5.73:1 (floor 3:1); navy type on it 5.73:1 (floor 4.5:1). */
+  --arena-signal: #FF4D4F;
+
   /* THE SCRIM: how much navy lies over the photos (BK, 2026-09-27). Outside is the
      front door on the splash; inside is the gym behind every course screen.
-     Was 62/80/96 outside and 70/88/100 inside (the "before"). Lower = more photo.
+     Inside was 70/88/100 (the "before"). Lower = more photo. The front door now
+     shows unscrimmed on the splash, so it has no scrim token.
      Cards are solid, so text on cards never depends on these numbers. */
-  --scrim-out-top: 38%; --scrim-out-mid: 58%; --scrim-out-low: 84%;
   --scrim-in-top:  48%; --scrim-in-mid:  64%; --scrim-in-low:  78%;
 }
 
