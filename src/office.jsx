@@ -432,9 +432,9 @@ button.theme-card:hover{background:var(--card-lit);border-color:var(--gold)}
 /* A theme page: the room behind, dimmed hard enough that type keeps its contrast. */
 .office-theme-bg{position:relative;min-height:100vh}
 .office-theme-bg::before{content:'';position:fixed;inset:0;z-index:0;background-image:var(--office-bg);
-  background-size:cover;background-position:center 40%;filter:blur(2px)}
+  background-size:cover;background-position:center 40%}
 .office-theme-bg::after{content:'';position:fixed;inset:0;z-index:0;
-  background:linear-gradient(180deg,color-mix(in srgb,var(--canvas) 80%,transparent),color-mix(in srgb,var(--canvas) 93%,transparent) 40%)}
+  background:linear-gradient(180deg,color-mix(in srgb,var(--canvas) var(--scrim-in-top),transparent),color-mix(in srgb,var(--canvas) var(--scrim-in-low),transparent) 40%)}
 .office-theme-bg > .wrap{position:relative;z-index:1}
 .theme-head{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between;margin-bottom:18px}
 
