@@ -355,15 +355,15 @@
         "lines": {
           "door_enter": [
             "Everything behind this door is practice. None of it goes in the gradebook. That's the point — this is where you get it wrong cheaply.",
-            "This is your Arena. Same moves we work on in class, no grade attached. Take a swing.",
+            "This is your Arena. Same skills we work on in class, no grade attached. Take a swing.",
             "Nothing in here counts against you. Come in, try things, find out what you actually know.",
             "Welcome in. The work behind this door is the work we do in class — just without anybody keeping score."
           ],
           "lane_enter": {
             "stations": [
-              "Each station is one move. Pick the one you want to get better at — you don't have to go in order.",
-              "One move per station. Start wherever you want to start.",
-              "These are the moves you're graded on in class. In here they're just practice."
+              "Each gauge is one skill. Pick the one you want to move. You don't have to go in order.",
+              "Six skills, six gauges. Start wherever you want to start.",
+              "These are the skills you're graded on in class. In here they're just practice."
             ],
             "units": [
               "These rooms follow the units. Go back into one any time — nothing in here closes.",
@@ -377,87 +377,125 @@
             ]
           },
           "station_enter": {
-            "contextualization": [
+            "historical-context": [
               "Context is the room a document is standing in. Not what it says — what was going on around it.",
               "This one asks where we are, when we are, and what everybody was arguing about. Before you read a word of the document.",
               "Historical context: the situation the document was written into. Set the scene, then read."
             ],
-            "sourcing-hipp": [
-              "Who made this, when, and what did they want from you? That's sourcing.",
-              "Every document was made by somebody with a reason. This station is about finding the reason.",
-              "Read the source line first — the name, the date, the kind of document. It tells you how to read the rest."
-            ],
-            "opvl": [
-              "Origin, purpose, value, limitation. Where it came from, why, what it's good for, and where it runs out.",
-              "Every document is useful for something and useless for something else. This station is about naming both.",
-              "OPVL: what this document can tell you, and what it can't. Both answers count."
-            ],
-            "argument-development": [
+            "thesis": [
               "A claim that answers the question, in one sentence. That's all a thesis is.",
-              "This station is about taking a position. Not describing — deciding, and saying so.",
-              "Answer the question in a sentence somebody could disagree with. That's the move."
+              "This one is about taking a position. Not describing — deciding, and saying so.",
+              "Answer the question in a sentence somebody could disagree with. That's a thesis."
+            ],
+            "document-use": [
+              "Name the document, pull the exact detail, put it to work. That's document use.",
+              "Read the source line first — the name, the date, the kind of document. It tells you how to read the rest.",
+              "Every document was made by somebody with a reason. Find the reason, then find the detail that proves your point."
+            ],
+            "explanation": [
+              "Most people stop at describing what a document says. Explaining goes one step further: why it matters.",
+              "Try it this way: ___, because ___, which means ___.",
+              "Every document is useful for something. Explaining says what, and why it matters."
+            ],
+            "civic-principle": [
+              "Name the principle out loud, from your card. Hinting at it isn't the same as saying it.",
+              "Twelve principles, one card. Is this document upholding one, denying one, or fighting over one?",
+              "Look for the clue your card names: a veto, a court case, a right, a vote. Then name the principle."
+            ],
+            "outside-evidence": [
+              "Outside evidence is what you know that isn't in the documents. Name it, and make it do work.",
+              "The exam calls it outside information. One specific fact from class, not from the page.",
+              "The documents are only part of what you know. This is where you practice using the rest."
             ]
           },
           "attempt_strong": {
-            "contextualization": [
-              "You set the scene before you touched the document. That's exactly the move.",
+            "historical-context": [
+              "You set the scene before you touched the document. That's exactly the skill.",
               "That's context — the time, the place, the argument. Well done.",
               "You gave me the world around it, not a summary of it. That's the hard part, and you did it."
             ],
-            "sourcing-hipp": [
-              "You used the source line, not just the passage. That's the move.",
-              "You named who made it and what they wanted. That's sourcing done right.",
-              "Good — you read the author's purpose, not only their words."
-            ],
-            "opvl": [
-              "You named what it's good for and where it stops. That's the whole move.",
-              "That's a real limitation — not 'it's biased,' but what the bias actually costs.",
-              "Good. You treated the document as evidence for something specific."
-            ],
-            "argument-development": [
+            "thesis": [
               "That's a claim, not a summary. Somebody could argue with it — that's what makes it a thesis.",
-              "You answered the question and took a side. That's the move.",
+              "You answered the question and took a side. That's a thesis.",
               "Clear position, one sentence. That's what the essay needs in its first paragraph."
+            ],
+            "document-use": [
+              "You used the source line, not just the passage. That's document use done right.",
+              "Good. You treated the document as evidence for something specific.",
+              "You pulled the exact detail instead of a summary. That's what makes it evidence."
+            ],
+            "explanation": [
+              "That's the “so what.” You said why it matters, not just what it says.",
+              "You used “because” and kept going. That's explanation.",
+              "You connected the evidence to the question. That's the step most answers skip."
+            ],
+            "civic-principle": [
+              "You named the principle, word for word from the card. That's the skill.",
+              "You showed how the document upholds it or denies it. That's a civic connection.",
+              "Good. You picked the principle that fits, not just the first one you remembered."
+            ],
+            "outside-evidence": [
+              "That fact isn't in any document. You brought it yourself. That's outside evidence.",
+              "Specific and relevant: a name, a date, an event. That's the kind that counts.",
+              "You connected what you know to what you read. That's the skill."
             ]
           },
           "attempt_miss": {
-            "contextualization": [
-              "That's what the document says. The move asks what was happening around it — same year, same place, same argument everybody was having.",
+            "historical-context": [
+              "That's what the document says. Context asks what was happening around it — same year, same place, same argument everybody was having.",
               "Close. You're inside the document; step outside it. What else was going on then?",
               "Start with the date and the place, then tell me one thing happening at that moment. That's your context."
             ],
-            "sourcing-hipp": [
-              "You named the source. Now say what they wanted from whoever was reading it.",
-              "Go back to the line above the passage. Who wrote it, when, and why does that change what it's worth?",
-              "That's the content. Sourcing asks about the person behind it — their position, their purpose, their moment."
-            ],
-            "opvl": [
-              "'Biased' isn't a limitation yet. Say what it keeps you from knowing.",
-              "You've got origin and purpose. Now: what is this document good for — and what would you not trust it about?",
-              "Push one step further. Useful for whom, about what, and what's missing from it?"
-            ],
-            "argument-development": [
+            "thesis": [
               "That's true, but nobody would argue with it. Take a position somebody could push back on.",
               "You described what happened. Now tell me what you think about it, in one sentence.",
               "Answer the question directly. Start with 'because' or 'although' and see what comes out."
+            ],
+            "document-use": [
+              "You named the document. Now pull the exact detail that proves your point.",
+              "Go back to the line above the passage. Who wrote it, when, and why does that change what it's worth?",
+              "“The document talks about” isn't evidence yet. Point to the words, the number, or the part of the picture."
+            ],
+            "explanation": [
+              "That's what the document says. Now tell me why it matters. Start with “This shows…”",
+              "Add a “because.” Then add a “which means.”",
+              "You described it well. Explaining asks one more question: so what?"
+            ],
+            "civic-principle": [
+              "Close. Check your card's “Look for it when” line. Which one matches what's happening?",
+              "You described the right idea. Now give it its name from the card.",
+              "Ask one question first: is this about how power is limited, where it comes from, or what government must protect?"
+            ],
+            "outside-evidence": [
+              "That's from the document. Outside evidence comes from somewhere else: class, your casefile notes, what you already know.",
+              "Too general. Give it a name, a place, or a date.",
+              "Good fact. Now say how it connects to the question."
             ]
           },
           "station_complete": {
-            "contextualization": [
+            "historical-context": [
               "You can set a scene now. That's the opening sentence of every essay this course asks you to write.",
-              "That's contextualization — the most-missed point on the short essay, and you just practiced it."
+              "That's historical context — the most-missed point on the short essay, and you just practiced it."
             ],
-            "sourcing-hipp": [
-              "You can size up a document by who made it. That pays on every document question on the exam.",
-              "That's sourcing. From here on, read the source line first — every time."
-            ],
-            "opvl": [
-              "You can say what a document is worth and where it runs out. That's the difference between using evidence and quoting it.",
-              "That's OPVL. It's the move that turns a document into proof."
-            ],
-            "argument-development": [
+            "thesis": [
               "You can put a claim on the page. Everything else in an essay is holding that sentence up.",
               "That's a thesis. Every essay you write this year starts with one."
+            ],
+            "document-use": [
+              "You can size up a document by who made it and pull the detail that matters. That pays on every document question on the exam.",
+              "That's document use. From here on, read the source line first — every time."
+            ],
+            "explanation": [
+              "You can explain, not just describe. That's the difference between using evidence and quoting it.",
+              "That's explanation. It's what turns a document into proof."
+            ],
+            "civic-principle": [
+              "You can name the principle at stake. The Civic Literacy Essay asks for exactly that.",
+              "That's civic principle. Keep the card in your Reps book; you'll use it all year."
+            ],
+            "outside-evidence": [
+              "You can bring your own knowledge into the argument. That's what separates a strong essay from a summary of the documents.",
+              "That's outside evidence. What you know counts, so use it."
             ]
           },
           "attempt_again": [
@@ -480,7 +518,8 @@
           ]
         },
         "_note": "TR is retired from the Arena (BK, 2026-09-10). Voice is BK's words on screen — no audio, none, ever. Lines below are TRANCHE 1, approved by BK 2026-09-18 ('yes to all') off _BRIEFCASE/US11R_ARENA_GUIDE-LINES_TRANCHE-1_DRAFT_2026-09-18.pdf. SHAPE: station_enter, attempt_strong, attempt_miss and station_complete are KEYED BY STATION SLUG — see from-sam-2026-09-18-guide-slot-schema-station_enter-must-be-keyed.md. If Josh keys them differently the words do not change, only where they sit. Only the four stations open on day one are written; the other six follow the unlock calendar. Portrait pending an image file from BK.",
-        "_portrait_note": "BK, 2026-09-18: 'josh has the image already.' Verified on Josh's desk the same day — builds/thearena/public/images/arena/guide-bk.png, 192x192 PNG, written 2026-09-18, an illustrated portrait in the same treatment as the cast-sheet portraits. NOT YET REFERENCED anywhere in the shell: no mention in src/App.jsx or public/arena.manifest.json as of this write, which is why it is named here. PATH: written as the served path; the 09-02 skeleton used a bare filename ('brand_tr-photo.jpg'), so if Josh's resolver wants 'guide-bk.png' instead, that is his call and his one-line change. TWO NOTES, neither blocking: 192x192 is comfortable up to about a 96px slot and will soften above that — if the guide renders larger, it wants a bigger source. And if the portrait is generated art, the standing rule from Sam's 2026-08-31 brief applies to it as it did to TR: art is a depiction, never a document, and it carries a manifest recording the prompt. Josh's asset, Josh's lane — flagged, not decided."
+        "_portrait_note": "BK, 2026-09-18: 'josh has the image already.' Verified on Josh's desk the same day — builds/thearena/public/images/arena/guide-bk.png, 192x192 PNG, written 2026-09-18, an illustrated portrait in the same treatment as the cast-sheet portraits. NOT YET REFERENCED anywhere in the shell: no mention in src/App.jsx or public/arena.manifest.json as of this write, which is why it is named here. PATH: written as the served path; the 09-02 skeleton used a bare filename ('brand_tr-photo.jpg'), so if Josh's resolver wants 'guide-bk.png' instead, that is his call and his one-line change. TWO NOTES, neither blocking: 192x192 is comfortable up to about a 96px slot and will soften above that — if the guide renders larger, it wants a bigger source. And if the portrait is generated art, the standing rule from Sam's 2026-08-31 brief applies to it as it did to TR: art is a depiction, never a document, and it carries a manifest recording the prompt. Josh's asset, Josh's lane — flagged, not decided.",
+        "_rekeyed": "2026-09-27: Sam's re-key to the six skill slugs (us11r-curriculum/_BRIEFCASE/us11r-skill-guide-lines_DRAFT_2026-09-27.json, BK yes 11:09). The retired station keys (contextualization, sourcing-hipp, opvl, argument-development) are dropped; door_enter line 2 and lane_enter.stations replaced per his _retire note. Word for word."
       },
       "stations": [
         {

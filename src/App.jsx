@@ -827,6 +827,11 @@ function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneI
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   const lane = laneIn || firstWithContent
+  // One scroll per screen: the welcome on arrival; once a kid taps a tab, that lane's own
+  // line (the desk's lane_enter lines), if the course has one.
+  const [touched, setTouched] = useState(false)
+  const LANE_LINES = { skills: 'stations', units: 'units' }
+  const laneLines = touched ? course.guide?.lines?.lane_enter?.[LANE_LINES[lane]] : null
   // The gauges follow the CURRENT unit (BK, 2026-09-25). Past units' gauges move
   // into their own page under Units, so the list grows as the year goes on.
   const unit = currentUnit(course)
@@ -847,7 +852,7 @@ function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneI
               disabled={!count}
               className="lane-tab"
               style={sel ? { background: course.accent, borderColor: course.accent } : undefined}
-              onClick={() => setLane(l.key)}
+              onClick={() => { setTouched(true); setLane(l.key) }}
             >
               {l.label}
             </button>
@@ -857,9 +862,12 @@ function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneI
 
       {/* Growth coaching (Leo's LOCKED bank, BK 10:11): welcome back only when this device
           holds real progress for this course; otherwise a first-visit line. */}
-      <CoachSays key={`door-${course.id}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
+      {laneLines?.length
+        ? <CoachSays key={`lane-${course.id}-${lane}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
+                     line={laneLines[Math.floor(Math.random() * laneLines.length)]} />
+        : <CoachSays key={`door-${course.id}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
                  line={welcomeLine(Object.entries(prog || {}).some(([k, v]) => k.startsWith(`${course.id}:`) && Object.values(v || {}).some(a => (a || []).length)),
-                                   course.guide?.lines?.door_enter)} />
+                                   course.guide?.lines?.door_enter)} />}
       <p className="lane-intro">{LANES.find(l => l.key === lane)?.intro}</p>
 
       {lane === 'skills' && (
