@@ -404,12 +404,27 @@ button:active:not(:disabled),a.door:active{transform:scale(.985)}
 .epigraph cite{color:var(--grey);font-style:normal;font-size:12.5px;opacity:.85;display:block}
 
 /* ---------- THE GUIDE ---------- */
-.guide-says{display:flex;gap:16px;align-items:flex-start;margin:0 0 24px;padding:18px 20px;
-  border-radius:12px;background:var(--card);border:1px solid var(--edge);
-  border-left:3px solid var(--gold);max-width:760px}
-.guide-says p{color:var(--white);font-size:18px;line-height:1.58;margin:0}
+/* BK's lines sit on a parchment scroll, so his voice pops off the navy (BK 2026-09-27 09:43).
+   Pure CSS, no image: cream paper, a darker burnt edge, a rolled rod top and bottom.
+   Ink #2A1C0C on the paper measures 9.9:1 at its darkest, 13.6:1 at its lightest. The scroll is chrome, not a document:
+   it never carries a quotation or a source. */
+.guide-says{display:flex;gap:16px;align-items:flex-start;margin:14px 0 30px;padding:20px 24px;
+  position:relative;max-width:760px;border-radius:4px;
+  background:
+    radial-gradient(ellipse 60% 80% at 18% 30%,rgba(255,250,235,.55),transparent 70%),
+    radial-gradient(ellipse 50% 70% at 85% 75%,rgba(140,95,40,.16),transparent 70%),
+    linear-gradient(180deg,#F4E8C8 0%,#EBD9AC 55%,#DFC690 100%);
+  border-left:1px solid #B8955A;border-right:1px solid #B8955A;
+  box-shadow:inset 0 0 26px rgba(120,80,30,.38),inset 0 0 3px rgba(90,60,20,.5),0 8px 20px rgba(0,0,0,.5)}
+.guide-says::before,.guide-says::after{content:'';position:absolute;left:-10px;right:-10px;height:14px;
+  border-radius:7px;background:linear-gradient(180deg,#A9854A 0%,#F2E3BD 40%,#D2B37A 70%,#8E6C36 100%);
+  box-shadow:0 2px 5px rgba(0,0,0,.45)}
+.guide-says::before{top:-9px}
+.guide-says::after{bottom:-9px}
+.guide-says p{color:#2A1C0C;font-size:18px;line-height:1.58;margin:0;text-shadow:none!important}
 .guide-face{width:64px;height:64px;border-radius:50%;flex:none;object-fit:cover;
   border:2px solid var(--gold)}
+.guide-says .guide-face{border-color:#6B4A1E}
 .guide-face.lg{width:140px;height:140px;border-width:3px;margin:0 auto 22px;display:block}
 
 /* ---------- DOORS ---------- */
