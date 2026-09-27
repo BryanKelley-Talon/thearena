@@ -381,15 +381,31 @@ button:active:not(:disabled),a.door:active{transform:scale(.985)}
 :focus-visible{outline:3px solid var(--gold-lit);outline-offset:3px;border-radius:6px}
 
 /* ---------- SPLASH ---------- */
-.splash{text-align:center;padding-top:34px;position:relative}
-/* The Arena's own front door. A fictional building — chrome, not a Realness asset.
-   BK, 2026-09-27: "we should see the exterior of the arena on that title page."
-   So the building is shown whole, framed like the Office's room, with no scrim over
-   it; the title and every line of type sit BELOW it on the navy, where contrast is
-   never in question. */
-.hero{position:relative;max-width:1100px;margin:0 auto 26px;border-radius:14px;overflow:hidden;
-  border:1px solid var(--edge);box-shadow:var(--arena-lift),0 18px 40px rgba(0,0,0,.45)}
-.hero img{width:100%;height:auto;aspect-ratio:1024/572;object-fit:cover;display:block}
+.splash{text-align:center;padding-top:30px;position:relative}
+/* The Arena's own front door, as the page itself. A fictional building — chrome,
+   not a Realness asset. BK, 2026-09-27 16:54: "main page should have the exterior
+   shot in the background but brightened with the doors over top of it. should not
+   require someone to scroll down to see where they're going."
+   The picture is fixed behind the page and brightened. A light scrim darkens only the
+   sky band under the title and the floor under the words; the building stays bright.
+   Everything a kid reads sits on a solid door card or a smoked plate, so contrast
+   never depends on the photo. */
+.splash-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:var(--canvas)}
+.splash-bg-img{position:absolute;inset:0;
+  background:url('/images/arena/frontdoor-v2.webp') center 42%/cover no-repeat;
+  filter:brightness(1.14) saturate(1.06)}
+.splash-bg-scrim{position:absolute;inset:0;background:linear-gradient(180deg,
+  color-mix(in srgb,var(--canvas) 62%,transparent) 0%,
+  color-mix(in srgb,var(--canvas) 26%,transparent) 26%,
+  color-mix(in srgb,var(--canvas) 8%,transparent) 50%,
+  color-mix(in srgb,var(--canvas) 40%,transparent) 100%)}
+.splash .doors{margin-top:22px}
+.splash .door-art{height:104px}
+/* The words below the doors: one smoked plate, the building showing around it. */
+.splash-words{max-width:760px;margin:34px auto 20px;padding:26px 26px 12px;border-radius:14px;
+  background:color-mix(in srgb,var(--canvas) 84%,transparent);
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid var(--edge)}
+.splash-words .epigraph{background:none;-webkit-backdrop-filter:none;backdrop-filter:none;margin-bottom:26px}
 .splash-mark{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
   letter-spacing:.34em;font-size:13px;color:var(--gold);margin-bottom:10px;
   text-shadow:0 1px 10px var(--canvas)}
@@ -716,6 +732,23 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
 @media (max-width:560px){
   .wrap{padding:20px 16px 56px}
   .doors{grid-template-columns:1fr}
+  /* Front page on a phone: all three doors above the fold. The door's picture
+     becomes a strip down its left side; every word stays. */
+  .splash{padding-top:6px}
+  .splash h1{font-size:40px}
+  .splash-tag{margin-bottom:0}
+  .splash .doors{gap:12px;margin-top:16px}
+  .splash a.door.has-art{display:grid;grid-template-columns:84px 1fr;column-gap:14px;
+    padding:12px 14px 12px 0;align-items:start}
+  .splash .door-art{grid-column:1;grid-row:1 / span 4;align-self:stretch;margin:-12px 0;height:auto;
+    border-bottom:0;border-right:1px solid var(--edge);position:relative}
+  .splash .door-art img{position:absolute;inset:0}
+  .splash a.door.has-art > :not(.door-art){grid-column:2}
+  .splash .door-accent{margin:2px 0 8px}
+  .splash .door-label{font-size:23px;margin-bottom:4px}
+  .splash .door-blurb{font-size:14.5px;line-height:1.45}
+  .splash .flag{margin-top:8px;justify-self:start}
+  .splash-words{padding:20px 16px 6px;margin-top:26px}
   .grid{grid-template-columns:1fr}
   .match-cols{grid-template-columns:1fr}
 }
@@ -730,46 +763,18 @@ function Splash({ manifest, onPick, onOffice }) {
   const guidePortrait = (courses.find(c => c.guide?.portrait) || {}).guide?.portrait || null
   return (
     <div className="wrap splash">
-      <div className="hero" aria-hidden="true">
-        {/* v2 (BK, 2026-09-27 01:10): brick and timber to match the rooms, NY flag.
-            v1 (frontdoor-bg.jpg) stays in the repo, unused, until BK approves removing it. */}
-        <picture>
-          <source media="(max-width: 700px)" srcSet="/images/arena/frontdoor-v2-640.webp" />
-          <img src="/images/arena/frontdoor-v2.webp" alt="" />
-        </picture>
+      {/* The exterior IS the page (BK, 2026-09-27 16:54: "main page should have the
+          exterior shot in the background but brightened with the doors over top of it.
+          should not require someone to scroll down to see where they're going.")
+          Fixed behind everything, brightened; the doors sit on it above the fold, and
+          the epigraph and BK's welcome follow below them on a smoked plate. */}
+      <div className="splash-bg" aria-hidden="true">
+        <div className="splash-bg-img" />
+        <div className="splash-bg-scrim" />
       </div>
       <div className="splash-mark">Flashpoint History</div>
       <h1>The Arena</h1>
       <div className="splash-tag">Train here. Perform anywhere.</div>
-      <div className="rule" />
-
-      {/* The epigraph is a QUOTATION: verbatim, attributed, dated, cited, and its
-          citation is always visible — never a tooltip. The source was filed to the
-          bank before these words were used (canon §6). */}
-      {splash.epigraph && (
-        <blockquote className="epigraph">
-          <p>{splash.epigraph.text}</p>
-          <cite>{splash.epigraph.cite}</cite>
-        </blockquote>
-      )}
-
-      {/* BK's own words. Paragraphs, not one blob — a kid reads paragraphs. */}
-      {Array.isArray(splash.intro) && splash.intro.length ? (
-        <div className="splash-intro">
-          {guidePortrait && <img className="guide-face lg" src={`/${guidePortrait}`} alt="" />}
-          {splash.intro.map((para, i) => (
-            <p key={i} className={i === 0 ? 'lede' : undefined}>{para}</p>
-          ))}
-          {/* Back at the front door after real work this visit: a signoff line. */}
-          {workedThisVisit() && <CoachSays portrait={null} line={signoffLine()} />}
-        </div>
-      ) : (
-        <div className="placeholder">
-          <b>Splash intro — awaiting BK</b>
-          BK&rsquo;s own words. Not invented here.
-        </div>
-      )}
-
       <div className="doors">
         {/* Order (BK, 2026-09-27): Global · BK's Office · U.S. The Office is the
             neutral ground that serves both, so it stands between them. */}
@@ -798,6 +803,37 @@ function Splash({ manifest, onPick, onOffice }) {
             </Tag>
           )
         })}
+      </div>
+
+      <div className="splash-words">
+        <div className="rule" />
+      {/* The epigraph is a QUOTATION: verbatim, attributed, dated, cited, and its
+          citation is always visible — never a tooltip. The source was filed to the
+          bank before these words were used (canon §6). */}
+      {splash.epigraph && (
+        <blockquote className="epigraph">
+          <p>{splash.epigraph.text}</p>
+          <cite>{splash.epigraph.cite}</cite>
+        </blockquote>
+      )}
+
+      {/* BK's own words. Paragraphs, not one blob — a kid reads paragraphs. */}
+      {Array.isArray(splash.intro) && splash.intro.length ? (
+        <div className="splash-intro">
+          {guidePortrait && <img className="guide-face lg" src={`/${guidePortrait}`} alt="" />}
+          {splash.intro.map((para, i) => (
+            <p key={i} className={i === 0 ? 'lede' : undefined}>{para}</p>
+          ))}
+          {/* Back at the front door after real work this visit: a signoff line. */}
+          {workedThisVisit() && <CoachSays portrait={null} line={signoffLine()} />}
+        </div>
+      ) : (
+        <div className="placeholder">
+          <b>Splash intro — awaiting BK</b>
+          BK&rsquo;s own words. Not invented here.
+        </div>
+      )}
+
       </div>
     </div>
   )
