@@ -52,6 +52,13 @@
      dark gauge face. The level is also written under every gauge, so colour is
      never the only signal. */
   --arena-needle: #FF6A13;
+
+  /* THE SCRIM: how much navy lies over the photos (BK, 2026-09-27). Outside is the
+     front door on the splash; inside is the gym behind every course screen.
+     Was 62/80/96 outside and 70/88/100 inside (the "before"). Lower = more photo.
+     Cards are solid, so text on cards never depends on these numbers. */
+  --scrim-out-top: 38%; --scrim-out-mid: 58%; --scrim-out-low: 84%;
+  --scrim-in-top:  48%; --scrim-in-mid:  64%; --scrim-in-low:  78%;
 }
 
 /* Everything a kid can tap sits ON the page, not in it. */

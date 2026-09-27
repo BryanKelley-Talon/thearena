@@ -628,8 +628,10 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 .gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px}
 @media (min-width:1200px){.gauges{grid-template-columns:repeat(6,1fr)}}
 .gauge{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px 14px;border-radius:14px;
-  background:color-mix(in srgb,var(--card) 80%,transparent);border:1px solid var(--edge);color:inherit;
-  font-family:'Outfit',sans-serif;cursor:pointer}
+  background:var(--card);border:1px solid var(--edge);color:inherit;
+  font-family:'Outfit',sans-serif;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 8px 22px rgba(0,0,0,.55)}
+/* Solid, not see-through (BK 2026-09-27, "make the rooms pop"): with more gym showing
+   behind, a gauge card has to sit ON the photo, not in it. */
 button.gauge:hover{border-color:var(--gold);background:var(--card-lit);transform:translateY(-2px)}
 .gauge.off{cursor:default}
 .gauge-name{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;
