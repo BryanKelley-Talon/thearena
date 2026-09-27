@@ -536,7 +536,7 @@ export function Enrichment({ pack, onComplete }) {
       )}
       {(pack.techniques || []).length > 0 && (
         <section>
-          <h3 className="set-heading">The moves</h3>
+          <h3 className="set-heading">Techniques</h3>
           <dl className="techniques">
             {pack.techniques.map((t, i) => (
               <div key={i} className="technique"><dt>{t.name}</dt><dd>{t.explanation}</dd></div>
