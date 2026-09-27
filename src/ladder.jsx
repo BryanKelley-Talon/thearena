@@ -634,8 +634,12 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 .room-section{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;
   font-size:14px;color:var(--gold);margin:6px 0 14px}
 .room-section + .room-sub{color:var(--grey);font-size:16px;line-height:1.55;margin:-6px 0 18px;max-width:720px}
-.gauges{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:34px}
-@media (min-width:1200px){.gauges{grid-template-columns:repeat(6,1fr)}}
+.gauges{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:34px}
+/* A gauge card never outgrows its column: on a 390-wide phone the 160px dial plus padding
+   and the 2px signal border overflowed by 7px (found in the pre-launch sweep, 2026-09-27). */
+.gauge{box-sizing:border-box;min-width:0}
+.gauge svg{max-width:100%;height:auto}
+@media (min-width:1200px){.gauges{grid-template-columns:repeat(6,minmax(0,1fr))}}
 .gauge{display:flex;flex-direction:column;align-items:center;gap:6px;padding:16px 10px 14px;border-radius:14px;
   background:var(--card);border:1px solid var(--edge);color:inherit;
   font-family:'Outfit',sans-serif;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 8px 22px rgba(0,0,0,.55)}
@@ -782,7 +786,7 @@ button.rung:hover{background:var(--card-lit);border-color:var(--gold);transform:
     text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--gold);margin-bottom:2px}
 }
 @media (max-width:560px){
-  .gauges{grid-template-columns:repeat(2,1fr);gap:10px}
+  .gauges{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .rung{padding:13px 12px;gap:11px}
   .rung-flags{flex-direction:column}
 }
