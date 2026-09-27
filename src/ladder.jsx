@@ -308,6 +308,9 @@ function BestFitItem({ item, n, total, onAnswered }) {
       {answered && (
         <div className="mc-reveal" role="status">
           <p className="mc-reasoning">{right ? 'Correct.' : `Not quite — the best fit is ${item.correct}.`}</p>
+          {/* The desk's reason for the best fit (Will's ask, 2026-09-27): a kid who
+              misses learns why, not just which. Sam writes `reason`, Will `rationale`. */}
+          {(item.rationale || item.reason) && <p className="mc-why">{item.rationale || item.reason}</p>}
         </div>
       )}
     </div>

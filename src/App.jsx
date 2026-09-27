@@ -669,6 +669,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
 .mc-reveal p{font-size:16.5px;line-height:1.6;margin-bottom:9px;color:var(--grey)}
 .mc-reveal b{color:var(--white)}
 .mc-reasoning{color:var(--white) !important}
+.mc-why{color:#C9D4E4;font-size:16px;line-height:1.55;margin-top:6px}
 
 /* Session counters. Not a score — no percentage, no rubric, no total possible. */
 .counters{display:flex;gap:10px;flex-wrap:wrap;margin-top:6px;padding-top:16px;
