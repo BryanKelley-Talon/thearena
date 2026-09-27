@@ -1,0 +1,79 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Strongest thesis",
+  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
+  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). Passed to Josh 17:34.",
+  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted).",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "level": 2,
+  "type": "mc_bestfit",
+  "_hint_model": "2 escalating hints per item. rationale per item is the reason line (the Arena's BestFit reveal doesn't show it yet; see cover memo).",
+  "items": [
+    {
+      "id": "th-01",
+      "stem": "Question: Did Enlightenment ideas threaten absolute monarchy? Which is the strongest thesis?",
+      "options": {
+        "1": "The Enlightenment was a movement in Europe in the 1700s.",
+        "2": "Yes. Locke and Montesquieu argued that power comes from the people and must be limited, which undercut kings who claimed to rule by divine right.",
+        "3": "Some people think yes and some people think no.",
+        "4": "Kings were very powerful."
+      },
+      "correct": "2",
+      "hints": [
+        "A thesis answers the question and takes a side.",
+        "Which choice says yes or no, and gives a reason?"
+      ],
+      "rationale": "The strongest thesis answers the question, takes a side and gives a reason. The others state a fact, dodge the question or say something nobody would argue with."
+    },
+    {
+      "id": "th-02",
+      "stem": "Question: Was Catherine the Great an enlightened ruler? Which is the strongest thesis?",
+      "options": {
+        "1": "Catherine the Great ruled Russia from 1762 to 1796.",
+        "2": "Catherine wrote letters to Voltaire.",
+        "3": "This is a hard question to answer.",
+        "4": "Catherine was enlightened in her words but not her actions: she promised equal laws while giving landlords more power over serfs."
+      },
+      "correct": "4",
+      "hints": [
+        "Two of these are true facts, but a fact isn't a claim.",
+        "Which choice could somebody argue against?"
+      ],
+      "rationale": "A thesis is a claim somebody could argue with. This one compares Catherine's words and actions and takes a side. Dates and facts can't be argued with, so they aren't a thesis."
+    },
+    {
+      "id": "th-03",
+      "stem": "Task: Explain why power and its abuse is a significant enduring issue. Which is the strongest thesis?",
+      "options": {
+        "1": "Power and its abuse is an enduring issue.",
+        "2": "Power and its abuse is significant because absolute rulers like Louis XIV controlled people who had no say, and people have kept fighting to limit that power ever since.",
+        "3": "Louis XIV built Versailles in the 1600s.",
+        "4": "Power is bad and should be stopped."
+      },
+      "correct": "2",
+      "hints": [
+        "The task asks why it's significant. Which choice answers why?",
+        "Look for two sides: how it affected people, and how it continued over time."
+      ],
+      "rationale": "The strongest thesis says why the issue matters on both sides: how it affected people, and how it has continued. The first choice only repeats the task."
+    },
+    {
+      "id": "th-04",
+      "stem": "Which statement is a thesis, not a summary?",
+      "options": {
+        "1": "Montesquieu wrote The Spirit of the Laws in 1748.",
+        "2": "Montesquieu talks about the three branches.",
+        "3": "Montesquieu was French.",
+        "4": "Montesquieu's plan to split power was the most practical answer to tyranny, because it didn't depend on finding a good king."
+      },
+      "correct": "4",
+      "hints": [
+        "A summary tells what happened. A thesis tells what you think it means.",
+        "Which choice uses \"because\"?"
+      ],
+      "rationale": "A thesis makes a claim and backs it with a reason. The other three only report facts about Montesquieu."
+    }
+  ]
+}

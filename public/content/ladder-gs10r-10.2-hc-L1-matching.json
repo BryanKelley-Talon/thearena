@@ -1,0 +1,105 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "The world each document was written in",
+  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
+  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). Passed to Josh 17:34.",
+  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted).",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 1,
+  "type": "matching",
+  "intro": "Match each document to the world it was written in: when, where, and what led to it.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Hobbes, Leviathan, 1651",
+      "hints": [
+        "1651 is the earliest date here. What was England going through?",
+        "Hobbes wanted one strong ruler because he had watched his country fight itself."
+      ]
+    },
+    {
+      "key": "b",
+      "label": "Locke, Two Treatises of Government, 1690",
+      "hints": [
+        "Locke wrote to justify something that had just happened in England.",
+        "Look for the choice about Parliament replacing a king."
+      ]
+    },
+    {
+      "key": "c",
+      "label": "Montesquieu, The Spirit of the Laws, 1748",
+      "hints": [
+        "Montesquieu was French. Who ruled France in 1748?",
+        "He wanted power split up because in France one ruler held all of it."
+      ]
+    },
+    {
+      "key": "d",
+      "label": "Catherine the Great's instructions for Russia's laws, 1767",
+      "hints": [
+        "Catherine ruled Russia. Who worked the land there?",
+        "Look for the choice that pairs the philosophes with serfs."
+      ]
+    },
+    {
+      "key": "e",
+      "label": "Wilberforce's speech to Parliament, 1789",
+      "hints": [
+        "Wilberforce spoke in Britain's Parliament. What trade did he want to end?",
+        "Look for the choice about ships crossing the Atlantic."
+      ]
+    },
+    {
+      "key": "f",
+      "label": "Wollstonecraft, A Vindication of the Rights of Woman, 1792",
+      "hints": [
+        "1792 is during the French Revolution.",
+        "Wollstonecraft wrote to a French lawmaker about who was left out of the new rights."
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "England in the middle of a civil war, when life without a strong ruler looked like chaos"
+    },
+    {
+      "key": "2",
+      "label": "England, the year after Parliament forced out one king and put another on the throne on its terms"
+    },
+    {
+      "key": "3",
+      "label": "France under an absolute king, who held the power to make, enforce and judge the law"
+    },
+    {
+      "key": "4",
+      "label": "Russia, where an absolute ruler who read the philosophes ruled over millions of serfs"
+    },
+    {
+      "key": "5",
+      "label": "Britain, whose ships still carried enslaved Africans across the Atlantic every year"
+    },
+    {
+      "key": "6",
+      "label": "Revolutionary France, writing new rules about rights that left women out"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "6"
+  },
+  "rationale": {
+    "a": "Hobbes wrote Leviathan during England's civil war. Watching his country fight itself convinced him people need one strong ruler.",
+    "b": "Locke published in 1690, the year after England forced out one king and installed another on terms. He was writing to justify that.",
+    "c": "Montesquieu lived under an absolute king in France. That's why he argued for splitting power so no one person holds all of it.",
+    "d": "Catherine read Montesquieu and wrote about equal laws in 1767, while ruling a Russia where millions of serfs could be bought and sold with the land.",
+    "e": "In 1789, British ships were still carrying enslaved Africans across the Atlantic. Wilberforce told Parliament he would never rest until that trade was abolished.",
+    "f": "Wollstonecraft wrote to a member of the French National Assembly while revolutionary France wrote new rules about rights. Women were left out, and she called that tyranny."
+  }
+}

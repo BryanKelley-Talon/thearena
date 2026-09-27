@@ -1,0 +1,105 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Claims and the evidence that proves them",
+  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
+  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). Passed to Josh 17:34.",
+  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted).",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "level": 1,
+  "type": "matching",
+  "intro": "Match each claim to the document detail that proves it. Name the document, then use the detail.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Hobbes thought life without a government would be terrible.",
+      "hints": [
+        "Which detail describes life with no government?",
+        "Look for the word \"war.\""
+      ]
+    },
+    {
+      "key": "b",
+      "label": "Locke believed people could take power back from a bad government.",
+      "hints": [
+        "Which detail says what happens to power when a government goes too far?",
+        "Look for Document 2."
+      ]
+    },
+    {
+      "key": "c",
+      "label": "Montesquieu feared power held by one person.",
+      "hints": [
+        "Which detail is about all the power in one person's hands?",
+        "Look for the word \"liberty.\""
+      ]
+    },
+    {
+      "key": "d",
+      "label": "Rousseau put the common good ahead of private wants.",
+      "hints": [
+        "Which detail talks about the good of everyone together?",
+        "Look for \"common interest.\""
+      ]
+    },
+    {
+      "key": "e",
+      "label": "Wollstonecraft challenged the men who shut women out.",
+      "hints": [
+        "Which detail is a challenge, not a request?",
+        "Look for the word \"prove.\""
+      ]
+    },
+    {
+      "key": "f",
+      "label": "Catherine's government did not treat serfs as equals.",
+      "hints": [
+        "Which detail shows how the government treated serfs?",
+        "Look for Document 10."
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Hobbes, Leviathan: without a power to keep them in awe, people live in a state of war."
+    },
+    {
+      "key": "2",
+      "label": "Document 2: a legislature that grabs absolute power forfeits it, and the power passes back to the people."
+    },
+    {
+      "key": "3",
+      "label": "Document 4: when the power to make and enforce laws sits with one person, there can be no liberty."
+    },
+    {
+      "key": "4",
+      "label": "Document 6: the general will takes account only of the common interest."
+    },
+    {
+      "key": "5",
+      "label": "Document 7: she dares them to prove first that women lack reason."
+    },
+    {
+      "key": "6",
+      "label": "Document 10: serfs who complain about their landlords are to be whipped and sent to forced labor."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "6"
+  },
+  "rationale": {
+    "a": "Hobbes says people with no common power over them live in a state of war. That proves he thought life without government would be terrible.",
+    "b": "Document 2 says power passes back to the people when a legislature abuses it. That's the detail that proves the claim.",
+    "c": "Document 4 says there can be no liberty when one person makes and enforces the laws. That's Montesquieu's fear, in his own argument.",
+    "d": "Document 6 says the general will looks only at the common interest, not private wants. That proves the claim.",
+    "e": "Document 7 dares lawmakers to prove women lack reason before shutting them out. The dare is the challenge.",
+    "f": "Document 10 orders punishment for serfs who complain. That proves serfs weren't treated as equals."
+  }
+}

@@ -285,6 +285,76 @@
               "published": true,
               "content_ref": "content/checkpoint-gs10r-10.2-casefileA.json"
             }
+          ],
+          "ladders": [
+            {
+              "skill": "HC",
+              "_source": "Will, arena-pack-global10r-10.2.md, BK approved 2026-09-27 17:34 ('yes'); ported word for word by Josh 17:46",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "The world each document was written in",
+                  "content_ref": "content/ladder-gs10r-10.2-hc-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Best context statement",
+                  "content_ref": "content/ladder-gs10r-10.2-hc-L2-bestfit.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "TH",
+              "_source": "Will, arena-pack-global10r-10.2.md, BK approved 2026-09-27 17:34 ('yes'); ported word for word by Josh 17:46",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Questions and the claims that answer them",
+                  "content_ref": "content/ladder-gs10r-10.2-th-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Strongest thesis",
+                  "content_ref": "content/ladder-gs10r-10.2-th-L2-bestfit.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "DU",
+              "_source": "Will, arena-pack-global10r-10.2.md, BK approved 2026-09-27 17:34 ('yes'); ported word for word by Josh 17:46",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Claims and the evidence that proves them",
+                  "content_ref": "content/ladder-gs10r-10.2-du-L1-matching.json",
+                  "published": true
+                }
+              ],
+              "_held": "Step 2 held at the port 2026-09-27: items name a document the screen does not show (gate: document on screen). Back to Will."
+            },
+            {
+              "skill": "EI",
+              "_source": "Will, arena-pack-global10r-10.2.md, BK approved 2026-09-27 17:34 ('yes'); ported word for word by Josh 17:46",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "The six umbrellas",
+                  "content_ref": "content/ladder-gs10r-10.2-ei-L1-matching.json",
+                  "published": true
+                }
+              ],
+              "_held": "Step 2 held at the port 2026-09-27: items name a document the screen does not show (gate: document on screen). Back to Will."
+            }
           ]
         }
       ],

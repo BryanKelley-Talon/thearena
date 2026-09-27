@@ -1,0 +1,91 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Questions and the claims that answer them",
+  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
+  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). Passed to Josh 17:34.",
+  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted).",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "level": 1,
+  "type": "matching",
+  "intro": "Match each question to the thesis that answers it: one clear claim somebody could argue with.",
+  "left": [
+    {
+      "key": "a",
+      "label": "According to Locke, where does a government's power come from?",
+      "hints": [
+        "Locke talks about a deal between the people and the government.",
+        "Look for the claim that says who holds power in the end."
+      ]
+    },
+    {
+      "key": "b",
+      "label": "How did Montesquieu want to stop tyranny?",
+      "hints": [
+        "Montesquieu's plan was about how government is built.",
+        "Look for the claim about separate branches."
+      ]
+    },
+    {
+      "key": "c",
+      "label": "Was Catherine the Great really an Enlightenment ruler?",
+      "hints": [
+        "The question asks whether she really was. The answer takes a side.",
+        "Look for the claim that compares her words with her actions."
+      ]
+    },
+    {
+      "key": "d",
+      "label": "Did the Enlightenment's rights include everyone?",
+      "hints": [
+        "Think about who Wollstonecraft and Wilberforce were speaking up for.",
+        "Look for the claim about who was left out."
+      ]
+    },
+    {
+      "key": "e",
+      "label": "Why does power and its abuse matter as an enduring issue?",
+      "hints": [
+        "A thesis about an enduring issue says why it matters.",
+        "Look for the claim that covers then and now."
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Government's power comes from the people, and they can take it back when a government breaks the deal."
+    },
+    {
+      "key": "2",
+      "label": "Splitting power among separate branches keeps any one person from abusing it."
+    },
+    {
+      "key": "3",
+      "label": "Catherine used Enlightenment words but kept absolute power and gave landlords more control over serfs, so she was enlightened only on paper."
+    },
+    {
+      "key": "4",
+      "label": "The Enlightenment's rights of man left out women and enslaved people until reformers like Wollstonecraft and Wilberforce pushed back."
+    },
+    {
+      "key": "5",
+      "label": "It matters because rulers like Louis XIV and Catherine used power over people who had no say, and people have kept arguing about how to limit power ever since."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "This claim answers the question and could be argued with. It states Locke's social contract: power comes from the people, and they can take it back.",
+    "b": "This claim answers how: split the power. It's Montesquieu's separation of powers in one sentence.",
+    "c": "This claim takes a side and gives the reason, words versus actions. Somebody could push back on it, and that's what makes it a thesis.",
+    "d": "This claim answers no and says who was left out. It points to the evidence you'd use: Wollstonecraft and Wilberforce.",
+    "e": "This claim says why the issue matters on both sides: how it affected people, and how it has continued over time."
+  }
+}

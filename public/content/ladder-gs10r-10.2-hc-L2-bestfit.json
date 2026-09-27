@@ -1,0 +1,95 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "Best context statement",
+  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
+  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). Passed to Josh 17:34.",
+  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted).",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 2,
+  "type": "mc_bestfit",
+  "_hint_model": "2 escalating hints per item. rationale per item is the reason line (the Arena's BestFit reveal doesn't show it yet; see cover memo).",
+  "items": [
+    {
+      "id": "hc-01",
+      "stem": "Which statement best gives the historical context for Locke's Two Treatises of Government, 1690?",
+      "options": {
+        "1": "Written after the French Revolution had overthrown the French king",
+        "2": "Written the year after England forced out one king and installed another on terms",
+        "3": "Written to defend the divine right of kings",
+        "4": "Written in Russia to advise Catherine the Great"
+      },
+      "correct": "2",
+      "hints": [
+        "Check the date. What had just happened in England?",
+        "The French Revolution is 1789, a hundred years later."
+      ],
+      "rationale": "Locke published in 1690, the year after England replaced one king with another on terms. He wrote to justify it. The French Revolution came a century later."
+    },
+    {
+      "id": "hc-02",
+      "stem": "Which statement best gives the historical context for Montesquieu's The Spirit of the Laws, 1748?",
+      "options": {
+        "1": "Written after the U.S. Constitution had already split power into three branches",
+        "2": "Written during England's civil war",
+        "3": "Written in France, where an absolute king held the power to make, enforce and judge the law",
+        "4": "Written in Japan under the Tokugawa shogun"
+      },
+      "correct": "3",
+      "hints": [
+        "Montesquieu was French. Who ruled France in 1748?",
+        "The U.S. Constitution came almost forty years later. It copied Montesquieu, not the other way around."
+      ],
+      "rationale": "Montesquieu wrote in France under an absolute king who held every kind of power. That's why he argued for splitting it. The U.S. Constitution borrowed his idea in 1787."
+    },
+    {
+      "id": "hc-03",
+      "stem": "Which statement best gives the historical context for Wollstonecraft's A Vindication of the Rights of Woman, 1792?",
+      "options": {
+        "1": "Written while revolutionary France was writing new rules about rights that left women out",
+        "2": "Written after women in Europe had already won the right to vote",
+        "3": "Written to support the absolute rule of Louis XIV",
+        "4": "Written in the Mughal Empire"
+      },
+      "correct": "1",
+      "hints": [
+        "1792 falls during the French Revolution.",
+        "She wrote to a French lawmaker. What were French lawmakers writing?"
+      ],
+      "rationale": "Wollstonecraft wrote during the French Revolution, while France wrote new rules about rights. Women were left out, and she addressed the book to a French lawmaker to say so."
+    },
+    {
+      "id": "hc-04",
+      "stem": "Which statement best gives the historical context for Wilberforce's 1789 speech to Parliament?",
+      "options": {
+        "1": "Spoken after slavery had already ended everywhere in the British Empire",
+        "2": "Spoken while British ships still carried enslaved Africans across the Atlantic",
+        "3": "Spoken in France's National Assembly",
+        "4": "Spoken to celebrate the growth of the slave trade"
+      },
+      "correct": "2",
+      "hints": [
+        "Wilberforce wanted to end something. Was it still going on in 1789?",
+        "He spoke in Britain's Parliament, not France's assembly."
+      ],
+      "rationale": "In 1789 the British slave trade was still running. Wilberforce spoke in Parliament to demand that it be abolished."
+    },
+    {
+      "id": "hc-05",
+      "stem": "Which statement best gives the historical context for Catherine the Great's 1767 instructions for Russia's laws?",
+      "options": {
+        "1": "Written by an elected president of Russia",
+        "2": "Written after Russia had freed its serfs",
+        "3": "Written by a French philosophe living in exile",
+        "4": "Written by an absolute ruler who admired the philosophes but kept millions of serfs"
+      },
+      "correct": "4",
+      "hints": [
+        "Catherine was an empress. How did she come to power, and how much did she hold?",
+        "Russia's serfs weren't freed until long after Catherine died."
+      ],
+      "rationale": "Catherine was an absolute ruler who read the philosophes and wrote about equal laws. Russia's serfs stayed bound to the land, and there were more of them when she died."
+    }
+  ]
+}

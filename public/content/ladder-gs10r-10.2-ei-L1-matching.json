@@ -1,0 +1,105 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
+  "_activity": "The six umbrellas",
+  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
+  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). Passed to Josh 17:34.",
+  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted).",
+  "skill": "EI",
+  "skill_label": "Enduring Issue",
+  "level": 1,
+  "type": "matching",
+  "intro": "Match each enduring issue umbrella to what it's about. These are the words on our classroom posters.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Power & Its Abuse",
+      "hints": [
+        "Which choice is about who's in charge?",
+        "Look for \"authority.\""
+      ]
+    },
+    {
+      "key": "b",
+      "label": "Conflict",
+      "hints": [
+        "Which choice is about fighting?",
+        "Look for \"fight.\""
+      ]
+    },
+    {
+      "key": "c",
+      "label": "Identity & Nationalism",
+      "hints": [
+        "Which choice is about who people are?",
+        "Look for \"who a people say they are.\""
+      ]
+    },
+    {
+      "key": "d",
+      "label": "Wealth & Resources",
+      "hints": [
+        "Which choice is about owning and producing?",
+        "Look for \"owns.\""
+      ]
+    },
+    {
+      "key": "e",
+      "label": "Technology & Environment",
+      "hints": [
+        "Which choice is about tools?",
+        "Look for \"new tools.\""
+      ]
+    },
+    {
+      "key": "f",
+      "label": "A Connected World",
+      "hints": [
+        "Which choice is about faraway places?",
+        "Look for \"distant places.\""
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Who holds authority, and what happens to the people who did not choose them."
+    },
+    {
+      "key": "2",
+      "label": "Why people fight, and what is still unsettled when the fighting stops."
+    },
+    {
+      "key": "3",
+      "label": "Who a people say they are, and who that leaves out."
+    },
+    {
+      "key": "4",
+      "label": "Who owns what a place produces, and who does the producing."
+    },
+    {
+      "key": "5",
+      "label": "What new tools let people do, and what they cost the world around them."
+    },
+    {
+      "key": "6",
+      "label": "What happens when distant places start depending on each other."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "6"
+  },
+  "rationale": {
+    "a": "Power & Its Abuse asks who holds authority and what happens to people who didn't choose them. Louis XIV's nobles and Catherine's serfs are examples.",
+    "b": "Conflict asks why people fight and what's left unsettled after. Hobbes feared a war of everyone against everyone.",
+    "c": "Identity & Nationalism asks who a people say they are, and who that leaves out. Aurangzeb's treatment of Hindus is an example.",
+    "d": "Wealth & Resources asks who owns what a place produces and who does the work. Serfs worked land they didn't own.",
+    "e": "Technology & Environment asks what new tools let people do and what they cost the world around them.",
+    "f": "A Connected World asks what happens when distant places depend on each other, like Europe's trade with the Mughal Empire."
+  }
+}
