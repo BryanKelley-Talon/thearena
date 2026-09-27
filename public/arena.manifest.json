@@ -31,7 +31,136 @@
       "status": "open",
       "current_unit": "unit-2",
       "_current_unit_note": "Josh, 2026-09-25 (BK: 'we're in unit 2 now'). Door gauges follow this unit; Unit 1's gauges move to its own page.",
-      "guide": null,
+      "guide": {
+        "name": "BK",
+        "portrait": "images/arena/guide-bk.png",
+        "owner": "global10r-curriculum (Will)",
+        "lines": {
+          "station_enter": {
+            "historical-context": [
+              "Before you read a word of the document, ask: when and where is this happening, and what led to it?",
+              "Context is the world a document was written into. Set the scene first, then read.",
+              "Every Regents essay opens with context. This is where you practice that first paragraph."
+            ],
+            "thesis": [
+              "A thesis answers the question in one sentence somebody could argue with. The rest of your writing proves it.",
+              "Your thesis says why the issue matters. How did it affect people? How did it continue or change over time?",
+              "Don't describe. Decide. Then say it in one clear sentence."
+            ],
+            "document-use": [
+              "Name the document, pull the exact detail, put it to work. That's document use.",
+              "Source line first, every time. Then find the detail that proves your point.",
+              "The Regents asks, \"According to Document 2...\" This is where you practice answering from the page, not from memory."
+            ],
+            "explanation": [
+              "Most people stop at describing what a document says. Explaining goes one step further: why it matters.",
+              "Try it this way: ___, because ___, which means ___.",
+              "Describing is where most answers stop. The \"so what\" is where they get strong."
+            ],
+            "outside-evidence": [
+              "Outside evidence is what you know that isn't in the documents. Name it, and make it do work.",
+              "One specific fact from class, not from the page. A name, a place, an event. That's outside evidence.",
+              "The documents are only part of what you know. This is where you practice using the rest."
+            ],
+            "enduring-issue": [
+              "An enduring issue is a challenge or problem that has been debated or discussed across time. Find one.",
+              "Name it, then explain it. Define the problem in one sentence, then show where a document shows it.",
+              "Power, conflict, identity, wealth, technology, a connected world. Which umbrella is this document under?"
+            ]
+          },
+          "attempt_strong": {
+            "historical-context": [
+              "You placed it in time and place before you used it. That's historical context.",
+              "You told me what led to it, not just what it says. That's the hard part.",
+              "When, where, and what led to it, in one sentence. That's a Context Check done right."
+            ],
+            "thesis": [
+              "That's a claim, not a summary. Somebody could push back on it, and that's what makes it a thesis.",
+              "You said why it matters, not just what happened. That's the difference.",
+              "How it affected people, and how it changed over time. Both sides. That's a full thesis."
+            ],
+            "document-use": [
+              "You named the document and pulled the exact detail. That's evidence.",
+              "You used the document instead of retelling it. That's the skill.",
+              "Named source, exact detail, tied to your point. That's document use done right."
+            ],
+            "explanation": [
+              "You didn't just say what happened. You said why it matters. That's explanation.",
+              "\"Which means\" did the work there. That's the so what.",
+              "Evidence, then what it means. You connected them. That's the part most people skip."
+            ],
+            "outside-evidence": [
+              "That fact wasn't in the documents, and you used it. That's outside evidence.",
+              "Specific and named. A real person, place or event. That's what makes it count.",
+              "You connected what you know to what the document shows. That's the hard part."
+            ],
+            "enduring-issue": [
+              "You named the issue and explained it. Most people stop at naming. You didn't.",
+              "A clear problem, shown in the documents. That's an enduring issue, explained.",
+              "You showed where the documents show it. That's what makes the issue real, not just a word."
+            ]
+          },
+          "attempt_miss": {
+            "historical-context": [
+              "That's what the document says. Now step outside it: what was going on in the world when it was written?",
+              "Start with the date and the place. Then name one thing that led up to it.",
+              "Close. Add what led to it. That's what turns a summary into context."
+            ],
+            "thesis": [
+              "That's true, but nobody would argue with it. Take a position somebody could push back on.",
+              "You told me how it affected people. Now tell me how it continued or changed over time.",
+              "You described it. Now answer the question: why does it matter?"
+            ],
+            "document-use": [
+              "That's a summary. Find the exact word, number or detail in the document that proves it.",
+              "Which document? Name it by number, then say what in it proves your point.",
+              "You dropped the quote and walked away. Add one sentence: what does it show?"
+            ],
+            "explanation": [
+              "That's a description. Add \"which means...\" and finish the thought.",
+              "You told me what the document says. Now tell me why that matters to your answer.",
+              "Good evidence. Now one more sentence: so what?"
+            ],
+            "outside-evidence": [
+              "That's in the document. Outside evidence comes from somewhere else. What do you know from class?",
+              "Too general. Name the person, the place or the event.",
+              "Good fact. Now tie it to the document: how does it help explain what you're reading?"
+            ],
+            "enduring-issue": [
+              "That's a topic, not an issue. What's the problem people keep arguing about?",
+              "You named it. Now explain it: what's the problem, in one sentence?",
+              "Good issue. Now show me where a document shows it."
+            ]
+          },
+          "station_complete": {
+            "historical-context": [
+              "You can set a scene now. That's the first paragraph of every essay on the Regents.",
+              "That's historical context. Do the Context Check on every document, every time."
+            ],
+            "thesis": [
+              "You can put a claim on the page now. Everything else in your writing holds that sentence up.",
+              "That's a thesis. Context, then claim, then evidence. That's Make the Case."
+            ],
+            "document-use": [
+              "You can use a document as proof now, not just a pile of facts. That pays on every question.",
+              "That's document use. Name it, pull it, use it, every time."
+            ],
+            "explanation": [
+              "You can explain now, not just describe. That's what makes the rest of your writing count.",
+              "That's explanation. After every piece of evidence, ask yourself: so what?"
+            ],
+            "outside-evidence": [
+              "You can bring in what you know now. Most people leave that at the door.",
+              "That's outside evidence. Every essay needs some, and now you know where to find it."
+            ],
+            "enduring-issue": [
+              "You can identify and explain an enduring issue now. That's the heart of the Enduring Issues Essay.",
+              "That's an enduring issue. People argued about it then, and they're still arguing about it now."
+            ]
+          }
+        },
+        "_note": "Will's 66 station guide lines, SIGNED by BK 2026-09-27 10:02 ('yes. i like all suggestions. signed.'), ported word for word from flashpoint/Project Flashpoint/In/will-pass-2026-09-27-gs10r-station-guide-lines-SIGNED.json. The unkeyed slots (door_enter, attempt_again, idle_nudge, signoff) come from Leo's locked growth-coaching bank on its own branch."
+      },
       "stations": [
         {
           "slug": "historical-context",
