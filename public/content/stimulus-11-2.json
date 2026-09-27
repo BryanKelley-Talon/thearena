@@ -1,0 +1,353 @@
+{
+  "intro": "Eight questions off real Regents exams, all from 11.2. Nothing here is scored and nothing is saved. Pick the wrong one on purpose if you want to — you will be told what that answer was built to catch.",
+  "_course": "US History and Government 11R",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_room_us11r_112.py",
+  "_skill_lines": "Each item carries the graded skill line read off the MC_BANK record's own skill code (1=HC 2=TH 3=DU 4=EX 5=OE 6=CP), as in stimulus-11-1.json.",
+  "_test_wall": "None of these eight is on the 11.2 Part I (DOC_BANK/Unit_02/US11R_Unit_11-2_Exam_PartI_SELECTION_2026-09-14.json). Four share a passage with a test item (Centinel, Antifederalist 46 x2, Marbury): BK's rule prefers familiar test documents inside the doc work. Passages transcribed word for word from the NYSED crops named in each item's _crop.",
+  "items": [
+    {
+      "n": 1,
+      "item_id": "0126-mc03",
+      "skill_line": "DU",
+      "skill_line_label": "Document Use",
+      "question": "This passage was written during the",
+      "stimulus": {
+        "kind": "text",
+        "content": "Centinel, no. 5\n\nFall 1787\n\n. . . But the convention has superadded another power, by which the congress may stamp with the sanction of the constitution every possible law; it is contained in the following clause—“To make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or officer thereof.” Whatever law congress may deem necessary and proper for carrying into execution any of the powers vested in them, may be enacted; and by virtue of this clause, they may controul [control] and abrogate [abolish] any and every of the laws of the state governments, on the allegation that they interfere with the execution of any of their powers, and yet these laws will “be made in pursuance [fulfillment] of the constitution,” and of course will “be the supreme law of the land, and the judges in every state shall be bound thereby, any thing in the constitution or laws of any state to the contrary notwithstanding.”",
+        "citation": "Source: Samuel Bryan, 1787; Herbert J. Storing, ed., The Complete Anti-Federalist, University of Chicago Press, 1981 (adapted)"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "debate over the adoption of the Articles of Confederation"
+        },
+        {
+          "key": "2",
+          "text": "ratification of the United States Constitution"
+        },
+        {
+          "key": "3",
+          "text": "nullification crisis in Virginia and Kentucky"
+        },
+        {
+          "key": "4",
+          "text": "controversy over the War of 1812"
+        }
+      ],
+      "correct": "2",
+      "reasoning": "Fall 1787: the Constitution has just been written, and the states are deciding whether to ratify it. Centinel is attacking one of its clauses, “necessary and proper.”",
+      "evidence_line": "But the convention has superadded another power, by which the congress may stamp with the sanction of the constitution every possible law;",
+      "distractors": {
+        "1": "The Articles were adopted in 1781. Centinel is quoting the new Constitution, not the Articles.",
+        "3": "The Virginia and Kentucky Resolutions came in 1798. The date at the top of this one is 1787.",
+        "4": "The War of 1812 is 25 years later, and nothing here is about a war."
+      },
+      "hints": [
+        "Look at the date at the top of the passage.",
+        "The clause he quotes is from the Constitution. In 1787, was it already law, or still being debated?"
+      ],
+      "_crop": "STIMULUS_BANK/Unit_02/unit02-centinel-1787-doc1.png"
+    },
+    {
+      "n": 2,
+      "item_id": "0625-mc05",
+      "skill_line": "DU",
+      "skill_line_label": "Document Use",
+      "question": "Based on this passage, what action would Alexander Hamilton recommend?",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . In pursuance of the plan which I have laid down for the discussion of the subject, the point next in order to be examined is the “insufficiency of the present Confederation to the preservation of the Union.” . . .\n\nIn our case, the concurrence [agreement] of thirteen distinct sovereign wills is requisite [required], under the Confederation, to the complete execution of every important measure that proceeds from the Union. It has happened as was to have been foreseen. The measures of the Union have not been executed; the delinquencies of the States have, step by step, matured themselves to an extreme, which has, at length, arrested all the wheels of the national government, and brought them to an awful stand. Congress at this time scarcely possess the means of keeping up the forms of administration, till the States can have time to agree upon a more substantial substitute for the present shadow of a federal government. Things did not come to this desperate extremity at once. . . . Each State, yielding to the persuasive voice of immediate interest or convenience, has successively withdrawn its support, till the frail and tottering edifice seems ready to fall upon our heads, and to crush us beneath its ruins.",
+        "citation": "Source: Alexander Hamilton, The Federalist Papers: No. 15, December 1, 1787 (adapted)"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "strengthening the national government"
+        },
+        {
+          "key": "2",
+          "text": "establishing a monarchy"
+        },
+        {
+          "key": "3",
+          "text": "increasing the power of the states"
+        },
+        {
+          "key": "4",
+          "text": "continuing to use the Articles of Confederation"
+        }
+      ],
+      "correct": "1",
+      "reasoning": "Hamilton says the Confederation can't carry out its own measures and calls it “the present shadow of a federal government.” He wants a “more substantial substitute”: a stronger national government.",
+      "evidence_line": "Congress at this time scarcely possess the means of keeping up the forms of administration, till the States can have time to agree upon a more substantial substitute for the present shadow of a federal government.",
+      "distractors": {
+        "2": "Hamilton wants a stronger government, but nothing here calls for a king. This choice goes further than the passage does.",
+        "3": "That's the opposite of his point. He blames the states for withdrawing their support.",
+        "4": "He calls the Confederation a “frail and tottering edifice.” He wants it replaced, not kept."
+      },
+      "hints": [
+        "What does Hamilton say is wrong with the Confederation?",
+        "He wants a “more substantial substitute.” Substantial means stronger."
+      ],
+      "_crop": "STIMULUS_BANK/Unit_02/unit02-0625-mc05.png"
+    },
+    {
+      "n": 3,
+      "item_id": "0625-mc06",
+      "skill_line": "DU",
+      "skill_line_label": "Document Use",
+      "question": "Based on this passage, the purpose of the Federalist Papers was to",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . In pursuance of the plan which I have laid down for the discussion of the subject, the point next in order to be examined is the “insufficiency of the present Confederation to the preservation of the Union.” . . .\n\nIn our case, the concurrence [agreement] of thirteen distinct sovereign wills is requisite [required], under the Confederation, to the complete execution of every important measure that proceeds from the Union. It has happened as was to have been foreseen. The measures of the Union have not been executed; the delinquencies of the States have, step by step, matured themselves to an extreme, which has, at length, arrested all the wheels of the national government, and brought them to an awful stand. Congress at this time scarcely possess the means of keeping up the forms of administration, till the States can have time to agree upon a more substantial substitute for the present shadow of a federal government. Things did not come to this desperate extremity at once. . . . Each State, yielding to the persuasive voice of immediate interest or convenience, has successively withdrawn its support, till the frail and tottering edifice seems ready to fall upon our heads, and to crush us beneath its ruins.",
+        "citation": "Source: Alexander Hamilton, The Federalist Papers: No. 15, December 1, 1787 (adapted)"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "discourage the creation of political parties"
+        },
+        {
+          "key": "2",
+          "text": "justify the American Revolution to the colonists"
+        },
+        {
+          "key": "3",
+          "text": "support ratification of the Constitution"
+        },
+        {
+          "key": "4",
+          "text": "argue for a bill of rights"
+        }
+      ],
+      "correct": "3",
+      "reasoning": "Hamilton sets out to prove the Confederation is failing. The Federalist Papers were written in 1787–88 to win support for ratifying the Constitution that would replace it.",
+      "evidence_line": "the point next in order to be examined is the “insufficiency of the present Confederation to the preservation of the Union.”",
+      "distractors": {
+        "1": "The famous warning about political parties comes later, in Washington's Farewell Address (1796).",
+        "2": "The Revolution was over by 1787. This is about a new government, not independence.",
+        "4": "A bill of rights was the Anti-Federalists' demand, not Hamilton's."
+      },
+      "hints": [
+        "Look at the date on the source line. What were the states deciding in 1787?",
+        "Hamilton argues the current government is failing. What did he want people to approve instead?"
+      ],
+      "_crop": "STIMULUS_BANK/Unit_02/unit02-0625-mc05.png"
+    },
+    {
+      "n": 4,
+      "item_id": "0823-mc01",
+      "skill_line": "DU",
+      "skill_line_label": "Document Use",
+      "question": "The purpose of this statement was to",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . My object is to consider that undefined, unbounded and immense power which is comprised [included] in the following clause—“And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States; or in any department or offices thereof.” Under such a clause as this, can anything be said to be reserved and kept back from Congress? . . .",
+        "citation": "Source: Antifederalist Papers No. 46, November 2, 1788 (adapted)"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "give reasons to support the ratification of the Constitution"
+        },
+        {
+          "key": "2",
+          "text": "question the power granted to Congress under the Constitution"
+        },
+        {
+          "key": "3",
+          "text": "decide which powers would be given to the president in the Constitution"
+        },
+        {
+          "key": "4",
+          "text": "encourage support for an amendment to limit personal taxation in the Constitution"
+        }
+      ],
+      "correct": "2",
+      "reasoning": "The writer calls the necessary and proper clause “undefined, unbounded and immense power” and asks whether anything is kept back from Congress. The point is to question how much power the Constitution gives Congress.",
+      "evidence_line": "Under such a clause as this, can anything be said to be reserved and kept back from Congress?",
+      "distractors": {
+        "1": "That's the other side. An Anti-Federalist argues against ratification.",
+        "3": "The clause he quotes is about Congress, not the president.",
+        "4": "He worries about all of Congress's power, not only taxes. This choice shrinks his point to one issue."
+      },
+      "hints": [
+        "Is the writer for this clause, or worried about it?",
+        "Look at the three words he uses to describe the power."
+      ],
+      "_crop": "STIMULUS_BANK/Unit_02/unit02-0823-mc01.png"
+    },
+    {
+      "n": 5,
+      "item_id": "0824-mc03",
+      "skill_line": "DU",
+      "skill_line_label": "Document Use",
+      "question": "Notices such as this, published in the Virginia Gazette in 1775, demonstrate that",
+      "stimulus": {
+        "kind": "text",
+        "content": "JUST ARRIVED,\nThe Justitia, Captain Kidd,\nWith About ONE HUNDRED AND THIRTY healthy SERVANTS,\n\nCONSISTING of Men, Women, and Boys; among whom are TRADESMEN, such as Carpenters and Joiners, Bricklayers and Plaisteres [plasterers], Shoemakers, Barbers and Hair Dressers, several Weavers, Cutlers, Curriers, and Bakers, a Tanner, a Tailor and Staymaker, a Blacksmith, a Painter, a Printer, a Bookbinder, a Miller, a Stocking Weaver, a Schoolmaster, a Hatter, a Silk Dryer, and others. There are also many Farmers, and other Country Labourers, Gentlemen’s Servants, etc. etc. The Sale will commence at Leeds Town, on Wednesday the 22d Instant (March) and be continued till all are sold. A reasonable Credit will be allowed, the Purchasers giving Bond, with approved Security, to THOMAS HODGE.",
+        "citation": "Source: Virginia Gazette, March 18, 1775 (adapted)"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "a skilled labor force was emigrating to British North America"
+        },
+        {
+          "key": "2",
+          "text": "impoverished Europeans were being denied entry to America"
+        },
+        {
+          "key": "3",
+          "text": "an extreme shortage of plantation workers existed in the south"
+        },
+        {
+          "key": "4",
+          "text": "northern economies were growing at a faster rate than those in the south"
+        }
+      ],
+      "correct": "1",
+      "reasoning": "The notice lists the servants' trades: carpenters, bricklayers, shoemakers, a printer, a schoolmaster. Skilled workers were crossing the Atlantic as indentured servants.",
+      "evidence_line": "among whom are TRADESMEN, such as Carpenters and Joiners, Bricklayers and Plaisteres [plasterers], Shoemakers,",
+      "distractors": {
+        "2": "The notice is selling servants who just arrived. Nobody is being kept out.",
+        "3": "One notice can't prove a shortage across a whole region, and most of these workers aren't plantation hands.",
+        "4": "The notice says nothing about the North at all."
+      },
+      "hints": [
+        "Look at the list of jobs in the notice.",
+        "What do carpenters, printers and blacksmiths have in common?"
+      ],
+      "_crop": "STIMULUS_BANK/Unit_02/unit02-0824-mc03.png"
+    },
+    {
+      "n": 6,
+      "item_id": "0824-mc04",
+      "skill_line": "DU",
+      "skill_line_label": "Document Use",
+      "question": "Based on this notice, what was the main reason immigrants were willing to enter into years of indentured servitude in British North America?",
+      "stimulus": {
+        "kind": "text",
+        "content": "JUST ARRIVED,\nThe Justitia, Captain Kidd,\nWith About ONE HUNDRED AND THIRTY healthy SERVANTS,\n\nCONSISTING of Men, Women, and Boys; among whom are TRADESMEN, such as Carpenters and Joiners, Bricklayers and Plaisteres [plasterers], Shoemakers, Barbers and Hair Dressers, several Weavers, Cutlers, Curriers, and Bakers, a Tanner, a Tailor and Staymaker, a Blacksmith, a Painter, a Printer, a Bookbinder, a Miller, a Stocking Weaver, a Schoolmaster, a Hatter, a Silk Dryer, and others. There are also many Farmers, and other Country Labourers, Gentlemen’s Servants, etc. etc. The Sale will commence at Leeds Town, on Wednesday the 22d Instant (March) and be continued till all are sold. A reasonable Credit will be allowed, the Purchasers giving Bond, with approved Security, to THOMAS HODGE.",
+        "citation": "Source: Virginia Gazette, March 18, 1775 (adapted)"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "They faced harsh punishments for petty criminal acts."
+        },
+        {
+          "key": "2",
+          "text": "They believed they could eventually prosper in the colonies."
+        },
+        {
+          "key": "3",
+          "text": "They could immediately pay off the debt they owed to colonial sponsors."
+        },
+        {
+          "key": "4",
+          "text": "They were facing severe hardship as a result of the Great Famine."
+        }
+      ],
+      "correct": "2",
+      "reasoning": "Indentured servants traded years of work for passage and a chance at a better life once their term ended. Skilled tradesmen accepting that deal shows they expected the colonies to pay off.",
+      "evidence_line": "CONSISTING of Men, Women, and Boys; among whom are TRADESMEN,",
+      "distractors": {
+        "1": "Nothing in the notice mentions crime or punishment.",
+        "3": "An indenture meant years of work to pay off passage. Nothing was paid off right away.",
+        "4": "Ireland's Great Famine was in the 1840s, seventy years after this notice."
+      },
+      "hints": [
+        "An indenture meant years of work without wages. Why would a skilled worker accept that?",
+        "Think about what they expected to have when the years were over."
+      ],
+      "_crop": "STIMULUS_BANK/Unit_02/unit02-0824-mc03.png"
+    },
+    {
+      "n": 7,
+      "item_id": "0824-mc08",
+      "skill_line": "OE",
+      "skill_line_label": "Outside Evidence",
+      "question": "Which action was taken to deal with the criticism expressed in this passage?",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . But to the question—without force what can restrain the Congress from making such laws as they please? What limits are there to their authority? I fear none at all. For surely it cannot be justly said that they have no power but what is expressly given to them, when by the very terms of their creation they are vested with the powers of making laws in all cases—necessary and proper; when from the nature of their power, they must necessarily be the judges what laws are necessary and proper. . . .",
+        "citation": "Source: Antifederalist No. 46, November 2, 1788"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "assigning the power of judicial review to the Supreme Court"
+        },
+        {
+          "key": "2",
+          "text": "giving states the ability to check the powers of Congress"
+        },
+        {
+          "key": "3",
+          "text": "amending the Constitution to eliminate the elastic clause"
+        },
+        {
+          "key": "4",
+          "text": "adding a Bill of Rights to the Constitution"
+        }
+      ],
+      "correct": "4",
+      "reasoning": "The writer fears nothing can limit Congress. The answer, ratified in 1791, was the Bill of Rights: written limits on what the national government can do. That's outside knowledge, since the passage doesn't say it.",
+      "evidence_line": "What limits are there to their authority? I fear none at all.",
+      "distractors": {
+        "1": "Judicial review came from the Supreme Court in Marbury v. Madison (1803), not as an answer to this critic.",
+        "2": "No amendment ever gave the states a check on Congress.",
+        "3": "The elastic clause is still in the Constitution."
+      },
+      "hints": [
+        "The writer asks, “What limits are there?” What was added to the Constitution to set limits?",
+        "Think of the first ten amendments."
+      ],
+      "_crop": "STIMULUS_BANK/Unit_02/unit02-0824-mc07.png"
+    },
+    {
+      "n": 8,
+      "item_id": "0824-mc09",
+      "skill_line": "CP",
+      "skill_line_label": "Civic Principle",
+      "question": "In this excerpt from Marbury v. Madison, Chief Justice Marshall established the precedent that the Supreme Court",
+      "stimulus": {
+        "kind": "text",
+        "content": ". . . It is emphatically the province and duty of the judicial department to say what the law is. Those who apply the rule to particular cases, must of necessity expound [explain] and interpret that rule. If two laws conflict with each other, the courts must decide on the operation of each.\n\nSo if a law be in opposition to the constitution; if both the law and the constitution apply to a particular case, so that the court must either decide that case conformably [according] to the law, disregarding the constitution; or conformably to the constitution, disregarding the law; the court must determine which of these conflicting rules governs the case; This is of the very essence of judicial duty.\n\nIf, then, the courts are to regard the constitution, and the constitution is superior to any ordinary act of the legislature, the constitution, and not such ordinary act, must govern the case to which they both apply. . . .",
+        "citation": "Source: Chief Justice John Marshall, majority opinion, Marbury v. Madison, February 24, 1803"
+      },
+      "choices": [
+        {
+          "key": "1",
+          "text": "can overturn laws that violate the Constitution"
+        },
+        {
+          "key": "2",
+          "text": "may disregard the Constitution in their decision-making"
+        },
+        {
+          "key": "3",
+          "text": "has an obligation to base decisions on the popular beliefs of the electorate"
+        },
+        {
+          "key": "4",
+          "text": "may have their decisions overruled by the executive branch of government"
+        }
+      ],
+      "correct": "1",
+      "reasoning": "Marshall says that when a law conflicts with the Constitution, the Constitution wins, and the courts decide. That's judicial review.",
+      "evidence_line": "the constitution, and not such ordinary act, must govern the case to which they both apply.",
+      "distractors": {
+        "2": "Marshall says the opposite: the court must follow the Constitution.",
+        "3": "Popular opinion never comes up. The test is the Constitution.",
+        "4": "Nothing here gives the president power over the Court."
+      },
+      "hints": [
+        "When a law and the Constitution disagree, which one does Marshall say wins?",
+        "Who does he say decides?"
+      ],
+      "_crop": "STIMULUS_BANK/Unit_02/unit02-0824-mc09.png"
+    }
+  ]
+}

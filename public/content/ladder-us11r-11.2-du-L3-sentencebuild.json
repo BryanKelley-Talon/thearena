@@ -1,0 +1,77 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Build it: name it, quote it, use it",
+  "_skill_lane": "Document Use (DU)",
+  "_ladder_level": 3,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "DU",
+  "step": 3,
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "Document ___ says “___,” which shows ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "document",
+      "tiles": [
+        {
+          "text": "12",
+          "correct": true
+        },
+        {
+          "text": "8",
+          "correct": false
+        },
+        {
+          "text": "14",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "exact detail",
+      "tiles": [
+        {
+          "text": "We are fast heading toward anarchy and confusion",
+          "correct": true
+        },
+        {
+          "text": "remember the ladies",
+          "correct": false
+        },
+        {
+          "text": "each state shall have one vote",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "what it shows",
+      "tiles": [
+        {
+          "text": "leaders feared the government under the Articles was failing",
+          "correct": true
+        },
+        {
+          "text": "Washington wanted to be king",
+          "correct": false
+        },
+        {
+          "text": "the Constitution had already been ratified",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Document 12 says “We are fast heading toward anarchy and confusion,” which shows leaders feared the government under the Articles was failing.",
+  "rationale": "Washington's 1786 letter is Document 12. The wrong quotes are real, but they come from Documents 10 and 11.",
+  "hints": [
+    "Washington's letter to Madison is which document?",
+    "Which quote is Washington's, and what does it show about the Articles?"
+  ],
+  "practice_only": true
+}

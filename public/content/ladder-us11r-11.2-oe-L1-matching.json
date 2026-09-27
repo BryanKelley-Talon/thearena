@@ -1,0 +1,90 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Bring what you know",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "OE",
+  "step": 1,
+  "type": "matching",
+  "intro": "Match each document to a fact you'd bring from outside it.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Document 3 · the Stamp Act Congress, 1765"
+    },
+    {
+      "key": "b",
+      "label": "Document 5 · Preston's testimony, 1770"
+    },
+    {
+      "key": "c",
+      "label": "Document 8 · the Declaration of Independence, 1776"
+    },
+    {
+      "key": "d",
+      "label": "Document 11 · the Articles of Confederation, 1781"
+    },
+    {
+      "key": "e",
+      "label": "Document 17 · the Bill of Rights, 1791"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Parliament repealed the Stamp Act in 1766 after colonial boycotts."
+    },
+    {
+      "key": "2",
+      "label": "John Adams, a Patriot lawyer, defended the soldiers at their trial."
+    },
+    {
+      "key": "3",
+      "label": "Thomas Jefferson, who wrote it, enslaved more than 600 people over his lifetime."
+    },
+    {
+      "key": "4",
+      "label": "Shays' Rebellion (1786–87) showed the national government had no army to keep order."
+    },
+    {
+      "key": "5",
+      "label": "James Madison drafted the amendments that became the Bill of Rights."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "The document asks for no taxes without consent; what happened next isn't in it.",
+    "b": "Preston's words don't name his lawyer. That's a fact you bring.",
+    "c": "The Declaration says all men are created equal. Its author's life is outside evidence for Thread 1.",
+    "d": "The Articles don't mention Shays. The rebellion is what proved their weakness.",
+    "e": "The amendments don't name their author. You bring it."
+  },
+  "hints": {
+    "a": [
+      "What happened to the Stamp Act?",
+      "Look for 1766."
+    ],
+    "b": [
+      "Who defended Preston in court?",
+      "Look for a future president."
+    ],
+    "c": [
+      "Who wrote the Declaration, and what does his life add?",
+      "Look for Jefferson."
+    ],
+    "d": [
+      "What event proved the Articles were too weak?",
+      "Look for 1786–87."
+    ],
+    "e": [
+      "Who wrote the first drafts of the amendments?",
+      "Look for the Federalist who changed his mind about a bill of rights."
+    ]
+  }
+}

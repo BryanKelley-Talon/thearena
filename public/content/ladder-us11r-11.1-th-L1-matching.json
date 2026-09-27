@@ -1,0 +1,93 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "Match the question to its thesis: 11.1",
+  "_skill_lane": "Thesis (TH)",
+  "_ladder_level": 1,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the shipped 11.1 casefiles. Quotes are the casefile's own text.",
+  "skill_line": "TH",
+  "step": 1,
+  "type": "matching",
+  "intro": "Match each question to the thesis that answers it. A thesis is a claim somebody could argue with.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Was indentured servitude a fair deal?"
+    },
+    {
+      "key": "b",
+      "label": "How did colonial law build slavery?"
+    },
+    {
+      "key": "c",
+      "label": "What did Native nations lose as the colonies grew?"
+    },
+    {
+      "key": "d",
+      "label": "Did colonial self-government include everyone?"
+    },
+    {
+      "key": "e",
+      "label": "Why did Franklin want the colonies to unite in 1754?"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Indentured servitude looked fair on paper, but servants like Richard Frethorne paid for it with sickness and hunger."
+    },
+    {
+      "key": "2",
+      "label": "Colonial law built slavery one statute at a time, turning servants into property by 1705."
+    },
+    {
+      "key": "3",
+      "label": "As the colonies grew, Native nations lost their land, their game and their food, and leaders like Miantonomo saw it coming."
+    },
+    {
+      "key": "4",
+      "label": "Colonial self-government was real, but it left out women, who lost their legal identity when they married."
+    },
+    {
+      "key": "5",
+      "label": "Franklin wanted the colonies to unite because, divided, they could not defend themselves against France."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "It takes a side and gives a reason from Document 10.",
+    "b": "It answers “how” with a claim about a process, from Document 13.",
+    "c": "It names what was lost, using Document 4.",
+    "d": "It admits self-government was real, then shows who it left out (Documents 17 and 18).",
+    "e": "It answers “why” with a reason, from Document 16."
+  },
+  "hints": {
+    "a": [
+      "Which thesis is about servants?",
+      "Look for Richard Frethorne."
+    ],
+    "b": [
+      "Which thesis is about laws?",
+      "Look for “one statute at a time.”"
+    ],
+    "c": [
+      "Which thesis is about Native nations?",
+      "Look for Miantonomo."
+    ],
+    "d": [
+      "Which thesis is about who got a say?",
+      "Look for women and marriage."
+    ],
+    "e": [
+      "Which thesis is about Join, or Die?",
+      "Look for France."
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Write the thesis: who was responsible in Boston?",
+  "_skill_lane": "Thesis (TH)",
+  "_ladder_level": 4,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "TH",
+  "step": 4,
+  "type": "guided_write",
+  "source_document": "Document 5 — Captain Thomas Preston's testimony, 1770 (11.2 Casefile A)",
+  "source_text": "I saw about 100 people surround the soldier on guard, with clubs and other weapons, threatening to kill him. When I asked my soldiers why they fired without orders, they said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing.",
+  "prompt": "Write a thesis that answers: Was Captain Preston responsible for the Boston Massacre?",
+  "sentence_starter": "Although ___, ___ because ___.",
+  "checklist": [
+    "Does it answer the question with a clear side?",
+    "Could somebody argue the other side?",
+    "Does it give a reason?"
+  ],
+  "model_response": "Although his soldiers fired into the crowd, Captain Preston was not fully responsible for the Boston Massacre, because he says he ordered them not to fire and the crowd was threatening the guard.",
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

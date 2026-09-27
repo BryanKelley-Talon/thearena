@@ -1,0 +1,77 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "Build it: name it, quote it, use it (11.1)",
+  "_skill_lane": "Document Use (DU)",
+  "_ladder_level": 3,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the shipped 11.1 casefiles. Quotes are the casefile's own text.",
+  "skill_line": "DU",
+  "step": 3,
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "Document ___ says “___,” which shows ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "document",
+      "tiles": [
+        {
+          "text": "11",
+          "correct": true
+        },
+        {
+          "text": "9",
+          "correct": false
+        },
+        {
+          "text": "17",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "exact detail",
+      "tiles": [
+        {
+          "text": "a servant for life",
+          "correct": true
+        },
+        {
+          "text": "for during the space of four years",
+          "correct": false
+        },
+        {
+          "text": "Loving and kind father and mother",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "what it shows",
+      "tiles": [
+        {
+          "text": "slavery had no end date, unlike indentured servitude",
+          "correct": true
+        },
+        {
+          "text": "Prince would be free in four years",
+          "correct": false
+        },
+        {
+          "text": "Prince was paid for his work",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Document 11 says “a servant for life,” which shows slavery had no end date, unlike indentured servitude.",
+  "rationale": "The bill of sale for Prince is Document 11. “Four years” is Lowther's contract (Document 9), the opposite point.",
+  "hints": [
+    "The bill of sale is which document?",
+    "Which quote has no end date?"
+  ],
+  "practice_only": true
+}

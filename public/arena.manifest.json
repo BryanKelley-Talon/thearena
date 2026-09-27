@@ -875,7 +875,7 @@
             "EX"
           ],
           "tier": "Foundation",
-          "published": false,
+          "published": true,
           "opens_at": "11.2",
           "content_ref": null,
           "drills": [
@@ -921,7 +921,8 @@
               ]
             }
           ],
-          "blurb": "The “so what.” The sentence most people skip."
+          "blurb": "The “so what.” The sentence most people skip.",
+          "_published_note": "Opened 18:27 2026-09-27 with the 11.2 ladders (all five steps built). FOR BK'S LOOK: confirm in the proof."
         },
         {
           "slug": "civic-principle",
@@ -930,7 +931,7 @@
             "CP"
           ],
           "tier": "Mastery",
-          "published": false,
+          "published": true,
           "opens_at": "11.3",
           "content_ref": null,
           "drills": [
@@ -946,7 +947,8 @@
               ]
             }
           ],
-          "blurb": "Name the idea out loud. Don’t make them guess it."
+          "blurb": "Name the idea out loud. Don’t make them guess it.",
+          "_published_note": "Opened 18:27 2026-09-27 with the 11.2 ladders (all five steps built). FOR BK'S LOOK: confirm in the proof."
         },
         {
           "slug": "outside-evidence",
@@ -955,7 +957,7 @@
             "OE"
           ],
           "tier": "Mastery",
-          "published": false,
+          "published": true,
           "opens_at": "11.3",
           "content_ref": null,
           "drills": [
@@ -971,7 +973,8 @@
               ]
             }
           ],
-          "blurb": "What you know that isn’t on the page."
+          "blurb": "What you know that isn’t on the page.",
+          "_published_note": "Opened 18:27 2026-09-27 with the 11.2 ladders (all five steps built). FOR BK'S LOOK: confirm in the proof."
         }
       ],
       "units": [
@@ -1080,6 +1083,364 @@
                   "published": true
                 }
               ]
+            },
+            {
+              "skill": "TH",
+              "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Match the question to its thesis: 11.1",
+                  "content_ref": "content/ladder-us11r-11.1-th-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the strongest thesis: 11.1",
+                  "content_ref": "content/ladder-us11r-11.1-th-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build the thesis: who self-government was for",
+                  "content_ref": "content/ladder-us11r-11.1-th-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write the thesis: was servitude a good deal?",
+                  "content_ref": "content/ladder-us11r-11.1-th-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5: a thesis with a turn",
+                  "content_ref": "content/ladder-us11r-11.1-th-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "DU",
+              "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Name it, pull the detail: 11.1",
+                  "content_ref": "content/ladder-us11r-11.1-du-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the detail that proves it: 11.1",
+                  "content_ref": "content/ladder-us11r-11.1-du-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: name it, quote it, use it (11.1)",
+                  "content_ref": "content/ladder-us11r-11.1-du-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: evidence of resistance",
+                  "content_ref": "content/ladder-us11r-11.1-du-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5: evidence the writer didn't mean to give",
+                  "content_ref": "content/ladder-us11r-11.1-du-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "slug": "unit-2",
+          "label": "11.2 · Constitutional Foundations",
+          "published": true,
+          "brief_ref": "content/brief-us11r-11.2.json",
+          "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+          "_test_wall": "Sam: none of the 8 reps is on the 11.2 Part I. Add no other MC_BANK/Unit_02 item to this room or the Bowl without asking him.",
+          "activities": [
+            {
+              "type": "stimulus",
+              "label": "Part I reps — 11.2",
+              "published": true,
+              "content_ref": "content/stimulus-11-2.json"
+            },
+            {
+              "type": "matching",
+              "label": "Cause and effect, 1763–1791",
+              "published": true,
+              "content_ref": "content/matching-us11r-11.2-cause-effect.json"
+            },
+            {
+              "type": "matching",
+              "label": "Civic Principles: the seven new",
+              "published": true,
+              "content_ref": "content/matching-us11r-11.2-civic-principles.json"
+            }
+          ],
+          "ladders": [
+            {
+              "skill": "HC",
+              "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Set the scene: 1765 to 1798",
+                  "content_ref": "content/ladder-us11r-11.2-hc-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Best context statement: 11.2",
+                  "content_ref": "content/ladder-us11r-11.2-hc-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build the context: Shays' Rebellion",
+                  "content_ref": "content/ladder-us11r-11.2-hc-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write the context: Washington, 1786",
+                  "content_ref": "content/ladder-us11r-11.2-hc-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5: context for 1786",
+                  "content_ref": "content/ladder-us11r-11.2-hc-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "TH",
+              "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Match the question to its thesis",
+                  "content_ref": "content/ladder-us11r-11.2-th-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the strongest thesis: 11.2",
+                  "content_ref": "content/ladder-us11r-11.2-th-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build the thesis: breaking from Britain",
+                  "content_ref": "content/ladder-us11r-11.2-th-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write the thesis: who was responsible in Boston?",
+                  "content_ref": "content/ladder-us11r-11.2-th-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5: the thesis that admits the other side",
+                  "content_ref": "content/ladder-us11r-11.2-th-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "DU",
+              "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Name it, pull the detail",
+                  "content_ref": "content/ladder-us11r-11.2-du-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the detail that proves it: 11.2",
+                  "content_ref": "content/ladder-us11r-11.2-du-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: name it, quote it, use it",
+                  "content_ref": "content/ladder-us11r-11.2-du-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: evidence from the Articles",
+                  "content_ref": "content/ladder-us11r-11.2-du-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5: pairing documents",
+                  "content_ref": "content/ladder-us11r-11.2-du-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "EX",
+              "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Evidence, then the “so what”",
+                  "content_ref": "content/ladder-us11r-11.2-ex-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the best explanation: 11.2",
+                  "content_ref": "content/ladder-us11r-11.2-ex-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build the explanation: the three-fifths clause",
+                  "content_ref": "content/ladder-us11r-11.2-ex-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write the explanation: the three-fifths clause",
+                  "content_ref": "content/ladder-us11r-11.2-ex-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5: explaining the long run",
+                  "content_ref": "content/ladder-us11r-11.2-ex-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "CP",
+              "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Name the principle: 11.2",
+                  "content_ref": "content/ladder-us11r-11.2-cp-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Which principle is at stake? 11.2",
+                  "content_ref": "content/ladder-us11r-11.2-cp-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: name the principle at stake",
+                  "content_ref": "content/ladder-us11r-11.2-cp-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: the principle behind “no taxes without consent”",
+                  "content_ref": "content/ladder-us11r-11.2-cp-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5: principles in tension",
+                  "content_ref": "content/ladder-us11r-11.2-cp-L5-enrichment.json",
+                  "published": true
+                }
+              ]
+            },
+            {
+              "skill": "OE",
+              "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Bring what you know",
+                  "content_ref": "content/ladder-us11r-11.2-oe-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the best outside evidence: 11.2",
+                  "content_ref": "content/ladder-us11r-11.2-oe-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: bring what you know",
+                  "content_ref": "content/ladder-us11r-11.2-oe-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: outside evidence for Hamilton",
+                  "content_ref": "content/ladder-us11r-11.2-oe-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "From a 4 to a 5: outside evidence that reaches",
+                  "content_ref": "content/ladder-us11r-11.2-oe-L5-enrichment.json",
+                  "published": true
+                }
+              ]
             }
           ]
         }
@@ -1123,8 +1484,8 @@
       ],
       "_blurbs_note": "Six card blurbs, RULED by BK 2026-09-18 13:17 EDT, written verbatim as he approved them — one line per card, second person, no station vocabulary, no acronyms. They are addressed to the student, which is why none of them explains what the card 'drills': the drill names inside the card do that. Curly apostrophes and curly quotes are intentional and are the house typography.",
       "status": "open",
-      "current_unit": "unit-1",
-      "_current_unit_note": "Josh, 2026-09-25 (BK): the course door's gauges follow this unit. Change it when the next unit opens; the old unit's gauges move to its own page under Units.",
+      "current_unit": "unit-2",
+      "_current_unit_note": "Josh 18:27 2026-09-27: door moves to NOW 11.2 on the port of Sam's arena-pack (BK signed 18:11). 11.1 gauges move into the 11.1 room.",
       "skill_lines": {
         "_README": "The course's graded skill lines, in the words the student reads on the scoring page. THIS IS THE CROSSWALK: a student sees a line on their grade, and every station and item that drills it declares the same CODE. Five lines are shared across both courses; the sixth is the course's own essay line and the two are NOT interchangeable.",
         "_contract": "Stations declare skill_lines: [CODE]. Items declare skill_line: CODE. The LABEL is resolved from this list and is never repeated on an item - one place to change a word. A code not in this list is a defect, not a new line.",

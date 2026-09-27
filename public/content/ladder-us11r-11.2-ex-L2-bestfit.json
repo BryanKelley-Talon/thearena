@@ -1,0 +1,60 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Pick the best explanation: 11.2",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "EX",
+  "step": 2,
+  "type": "mc_bestfit",
+  "intro": "Pick the sentence that best explains why the evidence matters.",
+  "items": [
+    {
+      "id": "ex112-01",
+      "stem": "Evidence: Abigail Adams asked John to “remember the ladies.” Which sentence best explains why it matters?",
+      "options": {
+        "1": "Abigail Adams wrote a letter to John Adams in March 1776.",
+        "2": "This shows the fight for liberty in 1776 left women out, and some women knew it.",
+        "3": "John Adams later became the second president.",
+        "4": "Letters were the main way people communicated in 1776."
+      },
+      "correct": "2",
+      "hints": [
+        "Which choice says what the evidence shows, not just what it is?",
+        "Look for “This shows…”"
+      ],
+      "reason": "It goes past what the letter says to why it matters: liberty in 1776 wasn't meant for everyone."
+    },
+    {
+      "id": "ex112-02",
+      "stem": "Evidence: Under Article VIII of the Articles, the states collected the taxes for the national treasury. Which sentence best explains why it matters?",
+      "options": {
+        "1": "Article VIII of the Articles is about taxes.",
+        "2": "Taxes are still collected today.",
+        "3": "This shows Congress had to ask the states for money and couldn't make them pay, so the national government stayed broke.",
+        "4": "The Articles were written in 1781."
+      },
+      "correct": "3",
+      "hints": [
+        "Which choice explains a result?",
+        "Look for “so the national government…”"
+      ],
+      "reason": "It connects the rule to its effect: a Congress that depends on the states for money stays broke."
+    },
+    {
+      "id": "ex112-03",
+      "stem": "Evidence: In Marbury v. Madison, Marshall said the Constitution wins when a law conflicts with it. Which sentence best explains why it matters?",
+      "options": {
+        "1": "This shows the Supreme Court claimed the power to strike down laws, a check on Congress courts still use today.",
+        "2": "Marbury v. Madison was decided in 1803.",
+        "3": "John Marshall was Chief Justice.",
+        "4": "The Constitution has seven articles."
+      },
+      "correct": "1",
+      "hints": [
+        "Three choices are facts. Which one explains?",
+        "Look for what the Court gained."
+      ],
+      "reason": "It says what the ruling did and why it still matters. The other three are facts with no “so what.”"
+    }
+  ]
+}

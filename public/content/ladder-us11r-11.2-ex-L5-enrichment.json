@@ -1,0 +1,61 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "From a 4 to a 5: explaining the long run",
+  "_skill_lane": "Explanation (EX)",
+  "_ladder_level": 5,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "EX",
+  "step": 5,
+  "type": "enrichment",
+  "design_intent": "Not skill practice. A kid here already writes at a 4. This is the gold dust that turns a 4 into a 5: more content, a wider lens, and a named technique.",
+  "tidbits": [
+    {
+      "id": "td-01",
+      "text": "The three-fifths clause gave slaveholding states extra seats in the House, and extra electoral votes for president too, for decades after 1787.",
+      "thread": "Thread 1 — Is There One America?",
+      "source_pointer": "11.2 Casefile B, Day 8 WHAT YOU NEED TO KNOW; wider lens"
+    },
+    {
+      "id": "td-02",
+      "text": "Some historians argue Jefferson's win in the 1800 election depended on the electoral votes the three-fifths clause gave the South.",
+      "thread": "Thread 1 and Thread 4",
+      "source_pointer": "Wider-lens connection; one historian's view, debated"
+    },
+    {
+      "id": "td-03",
+      "text": "On the Score Guide, a 5 in Explanation means your analysis outweighs your description. More “which means,” less retelling.",
+      "thread": "Writing move",
+      "source_pointer": "11.2 Casefile B Score Guide, Explanation"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "The three-fifths clause counted enslaved people for seats, because the South wanted power, which means slaveholding states got more seats in Congress.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "The three-fifths clause counted enslaved people for seats, because Southern delegates wanted more power in Congress, which means slaveholding states gained seats and electoral votes from people who could not vote, power they could use to protect slavery for decades after 1787.",
+      "what_changed": "The 4 explains the immediate effect. The 5 follows the “which means” one step further, to what that power was used for and for how long."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Two-step “which means”",
+      "explanation": "After your first “which means,” ask “and so?” once more. The second step is usually where the 5 lives."
+    },
+    {
+      "name": "Connect to the thread",
+      "explanation": "Say how this evidence fits a bigger pattern, like Thread 1's question of who counts. It shows the evidence matters beyond one document."
+    }
+  ],
+  "try_it": {
+    "prompt": "Think of a rule at school. Finish this: “The rule says ___, because ___, which means ___.” Then ask “and so?” one more time.",
+    "status": "Untimed, optional, never scored, never saved — practice reflection only."
+  },
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

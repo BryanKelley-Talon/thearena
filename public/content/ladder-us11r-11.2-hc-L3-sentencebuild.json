@@ -1,0 +1,77 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Build the context: Shays' Rebellion",
+  "_skill_lane": "Historical Context (HC)",
+  "_ladder_level": 3,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "HC",
+  "step": 3,
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "In ___, ___, which is why ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "year",
+      "tiles": [
+        {
+          "text": "1786",
+          "correct": true
+        },
+        {
+          "text": "1776",
+          "correct": false
+        },
+        {
+          "text": "1791",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "what was happening",
+      "tiles": [
+        {
+          "text": "Massachusetts farmers in debt shut down the courts, and Congress had no army to respond",
+          "correct": true
+        },
+        {
+          "text": "the Stamp Act Congress met in New York",
+          "correct": false
+        },
+        {
+          "text": "Britain closed Boston Harbor",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "why it matters",
+      "tiles": [
+        {
+          "text": "leaders met in Philadelphia to write a stronger government",
+          "correct": true
+        },
+        {
+          "text": "the Articles of Confederation were written",
+          "correct": false
+        },
+        {
+          "text": "the Bill of Rights was added",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "In 1786, Massachusetts farmers in debt shut down the courts, and Congress had no army to respond, which is why leaders met in Philadelphia to write a stronger government.",
+  "rationale": "Shays' Rebellion (1786–87) is the scene behind Documents 12 and 13. Wrong tiles are wrong on date, event, or consequence.",
+  "hints": [
+    "Start with the year Washington wrote Document 12.",
+    "What happened in Massachusetts, and what did leaders decide to do about it?"
+  ],
+  "practice_only": true
+}

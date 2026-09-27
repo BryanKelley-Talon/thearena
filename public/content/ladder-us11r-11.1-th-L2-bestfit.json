@@ -1,0 +1,63 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "Pick the strongest thesis: 11.1",
+  "_skill_lane": "Thesis (TH)",
+  "_ladder_level": 2,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the shipped 11.1 casefiles. Quotes are the casefile's own text.",
+  "skill_line": "TH",
+  "step": 2,
+  "type": "mc_bestfit",
+  "intro": "Pick the sentence that works best as a thesis: it answers the question with a claim somebody could argue with.",
+  "items": [
+    {
+      "id": "th111-01",
+      "stem": "Question: The thirteen colonies grew. Who paid for that growth? Which is the strongest thesis?",
+      "options": {
+        "1": "The thirteen colonies grew between 1607 and 1763.",
+        "2": "Enslaved Africans and Native nations paid the heaviest price for the colonies' growth, in lost freedom and lost land.",
+        "3": "This essay is about the colonies.",
+        "4": "Tobacco was grown in Virginia."
+      },
+      "correct": "2",
+      "hints": [
+        "A fact isn't a thesis. Which one makes a claim?",
+        "Look for the answer that names who paid."
+      ],
+      "reason": "It answers the unit question with a claim somebody could argue with. The others are a fact, a topic, and something off the question."
+    },
+    {
+      "id": "th111-02",
+      "stem": "Question: Was Richard Frethorne's indenture worth it? Which is the strongest thesis?",
+      "options": {
+        "1": "Richard Frethorne wrote a letter to his parents in 1623.",
+        "2": "Indentured servants were bound to work for years.",
+        "3": "Frethorne's indenture was not worth it, because he faced sickness, hunger and fear with no way home.",
+        "4": "Virginia is a state today."
+      },
+      "correct": "3",
+      "hints": [
+        "Which choice takes a side on “worth it”?",
+        "Look for “because.”"
+      ],
+      "reason": "It takes a side and gives three reasons from Document 10."
+    },
+    {
+      "id": "th111-03",
+      "stem": "Question: What does Venture Smith's story show about slavery? Which is the strongest thesis?",
+      "options": {
+        "1": "Venture Smith's story shows that enslaved people resisted and survived a system built to own them for life.",
+        "2": "Venture Smith was kidnapped in 1738.",
+        "3": "Slavery was bad.",
+        "4": "Rum was traded in the colonies."
+      },
+      "correct": "1",
+      "hints": [
+        "“Slavery was bad” is true, but too general to argue with.",
+        "Look for a specific claim about what his story shows."
+      ],
+      "reason": "It makes a specific claim about Document 12. The second choice is a fact, and the third is too general to prove."
+    }
+  ]
+}

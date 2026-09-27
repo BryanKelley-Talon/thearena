@@ -1,0 +1,90 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Set the scene: 1765 to 1798",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "HC",
+  "step": 1,
+  "type": "matching",
+  "intro": "Match each event to what was going on around it.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Stamp Act, 1765"
+    },
+    {
+      "key": "b",
+      "label": "Common Sense, January 1776"
+    },
+    {
+      "key": "c",
+      "label": "Articles of Confederation, 1781"
+    },
+    {
+      "key": "d",
+      "label": "Constitutional Convention, 1787"
+    },
+    {
+      "key": "e",
+      "label": "Sedition Act, 1798"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Britain is deep in debt after the French and Indian War and wants the colonies to help pay"
+    },
+    {
+      "key": "2",
+      "label": "The fighting has started, but many colonists still hope to make peace with the king"
+    },
+    {
+      "key": "3",
+      "label": "The states have just fought a war against a king and fear any strong central power"
+    },
+    {
+      "key": "4",
+      "label": "Shays' Rebellion has shown the national government can't keep order"
+    },
+    {
+      "key": "5",
+      "label": "The country fears war with France, and two political parties are attacking each other in print"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "Thomas Whately (Document 2) says Britain carries a huge debt from a war fought to protect the colonies.",
+    "b": "Paine writes against people who say, “Come, come, we shall be friends again” (Document 6). Not everyone wanted independence yet.",
+    "c": "The Congress fighting a king built a weak central government on purpose (Document 11).",
+    "d": "Farmers shut the Massachusetts courts in 1786–87, and Congress had no force of its own.",
+    "e": "Washington warned about parties in 1796. Two years later, with war with France feared, one party passed a law used against the other's editors."
+  },
+  "hints": {
+    "a": [
+      "What war had just ended, and who paid for it?",
+      "Look for Britain's debt."
+    ],
+    "b": [
+      "Paine is arguing with people who still want to be friends with Britain.",
+      "Look for hope of peace with the king."
+    ],
+    "c": [
+      "Who had the states just been fighting?",
+      "Look for fear of strong central power."
+    ],
+    "d": [
+      "What happened in Massachusetts in 1786–87?",
+      "Look for a rebellion the government couldn't stop."
+    ],
+    "e": [
+      "Which country did Americans fear a war with in 1798?",
+      "Look for France and political parties."
+    ]
+  }
+}

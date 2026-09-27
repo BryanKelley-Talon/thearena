@@ -183,8 +183,8 @@ export function GaugeFace({ value = 0, dark = false, size = 160 }) {
 
 export const statusLine = top => (top ? `Needle at ${top}` : 'Not started')
 
-export function SkillGauges({ course, unit, prog, onOpen }) {
-  const skills = roomSkills(course, unit)
+export function SkillGauges({ course, unit, prog, onOpen, builtOnly = false }) {
+  const skills = roomSkills(course, unit).filter(s => !builtOnly || s.ladder)
   if (!skills.length) return null
   return (
     <div className="gauges">

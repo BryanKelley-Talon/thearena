@@ -1,0 +1,77 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Build the thesis: breaking from Britain",
+  "_skill_lane": "Thesis (TH)",
+  "_ladder_level": 3,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "TH",
+  "step": 3,
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "Although ___, ___ because ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "the other side",
+      "tiles": [
+        {
+          "text": "some colonists, like Charles Inglis, feared a war with Britain would ruin them",
+          "correct": true
+        },
+        {
+          "text": "Thomas Jefferson wrote the Declaration",
+          "correct": false
+        },
+        {
+          "text": "the colonies were in North America",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "your claim",
+      "tiles": [
+        {
+          "text": "the colonists were right to declare independence",
+          "correct": true
+        },
+        {
+          "text": "the Declaration of Independence was written",
+          "correct": false
+        },
+        {
+          "text": "this answer is about the Revolution",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "your reason",
+      "tiles": [
+        {
+          "text": "Britain kept taxing and ruling them without their consent",
+          "correct": true
+        },
+        {
+          "text": "July 4 is a holiday today",
+          "correct": false
+        },
+        {
+          "text": "Paine wrote Common Sense in 1776",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Although some colonists, like Charles Inglis, feared a war with Britain would ruin them, the colonists were right to declare independence because Britain kept taxing and ruling them without their consent.",
+  "rationale": "“Although” admits the strongest point on the other side (Inglis, Document 7). Then the claim, then the reason. Wrong tiles are facts, not claims or reasons.",
+  "hints": [
+    "The first blank is the other side's best point.",
+    "The claim takes a side. The reason says why."
+  ],
+  "practice_only": true
+}

@@ -1,0 +1,75 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Pick the best outside evidence: 11.2",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "OE",
+  "step": 2,
+  "type": "mc_bestfit",
+  "intro": "Outside evidence is a relevant fact you know that isn't in the document. Pick the best one.",
+  "items": [
+    {
+      "id": "oe112-01",
+      "stem": "You're writing about Document 12, Washington's 1786 letter. Which is the best outside evidence?",
+      "options": {
+        "1": "“We are fast heading toward anarchy and confusion.”",
+        "2": "Shays' Rebellion: Massachusetts farmers shut down courts in 1786–87.",
+        "3": "Washington crossed the Delaware River in 1776.",
+        "4": "Washington was the greatest American ever."
+      },
+      "correct": "2",
+      "hints": [
+        "A quote from the document isn't outside evidence.",
+        "Which fact is both outside the letter and about 1786?"
+      ],
+      "reason": "Shays' Rebellion is what Washington is reacting to, and the letter never names it. The crossing is true but off the point.",
+      "stimulus": {
+        "kind": "text",
+        "content": "No morning ever dawned brighter than ours did — and no day was ever more clouded than the present. Without some change in our political thinking, the structure we have spent seven years raising, at the cost of much blood and treasure, must fall. We are fast heading toward anarchy and confusion.\n\nA letter I have just received from General Knox, who has just returned from Massachusetts, is full of sad information about the temper and designs of a considerable part of that people.\n\nWhat stronger evidence can be given of the weakness of our governments than these disorders? If no power exists to check them, what security has a man of life, liberty, or property? Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole.",
+        "citation": "Source: George Washington to James Madison, November 5, 1786 (adapted)"
+      }
+    },
+    {
+      "id": "oe112-02",
+      "stem": "You're writing about Document 13, Hamilton's Federalist No. 15. Which is the best outside evidence?",
+      "options": {
+        "1": "“the frail and tottering building seems ready to fall upon our heads”",
+        "2": "Hamilton appears on the ten-dollar bill.",
+        "3": "Hamilton's argument is convincing.",
+        "4": "The Federalist Papers were 85 essays by Hamilton, Madison and Jay, written to win support for the Constitution in New York."
+      },
+      "correct": "4",
+      "hints": [
+        "One choice is a quote, one is an opinion, one is off the point.",
+        "Which fact explains why the essay was written?"
+      ],
+      "reason": "It's relevant and it isn't in the document: who wrote the Federalist Papers, and why.",
+      "stimulus": {
+        "kind": "text",
+        "content": "The next question to examine is whether the present Confederation is enough to preserve the Union. Under the Confederation, all thirteen separate sovereign wills must agree before any important measure of the Union can be carried out. What has happened is what should have been expected: the measures of the Union have not been carried out. The failures of the states have grown, step by step, until they have stopped all the wheels of the national government and brought them to a halt.\n\nEach state, listening to the persuasive voice of its own immediate interest, has withdrawn its support, until the frail and tottering building seems ready to fall upon our heads and crush us beneath its ruins.",
+        "citation": "Source: Alexander Hamilton, The Federalist Papers: No. 15, December 1, 1787 (adapted)"
+      }
+    },
+    {
+      "id": "oe112-03",
+      "stem": "You're writing about Document 8, the Declaration of Independence. Which is the best outside evidence?",
+      "options": {
+        "1": "When the Declaration was signed, slavery was legal in all thirteen colonies.",
+        "2": "“all men are created equal”",
+        "3": "July 4 is a national holiday today.",
+        "4": "The Declaration is the best document ever written."
+      },
+      "correct": "1",
+      "hints": [
+        "A quote from the document isn't outside evidence.",
+        "Which fact helps you argue about the word “all”?"
+      ],
+      "reason": "It's a fact the Declaration doesn't say, and it tests the Declaration's promise.",
+      "stimulus": {
+        "kind": "text",
+        "content": "We hold these truths to be self-evident, that all men are created equal, that they are given by their Creator certain rights that cannot be taken away, and that among these are Life, Liberty and the pursuit of Happiness. To protect these rights, governments are created, and they get their power from the consent of the governed. Whenever any government destroys these rights, it is the right of the people to change it or get rid of it, and to create a new government.",
+        "citation": "Source: Declaration of Independence, July 4, 1776 (adapted)"
+      }
+    }
+  ]
+}

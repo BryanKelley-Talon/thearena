@@ -1,0 +1,24 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Write the context: Washington, 1786",
+  "_skill_lane": "Historical Context (HC)",
+  "_ladder_level": 4,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "HC",
+  "step": 4,
+  "type": "guided_write",
+  "source_document": "Document 12 — Washington to Madison, November 5, 1786 (11.2 Casefile B)",
+  "source_text": "What stronger evidence can be given of the weakness of our governments than these disorders? If no power exists to check them, what security has a man of life, liberty, or property? Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole.",
+  "prompt": "Write 2–3 sentences of historical context for this letter.",
+  "sentence_starter": "In the fall of 1786, ___",
+  "checklist": [
+    "Did you name when and where?",
+    "Did you name what was happening at the time?",
+    "Did you connect it to why the letter matters?"
+  ],
+  "model_response": "In the fall of 1786, the United States was governed by the Articles of Confederation, and armed farmers in Massachusetts were shutting down courts to stop the seizure of their farms. Congress had no army and no money to respond, which is why Washington, writing privately to Madison, feared the country was heading toward ruin.",
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

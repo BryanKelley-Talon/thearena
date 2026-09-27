@@ -1,0 +1,90 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Evidence, then the “so what”",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "EX",
+  "step": 1,
+  "type": "matching",
+  "intro": "Match each piece of evidence to what it means.",
+  "left": [
+    {
+      "key": "a",
+      "label": "The Stamp Act Congress says only the colonists' own representatives can tax them."
+    },
+    {
+      "key": "b",
+      "label": "Under the Articles, any change needed every state to agree."
+    },
+    {
+      "key": "c",
+      "label": "The three-fifths clause counted enslaved people for seats but gave them no vote."
+    },
+    {
+      "key": "d",
+      "label": "Washington writes that the nation is “fast heading toward anarchy.”"
+    },
+    {
+      "key": "e",
+      "label": "The Sedition Act jailed editors who criticized the president."
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "…which means Parliament's tax broke a right the colonists believed they already had."
+    },
+    {
+      "key": "2",
+      "label": "…which means one state could block any change to the Articles."
+    },
+    {
+      "key": "3",
+      "label": "…which means slaveholding states gained power in Congress from people who had no say."
+    },
+    {
+      "key": "4",
+      "label": "…which means even the country's most trusted leader thought the Articles were failing."
+    },
+    {
+      "key": "5",
+      "label": "…which means the First Amendment's promise was tested only seven years after it was made."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "The evidence is the claim; the explanation is why it mattered: a right taken away.",
+    "b": "Article XIII required every state legislature to agree, so a single state held a veto.",
+    "c": "More seats for the South, counted from people who could not vote.",
+    "d": "It matters who said it: the hero of the Revolution was scared.",
+    "e": "1791 to 1798: the promise of free speech and press was tested fast."
+  },
+  "hints": {
+    "a": [
+      "What did the colonists believe they already had?",
+      "Look for “a right.”"
+    ],
+    "b": [
+      "If everyone has to agree, what can one “no” do?",
+      "Look for “one state could block.”"
+    ],
+    "c": [
+      "Who got the extra seats?",
+      "Look for slaveholding states."
+    ],
+    "d": [
+      "Why does it matter that Washington said it?",
+      "Look for “most trusted leader.”"
+    ],
+    "e": [
+      "When was the First Amendment ratified?",
+      "Look for “seven years.”"
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Which principle is at stake? 11.2",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "CP",
+  "step": 2,
+  "type": "mc_bestfit",
+  "intro": "Pick the principle from your card.",
+  "items": [
+    {
+      "id": "cp112-01",
+      "stem": "Under the Constitution, Congress makes laws, the president carries them out, and the courts judge them. Which principle is this?",
+      "options": {
+        "1": "Checks and Balances",
+        "2": "Separation of Powers",
+        "3": "Federalism",
+        "4": "Limited Government"
+      },
+      "correct": "2",
+      "hints": [
+        "It's about each branch having its own job.",
+        "Look for the word that means split apart."
+      ],
+      "reason": "Separation of Powers: three branches, three jobs. Checks and Balances is about branches blocking each other."
+    },
+    {
+      "id": "cp112-02",
+      "stem": "Anti-Federalists worry that the national government will crush the states. Which principle are they arguing about?",
+      "options": {
+        "1": "Due Process",
+        "2": "Judicial Review",
+        "3": "Federalism",
+        "4": "Natural Rights"
+      },
+      "correct": "3",
+      "hints": [
+        "Who is on each side of the worry?",
+        "The nation versus the states."
+      ],
+      "reason": "Federalism: how power is divided between the national government and the states."
+    },
+    {
+      "id": "cp112-03",
+      "stem": "The Bill of Rights says no one can lose life, liberty or property without fair legal steps. Which principle is this?",
+      "options": {
+        "1": "Equal Protection",
+        "2": "Rule of Law",
+        "3": "Popular Sovereignty (consent of the governed)",
+        "4": "Due Process"
+      },
+      "correct": "4",
+      "hints": [
+        "The key words are “fair legal steps.”",
+        "Think of a trial."
+      ],
+      "reason": "Due Process: government must follow fair steps before it takes your life, liberty, or property."
+    }
+  ]
+}

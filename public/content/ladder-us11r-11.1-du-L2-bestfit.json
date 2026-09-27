@@ -1,0 +1,68 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "Pick the detail that proves it: 11.1",
+  "_skill_lane": "Document Use (DU)",
+  "_ladder_level": 2,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the shipped 11.1 casefiles. Quotes are the casefile's own text.",
+  "skill_line": "DU",
+  "step": 2,
+  "type": "mc_bestfit",
+  "intro": "Pick the detail that best supports the claim.",
+  "items": [
+    {
+      "id": "du111-01",
+      "stem": "Claim: Indentured servitude had an end date, and slavery did not. Which details best support it?",
+      "options": {
+        "1": "Document 10: “Loving and kind father and mother”",
+        "2": "Document 15: “named Tom, 25 Years old”",
+        "3": "Document 9: “for during the space of four years” and Document 11: “a servant for life”",
+        "4": "Document 12: “It was 1738”"
+      },
+      "correct": "3",
+      "hints": [
+        "The claim compares two things. Which choice uses two documents?",
+        "Look for a number of years and “for life.”"
+      ],
+      "reason": "One detail shows a set term and the other shows no end at all. Together they prove the difference."
+    },
+    {
+      "id": "du111-02",
+      "stem": "Claim: Enslaved people resisted slavery. Which detail best supports it?",
+      "options": {
+        "1": "Document 11: “To be sold at public auction”",
+        "2": "Document 15: “Has been several times captured, and escaped again before he could be delivered”",
+        "3": "Document 9: “the quantity of 50 acres of land in Virginia”",
+        "4": "Document 13: Massachusetts becomes the first colony to legalize slavery."
+      },
+      "correct": "2",
+      "hints": [
+        "Which detail shows someone fighting back?",
+        "Look for escaping."
+      ],
+      "reason": "Tom escaped again and again. The ad was written to catch him, and it proves he resisted."
+    },
+    {
+      "id": "du111-03",
+      "stem": "Claim: Life for indentured servants could be brutal. Which detail from Document 10 best supports it?",
+      "options": {
+        "1": "“for since I came out of the ship I never ate anything but peas, and loblollie”",
+        "2": "“Loving and kind father and mother”",
+        "3": "“This is to let you understand that I your child”",
+        "4": "Document 9: “sufficient meat and drink clothing”"
+      },
+      "correct": "1",
+      "hints": [
+        "Which detail describes hardship?",
+        "Look for what he eats."
+      ],
+      "reason": "Peas and water gruel, nothing else since he got off the ship. That's the brutal detail. Lowther's contract promised the opposite.",
+      "stimulus": {
+        "kind": "text",
+        "content": "Loving and kind father and mother,\n…This is to let you understand that I your child (though at 16 years hardly a child) am in a most heavy case by reason of the country, [which] is such that it causes much sickness, such as the scurvy and the dysentery and diverse other diseases… And when we are sick there is nothing to comfort us; for since I came out of the ship I never ate anything but peas, and loblollie (that is, water gruel)…",
+        "citation": "Source: Virtual Jamestown. Richard Frethorne to his parents, 1623."
+      }
+    }
+  ]
+}

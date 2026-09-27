@@ -1,0 +1,61 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "From a 4 to a 5: context for 1786",
+  "_skill_lane": "Historical Context (HC)",
+  "_ladder_level": 5,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "HC",
+  "step": 5,
+  "type": "enrichment",
+  "design_intent": "Not skill practice. A kid here already writes at a 4. This is the gold dust that turns a 4 into a 5: more content, a wider lens, and a named technique.",
+  "tidbits": [
+    {
+      "id": "td-01",
+      "text": "Daniel Shays was a Continental Army veteran. Many of the rebels had fought in the Revolution and came home to debts and taxes they couldn't pay.",
+      "thread": "Thread 3 — The Role and Size of Government",
+      "source_pointer": "Casefile B, Day 7 WHAT YOU NEED TO KNOW; wider-lens detail"
+    },
+    {
+      "id": "td-02",
+      "text": "Washington had retired to Mount Vernon. Shays' Rebellion helped convince him to come to Philadelphia in 1787, where he presided over the Convention.",
+      "thread": "Thread 3 and Thread 4",
+      "source_pointer": "Wider-lens connection to Document 12"
+    },
+    {
+      "id": "td-03",
+      "text": "The Threads card's question for this era: “Can a government be too weak to protect democracy — just as it can be too strong?” Context for 1786 is the “too weak” half of that question.",
+      "thread": "Thread 3 — the era question",
+      "source_pointer": "Threads card, Thread 3, 1781–1787"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "In 1786, farmers in Massachusetts rebelled, and the government under the Articles couldn't stop them, which is why Washington was worried.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "In the fall of 1786, just ten years after declaring independence from a king with too much power, Americans were living under a national government with too little: Congress had no army and no money, so when debt-ridden farmers shut down Massachusetts courts, only a privately funded army could stop them, which is why Washington warned Madison the country was heading toward ruin.",
+      "what_changed": "The 4 names the event. The 5 reaches back to 1776 and names the swing from too much power to too little, so the context explains the whole problem, not just one rebellion."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Reach-back",
+      "explanation": "Name one earlier moment that explains how things got here. Here, 1776 explains why the Articles were weak on purpose."
+    },
+    {
+      "name": "Name the swing",
+      "explanation": "Say what the country was swinging from and to: too much power, then too little. It shows you see the pattern."
+    }
+  ],
+  "try_it": {
+    "prompt": "Washington worried a government could be too weak to protect people. When have you seen a group (a team, a club, a class) struggle because nobody had the power to make a decision stick?",
+    "status": "Untimed, optional, never scored, never saved — practice reflection only."
+  },
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

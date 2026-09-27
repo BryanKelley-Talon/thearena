@@ -1,0 +1,90 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Name the principle: 11.2",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "CP",
+  "step": 1,
+  "type": "matching",
+  "intro": "Match each moment to the principle on your card.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Colonists say only their own elected assemblies can tax them (1765)"
+    },
+    {
+      "key": "b",
+      "label": "The Declaration says government gets its power from the consent of the governed (1776)"
+    },
+    {
+      "key": "c",
+      "label": "Madison says each branch needs the power to resist the others (1788)"
+    },
+    {
+      "key": "d",
+      "label": "The Bill of Rights protects speech, press and religion (1791)"
+    },
+    {
+      "key": "e",
+      "label": "McCulloch v. Maryland: a state can't tax the national bank (1819)"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Representative Government"
+    },
+    {
+      "key": "2",
+      "label": "Popular Sovereignty (consent of the governed)"
+    },
+    {
+      "key": "3",
+      "label": "Checks and Balances"
+    },
+    {
+      "key": "4",
+      "label": "Individual Rights (civil liberties)"
+    },
+    {
+      "key": "5",
+      "label": "Federalism"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "The card: the people elect officials to make decisions for them.",
+    "b": "The card: government's power comes from the people, and it rules only with their agreement.",
+    "c": "Federalist 51. The card: each branch can block or limit the others.",
+    "d": "The First Amendment. The card: freedoms government can't take away.",
+    "e": "The card: when the nation and a state clash, valid federal law wins."
+  },
+  "hints": {
+    "a": [
+      "Who do the colonists say gets to tax them?",
+      "Look for the principle about electing officials."
+    ],
+    "b": [
+      "Where does the power come from?",
+      "Consent of the governed sits inside one principle."
+    ],
+    "c": [
+      "Branches resisting each other means what?",
+      "Look for block or limit."
+    ],
+    "d": [
+      "Think of the First Amendment.",
+      "Also called civil liberties."
+    ],
+    "e": [
+      "It's a state against the nation.",
+      "Look for the principle about levels of government."
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "From a 4 to a 5: a thesis with a turn",
+  "_skill_lane": "Thesis (TH)",
+  "_ladder_level": 5,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the shipped 11.1 casefiles. Quotes are the casefile's own text.",
+  "skill_line": "TH",
+  "step": 5,
+  "type": "enrichment",
+  "design_intent": "Not skill practice. A kid here already writes at a 4. This is the gold dust that turns a 4 into a 5: more content, a wider lens, and a named technique.",
+  "tidbits": [
+    {
+      "id": "td-01",
+      "text": "Richard Lowther's 1627 contract promised food, clothing and 50 acres when his four years were up. Frethorne's letter, above, shows what that kind of promise could look like in practice. A 5 thesis uses the gap between the two.",
+      "thread": "Thread 1",
+      "source_pointer": "11.1 Casefile B, Documents 9 and 10"
+    },
+    {
+      "id": "td-02",
+      "text": "The unit question asks two things: what the growth cost, and who paid. A 5 answers both in one sentence.",
+      "thread": "Writing move",
+      "source_pointer": "11.1 unit question"
+    },
+    {
+      "id": "td-03",
+      "text": "“Although” shows you know the other side. A thesis that admits the best counterpoint is harder to knock down.",
+      "thread": "Writing move",
+      "source_pointer": "The casefile's thesis frame"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "Indentured servitude was a bad deal because servants got sick and went hungry.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "Although Lowther's contract promised food, clothing and 50 acres, indentured servitude was a bad deal for many servants, because what they actually got, in letters like Frethorne's, was disease, hunger and fear, a gap between the promise and the life that made the colonies' growth cheap for planters and costly for servants.",
+      "what_changed": "The 4 takes a side. The 5 admits the promise first, names the gap between promise and reality, and connects it to the unit question: who paid."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Concede, then claim",
+      "explanation": "Start with the other side's best point, then take your side. “Although the contract promised ___” is a strong way in."
+    },
+    {
+      "name": "Answer both halves",
+      "explanation": "When a question asks two things, answer both. “What did it cost, and who paid?” wants both in one sentence."
+    }
+  ],
+  "try_it": {
+    "prompt": "Think of a deal that looked good on paper but didn't turn out that way, like a job, a phone plan, or a game. Write it as “Although ___, ___ because ___.”",
+    "status": "Untimed, optional, never scored, never saved — practice reflection only."
+  },
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

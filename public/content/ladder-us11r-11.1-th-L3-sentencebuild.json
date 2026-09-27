@@ -1,0 +1,77 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "Build the thesis: who self-government was for",
+  "_skill_lane": "Thesis (TH)",
+  "_ladder_level": 3,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the shipped 11.1 casefiles. Quotes are the casefile's own text.",
+  "skill_line": "TH",
+  "step": 3,
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "Although ___, ___ because ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "the other side",
+      "tiles": [
+        {
+          "text": "the Fundamental Orders let Connecticut settlers elect their own leaders",
+          "correct": true
+        },
+        {
+          "text": "Connecticut is in New England",
+          "correct": false
+        },
+        {
+          "text": "Blackstone was an English lawyer",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "your claim",
+      "tiles": [
+        {
+          "text": "colonial self-government did not include everyone",
+          "correct": true
+        },
+        {
+          "text": "colonial self-government existed",
+          "correct": false
+        },
+        {
+          "text": "this answer is about Connecticut",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "your reason",
+      "tiles": [
+        {
+          "text": "married women lost their legal identity under coverture",
+          "correct": true
+        },
+        {
+          "text": "Connecticut had many towns",
+          "correct": false
+        },
+        {
+          "text": "the colonies were near the ocean",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Although the Fundamental Orders let Connecticut settlers elect their own leaders, colonial self-government did not include everyone because married women lost their legal identity under coverture.",
+  "rationale": "The Documents 17 and 18 pair from 11.1 Casefile B: self-government was real (Document 17), and it left out married women (Document 18).",
+  "hints": [
+    "The first blank is the best point for the other side.",
+    "The reason should prove somebody was left out."
+  ],
+  "practice_only": true
+}

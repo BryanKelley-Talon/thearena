@@ -1,0 +1,60 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Pick the strongest thesis: 11.2",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "TH",
+  "step": 2,
+  "type": "mc_bestfit",
+  "intro": "Pick the sentence that works best as a thesis: it answers the question with a claim somebody could argue with.",
+  "items": [
+    {
+      "id": "th112-01",
+      "stem": "Question: Why did the colonists declare independence in 1776? Which is the strongest thesis?",
+      "options": {
+        "1": "The Declaration of Independence was signed on July 4, 1776.",
+        "2": "This essay will talk about the Declaration of Independence.",
+        "3": "The colonists declared independence because Britain kept taxing and ruling them without their consent.",
+        "4": "Thomas Jefferson was a Virginian who later became president."
+      },
+      "correct": "3",
+      "hints": [
+        "A fact isn't a thesis. Which one makes a claim?",
+        "Look for the sentence that answers “why” with “because.”"
+      ],
+      "reason": "It answers the question and gives a reason somebody could argue with. The others are a fact, a topic, and something off the question."
+    },
+    {
+      "id": "th112-02",
+      "stem": "Question: Why did delegates meet in Philadelphia in 1787? Which is the strongest thesis?",
+      "options": {
+        "1": "The Constitutional Convention met in Philadelphia.",
+        "2": "Delegates met in 1787 because Shays' Rebellion showed the Articles left the nation too weak to keep order.",
+        "3": "There were many problems in the 1780s.",
+        "4": "George Washington was a general in the Revolution."
+      },
+      "correct": "2",
+      "hints": [
+        "Which sentence answers “why”?",
+        "Look for a specific reason, not a general one."
+      ],
+      "reason": "It answers why, with a specific cause. “Many problems” is too general to argue with."
+    },
+    {
+      "id": "th112-03",
+      "stem": "Question: Did the Declaration's promise of equality include everyone? Which is the strongest thesis?",
+      "options": {
+        "1": "The Declaration says all men are created equal.",
+        "2": "Equality is important.",
+        "3": "Abigail Adams was married to John Adams.",
+        "4": "Although it promised that all men are created equal, the Declaration left out enslaved people and women."
+      },
+      "correct": "4",
+      "hints": [
+        "Quoting the document isn't answering the question.",
+        "Look for “Although ___, ___.”"
+      ],
+      "reason": "It takes a side and names who was left out. The first choice only repeats the document."
+    }
+  ]
+}

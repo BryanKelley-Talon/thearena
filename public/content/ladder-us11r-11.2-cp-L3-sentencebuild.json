@@ -1,0 +1,77 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Build it: name the principle at stake",
+  "_skill_lane": "Civic Principle (CP)",
+  "_ladder_level": 3,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "CP",
+  "step": 3,
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "The ___ put the principle of ___ at stake, because ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "the moment",
+      "tiles": [
+        {
+          "text": "Sedition Act of 1798",
+          "correct": true
+        },
+        {
+          "text": "Stamp Act of 1765",
+          "correct": false
+        },
+        {
+          "text": "Articles of Confederation",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "the principle, from your card",
+      "tiles": [
+        {
+          "text": "Individual Rights (civil liberties)",
+          "correct": true
+        },
+        {
+          "text": "Federalism",
+          "correct": false
+        },
+        {
+          "text": "Judicial Review",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "because",
+      "tiles": [
+        {
+          "text": "it punished people for speaking and printing criticism of the government",
+          "correct": true
+        },
+        {
+          "text": "it split power between the nation and the states",
+          "correct": false
+        },
+        {
+          "text": "it let courts strike down laws",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "The Sedition Act of 1798 put the principle of Individual Rights (civil liberties) at stake, because it punished people for speaking and printing criticism of the government.",
+  "rationale": "Name the principle with the card's words, then show why it's at stake. The Sedition Act tested the First Amendment seven years after it was ratified.",
+  "hints": [
+    "Which law jailed newspaper editors?",
+    "Speech and press are which principle on your card?"
+  ],
+  "practice_only": true
+}

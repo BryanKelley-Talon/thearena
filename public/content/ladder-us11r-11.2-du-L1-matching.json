@@ -1,0 +1,90 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Name it, pull the detail",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "DU",
+  "step": 1,
+  "type": "matching",
+  "intro": "Match each document to an exact detail from it.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Document 3 · the Stamp Act Congress, 1765"
+    },
+    {
+      "key": "b",
+      "label": "Document 8 · the Declaration of Independence, 1776"
+    },
+    {
+      "key": "c",
+      "label": "Document 10 · Abigail Adams to John Adams, 1776"
+    },
+    {
+      "key": "d",
+      "label": "Document 11 · the Articles of Confederation, 1781"
+    },
+    {
+      "key": "e",
+      "label": "Document 12 · Washington to Madison, 1786"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "“no taxes be put on them without their own consent”"
+    },
+    {
+      "key": "2",
+      "label": "“they get their power from the consent of the governed”"
+    },
+    {
+      "key": "3",
+      "label": "“remember the ladies”"
+    },
+    {
+      "key": "4",
+      "label": "“each state shall have one vote”"
+    },
+    {
+      "key": "5",
+      "label": "“We are fast heading toward anarchy and confusion.”"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "The Stamp Act Congress's main complaint, in its own words.",
+    "b": "The Declaration's line about where government's power comes from.",
+    "c": "Her request to her husband about the new laws.",
+    "d": "Article V: every state, big or small, got one vote in Congress.",
+    "e": "Washington's warning about where the country was going."
+  },
+  "hints": {
+    "a": [
+      "Which detail is about taxes?",
+      "Look for “consent.”"
+    ],
+    "b": [
+      "Where does the Declaration say government's power comes from?",
+      "Look for “the governed.”"
+    ],
+    "c": [
+      "Who is Abigail Adams writing about?",
+      "Look for “ladies.”"
+    ],
+    "d": [
+      "The Articles gave every state the same amount of what?",
+      "Look for “one vote.”"
+    ],
+    "e": [
+      "Washington is worried. About what?",
+      "Look for “anarchy.”"
+    ]
+  }
+}

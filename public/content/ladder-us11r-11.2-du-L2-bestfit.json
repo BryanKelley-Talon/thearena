@@ -1,0 +1,75 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Pick the detail that proves it: 11.2",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "DU",
+  "step": 2,
+  "type": "mc_bestfit",
+  "intro": "Pick the detail that best supports the claim.",
+  "items": [
+    {
+      "id": "du112-01",
+      "stem": "Claim: The Articles left the states more powerful than Congress. Which detail from Document 11 best supports it?",
+      "options": {
+        "1": "“Delegates shall meet in one Congress.”",
+        "2": "“Each state keeps its sovereignty, its freedom, and its independence”",
+        "3": "“remember the ladies”",
+        "4": "The Articles were the first plan of government."
+      },
+      "correct": "2",
+      "hints": [
+        "Which detail is about the states' power?",
+        "Look for “sovereignty.”"
+      ],
+      "reason": "Article II says each state keeps its sovereignty and every power not given to Congress. That's the detail that proves the claim.",
+      "stimulus": {
+        "kind": "text",
+        "content": "Article II. Each state keeps its sovereignty, its freedom, and its independence, along with every power that this confederation does not expressly give to the United States.\n\nArticle V. Delegates shall meet in one Congress. In deciding questions, each state shall have one vote.",
+        "citation": "Source: Articles of Confederation, 1781 (adapted)"
+      }
+    },
+    {
+      "id": "du112-02",
+      "stem": "Claim: Preston says he did not order his soldiers to fire. Which detail from Document 5 best supports it?",
+      "options": {
+        "1": "“My words were: don't fire, stop your firing.”",
+        "2": "“I saw about 100 people surround the soldier on guard, with clubs and other weapons”",
+        "3": "Revere's engraving shows the soldiers firing in a straight line.",
+        "4": "Boston was the largest town in Massachusetts."
+      },
+      "correct": "1",
+      "hints": [
+        "The claim is about an order. Which detail is about what Preston said?",
+        "Look for his own words to his men."
+      ],
+      "reason": "Preston quotes himself telling the men not to fire. The crowd detail is real, but it proves a different point.",
+      "stimulus": {
+        "kind": "text",
+        "content": "I saw about 100 people surround the soldier on guard, with clubs and other weapons, threatening to kill him. When I asked my soldiers why they fired without orders, they said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing.",
+        "citation": "Source: Transcript of British Captain Thomas Preston's testimony, from “The Boston Massacre, The British View, 1770,” EyeWitness to History, 2009 (adapted)"
+      }
+    },
+    {
+      "id": "du112-03",
+      "stem": "Claim: Washington feared the country could fall apart. Which detail from Document 12 best supports it?",
+      "options": {
+        "1": "“A letter I have just received from General Knox”",
+        "2": "“No morning ever dawned brighter than ours did”",
+        "3": "Washington was the first president.",
+        "4": "“Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole.”"
+      },
+      "correct": "4",
+      "hints": [
+        "Which detail shows fear, not just news?",
+        "Look for “ruin.”"
+      ],
+      "reason": "Thirteen states pulling apart and “ruin on the whole” is the fear, in his words. In 1786 he wasn't president yet.",
+      "stimulus": {
+        "kind": "text",
+        "content": "No morning ever dawned brighter than ours did — and no day was ever more clouded than the present. Without some change in our political thinking, the structure we have spent seven years raising, at the cost of much blood and treasure, must fall. We are fast heading toward anarchy and confusion.\n\nA letter I have just received from General Knox, who has just returned from Massachusetts, is full of sad information about the temper and designs of a considerable part of that people.\n\nWhat stronger evidence can be given of the weakness of our governments than these disorders? If no power exists to check them, what security has a man of life, liberty, or property? Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole.",
+        "citation": "Source: George Washington to James Madison, November 5, 1786 (adapted)"
+      }
+    }
+  ]
+}

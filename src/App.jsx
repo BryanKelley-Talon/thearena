@@ -1200,10 +1200,12 @@ function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOp
       {!acts.length
         ? <EmptyLane what="Activities" />
         : <TestPractice unit={unit} acts={acts} games={games} onOpenActivity={onOpenActivity} />}
-      {!isCurrent && roomSkills(course, unit).length > 0 && (
+      {/* A past unit's room shows only the gauges that unit actually built: an empty
+          ladder in a room kids revisit is exactly the "empty" BK ruled out (17:19). */}
+      {!isCurrent && roomSkills(course, unit).some(s => s.ladder) && (
         <>
           <h3 className="room-section" style={{ marginTop: 30 }}>Your skills in this unit</h3>
-          <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} />
+          <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} builtOnly />
         </>
       )}
       <BottomBack onBack={onBack} back={course.label} />

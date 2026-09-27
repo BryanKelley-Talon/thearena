@@ -1,0 +1,193 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_room_us11r_112.py",
+  "_source": "New writing for the Arena, from the signed 11.2 unit map (2026-09-27) and the 11.2 casefile documents. Thread question verbatim from the Threads card. CLE task words verbatim from the June 2026 Regents.",
+  "unit": "11.2",
+  "title": "Constitutional Foundations",
+  "subtitle": "US History and Government 11R Regents Review · Primary Thread: 3 — The Role and Size of Government · Covers Casefiles A, B and C · See your casefiles for documents",
+  "how_to_use": {
+    "heading": "Part 1 — How to Use This Review",
+    "lead": "Three steps:",
+    "steps": [
+      "Read the Key Facts table (Part 3). Do not memorize — look for the pattern: too much power, then too little, then a search for the balance.",
+      "Practice the three Civic Literacy Essay sentences in Part 5, using the starters.",
+      "Read the Quick Check (Part 6). Try each question yourself before reading the answer underneath it — then check yourself against it."
+    ],
+    "connects_to": "This brief connects to: Thread 3 (The Role and Size of Government) · Thread 1 · the Civic Principles card · the Civic Literacy Essay"
+  },
+  "thread_anchor": {
+    "heading": "Part 2 — Regents Thread Anchor",
+    "label": "Primary Thread 3 — The Role and Size of Government",
+    "question": "\"How much should the federal government do for its citizens — and at what point does government intervention become a threat to liberty?\"",
+    "question_note": "In 11.2 the question starts at the beginning: first a king with too much power, then a national government with too little.",
+    "lead": "How Thread 3 appears in this unit:",
+    "points": [
+      "After 1763, Britain taxed the colonies without their consent. Colonists answered that only their own elected assemblies could tax them. The fight was over who holds power, and who agrees to it.",
+      "After independence, the states built the Articles of Confederation weak on purpose. Congress could not tax, regulate trade or make the states do anything. Shays' Rebellion (1786–87) showed how little it could do in a crisis.",
+      "The Constitution (1787) built a stronger national government, then limited it with separation of powers, checks and balances, federalism, and in 1791 a Bill of Rights. Marbury v. Madison (1803) and McCulloch v. Maryland (1819) show the Supreme Court deciding how far that power reaches."
+    ],
+    "after": "Thread 1 runs underneath. The Declaration said all men are created equal. The Constitution counted each enslaved person as three-fifths of a person, and Abigail Adams's request to \"remember the ladies\" went unanswered. A stronger government, built for some."
+  },
+  "background": {
+    "heading": "Background — Threads 2, 4 and 7 open here too",
+    "text": "Washington's Farewell Address (1796) sets up Thread 2 (America in the World) and Thread 4 (Presidential Power). The Sedition Act (1798) is the first test in Thread 7 (Civil Liberties in Wartime), seven years after the First Amendment promised freedom of speech and press."
+  },
+  "key_facts": {
+    "heading": "Part 3 — Key Facts by Casefile",
+    "note": "Thread connection note: The same people who said government needs the consent of the governed then had to build one strong enough to work. Every row below is part of that argument, and the argument never fully ends.",
+    "columns": [
+      "Term / Event",
+      "Key Detail",
+      "Thread Connection"
+    ],
+    "rows": [
+      {
+        "term": "Proclamation of 1763",
+        "detail": "After the French and Indian War, Britain banned colonists from settling west of the Appalachian Mountains to keep peace with Native nations.",
+        "thread": "Thread 1 — Native land, and the colonists' anger at a king deciding for them"
+      },
+      {
+        "term": "Stamp Act and the Stamp Act Congress (1765)",
+        "detail": "Parliament taxed printed paper in the colonies. Delegates from nine colonies declared that only their own elected assemblies could tax them. The act was repealed in 1766.",
+        "thread": "Thread 3 — no taxation without representation: power needs consent"
+      },
+      {
+        "term": "Boston Massacre (1770)",
+        "detail": "British soldiers fired into a Boston crowd, and five colonists died, including Crispus Attucks. Paul Revere's engraving and Captain Preston's testimony tell the story very differently.",
+        "thread": "Perspective — who gets to tell the story"
+      },
+      {
+        "term": "Common Sense (1776)",
+        "detail": "Thomas Paine's pamphlet argued in plain language that the colonies should break from Britain and its king.",
+        "thread": "Thread 3 — the case against a government the people don't choose"
+      },
+      {
+        "term": "Declaration of Independence (1776)",
+        "detail": "Claimed that all men are created equal, with unalienable rights, and that governments get their power from the consent of the governed.",
+        "thread": "Thread 1 ⚑ — the promise, made while about one in five people in the colonies was enslaved"
+      },
+      {
+        "term": "Abigail Adams, \"Remember the ladies\" (1776)",
+        "detail": "Asked her husband John to protect women's rights in the new laws. He laughed it off.",
+        "thread": "Thread 1 ⚑ — the women's arc in 11.2"
+      },
+      {
+        "term": "Articles of Confederation (1781)",
+        "detail": "The first national government. Congress could not tax, regulate trade, or enforce its own laws. Most power stayed with the states.",
+        "thread": "Thread 3 ⚑ — a government too weak to work"
+      },
+      {
+        "term": "Shays' Rebellion (1786–87)",
+        "detail": "Massachusetts farmers in debt rose up against taxes and foreclosures. The national government had no army to respond, which pushed leaders to call a convention.",
+        "thread": "Thread 3 — the crisis that led to the Constitution"
+      },
+      {
+        "term": "Constitution (1787)",
+        "detail": "Built a stronger national government, split among three branches that check each other. The Three-Fifths Compromise counted each enslaved person as three-fifths of a person.",
+        "thread": "Thread 3 and Thread 1 ⚑ — stronger government, and who gets counted"
+      },
+      {
+        "term": "Federalists vs. Anti-Federalists (1787–88)",
+        "detail": "Federalists (Hamilton, Madison, Jay, in the Federalist Papers) argued for ratifying the Constitution. Anti-Federalists feared a national government that could crush the states and people's liberties.",
+        "thread": "Thread 3 — how much power is too much?"
+      },
+      {
+        "term": "Bill of Rights (1791)",
+        "detail": "The first ten amendments, added to answer Anti-Federalist fears: freedom of speech, press and religion, and protection from unfair searches and trials.",
+        "thread": "Thread 7 ⚑ — the promise"
+      },
+      {
+        "term": "Washington's Farewell Address (1796)",
+        "detail": "Washington stepped down after two terms and warned against permanent alliances with foreign nations and against political parties.",
+        "thread": "Thread 2 and Thread 4 ⚑ — foreign policy and presidential precedent"
+      },
+      {
+        "term": "Sedition Act (1798)",
+        "detail": "Made it a crime to publish false or malicious writing against the government. Newspaper editors who criticized President Adams were jailed.",
+        "thread": "Thread 7 ⚑ — the first test of free speech"
+      },
+      {
+        "term": "Marbury v. Madison (1803)",
+        "detail": "The Supreme Court struck down part of a law passed by Congress for the first time. Chief Justice Marshall claimed judicial review.",
+        "thread": "Thread 3 — the courts decide what the Constitution means"
+      },
+      {
+        "term": "McCulloch v. Maryland (1819)",
+        "detail": "The Court ruled that Congress could create a national bank under the necessary and proper clause, and that a state could not tax it.",
+        "thread": "Thread 3 ⚑ — the national government reaches further"
+      }
+    ]
+  },
+  "exam": {
+    "heading": "Part 4 — Regents Exam Appearances",
+    "text": "Unit 11.2 is one of the most tested units on the Regents. It shows up in Part I in nearly every administration, and the June 2026 Civic Literacy Essay was about exactly this unit: the creation of a stronger national government.",
+    "watch_lead": "Watch for:",
+    "watch_for": [
+      {
+        "cue": "A passage quoting \"necessary and proper\"",
+        "move": "it's about how much power Congress has. Ask: is the writer for it, or afraid of it?"
+      },
+      {
+        "cue": "Weaknesses of the Articles of Confederation",
+        "move": "no power to tax, no way to enforce laws, states acting alone"
+      },
+      {
+        "cue": "Federalist or Anti-Federalist writing",
+        "move": "Federalists want ratification; Anti-Federalists fear a strong central government and want a bill of rights"
+      },
+      {
+        "cue": "Marbury v. Madison",
+        "move": "judicial review: the Court can strike down a law that breaks the Constitution"
+      },
+      {
+        "cue": "\"Consent of the governed\" or taxation without representation",
+        "move": "name the principle from your card: Popular Sovereignty or Representative Government"
+      }
+    ]
+  },
+  "three_move": {
+    "heading": "Part 5 — Civic Literacy Essay Practice",
+    "intro": "The June 2026 Civic Literacy Essay asked about this unit's issue: the creation of a stronger national government. Write three sentences, one for each part of the task. Use a starter, or write something of equal or better value.",
+    "moves": [
+      {
+        "move": "Part 1 — Describe the historical circumstances surrounding this constitutional or civic issue.",
+        "starter": "\"After independence, the states created the Articles of Confederation, a national government so weak that Congress could not...\""
+      },
+      {
+        "move": "Part 2 — Explain efforts by individuals, groups, and/or governments to address this constitutional or civic issue.",
+        "starter": "\"In 1787, delegates met in Philadelphia and wrote a Constitution that strengthened the national government by... while limiting it through...\""
+      },
+      {
+        "move": "Part 3 — Discuss the impact of the efforts on the United States and/or on American society.",
+        "starter": "\"The Constitution gave the national government the power to..., and the Bill of Rights answered Anti-Federalist fears by..., but the question of how much power is too much continued when...\""
+      }
+    ]
+  },
+  "quick_check": {
+    "heading": "Part 6 — Quick Check",
+    "intro": "Try each question yourself before you read the answer underneath it.",
+    "items": [
+      {
+        "q": "Why did colonists say the Stamp Act was unfair, even though the tax itself was small?",
+        "a": "Because they had no representatives in Parliament. Colonists argued that only their own elected assemblies could tax them. The fight was about consent, not the amount: no taxation without representation."
+      },
+      {
+        "q": "Name two weaknesses of the Articles of Confederation, and one event that exposed them.",
+        "a": "Congress could not tax, and it could not force the states to follow its laws (it also could not regulate trade). Shays' Rebellion (1786–87) exposed them: the national government had no army and no money to respond."
+      },
+      {
+        "q": "How did the Constitution make the national government stronger, and how did it keep that power from growing too strong?",
+        "a": "It gave Congress the power to tax, regulate trade and make laws that are \"necessary and proper.\" It limited that power by splitting it among three branches (separation of powers), letting each branch check the others, dividing power with the states (federalism), and adding the Bill of Rights in 1791."
+      },
+      {
+        "q": "What did the Anti-Federalists fear, and what did they get?",
+        "a": "They feared a national government strong enough to crush the states and people's liberties, especially through clauses like \"necessary and proper.\" They got the Bill of Rights: written limits on what the national government can do to individuals."
+      },
+      {
+        "q": "Name the primary Regents Thread for Unit 11.2 and write one sentence connecting McCulloch v. Maryland to it.",
+        "a": "Thread 3 — The Role and Size of Government. In McCulloch v. Maryland (1819), the Supreme Court read the necessary and proper clause broadly, letting the national government do more than the Constitution lists and settling that a state could not tax it."
+      }
+    ]
+  }
+}

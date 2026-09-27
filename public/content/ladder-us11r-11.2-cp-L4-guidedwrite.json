@@ -1,0 +1,24 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Write it: the principle behind “no taxes without consent”",
+  "_skill_lane": "Civic Principle (CP)",
+  "_ladder_level": 4,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "CP",
+  "step": 4,
+  "type": "guided_write",
+  "source_document": "Document 3 — Declaration of Rights and Grievances, Stamp Act Congress, 1765 (11.2 Casefile A)",
+  "source_text": "It is the right of free people that no taxes be put on them without their own consent, given in person or through their representatives. The people of these colonies are not, and cannot be, represented in Parliament. The only representatives of the colonists are the people they choose themselves.",
+  "prompt": "Name the principle at stake in Document 3, using your card's words, and show how the document upholds it, denies it, or fights over it.",
+  "sentence_starter": "Document 3 is about the principle of ___, because ___",
+  "checklist": [
+    "Did you name the principle from your card?",
+    "Did you point to the document?",
+    "Did you say whether it's upheld, denied, or fought over?"
+  ],
+  "model_response": "Document 3 is about the principle of Representative Government, because the Stamp Act Congress argues that only representatives the colonists choose themselves can tax them. The colonists are fighting over it: Parliament taxed them without any representatives of their own.",
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

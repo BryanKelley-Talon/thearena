@@ -1,0 +1,116 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Vocab Match — Civic Principles, the seven new in 11.2",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_room_us11r_112.py",
+  "_ruling": "Labels and definitions word for word from the Civic Principles card (BK 2026-09-26 14:45). The seven principles the signed 11.2 map introduces; with 11.1's four, students hold 11 of 12 (Equal Protection waits for 11.4).",
+  "intro": "Match each principle to its definition, in your card's words.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Separation of Powers"
+    },
+    {
+      "key": "b",
+      "label": "Checks and Balances"
+    },
+    {
+      "key": "c",
+      "label": "Federalism"
+    },
+    {
+      "key": "d",
+      "label": "Judicial Review"
+    },
+    {
+      "key": "e",
+      "label": "Natural Rights"
+    },
+    {
+      "key": "f",
+      "label": "Individual Rights (civil liberties)"
+    },
+    {
+      "key": "g",
+      "label": "Due Process"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Power is split among three branches, each with its own job: make laws, carry out laws, judge laws."
+    },
+    {
+      "key": "2",
+      "label": "Each branch can block or limit the others."
+    },
+    {
+      "key": "3",
+      "label": "Power is divided between the national government and the states. When they clash, valid federal law wins."
+    },
+    {
+      "key": "4",
+      "label": "Courts can strike down a law or action that breaks the Constitution."
+    },
+    {
+      "key": "5",
+      "label": "Every person is born with rights (life, liberty, property) that government exists to protect."
+    },
+    {
+      "key": "6",
+      "label": "Freedoms government can't take away, like speech, religion, press and assembly."
+    },
+    {
+      "key": "7",
+      "label": "Government must follow fair steps before it takes your life, liberty, or property."
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "6",
+    "g": "7"
+  },
+  "rationale": {
+    "a": "Article I (Congress), Article II (the president), Article III (the courts): three branches, three jobs.",
+    "b": "Madison, Federalist 51: each branch gets the means to resist the others. A veto and an override are both checks.",
+    "c": "McCulloch v. Maryland: a state tried to tax the national bank, and valid federal law won.",
+    "d": "Marbury v. Madison: the Supreme Court struck down part of a law passed by Congress.",
+    "e": "The Declaration: all men are created equal, with unalienable rights.",
+    "f": "The First Amendment: speech, religion, press and assembly. The Sedition Act tested it in 1798.",
+    "g": "The Bill of Rights: no one loses life, liberty or property without fair legal steps, like a trial."
+  },
+  "hints": {
+    "a": [
+      "The key word is “split,” with each branch doing its own job.",
+      "Look for three jobs: make, carry out, judge."
+    ],
+    "b": [
+      "This one is about branches stopping each other.",
+      "Look for “block or limit.”"
+    ],
+    "c": [
+      "This split isn't between branches. It's between levels of government.",
+      "Look for the national government and the states."
+    ],
+    "d": [
+      "Think of a court deciding whether a law fits the Constitution.",
+      "Look for “strike down.”"
+    ],
+    "e": [
+      "The key words are “born with.”",
+      "Look for life, liberty, property."
+    ],
+    "f": [
+      "Think of the First Amendment.",
+      "Look for speech, religion, press."
+    ],
+    "g": [
+      "Think of what government owes you before it can punish you.",
+      "Look for “fair steps.”"
+    ]
+  }
+}

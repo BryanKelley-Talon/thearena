@@ -1,0 +1,93 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "Name it, pull the detail: 11.1",
+  "_skill_lane": "Document Use (DU)",
+  "_ladder_level": 1,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the shipped 11.1 casefiles. Quotes are the casefile's own text.",
+  "skill_line": "DU",
+  "step": 1,
+  "type": "matching",
+  "intro": "Match each document to an exact detail from it.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Document 9 · Lowther's indenture, 1627"
+    },
+    {
+      "key": "b",
+      "label": "Document 10 · Frethorne to his parents, 1623"
+    },
+    {
+      "key": "c",
+      "label": "Document 11 · a bill of sale, 1750"
+    },
+    {
+      "key": "d",
+      "label": "Document 12 · Venture Smith's narrative"
+    },
+    {
+      "key": "e",
+      "label": "Document 15 · a runaway ad, Virginia Gazette, 1751"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "“for during the space of four years”"
+    },
+    {
+      "key": "2",
+      "label": "“we must work hard both early and late for a mess of water gruel”"
+    },
+    {
+      "key": "3",
+      "label": "“a servant for life”"
+    },
+    {
+      "key": "4",
+      "label": "“for four gallons of rum, and a piece of calico”"
+    },
+    {
+      "key": "5",
+      "label": "“Has been several times captured, and escaped again”"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "Lowther's contract had an end date.",
+    "b": "Frethorne describes the work and the food.",
+    "c": "Prince, about nine years old, is sold with no end date.",
+    "d": "What Venture Smith was sold for as a child, in his own words.",
+    "e": "The ad written to catch Tom proves he kept escaping."
+  },
+  "hints": {
+    "a": [
+      "An indenture was a contract. For how long?",
+      "Look for a number of years."
+    ],
+    "b": [
+      "Which detail sounds like a homesick sixteen-year-old?",
+      "Look for water gruel."
+    ],
+    "c": [
+      "Which detail has no end date?",
+      "Look for “for life.”"
+    ],
+    "d": [
+      "What was Venture Smith traded for?",
+      "Look for rum."
+    ],
+    "e": [
+      "Which detail is about escaping?",
+      "Look for “escaped again.”"
+    ]
+  }
+}

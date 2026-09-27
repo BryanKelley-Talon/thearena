@@ -1,0 +1,61 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "From a 4 to a 5: outside evidence that reaches",
+  "_skill_lane": "Outside Evidence (OE)",
+  "_ladder_level": 5,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "OE",
+  "step": 5,
+  "type": "enrichment",
+  "design_intent": "Not skill practice. A kid here already writes at a 4. This is the gold dust that turns a 4 into a 5: more content, a wider lens, and a named technique.",
+  "tidbits": [
+    {
+      "id": "td-01",
+      "text": "The exam calls it outside information, and your gauge calls it Outside Evidence. Same thing: relevant history you bring that isn't in the documents.",
+      "thread": "The Civic Literacy Essay",
+      "source_pointer": "June 2026 CLE guidelines"
+    },
+    {
+      "id": "td-02",
+      "text": "Outside evidence can come from an earlier unit. Magna Carta (1215) and the House of Burgesses (1619) are strong outside evidence for “no taxation without representation.”",
+      "thread": "Thread 3",
+      "source_pointer": "11.1 brief, key facts"
+    },
+    {
+      "id": "td-03",
+      "text": "The Threads lane in the Arena is an outside-evidence bank: every stop is a fact you can bring to a document it connects to.",
+      "thread": "All threads",
+      "source_pointer": "Arena Threads lane, signed 2026-09-27"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "Hamilton's argument is supported by Shays' Rebellion, which showed the government was weak.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "Hamilton's argument is supported by Shays' Rebellion: in 1786–87, debt-ridden farmers shut down Massachusetts courts, and Congress, with no army and no power to tax, could do nothing. That is exactly the “frail and tottering building” Hamilton describes.",
+      "what_changed": "The 4 names the outside fact. The 5 makes it specific (who, when, where) and ties it back to Hamilton's own words."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Name, date, place",
+      "explanation": "Outside evidence counts when it's specific. “Shays' Rebellion, 1786–87, Massachusetts” beats “a rebellion.”"
+    },
+    {
+      "name": "Borrow from another unit",
+      "explanation": "Facts from earlier units are fair game. Reaching back shows you see the whole course, not one unit."
+    }
+  ],
+  "try_it": {
+    "prompt": "Open the Threads lane. Pick one 11.1 stop that echoes something in 11.2 and say how they connect.",
+    "status": "Untimed, optional, never scored, never saved — practice reflection only."
+  },
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

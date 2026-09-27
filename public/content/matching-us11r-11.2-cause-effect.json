@@ -1,0 +1,88 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Match it — Cause and Effect, 1763 to 1791",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_room_us11r_112.py",
+  "_licence": "ORIGINAL. Built on 11.2 Casefile A Documents 1–3 and Casefile B Documents 11–17, per the signed map.",
+  "intro": "Match each cause to what it led to.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Proclamation of 1763"
+    },
+    {
+      "key": "b",
+      "label": "Stamp Act, 1765"
+    },
+    {
+      "key": "c",
+      "label": "Articles of Confederation, 1781"
+    },
+    {
+      "key": "d",
+      "label": "Shays' Rebellion, 1786–87"
+    },
+    {
+      "key": "e",
+      "label": "Anti-Federalist fears of a too-powerful Congress"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Colonists who fought for western land are blocked from settling it"
+    },
+    {
+      "key": "2",
+      "label": "Nine colonies meet and declare only their own assemblies can tax them"
+    },
+    {
+      "key": "3",
+      "label": "Congress can't collect taxes, and the states ignore its measures"
+    },
+    {
+      "key": "4",
+      "label": "Leaders call a convention to write a stronger government"
+    },
+    {
+      "key": "5",
+      "label": "The Bill of Rights is added to the Constitution in 1791"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5"
+  },
+  "rationale": {
+    "a": "Britain drew the line at the Appalachians to keep peace with Native nations, which angered colonists who wanted the land.",
+    "b": "The Stamp Act Congress answered Parliament's tax: no taxation without representation.",
+    "c": "The Articles kept the national government weak on purpose, so Congress depended on the states and couldn't make them act.",
+    "d": "Farmers rose up, and the national government had no army to respond. The crisis pushed leaders to Philadelphia in 1787.",
+    "e": "To win ratification, Federalists promised amendments. The first ten, ratified in 1791, set written limits on the national government."
+  },
+  "hints": {
+    "a": [
+      "It's a line on a map. What did it stop colonists from doing?",
+      "Look for western land."
+    ],
+    "b": [
+      "A tax on printed paper. How did the colonies respond, together?",
+      "Look for nine colonies meeting."
+    ],
+    "c": [
+      "The first national government was built weak on purpose. What couldn't it do?",
+      "Look for taxes and states ignoring Congress."
+    ],
+    "d": [
+      "A rebellion the national government couldn't stop. What did leaders decide to do about it?",
+      "Look for a convention."
+    ],
+    "e": [
+      "They feared nothing could limit Congress. What did they get?",
+      "Look for the first ten amendments."
+    ]
+  }
+}

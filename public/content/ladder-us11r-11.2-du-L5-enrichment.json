@@ -1,0 +1,61 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "From a 4 to a 5: pairing documents",
+  "_skill_lane": "Document Use (DU)",
+  "_ladder_level": 5,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "DU",
+  "step": 5,
+  "type": "enrichment",
+  "design_intent": "Not skill practice. A kid here already writes at a 4. This is the gold dust that turns a 4 into a 5: more content, a wider lens, and a named technique.",
+  "tidbits": [
+    {
+      "id": "td-01",
+      "text": "Washington's 1786 warning about anarchy was a private letter to Madison. People tend to say what they really think in private, which is part of what makes a letter like that strong evidence.",
+      "thread": "Sourcing",
+      "source_pointer": "11.2 Casefile B, Document 12, Q1"
+    },
+    {
+      "id": "td-02",
+      "text": "Captain Preston gave his account of the Boston Massacre at his own murder trial. A detail from testimony like that proves what he claimed, not always what happened. A 5 says which one.",
+      "thread": "Perspective",
+      "source_pointer": "11.2 Casefile A, Document 5, Q1"
+    },
+    {
+      "id": "td-03",
+      "text": "Documents 4 and 5 describe the same night in Boston two different ways. That's the Similarity/Difference relationship the 11.2 short essay uses.",
+      "thread": "The short essay",
+      "source_pointer": "Signed 11.2 map, decision 4"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "In Document 11, the Articles say taxes “shall be laid and collected by the legislatures of the several states,” which shows Congress was weak.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "In Document 11, the Articles say taxes “shall be laid and collected by the legislatures of the several states,” so Congress had to wait for the states to pay; Washington's private warning in Document 12 that “we are fast heading toward anarchy and confusion” shows what that weakness looked like by 1786.",
+      "what_changed": "The 4 uses one document well. The 5 pairs it with a second document that shows the result, so the evidence builds instead of just sitting there."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Pair two documents",
+      "explanation": "Use one document for the cause and one for the effect, or two that disagree. Two documents talking to each other are stronger than one alone."
+    },
+    {
+      "name": "Source the detail",
+      "explanation": "Say who wrote it and why before you use it. “In a private letter” or “at his own trial” changes what the detail proves."
+    }
+  ],
+  "try_it": {
+    "prompt": "Find a review, an ad or a post today. What's the one exact detail you'd quote to prove what it's really trying to get you to do?",
+    "status": "Untimed, optional, never scored, never saved — practice reflection only."
+  },
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

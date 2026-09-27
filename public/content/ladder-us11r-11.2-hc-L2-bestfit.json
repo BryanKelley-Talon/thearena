@@ -1,0 +1,60 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Best context statement: 11.2",
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "skill_line": "HC",
+  "step": 2,
+  "type": "mc_bestfit",
+  "intro": "Pick the statement that best sets the scene.",
+  "items": [
+    {
+      "id": "ctx112-01",
+      "stem": "Which statement best gives the historical context for the Stamp Act Congress, 1765?",
+      "options": {
+        "1": "The colonies had already declared independence",
+        "2": "Britain had begun taxing the colonies directly to pay war debts, and colonists had no representatives in Parliament",
+        "3": "The Constitution had just been ratified",
+        "4": "The colonies had no local assemblies of their own"
+      },
+      "correct": "2",
+      "hints": [
+        "Think about what Parliament had just done to the colonies.",
+        "It's about a tax and who got a say in it."
+      ],
+      "reason": "Parliament taxed the colonies to pay debts from the French and Indian War, and colonists had no seats in Parliament. That's the scene the Stamp Act Congress answered."
+    },
+    {
+      "id": "ctx112-02",
+      "stem": "Which statement best places Washington's 1786 letter to Madison in time and cause?",
+      "options": {
+        "1": "Written as armed farmers in Massachusetts shut down courts, and the national government had no army to stop them",
+        "2": "Written during the Revolutionary War, asking France for help",
+        "3": "Written after the Constitution was ratified, praising its success",
+        "4": "Written as president, warning against political parties"
+      },
+      "correct": "1",
+      "hints": [
+        "Look at the date: 1786. Was there a Constitution yet?",
+        "Washington mentions news from Massachusetts."
+      ],
+      "reason": "In late 1786, Shays' Rebellion was shutting courts in Massachusetts, and Congress had no force to respond. Washington is writing about that."
+    },
+    {
+      "id": "ctx112-03",
+      "stem": "Which statement best gives the historical context for the Bill of Rights, 1791?",
+      "options": {
+        "1": "Britain had just repealed the Stamp Act",
+        "2": "The Supreme Court had just ruled in Marbury v. Madison",
+        "3": "Several states ratified the Constitution only after being promised amendments to protect rights",
+        "4": "The Articles of Confederation were still in force"
+      },
+      "correct": "3",
+      "hints": [
+        "Think about the Anti-Federalists. What did they want added?",
+        "It's about a promise made during ratification."
+      ],
+      "reason": "Anti-Federalists feared the new government, and several states ratified only with the promise of amendments. The Bill of Rights kept that promise."
+    }
+  ]
+}

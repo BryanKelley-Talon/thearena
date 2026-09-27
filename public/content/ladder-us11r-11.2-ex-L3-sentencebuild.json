@@ -1,0 +1,77 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.2 - Constitutional Foundations",
+  "_activity": "Build the explanation: the three-fifths clause",
+  "_skill_lane": "Explanation (EX)",
+  "_ladder_level": 3,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
+  "skill_line": "EX",
+  "step": 3,
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "___, because ___, which means ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "the evidence",
+      "tiles": [
+        {
+          "text": "The three-fifths clause counted enslaved people toward a state's seats in the House",
+          "correct": true
+        },
+        {
+          "text": "The Senate gave each state two senators",
+          "correct": false
+        },
+        {
+          "text": "The Articles gave each state one vote",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "because",
+      "tiles": [
+        {
+          "text": "Southern delegates wanted more seats in Congress",
+          "correct": true
+        },
+        {
+          "text": "enslaved people were allowed to vote",
+          "correct": false
+        },
+        {
+          "text": "big states wanted every state counted the same",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "which means",
+      "tiles": [
+        {
+          "text": "slaveholding states gained power from people who could not vote",
+          "correct": true
+        },
+        {
+          "text": "enslaved people gained a voice in Congress",
+          "correct": false
+        },
+        {
+          "text": "the Senate became more powerful",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "The three-fifths clause counted enslaved people toward a state's seats in the House, because Southern delegates wanted more seats in Congress, which means slaveholding states gained power from people who could not vote.",
+  "rationale": "The casefile's Explanation frame, filled from Document 14. The “which means” is the part most answers skip.",
+  "hints": [
+    "Start with the part of Document 14 about counting people.",
+    "Who wanted the extra seats, and who paid for them?"
+  ],
+  "practice_only": true
+}

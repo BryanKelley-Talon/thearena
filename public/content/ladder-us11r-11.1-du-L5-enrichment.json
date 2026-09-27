@@ -1,0 +1,61 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.1 - Colonial Foundations",
+  "_activity": "From a 4 to a 5: evidence the writer didn't mean to give",
+  "_skill_lane": "Document Use (DU)",
+  "_ladder_level": 5,
+  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
+  "_licence": "ORIGINAL, built on the shipped 11.1 casefiles. Quotes are the casefile's own text.",
+  "skill_line": "DU",
+  "step": 5,
+  "type": "enrichment",
+  "design_intent": "Not skill practice. A kid here already writes at a 4. This is the gold dust that turns a 4 into a 5: more content, a wider lens, and a named technique.",
+  "tidbits": [
+    {
+      "id": "td-01",
+      "text": "John Stith wrote Document 15 to catch Tom. His own description ends up proving Tom's resistance. Evidence doesn't have to come from someone on your side.",
+      "thread": "Thread 1 — African Americans arc",
+      "source_pointer": "11.1 Casefile B, Document 15, Q1 and claim support"
+    },
+    {
+      "id": "td-02",
+      "text": "Documents 13, 14 and 15 are a law, a list and an ad. None was written to argue that slavery was resisted, and together they prove it anyway.",
+      "thread": "Thread 1",
+      "source_pointer": "11.1 Casefile B, Document 15 claim-support question"
+    },
+    {
+      "id": "td-03",
+      "text": "Quote the smallest piece that proves your point. Five exact words beat a copied paragraph.",
+      "thread": "Writing move",
+      "source_pointer": "Score Guide, Document Use: name it, pull a specific detail"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "In Document 15, the ad says Tom “has been several times captured, and escaped again,” which shows he resisted slavery.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "In Document 15, John Stith paid for an ad to catch Tom, yet his own words, that Tom “has been several times captured, and escaped again,” even after being shackled and collared, prove the resistance Stith wanted to stop, so the evidence is stronger for coming from the man who enslaved him.",
+      "what_changed": "The 4 quotes and explains. The 5 sources the detail first, saying who wrote it and why, and shows why a detail from the other side is even stronger evidence."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Source, then use",
+      "explanation": "Say who wrote it and why before you use the detail. It changes what the detail proves."
+    },
+    {
+      "name": "Use the reluctant witness",
+      "explanation": "Evidence from someone who didn't want to give it is often the strongest you have. Say so."
+    }
+  ],
+  "try_it": {
+    "prompt": "Think of an ad, a review, or a post that accidentally tells you more than the writer meant it to. What was the detail?",
+    "status": "Untimed, optional, never scored, never saved — practice reflection only."
+  },
+  "practice_only": true,
+  "submitted_to_teacher": false
+}
