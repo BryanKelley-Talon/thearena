@@ -215,14 +215,14 @@
           "slug": "outside-evidence",
           "name": "Outside Evidence",
           "tier": null,
-          "published": false,
+          "published": true,
           "blurb": "Named outside knowledge, integrated with the documents",
           "content_ref": null,
           "skill_lines": [
             "OE"
           ],
           "_skill_lines_note": "Derived by Josh 2026-09-18 from Will's own slug, which IS the line name - a 1:1 mapping, not a naming decision. Confirm or correct; the words are his.",
-          "_dark_note": "Ladder ported 2026-09-27; gauge stays dark until BK opens it (Will addendum 3: introduced in Casefile B Thu 10/1)."
+          "_published_note": "Opens with the Global push: BK 2026-09-27 18:18 'push oe with this update.'"
         },
         {
           "slug": "enduring-issue",
