@@ -1571,13 +1571,13 @@ function LevelScreen({ course, skillName, lv, pack, source, onComplete, onBack }
   else body = <EmptyLane what="This level" />
   return (
     <div className="wrap">
-      <ScreenHeader label={skillName} onBack={onBack} color={course.accent} back="The ladder" />
+      <ScreenHeader label={skillName} onBack={onBack} color={course.accent} back={skillName} />
       <div className="detail" style={{ maxWidth: 860 }}>
         <div className="card-type">Level {lv?.level}{t ? ` · ${t.name}` : ''}</div>
         <h2>{lv?.label || t?.name}</h2>
         {body}
       </div>
-      <BottomBack onBack={onBack} back='the ladder' />
+      <BottomBack onBack={onBack} back={skillName} />
     </div>
   )
 }

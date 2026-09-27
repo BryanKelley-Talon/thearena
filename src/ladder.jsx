@@ -201,7 +201,7 @@ export function SkillGauges({ course, unit, prog, onOpen }) {
         }
         return (
           <button key={s.code} type="button" className="gauge" onClick={() => onOpen(s.code)}
-                  aria-label={`${s.name}. ${statusLine(top)}. Open the ladder.`}>
+                  aria-label={`${s.name}. ${statusLine(top)}. Open the gauge.`}>
             <GaugeFace value={top} />
             <div className="gauge-name">{s.name}</div>
             <div className="gauge-status">{statusLine(top)}</div>
@@ -228,7 +228,7 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
           <p className="sub" style={{ marginBottom: 6 }}>{statusLine(top)}</p>
           <p className="ladder-note">{levels.some(levelOpen)
             ? 'Every level is open. Start anywhere — the tag shows a good place to begin.'
-            : 'This ladder isn’t built yet. Its levels open here as they’re added.'}</p>
+            : 'This gauge isn’t built yet. Its levels open here as they’re added.'}</p>
         </div>
       </div>
       <ol className="ladder">
@@ -323,7 +323,7 @@ export function BestFit({ pack, onComplete }) {
       {items.map((it, i) => (
         <BestFitItem key={it.id || i} item={it} n={i + 1} total={items.length} onAnswered={() => setCount(c => c + 1)} />
       ))}
-      {items.length > 0 && count >= items.length && <p className="level-done" role="status">Level done. Head back to the ladder for the next one.</p>}
+      {items.length > 0 && count >= items.length && <p className="level-done" role="status">Level done. Head back to the gauge for the next one.</p>}
     </>
   )
 }
@@ -407,7 +407,7 @@ export function SentenceBuild({ pack, onComplete }) {
         <div className="rep-reveal" role="status">
           <h4>Your sentence</h4>
           <p className="rep-exemplar">{pack.correct_sentence}</p>
-          <p className="level-done">Level done. Head back to the ladder for the next one.</p>
+          <p className="level-done">Level done. Head back to the gauge for the next one.</p>
         </div>
       )}
     </div>
@@ -461,7 +461,7 @@ export function GuidedWrite({ pack, accent, onComplete }) {
           <h4>One strong answer</h4>
           <p className="rep-exemplar">{pack.model_response}</p>
           <p className="rep-focus">Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?</p>
-          <p className="level-done">Level done. Head back to the ladder for the next one.</p>
+          <p className="level-done">Level done. Head back to the gauge for the next one.</p>
         </div>
       )}
     </div>
@@ -525,7 +525,7 @@ export function Enrichment({ pack, onComplete }) {
       )}
       {!done
         ? <button type="button" className="rep-go" onClick={() => { setDone(true); onComplete() }}>I’m done</button>
-        : <p className="level-done" role="status">Level 5 done. That’s the whole ladder for this skill.</p>}
+        : <p className="level-done" role="status">Level 5 done. That’s every level on this gauge.</p>}
     </div>
   )
 }
