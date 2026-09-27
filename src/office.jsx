@@ -92,9 +92,9 @@ async function copyText(text) {
 // ── THE DOOR (on the splash, third of three) ─────────────────────────────
 export function OfficeDoor({ office, onOpen, preview }) {
   return (
-    <a className="door office-door" href="#/office"
+    <a className="door office-door has-art" href="#/office"
        onClick={e => { e.preventDefault(); onOpen() }}>
-      <div className="office-door-art" aria-hidden="true">
+      <div className="door-art" aria-hidden="true">
         <img src={`/${office.background_small || office.background}`} alt="" loading="lazy" />
       </div>
       <div className="door-accent" style={{ background: 'var(--gold)' }} />
@@ -376,17 +376,15 @@ function Finish({ office, theme, bonus, coaching }) {
 // ── STYLES ───────────────────────────────────────────────────────────────
 export const OFFICE_STYLES = `
 /* PLACEHOLDER copy: dashed and striped so no one mistakes it for approved words.
-   Reviewer-only marks use the needle orange on purpose: the gate keeps them off main. */
-.ph{outline:2px dashed var(--arena-needle);outline-offset:2px;border-radius:4px;
-  background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--arena-needle) 14%,transparent) 10px 20px)}
-.preview-banner{position:relative;z-index:50;background:var(--arena-needle);color:#1a0d02;
+   Reviewer-only; the gate keeps them off main. Signal red, per BK's option A. */
+.ph{outline:2px dashed var(--arena-signal);outline-offset:2px;border-radius:4px;
+  background:repeating-linear-gradient(135deg,transparent 0 10px,color-mix(in srgb,var(--arena-signal) 14%,transparent) 10px 20px)}
+.preview-banner{position:relative;z-index:50;background:var(--arena-signal);color:var(--canvas);
   font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:14px;
   text-align:center;padding:7px 12px;font-weight:700}
 
 /* The door: same card as the course doors, with a window into the room. */
-a.door.office-door{padding-top:0;overflow:hidden}
-.office-door-art{margin:0 -22px 16px;height:118px;overflow:hidden;border-bottom:1px solid var(--edge)}
-.office-door-art img{width:100%;height:100%;object-fit:cover;object-position:center 42%;display:block}
+.office-door .door-art img{object-position:center 42%}
 
 /* The stage: the picture, with the title on the chalkboard and this month pinned to the corkboard. */
 .office-stage{position:relative;max-width:1100px;margin:6px auto 20px;border-radius:14px;overflow:hidden;
@@ -426,7 +424,7 @@ a.door.office-door{padding-top:0;overflow:hidden}
 
 .office-themes{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;margin-bottom:10px}
 button.theme-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:18px;
-  background:var(--card);border:1px solid var(--edge);border-radius:12px;color:var(--white);cursor:pointer}
+  background:var(--card);border-radius:12px;color:var(--white);cursor:pointer}
 button.theme-card:hover{background:var(--card-lit);border-color:var(--gold)}
 .theme-month{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-size:14px}
 .theme-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;line-height:1.05}
@@ -445,7 +443,8 @@ button.theme-card:hover{background:var(--card-lit);border-color:var(--gold)}
   background:var(--card);border:1px solid var(--edge);border-radius:10px;color:var(--white);cursor:pointer;box-shadow:var(--arena-lift)}
 .path-stop:disabled{cursor:default;box-shadow:none;color:var(--dim);background:color-mix(in srgb,var(--card) 92%,var(--canvas))}
 .path-stop:disabled .stop-mark{border-color:var(--dim)}
-.path-stop.here{border:2px solid var(--gold-lit);background:var(--card-lit)}
+.path-stop:not(:disabled), button.theme-card{border:2px solid var(--arena-signal)}
+.path-stop.here{background:var(--card-lit);box-shadow:var(--arena-lift),0 0 0 3px color-mix(in srgb,var(--arena-signal) 35%,transparent)}
 .path-stop.done .stop-mark{background:var(--gold);color:#1a1405}
 .stop-mark{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:14px;
   border:2px solid var(--gold);color:var(--gold)}

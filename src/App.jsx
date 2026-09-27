@@ -735,7 +735,11 @@ function Splash({ manifest, onPick, onOffice }) {
       )}
 
       <div className="doors">
-        {courses.map(c => {
+        {/* Order (BK, 2026-09-27): Global · BK's Office · U.S. The Office is the
+            neutral ground that serves both, so it stands between them. */}
+        {courses.flatMap((c, ci) => [ci === 1 && officeVisible(manifest.office, PREVIEW_OFFICE)
+          ? <OfficeDoor key="office" office={manifest.office} onOpen={onOffice} preview={PREVIEW_OFFICE} /> : null, c]).filter(Boolean).map(c => {
+          if (!c.id) return c
           const open = isOpen(c)
           const Tag = open ? 'a' : 'div'
           return (
@@ -758,10 +762,6 @@ function Splash({ manifest, onPick, onOffice }) {
             </Tag>
           )
         })}
-        {/* The third door, shared by both courses (BK via Leo, 2026-09-26). */}
-        {officeVisible(manifest.office, PREVIEW_OFFICE) && (
-          <OfficeDoor office={manifest.office} onOpen={onOffice} preview={PREVIEW_OFFICE} />
-        )}
       </div>
     </div>
   )
