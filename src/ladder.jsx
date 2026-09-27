@@ -632,6 +632,8 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
   font-family:'Outfit',sans-serif;cursor:pointer;box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 8px 22px rgba(0,0,0,.55)}
 /* Solid, not see-through (BK 2026-09-27, "make the rooms pop"): with more gym showing
    behind, a gauge card has to sit ON the photo, not in it. */
+/* Red border like every other card a kid can open (BK, 2026-09-27 01:13). */
+.gauge{border:2px solid var(--arena-signal)}
 button.gauge:hover{border-color:var(--gold);background:var(--card-lit);transform:translateY(-2px)}
 .gauge.off{cursor:default}
 .gauge-name{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;
