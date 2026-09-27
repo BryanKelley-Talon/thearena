@@ -742,9 +742,8 @@
     "_README": "BK'S OFFICE — the third splash door, shared by both courses (Leo's order 2026-09-26 23:35, amended 00:31; BK's rulings). Josh built the CONTAINER only, 2026-09-27. Every student-facing word in here is either (a) the building's own wording, given by BK (the Be a Hawk frame), (b) a line BK or Leo's order fixed verbatim (the name, the email line), or (c) marked PLACEHOLDER and waiting on BK's yes in chat. The gate FAILS the build if this section is published while anything under it still carries _placeholder. Hidden unless published:true; a reviewer sees it with ?preview=office.",
     "published": false,
     "label": "BK's Office",
-    "blurb": "PLACEHOLDER — door blurb, awaiting BK's wording.",
+    "blurb": "Not a course. The stuff that makes the rest of it work. A new theme every month, and a Hawk pass at the end.",
     "_placeholder_fields": [
-      "blurb",
       "intro",
       "eligibility_line"
     ],
@@ -782,6 +781,7 @@
         "published": false,
         "content_ref": "content/office-2026-09-starting-strong.json"
       }
-    ]
+    ],
+    "_blurb_source": "BK, 2026-09-27 01:07, option B, verbatim. Names the Hawk pass: BK's eligibility ruling (who can claim one) is still open."
   }
 }
