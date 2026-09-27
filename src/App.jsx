@@ -399,7 +399,9 @@ button:active:not(:disabled),a.door:active{transform:scale(.985)}
   color-mix(in srgb,var(--canvas) 26%,transparent) 26%,
   color-mix(in srgb,var(--canvas) 8%,transparent) 50%,
   color-mix(in srgb,var(--canvas) 40%,transparent) 100%)}
-.splash .doors{margin-top:22px}
+/* BK 17:06: "the doors need to be a little lower." They drop as far as the window
+   allows while the whole row stays above the fold (Chromebook window 1366x657 → 97px). */
+.splash .doors{margin-top:clamp(22px,calc(100vh - 560px),150px)}
 .splash .door-art{height:104px}
 /* The words below the doors: one smoked plate, the building showing around it. */
 .splash-words{max-width:760px;margin:34px auto 20px;padding:26px 26px 12px;border-radius:14px;
@@ -737,7 +739,7 @@ code{font-family:ui-monospace,Menlo,monospace;font-size:.9em;color:var(--gold-li
   .splash{padding-top:6px}
   .splash h1{font-size:40px}
   .splash-tag{margin-bottom:0}
-  .splash .doors{gap:12px;margin-top:16px}
+  .splash .doors{gap:12px;margin-top:clamp(16px,calc(100vh - 740px),110px)}
   .splash a.door.has-art{display:grid;grid-template-columns:84px 1fr;column-gap:14px;
     padding:12px 14px 12px 0;align-items:start}
   .splash .door-art{grid-column:1;grid-row:1 / span 4;align-self:stretch;margin:-12px 0;height:auto;
