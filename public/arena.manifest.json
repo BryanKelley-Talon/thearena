@@ -25,7 +25,7 @@
   "courses": [
     {
       "id": "global10r",
-      "label": "Global Studies and Geography 10R",
+      "label": "Global History and Geography 10R",
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
       "accent": "#7FB2D9",
       "status": "open",
@@ -172,7 +172,7 @@
           "_note": "Its own separately built game (builds/review-bowl), pointed at by URL — nothing absorbed into this shell. DARK to students by status:'building' (spec §3 — darkened, one short word, out of the tab order, never colour alone). published:true means 'this is real and may be named'; status is what keeps it unenterable. Going live is ONE edit — status to 'open' — and nothing else: no redeploy of the game, no second wiring pass. BK's action alone, on his timeline (Josh order 2026-09-22). Same URL on both doors: one game, the course is chosen inside it. NOTE 2026-09-22: the subdomain below is the agreed address but is NOT serving yet — the deploy needs BK's hand (see Out/handoff-code-2026-09-22-skills-review-bowl-arena-integration.md). The tile is dark, so nothing follows this URL until both that deploy and BK's flip have happened."
         }
       ],
-      "_label_note": "RULED 2026-09-18 by BK: 'Technically its Global Studies and Geography 10R.' Settles the three-way variant. Was 'Global History & Geography II'. Will reissued the fragment with exactly this one value changed; everything else byte-identical.",
+      "_label_note": "BK 2026-09-27 10:28: \"Global History and Geography 10R ( the 10R is specific to our in house language at school)---US History and Government 11R\". Consistent with the state's exam names (asked 10:26); replaces the 09-18 'Global Studies and Geography 10R' ruling.",
       "skill_lines": {
         "_README": "The course's graded skill lines, in the words the student reads on the scoring page. THIS IS THE CROSSWALK: a student sees a line on their grade, and every station and item that drills it declares the same CODE. Five lines are shared across both courses; the sixth is the course's own essay line and the two are NOT interchangeable.",
         "_contract": "Stations declare skill_lines: [CODE]. Items declare skill_line: CODE. The LABEL is resolved from this list and is never repeated on an item - one place to change a word. A code not in this list is a defect, not a new line.",
@@ -215,7 +215,7 @@
     },
     {
       "id": "us11r",
-      "label": "U.S. History & Government · 11R",
+      "label": "US History and Government 11R",
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
       "accent": "#E3B341",
       "_accent_note": "Adopted from Josh's own token file, builds/thearena/src/tokens/arena-navy.css — --course-us11r, the house gold, measured 9.62:1 on the navy canvas. The skeleton's #C17700 was 11.5's ERA accent out of canon/tokens and would have collided the first time an 11.5 room was built.",
@@ -743,12 +743,13 @@
       },
       "_josh_container_fields": "id/accent/status/skill_lines are Josh's. Stations, drills, blurbs, guide, units and regents are Sam's, taken verbatim from his 2026-09-18 SIX-CARDS-RULED file. Curly quotes in the blurbs are intentional and must not be straightened.",
       "door_image": "images/arena/door-us11r.webp",
-      "_door_image_note": "BK's art, generated in Gemini from Josh's prompt (record: _INBOX/arena-door-art/arena-door-art-PROMPT-RECORD.md), received 2026-09-27 01:07. 1024x572 source; the door uses the middle (x150-874, y110-460: the map and what flanks it), stored 640 wide."
+      "_door_image_note": "BK's art, generated in Gemini from Josh's prompt (record: _INBOX/arena-door-art/arena-door-art-PROMPT-RECORD.md), received 2026-09-27 01:07. 1024x572 source; the door uses the middle (x150-874, y110-460: the map and what flanks it), stored 640 wide.",
+      "_label_ruling": "BK 2026-09-27 10:28: \"Global History and Geography 10R ( the 10R is specific to our in house language at school)---US History and Government 11R\". Consistent with the state's exam names (asked 10:26); replaces the 09-18 'Global Studies and Geography 10R' ruling."
     }
   ],
   "office": {
     "_README": "BK'S OFFICE — the third splash door, shared by both courses (Leo's order 2026-09-26 23:35, amended 00:31; BK's rulings). Josh built the CONTAINER only, 2026-09-27. Every student-facing word in here is either (a) the building's own wording, given by BK (the Be a Hawk frame), (b) a line BK or Leo's order fixed verbatim (the name, the email line), or (c) Leo's LOCKED theme file. Nothing is marked PLACEHOLDER any more. The gate FAILS the build if this section is published while anything under it still carries _placeholder. Hidden unless published:true; a reviewer sees it with ?preview=office.",
-    "published": false,
+    "published": true,
     "label": "BK's Office",
     "blurb": "Not a course. The stuff that makes the rest of it work. Check back every month for a new theme and another shot at a Hawk Pass.",
     "intro": "How do we get better, as a person, as a class, as a school? A little at a time. Start here.",
@@ -789,12 +790,13 @@
         "month_label": "September",
         "title": "Starting the year strong",
         "_title_source": "Leo's order: theme 1, named by BK.",
-        "published": false,
+        "published": true,
         "content_ref": "content/office-2026-09-starting-strong.json",
         "_locked": "Theme words LOCKED by BK 2026-09-27 10:07; ported word for word by Josh."
       }
     ],
     "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B.",
-    "_intro_source": "Same ruling, §5, verbatim."
+    "_intro_source": "Same ruling, §5, verbatim.",
+    "_published": "BK 2026-09-27 10:28: \"2. yes\" (ship the Office tonight; screen labels approved). Live at the end-of-day push."
   }
 }
