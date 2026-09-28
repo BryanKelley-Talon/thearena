@@ -1175,14 +1175,15 @@
           "brief_ref": "content/brief-us11r-11.2.json",
           "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
           "_test_wall": "Sam: none of the 8 reps is on the 11.2 Part I. Add no other MC_BANK/Unit_02 item to this room or the Bowl without asking him.",
+          "assignment": {
+            "type_label": "Classroom assignment",
+            "title": "1776: The Question That Started Everything",
+            "blurb": "Play all seven chapters. Fill in your log sheet as you go. You'll turn it in for a score.",
+            "content_ref": "us11r-1776",
+            "published": true,
+            "_source": "BK 2026-09-28 12:24 ('Game link should live in 11.2 area of The Arena.', passed by Sam: In/sam-pass-2026-09-28-1776-game-link-in-11.2-room.md); card beside the unit review and its words approved by BK 13:47 ('yes.'). The score line is BK's own call against the no-score rule: it names the paper log sheet, shows no score. Resolves through games.json us11r-1776 (live). Used in class Fri 10/2."
+          },
           "activities": [
-            {
-              "type": "scenario_link",
-              "label": "1776: The Question That Started Everything",
-              "published": true,
-              "content_ref": "us11r-1776",
-              "_source": "BK 2026-09-28 12:24 ('Game link should live in 11.2 area of The Arena.'), passed by Sam: In/sam-pass-2026-09-28-1776-game-link-in-11.2-room.md. Label is the game's own title, per Sam. Resolves through games.json (status live), so it opens founding.flashpointhistory.com in a new tab. Used in class Fri 10/2."
-            },
             {
               "type": "stimulus",
               "label": "Part I reps — 11.2",

@@ -520,6 +520,8 @@ a.door, button.lane-tab, button.practice-row, .bottom-back-btn{border:2px solid 
 .card:hover:not(.card.off){background:var(--card-lit);border-color:var(--gold);transform:translateY(-2px)}
 .card.off{opacity:.45;cursor:default}
 a.card{display:block;text-decoration:none}
+/* Room cards (review + classroom assignment) sit side by side and read top-down alike. */
+.room-cards>.card{display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;text-align:left}
 .card-name{font-family:'Barlow Condensed',sans-serif;font-size:24px;line-height:1.14;
   text-transform:uppercase;color:var(--white);margin-bottom:8px}
 .card.off .card-name{color:var(--dim)}
@@ -1177,22 +1179,38 @@ function UnitLane({ course, onOpen }) {
 function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOpenReview, onBack }) {
   const acts = (unit.activities || []).filter(isLive)
   const isCurrent = currentUnit(course)?.slug === unit.slug
+  const asg = unit.assignment && unit.assignment.published !== false ? unit.assignment : null
+  const asgGame = asg ? (games || []).find(g => g.id === asg.content_ref) : null
+  const assignment = asg && asgGame?.status === 'live' && asgGame.url ? { ...asg, href: asgGame.url } : null
   return (
     <div className="wrap">
       <ScreenHeader label={unit.label} onBack={onBack} color={course.accent} back={course.label} />
       {/* ROOM ORDER (BK, 2026-09-25): the unit's review, then its test practice.
           The current unit's gauges live on the course door; a PAST unit's gauges
           move here, so every unit keeps its ladders as the year goes on. */}
-      {resolves(unit.brief_ref) && (
+      {(resolves(unit.brief_ref) || assignment) && (
         <>
           <h3 className="room-section">Review</h3>
-          <div className="grid" style={{ marginBottom: 34 }}>
-            <button type="button" className="card" onClick={onOpenReview}>
-              <div className="card-type">Unit review</div>
-              <div className="card-name">What this unit covered</div>
-              <div className="card-blurb">The key facts, the big idea, and a quick check.</div>
-              <span className="flag live">Open</span>
-            </button>
+          <div className="grid room-cards" style={{ marginBottom: 34 }}>
+            {resolves(unit.brief_ref) && (
+              <button type="button" className="card" onClick={onOpenReview}>
+                <div className="card-type">Unit review</div>
+                <div className="card-name">What this unit covered</div>
+                <div className="card-blurb">The key facts, the big idea, and a quick check.</div>
+                <span className="flag live">Open</span>
+              </button>
+            )}
+            {/* A classroom assignment (BK, 2026-09-28): a game the class plays in a period, beside
+                the unit review. Its words come from the manifest; its link resolves through
+                games.json, so it only lights when the game is live. */}
+            {assignment && (
+              <a className="card assignment" href={assignment.href} target="_blank" rel="noopener noreferrer">
+                <div className="card-type">{assignment.type_label}</div>
+                <div className="card-name">{assignment.title}</div>
+                <div className="card-blurb">{assignment.blurb}</div>
+                <span className="flag live">Open</span>
+              </a>
+            )}
           </div>
         </>
       )}
