@@ -1177,6 +1177,13 @@
           "_test_wall": "Sam: none of the 8 reps is on the 11.2 Part I. Add no other MC_BANK/Unit_02 item to this room or the Bowl without asking him.",
           "activities": [
             {
+              "type": "scenario_link",
+              "label": "1776: The Question That Started Everything",
+              "published": true,
+              "content_ref": "us11r-1776",
+              "_source": "BK 2026-09-28 12:24 ('Game link should live in 11.2 area of The Arena.'), passed by Sam: In/sam-pass-2026-09-28-1776-game-link-in-11.2-room.md. Label is the game's own title, per Sam. Resolves through games.json (status live), so it opens founding.flashpointhistory.com in a new tab. Used in class Fri 10/2."
+            },
+            {
               "type": "stimulus",
               "label": "Part I reps — 11.2",
               "published": true,
