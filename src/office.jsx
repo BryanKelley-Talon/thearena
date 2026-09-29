@@ -64,9 +64,13 @@ export function bonusView(office, theme, bonus, today = todayNow()) {
   const steps = bonus?.instructions || []
   const graded = !!theme?.bonus_due && today <= String(theme.bonus_due)
   if (graded) return { steps, hawkLine: null }
+  const shown = theme?.bonus_due_line ? steps.filter(s => s !== theme.bonus_due_line) : steps
+  // BK 2026-09-29 11:38: if the theme's own steps already say "Mr. Kelley reads
+  // these." (September does), use the short line so it isn't said twice.
+  const saysIt = shown.some(s => /Mr\. Kelley reads these/.test(s))
   return {
-    steps: theme?.bonus_due_line ? steps.filter(s => s !== theme.bonus_due_line) : steps,
-    hawkLine: office?.past_bonus_line || null,
+    steps: shown,
+    hawkLine: (saysIt && office?.past_bonus_line_short) || office?.past_bonus_line || null,
   }
 }
 
