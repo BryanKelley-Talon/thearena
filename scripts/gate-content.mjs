@@ -264,6 +264,20 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
       if (pq.length !== 3 || !pq.every(q => typeof q === 'string' && q.trim())) oFail(tLive, f, `needs exactly three proof questions, as plain strings (ruling 09-27 §2).`)
       if (/"answers?"\s*:/i.test(JSON.stringify(d.proof_questions || null))) oFail(true, f, `proof questions must not carry answers: those are BK's only.`)
       for (const it of [...(d.practice?.items || []), ...(d.mystery?.items || [])]) for (const c of it.choices || []) if (c.key !== it.correct && !(it.distractors || {})[c.key]) console.warn(`  warn  ${f}\n        item ${it.n}: no note for wrong choice ${c.key}.`), warns++
+      // The bonus by month (Leo's ruling 2026-09-28 21:59; BK 2026-09-29 11:21). A graded
+      // bonus names its due date and the exact line that promises the grade, so the page
+      // can drop that line the day after. A line that doesn't match would keep promising
+      // a grade after the window closes, so a mismatch fails.
+      if (t.bonus_due != null) {
+        if (!/^\d{4}-\d{2}-\d{2}$/.test(String(t.bonus_due))) oFail(tLive, tag, `theme ${t.slug}: bonus_due must be YYYY-MM-DD.`)
+        if (!t.bonus_due_line || !(d.bonus?.instructions || []).includes(t.bonus_due_line)) oFail(tLive, tag, `theme ${t.slug}: bonus_due_line must match one bonus instruction in ${f} exactly.`)
+      } else if ((d.bonus?.instructions || []).some(s => /Completion grade/i.test(s))) oFail(tLive, tag, `theme ${t.slug}: its bonus promises a Completion grade but the manifest gives no bonus_due date.`)
+      if (!o.past_bonus_line) oFail(tLive, tag, `office.past_bonus_line (the Hawk pass line, BK 09-29 11:21) is missing; past themes would show no bonus status.`)
+      // The back link names a theme by its place in the month order (September = 1).
+      if (d.back_link) {
+        const n = Number(d.back_link.theme), ordered = [...(o.themes || [])].sort((a, b) => String(a.month).localeCompare(String(b.month)))
+        if (!d.back_link.text || !(n >= 1 && n <= ordered.length) || ordered[n - 1]?.slug === t.slug) oFail(tLive, f, `back_link must carry text and point to an earlier theme (1–${ordered.length}), not itself.`)
+      }
     }
   }
 }

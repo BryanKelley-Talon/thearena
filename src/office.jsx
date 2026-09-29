@@ -49,6 +49,27 @@ export function monthNow(d = new Date()) {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`
 }
 
+// Today as "YYYY-MM-DD" from the DEVICE clock, local time (same clock as monthNow).
+export function todayNow(d = new Date()) {
+  return `${monthNow(d)}-${String(d.getDate()).padStart(2, '0')}`
+}
+
+// ── WHICH BONUS A THEME SHOWS (Leo's ruling 2026-09-28 21:59; BK 2026-09-29 11:21) ──
+// A theme's bonus is a Completion grade only while its bonus_due date has not
+// passed (through the due date itself, no late band). Every other theme, and
+// every theme with no due date, shows the Hawk pass line instead, and its
+// graded line (bonus_due_line, matched exactly) is left out. Unknown = Hawk pass:
+// the page never promises a grade the manifest doesn't name.
+export function bonusView(office, theme, bonus, today = todayNow()) {
+  const steps = bonus?.instructions || []
+  const graded = !!theme?.bonus_due && today <= String(theme.bonus_due)
+  if (graded) return { steps, hawkLine: null }
+  return {
+    steps: theme?.bonus_due_line ? steps.filter(s => s !== theme.bonus_due_line) : steps,
+    hawkLine: office?.past_bonus_line || null,
+  }
+}
+
 export function officeVisible(office, preview) {
   return !!office && (office.published === true || preview)
 }
@@ -174,7 +195,25 @@ const STEPS = [
   { n: 4, key: 'bonus', label: 'Bonus' },
 ]
 
-export function OfficeTheme({ office, theme, pack, done, onDone, onBack, ui }) {
+// ── THE BACK LINK (theme 2 on; BK 2026-09-28 22:11: "point people back to the
+// beginning if they skip it") ──
+// The words are the theme file's own. It shows above the path, on every visit,
+// and only when the theme it points to is open on this device. One tap opens it.
+function BackLink({ link, themes, current, onOpenTheme }) {
+  if (!link?.text || !onOpenTheme) return null
+  // Theme n is the nth month the Office has run: September = 1, October = 2.
+  const ordered = [...(themes || [])].sort((a, b) => String(a.month).localeCompare(String(b.month)))
+  const target = ordered[Number(link.theme) - 1]
+  if (!target || target.slug === current.slug) return null
+  return (
+    <button type="button" className="back-link-card" onClick={() => onOpenTheme(target.slug)}>
+      <span className="back-link-mark" aria-hidden="true">↩</span>
+      <span className="back-link-text">{link.text}</span>
+    </button>
+  )
+}
+
+export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack, onOpenTheme, ui }) {
   const { ScreenHeader, BottomBack, McItem } = ui
   // Step n is open when every step before it is done. The lesson is always open.
   const isDone = n => done.includes(n)
@@ -202,6 +241,7 @@ export function OfficeTheme({ office, theme, pack, done, onDone, onBack, ui }) {
         {pack === null && <div className="loading">Opening the theme&hellip;</div>}
         {pack === false && <div className="empty"><div className="empty-title">This theme is not built yet.</div></div>}
         {pack && <>
+          <BackLink link={pack.back_link} themes={themes} current={theme} onOpenTheme={onOpenTheme} />
           {/* The path. Each stop says in WORDS whether it is done, open or still
               locked; the gold ring marks the one you are on, and is never the only signal.
               (Orange is the growth needle's colour and nothing else's, per the token file.) */}
@@ -333,12 +373,14 @@ function Finish({ office, theme, bonus, coaching, proof }) {
     .join('\n')
   const [copied, setCopied] = useState('')
   const copy = async (what, text) => setCopied((await copyText(text)) ? what : 'fail')
+  const { steps, hawkLine } = bonusView(office, theme, bonus)
   return (
     <section className="office-panel finish">
       <h2 className="panel-h">Bonus</h2>
       {bonus?.title && <T as="h3" className="lesson-h">{bonus.title}</T>}
+      {hawkLine && <p className="hawk-bonus-line"><span className="hawk-bonus-mark" aria-hidden="true" />{hawkLine}</p>}
       <ol className="bonus-steps">
-        {(bonus?.instructions || []).map((s, i) => <T as="li" key={i}>{s}</T>)}
+        {steps.map((s, i) => <T as="li" key={i}>{s}</T>)}
       </ol>
 
       <div className="email-card" aria-labelledby="email-h">
@@ -474,6 +516,22 @@ a.news-title{color:var(--gold-lit);text-decoration:underline}
 .news-source{color:var(--grey);font-size:13.5px;margin-top:3px}
 .news-q{color:var(--white);font-size:15px;line-height:1.5;margin:6px 0 0}
 .news-pending{color:var(--dim);font-size:12.5px;text-transform:uppercase;letter-spacing:.08em;margin-top:6px}
+
+/* The back link: a full-width card above the path. Words plus an arrow mark, so it
+   reads as a way back without colour. Tap target well over 44px tall. */
+.back-link-card{display:flex;align-items:center;gap:12px;width:100%;margin:0 0 16px;padding:14px 16px;min-height:52px;
+  text-align:left;background:var(--card);border:2px solid var(--arena-signal);border-radius:10px;color:var(--white);
+  cursor:pointer;box-shadow:var(--arena-lift);font-family:inherit;font-size:17px;line-height:1.4}
+.back-link-card:hover{background:var(--card-lit);border-color:var(--gold)}
+.back-link-card:focus-visible{outline:3px solid var(--gold-lit);outline-offset:2px}
+.back-link-mark{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;
+  border:2px solid var(--gold);color:var(--gold);font-weight:700}
+.back-link-text{font-weight:600}
+
+/* The Hawk pass line: a gold-edged note with a diamond mark (shape, not colour alone). */
+.hawk-bonus-line{display:flex;align-items:center;gap:10px;margin:4px 0 12px;padding:10px 14px;border-left:4px solid var(--gold);
+  background:color-mix(in srgb,var(--gold) 10%,transparent);border-radius:6px;color:var(--white);font-size:16.5px;font-weight:600;line-height:1.45}
+.hawk-bonus-mark{flex:none;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
 
 .bonus-steps{color:var(--white);font-size:16.5px;line-height:1.6;padding-left:22px;margin:8px 0 18px}
 .bonus-steps li{margin-bottom:6px}

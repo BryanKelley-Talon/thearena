@@ -986,13 +986,6 @@
           "_brief_note": "Josh, 2026-09-25. Sam's GC content brief v2 (BK-approved), ported verbatim to JSON and rendered on the page — BK: render it directly rather than link a PDF. Letterhead, footer filename and the BK-only revision note are left out. Quick Check shows answers under each question (BK's ruling via Sam, 2026-09-25).",
           "activities": [
             {
-              "type": "scenario_link",
-              "label": "Play it: the Founding",
-              "published": false,
-              "content_ref": "https://founding.flashpointhistory.com",
-              "_note": "BK approved the tile 2026-09-18. Held at false until Sam opens the game and reads it against 11.1's question — 'The thirteen colonies grew. What did that growth cost, and who paid it?' Sam does not vouch for content he has not looked at. Flip is a one-line pass to Josh."
-            },
-            {
               "type": "stimulus",
               "label": "Part I reps — 11.1",
               "published": true,
@@ -1583,11 +1576,26 @@
         "published": true,
         "content_ref": "content/office-2026-09-starting-strong.json",
         "_locked": "Theme words LOCKED by BK 2026-09-27 10:07; ported word for word by Josh."
+      },
+      {
+        "slug": "2026-10-halftime-adjustments",
+        "month": "2026-10",
+        "month_label": "October",
+        "title": "Halftime Adjustments",
+        "_title_source": "The LOCKED theme file (theme.title), BK 2026-09-28 22:17.",
+        "published": true,
+        "content_ref": "content/office-2026-10-halftime-adjustments.json",
+        "_locked": "Whole theme LOCKED by BK 2026-09-28 22:17 (\"yes\"); ported byte-for-byte by Josh 2026-09-29. Opens on each device on Thu 10/1 (the month rule).",
+        "bonus_due": "2026-10-30",
+        "bonus_due_line": "Finish the Office and this bonus by Friday, October 30, and it counts as a Completion grade.",
+        "_bonus_due_source": "Leo's ruling 2026-09-28 21:59 (BK 21:56/21:58): October's bonus is a Completion grade, due Fri 10/30/2026, no late band. From Sat 10/31 on the device clock, bonus_due_line is dropped and past_bonus_line shows instead (Leo's reading, BK 'yes' 22:17)."
       }
     ],
     "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B.",
     "_intro_source": "Same ruling, §5, verbatim.",
-    "_published": "BK 2026-09-27 10:28: \"2. yes\" (ship the Office tonight; screen labels approved). Live at the end-of-day push."
+    "_published": "BK 2026-09-27 10:28: \"2. yes\" (ship the Office tonight; screen labels approved). Live at the end-of-day push.",
+    "past_bonus_line": "Hawk pass bonus. Open all year. Mr. Kelley reads these.",
+    "_past_bonus_line_source": "BK 2026-09-29 11:21 EDT (\"yes on octobers office bonus line\"), Josh's proposal of 11:02. Shows on every theme whose bonus is not (or no longer) a Completion grade: September now, October from Sat 10/31. Leo's ruling 2026-09-28 21:59 item 3."
   },
   "coaching": {
     "_source": "Leo's LOCKED growth-coaching bank v2, BK 2026-09-27 10:11 (\"locked\"), flashpoint/Project Flashpoint/In/ruling-2026-09-27-growth-coaching-bank-LOCKED.md. Every line verbatim. Slots and triggers are Josh's (CONVENTIONS §7).",

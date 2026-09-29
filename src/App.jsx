@@ -1834,20 +1834,24 @@ export default function App() {
   let screen
   const officeOn = office && officeVisible(manifest.office, PREVIEW_OFFICE)
   const officeUi = { ScreenHeader, BottomBack, McItem }
-  const theme = officeOn && officeTheme
-    ? visibleThemes(manifest.office, PREVIEW_OFFICE).find(t => t.slug === officeTheme) : null
+  const officeThemes = officeOn ? visibleThemes(manifest.office, PREVIEW_OFFICE) : []
+  const theme = officeOn && officeTheme ? officeThemes.find(t => t.slug === officeTheme) : null
+  const openOfficeTheme = slug => {
+    const t = officeThemes.find(x => x.slug === slug)
+    if (!t) return
+    setOfficeTheme(slug); fetchContent(t.content_ref, setOfficePack); window.scrollTo(0, 0)
+  }
   if (officeOn && theme) {
-    screen = <OfficeTheme office={manifest.office} theme={theme} pack={officePack} ui={officeUi}
+    // key: a theme-to-theme jump (the back link) starts the new theme's path fresh.
+    screen = <OfficeTheme key={theme.slug} office={manifest.office} theme={theme} themes={officeThemes}
+                          pack={officePack} ui={officeUi} onOpenTheme={openOfficeTheme}
                           done={prog?.[`${OFFICE_COURSE.id}:${theme.slug}`]?.[OFFICE_SKILL] || []}
                           onDone={n => markDone(OFFICE_COURSE, officeUnit(theme), OFFICE_SKILL, n)}
                           onBack={() => { setOfficeTheme(null); setOfficePack(null); window.scrollTo(0, 0) }} />
   }
   else if (officeOn) {
     screen = <OfficeRoom office={manifest.office} preview={PREVIEW_OFFICE} ui={officeUi}
-                         onOpenTheme={slug => {
-                           const t = visibleThemes(manifest.office, PREVIEW_OFFICE).find(x => x.slug === slug)
-                           setOfficeTheme(slug); fetchContent(t.content_ref, setOfficePack); window.scrollTo(0, 0)
-                         }}
+                         onOpenTheme={openOfficeTheme}
                          onBack={() => { setOffice(false); window.scrollTo(0, 0) }} />
   }
   else if (!course) screen = <Splash manifest={manifest} onPick={id => { setCourseId(id); window.scrollTo(0, 0) }} onOffice={() => { setOffice(true); window.scrollTo(0, 0) }} />
