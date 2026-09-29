@@ -169,8 +169,10 @@ export function OfficeRoom({ office, preview, onOpenTheme, onBack, ui }) {
       <HawkFrame frame={office.frame} />
 
       <h3 className="room-section">By month</h3>
+      {/* Oldest first, left to right (BK 2026-09-29 11:34): the months read in the
+          order a kid should work them, so October points back to September. */}
       <div className="office-themes">
-        {themes.map(t => (
+        {[...themes].sort((a, b) => String(a.month).localeCompare(String(b.month))).map(t => (
           <button key={t.slug} type="button" className="card theme-card" onClick={() => onOpenTheme(t.slug)}>
             <span className="theme-month">{t.month_label}</span>
             <span className="theme-title">{t.title}</span>
