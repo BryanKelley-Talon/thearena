@@ -8,8 +8,10 @@
 //   • The path unlocks in order: lesson → practice set → mystery deep dive →
 //     the bonus. News links sit alongside and never gate anything.
 //   • NO SCORE anywhere in the room. Not a count, not a percent, not a streak.
-//   • The prize is a Hawk pass BK writes by hand. The Arena runs no draw and
-//     awards nothing. Completion points come only from the bonus BK reads.
+//   • The prize is a pink Hawk Pass BK writes by hand, earned in the PINK BOX, the
+//     4th stop in every theme (Leo's ruling 2026-09-29 12:30). The Arena runs no draw
+//     and awards nothing; the building's Friday table does the drawing. Completion
+//     grades come only from the current month's bonus, which BK reads.
 //   • The finish email never prints BK's address or the district domain. It says
 //     "send to Mr. Kelley at his school email" (ruling 5, verbatim, from the manifest).
 //   • The frame is the building's own: Be a Hawk. Its four words come from the
@@ -54,24 +56,16 @@ export function todayNow(d = new Date()) {
   return `${monthNow(d)}-${String(d.getDate()).padStart(2, '0')}`
 }
 
-// ── WHICH BONUS A THEME SHOWS (Leo's ruling 2026-09-28 21:59; BK 2026-09-29 11:21) ──
-// A theme's bonus is a Completion grade only while its bonus_due date has not
-// passed (through the due date itself, no late band). Every other theme, and
-// every theme with no due date, shows the Hawk pass line instead, and its
-// graded line (bonus_due_line, matched exactly) is left out. Unknown = Hawk pass:
-// the page never promises a grade the manifest doesn't name.
-export function bonusView(office, theme, bonus, today = todayNow()) {
+// ── WHICH BONUS STEPS A THEME SHOWS ─────────────────────────────────────────
+// Leo's ruling 2026-09-28 21:59, amended 2026-09-29 12:30 (BK 12:29). A theme's bonus
+// is a Completion grade only through its bonus_due date (no late band). After that, and
+// on any theme with no due date, the bonus earns nothing: it stays open to do, and its
+// graded line (bonus_due_line, matched exactly) is left out. No status line replaces
+// it: the Hawk Pass lives in the pink box now, not in the bonus.
+export function bonusSteps(theme, bonus, today = todayNow()) {
   const steps = bonus?.instructions || []
   const graded = !!theme?.bonus_due && today <= String(theme.bonus_due)
-  if (graded) return { steps, hawkLine: null }
-  const shown = theme?.bonus_due_line ? steps.filter(s => s !== theme.bonus_due_line) : steps
-  // BK 2026-09-29 11:38: if the theme's own steps already say "Mr. Kelley reads
-  // these." (September does), use the short line so it isn't said twice.
-  const saysIt = shown.some(s => /Mr\. Kelley reads these/.test(s))
-  return {
-    steps: shown,
-    hawkLine: (saysIt && office?.past_bonus_line_short) || office?.past_bonus_line || null,
-  }
+  return graded || !theme?.bonus_due_line ? steps : steps.filter(s => s !== theme.bonus_due_line)
 }
 
 export function officeVisible(office, preview) {
@@ -194,11 +188,14 @@ export function OfficeRoom({ office, preview, onOpenTheme, onBack, ui }) {
 }
 
 // ── ONE THEME ────────────────────────────────────────────────────────────
-const STEPS = [
+// The pink box is stop 4 (Leo's ruling 2026-09-29 12:30). Progress stays level
+// numbers only: a device that had [1,2,3] now opens on the pink box.
+const stepsFor = office => [
   { n: 1, key: 'lesson', label: 'Lesson' },
   { n: 2, key: 'practice', label: 'Practice set' },
   { n: 3, key: 'mystery', label: 'Mystery deep dive' },
-  { n: 4, key: 'bonus', label: 'Bonus' },
+  ...(office?.hawk_box ? [{ n: 4, key: 'hawk', label: office.hawk_box.label, pink: true }] : []),
+  { n: office?.hawk_box ? 5 : 4, key: 'bonus', label: 'Bonus' },
 ]
 
 // ── THE BACK LINK (theme 2 on; BK 2026-09-28 22:11: "point people back to the
@@ -221,10 +218,12 @@ function BackLink({ link, themes, current, onOpenTheme }) {
 
 export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack, onOpenTheme, ui }) {
   const { ScreenHeader, BottomBack, McItem } = ui
+  const STEPS = stepsFor(office)
+  const LAST = STEPS[STEPS.length - 1].n
   // Step n is open when every step before it is done. The lesson is always open.
   const isDone = n => done.includes(n)
   const isOpenStep = n => n === 1 || [...Array(n - 1)].every((_, i) => isDone(i + 1))
-  const firstOpen = STEPS.find(s => isOpenStep(s.n) && !isDone(s.n))?.n || 4
+  const firstOpen = STEPS.find(s => isOpenStep(s.n) && !isDone(s.n))?.n || LAST
   const [step, setStep] = useState(firstOpen)
   const topRef = useRef(null)
   const go = n => { if (isOpenStep(n)) { setStep(n); topRef.current?.scrollIntoView({ block: 'start' }) } }
@@ -258,7 +257,7 @@ export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack,
                 <li key={s.n}>
                   <button type="button" className={`path-stop${here ? ' here' : ''}${d ? ' done' : ''}`}
                           disabled={!open} aria-current={here ? 'step' : undefined} onClick={() => go(s.n)}>
-                    <span className="stop-mark" aria-hidden="true">{d ? '✓' : open ? s.n : '🔒'}</span>
+                    <span className={`stop-mark${s.pink ? ' pink' : ''}`} aria-hidden="true">{d ? '✓' : open ? s.n : '🔒'}</span>
                     <span className="stop-label">{s.label}</span>
                     <span className="stop-state">{d ? 'Done' : open ? (here ? 'You are here' : 'Open') : 'Locked'}</span>
                   </button>
@@ -271,8 +270,9 @@ export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack,
             <div className="office-main">
               {step === 1 && <Lesson lesson={pack.lesson} frame={office.frame} done={isDone(1)} onFinish={() => finish(1)} />}
               {step === 2 && <OfficeSet set={pack.practice} McItem={McItem} done={isDone(2)} onFinish={() => finish(2)} next="the mystery" />}
-              {step === 3 && <OfficeSet set={pack.mystery} McItem={McItem} done={isDone(3)} onFinish={() => finish(3)} next="the bonus" titled />}
-              {step === 4 && <Finish office={office} theme={theme} bonus={pack.bonus} coaching={pack.coaching} proof={pack.proof_questions} />}
+              {step === 3 && <OfficeSet set={pack.mystery} McItem={McItem} done={isDone(3)} onFinish={() => finish(3)} titled />}
+              {step === 4 && office.hawk_box && <HawkBox box={office.hawk_box} done={isDone(4)} onFinish={() => finish(4)} />}
+              {step === LAST && <Finish office={office} theme={theme} bonus={pack.bonus} coaching={pack.coaching} proof={pack.proof_questions} />}
             </div>
             <aside className="office-aside">
               <NewsLinks news={pack.news} />
@@ -330,6 +330,21 @@ function OfficeSet({ set, McItem, done, onFinish, titled }) {
   )
 }
 
+// The pink box: the building's pink Hawk Pass, earned by doing it. The words are the
+// manifest's (one string for every theme). The pass shape (a ticket with a notch) and
+// the label carry it, not the pink alone.
+function HawkBox({ box, done, onFinish }) {
+  return (
+    <section className="office-panel">
+      <div className="hawk-box">
+        <div className="hawk-box-tag"><span className="hawk-box-notch" aria-hidden="true" />{box.label}</div>
+        <T as="p" className="hawk-box-text">{box.text}</T>
+      </div>
+      <StepDone done={done} onFinish={onFinish} label="On to the next step" />
+    </section>
+  )
+}
+
 function StepDone({ done, onFinish, label }) {
   return (
     <div className="step-done">
@@ -379,12 +394,11 @@ function Finish({ office, theme, bonus, coaching, proof }) {
     .join('\n')
   const [copied, setCopied] = useState('')
   const copy = async (what, text) => setCopied((await copyText(text)) ? what : 'fail')
-  const { steps, hawkLine } = bonusView(office, theme, bonus)
+  const steps = bonusSteps(theme, bonus)
   return (
     <section className="office-panel finish">
       <h2 className="panel-h">Bonus</h2>
       {bonus?.title && <T as="h3" className="lesson-h">{bonus.title}</T>}
-      {hawkLine && <p className="hawk-bonus-line"><span className="hawk-bonus-mark" aria-hidden="true" />{hawkLine}</p>}
       <ol className="bonus-steps">
         {steps.map((s, i) => <T as="li" key={i}>{s}</T>)}
       </ol>
@@ -479,7 +493,7 @@ button.theme-card:hover{background:var(--card-lit);border-color:var(--gold)}
 .office-theme-bg > .wrap{position:relative;z-index:1}
 .theme-head{display:flex;flex-wrap:wrap;gap:18px;align-items:flex-end;justify-content:space-between;margin-bottom:18px}
 
-.office-path{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:0;margin:0 0 20px;scroll-margin-top:12px}
+.office-path{list-style:none;display:grid;grid-template-columns:repeat(5,1fr);gap:10px;padding:0;margin:0 0 20px;scroll-margin-top:12px}
 .path-stop{width:100%;display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:12px 14px;text-align:left;
   background:var(--card);border:1px solid var(--edge);border-radius:10px;color:var(--white);cursor:pointer;box-shadow:var(--arena-lift)}
 .path-stop:disabled{cursor:default;box-shadow:none;color:var(--dim);background:color-mix(in srgb,var(--card) 92%,var(--canvas))}
@@ -534,10 +548,17 @@ a.news-title{color:var(--gold-lit);text-decoration:underline}
   border:2px solid var(--gold);color:var(--gold);font-weight:700}
 .back-link-text{font-weight:600}
 
-/* The Hawk pass line: a gold-edged note with a diamond mark (shape, not colour alone). */
-.hawk-bonus-line{display:flex;align-items:center;gap:10px;margin:4px 0 12px;padding:10px 14px;border-left:4px solid var(--gold);
-  background:color-mix(in srgb,var(--gold) 10%,transparent);border-radius:6px;color:var(--white);font-size:16.5px;font-weight:600;line-height:1.45}
-.hawk-bonus-mark{flex:none;width:10px;height:10px;background:var(--gold);transform:rotate(45deg)}
+/* The pink box (Leo's ruling 2026-09-29): the building's pass is pink. Dark ink on pink
+   (13:1), a notched ticket tag and the label, so it reads in greyscale too. */
+.hawk-box{background:#FBD9E6;color:#3A0E22;border-radius:10px;padding:16px 18px;border-left:8px solid #D2477F;
+  box-shadow:0 5px 14px rgba(0,0,0,.4)}
+.hawk-box-tag{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
+  letter-spacing:.14em;font-size:15px;font-weight:700;color:#3A0E22;background:#F4A9C6;border:1.5px dashed #8E1F4C;
+  border-radius:4px;padding:3px 10px;margin-bottom:10px}
+.hawk-box-notch{width:10px;height:10px;border-radius:50%;background:#FBD9E6;border:1.5px solid #8E1F4C}
+.hawk-box-text{font-size:17px;line-height:1.6;margin:0}
+.stop-mark.pink{border-color:#F08CB4;color:#F7B6CF}
+.path-stop.done .stop-mark.pink{background:#F08CB4;color:#3A0E22}
 
 .bonus-steps{color:var(--white);font-size:16.5px;line-height:1.6;padding-left:22px;margin:8px 0 18px}
 .bonus-steps li{margin-bottom:6px}

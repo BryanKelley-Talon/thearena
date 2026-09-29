@@ -236,6 +236,11 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     // Ruling §2-§3: the finish code is retired; the email carries the proof question.
     if (!(o.finish?.email_lines || []).some(l => l.includes('{proof}'))) oFail(live, tag, `finish.email_lines needs a {proof} line (ruling 09-27 §3).`)
     if (!o.background || !fs.existsSync(path.resolve('public', o.background))) oFail(live, tag, `background '${o.background}' is not in public/.`)
+    // Leo's ruling 2026-09-29 12:30: the pink box carries the Hawk Pass; the finish line never
+    // promises a drawing (names are never picked), and the email labels the trait lines HAWK.
+    if (!o.hawk_box?.label || !o.hawk_box?.text) oFail(live, tag, `office.hawk_box needs a label and its text (ruling 09-29).`)
+    if (/picked|drawing/i.test(o.finish?.screen_line || '')) oFail(true, tag, `finish.screen_line promises a drawing; the 09-29 ruling replaced that line.`)
+    if (!(o.finish?.email_lines || []).includes('HAWK')) oFail(live, tag, `finish.email_lines needs the HAWK label over the trait lines (ruling 09-29).`)
     for (const t of o.themes || []) {
       const tLive = live && t.published === true
       const f = String(t.content_ref || '').replace(/^content\//, '')
@@ -272,7 +277,6 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         if (!/^\d{4}-\d{2}-\d{2}$/.test(String(t.bonus_due))) oFail(tLive, tag, `theme ${t.slug}: bonus_due must be YYYY-MM-DD.`)
         if (!t.bonus_due_line || !(d.bonus?.instructions || []).includes(t.bonus_due_line)) oFail(tLive, tag, `theme ${t.slug}: bonus_due_line must match one bonus instruction in ${f} exactly.`)
       } else if ((d.bonus?.instructions || []).some(s => /Completion grade/i.test(s))) oFail(tLive, tag, `theme ${t.slug}: its bonus promises a Completion grade but the manifest gives no bonus_due date.`)
-      if (!o.past_bonus_line) oFail(tLive, tag, `office.past_bonus_line (the Hawk pass line, BK 09-29 11:21) is missing; past themes would show no bonus status.`)
       // The back link names a theme by its place in the month order (September = 1).
       if (d.back_link) {
         const n = Number(d.back_link.theme), ordered = [...(o.themes || [])].sort((a, b) => String(a.month).localeCompare(String(b.month)))

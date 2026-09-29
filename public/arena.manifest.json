@@ -1553,18 +1553,21 @@
     },
     "finish": {
       "_source": "Leo's ruling of 2026-09-27 09:22 (BK 09:20, \"yes 1-5\"), §2-§4, verbatim. The finish code is retired: a proof question replaces it. Ruling 5 of the order still stands: the page never prints BK's address or the district domain; the gate fails on either.",
-      "screen_line": "Finished? Copy the email below and send it to Mr. Kelley from your school account. Hawk Passes are for CPPHS students. If yours is picked, it comes with a note from him and goes into the Friday drawing.",
+      "screen_line": "Finished? Copy the email below and send it to Mr. Kelley from your school account. That's how he knows you finished.",
       "subject_pattern": "{theme} complete",
       "email_lines": [
         "Mr. Kelley,",
         "I finished {theme}.",
+        "HAWK",
         "The trait I worked on most was ____ (Kind, Respectful, Responsible or Safe).",
         "Here's how I showed it: ____",
         "{proof} ____",
         "One thing that would make our class or our school better: ____",
         "BONUS: ____"
       ],
-      "_email_note": "Ruling §3, verbatim, with two fillings: {theme} is the theme's title, and {proof} is one of the theme's three proof questions, picked at random when the finish screen opens. The ruling writes that line as \"[Proof question]: ____\"; the colon is dropped because every proof question ends in a question mark. The last line, \"BONUS: ____\", is from the LOCKED theme file (§6). The Arena never checks the answer; BK reads it."
+      "_email_note": "Ruling §3, verbatim, with two fillings: {theme} is the theme's title, and {proof} is one of the theme's three proof questions, picked at random when the finish screen opens. The ruling writes that line as \"[Proof question]: ____\"; the colon is dropped because every proof question ends in a question mark. The last line, \"BONUS: ____\", is from the LOCKED theme file (§6). The Arena never checks the answer; BK reads it.",
+      "_screen_line_source": "Leo's ruling 2026-09-29 12:30 (BK 12:25 \"yes\", 12:29 \"yes i agree with you\"), verbatim. Replaces the 09-27 §4 line, which promised a drawing (\"If yours is picked\"); names are never picked.",
+      "_hawk_label_source": "Same ruling, 'The email': a HAWK label over the two trait lines; no new question lines."
     },
     "themes": [
       {
@@ -1594,10 +1597,11 @@
     "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B.",
     "_intro_source": "Same ruling, §5, verbatim.",
     "_published": "BK 2026-09-27 10:28: \"2. yes\" (ship the Office tonight; screen labels approved). Live at the end-of-day push.",
-    "past_bonus_line": "Hawk pass bonus. Open all year. Mr. Kelley reads these.",
-    "_past_bonus_line_source": "BK 2026-09-29 11:21 EDT (\"yes on octobers office bonus line\"), Josh's proposal of 11:02. Shows on every theme whose bonus is not (or no longer) a Completion grade: September now, October from Sat 10/31. Leo's ruling 2026-09-28 21:59 item 3.",
-    "past_bonus_line_short": "Hawk pass bonus. Open all year.",
-    "_past_bonus_line_short_source": "BK 2026-09-29 11:38 EDT (\"b: yes\"): on a theme whose own bonus steps already say \"Mr. Kelley reads these.\" (September), show just this, so the line isn't said twice."
+    "hawk_box": {
+      "label": "Hawk Pass",
+      "text": "Be a Hawk. Pick one: Be Kind, Be Respectful, Be Responsible, Be Safe. Write two or three sentences about a time this month you did it. Put it in your email under HAWK. Mr. Kelley writes you a pink Hawk Pass for that trait. Bring it to the table outside the cafeteria at lunch on Fridays for the prize drawing. Hawk Passes are for CPPHS students.",
+      "_source": "Leo's ruling 2026-09-29 12:30 (BK 12:21/12:25/12:29), 'What students see', verbatim. The 4th stop in every theme, current or past, same text all year. Doing it earns the pass; no wrong answer. Pink, per the building's pass. 'label' is the path stop and box heading: BK 2026-09-29 12:37, \"yes.\""
+    }
   },
   "coaching": {
     "_source": "Leo's LOCKED growth-coaching bank v2, BK 2026-09-27 10:11 (\"locked\"), flashpoint/Project Flashpoint/In/ruling-2026-09-27-growth-coaching-bank-LOCKED.md. Every line verbatim. Slots and triggers are Josh's (CONVENTIONS §7).",
