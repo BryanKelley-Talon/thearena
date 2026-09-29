@@ -1534,7 +1534,7 @@
     "_README": "BK'S OFFICE — the third splash door, shared by both courses (Leo's order 2026-09-26 23:35, amended 00:31; BK's rulings). Josh built the CONTAINER only, 2026-09-27. Every student-facing word in here is either (a) the building's own wording, given by BK (the Be a Hawk frame), (b) a line BK or Leo's order fixed verbatim (the name, the email line), or (c) Leo's LOCKED theme file. Nothing is marked PLACEHOLDER any more. The gate FAILS the build if this section is published while anything under it still carries _placeholder. Hidden unless published:true; a reviewer sees it with ?preview=office.",
     "published": true,
     "label": "BK's Office",
-    "blurb": "Not a course. The stuff that makes the rest of it work. Check back every month for a new theme and another shot at a Hawk Pass.",
+    "blurb": "Not a course. The stuff that makes the rest of it work. Check back every month for a new theme and another shot at a Hawk Proud Coupon.",
     "intro": "How do we get better, as a person, as a class, as a school? A little at a time. Start here.",
     "background": "images/office/bks-office-bg.webp",
     "background_small": "images/office/bks-office-bg-640.webp",
@@ -1594,13 +1594,18 @@
         "_bonus_due_source": "Leo's ruling 2026-09-28 21:59 (BK 21:56/21:58): October's bonus is a Completion grade, due Fri 10/30/2026, no late band. From Sat 10/31 on the device clock, bonus_due_line is dropped and past_bonus_line shows instead (Leo's reading, BK 'yes' 22:17)."
       }
     ],
-    "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B.",
+    "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B. Renamed 2026-09-29 12:49 (BK): Hawk Pass → Hawk Proud Coupon.",
     "_intro_source": "Same ruling, §5, verbatim.",
     "_published": "BK 2026-09-27 10:28: \"2. yes\" (ship the Office tonight; screen labels approved). Live at the end-of-day push.",
     "hawk_box": {
-      "label": "Hawk Pass",
-      "text": "Be a Hawk. Pick one: Be Kind, Be Respectful, Be Responsible, Be Safe. Write two or three sentences about a time this month you did it. Put it in your email under HAWK. Mr. Kelley writes you a pink Hawk Pass for that trait. Bring it to the table outside the cafeteria at lunch on Fridays for the prize drawing. Hawk Passes are for CPPHS students.",
-      "_source": "Leo's ruling 2026-09-29 12:30 (BK 12:21/12:25/12:29), 'What students see', verbatim. The 4th stop in every theme, current or past, same text all year. Doing it earns the pass; no wrong answer. Pink, per the building's pass. 'label' is the path stop and box heading: BK 2026-09-29 12:37, \"yes.\""
+      "label": "Hawk Proud Coupon",
+      "text": "Be a Hawk. Pick one: Be Kind, Be Respectful, Be Responsible, Be Safe. Write two or three sentences about a time this month you did it. Put it in your email under HAWK. Mr. Kelley writes you a pink Hawk Proud Coupon for that trait. Bring it to the table outside the cafeteria at lunch on Fridays for the prize drawing. Hawk Proud Coupons are for CPPHS students.",
+      "_source": "Leo's ruling 2026-09-29 12:30 (BK 12:21/12:25/12:29), 'What students see', verbatim. The 4th stop in every theme, current or past, same text all year. Doing it earns the pass; no wrong answer. Pink, per the building's pass. 'label' is the path stop and box heading: BK 2026-09-29 12:37, \"yes.\"",
+      "title_lines": [
+        "Hawk Proud",
+        "Coupon"
+      ],
+      "_naming_source": "BK 2026-09-29 12:49 EDT, with a photo of the building's pink coupon: \"lets get consistent..heres the pass. update the naming..use the visual...make it pop.\" The building calls it a HAWK PROUD COUPON; 'Hawk Pass' is replaced in the stop, the box text and the door blurb, nothing else changed. title_lines are the coupon's own heading. Reported to Leo (his words were edited on BK's order)."
     }
   },
   "coaching": {

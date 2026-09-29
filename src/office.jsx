@@ -8,7 +8,7 @@
 //   • The path unlocks in order: lesson → practice set → mystery deep dive →
 //     the bonus. News links sit alongside and never gate anything.
 //   • NO SCORE anywhere in the room. Not a count, not a percent, not a streak.
-//   • The prize is a pink Hawk Pass BK writes by hand, earned in the PINK BOX, the
+//   • The prize is the building's pink Hawk Proud Coupon, which BK writes by hand, earned in the PINK BOX, the
 //     4th stop in every theme (Leo's ruling 2026-09-29 12:30). The Arena runs no draw
 //     and awards nothing; the building's Friday table does the drawing. Completion
 //     grades come only from the current month's bonus, which BK reads.
@@ -61,7 +61,7 @@ export function todayNow(d = new Date()) {
 // is a Completion grade only through its bonus_due date (no late band). After that, and
 // on any theme with no due date, the bonus earns nothing: it stays open to do, and its
 // graded line (bonus_due_line, matched exactly) is left out. No status line replaces
-// it: the Hawk Pass lives in the pink box now, not in the bonus.
+// it: the Hawk Proud Coupon lives in the pink box now, not in the bonus.
 export function bonusSteps(theme, bonus, today = todayNow()) {
   const steps = bonus?.instructions || []
   const graded = !!theme?.bonus_due && today <= String(theme.bonus_due)
@@ -271,7 +271,7 @@ export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack,
               {step === 1 && <Lesson lesson={pack.lesson} frame={office.frame} done={isDone(1)} onFinish={() => finish(1)} />}
               {step === 2 && <OfficeSet set={pack.practice} McItem={McItem} done={isDone(2)} onFinish={() => finish(2)} next="the mystery" />}
               {step === 3 && <OfficeSet set={pack.mystery} McItem={McItem} done={isDone(3)} onFinish={() => finish(3)} titled />}
-              {step === 4 && office.hawk_box && <HawkBox box={office.hawk_box} done={isDone(4)} onFinish={() => finish(4)} />}
+              {step === 4 && office.hawk_box && <HawkBox box={office.hawk_box} frame={office.frame} done={isDone(4)} onFinish={() => finish(4)} />}
               {step === LAST && <Finish office={office} theme={theme} bonus={pack.bonus} coaching={pack.coaching} proof={pack.proof_questions} />}
             </div>
             <aside className="office-aside">
@@ -330,15 +330,30 @@ function OfficeSet({ set, McItem, done, onFinish, titled }) {
   )
 }
 
-// The pink box: the building's pink Hawk Pass, earned by doing it. The words are the
-// manifest's (one string for every theme). The pass shape (a ticket with a notch) and
-// the label carry it, not the pink alone.
-function HawkBox({ box, done, onFinish }) {
+// THE PINK BOX, drawn as the building's own coupon (BK 2026-09-29 12:49: "use the visual...
+// make it pop"): pink stock, a black frame with notched corners and an orange rule inside
+// it, the HAWK PROUD / COUPON heading, a BE A HAWK ribbon, and the building's four traits
+// in the coupon's two-by-two grid. Every word is the manifest's or the building's frame;
+// the ruled instructions sit on the coupon under the grid. The check boxes are drawing,
+// not controls: nothing on this card is tapped or stored. The mascot art is left out.
+function HawkBox({ box, frame, done, onFinish }) {
+  const [top, bottom] = box.title_lines || [box.label, null]
+  const traits = frame?.traits || []
   return (
-    <section className="office-panel">
-      <div className="hawk-box">
-        <div className="hawk-box-tag"><span className="hawk-box-notch" aria-hidden="true" />{box.label}</div>
-        <T as="p" className="hawk-box-text">{box.text}</T>
+    <section className="office-panel coupon-panel">
+      <div className="coupon" role="group" aria-label={box.label}>
+        <div className="coupon-in">
+          <div className="coupon-title" aria-hidden="true">
+            <span className="coupon-top">{top}</span>
+            {bottom && <span className="coupon-ribbon">{bottom}</span>}
+          </div>
+          <h2 className="sr-only">{box.label}</h2>
+          {frame?.title && <div className="coupon-banner">{frame.title}</div>}
+          <ul className="coupon-traits">
+            {traits.map(t => <li key={t}><span className="coupon-check" aria-hidden="true" />{t}</li>)}
+          </ul>
+          <T as="p" className="coupon-text">{box.text}</T>
+        </div>
       </div>
       <StepDone done={done} onFinish={onFinish} label="On to the next step" />
     </section>
@@ -548,17 +563,42 @@ a.news-title{color:var(--gold-lit);text-decoration:underline}
   border:2px solid var(--gold);color:var(--gold);font-weight:700}
 .back-link-text{font-weight:600}
 
-/* The pink box (Leo's ruling 2026-09-29): the building's pass is pink. Dark ink on pink
-   (13:1), a notched ticket tag and the label, so it reads in greyscale too. */
-.hawk-box{background:#FBD9E6;color:#3A0E22;border-radius:10px;padding:16px 18px;border-left:8px solid #D2477F;
-  box-shadow:0 5px 14px rgba(0,0,0,.4)}
-.hawk-box-tag{display:inline-flex;align-items:center;gap:8px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
-  letter-spacing:.14em;font-size:15px;font-weight:700;color:#3A0E22;background:#F4A9C6;border:1.5px dashed #8E1F4C;
-  border-radius:4px;padding:3px 10px;margin-bottom:10px}
-.hawk-box-notch{width:10px;height:10px;border-radius:50%;background:#FBD9E6;border:1.5px solid #8E1F4C}
-.hawk-box-text{font-size:17px;line-height:1.6;margin:0}
-.stop-mark.pink{border-color:#F08CB4;color:#F7B6CF}
-.path-stop.done .stop-mark.pink{background:#F08CB4;color:#3A0E22}
+/* THE COUPON (BK 2026-09-29 12:49): the building's pink Hawk Proud Coupon, in CSS.
+   Ink #141414 on pink #F6A9B6 is 10.9:1; orange #F59A1F on ink is 8.6:1. The notched
+   corners are a clip-path, so the lift is a drop-shadow filter, not a box-shadow. */
+.coupon-panel{overflow:visible}
+.coupon{--ink:#141414;--pink:#F6A9B6;--pink-lit:#FBD0D8;--orange:#F59A1F;
+  max-width:640px;margin:4px auto 0;padding:6px;background:var(--ink);
+  clip-path:polygon(18px 0,calc(100% - 18px) 0,100% 18px,100% calc(100% - 18px),calc(100% - 18px) 100%,18px 100%,0 calc(100% - 18px),0 18px);
+  filter:drop-shadow(0 10px 18px rgba(0,0,0,.55));transform:rotate(-.6deg);animation:couponIn .45s cubic-bezier(.2,.9,.3,1.2) both}
+.coupon-in{background:var(--pink);color:var(--ink);padding:18px 20px 20px;position:relative;
+  clip-path:polygon(14px 0,calc(100% - 14px) 0,100% 14px,100% calc(100% - 14px),calc(100% - 14px) 100%,14px 100%,0 calc(100% - 14px),0 14px)}
+.coupon-in::before{content:'';position:absolute;inset:7px;border:2.5px solid var(--orange);pointer-events:none;
+  clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 10px,100% calc(100% - 10px),calc(100% - 10px) 100%,10px 100%,0 calc(100% - 10px),0 10px)}
+.coupon-title{display:flex;flex-direction:column;align-items:center;gap:2px;margin:2px 0 10px;position:relative}
+.coupon-top{font:900 clamp(38px,7vw,58px)/.9 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.02em;
+  color:var(--pink-lit);-webkit-text-stroke:2px var(--ink);paint-order:stroke fill;
+  text-shadow:3px 3px 0 var(--orange),5px 5px 0 var(--ink)}
+.coupon-ribbon{display:inline-block;background:var(--orange);color:var(--ink);font:900 clamp(22px,4vw,30px)/1 'Barlow Condensed',sans-serif;
+  text-transform:uppercase;letter-spacing:.18em;padding:4px 26px 3px;border:2.5px solid var(--ink);
+  clip-path:polygon(0 0,100% 0,calc(100% - 12px) 50%,100% 100%,0 100%,12px 50%)}
+.coupon-banner{width:max-content;max-width:100%;margin:0 auto 10px;background:var(--ink);color:var(--orange);
+  font:italic 900 22px/1 'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;padding:6px 22px;
+  clip-path:polygon(10px 0,calc(100% - 10px) 0,100% 50%,calc(100% - 10px) 100%,10px 100%,0 50%)}
+.coupon-traits{list-style:none;margin:0 0 14px;padding:10px 14px;background:var(--ink);border-radius:10px;
+  display:grid;grid-template-columns:1fr 1fr;gap:8px 18px;border:2px solid var(--orange)}
+.coupon-traits li{display:flex;align-items:center;gap:10px;color:var(--orange);font:800 19px/1.1 'Barlow Condensed',sans-serif;
+  text-transform:uppercase;letter-spacing:.06em}
+.coupon-check{flex:none;width:16px;height:16px;border:2.5px solid var(--pink-lit);border-radius:3px}
+.coupon-text{font-size:17px;line-height:1.6;margin:0;color:var(--ink);font-weight:500}
+@media (max-width:480px){ .coupon-traits{grid-template-columns:1fr} .coupon-in{padding:16px 14px 16px} }
+@keyframes couponIn{from{opacity:0;transform:rotate(-3deg) scale(.94)}to{opacity:1;transform:rotate(-.6deg) scale(1)}}
+@media (prefers-reduced-motion:reduce){ .coupon{animation:none;transform:none} }
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+.stop-mark.pink{border-color:#F6A9B6;color:#F6A9B6}
+.path-stop.done .stop-mark.pink{background:#F6A9B6;color:#141414}
+.path-stop.here .stop-mark.pink{border-color:#FBD0D8;color:#FBD0D8}
 
 .bonus-steps{color:var(--white);font-size:16.5px;line-height:1.6;padding-left:22px;margin:8px 0 18px}
 .bonus-steps li{margin-bottom:6px}
