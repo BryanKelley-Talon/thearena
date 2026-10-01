@@ -1,6 +1,7 @@
 {
- "_built": "Sam (us11r-curriculum) 2026-10-01 08:24 EDT",
- "_signed": "BK 2026-10-01 08:38 EDT: \"yes to this. well done. signed.\" off US11R_11.2A_DocAssist_WORDING_2026-10-01.pdf",
+ "_built": "Sam (us11r-curriculum) 2026-10-01 09:29 EDT",
+ "_signed": "BK 2026-10-01 10:22 EDT: \"a. yes. agreed.\" (v2 replaces the 08:38 set before today's push) off US11R_11.2A_DocAssist_WORDING_v2_2026-10-01.pdf",
+ "_v2": "BK 09:27: Doc Assist own four questions, not the casefile questions; label Ask yourself:",
  "_source": "OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileA_STUDENT_2026-09-30.pdf",
  "_ruled": "CARRY-FORWARD §6 DOC ASSIST, RULED (BK 2026-10-01 08:16)",
  "tool": "Doc Assist",
@@ -59,8 +60,8 @@
      "page": 3,
      "steps": [
       {
-       "question": "Who made this map, and when? Is it from 1763?",
-       "mode": "out loud",
+       "question": "Who made this map, and when? Is it from the time it shows?",
+       "mode": null,
        "line": "Two places to look: the source line under the map and the title on top. Check the year in the title against 1763."
       },
       {
@@ -69,18 +70,18 @@
        "line": "Find the key in the lower left first. It tells you what the dotted line means. Then follow that line with your finger, top to bottom."
       },
       {
-       "question": "Where does the line say colonists can't settle?",
-       "mode": "written",
+       "question": "What does the map show about where colonists could settle after 1763?",
+       "mode": null,
        "line": "Find the shaded colonies, then the dotted line. Which side of the line is off limits? Your KEY VOCABULARY names the mountains it runs along."
       },
       {
-       "question": "Name one reason a colonist might be angry about this line.",
-       "mode": "written",
-       "line": "Think like a colonist in 1763: a farmer with a big family, or a soldier who just fought a war over that land. What did they want on the far side of the line?"
+       "question": "How would a colonist and a Native nation each see this line?",
+       "mode": null,
+       "line": "Think like a colonist in 1763 who wanted land. Then think like a Native nation living west of the line. Same line, two views."
       },
       {
-       "question": "Should a government be able to limit where its people live? Find the principle on your card that this argument is about.",
-       "mode": "out loud",
+       "question": "Should a government be able to tell people where they can live?",
+       "mode": null,
        "line": "This is about how far a government's power should reach. Start with the first group on your card: How power is built and limited."
       }
      ],
@@ -101,8 +102,8 @@
      "page": 4,
      "steps": [
       {
-       "question": "Whately worked for Britain's Treasury and wrote the Stamp Act. How might his job shape how he explains the tax?",
-       "mode": "written",
+       "question": "Who wrote this, what was his job, and how might that shape what he says?",
+       "mode": null,
        "line": "He wrote the tax, and now he's explaining the tax. Ask yourself: would he ever call it a bad idea?"
       },
       {
@@ -111,18 +112,18 @@
        "line": "Four sentences. Hard words: a national debt is money a country owes. Keep going, then say what it's about."
       },
       {
-       "question": "Why does Whately think the colonies should pay?",
-       "mode": "written",
+       "question": "What reason does Whately give for making the colonies pay?",
+       "mode": null,
        "line": "His reason is in the first sentence and the last two. Look for what the money pays for, and who is paying right now."
       },
       {
-       "question": "Who in the colonies would disagree with Whately, and what would they say?",
-       "mode": "written",
-       "line": "Who actually has to pay for the stamps? Picture a colonial printer or a lawyer reading this. What would they say back?"
+       "question": "Who would argue back, and what would they say?",
+       "mode": null,
+       "line": "Who actually has to pay for the stamps? Picture a colonial printer or a lawyer reading this."
       },
       {
-       "question": "Is it fair to make people pay for protection they didn't ask for? Name the principle from your card this tax fight is about.",
-       "mode": "written",
+       "question": "Is it fair to tax people who had no say in the tax?",
+       "mode": null,
        "line": "Ask where a government gets the right to tax people at all. Look in the group called Where government's power comes from."
       }
      ],
@@ -145,9 +146,9 @@
      "page": 5,
      "steps": [
       {
-       "question": "Who wrote this, and who were they writing to?",
-       "mode": "written",
-       "line": "The source line names the group. WHAT YOU NEED TO KNOW on Day 1 says who they were. For \"writing to,\" ask who could get rid of the tax."
+       "question": "Who wrote this, and who were they trying to convince?",
+       "mode": null,
+       "line": "The source line names the group. WHAT YOU NEED TO KNOW on Day 1 says who they were. Then ask who could get rid of the tax."
       },
       {
        "question": null,
@@ -155,19 +156,19 @@
        "line": "Four sentences. Watch for the word consent: it means agreement. Mark it when you see it."
       },
       {
-       "question": "What is their main complaint? Say it in your own words, then explain why it matters.",
-       "mode": "written",
+       "question": "What is the colonists' main complaint, and why does it matter?",
+       "mode": null,
        "line": "Find the sentence with the word consent. Say it the way you'd explain it to a friend. Then finish: because ___, which means ___."
       },
       {
-       "question": "These delegates were colonial leaders with property to tax. Whose voice is missing?",
-       "mode": "written",
-       "line": "The writers owned property. Now think of everyone in the colonies in 1765 who couldn't vote or didn't own property. Who are they?"
+       "question": "Whose voice is in this document, and whose is missing?",
+       "mode": null,
+       "line": "The writers owned property. Now think of everyone in the colonies in 1765 who couldn't vote or didn't own property."
       },
       {
-       "question": "Name the principle from your card behind “no taxes without consent.” Where did you see it in 11.1?",
-       "mode": "written",
-       "line": "Consent is the clue word. Read the group Where government's power comes from and find the one that matches. For 11.1, think back to how the colonists governed themselves."
+       "question": "What principle about consent is this document fighting for?",
+       "mode": null,
+       "line": "Consent is the clue word. Read the group Where government's power comes from and find the one that matches."
       }
      ],
      "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
@@ -189,9 +190,9 @@
      "page": 8,
      "steps": [
       {
-       "question": "Revere made this print to sell. Why does who made it, and why, matter?",
-       "mode": "written",
-       "line": "Revere was a Boston silversmith and a Patriot, and he had this print for sale within weeks. Ask: what would make people want to buy it?"
+       "question": "Who made this picture, and why did he make it?",
+       "mode": null,
+       "line": "Revere was a Boston silversmith and a Patriot, and he had this print for sale within weeks. What would make people want to buy it?"
       },
       {
        "question": null,
@@ -199,18 +200,18 @@
        "line": "Read the title across the top word for word first. Then look at the two groups facing each other. Then the small details: the ground, the signs on the buildings, the sky."
       },
       {
-       "question": "What does Revere want you to feel? Point to one detail.",
-       "mode": "written",
+       "question": "What story about that night does the picture tell? Point to two details.",
+       "mode": null,
        "line": "Read the title again, especially the second word. Then look at the soldiers: are they a mob or a straight line? And look at the man behind them."
       },
       {
-       "question": "How might a British soldier have drawn the same night?",
-       "mode": "out loud",
+       "question": "What might be left out? How would a British soldier tell it?",
+       "mode": null,
        "line": "Picture the crowd from the soldiers' side of the street. What would a soldier put in the picture that Revere left out?"
       },
       {
-       "question": "Should an artist be free to publish a one-sided picture of events? Find the principle on your card.",
-       "mode": "out loud",
+       "question": "Should people be free to publish a one-sided picture of events?",
+       "mode": null,
        "line": "This is about a freedom a person keeps even when the government doesn't like what they say. Look in the group called What government must protect."
       }
      ],
@@ -231,8 +232,8 @@
      "page": 10,
      "steps": [
       {
-       "question": "Preston said this at his own murder trial. How does that shape what he tells?",
-       "mode": "written",
+       "question": "Who is speaking, where, and what does he need the jury to believe?",
+       "mode": null,
        "line": "Before you read, ask: what happens to Preston if the jury doesn't believe him?"
       },
       {
@@ -241,18 +242,18 @@
        "line": "Five sentences. Keep track of time: what happened before the shooting, and what he says after it."
       },
       {
-       "question": "What does Preston say happened before the shooting?",
-       "mode": "written",
-       "line": "Stay in the part before anyone fires. Mark each thing he says the crowd did."
+       "question": "What does Preston say happened, step by step?",
+       "mode": null,
+       "line": "Mark each thing he says the crowd did before anyone fired. Then find what he says about the order to fire."
       },
       {
-       "question": "Revere and Preston tell different stories. Which is more reliable, and why?",
-       "mode": "written",
-       "line": "Neither one is neutral. Go back to Step 1 for each: who made it, and what did they want? Then pick one and give your reason."
+       "question": "Is Preston's account reliable? How would someone in the crowd tell it?",
+       "mode": null,
+       "line": "Neither side is neutral. Go back to Step 1: who is talking, and what did he want? Then picture a man in the crowd."
       },
       {
-       "question": "A Patriot lawyer defended Preston, and the jury found him not guilty. Name the principle from your card this trial upholds. Why does it matter even for someone the public hates?",
-       "mode": "out loud",
+       "question": "Why does a fair trial matter, even for someone the public hates?",
+       "mode": null,
        "line": "Look in the group called What government must protect. Read each \"Look for it when\" cue and find the one that fits a trial."
       }
      ],
@@ -275,8 +276,8 @@
      "page": 14,
      "steps": [
       {
-       "question": "Both wrote in 1776 to persuade. Who was each one writing for?",
-       "mode": "out loud",
+       "question": "Who wrote this, when, and who was he trying to reach?",
+       "mode": null,
        "line": "Paine sold Common Sense as a cheap pamphlet. Who buys a cheap pamphlet in 1776?"
       },
       {
@@ -285,18 +286,18 @@
        "line": "Two paragraphs. The first fires question after question at you. The second makes the argument. Read it like a speech."
       },
       {
-       "question": "What is each one's strongest reason?",
-       "mode": "out loud",
-       "line": "Paine argues two ways: the first paragraph goes after your feelings, the second goes after your common sense. Pick the one you'd use in the debate."
+       "question": "What is Paine's main argument, and what reasons does he use?",
+       "mode": null,
+       "line": "Paine argues two ways: the first paragraph goes after your feelings, and the second goes after your common sense."
       },
       {
-       "question": "Who in the colonies might agree with Inglis, and why?",
-       "mode": "out loud",
-       "line": "This one is about Document 7. Finish Paine, then open Document 7's walk."
+       "question": "Who in the colonies would push back on Paine?",
+       "mode": null,
+       "line": "Think about who still had a lot to lose from a war with Britain. Then read Document 7."
       },
       {
-       "question": "Paine and Inglis disagree about who should rule America. Find the principle on your card they're fighting over.",
-       "mode": "out loud",
+       "question": "Who does Paine think should govern America?",
+       "mode": null,
        "line": "Paine's last three sentences are about who should govern America. Look in the group called Where government's power comes from."
       }
      ],
@@ -321,8 +322,8 @@
      "page": 14,
      "steps": [
       {
-       "question": "Both wrote in 1776 to persuade. Who was each one writing for?",
-       "mode": "out loud",
+       "question": "Who wrote this, when, and who was he answering?",
+       "mode": null,
        "line": "Inglis was a New York City minister, loyal to the King, answering Paine within weeks. Whose minds was he trying to win back?"
       },
       {
@@ -331,18 +332,18 @@
        "line": "Four short paragraphs. His first line is a jab at Paine's title. Catch it, then keep going."
       },
       {
-       "question": "What is each one's strongest reason?",
-       "mode": "out loud",
-       "line": "Inglis gives two lists: what peace keeps and what war would cost. Find one thing on each list. Which hits harder?"
+       "question": "What is Inglis's argument against independence?",
+       "mode": null,
+       "line": "Inglis gives two lists: what peace keeps and what war would cost. Find one thing on each list."
       },
       {
-       "question": "Who in the colonies might agree with Inglis, and why?",
-       "mode": "out loud",
+       "question": "Whose interests does Inglis speak for?",
+       "mode": null,
        "line": "Look at what Inglis says war would ruin. Who in the colonies made their living from those things?"
       },
       {
-       "question": "Paine and Inglis disagree about who should rule America. Find the principle on your card they're fighting over.",
-       "mode": "out loud",
+       "question": "What kind of government does Inglis want, and how is it different from Paine's?",
+       "mode": null,
        "line": "His last sentence names a kind of government. Put it next to what Paine wants. Then look in the group called Where government's power comes from."
       }
      ],
@@ -371,9 +372,9 @@
      "page": 16,
      "steps": [
       {
-       "question": "Who was this written for: the King, the colonists, or the world?",
-       "mode": "written",
-       "line": "Think about who needed to hear that the colonies were now their own country. Pick one, and give your because."
+       "question": "Who wrote this, when, and who was meant to hear it?",
+       "mode": null,
+       "line": "Think about who needed to hear that the colonies were now their own country. Pick an audience, and give your because."
       },
       {
        "question": null,
@@ -381,19 +382,19 @@
        "line": "Three long sentences. Break each one at the commas. The middle one has a phrase you'll see on the Regents: consent of the governed."
       },
       {
-       "question": "Where does a government get its power?",
-       "mode": "written",
-       "line": "One sentence answers this almost word for word. Find the words \"get their power.\""
+       "question": "What does the Declaration say governments are for, and where does their power come from?",
+       "mode": null,
+       "line": "Read the middle sentence. Find the words \"to protect\" and the words \"get their power.\""
       },
       {
-       "question": "Who was in the room when this was signed, and who was not?",
-       "mode": "out loud",
+       "question": "Who signed this, and who was left out of \"all men\"?",
+       "mode": null,
        "line": "Picture the room: who were the delegates? Then reread Day 4's OUTSIDE EVIDENCE box, on page 15."
       },
       {
-       "question": "The Declaration says people are born with rights that cannot be taken away. Name that principle from your card. What does the Declaration say people can do when a government destroys those rights?",
-       "mode": "written",
-       "line": "Look in the group called Where government's power comes from, and read each \"Look for it when\" cue. For the second part, find the sentence that starts \"Whenever.\""
+       "question": "What can people do when a government destroys their rights?",
+       "mode": null,
+       "line": "Find the sentence that starts \"Whenever.\" Then look in the group called Where government's power comes from, and read each \"Look for it when\" cue."
       }
      ],
      "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",
@@ -415,8 +416,8 @@
      "page": 17,
      "steps": [
       {
-       "question": "Virginia wrote this a month before the Declaration. Why might Jefferson, a Virginian, borrow from it?",
-       "mode": "out loud",
+       "question": "Who wrote this, when, and how is it connected to the Declaration?",
+       "mode": null,
        "line": "Check the two dates: June 12 and July 4. Then ask what a writer does with a strong line he's already read."
       },
       {
@@ -426,17 +427,17 @@
       },
       {
        "question": "What does it say about who holds power?",
-       "mode": "written",
+       "mode": null,
        "line": "The first sentence answers it. Find the two things it says about power and the people."
       },
       {
-       "question": "Who counted as “the people” in Virginia in 1776?",
-       "mode": "written",
-       "line": "Ask who could vote or hold office in Virginia in 1776, then who was left out. Thread 1 on your casefile cover is a good place to start."
+       "question": "When Virginia said \"the people,\" who did it mean, and who did it leave out?",
+       "mode": null,
+       "line": "Ask who could vote or hold office in Virginia in 1776. Thread 1 on your casefile cover is a good place to start."
       },
       {
-       "question": "What idea do Documents 8 and 9 share? Name it from your card.",
-       "mode": "written",
+       "question": "What idea does this share with the Declaration?",
+       "mode": null,
        "line": "Put the two side by side. Find one phrase in each about where power comes from. Then find that idea on your card."
       }
      ],
@@ -459,8 +460,8 @@
      "page": 18,
      "steps": [
       {
-       "question": "This is a private letter to her husband. How might that change what she's willing to say?",
-       "mode": "written",
+       "question": "Who wrote this, to whom, and why might a private letter say more?",
+       "mode": null,
        "line": "She wrote this to her husband, not for the newspapers. Read it asking: would she say this in public in 1776?"
       },
       {
@@ -469,19 +470,19 @@
        "line": "Two paragraphs. The first is one sentence, and it's a puzzle: read it twice. Who is taking away whose liberty?"
       },
       {
-       "question": "What two groups does she say are being denied liberty?",
-       "mode": "written",
+       "question": "What is Abigail Adams asking for, and what warning does she give?",
+       "mode": null,
+       "line": "Find \"remember the ladies,\" then read to the end. What does she say will happen if they're ignored?"
+      },
+      {
+       "question": "Whose liberty is missing from the new country's plans, according to her?",
+       "mode": null,
        "line": "One group hides in her first sentence. The other runs all through her second paragraph."
       },
       {
-       "question": "Finish the sentence: “Abigail Adams would say ‘all men are created equal’ is ___ because ___.”",
-       "mode": "written",
-       "line": "Put her line \"all men would be tyrants if they could\" next to Document 8's \"all men are created equal.\" Same two words. Same meaning?"
-      },
-      {
-       "question": "She says no voice means no obedience: the colonists' own argument. Name the principle from your card she's turning back on them.",
-       "mode": "written",
-       "line": "Go back to Document 3. What did the colonists say about taxes and representatives? She's using their argument. Find it on your card."
+       "question": "She uses the colonists' own argument. Which principle is she turning back on them?",
+       "mode": null,
+       "line": "Go back to Document 3. What did the colonists say about taxes and representatives? Find it on your card."
       }
      ],
      "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",

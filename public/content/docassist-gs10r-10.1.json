@@ -1,5 +1,5 @@
 {
- "_built": "Will (global10r-curriculum) 2026-10-01 09:07 EDT",
+ "_built": "Will (global10r-curriculum) 2026-10-01 09:53 EDT",
  "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: steps[].questions is a LIST (a Global step may carry 0, 1 or 2 casefile questions, each with its printed number, or n=null where the 10.1 packet prints none); optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05).",
  "tool": "Doc Assist",
  "room": "10.1",
@@ -96,9 +96,9 @@
  "_ruled": "Wording SIGNED by BK 2026-10-01 09:05 (\"1. ... yes good step. 2. yes 3. yes 4. yes with your changes. thank you. signed.\")",
  "casefiles": [
   {
-   "id": "10.1",
-   "title": "10.1 Student Packet · The World in 1750",
-   "book": "packet",
+   "id": "A",
+   "title": "10.1 Casefile A · The World in 1750",
+   "book": "casefile",
    "status": "open",
    "_source": "global10r-curriculum/OUTPUTS/Unit_10.1/GS10R_Unit10.1_Student_Packet_v13_2026-09-19.pdf",
    "docs": [
@@ -148,7 +148,7 @@
        "line": "Start with the question's own clue: \"Was nothing there?\" Ask who made the map and what they knew. Then check the anchors on your cover page for the issue a blank like that puts on the table."
       }
      ],
-     "close": "That's the walk. Now answer Document 1's questions in your packet, starting on page 3. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 3. Use the sentence stem, or write something of equal or better value.",
      "before": "Your teacher is putting two maps up. You are not copying them. You are answering from them — which is what the Regents will ask you to do with every map it gives you.",
      "images": [
       {
@@ -212,7 +212,7 @@
        "line": "Clue words: \"oppressive measures.\" Ask what kind of issue that phrase belongs to, then check the anchors on your cover page."
       }
      ],
-     "close": "That's the walk. Now answer Document 2's questions in your packet, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
      "before": "Aurangzeb was the last Mughal emperor to rule the whole empire. He reversed the policy his predecessors had followed for over a century. Read what he changed.",
      "text": [
       "Unfortunately, the last great Moghul [Mughal] ruler, Aurangzeb, opposed religious toleration. A devout Muslim and a Puritan in his habits, Aurangzeb dismissed the court musicians, artists, and historians. He discouraged poets, who “dealt in falsehood”; banned history, which “gave rise to feelings of undue pride”; and suppressed drinking and gambling. His military campaigns drained his resources. He also dismissed the Hindu clerks in his service and reimposed a poll tax on all “unbelievers.” These oppressive measures against the Hindus were perhaps the most destructive acts of his reign, for memories of Aurangzeb’s oppressive rule lingered in the minds of Hindu Indians for generations. By his death in 1707, the Moghul Empire was on the edge of ruin. The British came to fill the power vacuum."
@@ -264,7 +264,7 @@
        "line": "The question hands you the clue: look at the anchor on your cover page. For \"bigger than the Ottomans,\" ask who else, in any century, has watched trade move away from them."
       }
      ],
-     "close": "That's the walk. Now answer Document 3's questions in your packet, starting on page 6. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 6. Use the sentence stem, or write something of equal or better value.",
      "before": "A short list of the reasons historians give for the Ottoman slide. Notice how many of them are about trade rather than about war.",
      "text": [
       "The power of the [Ottoman] Empire was waning [fading] by 1683 when the second and last attempt was made to conquer Vienna. It failed. Without the conquest of Europe and the acquisition of significant new wealth, the Empire lost momentum and went into a slow decline.",
@@ -332,7 +332,7 @@
        "line": "The title holds the clue: \"the Closing of Japan.\" Ask what issue a country raises when it closes itself off, then check the anchors on your cover page."
       }
      ],
-     "close": "That's the walk. Now answer Document 4's questions in your packet, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
      "before": "A direct order from the Tokugawa government. This is a primary source — not somebody describing the decision later, but the decision itself, in its own words.",
      "before_we_talk": {
       "title": "BEFORE WE TALK",
@@ -394,7 +394,7 @@
        "line": "The question already asks it for you: how open should a country be to outsiders? Put this letter next to Document 4, then check the anchors on your cover page. For the second part, look past 1750."
       }
      ],
-     "close": "That's the walk. Now answer Document 5's questions in your packet, starting on page 10. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
      "before": "In 1614 King James I of England sent a diplomat, Sir Thomas Roe, to the Mughal emperor Jahangir to negotiate a trade treaty. It worked. This is Jahangir’s reply. Read it beside the edict you just read.",
      "text": [
       "The letter of love and friendship which you sent and the presents, tokens of your good affections toward me, I have received by the hands of your ambassador, Sir Thomas Roe (who well deserves to be your trusted servant), delivered to me in an acceptable and happy hour; upon which mine eyes were so fixed that I could not easily remove them to any other object, and have accepted them with great joy and delight.",
@@ -448,7 +448,7 @@
        "line": "Start with the question's own words: \"decides who is allowed to use it and when.\" Who holds that decision? Check the anchors on your cover page. The second part is yours; the question already lets you say both."
       }
      ],
-     "close": "That's the walk. Now answer Document 6's questions in your packet, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
      "before": "The Tokugawa shogunate’s most important highway. Read it as a document about control, not about transport.",
      "text": [
       "The Tokugawa shogunate realized the importance of maintaining contact with distant provinces within Japan. The Tōkaidō was its most important highway.",
@@ -508,7 +508,7 @@
        "line": "Clue word in the last paragraph: compelled. Ask what issue it raises when one man can make the most powerful people in the country do what he wants, then check the anchors on your cover page."
       }
      ],
-     "close": "That's the walk. Now answer Document 7's questions in your packet, starting on page 13. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
      "before": "The Duc de Saint-Simon was a French duke who lived at Versailles for years and kept a private record of what he saw. Read who is writing before you read what he says — he is one of the nobles the system was built to contain, and he did not enjoy it.",
      "text": [
       "Very early in the reign of Louis XIV the Court was removed from Paris, never to return. . . . he did not consider himself safe there, and thought cabals [secret plots] would be more easily detected if the Court was in the country, where the movements and temporary absences of any of its members would be more easily noticed. . . .",

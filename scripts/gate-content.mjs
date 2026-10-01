@@ -333,7 +333,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|your score|score[ds]?\b|points?\s+(earned|scored)|streak|you got \d+)/i
   const DATE = /\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/
   const LABELS = ['walk', 'read', 'easier', 'original', 'close', 'next', 'back', 'stop']
-  const MODES = new Set(['written', 'out loud'])
+  const MODES = new Set(['written', 'out loud', null])   // null: no mode shown (11.2 A v2, BK 10:22)
   for (const c of m.courses || []) for (const u of c.units || []) {
     const a = u.doc_assist
     if (!a) continue
@@ -389,14 +389,14 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
             for (const q of s.questions) {
               asked++
               if (!q || !String(q.text || '').trim()) df(`${w} step ${j + 1}: a casefile question with no words.`)
-              if (!MODES.has(q?.mode)) df(`${w} step ${j + 1}: mode must be "written" or "out loud".`)
+              if (!MODES.has(q?.mode)) df(`${w} step ${j + 1}: mode must be "written", "out loud" or null.`)
               if (q && q.n != null && !Number.isInteger(q.n)) df(`${w} step ${j + 1}: a question number must be a whole number or null.`)
             }
           } else if (j === 1) { if (s.question != null || s.mode != null) df(`${w} step 2: Read it through carries no casefile question.`) }
           else {
             asked++
             if (!s.question) df(`${w} step ${j + 1}: no casefile question.`)
-            if (!MODES.has(s.mode)) df(`${w} step ${j + 1}: mode must be "written" or "out loud".`)
+            if (!MODES.has(s.mode)) df(`${w} step ${j + 1}: mode must be "written", "out loud" or null.`)
           }
         })
         if (!asked) warn(f, `${w}: no casefile question on any step; check the close sends the kid to where they are.`)

@@ -31,7 +31,7 @@ export const CHROME = {
   picture: "What's in the picture",
   prevDoc: 'Previous document',
   nextDoc: 'Next document',
-  asks: 'Casefile asks:',
+  asks: 'Ask yourself:',          // BK 2026-10-01 09:27 ("2. agreed"), at Sam's desk
   outLoud: 'OUT LOUD',
 }
 
