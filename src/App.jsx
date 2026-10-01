@@ -31,6 +31,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles } from './docassist.jsx'
+import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
@@ -351,7 +352,11 @@ function Rep({ rep, station, course, attemptsAllowed }) {
 
 // ── helpers ────────────────────────────────────────────────────────────────
 const isOpen = (o) => (o?.status ?? 'open') !== 'building'
-const isLive = (o) => o?.published === true && isOpen(o)
+// `opens_on` (YYYY-MM-DD, the device's own date, like the Office's month rule): a published
+// activity can ship ahead and appear on the day kids start it (11.1 Test Practice, Mon 10/5).
+const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
+const onDate = (o) => !o?.opens_on || todayLocal() >= String(o.opens_on)
+const isLive = (o) => o?.published === true && isOpen(o) && onDate(o)
 
 // A thing is enterable only if it is published, open, AND its content resolves.
 const resolves = (ref) => typeof ref === 'string' && ref.length > 0
@@ -1312,7 +1317,7 @@ function UnitRoom({ course, unit, games, prog, docAssist, onOpenDocAssist, onOpe
 // Test practice, grouped so a kid can scan it. A unit activity that is already a
 // ladder level (e.g. HC L1 matching) is left out here — it lives on the ladder.
 const PRACTICE_GROUPS = [
-  { key: 'regents', label: 'Regents-style questions', test: a => a.type === 'stimulus' },
+  { key: 'regents', label: 'Regents-style questions', test: a => a.type === 'stimulus' || a.type === 'doc_check' },
   { key: 'vocab',   label: 'Vocabulary',              test: a => a.type === 'matching' && /vocab/i.test(a.content_ref || '') },
   { key: 'moves',   label: 'Thinking moves',          test: a => a.type === 'matching' },
   { key: 'more',    label: 'More',                    test: () => true },
@@ -1338,10 +1343,10 @@ function TestPractice({ unit, acts, games, onOpenActivity }) {
                       <span>{a.label}</span><span className="flag live">Open</span></a>
                   : <div key={i} className="practice-row off"><span>{a.label}</span><span className="flag soon">Coming</span></div>
               }
-              const playable = a.type === 'stimulus' || a.type === 'matching'
+              const playable = a.type === 'stimulus' || a.type === 'matching' || a.type === 'doc_check'
               return playable
                 ? <button key={i} type="button" className="practice-row" onClick={() => onOpenActivity(i)}>
-                    <span>{a.label}</span><span className="flag live">Start</span></button>
+                    <span>{a.label}{a.blurb && <span className="row-blurb">{a.blurb}</span>}</span><span className="flag live">Start</span></button>
                 : <div key={i} className="practice-row off"><span>{a.label}</span><span className="flag soon">Coming</span></div>
             })}
           </div>
@@ -1713,6 +1718,28 @@ function MatchingActivity({ course, activity, pack, onBack }) {
   )
 }
 
+// THE DOC CHECK (2026-09-30): test practice with a proof step. The set lives in doccheck.jsx;
+// this wrapper gives it the room's header, the reps counter, the stuck line and both Backs.
+function DocCheckActivity({ course, activity, pack, onBack }) {
+  const [reps, setReps] = useState(0)
+  const [stuck, noteStuck] = useStuck()
+  const Coach = ({ at }) => (stuck && stuck.at === at
+    ? <CoachSays portrait={course.guide?.portrait || BK_PORTRAIT} line={stuck.line} /> : null)
+  return (
+    <div className="wrap">
+      <ScreenHeader label={activity.label} onBack={onBack} color={course.accent} back="Back" />
+      <div className="detail" style={{ maxWidth: 1040 }}>
+        {!pack || !(pack.items || []).length
+          ? <div className="loading">Opening the set&hellip;</div>
+          : <DocCheckSet pack={pack} accent={course.accent} Coach={Coach}
+                         onAnswer={(ok, i) => { setReps(r => r + 1); noteStuck(ok, i) }} />}
+        <Counters reps={reps} />
+      </div>
+      <BottomBack onBack={onBack} back={'Back'} />
+    </div>
+  )
+}
+
 function StimulusActivity({ course, activity, pack, onBack }) {
   const items = (pack && pack.items) || []
   return (
@@ -2038,7 +2065,9 @@ export default function App() {
     const onActivityBack = () => { setActIndex(null); setPack(null); leaveRoomPage() }
     screen = act?.type === 'matching'
       ? <MatchingActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
-      : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
+      : act?.type === 'doc_check'
+        ? <DocCheckActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
+        : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
   else if (unit) screen = <UnitRoom course={course} unit={unit} games={games} prog={prog}
                                     docAssist={daPack || null}
@@ -2067,7 +2096,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

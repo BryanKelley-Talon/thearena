@@ -26,6 +26,7 @@ const LIVE = new Set()
 // which type each one is, and the gate checks it against THAT type's contract.
 const LADDER_TYPE = {}
 const DOCASSIST = new Set()    // Doc Assist packs carry their own shape; the DOC ASSIST block below checks them
+const DOCCHECK = new Set()     // doc_check packs carry their own shape; the THE DOC CHECK block below checks them
 const ENRICH_OK = new Set()   // enrichment files whose ladder has an L4 source the shell shows above them
 try {
   const m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8'))
@@ -34,7 +35,10 @@ try {
     for (const st of c.stations || []) if (st.published && st.content_ref) LIVE.add(String(st.content_ref).replace(/^content\//, ''))
     for (const u of c.units || []) {
       if (!u.published) continue
-      for (const a of u.activities || []) if (a.published && a.content_ref) LIVE.add(String(a.content_ref).replace(/^content\//, ''))
+      for (const a of u.activities || []) {
+        if (a.published && a.content_ref) LIVE.add(String(a.content_ref).replace(/^content\//, ''))
+        if (a.type === 'doc_check' && a.content_ref) DOCCHECK.add(String(a.content_ref).replace(/^content\//, ''))
+      }
       if (u.doc_assist?.content_ref) DOCASSIST.add(String(u.doc_assist.content_ref).replace(/^content\//, ''))
       if (u.brief_ref) {
         const f = String(u.brief_ref).replace(/^content\//, '')
@@ -185,6 +189,8 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) }
   catch (e) { fail(f, `not valid JSON - ${e.message}`); continue }
   if (DOCASSIST.has(f)) continue   // the DOC ASSIST block below
+  // A doc_check item names its stimulus by key; the DOC CHECK block below fails one that resolves to nothing.
+  if (DOCCHECK.has(f)) continue
   checkDocVisible(f, d)
   if (LADDER_TYPE[f]) { checkLadder(f, d, LADDER_TYPE[f]); continue }
   for (const rep of d.reps || []) {
@@ -517,6 +523,62 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     const sc = words.match(SCORE)
     if (sc) df(`something reads like a score: "${sc[0]}".`)
     if (DATE.test(words)) df(`something reads like a class date.`)
+  }
+}
+
+// ── THE DOC CHECK (added 2026-09-30, Josh; Sam's 11.1 Test Practice v2) ──────
+// Format only, never content. Every item: four choices, a key, two hints (CARRY-FORWARD),
+// a proof and three decoys that are EXACT spans of the document or its source line, a
+// feedback line, a known support level, and walk lines for every checklist step when it
+// walks. Picture items: boxes inside the picture, the picture on disk, a usable alt.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  const SUPPORT = new Set(['walk', 'show', 'tuck', 'none'])
+  const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|score|\bpoints\b|streak|\bpercent\b|%)/i
+  for (const c of m.courses || []) for (const u of c.units || []) for (const a of u.activities || []) {
+    if (a.type !== 'doc_check') continue
+    const f = String(a.content_ref || '').replace(/^content\//, '')
+    const live = a.published === true && u.published === true && (c.status ?? 'open') !== 'building'
+    const df = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (a.opens_on != null && !/^\d{4}-\d{2}-\d{2}$/.test(String(a.opens_on))) df(`opens_on must be YYYY-MM-DD.`)
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { df(`doc_check file '${f}' is not in public/content.`); continue }
+    const d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8'))
+    const steps = d.checklist || []
+    if (!d.credit) df(`no credit line.`)
+    if (d.licence?.sellable !== false || !d.licence?.attribution) df(`a teach-only pack needs licence { sellable: false, attribution } (CONVENTIONS §7).`)
+    if (!(d.items || []).length) df(`no items.`)
+    for (const it of d.items || []) {
+      const w = `item ${it.n ?? '?'}`
+      const s = d.stimuli?.[it.stimulus]
+      if (!s) { df(`${w}: stimulus '${it.stimulus}' is not defined (no task without its document).`); continue }
+      if ((it.choices || []).length !== 4) df(`${w}: needs four choices.`)
+      if (!(Number.isInteger(it.key) && it.key >= 1 && it.key <= (it.choices || []).length)) df(`${w}: key must point at a choice.`)
+      if ((it.hints || []).length !== 2) df(`${w}: needs two hints (CARRY-FORWARD).`)
+      if (!it.feedback) df(`${w}: needs a feedback line.`)
+      if ((it.decoys || []).length !== 3) df(`${w}: needs three decoys.`)
+      if (!SUPPORT.has(it.support || 'none')) df(`${w}: support '${it.support}' is not walk, show, tuck or none.`)
+      if ((it.support || 'none') !== 'none' && !steps.length) df(`${w}: support '${it.support}' but the pack has no checklist.`)
+      if (it.support === 'walk' && (it.walk_lines || []).length !== steps.length) df(`${w}: a walked item needs one walk line per checklist step (${steps.length}).`)
+      const hay = `${s.text || ''} ${s.src || ''}`
+      for (const sp of [it.proof, ...(it.decoys || [])]) {
+        if (typeof sp !== 'string' || !sp) { df(`${w}: an empty proof or decoy.`); continue }
+        if (sp.startsWith('IMAGE · ')) continue
+        if (!hay.includes(sp)) df(`${w}: "${sp.slice(0, 50)}" is not an exact span of its document or source line.`)
+      }
+      if (String(it.proof || '').startsWith('IMAGE · ')) {
+        if (!s.image_ref || !fs.existsSync(path.join(CONTENT, s.image_ref))) df(`${w}: picture '${s.image_ref}' is not in public/content.`)
+        const bad = altShape(s.image_alt)
+        if (bad && !bad.soft) df(`${w}: the picture's alt ${bad}.`)
+        const bx = it.proof_boxes || []
+        if (!bx.length || !bx.every(b => [b.x, b.y, b.w, b.h].every(v => typeof v === 'number' && v >= 0 && v <= 100) && b.x + b.w <= 100 && b.y + b.h <= 100 && b.label))
+          df(`${w}: a picture proof needs proof_boxes inside the picture, each with a label.`)
+      }
+      if (s.image_ref && (!s.image_alt || s.image_alt.length < 40)) df(`${w}: picture '${s.image_ref}' needs a describing alt.`)
+      const student = [it.stem, ...(it.choices || []), ...(it.hints || []), it.feedback, ...(it.walk_lines || [])].join(' ')
+      if (SCORE.test(student)) df(`${w}: something reads like a score.`)
+      if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(student)) df(`${w}: reads like a class date.`)
+    }
   }
 }
 

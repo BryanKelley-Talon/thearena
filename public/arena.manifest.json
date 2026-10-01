@@ -1011,6 +1011,15 @@
               "_note": "Flipped live by Josh 2026-09-19 — content/stimulus-11-1.json confirmed present in public/content/ (Sam released it 2026-09-18, _content-hold/RELEASED-2026-09-18-stimulus-11-1.json). The 09-18 note calling content_ref 'a promise, not a file' predates the release; the file is real now. Container-only flip, no content touched — Sam's stimulus-11-1.json body is untouched."
             },
             {
+              "type": "doc_check",
+              "label": "11.1 Part I (MC) Practice",
+              "blurb": "Answer each question, then find the proof in the document.",
+              "published": true,
+              "opens_on": "2026-10-05",
+              "content_ref": "content/doccheck-us11r-11.1-test-practice.json",
+              "_note": "Josh, 2026-09-30. Leo's order 14:08 (BK 14:07) and Sam's v2 brief (BK blessed 22:23). Phase 1: answer it, choose the proof, the proof highlighted in place; the Doc Check fades walk → show → tuck → none. Tile words BK 22:28. opens_on: ships ahead, appears on each device Mon 10/5 (BK: make-ups first). The 11.1 test wall lifts for this set only, by BK's ruling."
+            },
+            {
               "type": "matching",
               "label": "Match it: Contextualization",
               "published": true,

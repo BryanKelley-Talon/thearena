@@ -1,0 +1,563 @@
+{
+  "_source": "Ported by Josh (flashpoint) 2026-09-30 from Sam's sam-brief-2026-09-30-11.1-test-practice-v2.json (BLESSED by BK 22:23; Leo's order 2026-09-30 14:08). Every student-facing string is unchanged. Josh added only container fields: image_ref, image_alt (from Sam's bank, word for word), proof_boxes for items 3 and 4, and licence. The ' ‖ ' and ' · ' splits are done by the shell at render time. Updated 2026-10-02 to Sam's v3 (sam-brief-2026-10-01-11.1-part-i-mc-practice-v3.json): exactly the two fields v3 changed, pack and checklist_name (BK 10-01 09:25, 10:22).",
+  "_licence": "Items adapted from New Visions for Public Schools, US.01.R.2, CC BY-NC-SA 4.0: teach-only, never in a product (Leo's order ruling 3; CJ gets no copy). Items 13 and 14 are original.",
+  "licence": {
+    "sellable": false,
+    "attribution": "Items adapted from New Visions for Public Schools, US.01.R.2, CC BY-NC-SA 4.0. Items 13 and 14 are original."
+  },
+  "pack": "11.1 Part I (MC) Practice",
+  "room": "11.1",
+  "live": "Mon 10/5",
+  "credit": "Items adapted from New Visions for Public Schools, US.01.R.2, CC BY-NC-SA 4.0. Items 13 and 14 are original.",
+  "flow": [
+    "HINTS: two per item, on request, before the kid answers step 1.",
+    "1 · ANSWER IT. A miss shows the right answer.",
+    "2 · CHOOSE THE PROOF. Three or four phrases from the document. One proves the right answer; the rest are decoys.",
+    "After the pick, the proof is shown highlighted in the stimulus (a pre-marked span; nothing to draw). Then the feedback line."
+  ],
+  "checklist_name": "THE MC EVIDENCE FINDER",
+  "checklist": [
+    {
+      "step": "Question first.",
+      "say": "Read the question before the document. What does it want: a claim, a cause, a result, a point of view, or the best use?"
+    },
+    {
+      "step": "Source line.",
+      "say": "Who made it, when, and what kind of document is it?"
+    },
+    {
+      "step": "Read to hunt.",
+      "say": "Read the document looking for the words the question needs."
+    },
+    {
+      "step": "Cross out.",
+      "say": "Knock out any choice that's not in the document, from the wrong era, or the right topic with the wrong claim."
+    },
+    {
+      "step": "Prove it.",
+      "say": "Point to the words that back your pick. Nothing there? Bring what you know."
+    }
+  ],
+  "rules": [
+    "The document is on screen for every step.",
+    "Nothing reads as a score: no totals, no percent, no right/wrong tally.",
+    "Proof phrases are exact spans of the stimulus; highlight that span in place.",
+    "Shuffle the proof and decoys on screen; the order here is not the display order."
+  ],
+  "stimuli": {
+    "josselyn": {
+      "kind": "text",
+      "src": "John Josselyn, An Account of Two Voyages to New-England, Made during the Years 1638, 1663",
+      "text": "….Not long before the English came into the Country, happened a great mortality amongst [Native Americans], especially where the English afterwards planted, the East and Northern parts were sore smitten with the Contagion; first by the plague, afterwards when the English came by the small pox, the three Kingdoms or Sagamorships of the Massachusetts were very populous, having under them seven Dukedoms or petti-Sagamorships, but by the plague were brought from 30,000 to 300. There are not many now to the Eastward, the Pequots were destroyed by the English: the Mohawks are about five hundred…."
+    },
+    "harbor": {
+      "kind": "image",
+      "src": "View of Boston Harbor. Hand-colored etching by Francois Xavier Habermann, 1770–1780. Library of Congress. · Life of George Washington — The Farmer. Washington standing among enslaved African-American field workers harvesting grain; his Virginia home, Mount Vernon, in the background. Junius Brutus Stearns, 1853. Library of Congress.",
+      "file": "STIMULUS_BANK/Unit_01/unit01-bostonharbor-mtvernon-pair.png",
+      "image_ref": "unit01-bostonharbor-mtvernon-pair.png",
+      "image_alt": "Two hand-coloured pictures side by side. LEFT: a 1770s etching of Boston harbour seen across the water. Tall-masted merchant and naval ships lie at anchor in the foreground, one flying red pennants; behind them a dense waterfront of brick and timber buildings runs along the shore under a tall church steeple. Small figures in red coats stand on the grassy bank in front. Engraved captions in German and French run along the bottom. RIGHT: an 1853 painting of harvest at Mount Vernon. George Washington, in a dark coat, breeches and tricorn hat, stands at the right holding a cane and watching. Around him enslaved African-American men and women cut, rake, bundle and load grain; a boy sits on top of a loaded hay wagon drawn by two pale horses; a woman in a white dress and two children rest in the shade at the left. Rolling Virginia fields run back to a low horizon. The pair sets a northern port beside a southern plantation, and the two pictures were made about eighty years apart.",
+      "_image_alt_source": "Sam's bank, word for word: STIMULUS_BANK/_crop_manifest_unit01-bkexam-2026-09-01.json, slug unit01-bostonharbor-mtvernon-pair (blessed by BK 2026-09-02). File md5 d03c463758a978aa4a9330abc418edba matches the bank."
+    },
+    "rosenbloom": {
+      "kind": "text",
+      "src": "Joshua L. Rosenbloom, “The Colonial American Economy” (2018). Economics Working Papers: Department of Economics, Iowa State University",
+      "text": "In the Southern colonies, climatic conditions were conducive to the cultivation of crops that found lucrative markets in Europe. ….in the low country of South Carolina and Coastal Georgia, early colonists discovered that conditions were favorable for the cultivation of rice. … As a result, rice was grown mainly on relatively large plantations, and colonists in coastal South Carolina and Georgia relied heavily on slave labor to provide an adequate work force. … The climate of the northern colonies more closely resembled that of northwest Europe, limiting export opportunities. Pennsylvania, New Jersey and New York nonetheless supported the development of small farms raising livestock and growing wheat and other grains. Flour produced in the region found markets in Southern Europe and the West Indies… Reflecting the greater complexity of regional trading relationships, the northern colonies developed dense and relatively sophisticated merchant communities that helped to organize regional and international trade and provide shipping services. By the late colonial period, Boston, New York and Philadelphia had become bustling urban centers. The largest, Philadelphia, had over 30,000 residents in 1775, while New York had 25,000, and Boston 16,000. In comparison, Charleston, the only significant urban center in the South, had a population of just 12,000."
+    },
+    "engerman": {
+      "kind": "text+image",
+      "src": "Document 1: Slavery for Historical Statistics of the United States Millennial Edition, by Stanley Engerman, Richard Sutch, and Gavin Wright (2003) · Document 2: Sold to Go South, from The Suppressed Book About Slavery! G.W. Carleton & Co., 1864",
+      "text": "By 1619, slavery had been on the decline in England… In 1664, however, Maryland declared that all blacks held in the colony, and all those imported as slaves in the future, would serve for life, as would their children and later generations; Virginia's policy became equally clear by the end of that decade….As of 1690, blacks constituted less than 15 percent of the population in Virginia and Maryland, reflecting the fact that for the first two generations of Chesapeake tobacco, labor was primarily supplied by white indentured servants. Between 1690 and 1710, the pattern radically changed…The primary forces may be identified as: rising scarcity in the supply of white indentured servants; changes to laws forcing African slaves to be enslaved for life; booming demand for Chesapeake tobacco after 1700, and booming demand for cotton after the early 1800's.",
+      "file": "STIMULUS_BANK/Unit_01/unit01-nv-r2-sold-to-go-south-1864.png",
+      "image_ref": "unit01-nv-r2-sold-to-go-south-1864.png",
+      "image_alt": "A wood engraving titled Sold to Go South. A crowd of Black men, women and children stands on open ground beside a river landing, with a steamboat's paddle wheel and smokestacks behind them at the left. In the centre foreground a man in shirtsleeves and braces stands with his head bowed, facing a woman in a striped dress who reaches toward him; a second woman behind her raises both hands. Around them people carry bundles and hats, some walking toward the boat under guard, others seated on the ground. At the right a woman kneels with a child, and figures raise their arms. The caption reads SOLD TO GO SOUTH. (See page 178.)",
+      "_image_alt_source": "Sam's bank, word for word: STIMULUS_BANK/Unit_01/unit01-nv-r2-sold-to-go-south-1864.json (blessed true; public domain, 1864)."
+    },
+    "magna_yawp": {
+      "kind": "text",
+      "src": "Document 1: Magna Carta, England, 1215 · Document 2: Emily Arendt et al., “Colonial Society” in The American Yawp. Stanford University Press, 2018",
+      "text": "Clause 14: \"To obtain the general consent for a tax in Great Britain [England] we will cause the great council, made up of men who represent the people of England to be summoned individually by letter… they will come together on a fixed day and at a fixed place. … the decision about creating or collecting taxes on that day will be made by a decision reached by vote of majority rule of the representatives of the people…The King shall follow the will of the great council, the King shall not raise or levy taxes on his own accord\" ‖ Consumption, trade, and slavery drew the colonies closer to Great Britain, but politics and government split them further apart. Democracy in Europe more closely resembled oligarchies rather than republics, with only elite members of society eligible to serve in elected positions. Most European states did not hold regular elections, with Britain and the Dutch Republic being the two major exceptions. However, even in these countries, only a tiny portion of males could vote. In the North American colonies, by contrast, white male suffrage was far more widespread. In addition to having greater popular involvement, colonial government also had more power in a variety of areas. Assemblies and legislatures regulated businesses, imposed new taxes, cared for the poor in their communities, built roads and bridges, and made most decisions concerning education. Colonial Americans sued often, which in turn led to more power for local judges and more prestige in jury service. Thus, lawyers became extremely important in American society and in turn played a greater role in American politics."
+    },
+    "yawp_duty": {
+      "kind": "text",
+      "src": "Emily Arendt et al., “Colonial Society” in The American Yawp. Stanford University Press, 2018",
+      "text": "An elected assembly was an offshoot of the idea of civic duty, the notion that men had a responsibility to support and uphold the government through voting, paying taxes, and service in the militia. Americans firmly accepted the idea of a social contract, the idea that government was put in place by the people. Philosophers such as Thomas Hobbes and John Locke pioneered this idea, and there is evidence to suggest that these writers influenced the colonists. While in practice elites controlled colonial politics, in theory many colonists believed in the notion of equality before the law and opposed special treatment for any members of colonial society."
+    },
+    "blackstone": {
+      "kind": "text",
+      "src": "William Blackstone, Commentaries on the Laws of England, Book I, Chapter 15, “Of Husband and Wife,” 1765",
+      "text": "\"By marriage, the husband and wife are one person in law: that is, the very being or legal existence of the woman is suspended during the marriage, or at least is incorporated and consolidated into that of the husband: under whose wing, protection, and cover, she performs everything; and is therefore called in our law-French a feme-covert… and her condition during her marriage is called her coverture.\" \"Upon this principle, of an union of person in husband and wife, depend almost all the legal rights, duties, and disabilities, that either of them acquire by the marriage.\""
+    },
+    "maryland": {
+      "kind": "text",
+      "src": "Maryland Toleration Act of 1649",
+      "text": "And be it also further Enacted by the same authority … that whatsoever person or persons shall… declare call or denominate any person or persons whatsoever … within this Province… an Heretic, Schismatic, Idolator, puritan, Independant, Prespiterian popish priest, Jesuit, Jesuited papist, Lutheran, Calvinist, Anabaptist, Brownist, Antinomian, Barrowist, Roundhead, Separatist, or any other name or term in a reproachful (disrespectful) manner relating to matter of Religion shall for every such offense forfeit and lose the sum of ten shillings sterling or the value thereof to be levied on the goods and chattels of every such Offender and Offenders, the one half thereof to be forfeited and paid unto the person and persons of whom such reproachful words are or shall be spoken or uttered, and the other half thereof to the Lord Proprietary and his heirs Lords and Proprietaries of this Province…"
+    }
+  },
+  "items": [
+    {
+      "n": 1,
+      "stimulus": "josselyn",
+      "stem": "The events described in this account could be considered a turning point in history because",
+      "choices": [
+        "The author of this account went on to become a powerful English Lord.",
+        "Native American societies grew strong again after contracting European diseases, resulting in an increase in Native populations at this time.",
+        "Native Americans in the British colonies experienced a drastic decline in population due to disease and war brought by Europeans.",
+        "New England colonists repaired relationships with Native Americans soon after the incidents described."
+      ],
+      "key": 3,
+      "outside_info": false,
+      "proof": "by the plague were brought from 30,000 to 300",
+      "decoys": [
+        "the three Kingdoms or Sagamorships of the Massachusetts were very populous",
+        "the Mohawks are about five hundred",
+        "Not long before the English came into the Country"
+      ],
+      "feedback": "From 30,000 to 300 is the turning point: disease emptied Native New England as the English arrived, and war finished what disease began (\"the Pequots were destroyed by the English\").",
+      "proof_region": null,
+      "hints": [
+        "A turning point means something changed for good. What changed?",
+        "Look at the numbers in the middle of the passage."
+      ],
+      "support": "walk",
+      "walk_lines": [
+        "It asks why this is a turning point: something changed for good. You're hunting for a big change.",
+        "John Josselyn, an Englishman writing about his voyages in 1638 and 1663. He's on the English side, writing what he saw and heard.",
+        "Watch for numbers. Big changes often hide in them.",
+        "Choice (1) is about the author's life, and that's not in the document. Check (2) and (4) against what the numbers say.",
+        "Before you pick, find the words that prove it. You'll need them in step 2."
+      ]
+    },
+    {
+      "n": 2,
+      "stimulus": "josselyn",
+      "stem": "Based on the information provided in this account, which claim is most plausible?",
+      "choices": [
+        "Native American peoples were welcoming to European colonists who settled in North America.",
+        "Native American populations were susceptible to diseases to which they had no previous exposure.",
+        "European colonists poisoned Native peoples intentionally, decimating their population.",
+        "Native American civilization was far inferior to European civilization."
+      ],
+      "key": 2,
+      "outside_info": false,
+      "proof": "afterwards when the English came by the small pox",
+      "decoys": [
+        "the Pequots were destroyed by the English",
+        "the Mohawks are about five hundred",
+        "having under them seven Dukedoms or petti-Sagamorships"
+      ],
+      "feedback": "Josselyn names disease arriving with the English: smallpox. Nothing in the account says poison, welcome, or who was \"superior,\" so those choices aren't in the document.",
+      "proof_region": null,
+      "hints": [
+        "Most plausible means what the account actually supports, not what sounds dramatic.",
+        "What does Josselyn say came with the English?"
+      ],
+      "support": "show",
+      "walk_lines": null
+    },
+    {
+      "n": 3,
+      "stimulus": "harbor",
+      "stem": "Based on these two images, which claim is most accurate?",
+      "choices": [
+        "Colonial settlements did not vary much; all settlers lived in villages that grew into large cities.",
+        "Large plantations growing tobacco and cotton were common in both New England and the southern colonies.",
+        "Ship building anchored the economy in northern and southern colonies.",
+        "Colonial economies varied by region, depending on the geographic conditions."
+      ],
+      "key": 4,
+      "outside_info": false,
+      "proof": "IMAGE · Tall ships in Boston's harbor, and enslaved workers harvesting a Virginia field",
+      "decoys": [
+        "IMAGE · A church steeple rises above Boston's waterfront",
+        "IMAGE · Washington stands in a dark coat at the right",
+        "IMAGE · Children sit in the grass in the foreground"
+      ],
+      "feedback": "One picture is a seaport, the other a plantation field. Two regions, two ways of making a living: that's \"varied by region.\"",
+      "proof_region": "Boston etching: the ships in the harbor (left two-thirds of the left image). Stearns painting: the field workers and hay wagon (center of the right image). Mark both.",
+      "hints": [
+        "Compare the two pictures: how does each place make a living?",
+        "One is a port and one is a field. What does that say about regions?"
+      ],
+      "support": "show",
+      "walk_lines": null,
+      "proof_boxes": [
+        {
+          "x": 1.9,
+          "y": 8.7,
+          "w": 30.7,
+          "h": 61.4,
+          "label": "Boston harbor: the ships"
+        },
+        {
+          "x": 58.6,
+          "y": 33.7,
+          "w": 28.7,
+          "h": 43.3,
+          "label": "Mount Vernon: the field workers and hay wagon"
+        }
+      ],
+      "_proof_boxes_note": "Josh placed these boxes (percent of the image) from Sam's proof_region text; BK sees them in the proof."
+    },
+    {
+      "n": 4,
+      "stimulus": "harbor",
+      "stem": "Which of the following most likely led to the situation depicted in the image of Boston Harbor?",
+      "choices": [
+        "British settlers imported wood from England to build large ships in Boston.",
+        "Colonial settlers excavated the shallow beach to create Boston harbor.",
+        "Naturally deep water and a sheltered harbor encouraged colonists to settle in Boston",
+        "The British army invaded Boston to claim it from the Spanish empire."
+      ],
+      "key": 3,
+      "outside_info": true,
+      "proof": "IMAGE · Big sailing ships anchored right up against the waterfront",
+      "decoys": [
+        "IMAGE · Soldiers in red coats walk along the shore",
+        "IMAGE · The title runs in German and French along the bottom",
+        "IMAGE · A church steeple rises above the town"
+      ],
+      "feedback": "OUTSIDE KNOWLEDGE: the picture shows big ships close to shore, but not why. The why is geography you bring: Boston has naturally deep water and a harbor sheltered from the open ocean (Casefile A, Document 7, Question 1).",
+      "proof_region": "Boston etching: the large ships anchored at the waterfront (left and center of the left image).",
+      "hints": [
+        "Look at where the big ships are sitting.",
+        "Ships that size need something from the water itself. What?"
+      ],
+      "support": "show",
+      "walk_lines": null,
+      "proof_boxes": [
+        {
+          "x": 1.9,
+          "y": 8.7,
+          "w": 30.7,
+          "h": 61.4,
+          "label": "Boston harbor: the ships"
+        }
+      ],
+      "_proof_boxes_note": "Josh placed these boxes (percent of the image) from Sam's proof_region text; BK sees them in the proof."
+    },
+    {
+      "n": 5,
+      "stimulus": "rosenbloom",
+      "stem": "Which claim is best supported by the evidence in this document?",
+      "choices": [
+        "The labor system of the British North American colonies depended solely on personal preferences of the people who settled there.",
+        "Climatic conditions, choice of export crop and pursuit of profit combined to determine a colony's labor system.",
+        "Labor systems were determined by the laws of each colony as well as the religion of its predominant group of settlers.",
+        "The labor force exerted a strong influence on the structure of each colony's labor system."
+      ],
+      "key": 2,
+      "outside_info": false,
+      "proof": "conditions were conducive to the cultivation of crops that found lucrative markets",
+      "decoys": [
+        "Philadelphia, had over 30,000 residents in 1775",
+        "Flour produced in the region found markets in Southern Europe",
+        "Boston, New York and Philadelphia had become bustling urban centers"
+      ],
+      "feedback": "Climate made rice profitable, rice needed big plantations, and big plantations ran on enslaved labor. Climate plus crop plus profit decided the labor system.",
+      "proof_region": null,
+      "hints": [
+        "The question is about labor systems: who did the work, and why.",
+        "Read the first sentence: climate, crops and markets."
+      ],
+      "support": "tuck",
+      "walk_lines": null
+    },
+    {
+      "n": 6,
+      "stimulus": "rosenbloom",
+      "stem": "A historian's best use of this document would be as",
+      "choices": [
+        "documentary evidence of differences among colonial regions",
+        "a record of recent research findings about colonial American economies.",
+        "a fictional account of how colonial American economies might have worked",
+        "evidence of how colonial settlers understood economic theories"
+      ],
+      "key": 2,
+      "outside_info": true,
+      "proof": "Economics Working Papers: Department of Economics, Iowa State University",
+      "decoys": [
+        "Charleston, the only significant urban center in the South",
+        "conditions were favorable for the cultivation of rice",
+        "dense and relatively sophisticated merchant communities"
+      ],
+      "feedback": "OUTSIDE KNOWLEDGE: the source line is the answer. A 2018 working paper from a university economics department is how scholars share new research. It's a historian's work about the colonies, not a document from the colonies.",
+      "proof_region": null,
+      "hints": [
+        "It's a best-use question, so start with the source line, not the passage.",
+        "When was it written, and by whom? Is it from the colonies, or about them?"
+      ],
+      "support": "tuck",
+      "walk_lines": null
+    },
+    {
+      "n": 7,
+      "stimulus": "engerman",
+      "stem": "Based on both Documents 1 and 2, which is most likely responsible for the action shown in Document 2?",
+      "choices": [
+        "The decline of the institution of slavery in England by the early 17th century.",
+        "Increased 19th century demand for cotton grown in the deep southern U.S.",
+        "Increased 18th century demand for tobacco grown in the Chesapeake region of the U.S.",
+        "Increased demand for white indentured servants in the Southern states."
+      ],
+      "key": 2,
+      "outside_info": true,
+      "proof": "booming demand for cotton after the early 1800's",
+      "decoys": [
+        "booming demand for Chesapeake tobacco after 1700",
+        "By 1619, slavery had been on the decline in England",
+        "rising scarcity in the supply of white indentured servants"
+      ],
+      "feedback": "OUTSIDE KNOWLEDGE: Document 2 is from 1864, so the sale \"South\" belongs to the 1800s. The rest is history past this unit: in the 1800s the deep South grew cotton, and cotton, not Chesapeake tobacco, drove the sale of enslaved people south.",
+      "proof_region": null,
+      "hints": [
+        "Find Document 2's date in its source line.",
+        "Document 1's last line lists what drove slavery. Which one matches that date?"
+      ],
+      "support": "tuck",
+      "walk_lines": null
+    },
+    {
+      "n": 8,
+      "stimulus": "engerman",
+      "stem": "Which statement best describes a result of the historical events referenced in Documents 1 and 2?",
+      "choices": [
+        "Southern planters relied more heavily on white indentured servants to produce cotton.",
+        "Generations of people with African ancestry were legally subjected to lifetime enslavement.",
+        "Southern planters began to cultivate tobacco during the 18th century.",
+        "White indentured servants increasingly joined with black workers to fight for their rights."
+      ],
+      "key": 2,
+      "outside_info": true,
+      "proof": "would serve for life, as would their children and later generations",
+      "decoys": [
+        "blacks constituted less than 15 percent of the population",
+        "labor was primarily supplied by white indentured servants",
+        "Between 1690 and 1710, the pattern radically changed"
+      ],
+      "feedback": "Maryland's 1664 law made slavery last for life and pass to children. Generation after generation, enslaved by law: that's the result.",
+      "proof_region": null,
+      "hints": [
+        "A result is what happened because of these events.",
+        "What did Maryland's 1664 law say about children?"
+      ],
+      "support": "tuck",
+      "walk_lines": null
+    },
+    {
+      "n": 9,
+      "stimulus": "magna_yawp",
+      "stem": "Which claim is best supported by both documents?",
+      "choices": [
+        "Colonial political institutions were not influenced by English legal traditions.",
+        "Colonial political institutions failed to represent the interests of colonial inhabitants.",
+        "Colonial political institutions were influenced by both English legal tradition and colonial experience.",
+        "Colonial political institutions guaranteed suffrage for all adults who lived in the colonies."
+      ],
+      "key": 3,
+      "outside_info": false,
+      "proof": "colonial government also had more power in a variety of areas",
+      "decoys": [
+        "Most European states did not hold regular elections",
+        "only a tiny portion of males could vote",
+        "Colonial Americans sued often"
+      ],
+      "feedback": "Document 1 is the English tradition: representatives decide on taxes, not the King. Document 2 shows the colonies taking that tradition further. English roots plus colonial experience.",
+      "proof_region": null,
+      "hints": [
+        "\"Both documents\" means the answer needs an idea from each one.",
+        "Document 1 is England and Document 2 is the colonies. What did the colonies keep, and what did they add?"
+      ],
+      "support": "tuck",
+      "walk_lines": null
+    },
+    {
+      "n": 10,
+      "stimulus": "magna_yawp",
+      "stem": "According to these documents, a key difference between political institutions in England and its colonies centered around",
+      "choices": [
+        "the scope and variety of powers held by their representative bodies",
+        "the age at which a man was entitled to vote in elections",
+        "who had the authority to raise taxes from the people",
+        "the percentage by which a law could be passed in their representative bodies"
+      ],
+      "key": 1,
+      "outside_info": false,
+      "proof": "Assemblies and legislatures regulated businesses, imposed new taxes, cared for the poor",
+      "decoys": [
+        "the King shall not raise or levy taxes on his own accord",
+        "only a tiny portion of males could vote",
+        "by vote of majority rule of the representatives"
+      ],
+      "feedback": "In both places representatives voted on taxes, so taxes aren't the difference. The difference is how much colonial assemblies did: businesses, taxes, the poor, roads, schools.",
+      "proof_region": null,
+      "hints": [
+        "A difference: find something Document 2 says the colonies had that England didn't.",
+        "Read the list of what colonial assemblies did."
+      ],
+      "support": "tuck",
+      "walk_lines": null
+    },
+    {
+      "n": 11,
+      "stimulus": "yawp_duty",
+      "stem": "Which evidence best supports the claim about colonial society made by the historian in this excerpt?",
+      "choices": [
+        "the existence of elected assemblies such as the House of Burgesses in the colony of Virginia",
+        "the diversity of religious practices among residents of the British North American colonies",
+        "the large number of French settlers living in the British North American colonies",
+        "the predominance of indentured servitude as a system of labor in the British North American colonies"
+      ],
+      "key": 1,
+      "outside_info": false,
+      "proof": "An elected assembly was an offshoot of the idea of civic duty",
+      "decoys": [
+        "Philosophers such as Thomas Hobbes and John Locke pioneered this idea",
+        "in practice elites controlled colonial politics",
+        "service in the militia"
+      ],
+      "feedback": "The historian's claim is about elected assemblies and civic duty. The House of Burgesses (1619) was the first elected assembly in the colonies, a Week 3 Reps term.",
+      "proof_region": null,
+      "hints": [
+        "Find the historian's claim first. It's in the first sentence.",
+        "Which choice is an example of an elected assembly?"
+      ],
+      "support": "tuck",
+      "walk_lines": null
+    },
+    {
+      "n": 12,
+      "stimulus": "yawp_duty",
+      "stem": "Which statement best reflects the claim made by the historian in this excerpt?",
+      "choices": [
+        "Most American colonists believed that elites were best suited to govern.",
+        "Belief in equality before the law was widespread in Colonial America despite its social and political inequality.",
+        "Equality before the law is a concept that originated in 18th century colonial America.",
+        "Enlightenment thinkers influenced colonists to believe in special treatment for elites."
+      ],
+      "key": 2,
+      "outside_info": false,
+      "proof": "many colonists believed in the notion of equality before the law",
+      "decoys": [
+        "Americans firmly accepted the idea of a social contract",
+        "these writers influenced the colonists",
+        "support and uphold the government through voting, paying taxes"
+      ],
+      "feedback": "Two halves: elites ran things in practice, and many colonists believed in equality before the law in theory. The right answer holds both, and \"despite\" is the word that does it.",
+      "proof_region": null,
+      "hints": [
+        "The passage has a \"while … in theory\" sentence. Read it twice.",
+        "The answer has to hold both halves: what elites did, and what colonists believed."
+      ],
+      "support": "tuck",
+      "walk_lines": null
+    },
+    {
+      "n": 13,
+      "stimulus": "blackstone",
+      "stem": "According to this passage, what happened to a woman's legal status when she married?",
+      "choices": [
+        "She gained the right to sue in her own name.",
+        "Her legal existence was absorbed into her husband's.",
+        "She kept her property but lost the right to vote.",
+        "She became jointly liable for her husband's debts."
+      ],
+      "key": 2,
+      "outside_info": false,
+      "proof": "legal existence of the woman is suspended during the marriage",
+      "decoys": [
+        "under whose wing, protection, and cover, she performs everything",
+        "is therefore called in our law-French a feme-covert",
+        "almost all the legal rights, duties, and disabilities"
+      ],
+      "feedback": "In law, a married woman stopped existing on her own: \"suspended,\" \"incorporated and consolidated\" into her husband. That's coverture.",
+      "proof_region": null,
+      "hints": [
+        "The question asks about her legal status. Look for the word \"legal.\"",
+        "What does Blackstone say happens to her legal existence?"
+      ],
+      "support": "none",
+      "walk_lines": null
+    },
+    {
+      "n": 14,
+      "stimulus": "blackstone",
+      "stem": "A historian would best use this document, together with the Fundamental Orders of Connecticut, to show",
+      "choices": [
+        "that colonial charters expanded women's property rights",
+        "that English common law had little influence in the colonies",
+        "that colonial self-government excluded groups its founding documents never named",
+        "that married women often held elected office in colonial assemblies"
+      ],
+      "key": 3,
+      "outside_info": false,
+      "proof": "incorporated and consolidated into that of the husband",
+      "decoys": [
+        "Commentaries on the Laws of England",
+        "almost all the legal rights, duties, and disabilities",
+        "under whose wing, protection, and cover"
+      ],
+      "feedback": "The Fundamental Orders gave self-government to \"freemen\" and never named women. Blackstone shows why they didn't need to: in law, a married woman didn't exist apart from her husband (Casefile B, Documents 17 and 18).",
+      "proof_region": null,
+      "hints": [
+        "Think back to the Fundamental Orders (Casefile B): who got to govern?",
+        "If a wife didn't exist apart from her husband in law, would a charter need to name her?"
+      ],
+      "support": "none",
+      "walk_lines": null
+    },
+    {
+      "n": 15,
+      "stimulus": "maryland",
+      "stem": "A historian would best use this document as",
+      "choices": [
+        "evidence of the punitive nature of colonial laws in Maryland",
+        "evidence of intolerance of religious worship in colonial law",
+        "evidence of colonial support for the democratic principle of religious tolerance",
+        "the existence of a unified religious community in colonial America"
+      ],
+      "key": 3,
+      "outside_info": false,
+      "proof": "in a reproachful (disrespectful) manner relating to matter of Religion",
+      "decoys": [
+        "forfeit and lose the sum of ten shillings sterling",
+        "an Heretic, Schismatic, Idolator, puritan",
+        "the other half thereof to the Lord Proprietary"
+      ],
+      "feedback": "The fine is the tool, not the point. The law punishes insulting someone over their religion, and that protects many faiths at once. Stopping at the fine leads to the wrong answer.",
+      "proof_region": null,
+      "hints": [
+        "Ask what the law punishes, not just how.",
+        "Read the long list of names. What would calling someone those names do to them?"
+      ],
+      "support": "none",
+      "walk_lines": null
+    },
+    {
+      "n": 16,
+      "stimulus": "maryland",
+      "stem": "This document most likely led to which result?",
+      "choices": [
+        "forced exile of members of Protestant religious denominations from Maryland",
+        "forfeiture of English citizenship by religious residents of Maryland",
+        "conversion of thousands of Maryland residents from Catholicism to Protestantism",
+        "the thriving of a variety of religious communities in the colony of Maryland"
+      ],
+      "key": 4,
+      "outside_info": true,
+      "proof": "Lutheran, Calvinist, Anabaptist, Brownist, Antinomian, Barrowist",
+      "decoys": [
+        "forfeit and lose the sum of ten shillings sterling",
+        "levied on the goods and chattels of every such Offender",
+        "the Lord Proprietary and his heirs"
+      ],
+      "feedback": "OUTSIDE KNOWLEDGE: a law can't show its own result. The long list proves many faiths were already there. What the law produced is what you bring: protecting all those faiths let Catholics and many Protestant groups live and worship side by side in Maryland.",
+      "proof_region": null,
+      "hints": [
+        "A \"led to\" question: a document can't show its own result. You'll need what you know.",
+        "If insulting someone's religion costs money, what can many religions do?"
+      ],
+      "support": "none",
+      "walk_lines": null
+    }
+  ]
+}
