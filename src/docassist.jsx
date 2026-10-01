@@ -25,9 +25,9 @@ export const CHROME = {
   cardName: 'Your casefile documents',
   building: 'Under construction',
   docLabel: n => `Document ${n}`,
-  // 10.1 is a packet, not a casefile (Will's `book`). Its words go to BK with the Global proof.
-  page: (p, cf) => cf?.book === 'packet' ? `Packet page ${p}` : `Casefile page ${p}`,
-  backTo: (id, cf) => cf?.book === 'packet' ? 'Packet' : `Casefile ${id}`,
+  // One word, every room (BK 2026-10-01 09:25: "Casefile has to replace packet. consistency.").
+  page: p => `Casefile page ${p}`,
+  backTo: id => `Casefile ${id}`,
   picture: "What's in the picture",
   prevDoc: 'Previous document',
   nextDoc: 'Next document',
