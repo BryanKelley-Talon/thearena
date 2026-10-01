@@ -25,9 +25,9 @@ export const CHROME = {
   cardName: 'Your casefile documents',
   building: 'Under construction',
   docLabel: n => `Document ${n}`,
-  // A group's `short` name (e.g. "Block A" for 11.1's packets) replaces "Casefile A" when the pack gives one.
-  page: (p, cf) => cf?.short_page ? `${cf.short_page} ${p}` : `Casefile page ${p}`,
-  backTo: (id, cf) => cf?.short || `Casefile ${id}`,
+  // 10.1 is a packet, not a casefile (Will's `book`). Its words go to BK with the Global proof.
+  page: (p, cf) => cf?.book === 'packet' ? `Packet page ${p}` : `Casefile page ${p}`,
+  backTo: (id, cf) => cf?.book === 'packet' ? 'Packet' : `Casefile ${id}`,
   picture: "What's in the picture",
   prevDoc: 'Previous document',
   nextDoc: 'Next document',
@@ -170,6 +170,37 @@ export function DocAssistHome({ pack, onOpenDoc }) {
 }
 
 // ── ONE DOCUMENT ────────────────────────────────────────────
+// Two pack dialects, one page. US 11.2 A: a step carries `question` + `mode`.
+// Global (Will, 09:09): a step carries `questions` [{ n, text, mode }], 0–2 of them,
+// with the number the page prints (or null). Pictures: `image_file` or an `images`
+// list (10.1 Document 1, two maps). Boxes above the document: `before_we_talk`
+// {title, text}; `before` is either that shape (US) or a line the page prints (Global).
+const stepQuestions = s => Array.isArray(s?.questions) ? s.questions
+  : (s?.question ? [{ n: null, text: s.question, mode: s.mode }] : [])
+const docImages = d => Array.isArray(d.images) && d.images.length
+  ? d.images.map(i => ({ file: i.file, alt: i.alt || i.describe, describe: i.describe, label: i.label }))
+  : (d.image_file ? [{ file: d.image_file, alt: d.image_alt, describe: d.describe }] : [])
+const boxOf = b => (b && typeof b === 'object' && b.text ? b : null)
+
+function Umbrellas({ u }) {
+  return (
+    <div className="da-umb" id="da-umbrellas">
+      <div className="da-umb-title">{u.title}</div>
+      {u.intro && <p className="da-umb-intro">{u.intro}</p>}
+      <ol className="da-umb-list">
+        {(u.items || []).map(it => (
+          <li key={it.n}>
+            <div className="da-umb-name"><span className="da-umb-n">{it.n}</span>{it.name}</div>
+            <div className="da-umb-q">{it.question}</div>
+            <div className="da-umb-issues">{it.issues}</div>
+          </li>
+        ))}
+      </ol>
+      {(u.close || []).map((c, i) => <p key={i} className="da-umb-close">{c}</p>)}
+    </div>
+  )
+}
+
 export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
   const voice = useLocalVoice()
   const speaker = useSpeaker(voice)
@@ -178,14 +209,18 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
   const [easier, setEasier] = useState(false)
   const [walkOpen, setWalkOpen] = useState(false)
   const [at, setAt] = useState(0)               // 0..4 the steps, 5 the close
+  const [umbOpen, setUmbOpen] = useState(false)
   const walkRef = useRef(null)
   const isImage = doc.kind === 'image'
-  const canEasier = isImage ? !!doc.describe : !!(doc.easier?.text || []).length
+  const images = isImage ? docImages(doc) : []
+  const canEasier = isImage ? images.some(i => i.describe) : !!(doc.easier?.text || []).length
   const body = isImage ? [] : (easier ? doc.easier.text : doc.text) || []
+  const bwt = boxOf(doc.before_we_talk) || boxOf(doc.before)
+  const printed = typeof doc.before === 'string' ? doc.before : null
 
   // A new document starts as printed, walk closed, nothing reading.
-  useEffect(() => { setEasier(false); setWalkOpen(false); setAt(0); speaker.stop() }, [doc.n])
-  useEffect(() => { speaker.stop() }, [at, easier, walkOpen])
+  useEffect(() => { setEasier(false); setWalkOpen(false); setAt(0); setUmbOpen(false); speaker.stop() }, [doc.n, doc.title])
+  useEffect(() => { speaker.stop(); setUmbOpen(false) }, [at, easier, walkOpen])
 
   const openWalk = () => {
     setWalkOpen(true); setAt(0)
@@ -195,18 +230,21 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
 
   // What "Read it to me" says for the document: what is on the screen, in order.
   const docParts = [
-    doc.before && doc.before.title, doc.before && doc.before.text,
+    bwt?.title, bwt?.text, printed,
     doc.title,
     doc.src,
-    ...(isImage ? [easier ? doc.describe : doc.image_alt] : body),
+    ...(isImage ? images.flatMap(i => [i.label, easier && i.describe ? i.describe : i.alt]) : body),
   ]
 
   const step = walkSteps[at]
   const ds = (doc.steps || [])[at]
+  const qs = stepQuestions(ds)
   const say = step && (isImage && step.say_image ? step.say_image : step.say)
+  const qLine = q => `${q.n != null ? `${q.n}. ` : ''}${q.text}`
   const stepParts = at >= walkSteps.length
     ? [doc.close]
-    : [step?.step, say, ds?.question && `${CHROME.asks} ${ds.question}`, ds?.mode === 'out loud' ? CHROME.outLoud : null, ds?.line]
+    : [step?.step, say, ...qs.flatMap(q => [`${CHROME.asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), ds?.line]
+  const showUmb = pack.umbrellas && L.umbrellas && at === walkSteps.length - 1
 
   return (
     <div className="da-doc">
@@ -223,12 +261,13 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
 
       <div className={walkOpen ? 'da-grid' : 'da-grid da-solo'}>
         <div className="da-left">
-          {doc.before && (
-            <aside className="da-before" aria-label={doc.before.title}>
-              <div className="da-before-title">{doc.before.title}</div>
-              <p>{doc.before.text}</p>
+          {bwt && (
+            <aside className="da-before" aria-label={bwt.title}>
+              {bwt.title && <div className="da-before-title">{bwt.title}</div>}
+              <p>{bwt.text}</p>
             </aside>
           )}
+          {printed && <p className="da-printed">{printed}</p>}
           <figure className="stimulus da-paper">
             <div className="doc-tag">{CHROME.docLabel(doc.n)}</div>
             {/* As printed in the casefile: the source line sits above the document. */}
@@ -236,17 +275,20 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
               {doc.src}
               {!isImage && easier && doc.easier?.label && <span className="da-easier-label">{doc.easier.label}</span>}
             </div>
-            {isImage && (
-              <a className="da-imglink" href={imgSrc(doc.image_file)} target="_blank" rel="noopener noreferrer">
-                <img src={imgSrc(doc.image_file)} alt={doc.image_alt || ''} />
-              </a>
-            )}
-            {isImage && easier && doc.describe && (
-              <div className="da-describe">
-                <div className="da-describe-head">{CHROME.picture}</div>
-                <p>{doc.describe}</p>
+            {images.map((im, i) => (
+              <div key={i} className="da-imgblock">
+                {im.label && <div className="da-imglabel">{im.label}</div>}
+                <a className="da-imglink" href={imgSrc(im.file)} target="_blank" rel="noopener noreferrer">
+                  <img src={imgSrc(im.file)} alt={im.alt || ''} loading={i ? 'lazy' : undefined} />
+                </a>
+                {easier && im.describe && (
+                  <div className="da-describe">
+                    <div className="da-describe-head">{CHROME.picture}</div>
+                    <p>{im.describe}</p>
+                  </div>
+                )}
               </div>
-            )}
+            ))}
             {!isImage && (
               <div className="da-text" lang="en">
                 {body.map((p, i) => <p key={`${easier ? 'e' : 'o'}${i}`}>{p}</p>)}
@@ -269,10 +311,22 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
                 <div className="da-tag">{step.tag}</div>
                 <div className="da-stepline">{step.step}</div>
                 {say && <p className="da-say">{say}</p>}
-                {ds?.question && (
+                {qs.length > 0 && (
                   <div className="da-ask">
                     <div className="da-ask-head">{CHROME.asks}</div>
-                    <p>{ds.question}{ds.mode === 'out loud' && <span className="da-loud"> · {CHROME.outLoud}</span>}</p>
+                    {qs.map((q, i) => (
+                      <p key={i}>{q.n != null && <b className="da-qn">{q.n}.</b>} {q.text}
+                        {q.mode === 'out loud' && <span className="da-loud"> · {CHROME.outLoud}</span>}</p>
+                    ))}
+                  </div>
+                )}
+                {showUmb && (
+                  <div className="da-umb-wrap">
+                    <button type="button" className="da-btn" aria-expanded={umbOpen} aria-controls="da-umbrellas"
+                            onClick={() => setUmbOpen(o => !o)}>
+                      <span aria-hidden="true" className="da-ico">{umbOpen ? '−' : '+'}</span>{L.umbrellas}
+                    </button>
+                    {umbOpen && <Umbrellas u={pack.umbrellas} />}
                   </div>
                 )}
                 {ds?.line && (
@@ -370,6 +424,23 @@ export const DOCASSIST_STYLES = `
 .da-before{background:var(--card);border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:8px;padding:12px 15px;margin:0 0 16px}
 .da-before-title{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:15px;color:var(--gold);font-weight:700;margin-bottom:4px}
 .da-before p{color:var(--white);font-size:17px;line-height:1.55;margin:0}
+.da-printed{color:#2c2110;font-size:16px;line-height:1.55;font-style:italic;margin:0 0 14px;padding:12px 16px;border-radius:8px;
+  background:linear-gradient(160deg,#f8f0da,#ecdeb8);border:1px solid rgba(60,44,18,.3)}
+.da-imgblock+.da-imgblock{margin-top:18px}
+.da-imglabel{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:14px;color:#5a4210;font-weight:700;margin-bottom:6px}
+.da-qn{color:var(--gold);margin-right:2px}
+.da-ask p+p{margin-top:8px}
+.da-umb-wrap{margin:4px 0 6px}
+.da-umb{margin-top:10px;background:var(--canvas);border:1px solid var(--arena-choice-edge);border-radius:10px;padding:12px 14px}
+.da-umb-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;letter-spacing:.1em;color:var(--gold);margin-bottom:4px}
+.da-umb-intro{color:var(--white);font-size:15.5px;line-height:1.5;margin:0 0 10px}
+.da-umb-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+.da-umb-list li{border-left:3px solid var(--gold);padding:2px 0 2px 10px}
+.da-umb-name{font-family:'Barlow Condensed',sans-serif;font-size:17px;letter-spacing:.06em;color:var(--white);font-weight:700}
+.da-umb-n{display:inline-block;min-width:18px;color:var(--gold)}
+.da-umb-q{color:var(--white);font-size:15px;line-height:1.45}
+.da-umb-issues{color:var(--gold-lit);font-size:14.5px;line-height:1.45;margin-top:2px}
+.da-umb-close{color:var(--white);font-size:15px;line-height:1.5;margin:10px 0 0}
 .da-docnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:22px 0 0;max-width:860px}
 .da-docnav .btn-ghost{min-height:44px;font-size:16px;background:var(--card);border-style:solid;border-color:var(--arena-choice-edge)}
 .da-docnav .btn-ghost:disabled{visibility:hidden}

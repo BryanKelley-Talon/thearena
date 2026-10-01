@@ -274,6 +274,11 @@
             }
           ],
           "brief_ref": "content/brief-gs10r-10.1.json",
+          "doc_assist": {
+            "published": true,
+            "content_ref": "content/docassist-gs10r-10.1.json",
+            "_note": "Josh, 2026-10-01. Doc Assist, Global. Will's pack (BK signed 09:05), ported byte for byte. Images byte-identical to Will's drop (In/will-brief-2026-10-01-doc-assist-global-images/)."
+          },
           "_brief_note": "Will, arena-pack-global10r-10.1.md, BK approved 18:06 ('i agree with all'); ported word for word 18:11."
         },
         {
@@ -282,6 +287,11 @@
           "status": "open",
           "published": true,
           "brief_ref": "content/brief-gs10r-10.2.json",
+          "doc_assist": {
+            "published": true,
+            "content_ref": "content/docassist-gs10r-10.2.json",
+            "_note": "Josh, 2026-10-01. Doc Assist, Global. Will's pack (BK signed 09:05), ported byte for byte. Images byte-identical to Will's drop (In/will-brief-2026-10-01-doc-assist-global-images/)."
+          },
           "_note": "Josh, 2026-09-25. Built from Will's two 10.2 files already on this desk: the Casefile A checkpoint (BK-ruled work order 2026-09-21 — Josh's miss that it waited) and the 10.2 GC brief (2026-09-18). No ladders yet — Will's to author.",
           "activities": [
             {

@@ -1,0 +1,530 @@
+{
+ "_built": "Will (global10r-curriculum) 2026-10-01 09:07 EDT",
+ "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: steps[].questions is a LIST (a Global step may carry 0, 1 or 2 casefile questions, each with its printed number, or n=null where the 10.1 packet prints none); optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05).",
+ "tool": "Doc Assist",
+ "room": "10.1",
+ "course": "GS10R",
+ "tile": "Every document in your casefile, with a walk-through beside it. It won't answer for you. It shows you how.",
+ "walk_name": "THE DOC WALK",
+ "walk": [
+  {
+   "tag": "Q1 · SOURCING",
+   "step": "Source line first.",
+   "say": "Before you read a word of the document, read the line above it. Who made it, when, and why?"
+  },
+  {
+   "tag": "READ IT THROUGH",
+   "step": "Read it once, all the way.",
+   "say": "Start to finish, no stopping. Hit a hard word? Keep going. Then say what it's about in a few words.",
+   "say_image": "Look in three passes: the title and labels, then the biggest thing, then the small details."
+  },
+  {
+   "tag": "Q2 · CLAIM & EVIDENCE",
+   "step": "What is it saying?",
+   "say": "Find the words that say it. Your proof is always in the document."
+  },
+  {
+   "tag": "Q3 · PERSPECTIVE CHECK",
+   "step": "Whose view is this?",
+   "say": "Who would tell it differently? Who isn't in it?"
+  },
+  {
+   "tag": "Q4 · ENDURING ISSUE",
+   "step": "Name the issue.",
+   "say": "Which umbrella on your Six Umbrellas card does it fall under? Then name the exact issue underneath it, and explain it."
+  }
+ ],
+ "labels": {
+  "walk": "Walk me through it",
+  "read": "Read it to me",
+  "easier": "Easier to read",
+  "original": "Original",
+  "close": "Close the walk",
+  "next": "Next step",
+  "back": "Back",
+  "stop": "Stop reading",
+  "umbrellas": "The Six Umbrellas"
+ },
+ "umbrellas": {
+  "_ruled": "BK 2026-10-01 09:05: a button on step 5 (Q4 · ENDURING ISSUE) pops out this mini list. Josh builds it.",
+  "button": "The Six Umbrellas",
+  "title": "THE SIX UMBRELLAS",
+  "intro": "Every enduring issue fits under one of these six. Spot the umbrella fast. Then name the exact issue underneath it, and explain it.",
+  "items": [
+   {
+    "n": "1",
+    "name": "POWER & ITS ABUSE",
+    "question": "Who holds authority, and what happens to the people who did not choose them.",
+    "issues": "Abuse of Power · Imperialism · Human Rights Violations · Inequality"
+   },
+   {
+    "n": "2",
+    "name": "CONFLICT",
+    "question": "Why people fight, and what is still unsettled when the fighting stops.",
+    "issues": "Conflict"
+   },
+   {
+    "n": "3",
+    "name": "IDENTITY & NATIONALISM",
+    "question": "Who a people say they are, and who that leaves out.",
+    "issues": "Nationalism · Cultural Exchange and Diffusion"
+   },
+   {
+    "n": "4",
+    "name": "WEALTH & RESOURCES",
+    "question": "Who owns what a place produces, and who does the producing.",
+    "issues": "Economic Development · Scarcity"
+   },
+   {
+    "n": "5",
+    "name": "TECHNOLOGY & ENVIRONMENT",
+    "question": "What new tools let people do, and what they cost the world around them.",
+    "issues": "Scientific and Technological Change · Environmental Crisis"
+   },
+   {
+    "n": "6",
+    "name": "A CONNECTED WORLD",
+    "question": "What happens when distant places start depending on each other.",
+    "issues": "Cooperation · Population and Migration"
+   }
+  ],
+  "close": [
+   "On the essay, write the exact issue, not the umbrella: “Human Rights Violations,” not “Power & Its Abuse.”",
+   "Then EXPLAIN IT: define the problem in one sentence, and show where a document shows it."
+  ]
+ },
+ "_ruled": "Wording SIGNED by BK 2026-10-01 09:05 (\"1. ... yes good step. 2. yes 3. yes 4. yes with your changes. thank you. signed.\")",
+ "casefiles": [
+  {
+   "id": "10.1",
+   "title": "10.1 Student Packet · The World in 1750",
+   "book": "packet",
+   "status": "open",
+   "_source": "global10r-curriculum/OUTPUTS/Unit_10.1/GS10R_Unit10.1_Student_Packet_v13_2026-09-19.pdf",
+   "docs": [
+    {
+     "n": 1,
+     "title": "The world in 1750 — read the map on the screen",
+     "kind": "image",
+     "src": "Source: Projected: the eight states, then the world as a British atlas drew it in 1772",
+     "page": 3,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Pick any three of the eight states on the screen. For each one write the region it sat in — the continent and the part of it, not just the name. (Era and place. This is the move you will make on every document this year.)",
+         "mode": "written"
+        }
+       ],
+       "line": "Pick three you can find fast. For each one, name the continent first, then narrow it down: which part of that continent? WHAT YOU NEED TO KNOW on Day 1 says where several of them sat."
+      },
+      {
+       "questions": [],
+       "line": "Two maps: the eight states first, then the 1772 atlas. On the first, read all eight names before anything else. On the second, read the title and the key before anything else."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "One empire on that map reached across three continents. Which one, and which three? Then: name the state that held the least land of the eight.",
+         "mode": "written"
+        }
+       ],
+       "line": "Trace each empire's edges with your eyes and count the continents it touches. For the second part, go by the size of the shape on the map, not by how famous the name is."
+      },
+      {
+       "questions": [],
+       "line": "Read the source line again: the second map came from a British atlas. Whose eyes are you looking through on that map?"
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Now the 1772 map. Almost all of Asia is blank on it. Was nothing there? Say what the blank actually means, in one sentence — and name the enduring issue it puts on the table.",
+         "mode": "written"
+        }
+       ],
+       "line": "Start with the question's own clue: \"Was nothing there?\" Ask who made the map and what they knew. Then check the anchors on your cover page for the issue a blank like that puts on the table."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 1's questions in your packet, starting on page 3. Use the sentence stem, or write something of equal or better value.",
+     "before": "Your teacher is putting two maps up. You are not copying them. You are answering from them — which is what the Regents will ask you to do with every map it gives you.",
+     "images": [
+      {
+       "file": "images/gs10r-101-doc1a-eight-states-1750.png",
+       "label": "Map 1 · the eight states",
+       "describe": "A world map with no title. Lines of latitude and longitude are marked around the edges: 60°N, 40°N, 20°N, 0°, 20°S and 40°S down the left side, and 180°, 120°W, 60°W, 0°, 60°E, 120°E and 180° along the bottom. The continents are drawn in outline, and four are labeled in small gray letters: NORTH AMERICA, SOUTH AMERICA, AFRICA and AUSTRALIA. Six colored ovals sit on the map, each with a name in capital letters and a line pointing to it. RUSSIAN EMPIRE: a large tan oval centered near 60°N, 60°E. OTTOMAN EMPIRE: a red oval centered near 35°N, 30°E. MUGHAL EMPIRE: a green oval centered near 20°N, 75°E. QING CHINA: a blue oval centered near 35°N, 105°E. TOKUGAWA JAPAN: a small purple oval centered near 35°N, 138°E. A small teal oval near 5°N, 0° carries three names: BENIN · ASHANTI · DAHOMEY.",
+       "alt": "A world map with no title. Lines of latitude and longitude are marked around the edges: 60°N, 40°N, 20°N, 0°, 20°S and 40°S down the left side, and 180°, 120°W, 60°W, 0°, 60°E, 120°E and 180° along the bottom. The continents are drawn in outline, and four are labeled in small gray letters: NORTH AMERICA, SOUTH AMERICA, AFRICA and AUSTRALIA. Six colored ovals sit on the map, each with a name in capital letters and a line pointing to it. RUSSIAN EMPIRE: a large tan oval centered near 60°N, 60°E. OTTOMAN EMPIRE: a red oval centered near 35°N, 30°E. MUGHAL EMPIRE: a green oval centered near 20°N, 75°E. QING CHINA: a blue oval centered near 35°N, 105°E. TOKUGAWA JAPAN: a small purple oval centered near 35°N, 138°E. A small teal oval near 5°N, 0° carries three names: BENIN · ASHANTI · DAHOMEY."
+      },
+      {
+       "file": "images/gs10r-101-doc1b-world-1772.png",
+       "label": "Map 2 · the world, 1772",
+       "describe": "An old printed world map. In the lower left, the title: THE WORLD (1772). The oceans are labeled ARCTIC OCEAN, PACIFIC OCEAN, ATLANTIC OCEAN and INDIAN OCEAN, and the continents NORTH AMERICA, SOUTH AMERICA, AFRICA, EUROPE, ASIA and AUSTRALIA. A key in the lower right reads: British Possessions … Red · French do. … Blue · Portuguese … Yellow · Spanish … Green · Dutch … Orange. Color covers most of South America and Central America, parts of eastern North America, and small countries in western Europe. Along the coasts of Africa, India, Southeast Asia and the islands nearby, small places are colored or underlined in color, with names such as Gold Coast, Bombay, Goa, Madras, Ceylon, Java, Macao and Philippines. Across the rest of Asia, the coastlines and rivers are drawn in black outline with no color and few names. Small print along the bottom reads: Ludlow's War of American Independence, and Longmans, Green & Co., London, New York & Bombay.",
+       "alt": "An old printed world map. In the lower left, the title: THE WORLD (1772). The oceans are labeled ARCTIC OCEAN, PACIFIC OCEAN, ATLANTIC OCEAN and INDIAN OCEAN, and the continents NORTH AMERICA, SOUTH AMERICA, AFRICA, EUROPE, ASIA and AUSTRALIA. A key in the lower right reads: British Possessions … Red · French do. … Blue · Portuguese … Yellow · Spanish … Green · Dutch … Orange. Color covers most of South America and Central America, parts of eastern North America, and small countries in western Europe. Along the coasts of Africa, India, Southeast Asia and the islands nearby, small places are colored or underlined in color, with names such as Gold Coast, Bombay, Goa, Madras, Ceylon, Java, Macao and Philippines. Across the rest of Asia, the coastlines and rivers are drawn in black outline with no color and few names. Small print along the bottom reads: Ludlow's War of American Independence, and Longmans, Green & Co., London, New York & Bombay."
+      }
+     ],
+     "image_file": "images/gs10r-101-doc1a-eight-states-1750.png",
+     "image_alt": "A world map with no title. Lines of latitude and longitude are marked around the edges: 60°N, 40°N, 20°N, 0°, 20°S and 40°S down the left side, and 180°, 120°W, 60°W, 0°, 60°E, 120°E and 180° along the bottom. The continents are drawn in outline, and four are labeled in small gray letters: NORTH AMERICA, SOUTH AMERICA, AFRICA and AUSTRALIA. Six colored ovals sit on the map, each with a name in capital letters and a line pointing to it. RUSSIAN EMPIRE: a large tan oval centered near 60°N, 60°E. OTTOMAN EMPIRE: a red oval centered near 35°N, 30°E. MUGHAL EMPIRE: a green oval centered near 20°N, 75°E. QING CHINA: a blue oval centered near 35°N, 105°E. TOKUGAWA JAPAN: a small purple oval centered near 35°N, 138°E. A small teal oval near 5°N, 0° carries three names: BENIN · ASHANTI · DAHOMEY.",
+     "describe": "Two maps, shown one after the other. See each map's description.",
+     "licence": {
+      "text": "Map 1: built for GS10R on a public-domain outline. Map 2: The World (1772), Longmans, Green & Co., 1905 atlas plate, public domain (UT Libraries Perry-Castañeda collection).",
+      "sellable": true
+     }
+    },
+    {
+     "n": 2,
+     "title": "Aurangzeb and religious toleration",
+     "kind": "text",
+     "src": "Source: Donald J. Johnson et al., Through Indian Eyes, Apex Press, 1999 (adapted), from the NYS Global History and Geography II Regents Exam, June 2026",
+     "page": 5,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "When was this written, and when is it describing? Those are two different answers, and the gap between them matters. Name both.",
+         "mode": "written"
+        }
+       ],
+       "line": "The source line has two years in it, and only one is when the book was written. For when it's describing, the KEY VOCABULARY on Day 2 gives Aurangzeb's years."
+      },
+      {
+       "questions": [],
+       "line": "Eight sentences. Moghul is an older spelling of Mughal; the brackets tell you. A devout person is deeply religious. Mark each thing Aurangzeb changed as you go."
+      },
+      {
+       "questions": [],
+       "line": "The author's judgment sits in the last three sentences. Find the words that say what Aurangzeb's choices did to the empire."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Whose voice is this? The author calls Aurangzeb’s measures “oppressive” and his reign “destructive.” Who is not speaking in this passage — and how might they have described the same decisions?",
+         "mode": "written"
+        }
+       ],
+       "line": "The source line tells you who is talking, and when. Then list everyone the passage talks about but never lets speak. Pick one and ask what words they'd use instead of \"oppressive.\""
+      },
+      {
+       "questions": [],
+       "line": "Clue words: \"oppressive measures.\" Ask what kind of issue that phrase belongs to, then check the anchors on your cover page."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 2's questions in your packet, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+     "before": "Aurangzeb was the last Mughal emperor to rule the whole empire. He reversed the policy his predecessors had followed for over a century. Read what he changed.",
+     "text": [
+      "Unfortunately, the last great Moghul [Mughal] ruler, Aurangzeb, opposed religious toleration. A devout Muslim and a Puritan in his habits, Aurangzeb dismissed the court musicians, artists, and historians. He discouraged poets, who “dealt in falsehood”; banned history, which “gave rise to feelings of undue pride”; and suppressed drinking and gambling. His military campaigns drained his resources. He also dismissed the Hindu clerks in his service and reimposed a poll tax on all “unbelievers.” These oppressive measures against the Hindus were perhaps the most destructive acts of his reign, for memories of Aurangzeb’s oppressive rule lingered in the minds of Hindu Indians for generations. By his death in 1707, the Moghul Empire was on the edge of ruin. The British came to fill the power vacuum."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Sadly, the last great Moghul [Mughal] ruler, Aurangzeb, was against religious toleration (letting people practice a religion different from the ruler's). He was a devout (deeply religious) Muslim. He was also a Puritan in his habits (very strict and plain in how he lived). Aurangzeb sent away the court musicians, artists, and historians. He discouraged poets, who “dealt in falsehood” (told lies). He banned history, which “gave rise to feelings of undue pride” (made people too proud). He also suppressed (stopped) drinking and gambling. His military campaigns (wars) used up his resources (money and supplies). He also sent away the Hindu clerks who worked for him. He brought back a poll tax (a tax on each person) on all “unbelievers.” These oppressive (harsh and unfair) measures against the Hindus were perhaps the most destructive acts of his reign. Hindu Indians remembered Aurangzeb’s oppressive rule for generations. By his death in 1707, the Moghul Empire was on the edge of ruin. The British came to fill the power vacuum (the empty space where power used to be)."
+      ]
+     }
+    },
+    {
+     "n": 3,
+     "title": "The decline of the Ottoman Empire",
+     "kind": "text",
+     "src": "Source: “Ottoman Empire (1301–1922),” BBC online, 2009 (adapted), from the NYS Global History and Geography Regents Exam, June 2015",
+     "page": 6,
+     "steps": [
+      {
+       "questions": [],
+       "line": "The source line has a span of years in the title, then 2009. Ask: is the BBC watching this happen, or looking back at it?"
+      },
+      {
+       "questions": [],
+       "line": "One paragraph of three sentences, a lead-in line, then a list of seven. Waning means fading; the brackets tell you. Read the list one line at a time."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "The passage lists seven causes. Which two are about trade routes moving somewhere else? Name them, and say in one sentence why that would weaken an empire that had grown rich on trade.",
+         "mode": "written"
+        }
+       ],
+       "line": "For each of the seven, ask: is this trade going somewhere else, or trouble inside the empire? For the why, picture a city that grew rich because the trade road ran through it."
+      },
+      {
+       "questions": [],
+       "line": "This is a list of what historians say, from far away and long after. Whose voices aren't on it? Picture an Ottoman merchant in 1700 reading it."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "An empire that grew rich on controlling where trade passed is now watching trade pass somewhere else. Name the enduring issue that puts on the table. (Look at the anchor on your cover page.) One sentence on why it is bigger than the Ottomans.",
+         "mode": "written"
+        }
+       ],
+       "line": "The question hands you the clue: look at the anchor on your cover page. For \"bigger than the Ottomans,\" ask who else, in any century, has watched trade move away from them."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 3's questions in your packet, starting on page 6. Use the sentence stem, or write something of equal or better value.",
+     "before": "A short list of the reasons historians give for the Ottoman slide. Notice how many of them are about trade rather than about war.",
+     "text": [
+      "The power of the [Ottoman] Empire was waning [fading] by 1683 when the second and last attempt was made to conquer Vienna. It failed. Without the conquest of Europe and the acquisition of significant new wealth, the Empire lost momentum and went into a slow decline.",
+      "Several other factors contributed to the [Ottoman] Empire’s decline:",
+      "• Competition from trade from the Americas",
+      "• Competition from cheap products from India and the Far East",
+      "• Development of other trade routes",
+      "• Rising unemployment within the Empire",
+      "• Ottoman Empire became less centralised, and central control weakened",
+      "• Sultans being less severe in maintaining rigorous standards of integrity in the administration of the Empire",
+      "• Sultans becoming less sensitive to public opinion"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The power of the [Ottoman] Empire was waning [fading] by 1683. That year the Ottomans made their second and last attempt to conquer Vienna. It failed. They did not conquer Europe, and they did not gain much new wealth. So the Empire lost momentum (its forward push) and went into a slow decline (a long slide in power and wealth).",
+       "Several other factors (causes) helped bring about the [Ottoman] Empire’s decline:",
+       "• Competition from trade from the Americas.",
+       "• Competition from cheap products from India and the Far East (East Asia).",
+       "• Development of other trade routes (new paths for trade).",
+       "• Rising unemployment (more people without jobs) within the Empire.",
+       "• The Ottoman Empire became less centralised (less run from one center), and central control weakened.",
+       "• Sultans (Ottoman rulers) were less strict about keeping high standards of integrity (honesty) in running the Empire.",
+       "• Sultans cared less about public opinion (what the people thought)."
+      ]
+     }
+    },
+    {
+     "n": 4,
+     "title": "Edict of 1635 Ordering the Closing of Japan",
+     "kind": "text",
+     "src": "Source: David John Lu, Sources of Japanese History, McGraw-Hill, from the NYS Global History and Geography Regents Exam, January 2005",
+     "page": 8,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Name the source out loud, then write it here — what is this document, who issued it, and what year? Then pull the single harshest word or phrase in it.",
+         "mode": "written"
+        }
+       ],
+       "line": "The document's title tells you what it is and the year. The CONTEXT line above the text tells you who issued it. For the harshest phrase, reread the four rules, mark each punishment, then choose one."
+      },
+      {
+       "questions": [],
+       "line": "Four rules, one per bullet. Watch who each rule is aimed at. Impounded means taken by the government; padres are priests, and the page tells you who their followers are."
+      },
+      {
+       "questions": [],
+       "line": "Each rule forbids something or rewards something. Say each one in a few words, then ask what they all have in common."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "The edict rewards informers for turning in Christians. What does paying people to inform on their neighbors do to a country over two hundred years? One sentence — this is a consequence question, not a fact question.",
+         "mode": "written"
+        }
+       ],
+       "line": "Find the rule about informers and read its reward line. Then picture one village living under that rule for two hundred years, generation after generation. What changes there?"
+      },
+      {
+       "questions": [],
+       "line": "The title holds the clue: \"the Closing of Japan.\" Ask what issue a country raises when it closes itself off, then check the anchors on your cover page."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 4's questions in your packet, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+     "before": "A direct order from the Tokugawa government. This is a primary source — not somebody describing the decision later, but the decision itself, in its own words.",
+     "before_we_talk": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     },
+     "text": [
+      "• Japanese ships are strictly forbidden to leave for foreign countries.",
+      "• No Japanese is permitted to go abroad. If there is anyone who attempts to do so secretly, he must be executed. The ship so involved must be impounded and its owner arrested, and the matter must be reported to the higher authority.",
+      "• If any Japanese returns from overseas after residing there, he must be put to death. . . .",
+      "• Any informer revealing the whereabouts of the followers of padres (Christians) must be rewarded accordingly. If anyone reveals the whereabouts of a high ranking padre, he must be given one hundred pieces of silver. For those of lower ranks, depending on the deed, the reward must be set accordingly. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "• Japanese ships are strictly forbidden (not allowed at all) to leave for foreign countries.",
+       "• No Japanese is permitted to go abroad (to other countries). If anyone tries to do so secretly, he must be executed. The ship involved must be impounded (taken by the government). Its owner must be arrested. The matter must be reported to the higher authority.",
+       "• If any Japanese returns from overseas after living there, he must be put to death. . . .",
+       "• Any informer (a person who tells on others) who reveals the whereabouts (where someone is) of the followers of padres (Christians) must be rewarded. If anyone reveals the whereabouts of a high ranking padre (priest), he must be given one hundred pieces of silver. For people of lower ranks, the reward must be set depending on the deed (what was done). . . ."
+      ]
+     }
+    },
+    {
+     "n": 5,
+     "title": "Emperor Jahangir’s letter to King James I of England, 1617",
+     "kind": "text",
+     "src": "Source: Modified version of the Letter to James I, King of England, 1617, published on the Fordham University Indian History Sourcebook",
+     "page": 9,
+     "steps": [
+      {
+       "questions": [],
+       "line": "The title and the source line tell you who wrote it, to whom, and the year. Then ask what a letter between two rulers is for."
+      },
+      {
+       "questions": [],
+       "line": "Two paragraphs, and each one is a single long sentence. Break them at the semicolons. Soever means ever: \"what place soever\" means whatever place. Dominions is in your Day 3 KEY VOCABULARY."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Jahangir grants the English a list of freedoms. Pull two of them, in his own words. Then say in one sentence what he appears to want in return.",
+         "mode": "written"
+        }
+       ],
+       "line": "Stay in the second paragraph. Each piece between the semicolons gives the English merchants something; copy two in his exact words. For what he wants back, go back to how the letter opens."
+      },
+      {
+       "questions": [],
+       "line": "This is one ruler writing to another. Find the other country he names in the second paragraph, and picture one of its traders in the same port reading this letter."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Two rulers, one decade apart, answer the same question in opposite ways: how open should a country be to outsiders? That question did not end in 1635. Name the enduring issue, and give one place it shows up outside this century.",
+         "mode": "written"
+        }
+       ],
+       "line": "The question already asks it for you: how open should a country be to outsiders? Put this letter next to Document 4, then check the anchors on your cover page. For the second part, look past 1750."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 5's questions in your packet, starting on page 10. Use the sentence stem, or write something of equal or better value.",
+     "before": "In 1614 King James I of England sent a diplomat, Sir Thomas Roe, to the Mughal emperor Jahangir to negotiate a trade treaty. It worked. This is Jahangir’s reply. Read it beside the edict you just read.",
+     "text": [
+      "The letter of love and friendship which you sent and the presents, tokens of your good affections toward me, I have received by the hands of your ambassador, Sir Thomas Roe (who well deserves to be your trusted servant), delivered to me in an acceptable and happy hour; upon which mine eyes were so fixed that I could not easily remove them to any other object, and have accepted them with great joy and delight.",
+      "Upon which assurance of your royal love I have given my general command to all the kingdoms and ports of my dominions to receive all the merchants of the English nation as the subjects of my friend; that in what place soever they choose to live, they may have free liberty without any restraint; and at what port soever they shall arrive, that neither Portugal nor any other shall dare to molest their quiet; and in what city soever they shall have residence, I have commanded all my governors and captains to give them freedom answerable to their own desires; to sell, buy, and to transport into their country at their pleasure."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "I have received the letter of love and friendship you sent, and the presents. They are tokens (signs) of your good affections (feelings) toward me. Your ambassador, Sir Thomas Roe, handed them to me. He well deserves to be your trusted servant. They came to me at a good and happy time. My eyes were so fixed on them that I could hardly look at anything else. I have accepted them with great joy and delight.",
+       "You have shown me your royal love. So I have given my general command (order) to all the kingdoms and ports of my dominions (all the lands I rule). They must receive all the merchants of the English nation as the subjects of my friend. In whatever place they choose to live, they may have free liberty without any restraint (limits). At whatever port they arrive, neither Portugal nor any other shall dare to molest their quiet (bother or attack them). In whatever city they live, I have commanded all my governors and captains to give them freedom answerable to their own desires (as much freedom as they want). They are free to sell, buy, and to transport into their country at their pleasure (whenever they like)."
+      ]
+     }
+    },
+    {
+     "n": 6,
+     "title": "The Tōkaidō — the road that governed Japan",
+     "kind": "text",
+     "src": "Source: Patricia J. Graham, “The Political and Economic Importance of the Tōkaidō,” Tōkaidō: Adventures on the Road in Old Japan, University of Kansas Spencer Museum of Art (adapted), from the NYS Global History and Geography Regents Exam, January 2012",
+     "page": 12,
+     "steps": [
+      {
+       "questions": [],
+       "line": "The source line names an author, a museum book, and a Regents exam. Ask: is this someone who walked the road, or a historian looking back at it?"
+      },
+      {
+       "questions": [],
+       "line": "Two paragraphs: two sentences, then six. Relays are teams that hand off, one to the next; priority means going first. Watch who gets through and who gets stopped."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "The road did two jobs at once: it moved the government’s messages fast and it slowed everybody else down. Pull one specific detail for each job.",
+         "mode": "written"
+        }
+       ],
+       "line": "Stay in the second paragraph. The first job runs through its middle sentences; the second job is in its last sentence. One detail from each is all you need."
+      },
+      {
+       "questions": [],
+       "line": "Who is this road built for, and who just has to live along it? Find the two kinds of traveler in the last three sentences, and ask how each one would describe the road."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "A government builds a road, then decides who is allowed to use it and when. Name the enduring issue. Then, in one sentence: is controlling movement a way of governing, or a way of controlling people? (It can be both — say so if you think so.)",
+         "mode": "written"
+        }
+       ],
+       "line": "Start with the question's own words: \"decides who is allowed to use it and when.\" Who holds that decision? Check the anchors on your cover page. The second part is yours; the question already lets you say both."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 6's questions in your packet, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+     "before": "The Tokugawa shogunate’s most important highway. Read it as a document about control, not about transport.",
+     "text": [
+      "The Tokugawa shogunate realized the importance of maintaining contact with distant provinces within Japan. The Tōkaidō was its most important highway.",
+      "...Perhaps the most crucial use of the road was for governmental communication with the provinces. Official messengers traveled by foot, horseback (in wartime), and palanquin [a seat, usually for the wealthy, carried by other people]. The government used a system of relays for messengers, with reliefs at every seven li [3.9 km]. Government messengers had priority over any other type of traveler. They had first access to ferries at river crossings along the way, and could freely pass government road barriers at all times of the day or night. Private citizens were not allowed to travel at night; a series of barriers and checkpoints along the road kept them from doing so…."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The Tokugawa shogunate (Japan's military government) understood that it was important to stay in contact with distant provinces (regions) within Japan. The Tōkaidō was its most important highway.",
+       "...Perhaps the most important use of the road was for the government to communicate with the provinces. Official messengers traveled by foot, by horseback (in wartime), and by palanquin [a seat, usually for the wealthy, carried by other people]. The government used a system of relays (teams that hand off, one to the next) for messengers. Fresh messengers took over every seven li [3.9 km]. Government messengers had priority over (got to go ahead of) any other type of traveler. They had first access to ferries at river crossings along the way. They could freely pass government road barriers at all times of the day or night. Private citizens were not allowed to travel at night. A series of barriers and checkpoints along the road kept them from doing so…."
+      ]
+     }
+    },
+    {
+     "n": 7,
+     "title": "The court at Versailles",
+     "kind": "text",
+     "src": "Source: The Memoirs of the Duke de Saint-Simon, ed. F. Arkwright, Brentano's, Vol. V (adapted), via the Internet Modern History Sourcebook, Fordham University",
+     "page": 13,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Who wrote this, and where was he standing when he saw it? Then say when — the reign, not an exact year. (Era and place. Every document, all year.)",
+         "mode": "written"
+        }
+       ],
+       "line": "The source line names him, and the CONTEXT line says where he lived. For when, the first sentence of the document names whose reign it is."
+      },
+      {
+       "questions": [],
+       "line": "Three paragraphs. The dots mark places where words were cut, and the brackets explain the French words. Bestow a favour means give a favor. Watch for every place the King notices who is there."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Both rulers were solving the same problem. Say what that problem was in one sentence — then name the one word for what each ruler did with the people who could threaten him. One word for Edo, one for Versailles. They are opposites, and both worked.",
+         "mode": "written"
+        }
+       ],
+       "line": "This one is for Documents 6 and 7 together, after the comparison table on page 14. Fill the table first; its first row is where your two words come from. For the problem, reread WHAT YOU NEED TO KNOW on Day 4."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Saint-Simon is a duke describing a system designed to control dukes. Find the one sentence where he stops describing and starts accusing — where he tells you the King did it on purpose. Copy it. Then say why a noble might notice that when a peasant would not.",
+         "mode": "written"
+        }
+       ],
+       "line": "Look in the last paragraph for where he stops saying what the King did and starts saying why. For the second part, go back to Step 1: who is he, and what did this system cost people like him?"
+      },
+      {
+       "questions": [],
+       "line": "Clue word in the last paragraph: compelled. Ask what issue it raises when one man can make the most powerful people in the country do what he wants, then check the anchors on your cover page."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 7's questions in your packet, starting on page 13. Use the sentence stem, or write something of equal or better value.",
+     "before": "The Duc de Saint-Simon was a French duke who lived at Versailles for years and kept a private record of what he saw. Read who is writing before you read what he says — he is one of the nobles the system was built to contain, and he did not enjoy it.",
+     "text": [
+      "Very early in the reign of Louis XIV the Court was removed from Paris, never to return. . . . he did not consider himself safe there, and thought cabals [secret plots] would be more easily detected if the Court was in the country, where the movements and temporary absences of any of its members would be more easily noticed. . . .",
+      "Not only did he expect all persons of distinction to be in continual attendance at Court, but he was quick to notice the absence of those of inferior degree; at his lever [morning rising], his coucher [going to bed], his meals, in the gardens of Versailles, he used to cast his eyes to right and left; nothing escaped him, he saw everybody. If any one habitually living at Court absented himself he insisted on knowing the reason. . . . any one who seldom or never appeared there was certain to incur his displeasure. If asked to bestow a favour on such persons he would reply haughtily: “I do not know him.” . . .",
+      "He loved splendour, magnificence, and profusion in all things, and encouraged similar tastes in his Court. . . . Motives of policy had something to do with this; by making expensive habits the fashion, and, for people in a certain position, a necessity, he compelled his courtiers to live beyond their income, and gradually reduced them to depend on his bounty [generosity] for the means of subsistence [survival]. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Very early in the reign of Louis XIV, the Court was moved out of Paris, never to return. . . . He did not feel safe there. He thought cabals [secret plots] would be easier to detect (find) if the Court was in the country. There, people would more easily notice when any member of the Court moved around or was away for a while. . . .",
+       "He expected all persons of distinction (important people) to be at Court all the time. He was also quick to notice when people of inferior degree (lower rank) were missing. At his lever [morning rising], his coucher [going to bed], his meals, and in the gardens of Versailles, he looked to the right and left. Nothing escaped him; he saw everybody. If anyone who usually lived at Court stayed away, he insisted on knowing the reason. . . . Anyone who seldom or never came there was certain to incur his displeasure (make him unhappy). If someone asked him to bestow a favour (give a favor) on such persons, he would reply haughtily (in a proud, cold way): “I do not know him.” . . .",
+       "He loved splendour (grand beauty), magnificence, and profusion (having lots of everything) in all things. He encouraged similar tastes in his Court. . . . Motives of policy had something to do with this; by making expensive habits the fashion, and, for people in a certain position, a necessity, he compelled his courtiers to live beyond their income, and gradually reduced them to depend on his bounty [generosity] for the means of subsistence [survival]. . . ."
+      ]
+     }
+    }
+   ]
+  }
+ ]
+}

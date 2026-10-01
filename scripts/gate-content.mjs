@@ -328,7 +328,9 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
 {
   let m = {}
   try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
-  const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)?|score[ds]?|\bpoints\b|streak|\bpercent\b|%|\bgrade[ds]?\b)/i
+  // A document can be about numbers (a chart of percents) and a coaching line can say
+  // "compare the percents". What may never appear is a kid's performance read back as a score.
+  const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|your score|score[ds]?\b|points?\s+(earned|scored)|streak|you got \d+)/i
   const DATE = /\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/
   const LABELS = ['walk', 'read', 'easier', 'original', 'close', 'next', 'back', 'stop']
   const MODES = new Set(['written', 'out loud'])
@@ -348,10 +350,19 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     if (walk.length !== 5) df(`the walk needs five steps; it has ${walk.length}.`)
     walk.forEach((w, i) => { if (!w.tag || !w.step || !w.say) df(`walk step ${i + 1}: needs tag, step and say.`) })
     for (const k of LABELS) if (!d.labels?.[k]) df(`labels.${k} is missing (a button with no word).`)
+    // The Six Umbrellas pop-out on the last step (Global, BK 09:05).
+    if (d.umbrellas) {
+      const u = d.umbrellas
+      if (!d.labels?.umbrellas) df(`umbrellas: labels.umbrellas (the button word) is missing.`)
+      if (!u.title) df(`umbrellas: no title.`)
+      if ((u.items || []).length !== 6) df(`umbrellas: needs six items; it has ${(u.items || []).length}.`)
+      for (const it of u.items || []) if (!it.name || !it.question || !it.issues) df(`umbrellas item ${it.n ?? '?'}: needs name, question and issues.`)
+    }
     const cfs = d.casefiles || []
     if (!cfs.length) df(`no casefiles.`)
     if (!cfs.some(x => x.status === 'open')) df(`no casefile is open.`)
-    const student = [d.tile, d.walk_name, ...walk.flatMap(w => [w.tag, w.step, w.say, w.say_image]), ...Object.values(d.labels || {})]
+    const student = [d.tile, d.walk_name, ...walk.flatMap(w => [w.tag, w.step, w.say, w.say_image]), ...Object.values(d.labels || {}),
+      d.umbrellas?.intro, ...(d.umbrellas?.close || []), ...(d.umbrellas?.items || []).flatMap(i => [i.name, i.question, i.issues])]
     for (const cf of cfs) {
       if (!cf.id) df(`a casefile with no id.`)
       if (!['open', 'building'].includes(cf.status)) df(`casefile ${cf.id}: status must be open or building.`)
@@ -367,30 +378,60 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         if (!doc.close || !/\bpage \d+/.test(doc.close)) df(`${w}: the close must send the kid back to a casefile page.`)
         const steps = doc.steps || []
         if (steps.length !== walk.length) df(`${w}: needs one step per walk step (${walk.length}).`)
+        // Two dialects (2026-10-01): US 11.2 A puts one `question` + `mode` on steps 1, 3, 4, 5.
+        // Global puts a `questions` list (0–2, each { n, text, mode }) on any step but step 2.
+        let asked = 0
         steps.forEach((s, j) => {
           if (!s.line) df(`${w} step ${j + 1}: no BK line.`)
-          if (j === 1) { if (s.question != null || s.mode != null) df(`${w} step 2: Read it through carries no casefile question.`) }
+          if (Array.isArray(s.questions)) {
+            if (j === 1 && s.questions.length) df(`${w} step 2: Read it through carries no casefile question.`)
+            if (s.questions.length > 2) df(`${w} step ${j + 1}: more than two casefile questions on one step.`)
+            for (const q of s.questions) {
+              asked++
+              if (!q || !String(q.text || '').trim()) df(`${w} step ${j + 1}: a casefile question with no words.`)
+              if (!MODES.has(q?.mode)) df(`${w} step ${j + 1}: mode must be "written" or "out loud".`)
+              if (q && q.n != null && !Number.isInteger(q.n)) df(`${w} step ${j + 1}: a question number must be a whole number or null.`)
+            }
+          } else if (j === 1) { if (s.question != null || s.mode != null) df(`${w} step 2: Read it through carries no casefile question.`) }
           else {
+            asked++
             if (!s.question) df(`${w} step ${j + 1}: no casefile question.`)
             if (!MODES.has(s.mode)) df(`${w} step ${j + 1}: mode must be "written" or "out loud".`)
           }
         })
+        if (!asked) warn(f, `${w}: no casefile question on any step; check the close sends the kid to where they are.`)
         if (doc.kind === 'text') {
           if (!(doc.text || []).length || doc.text.some(p => !String(p).trim())) df(`${w}: a text document with no text.`)
           if (!(doc.easier?.text || []).length) df(`${w}: no easier-to-read version (BK ruled one per text document).`)
           if (doc.easier && !/adapted/i.test(doc.easier.label || '')) df(`${w}: the easier version must be labeled (adapted…) (canon §6).`)
           if (!/\(adapted\)/.test(doc.src || '') && doc.easier) warn(f, `${w}: source line does not say (adapted); check it is printed word for word.`)
         } else if (doc.kind === 'image') {
-          const img = String(doc.image_file || '').split('/').pop()
-          if (!img || !fs.existsSync(path.join(CONTENT, img))) df(`${w}: picture '${img}' is not in public/content.`)
-          const bad = altShape(doc.image_alt)
-          if (bad && !bad.soft) df(`${w}: image_alt ${bad}.`)
-          if (!doc.image_alt || doc.image_alt.length < 40) df(`${w}: image_alt must describe the picture.`)
-          if (!doc.describe) df(`${w}: a picture needs its plain description (Easier to read shows it).`)
+          // One picture (image_file) or several (images: [{ file, label, describe, alt }]).
+          const pics = Array.isArray(doc.images) && doc.images.length
+            ? doc.images.map(i => ({ file: i.file, alt: i.alt || i.describe, describe: i.describe, label: i.label, many: true }))
+            : [{ file: doc.image_file, alt: doc.image_alt, describe: doc.describe }]
+          for (const [k, pic] of pics.entries()) {
+            const pw = pics.length > 1 ? `${w} picture ${k + 1}` : w
+            const img = String(pic.file || '').split('/').pop()
+            if (!img || !fs.existsSync(path.join(CONTENT, img))) df(`${pw}: picture '${img}' is not in public/content.`)
+            const bad = altShape(pic.alt)
+            if (bad && !bad.soft) df(`${pw}: alt ${bad}.`)
+            if (!pic.alt || pic.alt.length < 40) df(`${pw}: the alt must describe the picture.`)
+            if (!pic.describe) df(`${pw}: a picture needs its plain description (Easier to read shows it).`)
+            if (pic.many && !pic.label) df(`${pw}: with two pictures, each needs a label.`)
+            student.push(pic.describe, pic.label)
+          }
         } else df(`${w}: kind must be "text" or "image".`)
-        if (doc.licence && (doc.licence.sellable !== false || !doc.licence.text)) df(`${w}: a licence needs text and sellable: false (CONVENTIONS §7).`)
-        if (doc.before && (!doc.before.title || !doc.before.text)) df(`${w}: a before block needs a title and text.`)
-        student.push(doc.title, doc.close, ...steps.flatMap(s => [s.question, s.line]), ...(doc.easier?.text || []), doc.describe, doc.before?.text)
+        // A licence is shown in full. Teach-only or NC sources must say sellable: false (CONVENTIONS §7).
+        if (doc.licence) {
+          if (!doc.licence.text || typeof doc.licence.sellable !== 'boolean') df(`${w}: a licence needs text and sellable true/false.`)
+          else if (doc.licence.sellable && /\bNC\b|teach-only|not for sale|Regents|New Visions/i.test(doc.licence.text)) df(`${w}: a teach-only or NC source marked sellable (CONVENTIONS §7).`)
+        }
+        const box = b => b && typeof b === 'object' && b.title && b.text
+        if (doc.before != null && !(typeof doc.before === 'string' ? doc.before.trim() : box(doc.before))) df(`${w}: 'before' must be a printed line or { title, text }.`)
+        if (doc.before_we_talk != null && !box(doc.before_we_talk)) df(`${w}: before_we_talk needs a title and text.`)
+        student.push(doc.title, doc.close, ...steps.flatMap(s => [s.question, s.line, ...(s.questions || []).map(q => q?.text)]),
+          ...(doc.easier?.text || []), typeof doc.before === 'string' ? doc.before : doc.before?.text, doc.before_we_talk?.text)
       })
     }
     const words = student.filter(Boolean).join(' \n ')

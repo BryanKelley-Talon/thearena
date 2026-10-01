@@ -1,0 +1,1518 @@
+{
+ "_built": "Will (global10r-curriculum) 2026-10-01 09:07 EDT",
+ "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: steps[].questions is a LIST (a Global step may carry 0, 1 or 2 casefile questions, each with its printed number, or n=null where the 10.1 packet prints none); optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05).",
+ "tool": "Doc Assist",
+ "room": "10.2",
+ "course": "GS10R",
+ "tile": "Every document in your casefile, with a walk-through beside it. It won't answer for you. It shows you how.",
+ "walk_name": "THE DOC WALK",
+ "walk": [
+  {
+   "tag": "Q1 · SOURCING",
+   "step": "Source line first.",
+   "say": "Before you read a word of the document, read the line above it. Who made it, when, and why?"
+  },
+  {
+   "tag": "READ IT THROUGH",
+   "step": "Read it once, all the way.",
+   "say": "Start to finish, no stopping. Hit a hard word? Keep going. Then say what it's about in a few words.",
+   "say_image": "Look in three passes: the title and labels, then the biggest thing, then the small details."
+  },
+  {
+   "tag": "Q2 · CLAIM & EVIDENCE",
+   "step": "What is it saying?",
+   "say": "Find the words that say it. Your proof is always in the document."
+  },
+  {
+   "tag": "Q3 · PERSPECTIVE CHECK",
+   "step": "Whose view is this?",
+   "say": "Who would tell it differently? Who isn't in it?"
+  },
+  {
+   "tag": "Q4 · ENDURING ISSUE",
+   "step": "Name the issue.",
+   "say": "Which umbrella on your Six Umbrellas card does it fall under? Then name the exact issue underneath it, and explain it."
+  }
+ ],
+ "labels": {
+  "walk": "Walk me through it",
+  "read": "Read it to me",
+  "easier": "Easier to read",
+  "original": "Original",
+  "close": "Close the walk",
+  "next": "Next step",
+  "back": "Back",
+  "stop": "Stop reading",
+  "umbrellas": "The Six Umbrellas"
+ },
+ "umbrellas": {
+  "_ruled": "BK 2026-10-01 09:05: a button on step 5 (Q4 · ENDURING ISSUE) pops out this mini list. Josh builds it.",
+  "button": "The Six Umbrellas",
+  "title": "THE SIX UMBRELLAS",
+  "intro": "Every enduring issue fits under one of these six. Spot the umbrella fast. Then name the exact issue underneath it, and explain it.",
+  "items": [
+   {
+    "n": "1",
+    "name": "POWER & ITS ABUSE",
+    "question": "Who holds authority, and what happens to the people who did not choose them.",
+    "issues": "Abuse of Power · Imperialism · Human Rights Violations · Inequality"
+   },
+   {
+    "n": "2",
+    "name": "CONFLICT",
+    "question": "Why people fight, and what is still unsettled when the fighting stops.",
+    "issues": "Conflict"
+   },
+   {
+    "n": "3",
+    "name": "IDENTITY & NATIONALISM",
+    "question": "Who a people say they are, and who that leaves out.",
+    "issues": "Nationalism · Cultural Exchange and Diffusion"
+   },
+   {
+    "n": "4",
+    "name": "WEALTH & RESOURCES",
+    "question": "Who owns what a place produces, and who does the producing.",
+    "issues": "Economic Development · Scarcity"
+   },
+   {
+    "n": "5",
+    "name": "TECHNOLOGY & ENVIRONMENT",
+    "question": "What new tools let people do, and what they cost the world around them.",
+    "issues": "Scientific and Technological Change · Environmental Crisis"
+   },
+   {
+    "n": "6",
+    "name": "A CONNECTED WORLD",
+    "question": "What happens when distant places start depending on each other.",
+    "issues": "Cooperation · Population and Migration"
+   }
+  ],
+  "close": [
+   "On the essay, write the exact issue, not the umbrella: “Human Rights Violations,” not “Power & Its Abuse.”",
+   "Then EXPLAIN IT: define the problem in one sentence, and show where a document shows it."
+  ]
+ },
+ "_ruled": "Wording SIGNED by BK 2026-10-01 09:05 (\"1. ... yes good step. 2. yes 3. yes 4. yes with your changes. thank you. signed.\")",
+ "casefiles": [
+  {
+   "id": "A",
+   "title": "10.2 Casefile A · The Enlightenment and its reformers",
+   "book": "casefile",
+   "status": "open",
+   "_source": "global10r-curriculum/OUTPUTS/Unit_10.2/GS10R_Unit10.2_CASEFILE-A_v11_2026-09-21.pdf",
+   "docs": [
+    {
+     "n": 1,
+     "title": "Locke on why people leave the state of nature",
+     "kind": "text",
+     "src": "Source: John Locke, Two Treatises of Government, 1690",
+     "page": 4,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "Hobbes says the only way out is to hand all power to one ruler, not a government that can be replaced. Locke, in Document 1, describes a different deal. Name one way Hobbes's deal is different from Locke's.",
+         "mode": "written"
+        },
+        {
+         "n": 1,
+         "text": "Who wrote this, and in what year? Then: is 1690 before or after the French Revolution? Write the number of years between them.",
+         "mode": "written"
+        }
+       ],
+       "line": "Q1 first: the source line has the name and the year. For the French Revolution's year, look near the end of WHAT YOU NEED TO KNOW on Day 1. For the Hobbes question, reread the Hobbes box just above Document 1, then ask who holds the power when each deal is done."
+      },
+      {
+       "questions": [],
+       "line": "Five sentences. The first two are questions Locke asks himself, and the last three answer them. Hard words: equity means fairness, and hence means for this reason."
+      },
+      {
+       "questions": [
+        {
+         "n": 2,
+         "text": "Locke says people trade something away to get something back. What do they give up, and what do they get? Use his words.",
+         "mode": "written"
+        }
+       ],
+       "line": "What they give up is in his first question. What they get is in his last sentence. Copy his words, not yours."
+      },
+      {
+       "questions": [],
+       "line": "WHAT YOU NEED TO KNOW on Day 2 says what Locke was writing to justify. Picture the king England forced out reading this. What would he say back?"
+      },
+      {
+       "questions": [],
+       "line": "Find the two words Locke uses for rights in the state of nature, near the end of his fourth sentence. Ask which enduring issue they point to, then explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“If man in the state of nature is free, if he is absolute lord of his own person and possessions, why will he give up his freedom? Why will he put himself under the control of any person or institution? The obvious answer is that rights in the state of nature are constantly exposed to the attack of others. Since every man is equal and since most men do not concern themselves with equity and justice, the enjoyment of rights in the state of nature is unsafe and insecure. Hence each man joins in society with others to preserve his life, liberty, and property.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“Suppose man in the state of nature (life before any government) is free. Suppose he is absolute lord (complete master) of his own person and possessions (the things he owns). Then why will he give up his freedom? Why will he put himself under the control of any person or institution (an organized group, like a government)? The obvious answer is this. In the state of nature, rights are always open to attack from others. Every man is equal. But most men do not care about equity (fairness) and justice. So in the state of nature, the enjoyment of rights is unsafe and insecure. Hence (for this reason) each man joins in society with others to preserve his life, liberty, and property.”"
+      ]
+     }
+    },
+    {
+     "n": 2,
+     "title": "Locke on a government that breaks the deal",
+     "kind": "text",
+     "src": "Source: John Locke, Two Treatises on Civil Government",
+     "page": 5,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Same writer as Document 1. The heading says this one is about a government that breaks the deal. Before you read, ask: what deal? Document 1's last sentence tells you."
+      },
+      {
+       "questions": [],
+       "line": "One long sentence, with pieces cut out where you see dots. Hard words: the legislature is the lawmakers, and forfeit is in your KEY VOCABULARY for Day 2. Watch who holds the power at the start of the sentence."
+      },
+      {
+       "questions": [
+        {
+         "n": 3,
+         "text": "What exactly does Locke say happens to power when a government seizes absolute control? Copy the phrase that says it.",
+         "mode": "written"
+        }
+       ],
+       "line": "Find the word forfeit, then keep reading to the end. Copy the words that say where the power goes."
+      },
+      {
+       "questions": [],
+       "line": "Picture a member of that legislature reading this sentence. How would they describe what they did?"
+      },
+      {
+       "questions": [
+        {
+         "n": 4,
+         "text": "Which enduring issue does this document belong under, and why? One sentence.",
+         "mode": "written"
+        }
+       ],
+       "line": "Your clue words are in the first half of the sentence: what the legislature grabs, and how much of it. Name the issue those words point to, then give your because."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“[When] the legislature shall . . . grasp [for] themselves, or put into the hands of any other, an absolute power over their lives, liberties, and estates of the people, . . . they forfeit the power the people had put into their hands for quite contrary ends, and it [passes] to the people, who have a right to resume their original liberty. . . .”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“Sometimes the legislature (the lawmakers) will . . . grab for themselves an absolute power (power with no limits) over the lives, liberties, and estates (property) of the people. Or they will put that power into the hands of someone else. When that happens, . . . they forfeit the power the people had put into their hands. The people gave them that power for quite contrary (opposite) ends (purposes). And it [passes] to the people, who have a right to resume their original liberty. . . .” (To resume means to take back up.)"
+      ]
+     }
+    },
+    {
+     "n": 3,
+     "title": "Montesquieu on the power of judging",
+     "kind": "text",
+     "src": "Source: Montesquieu, The Spirit of the Laws",
+     "page": 7,
+     "steps": [
+      {
+       "questions": [],
+       "line": "The source line gives you only a name and a book. WHAT YOU NEED TO KNOW on Day 3 tells you who he was and when the book came out. Find both before you read."
+      },
+      {
+       "questions": [],
+       "line": "Three sentences. The first sets the rule, and the next two each start with If. Hard words: arbitrary is in your KEY VOCABULARY for Day 3, and an oppressor is someone who uses power to crush people."
+      },
+      {
+       "questions": [
+        {
+         "n": 5,
+         "text": "Montesquieu names two things that go wrong if judging is combined with another power. Name both, in your own words.",
+         "mode": "written"
+        }
+       ],
+       "line": "Look at the two sentences that start with If. Each one ends with something going wrong. Put each one in your own words."
+      },
+      {
+       "questions": [],
+       "line": "Picture a king who writes the laws and also judges the cases. What would he say about this passage?"
+      },
+      {
+       "questions": [],
+       "line": "Find the word liberty in the first sentence. Ask what threatens it here, and which enduring issue that is. Then explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“. . . Nor is there liberty if the power of judging is not separate from legislative power and from executive power. If it were joined to legislative power, the power over the life and liberty of the citizens would be arbitrary, for the judge would be the legislator. If it were joined to executive power, the judge could have the force of an oppressor. . . .”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“. . . There is no liberty if the power of judging is not separate from legislative power (the power to make laws) and from executive power (the power to carry out laws). If it were joined to legislative power, the power over the life and liberty of the citizens would be arbitrary (decided by one person's will, not by law). That is because the judge would be the legislator (the lawmaker). If it were joined to executive power, the judge could have the force of an oppressor (someone who uses power to crush people). . . .”"
+      ]
+     }
+    },
+    {
+     "n": 4,
+     "title": "Montesquieu on powers united in one person",
+     "kind": "text",
+     "src": "Source: Baron de Montesquieu, Spirit of the Laws",
+     "page": 7,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Same writer as Document 3. The source line has no year, but WHAT YOU NEED TO KNOW on Day 3 gives you one. Who was he, and what country did he live in?"
+      },
+      {
+       "questions": [],
+       "line": "One sentence, with two hard words explained in the brackets. Read it in two halves: up to the word liberty, then the reason after because. Here, execute means carry out."
+      },
+      {
+       "questions": [],
+       "line": "Find the word united. Say his claim in your own words: what happens when those two powers sit in the same hands?"
+      },
+      {
+       "questions": [
+        {
+         "n": 6,
+         "text": "Montesquieu was a nobleman and a judge in France, writing about kings. Does that make his argument more convincing, less convincing, or neither? Defend your answer.",
+         "mode": "written"
+        }
+       ],
+       "line": "Ask what a noble and a judge had to gain or lose if a king held every power. Then pick one of the three answers and give your reason."
+      },
+      {
+       "questions": [],
+       "line": "One clue word shows up twice in the second half of the sentence. Name the enduring issue it points to, and explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“When the legislative and executive powers are united in the same person, or in the same body of magistrates [government officials], there can be no liberty; because apprehensions [fears] may arise, lest the same monarch or senate should enact tyrannical laws to execute them in a tyrannical manner. . . .”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“Sometimes the legislative and executive powers (the power to make laws and the power to carry them out) are united in the same person. Or they are united in the same body of magistrates [government officials]. When that happens, there can be no liberty. Why? Because apprehensions [fears] may arise. People may fear that the same monarch or senate will enact (pass) tyrannical laws (cruel, unfair laws). Then they will execute (carry out) them in a tyrannical manner. . . .”"
+      ]
+     }
+    },
+    {
+     "n": 5,
+     "title": "Rousseau states the problem the social contract solves",
+     "kind": "text",
+     "src": "Source: Jean-Jacques Rousseau, The Social Contract, 1762. Translated by G. D. H. Cole, 1913. Book I, Chapter VI.",
+     "page": 9,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Look closely at the source line: it has two years. One is when Rousseau wrote it, and one is when it was put into English. Which is which?"
+      },
+      {
+       "questions": [],
+       "line": "One long sentence. Hard words: an association is a group people join, and associate is in your KEY VOCABULARY for Day 4. Take a breath after the words each associate."
+      },
+      {
+       "questions": [
+        {
+         "n": 7,
+         "text": "Rousseau sets himself a problem with two halves that seem to contradict each other. Name both halves.",
+         "mode": "written"
+        }
+       ],
+       "line": "Split the sentence after the words each associate. Find what the group must do in the first half, and what each person keeps in the second."
+      },
+      {
+       "questions": [],
+       "line": "Picture one person in the community who disagrees with everyone else. Ask whether Rousseau's problem can be solved for that person."
+      },
+      {
+       "questions": [],
+       "line": "Your clue words are the whole common force. Ask which enduring issue comes up when a group holds that much force over each person. Then explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“The problem is to find a form of association which will defend and protect with the whole common force the person and goods of each associate, and in which each, while uniting himself with all, may still obey himself alone, and remain as free as before.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“The problem is to find a form of association (a group that people join together). This group must defend and protect with the whole common force the person and goods of each associate. (The whole common force means the strength of everyone together. Goods means belongings. An associate is a member.) And in this group, each one joins with all the others. Each may still obey himself alone, and remain as free as before.” (To obey himself alone means to follow only his own will.)"
+      ]
+     }
+    },
+    {
+     "n": 6,
+     "title": "Rousseau distinguishes the general will from the will of all",
+     "kind": "text",
+     "src": "Source: Jean-Jacques Rousseau, The Social Contract, 1762. Translated by G. D. H. Cole, 1913. Book II, Chapter III.",
+     "page": 10,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Same book as Document 5. WHAT YOU NEED TO KNOW on Day 4 says who will use this idea later, and how. Keep that in mind as you read."
+      },
+      {
+       "questions": [],
+       "line": "One sentence, built on two terms from your KEY VOCABULARY: will of all and general will. Watch the latter and the former: the latter is the second one named, the former is the first."
+      },
+      {
+       "questions": [],
+       "line": "Sort his words into two columns, one for each will. What does each one take account of?"
+      },
+      {
+       "questions": [],
+       "line": "Ask who gets to decide what the general will is. Then picture someone in the community who disagrees with that decision."
+      },
+      {
+       "questions": [
+        {
+         "n": 8,
+         "text": "A leader claims to speak for the general will and jails the people who disagree. Which enduring issue is that, and why?",
+         "mode": "written"
+        }
+       ],
+       "line": "Your clue words are in the question itself: claims to speak for, and jails. Name the issue those words point to, then explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“There is often a great deal of difference between the will of all and the general will; the latter takes account only of the common interest, while the former takes private interest into account, and is no more than a sum of particular wills.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“There is often a great deal of difference between the will of all and the general will. The latter (the general will) takes account only of the common interest (what is good for the whole community). The former (the will of all) takes private interest (what each person wants for himself) into account. It is no more than a sum (a total, added up) of particular wills (what each single person wants).”"
+      ]
+     }
+    },
+    {
+     "n": 7,
+     "title": "Wollstonecraft on reason and the rights of women",
+     "kind": "text",
+     "src": "Source: Mary Wollstonecraft, A Vindication of the Rights of Woman, 1792. Addressed to Talleyrand-Périgord, a member of the French National Assembly.",
+     "page": 11,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 9,
+         "text": "Who is she writing to, and what country is he governing? Now say why that choice of reader matters to her argument.",
+         "mode": "written"
+        }
+       ],
+       "line": "The source line answers the first half: read its second sentence. For why it matters, find the two words she prints in capital letters, and ask what that country was writing."
+      },
+      {
+       "questions": [],
+       "line": "Two short paragraphs, one sentence each, with pieces cut out where you see dots. In the first, she means a woman. In the second, want means lack, the way the bracket says."
+      },
+      {
+       "questions": [],
+       "line": "Find the words prove first. What does she say must be proved before women can be shut out? Say it in your own words."
+      },
+      {
+       "questions": [
+        {
+         "n": 10,
+         "text": "She uses the word tyrant — the same word the philosophes used about kings. Why would she pick that word on purpose?",
+         "mode": "written"
+        }
+       ],
+       "line": "Find tyrant in her last line, and tyranny in your KEY VOCABULARY for Day 2. Ask who the philosophes aimed that word at, and who she aims it at."
+      },
+      {
+       "questions": [],
+       "line": "Your clue words are excluded and NEW CONSTITUTION. Ask who is being left out of the rules, and which enduring issue that points to. Then explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 11. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“. . . if she be not prepared by education to become the companion of man, she will stop the progress of knowledge. . . .",
+      "“If women are to be excluded . . . prove first . . . that they want [lack] reason, else this flaw in your NEW CONSTITUTION will ever show that man must . . . act like a tyrant. . . .”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“. . . Suppose a woman is not prepared by education to become the companion (partner) of man. Then she will stop the progress of knowledge. . . .",
+       "“If women are to be excluded (shut out) . . . prove first . . . that they want [lack] reason (the ability to think logically). If you cannot, then this flaw (mistake) in your NEW CONSTITUTION will ever (always) show that man must . . . act like a tyrant (a ruler who uses power without limit or consent). . . .”"
+      ]
+     }
+    },
+    {
+     "n": 8,
+     "title": "Two voices from 1789: the slave trade",
+     "kind": "text",
+     "src": "Source: William Wilberforce, speech to the House of Commons, May 1789, in Cobbett, Parliamentary History of England, vol. 28 (adapted)",
+     "page": 13,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 11,
+         "text": "Wilberforce was a member of Parliament speaking about the slave trade. Equiano had been carried on a slave ship himself. Why would a historian want both voices, and not just one?",
+         "mode": "written"
+        }
+       ],
+       "line": "There are two source lines, one above each voice. For each man, ask: was he there, or was he arguing about it? Then ask what a historian would lose with only one of them."
+      },
+      {
+       "questions": [],
+       "line": "Two voices. Wilberforce speaks in two long sentences, and Equiano tells his in five shorter ones. The brackets give you the hard words, and abolition is in your KEY VOCABULARY for Day 5. Finish one voice before you start the next."
+      },
+      {
+       "questions": [
+        {
+         "n": 12,
+         "text": "According to Equiano, what were the captives told would happen to them? Quote his words.",
+         "mode": "written"
+        }
+       ],
+       "line": "Stay with Equiano. His answer comes in his last sentence, right after his own question. Quote his words exactly."
+      },
+      {
+       "questions": [],
+       "line": "Go back to Q11 from the other side. Ask who else was there in 1789, on the ships, in the trade, or in Parliament, and is not speaking in either voice."
+      },
+      {
+       "questions": [],
+       "line": "Find Wilberforce's word for what the trade was founded in, and the word Equiano uses for what was done to him in his first sentence. Ask which enduring issue those words point to, then explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
+     "before": "These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life.",
+     "text": [
+      "“I confess to you sir, so enormous so dreadful, so irremediable [impossible to fix] did its wickedness appear that my own mind was completely made up for the abolition. A trade founded in iniquity [wrongdoing] . . . must be abolished . . . let the consequences be what they would, I from this time determined that I would never rest till I had effected [achieved] its abolition.”",
+      "Source: Olaudah Equiano, The Interesting Narrative of the Life of Olaudah Equiano, London, 1794 edition (adapted), via OER Project",
+      "“I now saw myself deprived [robbed] of all chance of returning to my native country . . . . I was soon put down under the decks, and there I received such a salutation [greeting] in my nostrils as I had never experienced in my life . . . . I became so sick and low that I was not able to eat . . . . I inquired [asked] of them what was to be done with us? They gave me to understand we were to be carried to these white people's country to work for them.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“I confess to you, sir: its wickedness seemed so enormous, so dreadful, so irremediable [impossible to fix]. So my own mind was completely made up for the abolition (ending it). A trade founded in iniquity [wrongdoing] . . . must be abolished (ended) . . . . Let the consequences be what they would (no matter what happens). From this time I determined (decided) that I would never rest till I had effected [achieved] its abolition.”",
+       "Source: Olaudah Equiano, The Interesting Narrative of the Life of Olaudah Equiano, London, 1794 edition (adapted), via OER Project",
+       "“I now saw myself deprived [robbed] of all chance of returning to my native country (the land where I was born) . . . . I was soon put down under the decks. There I received such a salutation [greeting] in my nostrils (such a smell) as I had never experienced in my life . . . . I became so sick and low (weak in body and spirit) that I was not able to eat . . . . I inquired [asked] of them what was to be done with us? They gave me to understand we were to be carried to these white people's country to work for them.”"
+      ]
+     }
+    },
+    {
+     "n": 9,
+     "title": "Catherine the Great on law and equality",
+     "kind": "text",
+     "src": "Source: Documents of Catherine the Great, W. F. Reddaway, ed., Cambridge University Press (adapted)",
+     "page": 15,
+     "steps": [
+      {
+       "questions": [],
+       "line": "The source line has no date and no name for the document. WHAT YOU NEED TO KNOW on Day 6 tells you what she issued, and in what year. Find it before you read."
+      },
+      {
+       "questions": [],
+       "line": "Two sentences, each starting with dots because pieces were cut. Both are about the Laws. Hard word: framed means written."
+      },
+      {
+       "questions": [
+        {
+         "n": 13,
+         "text": "According to Catherine, what does equality between citizens consist of? Quote her.",
+         "mode": "written"
+        }
+       ],
+       "line": "One of her two sentences uses the word consists. Quote it exactly, capital letters and all."
+      },
+      {
+       "questions": [
+        {
+         "n": 14,
+         "text": "She wrote this while ruling a country where millions of serfs could be bought and sold with the land. Does that change how you read the passage? Say how.",
+         "mode": "written"
+        }
+       ],
+       "line": "Picture a serf hearing the words every Citizen and the same Laws read aloud. Then reread the passage and say how that changes your reading."
+      },
+      {
+       "questions": [],
+       "line": "Your clue words are Equality and the same Laws. Hold them up against WHAT YOU NEED TO KNOW on Day 6. Which enduring issue does that point to? Explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
+     "before": "These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life.",
+     "text": [
+      "“. . . The Laws ought to be so framed, as to secure the Safety of every Citizen as much as possible.",
+      "“. . . The Equality of the Citizens consists in this; that they should all be subject to the same Laws. . . .”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“. . . The Laws ought to be written to secure (protect) the Safety of every Citizen as much as possible.",
+       "“. . . The Equality of the Citizens consists in this; that they should all be subject to the same Laws. . . .” (Consists in this means is made of this. Subject to means ruled by.)"
+      ]
+     }
+    },
+    {
+     "n": 10,
+     "title": "Catherine's government on serfs",
+     "kind": "text",
+     "src": "Source: A Source Book for Russian History, G. Vernadsky, trans., Yale University Press, 1972 (adapted)",
+     "page": 16,
+     "steps": [
+      {
+       "questions": [],
+       "line": "The source line names a book, not who issued this. Read the document's first three words to find who issued it. The PARTNER TALK box under it tells you when."
+      },
+      {
+       "questions": [],
+       "line": "Three sentences, and the brackets give you the hard words. The second sentence is long: read it twice, and find who it punishes and how. Nerchinsk is a place in Siberia."
+      },
+      {
+       "questions": [
+        {
+         "n": 15,
+         "text": "“Catherine wrote ____________________________, but her government ____________________________.”",
+         "mode": "written"
+        }
+       ],
+       "line": "This one uses both documents. For the first blank, use Catherine's own words from Document 9. For the second, use what Document 10 orders for serfs who complain."
+      },
+      {
+       "questions": [
+        {
+         "n": null,
+         "text": "“You wrote that all citizens should be subject to the same laws. Does that include the serfs?”",
+         "mode": "out loud"
+        }
+       ],
+       "line": "Partner talk, out loud. If you're Catherine, you may use only her words from Documents 9 and 10. Find the lines you would answer with, and read them aloud exactly."
+      },
+      {
+       "questions": [],
+       "line": "Your clue words are absolute obedience, and what happens to a serf who sends a petition. Ask which enduring issue those words point to, then explain why."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",
+     "before_we_talk": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     },
+     "text": [
+      "“The Governing Senate . . . has deemed it necessary to make known that the landlords' serfs and peasants . . . owe their landlords proper submission and absolute obedience in all matters . . . . And should . . . any serfs and peasants . . . make bold to submit unlawful petitions [formal written complaints] complaining of their landlords, and especially to petition Her Imperial Majesty personally, then both those who make the complaints and those who write up the petitions shall be punished by the knout [a heavy whip] and forthwith deported to Nerchinsk to penal servitude [forced labor as punishment] for life . . . . it shall be read in all the churches on Sundays and holy days . . . lest anyone pretend ignorance.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“The Governing Senate (a top body of the government) . . . has decided it must make this known. The landlords' serfs and peasants . . . owe their landlords proper submission and absolute obedience in all matters . . . . (Submission means giving in. Obedience means doing what you are told.) Some serfs and peasants may . . . dare to submit unlawful petitions [formal written complaints] about their landlords. Some may even petition Her Imperial Majesty (the Empress) personally. If so, both those who make the complaints and those who write up the petitions shall be punished by the knout [a heavy whip]. And they shall be forthwith (right away) deported to Nerchinsk to penal servitude [forced labor as punishment] for life . . . . This order shall be read in all the churches on Sundays and holy days . . . lest anyone pretend ignorance (so no one can pretend they did not know).”"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": "10.2 Casefile B · France: one revolution, in depth, 1789–1815",
+   "book": "casefile",
+   "status": "open",
+   "_source": "global10r-curriculum/OUTPUTS/Unit_10.2/GS10R_Unit10.2_CASEFILE-B_v21_2026-09-29.pdf",
+   "docs": [
+    {
+     "n": 1,
+     "title": "Abbé Sieyès asks what the Third Estate actually is",
+     "kind": "text",
+     "src": "Source: Abbé Sieyès, 1789 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, August 2014",
+     "page": 5,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 4,
+         "text": "Who wrote this, and in what year -- before or after the Estates-General met? Say which.",
+         "mode": "written"
+        }
+       ],
+       "line": "The source line gives you the name and the year. For before or after, read the last paragraph of WHAT YOU NEED TO KNOW on page 3 for when the delegates met, then ask what Day 2's WHAT YOU NEED TO KNOW says his pamphlet helped inspire."
+      },
+      {
+       "questions": [],
+       "line": "Four lines: one opening sentence, then three numbered questions. Each question gets a one-word answer. The political order means the way power is shared in the government."
+      },
+      {
+       "questions": [
+        {
+         "n": 5,
+         "text": "Sieyès answers his own three questions in three words. Write all three, in order, and then explain in your own words what gap he is pointing at.",
+         "mode": "written"
+        }
+       ],
+       "line": "Each of his three words is the last word on a numbered line. For the gap, read line 1 and line 2 side by side and ask how both can be true at once."
+      },
+      {
+       "questions": [],
+       "line": "Abbé is a title for a priest, so a member of the clergy is speaking up for the Third Estate. Picture a noble at Versailles reading line 2. What would he say back?"
+      },
+      {
+       "questions": [],
+       "line": "Read the six questions on the card on page 2. Hold the word Nothing up against each one and see which it fits."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“... We must ask ourselves three questions.",
+      "1. What is the Third Estate? Everything.",
+      "2. What has it been until now in the political order? Nothing.",
+      "3. What does it want to be? Something....”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“... We must ask ourselves three questions.",
+       "1. What is the Third Estate? Everything.",
+       "2. What has it been until now in the political order (the way power is shared in the government)? Nothing.",
+       "3. What does it want to be? Something....”"
+      ]
+     }
+    },
+    {
+     "n": 2,
+     "title": "“Le Grand Abus” (“The Great Abuse”)",
+     "kind": "image",
+     "src": "Source: The Way We Saw It: ..., Highsmith, Inc., 1998 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, August 2002",
+     "page": 7,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Read the line under the source: when was this being passed around? Then WHAT YOU NEED TO KNOW on page 6 says who a cartoon could reach that a pamphlet couldn't."
+      },
+      {
+       "questions": [],
+       "line": "Start with the words: the title along the top of the oval, then the three labels. Then the figure at the bottom. Then the small details: faces, hands, the stick, the clothes."
+      },
+      {
+       "questions": [
+        {
+         "n": 7,
+         "text": "Explain how this cartoon makes the same point Sieyès made in Document 1 -- without borrowing a single word from his pamphlet.",
+         "mode": "written"
+        }
+       ],
+       "line": "Reread Sieyès's lines 1 and 2, then read the label on the figure at the bottom of the cartoon. The stem's last part, which means ___, is the so what: say why it counts as his argument."
+      },
+      {
+       "questions": [
+        {
+         "n": 6,
+         "text": "This cartoon is titled “The Great Abuse.” Based on what you see, name who is being carried, who is doing the carrying, and who the title says is being abused.",
+         "mode": "written"
+        }
+       ],
+       "line": "Your evidence is the three labels and where each figure is. Look for whose feet are on the ground. The title names no one, so ask which figure in the picture it fits."
+      },
+      {
+       "questions": [],
+       "line": "Read the six questions on the card on page 2. Hold the cartoon's title up against each one and see which it fits."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "images/g0202-c1-three-estates-cartoon.png",
+     "image_alt": "A black-and-white engraving in an oval frame. The line printed under the source reads: “An oval engraving circulating in France in the years before the Revolution.” Along the top edge of the oval are the words “LE GRAND ABUS.” The background inside the oval is dark. Three figures stand in the center, each with a printed label. At the bottom is a figure in a white cap, a white blouse and a long white skirt, bent forward at the waist, with the head tipped back and the face turned up. One hand grips a tall stick with a bundle at the top; the stick reaches the ground. The label across the long skirt reads “Peasants & Professionals.” Two more figures are up on its back. On the left is a figure in a long robe and a veil, one hand raised near the face, looking up; its label reads “Clergy.” On the right is a figure with curled hair, a tall hat with large feathers, and a ruffled gown with ribbons, looking down; its label reads “Nobility.” Small plants grow along the bottom edge of the oval.",
+     "describe": "A black-and-white engraving in an oval frame. The line printed under the source reads: “An oval engraving circulating in France in the years before the Revolution.” Along the top edge of the oval are the words “LE GRAND ABUS.” The background inside the oval is dark. Three figures stand in the center, each with a printed label. At the bottom is a figure in a white cap, a white blouse and a long white skirt, bent forward at the waist, with the head tipped back and the face turned up. One hand grips a tall stick with a bundle at the top; the stick reaches the ground. The label across the long skirt reads “Peasants & Professionals.” Two more figures are up on its back. On the left is a figure in a long robe and a veil, one hand raised near the face, looking up; its label reads “Clergy.” On the right is a figure with curled hair, a tall hat with large feathers, and a ruffled gown with ribbons, looking down; its label reads “Nobility.” Small plants grow along the bottom edge of the oval.",
+     "licence": {
+      "text": "NYSED Regents exam (August 2002), via New Visions Global II Exam Question Bank. Teach-only, not for sale.",
+      "sellable": false
+     }
+    },
+    {
+     "n": 3,
+     "title": "Declaration of the Rights of Man and of the Citizen, 1789",
+     "kind": "text",
+     "src": "Source: The Avalon Project at Yale Law School (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography II Regents Exam, June 2019",
+     "page": 9,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Read the title and the source line first. WHAT YOU NEED TO KNOW on page 8 names the body that approved this, and when."
+      },
+      {
+       "questions": [],
+       "line": "Four articles, numbered 1, 2, 4 and 6; the others were left out. Words in square brackets are the editor's help: [inalienable] means it cannot be taken away. Article 6 is the longest, four sentences, so read it twice."
+      },
+      {
+       "questions": [
+        {
+         "n": 8,
+         "text": "According to Document 3, what right does Article 6 guarantee to citizens in the making of law?",
+         "mode": "written"
+        }
+       ],
+       "line": "Stay inside Article 6. Find the words has a right to, and say what that sentence lets a citizen do. Foundation there means the making of the law."
+      },
+      {
+       "questions": [
+        {
+         "n": 10,
+         "text": "State one way Document 3 and Document 4 are similar, and one way they are different.",
+         "mode": "written"
+        }
+       ],
+       "line": "This one needs Document 4 too. Mark one article here you want to check, then open Document 4's walk."
+      },
+      {
+       "questions": [],
+       "line": "This day's Enduring Issue question is about Document 4, on page 11. Before you get there, read the six questions on the card on page 2 so they're fresh."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+     "before": "These two documents are paired on the real June 2019 Global History and Geography II Regents exam. The questions below are written the way the real exam asks them.",
+     "text": [
+      "Articles:",
+      "1. Men are born and remain free and equal in rights. Social distinctions may be founded only upon the general good.",
+      "2. The aim of all political association is the preservation of the natural and imprescriptible [inalienable] rights of man. These rights are liberty, property, security, and resistance to oppression....",
+      "4. Liberty consists in the freedom to do everything which injures no one else; hence the exercise of the natural rights of each man has no limits except those which assure to the other members of the society the enjoyment of the same rights. These limits can only be determined by law....",
+      "6. Law is the expression of the general will. Every citizen has a right to participate personally, or through his representative, in its foundation. It must be the same for all, whether it protects or punishes. All citizens, being equal in the eyes of the law, are equally eligible to all dignities and to all public positions and occupations, according to their abilities, and without distinction except that of their virtues and talents...."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Articles:",
+       "1. Men are born and remain free and equal in rights. Social distinctions (differences in rank) may be founded (based) only upon the general good (what is good for everyone).",
+       "2. All political association (people joining under a government) has one aim (goal). That aim is the preservation (protection) of the natural and imprescriptible [inalienable] rights of man. Inalienable means they cannot be taken away. These rights are liberty, property, security, and resistance to oppression (cruel, unfair use of power)....",
+       "4. Liberty consists in the freedom to do everything which injures no one else. So the exercise (use) of the natural rights of each man has no limits, except one. The other members of society must be able to enjoy the same rights. These limits can only be determined (decided) by law....",
+       "6. Law is the expression of the general will (what is best for the whole community). Every citizen has a right to participate personally, or through his representative, in its foundation (making the law). It must be the same for all, whether it protects or punishes. All citizens are equal in the eyes of the law. So they are equally eligible (allowed) to hold all dignities (high honors), public positions and jobs. This depends on their abilities. There is no difference between them except their virtues (good qualities) and talents...."
+      ]
+     }
+    },
+    {
+     "n": 4,
+     "title": "Olympe de Gouges, Declaration of the Rights of Woman and of the Female Citizen, 1791",
+     "kind": "text",
+     "src": "Source: Olympe de Gouges, 1791 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography II Regents Exam, June 2019",
+     "page": 10,
+     "steps": [
+      {
+       "questions": [],
+       "line": "The source line gives you a name and a year, and her picture is in the margin. Before you read, ask: why would someone write a declaration of her own?"
+      },
+      {
+       "questions": [],
+       "line": "Four articles: FIRST, II, IV and VI. Two words to know: perpetual means never-ending, and tyranny means cruel, unfair rule. Watch the words she uses for people."
+      },
+      {
+       "questions": [
+        {
+         "n": 9,
+         "text": "According to Document 4, how does Olympe de Gouges change the wording of that same right?",
+         "mode": "written"
+        }
+       ],
+       "line": "Put Document 3's Article 6 next to her Article VI. Read them word by word and mark every word she added or swapped."
+      },
+      {
+       "questions": [
+        {
+         "n": 10,
+         "text": "State one way Document 3 and Document 4 are similar, and one way they are different.",
+         "mode": "written"
+        }
+       ],
+       "line": "Pick one article that is in both documents. Find one thing that stays the same and one thing that changes, and quote the words from each."
+      },
+      {
+       "questions": [
+        {
+         "n": 11,
+         "text": "Identify the enduring issue Olympe de Gouges is raising. Then EXPLAIN IT: define the problem in one sentence, then show where Document 4 shows it.",
+         "mode": "written"
+        }
+       ],
+       "line": "The clue words are in Article IV: perpetual tyranny. Read the six questions on the card on page 2, find the one those words answer, then pick the exact issue underneath it."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "FIRST ARTICLE",
+      "Woman is born free and remains equal to man in rights. Social distinctions can only be founded on common service.",
+      "II",
+      "The aim of all political associations is to preserve the natural and inalienable rights of Woman and Man: these are the rights to liberty, ownership, safety and, above all, resistance to oppression....",
+      "IV",
+      "Liberty and justice lie in rendering everything which belongs to others as of right. Thus the exercise of woman's natural rights has no limit other than the perpetual tyranny of man's opposing them: these limits must be reformed by the laws of natural and reason....",
+      "VI",
+      "The Law must be the expression of the general will; all citizens, female and male, should concur [agree] personally or through their representatives in its formation, and it must be the same for all. All citizens, being equal in its eyes, must be equally eligible to all honours, positions and public posts according to their abilities, and with no other distinction other than those of their virtues and talents...."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "FIRST ARTICLE",
+       "Woman is born free and remains equal to man in rights. Social distinctions (differences in rank) can only be founded (based) on common service (what is useful to everyone).",
+       "II",
+       "All political associations (people joining under a government) have one aim (goal). That aim is to preserve (protect) the natural and inalienable rights of Woman and Man. Inalienable means they cannot be taken away. These are the rights to liberty, ownership, safety and, above all, resistance to oppression (cruel, unfair use of power)....",
+       "IV",
+       "Liberty and justice mean giving back to others everything that rightfully belongs to them. Thus the exercise (use) of woman's natural rights has no limit other than the perpetual tyranny of man's opposing them. Perpetual tyranny means never-ending cruel, unfair rule. These limits must be reformed (changed) by the laws of nature and reason....",
+       "VI",
+       "The Law must be the expression of the general will (what is best for the whole community). All citizens, female and male, should concur [agree] personally or through their representatives in its formation (making the law). It must be the same for all. All citizens are equal in its eyes. So they must be equally eligible (allowed) to hold all honours, positions and public posts, according to their abilities. There must be no other distinction (difference) except their virtues (good qualities) and talents...."
+      ]
+     }
+    },
+    {
+     "n": 5,
+     "title": "Maximilien Robespierre, “In Defence of the Committee of Public Safety and Against Briez,” September 25, 1793",
+     "kind": "text",
+     "src": "Source: Maximilien Robespierre, in Virtue and Terror, Verso (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, January 2015",
+     "page": 13,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 12,
+         "text": "Who is speaking, to what body, and in what year?",
+         "mode": "out loud"
+        }
+       ],
+       "line": "Three answers, three places: the title, the date after it, and WHAT YOU NEED TO KNOW on page 12 for the body he stood in front of."
+      },
+      {
+       "questions": [],
+       "line": "Two paragraphs. The first has a short opening sentence, then one very long one: break it at each semicolon and each I will remind you. Faction means a group working against the rest."
+      },
+      {
+       "questions": [],
+       "line": "His main claim is in the second paragraph. Find the word demand and read what comes right after it."
+      },
+      {
+       "questions": [
+        {
+         "n": 13,
+         "text": "Robespierre never says “I want to silence my political rivals.” What does he say instead, and why is that a more persuasive way to justify the same thing?",
+         "mode": "written"
+        }
+       ],
+       "line": "Start with his first sentence. Then mark every name he gives the people he is against. Ask what a listener in the Convention hears in those words that they wouldn't hear in the word rivals."
+      },
+      {
+       "questions": [],
+       "line": "Reread his first sentence: individuals are not at issue. Hold that up against the six questions on the card on page 2 and see which it fits."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“... Individuals are not at issue here; we are concerned with the homeland and principles. I tell you plainly: it is impossible, in this state of affairs, for the Committee to save the state; and if anyone disagrees, I will remind you just how treacherous and extensive is the scheme for bringing us down and dissolving us; how the foreigners and internal enemies have agents paid to execute it; I will remind you that faction is not dead; that it is conspiring from the depths of its dungeons; that the serpents of the Marais [a section of Paris] have not yet all been crushed....",
+      "I know we cannot flatter ourselves that we have attained perfection; but holding up a Republic surrounded by enemies, fortifying reason in favour of liberty, destroying prejudice and nullifying individual efforts against the public interest, demand moral and physical strengths that nature has perhaps denied to those who denounce us and those we are fighting....”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“... Individuals are not at issue here; we are concerned with the homeland and principles. I tell you plainly: in this state of affairs (the way things are now), it is impossible for the Committee to save the state. If anyone disagrees, I will remind you of the scheme (secret plan) for bringing us down and dissolving us (breaking us apart). I will remind you just how treacherous (disloyal and dangerous) and extensive (wide-reaching) it is. I will remind you how the foreigners and internal enemies have agents paid to execute (carry out) it. I will remind you that faction (a group working against the rest) is not dead. It is conspiring (secretly planning) from the depths of its dungeons. The serpents (snakes) of the Marais [a section of Paris] have not yet all been crushed....",
+       "I know we cannot flatter ourselves that we have attained perfection (we cannot pretend we are perfect). Here is what we are doing: holding up a Republic surrounded by enemies, and fortifying (strengthening) reason in favour of liberty. We are destroying prejudice (unfair judgments) and nullifying (cancelling out) individual efforts against the public interest. These things demand moral and physical strengths. Nature has perhaps denied those strengths to those who denounce us (speak out against us) and those we are fighting....”"
+      ]
+     }
+    },
+    {
+     "n": 6,
+     "title": "About the Law of Suspects: a historians' summary",
+     "kind": "text",
+     "src": "Source: Liberty, Equality, Fraternity: Exploring the French Revolution (Roy Rosenzweig Center for History and New Media / American Social History Project) (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, January 2015",
+     "page": 14,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Read the title and the source line. Is this from 1793, or written by historians later? Ask what that changes about how you read it."
+      },
+      {
+       "questions": [],
+       "line": "Two sentences, both long. Read the words in square brackets as part of the sentence. Penal means having to do with punishment, and tribunal is in your KEY VOCABULARY."
+      },
+      {
+       "questions": [
+        {
+         "n": 14,
+         "text": "According to Document 6, what could happen to someone accused under this law, even without being convicted of a specific crime?",
+         "mode": "written"
+        }
+       ],
+       "line": "Find the word suspected in the first sentence and the word removing near the end. Then read suspect in KEY VOCABULARY on page 14 for what was not required."
+      },
+      {
+       "questions": [],
+       "line": "Historians wrote this summary, long after the law was passed. Whose own words are not in it? Think about everyone who stood in a tribunal."
+      },
+      {
+       "questions": [],
+       "line": "Read the six questions on the card on page 2. The clue words here are suspected, and removing them from the citizenry."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
+     "before": "A text document and a data document, paired the way the real Regents mixes primary-source types. Same CRQ question format as Day 3.",
+     "before_we_talk": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     },
+     "text": [
+      "“This law, passed on 17 September 1793 [by Robespierre and the National Convention], authorized the creation of revolutionary tribunals to try those suspected of treason against the Republic and to punish those convicted with death. This legislation in effect made the penal justice system into the enforcement arm of the revolutionary government, which would now set as its primary responsibility not only the maintenance of public order but also the much more difficult and controversial task of identifying internal enemies of the Republic -- such as “profiteers” who violated the Maximum [decree to fix prices] -- and then removing them from the citizenry, where they might subvert [sabotage] the general will....”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“This law was passed on 17 September 1793 [by Robespierre and the National Convention]. It authorized (allowed) the creation of revolutionary tribunals (special courts). These courts would try those suspected of treason (betraying their country) against the Republic. They would punish those convicted (found guilty) with death. In effect, this legislation (law) changed the penal justice system (courts and punishment). It became the enforcement arm (the part that makes people obey) of the revolutionary government. Now the government had a primary (main) job. It was not only to keep public order. It was also the much harder and more controversial (argued-over) task of identifying internal enemies of the Republic. One example was “profiteers” who violated (broke) the Maximum [decree to fix prices]. The government would then be removing them from the citizenry (all the citizens). Among the citizens, they might subvert [sabotage] the general will....”"
+      ]
+     }
+    },
+    {
+     "n": 7,
+     "title": "Executions During the Reign of Terror (chart)",
+     "kind": "image",
+     "src": "Source: Dennis Sherman et al., eds., World Civilizations: Sources, Images, and Interpretations, McGraw-Hill (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, August 2006",
+     "page": 15,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Two lines to read before the chart: the source line and the line under it. Ask what this chart is counting, and what it sorts people by."
+      },
+      {
+       "questions": [],
+       "line": "Read the title first. Then go around the circle one slice at a time: the class, the percent, the number. Seven slices, and one has no number printed."
+      },
+      {
+       "questions": [
+        {
+         "n": 15,
+         "text": "According to Document 7, which social class made up the largest share of executions during the Terror?",
+         "mode": "written"
+        },
+        {
+         "n": 16,
+         "text": "Robespierre said the Terror targeted the Republic's enemies. Does the chart in Document 7 support that claim, complicate it, or contradict it? Use one number from the chart to explain your answer.",
+         "mode": "written"
+        }
+       ],
+       "line": "For 15, compare the percents, not the size of the slices by eye. For 16, go back to Document 5 and find who Robespierre says the enemies are, then pick the one number from this chart that tests his claim."
+      },
+      {
+       "questions": [],
+       "line": "Every number on this chart is people. Ask what a count by social class can show, and what it can't tell you about any one of them."
+      },
+      {
+       "questions": [],
+       "line": "Read today's question in the Day 5 banner on page 14. Then read the six questions on the card on page 2 and see which one it sits under."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
+     "before_we_talk": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     },
+     "image_file": "images/g0202-c1-reign-of-terror-chart.png",
+     "image_alt": "A pie chart titled “Executions During the Reign of Terror.” The line printed under the source reads: “A breakdown of Reign of Terror execution victims by social class.” The circle is cut into seven slices. Each slice is labeled with a social class, a percent, and a number. Going clockwise from the top: Peasants: 28%, 3,961. Upper Middle Class: 14%, 1,964. Lower Middle Class: 11%, 1,488. Nobility: 8%, 1,158. Clergy: 7%, 920. No Status Given: 1%, with no number printed. Working Class: 31%, 4,389.",
+     "describe": "A pie chart titled “Executions During the Reign of Terror.” The line printed under the source reads: “A breakdown of Reign of Terror execution victims by social class.” The circle is cut into seven slices. Each slice is labeled with a social class, a percent, and a number. Going clockwise from the top: Peasants: 28%, 3,961. Upper Middle Class: 14%, 1,964. Lower Middle Class: 11%, 1,488. Nobility: 8%, 1,158. Clergy: 7%, 920. No Status Given: 1%, with no number printed. Working Class: 31%, 4,389.",
+     "licence": {
+      "text": "NYSED Regents exam, via New Visions Global II Exam Question Bank. Teach-only, not for sale.",
+      "sellable": false
+     }
+    },
+    {
+     "n": 8,
+     "title": "Napoleon's Empire, 1812 (map)",
+     "kind": "image",
+     "src": "Source: Peiser and Serber, Our World, AMSCO (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, January 2005",
+     "page": 17,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 17,
+         "text": "Look at the map's legend. Name the three categories of control it shows, and explain in your own words what the difference is between them.",
+         "mode": "written"
+        }
+       ],
+       "line": "The legend is the box in the lower right corner. It has four entries, so read them all and ask which ones are about who controls a place. For the difference, read the words in each entry, not just the shading."
+      },
+      {
+       "questions": [],
+       "line": "Read the title first, then the legend. Then find the dark gray, then the stripes, then the light gray. Last, the starbursts and their years."
+      },
+      {
+       "questions": [],
+       "line": "Start at Paris. Trace the edge of the dark gray, then the stripes, then the light gray. What is the map saying about France in 1812?"
+      },
+      {
+       "questions": [],
+       "line": "Picture a family in Madrid in 1812, and ask what this map looks like from where they stand. Then read the OUTSIDE EVIDENCE box on page 18: what can't this map show you?"
+      },
+      {
+       "questions": [
+        {
+         "n": 18,
+         "text": "By 1812 France controlled or dominated most of Europe. Identify an enduring issue this map shows. Then EXPLAIN IT: define the problem in one sentence, then show where the map shows it.",
+         "mode": "written"
+        }
+       ],
+       "line": "The clue words are in the question itself: controlled or dominated. Read the six questions on the card on page 2 and find the one they fit. To show where the map shows it, use the legend and name a place."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "images/g0202-c1-napoleon-empire-map.png",
+     "image_alt": "A black-and-white map titled “Napoleon's Empire, 1812.” It shows Europe, with the edge of North Africa and the Ottoman Empire. A scale bar in the upper left reads 0 to 250 Kilometers and 0 to 250 Miles, with a compass rose below it. The water is labeled Atlantic Ocean, North Sea, Baltic Sea, Mediterranean Sea and Black Sea. A legend in a box at the lower right has four entries: a dark gray box, “French Empire”; a box with diagonal stripes, “Country indirectly controlled by Napoleon”; a light gray box, “Country allied with Napoleon”; and a starburst, “Battle site.” Dark gray areas: the land labeled FRENCH EMPIRE, with Paris, reaching north and east along the coast past Waterloo; part of northern Italy; the area around Rome; Corsica; and the ILLYRIAN PROVINCES along the Adriatic coast. Striped areas: SPAIN, with Madrid; the CONFEDERATION OF THE RHINE; the GRAND DUCHY OF WARSAW; the KINGDOM OF ITALY; and the KINGDOM OF NAPLES. Light gray areas: NORWAY; DENMARK; PRUSSIA, with Berlin; and AUSTRIA, with Vienna. Areas with no shading: GREAT BRITAIN, with London; PORTUGAL; SWEDEN; RUSSIA; the OTTOMAN EMPIRE, with Istanbul; SARDINIA; SICILY; MALTA; and NORTH AFRICA. SWITZ. is labeled between the French Empire and the Confederation of the Rhine. Gibraltar (Br.) is marked at the southern tip of Spain. Starbursts mark six battle sites, each with a year: Trafalgar (1805), Austerlitz (1805), Friedland (1807), Borodino (1812), Leipzig (1813) and Waterloo (1815).",
+     "describe": "A black-and-white map titled “Napoleon's Empire, 1812.” It shows Europe, with the edge of North Africa and the Ottoman Empire. A scale bar in the upper left reads 0 to 250 Kilometers and 0 to 250 Miles, with a compass rose below it. The water is labeled Atlantic Ocean, North Sea, Baltic Sea, Mediterranean Sea and Black Sea. A legend in a box at the lower right has four entries: a dark gray box, “French Empire”; a box with diagonal stripes, “Country indirectly controlled by Napoleon”; a light gray box, “Country allied with Napoleon”; and a starburst, “Battle site.” Dark gray areas: the land labeled FRENCH EMPIRE, with Paris, reaching north and east along the coast past Waterloo; part of northern Italy; the area around Rome; Corsica; and the ILLYRIAN PROVINCES along the Adriatic coast. Striped areas: SPAIN, with Madrid; the CONFEDERATION OF THE RHINE; the GRAND DUCHY OF WARSAW; the KINGDOM OF ITALY; and the KINGDOM OF NAPLES. Light gray areas: NORWAY; DENMARK; PRUSSIA, with Berlin; and AUSTRIA, with Vienna. Areas with no shading: GREAT BRITAIN, with London; PORTUGAL; SWEDEN; RUSSIA; the OTTOMAN EMPIRE, with Istanbul; SARDINIA; SICILY; MALTA; and NORTH AFRICA. SWITZ. is labeled between the French Empire and the Confederation of the Rhine. Gibraltar (Br.) is marked at the southern tip of Spain. Starbursts mark six battle sites, each with a year: Trafalgar (1805), Austerlitz (1805), Friedland (1807), Borodino (1812), Leipzig (1813) and Waterloo (1815).",
+     "licence": {
+      "text": "NYSED Regents exam, via New Visions Global II Exam Question Bank. Teach-only, not for sale.",
+      "sellable": false
+     }
+    }
+   ]
+  },
+  {
+   "id": "C",
+   "title": "10.2 Casefile C · The uniter and the divider: nationalism, 1791–1912",
+   "book": "casefile",
+   "status": "open",
+   "_source": "global10r-curriculum/OUTPUTS/Unit_10.2/GS10R_Unit10.2_CASEFILE-C_v2_2026-09-30.pdf",
+   "docs": [
+    {
+     "n": 1,
+     "title": "Toussaint L'Ouverture writes to the people of Saint-Domingue",
+     "kind": "text",
+     "src": "Source: C. L. R. James, Lettres de Toussaint L'Ouverture, The Black Jacobins, The Dial Press (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, January 2009",
+     "page": 5,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 4,
+         "text": "Who wrote this letter, when, and who is he writing to?",
+         "mode": "written"
+        }
+       ],
+       "line": "Three places: the title above the letter, the date line, and the greeting under it. Careful: the 2009 in the source line is a Regents exam, not the letter."
+      },
+      {
+       "questions": [],
+       "line": "A date, a greeting, then five short sentences. Vengeance means paying someone back for a wrong. Watch for where he stops talking about himself and starts asking something of his readers."
+      },
+      {
+       "questions": [
+        {
+         "n": 5,
+         "text": "Which two ideals does Toussaint want to “reign” in San Domingo, and what does he ask his readers to do?",
+         "mode": "written"
+        }
+       ],
+       "line": "Find the sentence with the word reign; both ideals are in it. For what he asks, read his last sentence: it starts with an order."
+      },
+      {
+       "questions": [],
+       "line": "Go back to 10.2 Casefile B, Document 3. Who wrote those words about liberty in Paris in 1789, and who is using them here, in 1793?"
+      },
+      {
+       "questions": [
+        {
+         "n": 7,
+         "text": "Identify an enduring issue Documents 1 and 2 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
+         "mode": "written"
+        }
+       ],
+       "line": "Question 7 covers Documents 1 and 2, so finish Document 2 before you write. For now, pick one clue word from this letter and read the question under each umbrella on page 2. Which one does your word fit?"
+      }
+     ],
+     "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+     "before_we_talk": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     },
+     "text": [
+      "August 29, 1793",
+      "Brothers and friends.",
+      "I am Toussaint L'Ouverture, my name is perhaps known to you. I have undertaken vengeance. I want Liberty and Equality to reign in San Domingo. I work to bring them into existence. Unite yourselves to us, brothers, and fight with us for the same cause, etc. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "August 29, 1793",
+       "Brothers and friends.",
+       "I am Toussaint L'Ouverture. Maybe you already know my name. I have undertaken (taken on) vengeance (paying someone back for a wrong). I want Liberty and Equality to reign (rule) in San Domingo (another name for Saint-Domingue). I work to make them real. Unite yourselves to us, brothers, and fight with us for the same cause, etc. . . ."
+      ]
+     }
+    },
+    {
+     "n": 2,
+     "title": "Jean-Jacques Dessalines declares Haiti independent",
+     "kind": "text",
+     "src": "Source: Jean-Jacques Dessalines, Haitian Declaration of Independence, January 1, 1804 (excerpt), from New Visions lesson G2.02.D.2",
+     "page": 5,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Put this date next to Document 1's date. What You Need to Know on page 3 covers the years in between; anything there that isn't in either document can go in your OUTSIDE EVIDENCE box on page 4."
+      },
+      {
+       "questions": [],
+       "line": "Two sentences, and the first one is long: break it at each semicolon and each set of dots. Expelled means driven out. The dots mean words were cut."
+      },
+      {
+       "questions": [],
+       "line": "What does Dessalines say Haiti must do? Find the words that come after each we must."
+      },
+      {
+       "questions": [
+        {
+         "n": 6,
+         "text": "Dessalines calls the French “barbarians” and their government “inhuman.” He had been enslaved himself. Why would he choose those words, and why does he say Haiti must be independent, not just free?",
+         "mode": "written"
+        }
+       ],
+       "line": "Read the words around barbarians and inhuman: what does he say each one did, or still hopes to do? For the second part, read sovereignty in KEY VOCABULARY on page 3, then his last sentence."
+      },
+      {
+       "questions": [
+        {
+         "n": 7,
+         "text": "Identify an enduring issue Documents 1 and 2 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
+         "mode": "written"
+        }
+       ],
+       "line": "Put a clue word from Document 1 next to one from this declaration. Read the question under each umbrella on page 2 and find the one that fits. Then name the exact issue under it, and point to the line that shows it."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 6. Use the sentence stem, or write something of equal or better value.",
+     "before_we_talk": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     },
+     "text": [
+      "“It is not enough to have expelled the barbarians who have bloodied our land for two centuries; … We must, with one last act of national authority, forever assure the empire of liberty in the country of our birth; we must take any hope of re-enslaving us away from the inhuman government …. In the end we must live independent or die.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“It is not enough to have expelled (driven out) the barbarians (cruel, uncivilized people) who have bloodied our land for two centuries (200 years). … We must do one last act of national authority (power as a nation). With it, we must forever assure (make sure of) the empire (rule) of liberty in the country of our birth. We must take away any hope the inhuman (cruel, without pity) government has of re-enslaving us …. In the end we must live independent or die.”"
+      ]
+     }
+    },
+    {
+     "n": 3,
+     "title": "A historian on what Napoleon started in Spanish America",
+     "kind": "text",
+     "src": "Source: Robert J. Alexander, Latin America, Scholastic Book Services, from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, January 2005",
+     "page": 8,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 8,
+         "text": "Is Document 3 a primary or a secondary source? Explain how you can tell from the source line.",
+         "mode": "written"
+        }
+       ],
+       "line": "Read the source line piece by piece: a writer, a book title, a publisher. Was Robert J. Alexander in Spanish America in 1808, or writing about it? The heading above the source line has one more clue."
+      },
+      {
+       "questions": [],
+       "line": "Two paragraphs, four sentences each. Words in [brackets] are glossed for you. A usurper is someone who grabs power that isn't rightfully theirs."
+      },
+      {
+       "questions": [
+        {
+         "n": 9,
+         "text": "According to Document 3, what did Napoleon do in 1808, and how did Spanish Americans respond?",
+         "mode": "written"
+        }
+       ],
+       "line": "What Napoleon did is in the first paragraph, right where you see 1808; find every action. The second paragraph is the response: mark each thing Spanish Americans did."
+      },
+      {
+       "questions": [],
+       "line": "When he writes Spanish Americans, who exactly does he mean? WHAT YOU NEED TO KNOW on page 7 lists everyone in the colonies, top to bottom. Ask which of them seized control of the local governments."
+      },
+      {
+       "questions": [],
+       "line": "There's no Enduring Issue question today, so try one for practice. Pick a clue word from this page, like usurper or independence, and read the question under each umbrella on page 2. Which one does it fit?"
+      }
+     ],
+     "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      ". . . The plans and ambitions of Napoleon Bonaparte, however, did inspire the Latin Americans, although hardly in a way Napoleon expected. The French dictator invaded Spain in 1808, forced the king to abdicate [give up the throne], and presented the Spanish crown to his brother Joseph. At a stroke, Spanish America became part of the Bonaparte family empire. (A few months earlier, Napoleon had invaded Portugal, and the Portuguese royal family had fled to its colony of Brazil.)",
+      "Spanish Americans reacted sharply against this French usurper. They refused to accept Joseph Bonaparte as their king, affirmed [declared] their loyalty to the Spanish House of Bourbon, and seized control of their local governments. But almost from the beginning, the rebellion against Napoleon turned into a revolution for complete independence. There could be no turning back to the old system. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       ". . . The plans and ambitions (big goals) of Napoleon Bonaparte did inspire the Latin Americans. But they did not inspire them in the way Napoleon expected. The French dictator (a ruler with total power) invaded Spain in 1808. He forced the king to abdicate [give up the throne]. Then he gave the Spanish crown to his brother Joseph. All at once, Spanish America became part of the Bonaparte family empire. (A few months earlier, Napoleon had invaded Portugal. The Portuguese royal family had fled to its colony of Brazil.)",
+       "Spanish Americans reacted sharply against this French usurper (someone who takes power that is not rightfully theirs). They refused to accept Joseph Bonaparte as their king. They affirmed [declared] their loyalty to the Spanish House of Bourbon (Spain's royal family). And they seized (took) control of their local governments. But almost from the beginning, the rebellion against Napoleon turned into a revolution for complete independence. There could be no turning back to the old system. . . ."
+      ]
+     }
+    },
+    {
+     "n": 4,
+     "title": "Simón Bolívar, the Jamaica Letter",
+     "kind": "text",
+     "src": "Source: Simón Bolívar, “Reply of a South American to a Gentleman of This Island [Jamaica],” September 6, 1815 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography II Regents Exam, August 2019",
+     "page": 9,
+     "steps": [
+      {
+       "questions": [],
+       "line": "The title in the source line says who is writing and to whom, and the bracket says where. KEY VOCABULARY on page 7 says why he was there in 1815."
+      },
+      {
+       "questions": [],
+       "line": "Two paragraphs: five sentences, then four. Expel means drive out. The second paragraph turns toward the future at the words As soon as."
+      },
+      {
+       "questions": [
+        {
+         "n": 10,
+         "text": "According to Bolívar, what do South Americans need in order to drive out the Spaniards and found a free government?",
+         "mode": "written"
+        }
+       ],
+       "line": "His first sentence promises to tell you, and his second sentence does. For your because, read on: what does he say America has, and what doesn't it have?"
+      },
+      {
+       "questions": [
+        {
+         "n": 11,
+         "text": "Bolívar is writing to an Englishman in Jamaica, a British colony, and he says America “is abandoned by all other nations.” Why might he describe America that way to this reader?",
+         "mode": "written"
+        }
+       ],
+       "line": "Picture the reader: an Englishman on an island Britain rules. Then reread the part of the second paragraph that starts As soon as we are strong. Why would Bolívar want this reader to see America as alone?"
+      },
+      {
+       "questions": [],
+       "line": "No Enduring Issue question today. For practice, pick one clue word from Bolívar and find the umbrella question on page 2 it fits. Then do the OUTSIDE EVIDENCE box on page 10; its hint sends you back to Day 1."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      ". . . I shall tell you with what we must provide ourselves in order to expel the Spaniards and to found a free government. It is union, obviously; but such union will come about through sensible planning and well-directed actions rather than by divine magic. America stands together because it is abandoned by all other nations. It is isolated in the center of the world. It has no diplomatic relations, nor does it receive any military assistance; instead, America is attacked by Spain, which has more military supplies than any we can possibly acquire through furtive [stealthy] means.",
+      "When success is not assured, when the state is weak, and when results are distantly seen, all men hesitate; opinion is divided, passions rage, and the enemy fans these passions in order to win an easy victory because of them. As soon as we are strong and under the guidance of a liberal nation which will lend us her protection, we will achieve accord [unity] in cultivating the virtues and talents that lead to glory. Then will we march majestically toward that great prosperity for which South America is destined. Then will those sciences and arts which, born in the East, have enlightened Europe, wing their way to a free Colombia, which will cordially bid them welcome. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       ". . . I shall tell you what we must get for ourselves in order to expel (drive out) the Spaniards and to found (start) a free government. It is union, obviously. But such union will come from sensible planning and well-directed actions, not from divine magic (a miracle). America stands together because it is abandoned by all other nations. It is isolated (alone, cut off) in the center of the world. It has no diplomatic relations (official ties with other countries). It does not get any military help. Instead, America is attacked by Spain. Spain has more military supplies than any we can possibly get through furtive [stealthy] means.",
+       "When success is not sure, when the state is weak, and when results are far off, all men hesitate. Opinion is divided, and passions (strong feelings) rage. The enemy fans (stirs up) these passions to win an easy victory because of them. A liberal nation is one that values freedom. As soon as we are strong and under the guidance of a liberal nation that will protect us, we will achieve accord [unity]. We will build the virtues and talents that lead to glory. Then we will march majestically (grandly) toward that great prosperity (wealth and success) for which South America is destined. Then the sciences and arts, which were born in the East and have enlightened Europe, will fly to a free Colombia. Colombia will warmly welcome them. . . ."
+      ]
+     }
+    },
+    {
+     "n": 5,
+     "title": "Camillo di Cavour, 1846",
+     "kind": "text",
+     "src": "Source: Camillo di Cavour, 1846, from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, August 2003",
+     "page": 11,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 12,
+         "text": "Cavour wrote this in 1846. Was Italy one country yet? Use What You Need to Know to explain.",
+         "mode": "written"
+        }
+       ],
+       "line": "Find the year What You Need to Know on page 11 gives for the Kingdom of Italy, and put it next to 1846. Then look at the word in brackets in his first line."
+      },
+      {
+       "questions": [],
+       "line": "One long sentence, broken by two dashes. Read the part between the dashes as its own thought. Petty means small and unimportant."
+      },
+      {
+       "questions": [
+        {
+         "n": 13,
+         "text": "According to Cavour, what must be “silenced” for Italy to unify, and what does he hope unification will do for Italy?",
+         "mode": "written"
+        }
+       ],
+       "line": "Find the word silenced and read back from it to see what must go quiet. For his hope, read what comes after it, and watch for not only and above all."
+      },
+      {
+       "questions": [
+        {
+         "n": 14,
+         "text": "Cavour and Bismarck both want to unify their people. How is Bismarck's way different from Cavour's? Use a word or phrase from each document.",
+         "mode": "written"
+        }
+       ],
+       "line": "This one needs both documents. Find the phrase here that shows how Cavour wants Italy to come together, then open Document 6's walk."
+      },
+      {
+       "questions": [
+        {
+         "n": 15,
+         "text": "Identify an enduring issue Documents 5 and 6 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
+         "mode": "written"
+        }
+       ],
+       "line": "Question 15 covers Documents 5 and 6. Unification is the clue word here: read the question under each umbrella on page 2 and find the one it fits. Then read Document 6 before you write."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      ". . . Therefore, if we so ardently desire the emancipation [unification] of Italy — if we declare that in the face of this great question all the petty questions that divide us must be silenced— it is not only that we may see our country glorious and powerful but that above all we may elevate her in intelligence and moral development up to the plane of the most civilized nations. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       ". . . Therefore, we so ardently (strongly) desire the emancipation [unification] of Italy. We declare that in the face of this great question, all the petty questions that divide us must be silenced. We do this not only so that we may see our country glorious and powerful. Above all, we do it so that we may elevate (raise) her in intelligence and moral development. We want to raise her up to the plane (level) of the most civilized nations. . . ."
+      ]
+     }
+    },
+    {
+     "n": 6,
+     "title": "Otto von Bismarck (adapted)",
+     "kind": "text",
+     "src": "Source: Otto von Bismarck (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam",
+     "page": 12,
+     "steps": [
+      {
+       "questions": [],
+       "line": "This source line has no date and no audience. Find Bismarck in What You Need to Know on page 11: when did he speak, and to whom?"
+      },
+      {
+       "questions": [],
+       "line": "One sentence in two halves: what will not reach the goal, then what will. Read each half on its own. Democracy means rule by the people, through voting."
+      },
+      {
+       "questions": [],
+       "line": "Say his sentence back in your own words. Then ask what blood and iron could stand for."
+      },
+      {
+       "questions": [
+        {
+         "n": 14,
+         "text": "Cavour and Bismarck both want to unify their people. How is Bismarck's way different from Cavour's? Use a word or phrase from each document.",
+         "mode": "written"
+        }
+       ],
+       "line": "Bismarck's sentence names what he won't use and what he will. Put that next to the phrase you found in Cavour. Your own words go in the blanks; their exact words go in the quotation marks."
+      },
+      {
+       "questions": [
+        {
+         "n": 15,
+         "text": "Identify an enduring issue Documents 5 and 6 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
+         "mode": "written"
+        }
+       ],
+       "line": "Take a clue word from either document and find the umbrella question on page 2 that fits it. Then name the exact issue under it, and do the OUTSIDE EVIDENCE box on page 13."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“Not by democracy or liberal standards will our goal be achieved but by blood and iron.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“Our goal will not be achieved (reached) by democracy or liberal standards (the rules of a free government). It will be achieved by blood and iron.”"
+      ]
+     }
+    },
+    {
+     "n": 7,
+     "title": "Map: the peoples of Austria-Hungary, 1911",
+     "kind": "image",
+     "src": "Source: William R. Shepherd, “Distribution of Races in Austria-Hungary,” Historical Atlas, Henry Holt, 1911 (public domain)",
+     "page": 15,
+     "steps": [
+      {
+       "questions": [
+        {
+         "n": 16,
+         "text": "Read the title, the date and the legend. What does this map show, and when was it made?",
+         "mode": "written"
+        }
+       ],
+       "line": "The title runs sideways down the right edge. The date is in the source line, and the note under it tells you what Races means here."
+      },
+      {
+       "questions": [],
+       "line": "Start with the legend in the lower left and read every name. Then find the heavy black border and look at the colors inside it. Big capital letters are regions; small ones are cities."
+      },
+      {
+       "questions": [
+        {
+         "n": 17,
+         "text": "Name three peoples the map shows inside Austria-Hungary. What problem could that cause for one empire in an age of nationalism?",
+         "mode": "written"
+        }
+       ],
+       "line": "Pick three names from the legend and find each color inside the border. For the problem, reread What You Need to Know on page 14, especially the question the other peoples asked."
+      },
+      {
+       "questions": [],
+       "line": "Pick one people from the legend and look at the map as one of them would in 1911. Where does your color sit, and whose border is drawn around it?"
+      },
+      {
+       "questions": [
+        {
+         "n": 19,
+         "text": "Identify an enduring issue Documents 7 and 8 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
+         "mode": "written"
+        }
+       ],
+       "line": "Question 19 covers Documents 7 and 8, so look at the cartoon before you write. For now, read the question under each umbrella on page 2 and ask which one this map's legend could answer."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
+     "before": "“Races” in 1911 meant groups of people who spoke the same language. The colors show languages.",
+     "image_file": "images/g0202-c3-doc7-austria-hungary-races-1911.jpg",
+     "image_alt": "A color map. Its title is printed sideways down the right edge: “Distribution of Races in Austria-Hungary.” The map covers central and southeastern Europe. A heavy black line marks the border of Austria-Hungary, and the land inside it is filled with colors. Land outside the border is mostly left white. Inside the border, large capital letters name regions, including BOHEMIA, MORAVIA, GALICIA, AUSTRIA, HUNGARY, TRANSYLVANIA, CROATIA-SLAVONIA, BOSNIA, DALMATIA and TYROL. Cities marked inside include Vienna, Budapest, Prague and Serajevo. Outside the border, the map names GERMAN EMPIRE and RUSSIA to the north, ITALY to the southwest, and SERVIA, RUMANIA, BULGARIA and MONTENEGRO to the southeast. The ADRIATIC SEA is in the lower left. Many areas have spots and patches of another color inside them. The legend in the lower left lists ten colors: Germans (pink), Magyars (green), Rumanians (orange), Croats and Servians (olive), Ruthenians (yellow-green), Czechs (light blue), Slovaks (gray-green), Poles (brown), Slovenes (gray) and Italians (yellow). A bracket groups six of them, from Croats and Servians down to Slovenes, under the word Slavs. Under the legend: Scale 1:7 500 000, with a scale bar in miles. Grid letters and numbers run along the edges.",
+     "describe": "A color map. Its title is printed sideways down the right edge: “Distribution of Races in Austria-Hungary.” The map covers central and southeastern Europe. A heavy black line marks the border of Austria-Hungary, and the land inside it is filled with colors. Land outside the border is mostly left white. Inside the border, large capital letters name regions, including BOHEMIA, MORAVIA, GALICIA, AUSTRIA, HUNGARY, TRANSYLVANIA, CROATIA-SLAVONIA, BOSNIA, DALMATIA and TYROL. Cities marked inside include Vienna, Budapest, Prague and Serajevo. Outside the border, the map names GERMAN EMPIRE and RUSSIA to the north, ITALY to the southwest, and SERVIA, RUMANIA, BULGARIA and MONTENEGRO to the southeast. The ADRIATIC SEA is in the lower left. Many areas have spots and patches of another color inside them. The legend in the lower left lists ten colors: Germans (pink), Magyars (green), Rumanians (orange), Croats and Servians (olive), Ruthenians (yellow-green), Czechs (light blue), Slovaks (gray-green), Poles (brown), Slovenes (gray) and Italians (yellow). A bracket groups six of them, from Croats and Servians down to Slovenes, under the word Slavs. Under the legend: Scale 1:7 500 000, with a scale bar in miles. Grid letters and numbers run along the edges.",
+     "licence": {
+      "text": "Map, 1911 (public domain).",
+      "sellable": false
+     }
+    },
+    {
+     "n": 8,
+     "title": "“The Boiling Point,” Punch, October 2, 1912",
+     "kind": "image",
+     "src": "Source: Leonard Raven-Hill, “The Boiling Point,” Punch (London), October 2, 1912 (public domain)",
+     "page": 16,
+     "steps": [
+      {
+       "questions": [],
+       "line": "Punch was printed in London; the source line says so. Check the date, then the note under the source line. Did the cartoonist know what was coming six days later when he drew this?"
+      },
+      {
+       "questions": [],
+       "line": "Read the words first: the caption at the bottom and the two words on the pot. Then the men, one at a time, left to right: look at each hat. Then the edges of the picture."
+      },
+      {
+       "questions": [],
+       "line": "Put the caption and the words on the pot together. Then find two details in the drawing that show what the caption says."
+      },
+      {
+       "questions": [
+        {
+         "n": 18,
+         "text": "Who is sitting on the lid, and what is boiling inside the pot? What is this British cartoonist predicting?",
+         "mode": "written"
+        }
+       ],
+       "line": "The first two parts are in the words: the note under the source line, and the side of the pot. For the prediction, look at the steam and at what the men are doing with their hands. How long can that last?"
+      },
+      {
+       "questions": [
+        {
+         "n": 19,
+         "text": "Identify an enduring issue Documents 7 and 8 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
+         "mode": "written"
+        }
+       ],
+       "line": "Pick one clue: the two words on the pot, or a name from Document 7's legend. Read the question under each umbrella on page 2 and find the one it fits. Then do the OUTSIDE EVIDENCE box on page 17."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",
+     "before": "The great powers of Europe sit on the lid of a pot labeled BALKAN TROUBLES. Six days later, the First Balkan War began.",
+     "image_file": "images/g0202-c3-doc8-punch-boiling-point-1912.jpg",
+     "image_alt": "A black-and-white pen drawing. A large, round, black pot sits in the middle, with a curved handle on its right side. The words “BALKAN TROUBLES” are written across the side of the pot. Five men crowd onto the lid. On the left, a man with a long white beard and a peaked cap leans forward with both hands flat on the lid. Behind him stands a man in a top hat. In the middle sits a man in a spiked helmet and round glasses. At the back right stands a man in a flat-topped military cap with fringed shoulder pieces, one fist clenched. At the front right, a man in a tall military cap sits on the edge of the lid with one leg hanging over the side and one hand on the lid. Swirling clouds of steam rise all around the pot and the men. The artist's signature is in the lower right. The caption under the drawing reads “THE BOILING POINT.”",
+     "describe": "A black-and-white pen drawing. A large, round, black pot sits in the middle, with a curved handle on its right side. The words “BALKAN TROUBLES” are written across the side of the pot. Five men crowd onto the lid. On the left, a man with a long white beard and a peaked cap leans forward with both hands flat on the lid. Behind him stands a man in a top hat. In the middle sits a man in a spiked helmet and round glasses. At the back right stands a man in a flat-topped military cap with fringed shoulder pieces, one fist clenched. At the front right, a man in a tall military cap sits on the edge of the lid with one leg hanging over the side and one hand on the lid. Swirling clouds of steam rise all around the pot and the men. The artist's signature is in the lower right. The caption under the drawing reads “THE BOILING POINT.”",
+     "licence": {
+      "text": "Punch cartoon, 1912 (public domain).",
+      "sellable": false
+     }
+    }
+   ]
+  }
+ ]
+}
