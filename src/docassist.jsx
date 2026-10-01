@@ -194,17 +194,21 @@ function Umbrellas({ u }) {
       <div className="da-umb-title">{u.title}</div>
       {u.intro && <p className="da-umb-intro">{u.intro}</p>}
       <ol className="da-umb-list">
-        {(u.items || []).map(it => (
+        {(u.items || []).map((it, i, all) => (
           <li key={it.n}>
-            <div className="da-umb-name"><span className="da-umb-n">{it.n}</span>{it.name}</div>
-            <div className="da-umb-q">{it.question}</div>
-            {Array.isArray(it.issue_defs) && it.issue_defs.length
-              ? <dl className="da-umb-defs">
-                  {it.issue_defs.map(d => (
-                    <div key={d.name}><dt>{d.name}</dt><dd>{d.definition}</dd></div>
-                  ))}
-                </dl>
-              : it.issues && <div className="da-umb-issues">{it.issues}</div>}
+            {/* US card (Sam 10:52): a subheading each time the card's group changes. */}
+            {it.group && it.group !== all[i - 1]?.group && <div className="da-umb-group">{it.group}</div>}
+            <div className="da-umb-body">
+              <div className="da-umb-name"><span className="da-umb-n">{it.n}</span>{it.name}</div>
+              <div className="da-umb-q">{it.question}</div>
+              {Array.isArray(it.issue_defs) && it.issue_defs.length
+                ? <dl className="da-umb-defs">
+                    {it.issue_defs.map(d => (
+                      <div key={d.name}><dt>{d.name}</dt><dd>{d.definition}</dd></div>
+                    ))}
+                  </dl>
+                : it.issues && <div className="da-umb-issues">{it.issues}</div>}
+            </div>
           </li>
         ))}
       </ol>
@@ -229,6 +233,7 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
   const body = isImage ? [] : (easier ? doc.easier.text : doc.text) || []
   const bwt = boxOf(doc.before_we_talk) || boxOf(doc.before)
   const printed = typeof doc.before === 'string' ? doc.before : null
+  const note = doc.note && doc.note.text ? doc.note : null   // printed on the page above the quote (11.1 B Doc 18)
 
   // A new document starts as printed, walk closed, nothing reading.
   useEffect(() => { setEasier(false); setWalkOpen(false); setAt(0); setUmbOpen(false); speaker.stop() }, [doc.n, doc.title])
@@ -242,7 +247,7 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
 
   // What "Read it to me" says for the document: what is on the screen, in order.
   const docParts = [
-    bwt?.title, bwt?.text, printed,
+    bwt?.title, bwt?.text, printed, note?.title, note?.text,
     doc.title,
     doc.src,
     ...(isImage ? images.flatMap(i => [i.label, easier && i.describe ? i.describe : i.alt]) : body),
@@ -282,6 +287,12 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
             </aside>
           )}
           {printed && <p className="da-printed">{printed}</p>}
+          {note && (
+            <div className="da-printed da-note">
+              {note.title && <div className="da-note-title">{note.title}</div>}
+              <p>{note.text}</p>
+            </div>
+          )}
           <figure className="stimulus da-paper">
             <div className="doc-tag">{CHROME.docLabel(doc.n)}</div>
             {/* As printed in the casefile: the source line sits above the document. */}
@@ -447,6 +458,9 @@ export const DOCASSIST_STYLES = `
 .da-before p{color:var(--white);font-size:17px;line-height:1.55;margin:0}
 .da-printed{color:#2c2110;font-size:16px;line-height:1.55;font-style:italic;margin:0 0 14px;padding:12px 16px;border-radius:8px;
   background:linear-gradient(160deg,#f8f0da,#ecdeb8);border:1px solid rgba(60,44,18,.3)}
+.da-note p{margin:0;font-style:normal}
+.da-note-title{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:13.5px;font-style:normal;color:#5a4210;font-weight:700;margin-bottom:4px}
+.da-umb-group{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:13.5px;color:var(--gold-lit);margin:10px 0 6px;padding-bottom:3px;border-bottom:1px solid var(--edge)}
 .da-imgblock+.da-imgblock{margin-top:18px}
 .da-imglabel{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:14px;color:#5a4210;font-weight:700;margin-bottom:6px}
 .da-qn{color:var(--gold);margin-right:2px}
@@ -456,9 +470,9 @@ export const DOCASSIST_STYLES = `
 .da-umb-title{font-family:'Barlow Condensed',sans-serif;font-size:20px;letter-spacing:.1em;color:var(--gold);margin-bottom:4px}
 .da-umb-intro{color:var(--white);font-size:15.5px;line-height:1.5;margin:0 0 10px}
 .da-umb-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
-.da-umb-list li{border-left:3px solid var(--gold);padding:2px 0 2px 10px}
+.da-umb-body{border-left:3px solid var(--gold);padding:2px 0 2px 10px}
 .da-umb-name{font-family:'Barlow Condensed',sans-serif;font-size:17px;letter-spacing:.06em;color:var(--white);font-weight:700}
-.da-umb-n{display:inline-block;min-width:18px;color:var(--gold)}
+.da-umb-n{display:inline-block;min-width:24px;margin-right:2px;color:var(--gold)}
 .da-umb-q{color:var(--white);font-size:15px;line-height:1.45}
 .da-umb-issues{color:var(--gold-lit);font-size:14.5px;line-height:1.45;margin-top:2px}
 .da-umb-defs{margin:4px 0 0;display:flex;flex-direction:column;gap:4px}

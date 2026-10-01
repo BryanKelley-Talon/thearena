@@ -1,7 +1,6 @@
 {
- "_built": "Sam (us11r-curriculum) 2026-10-01 09:29 EDT",
- "_signed": "BK 2026-10-01 10:22 EDT: \"a. yes. agreed.\" (v2 replaces the 08:38 set before today's push) off US11R_11.2A_DocAssist_WORDING_v2_2026-10-01.pdf",
  "_v2": "BK 09:27: Doc Assist own four questions, not the casefile questions; label Ask yourself:",
+ "_built": "Sam (us11r-curriculum) 2026-10-01 09:29 EDT",
  "_source": "OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileA_STUDENT_2026-09-30.pdf",
  "_ruled": "CARRY-FORWARD §6 DOC ASSIST, RULED (BK 2026-10-01 08:16)",
  "tool": "Doc Assist",
@@ -44,7 +43,8 @@
   "close": "Close the walk",
   "next": "Next step",
   "back": "Back",
-  "stop": "Stop reading"
+  "stop": "Stop reading",
+  "q4_card": "The Civic Principles"
  },
  "casefiles": [
   {
@@ -514,5 +514,88 @@
    "title": "11.2 Casefile C",
    "status": "building"
   }
- ]
+ ],
+ "_v3": "v2 content unchanged; adds q4_card + labels.q4_card (BK 10:26)",
+ "q4_card": {
+  "title": "Civic Principles",
+  "intro": "Q4 · CIVIC CONNECTION asks which principle is at stake. Name it from this card, then show how the document upholds it, denies it, or fights over it.",
+  "items": [
+   {
+    "n": "1",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Rule of Law",
+    "question": "No one is above the law, not even the people who make it. Look for it when someone powerful is held to the rules, or tries to dodge them."
+   },
+   {
+    "n": "2",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Limited Government",
+    "question": "Government can only do what the Constitution allows. Look for it when someone says the government went too far."
+   },
+   {
+    "n": "3",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Separation of Powers",
+    "question": "Power is split among three branches, each with its own job: make laws, carry out laws, judge laws. Look for it when the fight is about which branch gets to act."
+   },
+   {
+    "n": "4",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Checks and Balances",
+    "question": "Each branch can block or limit the others. Look for it when there's a veto, an override, an impeachment, or a court striking something down."
+   },
+   {
+    "n": "5",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Federalism",
+    "question": "Power is divided between the national government and the states. When they clash, valid federal law wins. Look for it when it's the nation against a state."
+   },
+   {
+    "n": "6",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Judicial Review",
+    "question": "Courts can strike down a law or action that breaks the Constitution. Look for it when a court decides whether something is constitutional."
+   },
+   {
+    "n": "7",
+    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+    "name": "Popular Sovereignty (consent of the governed)",
+    "question": "Government's power comes from the people, and it rules only with their agreement. Look for it when people give, or take back, their support for a government."
+   },
+   {
+    "n": "8",
+    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+    "name": "Representative Government",
+    "question": "The people elect officials to make decisions for them. Look for it when the issue is voting, elections, or who speaks for whom."
+   },
+   {
+    "n": "9",
+    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+    "name": "Natural Rights",
+    "question": "Every person is born with rights (life, liberty, property) that government exists to protect. Look for it when a right is treated as something you're born with, not something government hands out."
+   },
+   {
+    "n": "10",
+    "group": "WHAT GOVERNMENT MUST PROTECT",
+    "name": "Individual Rights (civil liberties)",
+    "question": "Freedoms government can't take away, like speech, religion, press and assembly. Look for it when a personal freedom is limited, defended, or expanded."
+   },
+   {
+    "n": "11",
+    "group": "WHAT GOVERNMENT MUST PROTECT",
+    "name": "Equal Protection",
+    "question": "The law must treat people equally. Look for it when a group is treated differently, shut out, or separated by law."
+   },
+   {
+    "n": "12",
+    "group": "WHAT GOVERNMENT MUST PROTECT",
+    "name": "Due Process",
+    "question": "Government must follow fair steps before it takes your life, liberty, or property. Look for it when someone is arrested, held, or punished. Ask whether it was fair."
+   }
+  ],
+  "close": [
+   "Learn these by name. The Regents asks for them. Practice them in the Arena's matching set."
+  ]
+ },
+ "_signed": "BK 2026-10-01 10:51 EDT: \"yes we want the no name piece covered. agreed on the before we talk and join or die. proceed\" off US11R_11.1B_DocAssist_and_CivicCard_WORDING_2026-10-01.pdf"
 }

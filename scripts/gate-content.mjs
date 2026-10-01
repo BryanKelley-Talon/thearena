@@ -378,10 +378,14 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
       if (!docs.length) df(`casefile ${cf.id} is open with no documents.`)
       docs.forEach((doc, i) => {
         const w = `casefile ${cf.id} document ${doc.n ?? '?'}`
-        if (doc.n !== i + 1) df(`${w}: documents must run 1, 2, 3… in order (found ${doc.n} at position ${i + 1}).`)
+        // Numbers are what the page prints: they may continue across casefiles (11.1 B starts at 8)
+        // and carry a letter ("16b"). They must be unique and never run backward.
+        const num = parseInt(String(doc.n), 10)
+        if (!(Number.isInteger(doc.n) || /^\d+[a-z]?$/.test(String(doc.n)))) df(`${w}: a document number must be a number, or a number and a letter ("16b").`)
+        if (docs.findIndex(o => String(o.n) === String(doc.n)) !== i) df(`${w}: two documents share a number.`)
+        if (i > 0 && num < parseInt(String(docs[i - 1].n), 10)) df(`${w}: document numbers run backward (after ${docs[i - 1].n}).`)
         if (!doc.title) df(`${w}: no title.`)
-        if (!doc.src || !/\bSource:/.test(doc.src))   // a paired picture carries two: "LEFT — Source: … RIGHT — Source: …" (11.1 A Doc 7)
-          df(`${w}: no source line (canon §6: every document points to its record).`)
+        if (!doc.src || String(doc.src).trim().length < 15) df(`${w}: no source line (canon §6: every document points to its record).`)   // as printed: "Source: …", "LEFT — Source: …", or a compiled-by line (11.1 B Doc 13)
         if (!Number.isInteger(doc.page) || doc.page < 1) df(`${w}: page must be the casefile page number.`)
         if (!doc.close || !/\bpage \d+/.test(doc.close)) df(`${w}: the close must send the kid back to a casefile page.`)
         const steps = doc.steps || []
@@ -439,8 +443,9 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         const box = b => b && typeof b === 'object' && b.title && b.text
         if (doc.before != null && !(typeof doc.before === 'string' ? doc.before.trim() : box(doc.before))) df(`${w}: 'before' must be a printed line or { title, text }.`)
         if (doc.before_we_talk != null && !box(doc.before_we_talk)) df(`${w}: before_we_talk needs a title and text.`)
+        if (doc.note != null && !(doc.note && doc.note.text)) df(`${w}: a note needs text.`)
         student.push(doc.title, doc.close, ...steps.flatMap(s => [s.question, s.line, ...(s.questions || []).map(q => q?.text), ...(s.tip?.text || [])]),
-          ...(doc.easier?.text || []), typeof doc.before === 'string' ? doc.before : doc.before?.text, doc.before_we_talk?.text)
+          ...(doc.easier?.text || []), typeof doc.before === 'string' ? doc.before : doc.before?.text, doc.before_we_talk?.text, doc.note?.text)
       })
     }
     const words = student.filter(Boolean).join(' \n ')

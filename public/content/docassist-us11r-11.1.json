@@ -1,6 +1,5 @@
 {
- "_built": "Sam (us11r-curriculum) 2026-10-01 09:25 EDT",
- "_signed": "BK 2026-10-01 09:27 EDT: \"1. approved. signed.\" off US11R_11.1A_DocAssist_WORDING_v2_2026-10-01.pdf; label \"Ask yourself:\" agreed (2.)",
+ "_built": "Sam (us11r-curriculum) 2026-10-01 10:46 EDT · A unchanged from the 09:27 signed set; B added (BK 10:38); q4_card added (BK 10:26)",
  "_source": "OUTPUTS/2026-27/Unit_01/STUDENT/US11R_Unit1_BlockA_PACKET.pdf (printed cover: Block A; on screen: Casefile A, BK 09:17)",
  "_shape": "11.2 A shape: steps[k] = {question, mode, line}; questions are Doc Assist own Frame questions (BK 09:23); mode null",
  "tool": "Doc Assist",
@@ -43,7 +42,8 @@
   "close": "Close the walk",
   "next": "Next step",
   "back": "Back",
-  "stop": "Stop reading"
+  "stop": "Stop reading",
+  "q4_card": "The Civic Principles"
  },
  "casefiles": [
   {
@@ -380,7 +380,727 @@
   {
    "id": "B",
    "title": "11.1 Casefile B · Who Paid for It",
-   "status": "building"
+   "status": "open",
+   "docs": [
+    {
+     "n": 8,
+     "title": "Two kinds of bound labor",
+     "kind": "text",
+     "src": "Source: adapted from New Visions for Public Schools, US.01.C.2.",
+     "page": 4,
+     "steps": [
+      {
+       "question": "Who made this chart, and when? Is it from the colonial era?",
+       "mode": null,
+       "line": "Read the source line. Teachers made this chart recently, from older records. Ask what a chart like this can show, and what it can't."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "It's a chart set as text: two columns, each with Who, Work and Terms. Read all of one column, then all of the other, then compare them row by row."
+      },
+      {
+       "question": "What is the biggest difference between the two columns?",
+       "mode": null,
+       "line": "Read the Terms row in both columns. Find the line in one column that the other can't match at any price."
+      },
+      {
+       "question": "Who chose which facts go side by side? What might the columns leave out?",
+       "mode": null,
+       "line": "Two columns make things look neat and even. Ask whose experience a neat row of facts can't hold."
+      },
+      {
+       "question": "Why is the difference between these columns a question about law, not just about work?",
+       "mode": null,
+       "line": "Look at what happens to children in each column, and what the law allowed. Then look in the group called What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "INDENTURED SERVANTS (1607 – early 1700s)",
+      "Who: Chose to immigrate from Europe under contract. Mostly the poorest class, or criminals, looking for a fresh start.",
+      "Work: Hard labor — clearing land, building farms and towns; field work; skilled trades: bricklaying, building, sewing, cooking.",
+      "Terms: Contract of 3–7 years, usually one master. In exchange: passage, room, lodging, food. Freedom dues at the end — land, clothes, a year's corn. Some legal protections.",
+      "ENSLAVED PEOPLE (1619–1776)",
+      "Who: Native people captured in America; African people forced to immigrate against their will — kidnapped or sold in Africa, then carried here.",
+      "Work: Hard labor; farm hands, often on large plantations; some worked in houses — sewing, cooking, cleaning.",
+      "Terms: Little pay for mostly lifelong service. Could sometimes earn or buy freedom. Children of enslaved people were also enslaved. Could be bought and sold. Little to no protection against abuse. Could legally be killed."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "INDENTURED SERVANTS (1607 to the early 1700s)",
+       "Who: People from Europe who chose to come here under a contract. Most were very poor, and some were criminals. They wanted a fresh start.",
+       "Work: Hard labor, like clearing land and building farms and towns. Field work. Skilled jobs like bricklaying, building, sewing and cooking.",
+       "Terms: A contract (a written deal) for 3 to 7 years, usually with one master. In return they got the trip over, a place to live, and food. At the end they got freedom dues: land, clothes, and a year's corn. The law gave them some protection.",
+       "ENSLAVED PEOPLE (1619 to 1776)",
+       "Who: Native people captured in America, and African people forced to come here against their will. They were kidnapped or sold in Africa, then carried here.",
+       "Work: Hard labor. Farm work, often on large plantations. Some worked in houses, sewing, cooking and cleaning.",
+       "Terms: Little pay, for service that mostly lasted their whole lives. Sometimes they could earn or buy their freedom. Their children were enslaved too. They could be bought and sold. The law gave them little or no protection from abuse. They could legally be killed."
+      ]
+     },
+     "licence": {
+      "text": "Adapted from New Visions for Public Schools, CC BY-NC-SA 4.0.",
+      "sellable": false
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    },
+    {
+     "n": 9,
+     "title": "The contract",
+     "kind": "text",
+     "src": "Source: Virtual Jamestown. Indenture of Richard Lowther, 1627.",
+     "page": 6,
+     "steps": [
+      {
+       "question": "Who made this agreement, and did Lowther choose to sign it?",
+       "mode": null,
+       "line": "Read the first lines: two men are named. Lowther signed this himself. Ask what he expected to get out of it."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Old legal English, with … where words were cut. Read it once for who promises what. Heirs are the people who inherit from you."
+      },
+      {
+       "question": "What does each side promise the other?",
+       "mode": null,
+       "line": "Find the four years and what Lowther owes. Then find what Hurd promises, during the term and at the end."
+      },
+      {
+       "question": "Is this a fair deal? Whose side of it are we not hearing?",
+       "mode": null,
+       "line": "Hurd's side is written in. Picture Lowther four years later in Virginia. What could go wrong that the contract doesn't mention?"
+      },
+      {
+       "question": "What does a contract protect, and who does it protect most?",
+       "mode": null,
+       "line": "Ask who wrote the terms, and who had to accept them. Then look in the group called What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 6. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "This writing… between Richard Lowther of Broom in Southill in the County of Bedford, and Edward Hurd citizen and iron monger of London… said Richard Lowther has presently pledges a covenant to agree and bind himself to be a servant of him the said Edward Hurd and heirs who assign him to be sent and transported unto the country and land of Virginia… and to be employed by Hurd and heirs upon his plantation there, and for during the space of four years… during which said term the said Richard Lowther shall and will truly employ and endeavor himself to the utmost power of his knowledge and skill to perform true and faithful service…",
+      "Edward Hurd and heirs do promise and grant to Richard Lowther transport to Virginia and find and provide him sufficient meat and drink clothing and any other necessaries for his livelihood and maintenance during the said term but also at the expiration of the said term shall and will grant the said Richard Lowther the quantity of 50 acres of land in Virginia to him…",
+      "[made the last day of July 1627, in the third year of the reign of King Charles]"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "This contract is between Richard Lowther, of Broom in the County of Bedford, and Edward Hurd, an iron merchant of London. Richard Lowther agrees to bind himself as a servant to Edward Hurd and his heirs. He will be sent to Virginia and work on Hurd's plantation there for four years. During that time Lowther will work as hard and as well as he can, and give true and faithful service.",
+       "In return, Edward Hurd and his heirs promise to carry Lowther to Virginia. During the four years they will give him enough food, drink, clothing and everything else he needs to live. When the four years are over, they will give Richard Lowther 50 acres of land in Virginia.",
+       "[made the last day of July 1627, in the third year of the reign of King Charles]"
+      ]
+     }
+    },
+    {
+     "n": 10,
+     "title": "The letter home",
+     "kind": "text",
+     "src": "Source: Virtual Jamestown. Richard Frethorne to his parents, 1623.",
+     "page": 7,
+     "steps": [
+      {
+       "question": "Who wrote this, to whom, and what does he want from them?",
+       "mode": null,
+       "line": "Frethorne is sixteen, and he's writing to the people who could send help. Read the last paragraph first, then start at the top."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Four parts: the greeting, then sickness and food, then fear and clothes, then his request. Gruel is a thin, watery porridge."
+      },
+      {
+       "question": "What is life like for Frethorne in Virginia? Name two conditions.",
+       "mode": null,
+       "line": "Look for food, sickness, clothes and fear. Each paragraph gives you at least one."
+      },
+      {
+       "question": "How might his reason for writing shape what he tells his parents?",
+       "mode": null,
+       "line": "Ask what a boy who wants to be bought out needs his parents to believe. Then ask what he might leave out."
+      },
+      {
+       "question": "He came under a contract like Lowther's. Who was the law really protecting?",
+       "mode": null,
+       "line": "Put Document 9's promises next to this letter. Then look in the group called What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "Loving and kind father and mother,",
+      "…This is to let you understand that I your child (though at 16 years hardly a child) am in a most heavy case by reason of the country, [which] is such that it causes much sickness, such as the scurvy and the dysentery and diverse other diseases… And when we are sick there is nothing to comfort us; for since I came out of the ship I never ate anything but peas, and loblollie (that is, water gruel)… we must work hard both early and late for a mess of water gruel and a mouthful of bread and beef…",
+      "For we live in fear of the enemy Natives every hour… we are but 32 to fight against 3000 Natives if they should come… And I have nothing to comfort me… not a shirt to my back but two rags, nor clothes but one poor suit, nor but one pair of shoes, but one pair of stockings, but one cap…",
+      "Goodman Jackson… much marveled that you would send me a servant to the Company; he said I had been better off if I had knocked on the head. And indeed so I find it now, to my great grief and misery; and I say that if you love me you will redeem me suddenly, for which I do entreat and beg…"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Loving and kind father and mother,",
+       "I want you to understand that I, your child (though at 16 years old I am hardly a child), am in a very hard place because of this country. It causes a lot of sickness, like scurvy and dysentery and other diseases. When we are sick there is nothing to comfort us. Since I got off the ship I have eaten nothing but peas and loblollie (that is, water gruel, a thin porridge). We must work hard, early and late, for a bowl of water gruel and a mouthful of bread and beef.",
+       "We live in fear of the enemy Natives every hour. There are only 32 of us to fight against 3000 Natives if they come. I have nothing to comfort me. I have no shirt on my back but two rags, only one poor suit of clothes, one pair of shoes, one pair of stockings, one cap.",
+       "Goodman Jackson was amazed that you would send me here as a servant to the Company. He said I had been better off if I had knocked on the head (been killed). And now I find that is true, to my great grief and misery. I say that if you love me you will redeem me (buy me out) suddenly. I beg you to."
+      ]
+     }
+    },
+    {
+     "n": 11,
+     "title": "Two notices",
+     "kind": "text",
+     "src": "A — Source: Higher Education and Slavery in Western Massachusetts. B — Source: New York Public Library Manuscript Collection.",
+     "page": 9,
+     "steps": [
+      {
+       "question": "What kind of document is each one, and what job was it written to do?",
+       "mode": null,
+       "line": "Read the label above each one. Neither was written to describe slavery. Each was written to get something done."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Two short documents. Read A, then B. In B, read the whole list without stopping, all the way to the end."
+      },
+      {
+       "question": "What do these two notices show about how enslaved people were treated under the law?",
+       "mode": null,
+       "line": "In A, find Prince's age and how long he is sold for. In B, read the list in order: what comes right after the people?"
+      },
+      {
+       "question": "Whose voice is missing from both notices?",
+       "mode": null,
+       "line": "Count the people named or listed. Now count how many of them say a word."
+      },
+      {
+       "question": "What principle had to be missing for a nine-year-old to be sold in an ordinary contract?",
+       "mode": null,
+       "line": "Look in the group called What government must protect. Read each name and ask which ones Prince was denied."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 11's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "A · BILL OF SALE, 1750",
+      "For and in consideration of the sum of two hundred and twenty five pounds… to me Ephraim Williams Jr. well and truly paid by Israel Williams of Hatfield, I do hereby assign, sell and convey to him a certain negro boy named Prince aged about nine years, a servant for life, and do hold him and his heirs against the claims of any person whatsoever as witness my hand this 25th day of September 1750.",
+      "B · AUCTION ANNOUNCEMENT, ESTATE OF ADOLPH PHILIPSE",
+      "To be sold at public auction… on the Manor of Philipsburg; Four Negro Men, namely a mill worker, a Boat-Man, and two farmers; three Negro women; namely two farm workers and one cook, six Negro boys, and two girls, household goods, and all the stock, consisting of 40 odd head of cattle, 26 horses, a number of sheep and hogs, and all the utensils belonging to the said manor."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "A · BILL OF SALE, 1750",
+       "Israel Williams of Hatfield has paid me, Ephraim Williams Jr., two hundred and twenty five pounds. In return I sell and hand over to him a Black boy named Prince, aged about nine years, a servant for life. I promise that no one else has any claim to him. Signed by me on the 25th day of September 1750.",
+       "B · AUCTION ANNOUNCEMENT, ESTATE OF ADOLPH PHILIPSE",
+       "To be sold at a public auction on the Manor of Philipsburg: four Black men (a mill worker, a boatman, and two farmers); three Black women (two farm workers and one cook); six Black boys and two girls; household goods; and all the animals: about 40 cattle, 26 horses, a number of sheep and hogs, and all the tools that belong to the manor."
+      ]
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    },
+    {
+     "n": 12,
+     "title": "A life, told by the person who lived it",
+     "kind": "text",
+     "src": "Source: Documenting the American South. Narrative of the Life and Adventures of Venture Smith, a Native of Africa, but resident above sixty years in the United States, related by himself.",
+     "page": 11,
+     "steps": [
+      {
+       "question": "Who is telling this story, and when did he tell it?",
+       "mode": null,
+       "line": "Read the whole source line: related by himself, after more than sixty years in this country. He's looking back on his whole life."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Four parts, with … where pages were skipped. Each part jumps ahead in his life: the sale, the work, the punishment, the family."
+      },
+      {
+       "question": "What does Venture Smith's story show about how enslaved people were treated?",
+       "mode": null,
+       "line": "Find what he was bought for, what he had to do at nine, and what happened to his family. Each paragraph adds one more."
+      },
+      {
+       "question": "What can his own story tell you that an owner's paperwork never could?",
+       "mode": null,
+       "line": "Put his story next to Document 11. Who is talking in each? What does only Venture know?"
+      },
+      {
+       "question": "Venture Smith bought his own freedom. Does that make the system fair?",
+       "mode": null,
+       "line": "Ask what he had to do to buy it, and what he had already lost. Then look in the group called What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 12's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "…It was 1738…. I was kidnapped in Africa…. our master told us all to appear to the best possible advantage for sale. I was brought on board by one Robertson Mumford, for four gallons of rum, and a piece of calico, and called VENTURE, on account of his having purchased me with his own private venture.",
+      "The first of the time of living at my master's own place, I was pretty much employed in the house at cleaning and picking wool… after which my master put me to work out of doors… to pound four bushels of ears of corn every night in a barrel for the poultry, or be rigorously punished… These tasks I had to perform when I was about nine years old.",
+      "…he then broke out into a great rage, snatched a pitchfork and went to lay me over the head therewith; but I as soon got another and defended myself… He took me to a gallows made for the purpose of hanging cattle on, and suspended me on it… I was released and went to work after hanging on the gallows about an hour.",
+      "…At the close of that year I was sold to a Thomas Stanton, and had to be separated from my wife and one daughter, who was about one month old… This money I got by cleaning gentlemen's shoes and drawing boots, by catching musk-rats and minks, raising potatoes and carrots, and by fishing in the night, and at odd spells."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "It was 1738. I was kidnapped in Africa. Our master told us all to look our best to be sold. I was brought on board a ship by Robertson Mumford, for four gallons of rum, and a piece of calico (cotton cloth). He called me VENTURE, because he bought me with his own private venture (his own money, as an investment).",
+       "When I first lived at my master's own place, I worked mostly in the house, cleaning and picking wool. After that my master put me to work outdoors. Every night I had to pound four bushels of ears of corn in a barrel for the chickens, or be harshly punished. These tasks I had to perform when I was about nine years old.",
+       "Then he flew into a great rage. He grabbed a pitchfork and went to hit me over the head with it, but I quickly got another one and defended myself. He took me to a gallows made for hanging cattle and hung me on it. I was let down and went back to work after hanging on the gallows about an hour.",
+       "At the end of that year I was sold to a Thomas Stanton, and had to be separated from my wife and one daughter, who was about one month old. I got this money by cleaning gentlemen's shoes and pulling off their boots, by catching muskrats and minks, raising potatoes and carrots, and by fishing at night and in my spare time."
+      ]
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    },
+    {
+     "n": 13,
+     "title": "How a law gets built",
+     "kind": "text",
+     "src": "Compiled by New Visions for Public Schools from Ferris State University, PBS Slavery in America, and Colonial Williamsburg.",
+     "page": 17,
+     "steps": [
+      {
+       "question": "Who made this timeline, and from what kinds of sources?",
+       "mode": null,
+       "line": "Read the source line. Then notice what almost every entry is: a law, a court ruling, or what lawmakers did after an event."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Nothing here happened all at once. Read the years in order, top to bottom, and watch one step build on the last."
+      },
+      {
+       "question": "What changes for Black people in the colonies between 1619 and 1705?",
+       "mode": null,
+       "line": "Compare the first entry with the last. What were the twenty Africans called in 1619, and what does the law call enslaved people in 1705?"
+      },
+      {
+       "question": "Who wrote these laws, and whose voice is missing?",
+       "mode": null,
+       "line": "Every line was written by the people making the law. Ask what this timeline would say if the people it was made about had kept it."
+      },
+      {
+       "question": "Freedoms are taken away one law at a time. What principle is being broken?",
+       "mode": null,
+       "line": "Look at 1640: the same offense, two different sentences. Then look in the group called What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 13's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "1619 · Jamestown: twenty captive Africans are sold and classified as indentured servants.",
+      "1640 · Three runaway servants are captured. The General Court gives the two white servants additional years to serve — and sentences John Punch, a Black man, to servitude for life.",
+      "1641 · Massachusetts becomes the first colony to legalize slavery.",
+      "1662 · Virginia decides any child born to an enslaved woman is also enslaved.",
+      "1664 · Maryland mandates lifelong servitude for all enslaved Black people. New York, New Jersey, the Carolinas and Virginia pass similar laws.",
+      "1669 · Virginia: an act on the “casual killing” of enslaved people — if a person dies resisting his master, it is not presumed to have been done with malice.",
+      "1676 · Bacon's Rebellion. Poor whites and Black servants fight side by side. The government's response hastens the shift to Black slavery and away from indentured servitude.",
+      "1694 · Rice cultivation begins in the Carolinas. Demand for enslaved labor rises sharply.",
+      "1705 · Virginia slave codes: all Black, mulatto and Indian enslaved people are declared real property — legally real estate. Forbidden to assault a white person, denied the right to bear arms, denied movement without written permission."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "1619 · Jamestown: twenty Africans who had been captured are sold. They are called indentured servants.",
+       "1640 · Three servants run away and are caught. The court gives the two white servants more years to serve. It sentences John Punch, a Black man, to serve for life.",
+       "1641 · Massachusetts becomes the first colony to make slavery legal.",
+       "1662 · Virginia decides that any child born to an enslaved woman is also enslaved.",
+       "1664 · Maryland requires lifelong servitude for all enslaved Black people. New York, New Jersey, the Carolinas and Virginia pass similar laws.",
+       "1669 · Virginia passes a law about the “casual killing” of enslaved people. If an enslaved person dies while resisting his master, the law does not assume the master meant to kill.",
+       "1676 · Bacon's Rebellion. Poor white people and Black servants fight side by side. The government's response speeds up the shift to Black slavery and away from indentured servitude.",
+       "1694 · Rice farming begins in the Carolinas. The demand for enslaved workers rises sharply.",
+       "1705 · Virginia slave codes: all Black, mulatto (mixed-race) and Indian enslaved people are declared real property, which means legally real estate. They are forbidden to hit a white person, denied the right to carry weapons, and not allowed to travel without written permission."
+      ]
+     },
+     "licence": {
+      "text": "Adapted from New Visions for Public Schools, CC BY-NC-SA 4.0.",
+      "sellable": false
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    },
+    {
+     "n": 14,
+     "title": "An inventory",
+     "kind": "text",
+     "src": "Source: New York Public Library Manuscript Collection. Set here as text from the transcription — the date reads 1749 because the year then began on 25 March; by our calendar it is 1750.",
+     "page": 20,
+     "steps": [
+      {
+       "question": "What is this document, and why was it made?",
+       "mode": null,
+       "line": "Read the first line, word by word. What kind of list is this, and what happens to a list like this after someone dies?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "It's a list, so read it top to bottom in order, headings and all. The spelling is from 1749; read past it."
+      },
+      {
+       "question": "What does the order of this list show about how the law saw enslaved people?",
+       "mode": null,
+       "line": "Read the three headings in order. What comes right after the people?"
+      },
+      {
+       "question": "Why is a list like this harder to argue with than a speech?",
+       "mode": null,
+       "line": "The writer wasn't trying to convince anyone. He was counting. Ask what a list proves without meaning to."
+      },
+      {
+       "question": "Betty is three years old and listed before the cattle. What principle has to be abandoned for this to be ordinary?",
+       "mode": null,
+       "line": "Read each \"Look for it when\" cue on your card. Which one describes a person being treated as a thing?"
+      }
+     ],
+     "close": "That's the walk. Now answer Document 14's questions in your casefile, starting on page 21. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "Inventory of all and Singular the goods, Rights Chattels & Credits of the Estate of Mr. Adolph Philipse Deceased · On the manour of Philipsburgh · 12 February 1749",
+      "NEGROS VIZ:",
+      "Men — Ceaser · Dimond · Sampson · Kaiser · Flip · Tom",
+      "Women — Susan · Abigal · Massy · Dina · Sue",
+      "Men not fitt for work — Venture · James · Charles · Billy",
+      "Boys — Tom abt 9 years old · Charles 9 · Sam 8 · Dimond 7 · Hendrick 5 · Ceaser 2 · Harry 1 & 4 months",
+      "A Girl — Betty, 3 years old",
+      "CATTLE VIZ: 6 worken Oxen · 12 Milch Cows · 9 3yr old heffers Steers & bulls · 30 sheep & some lambs · 19 hoggs & some piggs",
+      "HORSES VIZ: 3 Stable Horses · 3 horses in the woods · 17 Mares & young horses"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "An inventory (a list of everything someone owned) of the goods, rights, property and money owed to Mr. Adolph Philipse, who has died · On the manor of Philipsburgh · 12 February 1749 (1750 by our calendar)",
+       "NEGROS VIZ: (viz. means namely)",
+       "Men — Ceaser · Dimond · Sampson · Kaiser · Flip · Tom",
+       "Women — Susan · Abigal · Massy · Dina · Sue",
+       "Men not fit for work — Venture · James · Charles · Billy",
+       "Boys — Tom, about 9 years old · Charles, 9 · Sam, 8 · Dimond, 7 · Hendrick, 5 · Ceaser, 2 · Harry, 1 year and 4 months",
+       "A Girl — Betty, 3 years old",
+       "CATTLE VIZ: 6 working oxen · 12 milk cows · 9 three-year-old heifers (young cows), steers and bulls · 30 sheep and some lambs · 19 hogs and some pigs",
+       "HORSES VIZ: 3 stable horses · 3 horses in the woods · 17 mares and young horses"
+      ]
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    },
+    {
+     "n": 15,
+     "title": "A notice in the newspaper",
+     "kind": "text",
+     "src": "Source: Virginia Gazette (Hunter), 18 June 1751.",
+     "page": 22,
+     "steps": [
+      {
+       "question": "Who wrote this, who was it for, and what did he want it to do?",
+       "mode": null,
+       "line": "The writer's name is near the end. Ask who read the Virginia Gazette in 1751, and what Stith wanted them to do."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "One long notice. Read it in pieces: what Tom looks like, what happened before, the reward, and the last line."
+      },
+      {
+       "question": "What does this notice show about Tom?",
+       "mode": null,
+       "line": "Find how many times he was caught, and what was done to him the last time. Then read the last line."
+      },
+      {
+       "question": "Stith describes Tom to catch him. What does his description prove about Tom that Stith didn't mean to show?",
+       "mode": null,
+       "line": "Ask what a man who keeps escaping, even in chains, is telling you about himself."
+      },
+      {
+       "question": "What does the iron collar tell you about calling this system lawful?",
+       "mode": null,
+       "line": "Look at the shackles and the collar. Then read your card's \"Look for it when\" cues and find one this notice breaks."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 15's questions in your casefile, starting on page 23. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“Ran away from the Subscriber's home on Sapponic, in Prince George County — 14 or 15 Weeks ago, a Mulatto Man Slave, named Tom, 25 Years old, about 5 feet 8 or 9 Inches high, thin faced, and bushy hair, if not cut off; he is very likely to grin when he speaks, or is spoken to; had on an old dark thick twilled coat, with plain yellow metal buttons; Has been several times captured, and escaped again before he could be delivered to the master whom unto he belonged; and the last time shackled, handcuffed, and an iron collar about his neck, with prongs… Whoever will deliver him to me, in Charles-City County, shall have a Reward of gold coins, besides what the law allows… by John Stith. Note: It is suspected he will seek to escape on Board some Vessel.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“Ran away from my home on Sapponic, in Prince George County, 14 or 15 weeks ago: a Mulatto (mixed-race) Man Slave, named Tom, 25 years old. He is about 5 feet 8 or 9 inches tall, with a thin face and bushy hair, if it has not been cut off. He is very likely to grin when he speaks or is spoken to. He had on an old, dark, thick coat with plain yellow metal buttons. He has been several times captured, and escaped again before he could be returned to his master. The last time he was shackled, handcuffed, and had an iron collar about his neck, with prongs. Whoever brings him to me, in Charles City County, will get a reward of gold coins, plus what the law allows. By John Stith. Note: He may try to escape on board some ship.”"
+      ]
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    },
+    {
+     "n": 16,
+     "title": "Join, or Die",
+     "kind": "image",
+     "src": "Source: political cartoon, Pennsylvania Gazette, 9 May 1754. Attributed to Benjamin Franklin.",
+     "page": 25,
+     "steps": [
+      {
+       "question": "Who made this, where did it appear, and why does that matter?",
+       "mode": null,
+       "line": "Read the source line: who printed it, where, and on what day. Then ask what a printer wants when he runs a picture beside his own article."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Look first, before you read anything else: count the pieces and read the letters on each. One thing Franklin's readers knew: a popular belief said a snake cut into pieces before sundown would join back together and come alive."
+      },
+      {
+       "question": "What is the picture arguing?",
+       "mode": null,
+       "line": "Put the snake belief together with the two words at the bottom. What happens to the pieces if they stay apart?"
+      },
+      {
+       "question": "Who is in the snake, and who is left out?",
+       "mode": null,
+       "line": "Match each set of letters to a colony. Count them. Then count the thirteen colonies you know."
+      },
+      {
+       "question": "Why would separate colonies joining together matter to their safety and their freedom?",
+       "mode": null,
+       "line": "Think back to Miantonomo in Document 4. Then look in the group called How power is built and limited."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 16's questions in your casefile, starting on page 26. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "STIMULUS_BANK/Unit_01/unit01-nv-d1-join-or-die-1754.png",
+     "image_alt": "A woodcut inside a black border. A snake is cut into eight separate pieces, laid left to right in a loose S-curve. Each piece carries letters: from the tail at the left, S.C., N.C., V., M., P., N.J., N.Y., and at the right the head, N.E. Below a line, in large capital letters: JOIN, or DIE.",
+     "describe": "A woodcut inside a black border. A snake is cut into eight separate pieces, laid left to right in a loose S-curve. Each piece carries letters: from the tail at the left, S.C., N.C., V., M., P., N.J., N.Y., and at the right the head, N.E. Below a line, in large capital letters: JOIN, or DIE.",
+     "licence": {
+      "text": "The 1754 woodcut is public domain. This copy is from New Visions for Public Schools, US.01.D.1, CC BY-NC-SA 4.0.",
+      "sellable": false
+     }
+    },
+    {
+     "n": "16b",
+     "title": "The article it ran with",
+     "kind": "text",
+     "src": "Franklin in the Pennsylvania Gazette, 9 May 1754",
+     "page": 27,
+     "steps": [
+      {
+       "question": "Who wrote this, where was it printed, and what did he want readers to do?",
+       "mode": null,
+       "line": "The heading names the writer and the paper. Look back at Document 16: it ran on the same page, on the same day."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Two parts: first the news from the Ohio Valley, then Franklin's opinion. Read the numbers carefully. A purse here means a treasury, a shared supply of money."
+      },
+      {
+       "question": "What does Franklin say the colonies' problem is?",
+       "mode": null,
+       "line": "Find the words \"disunited State.\" Then find what he says the French have that the colonies don't."
+      },
+      {
+       "question": "Is this news, an argument, or both? How might a colonist who didn't want to unite read it?",
+       "mode": null,
+       "line": "Look at the order: the numbers first, then the blame. Ask what that order does to a reader."
+      },
+      {
+       "question": "What would the colonies have to give up to become \"one Council\"?",
+       "mode": null,
+       "line": "Ask who would make the decisions if the colonies joined. Then look in the group called How power is built and limited."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 16b's questions in your casefile, starting on page 27. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“Friday last an Express message arrived here from Major Washington, that Mr. Ward… was compelled to surrender his small fort in the Ohio River Valley to the French… the French had a Fleet of 360 Battleships and Canoes, upwards of 1000 Men, and 18 Pieces of Artillery… and Mr. Ward and the American colonists having but 44 Men, and no Cannon to make a proper Defense, was obliged to surrender…”",
+      "“…The Confidence of the French in this seems well-grounded on the present disunited State of the British Colonies, and the extreme Difficulty of bringing so many different Governments and Assemblies to agree in any speedy and effectual Measures for our common Defence and Security; while our Enemies have the very great Advantage of being under one Direction, with one Council, and one Purse.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“Last Friday an urgent message arrived here from Major Washington. Mr. Ward was forced to surrender his small fort in the Ohio River Valley to the French. The French had a fleet of 360 battleships and canoes, more than 1000 men, and 18 cannons. Mr. Ward and the American colonists had only 44 men and no cannon to defend themselves, so they had to surrender.”",
+       "“The French feel confident because of the present disunited State of the British Colonies. It is very hard to get so many different governments and assemblies to agree quickly on a plan to defend us all. Meanwhile, our enemies have the very great advantage of being under one Direction, with one Council, and one Purse (one leader, one government, and one treasury).”"
+      ]
+     }
+    },
+    {
+     "n": 17,
+     "title": "Who gets to choose",
+     "kind": "text",
+     "src": "Source: Fundamental Orders of Connecticut, Section 1, January 14, 1639.",
+     "page": 30,
+     "steps": [
+      {
+       "question": "Who wrote these rules, and who were they written for?",
+       "mode": null,
+       "line": "Read the source line: 1639, Connecticut, and Section 1. The towns wrote these rules for themselves."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "One very long sentence. Break it at each colon and semicolon. Magistrates are officials who run the government and act as judges."
+      },
+      {
+       "question": "How is a governor chosen, and who gets to choose?",
+       "mode": null,
+       "line": "Find the words \"Court of Election.\" Then find \"which choice shall be made by\" near the end, and read everything after it."
+      },
+      {
+       "question": "Who might be left out of \"all that are admitted freemen\"?",
+       "mode": null,
+       "line": "Read the three things a voter had to be. Ask who in 1639 Connecticut could not meet all three."
+      },
+      {
+       "question": "What principle does this document put into practice?",
+       "mode": null,
+       "line": "Ask where the governor's power comes from in this document. Then look in the group called Where government's power comes from."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 17's questions in your casefile, starting on page 30. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      ". . . It is Ordered, sentenced, and decreed, that there shall be yearly two General Assemblies or Courts, the one the second Thursday in April, the other the second Thursday in September following; the first shall be called the Court of Election, wherein shall be yearly chosen from time to time, so many Magistrates and other public Officers as shall be found requisite [needed]: Whereof one to be chosen Governor for the year ensuing and another be chosen, and no other Magistrate to be chosen for more than one year: provided always there be six chosen besides the Governor, which being chosen and sworn according to an Oath recorded for that purpose, shall have the power to administer justice according to the Laws here established, and for want thereof, according to the Rule of the Word of God; which choice shall be made by all that are admitted freemen and have taken the Oath of Fidelity, and do cohabit within this Jurisdiction having been admitted inhabitants by the major part of the Town wherein they live or the major part of such as shall be then present. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "It is ordered that there will be two General Assemblies or Courts every year, one on the second Thursday in April and the other on the second Thursday in September. The first one will be called the Court of Election. At it, every year, the people will choose as many Magistrates (officials and judges) and other public officers as are needed.",
+       "One of them will be chosen Governor for the coming year. No Magistrate will be chosen for more than one year at a time. There must always be six chosen besides the Governor. Once they are chosen and take their oath, they will have the power to give out justice according to the laws made here. Where there is no law, they will follow the Word of God.",
+       "The choice will be made by all who are admitted freemen, who have taken the Oath of Fidelity (loyalty), and who live in this area, after being accepted as residents by most of the people in their town."
+      ]
+     }
+    },
+    {
+     "n": 18,
+     "title": "And who cannot",
+     "kind": "text",
+     "src": "Source: William Blackstone, Commentaries on the Laws of England, Book I, Chapter 15, “Of Husband and Wife,” 1765.",
+     "page": 32,
+     "steps": [
+      {
+       "question": "Who wrote this, when, and why would a description of old law be hard to argue with?",
+       "mode": null,
+       "line": "Read the Before you read note: nobody had to pass this. Ask what it takes to fight a rule no one remembers making."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Read the Before you read note first. Then two quotes, the first one long. Feme-covert and coverture are law-French; the easier version explains them."
+      },
+      {
+       "question": "What happens to a woman's legal existence when she marries?",
+       "mode": null,
+       "line": "Find the word \"suspended.\" Read the words right before it and right after it."
+      },
+      {
+       "question": "Whose account of the same marriage is missing from this page?",
+       "mode": null,
+       "line": "Blackstone explains the rule from the law's side. Ask who lived under the rule and never got to write about it here."
+      },
+      {
+       "question": "Put Documents 17 and 18 together. Who did self-government include in colonial America, and who did it leave out?",
+       "mode": null,
+       "line": "Document 17 says who may choose. This one says who has no legal existence of her own. Then look in the group called What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 18's questions in your casefile, starting on page 33. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“By marriage, the husband and wife are one person in law: that is, the very being or legal existence of the woman is suspended during the marriage, or at least is incorporated and consolidated into that of the husband: under whose wing, protection, and cover, she performs everything; and is therefore called in our law-French a feme-covert… and her condition during her marriage is called her coverture.”",
+      "“Upon this principle, of an union of person in husband and wife, depend almost all the legal rights, duties, and disabilities, that either of them acquire by the marriage.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“When they marry, the husband and wife become one person in the eyes of the law. That means the very being or legal existence of the woman is suspended (put on hold) during the marriage, or at least it is folded into her husband's. She does everything under his wing, protection, and cover. So in our law she is called a feme-covert (a covered woman), and her condition while married is called her coverture.”",
+       "“Almost all the legal rights, duties, and limits that a husband or wife gets from marriage come from this one rule: that the two of them are one person.”"
+      ]
+     },
+     "note": {
+      "title": "Before you read",
+      "text": "Before you read. The colonies ran on English common law, and this is the clearest statement of the rule that governed every married woman in them. It was written in 1765 — just after the period this unit covers — because it describes law already centuries old. Nobody had to pass this. It was simply how things were."
+     }
+    }
+   ]
   }
- ]
+ ],
+ "q4_card": {
+  "title": "Civic Principles",
+  "intro": "Q4 · CIVIC CONNECTION asks which principle is at stake. Name it from this card, then show how the document upholds it, denies it, or fights over it.",
+  "items": [
+   {
+    "n": "1",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Rule of Law",
+    "question": "No one is above the law, not even the people who make it. Look for it when someone powerful is held to the rules, or tries to dodge them."
+   },
+   {
+    "n": "2",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Limited Government",
+    "question": "Government can only do what the Constitution allows. Look for it when someone says the government went too far."
+   },
+   {
+    "n": "3",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Separation of Powers",
+    "question": "Power is split among three branches, each with its own job: make laws, carry out laws, judge laws. Look for it when the fight is about which branch gets to act."
+   },
+   {
+    "n": "4",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Checks and Balances",
+    "question": "Each branch can block or limit the others. Look for it when there's a veto, an override, an impeachment, or a court striking something down."
+   },
+   {
+    "n": "5",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Federalism",
+    "question": "Power is divided between the national government and the states. When they clash, valid federal law wins. Look for it when it's the nation against a state."
+   },
+   {
+    "n": "6",
+    "group": "HOW POWER IS BUILT AND LIMITED",
+    "name": "Judicial Review",
+    "question": "Courts can strike down a law or action that breaks the Constitution. Look for it when a court decides whether something is constitutional."
+   },
+   {
+    "n": "7",
+    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+    "name": "Popular Sovereignty (consent of the governed)",
+    "question": "Government's power comes from the people, and it rules only with their agreement. Look for it when people give, or take back, their support for a government."
+   },
+   {
+    "n": "8",
+    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+    "name": "Representative Government",
+    "question": "The people elect officials to make decisions for them. Look for it when the issue is voting, elections, or who speaks for whom."
+   },
+   {
+    "n": "9",
+    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+    "name": "Natural Rights",
+    "question": "Every person is born with rights (life, liberty, property) that government exists to protect. Look for it when a right is treated as something you're born with, not something government hands out."
+   },
+   {
+    "n": "10",
+    "group": "WHAT GOVERNMENT MUST PROTECT",
+    "name": "Individual Rights (civil liberties)",
+    "question": "Freedoms government can't take away, like speech, religion, press and assembly. Look for it when a personal freedom is limited, defended, or expanded."
+   },
+   {
+    "n": "11",
+    "group": "WHAT GOVERNMENT MUST PROTECT",
+    "name": "Equal Protection",
+    "question": "The law must treat people equally. Look for it when a group is treated differently, shut out, or separated by law."
+   },
+   {
+    "n": "12",
+    "group": "WHAT GOVERNMENT MUST PROTECT",
+    "name": "Due Process",
+    "question": "Government must follow fair steps before it takes your life, liberty, or property. Look for it when someone is arrested, held, or punished. Ask whether it was fair."
+   }
+  ],
+  "close": [
+   "Learn these by name. The Regents asks for them. Practice them in the Arena's matching set."
+  ]
+ },
+ "_signed": "BK 2026-10-01 10:51 EDT: \"yes we want the no name piece covered. agreed on the before we talk and join or die. proceed\" off US11R_11.1B_DocAssist_and_CivicCard_WORDING_2026-10-01.pdf"
 }
