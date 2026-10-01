@@ -30,6 +30,7 @@
 
 import { useState, useEffect, useMemo } from 'react'
 import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
+import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles } from './docassist.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
@@ -1176,7 +1177,7 @@ function UnitLane({ course, onOpen }) {
   )
 }
 
-function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOpenReview, onBack }) {
+function UnitRoom({ course, unit, games, prog, docAssist, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenReview, onBack }) {
   const acts = (unit.activities || []).filter(isLive)
   const isCurrent = currentUnit(course)?.slug === unit.slug
   const asg = unit.assignment && unit.assignment.published !== false ? unit.assignment : null
@@ -1211,6 +1212,16 @@ function UnitRoom({ course, unit, games, prog, onOpenActivity, onOpenSkill, onOp
                 <span className="flag live">Open</span>
               </a>
             )}
+          </div>
+        </>
+      )}
+      {/* DOC ASSIST (BK 2026-10-01 08:16): every casefile document, with a walk-through
+          beside it, organized Casefile A · B · C. Lights only when the unit's pack loads. */}
+      {docAssist && (
+        <>
+          <h3 className="room-section">{DA.section}</h3>
+          <div className="grid room-cards" style={{ marginBottom: 34 }}>
+            <DocAssistCard pack={docAssist} onOpen={onOpenDocAssist} />
           </div>
         </>
       )}
@@ -1768,6 +1779,9 @@ export default function App() {
   const [levelPack, setLevelPack] = useState(null)
   const [levelSource, setLevelSource] = useState(null)   // undefined-while-loading is `null`; a failed fetch is `false`
   const [review, setReview] = useState(false)
+  const [daPack, setDaPack] = useState(null)          // the unit's Doc Assist pack; false = none or failed
+  const [daOpen, setDaOpen] = useState(false)
+  const [daDoc, setDaDoc] = useState(null)             // { cf, i } — a casefile id and a document index
   const [briefPack, setBriefPack] = useState(null)
   const [prog, markDone] = useProgress()
   const [ladderFrom, setLadderFrom] = useState('door')      // where Back from a ladder goes
@@ -1818,6 +1832,12 @@ export default function App() {
     if (src) fetchContent(src.content_ref, setLevelSource)
     window.scrollTo(0, 0)
   }
+  // Doc Assist: the unit's pack loads with the room, so the card can carry the desk's own tile line.
+  const daRef = unit?.doc_assist && isLive(unit.doc_assist) && resolves(unit.doc_assist.content_ref) ? unit.doc_assist.content_ref : null
+  useEffect(() => {
+    setDaOpen(false); setDaDoc(null)
+    if (daRef) fetchContent(daRef, setDaPack); else setDaPack(false)
+  }, [daRef])
   const openReview = () => { setReview(true); fetchContent(unit.brief_ref, setBriefPack); window.scrollTo(0, 0) }
 
   if (error) return (
@@ -1887,6 +1907,31 @@ export default function App() {
       </div>
     )
   }
+  else if (unit && daOpen && daPack && daDoc) {
+    const cf = openCasefiles(daPack).find(c => c.id === daDoc.cf)
+    const doc = cf?.docs?.[daDoc.i]
+    const go = i => { setDaDoc({ cf: daDoc.cf, i }); window.scrollTo(0, 0) }
+    const back = () => { setDaDoc(null); window.scrollTo(0, 0) }
+    screen = !doc ? null : (
+      <div className="wrap">
+        <ScreenHeader label={DA.docLabel(doc.n)} onBack={back} color={course.accent} back={DA.backTo(cf.id)} />
+        <DocAssistDoc pack={daPack} doc={doc} portrait={course.guide?.portrait || BK_PORTRAIT}
+                      onPrev={daDoc.i > 0 ? () => go(daDoc.i - 1) : null}
+                      onNext={daDoc.i < cf.docs.length - 1 ? () => go(daDoc.i + 1) : null} />
+        <BottomBack onBack={back} back={DA.backTo(cf.id)} />
+      </div>
+    )
+  }
+  else if (unit && daOpen && daPack) {
+    const back = () => { setDaOpen(false); window.scrollTo(0, 0) }
+    screen = (
+      <div className="wrap">
+        <ScreenHeader label={DA.section} onBack={back} color={course.accent} back={unit.label} />
+        <DocAssistHome pack={daPack} onOpenDoc={(cf, i) => { setDaDoc({ cf, i }); window.scrollTo(0, 0) }} />
+        <BottomBack onBack={back} back={unit.label} />
+      </div>
+    )
+  }
   else if (unit && review) {
     screen = (
       <div className="wrap">
@@ -1909,6 +1954,8 @@ export default function App() {
       : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
   else if (unit) screen = <UnitRoom course={course} unit={unit} games={games} prog={prog}
+                                    docAssist={daPack || null}
+                                    onOpenDocAssist={() => { setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
                                     onOpenSkill={code => { setLadderFrom('unit'); setSkill(code); window.scrollTo(0, 0) }}
                                     onOpenReview={openReview}
                                     onOpenActivity={i => {
@@ -1939,7 +1986,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

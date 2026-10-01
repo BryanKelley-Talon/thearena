@@ -25,6 +25,7 @@ const LIVE = new Set()
 // Ladder files carry their own shapes (added 2026-09-25, Josh). The manifest says
 // which type each one is, and the gate checks it against THAT type's contract.
 const LADDER_TYPE = {}
+const DOCASSIST = new Set()    // Doc Assist packs carry their own shape; the DOC ASSIST block below checks them
 const ENRICH_OK = new Set()   // enrichment files whose ladder has an L4 source the shell shows above them
 try {
   const m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8'))
@@ -34,6 +35,7 @@ try {
     for (const u of c.units || []) {
       if (!u.published) continue
       for (const a of u.activities || []) if (a.published && a.content_ref) LIVE.add(String(a.content_ref).replace(/^content\//, ''))
+      if (u.doc_assist?.content_ref) DOCASSIST.add(String(u.doc_assist.content_ref).replace(/^content\//, ''))
       if (u.brief_ref) {
         const f = String(u.brief_ref).replace(/^content\//, '')
         if (!fs.existsSync(path.join(CONTENT, f))) { console.error(`  FAIL  manifest\n        ${u.slug}: brief_ref '${f}' is not in public/content.`); process.exitCode = 1 }
@@ -182,6 +184,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   let d
   try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) }
   catch (e) { fail(f, `not valid JSON - ${e.message}`); continue }
+  if (DOCASSIST.has(f)) continue   // the DOC ASSIST block below
   checkDocVisible(f, d)
   if (LADDER_TYPE[f]) { checkLadder(f, d, LADDER_TYPE[f]); continue }
   for (const rep of d.reps || []) {
@@ -310,6 +313,90 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
       if (!['open', 'building'].includes(st.status)) tf(`stop ${st.id}: status must be open or building.`)
       if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(JSON.stringify([st.title, st.what_happened]))) tf(`stop ${st.id}: reads like a class date.`)
     }
+  }
+}
+
+// ── DOC ASSIST (added 2026-10-01, Josh; BK's rulings 08:16, Sam's 11.2 A pack) ─────
+// Format only, never content. The walk: five generic steps with tag, step and say.
+// Every button word present. Casefiles carry a status; an open one carries documents.
+// Every document: a number in order, title, kind, source line, casefile page, five
+// steps (step 2 has no casefile question), a mode the paper uses, a BK line per step,
+// and a close that sends the kid back to the casefile. Text: paragraphs and an easier
+// version with its label. Picture: on disk, a usable alt, and a description.
+// A licence is shown uncollapsed and must say sellable: false. Nothing reads as a
+// score, nothing reads like a class date, and the pack has no typing box to offer.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)?|score[ds]?|\bpoints\b|streak|\bpercent\b|%|\bgrade[ds]?\b)/i
+  const DATE = /\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/
+  const LABELS = ['walk', 'read', 'easier', 'original', 'close', 'next', 'back', 'stop']
+  const MODES = new Set(['written', 'out loud'])
+  for (const c of m.courses || []) for (const u of c.units || []) {
+    const a = u.doc_assist
+    if (!a) continue
+    const f = String(a.content_ref || '').replace(/^content\//, '')
+    const live = a.published === true && u.published === true && (c.status ?? 'open') !== 'building'
+    const df = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { df(`Doc Assist file '${f}' is not in public/content.`); continue }
+    let d
+    try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) } catch (e) { df(`not valid JSON - ${e.message}`); continue }
+    if (d.tool !== 'Doc Assist') df(`tool must be "Doc Assist".`)
+    if (!d.tile) df(`no tile line (the room card shows it).`)
+    if (!d.walk_name) df(`no walk_name.`)
+    const walk = d.walk || []
+    if (walk.length !== 5) df(`the walk needs five steps; it has ${walk.length}.`)
+    walk.forEach((w, i) => { if (!w.tag || !w.step || !w.say) df(`walk step ${i + 1}: needs tag, step and say.`) })
+    for (const k of LABELS) if (!d.labels?.[k]) df(`labels.${k} is missing (a button with no word).`)
+    const cfs = d.casefiles || []
+    if (!cfs.length) df(`no casefiles.`)
+    if (!cfs.some(x => x.status === 'open')) df(`no casefile is open.`)
+    const student = [d.tile, d.walk_name, ...walk.flatMap(w => [w.tag, w.step, w.say, w.say_image]), ...Object.values(d.labels || {})]
+    for (const cf of cfs) {
+      if (!cf.id) df(`a casefile with no id.`)
+      if (!['open', 'building'].includes(cf.status)) df(`casefile ${cf.id}: status must be open or building.`)
+      if (cf.status !== 'open') continue
+      const docs = cf.docs || []
+      if (!docs.length) df(`casefile ${cf.id} is open with no documents.`)
+      docs.forEach((doc, i) => {
+        const w = `casefile ${cf.id} document ${doc.n ?? '?'}`
+        if (doc.n !== i + 1) df(`${w}: documents must run 1, 2, 3… in order (found ${doc.n} at position ${i + 1}).`)
+        if (!doc.title) df(`${w}: no title.`)
+        if (!doc.src || !/^Source:/.test(doc.src)) df(`${w}: no source line (canon §6: every document points to its record).`)
+        if (!Number.isInteger(doc.page) || doc.page < 1) df(`${w}: page must be the casefile page number.`)
+        if (!doc.close || !/\bpage \d+/.test(doc.close)) df(`${w}: the close must send the kid back to a casefile page.`)
+        const steps = doc.steps || []
+        if (steps.length !== walk.length) df(`${w}: needs one step per walk step (${walk.length}).`)
+        steps.forEach((s, j) => {
+          if (!s.line) df(`${w} step ${j + 1}: no BK line.`)
+          if (j === 1) { if (s.question != null || s.mode != null) df(`${w} step 2: Read it through carries no casefile question.`) }
+          else {
+            if (!s.question) df(`${w} step ${j + 1}: no casefile question.`)
+            if (!MODES.has(s.mode)) df(`${w} step ${j + 1}: mode must be "written" or "out loud".`)
+          }
+        })
+        if (doc.kind === 'text') {
+          if (!(doc.text || []).length || doc.text.some(p => !String(p).trim())) df(`${w}: a text document with no text.`)
+          if (!(doc.easier?.text || []).length) df(`${w}: no easier-to-read version (BK ruled one per text document).`)
+          if (doc.easier && !/adapted/i.test(doc.easier.label || '')) df(`${w}: the easier version must be labeled (adapted…) (canon §6).`)
+          if (!/\(adapted\)/.test(doc.src || '') && doc.easier) warn(f, `${w}: source line does not say (adapted); check it is printed word for word.`)
+        } else if (doc.kind === 'image') {
+          const img = String(doc.image_file || '').split('/').pop()
+          if (!img || !fs.existsSync(path.join(CONTENT, img))) df(`${w}: picture '${img}' is not in public/content.`)
+          const bad = altShape(doc.image_alt)
+          if (bad && !bad.soft) df(`${w}: image_alt ${bad}.`)
+          if (!doc.image_alt || doc.image_alt.length < 40) df(`${w}: image_alt must describe the picture.`)
+          if (!doc.describe) df(`${w}: a picture needs its plain description (Easier to read shows it).`)
+        } else df(`${w}: kind must be "text" or "image".`)
+        if (doc.licence && (doc.licence.sellable !== false || !doc.licence.text)) df(`${w}: a licence needs text and sellable: false (CONVENTIONS §7).`)
+        if (doc.before && (!doc.before.title || !doc.before.text)) df(`${w}: a before block needs a title and text.`)
+        student.push(doc.title, doc.close, ...steps.flatMap(s => [s.question, s.line]), ...(doc.easier?.text || []), doc.describe, doc.before?.text)
+      })
+    }
+    const words = student.filter(Boolean).join(' \n ')
+    const sc = words.match(SCORE)
+    if (sc) df(`something reads like a score: "${sc[0]}".`)
+    if (DATE.test(words)) df(`something reads like a class date.`)
   }
 }
 

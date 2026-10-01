@@ -1,0 +1,517 @@
+{
+ "_built": "Sam (us11r-curriculum) 2026-10-01 08:24 EDT",
+ "_signed": "BK 2026-10-01 08:38 EDT: \"yes to this. well done. signed.\" off US11R_11.2A_DocAssist_WORDING_2026-10-01.pdf",
+ "_source": "OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileA_STUDENT_2026-09-30.pdf",
+ "_ruled": "CARRY-FORWARD §6 DOC ASSIST, RULED (BK 2026-10-01 08:16)",
+ "tool": "Doc Assist",
+ "room": "11.2",
+ "tile": "Every document in your casefile, with a walk-through beside it. It won't answer for you. It shows you how.",
+ "walk_name": "THE DOC WALK",
+ "walk": [
+  {
+   "tag": "Q1 · SOURCING",
+   "step": "Source line first.",
+   "say": "Before you read a word of the document, read the line above it. Who made it, when, and why?"
+  },
+  {
+   "tag": "READ IT THROUGH",
+   "step": "Read it once, all the way.",
+   "say": "Start to finish, no stopping. Hit a hard word? Keep going. Then say what it's about in a few words.",
+   "say_image": "Look in three passes: the title and labels, then the biggest thing, then the small details."
+  },
+  {
+   "tag": "Q2 · CLAIM & EVIDENCE",
+   "step": "What is it saying?",
+   "say": "Find the words that say it. Your proof is always in the document."
+  },
+  {
+   "tag": "Q3 · PERSPECTIVE CHECK",
+   "step": "Whose view is this?",
+   "say": "Who would tell it differently? Who isn't in it?"
+  },
+  {
+   "tag": "Q4 · CIVIC CONNECTION",
+   "step": "Name the principle.",
+   "say": "Find it on your Civic Principles card. Does the document uphold it, deny it, or fight over it?"
+  }
+ ],
+ "labels": {
+  "walk": "Walk me through it",
+  "read": "Read it to me",
+  "easier": "Easier to read",
+  "original": "Original",
+  "close": "Close the walk",
+  "next": "Next step",
+  "back": "Back",
+  "stop": "Stop reading"
+ },
+ "casefiles": [
+  {
+   "id": "A",
+   "title": "11.2 Casefile A · The Break",
+   "status": "open",
+   "docs": [
+    {
+     "n": 1,
+     "title": "North America, 1775 (map)",
+     "kind": "image",
+     "src": "Source: Exploring American History, Globe Book Company (adapted)",
+     "page": 3,
+     "steps": [
+      {
+       "question": "Who made this map, and when? Is it from 1763?",
+       "mode": "out loud",
+       "line": "Two places to look: the source line under the map and the title on top. Check the year in the title against 1763."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Find the key in the lower left first. It tells you what the dotted line means. Then follow that line with your finger, top to bottom."
+      },
+      {
+       "question": "Where does the line say colonists can't settle?",
+       "mode": "written",
+       "line": "Find the shaded colonies, then the dotted line. Which side of the line is off limits? Your KEY VOCABULARY names the mountains it runs along."
+      },
+      {
+       "question": "Name one reason a colonist might be angry about this line.",
+       "mode": "written",
+       "line": "Think like a colonist in 1763: a farmer with a big family, or a soldier who just fought a war over that land. What did they want on the far side of the line?"
+      },
+      {
+       "question": "Should a government be able to limit where its people live? Find the principle on your card that this argument is about.",
+       "mode": "out loud",
+       "line": "This is about how far a government's power should reach. Start with the first group on your card: How power is built and limited."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 3. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "STIMULUS_BANK/Unit_02/unit02-nv-a3-proclamation-map-1775.png",
+     "image_alt": "A black-and-white map titled North America, 1775. The thirteen colonies are shaded gray along the Atlantic coast, with dashed lines between them. A heavy dotted line runs north to south along the western edge of the shaded colonies. Short mountain marks run north to south inside the shaded area, near that line. Everything west of the dotted line is not shaded. The key in the lower left shows two lines: the dotted line is the Proclamation Line of 1763, and the dashed lines are colonial borders. A compass rose sits in the lower right. The source line is printed under the map.",
+     "describe": "A black-and-white map titled North America, 1775. The thirteen colonies are shaded gray along the Atlantic coast, with dashed lines between them. A heavy dotted line runs north to south along the western edge of the shaded colonies. Short mountain marks run north to south inside the shaded area, near that line. Everything west of the dotted line is not shaded. The key in the lower left shows two lines: the dotted line is the Proclamation Line of 1763, and the dashed lines are colonial borders. A compass rose sits in the lower right. The source line is printed under the map.",
+     "licence": {
+      "text": "Map as reproduced in New Visions for Public Schools, US.02.A.3, CC BY-NC-SA 4.0.",
+      "sellable": false
+     }
+    },
+    {
+     "n": 2,
+     "title": "The British side · Thomas Whately, who wrote the Stamp Act",
+     "kind": "text",
+     "src": "Source: Thomas Whately, The Regulations Lately Made Concerning the Colonies, and the Taxes Imposed Upon Them, Considered, January 1765 (adapted)",
+     "page": 4,
+     "steps": [
+      {
+       "question": "Whately worked for Britain's Treasury and wrote the Stamp Act. How might his job shape how he explains the tax?",
+       "mode": "written",
+       "line": "He wrote the tax, and now he's explaining the tax. Ask yourself: would he ever call it a bad idea?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Four sentences. Hard words: a national debt is money a country owes. Keep going, then say what it's about."
+      },
+      {
+       "question": "Why does Whately think the colonies should pay?",
+       "mode": "written",
+       "line": "His reason is in the first sentence and the last two. Look for what the money pays for, and who is paying right now."
+      },
+      {
+       "question": "Who in the colonies would disagree with Whately, and what would they say?",
+       "mode": "written",
+       "line": "Who actually has to pay for the stamps? Picture a colonial printer or a lawyer reading this. What would they say back?"
+      },
+      {
+       "question": "Is it fair to make people pay for protection they didn't ask for? Name the principle from your card this tax fight is about.",
+       "mode": "written",
+       "line": "Ask where a government gets the right to tax people at all. Look in the group called Where government's power comes from."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "The money raised by these taxes goes to pay the costs of defending and protecting the British colonies in America. The colonies have their own governments to pay for, but so does Great Britain. And Britain carries a huge national debt, most of it from a war fought to protect the colonies. Right now, Britain alone is paying it."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The money from these taxes pays to defend and protect Britain's colonies in America. The colonies pay for their own governments. But Great Britain pays for its government too. Britain also has a huge national debt (money a country owes). Most of that debt came from a war fought to protect the colonies. Right now, Britain is paying it all by itself."
+      ]
+     }
+    },
+    {
+     "n": 3,
+     "title": "The colonists' side · the Stamp Act Congress",
+     "kind": "text",
+     "src": "Source: Declaration of Rights and Grievances, Stamp Act Congress, October 19, 1765 (adapted)",
+     "page": 5,
+     "steps": [
+      {
+       "question": "Who wrote this, and who were they writing to?",
+       "mode": "written",
+       "line": "The source line names the group. WHAT YOU NEED TO KNOW on Day 1 says who they were. For \"writing to,\" ask who could get rid of the tax."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Four sentences. Watch for the word consent: it means agreement. Mark it when you see it."
+      },
+      {
+       "question": "What is their main complaint? Say it in your own words, then explain why it matters.",
+       "mode": "written",
+       "line": "Find the sentence with the word consent. Say it the way you'd explain it to a friend. Then finish: because ___, which means ___."
+      },
+      {
+       "question": "These delegates were colonial leaders with property to tax. Whose voice is missing?",
+       "mode": "written",
+       "line": "The writers owned property. Now think of everyone in the colonies in 1765 who couldn't vote or didn't own property. Who are they?"
+      },
+      {
+       "question": "Name the principle from your card behind “no taxes without consent.” Where did you see it in 11.1?",
+       "mode": "written",
+       "line": "Consent is the clue word. Read the group Where government's power comes from and find the one that matches. For 11.1, think back to how the colonists governed themselves."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "The colonists owe the same loyalty to the King as people born in Great Britain, and they have all the same rights. It is the right of free people that no taxes be put on them without their own consent, given in person or through their representatives. The people of these colonies are not, and cannot be, represented in Parliament. The only representatives of the colonists are the people they choose themselves."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Colonists are as loyal to the King as people born in Great Britain. They have all the same rights. Free people have a right: no taxes can be put on them without their own consent (agreement). They give that consent in person, or through representatives they choose. The people of these colonies are not represented in Parliament, and they cannot be. The only representatives of the colonists are the people they choose themselves."
+      ]
+     }
+    },
+    {
+     "n": 4,
+     "title": "Paul Revere's engraving · Boston, 1770",
+     "kind": "image",
+     "src": "Source: Paul Revere, engraver, 1770 (adapted)",
+     "page": 8,
+     "steps": [
+      {
+       "question": "Revere made this print to sell. Why does who made it, and why, matter?",
+       "mode": "written",
+       "line": "Revere was a Boston silversmith and a Patriot, and he had this print for sale within weeks. Ask: what would make people want to buy it?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Read the title across the top word for word first. Then look at the two groups facing each other. Then the small details: the ground, the signs on the buildings, the sky."
+      },
+      {
+       "question": "What does Revere want you to feel? Point to one detail.",
+       "mode": "written",
+       "line": "Read the title again, especially the second word. Then look at the soldiers: are they a mob or a straight line? And look at the man behind them."
+      },
+      {
+       "question": "How might a British soldier have drawn the same night?",
+       "mode": "out loud",
+       "line": "Picture the crowd from the soldiers' side of the street. What would a soldier put in the picture that Revere left out?"
+      },
+      {
+       "question": "Should an artist be free to publish a one-sided picture of events? Find the principle on your card.",
+       "mode": "out loud",
+       "line": "This is about a freedom a person keeps even when the government doesn't like what they say. Look in the group called What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "STIMULUS_BANK/Unit_02/unit02-revere-1770-doc1.png",
+     "image_alt": "An engraving with a printed title across the top: “The Bloody Massacre Perpetrated in King Street, Boston, on March 5th, 1770, by a Party of the 29th Regiment.” On the right, a line of British soldiers stands shoulder to shoulder and fires muskets at close range into a crowd of colonists on the left. Smoke fills the middle of the street. An officer stands behind the soldiers at the far right with his sword raised. In front, colonists lie on the ground while others hold up the wounded. A small dog stands in the street in front of the crowd. Behind them are the buildings of King Street and a tall steeple. A building on the right has a sign that reads “Butcher's Hall.” A moon shows in the sky at the upper left.",
+     "describe": "An engraving with a printed title across the top: “The Bloody Massacre Perpetrated in King Street, Boston, on March 5th, 1770, by a Party of the 29th Regiment.” On the right, a line of British soldiers stands shoulder to shoulder and fires muskets at close range into a crowd of colonists on the left. Smoke fills the middle of the street. An officer stands behind the soldiers at the far right with his sword raised. In front, colonists lie on the ground while others hold up the wounded. A small dog stands in the street in front of the crowd. Behind them are the buildings of King Street and a tall steeple. A building on the right has a sign that reads “Butcher's Hall.” A moon shows in the sky at the upper left.",
+     "licence": {
+      "text": "Engraving by Paul Revere, 1770 (public domain), as printed on the NYSED Regents exam in US History and Government, August 2025.",
+      "sellable": false
+     }
+    },
+    {
+     "n": 5,
+     "title": "The officer's story · Captain Thomas Preston, at his trial",
+     "kind": "text",
+     "src": "Source: Transcript of British Captain Thomas Preston's testimony, from “The Boston Massacre, The British View, 1770,” EyeWitness to History, 2009 (adapted)",
+     "page": 10,
+     "steps": [
+      {
+       "question": "Preston said this at his own murder trial. How does that shape what he tells?",
+       "mode": "written",
+       "line": "Before you read, ask: what happens to Preston if the jury doesn't believe him?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Five sentences. Keep track of time: what happened before the shooting, and what he says after it."
+      },
+      {
+       "question": "What does Preston say happened before the shooting?",
+       "mode": "written",
+       "line": "Stay in the part before anyone fires. Mark each thing he says the crowd did."
+      },
+      {
+       "question": "Revere and Preston tell different stories. Which is more reliable, and why?",
+       "mode": "written",
+       "line": "Neither one is neutral. Go back to Step 1 for each: who made it, and what did they want? Then pick one and give your reason."
+      },
+      {
+       "question": "A Patriot lawyer defended Preston, and the jury found him not guilty. Name the principle from your card this trial upholds. Why does it matter even for someone the public hates?",
+       "mode": "out loud",
+       "line": "Look in the group called What government must protect. Read each \"Look for it when\" cue and find the one that fits a trial."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "I saw about 100 people surround the soldier on guard, with clubs and other weapons, threatening to kill him. When I asked my soldiers why they fired without orders, they said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "I saw about 100 people surround the soldier on guard. They had clubs and other weapons, and they said they would kill him. Later I asked my soldiers why they fired without orders. They said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing."
+      ]
+     }
+    },
+    {
+     "n": 6,
+     "title": "Partner A · The Patriot",
+     "kind": "text",
+     "src": "Source: Thomas Paine, Common Sense, 1776 (adapted)",
+     "page": 14,
+     "steps": [
+      {
+       "question": "Both wrote in 1776 to persuade. Who was each one writing for?",
+       "mode": "out loud",
+       "line": "Paine sold Common Sense as a cheap pamphlet. Who buys a cheap pamphlet in 1776?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Two paragraphs. The first fires question after question at you. The second makes the argument. Read it like a speech."
+      },
+      {
+       "question": "What is each one's strongest reason?",
+       "mode": "out loud",
+       "line": "Paine argues two ways: the first paragraph goes after your feelings, the second goes after your common sense. Pick the one you'd use in the debate."
+      },
+      {
+       "question": "Who in the colonies might agree with Inglis, and why?",
+       "mode": "out loud",
+       "line": "This one is about Document 7. Finish Paine, then open Document 7's walk."
+      },
+      {
+       "question": "Paine and Inglis disagree about who should rule America. Find the principle on your card they're fighting over.",
+       "mode": "out loud",
+       "line": "Paine's last three sentences are about who should govern America. Look in the group called Where government's power comes from."
+      }
+     ],
+     "close": "That's the walk. Now argue it with your partner. The four questions are on page 13, out loud, no writing.",
+     "text": [
+      "Some people say, “Come, come, we shall be friends again.” But can you still love and faithfully serve the power that has carried fire and sword into your land? Has your house been burned? Has your property been destroyed in front of you? If so, and you can still shake hands with the murderers, you have the heart of a coward.",
+      "There is something very absurd in a continent being governed forever by an island. England belongs to Europe. America belongs to itself."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Some people say, “Come, come, we shall be friends again.” But think about it. Can you still love and serve the power that brought fire and sword into your land? Has your house been burned? Have you watched your property get destroyed? If so, and you can still shake hands with the murderers, you have the heart of a coward.",
+       "There is something very absurd (silly, making no sense) in a continent being governed forever by an island. England belongs to Europe. America belongs to itself."
+      ]
+     }
+    },
+    {
+     "n": 7,
+     "title": "Partner B · The Loyalist",
+     "kind": "text",
+     "src": "Source: Rev. Charles Inglis, The Deceiver Unmasked, 1776 (adapted)",
+     "page": 14,
+     "steps": [
+      {
+       "question": "Both wrote in 1776 to persuade. Who was each one writing for?",
+       "mode": "out loud",
+       "line": "Inglis was a New York City minister, loyal to the King, answering Paine within weeks. Whose minds was he trying to win back?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Four short paragraphs. His first line is a jab at Paine's title. Catch it, then keep going."
+      },
+      {
+       "question": "What is each one's strongest reason?",
+       "mode": "out loud",
+       "line": "Inglis gives two lists: what peace keeps and what war would cost. Find one thing on each list. Which hits harder?"
+      },
+      {
+       "question": "Who in the colonies might agree with Inglis, and why?",
+       "mode": "out loud",
+       "line": "Look at what Inglis says war would ruin. Who in the colonies made their living from those things?"
+      },
+      {
+       "question": "Paine and Inglis disagree about who should rule America. Find the principle on your card they're fighting over.",
+       "mode": "out loud",
+       "line": "His last sentence names a kind of government. Put it next to what Paine wants. Then look in the group called Where government's power comes from."
+      }
+     ],
+     "close": "That's the walk. Now argue it with your partner. The four questions are on page 13, out loud, no writing.",
+     "text": [
+      "I find no common sense in this pamphlet, only uncommon frenzy.",
+      "If we make peace with Britain, the war that has cost so many lives will end. Our trade will still be protected by the greatest navy in the world.",
+      "Suppose we break away from Great Britain and set up a republic of our own. What would happen? My blood runs cold when I think of it. The sword alone would decide the quarrel. Our coasts and ports would be ruined, and thousands would be left poor.",
+      "America is too large for a republic. A limited monarchy is the form of government most favorable to liberty."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "I find no common sense in this pamphlet, only uncommon frenzy (wild, out-of-control excitement).",
+       "If we make peace with Britain, the war will end. It has already cost many lives. The greatest navy in the world will still protect our trade.",
+       "What if we break away from Great Britain and set up a republic (a government with no king) of our own? What would happen? It scares me to think of it. Only fighting would settle it. Our coasts and ports would be ruined. Thousands of people would be left poor.",
+       "America is too large for a republic. A limited monarchy (a king whose power is limited by law) is the form of government most favorable to liberty."
+      ]
+     }
+    },
+    {
+     "n": 8,
+     "title": "The Declaration of Independence · July 1776",
+     "kind": "text",
+     "src": "Source: Declaration of Independence, July 4, 1776 (adapted)",
+     "page": 16,
+     "steps": [
+      {
+       "question": "Who was this written for: the King, the colonists, or the world?",
+       "mode": "written",
+       "line": "Think about who needed to hear that the colonies were now their own country. Pick one, and give your because."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Three long sentences. Break each one at the commas. The middle one has a phrase you'll see on the Regents: consent of the governed."
+      },
+      {
+       "question": "Where does a government get its power?",
+       "mode": "written",
+       "line": "One sentence answers this almost word for word. Find the words \"get their power.\""
+      },
+      {
+       "question": "Who was in the room when this was signed, and who was not?",
+       "mode": "out loud",
+       "line": "Picture the room: who were the delegates? Then reread Day 4's OUTSIDE EVIDENCE box, on page 15."
+      },
+      {
+       "question": "The Declaration says people are born with rights that cannot be taken away. Name that principle from your card. What does the Declaration say people can do when a government destroys those rights?",
+       "mode": "written",
+       "line": "Look in the group called Where government's power comes from, and read each \"Look for it when\" cue. For the second part, find the sentence that starts \"Whenever.\""
+      }
+     ],
+     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "We hold these truths to be self-evident, that all men are created equal, that they are given by their Creator certain rights that cannot be taken away, and that among these are Life, Liberty and the pursuit of Happiness. To protect these rights, governments are created, and they get their power from the consent of the governed. Whenever any government destroys these rights, it is the right of the people to change it or get rid of it, and to create a new government."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "We believe these truths are plain to see: that all men are created equal. Their Creator gave them certain rights that cannot be taken away. Among these rights are Life, Liberty and the pursuit of Happiness. Governments are created to protect these rights. They get their power from the consent of the governed (the agreement of the people). Whenever any government destroys these rights, the people have the right to change it or get rid of it. Then they can create a new government."
+      ]
+     }
+    },
+    {
+     "n": 9,
+     "title": "The Virginia Declaration of Rights · one month earlier, June 1776",
+     "kind": "text",
+     "src": "Source: Virginia Declaration of Rights, June 12, 1776 (adapted)",
+     "page": 17,
+     "steps": [
+      {
+       "question": "Virginia wrote this a month before the Declaration. Why might Jefferson, a Virginian, borrow from it?",
+       "mode": "out loud",
+       "line": "Check the two dates: June 12 and July 4. Then ask what a writer does with a strong line he's already read."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Two sentences. Trustee is in your KEY VOCABULARY. Read it slowly; every word counts."
+      },
+      {
+       "question": "What does it say about who holds power?",
+       "mode": "written",
+       "line": "The first sentence answers it. Find the two things it says about power and the people."
+      },
+      {
+       "question": "Who counted as “the people” in Virginia in 1776?",
+       "mode": "written",
+       "line": "Ask who could vote or hold office in Virginia in 1776, then who was left out. Thread 1 on your casefile cover is a good place to start."
+      },
+      {
+       "question": "What idea do Documents 8 and 9 share? Name it from your card.",
+       "mode": "written",
+       "line": "Put the two side by side. Find one phrase in each about where power comes from. Then find that idea on your card."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 17. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "All power belongs to the people and comes from the people. Government officials are the people's trustees and servants, and they must always answer to the people."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "All power belongs to the people and comes from the people. Government officials are the people's trustees (people trusted to manage something for others) and servants. They must always answer to the people."
+      ]
+     }
+    },
+    {
+     "n": 10,
+     "title": "“Remember the Ladies” · Abigail Adams to John Adams, March 1776",
+     "kind": "text",
+     "src": "Source: Abigail Adams, letter to John Adams, March 31, 1776 (adapted)",
+     "page": 18,
+     "steps": [
+      {
+       "question": "This is a private letter to her husband. How might that change what she's willing to say?",
+       "mode": "written",
+       "line": "She wrote this to her husband, not for the newspapers. Read it asking: would she say this in public in 1776?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Two paragraphs. The first is one sentence, and it's a puzzle: read it twice. Who is taking away whose liberty?"
+      },
+      {
+       "question": "What two groups does she say are being denied liberty?",
+       "mode": "written",
+       "line": "One group hides in her first sentence. The other runs all through her second paragraph."
+      },
+      {
+       "question": "Finish the sentence: “Abigail Adams would say ‘all men are created equal’ is ___ because ___.”",
+       "mode": "written",
+       "line": "Put her line \"all men would be tyrants if they could\" next to Document 8's \"all men are created equal.\" Same two words. Same meaning?"
+      },
+      {
+       "question": "She says no voice means no obedience: the colonists' own argument. Name the principle from your card she's turning back on them.",
+       "mode": "written",
+       "line": "Go back to Document 3. What did the colonists say about taxes and representatives? She's using their argument. Find it on your card."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "I have sometimes thought that the love of liberty cannot be as strong in those who are used to taking away the liberty of others.",
+      "I long to hear that you have declared independence. In the new laws you will make, remember the ladies, and be more generous to them than your ancestors were. Do not put such unlimited power into the hands of husbands. Remember, all men would be tyrants if they could. If attention is not paid to the ladies, we will start a rebellion, and we will not obey any laws in which we have no voice or representation."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Sometimes I think the love of liberty can't be as strong in those who are used to taking away the liberty of others.",
+       "I can't wait to hear that you have declared independence. In the new laws you will make, remember the ladies. Be more generous to them than your ancestors were. Do not put such unlimited power into the hands of husbands. Remember, all men would be tyrants (cruel, unfair rulers) if they could. If no one pays attention to the ladies, we will start a rebellion. We will not obey any laws in which we have no voice or representation."
+      ]
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": "11.2 Casefile B · The Build",
+   "status": "building"
+  },
+  {
+   "id": "C",
+   "title": "11.2 Casefile C",
+   "status": "building"
+  }
+ ]
+}

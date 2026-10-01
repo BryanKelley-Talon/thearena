@@ -1176,6 +1176,11 @@
             "published": true,
             "_source": "BK 2026-09-28 12:24 ('Game link should live in 11.2 area of The Arena.', passed by Sam: In/sam-pass-2026-09-28-1776-game-link-in-11.2-room.md); card beside the unit review and its words approved by BK 13:47 ('yes.'). The score line is BK's own call against the no-score rule: it names the paper log sheet, shows no score. Resolves through games.json us11r-1776 (live). Used in class Fri 10/2."
           },
+          "doc_assist": {
+            "published": true,
+            "content_ref": "content/docassist-us11r-11.2.json",
+            "_note": "Josh, 2026-10-01. Doc Assist, ruled by BK 08:16 at Sam's desk; content Sam's 11.2 Casefile A pack, signed by BK 08:38, ported byte for byte. Casefiles B and C are status building in the pack (Sam). Images: unit02-nv-a3-proclamation-map-1775.png, unit02-revere-1770-doc1.png, byte-identical to us11r-curriculum/STIMULUS_BANK/Unit_02/."
+          },
           "activities": [
             {
               "type": "stimulus",
