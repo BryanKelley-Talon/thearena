@@ -25,8 +25,9 @@ export const CHROME = {
   cardName: 'Your casefile documents',
   building: 'Under construction',
   docLabel: n => `Document ${n}`,
-  page: p => `Casefile page ${p}`,
-  backTo: id => `Casefile ${id}`,
+  // A group's `short` name (e.g. "Block A" for 11.1's packets) replaces "Casefile A" when the pack gives one.
+  page: (p, cf) => cf?.short_page ? `${cf.short_page} ${p}` : `Casefile page ${p}`,
+  backTo: (id, cf) => cf?.short || `Casefile ${id}`,
   picture: "What's in the picture",
   prevDoc: 'Previous document',
   nextDoc: 'Next document',
@@ -144,7 +145,7 @@ export function DocAssistHome({ pack, onOpenDoc }) {
         return (
           <section key={cf.id} className="da-cf">
             <h3 className="room-section da-cf-head">
-              <span>{cf.title || CHROME.backTo(cf.id)}</span>
+              <span>{cf.title || CHROME.backTo(cf.id, cf)}</span>
               {!open && <span className="flag building">{CHROME.building}</span>}
             </h3>
             {open && (
@@ -154,7 +155,7 @@ export function DocAssistHome({ pack, onOpenDoc }) {
                     <span>
                       <span className="da-row-n">{CHROME.docLabel(d.n)}</span>
                       <span className="da-row-title">{d.title}</span>
-                      <span className="row-blurb">{CHROME.page(d.page)}</span>
+                      <span className="row-blurb">{CHROME.page(d.page, cf)}</span>
                     </span>
                     <span className="flag live">Open</span>
                   </button>

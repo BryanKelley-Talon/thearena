@@ -1914,11 +1914,11 @@ export default function App() {
     const back = () => { setDaDoc(null); window.scrollTo(0, 0) }
     screen = !doc ? null : (
       <div className="wrap">
-        <ScreenHeader label={DA.docLabel(doc.n)} onBack={back} color={course.accent} back={DA.backTo(cf.id)} />
+        <ScreenHeader label={DA.docLabel(doc.n)} onBack={back} color={course.accent} back={DA.backTo(cf.id, cf)} />
         <DocAssistDoc pack={daPack} doc={doc} portrait={course.guide?.portrait || BK_PORTRAIT}
                       onPrev={daDoc.i > 0 ? () => go(daDoc.i - 1) : null}
                       onNext={daDoc.i < cf.docs.length - 1 ? () => go(daDoc.i + 1) : null} />
-        <BottomBack onBack={back} back={DA.backTo(cf.id)} />
+        <BottomBack onBack={back} back={DA.backTo(cf.id, cf)} />
       </div>
     )
   }
