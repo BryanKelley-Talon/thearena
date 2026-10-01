@@ -182,6 +182,12 @@ const docImages = d => Array.isArray(d.images) && d.images.length
   : (d.image_file ? [{ file: d.image_file, alt: d.image_alt, describe: d.describe }] : [])
 const boxOf = b => (b && typeof b === 'object' && b.text ? b : null)
 
+// THE STEP-5 CARD (BK 10:26: "a button ... that kids can pop up their enduring issues
+// list/definitions or Civic Principles in US"). One component, each course's own block:
+// Global sends `umbrellas`; US may send `q4_card` in the same shape.
+const q4Card = pack => pack.q4_card || pack.umbrellas || null
+const q4Label = pack => pack.labels?.q4_card || pack.labels?.umbrellas || q4Card(pack)?.button
+
 function Umbrellas({ u }) {
   return (
     <div className="da-umb" id="da-umbrellas">
@@ -192,7 +198,13 @@ function Umbrellas({ u }) {
           <li key={it.n}>
             <div className="da-umb-name"><span className="da-umb-n">{it.n}</span>{it.name}</div>
             <div className="da-umb-q">{it.question}</div>
-            <div className="da-umb-issues">{it.issues}</div>
+            {Array.isArray(it.issue_defs) && it.issue_defs.length
+              ? <dl className="da-umb-defs">
+                  {it.issue_defs.map(d => (
+                    <div key={d.name}><dt>{d.name}</dt><dd>{d.definition}</dd></div>
+                  ))}
+                </dl>
+              : it.issues && <div className="da-umb-issues">{it.issues}</div>}
           </li>
         ))}
       </ol>
@@ -243,8 +255,10 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
   const qLine = q => `${q.n != null ? `${q.n}. ` : ''}${q.text}`
   const stepParts = at >= walkSteps.length
     ? [doc.close]
-    : [step?.step, say, ...qs.flatMap(q => [`${CHROME.asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), ds?.line]
-  const showUmb = pack.umbrellas && L.umbrellas && at === walkSteps.length - 1
+    : [step?.step, say, ...qs.flatMap(q => [`${CHROME.asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), ds?.line, ds?.tip?.title, ...(ds?.tip?.text || [])]
+  const card = q4Card(pack)
+  const showUmb = card && q4Label(pack) && at === walkSteps.length - 1
+  const tip = ds?.tip && (ds.tip.text || []).length ? ds.tip : null
 
   return (
     <div className="da-doc">
@@ -324,9 +338,9 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
                   <div className="da-umb-wrap">
                     <button type="button" className="da-btn" aria-expanded={umbOpen} aria-controls="da-umbrellas"
                             onClick={() => setUmbOpen(o => !o)}>
-                      <span aria-hidden="true" className="da-ico">{umbOpen ? '−' : '+'}</span>{L.umbrellas}
+                      <span aria-hidden="true" className="da-ico">{umbOpen ? '−' : '+'}</span>{q4Label(pack)}
                     </button>
-                    {umbOpen && <Umbrellas u={pack.umbrellas} />}
+                    {umbOpen && <Umbrellas u={card} />}
                   </div>
                 )}
                 {ds?.line && (
@@ -334,6 +348,13 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
                     {portrait && <img className="guide-face" src={`/${portrait}`} alt="" />}
                     <p>{ds.line}</p>
                   </div>
+                )}
+                {/* A tip the step carries (Global v3: NO NAME ON IT?, BK 10:26), under the line. */}
+                {tip && (
+                  <aside className="da-tip" aria-label={tip.title}>
+                    {tip.title && <div className="da-tip-title">{tip.title}</div>}
+                    {tip.text.map((t, i) => <p key={i}>{t}</p>)}
+                  </aside>
                 )}
               </div>
             ) : (
@@ -440,6 +461,15 @@ export const DOCASSIST_STYLES = `
 .da-umb-n{display:inline-block;min-width:18px;color:var(--gold)}
 .da-umb-q{color:var(--white);font-size:15px;line-height:1.45}
 .da-umb-issues{color:var(--gold-lit);font-size:14.5px;line-height:1.45;margin-top:2px}
+.da-umb-defs{margin:4px 0 0;display:flex;flex-direction:column;gap:4px}
+.da-umb-defs div{color:var(--white);font-size:14.5px;line-height:1.45}
+.da-umb-defs dt{display:inline;color:var(--gold-lit);font-weight:600}
+.da-umb-defs dt::after{content:': '}
+.da-umb-defs dd{display:inline;margin:0}
+.da-tip{margin:-6px 0 18px;background:var(--card-lit);border:1px solid var(--arena-choice-edge);border-left:4px solid var(--gold);border-radius:8px;padding:10px 13px}
+.da-tip-title{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:14px;color:var(--gold);font-weight:700;margin-bottom:4px}
+.da-tip p{color:var(--white);font-size:15.5px;line-height:1.5;margin:0}
+.da-tip p+p{margin-top:6px}
 .da-umb-close{color:var(--white);font-size:15px;line-height:1.5;margin:10px 0 0}
 .da-docnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:22px 0 0;max-width:860px}
 .da-docnav .btn-ghost{min-height:44px;font-size:16px;background:var(--card);border-style:solid;border-color:var(--arena-choice-edge)}

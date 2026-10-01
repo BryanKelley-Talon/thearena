@@ -1,6 +1,6 @@
 {
- "_built": "Will (global10r-curriculum) 2026-10-01 09:07 EDT",
- "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: steps[].questions is a LIST (a Global step may carry 0, 1 or 2 casefile questions, each with its printed number, or n=null where the 10.1 packet prints none); optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05).",
+ "_built": "Will (global10r-curriculum) 2026-10-01 10:28 EDT · v3, the four-question arc",
+ "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: v3, BK 10:16 the four-question arc: steps[k] = {question, mode: null, line} exactly as us11r 11.2 A v2, step 2's question null; optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05; items[].issue_defs = one-line definitions, BK 10:28); steps[0].tip = {title, text[]} on 8 docs (NO NAME ON IT?, BK 10:26).",
  "tool": "Doc Assist",
  "room": "10.2",
  "course": "GS10R",
@@ -55,37 +55,101 @@
     "n": "1",
     "name": "POWER & ITS ABUSE",
     "question": "Who holds authority, and what happens to the people who did not choose them.",
-    "issues": "Abuse of Power · Imperialism · Human Rights Violations · Inequality"
+    "issues": "Abuse of Power · Imperialism · Human Rights Violations · Inequality",
+    "issue_defs": [
+     {
+      "name": "Abuse of Power",
+      "definition": "when someone with authority uses it to harm people or to serve themselves."
+     },
+     {
+      "name": "Imperialism",
+      "definition": "when a stronger country takes control of another land and its people."
+     },
+     {
+      "name": "Human Rights Violations",
+      "definition": "when people are denied the basic rights every person should have, like life, freedom and safety."
+     },
+     {
+      "name": "Inequality",
+      "definition": "when some groups get fewer rights, chances or resources than others."
+     }
+    ]
    },
    {
     "n": "2",
     "name": "CONFLICT",
     "question": "Why people fight, and what is still unsettled when the fighting stops.",
-    "issues": "Conflict"
+    "issues": "Conflict",
+    "issue_defs": [
+     {
+      "name": "Conflict",
+      "definition": "a struggle between groups, nations or ideas, from argument to war."
+     }
+    ]
    },
    {
     "n": "3",
     "name": "IDENTITY & NATIONALISM",
     "question": "Who a people say they are, and who that leaves out.",
-    "issues": "Nationalism · Cultural Exchange and Diffusion"
+    "issues": "Nationalism · Cultural Exchange and Diffusion",
+    "issue_defs": [
+     {
+      "name": "Nationalism",
+      "definition": "a people's loyalty to their own nation, and the push for that nation to rule itself."
+     },
+     {
+      "name": "Cultural Exchange and Diffusion",
+      "definition": "when ideas, beliefs, goods and ways of life spread from one people to another."
+     }
+    ]
    },
    {
     "n": "4",
     "name": "WEALTH & RESOURCES",
     "question": "Who owns what a place produces, and who does the producing.",
-    "issues": "Economic Development · Scarcity"
+    "issues": "Economic Development · Scarcity",
+    "issue_defs": [
+     {
+      "name": "Economic Development",
+      "definition": "how a place grows its wealth, and who that growth helps or leaves behind."
+     },
+     {
+      "name": "Scarcity",
+      "definition": "not having enough of something people need, like food, water or land."
+     }
+    ]
    },
    {
     "n": "5",
     "name": "TECHNOLOGY & ENVIRONMENT",
     "question": "What new tools let people do, and what they cost the world around them.",
-    "issues": "Scientific and Technological Change · Environmental Crisis"
+    "issues": "Scientific and Technological Change · Environmental Crisis",
+    "issue_defs": [
+     {
+      "name": "Scientific and Technological Change",
+      "definition": "new knowledge and tools that change how people live and work."
+     },
+     {
+      "name": "Environmental Crisis",
+      "definition": "serious harm to land, air, water or climate, often caused by people."
+     }
+    ]
    },
    {
     "n": "6",
     "name": "A CONNECTED WORLD",
     "question": "What happens when distant places start depending on each other.",
-    "issues": "Cooperation · Population and Migration"
+    "issues": "Cooperation · Population and Migration",
+    "issue_defs": [
+     {
+      "name": "Cooperation",
+      "definition": "when groups or countries work together toward a shared goal."
+     },
+     {
+      "name": "Population and Migration",
+      "definition": "how the number of people in a place changes, and why people move."
+     }
+    ]
    }
   ],
   "close": [
@@ -93,7 +157,7 @@
    "Then EXPLAIN IT: define the problem in one sentence, and show where a document shows it."
   ]
  },
- "_ruled": "Wording SIGNED by BK 2026-10-01 09:05 (\"1. ... yes good step. 2. yes 3. yes 4. yes with your changes. thank you. signed.\")",
+ "_ruled": "v3 SIGNED by BK 2026-10-01 10:28 (\"1 and 2: Yes. Signed.\"): the four-question walks (ruled 10:16), NO NAME ON IT? (10:26), issue definitions in the pop-up (10:28)",
  "casefiles": [
   {
    "id": "A",
@@ -110,41 +174,29 @@
      "page": 4,
      "steps": [
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Hobbes says the only way out is to hand all power to one ruler, not a government that can be replaced. Locke, in Document 1, describes a different deal. Name one way Hobbes's deal is different from Locke's.",
-         "mode": "written"
-        },
-        {
-         "n": 1,
-         "text": "Who wrote this, and in what year? Then: is 1690 before or after the French Revolution? Write the number of years between them.",
-         "mode": "written"
-        }
-       ],
-       "line": "Q1 first: the source line has the name and the year. For the French Revolution's year, look near the end of WHAT YOU NEED TO KNOW on Day 1. For the Hobbes question, reread the Hobbes box just above Document 1, then ask who holds the power when each deal is done."
+       "question": "Who wrote this, when, and what had just happened in England?",
+       "mode": null,
+       "line": "The source line has the name and the year. WHAT YOU NEED TO KNOW on Day 2 says what England did the year before, and what Locke was writing to justify."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Five sentences. The first two are questions Locke asks himself, and the last three answer them. Hard words: equity means fairness, and hence means for this reason."
       },
       {
-       "questions": [
-        {
-         "n": 2,
-         "text": "Locke says people trade something away to get something back. What do they give up, and what do they get? Use his words.",
-         "mode": "written"
-        }
-       ],
-       "line": "What they give up is in his first question. What they get is in his last sentence. Copy his words, not yours."
+       "question": "Why does Locke say people leave the state of nature, and what do they get?",
+       "mode": null,
+       "line": "Why is in his middle sentences. What they get is in his last sentence. Use Locke's words."
       },
       {
-       "questions": [],
-       "line": "WHAT YOU NEED TO KNOW on Day 2 says what Locke was writing to justify. Picture the king England forced out reading this. What would he say back?"
+       "question": "How would Hobbes, in the box above Document 1, see Locke's deal?",
+       "mode": null,
+       "line": "Reread the Hobbes box. Then ask who holds the power when each deal is done, and whether the people can ever take it back."
       },
       {
-       "questions": [],
-       "line": "Find the two words Locke uses for rights in the state of nature, near the end of his fourth sentence. Ask which enduring issue they point to, then explain why."
+       "question": "What lasting problem is Locke trying to solve?",
+       "mode": null,
+       "line": "Find the two words he uses for rights in the state of nature, near the end of his fourth sentence. Open the Six Umbrellas and see which question those words fit."
       }
      ],
      "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
@@ -166,36 +218,29 @@
      "page": 5,
      "steps": [
       {
-       "questions": [],
-       "line": "Same writer as Document 1. The heading says this one is about a government that breaks the deal. Before you read, ask: what deal? Document 1's last sentence tells you."
+       "question": "Who wrote this, and what deal from Document 1 is he talking about?",
+       "mode": null,
+       "line": "Same writer as Document 1. The heading says this one is about a government that breaks the deal. Document 1's last sentence tells you what deal."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "One long sentence, with pieces cut out where you see dots. Hard words: the legislature is the lawmakers, and forfeit is in your KEY VOCABULARY for Day 2. Watch who holds the power at the start of the sentence."
       },
       {
-       "questions": [
-        {
-         "n": 3,
-         "text": "What exactly does Locke say happens to power when a government seizes absolute control? Copy the phrase that says it.",
-         "mode": "written"
-        }
-       ],
-       "line": "Find the word forfeit, then keep reading to the end. Copy the words that say where the power goes."
+       "question": "What does Locke say happens when lawmakers grab absolute power?",
+       "mode": null,
+       "line": "Find the word forfeit, then keep reading to the end. Find the words that say where the power goes."
       },
       {
-       "questions": [],
-       "line": "Picture a member of that legislature reading this sentence. How would they describe what they did?"
+       "question": "How would the lawmakers in this sentence explain what they did?",
+       "mode": null,
+       "line": "Picture a member of that legislature reading this. Would they ever describe it the way Locke does?"
       },
       {
-       "questions": [
-        {
-         "n": 4,
-         "text": "Which enduring issue does this document belong under, and why? One sentence.",
-         "mode": "written"
-        }
-       ],
-       "line": "Your clue words are in the first half of the sentence: what the legislature grabs, and how much of it. Name the issue those words point to, then give your because."
+       "question": "What lasting problem does this sentence warn about?",
+       "mode": null,
+       "line": "Your clue words are in the first half of the sentence: what the legislature grabs, and how much of it. Open the Six Umbrellas and check those words against each question."
       }
      ],
      "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
@@ -217,30 +262,29 @@
      "page": 7,
      "steps": [
       {
-       "questions": [],
-       "line": "The source line gives you only a name and a book. WHAT YOU NEED TO KNOW on Day 3 tells you who he was and when the book came out. Find both before you read."
+       "question": "Who was Montesquieu, and when did he write this?",
+       "mode": null,
+       "line": "The source line gives you only a name and a book. WHAT YOU NEED TO KNOW on Day 3 tells you who he was and when the book came out."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Three sentences. The first sets the rule, and the next two each start with If. Hard words: arbitrary is in your KEY VOCABULARY for Day 3, and an oppressor is someone who uses power to crush people."
       },
       {
-       "questions": [
-        {
-         "n": 5,
-         "text": "Montesquieu names two things that go wrong if judging is combined with another power. Name both, in your own words.",
-         "mode": "written"
-        }
-       ],
+       "question": "What does Montesquieu say happens when judging is joined to another power?",
+       "mode": null,
        "line": "Look at the two sentences that start with If. Each one ends with something going wrong. Put each one in your own words."
       },
       {
-       "questions": [],
-       "line": "Picture a king who writes the laws and also judges the cases. What would he say about this passage?"
+       "question": "How would a king who makes the laws and judges the cases answer this?",
+       "mode": null,
+       "line": "Picture that king reading the first sentence. What would he say he needs all that power for?"
       },
       {
-       "questions": [],
-       "line": "Find the word liberty in the first sentence. Ask what threatens it here, and which enduring issue that is. Then explain why."
+       "question": "What lasting problem is Montesquieu trying to prevent?",
+       "mode": null,
+       "line": "Find the word liberty in the first sentence and the word oppressor in the last. Open the Six Umbrellas and see which question they fit."
       }
      ],
      "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
@@ -262,30 +306,29 @@
      "page": 7,
      "steps": [
       {
-       "questions": [],
-       "line": "Same writer as Document 3. The source line has no year, but WHAT YOU NEED TO KNOW on Day 3 gives you one. Who was he, and what country did he live in?"
+       "question": "Who wrote this, and what did he do for a living?",
+       "mode": null,
+       "line": "Same writer as Document 3. WHAT YOU NEED TO KNOW on Day 3 says who he was, and the source line names his book."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "One sentence, with two hard words explained in the brackets. Read it in two halves: up to the word liberty, then the reason after because. Here, execute means carry out."
       },
       {
-       "questions": [],
-       "line": "Find the word united. Say his claim in your own words: what happens when those two powers sit in the same hands?"
+       "question": "What does Montesquieu say is lost when two powers sit in the same hands, and why?",
+       "mode": null,
+       "line": "Find the word united. Then read past the word because to find his reason."
       },
       {
-       "questions": [
-        {
-         "n": 6,
-         "text": "Montesquieu was a nobleman and a judge in France, writing about kings. Does that make his argument more convincing, less convincing, or neither? Defend your answer.",
-         "mode": "written"
-        }
-       ],
-       "line": "Ask what a noble and a judge had to gain or lose if a king held every power. Then pick one of the three answers and give your reason."
+       "question": "Montesquieu was a noble. Whose view of power might be different from his?",
+       "mode": null,
+       "line": "He names a monarch or senate. Picture someone with no power at all reading this, a peasant in France. What would worry them most?"
       },
       {
-       "questions": [],
-       "line": "One clue word shows up twice in the second half of the sentence. Name the enduring issue it points to, and explain why."
+       "question": "What lasting danger is he pointing at?",
+       "mode": null,
+       "line": "One clue word shows up twice in the second half of the sentence. Open the Six Umbrellas and check it against each question."
       }
      ],
      "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
@@ -307,30 +350,29 @@
      "page": 9,
      "steps": [
       {
-       "questions": [],
-       "line": "Look closely at the source line: it has two years. One is when Rousseau wrote it, and one is when it was put into English. Which is which?"
+       "question": "Who wrote this, when, and who put it into English?",
+       "mode": null,
+       "line": "Look closely at the source line: it has two years and two names. Which year is Rousseau's, and which is the translator's?"
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "One long sentence. Hard words: an association is a group people join, and associate is in your KEY VOCABULARY for Day 4. Take a breath after the words each associate."
       },
       {
-       "questions": [
-        {
-         "n": 7,
-         "text": "Rousseau sets himself a problem with two halves that seem to contradict each other. Name both halves.",
-         "mode": "written"
-        }
-       ],
-       "line": "Split the sentence after the words each associate. Find what the group must do in the first half, and what each person keeps in the second."
+       "question": "What problem is Rousseau trying to solve, and why is it hard?",
+       "mode": null,
+       "line": "Split the sentence after the words each associate. Find what the group must do in the first half, and what each person keeps in the second. Can both be true at once?"
       },
       {
-       "questions": [],
-       "line": "Picture one person in the community who disagrees with everyone else. Ask whether Rousseau's problem can be solved for that person."
+       "question": "Would this deal work for a person who disagrees with everyone else?",
+       "mode": null,
+       "line": "Picture that one person. Reread the words obey himself alone, and ask what the group would do with him."
       },
       {
-       "questions": [],
-       "line": "Your clue words are the whole common force. Ask which enduring issue comes up when a group holds that much force over each person. Then explain why."
+       "question": "What lasting issue does Rousseau's problem raise?",
+       "mode": null,
+       "line": "Your clue words are the whole common force. Open the Six Umbrellas and see which question fits a group holding that much force."
       }
      ],
      "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
@@ -352,30 +394,29 @@
      "page": 10,
      "steps": [
       {
-       "questions": [],
-       "line": "Same book as Document 5. WHAT YOU NEED TO KNOW on Day 4 says who will use this idea later, and how. Keep that in mind as you read."
+       "question": "Who wrote this, and who will use his idea later?",
+       "mode": null,
+       "line": "Same book as Document 5. WHAT YOU NEED TO KNOW on Day 4 says who will use this idea, and how."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "One sentence, built on two terms from your KEY VOCABULARY: will of all and general will. Watch the latter and the former: the latter is the second one named, the former is the first."
       },
       {
-       "questions": [],
+       "question": "What does each kind of will care about, according to Rousseau?",
+       "mode": null,
        "line": "Sort his words into two columns, one for each will. What does each one take account of?"
       },
       {
-       "questions": [],
-       "line": "Ask who gets to decide what the general will is. Then picture someone in the community who disagrees with that decision."
+       "question": "Who gets to decide what the general will is, and what happens to people who disagree?",
+       "mode": null,
+       "line": "Picture someone in the community who disagrees with whoever decides. Then reread what WHAT YOU NEED TO KNOW on Day 4 says about 1793."
       },
       {
-       "questions": [
-        {
-         "n": 8,
-         "text": "A leader claims to speak for the general will and jails the people who disagree. Which enduring issue is that, and why?",
-         "mode": "written"
-        }
-       ],
-       "line": "Your clue words are in the question itself: claims to speak for, and jails. Name the issue those words point to, then explain why."
+       "question": "What lasting issue could the general will raise?",
+       "mode": null,
+       "line": "Picture a leader who claims to speak for the general will. Open the Six Umbrellas and see which question fits what that leader could do."
       }
      ],
      "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
@@ -397,36 +438,29 @@
      "page": 11,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 9,
-         "text": "Who is she writing to, and what country is he governing? Now say why that choice of reader matters to her argument.",
-         "mode": "written"
-        }
-       ],
-       "line": "The source line answers the first half: read its second sentence. For why it matters, find the two words she prints in capital letters, and ask what that country was writing."
+       "question": "Who is Wollstonecraft writing to, and why pick him?",
+       "mode": null,
+       "line": "The source line's second sentence names her reader. Then find the two words she prints in capital letters, and ask what his country was writing."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two short paragraphs, one sentence each, with pieces cut out where you see dots. In the first, she means a woman. In the second, want means lack, the way the bracket says."
       },
       {
-       "questions": [],
-       "line": "Find the words prove first. What does she say must be proved before women can be shut out? Say it in your own words."
+       "question": "What does she demand before women can be shut out?",
+       "mode": null,
+       "line": "Find the words prove first, and read to the end of that line. Say it in your own words."
       },
       {
-       "questions": [
-        {
-         "n": 10,
-         "text": "She uses the word tyrant — the same word the philosophes used about kings. Why would she pick that word on purpose?",
-         "mode": "written"
-        }
-       ],
-       "line": "Find tyrant in her last line, and tyranny in your KEY VOCABULARY for Day 2. Ask who the philosophes aimed that word at, and who she aims it at."
+       "question": "Whose voice is missing from the new constitution she writes about?",
+       "mode": null,
+       "line": "Find the word excluded. Then ask who was writing the NEW CONSTITUTION, and who was left out of writing it."
       },
       {
-       "questions": [],
-       "line": "Your clue words are excluded and NEW CONSTITUTION. Ask who is being left out of the rules, and which enduring issue that points to. Then explain why."
+       "question": "What lasting issue does she raise with the word tyrant?",
+       "mode": null,
+       "line": "Find tyrant in her last line, and tyranny in your KEY VOCABULARY for Day 2. Then open the Six Umbrellas and see which question fits."
       }
      ],
      "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 11. Use the sentence stem, or write something of equal or better value.",
@@ -450,36 +484,29 @@
      "page": 13,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 11,
-         "text": "Wilberforce was a member of Parliament speaking about the slave trade. Equiano had been carried on a slave ship himself. Why would a historian want both voices, and not just one?",
-         "mode": "written"
-        }
-       ],
-       "line": "There are two source lines, one above each voice. For each man, ask: was he there, or was he arguing about it? Then ask what a historian would lose with only one of them."
+       "question": "Who are the two voices, and how close was each one to the slave trade?",
+       "mode": null,
+       "line": "There are two source lines, one above each voice. For each man, ask: was he there, or was he arguing about it?"
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two voices. Wilberforce speaks in two long sentences, and Equiano tells his in five shorter ones. The brackets give you the hard words, and abolition is in your KEY VOCABULARY for Day 5. Finish one voice before you start the next."
       },
       {
-       "questions": [
-        {
-         "n": 12,
-         "text": "According to Equiano, what were the captives told would happen to them? Quote his words.",
-         "mode": "written"
-        }
-       ],
-       "line": "Stay with Equiano. His answer comes in his last sentence, right after his own question. Quote his words exactly."
+       "question": "What does each man say about the slave trade, in his own words?",
+       "mode": null,
+       "line": "For Wilberforce, find what he says must happen and what he decided. For Equiano, follow what happened to him, sentence by sentence, to his last line."
       },
       {
-       "questions": [],
-       "line": "Go back to Q11 from the other side. Ask who else was there in 1789, on the ships, in the trade, or in Parliament, and is not speaking in either voice."
+       "question": "What can Equiano tell us that Wilberforce cannot, and who is still not heard?",
+       "mode": null,
+       "line": "Ask what each man saw for himself. Then ask who else was there in 1789, on the ships, in the trade, or in Parliament, and is not speaking in either voice."
       },
       {
-       "questions": [],
-       "line": "Find Wilberforce's word for what the trade was founded in, and the word Equiano uses for what was done to him in his first sentence. Ask which enduring issue those words point to, then explain why."
+       "question": "What lasting issue do these two voices raise?",
+       "mode": null,
+       "line": "Find Wilberforce's word for what the trade was founded in, and the word Equiano uses for what was done to him in his first sentence. Open the Six Umbrellas and see which question those words fit."
       }
      ],
      "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
@@ -506,36 +533,29 @@
      "page": 15,
      "steps": [
       {
-       "questions": [],
-       "line": "The source line has no date and no name for the document. WHAT YOU NEED TO KNOW on Day 6 tells you what she issued, and in what year. Find it before you read."
+       "question": "Who wrote this, and what was it written for?",
+       "mode": null,
+       "line": "The source line has no date and no name for the document. WHAT YOU NEED TO KNOW on Day 6 tells you what she issued, in what year, and who it was meant to instruct."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two sentences, each starting with dots because pieces were cut. Both are about the Laws. Hard word: framed means written."
       },
       {
-       "questions": [
-        {
-         "n": 13,
-         "text": "According to Catherine, what does equality between citizens consist of? Quote her.",
-         "mode": "written"
-        }
-       ],
-       "line": "One of her two sentences uses the word consists. Quote it exactly, capital letters and all."
+       "question": "What does Catherine say the laws should do, and what makes citizens equal?",
+       "mode": null,
+       "line": "Each of her two sentences answers one half. Find the word secure in the first and the word consists in the second."
       },
       {
-       "questions": [
-        {
-         "n": 14,
-         "text": "She wrote this while ruling a country where millions of serfs could be bought and sold with the land. Does that change how you read the passage? Say how.",
-         "mode": "written"
-        }
-       ],
-       "line": "Picture a serf hearing the words every Citizen and the same Laws read aloud. Then reread the passage and say how that changes your reading."
+       "question": "How would a serf in Catherine's Russia hear these words?",
+       "mode": null,
+       "line": "Picture a serf hearing the words every Citizen and the same Laws read aloud. Then reread WHAT YOU NEED TO KNOW on Day 6 for what happened to serfs under her rule."
       },
       {
-       "questions": [],
-       "line": "Your clue words are Equality and the same Laws. Hold them up against WHAT YOU NEED TO KNOW on Day 6. Which enduring issue does that point to? Explain why."
+       "question": "What lasting issue does a ruler writing about equality raise?",
+       "mode": null,
+       "line": "Your clue words are Equality and the same Laws. Hold them up against WHAT YOU NEED TO KNOW on Day 6, then open the Six Umbrellas and see which question fits."
       }
      ],
      "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
@@ -560,36 +580,35 @@
      "page": 16,
      "steps": [
       {
-       "questions": [],
-       "line": "The source line names a book, not who issued this. Read the document's first three words to find who issued it. The PARTNER TALK box under it tells you when."
+       "question": "Who issued this order, when, and who had to hear it?",
+       "mode": null,
+       "line": "Read the document's first three words to find who issued it. The PARTNER TALK box under it tells you when, and the last line says where it was read.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Three sentences, and the brackets give you the hard words. The second sentence is long: read it twice, and find who it punishes and how. Nerchinsk is a place in Siberia."
       },
       {
-       "questions": [
-        {
-         "n": 15,
-         "text": "“Catherine wrote ____________________________, but her government ____________________________.”",
-         "mode": "written"
-        }
-       ],
-       "line": "This one uses both documents. For the first blank, use Catherine's own words from Document 9. For the second, use what Document 10 orders for serfs who complain."
+       "question": "What does the order demand of serfs, and what happens to those who complain?",
+       "mode": null,
+       "line": "Find the words owe their landlords for the first part. For the second, read the long middle sentence twice and find who is punished and how."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "“You wrote that all citizens should be subject to the same laws. Does that include the serfs?”",
-         "mode": "out loud"
-        }
-       ],
-       "line": "Partner talk, out loud. If you're Catherine, you may use only her words from Documents 9 and 10. Find the lines you would answer with, and read them aloud exactly."
+       "question": "How would a serf hear this read aloud in church, and how is it different from Document 9?",
+       "mode": null,
+       "line": "Picture a serf in church on a Sunday, hearing this. Then put it next to Catherine's words in Document 9 and say what you see."
       },
       {
-       "questions": [],
-       "line": "Your clue words are absolute obedience, and what happens to a serf who sends a petition. Ask which enduring issue those words point to, then explain why."
+       "question": "What lasting issue does this order raise?",
+       "mode": null,
+       "line": "Your clue words are absolute obedience, and what happens to a serf who sends a petition. Open the Six Umbrellas and see which question those words fit."
       }
      ],
      "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",
@@ -624,36 +643,29 @@
      "page": 5,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 4,
-         "text": "Who wrote this, and in what year -- before or after the Estates-General met? Say which.",
-         "mode": "written"
-        }
-       ],
+       "question": "Who wrote this, and when, compared with the Estates-General meeting?",
+       "mode": null,
        "line": "The source line gives you the name and the year. For before or after, read the last paragraph of WHAT YOU NEED TO KNOW on page 3 for when the delegates met, then ask what Day 2's WHAT YOU NEED TO KNOW says his pamphlet helped inspire."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Four lines: one opening sentence, then three numbered questions. Each question gets a one-word answer. The political order means the way power is shared in the government."
       },
       {
-       "questions": [
-        {
-         "n": 5,
-         "text": "Sieyès answers his own three questions in three words. Write all three, in order, and then explain in your own words what gap he is pointing at.",
-         "mode": "written"
-        }
-       ],
-       "line": "Each of his three words is the last word on a numbered line. For the gap, read line 1 and line 2 side by side and ask how both can be true at once."
+       "question": "What are Sieyès's three answers, and what do they say about the Third Estate?",
+       "mode": null,
+       "line": "Each of his three words is the last word on a numbered line. Then read line 1 and line 2 side by side and ask how both can be true at once."
       },
       {
-       "questions": [],
-       "line": "Abbé is a title for a priest, so a member of the clergy is speaking up for the Third Estate. Picture a noble at Versailles reading line 2. What would he say back?"
+       "question": "How would a noble at Versailles answer Sieyès?",
+       "mode": null,
+       "line": "Abbé is a title for a priest, so a member of the clergy is speaking up for the Third Estate. Picture a noble reading line 2. What would he say back?"
       },
       {
-       "questions": [],
-       "line": "Read the six questions on the card on page 2. Hold the word Nothing up against each one and see which it fits."
+       "question": "What lasting problem is Sieyès pointing at with the word Nothing?",
+       "mode": null,
+       "line": "Open the Six Umbrellas and read each question. Hold the word Nothing up against each one and see which it fits."
       }
      ],
      "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
@@ -681,36 +693,36 @@
      "page": 7,
      "steps": [
       {
-       "questions": [],
-       "line": "Read the line under the source: when was this being passed around? Then WHAT YOU NEED TO KNOW on page 6 says who a cartoon could reach that a pamphlet couldn't."
+       "question": "Who was this picture made for, and when was it being passed around?",
+       "mode": null,
+       "line": "Read the line under the source: when was this being passed around? Then WHAT YOU NEED TO KNOW on page 6 says who a cartoon could reach that a pamphlet couldn't.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Start with the words: the title along the top of the oval, then the three labels. Then the figure at the bottom. Then the small details: faces, hands, the stick, the clothes."
       },
       {
-       "questions": [
-        {
-         "n": 7,
-         "text": "Explain how this cartoon makes the same point Sieyès made in Document 1 -- without borrowing a single word from his pamphlet.",
-         "mode": "written"
-        }
-       ],
-       "line": "Reread Sieyès's lines 1 and 2, then read the label on the figure at the bottom of the cartoon. The stem's last part, which means ___, is the so what: say why it counts as his argument."
+       "question": "What is this cartoon saying about France's three estates?",
+       "mode": null,
+       "line": "Read the label on the figure at the bottom, then look for whose feet are on the ground. Then go back to Sieyès's lines 1 and 2 in Document 1."
       },
       {
-       "questions": [
-        {
-         "n": 6,
-         "text": "This cartoon is titled “The Great Abuse.” Based on what you see, name who is being carried, who is doing the carrying, and who the title says is being abused.",
-         "mode": "written"
-        }
-       ],
-       "line": "Your evidence is the three labels and where each figure is. Look for whose feet are on the ground. The title names no one, so ask which figure in the picture it fits."
+       "question": "Whose side is the cartoonist on, and how would a noble draw it?",
+       "mode": null,
+       "line": "Look at each face and where each figure's eyes go. Then picture a noble holding the pen: what would he change?"
       },
       {
-       "questions": [],
-       "line": "Read the six questions on the card on page 2. Hold the cartoon's title up against each one and see which it fits."
+       "question": "What lasting problem does the title point to?",
+       "mode": null,
+       "line": "Open the Six Umbrellas. Hold the cartoon's title up against each question and see which it fits."
       }
      ],
      "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
@@ -730,36 +742,35 @@
      "page": 9,
      "steps": [
       {
-       "questions": [],
-       "line": "Read the title and the source line first. WHAT YOU NEED TO KNOW on page 8 names the body that approved this, and when."
+       "question": "Who approved this declaration, and when?",
+       "mode": null,
+       "line": "Read the title and the source line first. WHAT YOU NEED TO KNOW on page 8 names the body that approved this, and when.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Four articles, numbered 1, 2, 4 and 6; the others were left out. Words in square brackets are the editor's help: [inalienable] means it cannot be taken away. Article 6 is the longest, four sentences, so read it twice."
       },
       {
-       "questions": [
-        {
-         "n": 8,
-         "text": "According to Document 3, what right does Article 6 guarantee to citizens in the making of law?",
-         "mode": "written"
-        }
-       ],
-       "line": "Stay inside Article 6. Find the words has a right to, and say what that sentence lets a citizen do. Foundation there means the making of the law."
+       "question": "What does this declaration promise every citizen?",
+       "mode": null,
+       "line": "Read Article 1, then Article 6. In Article 6, find the words has a right to, and say what that sentence lets a citizen do."
       },
       {
-       "questions": [
-        {
-         "n": 10,
-         "text": "State one way Document 3 and Document 4 are similar, and one way they are different.",
-         "mode": "written"
-        }
-       ],
+       "question": "Whose view is this, and how is Document 4 different?",
+       "mode": null,
        "line": "This one needs Document 4 too. Mark one article here you want to check, then open Document 4's walk."
       },
       {
-       "questions": [],
-       "line": "This day's Enduring Issue question is about Document 4, on page 11. Before you get there, read the six questions on the card on page 2 so they're fresh."
+       "question": "What lasting issue could this declaration raise?",
+       "mode": null,
+       "line": "Reread Article 1 with the word universal from your KEY VOCABULARY in mind. Then open the Six Umbrellas and check which question it raises."
       }
      ],
      "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
@@ -790,42 +801,29 @@
      "page": 10,
      "steps": [
       {
-       "questions": [],
-       "line": "The source line gives you a name and a year, and her picture is in the margin. Before you read, ask: why would someone write a declaration of her own?"
+       "question": "Who wrote this, when, and why write a declaration of her own?",
+       "mode": null,
+       "line": "The source line gives you a name and a year, and her picture is in the margin. Then read her title slowly, word by word."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Four articles: FIRST, II, IV and VI. Two words to know: perpetual means never-ending, and tyranny means cruel, unfair rule. Watch the words she uses for people."
       },
       {
-       "questions": [
-        {
-         "n": 9,
-         "text": "According to Document 4, how does Olympe de Gouges change the wording of that same right?",
-         "mode": "written"
-        }
-       ],
+       "question": "What does Gouges say about rights and the making of laws?",
+       "mode": null,
        "line": "Put Document 3's Article 6 next to her Article VI. Read them word by word and mark every word she added or swapped."
       },
       {
-       "questions": [
-        {
-         "n": 10,
-         "text": "State one way Document 3 and Document 4 are similar, and one way they are different.",
-         "mode": "written"
-        }
-       ],
+       "question": "How is Gouges's view the same as Document 3's, and how is it different?",
+       "mode": null,
        "line": "Pick one article that is in both documents. Find one thing that stays the same and one thing that changes, and quote the words from each."
       },
       {
-       "questions": [
-        {
-         "n": 11,
-         "text": "Identify the enduring issue Olympe de Gouges is raising. Then EXPLAIN IT: define the problem in one sentence, then show where Document 4 shows it.",
-         "mode": "written"
-        }
-       ],
-       "line": "The clue words are in Article IV: perpetual tyranny. Read the six questions on the card on page 2, find the one those words answer, then pick the exact issue underneath it."
+       "question": "What lasting problem is Gouges raising?",
+       "mode": null,
+       "line": "The clue words are in Article IV: perpetual tyranny. Open the Six Umbrellas, find the question those words answer, then pick the exact issue underneath it."
       }
      ],
      "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
@@ -861,36 +859,29 @@
      "page": 13,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 12,
-         "text": "Who is speaking, to what body, and in what year?",
-         "mode": "out loud"
-        }
-       ],
-       "line": "Three answers, three places: the title, the date after it, and WHAT YOU NEED TO KNOW on page 12 for the body he stood in front of."
+       "question": "Who is speaking, to whom, and what is France facing that year?",
+       "mode": null,
+       "line": "Three places to look: the title, the date after it, and WHAT YOU NEED TO KNOW on page 12 for the body he stood in front of and what France was facing."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two paragraphs. The first has a short opening sentence, then one very long one: break it at each semicolon and each I will remind you. Faction means a group working against the rest."
       },
       {
-       "questions": [],
-       "line": "His main claim is in the second paragraph. Find the word demand and read what comes right after it."
+       "question": "What does Robespierre say the Committee is up against, and what does he say it needs?",
+       "mode": null,
+       "line": "Mark every danger he lists in the first paragraph. Then find the word demand in the second and read what comes right after it."
       },
       {
-       "questions": [
-        {
-         "n": 13,
-         "text": "Robespierre never says “I want to silence my political rivals.” What does he say instead, and why is that a more persuasive way to justify the same thing?",
-         "mode": "written"
-        }
-       ],
-       "line": "Start with his first sentence. Then mark every name he gives the people he is against. Ask what a listener in the Convention hears in those words that they wouldn't hear in the word rivals."
+       "question": "Who does Robespierre call enemies, and how might they answer him?",
+       "mode": null,
+       "line": "Start with his first sentence, then mark every name he gives the people he is against. Picture one of them in the Convention hall hearing this. What would they say?"
       },
       {
-       "questions": [],
-       "line": "Reread his first sentence: individuals are not at issue. Hold that up against the six questions on the card on page 2 and see which it fits."
+       "question": "What lasting issue does this speech raise?",
+       "mode": null,
+       "line": "Reread his first sentence: individuals are not at issue. Open the Six Umbrellas and see which question that fits."
       }
      ],
      "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
@@ -914,30 +905,35 @@
      "page": 14,
      "steps": [
       {
-       "questions": [],
-       "line": "Read the title and the source line. Is this from 1793, or written by historians later? Ask what that changes about how you read it."
+       "question": "Who wrote this summary, and were they there in 1793?",
+       "mode": null,
+       "line": "Read the title and the source line. Ask what it changes when historians write about a law long after it was passed.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two sentences, both long. Read the words in square brackets as part of the sentence. Penal means having to do with punishment, and tribunal is in your KEY VOCABULARY."
       },
       {
-       "questions": [
-        {
-         "n": 14,
-         "text": "According to Document 6, what could happen to someone accused under this law, even without being convicted of a specific crime?",
-         "mode": "written"
-        }
-       ],
+       "question": "What did the Law of Suspects let the government do?",
+       "mode": null,
        "line": "Find the word suspected in the first sentence and the word removing near the end. Then read suspect in KEY VOCABULARY on page 14 for what was not required."
       },
       {
-       "questions": [],
-       "line": "Historians wrote this summary, long after the law was passed. Whose own words are not in it? Think about everyone who stood in a tribunal."
+       "question": "Whose voices are missing from this summary?",
+       "mode": null,
+       "line": "Historians wrote this, long after the law was passed. Think about everyone who stood in a tribunal, and ask whose own words you would want to read."
       },
       {
-       "questions": [],
-       "line": "Read the six questions on the card on page 2. The clue words here are suspected, and removing them from the citizenry."
+       "question": "What lasting issue does a law like this raise?",
+       "mode": null,
+       "line": "The clue words are suspected, and removing them from the citizenry. Open the Six Umbrellas and check which question they fit."
       }
      ],
      "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
@@ -964,35 +960,36 @@
      "page": 15,
      "steps": [
       {
-       "questions": [],
-       "line": "Two lines to read before the chart: the source line and the line under it. Ask what this chart is counting, and what it sorts people by."
+       "question": "Who made this chart, and what is it counting?",
+       "mode": null,
+       "line": "Two lines to read before the chart: the source line and the line under it. Ask what this chart sorts people by.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Read the title first. Then go around the circle one slice at a time: the class, the percent, the number. Seven slices, and one has no number printed."
       },
       {
-       "questions": [
-        {
-         "n": 15,
-         "text": "According to Document 7, which social class made up the largest share of executions during the Terror?",
-         "mode": "written"
-        },
-        {
-         "n": 16,
-         "text": "Robespierre said the Terror targeted the Republic's enemies. Does the chart in Document 7 support that claim, complicate it, or contradict it? Use one number from the chart to explain your answer.",
-         "mode": "written"
-        }
-       ],
-       "line": "For 15, compare the percents, not the size of the slices by eye. For 16, go back to Document 5 and find who Robespierre says the enemies are, then pick the one number from this chart that tests his claim."
+       "question": "Which groups make up the most of the chart, and does that fit what Robespierre said?",
+       "mode": null,
+       "line": "Compare the percents, not the size of the slices by eye. Then go back to Document 5, find who Robespierre says the enemies are, and pick one number that tests his claim."
       },
       {
-       "questions": [],
-       "line": "Every number on this chart is people. Ask what a count by social class can show, and what it can't tell you about any one of them."
+       "question": "What can this chart show, and what can't it tell you about the people in it?",
+       "mode": null,
+       "line": "Every number on this chart is people. Read the slice labeled No Status Given, and ask what a count by social class leaves out."
       },
       {
-       "questions": [],
-       "line": "Read today's question in the Day 5 banner on page 14. Then read the six questions on the card on page 2 and see which one it sits under."
+       "question": "What lasting issue does this chart show?",
+       "mode": null,
+       "line": "Read today's question in the Day 5 banner on page 14. Then open the Six Umbrellas and see which question it sits under."
       }
      ],
      "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
@@ -1016,36 +1013,36 @@
      "page": 17,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 17,
-         "text": "Look at the map's legend. Name the three categories of control it shows, and explain in your own words what the difference is between them.",
-         "mode": "written"
-        }
-       ],
-       "line": "The legend is the box in the lower right corner. It has four entries, so read them all and ask which ones are about who controls a place. For the difference, read the words in each entry, not just the shading."
+       "question": "What year does this map show, and what does its legend sort places into?",
+       "mode": null,
+       "line": "The title gives the year, and the legend is the box in the lower right corner. It has four entries, so read them all and ask which ones are about who controls a place.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Read the title first, then the legend. Then find the dark gray, then the stripes, then the light gray. Last, the starbursts and their years."
       },
       {
-       "questions": [],
-       "line": "Start at Paris. Trace the edge of the dark gray, then the stripes, then the light gray. What is the map saying about France in 1812?"
+       "question": "How much of Europe does France have a hold on in 1812, and in what ways?",
+       "mode": null,
+       "line": "Start at Paris. Trace the edge of the dark gray, then the stripes, then the light gray, and use the legend's words for each."
       },
       {
-       "questions": [],
+       "question": "How would someone living in a striped country see this map?",
+       "mode": null,
        "line": "Picture a family in Madrid in 1812, and ask what this map looks like from where they stand. Then read the OUTSIDE EVIDENCE box on page 18: what can't this map show you?"
       },
       {
-       "questions": [
-        {
-         "n": 18,
-         "text": "By 1812 France controlled or dominated most of Europe. Identify an enduring issue this map shows. Then EXPLAIN IT: define the problem in one sentence, then show where the map shows it.",
-         "mode": "written"
-        }
-       ],
-       "line": "The clue words are in the question itself: controlled or dominated. Read the six questions on the card on page 2 and find the one they fit. To show where the map shows it, use the legend and name a place."
+       "question": "What lasting issue does this map show?",
+       "mode": null,
+       "line": "The clue words are in the legend: controlled and allied. Open the Six Umbrellas, find the question they fit, then name a place on the map that shows it."
       }
      ],
      "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
@@ -1074,42 +1071,29 @@
      "page": 5,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 4,
-         "text": "Who wrote this letter, when, and who is he writing to?",
-         "mode": "written"
-        }
-       ],
-       "line": "Three places: the title above the letter, the date line, and the greeting under it. Careful: the 2009 in the source line is a Regents exam, not the letter."
+       "question": "Who is Toussaint, and who did he hope would read this letter?",
+       "mode": null,
+       "line": "His KEY VOCABULARY line on page 3 says who he was. For his readers, check the title above the letter and the greeting under the date. Careful: the 2009 in the source line is a Regents exam, not the letter."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "A date, a greeting, then five short sentences. Vengeance means paying someone back for a wrong. Watch for where he stops talking about himself and starts asking something of his readers."
       },
       {
-       "questions": [
-        {
-         "n": 5,
-         "text": "Which two ideals does Toussaint want to “reign” in San Domingo, and what does he ask his readers to do?",
-         "mode": "written"
-        }
-       ],
-       "line": "Find the sentence with the word reign; both ideals are in it. For what he asks, read his last sentence: it starts with an order."
+       "question": "What does Toussaint hope will rule in San Domingo, and what is he calling on people to do?",
+       "mode": null,
+       "line": "Find the sentence with the word reign; what he wants is in it. For what he asks, read his last sentence: it starts with an order."
       },
       {
-       "questions": [],
+       "question": "Whose promise of liberty is Toussaint using, and who is he claiming it for?",
+       "mode": null,
        "line": "Go back to 10.2 Casefile B, Document 3. Who wrote those words about liberty in Paris in 1789, and who is using them here, in 1793?"
       },
       {
-       "questions": [
-        {
-         "n": 7,
-         "text": "Identify an enduring issue Documents 1 and 2 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
-         "mode": "written"
-        }
-       ],
-       "line": "Question 7 covers Documents 1 and 2, so finish Document 2 before you write. For now, pick one clue word from this letter and read the question under each umbrella on page 2. Which one does your word fit?"
+       "question": "What lasting problem does Toussaint's letter raise?",
+       "mode": null,
+       "line": "Pick one clue word from the letter, like vengeance or reign. Open the Six Umbrellas and read the question under each one. Which one does your word fit?"
       }
      ],
      "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
@@ -1139,36 +1123,29 @@
      "page": 5,
      "steps": [
       {
-       "questions": [],
-       "line": "Put this date next to Document 1's date. What You Need to Know on page 3 covers the years in between; anything there that isn't in either document can go in your OUTSIDE EVIDENCE box on page 4."
+       "question": "Who is speaking now, and what changed on the island after Document 1?",
+       "mode": null,
+       "line": "Put this date next to Document 1's date. What You Need to Know on page 3 covers the years in between. Anything there that isn't in either document can go in your OUTSIDE EVIDENCE box on page 4."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two sentences, and the first one is long: break it at each semicolon and each set of dots. Expelled means driven out. The dots mean words were cut."
       },
       {
-       "questions": [],
-       "line": "What does Dessalines say Haiti must do? Find the words that come after each we must."
+       "question": "What does Dessalines say Haiti must do now?",
+       "mode": null,
+       "line": "Find the words that come after each we must. Then read his last sentence slowly."
       },
       {
-       "questions": [
-        {
-         "n": 6,
-         "text": "Dessalines calls the French “barbarians” and their government “inhuman.” He had been enslaved himself. Why would he choose those words, and why does he say Haiti must be independent, not just free?",
-         "mode": "written"
-        }
-       ],
+       "question": "Why does Dessalines choose such strong words for the French, and why isn't freedom alone enough for him?",
+       "mode": null,
        "line": "Read the words around barbarians and inhuman: what does he say each one did, or still hopes to do? For the second part, read sovereignty in KEY VOCABULARY on page 3, then his last sentence."
       },
       {
-       "questions": [
-        {
-         "n": 7,
-         "text": "Identify an enduring issue Documents 1 and 2 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
-         "mode": "written"
-        }
-       ],
-       "line": "Put a clue word from Document 1 next to one from this declaration. Read the question under each umbrella on page 2 and find the one that fits. Then name the exact issue under it, and point to the line that shows it."
+       "question": "What lasting problem does this declaration raise? Does Document 1 raise it too?",
+       "mode": null,
+       "line": "Pick a clue word, like re-enslaving or independent. Open the Six Umbrellas and find the question it fits. Then check Document 1 against that same umbrella."
       }
      ],
      "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 6. Use the sentence stem, or write something of equal or better value.",
@@ -1194,36 +1171,29 @@
      "page": 8,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 8,
-         "text": "Is Document 3 a primary or a secondary source? Explain how you can tell from the source line.",
-         "mode": "written"
-        }
-       ],
-       "line": "Read the source line piece by piece: a writer, a book title, a publisher. Was Robert J. Alexander in Spanish America in 1808, or writing about it? The heading above the source line has one more clue."
+       "question": "Did this writer see 1808 himself, or is he writing about it later? What in the source line tells you?",
+       "mode": null,
+       "line": "Read the source line piece by piece: a writer, a book title, a publisher. The heading above the source line has one more clue."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two paragraphs, four sentences each. Words in [brackets] are glossed for you. A usurper is someone who grabs power that isn't rightfully theirs."
       },
       {
-       "questions": [
-        {
-         "n": 9,
-         "text": "According to Document 3, what did Napoleon do in 1808, and how did Spanish Americans respond?",
-         "mode": "written"
-        }
-       ],
+       "question": "What did Napoleon do to Spain, and how did Spanish Americans answer him?",
+       "mode": null,
        "line": "What Napoleon did is in the first paragraph, right where you see 1808; find every action. The second paragraph is the response: mark each thing Spanish Americans did."
       },
       {
-       "questions": [],
-       "line": "When he writes Spanish Americans, who exactly does he mean? WHAT YOU NEED TO KNOW on page 7 lists everyone in the colonies, top to bottom. Ask which of them seized control of the local governments."
+       "question": "When the writer says Spanish Americans, who does he mean, and who is left out?",
+       "mode": null,
+       "line": "WHAT YOU NEED TO KNOW on page 7 lists everyone in the colonies, top to bottom. Ask which of them seized control of the local governments."
       },
       {
-       "questions": [],
-       "line": "There's no Enduring Issue question today, so try one for practice. Pick a clue word from this page, like usurper or independence, and read the question under each umbrella on page 2. Which one does it fit?"
+       "question": "What lasting problem do the words usurper and independence point to?",
+       "mode": null,
+       "line": "Find both words in the second paragraph. Open the Six Umbrellas and read the question under each one. Which one fits those words?"
       }
      ],
      "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
@@ -1247,36 +1217,29 @@
      "page": 9,
      "steps": [
       {
-       "questions": [],
+       "question": "Who is writing, to whom, and from where?",
+       "mode": null,
        "line": "The title in the source line says who is writing and to whom, and the bracket says where. KEY VOCABULARY on page 7 says why he was there in 1815."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two paragraphs: five sentences, then four. Expel means drive out. The second paragraph turns toward the future at the words As soon as."
       },
       {
-       "questions": [
-        {
-         "n": 10,
-         "text": "According to Bolívar, what do South Americans need in order to drive out the Spaniards and found a free government?",
-         "mode": "written"
-        }
-       ],
-       "line": "His first sentence promises to tell you, and his second sentence does. For your because, read on: what does he say America has, and what doesn't it have?"
+       "question": "What does Bolívar say his people need to win, and how will they get it?",
+       "mode": null,
+       "line": "His first sentence promises to tell you, and his second sentence does. Then read on: what does he say America has, and what doesn't it have?"
       },
       {
-       "questions": [
-        {
-         "n": 11,
-         "text": "Bolívar is writing to an Englishman in Jamaica, a British colony, and he says America “is abandoned by all other nations.” Why might he describe America that way to this reader?",
-         "mode": "written"
-        }
-       ],
-       "line": "Picture the reader: an Englishman on an island Britain rules. Then reread the part of the second paragraph that starts As soon as we are strong. Why would Bolívar want this reader to see America as alone?"
+       "question": "Why would Bolívar tell an Englishman that America stands alone?",
+       "mode": null,
+       "line": "Picture the reader: an Englishman on an island Britain rules. Then reread the part of the second paragraph that starts As soon as we are strong."
       },
       {
-       "questions": [],
-       "line": "No Enduring Issue question today. For practice, pick one clue word from Bolívar and find the umbrella question on page 2 it fits. Then do the OUTSIDE EVIDENCE box on page 10; its hint sends you back to Day 1."
+       "question": "What lasting problem is Bolívar trying to solve?",
+       "mode": null,
+       "line": "Pick one clue word from Bolívar, like abandoned or attacked. Open the Six Umbrellas and find the question it fits. Then do the OUTSIDE EVIDENCE box on page 10; its hint sends you back to Day 1."
       }
      ],
      "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
@@ -1300,48 +1263,29 @@
      "page": 11,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 12,
-         "text": "Cavour wrote this in 1846. Was Italy one country yet? Use What You Need to Know to explain.",
-         "mode": "written"
-        }
-       ],
+       "question": "Cavour wrote in 1846. Had Italy come together as one nation by then?",
+       "mode": null,
        "line": "Find the year What You Need to Know on page 11 gives for the Kingdom of Italy, and put it next to 1846. Then look at the word in brackets in his first line."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "One long sentence, broken by two dashes. Read the part between the dashes as its own thought. Petty means small and unimportant."
       },
       {
-       "questions": [
-        {
-         "n": 13,
-         "text": "According to Cavour, what must be “silenced” for Italy to unify, and what does he hope unification will do for Italy?",
-         "mode": "written"
-        }
-       ],
+       "question": "What does Cavour say Italians must set aside, and what does he hope a united Italy will become?",
+       "mode": null,
        "line": "Find the word silenced and read back from it to see what must go quiet. For his hope, read what comes after it, and watch for not only and above all."
       },
       {
-       "questions": [
-        {
-         "n": 14,
-         "text": "Cavour and Bismarck both want to unify their people. How is Bismarck's way different from Cavour's? Use a word or phrase from each document.",
-         "mode": "written"
-        }
-       ],
-       "line": "This one needs both documents. Find the phrase here that shows how Cavour wants Italy to come together, then open Document 6's walk."
+       "question": "How does Cavour want Italy to come together, and how is that different from Bismarck in Document 6?",
+       "mode": null,
+       "line": "Find the phrase here that shows how Cavour wants Italy to come together. Then open Document 6's walk and do the same for Bismarck."
       },
       {
-       "questions": [
-        {
-         "n": 15,
-         "text": "Identify an enduring issue Documents 5 and 6 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
-         "mode": "written"
-        }
-       ],
-       "line": "Question 15 covers Documents 5 and 6. Unification is the clue word here: read the question under each umbrella on page 2 and find the one it fits. Then read Document 6 before you write."
+       "question": "What lasting problem does the word unification point to?",
+       "mode": null,
+       "line": "Unification is in brackets in his first line. Open the Six Umbrellas and read the question under each one. Which one fits?"
       }
      ],
      "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
@@ -1363,36 +1307,29 @@
      "page": 12,
      "steps": [
       {
-       "questions": [],
-       "line": "This source line has no date and no audience. Find Bismarck in What You Need to Know on page 11: when did he speak, and to whom?"
+       "question": "When did Bismarck say this, and who was he talking to?",
+       "mode": null,
+       "line": "This source line has no date and no audience. Find Bismarck in What You Need to Know on page 11."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "One sentence in two halves: what will not reach the goal, then what will. Read each half on its own. Democracy means rule by the people, through voting."
       },
       {
-       "questions": [],
+       "question": "What does Bismarck say will not reach his goal, and what will?",
+       "mode": null,
        "line": "Say his sentence back in your own words. Then ask what blood and iron could stand for."
       },
       {
-       "questions": [
-        {
-         "n": 14,
-         "text": "Cavour and Bismarck both want to unify their people. How is Bismarck's way different from Cavour's? Use a word or phrase from each document.",
-         "mode": "written"
-        }
-       ],
-       "line": "Bismarck's sentence names what he won't use and what he will. Put that next to the phrase you found in Cavour. Your own words go in the blanks; their exact words go in the quotation marks."
+       "question": "How is Bismarck's way different from what Cavour hopes for in Document 5?",
+       "mode": null,
+       "line": "Bismarck's sentence names what he won't use and what he will. Put that next to the phrase you found in Cavour."
       },
       {
-       "questions": [
-        {
-         "n": 15,
-         "text": "Identify an enduring issue Documents 5 and 6 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
-         "mode": "written"
-        }
-       ],
-       "line": "Take a clue word from either document and find the umbrella question on page 2 that fits it. Then name the exact issue under it, and do the OUTSIDE EVIDENCE box on page 13."
+       "question": "What lasting problem does Bismarck's plan raise?",
+       "mode": null,
+       "line": "Take his last three words, or a clue word from Cavour, and open the Six Umbrellas. Which question do they fit? Then do the OUTSIDE EVIDENCE box on page 13."
       }
      ],
      "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
@@ -1414,42 +1351,29 @@
      "page": 15,
      "steps": [
       {
-       "questions": [
-        {
-         "n": 16,
-         "text": "Read the title, the date and the legend. What does this map show, and when was it made?",
-         "mode": "written"
-        }
-       ],
+       "question": "Who made this map, when, and what do its colors stand for?",
+       "mode": null,
        "line": "The title runs sideways down the right edge. The date is in the source line, and the note under it tells you what Races means here."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Start with the legend in the lower left and read every name. Then find the heavy black border and look at the colors inside it. Big capital letters are regions; small ones are cities."
       },
       {
-       "questions": [
-        {
-         "n": 17,
-         "text": "Name three peoples the map shows inside Austria-Hungary. What problem could that cause for one empire in an age of nationalism?",
-         "mode": "written"
-        }
-       ],
-       "line": "Pick three names from the legend and find each color inside the border. For the problem, reread What You Need to Know on page 14, especially the question the other peoples asked."
+       "question": "Which peoples live inside the empire's border, and what could that mean for one emperor ruling them all?",
+       "mode": null,
+       "line": "Read every name in the legend and find each color inside the heavy border. Then reread What You Need to Know on page 14, especially the question the other peoples asked."
       },
       {
-       "questions": [],
-       "line": "Pick one people from the legend and look at the map as one of them would in 1911. Where does your color sit, and whose border is drawn around it?"
+       "question": "How would one of these peoples see this map in 1911?",
+       "mode": null,
+       "line": "Pick one people from the legend and look at the map as one of them would. Where does your color sit, and whose border is drawn around it?"
       },
       {
-       "questions": [
-        {
-         "n": 19,
-         "text": "Identify an enduring issue Documents 7 and 8 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
-         "mode": "written"
-        }
-       ],
-       "line": "Question 19 covers Documents 7 and 8, so look at the cartoon before you write. For now, read the question under each umbrella on page 2 and ask which one this map's legend could answer."
+       "question": "What lasting problem does this map raise?",
+       "mode": null,
+       "line": "Look at how long the legend's list of names is. Open the Six Umbrellas and ask which question that list could answer. Then look at Document 8."
       }
      ],
      "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
@@ -1470,36 +1394,29 @@
      "page": 16,
      "steps": [
       {
-       "questions": [],
-       "line": "Punch was printed in London; the source line says so. Check the date, then the note under the source line. Did the cartoonist know what was coming six days later when he drew this?"
+       "question": "Where and when was this cartoon printed, and what happened soon after?",
+       "mode": null,
+       "line": "The source line says where Punch was printed and when. Then read the note under it. Did the cartoonist know what was coming when he drew this?"
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Read the words first: the caption at the bottom and the two words on the pot. Then the men, one at a time, left to right: look at each hat. Then the edges of the picture."
       },
       {
-       "questions": [],
-       "line": "Put the caption and the words on the pot together. Then find two details in the drawing that show what the caption says."
+       "question": "What does the cartoonist think is about to happen, and which two details show it?",
+       "mode": null,
+       "line": "Put the caption and the words on the pot together. Then look at the steam and at what the men are doing with their hands. How long can that last?"
       },
       {
-       "questions": [
-        {
-         "n": 18,
-         "text": "Who is sitting on the lid, and what is boiling inside the pot? What is this British cartoonist predicting?",
-         "mode": "written"
-        }
-       ],
-       "line": "The first two parts are in the words: the note under the source line, and the side of the pot. For the prediction, look at the steam and at what the men are doing with their hands. How long can that last?"
+       "question": "Who does the cartoonist put on top of the pot, and who isn't shown at all?",
+       "mode": null,
+       "line": "The note under the source line names who is on the lid. Then check Balkans in Day 4's KEY VOCABULARY on page 14: are any of those peoples drawn here?"
       },
       {
-       "questions": [
-        {
-         "n": 19,
-         "text": "Identify an enduring issue Documents 7 and 8 raise. Then EXPLAIN IT: define the problem in one sentence, then show where a document shows it.",
-         "mode": "written"
-        }
-       ],
-       "line": "Pick one clue: the two words on the pot, or a name from Document 7's legend. Read the question under each umbrella on page 2 and find the one it fits. Then do the OUTSIDE EVIDENCE box on page 17."
+       "question": "What lasting problem is boiling in this pot?",
+       "mode": null,
+       "line": "Start with the two words on the pot. Open the Six Umbrellas and find the question they fit. Then do the OUTSIDE EVIDENCE box on page 17."
       }
      ],
      "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",

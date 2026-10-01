@@ -350,19 +350,26 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     if (walk.length !== 5) df(`the walk needs five steps; it has ${walk.length}.`)
     walk.forEach((w, i) => { if (!w.tag || !w.step || !w.say) df(`walk step ${i + 1}: needs tag, step and say.`) })
     for (const k of LABELS) if (!d.labels?.[k]) df(`labels.${k} is missing (a button with no word).`)
-    // The Six Umbrellas pop-out on the last step (Global, BK 09:05).
-    if (d.umbrellas) {
-      const u = d.umbrellas
-      if (!d.labels?.umbrellas) df(`umbrellas: labels.umbrellas (the button word) is missing.`)
-      if (!u.title) df(`umbrellas: no title.`)
-      if ((u.items || []).length !== 6) df(`umbrellas: needs six items; it has ${(u.items || []).length}.`)
-      for (const it of u.items || []) if (!it.name || !it.question || !it.issues) df(`umbrellas item ${it.n ?? '?'}: needs name, question and issues.`)
+    // The step-5 card (BK 09:05, 10:26): Global's `umbrellas` (exactly six), or a course's `q4_card`.
+    for (const key of ['umbrellas', 'q4_card']) {
+      const u = d[key]
+      if (!u) continue
+      if (!d.labels?.[key] && !u.button) df(`${key}: no button word (labels.${key}).`)
+      if (!u.title) df(`${key}: no title.`)
+      const items = u.items || []
+      if (key === 'umbrellas' ? items.length !== 6 : !items.length) df(`${key}: ${key === 'umbrellas' ? 'needs six items' : 'has no items'}; it has ${items.length}.`)
+      for (const it of items) {
+        if (!it.name || !it.question) df(`${key} item ${it.n ?? '?'}: needs a name and a question.`)
+        if (key === 'umbrellas' && !it.issues) df(`${key} item ${it.n ?? '?'}: no issues line.`)
+        for (const x of it.issue_defs || []) if (!x.name || !x.definition) df(`${key} item ${it.n ?? '?'}: an issue with no definition.`)
+      }
     }
     const cfs = d.casefiles || []
     if (!cfs.length) df(`no casefiles.`)
     if (!cfs.some(x => x.status === 'open')) df(`no casefile is open.`)
     const student = [d.tile, d.walk_name, ...walk.flatMap(w => [w.tag, w.step, w.say, w.say_image]), ...Object.values(d.labels || {}),
-      d.umbrellas?.intro, ...(d.umbrellas?.close || []), ...(d.umbrellas?.items || []).flatMap(i => [i.name, i.question, i.issues])]
+      ...[d.umbrellas, d.q4_card].filter(Boolean).flatMap(u => [u.intro, ...(u.close || []),
+        ...(u.items || []).flatMap(i => [i.name, i.question, i.issues, ...(i.issue_defs || []).map(x => x.definition)])])]
     for (const cf of cfs) {
       if (!cf.id) df(`a casefile with no id.`)
       if (!['open', 'building'].includes(cf.status)) df(`casefile ${cf.id}: status must be open or building.`)
@@ -400,6 +407,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
           }
         })
         if (!asked) warn(f, `${w}: no casefile question on any step; check the close sends the kid to where they are.`)
+        steps.forEach((s, j) => { if (s.tip && (!s.tip.title || !(s.tip.text || []).length || s.tip.text.some(t => !String(t).trim()))) df(`${w} step ${j + 1}: a tip needs a title and text.`) })
         if (doc.kind === 'text') {
           if (!(doc.text || []).length || doc.text.some(p => !String(p).trim())) df(`${w}: a text document with no text.`)
           if (!(doc.easier?.text || []).length) df(`${w}: no easier-to-read version (BK ruled one per text document).`)
@@ -430,7 +438,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         const box = b => b && typeof b === 'object' && b.title && b.text
         if (doc.before != null && !(typeof doc.before === 'string' ? doc.before.trim() : box(doc.before))) df(`${w}: 'before' must be a printed line or { title, text }.`)
         if (doc.before_we_talk != null && !box(doc.before_we_talk)) df(`${w}: before_we_talk needs a title and text.`)
-        student.push(doc.title, doc.close, ...steps.flatMap(s => [s.question, s.line, ...(s.questions || []).map(q => q?.text)]),
+        student.push(doc.title, doc.close, ...steps.flatMap(s => [s.question, s.line, ...(s.questions || []).map(q => q?.text), ...(s.tip?.text || [])]),
           ...(doc.easier?.text || []), typeof doc.before === 'string' ? doc.before : doc.before?.text, doc.before_we_talk?.text)
       })
     }

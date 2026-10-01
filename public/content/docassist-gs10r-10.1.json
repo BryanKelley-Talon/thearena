@@ -1,6 +1,6 @@
 {
- "_built": "Will (global10r-curriculum) 2026-10-01 09:53 EDT",
- "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: steps[].questions is a LIST (a Global step may carry 0, 1 or 2 casefile questions, each with its printed number, or n=null where the 10.1 packet prints none); optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05).",
+ "_built": "Will (global10r-curriculum) 2026-10-01 10:28 EDT · v3, the four-question arc",
+ "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: v3, BK 10:16 the four-question arc: steps[k] = {question, mode: null, line} exactly as us11r 11.2 A v2, step 2's question null; optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05; items[].issue_defs = one-line definitions, BK 10:28); steps[0].tip = {title, text[]} on 8 docs (NO NAME ON IT?, BK 10:26).",
  "tool": "Doc Assist",
  "room": "10.1",
  "course": "GS10R",
@@ -55,37 +55,101 @@
     "n": "1",
     "name": "POWER & ITS ABUSE",
     "question": "Who holds authority, and what happens to the people who did not choose them.",
-    "issues": "Abuse of Power · Imperialism · Human Rights Violations · Inequality"
+    "issues": "Abuse of Power · Imperialism · Human Rights Violations · Inequality",
+    "issue_defs": [
+     {
+      "name": "Abuse of Power",
+      "definition": "when someone with authority uses it to harm people or to serve themselves."
+     },
+     {
+      "name": "Imperialism",
+      "definition": "when a stronger country takes control of another land and its people."
+     },
+     {
+      "name": "Human Rights Violations",
+      "definition": "when people are denied the basic rights every person should have, like life, freedom and safety."
+     },
+     {
+      "name": "Inequality",
+      "definition": "when some groups get fewer rights, chances or resources than others."
+     }
+    ]
    },
    {
     "n": "2",
     "name": "CONFLICT",
     "question": "Why people fight, and what is still unsettled when the fighting stops.",
-    "issues": "Conflict"
+    "issues": "Conflict",
+    "issue_defs": [
+     {
+      "name": "Conflict",
+      "definition": "a struggle between groups, nations or ideas, from argument to war."
+     }
+    ]
    },
    {
     "n": "3",
     "name": "IDENTITY & NATIONALISM",
     "question": "Who a people say they are, and who that leaves out.",
-    "issues": "Nationalism · Cultural Exchange and Diffusion"
+    "issues": "Nationalism · Cultural Exchange and Diffusion",
+    "issue_defs": [
+     {
+      "name": "Nationalism",
+      "definition": "a people's loyalty to their own nation, and the push for that nation to rule itself."
+     },
+     {
+      "name": "Cultural Exchange and Diffusion",
+      "definition": "when ideas, beliefs, goods and ways of life spread from one people to another."
+     }
+    ]
    },
    {
     "n": "4",
     "name": "WEALTH & RESOURCES",
     "question": "Who owns what a place produces, and who does the producing.",
-    "issues": "Economic Development · Scarcity"
+    "issues": "Economic Development · Scarcity",
+    "issue_defs": [
+     {
+      "name": "Economic Development",
+      "definition": "how a place grows its wealth, and who that growth helps or leaves behind."
+     },
+     {
+      "name": "Scarcity",
+      "definition": "not having enough of something people need, like food, water or land."
+     }
+    ]
    },
    {
     "n": "5",
     "name": "TECHNOLOGY & ENVIRONMENT",
     "question": "What new tools let people do, and what they cost the world around them.",
-    "issues": "Scientific and Technological Change · Environmental Crisis"
+    "issues": "Scientific and Technological Change · Environmental Crisis",
+    "issue_defs": [
+     {
+      "name": "Scientific and Technological Change",
+      "definition": "new knowledge and tools that change how people live and work."
+     },
+     {
+      "name": "Environmental Crisis",
+      "definition": "serious harm to land, air, water or climate, often caused by people."
+     }
+    ]
    },
    {
     "n": "6",
     "name": "A CONNECTED WORLD",
     "question": "What happens when distant places start depending on each other.",
-    "issues": "Cooperation · Population and Migration"
+    "issues": "Cooperation · Population and Migration",
+    "issue_defs": [
+     {
+      "name": "Cooperation",
+      "definition": "when groups or countries work together toward a shared goal."
+     },
+     {
+      "name": "Population and Migration",
+      "definition": "how the number of people in a place changes, and why people move."
+     }
+    ]
    }
   ],
   "close": [
@@ -93,7 +157,7 @@
    "Then EXPLAIN IT: define the problem in one sentence, and show where a document shows it."
   ]
  },
- "_ruled": "Wording SIGNED by BK 2026-10-01 09:05 (\"1. ... yes good step. 2. yes 3. yes 4. yes with your changes. thank you. signed.\")",
+ "_ruled": "v3 SIGNED by BK 2026-10-01 10:28 (\"1 and 2: Yes. Signed.\"): the four-question walks (ruled 10:16), NO NAME ON IT? (10:26), issue definitions in the pop-up (10:28)",
  "casefiles": [
   {
    "id": "A",
@@ -110,42 +174,36 @@
      "page": 3,
      "steps": [
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Pick any three of the eight states on the screen. For each one write the region it sat in — the continent and the part of it, not just the name. (Era and place. This is the move you will make on every document this year.)",
-         "mode": "written"
-        }
-       ],
-       "line": "Pick three you can find fast. For each one, name the continent first, then narrow it down: which part of that continent? WHAT YOU NEED TO KNOW on Day 1 says where several of them sat."
+       "question": "Who made the 1772 map, and when? Where in the world did each of the eight states sit?",
+       "mode": null,
+       "line": "For Map 2, read the title in the lower left and the small print along the bottom. For Map 1, name each state's continent first, then narrow it down: which part of that continent?",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two maps: the eight states first, then the 1772 atlas. On the first, read all eight names before anything else. On the second, read the title and the key before anything else."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "One empire on that map reached across three continents. Which one, and which three? Then: name the state that held the least land of the eight.",
-         "mode": "written"
-        }
-       ],
-       "line": "Trace each empire's edges with your eyes and count the continents it touches. For the second part, go by the size of the shape on the map, not by how famous the name is."
+       "question": "What does Map 1 show about how big each state was and how far it reached?",
+       "mode": null,
+       "line": "Trace each oval's edges and count the continents it touches. Then compare the shapes by size, not by how famous the name is."
       },
       {
-       "questions": [],
-       "line": "Read the source line again: the second map came from a British atlas. Whose eyes are you looking through on that map?"
+       "question": "Whose eyes are you looking through on the 1772 map?",
+       "mode": null,
+       "line": "Read the small print along the bottom and the key in the lower right. Which countries get a color, and which places are left in plain black outline?"
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Now the 1772 map. Almost all of Asia is blank on it. Was nothing there? Say what the blank actually means, in one sentence — and name the enduring issue it puts on the table.",
-         "mode": "written"
-        }
-       ],
-       "line": "Start with the question's own clue: \"Was nothing there?\" Ask who made the map and what they knew. Then check the anchors on your cover page for the issue a blank like that puts on the table."
+       "question": "What bigger issue does the blank part of Map 2 raise?",
+       "mode": null,
+       "line": "Find where Map 2 stops using color and names. Ask what the mapmaker knew and didn't know, then open the Six Umbrellas and check the umbrella questions."
       }
      ],
      "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 3. Use the sentence stem, or write something of equal or better value.",
@@ -180,36 +238,29 @@
      "page": 5,
      "steps": [
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "When was this written, and when is it describing? Those are two different answers, and the gap between them matters. Name both.",
-         "mode": "written"
-        }
-       ],
+       "question": "When was this book written, and what years is it describing?",
+       "mode": null,
        "line": "The source line has two years in it, and only one is when the book was written. For when it's describing, the KEY VOCABULARY on Day 2 gives Aurangzeb's years."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Eight sentences. Moghul is an older spelling of Mughal; the brackets tell you. A devout person is deeply religious. Mark each thing Aurangzeb changed as you go."
       },
       {
-       "questions": [],
-       "line": "The author's judgment sits in the last three sentences. Find the words that say what Aurangzeb's choices did to the empire."
+       "question": "What did Aurangzeb change, and what does the author say it did to the empire?",
+       "mode": null,
+       "line": "Mark each thing he dismissed, banned or brought back. Then find the author's judgment in the last three sentences."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Whose voice is this? The author calls Aurangzeb’s measures “oppressive” and his reign “destructive.” Who is not speaking in this passage — and how might they have described the same decisions?",
-         "mode": "written"
-        }
-       ],
-       "line": "The source line tells you who is talking, and when. Then list everyone the passage talks about but never lets speak. Pick one and ask what words they'd use instead of \"oppressive.\""
+       "question": "Who gets to speak in this passage, and who doesn't?",
+       "mode": null,
+       "line": "The source line tells you who is talking, and when. Then list everyone the passage talks about but never lets speak, and ask what words they'd use instead of \"oppressive.\""
       },
       {
-       "questions": [],
-       "line": "Clue words: \"oppressive measures.\" Ask what kind of issue that phrase belongs to, then check the anchors on your cover page."
+       "question": "What bigger issue do Aurangzeb's choices raise?",
+       "mode": null,
+       "line": "Clue words: \"oppressive measures.\" Open the Six Umbrellas and ask which umbrella question that phrase answers."
       }
      ],
      "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
@@ -232,36 +283,35 @@
      "page": 6,
      "steps": [
       {
-       "questions": [],
-       "line": "The source line has a span of years in the title, then 2009. Ask: is the BBC watching this happen, or looking back at it?"
+       "question": "Who wrote this list, and were they watching it happen or looking back?",
+       "mode": null,
+       "line": "The source line has a span of years in the title, then 2009. Put them side by side.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "One paragraph of three sentences, a lead-in line, then a list of seven. Waning means fading; the brackets tell you. Read the list one line at a time."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "The passage lists seven causes. Which two are about trade routes moving somewhere else? Name them, and say in one sentence why that would weaken an empire that had grown rich on trade.",
-         "mode": "written"
-        }
-       ],
-       "line": "For each of the seven, ask: is this trade going somewhere else, or trouble inside the empire? For the why, picture a city that grew rich because the trade road ran through it."
+       "question": "What reasons does the passage give for the Ottoman slide, and which ones are about trade?",
+       "mode": null,
+       "line": "Read the seven one line at a time and ask of each: is this trade going somewhere else, or trouble inside the empire?"
       },
       {
-       "questions": [],
-       "line": "This is a list of what historians say, from far away and long after. Whose voices aren't on it? Picture an Ottoman merchant in 1700 reading it."
+       "question": "Whose voices are missing from this list?",
+       "mode": null,
+       "line": "This is what historians say, long after. Picture an Ottoman merchant or a sultan in 1700 reading it. What would each one add or argue with?"
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "An empire that grew rich on controlling where trade passed is now watching trade pass somewhere else. Name the enduring issue that puts on the table. (Look at the anchor on your cover page.) One sentence on why it is bigger than the Ottomans.",
-         "mode": "written"
-        }
-       ],
-       "line": "The question hands you the clue: look at the anchor on your cover page. For \"bigger than the Ottomans,\" ask who else, in any century, has watched trade move away from them."
+       "question": "Why would trade moving away matter to any empire, not just the Ottomans?",
+       "mode": null,
+       "line": "Clue words: \"other trade routes.\" Open the Six Umbrellas and ask which umbrella question fits. Then think past 1750."
       }
      ],
      "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 6. Use the sentence stem, or write something of equal or better value.",
@@ -300,36 +350,29 @@
      "page": 8,
      "steps": [
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Name the source out loud, then write it here — what is this document, who issued it, and what year? Then pull the single harshest word or phrase in it.",
-         "mode": "written"
-        }
-       ],
-       "line": "The document's title tells you what it is and the year. The CONTEXT line above the text tells you who issued it. For the harshest phrase, reread the four rules, mark each punishment, then choose one."
+       "question": "What kind of document is this, who issued it, and when?",
+       "mode": null,
+       "line": "The title tells you what it is and the year. The CONTEXT line above the text tells you who issued it."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Four rules, one per bullet. Watch who each rule is aimed at. Impounded means taken by the government; padres are priests, and the page tells you who their followers are."
       },
       {
-       "questions": [],
+       "question": "What does the edict forbid, and what does it reward?",
+       "mode": null,
        "line": "Each rule forbids something or rewards something. Say each one in a few words, then ask what they all have in common."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "The edict rewards informers for turning in Christians. What does paying people to inform on their neighbors do to a country over two hundred years? One sentence — this is a consequence question, not a fact question.",
-         "mode": "written"
-        }
-       ],
-       "line": "Find the rule about informers and read its reward line. Then picture one village living under that rule for two hundred years, generation after generation. What changes there?"
+       "question": "Who is this order aimed at, and how would they see it?",
+       "mode": null,
+       "line": "Each rule names a different group of people. Pick one group and read its rule through their eyes. What does the rule cost them?"
       },
       {
-       "questions": [],
-       "line": "The title holds the clue: \"the Closing of Japan.\" Ask what issue a country raises when it closes itself off, then check the anchors on your cover page."
+       "question": "What bigger issue does a country raise when it shuts itself off?",
+       "mode": null,
+       "line": "The title holds the clue: \"the Closing of Japan.\" Open the Six Umbrellas and find the umbrella question it answers."
       }
      ],
      "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
@@ -362,36 +405,29 @@
      "page": 9,
      "steps": [
       {
-       "questions": [],
-       "line": "The title and the source line tell you who wrote it, to whom, and the year. Then ask what a letter between two rulers is for."
+       "question": "Who wrote this letter, to whom, and why would one ruler write to another?",
+       "mode": null,
+       "line": "The title and the source line give you the writer, the reader and the year. The CONTEXT line says what Roe went there to get."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two paragraphs, and each one is a single long sentence. Break them at the semicolons. Soever means ever: \"what place soever\" means whatever place. Dominions is in your Day 3 KEY VOCABULARY."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Jahangir grants the English a list of freedoms. Pull two of them, in his own words. Then say in one sentence what he appears to want in return.",
-         "mode": "written"
-        }
-       ],
-       "line": "Stay in the second paragraph. Each piece between the semicolons gives the English merchants something; copy two in his exact words. For what he wants back, go back to how the letter opens."
+       "question": "What does Jahangir promise the English merchants?",
+       "mode": null,
+       "line": "Stay in the second paragraph. Each piece between the semicolons gives the English merchants something. Find two in his exact words."
       },
       {
-       "questions": [],
-       "line": "This is one ruler writing to another. Find the other country he names in the second paragraph, and picture one of its traders in the same port reading this letter."
+       "question": "Who is left out of this deal, and how would they see it?",
+       "mode": null,
+       "line": "Find the other country he names in the second paragraph. Picture one of its traders in the same port reading this letter."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Two rulers, one decade apart, answer the same question in opposite ways: how open should a country be to outsiders? That question did not end in 1635. Name the enduring issue, and give one place it shows up outside this century.",
-         "mode": "written"
-        }
-       ],
-       "line": "The question already asks it for you: how open should a country be to outsiders? Put this letter next to Document 4, then check the anchors on your cover page. For the second part, look past 1750."
+       "question": "How much should a ruler let foreigners in? How is Jahangir's answer different from Document 4's?",
+       "mode": null,
+       "line": "Put this letter next to Document 4. Open the Six Umbrellas and find the umbrella question this letter answers. Then look past 1750."
       }
      ],
      "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
@@ -416,36 +452,29 @@
      "page": 12,
      "steps": [
       {
-       "questions": [],
-       "line": "The source line names an author, a museum book, and a Regents exam. Ask: is this someone who walked the road, or a historian looking back at it?"
+       "question": "Who wrote this, and did she see the road in use?",
+       "mode": null,
+       "line": "The source line names an author, a museum book, and a Regents exam. Ask: did she walk the road, or study it later?"
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Two paragraphs: two sentences, then six. Relays are teams that hand off, one to the next; priority means going first. Watch who gets through and who gets stopped."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "The road did two jobs at once: it moved the government’s messages fast and it slowed everybody else down. Pull one specific detail for each job.",
-         "mode": "written"
-        }
-       ],
-       "line": "Stay in the second paragraph. The first job runs through its middle sentences; the second job is in its last sentence. One detail from each is all you need."
+       "question": "What did the road do for the government, and what did it do to everyone else?",
+       "mode": null,
+       "line": "Stay in the second paragraph. The middle sentences are about government messengers; the last sentence is about everyone else."
       },
       {
-       "questions": [],
-       "line": "Who is this road built for, and who just has to live along it? Find the two kinds of traveler in the last three sentences, and ask how each one would describe the road."
+       "question": "How would a private traveler describe this road?",
+       "mode": null,
+       "line": "Find the two kinds of traveler in the last three sentences. Read the road's rules once as a messenger, then once as a private citizen."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "A government builds a road, then decides who is allowed to use it and when. Name the enduring issue. Then, in one sentence: is controlling movement a way of governing, or a way of controlling people? (It can be both — say so if you think so.)",
-         "mode": "written"
-        }
-       ],
-       "line": "Start with the question's own words: \"decides who is allowed to use it and when.\" Who holds that decision? Check the anchors on your cover page. The second part is yours; the question already lets you say both."
+       "question": "What bigger issue comes up when a government decides who can travel and when?",
+       "mode": null,
+       "line": "Clue words: \"barriers and checkpoints.\" Ask who sets them up and who has to stop at them, then open the Six Umbrellas."
       }
      ],
      "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
@@ -470,42 +499,29 @@
      "page": 13,
      "steps": [
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Who wrote this, and where was he standing when he saw it? Then say when — the reign, not an exact year. (Era and place. Every document, all year.)",
-         "mode": "written"
-        }
-       ],
-       "line": "The source line names him, and the CONTEXT line says where he lived. For when, the first sentence of the document names whose reign it is."
+       "question": "Who wrote this, where was he, and whose reign is he describing?",
+       "mode": null,
+       "line": "The source line names him, and the CONTEXT line says where he lived. For whose reign, read the first sentence of the document."
       },
       {
-       "questions": [],
+       "question": null,
+       "mode": null,
        "line": "Three paragraphs. The dots mark places where words were cut, and the brackets explain the French words. Bestow a favour means give a favor. Watch for every place the King notices who is there."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Both rulers were solving the same problem. Say what that problem was in one sentence — then name the one word for what each ruler did with the people who could threaten him. One word for Edo, one for Versailles. They are opposites, and both worked.",
-         "mode": "written"
-        }
-       ],
-       "line": "This one is for Documents 6 and 7 together, after the comparison table on page 14. Fill the table first; its first row is where your two words come from. For the problem, reread WHAT YOU NEED TO KNOW on Day 4."
+       "question": "How did Louis XIV keep watch on his nobles, and what did court life cost them?",
+       "mode": null,
+       "line": "Mark every place the King notices who is there. Then read the last paragraph for what the nobles had to spend."
       },
       {
-       "questions": [
-        {
-         "n": null,
-         "text": "Saint-Simon is a duke describing a system designed to control dukes. Find the one sentence where he stops describing and starts accusing — where he tells you the King did it on purpose. Copy it. Then say why a noble might notice that when a peasant would not.",
-         "mode": "written"
-        }
-       ],
-       "line": "Look in the last paragraph for where he stops saying what the King did and starts saying why. For the second part, go back to Step 1: who is he, and what did this system cost people like him?"
+       "question": "Saint-Simon is one of the nobles this system was built for. How might that shape what he says?",
+       "mode": null,
+       "line": "The CONTEXT line says how he felt about it. Look in the last paragraph for where he stops saying what the King did and starts saying why."
       },
       {
-       "questions": [],
-       "line": "Clue word in the last paragraph: compelled. Ask what issue it raises when one man can make the most powerful people in the country do what he wants, then check the anchors on your cover page."
+       "question": "What bigger issue does Versailles raise, and how is it different from the Tōkaidō in Document 6?",
+       "mode": null,
+       "line": "Clue word in the last paragraph: compelled. Ask what the King could make his nobles do, then open the Six Umbrellas and check the umbrella questions."
       }
      ],
      "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
