@@ -993,6 +993,11 @@
           "label": "11.1 · Colonial Foundations",
           "published": true,
           "brief_ref": "content/brief-us11r-11.1.json",
+          "doc_assist": {
+            "published": true,
+            "content_ref": "content/docassist-us11r-11.1.json",
+            "_note": "Josh, 2026-10-01. Doc Assist 11.1, Sam's Casefile A pack (BK signed 09:27), byte for byte; Casefile B building, next push (BK 09:17)."
+          },
           "_brief_note": "Josh, 2026-09-25. Sam's GC content brief v2 (BK-approved), ported verbatim to JSON and rendered on the page — BK: render it directly rather than link a PDF. Letterhead, footer filename and the BK-only revision note are left out. Quick Check shows answers under each question (BK's ruling via Sam, 2026-09-25).",
           "activities": [
             {

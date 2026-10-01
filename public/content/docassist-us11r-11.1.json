@@ -1,0 +1,386 @@
+{
+ "_built": "Sam (us11r-curriculum) 2026-10-01 09:25 EDT",
+ "_signed": "BK 2026-10-01 09:27 EDT: \"1. approved. signed.\" off US11R_11.1A_DocAssist_WORDING_v2_2026-10-01.pdf; label \"Ask yourself:\" agreed (2.)",
+ "_source": "OUTPUTS/2026-27/Unit_01/STUDENT/US11R_Unit1_BlockA_PACKET.pdf (printed cover: Block A; on screen: Casefile A, BK 09:17)",
+ "_shape": "11.2 A shape: steps[k] = {question, mode, line}; questions are Doc Assist own Frame questions (BK 09:23); mode null",
+ "tool": "Doc Assist",
+ "room": "11.1",
+ "tile": "Every document in your casefile, with a walk-through beside it. It won't answer for you. It shows you how.",
+ "walk_name": "THE DOC WALK",
+ "walk": [
+  {
+   "tag": "Q1 · SOURCING",
+   "step": "Source line first.",
+   "say": "Before you read a word of the document, read the line above it. Who made it, when, and why?"
+  },
+  {
+   "tag": "READ IT THROUGH",
+   "step": "Read it once, all the way.",
+   "say": "Start to finish, no stopping. Hit a hard word? Keep going. Then say what it's about in a few words.",
+   "say_image": "Look in three passes: the title and labels, then the biggest thing, then the small details."
+  },
+  {
+   "tag": "Q2 · CLAIM & EVIDENCE",
+   "step": "What is it saying?",
+   "say": "Find the words that say it. Your proof is always in the document."
+  },
+  {
+   "tag": "Q3 · PERSPECTIVE CHECK",
+   "step": "Whose view is this?",
+   "say": "Who would tell it differently? Who isn't in it?"
+  },
+  {
+   "tag": "Q4 · CIVIC CONNECTION",
+   "step": "Name the principle.",
+   "say": "Find it on your Civic Principles card. Does the document uphold it, deny it, or fight over it?"
+  }
+ ],
+ "labels": {
+  "walk": "Walk me through it",
+  "read": "Read it to me",
+  "easier": "Easier to read",
+  "original": "Original",
+  "close": "Close the walk",
+  "next": "Next step",
+  "back": "Back",
+  "stop": "Stop reading"
+ },
+ "casefiles": [
+  {
+   "id": "A",
+   "title": "11.1 Casefile A · Contact, Consequence, and the Colonial Economies",
+   "status": "open",
+   "docs": [
+    {
+     "n": 1,
+     "title": "The Town of Secota",
+     "kind": "image",
+     "src": "Source: Theodor de Bry, engraver, 1590 (adapted). De Bry worked in Frankfurt from watercolors painted in Virginia by John White. De Bry never crossed the Atlantic.",
+     "page": 5,
+     "steps": [
+      {
+       "question": "Who made this picture, where, and for whom?",
+       "mode": null,
+       "line": "Read the whole source line. Count the hands between Secota and you: who painted it, who carved it, and who bought it."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Use the page's Five Looks: frame, people, words, what is centered, what is missing. One pass for each."
+      },
+      {
+       "question": "What does this picture show about life in Secota? Find three details that prove it.",
+       "mode": null,
+       "line": "Split the picture into four corners and the center street. Look for people doing something in each part, and look at the fields."
+      },
+      {
+       "question": "Whose view is this, and whose voice is missing?",
+       "mode": null,
+       "line": "The people of Secota didn't make this picture. Ask what a buyer in Europe in 1590 hoped to see."
+      },
+      {
+       "question": "If the land was already full of towns and farms, what does that say about who had a right to it?",
+       "mode": null,
+       "line": "Put the picture next to the word settlement. What does that word assume about the land?"
+      }
+     ],
+     "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "STIMULUS_BANK/Unit_01/unit01-0625-mc01.png",
+     "image_alt": "A black-and-white engraving titled The Town of Secota, 1590. It shows a town from above. Along a wide center street stand long houses with rounded roofs. In the upper right, a field of tall plants grows beside a small raised platform with a hut on it. Down the right side are more fields: rows of tall plants, and below them rows of shorter plants. In the middle of the street, people sit and stand around food laid out on mats. Near the top, people gather around a fire. In the lower right, people dance in a ring around a circle of carved posts while others sit and watch. In the lower left, people sit around a fire inside a small ring. Trees fill the left edge, and small figures walk among the houses.",
+     "describe": "A black-and-white engraving titled The Town of Secota, 1590. It shows a town from above. Along a wide center street stand long houses with rounded roofs. In the upper right, a field of tall plants grows beside a small raised platform with a hut on it. Down the right side are more fields: rows of tall plants, and below them rows of shorter plants. In the middle of the street, people sit and stand around food laid out on mats. Near the top, people gather around a fire. In the lower right, people dance in a ring around a circle of carved posts while others sit and watch. In the lower left, people sit around a fire inside a small ring. Trees fill the left edge, and small figures walk among the houses.",
+     "licence": {
+      "text": "As printed on the NYSED Regents exam in US History and Government, June 2025.",
+      "sellable": false
+     }
+    },
+    {
+     "n": 2,
+     "title": "An English traveler counts the dead",
+     "kind": "text",
+     "src": "Source: John Josselyn, An Account of Two Voyages to New-England, Made during the Years 1638, 1663",
+     "page": 6,
+     "steps": [
+      {
+       "question": "Who wrote this, and did he see all of it himself?",
+       "mode": null,
+       "line": "Check the dates in the source line, then the first words of the passage. When did these deaths happen, and when did he arrive?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "It was written more than 300 years ago, so read it once for the story, then once more slowly. Mortality and sagamorship are in your word list on page 4."
+      },
+      {
+       "question": "What does Josselyn say happened to Native peoples, and what numbers back it up?",
+       "mode": null,
+       "line": "Find the word \"first\" and the word \"afterwards.\" Then look for the word \"from.\""
+      },
+      {
+       "question": "Whose view is this, and whose voices are missing?",
+       "mode": null,
+       "line": "Notice whose numbers he gives. Is any Native person quoted?"
+      },
+      {
+       "question": "If disease emptied the land, did that make the land free to take? Who gets to decide?",
+       "mode": null,
+       "line": "Ask who is doing the claiming, and who isn't there to say no."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 6. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "….Not long before the English came into the Country, happened a great mortality amongst [Native Americans], especially where the English afterwards planted, the East and Northern parts were sore smitten with the Contagion; first by the plague, afterwards when the English came by the small pox, the three Kingdoms or Sagamorships of the Massachusetts were very populous, having under them seven Dukedoms or petti-Sagamorships, but by the plague were brought from 30,000 to 300. There are not many now to the Eastward, the Pequots were destroyed by the English: the Mohawks are about five hundred…."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Not long before the English came into the Country, a great mortality (many deaths) happened among [Native Americans]. It struck especially where the English afterwards planted (settled). The East and Northern parts were hit hard by the Contagion (a disease that spreads). It came first by the plague, and afterwards, when the English came, by the small pox. The three Kingdoms or Sagamorships (lands ruled by Native leaders) of the Massachusetts once had many people, with seven smaller Sagamorships under them. But by the plague they were brought from 30,000 to 300. There are not many left now to the East. The Pequots were destroyed by the English. The Mohawks are about five hundred."
+      ]
+     }
+    },
+    {
+     "n": 3,
+     "title": "The same story in numbers",
+     "kind": "image",
+     "src": "Source: Smithsonian National Museum of American History (adapted)",
+     "page": 7,
+     "steps": [
+      {
+       "question": "Who made these tables, and how exact are the numbers?",
+       "mode": null,
+       "line": "Read the source line and the title. One word in the title tells you how sure these numbers are."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Title first. Then the top table, one row at a time, then the bottom table. \"c.\" before a year means about, and \"100s\" means a few hundred."
+      },
+      {
+       "question": "What do the two tables show when you read them together?",
+       "mode": null,
+       "line": "Read the first row of each table across. Which way is each number moving?"
+      },
+      {
+       "question": "Whose numbers are probably the roughest guess, and why?",
+       "mode": null,
+       "line": "Ask who was keeping records in 1610, and whose numbers they cared about."
+      },
+      {
+       "question": "When a population drops this far, who, if anyone, is responsible?",
+       "mode": null,
+       "line": "First list the causes you've seen in Documents 2 and 3. Then ask which of them a person could answer for."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "STIMULUS_BANK/Unit_01/unit01-0824-mc01.png",
+     "image_alt": "Two tables under the title Early American Populations (Estimated). The top table is Estimated European Populations, about 1610 and about 1700: English in Virginia, 100 and 72,000. French in New France, 100 and 13,000. Spanish in New Mexico, 500 and 3,000. The bottom table is Estimated Native Populations, about 1610 and about 1700: Powhatans, 15,000 and 1,000. Hurons, 20,000 and 100s. Pueblos, 60,000 and 14,000.",
+     "describe": "Two tables under the title Early American Populations (Estimated). The top table is Estimated European Populations, about 1610 and about 1700: English in Virginia, 100 and 72,000. French in New France, 100 and 13,000. Spanish in New Mexico, 500 and 3,000. The bottom table is Estimated Native Populations, about 1610 and about 1700: Powhatans, 15,000 and 1,000. Hurons, 20,000 and 100s. Pueblos, 60,000 and 14,000.",
+     "licence": {
+      "text": "As printed on the NYSED Regents exam in US History and Government, August 2024.",
+      "sellable": false
+     }
+    },
+    {
+     "n": 4,
+     "title": "A warning",
+     "kind": "text",
+     "src": "Source: Miantonomo, Narragansett sachem, speaking to the Montaukett on Long Island, c. 1642. Recorded by an English listener and printed later in Great Native American Speeches.",
+     "page": 8,
+     "steps": [
+      {
+       "question": "Who spoke these words, who wrote them down, and why does that matter?",
+       "mode": null,
+       "line": "Read the source line all the way to the end. He spoke; someone else wrote. What could change between the two?"
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Two paragraphs: the first is how things were, and the second is what changed. Words in [brackets] were added to help you."
+      },
+      {
+       "question": "What is Miantonomo asking his listeners to do, and what reasons does he give?",
+       "mode": null,
+       "line": "His first sentence is the ask. The reasons are the before and after: what their fathers had, and what the English changed."
+      },
+      {
+       "question": "Whose view is this? How would an English colonist tell the same story?",
+       "mode": null,
+       "line": "Look at the word he uses for what the English did to the country. Would a colonist use that word?"
+      },
+      {
+       "question": "Why would joining together matter to peoples who are losing their land?",
+       "mode": null,
+       "line": "Find his first sentence and hold on to it. The same idea comes back in Casefile B."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "Brothers, we must be as one as the English are, or we shall all be destroyed. You know our fathers had plenty of deer and skins and our plains were full of game and turkeys, and our coves and rivers were full of fish.",
+      "But, brothers, since these Englishmen have seized our country, they have cut down the grass with scythes, and the trees with axes. Their cows and horses eat up the grass, and their hogs spoil our bed of clams; and finally we shall all starve to death; therefore, stand not in your own light, I ask you, but resolve to act like men. All the sachems [tribal chiefs] both to the east and the west have joined with us, and we are resolved to fall upon them at a day appointed, and therefore I come secretly to you, cause you can persuade your Indians [Native Americans] to do what you will."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Brothers, we must be as one, the way the English are, or we shall all be destroyed. You know our fathers had plenty of deer and skins. Our plains were full of game and turkeys, and our coves and rivers were full of fish.",
+       "But, brothers, these Englishmen have seized (taken) our country. They have cut down the grass with scythes and the trees with axes. Their cows and horses eat up the grass, and their hogs spoil our bed of clams. In the end we shall all starve to death. So do not stand in your own way, I ask you. Make up your minds to act like men. All the sachems [tribal chiefs] to the east and the west have joined with us. We have decided to attack them on a day we choose. That is why I come to you in secret, because you can persuade your Indians [Native Americans] to do what you want."
+      ]
+     },
+     "licence": {
+      "text": "As printed on the NYSED Regents exam in US History and Government, January 2024.",
+      "sellable": false
+     }
+    },
+    {
+     "n": 5,
+     "title": "A treaty, and what was said at it",
+     "kind": "text",
+     "src": "Source: The Lancaster Treaty of 1744. The speaker, Gachradodow, was an Iroquois (Haudenosaunee) orator addressing colonial negotiators from Virginia, Maryland and Pennsylvania.",
+     "page": 9,
+     "steps": [
+      {
+       "question": "Who is speaking, to whom, and who wrote it down?",
+       "mode": null,
+       "line": "The source line names the speaker and his listeners. The line just before the speech is someone else describing him."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "The bold line at the top is a quote from the speech. Assaragoa is the name the Iroquois used for Virginia's governor. Read it like a speech said out loud."
+      },
+      {
+       "question": "What does Gachradodow claim about the two peoples, and how does he back it up?",
+       "mode": null,
+       "line": "Start with the bold line at the top. Then find the word \"placed\" and his last sentence about land."
+      },
+      {
+       "question": "Whose view is this, and how might the colonial negotiators answer him?",
+       "mode": null,
+       "line": "Picture the men from Virginia, Maryland and Pennsylvania across the table. What did they come to this meeting for?"
+      },
+      {
+       "question": "What right is Gachradodow defending for his people?",
+       "mode": null,
+       "line": "Reread the bold line at the top. It's about who has the right to make the laws on this land. The Native American arc of Thread 1 asks about it by name."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "“You have your Laws and Customs, so have we.”",
+      "—Gachradodow",
+      "Pennsylvania, 1744",
+      ". . . Gachradodow in a strong voice, and with a proper action, spoke as follows:",
+      "“Great Assaragoa, The World at the first was made on the other Side of the Great Water, different from what it is on this Side, as may be known from the different Colors of our Skin and of our Flesh, and that which you call Justice may not be so amongst us. You have your Laws and Customs, and so have we. The Great King might send you over to conquer the Indians [Native Americans], but it looks to us that God did not approve of it. If he had, he would not have placed the Sea where it is, as the Limits between us and you. . . .",
+      "Brother Assaragoa . . . You know very well when the white people came first here, they were poor; but now they have got lands and are by them become rich, and we are now poor: what little we have had for the land goes soon away, but the land lasts forever.” . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“You have your Laws and Customs, so have we.”",
+       "—Gachradodow",
+       "Pennsylvania, 1744",
+       "Gachradodow spoke in a strong voice, with the right gestures. He said:",
+       "“Great Assaragoa, the World was first made on the other Side of the Great Water, different from how it is on this Side. You can tell from the different Colors of our Skin and of our Flesh. What you call Justice may not be justice to us. You have your Laws and Customs, and so have we. The Great King might send you over to conquer the Indians [Native Americans]. But it looks to us that God did not approve of it. If he had, he would not have placed the Sea where it is, as the Limits (border) between us and you.",
+       "Brother Assaragoa, you know very well that when the white people first came here, they were poor. But now they have got lands, and the lands have made them rich. And we are now poor. What little we got for the land is soon gone, but the land lasts forever.”"
+      ]
+     },
+     "licence": {
+      "text": "As printed on the NYSED Regents exam in US History and Government, June 2026.",
+      "sellable": false
+     }
+    },
+    {
+     "n": 6,
+     "title": "The trade",
+     "kind": "image",
+     "src": "Source: The Making of America, National Geographic Society (adapted)",
+     "page": 10,
+     "steps": [
+      {
+       "question": "Who made this map, and when, compared with the trade it shows?",
+       "mode": null,
+       "line": "The source line names a modern publisher. Ask how a mapmaker today knows what was shipped centuries ago."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Do what the page says: read the key first, then the arrows. Trace each arrow from its tail to its head."
+      },
+      {
+       "question": "What does the map show about how the colonies made money?",
+       "mode": null,
+       "line": "Read the key first. Then follow the solid arrows leaving the colonies and read the words along them."
+      },
+      {
+       "question": "On two arrows, people are listed with sugar and gold. Whose point of view does that show, and who is left out?",
+       "mode": null,
+       "line": "Ask who did the buying and selling, and who was carried. Which of them would list it this way?"
+      },
+      {
+       "question": "If a country's wealth is built on a route like this one, what is that country responsible for?",
+       "mode": null,
+       "line": "Take a side, then give one reason from the map. There's no single right answer here, only one you can back up."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 10. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "STIMULUS_BANK/Unit_01/unit01-0825-mc01.png",
+     "image_alt": "A map titled Colonial Trade Routes and Goods. It shows the Atlantic Ocean, with North America and the thirteen British colonies on the left, the West Indies and South America at the lower left, Great Britain and Europe at the upper right, and Africa at the lower right. A key at the top shows three kinds of arrow: a solid line for colonial exports, a dashed line for colonial imports, and a dotted line for intercolonial trade. Solid arrows run from the colonies to Great Britain, labeled lumber, furs, dried fish, whale oil, iron, gunpowder, rice, tobacco, indigo; from the West Indies to Great Britain, labeled sugar, molasses, fruit; and from the colonies to Africa, labeled rum, iron, gunpowder, cloth, tools. Dashed arrows run from Great Britain to the colonies, labeled manufactured goods, textiles, furniture, luxuries; and from Africa to the West Indies, labeled enslaved persons, gold, pepper, with the words Middle Passage under it. Dotted arrows run between the colonies and the West Indies: one going south, labeled flour, fish, meat, and one going north, labeled enslaved persons, molasses, sugar. A scale bar shows 1,000 miles.",
+     "describe": "A map titled Colonial Trade Routes and Goods. It shows the Atlantic Ocean, with North America and the thirteen British colonies on the left, the West Indies and South America at the lower left, Great Britain and Europe at the upper right, and Africa at the lower right. A key at the top shows three kinds of arrow: a solid line for colonial exports, a dashed line for colonial imports, and a dotted line for intercolonial trade. Solid arrows run from the colonies to Great Britain, labeled lumber, furs, dried fish, whale oil, iron, gunpowder, rice, tobacco, indigo; from the West Indies to Great Britain, labeled sugar, molasses, fruit; and from the colonies to Africa, labeled rum, iron, gunpowder, cloth, tools. Dashed arrows run from Great Britain to the colonies, labeled manufactured goods, textiles, furniture, luxuries; and from Africa to the West Indies, labeled enslaved persons, gold, pepper, with the words Middle Passage under it. Dotted arrows run between the colonies and the West Indies: one going south, labeled flour, fish, meat, and one going north, labeled enslaved persons, molasses, sugar. A scale bar shows 1,000 miles.",
+     "licence": {
+      "text": "As printed on the NYSED Regents exam in US History and Government, August 2025.",
+      "sellable": false
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    },
+    {
+     "n": 7,
+     "title": "Two places that trade built",
+     "kind": "image",
+     "src": "LEFT — Source: View of Boston Harbor, hand-colored etching by Francois Xavier Habermann, 1770–1780. RIGHT — Source: Life of George Washington: The Farmer, by Junius Brutus Stearns, 1853.",
+     "page": 11,
+     "steps": [
+      {
+       "question": "When was each picture made, and which artist could have seen what he drew?",
+       "mode": null,
+       "line": "Check the dates in both source lines. The right one was painted about eighty years after the time it shows."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Two pictures. Give the left one all three passes, then the right one. Don't compare yet."
+      },
+      {
+       "question": "What does each picture show about how colonial wealth was made?",
+       "mode": null,
+       "line": "Left: start with the water, then the shore. Right: find everyone holding a tool, then find who isn't."
+      },
+      {
+       "question": "Whose view of the work does the right picture give, and whose is missing?",
+       "mode": null,
+       "line": "Look at how the workers are painted. Then ask what a painter who wanted Washington remembered well would choose to show."
+      },
+      {
+       "question": "Both pictures show prosperity. Who isn't shown enjoying it, and what does that leave out of the country's story?",
+       "mode": null,
+       "line": "In each picture, find who owns the wealth and who makes it. Are they the same people?"
+      }
+     ],
+     "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 11. Use the sentence stem, or write something of equal or better value.",
+     "image_file": "STIMULUS_BANK/Unit_01/unit01-bostonharbor-mtvernon-pair.png",
+     "image_alt": "Two pictures side by side. LEFT: a hand-colored etching of Boston harbor, seen from across the water. Tall-masted ships lie at anchor in front, one flying red pennants. Behind them, a crowded waterfront of brick and wooden buildings runs along the shore under a tall church steeple. Small figures in red coats stand on the grassy bank in front. Captions in German and French run along the bottom. RIGHT: a painting of a harvest at Mount Vernon. George Washington, in a dark coat, breeches and a three-cornered hat, stands at the right holding a cane. Around him, African-American men and women cut, rake, bundle and load grain. A boy sits on top of a loaded hay wagon pulled by two pale horses. At the left, a woman in a white dress and two children rest in the shade. Fields roll back to a low horizon.",
+     "describe": "Two pictures side by side. LEFT: a hand-colored etching of Boston harbor, seen from across the water. Tall-masted ships lie at anchor in front, one flying red pennants. Behind them, a crowded waterfront of brick and wooden buildings runs along the shore under a tall church steeple. Small figures in red coats stand on the grassy bank in front. Captions in German and French run along the bottom. RIGHT: a painting of a harvest at Mount Vernon. George Washington, in a dark coat, breeches and a three-cornered hat, stands at the right holding a cane. Around him, African-American men and women cut, rake, bundle and load grain. A boy sits on top of a loaded hay wagon pulled by two pale horses. At the left, a woman in a white dress and two children rest in the shade. Fields roll back to a low horizon.",
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    }
+   ]
+  },
+  {
+   "id": "B",
+   "title": "11.1 Casefile B · Who Paid for It",
+   "status": "building"
+  }
+ ]
+}

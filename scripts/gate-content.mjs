@@ -380,7 +380,8 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         const w = `casefile ${cf.id} document ${doc.n ?? '?'}`
         if (doc.n !== i + 1) df(`${w}: documents must run 1, 2, 3… in order (found ${doc.n} at position ${i + 1}).`)
         if (!doc.title) df(`${w}: no title.`)
-        if (!doc.src || !/^Source:/.test(doc.src)) df(`${w}: no source line (canon §6: every document points to its record).`)
+        if (!doc.src || !/\bSource:/.test(doc.src))   // a paired picture carries two: "LEFT — Source: … RIGHT — Source: …" (11.1 A Doc 7)
+          df(`${w}: no source line (canon §6: every document points to its record).`)
         if (!Number.isInteger(doc.page) || doc.page < 1) df(`${w}: page must be the casefile page number.`)
         if (!doc.close || !/\bpage \d+/.test(doc.close)) df(`${w}: the close must send the kid back to a casefile page.`)
         const steps = doc.steps || []
