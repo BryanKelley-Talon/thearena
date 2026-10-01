@@ -1573,21 +1573,38 @@
     },
     "finish": {
       "_source": "Leo's ruling of 2026-09-27 09:22 (BK 09:20, \"yes 1-5\"), §2-§4, verbatim. The finish code is retired: a proof question replaces it. Ruling 5 of the order still stands: the page never prints BK's address or the district domain; the gate fails on either.",
-      "screen_line": "Finished? Copy the email below and send it to Mr. Kelley from your school account. That's how he knows you finished.",
-      "subject_pattern": "{theme} complete",
-      "email_lines": [
-        "Mr. Kelley,",
-        "I finished {theme}.",
-        "HAWK",
-        "The trait I worked on most was ____ (Kind, Respectful, Responsible or Safe).",
-        "Here's how I showed it: ____",
-        "{proof} ____",
-        "One thing that would make our class or our school better: ____",
-        "BONUS: ____"
-      ],
       "_email_note": "Ruling §3, verbatim, with two fillings: {theme} is the theme's title, and {proof} is one of the theme's three proof questions, picked at random when the finish screen opens. The ruling writes that line as \"[Proof question]: ____\"; the colon is dropped because every proof question ends in a question mark. The last line, \"BONUS: ____\", is from the LOCKED theme file (§6). The Arena never checks the answer; BK reads it.",
       "_screen_line_source": "Leo's ruling 2026-09-29 12:30 (BK 12:25 \"yes\", 12:29 \"yes i agree with you\"), verbatim. Replaces the 09-27 §4 line, which promised a drawing (\"If yours is picked\"); names are never picked.",
-      "_hawk_label_source": "Same ruling, 'The email': a HAWK label over the two trait lines; no new question lines."
+      "_hawk_label_source": "Same ruling, 'The email': a HAWK label over the two trait lines; no new question lines.",
+      "_retired_email_2026-10-01": {
+        "screen_line": "Finished? Copy the email below and send it to Mr. Kelley from your school account. That's how he knows you finished.",
+        "subject_pattern": "{theme} complete",
+        "email_lines": [
+          "Mr. Kelley,",
+          "I finished {theme}.",
+          "HAWK",
+          "The trait I worked on most was ____ (Kind, Respectful, Responsible or Safe).",
+          "Here's how I showed it: ____",
+          "{proof} ____",
+          "One thing that would make our class or our school better: ____",
+          "BONUS: ____"
+        ]
+      },
+      "classroom": {
+        "heading": "Turn it in on Google Classroom",
+        "line": "Finished? Open the Google Classroom assignment {assignment}. The doc attached to it has two spaces. Fill them in, then turn it in.",
+        "spaces": [
+          {
+            "label": "The proof question: my answer",
+            "fill": "{proof}"
+          },
+          {
+            "label": "My BONUS paragraph",
+            "fill": "Your three to five sentences from the Bonus above."
+          }
+        ]
+      },
+      "_classroom_source": "BK 2026-10-01 10:55 (\"eliminate the email for their bonus ... the submission is the assignment in Google Classroom (by name)\"), 11:02 (the Classroom post), 11:05 (\"we have to get 3 consistent\"; the doc's two spaces, verbatim), 11:07 (Hawk dropped for October). Wording proposed by Josh in chat 11:05; proof to BK before deploy."
     },
     "themes": [
       {
@@ -1598,7 +1615,9 @@
         "_title_source": "Leo's order: theme 1, named by BK.",
         "published": true,
         "content_ref": "content/office-2026-09-starting-strong.json",
-        "_locked": "Theme words LOCKED by BK 2026-09-27 10:07; ported word for word by Josh."
+        "_locked": "Theme words LOCKED by BK 2026-09-27 10:07; ported word for word by Josh.",
+        "hawk_box": false,
+        "_hawk_box_source": "BK 2026-10-01 11:07: \"for October, we can eliminate the Hawk portion of their requirement...i'll just produce a hawk pass for completed assignments...and in future installments we can integrate it into the document\". September carries no email either (BK 10:55); flagged to BK in the proof."
       },
       {
         "slug": "2026-10-halftime-adjustments",
@@ -1611,7 +1630,11 @@
         "_locked": "Whole theme LOCKED by BK 2026-09-28 22:17 (\"yes\"); ported byte-for-byte by Josh 2026-09-29. Opens on each device on Thu 10/1 (the month rule).",
         "bonus_due": "2026-10-30",
         "bonus_due_line": "Finish the Office and this bonus by Friday, October 30, and it counts as a Completion grade.",
-        "_bonus_due_source": "Leo's ruling 2026-09-28 21:59 (BK 21:56/21:58): October's bonus is a Completion grade, due Fri 10/30/2026, no late band. From Sat 10/31 on the device clock, bonus_due_line is dropped and past_bonus_line shows instead (Leo's reading, BK 'yes' 22:17)."
+        "_bonus_due_source": "Leo's ruling 2026-09-28 21:59 (BK 21:56/21:58): October's bonus is a Completion grade, due Fri 10/30/2026, no late band. From Sat 10/31 on the device clock, bonus_due_line is dropped and past_bonus_line shows instead (Leo's reading, BK 'yes' 22:17).",
+        "hawk_box": false,
+        "classroom_assignment": "BONUS · bK's Arena Office · October",
+        "_classroom_source": "BK's Classroom post, screenshot 2026-10-01 11:02: the assignment title, verbatim.",
+        "_hawk_box_source": "BK 2026-10-01 11:07: \"for October, we can eliminate the Hawk portion of their requirement...i'll just produce a hawk pass for completed assignments...and in future installments we can integrate it into the document\". September carries no email either (BK 10:55); flagged to BK in the proof."
       }
     ],
     "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B. Renamed 2026-09-29 12:49 (BK): Hawk Pass → Hawk Proud Coupon.",

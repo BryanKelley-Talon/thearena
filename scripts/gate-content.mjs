@@ -234,16 +234,17 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     if (phO.length) oFail(live, tag, `${phO.length} PLACEHOLDER field(s) (${phO.join(', ')}): cannot publish until BK approves the words.`)
     if (JSON.stringify(o.frame?.traits) !== JSON.stringify(TRAITS) || o.frame?.title !== 'Be a Hawk' || o.frame?.tagline !== 'Be Hawk Proud!')
       oFail(true, tag, `frame must carry the building's exact wording: Be a Hawk · ${TRAITS.join(' · ')} · "Be Hawk Proud!"`)
-    // Ruling 2026-09-27 §4: the finish screen names Mr. Kelley and the student's school account, never an address.
-    if (!/Mr\. Kelley/.test(o.finish?.screen_line || '') || !/school account/.test(o.finish?.screen_line || '')) oFail(live, tag, `finish.screen_line must tell the student to send it to Mr. Kelley from their school account (ruling 09-27 §4).`)
-    // Ruling §2-§3: the finish code is retired; the email carries the proof question.
-    if (!(o.finish?.email_lines || []).some(l => l.includes('{proof}'))) oFail(live, tag, `finish.email_lines needs a {proof} line (ruling 09-27 §3).`)
+    // BK 2026-10-01 10:55-11:07: the email is gone. The finish card names the theme's Google
+    // Classroom assignment and shows the attached doc's spaces; one of them carries the proof question.
+    const cr = o.finish?.classroom
+    if (!cr?.heading || !String(cr?.line || '').includes('{assignment}')) oFail(live, tag, `finish.classroom needs a heading and a line naming {assignment} (BK 10-01).`)
+    if (!(cr?.spaces || []).length || !(cr.spaces || []).every(sp => sp.label && sp.fill)) oFail(live, tag, `finish.classroom.spaces: every space needs a label and a fill.`)
+    if (!(cr?.spaces || []).some(sp => String(sp.fill).includes('{proof}'))) oFail(live, tag, `finish.classroom needs a {proof} space (the proof question, ruling 09-27 §3).`)
     if (!o.background || !fs.existsSync(path.resolve('public', o.background))) oFail(live, tag, `background '${o.background}' is not in public/.`)
-    // Leo's ruling 2026-09-29 12:30: the pink box carries the Hawk Pass; the finish line never
-    // promises a drawing (names are never picked), and the email labels the trait lines HAWK.
-    if (!o.hawk_box?.label || !o.hawk_box?.text) oFail(live, tag, `office.hawk_box needs a label and its text (ruling 09-29).`)
-    if (/picked|drawing/i.test(o.finish?.screen_line || '')) oFail(true, tag, `finish.screen_line promises a drawing; the 09-29 ruling replaced that line.`)
-    if (!(o.finish?.email_lines || []).includes('HAWK')) oFail(live, tag, `finish.email_lines needs the HAWK label over the trait lines (ruling 09-29).`)
+    // Leo's ruling 2026-09-29 12:30: the pink box carries the Hawk Pass (a theme may drop it, BK 10-01 11:07).
+    if ((o.themes || []).some(t => t.hawk_box !== false) && (!o.hawk_box?.label || !o.hawk_box?.text)) oFail(live, tag, `office.hawk_box needs a label and its text (ruling 09-29).`)
+    // No email anywhere a student reads (BK 10-01 10:55).
+    walk({ finish: o.finish, hawk: (o.themes || []).some(t => t.hawk_box !== false) ? o.hawk_box : null }, (str, at) => { if (/\bemail\b/i.test(str)) oFail(live, tag, `${at} still says email; the email is retired (BK 10-01).`) })
     for (const t of o.themes || []) {
       const tLive = live && t.published === true
       const f = String(t.content_ref || '').replace(/^content\//, '')
@@ -258,6 +259,8 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
       })
       if (d._placeholder || phT.length) oFail(tLive, f, `theme words not approved yet: _placeholder ${d._placeholder ? 'set' : 'clear'}, ${phT.length} PLACEHOLDER string(s).`)
       for (const k of ['lesson', 'practice', 'mystery', 'bonus']) if (!d[k]) oFail(tLive, f, `missing the ${k} step.`)
+      if ((d.bonus?.instructions || []).some(x => /\bemail\b/i.test(x))) oFail(tLive, f, `the bonus still says email; the email is retired (BK 10-01).`)
+      if (t.classroom_assignment != null && !String(t.classroom_assignment).trim()) oFail(tLive, f, `classroom_assignment is empty.`)
       for (const [i, c] of (d.lesson?.cards || []).entries()) if (!TRAITS.includes(c.trait)) oFail(tLive, f, `lesson card ${i + 1}: trait '${c.trait}' is not one of the building's four words.`)
       for (const k of ['practice', 'mystery']) for (const it of d[k]?.items || []) {
         const w = `${k} item ${it.n ?? '?'}`

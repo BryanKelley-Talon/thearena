@@ -190,12 +190,15 @@ export function OfficeRoom({ office, preview, onOpenTheme, onBack, ui }) {
 // ── ONE THEME ────────────────────────────────────────────────────────────
 // The pink box is stop 4 (Leo's ruling 2026-09-29 12:30). Progress stays level
 // numbers only: a device that had [1,2,3] now opens on the pink box.
-const stepsFor = office => [
+// A theme can drop the pink box (BK 2026-10-01 11:07: October's Hawk portion is
+// eliminated; BK writes coupons for completed assignments instead).
+const hawkOn = (office, theme) => !!office?.hawk_box && theme?.hawk_box !== false
+const stepsFor = (office, theme) => [
   { n: 1, key: 'lesson', label: 'Lesson' },
   { n: 2, key: 'practice', label: 'Practice set' },
   { n: 3, key: 'mystery', label: 'Mystery deep dive' },
-  ...(office?.hawk_box ? [{ n: 4, key: 'hawk', label: office.hawk_box.label, pink: true }] : []),
-  { n: office?.hawk_box ? 5 : 4, key: 'bonus', label: 'Bonus' },
+  ...(hawkOn(office, theme) ? [{ n: 4, key: 'hawk', label: office.hawk_box.label, pink: true }] : []),
+  { n: hawkOn(office, theme) ? 5 : 4, key: 'bonus', label: 'Bonus' },
 ]
 
 // ── THE BACK LINK (theme 2 on; BK 2026-09-28 22:11: "point people back to the
@@ -218,7 +221,7 @@ function BackLink({ link, themes, current, onOpenTheme }) {
 
 export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack, onOpenTheme, ui }) {
   const { ScreenHeader, BottomBack, McItem } = ui
-  const STEPS = stepsFor(office)
+  const STEPS = stepsFor(office, theme)
   const LAST = STEPS[STEPS.length - 1].n
   // Step n is open when every step before it is done. The lesson is always open.
   const isDone = n => done.includes(n)
@@ -271,7 +274,7 @@ export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack,
               {step === 1 && <Lesson lesson={pack.lesson} frame={office.frame} done={isDone(1)} onFinish={() => finish(1)} />}
               {step === 2 && <OfficeSet set={pack.practice} McItem={McItem} done={isDone(2)} onFinish={() => finish(2)} next="the mystery" />}
               {step === 3 && <OfficeSet set={pack.mystery} McItem={McItem} done={isDone(3)} onFinish={() => finish(3)} titled />}
-              {step === 4 && office.hawk_box && <HawkBox box={office.hawk_box} frame={office.frame} done={isDone(4)} onFinish={() => finish(4)} />}
+              {step === 4 && hawkOn(office, theme) && <HawkBox box={office.hawk_box} frame={office.frame} done={isDone(4)} onFinish={() => finish(4)} />}
               {step === LAST && <Finish office={office} theme={theme} bonus={pack.bonus} coaching={pack.coaching} proof={pack.proof_questions} />}
             </div>
             <aside className="office-aside">
@@ -398,18 +401,15 @@ function NewsLinks({ news }) {
 }
 
 function Finish({ office, theme, bonus, coaching, proof }) {
-  const f = office.finish || {}
+  const c = office.finish?.classroom || {}
   const question = useMemo(() => pickProof(proof), [proof])
-  const subject = (f.subject_pattern || '{theme} complete').replace('{theme}', theme.title)
-  // The email, line by line, exactly as ruled: {theme} is the title; {proof} is the
-  // question picked above. A line whose filling is missing is left out, never faked.
-  const body = (f.email_lines || [])
-    .filter(l => !l.includes('{proof}') || question)
-    .map(l => l.replace('{theme}', theme.title).replace('{proof}', question || ''))
-    .join('\n')
-  const [copied, setCopied] = useState('')
-  const copy = async (what, text) => setCopied((await copyText(text)) ? what : 'fail')
   const steps = bonusSteps(theme, bonus)
+  // TURN IT IN (BK 2026-10-01 10:55-11:07): no email. The page names the theme's Google
+  // Classroom assignment exactly as it is titled, and shows the attached doc's two spaces
+  // under the doc's own labels. Nothing is sent and nothing links into Classroom.
+  // A theme with no assignment (September) shows no turn-in card.
+  const assignment = theme.classroom_assignment
+  const fill = t => String(t || '').replace('{proof}', question || '')
   return (
     <section className="office-panel finish">
       <h2 className="panel-h">Bonus</h2>
@@ -418,26 +418,22 @@ function Finish({ office, theme, bonus, coaching, proof }) {
         {steps.map((s, i) => <T as="li" key={i}>{s}</T>)}
       </ol>
 
-      <div className="email-card" aria-labelledby="email-h">
-        <h3 id="email-h" className="email-h">Your email</h3>
-        {/* Ruling 5 of the order: never BK's address, never the district domain. */}
-        {f.screen_line && <p className="send-line">{f.screen_line}</p>}
-        <div className="email-field">
-          <span className="email-label">Subject</span>
-          <code className="email-value">{subject}</code>
-          <button type="button" className="btn-ghost" onClick={() => copy('subject', subject)}>Copy subject</button>
+      {assignment && c.heading && (
+        <div className="email-card turnin-card" aria-labelledby="turnin-h">
+          <h3 id="turnin-h" className="email-h">{c.heading}</h3>
+          {c.line && (
+            <p className="send-line">
+              {c.line.split('{assignment}')[0]}<b className="turnin-name">{assignment}</b>{c.line.split('{assignment}')[1]}
+            </p>
+          )}
+          {(c.spaces || []).filter(sp => !String(sp.fill).includes('{proof}') || question).map((sp, i) => (
+            <div key={i} className="turnin-space">
+              <div className="email-label">{sp.label}</div>
+              <div className="turnin-fill">{fill(sp.fill)}</div>
+            </div>
+          ))}
         </div>
-        <div className="email-field">
-          <span className="email-label">Message</span>
-          <pre className="email-value email-body">{body}</pre>
-          <button type="button" className="btn-ghost" onClick={() => copy('message', body)}>Copy message</button>
-        </div>
-        <p className="copy-status" role="status" aria-live="polite">
-          {copied === 'subject' && 'Subject copied.'}
-          {copied === 'message' && 'Message copied.'}
-          {copied === 'fail' && 'Copy did not work here. Select the text and copy it yourself.'}
-        </p>
-      </div>
+      )}
       {(coaching || []).length > 0 && <p className="coach-line">{coaching[0]}</p>}
     </section>
   )
@@ -602,6 +598,10 @@ a.news-title{color:var(--gold-lit);text-decoration:underline}
 
 .bonus-steps{color:var(--white);font-size:16.5px;line-height:1.6;padding-left:22px;margin:8px 0 18px}
 .bonus-steps li{margin-bottom:6px}
+.turnin-card .send-line{font-weight:400}
+.turnin-name{font-weight:800;white-space:normal}
+.turnin-space{margin-top:12px}
+.turnin-fill{border-left:3px solid #B8955A;padding:2px 0 2px 12px;font-size:16.5px;line-height:1.5;margin-top:4px;color:#2A2113}
 .email-card{background:#FBF3DE;color:#2A2113;border-radius:10px;padding:18px;box-shadow:0 5px 14px rgba(0,0,0,.4)}
 .email-h{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:20px;margin:0 0 4px}
 .send-line{font-size:17px;font-weight:600;line-height:1.5;margin:0 0 14px}
