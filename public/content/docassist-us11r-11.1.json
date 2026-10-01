@@ -147,7 +147,14 @@
       {
        "question": "Who made these tables, and how exact are the numbers?",
        "mode": null,
-       "line": "Read the source line and the title. One word in the title tells you how sure these numbers are."
+       "line": "Read the source line and the title. One word in the title tells you how sure these numbers are.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
        "question": null,
@@ -297,7 +304,14 @@
       {
        "question": "Who made this map, and when, compared with the trade it shows?",
        "mode": null,
-       "line": "The source line names a modern publisher. Ask how a mapmaker today knows what was shipped centuries ago."
+       "line": "The source line names a modern publisher. Ask how a mapmaker today knows what was shipped centuries ago.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
        "question": null,
@@ -392,7 +406,14 @@
       {
        "question": "Who made this chart, and when? Is it from the colonial era?",
        "mode": null,
-       "line": "Read the source line. Teachers made this chart recently, from older records. Ask what a chart like this can show, and what it can't."
+       "line": "Read the source line. Teachers made this chart recently, from older records. Ask what a chart like this can show, and what it can't.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
        "question": null,
@@ -556,7 +577,13 @@
       {
        "question": "What kind of document is each one, and what job was it written to do?",
        "mode": null,
-       "line": "Read the label above each one. Neither was written to describe slavery. Each was written to get something done."
+       "line": "Read the label above each one. Neither was written to describe slavery. Each was written to get something done.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
       },
       {
        "question": null,
@@ -664,7 +691,14 @@
       {
        "question": "Who made this timeline, and from what kinds of sources?",
        "mode": null,
-       "line": "Read the source line. Then notice what almost every entry is: a law, a court ruling, or what lawmakers did after an event."
+       "line": "Read the source line. Then notice what almost every entry is: a law, a court ruling, or what lawmakers did after an event.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
        "question": null,
@@ -732,7 +766,13 @@
       {
        "question": "What is this document, and why was it made?",
        "mode": null,
-       "line": "Read the first line, word by word. What kind of list is this, and what happens to a list like this after someone dies?"
+       "line": "Read the first line, word by word. What kind of list is this, and what happens to a list like this after someone dies?",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
       },
       {
        "question": null,
@@ -932,7 +972,13 @@
       {
        "question": "Who wrote these rules, and who were they written for?",
        "mode": null,
-       "line": "Read the source line: 1639, Connecticut, and Section 1. The towns wrote these rules for themselves."
+       "line": "Read the source line: 1639, Connecticut, and Section 1. The towns wrote these rules for themselves.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
       },
       {
        "question": null,
@@ -1102,5 +1148,6 @@
    "Learn these by name. The Regents asks for them. Practice them in the Arena's matching set."
   ]
  },
- "_signed": "BK 2026-10-01 10:51 EDT: \"yes we want the no name piece covered. agreed on the before we talk and join or die. proceed\" off US11R_11.1B_DocAssist_and_CivicCard_WORDING_2026-10-01.pdf"
+ "_tip": "NO NAME ON IT? on step 1 of unauthored documents, Will's signed Global words verbatim (BK 10:51: \"yes we want the no name piece covered\")",
+ "_signed": "BK 2026-10-01 10:51 EDT: \"yes we want the no name piece covered. agreed on the before we talk and join or die. proceed\""
 }

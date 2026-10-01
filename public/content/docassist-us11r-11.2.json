@@ -62,7 +62,14 @@
       {
        "question": "Who made this map, and when? Is it from the time it shows?",
        "mode": null,
-       "line": "Two places to look: the source line under the map and the title on top. Check the year in the title against 1763."
+       "line": "Two places to look: the source line under the map and the title on top. Check the year in the title against 1763.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+        ]
+       }
       },
       {
        "question": null,
@@ -597,5 +604,6 @@
    "Learn these by name. The Regents asks for them. Practice them in the Arena's matching set."
   ]
  },
- "_signed": "BK 2026-10-01 10:51 EDT: \"yes we want the no name piece covered. agreed on the before we talk and join or die. proceed\" off US11R_11.1B_DocAssist_and_CivicCard_WORDING_2026-10-01.pdf"
+ "_tip": "NO NAME ON IT? on step 1 of unauthored documents, Will's signed Global words verbatim (BK 10:51: \"yes we want the no name piece covered\")",
+ "_signed": "BK 2026-10-01 10:51 EDT: \"yes we want the no name piece covered. agreed on the before we talk and join or die. proceed\""
 }
