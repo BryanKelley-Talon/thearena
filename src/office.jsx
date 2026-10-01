@@ -408,7 +408,10 @@ function Finish({ office, theme, bonus, coaching, proof }) {
   // Classroom assignment exactly as it is titled, and shows the attached doc's two spaces
   // under the doc's own labels. Nothing is sent and nothing links into Classroom.
   // A theme with no assignment (September) shows no turn-in card.
-  const assignment = theme.classroom_assignment
+  // After the theme's due date the assignment is closed, and a past month earns nothing
+  // (Leo's ruling 09-28, BK 22:17), so the card goes away with the graded line.
+  const open = !theme?.bonus_due || todayNow() <= String(theme.bonus_due)
+  const assignment = open ? theme.classroom_assignment : null
   const fill = t => String(t || '').replace('{proof}', question || '')
   return (
     <section className="office-panel finish">
