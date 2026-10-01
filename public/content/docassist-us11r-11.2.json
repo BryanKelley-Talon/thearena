@@ -1,6 +1,6 @@
 {
- "_v2": "BK 09:27: Doc Assist own four questions, not the casefile questions; label Ask yourself:",
- "_built": "Sam (us11r-curriculum) 2026-10-01 09:29 EDT",
+ "_built": "Sam (us11r-curriculum) 2026-10-01 13:21 EDT · A = v4 as live; B added (DESK §8 step 21, BK 13:17/13:19)",
+ "_signed": "A: as live (v4). B: BK 2026-10-01 13:22 EDT \"approved.\" off US11R_11.2B_DocAssist_WORDING_2026-10-01.pdf",
  "_source": "OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileA_STUDENT_2026-09-30.pdf",
  "_ruled": "CARRY-FORWARD §6 DOC ASSIST, RULED (BK 2026-10-01 08:16)",
  "tool": "Doc Assist",
@@ -514,7 +514,357 @@
   {
    "id": "B",
    "title": "11.2 Casefile B · The Build",
-   "status": "building"
+   "status": "open",
+   "docs": [
+    {
+     "n": 11,
+     "title": "The Articles of Confederation · the first plan of government",
+     "kind": "text",
+     "src": "Source: Articles of Confederation, 1781 (adapted)",
+     "page": 4,
+     "steps": [
+      {
+       "question": "Who wrote these rules, and what had they just lived through?",
+       "mode": null,
+       "line": "The source line says 1781. Think about what the colonists had just been fighting against, and what kind of power they feared."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Four articles, each its own rule. Read one, say it in your own words, then go to the next. Sovereignty means supreme power."
+      },
+      {
+       "question": "What could the national government do under these rules, and what couldn't it do?",
+       "mode": null,
+       "line": "Look at Article VIII: who collects the taxes? Then look at Article XIII: who has to agree to any change?"
+      },
+      {
+       "question": "Who would like these rules, and who would find them frustrating?",
+       "mode": null,
+       "line": "Think of a small state, a big state, and a soldier waiting to be paid. Article V and Article VIII are good places to look."
+      },
+      {
+       "question": "Who held more power under the Articles, the states or the national government?",
+       "mode": null,
+       "line": "Start with the first line of Article II. Then look in the group called How power is built and limited."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 11's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "Article II. Each state keeps its sovereignty, its freedom, and its independence, along with every power that this confederation does not expressly give to the United States.",
+      "Article V. Delegates shall meet in one Congress. In deciding questions, each state shall have one vote.",
+      "Article VIII. The costs of war and all other common expenses shall be paid out of a common treasury, supplied by the states in proportion to the value of the land in each state. The taxes for that share shall be laid and collected by the legislatures of the several states.",
+      "Article XIII. No change shall ever be made to these articles unless it is agreed to in Congress and afterward confirmed by the legislature of every state."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Article II. Each state keeps its sovereignty (supreme power), its freedom, and its independence. It also keeps every power that this confederation does not clearly give to the United States.",
+       "Article V. Delegates will meet in one Congress. When they vote, each state gets one vote.",
+       "Article VIII. The costs of war and other shared costs will be paid from a shared treasury. Each state pays in based on the value of its land. Each state's own legislature (its lawmakers) will set and collect the taxes for that share.",
+       "Article XIII. These articles can never be changed unless Congress agrees and then the legislature of every state approves."
+      ]
+     }
+    },
+    {
+     "n": 12,
+     "title": "Washington, 1786 · a private letter to James Madison",
+     "kind": "text",
+     "src": "Source: George Washington to James Madison, November 5, 1786 (adapted)",
+     "page": 8,
+     "steps": [
+      {
+       "question": "Who wrote this, to whom, and why might a private letter say more?",
+       "mode": null,
+       "line": "Washington is writing to James Madison, not to the public. Check the date: November 1786. Something had just happened in Massachusetts."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Three paragraphs: how bright things were, the bad news from Massachusetts, and his warning. Anarchy means no working government at all."
+      },
+      {
+       "question": "What is Washington afraid will happen, and why?",
+       "mode": null,
+       "line": "Find the word \"anarchy.\" Then read his last sentence about thirteen sovereignties."
+      },
+      {
+       "question": "Whose side of the story is missing from Washington's letter?",
+       "mode": null,
+       "line": "He calls them disorders. Ask who was behind them, and what they were losing."
+      },
+      {
+       "question": "If no power can stop disorder, what happens to people's rights?",
+       "mode": null,
+       "line": "Find \"life, liberty, or property.\" Then look in the group called Where government's power comes from."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 12's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "No morning ever dawned brighter than ours did — and no day was ever more clouded than the present. Without some change in our political thinking, the structure we have spent seven years raising, at the cost of much blood and treasure, must fall. We are fast heading toward anarchy and confusion.",
+      "A letter I have just received from General Knox, who has just returned from Massachusetts, is full of sad information about the temper and designs of a considerable part of that people.",
+      "What stronger evidence can be given of the weakness of our governments than these disorders? If no power exists to check them, what security has a man of life, liberty, or property? Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "No morning ever started brighter than ours did, and no day has ever been cloudier than today. Unless our political thinking changes, the structure we spent seven years building, at the cost of much blood and money, will fall. We are fast heading toward anarchy (no working government) and confusion.",
+       "I just got a letter from General Knox, who is back from Massachusetts. It is full of sad news about the mood and the plans of many of the people there.",
+       "What stronger proof could there be of how weak our governments are than these disorders? If no power exists to stop them, how safe is anyone's life, liberty, or property? Thirteen sovereignties (thirteen states, each with supreme power) pulling against each other, and all tugging at the federal head, will soon ruin the whole country."
+      ]
+     }
+    },
+    {
+     "n": 13,
+     "title": "Hamilton makes the case · The Federalist No. 15",
+     "kind": "text",
+     "src": "Source: Alexander Hamilton, The Federalist Papers: No. 15, December 1, 1787 (adapted)",
+     "page": 9,
+     "steps": [
+      {
+       "question": "Who wrote this, for whom, and what did he want readers to do?",
+       "mode": null,
+       "line": "Hamilton wrote this for New York newspapers while New York was deciding on the Constitution. Ask what vote he was hoping for."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Three paragraphs: the question, the problem, and the picture he paints. Read the last sentence twice."
+      },
+      {
+       "question": "What does Hamilton say is broken, and how does he show it?",
+       "mode": null,
+       "line": "Find \"all thirteen separate sovereign wills must agree.\" Then find the wheels and the building."
+      },
+      {
+       "question": "Who would argue that the Articles were working just fine?",
+       "mode": null,
+       "line": "Think about who held the power under the Articles. Would they want to give it up?"
+      },
+      {
+       "question": "What principle does Hamilton think the Articles took too far?",
+       "mode": null,
+       "line": "He says one state can stop the whole country. Look in the group called How power is built and limited."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 13's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "The next question to examine is whether the present Confederation is enough to preserve the Union.",
+      "Under the Confederation, all thirteen separate sovereign wills must agree before any important measure of the Union can be carried out. What has happened is what should have been expected: the measures of the Union have not been carried out. The failures of the states have grown, step by step, until they have stopped all the wheels of the national government and brought them to a halt.",
+      "Each state, listening to the persuasive voice of its own immediate interest, has withdrawn its support, until the frail and tottering building seems ready to fall upon our heads and crush us beneath its ruins."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The next question is whether the Confederation we have now is enough to keep the Union together.",
+       "Under the Confederation, all thirteen separate states, each with supreme power, must agree before the Union can do anything important. What happened is what you would expect: the Union's plans have not been carried out. The states' failures have grown, step by step, until they have stopped all the wheels of the national government and brought them to a halt.",
+       "Each state listened to the voice of its own immediate interest (what helps it right now) and pulled back its support. Now the frail and tottering building looks ready to fall on our heads and crush us under its ruins."
+      ]
+     }
+    },
+    {
+     "n": 14,
+     "title": "Article I · the bargains, the Constitution, 1787",
+     "kind": "text",
+     "src": "Source: United States Constitution, Article I, 1787 (adapted)",
+     "page": 13,
+     "steps": [
+      {
+       "question": "Who wrote this, and who was not in the room?",
+       "mode": null,
+       "line": "The source line says 1787. Day 8's What You Need to Know tells you who met in Philadelphia. Then ask who wasn't there."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Four sections, each its own rule. Watch for the numbers: every second year, three fifths, two Senators."
+      },
+      {
+       "question": "How does Article I decide how much power each state gets in Congress?",
+       "mode": null,
+       "line": "Compare Section 2 with Section 3. One counts people. The other doesn't."
+      },
+      {
+       "question": "Who gained power from the three-fifths clause, and who paid for it?",
+       "mode": null,
+       "line": "Find \"all other persons.\" Ask who those persons were, and whether they got a vote."
+      },
+      {
+       "question": "What principle does Section 1 put into practice?",
+       "mode": null,
+       "line": "Section 1 gives the power to make laws to one branch only. Look in the group called How power is built and limited."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 14's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "Section 1. All legislative powers granted here shall be vested in a Congress of the United States, which shall consist of a Senate and a House of Representatives.",
+      "Section 2. The House of Representatives shall be made up of members chosen every second year by the people. Representatives shall be divided among the states according to their numbers — adding to the whole number of free persons three fifths of all other persons.",
+      "Section 3. The Senate shall be made up of two Senators from each state, and each Senator shall have one vote.",
+      "Section 8. The Congress shall have power to lay and collect taxes, to pay the debts and provide for the common defense and general welfare of the United States."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Section 1. All the power to make laws given here belongs to a Congress of the United States. Congress has two parts: a Senate and a House of Representatives.",
+       "Section 2. Members of the House of Representatives are chosen by the people every two years. Each state gets Representatives based on its population: all the free persons, plus three fifths of all other persons (enslaved people).",
+       "Section 3. The Senate has two Senators from each state, and each Senator gets one vote.",
+       "Section 8. Congress has the power to set and collect taxes, to pay the country's debts, and to provide for the common defense and general welfare (the good of everyone) of the United States."
+      ]
+     },
+     "before": {
+      "title": "BEFORE WE TALK",
+      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+     }
+    },
+    {
+     "n": 15,
+     "title": "Madison on checks · The Federalist No. 51",
+     "kind": "text",
+     "src": "Source: James Madison, Federalist No. 51, 1788 (adapted)",
+     "page": 15,
+     "steps": [
+      {
+       "question": "Who wrote this, and why was he writing it?",
+       "mode": null,
+       "line": "Madison helped write the Constitution, then wrote this to defend it. Ask what he wants his readers to believe."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Two short paragraphs, but every word counts. A check is something that can stop or limit something else."
+      },
+      {
+       "question": "What does Madison want each part of government to do to the others?",
+       "mode": null,
+       "line": "Find \"a check on the others.\" Then read the words right after it."
+      },
+      {
+       "question": "Is Madison's view of people hopeful or worried? How might someone see it differently?",
+       "mode": null,
+       "line": "He says better motives fail. Ask what he thinks people with power will do if nothing stops them."
+      },
+      {
+       "question": "What principle is Madison describing, and where do you see it in the Constitution?",
+       "mode": null,
+       "line": "Look in the group called How power is built and limited. Then think of a time one branch can block another."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 15's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "This policy of supplying, by opposite and rival interests, what better motives fail to supply can be traced through the whole system of human affairs, private as well as public.",
+      "We see it especially in every lesser distribution of power, where the constant aim is to divide and arrange the several offices so that each may be a check on the others — so that the private interest of every individual becomes a guard over the public's rights. These inventions of prudence are no less necessary in dividing the supreme powers of the state."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "This plan works by setting opposite and rival interests against each other, to make up for what better motives fail to do. You can see it all through human life, in private matters and in public ones.",
+       "You see it especially when smaller amounts of power are handed out. The goal is always to divide and arrange the offices so that each one can be a check on the others. That way, each person's own private interest becomes a guard over the public's rights. These careful, smart inventions are just as necessary when dividing the highest powers of the government."
+      ]
+     }
+    },
+    {
+     "n": 16,
+     "title": "The case against · Antifederalist No. 46",
+     "kind": "text",
+     "src": "Source: Antifederalist Papers No. 46, November 2, 1788 (adapted)",
+     "page": 16,
+     "steps": [
+      {
+       "question": "Who wrote this, and why might he hide his name?",
+       "mode": null,
+       "line": "The source line names no author. Think about who might be angry at someone attacking the new Constitution in 1788.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Most of the first paragraph is a quote from the Constitution. Find where the quote starts and ends. Then read his one-sentence question."
+      },
+      {
+       "question": "What part of the Constitution worries the author, and what is he afraid of?",
+       "mode": null,
+       "line": "Find \"necessary and proper.\" Then read his question: what does he think Congress could do?"
+      },
+      {
+       "question": "How would a Federalist like Madison answer this worry?",
+       "mode": null,
+       "line": "Go back to Document 15. What does Madison say stops any one part of government from taking too much?"
+      },
+      {
+       "question": "If a government's power has no clear limits, what protects the people?",
+       "mode": null,
+       "line": "Look in two groups on your card: How power is built and limited, and What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 16's questions in your casefile, starting on page 17. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "My object is to consider that undefined, unbounded, and immense power which is contained in the following clause: “And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or offices thereof.”",
+      "Under such a clause as this, can anything be said to be reserved and kept back from Congress?"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "I want to look at a power that is undefined, unbounded (unlimited), and huge. It is in this clause of the Constitution: “And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or offices thereof.” (In other words: Congress can make any law it needs to carry out its powers.)",
+       "With a clause like this, is anything left that Congress can't do?"
+      ]
+     }
+    },
+    {
+     "n": 17,
+     "title": "The Bill of Rights · the answer, 1791",
+     "kind": "text",
+     "src": "Source: United States Constitution, Amendments I–X, 1791 (adapted)",
+     "page": 18,
+     "steps": [
+      {
+       "question": "When were these added, and why add them after the Constitution was approved?",
+       "mode": null,
+       "line": "Check the date: 1791. Day 9's What You Need to Know tells you the promise some states were made."
+      },
+      {
+       "question": null,
+       "mode": null,
+       "line": "Four amendments, each its own rule. For each one, ask: what can't the government do?"
+      },
+      {
+       "question": "What does the Bill of Rights stop the government from doing?",
+       "mode": null,
+       "line": "Pick one amendment. Find the words \"no law\" or \"shall not,\" and read what comes after."
+      },
+      {
+       "question": "Would the author of Document 16 be satisfied by these amendments?",
+       "mode": null,
+       "line": "His worry was about how much Congress could do. Ask whether these amendments limit that, or protect people in a different way."
+      },
+      {
+       "question": "Which principle on your card appears in these amendments, and what does it protect?",
+       "mode": null,
+       "line": "Read Amendment V slowly. Then look in the group called What government must protect."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 17's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "Amendment I. Congress shall make no law establishing a religion or limiting the free exercise of religion, the freedom of speech or of the press, or the right of the people to assemble and to petition the government.",
+      "Amendment IV. The right of the people to be secure in their persons, houses, papers and effects against unreasonable searches and seizures shall not be violated, and no warrant shall issue except upon probable cause.",
+      "Amendment V. No person shall be compelled to be a witness against himself, nor be deprived of life, liberty or property without due process of law.",
+      "Amendment VI. In all criminal prosecutions the accused shall enjoy the right to a speedy public trial by an impartial jury, and to a lawyer."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Amendment I. Congress shall make no law that sets up an official religion or stops people from practicing their religion. It can't limit the freedom of speech or of the press, or the right of the people to gather and to petition (ask) the government.",
+       "Amendment IV. People have the right to be safe in their persons, houses, papers and belongings from unreasonable searches and seizures. No warrant can be given out without probable cause (a good reason to believe a crime happened).",
+       "Amendment V. No person can be forced to be a witness against himself, or lose his life, liberty or property without due process of law (fair legal steps).",
+       "Amendment VI. Anyone accused of a crime has the right to a speedy public trial by a fair jury, and to a lawyer."
+      ]
+     }
+    }
+   ]
   },
   {
    "id": "C",
@@ -522,7 +872,6 @@
    "status": "building"
   }
  ],
- "_v3": "v2 content unchanged; adds q4_card + labels.q4_card (BK 10:26)",
  "q4_card": {
   "title": "Civic Principles",
   "intro": "Q4 · CIVIC CONNECTION asks which principle is at stake. Name it from this card, then show how the document upholds it, denies it, or fights over it.",
@@ -603,7 +952,5 @@
   "close": [
    "Learn these by name. The Regents asks for them. Practice them in the Arena's matching set."
   ]
- },
- "_tip": "NO NAME ON IT? on step 1 of unauthored documents, Will's signed Global words verbatim (BK 10:51: \"yes we want the no name piece covered\")",
- "_signed": "BK 2026-10-01 10:51 EDT: \"yes we want the no name piece covered. agreed on the before we talk and join or die. proceed\""
+ }
 }
