@@ -240,6 +240,7 @@
       "units": [
         {
           "slug": "unit-1",
+          "number": "10.1",
           "label": "The World in 1750",
           "status": "open",
           "published": true,
@@ -283,6 +284,7 @@
         },
         {
           "slug": "unit-2",
+          "number": "10.2",
           "label": "Enlightenment, Revolution & Nationalism",
           "status": "open",
           "published": true,
@@ -990,6 +992,7 @@
       "units": [
         {
           "slug": "unit-1",
+          "number": "11.1",
           "label": "11.1 · Colonial Foundations",
           "published": true,
           "brief_ref": "content/brief-us11r-11.1.json",
@@ -1178,6 +1181,7 @@
         },
         {
           "slug": "unit-2",
+          "number": "11.2",
           "label": "11.2 · Constitutional Foundations",
           "published": true,
           "brief_ref": "content/brief-us11r-11.2.json",

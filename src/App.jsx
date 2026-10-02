@@ -513,6 +513,21 @@ a.door, button.lane-tab, button.practice-row, .bottom-back-btn{border:2px solid 
 .lane-tab[aria-selected=true]{color:var(--canvas);font-weight:700}
 .lane-tab:disabled{opacity:.42;cursor:default}
 .lane-intro{color:var(--grey);font-size:17px;line-height:1.6;margin-bottom:22px;max-width:740px}
+/* THE RIGHT ROOM (BK 2026-10-02): the unit we're in, whole, on the door; finished units say so. */
+.unit-here{color:var(--white);font-size:17px;line-height:1.5;margin:-4px 0 16px;max-width:740px}
+.door-room{margin-top:34px;padding-top:22px;border-top:1px solid var(--edge)}
+.unit-elsewhere{color:var(--white);font-size:16.5px;line-height:1.5;margin:26px 0 0;padding:12px 15px;max-width:740px;
+  background:var(--card);border:1px solid var(--arena-choice-edge);border-left:4px solid var(--gold);border-radius:9px}
+.link-btn{background:none;border:none;padding:0 1px;font:inherit;color:var(--gold-lit);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px}
+.link-btn:hover{color:var(--gold)}
+.unit-elsewhere .link-btn{display:inline;width:auto;min-height:0;margin:0;padding:0 1px;border:none;border-radius:0;background:none;box-shadow:none;
+  font:inherit;font-weight:700;color:var(--gold-lit);text-decoration:underline;text-underline-offset:3px;transform:none}
+.unit-finished{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin:0 0 26px;padding:13px 16px;max-width:900px;
+  background:var(--card);border:1.5px solid var(--gold);border-radius:10px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.unit-finished p{margin:0;color:var(--white);font-size:17px;line-height:1.5;flex:1 1 280px}
+.btn-now{background:var(--gold);color:var(--canvas);border:1.5px solid var(--gold);border-radius:9px;padding:10px 16px;min-height:44px;
+  font-family:'Outfit',sans-serif;font-size:16px;font-weight:700;cursor:pointer}
+.btn-now:hover{background:var(--gold-lit);border-color:var(--gold-lit)}
 
 /* ---------- CARDS ---------- */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:18px}
@@ -857,7 +872,8 @@ const LANES = [
   { key: 'skills',        src: 'stations',      label: 'Your Skills',
     intro: 'Start here. Each gauge is one skill you’re graded on. Tap it to climb.' },
   { key: 'units',         src: 'units',         label: 'Units',
-    intro: 'Review for each unit’s test: what to know, and practice questions.' },
+    // BK 2026-10-02 14:03 ("a. agreed b. yes"): Units holds FINISHED units only; the unit we're in lives on the door.
+    intro: 'Units we’ve finished. Got a casefile back? Open the unit it came from and work its gauges there. Nothing in here closes.' },
   // BK, 2026-09-27 09:29: the U.S. door's fourth lane ("its own lane"); intro approved 10:25.
   // `optional`: a course without it (Global) shows no tab at all, not a dead one.
   { key: 'threads',       src: 'threads',       label: 'Threads', optional: true,
@@ -866,7 +882,7 @@ const LANES = [
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneIn, setLane }) {
+function CourseDoor({ course, prog, games, docAssist, onOpenSkill, onOpenUnit, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane }) {
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   const lane = laneIn || firstWithContent
@@ -915,8 +931,19 @@ function CourseDoor({ course, prog, onOpenSkill, onOpenUnit, onBack, lane: laneI
 
       {lane === 'skills' && (
         !unit ? <EmptyLane what="Skills" /> : <>
-          <p className="unit-now"><span className="unit-now-tag">Now</span> {unit.label}</p>
+          <p className="unit-now"><span className="unit-now-tag">Now</span> {unitName(unit)}</p>
+          <p className="unit-here">{UNIT_WORDS.here}</p>
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={code => onOpenSkill(unit.slug, code)} />
+          <div className="door-room">
+            <RoomParts unit={unit} games={games} docAssist={docAssist}
+                       onOpenDocAssist={onOpenDocAssist} onOpenActivity={onOpenActivity} onOpenReview={onOpenReview} />
+          </div>
+          {finishedUnits(course).length > 0 && (
+            <p className="unit-elsewhere">
+              {UNIT_WORDS.elsewhere}{' '}
+              <button type="button" className="link-btn" onClick={() => { setTouched(true); setLane('units'); window.scrollTo(0, 0) }}>{UNIT_WORDS.elsewhereLink}</button>.
+            </p>
+          )}
         </>
       )}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} />}
@@ -1147,48 +1174,37 @@ function SkillsReviewLane({ course }) {
   )
 }
 
-function UnitLane({ course, onOpen }) {
-  const units = (course.units || [])
-  if (!units.length) return <EmptyLane what="Unit rooms" />
-  return (
-    <div className="grid">
-      {units.map(u => {
-        const on = isLive(u)
-        const n = (u.activities || []).filter(isLive).length
-        return (
-          <button
-            key={u.slug}
-            className={`card${on ? '' : ' off'}`}
-            disabled={!on}
-            tabIndex={on ? 0 : -1}
-            onClick={() => on && onOpen(u.slug)}
-          >
-            <div className="card-name">{u.label}</div>
-            <div className="card-blurb">
-              {n ? `${n} ${n === 1 ? 'activity' : 'activities'}` : 'Nothing published yet'}
-            </div>
-            {on
-              ? <span className="flag live">Open</span>
-              : <span className="flag building">Under construction</span>}
-          </button>
-        )
-      })}
-    </div>
-  )
+// THE RIGHT ROOM (BK 2026-10-02 13:30 / 14:03): "whole goal is for them to be working in the right
+// area." The unit we're in lives on the door (gauges, then its Review, Doc Assist and Test practice);
+// a unit slides into Units once the next one opens. Every name carries the number on the casefile.
+const UNIT_WORDS = {
+  here: 'This is the unit we’re in now. Gauge work for it goes here.',
+  elsewhere: 'Got a casefile back from an earlier unit? Its gauges are in',
+  elsewhereLink: 'Units',
+  finished: name => `You’re in ${name}, a finished unit. Working on the unit we’re in now?`,
+  goNow: n => `Go to ${n} (now)`,
+  skillsIn: n => `Your ${n} skills`,
+}
+export const unitNum = u => u?.number || (String(u?.label || '').match(/^\d+\.\d+/) || [])[0] || ''
+export const unitName = u => {
+  const n = unitNum(u), l = String(u?.label || '')
+  return n && !l.startsWith(n) ? `${n} · ${l}` : l
+}
+const finishedUnits = course => {
+  const now = currentUnit(course)?.slug
+  return [...(course.units || [])].filter(u => u.slug !== now).reverse()   // newest first
 }
 
-function UnitRoom({ course, unit, games, prog, docAssist, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenReview, onBack }) {
+// One unit's Review, Doc Assist and Test practice: in the unit's room, and for the unit
+// we're in, on the door under its gauges.
+function RoomParts({ unit, games, docAssist, onOpenDocAssist, onOpenActivity, onOpenReview }) {
   const acts = (unit.activities || []).filter(isLive)
-  const isCurrent = currentUnit(course)?.slug === unit.slug
   const asg = unit.assignment && unit.assignment.published !== false ? unit.assignment : null
   const asgGame = asg ? (games || []).find(g => g.id === asg.content_ref) : null
   const assignment = asg && asgGame?.status === 'live' && asgGame.url ? { ...asg, href: asgGame.url } : null
   return (
-    <div className="wrap">
-      <ScreenHeader label={unit.label} onBack={onBack} color={course.accent} back={course.label} />
-      {/* ROOM ORDER (BK, 2026-09-25): the unit's review, then its test practice.
-          The current unit's gauges live on the course door; a PAST unit's gauges
-          move here, so every unit keeps its ladders as the year goes on. */}
+    <>
+      {/* ROOM ORDER (BK, 2026-09-25): the unit's review, then its test practice. */}
       {(resolves(unit.brief_ref) || assignment) && (
         <>
           <h3 className="room-section">Review</h3>
@@ -1229,14 +1245,65 @@ function UnitRoom({ course, unit, games, prog, docAssist, onOpenDocAssist, onOpe
       {!acts.length
         ? <EmptyLane what="Activities" />
         : <TestPractice unit={unit} acts={acts} games={games} onOpenActivity={onOpenActivity} />}
-      {/* A past unit's room shows only the gauges that unit actually built: an empty
+    </>
+  )
+}
+
+function UnitLane({ course, onOpen }) {
+  const units = finishedUnits(course)
+  if (!units.length) return <EmptyLane what="Unit rooms" />
+  return (
+    <div className="grid">
+      {units.map(u => {
+        const on = isLive(u)
+        const n = (u.activities || []).filter(isLive).length
+        return (
+          <button
+            key={u.slug}
+            className={`card${on ? '' : ' off'}`}
+            disabled={!on}
+            tabIndex={on ? 0 : -1}
+            onClick={() => on && onOpen(u.slug)}
+          >
+            <div className="card-name">{unitName(u)}</div>
+            <div className="card-blurb">
+              {n ? `${n} ${n === 1 ? 'activity' : 'activities'}` : 'Nothing published yet'}
+            </div>
+            {on
+              ? <span className="flag live">Open</span>
+              : <span className="flag building">Under construction</span>}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+function UnitRoom({ course, unit, games, prog, docAssist, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenReview, onBack, onGoNow }) {
+  const now = currentUnit(course)
+  const isCurrent = now?.slug === unit.slug
+  return (
+    <div className="wrap">
+      <ScreenHeader label={unitName(unit)} onBack={onBack} color={course.accent} back={course.label} />
+      {/* A finished unit says so at the top, with the way back to the unit we're in (BK 14:03). */}
+      {!isCurrent && now && (
+        <div className="unit-finished" role="note">
+          <p>{UNIT_WORDS.finished(unitName(unit))}</p>
+          <button type="button" className="btn-now" onClick={onGoNow}>{UNIT_WORDS.goNow(unitNum(now) || now.label)}</button>
+        </div>
+      )}
+      {/* Gauges first, as on the door: a casefile back is why a kid is in here (Josh, 2026-10-02).
+          A past unit's room shows only the gauges that unit actually built: an empty
           ladder in a room kids revisit is exactly the "empty" BK ruled out (17:19). */}
       {!isCurrent && roomSkills(course, unit).some(s => s.ladder) && (
         <>
-          <h3 className="room-section" style={{ marginTop: 30 }}>Your skills in this unit</h3>
+          <h3 className="room-section" >{unitNum(unit) ? UNIT_WORDS.skillsIn(unitNum(unit)) : 'Your skills in this unit'}</h3>
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} builtOnly />
+          <div className="door-room" />
         </>
       )}
+      <RoomParts unit={unit} games={games} docAssist={docAssist}
+                 onOpenDocAssist={onOpenDocAssist} onOpenActivity={onOpenActivity} onOpenReview={onOpenReview} />
       <BottomBack onBack={onBack} back={course.label} />
     </div>
   )
@@ -1785,6 +1852,7 @@ export default function App() {
   const [briefPack, setBriefPack] = useState(null)
   const [prog, markDone] = useProgress()
   const [ladderFrom, setLadderFrom] = useState('door')      // where Back from a ladder goes
+  const [roomFrom, setRoomFrom] = useState('units')         // where Back from a review, Doc Assist or practice set goes
   const [drillFromLadder, setDrillFromLadder] = useState(false)
   const [doorLane, setDoorLane] = useState(null)
   const [office, setOffice] = useState(false)
@@ -1833,12 +1901,30 @@ export default function App() {
     window.scrollTo(0, 0)
   }
   // Doc Assist: the unit's pack loads with the room, so the card can carry the desk's own tile line.
-  const daRef = unit?.doc_assist && isLive(unit.doc_assist) && resolves(unit.doc_assist.content_ref) ? unit.doc_assist.content_ref : null
+  // On the door, the unit we're in carries its own Doc Assist card (BK 14:03), so its pack loads there too.
+  const daUnit = unit || (course ? currentUnit(course) : null)
+  const daRef = daUnit?.doc_assist && isLive(daUnit.doc_assist) && resolves(daUnit.doc_assist.content_ref) ? daUnit.doc_assist.content_ref : null
   useEffect(() => {
     setDaOpen(false); setDaDoc(null)
-    if (daRef) fetchContent(daRef, setDaPack); else setDaPack(false)
+    if (daRef) { setDaPack(null); fetchContent(daRef, setDaPack) } else setDaPack(false)
   }, [daRef])
-  const openReview = () => { setReview(true); fetchContent(unit.brief_ref, setBriefPack); window.scrollTo(0, 0) }
+  const openReview = (u = unit) => { setReview(true); fetchContent(u.brief_ref, setBriefPack); window.scrollTo(0, 0) }
+  const openActivity = (u, i) => {
+    const a = (u.activities || []).filter(isLive)[i]
+    setActIndex(i); setPack(null)
+    if (resolves(a?.content_ref)) {
+      // Same defensive strip as the station/drill fetchers below —
+      // a content_ref is written both ways across the manifest
+      // ("content/x.json" and bare "x.json"); doubling the prefix
+      // was a silent 404 no one had hit until 11.1 went live today.
+      const ref = a.content_ref.replace(/^content\//, '')
+      fetch(`/content/${ref}`)
+        .then(r => r.ok ? r.json() : null).then(setPack).catch(() => setPack(null))
+    }
+  }
+  // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
+  const fromDoor = roomFrom === 'door'
+  const leaveRoomPage = () => { if (fromDoor) setUnitSlug(null) }
 
   if (error) return (
     <><style>{STYLES}</style>
@@ -1923,54 +2009,44 @@ export default function App() {
     )
   }
   else if (unit && daOpen && daPack) {
-    const back = () => { setDaOpen(false); window.scrollTo(0, 0) }
+    const back = () => { setDaOpen(false); leaveRoomPage(); window.scrollTo(0, 0) }
+    const backLabel = fromDoor ? course.label : unitName(unit)
     screen = (
       <div className="wrap">
-        <ScreenHeader label={DA.section} onBack={back} color={course.accent} back={unit.label} />
+        <ScreenHeader label={DA.section} onBack={back} color={course.accent} back={backLabel} />
         <DocAssistHome pack={daPack} onOpenDoc={(cf, i) => { setDaDoc({ cf, i }); window.scrollTo(0, 0) }} />
-        <BottomBack onBack={back} back={unit.label} />
+        <BottomBack onBack={back} back={backLabel} />
       </div>
     )
   }
   else if (unit && review) {
     screen = (
       <div className="wrap">
-        <ScreenHeader label="Unit review" onBack={() => { setReview(false); setBriefPack(null) }} color={course.accent} back={unit.label} />
+        <ScreenHeader label="Unit review" onBack={() => { setReview(false); setBriefPack(null); leaveRoomPage() }} color={course.accent} back={fromDoor ? course.label : unitName(unit)} />
         <div className="detail" style={{ maxWidth: 900 }}>
           <h2>{briefPack?.title || unit.label}</h2>
           {briefPack === null && <div className="loading">Opening the review&hellip;</div>}
           {briefPack === false && <EmptyLane what="Unit review" />}
           {briefPack && <UnitBrief brief={briefPack} />}
         </div>
-        <BottomBack onBack={() => { setReview(false); setBriefPack(null) }} back={unit.label} />
+        <BottomBack onBack={() => { setReview(false); setBriefPack(null); leaveRoomPage() }} back={fromDoor ? course.label : unitName(unit)} />
       </div>
     )
   }
   else if (unit && actIndex != null) {
     const act = (unit.activities || []).filter(isLive)[actIndex]
-    const onActivityBack = () => { setActIndex(null); setPack(null) }
+    const onActivityBack = () => { setActIndex(null); setPack(null); leaveRoomPage() }
     screen = act?.type === 'matching'
       ? <MatchingActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
       : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
   else if (unit) screen = <UnitRoom course={course} unit={unit} games={games} prog={prog}
                                     docAssist={daPack || null}
-                                    onOpenDocAssist={() => { setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
+                                    onOpenDocAssist={() => { setRoomFrom('units'); setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
                                     onOpenSkill={code => { setLadderFrom('unit'); setSkill(code); window.scrollTo(0, 0) }}
-                                    onOpenReview={openReview}
-                                    onOpenActivity={i => {
-                                      const a = (unit.activities || []).filter(isLive)[i]
-                                      setActIndex(i); setPack(null)
-                                      if (resolves(a?.content_ref)) {
-                                        // Same defensive strip as the station/drill fetchers below —
-                                        // a content_ref is written both ways across the manifest
-                                        // ("content/x.json" and bare "x.json"); doubling the prefix
-                                        // was a silent 404 no one had hit until 11.1 went live today.
-                                        const ref = a.content_ref.replace(/^content\//, '')
-                                        fetch(`/content/${ref}`)
-                                          .then(r => r.ok ? r.json() : null).then(setPack).catch(() => setPack(null))
-                                      }
-                                    }}
+                                    onOpenReview={() => { setRoomFrom('units'); openReview(unit) }}
+                                    onOpenActivity={i => { setRoomFrom('units'); openActivity(unit, i) }}
+                                    onGoNow={() => { setUnitSlug(null); setSkill(null); setLevel(null); setReview(false); setDoorLane('skills'); window.scrollTo(0, 0) }}
                                     onBack={() => { setUnitSlug(null); setSkill(null); setLevel(null); setReview(false) }} />
   else screen = (
     <CourseDoor
@@ -1979,7 +2055,12 @@ export default function App() {
       lane={doorLane}
       setLane={setDoorLane}
       onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
-      onOpenUnit={slug => { setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false) }}
+      onOpenUnit={slug => { setRoomFrom('units'); setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false); window.scrollTo(0, 0) }}
+      games={games}
+      docAssist={daPack || null}
+      onOpenDocAssist={() => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
+      onOpenReview={() => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); openReview(u) }}
+      onOpenActivity={i => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); openActivity(u, i) }}
       onBack={() => { setCourseId(null); setUnitSlug(null); setStationSlug(null); setDoorLane(null) }}
     />
   )
