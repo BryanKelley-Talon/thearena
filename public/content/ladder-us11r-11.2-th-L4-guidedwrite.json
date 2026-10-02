@@ -9,7 +9,7 @@
   "skill_line": "TH",
   "step": 4,
   "type": "guided_write",
-  "source_document": "Document 5 — Captain Thomas Preston's testimony, 1770 (11.2 Casefile A)",
+  "source_document": "Document 5 — Captain Thomas Preston's own account, 1770 (11.2 Casefile A)",
   "source_text": "I saw about 100 people surround the soldier on guard, with clubs and other weapons, threatening to kill him. When I asked my soldiers why they fired without orders, they said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing.",
   "prompt": "Write a thesis that answers: Was Captain Preston responsible for the Boston Massacre?",
   "sentence_starter": "Although ___, ___ because ___.",

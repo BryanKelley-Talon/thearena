@@ -38,7 +38,7 @@ export const CHROME = {
   frAsks: 'Demande-toi :',        // as printed in Will's signed B wording PDF (BK 11:32)
   frOff: 'In English',            // (a) BK 2026-10-02 13:30: "That s fine."
   annotateHide: 'Hide how to annotate',   // (b) BK 13:30: "okay. make it visually make sense to kids"
-  mark: m => String(m || '').toUpperCase(),   // BOX · CIRCLE · MARGIN, as Will's signed PDF prints them
+  mark: m => String(m || '').toUpperCase(),   // BOX · CIRCLE · MARGIN · UNDERLINE, as the signed PDFs print them
 }
 
 const imgName = f => String(f || '').split('/').pop()
@@ -260,12 +260,21 @@ function frCard(pack) {
 
 // Draw the model notes on the printed words: each `where` that appears in a string is wrapped
 // in its mark (box · circle · margin) with the note's number. First match only.
-function marked(str, notes) {
+// Sam's US packs (2026-10-02) may point into the source line as "Lately, in the source line":
+// those words are looked for in the source line only.
+const SRC_PTR = /^(.*), in the source line$/
+export const noteTarget = (where, isSrc) => {
+  const m = String(where || '').match(SRC_PTR)
+  if (m) return isSrc ? m[1] : null
+  return where || null
+}
+function marked(str, notes, isSrc = false) {
   if (!notes?.length) return str
   const hits = []
   notes.forEach((nt, k) => {
-    const at = nt.where ? String(str).indexOf(nt.where) : -1
-    if (at >= 0 && !hits.some(h => at < h.at + h.len && h.at < at + nt.where.length)) hits.push({ at, len: nt.where.length, k, mark: nt.mark })
+    const needle = noteTarget(nt.where, isSrc)
+    const at = needle ? String(str).indexOf(needle) : -1
+    if (at >= 0 && !hits.some(h => at < h.at + h.len && h.at < at + needle.length)) hits.push({ at, len: needle.length, k, mark: nt.mark })
   })
   if (!hits.length) return str
   hits.sort((a, b) => a.at - b.at)
@@ -438,7 +447,7 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
             <div className="doc-tag">{CHROME.docLabel(doc.n)}</div>
             {/* As printed in the casefile: the source line sits above the document. It stays as printed in French. */}
             <div className="da-src" lang="en">
-              {marks ? marked(doc.src, marks) : doc.src}
+              {marks ? marked(doc.src, marks, true) : doc.src}
               {!isImage && showEasier && doc.easier?.label && <span className="da-easier-label">{doc.easier.label}</span>}
             </div>
             {fr && (
@@ -650,12 +659,15 @@ export const DOCASSIST_STYLES = `
 .da-ww{margin:16px 0 4px;padding:10px 13px;border-radius:6px;background:#efe2bf;border:1px solid rgba(60,44,18,.35);border-left:4px solid #8a6a1f}
 .da-ww-title{display:block;color:#2c2110;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;font-size:15px;margin-bottom:3px}
 .da-ww p{color:#2c2110;font-size:16.5px;line-height:1.6;margin:0}
-/* The model notes, drawn on the page. Each mark has its own shape and a number, never colour alone. */
-.da-mk{padding:0 2px;border-radius:3px}
-.da-mk-box{outline:2px solid #6b4a0e;outline-offset:1px;border-radius:2px}
-.da-mk-circle{border:2px solid #6b4a0e;border-radius:999px;padding:0 6px}
-.da-mk-margin{text-decoration:underline wavy #6b4a0e;text-underline-offset:4px;text-decoration-thickness:2px;background:rgba(138,106,31,.14)}
-.da-mk-n{font-family:'Outfit',sans-serif;font-style:normal;font-weight:700;font-size:11px;color:#fff;background:#6b4a0e;border-radius:999px;
+/* The model notes, drawn on the page (BK 2026-10-02 14:05: hi-vis against the parchment). A highlighter
+   yellow under every mark, and dark green ink for its shape. Orange stays growth-only (BK 09-26).
+   Each mark has its own shape and a number, never colour alone. */
+.da-mk{background:#FFE34A;color:#1d1608;padding:1px 3px;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.da-mk-box{outline:2.5px solid #0A6B34;outline-offset:1px;border-radius:1px}
+.da-mk-circle{border:2.5px solid #0A6B34;border-radius:999px;padding:0 7px}
+.da-mk-underline{text-decoration:underline solid #0A6B34;text-decoration-thickness:3px;text-underline-offset:4px}
+.da-mk-margin{text-decoration:underline wavy #0A6B34;text-decoration-thickness:2px;text-underline-offset:5px}
+.da-mk-n{font-family:'Outfit',sans-serif;font-style:normal;font-weight:700;font-size:11.5px;color:#fff;background:#0A6B34;border-radius:999px;
   padding:1px 5px;margin-left:3px;vertical-align:super;line-height:1}
 .da-ann{margin:16px 0 0;background:var(--card);border:1px solid var(--arena-choice-edge);border-left:4px solid var(--gold);border-radius:10px;padding:14px 16px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
 .da-ann-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -668,10 +680,12 @@ export const DOCASSIST_STYLES = `
 .da-ann-notes{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:10px}
 .da-ann-notes li{display:flex;gap:10px;align-items:flex-start;background:var(--card-lit);border:1px solid var(--edge);border-radius:8px;padding:9px 11px}
 .da-ann-notes p{color:var(--white);font-size:16px;line-height:1.5;margin:3px 0 0}
-.da-ann-key{flex:0 0 auto;min-width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13.5px;color:var(--white);background:transparent}
-.da-ann-key.da-mk-box{outline:2px solid var(--gold-lit);outline-offset:-2px;border-radius:2px;padding:0}
-.da-ann-key.da-mk-circle{border:2px solid var(--gold-lit);border-radius:50%;padding:0}
-.da-ann-key.da-mk-margin{border-left:3px solid var(--gold-lit);border-radius:0;justify-content:flex-start;padding-left:6px;text-decoration:underline wavy var(--gold-lit);text-underline-offset:3px}
+.da-ann-key{flex:0 0 auto;min-width:28px;height:28px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;
+  color:#1d1608;background:#FFE34A;border-radius:4px;padding:0}
+.da-ann-key.da-mk-box{outline:2.5px solid #2FBF71;outline-offset:1px;border-radius:1px}
+.da-ann-key.da-mk-circle{border:2.5px solid #2FBF71;border-radius:50%}
+.da-ann-key.da-mk-underline{box-shadow:inset 0 -4px 0 #0A6B34}
+.da-ann-key.da-mk-margin{text-decoration:underline wavy #0A6B34;text-decoration-thickness:2px;text-underline-offset:3px}
 .da-ann-mark{font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;color:var(--gold-lit);font-size:14.5px}
 .da-ann-where{color:var(--white);font-style:italic;font-size:15.5px}
 .da-ann-oe{margin-top:12px;padding-top:10px;border-top:1px solid var(--edge)}

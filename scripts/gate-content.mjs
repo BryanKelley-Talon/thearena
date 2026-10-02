@@ -470,9 +470,11 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
           if (!notes.length) df(`${w}: annotate has no model notes.`)
           for (const [k, n] of notes.entries()) {
             if (!n.where || !n.note) df(`${w} note ${k + 1}: needs where and note.`)
-            if (!['box', 'circle', 'margin'].includes(n.mark)) df(`${w} note ${k + 1}: mark must be box, circle or margin.`)
+            if (!['box', 'circle', 'margin', 'underline'].includes(n.mark)) df(`${w} note ${k + 1}: mark must be box, circle, underline or margin.`)
             // On a text document the note is drawn on the words, so the words must be there.
-            if (doc.kind === 'text' && n.where && ![doc.src, ...(doc.text || [])].some(t => String(t).includes(n.where))) df(`${w} note ${k + 1}: '${n.where}' is not in the document or its source line.`)
+            // "Lately, in the source line" (Sam, 10-02) points into the source line only.
+            const ptr = String(n.where || '').match(/^(.*), in the source line$/)
+            if (doc.kind === 'text' && n.where && !(ptr ? String(doc.src).includes(ptr[1]) : [doc.src, ...(doc.text || [])].some(t => String(t).includes(n.where)))) df(`${w} note ${k + 1}: '${n.where}' is not in the document or its source line.`)
           }
           if (a.oe) {
             if (!['example', 'where'].includes(a.oe.kind) || !a.oe.text) df(`${w}: outside evidence needs kind example|where and text.`)

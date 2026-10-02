@@ -1,5 +1,5 @@
 {
- "_built": "Sam (us11r-curriculum) 2026-10-01 10:46 EDT · A unchanged from the 09:27 signed set; B added (BK 10:38); q4_card added (BK 10:26)",
+ "_built": "Sam (us11r-curriculum) 2026-10-02 · proofread sweep 1 · NV text restored (BK)",
  "_source": "OUTPUTS/2026-27/Unit_01/STUDENT/US11R_Unit1_BlockA_PACKET.pdf (printed cover: Block A; on screen: Casefile A, BK 09:17)",
  "_shape": "11.2 A shape: steps[k] = {question, mode, line}; questions are Doc Assist own Frame questions (BK 09:23); mode null",
  "tool": "Doc Assist",
@@ -113,7 +113,7 @@
       {
        "question": "What does Josselyn say happened to Native peoples, and what numbers back it up?",
        "mode": null,
-       "line": "Find the word \"first\" and the word \"afterwards.\" Then look for the word \"from.\""
+       "line": "Find the word “first” and the word “afterwards.” Then look for the word “from.”"
       },
       {
        "question": "Whose view is this, and whose voices are missing?",
@@ -159,7 +159,7 @@
       {
        "question": null,
        "mode": null,
-       "line": "Title first. Then the top table, one row at a time, then the bottom table. \"c.\" before a year means about, and \"100s\" means a few hundred."
+       "line": "Title first. Then the top table, one row at a time, then the bottom table. “c.” before a year means about, and “100s” means a few hundred."
       },
       {
        "question": "What do the two tables show when you read them together?",
@@ -174,7 +174,7 @@
       {
        "question": "When a population drops this far, who, if anyone, is responsible?",
        "mode": null,
-       "line": "First list the causes you've seen in Documents 2 and 3. Then ask which of them a person could answer for."
+       "line": "First list the causes Document 2 names. Then ask which of them a person could answer for."
       }
      ],
      "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
@@ -228,7 +228,7 @@
       "label": "(adapted, easier to read)",
       "text": [
        "Brothers, we must be as one, the way the English are, or we shall all be destroyed. You know our fathers had plenty of deer and skins. Our plains were full of game and turkeys, and our coves and rivers were full of fish.",
-       "But, brothers, these Englishmen have seized (taken) our country. They have cut down the grass with scythes and the trees with axes. Their cows and horses eat up the grass, and their hogs spoil our bed of clams. In the end we shall all starve to death. So do not stand in your own way, I ask you. Make up your minds to act like men. All the sachems [tribal chiefs] to the east and the west have joined with us. We have decided to attack them on a day we choose. That is why I come to you in secret, because you can persuade your Indians [Native Americans] to do what you want."
+       "But, brothers, these Englishmen have seized (taken) our country. They have cut down the grass with scythes and the trees with axes. Their cows and horses eat up the grass, and their hogs spoil our bed of clams. In the end we shall all starve to death. So do not stand in your own way, I ask you. Make up your minds to act like men. All the sachems [tribal chiefs] to the east and the west have joined with us. We have decided to attack them on a day that is already set. That is why I come to you in secret, because you can persuade your Indians [Native Americans] to do what you want."
       ]
      },
      "licence": {
@@ -256,7 +256,7 @@
       {
        "question": "What does Gachradodow claim about the two peoples, and how does he back it up?",
        "mode": null,
-       "line": "Start with the bold line at the top. Then find the word \"placed\" and his last sentence about land."
+       "line": "Start with the bold line at the top. Then find the word “placed” and his last sentence about land."
       },
       {
        "question": "Whose view is this, and how might the colonial negotiators answer him?",
@@ -266,7 +266,7 @@
       {
        "question": "What right is Gachradodow defending for his people?",
        "mode": null,
-       "line": "Reread the bold line at the top. It's about who has the right to make the laws on this land. The Native American arc of Thread 1 asks about it by name."
+       "line": "Reread the bold line at the top. Whose laws does he say belong to his people, and who does he say gets to decide that?"
       }
      ],
      "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
@@ -355,9 +355,9 @@
      "page": 11,
      "steps": [
       {
-       "question": "When was each picture made, and which artist could have seen what he drew?",
+       "question": "When and where was each picture made? Could either artist have seen what he drew?",
        "mode": null,
-       "line": "Check the dates in both source lines. The right one was painted about eighty years after the time it shows."
+       "line": "Check the dates in both source lines. Then read the tiny print along the bottom of the left one: where was it sold?"
       },
       {
        "question": null,
@@ -382,8 +382,8 @@
      ],
      "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 11. Use the sentence stem, or write something of equal or better value.",
      "image_file": "STIMULUS_BANK/Unit_01/unit01-bostonharbor-mtvernon-pair.png",
-     "image_alt": "Two pictures side by side. LEFT: a hand-colored etching of Boston harbor, seen from across the water. Tall-masted ships lie at anchor in front, one flying red pennants. Behind them, a crowded waterfront of brick and wooden buildings runs along the shore under a tall church steeple. Small figures in red coats stand on the grassy bank in front. Captions in German and French run along the bottom. RIGHT: a painting of a harvest at Mount Vernon. George Washington, in a dark coat, breeches and a three-cornered hat, stands at the right holding a cane. Around him, African-American men and women cut, rake, bundle and load grain. A boy sits on top of a loaded hay wagon pulled by two pale horses. At the left, a woman in a white dress and two children rest in the shade. Fields roll back to a low horizon.",
-     "describe": "Two pictures side by side. LEFT: a hand-colored etching of Boston harbor, seen from across the water. Tall-masted ships lie at anchor in front, one flying red pennants. Behind them, a crowded waterfront of brick and wooden buildings runs along the shore under a tall church steeple. Small figures in red coats stand on the grassy bank in front. Captions in German and French run along the bottom. RIGHT: a painting of a harvest at Mount Vernon. George Washington, in a dark coat, breeches and a three-cornered hat, stands at the right holding a cane. Around him, African-American men and women cut, rake, bundle and load grain. A boy sits on top of a loaded hay wagon pulled by two pale horses. At the left, a woman in a white dress and two children rest in the shade. Fields roll back to a low horizon.",
+     "image_alt": "Two pictures side by side. LEFT: a hand-colored etching of a harbor, seen from the near shore. Tall-masted ships lie at anchor, one flying red pennants. Beyond them, a crowded waterfront of tall pale buildings with red roofs, round stone towers and a tall church steeple runs along the shore. On the grassy bank in front, small figures in red coats and three-cornered hats stand, carry and hammer. The title at the top is printed backwards, and captions in German and French run along the bottom. RIGHT: a painting of a harvest at Mount Vernon. George Washington, in a dark coat, breeches and a three-cornered hat, stands at the right holding a cane. Beside him, a man in a straw hat and a light smock holds a rake. In the middle, African-American men and women cut and bundle grain; one kneels by a bucket, one drinks from a jug. Behind them, a man stands on top of a loaded hay wagon, pitching hay; it is hitched to a brown horse and a white horse. At the left, a boy and a girl in a white dress sit in the shade, and the boy puts flowers in her hair. Fields roll back to a low horizon.",
+     "describe": "Two pictures side by side. LEFT: a hand-colored etching of a harbor, seen from the near shore. Tall-masted ships lie at anchor, one flying red pennants. Beyond them, a crowded waterfront of tall pale buildings with red roofs, round stone towers and a tall church steeple runs along the shore. On the grassy bank in front, small figures in red coats and three-cornered hats stand, carry and hammer. The title at the top is printed backwards, and captions in German and French run along the bottom. RIGHT: a painting of a harvest at Mount Vernon. George Washington, in a dark coat, breeches and a three-cornered hat, stands at the right holding a cane. Beside him, a man in a straw hat and a light smock holds a rake. In the middle, African-American men and women cut and bundle grain; one kneels by a bucket, one drinks from a jug. Behind them, a man stands on top of a loaded hay wagon, pitching hay; it is hitched to a brown horse and a white horse. At the left, a boy and a girl in a white dress sit in the shade, and the boy puts flowers in her hair. Fields roll back to a low horizon.",
      "before": {
       "title": "BEFORE WE TALK",
       "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
@@ -406,7 +406,7 @@
       {
        "question": "Who made this chart, and when? Is it from the colonial era?",
        "mode": null,
-       "line": "Read the source line. Teachers made this chart recently, from older records. Ask what a chart like this can show, and what it can't.",
+       "line": "Read the source line. Who is New Visions for Public Schools, and could they have been alive in the 1600s? Ask what a chart like this can show, and what it can't.",
        "tip": {
         "title": "NO NAME ON IT?",
         "text": [
@@ -473,13 +473,13 @@
      "n": 9,
      "title": "The contract",
      "kind": "text",
-     "src": "Source: Virtual Jamestown. Indenture of Richard Lowther, 1627.",
+     "src": "Source: Virtual Jamestown. Indenture of Richard Lowther, 1627 (adapted)",
      "page": 6,
      "steps": [
       {
        "question": "Who made this agreement, and did Lowther choose to sign it?",
        "mode": null,
-       "line": "Read the first lines: two men are named. Lowther signed this himself. Ask what he expected to get out of it."
+       "line": "Read the first lines: two men are named. Find the words that say who binds Lowther to serve. Ask what he expected to get out of it."
       },
       {
        "question": null,
@@ -515,19 +515,22 @@
        "In return, Edward Hurd and his heirs promise to carry Lowther to Virginia. During the four years they will give him enough food, drink, clothing and everything else he needs to live. When the four years are over, they will give Richard Lowther 50 acres of land in Virginia.",
        "[made the last day of July 1627, in the third year of the reign of King Charles]"
       ]
-     }
+     },
+     "errata": [
+      "Source line ends '(adapted)'; the printed packet's line does not (proofread sweep 1, 10/2)."
+     ]
     },
     {
      "n": 10,
      "title": "The letter home",
      "kind": "text",
-     "src": "Source: Virtual Jamestown. Richard Frethorne to his parents, 1623.",
+     "src": "Source: Virtual Jamestown. Richard Frethorne to his parents, 1623 (adapted)",
      "page": 7,
      "steps": [
       {
        "question": "Who wrote this, to whom, and what does he want from them?",
        "mode": null,
-       "line": "Frethorne is sixteen, and he's writing to the people who could send help. Read the last paragraph first, then start at the top."
+       "line": "Read the greeting first, then the last paragraph. Who is he writing to, and what is the last thing he asks for?"
       },
       {
        "question": null,
@@ -537,7 +540,7 @@
       {
        "question": "What is life like for Frethorne in Virginia? Name two conditions.",
        "mode": null,
-       "line": "Look for food, sickness, clothes and fear. Each paragraph gives you at least one."
+       "line": "Each paragraph after the greeting tells you about one part of his life. Find one condition in each, and pick two."
       },
       {
        "question": "How might his reason for writing shape what he tells his parents?",
@@ -553,25 +556,28 @@
      "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
      "text": [
       "Loving and kind father and mother,",
-      "…This is to let you understand that I your child (though at 16 years hardly a child) am in a most heavy case by reason of the country, [which] is such that it causes much sickness, such as the scurvy and the dysentery and diverse other diseases… And when we are sick there is nothing to comfort us; for since I came out of the ship I never ate anything but peas, and loblollie (that is, water gruel)… we must work hard both early and late for a mess of water gruel and a mouthful of bread and beef…",
+      "…This is to let you understand that I your child am in a most heavy case by reason of the country, [which] is such that it causes much sickness, such as the scurvy and the dysentery and diverse other diseases… And when we are sick there is nothing to comfort us; for since I came out of the ship I never ate anything but peas, and loblollie (that is, water gruel)… we must work hard both early and late for a mess of water gruel and a mouthful of bread and beef…",
       "For we live in fear of the enemy Natives every hour… we are but 32 to fight against 3000 Natives if they should come… And I have nothing to comfort me… not a shirt to my back but two rags, nor clothes but one poor suit, nor but one pair of shoes, but one pair of stockings, but one cap…",
-      "Goodman Jackson… much marveled that you would send me a servant to the Company; he said I had been better off if I had knocked on the head. And indeed so I find it now, to my great grief and misery; and I say that if you love me you will redeem me suddenly, for which I do entreat and beg…"
+      "Goodman Jackson… much marveled that you would send me a servant to the Company; he said I had been better off if I had been knocked on the head. And indeed so I find it now, to my great grief and misery; and I say that if you love me you will redeem me suddenly, for which I do entreat and beg…"
      ],
      "easier": {
       "label": "(adapted, easier to read)",
       "text": [
        "Loving and kind father and mother,",
-       "I want you to understand that I, your child (though at 16 years old I am hardly a child), am in a very hard place because of this country. It causes a lot of sickness, like scurvy and dysentery and other diseases. When we are sick there is nothing to comfort us. Since I got off the ship I have eaten nothing but peas and loblollie (that is, water gruel, a thin porridge). We must work hard, early and late, for a bowl of water gruel and a mouthful of bread and beef.",
+       "I want you to understand that I, your child, am in a very hard place because of this country. It causes a lot of sickness, like scurvy and dysentery and other diseases. When we are sick there is nothing to comfort us. Since I got off the ship I have eaten nothing but peas and loblollie (that is, water gruel, a thin porridge). We must work hard, early and late, for a bowl of water gruel and a mouthful of bread and beef.",
        "We live in fear of the enemy Natives every hour. There are only 32 of us to fight against 3000 Natives if they come. I have nothing to comfort me. I have no shirt on my back but two rags, only one poor suit of clothes, one pair of shoes, one pair of stockings, one cap.",
-       "Goodman Jackson was amazed that you would send me here as a servant to the Company. He said I had been better off if I had knocked on the head (been killed). And now I find that is true, to my great grief and misery. I say that if you love me you will redeem me (buy me out) suddenly. I beg you to."
+       "Goodman Jackson was amazed that you would send me here as a servant to the Company. He said I had been better off if I had been knocked on the head (killed). And now I find that is true, to my great grief and misery. I say that if you love me you will redeem me (buy me out) right away. I beg you to."
       ]
-     }
+     },
+     "errata": [
+      "Text restored to Frethorne's letter (BK 2026-10-02 13:57): New Visions' inserted '(though at 16 years hardly a child)' removed; 'had been knocked on the head' (the printed packet lacks 'been')."
+     ]
     },
     {
      "n": 11,
      "title": "Two notices",
      "kind": "text",
-     "src": "A — Source: Higher Education and Slavery in Western Massachusetts. B — Source: New York Public Library Manuscript Collection.",
+     "src": "A — Source: Higher Education and Slavery in Western Massachusetts (adapted). B — Source: New York Public Library Manuscript Collection (adapted)",
      "page": 9,
      "steps": [
       {
@@ -619,19 +625,22 @@
        "A · BILL OF SALE, 1750",
        "Israel Williams of Hatfield has paid me, Ephraim Williams Jr., two hundred and twenty five pounds. In return I sell and hand over to him a Black boy named Prince, aged about nine years, a servant for life. I promise that no one else has any claim to him. Signed by me on the 25th day of September 1750.",
        "B · AUCTION ANNOUNCEMENT, ESTATE OF ADOLPH PHILIPSE",
-       "To be sold at a public auction on the Manor of Philipsburg: four Black men (a mill worker, a boatman, and two farmers); three Black women (two farm workers and one cook); six Black boys and two girls; household goods; and all the animals: about 40 cattle, 26 horses, a number of sheep and hogs, and all the tools that belong to the manor."
+       "To be sold at a public auction on the Manor of Philipsburg: four Black men (a mill worker, a boatman, and two farmers); three Black women (two farm workers and one cook); six Black boys and two girls; household goods; and all the animals: more than 40 cattle, 26 horses, a number of sheep and hogs, and all the tools that belong to the manor."
       ]
      },
      "before": {
       "title": "BEFORE WE TALK",
       "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
-     }
+     },
+     "errata": [
+      "Source line ends '(adapted)'; the printed packet's line does not (proofread sweep 1, 10/2)."
+     ]
     },
     {
      "n": 12,
      "title": "A life, told by the person who lived it",
      "kind": "text",
-     "src": "Source: Documenting the American South. Narrative of the Life and Adventures of Venture Smith, a Native of Africa, but resident above sixty years in the United States, related by himself.",
+     "src": "Source: Documenting the American South. Narrative of the Life and Adventures of Venture Smith, a Native of Africa, but resident above sixty years in the United States, related by himself (adapted)",
      "page": 11,
      "steps": [
       {
@@ -662,7 +671,7 @@
      ],
      "close": "That's the walk. Now answer Document 12's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
      "text": [
-      "…It was 1738…. I was kidnapped in Africa…. our master told us all to appear to the best possible advantage for sale. I was brought on board by one Robertson Mumford, for four gallons of rum, and a piece of calico, and called VENTURE, on account of his having purchased me with his own private venture.",
+      "…our master told us all to appear to the best possible advantage for sale. I was bought on board by one Robertson Mumford, for four gallons of rum, and a piece of calico, and called VENTURE, on account of his having purchased me with his own private venture.",
       "The first of the time of living at my master's own place, I was pretty much employed in the house at cleaning and picking wool… after which my master put me to work out of doors… to pound four bushels of ears of corn every night in a barrel for the poultry, or be rigorously punished… These tasks I had to perform when I was about nine years old.",
       "…he then broke out into a great rage, snatched a pitchfork and went to lay me over the head therewith; but I as soon got another and defended myself… He took me to a gallows made for the purpose of hanging cattle on, and suspended me on it… I was released and went to work after hanging on the gallows about an hour.",
       "…At the close of that year I was sold to a Thomas Stanton, and had to be separated from my wife and one daughter, who was about one month old… This money I got by cleaning gentlemen's shoes and drawing boots, by catching musk-rats and minks, raising potatoes and carrots, and by fishing in the night, and at odd spells."
@@ -670,7 +679,7 @@
      "easier": {
       "label": "(adapted, easier to read)",
       "text": [
-       "It was 1738. I was kidnapped in Africa. Our master told us all to look our best to be sold. I was brought on board a ship by Robertson Mumford, for four gallons of rum, and a piece of calico (cotton cloth). He called me VENTURE, because he bought me with his own private venture (his own money, as an investment).",
+       "Our master told us all to look our best to be sold. I was bought on board the ship by Robertson Mumford, for four gallons of rum, and a piece of calico (cotton cloth). He called me VENTURE, because he bought me with his own private venture (his own money, as an investment).",
        "When I first lived at my master's own place, I worked mostly in the house, cleaning and picking wool. After that my master put me to work outdoors. Every night I had to pound four bushels of ears of corn in a barrel for the chickens, or be harshly punished. These tasks I had to perform when I was about nine years old.",
        "Then he flew into a great rage. He grabbed a pitchfork and went to hit me over the head with it, but I quickly got another one and defended myself. He took me to a gallows made for hanging cattle and hung me on it. I was let down and went back to work after hanging on the gallows about an hour.",
        "At the end of that year I was sold to a Thomas Stanton, and had to be separated from my wife and one daughter, who was about one month old. I got this money by cleaning gentlemen's shoes and pulling off their boots, by catching muskrats and minks, raising potatoes and carrots, and by fishing at night and in my spare time."
@@ -679,7 +688,10 @@
      "before": {
       "title": "BEFORE WE TALK",
       "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
-     }
+     },
+     "errata": [
+      "Text restored to Venture Smith's narrative (BK 13:57): New Visions' inserted '…It was 1738…. I was kidnapped in Africa….' removed; 'bought on board' (the printed packet says 'brought')."
+     ]
     },
     {
      "n": 13,
@@ -713,7 +725,7 @@
       {
        "question": "Who wrote these laws, and whose voice is missing?",
        "mode": null,
-       "line": "Every line was written by the people making the law. Ask what this timeline would say if the people it was made about had kept it."
+       "line": "Every law on this timeline was written by the people in power. Ask what this timeline would say if the people the laws were made about had kept it."
       },
       {
        "question": "Freedoms are taken away one law at a time. What principle is being broken?",
@@ -787,12 +799,12 @@
       {
        "question": "Why is a list like this harder to argue with than a speech?",
        "mode": null,
-       "line": "The writer wasn't trying to convince anyone. He was counting. Ask what a list proves without meaning to."
+       "line": "Read the first line again: what job was this list made to do? Then ask what a list proves without meaning to."
       },
       {
        "question": "Betty is three years old and listed before the cattle. What principle has to be abandoned for this to be ordinary?",
        "mode": null,
-       "line": "Read each \"Look for it when\" cue on your card. Which one describes a person being treated as a thing?"
+       "line": "Look in the group called What government must protect. Which of those is missing when a three-year-old is counted on the same page as cattle?"
       }
      ],
      "close": "That's the walk. Now answer Document 14's questions in your casefile, starting on page 21. Use the sentence stem, or write something of equal or better value.",
@@ -830,7 +842,7 @@
      "n": 15,
      "title": "A notice in the newspaper",
      "kind": "text",
-     "src": "Source: Virginia Gazette (Hunter), 18 June 1751.",
+     "src": "Source: Virginia Gazette (Hunter), 18 June 1751 (adapted)",
      "page": 22,
      "steps": [
       {
@@ -856,7 +868,7 @@
       {
        "question": "What does the iron collar tell you about calling this system lawful?",
        "mode": null,
-       "line": "Look at the shackles and the collar. Then read your card's \"Look for it when\" cues and find one this notice breaks."
+       "line": "Look at the shackles and the collar. Then read your card's “Look for it when” cues and find one this notice breaks."
       }
      ],
      "close": "That's the walk. Now answer Document 15's questions in your casefile, starting on page 23. Use the sentence stem, or write something of equal or better value.",
@@ -872,7 +884,10 @@
      "before": {
       "title": "BEFORE WE TALK",
       "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
-     }
+     },
+     "errata": [
+      "Source line ends '(adapted)'; the printed packet's line does not (proofread sweep 1, 10/2)."
+     ]
     },
     {
      "n": 16,
@@ -894,7 +909,7 @@
       {
        "question": "What is the picture arguing?",
        "mode": null,
-       "line": "Put the snake belief together with the two words at the bottom. What happens to the pieces if they stay apart?"
+       "line": "Put the snake belief together with the words at the bottom. What happens to the pieces if they stay apart?"
       },
       {
        "question": "Who is in the snake, and who is left out?",
@@ -920,7 +935,7 @@
      "n": "16b",
      "title": "The article it ran with",
      "kind": "text",
-     "src": "Franklin in the Pennsylvania Gazette, 9 May 1754",
+     "src": "Source: Benjamin Franklin, Pennsylvania Gazette, 9 May 1754 (adapted)",
      "page": 27,
      "steps": [
       {
@@ -936,7 +951,7 @@
       {
        "question": "What does Franklin say the colonies' problem is?",
        "mode": null,
-       "line": "Find the words \"disunited State.\" Then find what he says the French have that the colonies don't."
+       "line": "Find the sentence that begins “The Confidence of the French.” What does he say the French are counting on? Then find what he says the French have that the colonies don't."
       },
       {
        "question": "Is this news, an argument, or both? How might a colonist who didn't want to unite read it?",
@@ -944,23 +959,26 @@
        "line": "Look at the order: the numbers first, then the blame. Ask what that order does to a reader."
       },
       {
-       "question": "What would the colonies have to give up to become \"one Council\"?",
+       "question": "What would the colonies have to give up to become “one Council”?",
        "mode": null,
        "line": "Ask who would make the decisions if the colonies joined. Then look in the group called How power is built and limited."
       }
      ],
      "close": "That's the walk. Now answer Document 16b's questions in your casefile, starting on page 27. Use the sentence stem, or write something of equal or better value.",
      "text": [
-      "“Friday last an Express message arrived here from Major Washington, that Mr. Ward… was compelled to surrender his small fort in the Ohio River Valley to the French… the French had a Fleet of 360 Battleships and Canoes, upwards of 1000 Men, and 18 Pieces of Artillery… and Mr. Ward and the American colonists having but 44 Men, and no Cannon to make a proper Defense, was obliged to surrender…”",
+      "“Friday last an Express message arrived here from Major Washington, that Mr. Ward… was compelled to surrender his small fort in the Ohio River Valley to the French… the French had a Fleet of 360 Battoes [flat-bottomed boats] and Canoes, upwards of 1000 Men, and 18 Pieces of Artillery… and Mr. Ward and the American colonists having but 44 Men, and no Cannon to make a proper Defense, was obliged to surrender…”",
       "“…The Confidence of the French in this seems well-grounded on the present disunited State of the British Colonies, and the extreme Difficulty of bringing so many different Governments and Assemblies to agree in any speedy and effectual Measures for our common Defence and Security; while our Enemies have the very great Advantage of being under one Direction, with one Council, and one Purse.”"
      ],
      "easier": {
       "label": "(adapted, easier to read)",
       "text": [
-       "“Last Friday an urgent message arrived here from Major Washington. Mr. Ward was forced to surrender his small fort in the Ohio River Valley to the French. The French had a fleet of 360 battleships and canoes, more than 1000 men, and 18 cannons. Mr. Ward and the American colonists had only 44 men and no cannon to defend themselves, so they had to surrender.”",
+       "“Last Friday an urgent message arrived here from Major Washington. Mr. Ward was forced to surrender his small fort in the Ohio River Valley to the French. The French had a fleet of 360 flat-bottomed boats and canoes, more than 1000 men, and 18 cannons. Mr. Ward and the American colonists had only 44 men and no cannon to defend themselves, so they had to surrender.”",
        "“The French feel confident because of the present disunited State of the British Colonies. It is very hard to get so many different governments and assemblies to agree quickly on a plan to defend us all. Meanwhile, our enemies have the very great advantage of being under one Direction, with one Council, and one Purse (one leader, one government, and one treasury).”"
       ]
-     }
+     },
+     "errata": [
+      "Text restored to Franklin's Gazette (BK 13:57): '360 Battoes [flat-bottomed boats]' (the printed packet says 'Battleships'). Source line: 'Source: … (adapted)'."
+     ]
     },
     {
      "n": 17,
@@ -972,7 +990,7 @@
       {
        "question": "Who wrote these rules, and who were they written for?",
        "mode": null,
-       "line": "Read the source line: 1639, Connecticut, and Section 1. The towns wrote these rules for themselves.",
+       "line": "Read the source line: 1639, Connecticut, and Section 1. No king's name is on it. Ask who in Connecticut would sit down and write rules like these.",
        "tip": {
         "title": "NO NAME ON IT?",
         "text": [
@@ -988,10 +1006,10 @@
       {
        "question": "How is a governor chosen, and who gets to choose?",
        "mode": null,
-       "line": "Find the words \"Court of Election.\" Then find \"which choice shall be made by\" near the end, and read everything after it."
+       "line": "Find the words “Court of Election.” Then find “which choice shall be made by” near the end, and read everything after it."
       },
       {
-       "question": "Who might be left out of \"all that are admitted freemen\"?",
+       "question": "Who might be left out of “all that are admitted freemen”?",
        "mode": null,
        "line": "Read the three things a voter had to be. Ask who in 1639 Connecticut could not meet all three."
       },
@@ -1008,9 +1026,9 @@
      "easier": {
       "label": "(adapted, easier to read)",
       "text": [
-       "It is ordered that there will be two General Assemblies or Courts every year, one on the second Thursday in April and the other on the second Thursday in September. The first one will be called the Court of Election. At it, every year, the people will choose as many Magistrates (officials and judges) and other public officers as are needed.",
+       "It is ordered that there will be two General Assemblies or Courts every year, one on the second Thursday in April and the other on the second Thursday in September. The first one will be called the Court of Election. At it, every year, as many Magistrates (officials and judges) and other public officers as are needed will be chosen.",
        "One of them will be chosen Governor for the coming year. No Magistrate will be chosen for more than one year at a time. There must always be six chosen besides the Governor. Once they are chosen and take their oath, they will have the power to give out justice according to the laws made here. Where there is no law, they will follow the Word of God.",
-       "The choice will be made by all who are admitted freemen, who have taken the Oath of Fidelity (loyalty), and who live in this area, after being accepted as residents by most of the people in their town."
+       "The choice will be made by all who are admitted freemen, who have taken the Oath of Fidelity (loyalty), and who live in this area, after being accepted as residents by most of the people in their town, or by most of those present at the time."
       ]
      }
     },
@@ -1024,7 +1042,7 @@
       {
        "question": "Who wrote this, when, and why would a description of old law be hard to argue with?",
        "mode": null,
-       "line": "Read the Before you read note: nobody had to pass this. Ask what it takes to fight a rule no one remembers making."
+       "line": "Read the Before you read note. Then ask: if you wanted to change this rule, what vote or law would you go after?"
       },
       {
        "question": null,
@@ -1034,7 +1052,7 @@
       {
        "question": "What happens to a woman's legal existence when she marries?",
        "mode": null,
-       "line": "Find the word \"suspended.\" Read the words right before it and right after it."
+       "line": "Find the words “legal existence of the woman.” Read what the sentence says happens to it."
       },
       {
        "question": "Whose account of the same marriage is missing from this page?",
@@ -1061,7 +1079,7 @@
      },
      "note": {
       "title": "Before you read",
-      "text": "Before you read. The colonies ran on English common law, and this is the clearest statement of the rule that governed every married woman in them. It was written in 1765 — just after the period this unit covers — because it describes law already centuries old. Nobody had to pass this. It was simply how things were."
+      "text": "The colonies ran on English common law, and this is the clearest statement of the rule that governed every married woman in them. It was written in 1765 — just after the period this unit covers — but it describes law already centuries old. Nobody had to pass this. It was simply how things were."
      }
     }
    ]
