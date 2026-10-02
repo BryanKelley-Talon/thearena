@@ -33,6 +33,12 @@ export const CHROME = {
   nextDoc: 'Next document',
   asks: 'Ask yourself:',          // BK 2026-10-01 09:27 ("2. agreed"), at Sam's desk
   outLoud: 'OUT LOUD',
+  // Doc Assist v4 (Will's 10.2 B and C, BK signed 2026-10-02 11:32 / 13:22). The pack carries
+  // its own button words (labels.annotate, labels.fr); these are the few it doesn't.
+  frAsks: 'Demande-toi :',        // as printed in Will's signed B wording PDF (BK 11:32)
+  frOff: 'In English',            // (a) BK 2026-10-02 13:30: "That s fine."
+  annotateHide: 'Hide how to annotate',   // (b) BK 13:30: "okay. make it visually make sense to kids"
+  mark: m => String(m || '').toUpperCase(),   // BOX · CIRCLE · MARGIN, as Will's signed PDF prints them
 }
 
 const imgName = f => String(f || '').split('/').pop()
@@ -42,26 +48,31 @@ export const openCasefiles = pack => (pack?.casefiles || []).filter(c => c.statu
 // ── READ IT TO ME ───────────────────────────────────────────
 // On-device voices only. Chrome lists Google's network voices beside the
 // Chromebook's own; those send the text to a server, so they are never used.
-function pickLocalVoice() {
+// The French view (2026-10-02) reads with a French on-device voice, under the same rule:
+// no local French voice on the device → no Read button in French.
+const HOME_LANG = { en: 'US', fr: 'FR' }
+function pickLocalVoice(lang = 'en') {
   const ss = typeof window !== 'undefined' ? window.speechSynthesis : null
   if (!ss || typeof window.SpeechSynthesisUtterance === 'undefined') return null
-  const local = ss.getVoices().filter(v => v.localService === true && /^en\b|^en[-_]/i.test(v.lang || ''))
+  const re = new RegExp(`^${lang}\\b|^${lang}[-_]`, 'i')
+  const home = new RegExp(`^${lang}[-_]${HOME_LANG[lang] || ''}$`, 'i')
+  const local = ss.getVoices().filter(v => v.localService === true && re.test(v.lang || ''))
   if (!local.length) return null
-  return local.find(v => /^en[-_]US$/i.test(v.lang) && v.default)
-      || local.find(v => /^en[-_]US$/i.test(v.lang))
+  return local.find(v => home.test(v.lang) && v.default)
+      || local.find(v => home.test(v.lang))
       || local.find(v => v.default) || local[0]
 }
 
-export function useLocalVoice() {
-  const [voice, setVoice] = useState(() => pickLocalVoice())
+export function useLocalVoice(lang = 'en') {
+  const [voice, setVoice] = useState(() => pickLocalVoice(lang))
   useEffect(() => {
     const ss = typeof window !== 'undefined' ? window.speechSynthesis : null
     if (!ss) return
-    const update = () => setVoice(pickLocalVoice())
+    const update = () => setVoice(pickLocalVoice(lang))
     update()
     ss.addEventListener?.('voiceschanged', update)
     return () => ss.removeEventListener?.('voiceschanged', update)
-  }, [])
+  }, [lang])
   return voice
 }
 
@@ -217,57 +228,176 @@ function Umbrellas({ u }) {
   )
 }
 
+// ── DOC ASSIST v4 (Will, 10.2 B and C; BK signed 2026-10-02 11:32 and 13:22) ──
+// Two buttons on a document that carries them:
+//   • How to annotate: the method for the document's kind (text · picture · map), the model
+//     notes on parts no question asks about, and one outside-evidence line (an example where
+//     outside evidence isn't scored, where to look where it is). On an English text document the
+//     notes are also drawn on the document itself, numbered, so the kid watches it done.
+//   • En français: the document and the walk swap to French; the source line stays as printed.
+//     BK 11:32: the notes stay English ("just the documents"). BK 12:06: the work is written in
+//     English; pack.fr.note says so under the label on every document.
+// Nothing typed, nothing stored. French stays on from one document to the next for this visit
+// only (a variable, never storage).
+let frThisVisit = false
+
+// The French step-5 card: Will's French names, questions and issues; the issue names stay
+// English (as on the paper) with French definitions (pack.fr.umbrellas.issue_defs).
+function frCard(pack) {
+  const en = q4Card(pack), f = pack.fr?.umbrellas
+  if (!en || !f) return en
+  return {
+    ...en, title: f.title || en.title, intro: f.intro ?? en.intro, close: f.close || en.close,
+    items: (en.items || []).map((it, i) => {
+      const fi = (f.items || [])[i] || {}
+      return {
+        ...it, name: fi.name || it.name, question: fi.question || it.question, issues: fi.issues || it.issues,
+        issue_defs: (it.issue_defs || []).map(x => ({ name: x.name, definition: f.issue_defs?.[x.name] || x.definition })),
+      }
+    }),
+  }
+}
+
+// Draw the model notes on the printed words: each `where` that appears in a string is wrapped
+// in its mark (box · circle · margin) with the note's number. First match only.
+function marked(str, notes) {
+  if (!notes?.length) return str
+  const hits = []
+  notes.forEach((nt, k) => {
+    const at = nt.where ? String(str).indexOf(nt.where) : -1
+    if (at >= 0 && !hits.some(h => at < h.at + h.len && h.at < at + nt.where.length)) hits.push({ at, len: nt.where.length, k, mark: nt.mark })
+  })
+  if (!hits.length) return str
+  hits.sort((a, b) => a.at - b.at)
+  const out = []
+  let i = 0
+  for (const h of hits) {
+    if (h.at > i) out.push(str.slice(i, h.at))
+    out.push(
+      <span key={h.k} className={`da-mk da-mk-${h.mark}`}>
+        {str.slice(h.at, h.at + h.len)}<sup className="da-mk-n" aria-label={`, note ${h.k + 1}`}>{h.k + 1}</sup>
+      </span>)
+    i = h.at + h.len
+  }
+  if (i < str.length) out.push(str.slice(i))
+  return out
+}
+
+function AnnotatePanel({ pack, doc, fr }) {
+  const A = pack.annotate || {}
+  const a = doc.annotate
+  const method = A.methods?.[a.kind] || []
+  const oeLabel = a.oe?.kind === 'where' ? A.oe_where_label : A.oe_example_label
+  return (
+    <section className="da-ann" id="da-annotate" aria-label={A.button}>
+      <div className="da-ann-title">{A.button}</div>
+      <ol className="da-ann-method">
+        {method.map(([tag, step], i) => (
+          <li key={i}><span className="da-ann-n">{i + 1}</span><span><b className="da-ann-tag">{tag}</b> {step}</span></li>
+        ))}
+      </ol>
+      <div className="da-ann-head">{A.model_label}</div>
+      {/* (d) In the French view, Will's French line replaces the English one; the notes stay English. */}
+      <p className="da-ann-intro" lang={fr && pack.fr?.annotate_note ? 'fr' : 'en'}>
+        {fr && pack.fr?.annotate_note ? pack.fr.annotate_note : A.model_note}
+      </p>
+      <ol className="da-ann-notes" lang="en">
+        {(a.notes || []).map((n, i) => (
+          <li key={i}>
+            <span className={`da-ann-key da-mk-${n.mark}`} aria-hidden="true">{i + 1}</span>
+            <div>
+              <div><b className="da-ann-mark">{CHROME.mark(n.mark)}</b> <span className="da-ann-where">{n.where}</span></div>
+              <p>{n.note}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+      {a.oe?.text && (
+        <div className="da-ann-oe">
+          <div className="da-ann-head">{oeLabel}</div>
+          <p lang="en">{a.oe.text}</p>
+        </div>
+      )}
+    </section>
+  )
+}
+
 export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
-  const voice = useLocalVoice()
-  const speaker = useSpeaker(voice)
-  const L = pack.labels || {}
+  const voiceEn = useLocalVoice('en')
+  const voiceFr = useLocalVoice('fr')
   const walkSteps = pack.walk || []
   const [easier, setEasier] = useState(false)
   const [walkOpen, setWalkOpen] = useState(false)
   const [at, setAt] = useState(0)               // 0..4 the steps, 5 the close
   const [umbOpen, setUmbOpen] = useState(false)
+  const [annOpen, setAnnOpen] = useState(false)
+  const [frOn, setFrOn] = useState(frThisVisit)
   const walkRef = useRef(null)
+  const F = doc.fr && pack.fr ? doc.fr : null      // this document has a French version
+  const fr = frOn && !!F
+  const canAnnotate = !!(doc.annotate && pack.annotate)
+  const voice = fr ? voiceFr : voiceEn
+  const speaker = useSpeaker(voice)
+  const L = fr ? { ...(pack.labels || {}), ...(pack.fr.labels || {}) } : (pack.labels || {})
   const isImage = doc.kind === 'image'
   const images = isImage ? docImages(doc) : []
-  const canEasier = isImage ? images.some(i => i.describe) : !!(doc.easier?.text || []).length
-  const body = isImage ? [] : (easier ? doc.easier.text : doc.text) || []
-  const bwt = boxOf(doc.before_we_talk) || boxOf(doc.before)
-  const printed = typeof doc.before === 'string' ? doc.before : null
+  // (c) No French easy version in the pack, so Easier to read is off in the French view.
+  const canEasier = !fr && (isImage ? images.some(i => i.describe) : !!(doc.easier?.text || []).length)
+  const showEasier = easier && canEasier
+  const body = isImage ? [] : (fr ? F.text : showEasier ? doc.easier.text : doc.text) || []
+  const bwtEn = boxOf(doc.before_we_talk) || boxOf(doc.before)
+  const bwt = bwtEn && fr && (typeof F.before_we_talk === 'string' || typeof F.before === 'object')
+    ? { title: bwtEn.title, text: (typeof F.before_we_talk === 'string' ? F.before_we_talk : F.before?.text) || bwtEn.text, fr: true }
+    : bwtEn
+  const printedEn = typeof doc.before === 'string' ? doc.before : null
+  const printed = printedEn && fr && typeof F.before === 'string' ? F.before : printedEn
   const note = doc.note && doc.note.text ? doc.note : null   // printed on the page above the quote (11.1 B Doc 18)
+  const ww = fr && F.word_watch ? F.word_watch : doc.word_watch
+  // Marks go on the printed English words only (the notes are English, BK 11:32).
+  const marks = annOpen && canAnnotate && !fr && !showEasier && !isImage ? doc.annotate.notes : null
 
-  // A new document starts as printed, walk closed, nothing reading.
-  useEffect(() => { setEasier(false); setWalkOpen(false); setAt(0); setUmbOpen(false); speaker.stop() }, [doc.n, doc.title])
-  useEffect(() => { speaker.stop(); setUmbOpen(false) }, [at, easier, walkOpen])
+  // A new document starts as printed, walk closed, nothing reading. French stays as the kid left it.
+  useEffect(() => { setEasier(false); setWalkOpen(false); setAt(0); setUmbOpen(false); setAnnOpen(false); speaker.stop() }, [doc.n, doc.title])
+  useEffect(() => { speaker.stop(); setUmbOpen(false) }, [at, easier, walkOpen, frOn])
 
   const openWalk = () => {
     setWalkOpen(true); setAt(0)
     requestAnimationFrame(() => walkRef.current?.focus())
   }
   const closeWalk = () => { setWalkOpen(false); setAt(0) }
+  const toggleFr = () => { const v = !frOn; frThisVisit = v; setFrOn(v) }
 
-  // What "Read it to me" says for the document: what is on the screen, in order.
-  const docParts = [
-    bwt?.title, bwt?.text, printed, note?.title, note?.text,
-    doc.title,
-    doc.src,
-    ...(isImage ? images.flatMap(i => [i.label, easier && i.describe ? i.describe : i.alt]) : body),
-  ]
+  const title = fr ? F.title : doc.title
+  // What "Read it to me" says for the document: what is on the screen, in order. In French the
+  // printed English source line is left to the eye (a French voice would mangle it).
+  const docParts = fr
+    ? [bwt?.text, printed, title, ...(isImage ? [F.describe] : body), ww?.title, ww?.text]
+    : [bwt?.title, bwt?.text, printed, note?.title, note?.text, title, doc.src,
+       ...(isImage ? images.flatMap(i => [i.label, showEasier && i.describe ? i.describe : i.alt]) : body),
+       ww?.title, ww?.text]
 
-  const step = walkSteps[at]
-  const ds = (doc.steps || [])[at]
-  const qs = stepQuestions(ds)
+  const step = fr ? (pack.fr.walk || [])[at] || walkSteps[at] : walkSteps[at]
+  const dsEn = (doc.steps || [])[at]
+  const dsFr = fr ? (F.steps || [])[at] : null
+  const qs = fr
+    ? (dsFr?.question ? [{ n: null, text: dsFr.question, mode: dsEn?.mode }] : [])
+    : stepQuestions(dsEn)
+  const line = fr ? dsFr?.line : dsEn?.line
+  const asks = fr ? CHROME.frAsks : CHROME.asks
   const say = step && (isImage && step.say_image ? step.say_image : step.say)
   const qLine = q => `${q.n != null ? `${q.n}. ` : ''}${q.text}`
+  const tipEn = dsEn?.tip && (dsEn.tip.text || []).length ? dsEn.tip : null
+  const tip = tipEn && fr ? (F.tip && (F.tip.text || []).length ? F.tip : null) : tipEn
+  const close = fr ? F.close : doc.close
   const stepParts = at >= walkSteps.length
-    ? [doc.close]
-    : [step?.step, say, ...qs.flatMap(q => [`${CHROME.asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), ds?.line, ds?.tip?.title, ...(ds?.tip?.text || [])]
-  const card = q4Card(pack)
+    ? [close]
+    : [step?.step, say, ...qs.flatMap(q => [`${asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), line, tip?.title, ...(tip?.text || [])]
+  const card = fr ? frCard(pack) : q4Card(pack)
   const showUmb = card && q4Label(pack) && at === walkSteps.length - 1
-  const tip = ds?.tip && (ds.tip.text || []).length ? ds.tip : null
 
   return (
     <div className="da-doc">
-      <h2 className="da-title">{doc.title}</h2>
+      <h2 className="da-title" lang={fr ? 'fr' : 'en'}>{title}</h2>
       <div className="da-tools" role="toolbar" aria-label={CHROME.docLabel(doc.n)}>
         {!walkOpen && <button type="button" className="da-btn da-btn-main" onClick={openWalk}>{L.walk}</button>}
         {canEasier && (
@@ -276,6 +406,17 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
           </button>
         )}
         <ReadButton voice={voice} speaker={speaker} k="doc" parts={docParts} labels={L} />
+        {canAnnotate && (
+          <button type="button" className="da-btn" aria-expanded={annOpen} aria-controls="da-annotate"
+                  onClick={() => setAnnOpen(o => !o)}>
+            <span aria-hidden="true" className="da-ico">{annOpen ? '−' : '+'}</span>{annOpen ? CHROME.annotateHide : (pack.labels?.annotate || pack.annotate.button)}
+          </button>
+        )}
+        {F && (
+          <button type="button" className="da-btn" aria-pressed={fr} onClick={toggleFr} lang={fr ? 'en' : 'fr'}>
+            {fr ? CHROME.frOff : (pack.labels?.fr || pack.fr.button)}
+          </button>
+        )}
       </div>
 
       <div className={walkOpen ? 'da-grid' : 'da-grid da-solo'}>
@@ -283,10 +424,10 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
           {bwt && (
             <aside className="da-before" aria-label={bwt.title}>
               {bwt.title && <div className="da-before-title">{bwt.title}</div>}
-              <p>{bwt.text}</p>
+              <p lang={bwt.fr ? 'fr' : 'en'}>{bwt.text}</p>
             </aside>
           )}
-          {printed && <p className="da-printed">{printed}</p>}
+          {printed && <p className="da-printed" lang={fr ? 'fr' : 'en'}>{printed}</p>}
           {note && (
             <div className="da-printed da-note">
               {note.title && <div className="da-note-title">{note.title}</div>}
@@ -295,18 +436,24 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
           )}
           <figure className="stimulus da-paper">
             <div className="doc-tag">{CHROME.docLabel(doc.n)}</div>
-            {/* As printed in the casefile: the source line sits above the document. */}
-            <div className="da-src">
-              {doc.src}
-              {!isImage && easier && doc.easier?.label && <span className="da-easier-label">{doc.easier.label}</span>}
+            {/* As printed in the casefile: the source line sits above the document. It stays as printed in French. */}
+            <div className="da-src" lang="en">
+              {marks ? marked(doc.src, marks) : doc.src}
+              {!isImage && showEasier && doc.easier?.label && <span className="da-easier-label">{doc.easier.label}</span>}
             </div>
+            {fr && (
+              <div className="da-fr-label" lang="fr">
+                <b>{F.label || pack.fr.label}</b>
+                {pack.fr.note && <span>{pack.fr.note}</span>}
+              </div>
+            )}
             {images.map((im, i) => (
               <div key={i} className="da-imgblock">
                 {im.label && <div className="da-imglabel">{im.label}</div>}
                 <a className="da-imglink" href={imgSrc(im.file)} target="_blank" rel="noopener noreferrer">
                   <img src={imgSrc(im.file)} alt={im.alt || ''} loading={i ? 'lazy' : undefined} />
                 </a>
-                {easier && im.describe && (
+                {showEasier && im.describe && (
                   <div className="da-describe">
                     <div className="da-describe-head">{CHROME.picture}</div>
                     <p>{im.describe}</p>
@@ -314,31 +461,41 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
                 )}
               </div>
             ))}
+            {isImage && fr && F.describe && (
+              <div className="da-describe" lang="fr"><p>{F.describe}</p></div>
+            )}
             {!isImage && (
-              <div className="da-text" lang="en">
-                {body.map((p, i) => <p key={`${easier ? 'e' : 'o'}${i}`}>{p}</p>)}
+              <div className="da-text" lang={fr ? 'fr' : 'en'}>
+                {body.map((p, i) => <p key={`${fr ? 'f' : showEasier ? 'e' : 'o'}${i}`}>{marks ? marked(p, marks) : p}</p>)}
+              </div>
+            )}
+            {ww?.text && (
+              <div className="da-ww" lang={fr ? 'fr' : 'en'}>
+                {ww.title && <b className="da-ww-title">{ww.title}</b>}
+                <p>{ww.text}</p>
               </div>
             )}
             {doc.licence?.text && <p className="da-licence">{doc.licence.text}</p>}
           </figure>
+          {annOpen && canAnnotate && <AnnotatePanel pack={pack} doc={doc} fr={fr} />}
         </div>
 
         {walkOpen && (
-          <section className="da-walk" ref={walkRef} tabIndex={-1} aria-label={pack.walk_name}>
+          <section className="da-walk" ref={walkRef} tabIndex={-1} aria-label={pack.walk_name} lang={fr ? 'fr' : 'en'}>
             <div className="da-walk-top">
-              <div className="da-walk-name">{pack.walk_name}</div>
+              <div className="da-walk-name" lang="en">{pack.walk_name}</div>
               <div className="da-dots" aria-hidden="true">
                 {walkSteps.map((_, i) => <span key={i} className={i < at ? 'da-dot done' : i === at ? 'da-dot now' : 'da-dot'} />)}
               </div>
             </div>
             {at < walkSteps.length ? (
-              <div className="da-step" key={at} aria-live="polite">
+              <div className="da-step" key={`${at}${fr ? 'f' : ''}`} aria-live="polite">
                 <div className="da-tag">{step.tag}</div>
                 <div className="da-stepline">{step.step}</div>
                 {say && <p className="da-say">{say}</p>}
                 {qs.length > 0 && (
                   <div className="da-ask">
-                    <div className="da-ask-head">{CHROME.asks}</div>
+                    <div className="da-ask-head">{asks}</div>
                     {qs.map((q, i) => (
                       <p key={i}>{q.n != null && <b className="da-qn">{q.n}.</b>} {q.text}
                         {q.mode === 'out loud' && <span className="da-loud"> · {CHROME.outLoud}</span>}</p>
@@ -354,10 +511,10 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
                     {umbOpen && <Umbrellas u={card} />}
                   </div>
                 )}
-                {ds?.line && (
+                {line && (
                   <div className="guide-says da-bk" role="note">
                     {portrait && <img className="guide-face" src={`/${portrait}`} alt="" />}
-                    <p>{ds.line}</p>
+                    <p>{line}</p>
                   </div>
                 )}
                 {/* A tip the step carries (Global v3: NO NAME ON IT?, BK 10:26), under the line. */}
@@ -369,10 +526,10 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
                 )}
               </div>
             ) : (
-              <div className="da-step" key="close" aria-live="polite">
+              <div className="da-step" key={`close${fr ? 'f' : ''}`} aria-live="polite">
                 <div className="guide-says da-bk" role="note">
                   {portrait && <img className="guide-face" src={`/${portrait}`} alt="" />}
-                  <p>{doc.close}</p>
+                  <p>{close}</p>
                 </div>
               </div>
             )}
@@ -409,7 +566,7 @@ export const DOCASSIST_STYLES = `
 .da-btn{display:inline-flex;align-items:center;gap:8px;background:var(--arena-choice);border:1.5px solid var(--arena-choice-edge);
   color:var(--white);padding:11px 16px;border-radius:9px;font-family:'Outfit',sans-serif;font-size:16px;cursor:pointer;min-height:44px}
 .da-btn:hover{border-color:var(--gold)}
-.da-btn[aria-pressed=true]{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
+.da-btn[aria-expanded=true],.da-btn[aria-pressed=true]{border-color:var(--gold);box-shadow:inset 0 0 0 1px var(--gold)}
 .da-btn-main{background:var(--gold);border-color:var(--gold);color:var(--canvas);font-weight:700}
 .da-btn-main:hover{background:var(--gold-lit);border-color:var(--gold-lit)}
 .da-ico{font-size:12px;line-height:1}
@@ -488,6 +645,37 @@ export const DOCASSIST_STYLES = `
 .da-docnav{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:22px 0 0;max-width:860px}
 .da-docnav .btn-ghost{min-height:44px;font-size:16px;background:var(--card);border-style:solid;border-color:var(--arena-choice-edge)}
 .da-docnav .btn-ghost:disabled{visibility:hidden}
+.da-fr-label{margin:-4px 0 14px;padding:8px 12px;border-radius:6px;background:rgba(255,255,255,.5);border:1px solid rgba(60,44,18,.3);color:#2c2110;font-size:15px;line-height:1.5}
+.da-fr-label b{display:block;color:#5a4210}
+.da-ww{margin:16px 0 4px;padding:10px 13px;border-radius:6px;background:#efe2bf;border:1px solid rgba(60,44,18,.35);border-left:4px solid #8a6a1f}
+.da-ww-title{display:block;color:#2c2110;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;font-size:15px;margin-bottom:3px}
+.da-ww p{color:#2c2110;font-size:16.5px;line-height:1.6;margin:0}
+/* The model notes, drawn on the page. Each mark has its own shape and a number, never colour alone. */
+.da-mk{padding:0 2px;border-radius:3px}
+.da-mk-box{outline:2px solid #6b4a0e;outline-offset:1px;border-radius:2px}
+.da-mk-circle{border:2px solid #6b4a0e;border-radius:999px;padding:0 6px}
+.da-mk-margin{text-decoration:underline wavy #6b4a0e;text-underline-offset:4px;text-decoration-thickness:2px;background:rgba(138,106,31,.14)}
+.da-mk-n{font-family:'Outfit',sans-serif;font-style:normal;font-weight:700;font-size:11px;color:#fff;background:#6b4a0e;border-radius:999px;
+  padding:1px 5px;margin-left:3px;vertical-align:super;line-height:1}
+.da-ann{margin:16px 0 0;background:var(--card);border:1px solid var(--arena-choice-edge);border-left:4px solid var(--gold);border-radius:10px;padding:14px 16px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
+.da-ann-title{font-family:'Barlow Condensed',sans-serif;font-size:22px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
+.da-ann-method{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-direction:column;gap:7px}
+.da-ann-method li{display:flex;gap:10px;align-items:baseline;color:var(--white);font-size:16.5px;line-height:1.5}
+.da-ann-n{flex:0 0 auto;min-width:24px;height:24px;border-radius:50%;background:var(--gold);color:var(--canvas);font-weight:700;font-size:13.5px;display:inline-flex;align-items:center;justify-content:center}
+.da-ann-tag{font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;color:var(--gold-lit);font-weight:700}
+.da-ann-head{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:15px;color:var(--gold);font-weight:700;margin:4px 0 2px}
+.da-ann-intro{color:var(--grey);font-size:15.5px;line-height:1.5;margin:0 0 10px}
+.da-ann-notes{list-style:none;margin:0 0 6px;padding:0;display:flex;flex-direction:column;gap:10px}
+.da-ann-notes li{display:flex;gap:10px;align-items:flex-start;background:var(--card-lit);border:1px solid var(--edge);border-radius:8px;padding:9px 11px}
+.da-ann-notes p{color:var(--white);font-size:16px;line-height:1.5;margin:3px 0 0}
+.da-ann-key{flex:0 0 auto;min-width:26px;height:26px;display:inline-flex;align-items:center;justify-content:center;font-weight:700;font-size:13.5px;color:var(--white);background:transparent}
+.da-ann-key.da-mk-box{outline:2px solid var(--gold-lit);outline-offset:-2px;border-radius:2px;padding:0}
+.da-ann-key.da-mk-circle{border:2px solid var(--gold-lit);border-radius:50%;padding:0}
+.da-ann-key.da-mk-margin{border-left:3px solid var(--gold-lit);border-radius:0;justify-content:flex-start;padding-left:6px;text-decoration:underline wavy var(--gold-lit);text-underline-offset:3px}
+.da-ann-mark{font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;color:var(--gold-lit);font-size:14.5px}
+.da-ann-where{color:var(--white);font-style:italic;font-size:15.5px}
+.da-ann-oe{margin-top:12px;padding-top:10px;border-top:1px solid var(--edge)}
+.da-ann-oe p{color:var(--white);font-size:16px;line-height:1.55;margin:2px 0 0}
 @media (prefers-reduced-motion:no-preference){
   .da-step{animation:da-in .22s var(--ease-calm,ease-out) both}
   @keyframes da-in{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}

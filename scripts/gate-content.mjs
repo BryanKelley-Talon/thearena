@@ -367,12 +367,19 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         for (const x of it.issue_defs || []) if (!x.name || !x.definition) df(`${key} item ${it.n ?? '?'}: an issue with no definition.`)
       }
     }
+    // The French step-5 card: every issue the English card defines has a French definition.
+    if (d.fr?.umbrellas && d.umbrellas) {
+      const fu = d.fr.umbrellas
+      if ((fu.items || []).length !== (d.umbrellas.items || []).length) df(`fr.umbrellas: needs the same ${(d.umbrellas.items || []).length} items as the English card.`)
+      for (const it of d.umbrellas.items || []) for (const x of it.issue_defs || []) if (!fu.issue_defs?.[x.name]) df(`fr.umbrellas: no French definition for '${x.name}'.`)
+    }
     const cfs = d.casefiles || []
     if (!cfs.length) df(`no casefiles.`)
     if (!cfs.some(x => x.status === 'open')) df(`no casefile is open.`)
     const student = [d.tile, d.walk_name, ...walk.flatMap(w => [w.tag, w.step, w.say, w.say_image]), ...Object.values(d.labels || {}),
       ...[d.umbrellas, d.q4_card].filter(Boolean).flatMap(u => [u.intro, ...(u.close || []),
         ...(u.items || []).flatMap(i => [i.name, i.question, i.issues, ...(i.issue_defs || []).map(x => x.definition)])])]
+    if (d.fr) student.push(d.fr.note, d.fr.annotate_note, ...Object.values(d.fr.labels || {}), ...(d.fr.walk || []).flatMap(x => [x.tag, x.step, x.say, x.say_image]))
     for (const cf of cfs) {
       if (!cf.id) df(`a casefile with no id.`)
       if (!['open', 'building'].includes(cf.status)) df(`casefile ${cf.id}: status must be open or building.`)
@@ -447,6 +454,59 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         if (doc.before != null && !(typeof doc.before === 'string' ? doc.before.trim() : box(doc.before))) df(`${w}: 'before' must be a printed line or { title, text }.`)
         if (doc.before_we_talk != null && !box(doc.before_we_talk)) df(`${w}: before_we_talk needs a title and text.`)
         if (doc.note != null && !(doc.note && doc.note.text)) df(`${w}: a note needs text.`)
+        // ── Doc Assist v4 (2026-10-02, Will's 10.2 B and C; BK signed 11:32, 13:22) ──
+        if (doc.word_watch != null && !box(doc.word_watch)) df(`${w}: word_watch needs a title and text.`)
+        if (doc.word_watch) student.push(doc.word_watch.text)
+        if (doc.annotate) {
+          const A = d.annotate, a = doc.annotate
+          if (!A) df(`${w}: annotate notes with no pack.annotate (no method, no labels).`)
+          else {
+            const meth = A.methods?.[a.kind]
+            if (!Array.isArray(meth) || !meth.length || meth.some(m => !Array.isArray(m) || !m[0] || !m[1])) df(`${w}: annotate kind '${a.kind}' has no method (pack.annotate.methods.${a.kind}: [tag, step] pairs).`)
+            if (!A.model_label || !A.model_note) df(`${w}: pack.annotate needs model_label and model_note.`)
+            if (!d.labels?.annotate && !A.button) df(`${w}: How to annotate has no button word.`)
+          }
+          const notes = a.notes || []
+          if (!notes.length) df(`${w}: annotate has no model notes.`)
+          for (const [k, n] of notes.entries()) {
+            if (!n.where || !n.note) df(`${w} note ${k + 1}: needs where and note.`)
+            if (!['box', 'circle', 'margin'].includes(n.mark)) df(`${w} note ${k + 1}: mark must be box, circle or margin.`)
+            // On a text document the note is drawn on the words, so the words must be there.
+            if (doc.kind === 'text' && n.where && ![doc.src, ...(doc.text || [])].some(t => String(t).includes(n.where))) df(`${w} note ${k + 1}: '${n.where}' is not in the document or its source line.`)
+          }
+          if (a.oe) {
+            if (!['example', 'where'].includes(a.oe.kind) || !a.oe.text) df(`${w}: outside evidence needs kind example|where and text.`)
+            else if (!(a.oe.kind === 'where' ? A?.oe_where_label : A?.oe_example_label)) df(`${w}: no label for outside evidence kind '${a.oe.kind}'.`)
+          }
+          student.push(...notes.map(n => n.note), a.oe?.text)
+        }
+        if (doc.fr) {
+          const P = d.fr, F = doc.fr, fw = `${w} (français)`
+          if (!P) df(`${fw}: a French document with no pack.fr (no button, no labels).`)
+          else {
+            for (const k of LABELS) if (!P.labels?.[k]) df(`${fw}: fr.labels.${k} is missing.`)
+            if ((P.walk || []).length !== walk.length || (P.walk || []).some(x => !x.tag || !x.step || !x.say)) df(`${fw}: fr.walk needs ${walk.length} steps with tag, step and say.`)
+            if (!(F.label || P.label)) df(`${fw}: no « (traduit en français) » label.`)
+          }
+          if (!F.title) df(`${fw}: no title.`)
+          if (doc.kind === 'text' && (!(F.text || []).length || F.text.some(p => !String(p).trim()))) df(`${fw}: a text document with no French text.`)
+          if (doc.kind === 'image' && !F.describe) df(`${fw}: a picture with no French description.`)
+          if (!F.close || !/\bpage \d+/.test(F.close)) df(`${fw}: the close must send the kid back to a casefile page.`)
+          const fs_ = F.steps || []
+          if (fs_.length !== steps.length) df(`${fw}: needs one step per walk step (${steps.length}).`)
+          fs_.forEach((s, j) => {
+            if (!s?.line) df(`${fw} step ${j + 1}: no line.`)
+            const enAsks = j !== 1 && (steps[j]?.question || (steps[j]?.questions || []).length)
+            if (enAsks && !s?.question) df(`${fw} step ${j + 1}: the English asks a question; the French doesn't.`)
+            if (j === 1 && s?.question) df(`${fw} step 2: Read it through carries no question.`)
+          })
+          // Everything the English page shows, the French page shows.
+          if (doc.before_we_talk && !F.before_we_talk) df(`${fw}: no French before_we_talk.`)
+          if (typeof doc.before === 'string' && !F.before) df(`${fw}: no French 'before' line.`)
+          if (steps.some(s => s.tip) && !(F.tip?.title && (F.tip.text || []).length)) df(`${fw}: the English has a tip; the French has none.`)
+          if (doc.word_watch && !box(F.word_watch)) df(`${fw}: the English has a WORD WATCH; the French has none.`)
+          student.push(F.title, F.close, F.describe, ...(F.text || []), ...fs_.flatMap(s => [s?.question, s?.line]), ...(F.tip?.text || []), F.word_watch?.text)
+        }
         student.push(doc.title, doc.close, ...steps.flatMap(s => [s.question, s.line, ...(s.questions || []).map(q => q?.text), ...(s.tip?.text || [])]),
           ...(doc.easier?.text || []), typeof doc.before === 'string' ? doc.before : doc.before?.text, doc.before_we_talk?.text, doc.note?.text)
       })

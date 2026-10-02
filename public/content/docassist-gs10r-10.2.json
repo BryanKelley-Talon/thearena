@@ -1,6 +1,6 @@
 {
- "_built": "Will (global10r-curriculum) 2026-10-01 10:28 EDT · v3, the four-question arc",
- "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: v3, BK 10:16 the four-question arc: steps[k] = {question, mode: null, line} exactly as us11r 11.2 A v2, step 2's question null; optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05; items[].issue_defs = one-line definitions, BK 10:28); steps[0].tip = {title, text[]} on 8 docs (NO NAME ON IT?, BK 10:26).",
+ "_built": "Will (global10r-curriculum) 2026-10-02 13:23 EDT · v4.1: Casefile C to v4 (annotate + français) and matched to printed Casefile C v4; B v4 unchanged; A unchanged at v3 until printed A v12",
+ "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: v3, BK 10:16 the four-question arc: steps[k] = {question, mode: null, line} exactly as us11r 11.2 A v2, step 2's question null; optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05; items[].issue_defs = one-line definitions, BK 10:28); steps[0].tip = {title, text[]} on 8 docs (NO NAME ON IT?, BK 10:26). v4: pack.annotate = {button, methods{text,picture,map}: [[tag, step]...], model_label, model_note, oe_example_label, oe_where_label}; docs[].annotate = {kind, notes[{where, mark, note}], oe{kind: example|where, text}} (B only for now). pack.fr = French chrome; docs[].fr = {label, title, text[], describe, before, before_we_talk, steps[5 x {question, line}], tip, close} (B only). v4.1: docs[].word_watch = {title, text} (optional; Casefile C Document 5): show it under the document text, in a tinted box, title in bold, as the printed page does; docs[].fr.word_watch = the same in French. pack.fr.note = one line shown under the « (traduit en français) » label on every document.",
  "tool": "Doc Assist",
  "room": "10.2",
  "course": "GS10R",
@@ -43,7 +43,9 @@
   "next": "Next step",
   "back": "Back",
   "stop": "Stop reading",
-  "umbrellas": "The Six Umbrellas"
+  "umbrellas": "The Six Umbrellas",
+  "annotate": "How to annotate",
+  "fr": "En français"
  },
  "umbrellas": {
   "_ruled": "BK 2026-10-01 09:05: a button on step 5 (Q4 · ENDURING ISSUE) pops out this mini list. Josh builds it.",
@@ -157,7 +159,7 @@
    "Then EXPLAIN IT: define the problem in one sentence, and show where a document shows it."
   ]
  },
- "_ruled": "v3 SIGNED by BK 2026-10-01 10:28 (\"1 and 2: Yes. Signed.\"): the four-question walks (ruled 10:16), NO NAME ON IT? (10:26), issue definitions in the pop-up (10:28)",
+ "_ruled": "v3 SIGNED BK 2026-10-01 10:28; v4 buttons ruled BK 2026-10-02 11:02/11:05; B v4 SIGNED 11:32; C v4 approved with the plan BK 12:15; printed C v4 BLESSED 12:37; Doc 6 step-1 line APPROVED BK 13:22 ('doc 6 looks good. approved.')",
  "casefiles": [
   {
    "id": "A",
@@ -683,6 +685,63 @@
        "2. What has it been until now in the political order (the way power is shared in the government)? Nothing.",
        "3. What does it want to be? Something....”"
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "(adapted)",
+        "mark": "box",
+        "note": "My guess: changed or shortened from the original."
+       },
+       {
+        "where": "“...",
+        "mark": "margin",
+        "note": "Dots at the start: words were cut. This is a piece of something longer."
+       },
+       {
+        "where": "We must ask ourselves three questions.",
+        "mark": "margin",
+        "note": "He opens with questions, not a statement. He wants the reader thinking along with him."
+       }
+      ],
+      "oe": {
+       "kind": "example",
+       "text": "Years later, asked what he had done during the Terror, Sieyès is said to have answered, “I survived.” Connects: the writer of this pamphlet lived through every stage of the Revolution that came after it."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "L'abbé Sieyès demande ce qu'est vraiment le Tiers état [Third Estate]",
+      "steps": [
+       {
+        "question": "Qui a écrit ce texte, et quand, par rapport à la réunion des États généraux [Estates-General] ?",
+        "line": "La ligne de source te donne le nom et l'année. Pour savoir si c'est avant ou après, lis le dernier paragraphe de WHAT YOU NEED TO KNOW, page 3 : il dit quand les députés se sont réunis. Puis demande-toi ce que son pamphlet a contribué à inspirer, d'après le WHAT YOU NEED TO KNOW du jour 2."
+       },
+       {
+        "question": null,
+        "line": "Quatre lignes : une phrase d'introduction, puis trois questions numérotées. Chaque réponse tient en un ou deux mots. L'ordre politique, c'est la façon dont le pouvoir est partagé dans le gouvernement."
+       },
+       {
+        "question": "Quelles sont les trois réponses de Sieyès, et que disent-elles du Tiers état [Third Estate] ?",
+        "line": "Chacune de ses trois réponses se trouve à la fin d'une ligne numérotée. Ensuite, lis la ligne 1 et la ligne 2 côte à côte et demande-toi comment les deux peuvent être vraies en même temps."
+       },
+       {
+        "question": "Comment un noble à Versailles répondrait-il à Sieyès ?",
+        "line": "Abbé est un titre donné à un prêtre : c'est donc un membre du clergé [clergy] qui prend la défense du Tiers état. Imagine un noble en train de lire la ligne 2. Que répondrait-il ?"
+       },
+       {
+        "question": "Quel problème durable Sieyès montre-t-il du doigt avec le mot Rien [Nothing] ?",
+        "line": "Ouvre les Six Parapluies [Six Umbrellas] et lis chaque question. Compare le mot Rien à chacune d'elles et vois à laquelle il correspond."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 1 dans ton Casefile, à partir de la page 5. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "« ... Nous devons nous poser trois questions.",
+       "1. Qu'est-ce que le Tiers état ? Tout.",
+       "2. Qu'a-t-il été jusqu'à présent dans l'ordre politique ? Rien.",
+       "3. Que veut-il être ? Quelque chose.... »"
+      ]
      }
     },
     {
@@ -732,6 +791,65 @@
      "licence": {
       "text": "NYSED Regents exam (August 2002), via New Visions Global II Exam Question Bank. Teach-only, not for sale.",
       "sellable": false
+     },
+     "annotate": {
+      "kind": "picture",
+      "notes": [
+       {
+        "where": "the tall stick with a bundle at the top, in the bottom figure's hand",
+        "mark": "circle",
+        "note": "Symbol? A tool or a walking stick. What could it stand for?"
+       },
+       {
+        "where": "the tall hat with large feathers on the right-hand figure",
+        "mark": "circle",
+        "note": "Exaggeration: the feathers stand taller than the head. Stretched past real life."
+       },
+       {
+        "where": "the small plants along the bottom edge of the oval",
+        "mark": "margin",
+        "note": "Last pass, small details. Ask: does this mean something, or just fill the space?"
+       }
+      ],
+      "oe": {
+       "kind": "example",
+       "text": "On the night of August 4, 1789, the National Assembly voted to abolish old privileges, including the tithe the Church collected on harvests. Connects: in time, it came about three weeks after the Bastille fell; in place, the Assembly was still meeting at Versailles."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "« Le Grand Abus » (« The Great Abuse »)",
+      "steps": [
+       {
+        "question": "Pour qui cette image a-t-elle été faite, et quand circulait-elle ?",
+        "line": "Lis la ligne sous la source : quand cette image circulait-elle ? Ensuite, WHAT YOU NEED TO KNOW, page 6, dit qui une caricature [cartoon] pouvait toucher, contrairement à un pamphlet."
+       },
+       {
+        "question": null,
+        "line": "Commence par les mots : le titre en haut de l'ovale, puis les trois étiquettes. Ensuite, le personnage du bas. Puis les petits détails : les visages, les mains, le bâton, les vêtements."
+       },
+       {
+        "question": "Que dit cette caricature des trois ordres [three estates] de la France ?",
+        "line": "Lis l'étiquette du personnage du bas, puis regarde qui a les pieds sur le sol. Ensuite, reviens aux lignes 1 et 2 de Sieyès dans le document 1."
+       },
+       {
+        "question": "De quel côté est le caricaturiste, et comment un noble dessinerait-il cette caricature ?",
+        "line": "Regarde chaque visage et la direction du regard de chaque personnage. Ensuite, imagine un noble tenant la plume : que changerait-il ?"
+       },
+       {
+        "question": "Quel problème durable le titre désigne-t-il ?",
+        "line": "Ouvre les Six Parapluies [Six Umbrellas]. Compare le titre de la caricature à chaque question et vois à laquelle il correspond."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 2 dans ton Casefile, à partir de la page 7. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "describe": "Une gravure en noir et blanc dans un cadre ovale. La ligne imprimée sous la source dit : « Une gravure ovale qui circulait en France dans les années précédant la Révolution. » Le long du bord supérieur de l'ovale, on lit les mots « LE GRAND ABUS ». L'intérieur de l'ovale a un fond sombre. Trois personnages se tiennent au centre, chacun avec une étiquette imprimée. En bas se trouve un personnage coiffé d'un bonnet blanc, vêtu d'un corsage blanc et d'une longue jupe blanche, plié en avant au niveau de la taille, la tête renversée en arrière et le visage tourné vers le haut. Une main serre un grand bâton surmonté d'un paquet ; le bâton touche le sol. L'étiquette placée en travers de la longue jupe indique « Peasants & Professionals » [paysans et professions libérales]. Deux autres personnages se trouvent sur son dos. À gauche, un personnage en longue robe, avec un voile, une main levée près du visage, regarde vers le haut ; son étiquette indique « Clergy » [clergé]. À droite, un personnage aux cheveux bouclés, coiffé d'un haut chapeau à grandes plumes et vêtu d'une robe à volants ornée de rubans, regarde vers le bas ; son étiquette indique « Nobility » [noblesse]. De petites plantes poussent le long du bord inférieur de l'ovale.",
+      "tip": {
+       "title": "PAS DE NOM DESSUS ?",
+       "text": [
+        "Toutes les sources ne te disent pas qui les a créées. Quand ce n'est pas le cas, pose-toi trois questions : Quand a-t-elle été créée ? Qui l'a publiée, et où est-elle parue pour la première fois ? Pour qui a-t-elle été créée ? Ensuite, dis ce que la ligne de source t'apprend, et ce qu'elle ne peut pas t'apprendre.",
+        "Une carte ou un graphique a aussi un auteur. Quelqu'un a choisi quoi colorier, quoi nommer et quoi laisser en blanc."
+       ]
+      }
      }
     },
     {
@@ -791,6 +909,71 @@
        "4. Liberty consists in the freedom to do everything which injures no one else. So the exercise (use) of the natural rights of each man has no limits, except one. The other members of society must be able to enjoy the same rights. These limits can only be determined (decided) by law....",
        "6. Law is the expression of the general will (what is best for the whole community). Every citizen has a right to participate personally, or through his representative, in its foundation (making the law). It must be the same for all, whether it protects or punishes. All citizens are equal in the eyes of the law. So they are equally eligible (allowed) to hold all dignities (high honors), public positions and jobs. This depends on their abilities. There is no difference between them except their virtues (good qualities) and talents...."
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "The Avalon Project at Yale Law School",
+        "mark": "circle",
+        "note": "A library that posts old documents online. It published this, it didn't write it."
+       },
+       {
+        "where": "injures",
+        "mark": "box",
+        "note": "My guess: hurts or harms."
+       },
+       {
+        "where": "hence",
+        "mark": "box",
+        "note": "My guess: so, that's why. What comes next follows from the first part."
+       }
+      ],
+      "oe": {
+       "kind": "example",
+       "text": "France's first written constitution, the Constitution of 1791, printed this Declaration at its front. Connects: these promises became the opening page of the law of the land."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Déclaration des droits de l'homme et du citoyen, 1789",
+      "steps": [
+       {
+        "question": "Qui a adopté cette déclaration, et quand ?",
+        "line": "Lis d'abord le titre et la ligne de source. WHAT YOU NEED TO KNOW, page 8, nomme l'institution qui l'a adoptée, et quand."
+       },
+       {
+        "question": null,
+        "line": "Quatre articles, numérotés 1, 2, 4 et 6 ; les autres ont été retirés. Les mots français entre crochets sont une aide de l'éditeur : [inaliénables] veut dire qu'on ne peut pas les enlever. L'article 6 est le plus long, quatre phrases, alors lis-le deux fois."
+       },
+       {
+        "question": "Que promet cette déclaration à chaque citoyen ?",
+        "line": "Lis l'article 1, puis l'article 6. Dans l'article 6, trouve les mots « a le droit de » [has a right to], et dis ce que cette phrase permet à un citoyen de faire."
+       },
+       {
+        "question": "De qui est-ce le point de vue, et en quoi le document 4 est-il différent ?",
+        "line": "Pour celle-ci, il te faut aussi le document 4. Marque ici un article que tu veux vérifier, puis ouvre le parcours du document 4."
+       },
+       {
+        "question": "Quel enjeu durable cette déclaration pourrait-elle soulever ?",
+        "line": "Relis l'article 1 en gardant en tête le mot universel [universal] de ton KEY VOCABULARY. Ensuite, ouvre les Six Parapluies [Six Umbrellas] et vérifie quelle question il soulève."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 3 dans ton Casefile, à partir de la page 9. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "Articles :",
+       "1. Les hommes naissent et demeurent libres et égaux en droits. Les distinctions sociales ne peuvent être fondées que sur le bien général.",
+       "2. Le but de toute association politique est la conservation des droits naturels et imprescriptibles [inaliénables] de l'homme. Ces droits sont la liberté, la propriété, la sûreté, et la résistance à l'oppression....",
+       "4. La liberté consiste à pouvoir faire tout ce qui ne nuit pas à autrui : ainsi, l'exercice des droits naturels de chaque homme n'a de bornes que celles qui assurent aux autres membres de la société la jouissance de ces mêmes droits. Ces bornes ne peuvent être déterminées que par la loi....",
+       "6. La Loi est l'expression de la volonté générale [general will]. Chaque citoyen a le droit de participer personnellement, ou par son représentant, à sa fondation. Elle doit être la même pour tous, qu'elle protège ou qu'elle punisse. Tous les citoyens, étant égaux aux yeux de la loi, sont également admissibles à toutes les dignités et à tous les postes et emplois publics, selon leurs capacités, et sans distinction, excepté celle de leurs vertus et de leurs talents...."
+      ],
+      "before": "Ces deux documents sont associés dans le véritable examen Regents de Global History and Geography II de juin 2019. Les questions ci-dessous sont formulées comme le véritable examen les pose.",
+      "tip": {
+       "title": "PAS DE NOM DESSUS ?",
+       "text": [
+        "Toutes les sources ne te disent pas qui les a créées. Quand ce n'est pas le cas, pose-toi trois questions : Quand a-t-elle été créée ? Qui l'a publiée, et où est-elle parue pour la première fois ? Pour qui a-t-elle été créée ? Ensuite, dis ce que la ligne de source t'apprend, et ce qu'elle ne peut pas t'apprendre."
+       ]
+      }
      }
     },
     {
@@ -835,7 +1018,7 @@
       "IV",
       "Liberty and justice lie in rendering everything which belongs to others as of right. Thus the exercise of woman's natural rights has no limit other than the perpetual tyranny of man's opposing them: these limits must be reformed by the laws of natural and reason....",
       "VI",
-      "The Law must be the expression of the general will; all citizens, female and male, should concur [agree] personally or through their representatives in its formation, and it must be the same for all. All citizens, being equal in its eyes, must be equally eligible to all honours, positions and public posts according to their abilities, and with no other distinction other than those of their virtues and talents...."
+      "The Law must be the expression of the general will; all citizens, female and male, should concur [take part] personally or through their representatives in its formation, and it must be the same for all. All citizens, being equal in its eyes, must be equally eligible to all honours, positions and public posts according to their abilities, and with no other distinction other than those of their virtues and talents...."
      ],
      "easier": {
       "label": "(adapted, easier to read)",
@@ -847,8 +1030,67 @@
        "IV",
        "Liberty and justice mean giving back to others everything that rightfully belongs to them. Thus the exercise (use) of woman's natural rights has no limit other than the perpetual tyranny of man's opposing them. Perpetual tyranny means never-ending cruel, unfair rule. These limits must be reformed (changed) by the laws of nature and reason....",
        "VI",
-       "The Law must be the expression of the general will (what is best for the whole community). All citizens, female and male, should concur [agree] personally or through their representatives in its formation (making the law). It must be the same for all. All citizens are equal in its eyes. So they must be equally eligible (allowed) to hold all honours, positions and public posts, according to their abilities. There must be no other distinction (difference) except their virtues (good qualities) and talents...."
+       "The Law must be the expression of the general will (what is best for the whole community). All citizens, female and male, should concur [take part] personally or through their representatives in its formation (making the law). It must be the same for all. All citizens are equal in its eyes. So they must be equally eligible (allowed) to hold all honours, positions and public posts, according to their abilities. There must be no other distinction (difference) except their virtues (good qualities) and talents...."
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "founded",
+        "mark": "box",
+        "note": "My guess: based on."
+       },
+       {
+        "where": "common service",
+        "mark": "margin",
+        "note": "So what: rank has to come from serving everyone. Who would lose rank if that were true?"
+       }
+      ],
+      "oe": {
+       "kind": "example",
+       "text": "In October 1789, thousands of Paris women marched to Versailles over the price of bread and brought the royal family back to Paris. Connects: women were already acting in the Revolution two years before she wrote this."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Olympe de Gouges, Déclaration des droits de la femme et de la citoyenne [citizeness], 1791",
+      "steps": [
+       {
+        "question": "Qui a écrit ce texte, quand, et pourquoi écrire sa propre déclaration ?",
+        "line": "La ligne de source te donne un nom et une année, et son portrait est dans la marge. Ensuite, lis son titre lentement, mot par mot."
+       },
+       {
+        "question": null,
+        "line": "Quatre articles : PREMIER, II, IV et VI. Deux mots à connaître : perpétuelle [perpetual] veut dire qui ne finit jamais, et tyrannie [tyranny] veut dire un pouvoir cruel et injuste. Fais attention aux mots qu'elle utilise pour désigner les gens."
+       },
+       {
+        "question": "Que dit Gouges des droits et de la manière dont les lois sont faites ?",
+        "line": "Place l'article 6 du document 3 à côté de son article VI. Lis-les mot à mot et marque chaque mot qu'elle a ajouté ou remplacé."
+       },
+       {
+        "question": "En quoi le point de vue de Gouges est-il le même que celui du document 3, et en quoi est-il différent ?",
+        "line": "Choisis un article qui figure dans les deux documents. Trouve une chose qui reste la même et une chose qui change, et cite les mots de chacun."
+       },
+       {
+        "question": "Quel problème durable Gouges soulève-t-elle ?",
+        "line": "Les mots clés sont dans l'article IV : tyrannie perpétuelle [perpetual tyranny]. Ouvre les Six Parapluies [Six Umbrellas], trouve la question à laquelle ces mots répondent, puis choisis l'enjeu précis qui se trouve dessous."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 4 dans ton Casefile, à partir de la page 10. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "ARTICLE PREMIER",
+       "La Femme naît libre et demeure égale à l'homme en droits. Les distinctions sociales ne peuvent être fondées que sur l'utilité commune.",
+       "II",
+       "Le but de toutes les associations politiques est de conserver les droits naturels et inaliénables de la Femme et de l'Homme : ce sont les droits à la liberté, à la possession, à la sécurité et, surtout, à la résistance à l'oppression....",
+       "IV",
+       "La liberté et la justice résident dans le fait de rendre à autrui tout ce qui lui appartient de droit. Ainsi, l'exercice des droits naturels de la femme n'a d'autre borne que la tyrannie perpétuelle que l'homme lui oppose : ces bornes doivent être réformées par les lois de la nature et de la raison....",
+       "VI",
+       "La Loi doit être l'expression de la volonté générale [general will] ; tous les citoyens, femmes et hommes, doivent concourir [prendre part] personnellement ou par leurs représentants à sa formation, et elle doit être la même pour tous. Tous les citoyens, étant égaux à ses yeux, doivent être également admissibles à tous les honneurs, postes et fonctions publiques selon leurs capacités, et sans autre distinction que celles de leurs vertus et de leurs talents...."
+      ]
+     },
+     "errata": {
+      "note": "BK 2026-10-02 11:32: Doc Assist's English corrects the printed bracket (concur [agree] → concur [take part]). The paper keeps the old bracket this year; fix in next year's casefile."
      }
     },
     {
@@ -886,15 +1128,68 @@
      ],
      "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
      "text": [
-      "“... Individuals are not at issue here; we are concerned with the homeland and principles. I tell you plainly: it is impossible, in this state of affairs, for the Committee to save the state; and if anyone disagrees, I will remind you just how treacherous and extensive is the scheme for bringing us down and dissolving us; how the foreigners and internal enemies have agents paid to execute it; I will remind you that faction is not dead; that it is conspiring from the depths of its dungeons; that the serpents of the Marais [a section of Paris] have not yet all been crushed....",
+      "“... Individuals are not at issue here; we are concerned with the homeland and principles. I tell you plainly: it is impossible, in this state of affairs, for the Committee to save the state; and if anyone disagrees, I will remind you just how treacherous and extensive is the scheme for bringing us down and dissolving us; how the foreigners and internal enemies have agents paid to execute it; I will remind you that faction is not dead; that it is conspiring from the depths of its dungeons; that the serpents of the Marais [the moderate deputies of the Convention, also called the Plain] have not yet all been crushed....",
       "I know we cannot flatter ourselves that we have attained perfection; but holding up a Republic surrounded by enemies, fortifying reason in favour of liberty, destroying prejudice and nullifying individual efforts against the public interest, demand moral and physical strengths that nature has perhaps denied to those who denounce us and those we are fighting....”"
      ],
      "easier": {
       "label": "(adapted, easier to read)",
       "text": [
-       "“... Individuals are not at issue here; we are concerned with the homeland and principles. I tell you plainly: in this state of affairs (the way things are now), it is impossible for the Committee to save the state. If anyone disagrees, I will remind you of the scheme (secret plan) for bringing us down and dissolving us (breaking us apart). I will remind you just how treacherous (disloyal and dangerous) and extensive (wide-reaching) it is. I will remind you how the foreigners and internal enemies have agents paid to execute (carry out) it. I will remind you that faction (a group working against the rest) is not dead. It is conspiring (secretly planning) from the depths of its dungeons. The serpents (snakes) of the Marais [a section of Paris] have not yet all been crushed....",
+       "“... Individuals are not at issue here; we are concerned with the homeland and principles. I tell you plainly: in this state of affairs (the way things are now), it is impossible for the Committee to save the state. If anyone disagrees, I will remind you of the scheme (secret plan) for bringing us down and dissolving us (breaking us apart). I will remind you just how treacherous (disloyal and dangerous) and extensive (wide-reaching) it is. I will remind you how the foreigners and internal enemies have agents paid to execute (carry out) it. I will remind you that faction (a group working against the rest) is not dead. It is conspiring (secretly planning) from the depths of its dungeons. The serpents (snakes) of the Marais [the moderate deputies of the Convention, also called the Plain] have not yet all been crushed....",
        "I know we cannot flatter ourselves that we have attained perfection (we cannot pretend we are perfect). Here is what we are doing: holding up a Republic surrounded by enemies, and fortifying (strengthening) reason in favour of liberty. We are destroying prejudice (unfair judgments) and nullifying (cancelling out) individual efforts against the public interest. These things demand moral and physical strengths. Nature has perhaps denied those strengths to those who denounce us (speak out against us) and those we are fighting....”"
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "Virtue and Terror, Verso",
+        "mark": "circle",
+        "note": "A modern book that collects his speeches. It tells you where this was printed, not when he spoke."
+       },
+       {
+        "where": "attained",
+        "mark": "box",
+        "note": "My guess: reached."
+       }
+      ],
+      "oe": {
+       "kind": "example",
+       "text": "Robespierre's supporters called him “the Incorruptible,” for his reputation as a man who could not be bought. Connects: that was the reputation he carried when he gave this speech."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Maximilien Robespierre, « Pour la défense du Comité de salut public [Committee of Public Safety] et contre Briez », 25 septembre 1793",
+      "steps": [
+       {
+        "question": "Qui parle, à qui, et à quoi la France fait-elle face cette année-là ?",
+        "line": "Trois endroits où chercher : le titre, la date qui le suit, et WHAT YOU NEED TO KNOW, page 12, pour l'institution devant laquelle il se tenait et ce à quoi la France faisait face."
+       },
+       {
+        "question": null,
+        "line": "Deux paragraphes. Le premier commence par une phrase courte, puis vient une très longue phrase : coupe-la à chaque point-virgule et à chaque je vous rappellerai [I will remind you]. Faction veut dire un groupe qui agit contre tous les autres."
+       },
+       {
+        "question": "Selon Robespierre, à quoi le Comité doit-il faire face, et de quoi dit-il qu'il a besoin ?",
+        "line": "Marque chaque danger qu'il énumère dans le premier paragraphe. Ensuite, trouve le mot exigent [demand] dans le second et lis ce qui vient juste après."
+       },
+       {
+        "question": "Qui Robespierre traite-t-il d'ennemis, et que pourraient-ils lui répondre ?",
+        "line": "Commence par sa première phrase, puis marque chaque nom qu'il donne aux gens auxquels il s'oppose. Imagine l'un d'eux dans la salle de la Convention nationale [National Convention] en train d'entendre cela. Que dirait-il ?"
+       },
+       {
+        "question": "Quel enjeu durable ce discours soulève-t-il ?",
+        "line": "Relis sa première phrase : il ne s'agit pas des individus [individuals are not at issue]. Ouvre les Six Parapluies [Six Umbrellas] et vois à quelle question cela correspond."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 5 dans ton Casefile, à partir de la page 12. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "« ... Il ne s'agit pas ici des individus ; il s'agit de la patrie et des principes. Je vous le dis franchement : il est impossible, dans l'état actuel des choses, que le Comité sauve l'État ; et si quelqu'un n'est pas de cet avis, je vous rappellerai à quel point est perfide et étendue la machination destinée à nous abattre et à nous dissoudre ; comment les étrangers et les ennemis de l'intérieur ont des agents payés pour l'exécuter ; je vous rappellerai que la faction n'est pas morte ; qu'elle conspire du fond de ses cachots ; que les serpents du Marais [les députés modérés de la Convention, appelés aussi la Plaine] n'ont pas encore tous été écrasés....",
+       "Je sais que nous ne pouvons pas nous flatter d'avoir atteint la perfection ; mais soutenir une République entourée d'ennemis, fortifier la raison en faveur de la liberté, détruire les préjugés et réduire à néant les efforts individuels contre l'intérêt public, exigent des forces morales et physiques que la nature a peut-être refusées à ceux qui nous dénoncent et à ceux que nous combattons.... »"
+      ]
+     },
+     "errata": {
+      "note": "BK 2026-10-02 11:32: Doc Assist's English corrects the printed bracket ([a section of Paris] → [the moderate deputies of the Convention, also called the Plain]). The paper keeps the old bracket this year; fix in next year's casefile."
      }
     },
     {
@@ -950,6 +1245,63 @@
       "text": [
        "“This law was passed on 17 September 1793 [by Robespierre and the National Convention]. It authorized (allowed) the creation of revolutionary tribunals (special courts). These courts would try those suspected of treason (betraying their country) against the Republic. They would punish those convicted (found guilty) with death. In effect, this legislation (law) changed the penal justice system (courts and punishment). It became the enforcement arm (the part that makes people obey) of the revolutionary government. Now the government had a primary (main) job. It was not only to keep public order. It was also the much harder and more controversial (argued-over) task of identifying internal enemies of the Republic. One example was “profiteers” who violated (broke) the Maximum [decree to fix prices]. The government would then be removing them from the citizenry (all the citizens). Among the citizens, they might subvert [sabotage] the general will....”"
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "controversial",
+        "mark": "box",
+        "note": "My guess: argued over. People disagreed about it."
+       },
+       {
+        "where": "profiteers",
+        "mark": "margin",
+        "note": "Quote marks: a label someone else gave them. My guess: people making money off shortages."
+       }
+      ],
+      "oe": {
+       "kind": "example",
+       "text": "In late September 1793 the National Convention passed the General Maximum, which set top prices on many everyday goods, and on wages too. Connects: it is the price law this document's brackets call the Maximum."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "À propos de la loi des suspects [Law of Suspects] : un résumé d'historiens",
+      "steps": [
+       {
+        "question": "Qui a écrit ce résumé, et ces auteurs étaient-ils là en 1793 ?",
+        "line": "Lis le titre et la ligne de source. Demande-toi ce que cela change quand des historiens écrivent sur une loi longtemps après son adoption."
+       },
+       {
+        "question": null,
+        "line": "Deux phrases, toutes les deux longues. Lis les mots français entre crochets comme s'ils faisaient partie de la phrase. Pénale veut dire qui concerne les punitions, et tribunal est dans ton KEY VOCABULARY."
+       },
+       {
+        "question": "Que permettait au gouvernement la loi des suspects [Law of Suspects] ?",
+        "line": "Trouve le mot soupçonnées [suspected] dans la première phrase et le mot écarter [removing] vers la fin. Ensuite, lis suspect dans le KEY VOCABULARY de la page 14 pour voir ce qui n'était pas exigé."
+       },
+       {
+        "question": "Quelles voix sont absentes de ce résumé ?",
+        "line": "Ce sont des historiens qui ont écrit ceci, longtemps après le vote de la loi. Pense à tous ceux qui ont comparu devant un tribunal, et demande-toi de qui tu voudrais lire les propres mots."
+       },
+       {
+        "question": "Quel enjeu durable une loi comme celle-ci soulève-t-elle ?",
+        "line": "Les mots clés sont soupçonnées [suspected] et les écarter du corps des citoyens [removing them from the citizenry]. Ouvre les Six Parapluies [Six Umbrellas] et vérifie à quelle question ils correspondent."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 6 dans ton Casefile, à partir de la page 15. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "« Cette loi, votée le 17 septembre 1793 [par Robespierre et la Convention nationale], autorisait la création de tribunaux révolutionnaires [revolutionary tribunals] chargés de juger les personnes soupçonnées de trahison envers la République et de punir de mort celles qui étaient reconnues coupables. En pratique, cette législation faisait du système de justice pénale le bras armé du gouvernement révolutionnaire, qui allait désormais se fixer comme responsabilité première non seulement le maintien de l'ordre public, mais aussi la tâche bien plus difficile et controversée d'identifier les ennemis intérieurs de la République -- comme les “profiteurs” qui violaient le Maximum [décret fixant les prix] -- puis de les écarter du corps des citoyens, au sein duquel ils risquaient de subvertir [saboter] la volonté générale [general will].... »"
+      ],
+      "before": "Un document texte et un document de données, associés de la même façon que le véritable examen Regents mélange les types de sources primaires. Même format de questions CRQ que le jour 3.",
+      "before_we_talk": "C'étaient des personnes réelles, et ce qui leur est arrivé a façonné le monde dans lequel nous vivons. Utilise leurs noms et leurs mots. Pas de blagues, et pas de comparaisons avec la vie de tous les jours.",
+      "tip": {
+       "title": "PAS DE NOM DESSUS ?",
+       "text": [
+        "Toutes les sources ne te disent pas qui les a créées. Quand ce n'est pas le cas, pose-toi trois questions : Quand a-t-elle été créée ? Qui l'a publiée, et où est-elle parue pour la première fois ? Pour qui a-t-elle été créée ? Ensuite, dis ce que la ligne de source t'apprend, et ce qu'elle ne peut pas t'apprendre."
+       ]
+      }
      }
     },
     {
@@ -1003,6 +1355,61 @@
      "licence": {
       "text": "NYSED Regents exam, via New Visions Global II Exam Question Bank. Teach-only, not for sale.",
       "sellable": false
+     },
+     "annotate": {
+      "kind": "map",
+      "notes": [
+       {
+        "where": "beside the chart's title",
+        "mark": "margin",
+        "note": "No date on the chart. Add it: the Terror, 1793–94."
+       },
+       {
+        "where": "the seven percents around the circle",
+        "mark": "margin",
+        "note": "Checked the math: the seven percents add up to 100."
+       }
+      ],
+      "oe": {
+       "kind": "example",
+       "text": "On July 27, 1794, the National Convention ordered Robespierre's arrest, and he was executed the next day. The Terror wound down after his fall. Connects: Robespierre is the speaker in Document 5, and this came ten months after that speech."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Les exécutions pendant la Terreur [Reign of Terror] (graphique)",
+      "steps": [
+       {
+        "question": "Qui a réalisé ce graphique, et que compte-t-il ?",
+        "line": "Deux lignes à lire avant le graphique : la ligne de source et la ligne en dessous. Demande-toi selon quel critère ce graphique classe les gens."
+       },
+       {
+        "question": null,
+        "line": "Lis d'abord le titre. Ensuite, fais le tour du cercle une part à la fois : la classe, le pourcentage, le nombre. Sept parts, et l'une d'elles n'a pas de nombre imprimé."
+       },
+       {
+        "question": "Quels groupes représentent la plus grande partie du graphique, et est-ce que cela correspond à ce qu'a dit Robespierre ?",
+        "line": "Compare les pourcentages, pas la taille des parts à l'œil. Ensuite, reviens au document 5, trouve qui sont les ennemis selon Robespierre, et choisis un nombre qui met son affirmation [claim] à l'épreuve."
+       },
+       {
+        "question": "Que peut montrer ce graphique, et que ne peut-il pas te dire sur les personnes qui y figurent ?",
+        "line": "Chaque nombre de ce graphique, ce sont des personnes. Lis la part intitulée No Status Given [statut non précisé], et demande-toi ce qu'un décompte par classe sociale laisse de côté."
+       },
+       {
+        "question": "Quel enjeu durable ce graphique montre-t-il ?",
+        "line": "Lis la question du jour dans le bandeau du jour 5, page 14. Ensuite, ouvre les Six Parapluies [Six Umbrellas] et vois sous quelle question elle se range."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 7 dans ton Casefile, à partir de la page 15. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "describe": "Un diagramme circulaire intitulé « Executions During the Reign of Terror » [Les exécutions pendant la Terreur]. La ligne imprimée sous la source dit : « Répartition des victimes exécutées pendant la Terreur selon leur classe sociale. » Le cercle est découpé en sept parts. Chaque part indique une classe sociale, un pourcentage et un nombre. Dans le sens des aiguilles d'une montre, en partant du haut : Peasants [paysans] : 28 %, 3 961. Upper Middle Class [haute bourgeoisie] : 14 %, 1 964. Lower Middle Class [petite bourgeoisie] : 11 %, 1 488. Nobility [noblesse] : 8 %, 1 158. Clergy [clergé] : 7 %, 920. No Status Given [statut non précisé] : 1 %, sans nombre imprimé. Working Class [classe ouvrière] : 31 %, 4 389. Sur le graphique, les nombres sont écrits à l'américaine, avec une virgule pour séparer les milliers : 3,961 veut dire 3 961.",
+      "before_we_talk": "C'étaient des personnes réelles, et ce qui leur est arrivé a façonné le monde dans lequel nous vivons. Utilise leurs noms et leurs mots. Pas de blagues, et pas de comparaisons avec la vie de tous les jours.",
+      "tip": {
+       "title": "PAS DE NOM DESSUS ?",
+       "text": [
+        "Toutes les sources ne te disent pas qui les a créées. Quand ce n'est pas le cas, pose-toi trois questions : Quand a-t-elle été créée ? Qui l'a publiée, et où est-elle parue pour la première fois ? Pour qui a-t-elle été créée ? Ensuite, dis ce que la ligne de source t'apprend, et ce qu'elle ne peut pas t'apprendre.",
+        "Une carte ou un graphique a aussi un auteur. Quelqu'un a choisi quoi colorier, quoi nommer et quoi laisser en blanc."
+       ]
+      }
      }
     },
     {
@@ -1052,6 +1459,65 @@
      "licence": {
       "text": "NYSED Regents exam, via New Visions Global II Exam Question Bank. Teach-only, not for sale.",
       "sellable": false
+     },
+     "annotate": {
+      "kind": "map",
+      "notes": [
+       {
+        "where": "the two scale bars in the upper left",
+        "mark": "circle",
+        "note": "Two bars: kilometers and miles. Measure before you say big or far."
+       },
+       {
+        "where": "“Gibraltar (Br.)” at the southern tip of Spain",
+        "mark": "box",
+        "note": "Br. = British. Britain holds this point at the tip of Spain."
+       },
+       {
+        "where": "the Borodino (1812) starburst, far to the east",
+        "mark": "margin",
+        "note": "Borodino: the farthest-east battle on the map, inside Russia."
+       }
+      ],
+      "oe": {
+       "kind": "example",
+       "text": "In 1812 Napoleon invaded Russia with more than half a million soldiers, and most of them never came back. Connects: Borodino was a battle on that march toward Moscow."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "L'Empire de Napoléon, 1812 (carte)",
+      "steps": [
+       {
+        "question": "Quelle année cette carte montre-t-elle, et en quelles catégories sa légende classe-t-elle les lieux ?",
+        "line": "Le titre donne l'année, et la légende est le cadre en bas à droite. Elle a quatre entrées : lis-les toutes et demande-toi lesquelles parlent de qui contrôle un lieu."
+       },
+       {
+        "question": null,
+        "line": "Lis d'abord le titre, puis la légende. Ensuite, repère le gris foncé, puis les rayures, puis le gris clair. Pour finir, les éclats en étoile et leurs années."
+       },
+       {
+        "question": "Quelle part de l'Europe la France tient-elle sous son emprise en 1812, et de quelles manières ?",
+        "line": "Pars de Paris. Suis le bord du gris foncé, puis des rayures, puis du gris clair, et utilise les mots de la légende pour chacun."
+       },
+       {
+        "question": "Comment quelqu'un qui vit dans un pays à rayures verrait-il cette carte ?",
+        "line": "Imagine une famille à Madrid en 1812, et demande-toi à quoi ressemble cette carte de là où elle se trouve. Ensuite, lis l'encadré OUTSIDE EVIDENCE [connaissances extérieures], page 18 : qu'est-ce que cette carte ne peut pas te montrer ?"
+       },
+       {
+        "question": "Quel enjeu durable cette carte montre-t-elle ?",
+        "line": "Les mots clés sont dans la légende : controlled [contrôlé] et allied [allié]. Ouvre les Six Parapluies [Six Umbrellas], trouve la question à laquelle ils correspondent, puis nomme un lieu de la carte qui le montre."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 8 dans ton Casefile, à partir de la page 18. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "describe": "Une carte en noir et blanc intitulée « Napoleon's Empire, 1812 » [L'Empire de Napoléon, 1812]. Elle montre l'Europe, avec le bord de l'Afrique du Nord et l'Empire ottoman. Une échelle, en haut à gauche, indique 0 à 250 Kilometers [kilomètres] et 0 à 250 Miles [milles], avec une rose des vents en dessous. Les étendues d'eau sont nommées Atlantic Ocean [océan Atlantique], North Sea [mer du Nord], Baltic Sea [mer Baltique], Mediterranean Sea [mer Méditerranée] et Black Sea [mer Noire]. Une légende, dans un cadre en bas à droite, comporte quatre entrées : une case gris foncé, « French Empire » [Empire français] ; une case à rayures diagonales, « Country indirectly controlled by Napoleon » [pays contrôlé indirectement par Napoléon] ; une case gris clair, « Country allied with Napoleon » [pays allié de Napoléon] ; et un éclat en étoile, « Battle site » [lieu de bataille]. Zones gris foncé : le territoire nommé FRENCH EMPIRE [Empire français], qui comprend Paris et s'étend vers le nord et l'est le long de la côte au-delà de Waterloo ; une partie du nord de l'Italie ; la région autour de Rome ; Corsica [Corse] ; et les ILLYRIAN PROVINCES [Provinces illyriennes] le long de la côte de l'Adriatique. Zones à rayures : SPAIN [Espagne], avec Madrid ; la CONFEDERATION OF THE RHINE [Confédération du Rhin] ; le GRAND DUCHY OF WARSAW [grand-duché de Varsovie] ; le KINGDOM OF ITALY [royaume d'Italie] ; et le KINGDOM OF NAPLES [royaume de Naples]. Zones gris clair : NORWAY [Norvège] ; DENMARK [Danemark] ; PRUSSIA [Prusse], avec Berlin ; et AUSTRIA [Autriche], avec Vienna [Vienne]. Zones laissées en blanc : GREAT BRITAIN [Grande-Bretagne], avec London [Londres] ; PORTUGAL ; SWEDEN [Suède] ; RUSSIA [Russie] ; l'OTTOMAN EMPIRE [Empire ottoman], avec Istanbul ; SARDINIA [Sardaigne] ; SICILY [Sicile] ; MALTA [Malte] ; et NORTH AFRICA [Afrique du Nord]. SWITZ. [Suisse] est indiqué entre l'Empire français et la Confédération du Rhin. Gibraltar (Br.) [britannique] est marqué à la pointe sud de l'Espagne. Des éclats en étoile marquent six lieux de bataille, chacun avec une année : Trafalgar (1805), Austerlitz (1805), Friedland (1807), Borodino (1812), Leipzig (1813) et Waterloo (1815).",
+      "tip": {
+       "title": "PAS DE NOM DESSUS ?",
+       "text": [
+        "Toutes les sources ne te disent pas qui les a créées. Quand ce n'est pas le cas, pose-toi trois questions : Quand a-t-elle été créée ? Qui l'a publiée, et où est-elle parue pour la première fois ? Pour qui a-t-elle été créée ? Ensuite, dis ce que la ligne de source t'apprend, et ce qu'elle ne peut pas t'apprendre.",
+        "Une carte ou un graphique a aussi un auteur. Quelqu'un a choisi quoi colorier, quoi nommer et quoi laisser en blanc."
+       ]
+      }
      }
     }
    ]
@@ -1113,6 +1579,63 @@
        "Brothers and friends.",
        "I am Toussaint L'Ouverture. Maybe you already know my name. I have undertaken (taken on) vengeance (paying someone back for a wrong). I want Liberty and Equality to reign (rule) in San Domingo (another name for Saint-Domingue). I work to make them real. Unite yourselves to us, brothers, and fight with us for the same cause, etc. . . ."
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "undertaken",
+        "mark": "box",
+        "note": "My guess: taken on. Something he has decided to do."
+       },
+       {
+        "where": "my name is perhaps known to you",
+        "mark": "margin",
+        "note": "Perhaps: he isn't sure. Some of his readers may not know him yet."
+       },
+       {
+        "where": "etc. . . .",
+        "mark": "margin",
+        "note": "Etc. means and so on, and the dots mean words were cut. The letter goes on past this."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Where to look: the WATCH video on page 4, Crash Course World History #30, and your WHILE YOU WATCH notes. Then WHAT YOU NEED TO KNOW on page 3, the second paragraph. Test it: if it's in Document 1 or 2, it doesn't count."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Toussaint L'Ouverture écrit aux habitants de Saint-Domingue",
+      "steps": [
+       {
+        "question": "Qui est Toussaint, et par qui espérait-il que cette lettre serait lue ?",
+        "line": "Sa ligne dans le KEY VOCABULARY, page 3, dit qui il était. Pour ses lecteurs, regarde le titre au-dessus de la lettre et la salutation sous la date. Attention : le 2009 de la ligne de source est un examen Regents, pas la lettre."
+       },
+       {
+        "question": null,
+        "line": "Une date, une salutation, puis cinq phrases courtes. La vengeance, c'est faire payer à quelqu'un le mal qu'il a fait. Repère l'endroit où il cesse de parler de lui-même et commence à demander quelque chose à ses lecteurs. Sur la page imprimée en anglais, Saint-Domingue s'écrit San Domingo."
+       },
+       {
+        "question": "Qu'est-ce que Toussaint espère voir gouverner Saint-Domingue, et qu'appelle-t-il les gens à faire ?",
+        "line": "Trouve la phrase avec le mot règnent [reign] ; ce qu'il veut s'y trouve. Pour ce qu'il demande, lis sa dernière phrase : elle commence par un ordre."
+       },
+       {
+        "question": "De qui Toussaint reprend-il la promesse de liberté, et pour qui la réclame-t-il ?",
+        "line": "Retourne au 10.2 Casefile B, document 3. Qui a écrit ces mots sur la liberté à Paris en 1789, et qui les utilise ici, en 1793 ?"
+       },
+       {
+        "question": "Quel problème durable la lettre de Toussaint soulève-t-elle ?",
+        "line": "Choisis un mot clé dans la lettre, comme vengeance ou règnent [reign]. Ouvre les Six Parapluies [Six Umbrellas] et lis la question sous chacun d'eux. À laquelle ton mot correspond-il ?"
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 1 dans ton Casefile, à partir de la page 5. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "29 août 1793",
+       "Frères et amis.",
+       "Je suis Toussaint L'Ouverture, mon nom vous est peut-être connu. J'ai entrepris la vengeance. Je veux que la Liberté et l'Égalité règnent à Saint-Domingue. Je travaille à les faire exister. Unissez-vous à nous, frères, et combattez avec nous pour la même cause, etc...."
+      ],
+      "before_we_talk": "C'étaient des personnes réelles, et ce qui leur est arrivé a façonné le monde dans lequel nous vivons. Utilise leurs noms et leurs mots. Pas de blagues, et pas de comparaisons avec la vie de tous les jours."
      }
     },
     {
@@ -1161,6 +1684,61 @@
       "text": [
        "“It is not enough to have expelled (driven out) the barbarians (cruel, uncivilized people) who have bloodied our land for two centuries (200 years). … We must do one last act of national authority (power as a nation). With it, we must forever assure (make sure of) the empire (rule) of liberty in the country of our birth. We must take away any hope the inhuman (cruel, without pity) government has of re-enslaving us …. In the end we must live independent or die.”"
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "(excerpt)",
+        "mark": "box",
+        "note": "My guess: a piece taken out of something longer."
+       },
+       {
+        "where": "New Visions lesson G2.02.D.2",
+        "mark": "circle",
+        "note": "A teaching lesson. It printed this piece, it didn't write it."
+       },
+       {
+        "where": "Haitian Declaration of Independence",
+        "mark": "margin",
+        "note": "A declaration is an official public statement. Ask who was meant to hear it."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Where to look: WHAT YOU NEED TO KNOW on page 3, the last paragraph, and the Saint-Domingue line in KEY VOCABULARY on page 3. Your notes from the video on page 4 count too. Test it: if it's in Document 1 or 2, it doesn't count."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Jean-Jacques Dessalines proclame l'indépendance d'Haïti",
+      "steps": [
+       {
+        "question": "Qui parle maintenant, et qu'est-ce qui a changé sur l'île après le document 1 ?",
+        "line": "Place cette date à côté de celle du document 1. WHAT YOU NEED TO KNOW, page 3, couvre les années entre les deux. Tout ce qui s'y trouve et qui n'est dans aucun des deux documents peut aller dans ton encadré OUTSIDE EVIDENCE [connaissances extérieures], page 4."
+       },
+       {
+        "question": null,
+        "line": "Deux phrases, et la première est longue : coupe-la à chaque point-virgule et à chaque série de points. Expulsé [expelled] veut dire chassé. Les points veulent dire que des mots ont été coupés."
+       },
+       {
+        "question": "Selon Dessalines, que doit faire Haïti maintenant ?",
+        "line": "Trouve les mots qui viennent après chaque nous devons [we must]. Ensuite, lis lentement sa dernière phrase."
+       },
+       {
+        "question": "Pourquoi Dessalines choisit-il des mots aussi forts pour parler des Français, et pourquoi la liberté seule ne lui suffit-elle pas ?",
+        "line": "Lis ce qui entoure les mots barbares [barbarians] et inhumain [inhuman] : que dit-il de ce que chacun a fait, ou espère encore faire ? Pour la seconde partie, lis souveraineté [sovereignty] dans le KEY VOCABULARY, page 3, puis sa dernière phrase."
+       },
+       {
+        "question": "Quel problème durable cette déclaration soulève-t-elle ? Le document 1 le soulève-t-il aussi ?",
+        "line": "Choisis un mot clé, comme réasservir [re-enslaving] ou indépendants [independent]. Ouvre les Six Parapluies [Six Umbrellas] et trouve la question à laquelle il correspond. Ensuite, confronte le document 1 à ce même parapluie."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 2 dans ton Casefile, à partir de la page 6. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "« Ce n'est pas assez d'avoir expulsé les barbares qui ont ensanglanté notre terre depuis deux siècles ; … Nous devons, par un dernier acte d'autorité nationale, assurer à jamais l'empire de la liberté dans le pays qui nous a vus naître ; nous devons ôter au gouvernement inhumain tout espoir de nous réasservir …. Enfin, nous devons vivre indépendants ou mourir. »"
+      ],
+      "before_we_talk": "C'étaient des personnes réelles, et ce qui leur est arrivé a façonné le monde dans lequel nous vivons. Utilise leurs noms et leurs mots. Pas de blagues, et pas de comparaisons avec la vie de tous les jours."
      }
     },
     {
@@ -1206,6 +1784,61 @@
       "text": [
        ". . . The plans and ambitions (big goals) of Napoleon Bonaparte did inspire the Latin Americans. But they did not inspire them in the way Napoleon expected. The French dictator (a ruler with total power) invaded Spain in 1808. He forced the king to abdicate [give up the throne]. Then he gave the Spanish crown to his brother Joseph. All at once, Spanish America became part of the Bonaparte family empire. (A few months earlier, Napoleon had invaded Portugal. The Portuguese royal family had fled to its colony of Brazil.)",
        "Spanish Americans reacted sharply against this French usurper (someone who takes power that is not rightfully theirs). They refused to accept Joseph Bonaparte as their king. They affirmed [declared] their loyalty to the Spanish House of Bourbon (Spain's royal family). And they seized (took) control of their local governments. But almost from the beginning, the rebellion against Napoleon turned into a revolution for complete independence. There could be no turning back to the old system. . . ."
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": ". . . The plans",
+        "mark": "margin",
+        "note": "Dots at the start: words were cut. This is a piece of something longer."
+       },
+       {
+        "where": "however",
+        "mark": "box",
+        "note": "My guess: but. It turns against something said before the cut."
+       },
+       {
+        "where": "At a stroke",
+        "mark": "box",
+        "note": "My guess: all at once, in one move."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Where to look: 10.2 Casefile B, Day 6, WHAT YOU NEED TO KNOW on page 17: how Napoleon came to power. Or here, WHAT YOU NEED TO KNOW on page 7: the last sentence of the first paragraph, and the last sentence on the page. Test it: if it's in Document 3 or 4, it doesn't count."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Ce que Napoléon a déclenché en Amérique espagnole, selon un historien",
+      "steps": [
+       {
+        "question": "Cet auteur a-t-il vu 1808 de ses propres yeux, ou écrit-il à ce sujet plus tard ? Qu'est-ce qui, dans la ligne de source, te l'indique ?",
+        "line": "Lis la ligne de source morceau par morceau : un auteur, un titre de livre, un éditeur. Le titre au-dessus de la ligne de source donne un indice de plus."
+       },
+       {
+        "question": null,
+        "line": "Deux paragraphes, de quatre phrases chacun. Les mots entre [crochets] sont des explications pour toi. Un usurpateur [usurper], c'est quelqu'un qui s'empare d'un pouvoir qui ne lui revient pas de droit."
+       },
+       {
+        "question": "Qu'a fait Napoléon à l'Espagne, et comment les Hispano-Américains [Spanish Americans] lui ont-ils répondu ?",
+        "line": "Ce qu'a fait Napoléon est dans le premier paragraphe, juste là où tu vois 1808 ; trouve chaque action. Le second paragraphe, c'est la réponse : marque chaque chose qu'ont faite les Hispano-Américains."
+       },
+       {
+        "question": "Quand l'auteur écrit Hispano-Américains, de qui parle-t-il, et qui est laissé de côté ?",
+        "line": "WHAT YOU NEED TO KNOW, page 7, énumère tous les habitants des colonies, de haut en bas. Demande-toi lesquels d'entre eux ont pris le contrôle des gouvernements locaux."
+       },
+       {
+        "question": "Quel problème durable les mots usurpateur [usurper] et indépendance [independence] désignent-ils ?",
+        "line": "Trouve les deux mots dans le second paragraphe. Ouvre les Six Parapluies [Six Umbrellas] et lis la question sous chacun d'eux. Laquelle correspond à ces mots ?"
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 3 dans ton Casefile, à partir de la page 8. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "... Les projets et les ambitions de Napoléon Bonaparte inspirèrent pourtant bel et bien les Latino-Américains, quoique d'une manière que Napoléon n'avait guère prévue. Le dictateur français envahit l'Espagne en 1808, força le roi à abdiquer [renoncer au trône] et remit la couronne d'Espagne à son frère Joseph. D'un seul coup, l'Amérique espagnole devint une partie de l'empire familial des Bonaparte. (Quelques mois plus tôt, Napoléon avait envahi le Portugal, et la famille royale portugaise s'était enfuie dans sa colonie du Brésil.)",
+       "Les Hispano-Américains réagirent vivement contre cet usurpateur français. Ils refusèrent d'accepter Joseph Bonaparte comme leur roi, affirmèrent [déclarèrent] leur loyauté envers la maison des Bourbons d'Espagne et prirent le contrôle de leurs gouvernements locaux. Mais presque dès le début, la rébellion contre Napoléon se transforma en une révolution pour l'indépendance complète. Il ne pouvait plus être question de revenir à l'ancien système...."
       ]
      }
     },
@@ -1253,6 +1886,61 @@
        ". . . I shall tell you what we must get for ourselves in order to expel (drive out) the Spaniards and to found (start) a free government. It is union, obviously. But such union will come from sensible planning and well-directed actions, not from divine magic (a miracle). America stands together because it is abandoned by all other nations. It is isolated (alone, cut off) in the center of the world. It has no diplomatic relations (official ties with other countries). It does not get any military help. Instead, America is attacked by Spain. Spain has more military supplies than any we can possibly get through furtive [stealthy] means.",
        "When success is not sure, when the state is weak, and when results are far off, all men hesitate. Opinion is divided, and passions (strong feelings) rage. The enemy fans (stirs up) these passions to win an easy victory because of them. A liberal nation is one that values freedom. As soon as we are strong and under the guidance of a liberal nation that will protect us, we will achieve accord [unity]. We will build the virtues and talents that lead to glory. Then we will march majestically (grandly) toward that great prosperity (wealth and success) for which South America is destined. Then the sciences and arts, which were born in the East and have enlightened Europe, will fly to a free Colombia. Colombia will warmly welcome them. . . ."
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "hesitate",
+        "mark": "box",
+        "note": "My guess: hold back, wait before acting."
+       },
+       {
+        "where": "fans these passions",
+        "mark": "margin",
+        "note": "Fans, like fanning a flame. It makes the passions burn hotter."
+       },
+       {
+        "where": "August 2019",
+        "mark": "margin",
+        "note": "2019 is the Regents exam that used it, not when he wrote it."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Where to look: the hint in the OUTSIDE EVIDENCE box on page 10, then WHAT YOU NEED TO KNOW on page 7, the last paragraph. The Simón Bolívar line in KEY VOCABULARY on page 7 has more. Test it: if it's in Document 3 or 4, it doesn't count."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Simón Bolívar, la Lettre de la Jamaïque [Jamaica Letter]",
+      "steps": [
+       {
+        "question": "Qui écrit, à qui, et d'où ?",
+        "line": "Le titre, dans la ligne de source, dit qui écrit et à qui, et le mot entre crochets dit d'où. Le KEY VOCABULARY, page 7, dit pourquoi il se trouvait là-bas en 1815."
+       },
+       {
+        "question": null,
+        "line": "Deux paragraphes : cinq phrases, puis quatre. Expulser [expel] veut dire chasser. Le second paragraphe se tourne vers l'avenir aux mots Dès que [As soon as]."
+       },
+       {
+        "question": "Selon Bolívar, de quoi son peuple a-t-il besoin pour gagner, et comment l'obtiendra-t-il ?",
+        "line": "Sa première phrase promet de te le dire, et sa deuxième phrase le dit. Ensuite, continue ta lecture : selon lui, qu'est-ce que l'Amérique a, et qu'est-ce qu'elle n'a pas ?"
+       },
+       {
+        "question": "Pourquoi Bolívar dirait-il à un Anglais que l'Amérique est seule ?",
+        "line": "Représente-toi le lecteur : un Anglais sur une île gouvernée par la Grande-Bretagne. Ensuite, relis la partie du second paragraphe qui commence par Dès que nous serons forts [As soon as we are strong]."
+       },
+       {
+        "question": "Quel problème durable Bolívar essaie-t-il de résoudre ?",
+        "line": "Choisis un mot clé chez Bolívar, comme abandonnée [abandoned] ou attaquée [attacked]. Ouvre les Six Parapluies [Six Umbrellas] et trouve la question à laquelle il correspond. Ensuite, remplis l'encadré OUTSIDE EVIDENCE [connaissances extérieures], page 10 : son indice te renvoie au jour 1."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 4 dans ton Casefile, à partir de la page 9. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "... Je vous dirai de quoi nous devons nous pourvoir pour expulser les Espagnols et fonder un gouvernement libre. C'est l'union, évidemment ; mais cette union se réalisera par une planification sensée et des actions bien dirigées, plutôt que par une magie divine. L'Amérique fait bloc parce qu'elle est abandonnée par toutes les autres nations. Elle est isolée au centre du monde. Elle n'a aucune relation diplomatique, et elle ne reçoit pas non plus d'aide militaire ; au contraire, l'Amérique est attaquée par l'Espagne, qui dispose de plus de fournitures militaires que nous ne pourrions jamais en acquérir par des moyens furtifs [clandestins].",
+       "Quand le succès n'est pas assuré, quand l'État est faible et quand les résultats ne s'aperçoivent que de loin, tous les hommes hésitent ; l'opinion est divisée, les passions se déchaînent, et l'ennemi attise ces passions afin de remporter grâce à elles une victoire facile. Dès que nous serons forts et sous la conduite d'une nation libérale qui nous accordera sa protection, nous parviendrons à la concorde [l'unité] en cultivant les vertus et les talents qui mènent à la gloire. Alors nous marcherons majestueusement vers cette grande prospérité à laquelle l'Amérique du Sud est destinée. Alors ces sciences et ces arts qui, nés en Orient, ont éclairé l'Europe, s'envoleront vers une Colombie libre, qui leur fera cordialement bon accueil...."
+      ]
      }
     },
     {
@@ -1290,26 +1978,88 @@
      ],
      "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
      "text": [
-      ". . . Therefore, if we so ardently desire the emancipation [unification] of Italy — if we declare that in the face of this great question all the petty questions that divide us must be silenced— it is not only that we may see our country glorious and powerful but that above all we may elevate her in intelligence and moral development up to the plane of the most civilized nations. . . ."
+      ". . . Therefore, if we so ardently desire the emancipation [unification] of Italy — if we declare that in the face of this great question all the petty questions that divide us must be silenced — it is not only that we may see our country glorious and powerful but that above all we may elevate her in intelligence and moral development up to the plane of the most civilized nations. . . ."
      ],
      "easier": {
       "label": "(adapted, easier to read)",
       "text": [
        ". . . Therefore, we so ardently (strongly) desire the emancipation [unification] of Italy. We declare that in the face of this great question, all the petty questions that divide us must be silenced. We do this not only so that we may see our country glorious and powerful. Above all, we do it so that we may elevate (raise) her in intelligence and moral development. We want to raise her up to the plane (level) of the most civilized nations. . . ."
       ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "Therefore",
+        "mark": "margin",
+        "note": "Therefore means so. It points back to something said before the cut, and the dots tell you that part is missing."
+       },
+       {
+        "where": "ardently",
+        "mark": "box",
+        "note": "My guess: with strong feeling."
+       },
+       {
+        "where": "Exam Question Bank",
+        "mark": "circle",
+        "note": "A question bank teachers use. It reprinted this, it didn't publish it first."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Where to look: WHAT YOU NEED TO KNOW on page 11, the Italy paragraph: the other Italians it names, and what each one did. KEY VOCABULARY on page 11 has Risorgimento. Test it: if it's in Document 5 or 6, it doesn't count."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Camillo di Cavour, 1846",
+      "steps": [
+       {
+        "question": "Cavour a écrit ce texte en 1846. L'Italie s'était-elle déjà réunie en une seule nation à cette date ?",
+        "line": "Trouve l'année que WHAT YOU NEED TO KNOW, page 11, donne pour le royaume d'Italie, et place-la à côté de 1846. Ensuite, regarde le mot entre crochets dans sa première ligne."
+       },
+       {
+        "question": null,
+        "line": "Une seule longue phrase, coupée par deux tirets. Lis la partie entre les tirets comme une idée à part. Mesquines [petty] veut dire petites et sans importance."
+       },
+       {
+        "question": "Selon Cavour, que doivent mettre de côté les Italiens, et qu'espère-t-il qu'une Italie unie deviendra ?",
+        "line": "Trouve les mots réduites au silence [silenced] et lis en remontant à partir d'eux pour voir ce qui doit se taire. Pour son espoir, lis ce qui vient après, et repère pas seulement [not only] et surtout [above all]."
+       },
+       {
+        "question": "Comment Cavour veut-il que l'Italie s'unisse, et en quoi est-ce différent de Bismarck, dans le document 6 ?",
+        "line": "Trouve ici l'expression qui montre comment Cavour veut que l'Italie s'unisse. Ensuite, ouvre le parcours du document 6 et fais de même pour Bismarck."
+       },
+       {
+        "question": "Quel problème durable le mot unification désigne-t-il ?",
+        "line": "Unification est entre crochets dans sa première ligne. Ouvre les Six Parapluies [Six Umbrellas] et lis la question sous chacun d'eux. Laquelle correspond ?"
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 5 dans ton Casefile, à partir de la page 12. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "... Par conséquent, si nous désirons si ardemment l'émancipation [unification] de l'Italie — si nous déclarons que, face à cette grande question, toutes les questions mesquines qui nous divisent doivent être réduites au silence — ce n'est pas seulement pour voir notre pays glorieux et puissant, mais surtout pour l'élever, en intelligence et en développement moral, jusqu'au niveau des nations les plus civilisées...."
+      ],
+      "word_watch": {
+       "title": "WORD WATCH [attention au mot]",
+       "text": "Le jour 1, émancipation [emancipation] voulait dire libérer des personnes de l'esclavage. Ici, Cavour l'emploie pour l'Italie : la libérer de la domination étrangère pour qu'elle puisse devenir une seule nation. C'est pour cela qu'entre crochets, on lit unification."
+      }
+     },
+     "word_watch": {
+      "title": "WORD WATCH",
+      "text": "On Day 1, emancipation meant freeing people from slavery. Here Cavour uses it for Italy: freeing it from foreign rule so it could become one nation. That's why the bracket says unification."
      }
     },
     {
      "n": 6,
-     "title": "Otto von Bismarck (adapted)",
+     "title": "Otto von Bismarck, 1862",
      "kind": "text",
-     "src": "Source: Otto von Bismarck (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam",
+     "src": "Source: Otto von Bismarck, speech to the Prussian parliament, 1862 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam",
      "page": 12,
      "steps": [
       {
        "question": "When did Bismarck say this, and who was he talking to?",
        "mode": null,
-       "line": "This source line has no date and no audience. Find Bismarck in What You Need to Know on page 11."
+       "line": "The source line names the year and the audience. Then find Bismarck in What You Need to Know on page 11 to see what came next."
       },
       {
        "question": null,
@@ -1340,6 +2090,55 @@
       "label": "(adapted, easier to read)",
       "text": [
        "“Our goal will not be achieved (reached) by democracy or liberal standards (the rules of a free government). It will be achieved by blood and iron.”"
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "notes": [
+       {
+        "where": "(adapted)",
+        "mark": "box",
+        "note": "My guess: changed from the original. Even inside quote marks, the wording may not be exactly his."
+       },
+       {
+        "where": "Exam Question Bank",
+        "mark": "circle",
+        "note": "A question bank teachers use. It reprinted this line. It can't tell you where he first said it."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Where to look: WHAT YOU NEED TO KNOW on page 11, the last two sentences of the Germany paragraph. KEY VOCABULARY on page 11 has kaiser. Then do the OUTSIDE EVIDENCE box on page 13. Test it: if it's in Document 5 or 6, it doesn't count."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Otto von Bismarck, 1862",
+      "steps": [
+       {
+        "question": "Quand Bismarck a-t-il dit cela, et à qui parlait-il ?",
+        "line": "La ligne de source donne l'année et dit à qui il parlait. Ensuite, trouve Bismarck dans WHAT YOU NEED TO KNOW, page 11, pour voir la suite."
+       },
+       {
+        "question": null,
+        "line": "Une phrase en deux moitiés : ce qui ne permettra pas d'atteindre le but, puis ce qui le permettra. Lis chaque moitié séparément. La démocratie, c'est le pouvoir du peuple, exercé par le vote."
+       },
+       {
+        "question": "Selon Bismarck, qu'est-ce qui ne permettra pas d'atteindre son but, et qu'est-ce qui le permettra ?",
+        "line": "Redis sa phrase avec tes propres mots. Ensuite, demande-toi ce que le sang et le fer [blood and iron] pourraient représenter."
+       },
+       {
+        "question": "En quoi la manière de Bismarck est-elle différente de ce qu'espère Cavour dans le document 5 ?",
+        "line": "La phrase de Bismarck nomme ce qu'il n'utilisera pas et ce qu'il utilisera. Place cela à côté de l'expression que tu as trouvée chez Cavour."
+       },
+       {
+        "question": "Quel problème durable le plan de Bismarck soulève-t-il ?",
+        "line": "Prends les cinq derniers mots de sa phrase, ou un mot clé chez Cavour, et ouvre les Six Parapluies [Six Umbrellas]. À quelle question correspondent-ils ? Ensuite, remplis l'encadré OUTSIDE EVIDENCE [connaissances extérieures], page 13."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 6 dans ton Casefile, à partir de la page 12. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "text": [
+       "« Ce n'est ni par la démocratie ni par les principes libéraux que notre but sera atteint, mais par le sang et le fer. »"
       ]
      }
     },
@@ -1384,6 +2183,59 @@
      "licence": {
       "text": "Map, 1911 (public domain).",
       "sellable": false
+     },
+     "annotate": {
+      "kind": "map",
+      "notes": [
+       {
+        "where": "the scale under the legend, lower left: “Scale 1:7 500 000” and the bar in miles",
+        "mark": "circle",
+        "note": "The bar is in miles. Measure before you say big or far."
+       },
+       {
+        "where": "the small “R.” after river names, like “Danube R.” and “Elbe R.”",
+        "mark": "box",
+        "note": "R. = River."
+       },
+       {
+        "where": "“Long. East 18 of Greenw.” along the bottom edge",
+        "mark": "box",
+        "note": "Long. = longitude, east of Greenwich, England. The numbers along the edges are degrees."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Where to look: WHAT YOU NEED TO KNOW on page 14, the last paragraph: what came two years after 1912. KEY VOCABULARY on page 14 has Pan-Slavism. Test it: if it's on Document 7 or 8, it doesn't count."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "Carte : les peuples de l'Autriche-Hongrie [Austria-Hungary], 1911",
+      "steps": [
+       {
+        "question": "Qui a fait cette carte, quand, et que représentent ses couleurs ?",
+        "line": "Le titre est écrit à la verticale, le long du bord droit. La date est dans la ligne de source, et la note en dessous te dit ce que Races veut dire ici."
+       },
+       {
+        "question": null,
+        "line": "Commence par la légende en bas à gauche et lis chaque nom. Ensuite, trouve l'épaisse frontière noire et regarde les couleurs à l'intérieur. Les grosses lettres capitales désignent des régions ; les petites, des villes."
+       },
+       {
+        "question": "Quels peuples vivent à l'intérieur de la frontière de l'empire, et qu'est-ce que cela pourrait signifier pour un seul empereur qui les gouverne tous ?",
+        "line": "Lis chaque nom de la légende et trouve chaque couleur à l'intérieur de l'épaisse frontière. Ensuite, relis WHAT YOU NEED TO KNOW, page 14, surtout la question qu'ont posée les autres peuples."
+       },
+       {
+        "question": "Comment l'un de ces peuples verrait-il cette carte en 1911 ?",
+        "line": "Choisis un peuple dans la légende et regarde la carte comme le ferait l'un de ses membres. Où se trouve ta couleur, et à qui appartient la frontière tracée autour d'elle ?"
+       },
+       {
+        "question": "Quel problème durable cette carte soulève-t-elle ?",
+        "line": "Regarde la longueur de la liste de noms dans la légende. Ouvre les Six Parapluies [Six Umbrellas] et demande-toi à quelle question cette liste pourrait répondre. Ensuite, regarde le document 8."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 7 dans ton Casefile, à partir de la page 15. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "describe": "Une carte en couleurs. Son titre est imprimé à la verticale, le long du bord droit : « Distribution of Races in Austria-Hungary » [répartition des races en Autriche-Hongrie]. La carte couvre l'Europe centrale et du Sud-Est. Un épais trait noir marque la frontière de l'Autriche-Hongrie, et les terres à l'intérieur sont remplies de couleurs. Les terres situées hors de la frontière sont pour la plupart laissées en blanc. À l'intérieur de la frontière, de grosses lettres capitales nomment des régions, parmi lesquelles BOHEMIA [Bohême], MORAVIA [Moravie], GALICIA [Galicie], AUSTRIA [Autriche], HUNGARY [Hongrie], TRANSYLVANIA [Transylvanie], CROATIA-SLAVONIA [Croatie-Slavonie], BOSNIA [Bosnie], DALMATIA [Dalmatie] et TYROL [Tyrol]. Parmi les villes indiquées à l'intérieur figurent Vienna [Vienne], Budapest, Prague et Serajevo [Sarajevo]. Hors de la frontière, la carte nomme GERMAN EMPIRE [Empire allemand] et RUSSIA [Russie] au nord, ITALY [Italie] au sud-ouest, et SERVIA [Serbie], RUMANIA [Roumanie], BULGARIA [Bulgarie] et MONTENEGRO [Monténégro] au sud-est. ADRIATIC SEA [mer Adriatique] figure en bas à gauche. Beaucoup de zones contiennent des points et des taches d'une autre couleur. La légende, en bas à gauche, énumère dix couleurs : Germans [Allemands] (rose), Magyars (vert), Rumanians [Roumains] (orange), Croats and Servians [Croates et Serbes] (vert olive), Ruthenians [Ruthènes] (vert-jaune), Czechs [Tchèques] (bleu clair), Slovaks [Slovaques] (vert-gris), Poles [Polonais] (marron), Slovenes [Slovènes] (gris) et Italians [Italiens] (jaune). Une accolade regroupe six d'entre eux, de Croats and Servians jusqu'à Slovenes, sous le mot Slavs [Slaves]. Sous la légende : Scale 1:7 500 000 [échelle], avec une barre d'échelle en milles. Des lettres et des chiffres de repère courent le long des bords.",
+      "before": "En 1911, le mot « Races » désignait des groupes de personnes qui parlaient la même langue. Les couleurs indiquent les langues."
      }
     },
     {
@@ -1427,9 +2279,246 @@
      "licence": {
       "text": "Punch cartoon, 1912 (public domain).",
       "sellable": false
+     },
+     "annotate": {
+      "kind": "picture",
+      "notes": [
+       {
+        "where": "the artist's signature in the lower right, just above the caption",
+        "mark": "circle",
+        "note": "The artist signed it. Match the name to the source line before you read the drawing."
+       },
+       {
+        "where": "the curved handle on the pot's right side",
+        "mark": "margin",
+        "note": "Last pass, small details. A handle: does it mean something, or is it just part of a pot?"
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Where to look: WHAT YOU NEED TO KNOW on page 14, the middle paragraph, on the Ottoman Empire, with its dates. The Ottoman Empire line in KEY VOCABULARY on page 14 has more. Then do the OUTSIDE EVIDENCE box on page 17. Test it: if it's on Document 7 or 8, it doesn't count."
+      }
+     },
+     "fr": {
+      "label": "(traduit en français)",
+      "title": "« The Boiling Point » [Le point d'ébullition], Punch, 2 octobre 1912",
+      "steps": [
+       {
+        "question": "Où et quand cette caricature [cartoon] a-t-elle été imprimée, et que s'est-il passé peu après ?",
+        "line": "La ligne de source dit où Punch était imprimé, et quand. Ensuite, lis la note en dessous. Le caricaturiste savait-il ce qui allait arriver quand il a dessiné ceci ?"
+       },
+       {
+        "question": null,
+        "line": "Lis d'abord les mots : la légende en bas et les deux mots sur la marmite. Ensuite, les hommes, un par un, de gauche à droite : regarde chaque couvre-chef. Puis les bords de l'image."
+       },
+       {
+        "question": "Selon le caricaturiste, qu'est-ce qui est sur le point d'arriver, et quels sont les deux détails qui le montrent ?",
+        "line": "Rapproche la légende et les mots sur la marmite. Ensuite, regarde la vapeur et ce que les hommes font de leurs mains. Combien de temps cela peut-il durer ?"
+       },
+       {
+        "question": "Qui le caricaturiste place-t-il sur la marmite, et qui n'apparaît pas du tout ?",
+        "line": "La note sous la ligne de source nomme ceux qui sont sur le couvercle. Ensuite, vérifie Balkans dans le KEY VOCABULARY du jour 4, page 14 : l'un de ces peuples est-il dessiné ici ?"
+       },
+       {
+        "question": "Quel problème durable bout dans cette marmite ?",
+        "line": "Commence par les deux mots sur la marmite. Ouvre les Six Parapluies [Six Umbrellas] et trouve la question à laquelle ils correspondent. Ensuite, remplis l'encadré OUTSIDE EVIDENCE [connaissances extérieures], page 17."
+       }
+      ],
+      "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 8 dans ton Casefile, à partir de la page 16. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
+      "describe": "Un dessin à la plume en noir et blanc. Une grande marmite ronde et noire est posée au milieu, avec une anse courbe sur son côté droit. Les mots « BALKAN TROUBLES » [les troubles des Balkans] sont écrits sur le flanc de la marmite. Cinq hommes se serrent sur le couvercle. À gauche, un homme à longue barbe blanche, coiffé d'une casquette à visière, se penche en avant, les deux mains à plat sur le couvercle. Derrière lui se tient un homme en haut-de-forme. Au milieu est assis un homme avec un casque à pointe et des lunettes rondes. À l'arrière, à droite, se tient un homme coiffé d'une casquette militaire plate sur le dessus, avec des épaulettes à franges, un poing serré. À l'avant, à droite, un homme coiffé d'une haute coiffe militaire est assis au bord du couvercle, une jambe pendant par-dessus le bord et une main sur le couvercle. Des nuages de vapeur tourbillonnants s'élèvent tout autour de la marmite et des hommes. La signature de l'artiste est en bas à droite. La légende sous le dessin indique « THE BOILING POINT. » [le point d'ébullition].",
+      "before": "Les grandes puissances de l'Europe sont assises sur le couvercle d'une marmite qui porte l'inscription BALKAN TROUBLES [les troubles des Balkans]. Six jours plus tard, la première guerre balkanique commença."
      }
     }
    ]
   }
- ]
+ ],
+ "annotate": {
+  "button": "How to annotate",
+  "methods": {
+   "text": [
+    [
+     "WHO AND WHEN",
+     "Circle who made it and the year. They're in the source line."
+    ],
+    [
+     "THE CLAIM",
+     "Underline the one sentence that makes the main point."
+    ],
+    [
+     "WORDS",
+     "Box any word you don't know. Write your best guess above it."
+    ],
+    [
+     "SO WHAT",
+     "In the margin, write a few words on why it matters."
+    ],
+    [
+     "OUTSIDE",
+     "Add one true thing you already know that isn't in the document."
+    ]
+   ],
+   "picture": [
+    [
+     "LABELS",
+     "Read every word first: the title, the caption, the labels."
+    ],
+    [
+     "WHO'S WHO",
+     "Name every figure. Who is big, and who is small?"
+    ],
+    [
+     "EXAGGERATION",
+     "What is stretched past real life? That's the caricature."
+    ],
+    [
+     "SYMBOLS",
+     "What stands for something else: clothes, tools, animals?"
+    ],
+    [
+     "THE POINT",
+     "What is the artist accusing, and who would agree?"
+    ]
+   ],
+   "map": [
+    [
+     "TITLE, KEY, DATE",
+     "Read the title, the key and the date before anything else."
+    ],
+    [
+     "THE BIG PICTURE",
+     "Circle the biggest or most important part."
+    ],
+    [
+     "COMPARE",
+     "Mark two parts you can compare."
+    ],
+    [
+     "THE POINT",
+     "Write what it shows in one sentence."
+    ],
+    [
+     "OUTSIDE",
+     "Add one true thing you already know that isn't on it."
+    ]
+   ]
+  },
+  "model_label": "WATCH IT DONE ON THIS DOCUMENT",
+  "model_note": "These notes are on parts no question asks about. Your questions are yours to do.",
+  "oe_example_label": "OUTSIDE EVIDENCE · AN EXAMPLE",
+  "oe_where_label": "OUTSIDE EVIDENCE · WHERE TO LOOK"
+ },
+ "fr": {
+  "button": "En français",
+  "label": "(traduit en français)",
+  "tile": "Chaque document de ton Casefile, avec un parcours guidé à côté. Il ne répondra pas à ta place. Il te montre comment faire.",
+  "labels": {
+   "walk": "Guide-moi pas à pas",
+   "read": "Lis-le-moi",
+   "easier": "Plus facile à lire",
+   "original": "Original",
+   "close": "Fermer le parcours",
+   "next": "Étape suivante",
+   "back": "Retour",
+   "stop": "Arrêter la lecture"
+  },
+  "walk": [
+   {
+    "tag": "Q1 · LA SOURCE [SOURCING]",
+    "step": "D'abord, la ligne de source.",
+    "say": "Avant de lire le moindre mot du document, lis la ligne au-dessus. Qui l'a créé, quand, et pourquoi ?",
+    "say_image": null
+   },
+   {
+    "tag": "LIS-LE EN ENTIER",
+    "step": "Lis-le une fois, jusqu'au bout.",
+    "say": "Du début à la fin, sans t'arrêter. Un mot difficile ? Continue. Ensuite, dis en quelques mots de quoi ça parle.",
+    "say_image": "Regarde en trois temps : le titre et les inscriptions, puis l'élément le plus grand, puis les petits détails."
+   },
+   {
+    "tag": "Q2 · AFFIRMATION ET PREUVES [CLAIM & EVIDENCE]",
+    "step": "Que dit-il ?",
+    "say": "Trouve les mots qui le disent. Ta preuve est toujours dans le document.",
+    "say_image": null
+   },
+   {
+    "tag": "Q3 · LE POINT DE VUE [PERSPECTIVE CHECK]",
+    "step": "De qui est-ce le point de vue ?",
+    "say": "Qui le raconterait autrement ? Qui n'y figure pas ?",
+    "say_image": null
+   },
+   {
+    "tag": "Q4 · L'ENJEU DURABLE [ENDURING ISSUE]",
+    "step": "Nomme l'enjeu.",
+    "say": "Sous quel parapluie de ta carte des Six Parapluies [Six Umbrellas] se range-t-il ? Ensuite, nomme l'enjeu précis qui se trouve dessous, et explique-le.",
+    "say_image": null
+   }
+  ],
+  "before_we_talk": "C'étaient des personnes réelles, et ce qui leur est arrivé a façonné le monde dans lequel nous vivons. Utilise leurs noms et leurs mots. Pas de blagues, et pas de comparaisons avec la vie de tous les jours.",
+  "no_name_title": "PAS DE NOM DESSUS ?",
+  "no_name_text": "Toutes les sources ne te disent pas qui les a créées. Quand ce n'est pas le cas, pose-toi trois questions : Quand a-t-elle été créée ? Qui l'a publiée, et où est-elle parue pour la première fois ? Pour qui a-t-elle été créée ? Ensuite, dis ce que la ligne de source t'apprend, et ce qu'elle ne peut pas t'apprendre.",
+  "no_name_visual": "Une carte ou un graphique a aussi un auteur. Quelqu'un a choisi quoi colorier, quoi nommer et quoi laisser en blanc.",
+  "annotate_note": "Ces notes portent sur des passages qu'aucune question ne vise. Tes questions, c'est à toi de les faire.",
+  "umbrellas": {
+   "title": "LES SIX PARAPLUIES [THE SIX UMBRELLAS]",
+   "intro": "Chaque enjeu durable [enduring issue] se range sous l'un de ces six parapluies. Repère vite le bon parapluie. Ensuite, nomme l'enjeu précis qui se trouve dessous, et explique-le.",
+   "items": [
+    {
+     "n": "1",
+     "name": "LE POUVOIR ET SES ABUS [POWER & ITS ABUSE]",
+     "question": "Qui détient l'autorité, et ce qu'il advient des gens qui ne l'ont pas choisi.",
+     "issues": "Abus de pouvoir [Abuse of Power] · Impérialisme [Imperialism] · Violations des droits de l'homme [Human Rights Violations] · Inégalité [Inequality]"
+    },
+    {
+     "n": "2",
+     "name": "LE CONFLIT [CONFLICT]",
+     "question": "Pourquoi les gens se battent, et ce qui reste à régler quand les combats s'arrêtent.",
+     "issues": "Conflit [Conflict]"
+    },
+    {
+     "n": "3",
+     "name": "IDENTITÉ ET NATIONALISME [IDENTITY & NATIONALISM]",
+     "question": "Qui un peuple dit être, et qui cela laisse de côté.",
+     "issues": "Nationalisme [Nationalism] · Échanges et diffusion culturels [Cultural Exchange and Diffusion]"
+    },
+    {
+     "n": "4",
+     "name": "RICHESSES ET RESSOURCES [WEALTH & RESOURCES]",
+     "question": "À qui appartient ce qu'un lieu produit, et qui le produit.",
+     "issues": "Développement économique [Economic Development] · Pénurie [Scarcity]"
+    },
+    {
+     "n": "5",
+     "name": "TECHNOLOGIE ET ENVIRONNEMENT [TECHNOLOGY & ENVIRONMENT]",
+     "question": "Ce que les nouveaux outils permettent aux gens de faire, et ce qu'ils coûtent au monde qui les entoure.",
+     "issues": "Changements scientifiques et technologiques [Scientific and Technological Change] · Crise environnementale [Environmental Crisis]"
+    },
+    {
+     "n": "6",
+     "name": "UN MONDE CONNECTÉ [A CONNECTED WORLD]",
+     "question": "Ce qui se passe quand des lieux éloignés commencent à dépendre les uns des autres.",
+     "issues": "Coopération [Cooperation] · Population et migrations [Population and Migration]"
+    }
+   ],
+   "close": [
+    "Dans ta rédaction [essay], écris l'enjeu précis, pas le parapluie : « Human Rights Violations », pas « Power & Its Abuse ».",
+    "Ensuite, EXPLIQUE-LE [EXPLAIN IT] : définis le problème en une phrase, et indique où un document le montre."
+   ],
+   "issue_defs": {
+    "Abuse of Power": "quand une personne qui détient l'autorité s'en sert pour faire du mal aux gens ou pour servir ses propres intérêts.",
+    "Imperialism": "quand un pays plus puissant prend le contrôle d'un autre territoire et de ses habitants.",
+    "Human Rights Violations": "quand des personnes sont privées des droits fondamentaux que toute personne devrait avoir, comme la vie, la liberté et la sécurité.",
+    "Inequality": "quand certains groupes ont moins de droits, de chances ou de ressources que d'autres.",
+    "Conflict": "une lutte entre des groupes, des nations ou des idées, de la dispute jusqu'à la guerre.",
+    "Nationalism": "la loyauté d'un peuple envers sa propre nation, et la volonté que cette nation se gouverne elle-même.",
+    "Cultural Exchange and Diffusion": "quand des idées, des croyances, des biens et des modes de vie se répandent d'un peuple à un autre.",
+    "Economic Development": "la façon dont un lieu fait croître sa richesse, et qui cette croissance aide ou laisse de côté.",
+    "Scarcity": "ne pas avoir assez de quelque chose dont les gens ont besoin, comme la nourriture, l'eau ou la terre.",
+    "Scientific and Technological Change": "de nouvelles connaissances et de nouveaux outils qui changent la façon dont les gens vivent et travaillent.",
+    "Environmental Crisis": "des dommages graves à la terre, à l'air, à l'eau ou au climat, souvent causés par les humains.",
+    "Cooperation": "quand des groupes ou des pays travaillent ensemble pour atteindre un objectif commun.",
+    "Population and Migration": "la façon dont le nombre d'habitants d'un lieu change, et les raisons pour lesquelles les gens se déplacent."
+   }
+  },
+  "note": "Pour t'aider à comprendre. Tes réponses, tu les écris en anglais."
+ }
 }
