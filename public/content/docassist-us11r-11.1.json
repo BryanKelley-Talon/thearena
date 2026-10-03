@@ -1,5 +1,5 @@
 {
- "_built": "Sam (us11r-curriculum) 2026-10-02 · proofread sweep 1 · NV text restored (BK)",
+ "_built": "Sam (us11r-curriculum) 2026-10-02 · proofread sweep 1 · NV text restored (BK) · v3.1: B17 'until' restored (shelf rebuilt to match)",
  "_source": "OUTPUTS/2026-27/Unit_01/STUDENT/US11R_Unit1_BlockA_PACKET.pdf (printed cover: Block A; on screen: Casefile A, BK 09:17)",
  "_shape": "11.2 A shape: steps[k] = {question, mode, line}; questions are Doc Assist own Frame questions (BK 09:23); mode null",
  "tool": "Doc Assist",
@@ -984,7 +984,7 @@
      "n": 17,
      "title": "Who gets to choose",
      "kind": "text",
-     "src": "Source: Fundamental Orders of Connecticut, Section 1, January 14, 1639.",
+     "src": "Source: Fundamental Orders of Connecticut, Section 1, January 14, 1639 (adapted).",
      "page": 30,
      "steps": [
       {
@@ -1021,7 +1021,7 @@
      ],
      "close": "That's the walk. Now answer Document 17's questions in your casefile, starting on page 30. Use the sentence stem, or write something of equal or better value.",
      "text": [
-      ". . . It is Ordered, sentenced, and decreed, that there shall be yearly two General Assemblies or Courts, the one the second Thursday in April, the other the second Thursday in September following; the first shall be called the Court of Election, wherein shall be yearly chosen from time to time, so many Magistrates and other public Officers as shall be found requisite [needed]: Whereof one to be chosen Governor for the year ensuing and another be chosen, and no other Magistrate to be chosen for more than one year: provided always there be six chosen besides the Governor, which being chosen and sworn according to an Oath recorded for that purpose, shall have the power to administer justice according to the Laws here established, and for want thereof, according to the Rule of the Word of God; which choice shall be made by all that are admitted freemen and have taken the Oath of Fidelity, and do cohabit within this Jurisdiction having been admitted inhabitants by the major part of the Town wherein they live or the major part of such as shall be then present. . . ."
+      ". . . It is Ordered, sentenced, and decreed, that there shall be yearly two General Assemblies or Courts, the one the second Thursday in April, the other the second Thursday in September following; the first shall be called the Court of Election, wherein shall be yearly chosen from time to time, so many Magistrates and other public Officers as shall be found requisite [needed]: Whereof one to be chosen Governor for the year ensuing and until another be chosen, and no other Magistrate to be chosen for more than one year: provided always there be six chosen besides the Governor, which being chosen and sworn according to an Oath recorded for that purpose, shall have the power to administer justice according to the Laws here established, and for want thereof, according to the Rule of the Word of God; which choice shall be made by all that are admitted freemen and have taken the Oath of Fidelity, and do cohabit within this Jurisdiction having been admitted inhabitants by the major part of the Town wherein they live or the major part of such as shall be then present. . . ."
      ],
      "easier": {
       "label": "(adapted, easier to read)",
@@ -1030,7 +1030,10 @@
        "One of them will be chosen Governor for the coming year. No Magistrate will be chosen for more than one year at a time. There must always be six chosen besides the Governor. Once they are chosen and take their oath, they will have the power to give out justice according to the laws made here. Where there is no law, they will follow the Word of God.",
        "The choice will be made by all who are admitted freemen, who have taken the Oath of Fidelity (loyalty), and who live in this area, after being accepted as residents by most of the people in their town, or by most of those present at the time."
       ]
-     }
+     },
+     "errata": [
+      "'until another be chosen' restored from the 1639 text (BK 2026-10-02 14:50); the printed 11.1 packet's picture of the text lacks 'until'."
+     ]
     },
     {
      "n": 18,
