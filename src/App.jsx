@@ -28,7 +28,9 @@
 //   • The shell never absorbs content. It points at it.
 // ============================================================
 
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
+import { parseHash, buildHash } from './deeplinks.js'
+import { Unit0Card, Unit0Room, UNIT0_STYLES } from './unit0.jsx'
 import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles } from './docassist.jsx'
 import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
@@ -887,7 +889,7 @@ const LANES = [
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course, prog, games, docAssist, onOpenSkill, onOpenUnit, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane }) {
+function CourseDoor({ course, prog, games, docAssist, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane }) {
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   const lane = laneIn || firstWithContent
@@ -951,7 +953,7 @@ function CourseDoor({ course, prog, games, docAssist, onOpenSkill, onOpenUnit, o
           )}
         </>
       )}
-      {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} />}
+      {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} onOpenUnit0={onOpenUnit0} />}
       {lane === 'threads' && <ThreadsLane course={course} />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
@@ -1254,9 +1256,9 @@ function RoomParts({ unit, games, docAssist, onOpenDocAssist, onOpenActivity, on
   )
 }
 
-function UnitLane({ course, onOpen }) {
+function UnitLane({ course, onOpen, onOpenUnit0 }) {
   const units = finishedUnits(course)
-  if (!units.length) return <EmptyLane what="Unit rooms" />
+  if (!units.length && !course.unit0?.published) return <EmptyLane what="Unit rooms" />
   return (
     <div className="grid">
       {units.map(u => {
@@ -1280,6 +1282,8 @@ function UnitLane({ course, onOpen }) {
           </button>
         )
       })}
+      {/* Unit 0, the oldest: the six skills outside a history class (Leo's order 10/3). */}
+      <Unit0Card course={course} onOpen={onOpenUnit0} />
     </div>
   )
 }
@@ -1885,6 +1889,15 @@ export default function App() {
   const [office, setOffice] = useState(false)
   const [officeTheme, setOfficeTheme] = useState(null)
   const [officePack, setOfficePack] = useState(null)
+  const [unit0, setUnit0] = useState(false)
+  const [u0Pack, setU0Pack] = useState(null)
+  const [u0Culture, setU0Culture] = useState(null)
+  // DEEP LINKS (Leo's order 10/2; scheme in deeplinks.js). A link is applied once the manifest
+  // is in, and again whenever the hash changes; a casefile or document waits for its pack.
+  const linked = useRef(false)
+  const [pendingDa, setPendingDa] = useState(null)      // { cf, docN } waiting on the Doc Assist pack
+  const daPackFor = useRef(null)
+  const [daCfFocus, setDaCfFocus] = useState(null)       // a casefile link's casefile, kept in the address bar                          // which content_ref the loaded Doc Assist pack is
 
   useEffect(() => {
     fetch(MANIFEST_URL)
@@ -1933,8 +1946,14 @@ export default function App() {
   const daRef = daUnit?.doc_assist && isLive(daUnit.doc_assist) && resolves(daUnit.doc_assist.content_ref) ? daUnit.doc_assist.content_ref : null
   useEffect(() => {
     setDaOpen(false); setDaDoc(null)
-    if (daRef) { setDaPack(null); fetchContent(daRef, setDaPack) } else setDaPack(false)
+    if (daRef) { setDaPack(null); daPackFor.current = null; fetchContent(daRef, p => { if (p !== null) daPackFor.current = daRef; setDaPack(p) }) } else setDaPack(false)
   }, [daRef])
+  useEffect(() => {
+    if (!unit0 || !course?.unit0) return
+    fetchContent(course.unit0.content_ref, setU0Pack)
+    if (course.unit0.culture_ref) fetchContent(course.unit0.culture_ref, setU0Culture); else setU0Culture(false)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [unit0, course])
   const openReview = (u = unit) => { setReview(true); fetchContent(u.brief_ref, setBriefPack); window.scrollTo(0, 0) }
   const openActivity = (u, i) => {
     const a = (u.activities || []).filter(isLive)[i]
@@ -1949,6 +1968,63 @@ export default function App() {
         .then(r => r.ok ? r.json() : null).then(setPack).catch(() => setPack(null))
     }
   }
+  const applyRoute = r => {
+    setStationSlug(null); setDrillIndex(null); setSkill(null); setLevel(null); setLevelPack(null)
+    setReview(false); setBriefPack(null); setDaOpen(false); setDaDoc(null); setPendingDa(null)
+    setActIndex(null); setPack(null); setUnit0(false); setOfficeTheme(null); setOfficePack(null)
+    setOffice(r.at === 'office')
+    if (r.at === 'office') {
+      if (r.theme) {
+        const t = visibleThemes(manifest.office, PREVIEW_OFFICE).find(x => x.slug === r.theme)
+        if (t) { setOfficeTheme(t.slug); fetchContent(t.content_ref, setOfficePack) }
+      }
+      setCourseId(null); setUnitSlug(null); window.scrollTo(0, 0); return
+    }
+    setCourseId(r.courseId || null)
+    setDoorLane(r.lane || null)
+    setUnitSlug(r.unitSlug || null)
+    setRoomFrom('units')
+    if (r.at === 'unit0') setUnit0(true)
+    if (r.at === 'review') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) { setReview(true); fetchContent(u.brief_ref, setBriefPack) } }
+    if (r.at === 'docassist') setPendingDa({ cf: r.cf || null, docN: r.docN ?? null })
+    window.scrollTo(0, 0)
+  }
+  useEffect(() => {
+    if (!manifest) return
+    if (!linked.current) { linked.current = true; if (location.hash) applyRoute(parseHash(location.hash, manifest)) }
+    const on = () => applyRoute(parseHash(location.hash, manifest))
+    window.addEventListener('hashchange', on)
+    return () => window.removeEventListener('hashchange', on)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [manifest])
+  // A casefile or document link: once the unit's Doc Assist pack is in, open the document, or
+  // scroll the casefile into view. A casefile or number that doesn't exist leaves Doc Assist open.
+  useEffect(() => {
+    if (!pendingDa || daPack === null || daPackFor.current !== daRef) return
+    setPendingDa(null)
+    if (!daPack) return                                   // no Doc Assist in this unit: the room stays
+    setDaOpen(true)
+    const cf = pendingDa.cf ? openCasefiles(daPack).find(c => String(c.id).toUpperCase() === pendingDa.cf) : null
+    if (!cf) return
+    const i = pendingDa.docN != null ? (cf.docs || []).findIndex(d => Number(d.n) === pendingDa.docN) : -1
+    if (i >= 0) { setDaDoc({ cf: cf.id, i }); window.scrollTo(0, 0); return }
+    setDaCfFocus(cf.id)
+    requestAnimationFrame(() => document.getElementById(`da-cf-${cf.id}`)?.scrollIntoView({ block: 'start' }))
+  }, [pendingDa, daPack, daRef])
+  // Where the student is now, written quietly to the address bar (no history entry, nothing sent).
+  useEffect(() => {
+    if (!manifest || !linked.current) return
+    const daCf = daDoc && daPack ? openCasefiles(daPack).find(c => c.id === daDoc.cf) : null
+    const h = buildHash({
+      office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
+      course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack,
+      daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
+      daCf: daOpen && !daDoc ? daCfFocus : null,
+    })
+    if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus])
+  useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
+
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
   const fromDoor = roomFrom === 'door'
   const leaveRoomPage = () => { if (fromDoor) setUnitSlug(null) }
@@ -1986,6 +2062,10 @@ export default function App() {
     screen = <OfficeRoom office={manifest.office} preview={PREVIEW_OFFICE} ui={officeUi}
                          onOpenTheme={openOfficeTheme}
                          onBack={() => { setOffice(false); window.scrollTo(0, 0) }} />
+  }
+  else if (course && unit0 && course.unit0?.published) {
+    screen = <Unit0Room key={`u0-${course.id}-${location.hash}`} course={course} pack={u0Pack} culture={u0Culture || null} ui={officeUi}
+                        onBack={() => { setUnit0(false); setDoorLane('units'); window.scrollTo(0, 0) }} />
   }
   else if (!course) screen = <Splash manifest={manifest} onPick={id => { setCourseId(id); window.scrollTo(0, 0) }} onOffice={() => { setOffice(true); window.scrollTo(0, 0) }} />
   else if (station && drillIndex != null && (station.drills || [])[drillIndex]) {
@@ -2085,18 +2165,19 @@ export default function App() {
       setLane={setDoorLane}
       onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
       onOpenUnit={slug => { setRoomFrom('units'); setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false); window.scrollTo(0, 0) }}
+      onOpenUnit0={() => { setUnit0(true); window.scrollTo(0, 0) }}
       games={games}
       docAssist={daPack || null}
       onOpenDocAssist={() => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
       onOpenReview={() => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); openReview(u) }}
       onOpenActivity={i => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); openActivity(u, i) }}
-      onBack={() => { setCourseId(null); setUnitSlug(null); setStationSlug(null); setDoorLane(null) }}
+      onBack={() => { setCourseId(null); setUnitSlug(null); setStationSlug(null); setDoorLane(null); setUnit0(false) }}
     />
   )
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

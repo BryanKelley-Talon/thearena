@@ -154,7 +154,7 @@ export function DocAssistHome({ pack, onOpenDoc }) {
       {(pack.casefiles || []).map(cf => {
         const open = cf.status === 'open' && (cf.docs || []).length > 0
         return (
-          <section key={cf.id} className="da-cf">
+          <section key={cf.id} id={`da-cf-${cf.id}`} className="da-cf">
             <h3 className="room-section da-cf-head">
               <span>{cf.title || CHROME.backTo(cf.id, cf)}</span>
               {!open && <span className="flag building">{CHROME.building}</span>}

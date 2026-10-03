@@ -1,0 +1,405 @@
+{
+ "_built": "2026-10-03 by Sam (us11r-curriculum) from Will's reconciled set; card lines from skillbands.py",
+ "_ruled": "BK 2026-10-03 15:24 (fork), 15:31 (shape; EI signed), 15:45 (gauge lines, consistency; co-signed Sam 15:42, Will 15:40)",
+ "_shape": "rooms: which course room shows it. card_line: the gauge's own line. gauge: the five bands (5 → 1). next_step: 2→3, 3→4, 4→5 (1→2 not printed). help: live tools only. No scores shown.",
+ "room": "unit-0",
+ "title": "The Six Skills, Outside a History Class",
+ "intro": "You already do all six of these. This room shows what each one looks like outside a history class, what each gauge is asking for, your next step up, and where to go for help.",
+ "scenarios": [
+  {
+   "n": 1,
+   "skill": "HC",
+   "name": "Historical Context",
+   "rooms": [
+    "us11r",
+    "global10r"
+   ],
+   "card_line": "Warm up the document — set the scene before you argue.",
+   "scene": "You walk up to your lunch table and everyone's quiet. One phone is face-down, and two people won't look at each other. You want to say something.",
+   "skip_it": "“Why's everyone being weird? Anyway, did you see the game?”",
+   "do_it": "You check the group chat first. It blew up last night over weekend plans. Then you say, “I saw the chat. Can we talk about Saturday?”",
+   "the_skill": "You found out what led up to the moment before you said a word. That's Historical Context, one of your six gauges. In a casefile, it's the first sentence of Your 30-Second Case: “In [year], …”",
+   "gauge": [
+    {
+     "band": "5",
+     "text": "era + what's happening + tied to the issue"
+    },
+    {
+     "band": "4",
+     "text": "scene set, one part thin"
+    },
+    {
+     "band": "3",
+     "text": "background stays general"
+    },
+    {
+     "band": "2",
+     "text": "vague gesture, scene missing"
+    },
+    {
+     "band": "1",
+     "text": "jumps straight in"
+    }
+   ],
+   "next_step": [
+    {
+     "step": "2 → 3",
+     "text_us11r": "One sentence of when and where, before you argue.",
+     "text_global10r": "One sentence of when and where, before you argue."
+    },
+    {
+     "step": "3 → 4",
+     "text_us11r": "Trade general words for a real date, place or event — “Boston in the 1760s,” not “back then.”",
+     "text_global10r": "Trade general words for a real date, place or event — “Paris in 1789,” not “back then.”"
+    },
+    {
+     "step": "4 → 5",
+     "text_us11r": "Finish your context by tying it to the question: “…and that is why ___ mattered.”",
+     "text_global10r": "Finish your context by tying it to the question: “…and that is why ___ mattered.”"
+    }
+   ],
+   "help": [
+    "The Historical Context station in your unit's Arena room: five steps of practice.",
+    "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
+   ]
+  },
+  {
+   "n": 2,
+   "skill": "TH",
+   "name": "Thesis",
+   "rooms": [
+    "us11r",
+    "global10r"
+   ],
+   "card_line": "Take a clear position and hold it. Try: “Although ___, ___ because ___.”",
+   "scene": "Your group has twenty minutes to pick a project topic from three choices. Everyone keeps saying, “I don't care, whatever works.”",
+   "skip_it": "“Any of them is fine, I guess.”",
+   "do_it": "“Let's do the food-waste one. We already have photos from the cafeteria, so we can start today.” Someone disagrees, and you answer them instead of giving in.",
+   "the_skill": "You picked a side, gave a reason, and held it. That's Thesis, one of your six gauges. In a casefile, it's the second sentence of Your 30-Second Case: “I think … because …”",
+   "gauge": [
+    {
+     "band": "5",
+     "text": "clear position held all the way"
+    },
+    {
+     "band": "4",
+     "text": "clear, one part under-served"
+    },
+    {
+     "band": "3",
+     "text": "topic, not argument — or drifts"
+    },
+    {
+     "band": "2",
+     "text": "position unclear or buried"
+    },
+    {
+     "band": "1",
+     "text": "describes, doesn't argue"
+    }
+   ],
+   "next_step": [
+    {
+     "step": "2 → 3",
+     "text_us11r": "Put your answer in the first sentence.",
+     "text_global10r": "Put your answer in the first sentence."
+    },
+    {
+     "step": "3 → 4",
+     "text_us11r": "Could someone argue the other side? If not, it's a topic. Try “Although ___, ___ because ___.”",
+     "text_global10r": "Could someone argue the other side? If not, it's a topic. Try “Although ___, ___ because ___.”"
+    },
+    {
+     "step": "4 → 5",
+     "text_us11r": "Reread your first sentence, then make every paragraph prove it.",
+     "text_global10r": "Reread your first sentence, then make every paragraph prove it."
+    }
+   ],
+   "help": [
+    "The Thesis station in your unit's Arena room: five steps of practice.",
+    "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
+   ]
+  },
+  {
+   "n": 3,
+   "skill": "DU",
+   "name": "Document Use",
+   "rooms": [
+    "us11r",
+    "global10r"
+   ],
+   "card_line": "Name the document. Pull a specific detail. Use it as evidence — don't just point at it.",
+   "scene": "Someone at home says you got in late. You know you didn't.",
+   "skip_it": "“I was home on time. Check my phone.”",
+   "do_it": "“Look at this text. I sent ‘home’ at 10:52. Curfew is 11.”",
+   "the_skill": "You named the source (the text), pulled one exact detail (10:52), and used it to prove your point. That's Document Use, one of your six gauges. In a casefile, it's the third sentence of Your 30-Second Case: “Document ___ shows …”",
+   "gauge": [
+    {
+     "band": "5",
+     "text": "named + specific detail used as evidence"
+    },
+    {
+     "band": "4",
+     "text": "named + specific, link slightly loose"
+    },
+    {
+     "band": "3",
+     "text": "referenced, detail stays general"
+    },
+    {
+     "band": "2",
+     "text": "vague mention or copying"
+    },
+    {
+     "band": "1",
+     "text": "barely referenced"
+    }
+   ],
+   "next_step": [
+    {
+     "step": "2 → 3",
+     "text_us11r": "Stop copying the sentence. Say what is in it.",
+     "text_global10r": "Stop copying the sentence. Say what is in it."
+    },
+    {
+     "step": "3 → 4",
+     "text_us11r": "Name it. Then lift one thing out of it.",
+     "text_global10r": "Name it. Then lift one thing out of it."
+    },
+    {
+     "step": "4 → 5",
+     "text_us11r": "After the detail, write “which shows ___” and connect it to your position.",
+     "text_global10r": "After the detail, write “which shows ___” and connect it to your position."
+    }
+   ],
+   "help": [
+    "Doc Assist: it walks you through any casefile document, one question at a time.",
+    "The Document Use station in your unit's Arena room: five steps of practice.",
+    "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
+   ]
+  },
+  {
+   "n": 4,
+   "skill": "EX",
+   "name": "Explanation",
+   "rooms": [
+    "us11r",
+    "global10r"
+   ],
+   "card_line": "The “so what.” After every piece of evidence, say why it matters.",
+   "scene": "You want the coach to put you in the longer race. You have one stat to make your case.",
+   "skip_it": "“I ran a 5:40 mile.”",
+   "do_it": "“I ran a 5:40 mile. That's faster than the pace the longer race needs, which means I can hold that pace for the whole distance.”",
+   "the_skill": "The time is the evidence. “Which means” is what makes it matter. That's Explanation, one of your six gauges. In a casefile, it's the stem “___, because ___, which means ___.”",
+   "gauge": [
+    {
+     "band": "5",
+     "text": "every piece explained; analysis outweighs description"
+    },
+    {
+     "band": "4",
+     "text": "most explained"
+    },
+    {
+     "band": "3",
+     "text": "more describing than analyzing"
+    },
+    {
+     "band": "2",
+     "text": "mostly describes"
+    },
+    {
+     "band": "1",
+     "text": "restates the prompt"
+    }
+   ],
+   "next_step": [
+    {
+     "step": "2 → 3",
+     "text_us11r": "Add the so-what sentence: “This matters because…”",
+     "text_global10r": "Add the so-what sentence: “This matters because…”"
+    },
+    {
+     "step": "3 → 4",
+     "text_us11r": "Every piece of evidence gets its own so-what. No detail left bare.",
+     "text_global10r": "Every piece of evidence gets its own so-what. No detail left bare."
+    },
+    {
+     "step": "4 → 5",
+     "text_us11r": "Cut one sentence of retelling and spend it on why.",
+     "text_global10r": "Cut one sentence of retelling and spend it on why."
+    }
+   ],
+   "help": [
+    "The Explanation station in your unit's Arena room: five steps of practice.",
+    "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
+   ]
+  },
+  {
+   "n": 5,
+   "skill": "OE",
+   "name": "Outside Evidence",
+   "rooms": [
+    "us11r",
+    "global10r"
+   ],
+   "card_line": "Bring in something NOT in the documents — a law, case, or event.",
+   "scene": "You're deciding whether to buy a pair of headphones. The ad says the battery lasts “all day.”",
+   "skip_it": "“It says all day, so it lasts all day.”",
+   "do_it": "“The ad says all day, but I had last year's version and it died by sixth period. I'd want to see a real test first.”",
+   "the_skill": "You brought in something true that the ad didn't tell you. That's Outside Evidence, one of your six gauges. The exam calls it “outside information.” In a casefile, the OUTSIDE EVIDENCE boxes show you what it looks like.",
+   "gauge": [
+    {
+     "band": "5",
+     "text": "substantial, well-chosen, strengthens the argument"
+    },
+    {
+     "band": "4",
+     "text": "relevant and fits"
+    },
+    {
+     "band": "3",
+     "text": "limited or loosely connected"
+    },
+    {
+     "band": "2",
+     "text": "almost nothing"
+    },
+    {
+     "band": "1",
+     "text": "none"
+    }
+   ],
+   "next_step": [
+    {
+     "step": "2 → 3",
+     "text_us11r": "Name a specific law, court case, person or event from class.",
+     "text_global10r": "Name a specific law, court case, person or event from class."
+    },
+    {
+     "step": "3 → 4",
+     "text_us11r": "Say how that outside fact connects to your point.",
+     "text_global10r": "Say how that outside fact connects to your point."
+    },
+    {
+     "step": "4 → 5",
+     "text_us11r": "Choose the outside example that proves your point best, not the first one you remember.",
+     "text_global10r": "Choose the outside example that proves your point best, not the first one you remember."
+    }
+   ],
+   "help": [
+    "The Outside Evidence station in your unit's Arena room: five steps of practice.",
+    "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
+   ]
+  },
+  {
+   "n": 6,
+   "skill": "CP",
+   "name": "Civic Principle",
+   "rooms": [
+    "us11r"
+   ],
+   "card_line": "Name it out loud — equal protection, federalism, checks and balances. Don't imply it.",
+   "scene": "Over the weekend, the school changes the lunch schedule. Nobody asked the students who eat at those times, and people are mad.",
+   "skip_it": "“That's not fair.”",
+   "do_it": "“The people a rule is for should have a say in it. That's Popular Sovereignty, the consent of the governed, and nobody asked us.”",
+   "the_skill": "“Not fair” hints at an idea. Naming the idea makes the argument. That's Civic Principle, one of your six gauges. In a casefile, every Q4 asks you to name it from your Civic Principles card.",
+   "gauge": [
+    {
+     "band": "5",
+     "text": "named and woven through"
+    },
+    {
+     "band": "4",
+     "text": "named and connected"
+    },
+    {
+     "band": "3",
+     "text": "named but thin"
+    },
+    {
+     "band": "2",
+     "text": "implied, never named"
+    },
+    {
+     "band": "1",
+     "text": "absent"
+    }
+   ],
+   "next_step": [
+    {
+     "step": "2 → 3",
+     "text_us11r": "Say the principle's name out loud on the page — federalism, due process, checks and balances."
+    },
+    {
+     "step": "3 → 4",
+     "text_us11r": "Name it out loud, then say how this document shows it."
+    },
+    {
+     "step": "4 → 5",
+     "text_us11r": "Bring the principle back in your last paragraph, not just your first."
+    }
+   ],
+   "help": [
+    "Doc Assist, step 5: tap the Civic Principles button to see every principle and what it means.",
+    "The Civic Principle station in your unit's Arena room: five steps of practice.",
+    "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
+   ]
+  },
+  {
+   "n": 6,
+   "skill": "EI",
+   "name": "Enduring Issue",
+   "rooms": [
+    "global10r"
+   ],
+   "card_line": "Name one enduring issue out loud, define it, and show it in at least three documents.",
+   "scene": "Your phone is at 4%.\nAt home, three people want the one fast charger.\nAt practice, fourteen players want five starting spots.\nAt lunch, the whole table wants the two seats by the window.\nIt happens in three places, and it's the same problem every time: there isn't enough to go around, so someone has to decide who gets it. It isn't new, either. Ask anyone older than you about the one TV in the house.",
+   "skip_it": "“There's never enough of anything around here.”",
+   "do_it": "“That's scarcity: there isn't enough of something people need. I see it at home, at practice and at lunch.”",
+   "the_skill": "You named the issue, defined it, and showed it in three places. That's Enduring Issue, one of your six gauges. On the exam, the three places are three documents, and the job is the same.",
+   "gauge": [
+    {
+     "band": "5",
+     "text": "named + defined + tied to three documents"
+    },
+    {
+     "band": "4",
+     "text": "tied to three, definition slightly loose"
+    },
+    {
+     "band": "3",
+     "text": "partly defined, link uneven"
+    },
+    {
+     "band": "2",
+     "text": "named, definition thin, link weak"
+    },
+    {
+     "band": "1",
+     "text": "mentioned, not defined or not enduring"
+    }
+   ],
+   "next_step": [
+    {
+     "step": "2 → 3",
+     "text_global10r": "Define the issue in one sentence of your own: “___ is when ___.”"
+    },
+    {
+     "step": "3 → 4",
+     "text_global10r": "Find the issue in three documents and name each one by number."
+    },
+    {
+     "step": "4 → 5",
+     "text_global10r": "Tighten your definition so it fits every document you use — not just the first one."
+    }
+   ],
+   "help": [
+    "The Six Umbrellas card, page 2 of every casefile. Scarcity is under Umbrella 4, Wealth & Resources. On the essay, write the exact issue, not the umbrella.",
+    "Doc Assist, step 5: tap the Six Umbrellas button to see every issue and what it means.",
+    "The Enduring Issue station in your unit's Arena room: five steps of practice.",
+    "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
+   ]
+  }
+ ]
+}
