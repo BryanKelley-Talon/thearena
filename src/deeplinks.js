@@ -80,7 +80,8 @@ export function linkList(manifest, base, daPacks = {}) {
     if (c.unit0?.published) out.push({ what: `${c.label}: Unit 0, the six skills`, href: `${base}#/${k}/0` })
     for (const u of c.units || []) {
       if (u.published !== true) continue
-      out.push({ what: `${u.number} · ${u.label}: the room`, href: `${base}#/${k}/${u.number}` })
+      const nm = String(u.label).startsWith(String(u.number)) ? u.label : `${u.number} · ${u.label}`
+      out.push({ what: `${nm}: the room`, href: `${base}#/${k}/${u.number}` })
       if (u.brief_ref) out.push({ what: `${u.number}: the unit review`, href: `${base}#/${k}/${u.number}/review` })
       if (u.doc_assist?.published) {
         out.push({ what: `${u.number}: Doc Assist`, href: `${base}#/${k}/${u.number}/doc-assist` })
