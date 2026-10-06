@@ -1,5 +1,5 @@
 {
-  "_README": "The Atlas for us11r. Container: Josh. Every map, caption, source line and walk step: Sam (us11r-curriculum). Ported word for word 2026-10-05 from us11r-curriculum/OUTPUTS/2026-27/Course/atlas/ (atlas-us11r-11.1.json, atlas-us11r-11.2.json, atlas-us11r-walk.json); Sam's port-only fields (_file, _pixels, _commons, _note) dropped, as his cover memo asks. Shape: flashpoint OUTPUTS/atlas/atlas-map-entry-shape-2026-10-05.md.",
+  "_README": "The Atlas for us11r. Container: Josh. Every map, caption, source line and walk step: Sam (us11r-curriculum). Ported word for word 2026-10-05 from us11r-curriculum/OUTPUTS/2026-27/Course/atlas/ (atlas-us11r-11.1.json, atlas-us11r-11.2.json, atlas-us11r-walk.json); Sam's port-only fields (_file, _pixels, _commons, _note) dropped, as his cover memo asks. Shape: flashpoint OUTPUTS/atlas/atlas-map-entry-shape-2026-10-05.md. Card thumbnails (thumb) are 640px copies Josh made from the same pictures, so the lane loads light on school wifi.",
   "course": "us11r",
   "walk": [
     {
@@ -45,6 +45,7 @@
       "title": "Who was already here",
       "caption": "The Native nations of what became the United States, grouped by culture area and language.",
       "image": "atlas/us11r/11.1-A-01.webp",
+      "thumb": "atlas/us11r/thumbs/11.1-A-01.webp",
       "image_alt": "A colored map of the present-day United States titled Indian Tribes, Cultures & Languages. Large capital letters name culture areas: NORTHWEST COAST, PLATEAU, CALIFORNIA, GREAT BASIN, SOUTHWEST, PLAINS, NORTHEAST and SOUTHEAST. Inside them, hundreds of nations are named in smaller type, such as the Nez Perce, Comanche, Shawnee, Delaware, Susquehanna, Cherokee and Natchez. Each color stands for a language family, explained in a key at the lower right.",
       "source": "William C. Sturtevant (Smithsonian Institution), Early Indian Tribes, Culture Areas, and Linguistic Stocks, 1967, in The National Atlas of the United States of America (U.S. Geological Survey). Library of Congress, https://www.loc.gov/item/95682185/. Public domain.",
       "origin": "public-domain",
@@ -58,6 +59,7 @@
       "title": "Three empires, one continent, 1700–1763",
       "caption": "Britain, France and Spain all claimed North America. The colonies were one corner of a fight for empire around the world.",
       "image": "atlas/us11r/11.1-B-01.webp",
+      "thumb": "atlas/us11r/thumbs/11.1-B-01.webp",
       "image_alt": "A world map from a historical atlas titled The Struggle for Colonial Dominion, 1700–1763. Colors show who held what: British possessions in pink, French in green, Spanish in orange, Portuguese in yellow and Dutch in gray. In North America, the British colonies are pink along the Atlantic coast, French lands are green to the north and inland, and Spanish lands are orange to the south and west. Insets show the West Indies and Captain Cook's voyages in the Pacific.",
       "source": "William R. Shepherd, \"The Struggle for Colonial Dominion, 1700–1763,\" Historical Atlas (New York: Henry Holt, 1923), p. 136. Perry-Castañeda Library Map Collection, University of Texas at Austin, via Wikimedia Commons. Public domain.",
       "origin": "public-domain"
@@ -70,6 +72,7 @@
       "title": "The map Britain printed in 1763",
       "caption": "Drawn the year it happened: the new governments Britain set up by the Proclamation of October 7, 1763.",
       "image": "atlas/us11r/11.2-A-01.webp",
+      "thumb": "atlas/us11r/thumbs/11.2-A-01.webp",
       "image_alt": "A black-and-white engraved map from 1763 of eastern North America, from Hudson Bay and Newfoundland down to Florida and the Gulf of Mexico. The colonies are named along the Atlantic coast, among them New York, Pennsylvania, Virginia, the Carolinas and Georgia, with Boston and Philadelphia marked. The new Government of Quebec is outlined along the St. Lawrence River. Inland, the map names Native nations such as the Senecas, Delawares, Cherokees, Creeks and Chickasaws. A decorated frame at the lower right holds the title, and an inset shows East Florida.",
       "source": "Thomas Kitchin, A New Map of the British Dominions in North America, with the Limits of the Governments Annexed Thereto by the Late Treaty of Peace, and Settled by Proclamation, October 7th 1763, engraved for the Annual Register, 1763. Library of Congress Geography and Map Division, https://www.loc.gov/item/75696331/. Public domain.",
       "origin": "public-domain",
@@ -83,6 +86,7 @@
       "title": "The Proclamation Line of 1763",
       "caption": "The colonies to the east of the line, land reserved for Native nations to the west.",
       "image": "atlas/us11r/11.2-A-02.webp",
+      "thumb": "atlas/us11r/thumbs/11.2-A-02.webp",
       "image_alt": "A colored map from a historical atlas showing eastern North America from 1763 to 1775. The Thirteen Colonies are pink along the Atlantic coast. A red line, the Proclamation Line of 1763, runs behind them along the mountains, and the land west of it is gray-blue, labeled in the key as Crown lands reserved for Indians by the proclamation. Spanish Louisiana is yellow in the west, and the Province of Quebec is outlined in the north. An inset at the lower right shows New York and Pennsylvania up close.",
       "source": "William R. Shepherd, \"The British Colonies in North America, 1763–1775,\" Historical Atlas (New York: Henry Holt, 1911). Perry-Castañeda Library Map Collection, University of Texas at Austin; color-enhanced copy on Wikimedia Commons. Public domain.",
       "origin": "public-domain",
@@ -96,6 +100,7 @@
       "title": "Boston, 1775",
       "caption": "A crowded town on a narrow peninsula, five years after the shooting on King Street.",
       "image": "atlas/us11r/11.2-A-03.webp",
+      "thumb": "atlas/us11r/thumbs/11.2-A-03.webp",
       "image_alt": "An engraved map from February 1775 of Boston and its harbor. Boston sits on a small peninsula at the upper left, its streets packed tightly together and joined to the mainland by a thin neck of land. Charlestown, Cambridge, Roxbury and Dorchester surround it. The harbor is full of islands, among them Castle Island with its fort, and small numbers in the water mark its depth. A scale of miles sits at the lower left.",
       "source": "A Plan of the Town and Chart of the Harbour of Boston, Gentleman's Magazine, vol. 45 (January 1775), dated February 1, 1775 on the plate. Library of Congress Geography and Map Division, https://www.loc.gov/item/2001624924/. Public domain.",
       "origin": "public-domain"
@@ -108,6 +113,7 @@
       "title": "The new United States, 1783",
       "caption": "After the peace treaty, the borders reach the Mississippi, and the map still names the Native nations living there.",
       "image": "atlas/us11r/11.2-B-01.webp",
+      "thumb": "atlas/us11r/thumbs/11.2-B-01.webp",
       "image_alt": "A hand-colored map of the United States after the peace treaty of 1783. Colored borders run through the Great Lakes in the north, down the Mississippi River in the west, and along Florida in the south. The states are named along the Atlantic coast, from Massachusetts to Georgia. Between the mountains and the Mississippi, the map names Native nations and lands, such as the Mascoutens and the Illinois Country. A long block of text at the lower right prints articles of the treaty.",
       "source": "John Cary, An Accurate Map of the United States of America, with Part of the Surrounding Provinces, Agreeable to the Treaty of Peace of 1783 (London, 1783). Library of Congress Geography and Map Division, https://www.loc.gov/item/gm71005488/. Public domain.",
       "origin": "public-domain"

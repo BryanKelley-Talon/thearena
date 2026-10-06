@@ -1,6 +1,812 @@
 {
-  "_README": "The Atlas for global10r. Container: Josh. Every map, caption, source line and walk step: Will (global10r-curriculum). Shape: OUTPUTS/atlas/atlas-map-entry-shape-2026-10-05.md. Josh ports word for word; the gate checks format only.",
+  "_README": "The Atlas for global10r. Container: Josh. Every map, caption, source line, walk step and callout: Will (global10r-curriculum). Ported word for word 2026-10-05 from global10r-curriculum/OUTPUTS/2026-27/Course/atlas/ (atlas-global10r-10.1.json, atlas-global10r-10.2.json, atlas-global10r-walk.json); port-only fields (_file, _pixels, _note) dropped; pictures converted to WebP at their own pixel size, so every focus box still lands. Shape: flashpoint OUTPUTS/atlas/atlas-map-entry-shape-2026-10-05.md. Card thumbnails (thumb) are 640px copies Josh made from the same pictures, so the lane loads light on school wifi.",
   "course": "global10r",
-  "walk": [],
-  "maps": []
+  "walk": [
+    {
+      "tag": "TITLE",
+      "say": "Read the title first. It tells you what the map is about, and often when.",
+      "ask": "What is this map about?"
+    },
+    {
+      "tag": "DATE AND MAKER",
+      "say": "Find when it was made and who made it. A map has a maker: someone chose what to color, what to label, and what to leave blank.",
+      "ask": "Who made this map, and when?"
+    },
+    {
+      "tag": "KEY",
+      "say": "Read the key before anything else on the map. Every color, line and symbol means something.",
+      "ask": "What does each color stand for?"
+    },
+    {
+      "tag": "SCALE AND COMPASS",
+      "say": "Find the scale and the compass rose. How big is this place, and which way is north?"
+    },
+    {
+      "tag": "WHERE",
+      "say": "Name the place: which continent, and which part of it? Find one place you already know."
+    },
+    {
+      "tag": "WHAT IT SHOWS",
+      "say": "Now read the map itself. What's big, what's small, what's crowded, and what's left blank?",
+      "ask": "What is the one thing this map wants you to notice?"
+    },
+    {
+      "tag": "ENDURING ISSUE",
+      "say": "Ask what the map puts on the table. Open the Six Umbrellas and name the issue.",
+      "ask": "Which enduring issue does this map raise?"
+    }
+  ],
+  "maps": [
+    {
+      "id": "10.1-A-01",
+      "unit": "10.1",
+      "casefile": "A",
+      "status": "open",
+      "title": "Who was running the world? 1750",
+      "caption": "The states 10.1 starts with, and how far each one reached.",
+      "image_alt": "A world map with no title. Lines of latitude and longitude are marked around the edges: 60°N, 40°N, 20°N, 0°, 20°S and 40°S down the left side, and 180°, 120°W, 60°W, 0°, 60°E, 120°E and 180° along the bottom. The continents are drawn in outline, and four are labeled in small gray letters: NORTH AMERICA, SOUTH AMERICA, AFRICA and AUSTRALIA. Six colored ovals sit on the map, each with a name in capital letters and a line pointing to it. RUSSIAN EMPIRE: a large tan oval centered near 60°N, 60°E. OTTOMAN EMPIRE: a red oval centered near 35°N, 30°E. MUGHAL EMPIRE: a green oval centered near 20°N, 75°E. QING CHINA: a blue oval centered near 35°N, 105°E. TOKUGAWA JAPAN: a small purple oval centered near 35°N, 138°E. A small teal oval near 5°N, 0° carries three names: BENIN · ASHANTI · DAHOMEY.",
+      "source": "Drawn for GS10R by the global10r-curriculum desk on its own blank world outline (original work); the states and their reach follow 10.1 Casefile A, Document 1 and Day 1's What You Need to Know.",
+      "origin": "drawn-new",
+      "supports": "A CONNECTED WORLD",
+      "walk": [
+        {
+          "tag": "WHAT IT SHOWS",
+          "say": "No title on this one: it was drawn for this class. Each colored oval is one state in 1750."
+        },
+        {
+          "tag": "RUSSIAN EMPIRE",
+          "say": "The biggest oval. Russia stretches across two continents.",
+          "ask": "Was the biggest state the strongest one?",
+          "focus": [
+            1420,
+            190,
+            660,
+            320
+          ]
+        },
+        {
+          "tag": "MUGHAL EMPIRE",
+          "say": "Enormous, and coming apart by 1750.",
+          "focus": [
+            1660,
+            580,
+            170,
+            160
+          ]
+        },
+        {
+          "tag": "TOKUGAWA JAPAN",
+          "say": "Small, and gripped tight.",
+          "focus": [
+            2030,
+            490,
+            110,
+            140
+          ]
+        },
+        {
+          "tag": "BENIN · ASHANTI · DAHOMEY",
+          "say": "Three West African kingdoms. A small oval doesn't mean a small story.",
+          "focus": [
+            1250,
+            705,
+            140,
+            70
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.1-A-01.webp",
+      "thumb": "atlas/global10r/thumbs/10.1-A-01.webp"
+    },
+    {
+      "id": "10.1-A-02",
+      "unit": "10.1",
+      "casefile": "A",
+      "status": "open",
+      "title": "The world as a British atlas drew it, 1772",
+      "caption": "Europe's empires in color, most of Asia left blank. Whose eyes are you looking through?",
+      "image_alt": "An old printed world map. In the lower left, the title: THE WORLD (1772). The oceans are labeled ARCTIC OCEAN, PACIFIC OCEAN, ATLANTIC OCEAN and INDIAN OCEAN, and the continents NORTH AMERICA, SOUTH AMERICA, AFRICA, EUROPE, ASIA and AUSTRALIA. A key in the lower right reads: British Possessions … Red · French do. … Blue · Portuguese … Yellow · Spanish … Green · Dutch … Orange. Color covers most of South America and Central America, parts of eastern North America, and small countries in western Europe. Along the coasts of Africa, India, Southeast Asia and the islands nearby, small places are colored or underlined in color, with names such as Gold Coast, Bombay, Goa, Madras, Ceylon, Java, Macao and Philippines. Across the rest of Asia, the coastlines and rivers are drawn in black outline with no color and few names. Small print along the bottom reads: Ludlow's War of American Independence, and Longmans, Green & Co., London, New York & Bombay.",
+      "source": "“The World (1772),” in C. Colbeck, The Public Schools Historical Atlas, Longmans, Green & Co., London, New York and Bombay, 1905, plate 76 (public domain). University of Texas Libraries, Perry-Castañeda Map Collection.",
+      "origin": "public-domain",
+      "supports": "POWER & ITS ABUSE",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "The World (1772). The date is the year the map shows, not the year it was printed.",
+          "focus": [
+            70,
+            800,
+            260,
+            80
+          ]
+        },
+        {
+          "tag": "DATE AND MAKER",
+          "say": "Printed in London in 1905 by Longmans, Green & Co., a British publisher.",
+          "ask": "Who made this map, and for whom?",
+          "focus": [
+            460,
+            1000,
+            380,
+            30
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "Five colors, five European empires: British, French, Portuguese, Spanish, Dutch.",
+          "focus": [
+            580,
+            845,
+            210,
+            105
+          ]
+        },
+        {
+          "tag": "THE AMERICAS",
+          "say": "Nearly all of the Americas is colored. Europe claims it.",
+          "focus": [
+            225,
+            295,
+            310,
+            450
+          ]
+        },
+        {
+          "tag": "ASIA",
+          "say": "Asia is almost blank. Was nothing there?",
+          "ask": "Whose eyes are you looking through?",
+          "focus": [
+            700,
+            150,
+            590,
+            370
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.1-A-02.webp",
+      "thumb": "atlas/global10r/thumbs/10.1-A-02.webp"
+    },
+    {
+      "id": "10.1-A-03",
+      "unit": "10.1",
+      "casefile": "A",
+      "status": "open",
+      "title": "Europe about 1740",
+      "caption": "Europe as 10.1 meets it: kingdoms held by a few ruling families.",
+      "image_alt": "A color map titled “Europe about 1740,” from a 1923 historical atlas. Land is colored by the family that ruled it: the House of Bourbon (France, Spain and the Kingdom of the Two Sicilies), the House of Hapsburg-Lorraine (Austria, Bohemia and the Kingdom of Hungary), the Kingdom of Prussia and the House of Savoy. The Russian Empire fills the east, the Kingdom of Poland sits between Prussia and Russia, and the Ottoman Empire holds the Balkans. An inset in the upper left shows the growth of Savoy, and a key sits in the lower right.",
+      "source": "William R. Shepherd, “Europe about 1740,” Historical Atlas, Henry Holt and Company, 1923 (public domain). University of Texas Libraries, Perry-Castañeda Library Map Collection, https://maps.lib.utexas.edu/maps/historical/shepherd/europe_1740.jpg",
+      "origin": "public-domain",
+      "supports": "POWER & ITS ABUSE",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "Europe about 1740. The map was printed in 1923.",
+          "focus": [
+            900,
+            0,
+            520,
+            70
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "The key colors land by ruling family: Bourbon, Hapsburg, Prussia, Savoy. In 1740, land belonged to families.",
+          "focus": [
+            1930,
+            1460,
+            320,
+            200
+          ]
+        },
+        {
+          "tag": "FRANCE",
+          "say": "The Kingdom of France. Paris, and Versailles just outside it, where Louis XIV kept his nobles.",
+          "focus": [
+            580,
+            830,
+            420,
+            410
+          ]
+        },
+        {
+          "tag": "THE HAPSBURG LANDS",
+          "say": "Austria, Bohemia and Hungary: one family, many peoples.",
+          "focus": [
+            1000,
+            880,
+            720,
+            380
+          ]
+        },
+        {
+          "tag": "OTTOMAN EMPIRE",
+          "say": "The Ottoman Empire still holds the Balkans.",
+          "focus": [
+            1500,
+            1200,
+            700,
+            450
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.1-A-03.webp",
+      "thumb": "atlas/global10r/thumbs/10.1-A-03.webp"
+    },
+    {
+      "id": "10.1-A-04",
+      "unit": "10.1",
+      "casefile": "A",
+      "status": "open",
+      "title": "India, 1700–1792",
+      "caption": "How far the Mughal Empire reached in 1700, and who picked up the pieces.",
+      "image_alt": "A color map titled “India, 1700–1792,” from a 1923 historical atlas. A dotted yellow line marks the approximate limit of the Mogul (Mughal) Empire in 1700, around nearly all of the subcontinent. Inside it, the map names the states that rose as the empire broke apart, among them the Maratha lands, Rajputana, Oudh, Bengal, the Nizam's dominions and Mysore. Shades of pink and red mark British gains under Clive, Hastings and Cornwallis, starting in Bengal in the northeast, and small colored names on the coasts mark British and French trading posts such as Bombay, Madras, Calcutta and Pondicherry. A key sits in the lower right.",
+      "source": "William R. Shepherd, “India, 1700–1792,” Historical Atlas, Henry Holt and Company, 1923 (public domain). University of Texas Libraries, Perry-Castañeda Library Map Collection, https://maps.lib.utexas.edu/maps/historical/shepherd/india_shepherd_1923.jpg",
+      "origin": "public-domain",
+      "supports": "POWER & ITS ABUSE",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "India, 1700 to 1792: almost a century in one map.",
+          "focus": [
+            560,
+            40,
+            420,
+            110
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "The dotted yellow line is the edge of the Mughal Empire in 1700. The pinks and reds are British gains, from the 1750s to the 1790s.",
+          "focus": [
+            960,
+            1400,
+            500,
+            600
+          ]
+        },
+        {
+          "tag": "THE MUGHAL REACH",
+          "say": "Follow the dotted yellow line: nearly the whole subcontinent in 1700. Inside it, new states are breaking away.",
+          "focus": [
+            100,
+            380,
+            1250,
+            1000
+          ]
+        },
+        {
+          "tag": "BENGAL",
+          "say": "Bengal, in the northeast: where British rule begins, in the 1750s.",
+          "focus": [
+            1000,
+            820,
+            350,
+            250
+          ]
+        },
+        {
+          "tag": "THE COASTS",
+          "say": "Trading posts on the coasts: Bombay and Madras for the British, Pondicherry for the French. Trade comes first. Rule follows.",
+          "focus": [
+            330,
+            1280,
+            560,
+            400
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.1-A-04.webp",
+      "thumb": "atlas/global10r/thumbs/10.1-A-04.webp"
+    },
+    {
+      "id": "10.1-A-05",
+      "unit": "10.1",
+      "casefile": "A",
+      "status": "open",
+      "title": "The Ottoman Empire, 1481–1683",
+      "caption": "Two hundred years of Ottoman growth, stopped at Vienna in 1683.",
+      "image_alt": "A color map titled “The Ottoman Empire, 1481–1683,” from a 1923 historical atlas. A key in the lower left colors the empire by when the land was won: the empire in 1481, lands added up to 1520 under Selim I, lands added under Suleiman the Magnificent (1520–1566), and lands added up to 1683. The empire wraps around the eastern Mediterranean and the Black Sea, from Hungary and the Balkans through Anatolia, Syria and Mesopotamia to Egypt. Vienna sits just past its northwest edge, and Constantinople sits on the strait between Europe and Asia.",
+      "source": "William R. Shepherd, “The Ottoman Empire, 1481–1683,” Historical Atlas, Henry Holt and Company, 1923 (public domain). University of Texas Libraries, Perry-Castañeda Library Map Collection, https://maps.lib.utexas.edu/maps/historical/shepherd/ottoman_empire_1481-1683.jpg",
+      "origin": "public-domain",
+      "supports": "CONFLICT",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "The title runs up the left edge: the Ottoman Empire, 1481 to 1683.",
+          "focus": [
+            0,
+            280,
+            90,
+            720
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "Four colors, four eras of conquest, from 1481 to 1683.",
+          "focus": [
+            110,
+            995,
+            500,
+            280
+          ]
+        },
+        {
+          "tag": "CONSTANTINOPLE",
+          "say": "The capital, where Europe meets Asia.",
+          "focus": [
+            790,
+            430,
+            180,
+            120
+          ]
+        },
+        {
+          "tag": "VIENNA",
+          "say": "Just past the edge. In 1683 the Ottomans tried to take it, and failed.",
+          "focus": [
+            300,
+            150,
+            200,
+            140
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.1-A-05.webp",
+      "thumb": "atlas/global10r/thumbs/10.1-A-05.webp"
+    },
+    {
+      "id": "10.2-B-01",
+      "unit": "10.2",
+      "casefile": "B",
+      "status": "open",
+      "title": "Central Europe in 1812",
+      "caption": "Napoleon's Europe: what France ruled, and what it controlled.",
+      "image_alt": "A color map titled “Central Europe in 1812,” from a 1923 historical atlas. It runs from the North Sea and the edge of France in the west to Prussia and the Duchy of Warsaw in the east, and from Denmark down to the Kingdom of Italy and the Adriatic Sea. Colors separate France from the states under Napoleon's control, among them the Kingdom of Westphalia, Bavaria, Württemberg, Saxony and the Duchy of Warsaw. An inset in the lower right, “Europe in 1812,” shows the whole continent: the Empire of the French, the states under Napoleon's control, the states allied with him, and the independent states.",
+      "source": "William R. Shepherd, “Central Europe in 1812,” Historical Atlas, Henry Holt and Company, 1923 (public domain). University of Texas Libraries, Perry-Castañeda Library Map Collection, https://maps.lib.utexas.edu/maps/historical/shepherd/central_europe_1812.jpg",
+      "origin": "public-domain",
+      "supports": "POWER & ITS ABUSE",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "Central Europe in 1812, the year Napoleon marched on Russia.",
+          "focus": [
+            700,
+            0,
+            460,
+            50
+          ]
+        },
+        {
+          "tag": "THE SMALL MAP",
+          "say": "Start with the inset: all of Europe in 1812. France, the states it controls, its allies, and the few left independent.",
+          "focus": [
+            1265,
+            1045,
+            575,
+            430
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "On the big map, one color is France and another is the states under Napoleon's control.",
+          "focus": [
+            1500,
+            760,
+            340,
+            100
+          ]
+        },
+        {
+          "tag": "THE STATES BETWEEN",
+          "say": "Westphalia, Bavaria, Württemberg, Saxony: German states under Napoleon's control.",
+          "focus": [
+            550,
+            450,
+            500,
+            600
+          ]
+        },
+        {
+          "tag": "DUCHY OF WARSAW",
+          "say": "A Polish state Napoleon created, on Russia's doorstep.",
+          "focus": [
+            1200,
+            460,
+            440,
+            290
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.2-B-01.webp",
+      "thumb": "atlas/global10r/thumbs/10.2-B-01.webp"
+    },
+    {
+      "id": "10.2-C-01",
+      "unit": "10.2",
+      "casefile": "C",
+      "status": "open",
+      "title": "The peoples of Austria-Hungary, 1911",
+      "caption": "Ten peoples inside one empire's border, each a possible nation.",
+      "image_alt": "A color map. Its title is printed sideways down the right edge: “Distribution of Races in Austria-Hungary.” The map covers central and southeastern Europe. A heavy black line marks the border of Austria-Hungary, and the land inside it is filled with colors. Land outside the border is mostly left white. Inside the border, large capital letters name regions, including BOHEMIA, MORAVIA, GALICIA, AUSTRIA, HUNGARY, TRANSYLVANIA, CROATIA-SLAVONIA, BOSNIA, DALMATIA and TYROL. Cities marked inside include Vienna, Budapest, Prague and Serajevo. Outside the border, the map names GERMAN EMPIRE and RUSSIA to the north, ITALY to the southwest, and SERVIA, RUMANIA, BULGARIA and MONTENEGRO to the southeast. The ADRIATIC SEA is in the lower left. Many areas have spots and patches of another color inside them. The legend in the lower left lists ten colors: Germans (pink), Magyars (green), Rumanians (orange), Croats and Servians (olive), Ruthenians (yellow-green), Czechs (light blue), Slovaks (gray-green), Poles (brown), Slovenes (gray) and Italians (yellow). A bracket groups six of them, from Croats and Servians down to Slovenes, under the word Slavs. Under the legend: Scale 1:7 500 000, with a scale bar in miles. Grid letters and numbers run along the edges.",
+      "source": "William R. Shepherd, “Distribution of Races in Austria-Hungary,” Historical Atlas, Henry Holt, 1911 (public domain). 10.2 Casefile C, Document 7.",
+      "origin": "public-domain",
+      "supports": "IDENTITY & NATIONALISM",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "The title runs down the right edge. “Races” in 1911 meant groups of people who spoke the same language.",
+          "focus": [
+            1465,
+            230,
+            50,
+            700
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "Ten colors, ten peoples. Six of them are bracketed together as Slavs.",
+          "focus": [
+            50,
+            810,
+            240,
+            290
+          ]
+        },
+        {
+          "tag": "VIENNA",
+          "say": "The capital. Germans ruled from here.",
+          "focus": [
+            490,
+            340,
+            170,
+            110
+          ]
+        },
+        {
+          "tag": "HUNGARY",
+          "say": "The Magyars, or Hungarians. In 1867 the emperor split power with them.",
+          "focus": [
+            655,
+            385,
+            350,
+            340
+          ]
+        },
+        {
+          "tag": "BOSNIA",
+          "say": "Croats and Serbs in the south. Sarajevo is here: remember it when we get to World War I.",
+          "focus": [
+            515,
+            655,
+            300,
+            420
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.2-C-01.webp",
+      "thumb": "atlas/global10r/thumbs/10.2-C-01.webp"
+    },
+    {
+      "id": "10.2-C-02",
+      "unit": "10.2",
+      "casefile": "C",
+      "status": "open",
+      "title": "Central Europe, 1815–1866",
+      "caption": "Europe after Napoleon: Austria, Prussia, and the small German states between them.",
+      "image_alt": "A color map titled “Central Europe, 1815–1866,” from a 1923 historical atlas. A key in the upper left colors the Empire of Austria and the Kingdom of Prussia; the other states of the German Confederation get a lighter surface color. Prussia stretches across the north in two pieces, from the Rhine to East Prussia. Austria holds the south and east: Bohemia, Austria, Hungary, Galicia and Lombardy in northern Italy. Dozens of smaller German states sit between the two powers, among them Hanover, Saxony, Bavaria and Württemberg.",
+      "source": "William R. Shepherd, “Central Europe, 1815–1866,” Historical Atlas, Henry Holt and Company, 1923 (public domain). University of Texas Libraries, Perry-Castañeda Library Map Collection, https://maps.lib.utexas.edu/maps/historical/shepherd/central_europe_1815_1866.jpg",
+      "origin": "public-domain",
+      "supports": "IDENTITY & NATIONALISM",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "Central Europe, 1815 to 1866: after Napoleon, before Germany unites.",
+          "focus": [
+            670,
+            0,
+            560,
+            55
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "Two colors matter: the Empire of Austria and the Kingdom of Prussia.",
+          "focus": [
+            40,
+            60,
+            330,
+            290
+          ]
+        },
+        {
+          "tag": "PRUSSIA",
+          "say": "Prussia comes in two pieces, east and west.",
+          "focus": [
+            900,
+            150,
+            650,
+            600
+          ]
+        },
+        {
+          "tag": "AUSTRIA",
+          "say": "Austria holds the south and east, and rules many peoples who aren't German.",
+          "focus": [
+            820,
+            760,
+            700,
+            500
+          ]
+        },
+        {
+          "tag": "THE STATES BETWEEN",
+          "say": "Dozens of small German states: Hanover, Saxony, Bavaria, Württemberg.",
+          "ask": "Who will unite them, and how?",
+          "focus": [
+            450,
+            450,
+            450,
+            900
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.2-C-02.webp",
+      "thumb": "atlas/global10r/thumbs/10.2-C-02.webp"
+    },
+    {
+      "id": "10.2-C-03",
+      "unit": "10.2",
+      "casefile": "C",
+      "status": "open",
+      "title": "The Unification of Italy, 1815–1870",
+      "caption": "One kingdom, piece by piece: the year each region joined.",
+      "image_alt": "A color map titled “The Unification of Italy, 1815–1870,” from a 1923 historical atlas. Dates mark the year each region joined the Kingdom of Sardinia, which became the Kingdom of Italy in 1861: Lombardy in 1859; Parma, Modena, Tuscany and the Romagna in 1860; the Kingdom of the Two Sicilies in the south in 1860; Venetia in 1866; and Rome in 1870. Savoy and Nice, in the northwest, go to France in 1860. Piedmont and the island of Sardinia, where the kingdom began, are colored together.",
+      "source": "William R. Shepherd, “The Unification of Italy, 1815–1870,” Historical Atlas, Henry Holt and Company, 1923 (public domain). University of Texas Libraries, Perry-Castañeda Library Map Collection, https://maps.lib.utexas.edu/maps/historical/shepherd/italy_unification_1815_1870.jpg",
+      "origin": "public-domain",
+      "supports": "IDENTITY & NATIONALISM",
+      "walk": [
+        {
+          "tag": "TITLE AND KEY",
+          "say": "The dates on the map are the years each region joined the kingdom.",
+          "focus": [
+            670,
+            10,
+            300,
+            160
+          ]
+        },
+        {
+          "tag": "WHERE IT STARTS",
+          "say": "The Kingdom of Sardinia, ruled from Turin in Piedmont. Cavour's kingdom.",
+          "focus": [
+            80,
+            80,
+            200,
+            220
+          ]
+        },
+        {
+          "tag": "1859 AND 1860",
+          "say": "Lombardy in 1859. Then the central states and the whole south in 1860.",
+          "focus": [
+            200,
+            115,
+            330,
+            350
+          ]
+        },
+        {
+          "tag": "1866",
+          "say": "Venetia joins.",
+          "focus": [
+            400,
+            40,
+            170,
+            170
+          ]
+        },
+        {
+          "tag": "1870",
+          "say": "Rome is last.",
+          "focus": [
+            460,
+            370,
+            160,
+            240
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.2-C-03.webp",
+      "thumb": "atlas/global10r/thumbs/10.2-C-03.webp"
+    },
+    {
+      "id": "10.2-C-04",
+      "unit": "10.2",
+      "casefile": "C",
+      "status": "open",
+      "title": "The Unification of Germany, 1815–1871",
+      "caption": "Germany united its trade before it united its government.",
+      "image_alt": "A two-part color map titled “The Unification of Germany, 1815–1871,” from a 1923 historical atlas. The top map, “Rise of the German Zollverein (Customs-Union) up to 1834,” shows Prussia's customs union and the rival unions of the southern and central German states. The bottom map, “The German Zollverein (Customs-Union) after 1834,” shows the union spreading across nearly all of Germany by 1872, with dates for Hanover, Schleswig-Holstein, Mecklenburg and Alsace-Lorraine. Prussia stretches across the north of both maps.",
+      "source": "William R. Shepherd, “The Unification of Germany, 1815–1871,” Historical Atlas, Henry Holt and Company, 1923 (public domain). University of Texas Libraries, Perry-Castañeda Library Map Collection, https://maps.lib.utexas.edu/maps/historical/shepherd/german_unified_1815_1871.jpg",
+      "origin": "public-domain",
+      "supports": "IDENTITY & NATIONALISM",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "Two maps on one page: the top one is up to 1834, the bottom one after.",
+          "focus": [
+            120,
+            0,
+            760,
+            45
+          ]
+        },
+        {
+          "tag": "TOP MAP",
+          "say": "A customs union, the Zollverein, lets goods cross the borders inside it without a tax. Prussia leads one.",
+          "focus": [
+            560,
+            575,
+            410,
+            200
+          ]
+        },
+        {
+          "tag": "PRUSSIA",
+          "say": "Prussia, across the north, with Berlin.",
+          "focus": [
+            380,
+            200,
+            550,
+            500
+          ]
+        },
+        {
+          "tag": "BOTTOM MAP",
+          "say": "After 1834 the union spreads to almost all of Germany.",
+          "ask": "Why would trade come before government?",
+          "focus": [
+            615,
+            1300,
+            370,
+            210
+          ]
+        },
+        {
+          "tag": "ALSACE-LORRAINE",
+          "say": "Taken from France in 1871.",
+          "focus": [
+            150,
+            1270,
+            140,
+            190
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.2-C-04.webp",
+      "thumb": "atlas/global10r/thumbs/10.2-C-04.webp"
+    },
+    {
+      "id": "10.2-C-05",
+      "unit": "10.2",
+      "casefile": "C",
+      "status": "open",
+      "title": "The peoples of the Balkans and Asia Minor",
+      "caption": "Peoples in patches: why the Balkans were hard to divide into nations.",
+      "image_alt": "A color map titled “Distribution of Races in the Balkan Peninsula and Asia Minor,” from a 1923 historical atlas. A key in the upper right colors the peoples: Turks, Rumanians, Bulgarians, Croats and Serbians, Greeks, Albanians, Armenians, Kurds and Arabs. A note along the bottom says the map shows the situation about 1910, with changes after the war of 1914–1918 marked in red. In the Balkans the colors crowd together in small patches, from Bosnia and Serbia to Bulgaria, Albania and Greece, while Turks fill most of Asia Minor.",
+      "source": "William R. Shepherd, “Distribution of Races in the Balkan Peninsula and Asia Minor,” Historical Atlas, Henry Holt and Company, 1923 (public domain). University of Texas Libraries, Perry-Castañeda Library Map Collection, https://maps.lib.utexas.edu/maps/historical/shepherd/races_balkan_shepherd_1923.jpg",
+      "origin": "public-domain",
+      "supports": "IDENTITY & NATIONALISM",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "The title runs down the right edge.",
+          "focus": [
+            1190,
+            10,
+            45,
+            810
+          ]
+        },
+        {
+          "tag": "THE BOTTOM LINE",
+          "say": "Read it first: the colors show about 1910. The red lines are changes after World War I.",
+          "focus": [
+            50,
+            835,
+            700,
+            30
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "Nine peoples, nine colors.",
+          "focus": [
+            950,
+            30,
+            230,
+            230
+          ]
+        },
+        {
+          "tag": "THE BALKANS",
+          "say": "The colors crowd and mix. Draw one border here, and someone ends up on the wrong side.",
+          "ask": "Where would you draw the line?",
+          "focus": [
+            30,
+            30,
+            590,
+            380
+          ]
+        },
+        {
+          "tag": "CONSTANTINOPLE",
+          "say": "The city on the straits between the Black Sea and the Mediterranean.",
+          "focus": [
+            505,
+            280,
+            120,
+            90
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "image": "atlas/global10r/10.2-C-05.webp",
+      "thumb": "atlas/global10r/thumbs/10.2-C-05.webp"
+    }
+  ]
 }

@@ -187,10 +187,11 @@ export function AtlasViewer({ map, onClose }) {
   const scale = fit * view.z
 
   // Keep the map from sliding off: at least a quarter of the stage stays covered.
-  const bound = useCallback((v) => {
+  // A walk step frames tighter: the map's edge stops at the stage's edge, so no dark gap opens beside a callout.
+  const bound = useCallback((v, slack = 0.25) => {
     if (!nat) return v
     const w = nat.w * fit * v.z, h = nat.h * fit * v.z
-    const mx = Math.max(0, (w - box.w) / 2 + box.w * 0.25), my = Math.max(0, (h - box.h) / 2 + box.h * 0.25)
+    const mx = Math.max(0, (w - box.w) / 2 + (w > box.w ? box.w * slack : 0)), my = Math.max(0, (h - box.h) / 2 + (h > box.h ? box.h * slack : 0))
     return { z: v.z, x: clamp(v.x, -mx, mx), y: clamp(v.y, -my, my) }
   }, [nat, fit, box])
 
@@ -215,7 +216,7 @@ export function AtlasViewer({ map, onClose }) {
     if (!nat || !f) { glideView({ z: 1, x: 0, y: 0 }); return }
     const [fx, fy, fw, fh] = f
     const z = clamp(Math.min(box.w / (fw * fit), box.h / (fh * fit)) * 0.55, MIN_Z, 4)
-    glideView(bound({ z, x: -(fx + fw / 2 - nat.w / 2) * fit * z, y: -(fy + fh / 2 - nat.h / 2) * fit * z }))
+    glideView(bound({ z, x: -(fx + fw / 2 - nat.w / 2) * fit * z, y: -(fy + fh / 2 - nat.h / 2) * fit * z }, 0))
   }
   const goStep = i => { setWalkAt(i); if (i == null) glideView({ z: 1, x: 0, y: 0 }); else frame(walk[i]?.focus) }
   const focus = walkAt != null ? walk[walkAt]?.focus : null
@@ -536,7 +537,7 @@ export const ATLAS_STYLES = `
 .atlas-card .flag{align-self:flex-start}
 
 .atlas-viewer{position:fixed;inset:0;z-index:1000;background:var(--canvas);color:var(--white);
-  display:grid;grid-template-rows:auto 1fr auto;font-family:'Outfit',system-ui,sans-serif}
+  display:grid;grid-template-rows:auto minmax(0,1fr) auto;grid-template-columns:minmax(0,1fr);font-family:'Outfit',system-ui,sans-serif}
 .atlas-bar{display:flex;align-items:center;gap:12px 16px;flex-wrap:wrap;padding:10px 16px;border-bottom:1px solid var(--edge);background:#0E1830}
 .atlas-title{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.02em;margin:0;flex:1 1 260px;
   font-size:clamp(22px,2.1vw,46px);line-height:1.1;color:var(--white)}
@@ -549,8 +550,9 @@ export const ATLAS_STYLES = `
 .atlas-close{border-color:var(--gold)}
 .atlas-viewer :focus-visible{outline:3px solid var(--gold-lit);outline-offset:2px}
 
-.atlas-body{display:grid;grid-template-columns:1fr;grid-template-rows:1fr auto;min-height:0}
-@media (min-width:1100px){ .atlas-body.with-controls{grid-template-columns:1fr minmax(280px,22vw);grid-template-rows:1fr} }
+.atlas-body{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;min-height:0;min-width:0}
+.atlas-bar,.atlas-foot,.atlas-controls,.atlas-stage{min-width:0}
+@media (min-width:1100px){ .atlas-body.with-controls{grid-template-columns:minmax(0,1fr) minmax(280px,22vw);grid-template-rows:minmax(0,1fr)} }
 .atlas-stage{position:relative;overflow:hidden;touch-action:none;cursor:grab;background:#070C16;min-height:0}
 .atlas-stage:active{cursor:grabbing}
 .atlas-plane{position:absolute;left:50%;top:50%;transform-origin:center center;will-change:transform}
@@ -581,8 +583,8 @@ export const ATLAS_STYLES = `
 .atlas-chip[aria-pressed=true] .atlas-check{background:var(--gold);border-color:var(--gold)}
 
 .atlas-foot{padding:10px 16px 12px;border-top:1px solid var(--edge);background:#0E1830}
-.atlas-caption{margin:0 0 4px;font-size:clamp(16px,1.25vw,28px);line-height:1.4;color:var(--white)}
-.atlas-sources{list-style:none;margin:0;padding:0;font-size:clamp(13px,.9vw,19px);line-height:1.45;color:#B7C3D6}
+.atlas-caption{overflow-wrap:anywhere;margin:0 0 4px;font-size:clamp(16px,1.25vw,28px);line-height:1.4;color:var(--white)}
+.atlas-sources{overflow-wrap:anywhere;list-style:none;margin:0;padding:0;font-size:clamp(13px,.9vw,19px);line-height:1.45;color:#B7C3D6}
 .atlas-sources b{color:var(--gold);font-weight:600}
 
 @media (max-width:600px){
@@ -593,13 +595,13 @@ export const ATLAS_STYLES = `
   .atlas-btn .atlas-lbl{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
   .atlas-btn span[aria-hidden]{font-size:20px}
   .atlas-controls{max-height:30vh;padding:10px}
-  .atlas-foot{padding:8px 10px 10px}
+  .atlas-foot{padding:8px 10px 10px;max-height:24vh;overflow:auto}
 }
 @media (max-height:500px) and (orientation:landscape){
   .atlas-bar{padding:6px 10px}
   .atlas-title{font-size:18px}
   .atlas-btn{min-height:40px;padding:5px 10px;font-size:14px}
-  .atlas-body.with-controls{grid-template-columns:1fr minmax(220px,34vw);grid-template-rows:1fr}
+  .atlas-body.with-controls{grid-template-columns:minmax(0,1fr) minmax(220px,34vw);grid-template-rows:minmax(0,1fr)}
   .atlas-controls{border-top:none;border-left:1px solid var(--edge);max-height:none}
   .atlas-foot{padding:6px 10px}
   .atlas-caption{font-size:14px}
