@@ -53,7 +53,7 @@ export const PAPER = {
   yellow: { name: 'Yellow', sheet: '#FFF4B0', tint: '#FFE45C' },
   pink:   { name: 'Pink',   sheet: '#FBD3E0', tint: '#FF8DB4' },
   blue:   { name: 'Blue',   sheet: '#CFE6F8', tint: '#6DB5F0' },
-  salmon: { name: 'Salmon', sheet: '#FBD0BF', tint: '#FF9A78' },
+  coral:  { name: 'Coral',  sheet: '#FBD0BF', tint: '#FF9A78' },   // BK 10:54: "Coral is fine" (11.1 B, coral/salmon paper)
   green:  { name: 'Green',  sheet: '#D3EFCC', tint: '#7FD66E' },
 }
 export const paperOf = (map, cfId) => PAPER[String(map?.[cfId] || map?.[String(cfId).toUpperCase()] || '').toLowerCase()] || null
