@@ -727,7 +727,9 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
           if (!mapSize) af(`${w}: a course-wide step can't point at a spot; only a map's own walk can.`)
           else if (!Array.isArray(st.focus) || st.focus.length !== 4 || st.focus.some(n => typeof n !== 'number' || n < 0)) af(`${w}: focus must be [x, y, w, h] in map pixels.`)
         }
-        if (ATLAS_SCORE.test(`${st.tag} ${st.say} ${st.ask || ''}`)) af(`${w}: something reads like a score.`)
+        if (ATLAS_SCORE.test(`${st.tag} ${st.say} ${st.ask || ''} ${st.answer || ''}`)) af(`${w}: something reads like a score.`)
+        if (st.answer_focus != null && (!mapSize || !Array.isArray(st.answer_focus) || st.answer_focus.length !== 4)) af(`${w}: answer_focus must be [x, y, w, h] on a map's own walk.`)
+        if (mapSize && st.ask && !st.answer) warn(f, `${w}: asks a question with no answer (BK 23:38: the Atlas answers its questions).`)
       }
     }
     checkWalk(d.walk, 'course', false)

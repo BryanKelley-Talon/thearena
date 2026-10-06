@@ -52,6 +52,8 @@ export const ATLAS_WORDS = {
   back: 'Back',
   next: 'Next',
   done: 'Done',
+  // BK 23:38: "my only ask is that the atlas actually answers questions about the map." Word proposed 23:4x.
+  showMe: 'Show me',
 }
 
 const reducedMotion = () =>
@@ -174,6 +176,7 @@ export function AtlasViewer({ map, refs, onClose }) {
   const [drawn, setDrawn] = useState({})          // route id → run count (0 = not drawn)
   const [full, setFull] = useState(false)
   const [walkAt, setWalkAt] = useState(null)      // null = not walking; else the step index
+  const [shown, setShown] = useState(false)         // this step's answer is showing
   const [glide, setGlide] = useState(false)       // a programmatic move eases; a drag never does
   const walk = map.walk || []
   const anim = useRef(0)
@@ -219,8 +222,11 @@ export function AtlasViewer({ map, refs, onClose }) {
     const z = clamp(Math.min(box.w / (fw * fit), box.h / (fh * fit)) * 0.55, MIN_Z, 4)
     glideView(bound({ z, x: -(fx + fw / 2 - nat.w / 2) * fit * z, y: -(fy + fh / 2 - nat.h / 2) * fit * z }, 0))
   }
-  const goStep = i => { setWalkAt(i); if (i == null) glideView({ z: 1, x: 0, y: 0 }); else frame(walk[i]?.focus) }
-  const focus = walkAt != null ? walk[walkAt]?.focus : null
+  const goStep = i => { setWalkAt(i); setShown(false); if (i == null) glideView({ z: 1, x: 0, y: 0 }); else frame(walk[i]?.focus) }
+  // Show me: the desk's answer appears, and the map glides to where the answer is (answer_focus),
+  // or stays on the step's own spot. The kid tries first; one tap shows it.
+  const showAnswer = () => { setShown(true); const f = walk[walkAt]?.answer_focus; if (f) frame(f) }
+  const focus = walkAt != null ? ((shown && walk[walkAt]?.answer_focus) || walk[walkAt]?.focus) : null
   const pan = (dx, dy) => setView(v => bound({ ...v, x: v.x + dx, y: v.y + dy }))
 
   // The stage's size, kept current through rotation, full screen and resizes.
@@ -441,6 +447,9 @@ export function AtlasViewer({ map, refs, onClose }) {
                     <h3 className="atlas-walk-tag">{walk[walkAt].tag}</h3>
                     <p className="atlas-walk-say">{walk[walkAt].say}</p>
                     {walk[walkAt].ask && <p className="atlas-walk-ask">{walk[walkAt].ask}</p>}
+                    {walk[walkAt].answer && (shown
+                      ? <p className="atlas-walk-answer" role="status">{walk[walkAt].answer}</p>
+                      : <button type="button" className="atlas-btn atlas-showme" onClick={showAnswer}>{ATLAS_WORDS.showMe}</button>)}
                     <RefButtons text={[walk[walkAt].tag, walk[walkAt].say, walk[walkAt].ask].join(' ')} refs={refs} idBase="atlas-ref" />
                     <div className="atlas-walk-nav">
                       <button type="button" className="atlas-btn" disabled={walkAt === 0} onClick={() => goStep(walkAt - 1)}>{ATLAS_WORDS.back}</button>
@@ -527,6 +536,9 @@ export const ATLAS_STYLES = `
 .atlas-dots li.sel{background:var(--gold);border-color:var(--gold);transform:scale(1.25)}
 .atlas-walk-tag{margin:2px 0 0;font-family:'Barlow Condensed',sans-serif;font-size:clamp(22px,1.6vw,36px);line-height:1.1;color:var(--white)}
 .atlas-walk-say{margin:0;font-size:clamp(16px,1.15vw,26px);line-height:1.45;color:var(--white)}
+.atlas-walk-answer{margin:0;padding:8px 12px;border-left:5px solid #3FB37A;border-radius:8px;background:color-mix(in srgb,var(--canvas) 40%,var(--card));
+  color:var(--white);font-size:clamp(16px,1.1vw,25px);line-height:1.5}
+.atlas-showme{align-self:flex-start;border-color:var(--gold)}
 .atlas-walk-ask{margin:0;font-size:clamp(15px,1.05vw,24px);line-height:1.45;color:var(--gold-lit);font-style:italic}
 .atlas-walk-nav{display:flex;gap:8px;justify-content:space-between}
 .atlas-walk-nav .btn-now,.atlas-walk-start{font-size:clamp(16px,1.05vw,23px);min-height:44px;padding:8px 18px}
