@@ -58,7 +58,7 @@ export function useThreads(ref) {
   return data
 }
 
-export function ThreadsLane({ course }) {
+export function ThreadsLane({ course, maps, onOpenMap }) {
   const entry = (course.threads || [])[0]
   const data = useThreads(entry?.content_ref)
   const [open, setOpen] = useState(null)       // stop id
@@ -82,7 +82,8 @@ export function ThreadsLane({ course }) {
       <ThreadsMap data={data} open={open} onPick={pick} />
       <ThreadsPhone data={data} open={open} onPick={pick} byId={byId} threadById={threadById} />
       <div ref={cardRef}>
-        {current && <StopCard stop={current} byId={byId} threadById={threadById} onPick={pick} onClose={() => setOpen(null)} />}
+        {current && <StopCard stop={current} byId={byId} threadById={threadById} onPick={pick} onClose={() => setOpen(null)}
+                                mapId={current.atlas && (maps || []).some(m => m.id === current.atlas) ? current.atlas : null} onOpenMap={onOpenMap} />}
       </div>
     </div>
   )
@@ -216,7 +217,7 @@ function ThreadsPhone({ data, open, onPick, byId, threadById }) {
 }
 
 // ── ONE STOP ─────────────────────────────────────────────────────────
-function StopCard({ stop, byId, threadById, onPick, onClose }) {
+function StopCard({ stop, byId, threadById, onPick, onClose, mapId, onOpenMap }) {
   const ts = threadsOf(stop).map(id => threadById[id]).filter(Boolean)
   const doc = stop.document
   return (
@@ -235,6 +236,9 @@ function StopCard({ stop, byId, threadById, onPick, onClose }) {
       <div className="stop-when-lg">{stop.unit} · {stop.when}</div>
       <h3 id="stop-card-h" className="stop-title">{stop.title}</h3>
       <p className="stop-what">{stop.what_happened}</p>
+
+      {/* A stop with an Atlas map (its `atlas` field names the map id) opens it (10/5). */}
+      {mapId && <button type="button" className="btn-now stop-map" onClick={() => onOpenMap(mapId)}>Open the map</button>}
 
       <h4 className="stop-h">The thread&rsquo;s question</h4>
       <p className="stop-q">{stop.question}</p>

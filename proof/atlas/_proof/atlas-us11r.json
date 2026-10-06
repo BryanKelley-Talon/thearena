@@ -1,0 +1,128 @@
+{
+  "_README": "PROOF ONLY. Placeholders. Never copied to public/.",
+  "course": "us11r",
+  "walk": [
+    {
+      "tag": "Placeholder course step",
+      "say": "The desk writes the course-wide map-reading steps; a map's own walk replaces them."
+    }
+  ],
+  "maps": [
+    {
+      "id": "ph-us-11.2-A-01",
+      "unit": "11.2",
+      "casefile": "A",
+      "status": "open",
+      "placeholder": true,
+      "title": "Placeholder map: the desk writes this title",
+      "caption": "Placeholder caption. One line from the desk about what this map shows and why it matters here.",
+      "image": "_proof/images/ph-base.webp",
+      "image_alt": "Placeholder test image: a grey grid with lettered columns and numbered rows, four labelled boxes for a title block, key, scale and compass, and the words placeholder, not a map.",
+      "source": "Placeholder test image made by Josh for the proof. Not a map.",
+      "origin": "drawn-new",
+      "supports": "Placeholder: the Enduring Issue or Thread line this map supports.",
+      "layers": [
+        {
+          "id": "a",
+          "label": "Placeholder layer A",
+          "image": "_proof/images/ph-layer-a.webp",
+          "source": "Placeholder layer A, made by Josh for the proof."
+        },
+        {
+          "id": "b",
+          "label": "Placeholder layer B",
+          "image": "_proof/images/ph-layer-b.webp",
+          "source": "Placeholder layer B, made by Josh for the proof."
+        }
+      ],
+      "then_now": [
+        {
+          "label": "Step 1",
+          "image": "_proof/images/ph-step-1.webp",
+          "image_alt": "Placeholder step 1: a small tan shape in the middle of the grid.",
+          "source": "Placeholder step 1, made by Josh for the proof."
+        },
+        {
+          "label": "Step 2",
+          "image": "_proof/images/ph-step-2.webp",
+          "image_alt": "Placeholder step 2: the tan shape, larger.",
+          "source": "Placeholder step 2, made by Josh for the proof."
+        },
+        {
+          "label": "Step 3",
+          "image": "_proof/images/ph-step-3.webp",
+          "image_alt": "Placeholder step 3: the tan shape, largest.",
+          "source": "Placeholder step 3, made by Josh for the proof."
+        }
+      ],
+      "routes": [
+        {
+          "id": "r1",
+          "label": "Placeholder route",
+          "path": "M 300 900 C 700 700, 1000 1150, 1400 950 S 1900 500, 2150 640",
+          "source": "Placeholder route, made by Josh for the proof."
+        }
+      ],
+      "walk": [
+        {
+          "tag": "Placeholder step: the title",
+          "say": "The desk writes this step: what to look for in the title and the date.",
+          "ask": "Placeholder question the desk writes.",
+          "focus": [
+            90,
+            80,
+            760,
+            190
+          ]
+        },
+        {
+          "tag": "Placeholder step: the key",
+          "say": "The desk writes this step: how to read the key.",
+          "focus": [
+            1880,
+            980,
+            430,
+            420
+          ]
+        },
+        {
+          "tag": "Placeholder step: the scale",
+          "say": "The desk writes this step: what the scale tells you.",
+          "focus": [
+            90,
+            1260,
+            520,
+            150
+          ]
+        },
+        {
+          "tag": "Placeholder step: the compass",
+          "say": "The desk writes this step: which way is north.",
+          "focus": [
+            2090,
+            80,
+            220,
+            220
+          ]
+        },
+        {
+          "tag": "Placeholder step: the whole map",
+          "say": "The desk writes this step: put it together and answer the casefile question."
+        }
+      ]
+    },
+    {
+      "id": "ph-us-11.1-B-01",
+      "unit": "11.1",
+      "casefile": "B",
+      "status": "open",
+      "placeholder": true,
+      "title": "Placeholder map 2: a plain map",
+      "caption": "Placeholder caption for a map with no layers, steps or routes.",
+      "image": "_proof/images/ph-plain.webp",
+      "image_alt": "Placeholder test image: a grey-green grid with lettered columns and numbered rows and the words placeholder map 2.",
+      "source": "Placeholder test image made by Josh for the proof. Not a map.",
+      "origin": "drawn-new"
+    }
+  ]
+}

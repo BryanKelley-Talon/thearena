@@ -189,6 +189,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) }
   catch (e) { fail(f, `not valid JSON - ${e.message}`); continue }
   if (DOCASSIST.has(f)) continue   // the DOC ASSIST block below
+  if (/^atlas-/.test(f)) continue   // the ATLAS block below
   // A doc_check item names its stimulus by key; the DOC CHECK block below fails one that resolves to nothing.
   if (DOCCHECK.has(f)) continue
   checkDocVisible(f, d)
@@ -578,6 +579,81 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
       const student = [it.stem, ...(it.choices || []), ...(it.hints || []), it.feedback, ...(it.walk_lines || [])].join(' ')
       if (SCORE.test(student)) df(`${w}: something reads like a score.`)
       if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(student)) df(`${w}: reads like a class date.`)
+    }
+  }
+}
+
+// ── THE ATLAS (added 2026-10-05, Josh; Leo's order 21:07, BK 21:11 and 21:14) ──────────
+// Format only, never content. Every map: a stable id, a unit this course has, a casefile
+// letter or none, a title, a one-line caption, a picture on disk with a describing alt,
+// a source line and where the picture came from (public domain or drawn new). Every layer,
+// Then → Now step and route carries its own source line, because it is a picture of
+// geography too. A route is path data only, never markup. A walk step has a tag and what to
+// look for; a step that points at the map carries [x, y, w, h] in map pixels. Placeholder
+// maps never reach public/content. Nothing reads as a score or a class date.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  const PUB = path.resolve('public')
+  const onDisk = p => p && fs.existsSync(path.join(PUB, String(p).replace(/^\//, '')))
+  const ATLAS_SCORE = /\b\d+\s*(of|out of|\/)\s*\d+\b|\b\d+\s*%|\b\d+\s*points?\b|\bscore\b|\bstreak\b/i
+  const DATE = /\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/
+  const PATH_D = /^[MmLlHhVvCcSsQqTtAaZz0-9.,\s+-]+$/
+  const seen = new Set()
+  for (const c of m.courses || []) for (const a of c.atlas || []) {
+    const f = String(a.content_ref || '').replace(/^content\//, '')
+    const live = a.published === true
+    const af = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { af(`atlas file '${f}' is not in public/content.`); continue }
+    let d
+    try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) } catch (e) { af(`not valid JSON - ${e.message}`); continue }
+    const units = new Set((c.units || []).map(u => String(u.number)))
+    const checkWalk = (walk, where, mapSize) => {
+      for (const [i, st] of (walk || []).entries()) {
+        const w = `${where} walk step ${i + 1}`
+        if (!st.tag || !String(st.tag).trim()) af(`${w}: no tag.`)
+        if (!st.say || !String(st.say).trim()) af(`${w}: no 'say' (what to look for).`)
+        if (st.focus != null) {
+          if (!mapSize) af(`${w}: a course-wide step can't point at a spot; only a map's own walk can.`)
+          else if (!Array.isArray(st.focus) || st.focus.length !== 4 || st.focus.some(n => typeof n !== 'number' || n < 0)) af(`${w}: focus must be [x, y, w, h] in map pixels.`)
+        }
+        if (ATLAS_SCORE.test(`${st.tag} ${st.say} ${st.ask || ''}`)) af(`${w}: something reads like a score.`)
+      }
+    }
+    checkWalk(d.walk, 'course', false)
+    for (const mp of d.maps || []) {
+      const w = `map ${mp.id || '(no id)'}`
+      if (!mp.id || !/^[A-Za-z0-9._-]+$/.test(mp.id)) af(`${w}: id must be letters, numbers, dots, dashes (it lives in links).`)
+      if (seen.has(mp.id)) af(`${w}: id used twice.`); seen.add(mp.id)
+      if (mp.placeholder) af(`${w}: a placeholder map is in public/content. Placeholders live in proof/ only.`)
+      if (!['open', 'building'].includes(mp.status)) af(`${w}: status must be open or building.`)
+      if (!units.has(String(mp.unit))) af(`${w}: unit '${mp.unit}' is not a unit in this course, so no room would show it.`)
+      if (mp.casefile != null && !/^[A-Z]$/.test(String(mp.casefile))) af(`${w}: casefile must be a letter or null.`)
+      for (const k of ['title', 'caption', 'source']) if (!mp[k] || !String(mp[k]).trim()) af(`${w}: no ${k}.`)
+      if (!['public-domain', 'drawn-new'].includes(mp.origin)) af(`${w}: origin must be public-domain or drawn-new (canon 1 and 6).`)
+      if (!onDisk(mp.image)) af(`${w}: image '${mp.image}' is not in public/.`)
+      if (mp.thumb && !onDisk(mp.thumb)) af(`${w}: thumb '${mp.thumb}' is not in public/.`)
+      const alt = altShape(mp.image_alt)
+      if (alt && typeof alt === 'string') af(`${w}: image_alt ${alt}.`)
+      else if (alt?.soft) warn(f, `${w}: image_alt ${alt.soft}.`)
+      if (onDisk(mp.image) && fs.statSync(path.join(PUB, String(mp.image).replace(/^\//, ''))).size > 900_000) warn(f, `${w}: the image is over 900 KB; school wifi.`)
+      for (const l of mp.layers || []) {
+        if (!l.id || !l.label || !l.source) af(`${w} layer ${l.id || '?'}: needs id, label and source.`)
+        if (!onDisk(l.image)) af(`${w} layer ${l.id || '?'}: image '${l.image}' is not in public/.`)
+      }
+      if (mp.then_now && mp.then_now.length < 2) af(`${w}: Then → Now needs at least two steps.`)
+      for (const [i, s2] of (mp.then_now || []).entries()) {
+        if (!s2.label || !s2.source) af(`${w} step ${i + 1}: needs a label and a source.`)
+        if (!onDisk(s2.image)) af(`${w} step ${i + 1}: image '${s2.image}' is not in public/.`)
+      }
+      for (const r of mp.routes || []) {
+        if (!r.id || !r.label || !r.source) af(`${w} route ${r.id || '?'}: needs id, label and source.`)
+        if (!r.path || !PATH_D.test(r.path)) af(`${w} route ${r.id || '?'}: path must be SVG path data only (M, L, C … and numbers).`)
+      }
+      checkWalk(mp.walk, w, true)
+      const student = [mp.title, mp.caption, ...(mp.layers || []).map(l => l.label), ...(mp.then_now || []).map(s2 => s2.label), ...(mp.routes || []).map(r => r.label)].join(' ')
+      if (ATLAS_SCORE.test(student)) af(`${w}: something reads like a score.`)
+      if (DATE.test(student)) af(`${w}: reads like a class date.`)
     }
   }
 }

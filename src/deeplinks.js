@@ -10,6 +10,7 @@
 //   #/us/11.1/doc-assist                   the unit's Doc Assist
 //   #/us/11.1/doc-assist/B                 one casefile (the page opens at Casefile B)
 //   #/us/11.1/doc-assist/B/12              one document, by its printed number
+//   #/us/atlas · #/global/atlas/<map-id>   the Atlas lane, or one map open in the viewer (10/5)
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
 //   #/office · #/office/2026-10-halftime-adjustments
 //
@@ -20,7 +21,7 @@
 
 export const COURSE_KEY = { us11r: 'us', global10r: 'global' }
 const KEY_COURSE = Object.fromEntries(Object.entries(COURSE_KEY).map(([k, v]) => [v, k]))
-export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', review: 'skills_review' }
+export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', atlas: 'atlas', review: 'skills_review' }
 const KEY_LANE = Object.fromEntries(Object.entries(LANE_KEYS).map(([k, v]) => [v, k]))
 
 const unitByNumber = (course, n) => (course?.units || []).find(u => String(u.number) === String(n)) || null
@@ -36,6 +37,8 @@ export function parseHash(hash, manifest) {
   if (!course) return { at: 'splash' }
   const r = { at: 'door', courseId }
   if (!parts[1]) return r
+  // A map id is checked by the App once the course's maps are in; an unknown one leaves the lane open.
+  if (parts[1] === 'atlas' && parts[2]) return { ...r, lane: 'atlas', atlasMap: parts[2] }
   if (KEY_LANE[parts[1]] !== undefined || LANE_KEYS[parts[1]]) return { ...r, lane: LANE_KEYS[parts[1]] || parts[1] }
   if (parts[1] === '0') return { ...r, at: 'unit0' }
   const unit = unitByNumber(course, parts[1])
@@ -58,6 +61,7 @@ export function buildHash(s) {
   if (s.office) return s.officeTheme ? `#/office/${s.officeTheme}` : '#/office'
   if (!s.course) return ''
   const c = `#/${COURSE_KEY[s.course.id] || s.course.id}`
+  if (s.atlasMap) return `${c}/atlas/${encodeURIComponent(s.atlasMap)}`
   if (s.unit0) return `${c}/0`
   if (!s.unit) return s.lane ? `${c}/${KEY_LANE[s.lane] || s.lane}` : c
   const u = `${c}/${s.unit.number}`

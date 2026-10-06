@@ -553,6 +553,14 @@
           ]
         }
       ],
+      "atlas": [
+        {
+          "slug": "atlas-global10r",
+          "content_ref": "content/atlas-global10r.json",
+          "published": true,
+          "_note": "The Atlas (Leo's order 2026-10-05 21:07; BK 21:11). Josh owns the container; the desk owns every map. Maps arrive in the casefile pack; Josh ports them word for word into this file. An empty file shows the lane as Under construction."
+        }
+      ],
       "regents": [],
       "skills_review": [
         {
@@ -1484,6 +1492,14 @@
               ]
             }
           ]
+        }
+      ],
+      "atlas": [
+        {
+          "slug": "atlas-us11r",
+          "content_ref": "content/atlas-us11r.json",
+          "published": true,
+          "_note": "The Atlas (Leo's order 2026-10-05 21:07; BK 21:11). Josh owns the container; the desk owns every map. Maps arrive in the casefile pack; Josh ports them word for word into this file. An empty file shows the lane as Under construction."
         }
       ],
       "threads": [
