@@ -10,6 +10,7 @@
 //   #/us/11.1/doc-assist                   the unit's Doc Assist
 //   #/us/11.1/doc-assist/B                 one casefile (the page opens at Casefile B)
 //   #/us/11.1/doc-assist/B/12              one document, by its printed number
+//   #/global/issues                        the Enduring Issues map (10/5)
 //   #/us/atlas · #/global/atlas/<map-id>   the Atlas lane, or one map open in the viewer (10/5)
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
 //   #/office · #/office/2026-10-halftime-adjustments
@@ -21,7 +22,7 @@
 
 export const COURSE_KEY = { us11r: 'us', global10r: 'global' }
 const KEY_COURSE = Object.fromEntries(Object.entries(COURSE_KEY).map(([k, v]) => [v, k]))
-export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', atlas: 'atlas', review: 'skills_review' }
+export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', review: 'skills_review' }
 const KEY_LANE = Object.fromEntries(Object.entries(LANE_KEYS).map(([k, v]) => [v, k]))
 
 const unitByNumber = (course, n) => (course?.units || []).find(u => String(u.number) === String(n)) || null

@@ -553,6 +553,14 @@
           ]
         }
       ],
+      "issues": [
+        {
+          "slug": "enduring-issues-gs10r",
+          "content_ref": "content/enduring-issues-gs10r.json",
+          "published": true,
+          "_note": "Will's signed stops (BK 2026-10-05 21:14), byte-identical copy of global10r-curriculum/OUTPUTS/2026-27/Course/enduring-issues-gs10r.json. map-stop-shape v1; Josh confirmed 21:29."
+        }
+      ],
       "atlas": [
         {
           "slug": "atlas-global10r",

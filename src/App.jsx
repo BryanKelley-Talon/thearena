@@ -32,6 +32,7 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { parseHash, buildHash } from './deeplinks.js'
 import { Unit0Card, Unit0Room, UNIT0_STYLES } from './unit0.jsx'
 import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
+import { IssuesLane, ISSUES_STYLES } from './issues.jsx'
 import { useAtlas, AtlasLane, AtlasViewer, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles } from './docassist.jsx'
 import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
@@ -886,6 +887,10 @@ const LANES = [
   // `optional`: a course without it (Global) shows no tab at all, not a dead one.
   { key: 'threads',       src: 'threads',       label: 'Threads', optional: true,
     intro: 'Seven questions America keeps asking. Follow a thread from unit to unit, and tap any stop to see what happened.' },
+  // The Enduring Issues map: Global's counterpart to Threads (Leo 20:59; BK 21:38 "EI Map moves above case closed").
+  // Lane name and intro proposed to BK 21:41.
+  { key: 'issues',        src: 'issues',        label: 'Enduring Issues', optional: true,
+    intro: 'Six issues the world keeps facing. Follow an issue from unit to unit, and tap any stop to see what happened.' },
   // The Atlas (Leo's order 10/5 21:07): both doors, after Threads. Lane name and intro, BK 21:11 ("yes to all three").
   { key: 'atlas',         src: 'atlas',         label: 'Atlas', optional: true,
     intro: 'Every map from this unit. Tap one to open it big.' },
@@ -959,6 +964,7 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
       )}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} onOpenUnit0={onOpenUnit0} />}
       {lane === 'threads' && <ThreadsLane course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
+      {lane === 'issues' && <IssuesLane course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
       {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} Empty={EmptyLane} />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
@@ -2196,7 +2202,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

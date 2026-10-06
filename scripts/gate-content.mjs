@@ -190,6 +190,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   catch (e) { fail(f, `not valid JSON - ${e.message}`); continue }
   if (DOCASSIST.has(f)) continue   // the DOC ASSIST block below
   if (/^atlas-/.test(f)) continue   // the ATLAS block below
+  if (/^enduring-issues-/.test(f)) continue   // the STOP MAP block below
   // A doc_check item names its stimulus by key; the DOC CHECK block below fails one that resolves to nothing.
   if (DOCCHECK.has(f)) continue
   checkDocVisible(f, d)
@@ -579,6 +580,48 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
       const student = [it.stem, ...(it.choices || []), ...(it.hints || []), it.feedback, ...(it.walk_lines || [])].join(' ')
       if (SCORE.test(student)) df(`${w}: something reads like a score.`)
       if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(student)) df(`${w}: reads like a class date.`)
+    }
+  }
+}
+
+// ── THE STOP MAP, shared shape v1 (added 2026-10-05, Josh; confirmed 21:29) ─────────
+// Format only, never content. Global's Enduring Issues map now; Sam's Threads map when it moves.
+// Every on_lines entry names a defined line, its sub sits under that line, and it carries a
+// reason and a question. Every link resolves, every document and also_read entry is cited,
+// status is open or building, an `atlas` id is well formed, no class dates, and no "thread"
+// on a Global screen.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  for (const c of m.courses || []) for (const t of c.issues || []) {
+    const f = String(t.content_ref || '').replace(/^content\//, '')
+    const live = t.published === true
+    const sf = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { sf(`stop map file '${f}' is not in public/content.`); continue }
+    let d
+    try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) } catch (e) { sf(`not valid JSON - ${e.message}`); continue }
+    const lines = new Map((d.lines || []).map(l => [l.id, new Set((l.subs || []).map(x => x.id))]))
+    const ids = new Set((d.stops || []).map(x => x.id))
+    if (!lines.size) sf('no lines.')
+    for (const l of d.lines || []) if (!l.name) sf(`line ${l.id}: no name.`)
+    for (const st of d.stops || []) {
+      const w = `stop ${st.id}`
+      if (!['open', 'building'].includes(st.status)) sf(`${w}: status must be open or building.`)
+      if (!(st.on_lines || []).length) sf(`${w}: on no line.`)
+      for (const e of st.on_lines || []) {
+        if (!lines.has(e.line)) sf(`${w}: line '${e.line}' is not defined.`)
+        else if (e.sub && !lines.get(e.line).has(e.sub)) sf(`${w}: issue '${e.sub}' is not under line '${e.line}'.`)
+        if (!e.reason || !e.question) sf(`${w}: a line entry needs a reason and a question.`)
+      }
+      for (const l of st.links || []) if (!ids.has(l.to)) sf(`${w}: link to '${l.to}' goes nowhere.`)
+      for (const doc of [st.document, ...(st.also_read || [])]) if (doc && !doc.citation) sf(`${w}: a document has no citation.`)
+      if (st.atlas != null && !/^[A-Za-z0-9._-]+$/.test(st.atlas)) sf(`${w}: atlas id is not a map id.`)
+      if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(JSON.stringify([st.title, st.what_happened]))) sf(`${w}: reads like a class date.`)
+    }
+    if (c.id === 'global10r') {
+      const shown = JSON.stringify({ lines: (d.lines || []).map(l => [l.name, l.question, (l.subs || []).map(x => [x.name, x.definition])]),
+        stops: (d.stops || []).map(x => [x.title, x.what_happened, x.when, (x.on_lines || []).map(e => [e.reason, e.question]), x.links]) })
+      if (/\bthreads?\b/i.test(shown)) sf('the word "thread" appears on a Global screen (BK 9/26).')
     }
   }
 }
