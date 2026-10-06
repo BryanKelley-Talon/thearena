@@ -52,7 +52,7 @@ export function parseHash(hash, manifest) {
     const da = { ...u, at: 'docassist' }
     if (!parts[3]) return da
     const cf = parts[3].toUpperCase()
-    if (parts[4] && /^\d+$/.test(parts[4])) return { ...da, cf, docN: Number(parts[4]) }
+    if (parts[4] && /^\d+[a-z]?$/i.test(parts[4])) return { ...da, cf, docN: parts[4].toLowerCase() }
     return { ...da, cf }
   }
   return u

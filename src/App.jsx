@@ -2031,7 +2031,7 @@ export default function App() {
     setDaOpen(true)
     const cf = pendingDa.cf ? openCasefiles(daPack).find(c => String(c.id).toUpperCase() === pendingDa.cf) : null
     if (!cf) return
-    const i = pendingDa.docN != null ? (cf.docs || []).findIndex(d => Number(d.n) === pendingDa.docN) : -1
+    const i = pendingDa.docN != null ? (cf.docs || []).findIndex(d => String(d.n).toLowerCase() === String(pendingDa.docN)) : -1
     if (i >= 0) { setDaDoc({ cf: cf.id, i }); window.scrollTo(0, 0); return }
     setDaCfFocus(cf.id)
     requestAnimationFrame(() => document.getElementById(`da-cf-${cf.id}`)?.scrollIntoView({ block: 'start' }))

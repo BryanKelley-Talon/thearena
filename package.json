@@ -8,7 +8,8 @@
     "dev": "vite",
     "build": "node scripts/gate-content.mjs && vite build",
     "preview": "vite preview",
-    "gate": "node scripts/gate-content.mjs"
+    "gate": "node scripts/gate-content.mjs",
+    "links": "node scripts/links.mjs"
   },
   "dependencies": {
     "react": "^18.2.0",
