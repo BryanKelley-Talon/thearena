@@ -42,6 +42,27 @@ export const CHROME = {
   mark: m => String(m || '').toUpperCase(),   // BOX · CIRCLE · MARGIN · UNDERLINE, as the signed PDFs print them
 }
 
+// ── PAPER COLOURS (BK 2026-10-06 10:47–10:50) ──────────────────
+// "give the backgrounds of the docs for casefile with a colored background that matches the copy
+// color of their hard copy in class ... when no color has been identified we can stay default."
+// "just light shadings to indicate hard copy color"; the label: "Yellow Copy, etc."
+// The colour per casefile lives in the manifest (unit.doc_assist.paper = { A: 'yellow', … }).
+// The casefile's name stays the identifier; the shading and the label only point to the paper.
+export const PAPER = {
+  white:  { name: 'White',  sheet: '#FBFAF5', tint: '#FBFAF5' },
+  yellow: { name: 'Yellow', sheet: '#FFF4B0', tint: '#FFE45C' },
+  pink:   { name: 'Pink',   sheet: '#FBD3E0', tint: '#FF8DB4' },
+  blue:   { name: 'Blue',   sheet: '#CFE6F8', tint: '#6DB5F0' },
+  salmon: { name: 'Salmon', sheet: '#FBD0BF', tint: '#FF9A78' },
+  green:  { name: 'Green',  sheet: '#D3EFCC', tint: '#7FD66E' },
+}
+export const paperOf = (map, cfId) => PAPER[String(map?.[cfId] || map?.[String(cfId).toUpperCase()] || '').toLowerCase()] || null
+const paperLabel = p => `${p.name} Copy`
+const paperVars = p => (p ? { '--paper': p.sheet, '--paper-tint': p.tint } : undefined)
+function PaperTag({ p }) {
+  return p ? <span className="da-paper-tag" style={paperVars(p)}><span className="da-paper-swatch" aria-hidden="true" />{paperLabel(p)}</span> : null
+}
+
 const imgName = f => String(f || '').split('/').pop()
 const imgSrc = f => `/content/${imgName(f)}`
 export const openCasefiles = pack => (pack?.casefiles || []).filter(c => c.status === 'open' && (c.docs || []).length)
@@ -148,16 +169,18 @@ export function DocAssistCard({ pack, onOpen }) {
 }
 
 // ── THE CASEFILE LIST ───────────────────────────────────────
-export function DocAssistHome({ pack, onOpenDoc }) {
+export function DocAssistHome({ pack, paper, onOpenDoc }) {
   return (
     <div className="da-home">
       {pack.tile && <p className="lane-intro">{pack.tile}</p>}
       {(pack.casefiles || []).map(cf => {
         const open = cf.status === 'open' && (cf.docs || []).length > 0
+        const p = paperOf(paper, cf.id)
         return (
-          <section key={cf.id} id={`da-cf-${cf.id}`} className="da-cf">
+          <section key={cf.id} id={`da-cf-${cf.id}`} className={`da-cf${p ? ' da-cf-paper' : ''}`} style={paperVars(p)}>
             <h3 className="room-section da-cf-head">
               <span>{cf.title || CHROME.backTo(cf.id, cf)}</span>
+              <PaperTag p={p} />
               {!open && <span className="flag building">{CHROME.building}</span>}
             </h3>
             {open && (
@@ -332,7 +355,7 @@ function AnnotatePanel({ pack, doc, fr }) {
   )
 }
 
-export function DocAssistDoc({ pack, doc, refs, portrait, onPrev, onNext }) {
+export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext }) {
   const voiceEn = useLocalVoice('en')
   const voiceFr = useLocalVoice('fr')
   const walkSteps = pack.walk || []
@@ -447,8 +470,8 @@ export function DocAssistDoc({ pack, doc, refs, portrait, onPrev, onNext }) {
               <p>{note.text}</p>
             </div>
           )}
-          <figure className="stimulus da-paper">
-            <div className="doc-tag">{CHROME.docLabel(doc.n)}</div>
+          <figure className={`stimulus da-paper${paper ? ' da-sheet' : ''}`} style={paperVars(paper)}>
+            <div className="doc-tag">{CHROME.docLabel(doc.n)}{paper && <PaperTag p={paper} />}</div>
             {/* As printed in the casefile: the source line sits above the document. It stays as printed in French. */}
             <div className="da-src" lang="en">
               {marks ? marked(doc.src, marks, true) : doc.src}
@@ -570,6 +593,19 @@ export const DOCASSIST_STYLES = `
 /* ---------- DOC ASSIST ---------- */
 .practice-row .row-blurb{display:block;color:var(--grey);font-size:15px;line-height:1.4;margin-top:3px;font-weight:400}
 .da-cf{margin-bottom:28px;max-width:860px}
+/* Paper colours: a light shading of the copy colour on the casefile, and the sheet itself in that colour. */
+.da-cf-paper{position:relative;padding:12px 14px 14px;border-radius:12px;border-left:6px solid var(--paper);
+  background:color-mix(in srgb,var(--paper-tint) 18%,transparent)}
+.da-cf-paper .da-row{border-left:4px solid var(--paper);background:color-mix(in srgb,var(--paper-tint) 9%,var(--card))}
+.da-paper-tag{display:inline-flex;align-items:center;gap:7px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;
+  letter-spacing:.12em;text-transform:uppercase;color:#1d1a12;background:var(--paper);border-radius:999px;padding:3px 11px 3px 8px;
+  box-shadow:inset 0 0 0 1px rgba(0,0,0,.18);vertical-align:middle}
+.da-paper-swatch{width:12px;height:12px;border-radius:3px;background:var(--paper-tint);box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+.da-paper .doc-tag .da-paper-tag{margin-left:10px;font-size:12px}
+.stimulus.da-sheet .doc-tag{color:#5a4310}
+.stimulus.da-sheet{background:
+    repeating-linear-gradient(transparent 0px,transparent 29px,rgba(60,50,30,.12) 30px),
+    linear-gradient(160deg,color-mix(in srgb,var(--paper) 92%,#fff),var(--paper))}
 .da-cf-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .da-cf-head .flag{margin-top:0}
 .da-row-n{display:block;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;

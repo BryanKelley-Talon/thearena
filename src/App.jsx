@@ -38,7 +38,7 @@ import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
-import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles } from './docassist.jsx'
+import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles, paperOf } from './docassist.jsx'
 import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
@@ -2170,6 +2170,7 @@ export default function App() {
       <div className="wrap">
         <ScreenHeader label={DA.docLabel(doc.n)} onBack={back} color={course.accent} back={DA.backTo(cf.id, cf)} />
         <DocAssistDoc pack={daPack} doc={doc} refs={refs} portrait={course.guide?.portrait || BK_PORTRAIT}
+                      paper={paperOf(unit.doc_assist?.paper, cf.id)}
                       onPrev={daDoc.i > 0 ? () => go(daDoc.i - 1) : null}
                       onNext={daDoc.i < cf.docs.length - 1 ? () => go(daDoc.i + 1) : null} />
         <BottomBack onBack={back} back={DA.backTo(cf.id, cf)} />
@@ -2182,7 +2183,7 @@ export default function App() {
     screen = (
       <div className="wrap">
         <ScreenHeader label={DA.section} onBack={back} color={course.accent} back={backLabel} />
-        <DocAssistHome pack={daPack} onOpenDoc={(cf, i) => { setDaDoc({ cf, i }); window.scrollTo(0, 0) }} />
+        <DocAssistHome pack={daPack} paper={unit.doc_assist?.paper} onOpenDoc={(cf, i) => { setDaDoc({ cf, i }); window.scrollTo(0, 0) }} />
         <BottomBack onBack={back} back={backLabel} />
       </div>
     )

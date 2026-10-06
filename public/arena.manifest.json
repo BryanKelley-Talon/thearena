@@ -278,7 +278,10 @@
           "doc_assist": {
             "published": true,
             "content_ref": "content/docassist-gs10r-10.1.json",
-            "_note": "Josh, 2026-10-01. Doc Assist, Global. Will's pack (BK signed 09:05), ported byte for byte. Images byte-identical to Will's drop (In/will-brief-2026-10-01-doc-assist-global-images/)."
+            "_note": "Josh, 2026-10-01. Doc Assist, Global. Will's pack (BK signed 09:05), ported byte for byte. Images byte-identical to Will's drop (In/will-brief-2026-10-01-doc-assist-global-images/).",
+            "paper": {
+              "A": "white"
+            }
           },
           "_brief_note": "Will, arena-pack-global10r-10.1.md, BK approved 18:06 ('i agree with all'); ported word for word 18:11."
         },
@@ -292,7 +295,11 @@
           "doc_assist": {
             "published": true,
             "content_ref": "content/docassist-gs10r-10.2.json",
-            "_note": "Josh, 2026-10-01. Doc Assist, Global. Will's pack (BK signed 09:05), ported byte for byte. Images byte-identical to Will's drop (In/will-brief-2026-10-01-doc-assist-global-images/)."
+            "_note": "Josh, 2026-10-01. Doc Assist, Global. Will's pack (BK signed 09:05), ported byte for byte. Images byte-identical to Will's drop (In/will-brief-2026-10-01-doc-assist-global-images/).",
+            "paper": {
+              "A": "yellow",
+              "B": "pink"
+            }
           },
           "_note": "Josh, 2026-09-25. Built from Will's two 10.2 files already on this desk: the Casefile A checkpoint (BK-ruled work order 2026-09-21 — Josh's miss that it waited) and the 10.2 GC brief (2026-09-18). No ladders yet — Will's to author.",
           "activities": [
@@ -1039,7 +1046,11 @@
           "doc_assist": {
             "published": true,
             "content_ref": "content/docassist-us11r-11.1.json",
-            "_note": "Josh, 2026-10-01. Doc Assist 11.1, Sam's Casefile A pack (BK signed 09:27), byte for byte; Casefile B building, next push (BK 09:17)."
+            "_note": "Josh, 2026-10-01. Doc Assist 11.1, Sam's Casefile A pack (BK signed 09:27), byte for byte; Casefile B building, next push (BK 09:17).",
+            "paper": {
+              "A": "blue",
+              "B": "salmon"
+            }
           },
           "_brief_note": "Josh, 2026-09-25. Sam's GC content brief v2 (BK-approved), ported verbatim to JSON and rendered on the page — BK: render it directly rather than link a PDF. Letterhead, footer filename and the BK-only revision note are left out. Quick Check shows answers under each question (BK's ruling via Sam, 2026-09-25).",
           "activities": [
@@ -1247,7 +1258,10 @@
           "doc_assist": {
             "published": true,
             "content_ref": "content/docassist-us11r-11.2.json",
-            "_note": "Josh, 2026-10-01. Doc Assist, ruled by BK 08:16 at Sam's desk; content Sam's 11.2 Casefile A pack, signed by BK 08:38, ported byte for byte. Casefiles B and C are status building in the pack (Sam). Images: unit02-nv-a3-proclamation-map-1775.png, unit02-revere-1770-doc1.png, byte-identical to us11r-curriculum/STIMULUS_BANK/Unit_02/."
+            "_note": "Josh, 2026-10-01. Doc Assist, ruled by BK 08:16 at Sam's desk; content Sam's 11.2 Casefile A pack, signed by BK 08:38, ported byte for byte. Casefiles B and C are status building in the pack (Sam). Images: unit02-nv-a3-proclamation-map-1775.png, unit02-revere-1770-doc1.png, byte-identical to us11r-curriculum/STIMULUS_BANK/Unit_02/.",
+            "paper": {
+              "A": "green"
+            }
           },
           "activities": [
             {
