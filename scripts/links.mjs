@@ -36,8 +36,8 @@ for (const c of m.courses || []) {
   const atlasFiles = (c.atlas || []).filter(a => a.published).map(a => read(ref(a.content_ref))).filter(Boolean)
   const maps = atlasFiles.flatMap(f => f.maps || []).filter(x => x.status === 'open')
   if ((c.atlas || []).some(a => a.published)) { C.lanes.atlas = `${BASE}#/${k}/atlas`; md.push(`- Atlas: ${C.lanes.atlas}`) }
-  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' })
-  const wl = (c.writing_lab || []).filter(e => e.published && (!e.opens_on || today >= e.opens_on))
+  // A set that ships ahead is listed with its open day, so a deck built now can carry its link.
+  const wl = (c.writing_lab || []).filter(e => e.published)
   if (wl.length) { C.lanes.writing_lab = `${BASE}#/${k}/writing-lab`; md.push(`- Writing Lab: ${C.lanes.writing_lab}`) }
   md.push('')
   for (const u of c.units || []) {
@@ -74,8 +74,8 @@ for (const c of m.courses || []) {
       U.writing_lab = {}
       for (const e of ws) {
         const d = read(ref(e.content_ref))
-        U.writing_lab[e.slug] = { title: `${d?.name || e.tool} · Set ${e.set ?? 1} · ${d?.set_title || ''}`, casefile: e.casefile, link: `${BASE}#/${k}/writing-lab/${e.slug}` }
-        md.push(`- Writing Lab, ${U.writing_lab[e.slug].title}: ${U.writing_lab[e.slug].link}`)
+        U.writing_lab[e.slug] = { title: `${d?.name || e.tool} · Set ${e.set ?? 1} · ${d?.set_title || ''}`, casefile: e.casefile, opens_on: e.opens_on || null, link: `${BASE}#/${k}/writing-lab/${e.slug}` }
+        md.push(`- Writing Lab, ${U.writing_lab[e.slug].title}${e.opens_on ? ` (opens ${e.opens_on})` : ''}: ${U.writing_lab[e.slug].link}`)
       }
     }
     C.units[n] = U
