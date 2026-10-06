@@ -225,7 +225,11 @@ export function AtlasViewer({ map, refs, onClose }) {
   const goStep = i => { setWalkAt(i); setShown(false); if (i == null) glideView({ z: 1, x: 0, y: 0 }); else frame(walk[i]?.focus) }
   // Show me: the desk's answer appears, and the map glides to where the answer is (answer_focus),
   // or stays on the step's own spot. The kid tries first; one tap shows it.
-  const showAnswer = () => { setShown(true); const f = walk[walkAt]?.answer_focus; if (f) frame(f) }
+  // On a phone the walk panel scrolls: bring the answer and the Next button into view with it.
+  const showAnswer = () => {
+    setShown(true); const f = walk[walkAt]?.answer_focus; if (f) frame(f)
+    requestAnimationFrame(() => document.querySelector('.atlas-walk-nav')?.scrollIntoView({ block: 'nearest' }))
+  }
   const focus = walkAt != null ? ((shown && walk[walkAt]?.answer_focus) || walk[walkAt]?.focus) : null
   const pan = (dx, dy) => setView(v => bound({ ...v, x: v.x + dx, y: v.y + dy }))
 
