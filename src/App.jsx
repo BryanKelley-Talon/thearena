@@ -890,11 +890,12 @@ const LANES = [
   // BK, 2026-09-27 09:29: the U.S. door's fourth lane ("its own lane"); intro approved 10:25.
   // `optional`: a course without it (Global) shows no tab at all, not a dead one.
   { key: 'threads',       src: 'threads',       label: 'Threads', optional: true,
-    intro: 'Seven questions America keeps asking. Follow a thread from unit to unit, and tap any stop to see what happened.' },
+    // BK 2026-10-06 09:20 ("yes as it is."): the intros point to the model paragraphs.
+    intro: 'Seven questions America keeps asking. Follow a thread from unit to unit, and tap any stop to see what happened, and a model paragraph to learn from.' },
   // The Enduring Issues map: Global's counterpart to Threads (Leo 20:59; BK 21:38 "EI Map moves above case closed").
   // Lane name and intro proposed to BK 21:41.
   { key: 'issues',        src: 'issues',        label: 'Enduring Issues', optional: true,
-    intro: 'Six issues the world keeps facing. Follow an issue from unit to unit, and tap any stop to see what happened.' },
+    intro: 'Six issues the world keeps facing. Follow an issue from unit to unit, and tap any stop to see what happened, and a model paragraph to learn from.' },
   // The Atlas (Leo's order 10/5 21:07): both doors, after Threads. Lane name and intro, BK 21:11 ("yes to all three").
   { key: 'atlas',         src: 'atlas',         label: 'Atlas', optional: true,
     intro: ATLAS_WORDS.intro },

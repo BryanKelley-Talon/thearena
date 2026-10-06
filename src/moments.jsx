@@ -7,7 +7,7 @@
 //   • The card's words are BK's, used exactly. No "thread" on the Global card.
 //   • Each tool name links to its live destination (the Arena's own hash links, deeplinks.js).
 //     A tool that isn't live yet shows how it shows: not a link, with "Coming" or its open day.
-//   • Make the Case is done on their own: it links nowhere.
+//   • Make the Case is done on their own. Its one link (BK 10/6) is to the map's model paragraphs.
 //   • Nothing is stored and nothing is sent.
 // ============================================================
 import { COURSE_KEY } from './deeplinks.js'
@@ -19,10 +19,14 @@ export const MOMENTS_WORDS = {
     { n: 1, name: 'Get your bearings.', q: 'Where are we, and what led here?' },
     { n: 2, name: 'Work the documents.', q: 'What is this, and what does it say?' },
     { n: 3, name: 'Build your case.', q: 'How do the pieces fit together?' },
-    { n: 4, name: 'Make the Case.', q: 'On your own. Everything above gets you here.' },
+    // BK 2026-10-06 09:20 ("yes as it is."): why Make the Case matters, and where to see it done.
+    { n: 4, name: 'Make the Case.', q: 'On your own. Everything above gets you here.',
+      more: 'Your document work is building toward this paragraph, and your skill grades come from it. Strong paragraphs here are what unlock the essay.' },
     { n: 5, name: 'Read your gauges.', q: 'What do I work on next?' },
   ],
   backInto: 'Back into the Arena:',
+  seeHow: 'See how it\u2019s done: every stop on the',
+  modelPara: 'has a model paragraph.',
   // Container words for a tool that isn't open yet — to BK in the morning proof.
   coming: 'Coming',
   opens: d => `opens ${d}`,
@@ -76,7 +80,7 @@ export function MomentsCard({ course, unit, maps, preview, compact }) {
     1: [global ? T.issues : T.threads, T.atlas],
     2: [T.docAssist, T.unitAtlas],
     3: [T.blueprint],
-    4: null,
+    4: [global ? T.issues : T.threads],
     5: [T.climbs, T.review, T.bowl, T.game, T.caseClosed],
   }
   return (
@@ -89,12 +93,14 @@ export function MomentsCard({ course, unit, maps, preview, compact }) {
             <div className="mo-body">
               <div className="mo-name">{s.name}</div>
               <div className="mo-q">{s.q}</div>
+              {s.more && <div className="mo-more">{s.more}</div>}
               {tools[s.n] && (
                 <div className="mo-tools">
                   <span className="mo-arrow" aria-hidden="true">&rarr; </span>
                   {s.n === 3 && <><Tool t={tools[3][0]} />, in the Writing Lab</>}
                   {s.n === 5 && <>{W.backInto} {tools[5].map((t, i) => <span key={i}>{i > 0 && <Dot />}<Tool t={t} /></span>)}</>}
-                  {s.n !== 3 && s.n !== 5 && tools[s.n].map((t, i) => <span key={i}>{i > 0 && <Dot />}<Tool t={t} /></span>)}
+                  {s.n === 4 && <>{W.seeHow} <Tool t={tools[4][0]} /> {W.modelPara}</>}
+                  {s.n !== 3 && s.n !== 4 && s.n !== 5 && tools[s.n].map((t, i) => <span key={i}>{i > 0 && <Dot />}<Tool t={t} /></span>)}
                 </div>
               )}
             </div>
@@ -119,6 +125,7 @@ export const MOMENTS_STYLES = `
 .mo-name{color:var(--white);font-weight:700;font-size:15.5px;line-height:1.25}
 .mo-q{color:var(--grey);font-size:14px;line-height:1.4;margin-top:2px}
 .mo-step.own .mo-q{color:var(--white)}
+.mo-more{color:var(--white);font-size:14px;line-height:1.45;margin-top:6px}
 .mo-tools{margin-top:6px;color:var(--white);font-size:14px;line-height:1.55;overflow-wrap:anywhere}
 .mo-arrow{color:var(--gold)}
 .mo-tool{color:var(--gold-lit);font-weight:600;text-decoration:underline;text-underline-offset:3px}
