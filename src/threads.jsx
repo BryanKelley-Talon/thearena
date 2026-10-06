@@ -236,11 +236,16 @@ function StopCard({ stop, byId, threadById, onPick, onClose, mapId, onOpenMap })
     <article className="stop-card" aria-labelledby="stop-card-h">
       <div className="stop-card-top">
         <div className="stop-chips">
-          {ts.map(t => (
-            <span key={t.id} className="stop-chip" style={{ '--c': COLOR[t.id === 't1' && arc ? arc : t.id] }}>
-              {t.number} · {t.name}{t.id === 't1' && arc ? ` · ${arcNameOf(t, arc)}` : ''}
-            </span>
-          ))}
+          {/* v2: one chip per line entry (Thread 1's trunk and each strand it sits on). */}
+          {(stop.on_lines || ts.map(t => ({ line: t.id, sub: t.id === 't1' ? arc : null }))).map((e, i) => {
+            const t = threadById[e.line]
+            if (!t) return null
+            return (
+              <span key={i} className="stop-chip" style={{ '--c': COLOR[e.line === 't1' && e.sub ? e.sub : e.line] }}>
+                {t.number} · {t.name}{e.sub ? ` · ${arcNameOf(t, e.sub)}` : ''}
+              </span>
+            )
+          })}
           {ts.length > 1 && <span className="stop-chip two">On two threads</span>}
         </div>
         <button type="button" className="btn-ghost" onClick={onClose} aria-label="Close this stop">Close</button>
