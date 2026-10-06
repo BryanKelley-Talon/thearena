@@ -311,7 +311,12 @@ const EX_PARTS = ['context', 'claim', 'evidence', 'explain']
 function checkPopouts(d, f, course, m, fail) {
   const exBad = ex => !ex || typeof ex !== 'object' || Object.keys(ex).some(k => !EX_PARTS.includes(k))
     || EX_PARTS.some(k => typeof ex[k] !== 'string' || !ex[k].trim())
-  const rows = new Set((d.lines || []).flatMap(l => [l.id, ...(l.subs || []).map(x => x.id)]))
+  // exemplar_by_line keys: a line id, a sub id (Will), or "<line>:<sub>" (Sam, map-stop-shape v2).
+  const rows = new Set((d.lines || []).flatMap(l => [l.id, ...(l.subs || []).flatMap(x => [x.id, `${l.id}:${x.id}`])]))
+  // Link kinds: the SEQ three (BK 00:04 via Sam), the 23:47 pair while files move over, and any
+  // the file names in its own link_kinds.
+  const KINDS = new Set(['cause_effect', 'similarity_difference', 'turning_point', 'change', 'continuity', ...Object.keys(d.link_kinds || {})])
+  const ONE_WAY = new Set(['cause_effect', 'turning_point'])
   const byId = Object.fromEntries((d.stops || []).map(x => [x.id, x]))
   const daPack = unit => {
     const u = (course.units || []).find(x => String(x.number) === String(unit))
@@ -324,18 +329,19 @@ function checkPopouts(d, f, course, m, fail) {
     if (st.exemplar != null && exBad(st.exemplar)) fail(`${w}: an exemplar needs exactly four parts in words: ${EX_PARTS.join(', ')}.`)
     if (st.exemplar_by_line != null) {
       for (const [k, ex] of Object.entries(st.exemplar_by_line)) {
-        if (!rows.has(k)) fail(`${w}: exemplar_by_line names '${k}', which is not a line.`)
+        if (!rows.has(k)) fail(`${w}: exemplar_by_line names '${k}', which is not a line, an issue, or line:sub.`)
         if (exBad(ex)) fail(`${w}: exemplar_by_line '${k}' needs exactly four parts in words: ${EX_PARTS.join(', ')}.`)
       }
     }
     if (st.status === 'open' && st.exemplar == null && st.exemplar_by_line == null) noEx++
     for (const l of st.links || []) {
-      if (l.kind != null && !['change', 'continuity'].includes(l.kind)) fail(`${w}: link to '${l.to}' has kind '${l.kind}'; it must be change or continuity.`)
+      if (l.kind != null && !KINDS.has(l.kind)) fail(`${w}: link to '${l.to}' has kind '${l.kind}'; it must be one of ${[...KINDS].join(', ')}.`)
       if (l.kind == null) noKind++
       if (l.explain != null && (typeof l.explain !== 'string' || !l.explain.trim())) fail(`${w}: link to '${l.to}' has an empty explanation.`)
       if (l.explain == null) noExplain++
       const back = (byId[l.to]?.links || []).find(x => x.to === st.id)
       if (back && l.kind && back.kind && back.kind !== l.kind) fail(`${w}: calls its link to '${l.to}' ${l.kind}; '${l.to}' calls it ${back.kind}.`)
+      else if (back && ONE_WAY.has(l.kind) && back.kind === l.kind) fail(`${w}: ${l.kind} runs one way, but '${l.to}' names it back to this stop too.`)
     }
     if (st.doc_assist != null) {
       const mm = String(st.doc_assist).match(/^(\d+\.\d+)\/([A-Z])\/(\d+[a-z]?)$/)

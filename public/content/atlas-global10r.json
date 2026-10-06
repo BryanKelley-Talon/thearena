@@ -51,18 +51,21 @@
       "walk": [
         {
           "tag": "WHAT IT SHOWS",
-          "say": "No title on this one: it was drawn for this class. Each colored oval is one state in 1750."
+          "say": "No title on this one: it was drawn for this class. Each colored oval is one state in 1750.",
+          "ask": "How many ovals are there, and where are most of them?",
+          "answer": "Six ovals. Five are in Asia or reach into it: Russia, the Ottomans, Qing China, Tokugawa Japan and the Mughals. One small oval is in West Africa."
         },
         {
           "tag": "RUSSIAN EMPIRE",
           "say": "The biggest oval. Russia stretches across two continents.",
-          "ask": "Was the biggest state the strongest one?",
+          "ask": "Which two continents does the biggest oval cross?",
           "focus": [
             1420,
             190,
             660,
             320
-          ]
+          ],
+          "answer": "Europe and Asia. The Russian Empire runs from eastern Europe across all of northern Asia."
         },
         {
           "tag": "MUGHAL EMPIRE",
@@ -82,6 +85,14 @@
             490,
             110,
             140
+          ],
+          "ask": "How does Japan's oval compare with China's, right next door?",
+          "answer": "Much smaller. Tokugawa Japan is a small island state beside the big Qing China oval.",
+          "answer_focus": [
+            1760,
+            460,
+            400,
+            220
           ]
         },
         {
@@ -92,12 +103,15 @@
             705,
             140,
             70
-          ]
+          ],
+          "ask": "Which continent is the small green oval on, and which part of it?",
+          "answer": "Africa, on the west coast. That's where Benin, Ashanti and Dahomey are."
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "More than one fits. A strong pick: Imperialism. Most of these ovals are empires, and each one rules many different peoples across a huge area."
         }
       ],
       "image": "atlas/global10r/10.1-A-01.webp",
@@ -123,7 +137,9 @@
             800,
             260,
             80
-          ]
+          ],
+          "ask": "What year does this map show?",
+          "answer": "1772. It's printed under the title, in the bottom left."
         },
         {
           "tag": "DATE AND MAKER",
@@ -134,6 +150,13 @@
             1000,
             380,
             30
+          ],
+          "answer": "A British publisher: Longmans, Green & Co. of London, on the bottom edge. The bottom left corner says it was made for a history book, Ludlow's War of American Independence. British mapmakers, English-speaking readers.",
+          "answer_focus": [
+            0,
+            995,
+            840,
+            43
           ]
         },
         {
@@ -144,6 +167,14 @@
             845,
             210,
             105
+          ],
+          "ask": "Which color is Spain, and where is most of it?",
+          "answer": "Green. Most of Spain's green is in the Americas: New Spain (Mexico), Central America and the west side of South America.",
+          "answer_focus": [
+            230,
+            430,
+            260,
+            310
           ]
         },
         {
@@ -154,6 +185,14 @@
             295,
             310,
             450
+          ],
+          "ask": "Which empire holds Brazil?",
+          "answer": "Portugal. Brazil is yellow, and the key says yellow is Portuguese.",
+          "answer_focus": [
+            410,
+            580,
+            130,
+            110
           ]
         },
         {
@@ -165,12 +204,14 @@
             150,
             590,
             370
-          ]
+          ],
+          "answer": "A British mapmaker's. Only European empires get color. The states that ruled most of Asia in 1772, like China, aren't colored or even named, so Asia looks empty. It wasn't."
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Imperialism. Every color in the key is a European empire, and those colors cover lands far from Europe: the Americas, the coasts of Africa, and parts of India."
         }
       ],
       "image": "atlas/global10r/10.1-A-02.webp",
@@ -206,6 +247,14 @@
             1460,
             320,
             200
+          ],
+          "ask": "Which family holds both France and Spain?",
+          "answer": "The House of Bourbon. France and Spain are both in the Bourbon colors, and so is the Kingdom of the Two Sicilies in southern Italy.",
+          "answer_focus": [
+            250,
+            830,
+            750,
+            830
           ]
         },
         {
@@ -216,6 +265,14 @@
             830,
             420,
             410
+          ],
+          "ask": "Find Versailles. Where is it?",
+          "answer": "Right beside Paris, just to the southwest.",
+          "answer_focus": [
+            800,
+            930,
+            200,
+            90
           ]
         },
         {
@@ -226,7 +283,9 @@
             880,
             720,
             380
-          ]
+          ],
+          "ask": "Name three lands the Hapsburg family holds on this map.",
+          "answer": "Austria, Bohemia and Hungary. Moravia, Silesia, Transylvania and the Austrian Netherlands are in the Hapsburg colors too."
         },
         {
           "tag": "OTTOMAN EMPIRE",
@@ -236,12 +295,21 @@
             1200,
             700,
             450
+          ],
+          "ask": "Name two Balkan lands inside the Ottoman Empire.",
+          "answer": "Bosnia, Servia (Serbia), Bulgaria and Rumelia are all inside it.",
+          "answer_focus": [
+            1300,
+            1180,
+            700,
+            400
           ]
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "A strong pick: Inequality. The key colors Europe by ruling family, not by people. A few families hold whole kingdoms, and the millions of people living in them have no say."
         }
       ],
       "image": "atlas/global10r/10.1-A-03.webp",
@@ -277,6 +345,14 @@
             1400,
             500,
             600
+          ],
+          "ask": "What do the three pinks mean?",
+          "answer": "Land Britain took. The lightest pink is under Clive (1756–1767), the middle pink under Hastings (1772–1785), and the darkest under Cornwallis (1786–1793).",
+          "answer_focus": [
+            1020,
+            1750,
+            400,
+            150
           ]
         },
         {
@@ -287,7 +363,9 @@
             380,
             1250,
             1000
-          ]
+          ],
+          "ask": "Name two states breaking away inside the Mughal line.",
+          "answer": "The Mahrattas across the middle, the Nizam's lands around Haidarabad, Oudh in the north, and Tippoo's lands (Mysore) in the south."
         },
         {
           "tag": "BENGAL",
@@ -297,6 +375,14 @@
             820,
             350,
             250
+          ],
+          "ask": "Find Plassey. Which pink is it in?",
+          "answer": "Plassey is in Bengal, in the lightest pink: land Britain took under Clive, starting in 1756.",
+          "answer_focus": [
+            1100,
+            980,
+            160,
+            110
           ]
         },
         {
@@ -307,12 +393,21 @@
             1280,
             560,
             400
+          ],
+          "ask": "Which other European country has trading posts on India's coast?",
+          "answer": "France: Pondicherry on the east coast and Mahé on the west. Portugal still holds Goa.",
+          "answer_focus": [
+            380,
+            1440,
+            500,
+            330
           ]
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Imperialism. Britain starts with trading posts on the coast and ends up ruling Bengal and more. The pinks spread from the 1750s to the 1790s."
         }
       ],
       "image": "atlas/global10r/10.1-A-04.webp",
@@ -348,6 +443,14 @@
             995,
             500,
             280
+          ],
+          "ask": "Which color shows Suleiman's conquests?",
+          "answer": "Pink: Suleiman the Magnificent, 1520–1566. Look at Hungary, and at Baghdad in the east.",
+          "answer_focus": [
+            420,
+            190,
+            300,
+            200
           ]
         },
         {
@@ -358,7 +461,9 @@
             430,
             180,
             120
-          ]
+          ],
+          "ask": "Which waters does Constantinople sit between?",
+          "answer": "It sits on the water route between the Black Sea and the Mediterranean, where Europe meets Asia."
         },
         {
           "tag": "VIENNA",
@@ -368,12 +473,21 @@
             150,
             200,
             140
+          ],
+          "ask": "Which conquered land comes right up to Vienna?",
+          "answer": "Hungary, in Suleiman's pink. It reaches almost to Vienna.",
+          "answer_focus": [
+            420,
+            190,
+            300,
+            200
           ]
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Conflict. Each color in the key is a wave of conquest, and the empire's edge stops where the fighting stopped: at Vienna, in 1683."
         }
       ],
       "image": "atlas/global10r/10.1-A-05.webp",
@@ -409,7 +523,9 @@
             1045,
             575,
             430
-          ]
+          ],
+          "ask": "Name one country that stayed independent of Napoleon in 1812.",
+          "answer": "The United Kingdom, Russia, Sweden, Portugal or Turkey: the brown on the small map."
         },
         {
           "tag": "KEY",
@@ -419,6 +535,14 @@
             760,
             340,
             100
+          ],
+          "ask": "Find Paris on the big map. Whose empire is it in?",
+          "answer": "The Empire of the French, Napoleon's own empire, across the left side of the map.",
+          "answer_focus": [
+            50,
+            600,
+            450,
+            500
           ]
         },
         {
@@ -429,6 +553,14 @@
             450,
             500,
             600
+          ],
+          "ask": "What name ties these German states together on the small map?",
+          "answer": "The Confederation of the Rhine, in the color for states under Napoleon's control.",
+          "answer_focus": [
+            1265,
+            1045,
+            575,
+            430
           ]
         },
         {
@@ -439,12 +571,15 @@
             460,
             440,
             290
-          ]
+          ],
+          "ask": "Which two powers does the Duchy of Warsaw sit between?",
+          "answer": "Prussia to the west and north, and Russia to the east."
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Imperialism. France rules some lands outright and controls others, like the Confederation of the Rhine and the Duchy of Warsaw, through rulers Napoleon chose."
         }
       ],
       "image": "atlas/global10r/10.2-B-01.webp",
@@ -480,7 +615,9 @@
             810,
             240,
             290
-          ]
+          ],
+          "ask": "How many of the ten peoples are Slavs?",
+          "answer": "Six: Croats and Servians, Ruthenians, Czechs, Slovaks, Poles and Slovenes."
         },
         {
           "tag": "VIENNA",
@@ -490,7 +627,9 @@
             340,
             170,
             110
-          ]
+          ],
+          "ask": "Which people live around Vienna?",
+          "answer": "Germans, in pink."
         },
         {
           "tag": "HUNGARY",
@@ -500,6 +639,14 @@
             385,
             350,
             340
+          ],
+          "ask": "Which people live in Transylvania, inside Hungary's border?",
+          "answer": "Mostly Rumanians, in orange, with patches of Magyars and Germans.",
+          "answer_focus": [
+            1000,
+            500,
+            420,
+            220
           ]
         },
         {
@@ -510,12 +657,15 @@
             655,
             300,
             420
-          ]
+          ],
+          "ask": "Which people live in Bosnia?",
+          "answer": "Croats and Servians (Serbs), in olive."
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Nationalism. Ten peoples live inside one empire's border, and each could want a nation of its own."
         }
       ],
       "image": "atlas/global10r/10.2-C-01.webp",
@@ -551,6 +701,14 @@
             60,
             330,
             290
+          ],
+          "ask": "Which power holds Bohemia and Hungary?",
+          "answer": "Austria, in orange.",
+          "answer_focus": [
+            820,
+            760,
+            700,
+            500
           ]
         },
         {
@@ -561,6 +719,14 @@
             150,
             650,
             600
+          ],
+          "ask": "Why does Prussia look like two pieces?",
+          "answer": "Its western lands, Westphalia and the Rhine, are cut off from its main block in the east (Brandenburg, Silesia, Prussia) by Hanover and other small states.",
+          "answer_focus": [
+            370,
+            520,
+            280,
+            300
           ]
         },
         {
@@ -571,23 +737,33 @@
             760,
             700,
             500
+          ],
+          "ask": "Name a land Austria rules where most people aren't German.",
+          "answer": "Hungary, and Lombardy and Venetia in northern Italy.",
+          "answer_focus": [
+            540,
+            1250,
+            400,
+            160
           ]
         },
         {
           "tag": "THE STATES BETWEEN",
           "say": "Dozens of small German states: Hanover, Saxony, Bavaria, Württemberg.",
-          "ask": "Who will unite them, and how?",
+          "ask": "Which two big powers border the small German states?",
           "focus": [
             450,
             450,
             450,
             900
-          ]
+          ],
+          "answer": "Prussia to the north, wrapped around them on both sides, and Austria to the south. They're the two powers big enough to unite Germany."
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Nationalism. Dozens of small states, one German people. Which power unites them is the question this map sets up."
         }
       ],
       "image": "atlas/global10r/10.2-C-02.webp",
@@ -613,7 +789,9 @@
             10,
             300,
             160
-          ]
+          ],
+          "ask": "What do the dates mean?",
+          "answer": "The year each region joined the Kingdom of Sardinia, which became the Kingdom of Italy in 1861 (the note under the title)."
         },
         {
           "tag": "WHERE IT STARTS",
@@ -623,7 +801,9 @@
             80,
             200,
             220
-          ]
+          ],
+          "ask": "What is the capital where it starts?",
+          "answer": "Turin, in Piedmont."
         },
         {
           "tag": "1859 AND 1860",
@@ -633,6 +813,14 @@
             115,
             330,
             350
+          ],
+          "ask": "Which region joins in 1859, and what does Sardinia give up in 1860?",
+          "answer": "Lombardy joins in 1859. In 1860 Savoy and Nice go to France (top left).",
+          "answer_focus": [
+            30,
+            70,
+            130,
+            310
           ]
         },
         {
@@ -653,12 +841,15 @@
             370,
             160,
             240
-          ]
+          ],
+          "ask": "Which part joins last?",
+          "answer": "Rome and the land around it, the last of the Papal States, in 1870."
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Nationalism. Italians unite many small states into one nation, region by region."
         }
       ],
       "image": "atlas/global10r/10.2-C-03.webp",
@@ -694,7 +885,9 @@
             575,
             410,
             200
-          ]
+          ],
+          "ask": "Which state leads the customs union?",
+          "answer": "Prussia. The first line of the top key is the Prussian Customs-Union."
         },
         {
           "tag": "PRUSSIA",
@@ -709,12 +902,19 @@
         {
           "tag": "BOTTOM MAP",
           "say": "After 1834 the union spreads to almost all of Germany.",
-          "ask": "Why would trade come before government?",
+          "ask": "Which big German-speaking state never joins the Zollverein?",
           "focus": [
             615,
             1300,
             370,
             210
+          ],
+          "answer": "Austria, at the bottom. It's left out on both maps.",
+          "answer_focus": [
+            380,
+            1380,
+            220,
+            110
           ]
         },
         {
@@ -725,12 +925,15 @@
             1270,
             140,
             190
-          ]
+          ],
+          "ask": "Which country did Germany take Alsace-Lorraine from?",
+          "answer": "France, right next door to the west."
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Nationalism. The German states join together, first in trade and then as one nation. Economic Development fits too."
         }
       ],
       "image": "atlas/global10r/10.2-C-04.webp",
@@ -766,7 +969,9 @@
             835,
             700,
             30
-          ]
+          ],
+          "ask": "What year do the colors show?",
+          "answer": "About 1910."
         },
         {
           "tag": "KEY",
@@ -776,17 +981,32 @@
             30,
             230,
             230
+          ],
+          "ask": "Which people live in most of Asia Minor?",
+          "answer": "Turks, in pink.",
+          "answer_focus": [
+            480,
+            300,
+            560,
+            380
           ]
         },
         {
           "tag": "THE BALKANS",
           "say": "The colors crowd and mix. Draw one border here, and someone ends up on the wrong side.",
-          "ask": "Where would you draw the line?",
+          "ask": "Look near Salonika. How many peoples can you find close together?",
           "focus": [
             30,
             30,
             590,
             380
+          ],
+          "answer": "At least four: Greeks along the coast, Bulgarians inland, Albanians to the west, and patches of Turks. Any border here leaves someone on the wrong side.",
+          "answer_focus": [
+            100,
+            250,
+            310,
+            165
           ]
         },
         {
@@ -797,12 +1017,15 @@
             280,
             120,
             90
-          ]
+          ],
+          "ask": "Which two seas meet at Constantinople?",
+          "answer": "The Black Sea and the Sea of Marmora, which opens to the Mediterranean."
         },
         {
           "tag": "ENDURING ISSUE",
           "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
-          "ask": "Which enduring issue does this map raise?"
+          "ask": "Which enduring issue does this map raise?",
+          "answer": "Nationalism. The peoples are mixed together, so any border drawn for one nation leaves others inside it. Conflict fits too."
         }
       ],
       "image": "atlas/global10r/10.2-C-05.webp",

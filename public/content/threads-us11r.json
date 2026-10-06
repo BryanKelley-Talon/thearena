@@ -1,7 +1,7 @@
 {
   "_course": "US History & Government 11R",
   "_built": "2026-09-27 by Sam · SIGNED by BK 2026-09-27 09:56 · v2 2026-10-05: every line an event belongs to (on_lines), the shared stop shape (map-stop-shape.md), atlas links · build_threads_us11r.py",
-  "_shape": "map-stop-shape v1 · Sam + Will 2026-10-05 · revises Josh's 9/27 Data Brief §2 · Josh confirms",
+  "_shape": "map-stop-shape v2 · Sam 2026-10-05 · v1 + exemplar / exemplar_by_line, link kind + explain, doc_assist (Josh 23:45)",
   "_you_are_here": "Read the door's current_unit in the Arena manifest; no field here.",
   "lines": [
     {
@@ -97,10 +97,19 @@
       "links": [
         {
           "to": "s-1642-miantonomo",
-          "why": "The people, land and animals lost here are what Miantonomo warns about."
+          "why": "The people, land and animals lost here are what Miantonomo warns about.",
+          "kind": "continuity",
+          "explain": "Disease weakened Native nations, and settlement kept taking what was left. Miantonomo is describing the same loss a generation later, now from English axes, scythes and livestock instead of sickness."
         }
       ],
       "atlas": "11.1-A-01",
+      "doc_assist": "11.1/A/2",
+      "exemplar": {
+        "context": "In the early 1600s, before English towns spread across New England, European diseases reached Native villages along the coast.",
+        "claim": "Disease took Native nations' people before settlers took their land, and that loss weakened their power to defend their sovereignty.",
+        "evidence": "Document 2 shows the scale of the loss: John Josselyn wrote that the Massachusetts peoples \"by the plague were brought from 30,000 to 300.\"",
+        "explain": "A nation that loses most of its people loses its farmers, warriors and leaders all at once. When English settlers arrived in large numbers, many Native nations were already facing them from a position of terrible loss."
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -131,14 +140,25 @@
       "links": [
         {
           "to": "s-1744-lancaster",
-          "why": "A hundred years later, Native leaders are still arguing about the same land, now at a treaty table."
+          "why": "A hundred years later, Native leaders are still defending their land, now at a treaty table.",
+          "kind": "continuity",
+          "explain": "A century apart, both leaders defend their people's land and way of life. What changed is the setting: by 1744 the fight happens at a treaty table, but the land is still moving into colonial hands."
         },
         {
           "to": "s-1754-join-or-die",
-          "why": "Franklin makes the same argument, act as one or lose everything, for the colonists."
+          "why": "Franklin makes the same argument, act as one or lose everything, for the colonists.",
+          "kind": "continuity",
+          "explain": "Two leaders on two different threads make the same argument: unite or be destroyed. Miantonomo says it to Native nations about the English; Franklin says it to the colonies about the French."
         }
       ],
       "atlas": "11.1-A-01",
+      "doc_assist": "11.1/A/4",
+      "exemplar": {
+        "context": "In the 1640s, English settlers were spreading across Native lands in southern New England and Long Island.",
+        "claim": "Miantonomo saw that English settlement was destroying his people's way of life, and he believed only unity could protect them.",
+        "evidence": "Document 4 shows Miantonomo warning that \"since these Englishmen have seized our country, they have cut down the grass with scythes, and the trees with axes,\" and telling the Montaukett, \"we must be as one as the English are, or we shall all be destroyed.\"",
+        "explain": "Losing land meant losing food and a whole way of life, not just territory. His answer, act as one, is an early version of this thread's question: when will Native nations' right to govern their own land be respected?"
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -169,10 +189,19 @@
       "links": [
         {
           "to": "s-1763-proclamation",
-          "why": "Twenty years later, Britain draws a line to keep colonists off Native land, and the colonists are furious."
+          "why": "Nineteen years later, Britain draws a line to keep colonists off Native land, and the colonists are furious.",
+          "kind": "change",
+          "explain": "At Lancaster, colonial governments bargained for Native land. In 1763 the British government stepped in and drew a line to keep colonists out, the empire itself protecting Native land from its own colonists."
         }
       ],
       "atlas": "11.1-A-01",
+      "doc_assist": "11.1/A/5",
+      "exemplar": {
+        "context": "In 1744, Haudenosaunee (Iroquois) leaders met negotiators from Virginia, Maryland and Pennsylvania at Lancaster to settle disputes over land settlers had already taken.",
+        "claim": "Gachradodow used the treaty table to insist that his nation had its own laws, equal to the colonists'.",
+        "evidence": "Document 5 shows Gachradodow telling them, \"You have your Laws and Customs, and so have we,\" and saying the colonists \"have got lands and are by them become rich, and we are now poor.\"",
+        "explain": "He speaks as the leader of a sovereign nation, not a subject. But the treaty also shows this thread's pattern: Native nations bargained as equals while the land kept passing into colonial hands."
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -203,13 +232,24 @@
       "links": [
         {
           "to": "s-1738-venture-smith",
-          "why": "Venture Smith lived inside the system these laws built."
+          "why": "Venture Smith lived inside the system these laws built.",
+          "kind": "continuity",
+          "explain": "Laws like Virginia's turned slavery into a permanent, inherited condition across the colonies. Venture Smith's life in New England shows what that system meant for one child."
         },
         {
           "to": "s-1787-constitution",
-          "why": "The Constitution counts three of every five enslaved people toward seats in Congress. The law is still doing the work."
+          "why": "The Constitution counts three of every five enslaved people toward seats in Congress. The law is still doing the work.",
+          "kind": "continuity",
+          "explain": "The colonies built slavery into their laws; the new nation built it into its Constitution. The three-fifths clause shows the law still protecting slavery after independence."
         }
       ],
+      "doc_assist": "11.1/B/13",
+      "exemplar": {
+        "context": "In 1619, captive Africans were brought to Virginia, and no Virginia law yet said that anyone was enslaved for life.",
+        "claim": "Colonial governments built slavery step by step through law, turning servitude into a permanent condition tied to race.",
+        "evidence": "Document 13 shows John Punch sentenced to \"servitude for life\" in 1640, and Virginia deciding in 1662 that \"any child born to an enslaved woman is also enslaved.\"",
+        "explain": "Each law closed another way out, until slavery passed from mother to child. That matters for this thread because full citizenship would later have to undo what the law itself had built."
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -240,9 +280,18 @@
       "links": [
         {
           "to": "s-1776-declaration",
-          "why": "The Declaration says all men are created equal. Venture Smith had to buy his freedom."
+          "why": "The Declaration says all men are created equal. Venture Smith had to buy his freedom.",
+          "kind": "change",
+          "explain": "Venture Smith had to buy his own freedom. The Declaration then announced that all men are created equal, a new promise that enslaved people could hold the nation to, even though it was not kept for them."
         }
       ],
+      "doc_assist": "11.1/B/12",
+      "exemplar": {
+        "context": "In the 1730s, the slave trade carried captive African children to the American colonies, including New England.",
+        "claim": "Venture Smith's own account shows that slavery treated a child as property to be bought, worked and punished.",
+        "evidence": "Document 12 shows he was \"bought on board by one Robertson Mumford, for four gallons of rum, and a piece of calico,\" and named Venture because his master bought him \"with his own private venture.\"",
+        "explain": "Even his name was a record of his sale. When he later bought his own freedom and told his story himself, he answered this thread's question the only way the law allowed him: by paying for what should have been his."
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -273,10 +322,19 @@
       "links": [
         {
           "to": "s-1781-articles",
-          "why": "When the colonies finally unite, their first government is so weak it can barely act."
+          "why": "When the colonies finally unite, their first government is so weak it can barely act.",
+          "kind": "change",
+          "explain": "Franklin begged the colonies to unite, and they would not. By 1781 they finally had a union of their own, even if they made it weak on purpose."
         }
       ],
       "atlas": "11.1-B-01",
+      "doc_assist": "11.1/B/16",
+      "exemplar": {
+        "context": "In 1754, the French were pushing into the Ohio River Valley, and each British colony had its own government and assembly.",
+        "claim": "Franklin argued that the colonies were too weak apart to defend themselves.",
+        "evidence": "Document 16 shows a snake cut into pieces labeled with the colonies above the words \"JOIN, or DIE,\" and Franklin's article blamed \"the present disunited State of the British Colonies.\"",
+        "explain": "A government that cannot act together cannot protect its people. This is where this thread's question first shows up in this course: can a government be too weak?"
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -307,9 +365,18 @@
       "links": [
         {
           "to": "s-1776-abigail-adams",
-          "why": "Eleven years later, Abigail Adams asks her husband to “remember the ladies.”"
+          "why": "Eleven years later, Abigail Adams asks her husband to “remember the ladies.”",
+          "kind": "change",
+          "explain": "Blackstone's law said a married woman's legal existence was suspended. Eleven years later, Abigail Adams pushed back, asking that women's interests be remembered in the new laws."
         }
       ],
+      "doc_assist": "11.1/B/18",
+      "exemplar": {
+        "context": "In 1765, the colonies followed English common law, which William Blackstone described that year.",
+        "claim": "Under coverture, a married woman had no legal identity of her own.",
+        "evidence": "Document 18 shows Blackstone writing that \"the very being or legal existence of the woman is suspended during the marriage.\"",
+        "explain": "Because the law treated a married woman as part of her husband, she could not own property, sign a contract or sue in her own name. That is where this thread's question for women begins: when does equality mean us too?"
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -340,10 +407,19 @@
       "links": [
         {
           "to": "s-1765-stamp-act-congress",
-          "why": "Then Britain starts taxing the colonies to pay for the war."
+          "why": "Then Parliament taxes the colonies to help pay for the war.",
+          "kind": "change",
+          "explain": "The fight with Britain moves from land to money. First Britain limits where colonists can settle; then it taxes them, and the colonists answer with a claim about their rights."
         }
       ],
       "atlas": "11.2-A-02",
+      "doc_assist": "11.2/A/1",
+      "exemplar": {
+        "context": "In 1763, Britain won the French and Indian War and gained the land between the Appalachian Mountains and the Mississippi River.",
+        "claim": "The Proclamation Line set aside western land for Native nations, and colonists resented it.",
+        "evidence": "Document 1 shows the Proclamation Line of 1763 running along the mountains, with the colonies on one side and unshaded land to the west.",
+        "explain": "For a moment, the British government drew a border that recognized Native land. Colonists who wanted that land saw the line as a limit on their own rights, so Native sovereignty and colonial liberty pulled in opposite directions."
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -374,9 +450,24 @@
       "links": [
         {
           "to": "s-1776-declaration",
-          "why": "Eleven years later, the argument about rights becomes a declaration of independence."
+          "why": "Eleven years later, the argument about rights becomes a declaration of independence.",
+          "kind": "change",
+          "explain": "In 1765, colonists argued for their rights as British subjects. By 1776 they claimed rights because all men are created equal, and broke away to protect them."
+        },
+        {
+          "to": "s-1781-articles",
+          "why": "No taxes without consent, and then a Congress that can't tax at all.",
+          "kind": "continuity",
+          "explain": "The colonists fought Britain over who could tax them. When they built their own national government, they kept that fear so strongly that Congress could not tax anyone, and it nearly sank the new nation."
         }
       ],
+      "doc_assist": "11.2/A/3",
+      "exemplar": {
+        "context": "In 1765, Parliament taxed printed paper in the colonies to help pay for British troops kept in America after the French and Indian War.",
+        "claim": "The colonists answered that they had the same rights as anyone born in Great Britain, including the right not to be taxed without their consent.",
+        "evidence": "Document 3 shows the Stamp Act Congress declaring that it is \"the right of free people that no taxes be put on them without their own consent, given in person or through their representatives.\"",
+        "explain": "This is the colonists claiming full rights for themselves. Thread 1 asks whether there is one America with the same rights for everyone, and this is the first big claim, made before most colonists asked who it left out."
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -414,10 +505,19 @@
       "links": [
         {
           "to": "s-1798-sedition",
-          "why": "In 1770, printing an attack on the government made Revere a patriot. In 1798, it could land a printer in jail."
+          "why": "In 1770, printing an attack on the government made Revere a patriot. In 1798, it could land a printer in jail.",
+          "kind": "change",
+          "explain": "In 1770, Revere's attack on the government made him a patriot. In 1798, the new government made attacks on itself a crime: the same kind of speech, judged very differently once Americans held the power."
         }
       ],
       "atlas": "11.2-A-03",
+      "doc_assist": "11.2/A/4",
+      "exemplar": {
+        "context": "In March 1770, a crowd confronted British soldiers on King Street in Boston, and five colonists died, among them Crispus Attucks, a sailor of African and Native descent.",
+        "claim": "Paul Revere's engraving turned the shooting into proof that Britain was trampling the colonists' rights.",
+        "evidence": "Document 4 shows Revere titling it \"The Bloody Massacre Perpetrated in King Street\" and drawing the soldiers firing in a neat line into the crowd while an officer raises his sword.",
+        "explain": "Patriots used the image to say all colonists were victims of the same tyranny. But Attucks, among the dead, belonged to groups the colonists' new rights would leave out, which is the question this thread asks."
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -467,9 +567,32 @@
       "links": [
         {
           "to": "s-1787-constitution",
-          "why": "Eleven years later, the Constitution counts three of every five enslaved people toward seats in Congress, and gives them no vote."
+          "why": "Eleven years later, the Constitution counts three of every five enslaved people toward seats in Congress, and gives them no vote.",
+          "kind": "continuity",
+          "explain": "The Declaration promised that all men are created equal. The Constitution protected slavery anyway, through the three-fifths clause: the gap between promise and practice carried into the new government."
         }
       ],
+      "doc_assist": "11.2/A/8",
+      "exemplar_by_line": {
+        "t1": {
+          "context": "In July 1776, more than a year after fighting began, the Continental Congress declared independence from Britain.",
+          "claim": "The Declaration made the promise this whole thread tests: that all men are created equal, with rights no government can take away.",
+          "evidence": "Document 8 says \"all men are created equal\" and that governments \"get their power from the consent of the governed.\"",
+          "explain": "Every later fight on this thread holds America to these words. The question is never whether the promise was made, but who it was kept for."
+        },
+        "t1:t1-aa": {
+          "context": "In 1776, when Congress declared independence, about one in five people in the colonies was enslaved.",
+          "claim": "The Declaration's promise of equality did not reach enslaved people.",
+          "evidence": "Document 8 declares that \"all men are created equal\" with rights \"that cannot be taken away,\" while slavery stayed legal in every one of the thirteen colonies.",
+          "explain": "Enslaved African Americans could point to these exact words to demand freedom. The distance between the promise and their lives is this arc's question: when do we become full citizens?"
+        },
+        "t1:t1-women": {
+          "context": "In the spring of 1776, as Congress moved toward independence, Abigail Adams asked her husband John to \"remember the ladies\" in the new laws.",
+          "claim": "The Declaration spoke of \"all men,\" and the new nation left most women without a vote.",
+          "evidence": "Document 8 promises that governments \"get their power from the consent of the governed,\" yet most women had no vote with which to give that consent.",
+          "explain": "If power comes from the people's consent, leaving women out is a contradiction inside the promise itself. That contradiction drives this arc: when does equality mean us too?"
+        }
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -500,9 +623,18 @@
       "links": [
         {
           "to": "s-1776-declaration",
-          "why": "She writes the same spring Congress declares that all men are created equal."
+          "why": "She writes in March. That July, Congress declares that all men are created equal.",
+          "kind": "continuity",
+          "explain": "Abigail Adams asked for women's voices in the spring of 1776; that summer the Declaration spoke of \"all men.\" Her request and its silence sit side by side in the same year."
         }
       ],
+      "doc_assist": "11.2/A/10",
+      "exemplar": {
+        "context": "In March 1776, while John Adams served in the Continental Congress, Abigail Adams wrote to him about the new government he was helping to build.",
+        "claim": "Abigail Adams turned the colonists' own argument about representation back on them, on behalf of women.",
+        "evidence": "Document 10 shows her warning that women \"will not obey any laws in which we have no voice or representation\" and telling him, \"Remember, all men would be tyrants if they could.\"",
+        "explain": "The colonists said no taxation without representation; she said no obedience without a voice. John Adams laughed it off, which shows how far equality still was from meaning women too."
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -539,10 +671,33 @@
       "links": [
         {
           "to": "s-1787-constitution",
-          "why": "Shays' Rebellion scares the country's leaders, and they write a stronger government."
+          "why": "Shays' Rebellion scares the country's leaders, and they write a stronger government.",
+          "kind": "change",
+          "explain": "The Articles made a government too weak to tax or keep order. After Shays' Rebellion, the Constitution replaced it with a stronger one that could tax and enforce its laws."
+        },
+        {
+          "to": "s-1796-farewell",
+          "why": "From no leader at all to a President who limits himself.",
+          "kind": "change",
+          "explain": "The Articles had no executive, out of fear of one-person rule. Under the Constitution, Washington held real power and chose to give it up after two terms, showing a strong leader could still respect limits."
         }
       ],
       "atlas": "11.2-B-01",
+      "doc_assist": "11.2/B/11",
+      "exemplar_by_line": {
+        "t3": {
+          "context": "In 1781, after years of fighting a king with too much power, the states approved their first national government.",
+          "claim": "The Articles of Confederation created a national government too weak to protect the country.",
+          "evidence": "Document 11 shows that Article VIII left taxes to be \"laid and collected by the legislatures of the several states,\" and Article XIII required every state's legislature to confirm any change.",
+          "explain": "A Congress that cannot collect taxes or change its own rules cannot pay its debts or answer a crisis. That is this thread's question in action: a government can be too weak, just as it can be too strong."
+        },
+        "t4": {
+          "context": "In 1781, the Americans who wrote the Articles had just fought a war against a king.",
+          "claim": "Fear of one-person rule led them to build a national government with no executive branch.",
+          "evidence": "Document 11 shows that under Article V, \"delegates shall meet in one Congress,\" and each state has one vote; the Articles give the work of governing to that Congress alone.",
+          "explain": "No single leader could become a tyrant, but no one could lead, either. The question of how much power one person should have starts with this choice of none."
+        }
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -586,9 +741,26 @@
       "links": [
         {
           "to": "s-1791-bill-of-rights",
-          "why": "Critics say this government is too strong. The Bill of Rights is the answer."
+          "why": "Critics say this government is too strong. The Bill of Rights is the answer.",
+          "kind": "change",
+          "explain": "The Constitution made the national government stronger. The Bill of Rights then set written limits on that power, answering critics who feared it had gone too far."
         }
       ],
+      "doc_assist": "11.2/B/14",
+      "exemplar_by_line": {
+        "t3": {
+          "context": "In 1787, after Shays' Rebellion showed how weak the Articles were, delegates met in Philadelphia to write a new plan of government.",
+          "claim": "The Constitution built a stronger national government while dividing its power.",
+          "evidence": "Document 14 shows that Article I gives Congress the \"power to lay and collect taxes, to pay the debts and provide for the common defense,\" and splits it into a Senate and a House of Representatives.",
+          "explain": "The power to tax fixed the Articles' biggest weakness, and dividing power was meant to keep a stronger government from becoming the tyranny they had fought. That balance is the heart of this thread."
+        },
+        "t1:t1-aa": {
+          "context": "In 1787, delegates at the Convention argued over how enslaved people would be counted when House seats were divided among the states.",
+          "claim": "The three-fifths clause gave slave states more power while giving enslaved people no voice.",
+          "evidence": "Document 14 shows that Article I divides representatives among the states by \"adding to the whole number of free persons three fifths of all other persons.\"",
+          "explain": "Every five enslaved people counted as three toward a state's seats, so slaveholders gained power in Congress from the people they enslaved. The new government protected slavery, the opposite of full citizenship."
+        }
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -625,9 +797,26 @@
       "links": [
         {
           "to": "s-1798-sedition",
-          "why": "Seven years later, Congress passes a law that tests “Congress shall make no law.”"
+          "why": "Seven years later, Congress passes a law that tests “Congress shall make no law.”",
+          "kind": "change",
+          "explain": "The First Amendment promised that Congress would make no law limiting speech or the press. Seven years later, Congress passed one, the first test of that promise."
         }
       ],
+      "doc_assist": "11.2/B/17",
+      "exemplar_by_line": {
+        "t7": {
+          "context": "In 1791, the states ratified the first ten amendments, after Antifederalists warned that the new government could crush people's liberties.",
+          "claim": "The First Amendment made a clear promise to protect speech and the press from the national government.",
+          "evidence": "Document 17 says \"Congress shall make no law\" limiting \"the freedom of speech or of the press.\"",
+          "explain": "This is the promise this thread tests whenever the country feels threatened. Within seven years, Congress passed a law that tested whether \"no law\" meant no exceptions."
+        },
+        "t3": {
+          "context": "In 1788, Antifederalists feared that the Constitution gave the national government too much power, and several states ratified it only after being promised a bill of rights.",
+          "claim": "The Bill of Rights answered the fear of a government that was too strong by writing its limits down.",
+          "evidence": "In Document 17, Amendment V says no person shall \"be deprived of life, liberty or property without due process of law.\"",
+          "explain": "After the Articles proved too weak, the Constitution swung toward strength, and the Bill of Rights pulled back toward liberty. That back-and-forth is exactly what this thread tracks."
+        }
+      },
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -664,9 +853,25 @@
       "links": [
         {
           "to": "s-1798-sedition",
-          "why": "Washington warned about parties. Two years later, one party passes a law used to jail the other side's newspaper editors."
+          "why": "Washington warned about parties. Two years later, one party passes a law used to jail the other side's newspaper editors.",
+          "kind": "change",
+          "explain": "Washington warned against the spirit of political parties. Two years later, the party in power used the Sedition Act against the other side's newspapers, the danger he had described."
         }
       ],
+      "exemplar_by_line": {
+        "t4": {
+          "context": "In 1796, near the end of his second term, George Washington decided not to run again.",
+          "claim": "Washington set a limit on presidential power that the Constitution itself did not require.",
+          "evidence": "In his Farewell Address, he announced that he would not seek a third term and would return to private life.",
+          "explain": "Because no rule stopped him, his choice became the rule: no President won a third term until Franklin Roosevelt in 1940. Some limits on power come from precedent, not law."
+        },
+        "t2": {
+          "context": "In the 1790s, Britain and France were at war, and Americans argued over which side to favor.",
+          "claim": "Washington warned the young nation to stay out of foreign alliances.",
+          "evidence": "He advised that it was \"our true policy to steer clear of permanent alliances with any portion of the foreign world.\"",
+          "explain": "His advice shaped American foreign policy for more than a century. Every later debate on this thread about when to intervene starts from Washington's answer: as little as possible."
+        }
+      },
       "status": "building",
       "image": null,
       "image_alt": null,
@@ -695,6 +900,12 @@
         }
       ],
       "links": [],
+      "exemplar": {
+        "context": "In 1798, the United States feared war with France, and the Federalists in power faced harsh criticism from Republican newspapers.",
+        "claim": "The Sedition Act tested the First Amendment by making some criticism of the government a crime.",
+        "evidence": "It punished \"any false, scandalous and malicious writing or writings against the government of the United States,\" Congress or the President.",
+        "explain": "Newspaper editors who criticized President Adams went to jail only seven years after \"Congress shall make no law.\" Fear of war was used to limit speech, the exact conflict this thread follows."
+      },
       "status": "building",
       "image": null,
       "image_alt": null,
@@ -725,9 +936,17 @@
       "links": [
         {
           "to": "s-1819-mcculloch",
-          "why": "Sixteen years later, Marshall's Court uses that power to let the national government reach further."
+          "why": "Sixteen years later, Marshall's Court uses that power to let the national government reach further.",
+          "kind": "continuity",
+          "explain": "Marbury gave the Court the power to judge whether laws follow the Constitution. In McCulloch, the Court used that power again, to uphold the national bank and strike down Maryland's tax."
         }
       ],
+      "exemplar": {
+        "context": "In 1801, outgoing President John Adams appointed new judges, and William Marbury's commission was never delivered.",
+        "claim": "In Marbury v. Madison, the Supreme Court claimed the power to strike down laws that break the Constitution.",
+        "evidence": "Chief Justice John Marshall wrote that \"it is emphatically the province and duty of the judicial department to say what the law is.\"",
+        "explain": "Judicial review let the Court check Congress and the President, a new limit on how far the national government can go. It became one of the main ways this thread decides when government power has gone too far."
+      },
       "status": "building",
       "image": null,
       "image_alt": null,
@@ -758,9 +977,17 @@
       "links": [
         {
           "to": "s-1781-articles",
-          "why": "Under the Articles, Congress couldn't even collect a tax. Now the Court says the national government can do more than the Constitution lists."
+          "why": "Under the Articles, Congress couldn't even collect a tax. Now the Court says Congress has powers beyond the ones listed.",
+          "kind": "change",
+          "explain": "Under the Articles, Congress could not even collect a tax. Almost forty years later, the Supreme Court said Congress has powers beyond the ones listed, the opposite end of this thread."
         }
       ],
+      "exemplar": {
+        "context": "In 1818, Maryland taxed the Second Bank of the United States, which Congress had created, and the case reached the Supreme Court in 1819.",
+        "claim": "In McCulloch v. Maryland, the Supreme Court ruled that Congress has powers beyond the ones listed in the Constitution, and that a state cannot tax the national government.",
+        "evidence": "Marshall held that the necessary and proper clause let Congress create the bank, and warned that \"the power to tax involves the power to destroy.\"",
+        "explain": "The decision made the national government far stronger than the Articles ever allowed. The fight this thread follows, over how far federal power can reach, kept going long after it."
+      },
       "status": "building",
       "image": null,
       "image_alt": null,

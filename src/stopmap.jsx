@@ -32,7 +32,8 @@
 // ============================================================
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 
-const PROOF = import.meta.env.VITE_ATLAS_PROOF === '1'
+// Proof builds (VITE_STOPMAP_PROOF=1, proof/stopmap/build-proof.sh) read a proof copy from dist/_proof/.
+const PROOF = import.meta.env.VITE_STOPMAP_PROOF === '1'
 
 const reducedMotion = () =>
   typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
@@ -58,7 +59,13 @@ const COMMON_WORDS = {
   connects: 'Connects to',
   // BK 23:47 "yes": the four labels, and the two tags on the connecting line.
   part: { context: 'Context', claim: 'Claim', evidence: 'Evidence', explain: 'Explanation / Link' },
-  kind: { change: 'Change over time', continuity: 'Continuity' },
+  // BK 00:04 (via Sam, 00:08): "We shouldn't veer from seq language similar different, cause effect,
+  // turning point." The SEQ three replace the 23:47 pair; the pair still reads in a file not yet
+  // rebuilt. A file's own `link_kinds` {kind: words} overrides these, so the desks can move a tag.
+  kind: { cause_effect: 'Cause and Effect', similarity_difference: 'Similarity/Difference', turning_point: 'Turning Point',
+          change: 'Change over time', continuity: 'Continuity' },
+  // Each box's part in a one-way relationship (proposed to BK in the morning proof).
+  role: { cause: 'Cause', effect: 'Effect', turning: 'Turning point' },
   openDoc: 'Open in Doc Assist',        // proposed to BK in the morning proof
 }
 export const STOPMAP_WORDS = {
@@ -188,11 +195,12 @@ export function StopMapLane({ course, kind, maps, onOpenMap }) {
   const close = () => { setOpen(null); setPair(null); setVia(null) }
   const link = open && pair ? (links[open] || []).find(l => l.to === pair) : null
 
-  const ctx = { W, kind, byId, rows, rowByKey, rowKeysOf, lineById, subById, units, here, links, maps, onOpenMap, da }
+  const labels = { ...W.kind, ...((data && data.link_kinds) || {}) }
+  const ctx = { W, kind, byId, rows, rowByKey, rowKeysOf, lineById, subById, units, here, links, maps, onOpenMap, da, labels }
   return (
     <div className={`threads stopmap${kind === 'issues' ? ' issues' : ''}`}>
       <StopMapWide ctx={ctx} open={open} pair={pair} via={via} link={link} onPick={pick} onPair={setPair} onClose={close} />
-      <StopMapPhone ctx={ctx} open={open} pair={pair} link={link} onPick={pick} onPair={setPair} onClose={close} />
+      <StopMapPhone ctx={ctx} open={open} pair={pair} via={via} link={link} onPick={pick} onPair={setPair} onClose={close} />
     </div>
   )
 }
@@ -424,10 +432,15 @@ function StopMapWide({ ctx, open, pair, via, link, onPick, onPair, onClose }) {
             {place && place.b != null && (() => {
               const yy = deckTop + 30
               const [l, r] = place.b > place.a ? [place.a + BOX_W, place.b] : [place.b + BOX_W, place.a]
+              // Arrowheads: both ends for a two-way relationship; one end for cause → effect and
+              // for the stop a turning point points to.
+              const d = dirOf(link), aLeft = place.a < place.b
+              const toB = d === 'ab' || d === 'both', toA = d === 'ba' || d === 'both'
+              const headL = aLeft ? toA : toB, headR = aLeft ? toB : toA
               return <g className="bridge-line">
                 <line x1={l + 2} x2={r - 2} y1={yy} y2={yy} />
-                <path d={`M ${l + 12} ${yy - 7} L ${l + 2} ${yy} L ${l + 12} ${yy + 7}`} />
-                <path d={`M ${r - 12} ${yy - 7} L ${r - 2} ${yy} L ${r - 12} ${yy + 7}`} />
+                {headL && <path d={`M ${l + 12} ${yy - 7} L ${l + 2} ${yy} L ${l + 12} ${yy + 7}`} />}
+                {headR && <path d={`M ${r - 12} ${yy - 7} L ${r - 2} ${yy} L ${r - 12} ${yy + 7}`} />}
               </g>
             })()}
           </svg>
@@ -435,16 +448,16 @@ function StopMapWide({ ctx, open, pair, via, link, onPick, onPair, onClose }) {
           {open && (
             <div className="stopmap-deck" style={{ top: deckTop }}>
               <div className="pop-box a" ref={boxA} style={{ left: place.a, width: BOX_W }}>
-                <PopBox ctx={ctx} stop={ctx.byId[open]} via={via} headRef={headA} onClose={onClose}
+                <PopBox ctx={ctx} stop={ctx.byId[open]} via={via} headRef={headA} onClose={onClose} role={roleOf(W, link, true)}
                         pair={pair} onPair={onPair} onPick={onPick} main />
               </div>
               {pair && (
                 <>
                   <div className="pop-bridge" style={{ left: (Math.min(place.a, place.b) + BOX_W + Math.max(place.a, place.b)) / 2 - (BRIDGE_W - 28) / 2, width: BRIDGE_W - 28 }}>
-                    <Bridge W={W} link={link} />
+                    <Bridge W={W} labels={ctx.labels} link={link} />
                   </div>
                   <div className="pop-box b" ref={boxB} style={{ left: place.b, width: BOX_W }}>
-                    <PopBox ctx={ctx} stop={ctx.byId[pair]} via={via} onPick={onPick} />
+                    <PopBox ctx={ctx} stop={ctx.byId[pair]} onPick={onPick} role={roleOf(W, link, false)} />
                   </div>
                 </>
               )}
@@ -457,24 +470,54 @@ function StopMapWide({ ctx, open, pair, via, link, onPick, onPair, onClose }) {
 }
 
 // ── THE BRIDGE: the relationship between the two stops ───────────────────
-function Bridge({ W, link, vertical }) {
+// SEQ relationships run one way: a cause leads to its effect; a turning point is the stop a link
+// points to. A link read from the stop it names keeps its direction; read from the other end, it flips.
+const DIRECTED = new Set(['cause_effect', 'turning_point'])
+export const dirOf = link => (!link || !DIRECTED.has(link.kind) ? 'both' : (link.reverse ? 'ba' : 'ab'))
+// Each box's part in the relationship: 'from' is the stop that names the link.
+const roleOf = (W, link, isA) => {
   if (!link) return null
-  const tag = W.kind[link.kind]
+  const isFrom = link.reverse ? !isA : isA
+  if (link.kind === 'cause_effect') return isFrom ? W.role.cause : W.role.effect
+  if (link.kind === 'turning_point') return isFrom ? null : W.role.turning
+  return null
+}
+
+function Bridge({ W, labels, link, vertical }) {
+  if (!link) return null
+  const tag = labels[link.kind]
+  const dir = dirOf(link)
   return (
-    <div className={`bridge${vertical ? ' vertical' : ''}`} role="note" aria-label={tag || W.connects}>
-      {tag && <div className={`bridge-tag ${link.kind}`}>{tag}</div>}
+    <div className={`bridge dir-${dir}${vertical ? ' vertical' : ''}`} role="note" aria-label={tag || W.connects}>
+      {vertical && (dir === 'ba' || dir === 'both') && <div className="bridge-arrow up" aria-hidden="true">&#9650;</div>}
+      {tag && <div className={`bridge-tag k-${link.kind}`}>{tag}</div>}
       <p className="bridge-text">{link.explain || link.why}</p>
+      {vertical && (dir === 'ab' || dir === 'both') && <div className="bridge-arrow down" aria-hidden="true">&#9660;</div>}
     </div>
   )
 }
 
+// The paragraph for one line entry: "<line>:<sub>" (Sam), then the sub id (Will), then the line,
+// then the stop's own exemplar.
+const exFor = (stop, e) => {
+  const by = stop.exemplar_by_line || {}
+  return (e && (by[`${e.line}:${e.sub}`] || (e.sub && by[e.sub]) || by[e.line])) || stop.exemplar || null
+}
+
 // ── ONE BOX ─────────────────────────────────────────────────────────────
-function PopBox({ ctx, stop, via, headRef, onClose, pair, onPair, onPick, main }) {
-  const { W, kind, byId, rowByKey, lineById, subById, links, maps, onOpenMap, da } = ctx
-  if (!stop) return null
+function PopBox(props) {
+  if (!props.stop) return null
+  return <PopBoxInner key={`${props.stop.id}|${props.via || ''}`} {...props} />
+}
+function PopBoxInner({ ctx, stop, via, headRef, onClose, pair, onPair, onPick, main, role }) {
+  const { W, kind, byId, rowByKey, lineById, subById, links, maps, onOpenMap, da, labels } = ctx
+  const entries = stop.on_lines || []
+  const start = Math.max(0, entries.findIndex(e => via && (e.sub === via || (e.line === via && !rowByKey[e.sub]))))
+  const [at, setAt] = useState(start)
+  const ex = exFor(stop, entries[at])
+  // Chips switch the paragraph when the stop has more than one.
+  const switching = new Set(entries.map(e => exFor(stop, e))).size > 1
   const doc = stop.document
-  const ex = (via && stop.exemplar_by_line && (stop.exemplar_by_line[via] || stop.exemplar_by_line[rowByKey[via]?.line?.id]))
-    || stop.exemplar || (stop.exemplar_by_line && Object.values(stop.exemplar_by_line)[0]) || null
   const mapId = stop.atlas && (maps || []).some(m => m.id === stop.atlas) ? stop.atlas : null
   const dl = da.lookup(stop)
   const thumb = stop.image ? { src: assetSrc(stop.image), alt: stop.image_alt || '' } : dl?.img
@@ -487,13 +530,19 @@ function PopBox({ ctx, stop, via, headRef, onClose, pair, onPair, onPick, main }
   }
   const colorOf = e => (rowByKey[e.sub]?.color || rowByKey[e.line]?.color)
   const hid = `pop-h-${stop.id}`
+  const chipCls = `stop-chip${kind === 'issues' ? ' issue-stop-chip' : ''}`
   return (
     <article className={`pop${main ? ' main' : ' second'}`} aria-labelledby={hid}>
+      {role && <div className="pop-role">{role}</div>}
       <div className="pop-top">
         <div className="stop-chips">
-          {(stop.on_lines || []).map((e, i) => {
+          {entries.map((e, i) => {
             const n = chipName(e)
-            return n && <span key={i} className={`stop-chip${kind === 'issues' ? ' issue-stop-chip' : ''}`} style={{ '--c': colorOf(e) }}>{n}</span>
+            if (!n) return null
+            return switching
+              ? <button key={i} type="button" className={`${chipCls} chip-btn${i === at ? ' sel' : ''}`} aria-pressed={i === at}
+                        style={{ '--c': colorOf(e) }} onClick={() => setAt(i)}>{n}</button>
+              : <span key={i} className={chipCls} style={{ '--c': colorOf(e) }}>{n}</span>
           })}
         </div>
         {main && <button type="button" className="btn-ghost pop-close" onClick={onClose} aria-label="Close this stop">{W.close}</button>}
@@ -521,14 +570,14 @@ function PopBox({ ctx, stop, via, headRef, onClose, pair, onPair, onPick, main }
       )}
 
       {ex ? (
-        <p className="pop-ex">
+        <p className="pop-ex" aria-live="polite">
           {['context', 'claim', 'evidence', 'explain'].map(k => ex[k] && (
             <span key={k} className={`pop-ex-part ${k}`}><span className="pop-ex-label">{W.part[k]}</span> {ex[k]} </span>
           ))}
         </p>
       ) : (
         // A stop without an exemplar yet shows the desk's reasons, as before.
-        (stop.on_lines || []).map((e, i) => (
+        entries.map((e, i) => (
           <div key={i} className="thread-entry" style={{ '--c': colorOf(e) }}>
             {e.reason && <p className="thread-entry-why">{e.reason}</p>}
             {e.question && <p className="stop-q">{e.question}</p>}
@@ -551,7 +600,7 @@ function PopBox({ ctx, stop, via, headRef, onClose, pair, onPair, onPick, main }
                   <button type="button" className={`pop-conn${sel ? ' sel' : ''}`} disabled={building} aria-pressed={sel}
                           onClick={() => onPair(l.to)}>
                     <span className="link-to">{to.when} &middot; {to.title}{building ? ` · ${W.coming}` : ''}</span>
-                    {W.kind[l.kind] && <span className={`pop-conn-tag ${l.kind}`}>{W.kind[l.kind]}</span>}
+                    {labels[l.kind] && <span className={`pop-conn-tag k-${l.kind}`}>{labels[l.kind]}</span>}
                   </button>
                 </li>
               )
@@ -564,7 +613,7 @@ function PopBox({ ctx, stop, via, headRef, onClose, pair, onPair, onPick, main }
 }
 
 // ── PHONES: one line at a time; the boxes open in a sheet ────────────────
-function StopMapPhone({ ctx, open, pair, link, onPick, onPair, onClose }) {
+function StopMapPhone({ ctx, open, pair, via, link, onPick, onPair, onClose }) {
   const { W, kind, byId, rows, rowKeysOf, units, here } = ctx
   const top = rows.filter(r => !r.strand)
   const [lid, setLid] = useState(top[0]?.key)
@@ -619,10 +668,10 @@ function StopMapPhone({ ctx, open, pair, link, onPick, onPair, onClose }) {
       {open && (
         <div className="pop-sheet" ref={sheet} role="dialog" aria-modal="true" aria-label={byId[open]?.title}
              onKeyDown={e => { if (e.key === 'Escape') onClose() }}>
-          <PopBox ctx={ctx} stop={byId[open]} headRef={head} onClose={onClose} pair={pair} onPair={onPair} onPick={onPick} main />
+          <PopBox ctx={ctx} stop={byId[open]} via={via} headRef={head} onClose={onClose} pair={pair} onPair={onPair} onPick={onPick} main role={roleOf(W, link, true)} />
           {pair && <>
-            <Bridge W={W} link={link} vertical />
-            <PopBox ctx={ctx} stop={byId[pair]} onPick={onPick} />
+            <Bridge W={W} labels={ctx.labels} link={link} vertical />
+            <PopBox ctx={ctx} stop={byId[pair]} onPick={onPick} role={roleOf(W, link, false)} />
           </>}
           <button type="button" className="btn-ghost pop-sheet-close" onClick={onClose}>{W.close}</button>
         </div>
@@ -709,7 +758,16 @@ export const STOPMAP_STYLES = `
 .pop-conn:disabled{opacity:.6;cursor:default}
 .pop-conn-tag,.bridge-tag{font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.07em;font-size:13px;white-space:nowrap;
   border-radius:999px;padding:2px 10px;border:2px solid var(--gold);color:var(--gold-lit)}
-.pop-conn-tag.continuity,.bridge-tag.continuity{border-style:dashed}
+.pop-conn-tag.k-continuity,.bridge-tag.k-continuity,.pop-conn-tag.k-similarity_difference,.bridge-tag.k-similarity_difference{border-style:dashed}
+.pop-conn-tag.k-turning_point,.bridge-tag.k-turning_point{border-style:double;border-width:3px}
+.pop-role{display:inline-block;margin:-4px 0 8px;font-family:'Barlow Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.12em;
+  font-size:13px;color:#0B1220;background:var(--gold);border-radius:4px;padding:2px 8px}
+.pop.second .pop-role{background:var(--gold-lit)}
+.chip-btn{cursor:pointer;background:transparent;font:inherit;font-size:12.5px;text-align:left}
+.chip-btn.sel{background:color-mix(in srgb,var(--c) 30%,transparent);font-weight:700;box-shadow:0 0 0 2px var(--gold-lit)}
+.chip-btn:hover{background:color-mix(in srgb,var(--c) 18%,transparent)}
+.bridge-arrow{color:var(--gold);font-size:13px;line-height:1;text-align:left;padding-left:22px}
+.bridge-arrow.up{margin:-4px 0 4px}.bridge-arrow.down{margin:4px 0 -4px}
 .pop-bridge{position:absolute;top:44px}
 .bridge{background:color-mix(in srgb,var(--gold) 9%,var(--card));border:2px solid var(--gold);border-radius:12px;padding:10px 12px;
   box-shadow:0 10px 24px rgba(0,0,0,.4)}
