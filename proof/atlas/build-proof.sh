@@ -5,4 +5,6 @@ set -euo pipefail
 cd "$(dirname "$0")/../.."
 VITE_ATLAS_PROOF=1 npm run build
 mkdir -p dist/_proof && cp -R proof/atlas/_proof/. dist/_proof/
+# The stop-map redesign placeholders (exemplars, link kinds) ride the same proof build.
+[ -d proof/stopmap/_proof ] && cp -R proof/stopmap/_proof/. dist/_proof/
 echo "proof build ready in dist/ (placeholders under dist/_proof/)"

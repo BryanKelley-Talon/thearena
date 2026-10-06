@@ -301,6 +301,63 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   }
 }
 
+// ── THE STOP MAP POP-OUTS (added 2026-10-05, Josh; BK 23:39/23:42/23:47) ───────────────
+// Format only, never content. Shared by the Threads block and the stop map block. An exemplar has
+// exactly four parts, each words; a link's kind is change or continuity, and two stops that link
+// each other agree on it; a doc_assist key resolves to a real document; an image is on disk with
+// an alt; and no proof placeholder ever reaches public/. Missing exemplars or link explanations
+// warn (the box falls back to the desk's reasons), so a file can ship ahead of its words.
+const EX_PARTS = ['context', 'claim', 'evidence', 'explain']
+function checkPopouts(d, f, course, m, fail) {
+  const exBad = ex => !ex || typeof ex !== 'object' || Object.keys(ex).some(k => !EX_PARTS.includes(k))
+    || EX_PARTS.some(k => typeof ex[k] !== 'string' || !ex[k].trim())
+  const rows = new Set((d.lines || []).flatMap(l => [l.id, ...(l.subs || []).map(x => x.id)]))
+  const byId = Object.fromEntries((d.stops || []).map(x => [x.id, x]))
+  const daPack = unit => {
+    const u = (course.units || []).find(x => String(x.number) === String(unit))
+    const r = u?.doc_assist?.content_ref && String(u.doc_assist.content_ref).replace(/^content\//, '')
+    try { return r ? JSON.parse(fs.readFileSync(path.join(CONTENT, r), 'utf8')) : null } catch { return null }
+  }
+  let noEx = 0, noKind = 0, noExplain = 0
+  for (const st of d.stops || []) {
+    const w = `stop ${st.id}`
+    if (st.exemplar != null && exBad(st.exemplar)) fail(`${w}: an exemplar needs exactly four parts in words: ${EX_PARTS.join(', ')}.`)
+    if (st.exemplar_by_line != null) {
+      for (const [k, ex] of Object.entries(st.exemplar_by_line)) {
+        if (!rows.has(k)) fail(`${w}: exemplar_by_line names '${k}', which is not a line.`)
+        if (exBad(ex)) fail(`${w}: exemplar_by_line '${k}' needs exactly four parts in words: ${EX_PARTS.join(', ')}.`)
+      }
+    }
+    if (st.status === 'open' && st.exemplar == null && st.exemplar_by_line == null) noEx++
+    for (const l of st.links || []) {
+      if (l.kind != null && !['change', 'continuity'].includes(l.kind)) fail(`${w}: link to '${l.to}' has kind '${l.kind}'; it must be change or continuity.`)
+      if (l.kind == null) noKind++
+      if (l.explain != null && (typeof l.explain !== 'string' || !l.explain.trim())) fail(`${w}: link to '${l.to}' has an empty explanation.`)
+      if (l.explain == null) noExplain++
+      const back = (byId[l.to]?.links || []).find(x => x.to === st.id)
+      if (back && l.kind && back.kind && back.kind !== l.kind) fail(`${w}: calls its link to '${l.to}' ${l.kind}; '${l.to}' calls it ${back.kind}.`)
+    }
+    if (st.doc_assist != null) {
+      const mm = String(st.doc_assist).match(/^(\d+\.\d+)\/([A-Z])\/(\d+[a-z]?)$/)
+      if (!mm) fail(`${w}: doc_assist '${st.doc_assist}' must read unit/casefile/number, like 11.1/A/2.`)
+      else {
+        const pk = daPack(mm[1])
+        const cf = pk && (pk.casefiles || []).find(c => String(c.id).toUpperCase() === mm[2])
+        const doc = cf && (cf.docs || []).find(x => String(x.n).toLowerCase() === mm[3].toLowerCase())
+        if (!doc) fail(`${w}: doc_assist '${st.doc_assist}' is not a document in ${mm[1]}'s Doc Assist.`)
+      }
+    }
+    if (st.image != null) {
+      const im = String(st.image).split('/').pop()
+      if (!fs.existsSync(path.join(CONTENT, im))) fail(`${w}: image '${im}' is not in public/content.`)
+      if (!st.image_alt) fail(`${w}: an image needs image_alt.`)
+    }
+  }
+  if (/\[PLACEHOLDER/i.test(JSON.stringify(d))) fail('a proof placeholder is in a live file. Placeholders never leave proof/.')
+  if (noEx) { console.warn(`  note  ${f}\n        ${noEx} open stop(s) without an exemplar yet (the box shows the desk's reasons until it lands).`); warns++ }
+  if (noKind || noExplain) { console.warn(`  note  ${f}\n        ${noKind} link(s) without a kind, ${noExplain} without an explanation (the bridge shows the short why until they land).`); warns++ }
+}
+
 // ── THE THREADS MAP (added 2026-09-27, Josh; Sam's signed stops) ─────────────
 // Format only, never content: every stop names a defined thread (and a defined arc),
 // every link resolves, every document carries a citation, and no class dates.
@@ -331,6 +388,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         if (st.atlas != null && !/^[A-Za-z0-9._-]+$/.test(st.atlas)) tf(`${w}: atlas id is not a map id.`)
         if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(JSON.stringify([st.title, st.what_happened]))) tf(`${w}: reads like a class date.`)
       }
+      checkPopouts(d, f, c, m, tf)
       continue
     }
     const threads = new Set((d.threads || []).map(x => x.id))
@@ -641,9 +699,10 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     }
     if (c.id === 'global10r') {
       const shown = JSON.stringify({ lines: (d.lines || []).map(l => [l.name, l.question, (l.subs || []).map(x => [x.name, x.definition])]),
-        stops: (d.stops || []).map(x => [x.title, x.what_happened, x.when, (x.on_lines || []).map(e => [e.reason, e.question]), x.links]) })
+        stops: (d.stops || []).map(x => [x.title, x.what_happened, x.when, (x.on_lines || []).map(e => [e.reason, e.question]), x.links, x.exemplar, x.exemplar_by_line]) })
       if (/\bthreads?\b/i.test(shown)) sf('the word "thread" appears on a Global screen (BK 9/26).')
     }
+    checkPopouts(d, f, c, m, sf)
   }
 }
 

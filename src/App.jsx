@@ -31,8 +31,9 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
 import { parseHash, buildHash } from './deeplinks.js'
 import { Unit0Card, Unit0Room, UNIT0_STYLES } from './unit0.jsx'
-import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
-import { IssuesLane, ISSUES_STYLES } from './issues.jsx'
+import { THREADS_STYLES } from './threads.jsx'
+import { ISSUES_STYLES } from './issues.jsx'
+import { StopMapLane, STOPMAP_STYLES } from './stopmap.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
@@ -968,9 +969,9 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
         </>
       )}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} onOpenUnit0={onOpenUnit0} />}
-      {lane === 'threads' && <ThreadsLane course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
+      {lane === 'threads' && <StopMapLane kind="threads" course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
       {lane === 'writing_lab' && <WritingLabLane course={course} sets={wlSets} unitName={unitName} onOpen={onOpenSet} Empty={EmptyLane} />}
-      {lane === 'issues' && <IssuesLane course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
+      {lane === 'issues' && <StopMapLane kind="issues" course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
       {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
@@ -2238,7 +2239,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + WRITINGLAB_STYLES + REF_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + WRITINGLAB_STYLES + REF_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}
