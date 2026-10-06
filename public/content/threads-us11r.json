@@ -1,7 +1,12 @@
 {
   "_course": "US History & Government 11R",
   "_built": "2026-09-27 by Sam · SIGNED by BK 2026-09-27 09:56 · v2 2026-10-05: every line an event belongs to (on_lines), the shared stop shape (map-stop-shape.md), atlas links · build_threads_us11r.py",
-  "_shape": "map-stop-shape v2 · Sam 2026-10-05 · v1 + exemplar / exemplar_by_line, link kind + explain, doc_assist (Josh 23:45)",
+  "_shape": "map-stop-shape v2.1 · Sam 2026-10-06 · v2 + link kind in SEQ language (cause_effect | similarity_difference | turning_point), link_kinds tag words (BK 00:04, ruled 08:50)",
+  "link_kinds": {
+    "cause_effect": "Cause and Effect",
+    "similarity_difference": "Similarity/Difference",
+    "turning_point": "Turning Point"
+  },
   "_you_are_here": "Read the door's current_unit in the Arena manifest; no field here.",
   "lines": [
     {
@@ -98,8 +103,8 @@
         {
           "to": "s-1642-miantonomo",
           "why": "The people, land and animals lost here are what Miantonomo warns about.",
-          "kind": "continuity",
-          "explain": "Disease weakened Native nations, and settlement kept taking what was left. Miantonomo is describing the same loss a generation later, now from English axes, scythes and livestock instead of sickness."
+          "kind": "cause_effect",
+          "explain": "Disease contributed to Miantonomo's warning because it emptied Native villages before English settlers arrived in large numbers. With fewer people to farm, fight and hold their land, Native nations could not stop settlers from spreading across it, the loss Miantonomo describes a generation later."
         }
       ],
       "atlas": "11.1-A-01",
@@ -141,14 +146,14 @@
         {
           "to": "s-1744-lancaster",
           "why": "A hundred years later, Native leaders are still defending their land, now at a treaty table.",
-          "kind": "continuity",
-          "explain": "A century apart, both leaders defend their people's land and way of life. What changed is the setting: by 1744 the fight happens at a treaty table, but the land is still moving into colonial hands."
+          "kind": "similarity_difference",
+          "explain": "Both Miantonomo and Gachradodow defend their people's land against colonists who keep taking it. However, Miantonomo calls on Native nations to unite against the English, while Gachradodow bargains with colonial governments at a treaty table."
         },
         {
           "to": "s-1754-join-or-die",
           "why": "Franklin makes the same argument, act as one or lose everything, for the colonists.",
-          "kind": "continuity",
-          "explain": "Two leaders on two different threads make the same argument: unite or be destroyed. Miantonomo says it to Native nations about the English; Franklin says it to the colonies about the French."
+          "kind": "similarity_difference",
+          "explain": "Both Miantonomo and Franklin argue that separate peoples must act as one or be destroyed. However, Miantonomo urges Native nations to unite against the English, while Franklin urges the British colonies to unite against the French."
         }
       ],
       "atlas": "11.1-A-01",
@@ -190,8 +195,8 @@
         {
           "to": "s-1763-proclamation",
           "why": "Nineteen years later, Britain draws a line to keep colonists off Native land, and the colonists are furious.",
-          "kind": "change",
-          "explain": "At Lancaster, colonial governments bargained for Native land. In 1763 the British government stepped in and drew a line to keep colonists out, the empire itself protecting Native land from its own colonists."
+          "kind": "turning_point",
+          "explain": "Before 1763, colonial governments bargained for Native land, as they did at Lancaster, and the land kept passing into colonial hands. In 1763, the British government itself drew a line to keep colonists out. After that, colonists saw Britain as standing between them and the land they wanted."
         }
       ],
       "atlas": "11.1-A-01",
@@ -233,14 +238,14 @@
         {
           "to": "s-1738-venture-smith",
           "why": "Venture Smith lived inside the system these laws built.",
-          "kind": "continuity",
-          "explain": "Laws like Virginia's turned slavery into a permanent, inherited condition across the colonies. Venture Smith's life in New England shows what that system meant for one child."
+          "kind": "cause_effect",
+          "explain": "Colonial slave laws contributed to Venture Smith's enslavement because they let colonists hold Africans as property for life. Because the law protected that kind of property, a ship's steward could buy a child captured in Africa and bring him to the colonies to be held as a slave. That is what happened to Venture Smith."
         },
         {
           "to": "s-1787-constitution",
           "why": "The Constitution counts three of every five enslaved people toward seats in Congress. The law is still doing the work.",
-          "kind": "continuity",
-          "explain": "The colonies built slavery into their laws; the new nation built it into its Constitution. The three-fifths clause shows the law still protecting slavery after independence."
+          "kind": "similarity_difference",
+          "explain": "Both the colonial slave laws and the Constitution used the law to protect slavery. However, the colonial laws were written colony by colony, while the Constitution built slavery into the national government, counting three of every five enslaved people toward a state's seats in the House."
         }
       ],
       "doc_assist": "11.1/B/13",
@@ -281,8 +286,8 @@
         {
           "to": "s-1776-declaration",
           "why": "The Declaration says all men are created equal. Venture Smith had to buy his freedom.",
-          "kind": "change",
-          "explain": "Venture Smith had to buy his own freedom. The Declaration then announced that all men are created equal, a new promise that enslaved people could hold the nation to, even though it was not kept for them."
+          "kind": "similarity_difference",
+          "explain": "Both Venture Smith and the colonists who wrote the Declaration claimed freedom for themselves. However, Venture Smith had to buy his with money he earned, while the Declaration said all men are created equal, with rights that cannot be taken away, a promise the nation did not keep for enslaved people."
         }
       ],
       "doc_assist": "11.1/B/12",
@@ -323,8 +328,8 @@
         {
           "to": "s-1781-articles",
           "why": "When the colonies finally unite, their first government is so weak it can barely act.",
-          "kind": "change",
-          "explain": "Franklin begged the colonies to unite, and they would not. By 1781 they finally had a union of their own, even if they made it weak on purpose."
+          "kind": "turning_point",
+          "explain": "Before 1781, the states had no written plan of union. Franklin's Albany Plan was turned down in 1754, and the Continental Congress ran the war without one. With the Articles, the states formally joined under one national government. After that, they had a union, but one so weak it could not tax or keep order."
         }
       ],
       "atlas": "11.1-B-01",
@@ -366,8 +371,8 @@
         {
           "to": "s-1776-abigail-adams",
           "why": "Eleven years later, Abigail Adams asks her husband to “remember the ladies.”",
-          "kind": "change",
-          "explain": "Blackstone's law said a married woman's legal existence was suspended. Eleven years later, Abigail Adams pushed back, asking that women's interests be remembered in the new laws."
+          "kind": "cause_effect",
+          "explain": "Coverture contributed to Abigail Adams's letter because it left married women with no legal voice of their own. Living under laws that treated a wife as part of her husband, she asked John to \"remember the ladies\" when the new laws were written."
         }
       ],
       "doc_assist": "11.1/B/18",
@@ -408,8 +413,8 @@
         {
           "to": "s-1765-stamp-act-congress",
           "why": "Then Parliament taxes the colonies to help pay for the war.",
-          "kind": "change",
-          "explain": "The fight with Britain moves from land to money. First Britain limits where colonists can settle; then it taxes them, and the colonists answer with a claim about their rights."
+          "kind": "similarity_difference",
+          "explain": "Both the Proclamation Line and the Stamp Act were rules made in London, without the colonists' consent, as Britain tightened control after the French and Indian War. However, the Proclamation limited where colonists could settle, while the Stamp Act taxed them directly. The Stamp Act Congress answered that only the colonists' own assemblies could tax them."
         }
       ],
       "atlas": "11.2-A-02",
@@ -451,14 +456,14 @@
         {
           "to": "s-1776-declaration",
           "why": "Eleven years later, the argument about rights becomes a declaration of independence.",
-          "kind": "change",
-          "explain": "In 1765, colonists argued for their rights as British subjects. By 1776 they claimed rights because all men are created equal, and broke away to protect them."
+          "kind": "turning_point",
+          "explain": "Before 1776, colonists like those at the Stamp Act Congress argued for their rights as British subjects, still loyal to the king. With the Declaration, they claimed rights because all men are created equal, and broke away. After that, the fight was for independence, not for British rights."
         },
         {
           "to": "s-1781-articles",
           "why": "No taxes without consent, and then a Congress that can't tax at all.",
-          "kind": "continuity",
-          "explain": "The colonists fought Britain over who could tax them. When they built their own national government, they kept that fear so strongly that Congress could not tax anyone, and it nearly sank the new nation."
+          "kind": "cause_effect",
+          "explain": "The fight with Britain over taxes contributed to the weakness of the Articles because Americans feared any distant government that could tax them. When they wrote the Articles, they left the power to tax with the states, so Congress could not pay its debts."
         }
       ],
       "doc_assist": "11.2/A/3",
@@ -506,8 +511,8 @@
         {
           "to": "s-1798-sedition",
           "why": "In 1770, printing an attack on the government made Revere a patriot. In 1798, it could land a printer in jail.",
-          "kind": "change",
-          "explain": "In 1770, Revere's attack on the government made him a patriot. In 1798, the new government made attacks on itself a crime: the same kind of speech, judged very differently once Americans held the power."
+          "kind": "similarity_difference",
+          "explain": "Both Revere's engraving and the newspapers punished under the Sedition Act used print to turn people against the government in power. However, Revere attacked British rule and was never punished for it, while in 1798 the new American government made some criticism of itself a crime."
         }
       ],
       "atlas": "11.2-A-03",
@@ -568,8 +573,8 @@
         {
           "to": "s-1787-constitution",
           "why": "Eleven years later, the Constitution counts three of every five enslaved people toward seats in Congress, and gives them no vote.",
-          "kind": "continuity",
-          "explain": "The Declaration promised that all men are created equal. The Constitution protected slavery anyway, through the three-fifths clause: the gap between promise and practice carried into the new government."
+          "kind": "similarity_difference",
+          "explain": "Both the Declaration and the Constitution are founding documents that claim to rest on the people's consent. However, the Declaration said all men are created equal, while the Constitution protected slavery, counting three of every five enslaved people toward a state's seats in the House."
         }
       ],
       "doc_assist": "11.2/A/8",
@@ -624,8 +629,8 @@
         {
           "to": "s-1776-declaration",
           "why": "She writes in March. That July, Congress declares that all men are created equal.",
-          "kind": "continuity",
-          "explain": "Abigail Adams asked for women's voices in the spring of 1776; that summer the Declaration spoke of \"all men.\" Her request and its silence sit side by side in the same year."
+          "kind": "similarity_difference",
+          "explain": "Both Abigail Adams and the Declaration argue that people should have a voice in the laws that govern them. However, Abigail Adams asked for that voice for women, while the Declaration spoke only of \"all men.\""
         }
       ],
       "doc_assist": "11.2/A/10",
@@ -672,14 +677,14 @@
         {
           "to": "s-1787-constitution",
           "why": "Shays' Rebellion scares the country's leaders, and they write a stronger government.",
-          "kind": "change",
-          "explain": "The Articles made a government too weak to tax or keep order. After Shays' Rebellion, the Constitution replaced it with a stronger one that could tax and enforce its laws."
+          "kind": "cause_effect",
+          "explain": "The weakness of the Articles contributed to the writing of the Constitution because Congress could not tax or keep order. When Shays' Rebellion showed that weakness, leaders met in Philadelphia and wrote a stronger government that could tax and enforce its laws."
         },
         {
           "to": "s-1796-farewell",
           "why": "From no leader at all to a President who limits himself.",
-          "kind": "change",
-          "explain": "The Articles had no executive, out of fear of one-person rule. Under the Constitution, Washington held real power and chose to give it up after two terms, showing a strong leader could still respect limits."
+          "kind": "similarity_difference",
+          "explain": "Both the Articles and Washington's choice show Americans' fear of one person holding too much power. However, the Articles answered that fear with no executive at all, while Washington held real power as President and chose to give it up after two terms."
         }
       ],
       "atlas": "11.2-B-01",
@@ -742,8 +747,8 @@
         {
           "to": "s-1791-bill-of-rights",
           "why": "Critics say this government is too strong. The Bill of Rights is the answer.",
-          "kind": "change",
-          "explain": "The Constitution made the national government stronger. The Bill of Rights then set written limits on that power, answering critics who feared it had gone too far."
+          "kind": "cause_effect",
+          "explain": "The Constitution contributed to the Bill of Rights because it made the national government much stronger. Antifederalists feared that power, and several states ratified only after being promised written limits on it."
         }
       ],
       "doc_assist": "11.2/B/14",
@@ -798,8 +803,8 @@
         {
           "to": "s-1798-sedition",
           "why": "Seven years later, Congress passes a law that tests “Congress shall make no law.”",
-          "kind": "change",
-          "explain": "The First Amendment promised that Congress would make no law limiting speech or the press. Seven years later, Congress passed one, the first test of that promise."
+          "kind": "similarity_difference",
+          "explain": "Both the First Amendment and the Sedition Act are about speech and the press. However, the First Amendment says \"Congress shall make no law\" limiting them, while seven years later the Sedition Act made some criticism of the government a crime."
         }
       ],
       "doc_assist": "11.2/B/17",
@@ -854,8 +859,8 @@
         {
           "to": "s-1798-sedition",
           "why": "Washington warned about parties. Two years later, one party passes a law used to jail the other side's newspaper editors.",
-          "kind": "change",
-          "explain": "Washington warned against the spirit of political parties. Two years later, the party in power used the Sedition Act against the other side's newspapers, the danger he had described."
+          "kind": "similarity_difference",
+          "explain": "Both Washington's Farewell Address and the Sedition Act show how bitter the fight between political parties had become in the 1790s. However, Washington warned that party fighting could tear the nation apart, while two years later the Federalists used the Sedition Act to jail editors who supported the other party."
         }
       ],
       "exemplar_by_line": {
@@ -937,8 +942,8 @@
         {
           "to": "s-1819-mcculloch",
           "why": "Sixteen years later, Marshall's Court uses that power to let the national government reach further.",
-          "kind": "continuity",
-          "explain": "Marbury gave the Court the power to judge whether laws follow the Constitution. In McCulloch, the Court used that power again, to uphold the national bank and strike down Maryland's tax."
+          "kind": "cause_effect",
+          "explain": "Marbury v. Madison contributed to McCulloch v. Maryland because it established the Supreme Court's power to judge whether laws follow the Constitution. Sixteen years later, the Court used that power to uphold the national bank and strike down Maryland's tax."
         }
       ],
       "exemplar": {
@@ -978,8 +983,8 @@
         {
           "to": "s-1781-articles",
           "why": "Under the Articles, Congress couldn't even collect a tax. Now the Court says Congress has powers beyond the ones listed.",
-          "kind": "change",
-          "explain": "Under the Articles, Congress could not even collect a tax. Almost forty years later, the Supreme Court said Congress has powers beyond the ones listed, the opposite end of this thread."
+          "kind": "similarity_difference",
+          "explain": "Both the Articles and McCulloch v. Maryland deal with how much power the national government should have. However, under the Articles Congress could not even collect a tax, while in McCulloch the Supreme Court said the Constitution gives Congress implied powers, not just the ones it lists."
         }
       ],
       "exemplar": {

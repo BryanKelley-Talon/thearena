@@ -1,8 +1,13 @@
 {
   "_course": "Global History and Geography II 10R",
   "_built": "2026-10-05 by Will (global10r-curriculum) · skills/enduring-issues/build_ei_map_gs10r.py · stops from what students read in 10.1 and 10.2 · SIGNED by BK 2026-10-05 21:14 EDT (\"yes agreed to all\")",
-  "_shape": "map-stop-shape v1 · Sam + Will 2026-10-05 · Josh confirms. Global: subs = the card's Issues to name; on_lines.sub = the exact issue; also_read optional. No 'thread' anywhere on a Global screen. v2 fields (Josh 23:45 proposal): exemplar, exemplar_by_line (key = line id, or the sub id where one line carries two issues at a stop), links[].kind and .explain, doc_assist.",
+  "_shape": "map-stop-shape v1 · Sam + Will 2026-10-05 · Josh confirms. Global: subs = the card's Issues to name; on_lines.sub = the exact issue; also_read optional. No 'thread' anywhere on a Global screen. v2 fields (Josh 23:45 proposal): exemplar, exemplar_by_line (key = line id, or the sub id where one line carries two issues at a stop), links[].kind (SEQ: cause_effect | similarity_difference | turning_point, words in link_kinds; Sam's shape v2.1, BK 08:50) and .explain, doc_assist.",
   "_line_words": "Names, questions and issues are read from skills/casefile/umbrellas.py (the card on page 2); definitions from skills/doc-assist/da_global_common.py. Never typed.",
+  "link_kinds": {
+    "cause_effect": "Cause and Effect",
+    "similarity_difference": "Similarity/Difference",
+    "turning_point": "Turning Point"
+  },
   "lines": [
     {
       "id": "u1",
@@ -157,15 +162,15 @@
       "exemplar": {
         "context": "In the late 1600s, the Mughal Empire ruled most of India. Its emperors were Muslim, but most of the people they ruled were Hindu, and earlier emperors had practiced religious toleration.",
         "claim": "Aurangzeb's rule shows the enduring issue of Abuse of Power, because he used the emperor's power against the Hindus he ruled.",
-        "evidence": "According to Through Indian Eyes, Aurangzeb “dismissed the Hindu clerks in his service” and brought back a tax on all “unbelievers.”",
+        "evidence": "Document 2 shows that Aurangzeb “dismissed the Hindu clerks in his service” and brought back a tax on all “unbelievers.”",
         "explain": "Hindus lost their jobs and paid an extra tax only because of their religion, and they had no say in it. That is abuse of power, and the document says Hindus remembered his “oppressive rule” for generations."
       },
       "links": [
         {
           "to": "s-1635-japan",
           "why": "A generation earlier, Japan's shogun also punishes people for their faith.",
-          "kind": "continuity",
-          "explain": "Aurangzeb taxes and dismisses Hindus for their religion, and Japan's shogun pays informers to turn in Christian priests. Two rulers in two places use their power against people of a different faith."
+          "kind": "similarity_difference",
+          "explain": "Both Aurangzeb and the Tokugawa shogun used their power against people of a different faith. However, Aurangzeb taxed Hindus and dismissed them from his service, while Japan's shogun paid informers to turn in Christians and their priests."
         }
       ],
       "atlas": "10.1-A-04",
@@ -204,22 +209,22 @@
         }
       ],
       "exemplar": {
-        "context": "For centuries the Ottoman Empire grew rich by conquering new land and controlling the trade routes between Europe and Asia. By the late 1600s, that was changing.",
+        "context": "In the late 1600s, the Ottoman Empire was still huge, built on conquest and on the trade routes between Europe and Asia. That trade was starting to move elsewhere.",
         "claim": "The Ottoman decline shows the enduring issue of Economic Development, because the empire's wealth depended on trade it was losing.",
-        "evidence": "The BBC lists “competition from trade from the Americas,” “cheap products from India and the Far East” and the “development of other trade routes,” along with “rising unemployment within the Empire.”",
+        "evidence": "Document 3 shows the causes: “competition from trade from the Americas,” “cheap products from India and the Far East” and the “development of other trade routes,” along with “rising unemployment within the Empire.”",
         "explain": "When trade moved to new routes, money and jobs left the empire with it. A country's wealth depends on what it produces and trades, and when that changes, the whole empire feels it."
       },
       "exemplar_by_line": {
         "u4": {
-          "context": "For centuries the Ottoman Empire grew rich by conquering new land and controlling the trade routes between Europe and Asia. By the late 1600s, that was changing.",
+          "context": "In the late 1600s, the Ottoman Empire was still huge, built on conquest and on the trade routes between Europe and Asia. That trade was starting to move elsewhere.",
           "claim": "The Ottoman decline shows the enduring issue of Economic Development, because the empire's wealth depended on trade it was losing.",
-          "evidence": "The BBC lists “competition from trade from the Americas,” “cheap products from India and the Far East” and the “development of other trade routes,” along with “rising unemployment within the Empire.”",
+          "evidence": "Document 3 shows the causes: “competition from trade from the Americas,” “cheap products from India and the Far East” and the “development of other trade routes,” along with “rising unemployment within the Empire.”",
           "explain": "When trade moved to new routes, money and jobs left the empire with it. A country's wealth depends on what it produces and trades, and when that changes, the whole empire feels it."
         },
         "u2": {
-          "context": "The Ottoman Empire grew by war for more than two hundred years, taking land in the Balkans, the Middle East and North Africa. Vienna, the Hapsburg capital, was its next target.",
+          "context": "In 1683, the Ottoman Empire had been growing by war for more than two hundred years, taking land in the Balkans, the Middle East and North Africa. Vienna, the Hapsburg capital, was its next target.",
           "claim": "The siege of Vienna shows the enduring issue of Conflict, because a lost war ended the Ottomans' growth.",
-          "evidence": "The BBC says the second and “last attempt was made to conquer Vienna” in 1683, and “it failed.” Without new conquests, the empire “lost momentum and went into a slow decline.”",
+          "evidence": "Document 3 shows that the “last attempt was made to conquer Vienna” in 1683 and “it failed,” and that without new conquests the empire “lost momentum and went into a slow decline.”",
           "explain": "The empire was built by conquest, so when the fighting stopped going its way, so did its growth. Conflict decides who holds land, and after 1683 the Ottomans stopped gaining it."
         }
       },
@@ -227,8 +232,8 @@
         {
           "to": "s-1912-balkans",
           "why": "Two centuries later, the empire that failed at Vienna is losing its hold on the Balkans.",
-          "kind": "continuity",
-          "explain": "The Ottoman Empire's decline didn't stop after Vienna; it kept losing land for two hundred years. By 1912 the small Balkan nations were pushing it out of Europe, and the conflict that began with a lost siege was still not settled."
+          "kind": "cause_effect",
+          "explain": "The Ottoman Empire's decline contributed to the Balkan crisis because a weaker empire could no longer hold its Balkan lands. By 1912 the small Balkan nations were ready to drive it out of Europe, and the great powers rushed to protect their own interests."
         }
       ],
       "atlas": "10.1-A-05",
@@ -267,22 +272,22 @@
         }
       ],
       "exemplar": {
-        "context": "In the early 1600s, English merchants wanted to trade in India, which was ruled by the powerful Mughal Empire. King James I of England sent an ambassador, Sir Thomas Roe, with gifts and a letter.",
+        "context": "In 1617, English merchants wanted to trade in India, which was ruled by the powerful Mughal Empire. King James I of England sent an ambassador, Sir Thomas Roe, with gifts and a letter.",
         "claim": "Jahangir's letter shows the enduring issue of Cooperation, because two rulers far apart agree to work together for trade.",
-        "evidence": "Jahangir orders “all the kingdoms and ports” of his empire to receive English merchants “as the subjects of my friend,” free “to sell, buy, and to transport into their country.”",
+        "evidence": "Document 5 shows Jahangir ordering “all the kingdoms and ports” of his empire to receive English merchants “as the subjects of my friend,” free “to sell, buy, and to transport into their country.”",
         "explain": "Two rulers who never met trade gifts and promises, and both of their countries gain from the trade that follows. Cooperation is working together toward a shared goal, and this letter opens the door for England in India."
       },
       "exemplar_by_line": {
         "u6": {
-          "context": "In the early 1600s, English merchants wanted to trade in India, which was ruled by the powerful Mughal Empire. King James I of England sent an ambassador, Sir Thomas Roe, with gifts and a letter.",
+          "context": "In 1617, English merchants wanted to trade in India, which was ruled by the powerful Mughal Empire. King James I of England sent an ambassador, Sir Thomas Roe, with gifts and a letter.",
           "claim": "Jahangir's letter shows the enduring issue of Cooperation, because two rulers far apart agree to work together for trade.",
-          "evidence": "Jahangir orders “all the kingdoms and ports” of his empire to receive English merchants “as the subjects of my friend,” free “to sell, buy, and to transport into their country.”",
+          "evidence": "Document 5 shows Jahangir ordering “all the kingdoms and ports” of his empire to receive English merchants “as the subjects of my friend,” free “to sell, buy, and to transport into their country.”",
           "explain": "Two rulers who never met trade gifts and promises, and both of their countries gain from the trade that follows. Cooperation is working together toward a shared goal, and this letter opens the door for England in India."
         },
         "u3": {
           "context": "In 1617, the Mughal emperor Jahangir answered a letter from King James I of England. English merchants wanted to live and do business in India.",
           "claim": "Jahangir's letter shows the enduring issue of Cultural Exchange and Diffusion, because it opens India to English people and English trade.",
-          "evidence": "Jahangir says that “in what place soever they choose to live, they may have free liberty without any restraint,” and that they may “sell, buy, and to transport into their country” what they want.",
+          "evidence": "Document 5 shows Jahangir promising that “in what place soever they choose to live, they may have free liberty without any restraint,” and that they may “sell, buy, and to transport into their country” what they want.",
           "explain": "When foreign merchants can live, buy and sell anywhere in an empire, goods and ideas move both ways between the two peoples. That exchange between India and England starts with an open door like this one."
         }
       },
@@ -290,8 +295,8 @@
         {
           "to": "s-1635-japan",
           "why": "Eighteen years later, Japan answers the same question the opposite way.",
-          "kind": "change",
-          "explain": "Jahangir opens every port in his empire to English merchants. Eighteen years later, Japan's shogun does the opposite and closes the country, so two Asian rulers answer the same question, trade with Europe or not, in opposite ways."
+          "kind": "similarity_difference",
+          "explain": "Both Jahangir and the Tokugawa shogun had to decide what to do about European traders arriving in Asia. However, Jahangir opened every port in his empire to English merchants, while Japan's shogun closed the country and forbade any Japanese to leave."
         }
       ],
       "atlas": "10.1-A-04",
@@ -332,20 +337,20 @@
       "exemplar": {
         "context": "In the early 1600s, European traders and Catholic missionaries, called padres, were arriving in Japan, and some Japanese had become Christians. The Tokugawa shoguns saw them as a threat to their control.",
         "claim": "The Edict of 1635 shows the enduring issue of Cultural Exchange and Diffusion, because Japan's government shut down the flow of people and ideas in and out of the country.",
-        "evidence": "The edict says “no Japanese is permitted to go abroad,” and anyone who returns from overseas “must be put to death.” It also pays informers who reveal “the followers of padres (Christians).”",
+        "evidence": "Document 4 shows that “no Japanese is permitted to go abroad,” and that anyone who returns from overseas “must be put to death.” It also pays informers who reveal “the followers of padres (Christians).”",
         "explain": "Cultural exchange needs people to travel and ideas to spread, and this law stops both. Japan chose to close itself off, the opposite of trading and sharing with the world."
       },
       "exemplar_by_line": {
         "u3": {
           "context": "In the early 1600s, European traders and Catholic missionaries, called padres, were arriving in Japan, and some Japanese had become Christians. The Tokugawa shoguns saw them as a threat to their control.",
           "claim": "The Edict of 1635 shows the enduring issue of Cultural Exchange and Diffusion, because Japan's government shut down the flow of people and ideas in and out of the country.",
-          "evidence": "The edict says “no Japanese is permitted to go abroad,” and anyone who returns from overseas “must be put to death.” It also pays informers who reveal “the followers of padres (Christians).”",
+          "evidence": "Document 4 shows that “no Japanese is permitted to go abroad,” and that anyone who returns from overseas “must be put to death.” It also pays informers who reveal “the followers of padres (Christians).”",
           "explain": "Cultural exchange needs people to travel and ideas to spread, and this law stops both. Japan chose to close itself off, the opposite of trading and sharing with the world."
         },
         "u1": {
           "context": "In 1635, the Tokugawa shoguns had ruled Japan for about thirty years and wanted no outside threats. They feared Christianity and contact with foreigners.",
           "claim": "The Edict of 1635 shows the enduring issue of Human Rights Violations, because people could be killed for traveling or for their faith.",
-          "evidence": "Anyone who tries to leave Japan secretly “must be executed,” and an informer who reveals where a high-ranking padre is gets “one hundred pieces of silver.”",
+          "evidence": "Document 4 shows that anyone who tries to leave Japan secretly “must be executed,” and that an informer who reveals where a high-ranking padre is gets “one hundred pieces of silver.”",
           "explain": "The freedom to travel and to practice your faith are basic rights every person should have, and this law punishes both with death. The shogun's government treats its own people as threats to be hunted."
         }
       },
@@ -353,8 +358,8 @@
         {
           "to": "s-1617-jahangir",
           "why": "Eighteen years earlier, the Mughal emperor opened his ports instead.",
-          "kind": "change",
-          "explain": "Japan closes its doors to protect the shogun's control. The Mughal emperor chose the other way and welcomed foreign merchants, so contact with Europe could mean opportunity to one ruler and danger to another."
+          "kind": "similarity_difference",
+          "explain": "Both the Tokugawa shogun and Jahangir were powerful Asian rulers deciding how to deal with Europeans. However, Japan closed itself off to protect the shogun's control, while Jahangir welcomed English merchants as the subjects of his friend."
         }
       ],
       "atlas": null,
@@ -389,15 +394,15 @@
       "exemplar": {
         "context": "In the 1600s, the Tokugawa shoguns ruled Japan after a long civil war between powerful lords. Keeping control of distant provinces was their biggest challenge.",
         "claim": "The Tōkaidō shows the enduring issue of Abuse of Power, because the shogun used the road to control where and when ordinary people could move.",
-        "evidence": "Government messengers “could freely pass government road barriers at all times of the day or night,” but “private citizens were not allowed to travel at night,” and “barriers and checkpoints” kept them off the road.",
+        "evidence": "Document 6 shows that government messengers “could freely pass government road barriers at all times of the day or night,” but “private citizens were not allowed to travel at night,” and “barriers and checkpoints” kept them off the road.",
         "explain": "The road is open for the government and closed to everyone else. Watching and limiting how ordinary people move is one way a ruler uses authority to serve himself."
       },
       "links": [
         {
           "to": "s-1682-versailles",
           "why": "Louis XIV controls his nobles the other way: he makes them stay.",
-          "kind": "continuity",
-          "explain": "The shogun controls people by limiting who can travel; Louis XIV controls his nobles by making them stay at his palace. The method is opposite, but the goal is the same: a ruler keeping power by watching and controlling the people who could challenge him."
+          "kind": "similarity_difference",
+          "explain": "Both the Tokugawa shoguns and Louis XIV kept power by controlling the people who could challenge them. However, the shogun controlled who could travel on Japan's roads, while Louis XIV made his nobles stay at Versailles, where he could watch them."
         }
       ],
       "atlas": null,
@@ -430,17 +435,17 @@
         }
       ],
       "exemplar": {
-        "context": "Louis XIV ruled France as an absolute monarch from 1643 to 1715. As a boy he lived through the Fronde, a revolt by French nobles, and he never trusted them again.",
+        "context": "In 1682, Louis XIV, who ruled France as an absolute monarch, moved his court to Versailles. As a boy he had lived through the Fronde, a revolt by French nobles, and he never trusted them again.",
         "claim": "Versailles shows the enduring issue of Abuse of Power, because Louis XIV used his court to control the nobles and make them depend on him.",
-        "evidence": "Saint-Simon writes that Louis “saw everybody,” and that by making expensive habits a necessity, “he compelled his courtiers to live beyond their income.”",
+        "evidence": "Document 7 shows Saint-Simon writing that Louis “saw everybody,” and that by making expensive habits a necessity, “he compelled his courtiers to live beyond their income.”",
         "explain": "Nobles who are watched all day and owe the king money can't plot against him. Louis keeps all the power in his own hands by making the most powerful people in France helpless."
       },
       "links": [
         {
           "to": "s-1789-third-estate",
           "why": "About a century later, Sieyès says the people who paid for all of it have counted for nothing.",
-          "kind": "change",
-          "explain": "Louis XIV's splendor was paid for by France's taxpayers, the Third Estate. A century later, Sieyès says out loud that the people who pay for everything have counted for nothing, and they want to be something: the old system is about to be challenged."
+          "kind": "cause_effect",
+          "explain": "The spending of France's kings contributed to the anger of the Third Estate because the splendor of Versailles and the kings' wars were paid for with taxes that fell on the common people. By 1789 France was deep in debt, and Sieyès said the people who paid for everything had counted for nothing."
         }
       ],
       "atlas": "10.1-A-03",
@@ -482,15 +487,15 @@
       "exemplar": {
         "context": "In 1688, England's Parliament pushed out King James II in the Glorious Revolution. John Locke wrote to explain when people have the right to replace their government.",
         "claim": "Locke's writing shows the enduring issue of Abuse of Power, because he says a government that takes absolute power loses its right to rule.",
-        "evidence": "Locke writes that when lawmakers grab “an absolute power over their lives, liberties, and estates of the people,” they “forfeit the power,” and it passes to the people, “who have a right to resume their original liberty.”",
+        "evidence": "Document 2 shows Locke writing that when lawmakers grab “an absolute power over their lives, liberties, and estates of the people,” they “forfeit the power,” and it passes to the people, “who have a right to resume their original liberty.”",
         "explain": "People form governments to protect their life, liberty and property, not to lose them. Locke sets a limit on power: a government that abuses it breaks the deal, and the people can take their power back."
       },
       "links": [
         {
           "to": "s-1789-rights-of-man",
           "why": "A century later, France writes Locke's rights into law, with resistance to oppression among them.",
-          "kind": "continuity",
-          "explain": "Locke says people form governments to protect life, liberty and property, and can resist a government that abuses its power. A century later, France's Declaration lists the same rights, liberty, property, security and resistance to oppression, so Locke's idea becomes law."
+          "kind": "cause_effect",
+          "explain": "Locke's ideas contributed to the Declaration of the Rights of Man because they gave French revolutionaries a reason to resist a government that abused its power. The Declaration names the natural rights Locke described, liberty and property, and adds resistance to oppression."
         }
       ],
       "atlas": null,
@@ -532,15 +537,15 @@
       "exemplar": {
         "context": "In the 1700s, French kings made the laws, enforced them, and had the final word in the courts. Montesquieu studied governments around the world to find out what keeps people free.",
         "claim": "Montesquieu's writing shows the enduring issue of Abuse of Power, because he warns what happens when one person holds all the power.",
-        "evidence": "He writes that when the lawmaking and enforcing powers “are united in the same person,” there “can be no liberty,” because that ruler might “enact tyrannical laws to execute them in a tyrannical manner.”",
+        "evidence": "Document 4 shows Montesquieu writing that when the lawmaking and enforcing powers “are united in the same person,” there “can be no liberty,” because that ruler might “enact tyrannical laws to execute them in a tyrannical manner.”",
         "explain": "If one ruler makes the laws and enforces them, nothing stops him from using them against the people. Dividing power is Montesquieu's way to stop abuse of power before it starts."
       },
       "links": [
         {
           "to": "s-1793-terror",
           "why": "In 1793 the Law of Suspects makes the courts the enforcement arm of the government, the danger Montesquieu named.",
-          "kind": "continuity",
-          "explain": "Montesquieu warned that when the same people make the laws, enforce them and judge, there is no liberty. In 1793 the Law of Suspects did exactly that, turning the courts into the government's weapon, and his warning came true."
+          "kind": "similarity_difference",
+          "explain": "Both Montesquieu and the Law of Suspects deal with who controls the courts. However, Montesquieu warned that judges must be separate from the lawmakers and the government, while the Law of Suspects made the courts the enforcement arm of the government, the danger he described."
         }
       ],
       "atlas": null,
@@ -588,20 +593,20 @@
       "exemplar": {
         "context": "In the 1700s, most Europeans lived under kings who said their power came from God. Rousseau asked how people could live under a government and still be free.",
         "claim": "Rousseau's Social Contract shows the enduring issue of Nationalism, because it says a people united together should rule themselves.",
-        "evidence": "Rousseau looks for a way of living together in which each person, “while uniting himself with all, may still obey himself alone, and remain as free as before.”",
+        "evidence": "Document 5 shows Rousseau looking for a way of living together in which each person, “while uniting himself with all, may still obey himself alone, and remain as free as before.”",
         "explain": "If the people united are the ones who rule, then power belongs to the people, not to a king. Nationalists build on that idea: a people who share one identity should govern themselves."
       },
       "exemplar_by_line": {
         "u3": {
           "context": "In the 1700s, most Europeans lived under kings who said their power came from God. Rousseau asked how people could live under a government and still be free.",
           "claim": "Rousseau's Social Contract shows the enduring issue of Nationalism, because it says a people united together should rule themselves.",
-          "evidence": "Rousseau looks for a way of living together in which each person, “while uniting himself with all, may still obey himself alone, and remain as free as before.”",
+          "evidence": "Document 5 shows Rousseau looking for a way of living together in which each person, “while uniting himself with all, may still obey himself alone, and remain as free as before.”",
           "explain": "If the people united are the ones who rule, then power belongs to the people, not to a king. Nationalists build on that idea: a people who share one identity should govern themselves."
         },
         "u1": {
-          "context": "Rousseau wrote that law should follow the general will, the common good of the whole people. Later leaders would claim that they knew what the general will was.",
+          "context": "In 1762, Rousseau wrote that law should follow the general will, the common good of the whole people. Later leaders would claim that they knew what the general will was.",
           "claim": "Rousseau's idea of the general will connects to the enduring issue of Abuse of Power, because a leader can claim to speak for everyone and punish those who disagree.",
-          "evidence": "Rousseau says the general will “takes account only of the common interest,” while the will of all is “no more than a sum of particular wills.”",
+          "evidence": "Document 6 shows Rousseau saying the general will “takes account only of the common interest,” while the will of all is “no more than a sum of particular wills.”",
           "explain": "If the general will can be different from what people actually want, someone has to decide what it is. A leader who says he alone knows the common good can use that claim to silence anyone who disagrees."
         }
       },
@@ -609,14 +614,14 @@
         {
           "to": "s-1793-terror",
           "why": "Robespierre claims to speak for the homeland, and the Law of Suspects removes anyone who might sabotage the general will.",
-          "kind": "continuity",
-          "explain": "Rousseau says law should follow the general will, the common good. In 1793 Robespierre's government claims to defend that general will and removes anyone who might sabotage it, so the same idea that was meant to keep people free is used to justify the Terror."
+          "kind": "cause_effect",
+          "explain": "Rousseau's idea of the general will contributed to the Reign of Terror because it gave revolutionary leaders a way to claim they spoke for the whole people. Robespierre's government used that claim to remove anyone who might sabotage the general will."
         },
         {
           "to": "s-1789-rights-of-man",
           "why": "France's Declaration calls law “the expression of the general will.”",
-          "kind": "continuity",
-          "explain": "Rousseau says law should follow the general will of the people. Article 6 of the Declaration says the same thing, “Law is the expression of the general will,” so Rousseau's idea becomes part of France's new government."
+          "kind": "cause_effect",
+          "explain": "Rousseau's idea of the general will contributed to the Declaration of the Rights of Man because it said the people, not a king, should be the source of law. Article 6 of the Declaration put that idea into French law: “Law is the expression of the general will.”"
         }
       ],
       "atlas": null,
@@ -662,22 +667,22 @@
         }
       ],
       "exemplar": {
-        "context": "Catherine the Great ruled Russia from 1762 to 1796 and wrote to the Enlightenment thinkers of her day. Most Russians were serfs, peasants bound to their landlords' land.",
+        "context": "In 1767, Catherine the Great ruled Russia and wrote to the Enlightenment thinkers of her day. Most Russians were serfs, peasants bound to their landlords' land.",
         "claim": "Catherine's Russia shows the enduring issue of Inequality, because her government promised equal laws but kept serfs under their landlords' control.",
-        "evidence": "Catherine writes that “the Equality of the Citizens consists in this; that they should all be subject to the same Laws.” Yet her Senate orders that serfs owe their landlords “proper submission and absolute obedience in all matters.”",
+        "evidence": "Document 9 shows Catherine writing that “the Equality of the Citizens consists in this; that they should all be subject to the same Laws.” Yet Document 10 shows her Senate ordering that serfs owe their landlords “proper submission and absolute obedience in all matters.”",
         "explain": "Equal laws for citizens meant nothing to serfs, who had to obey their landlords in everything. The gap between her words and her laws is inequality: some people get rights, and others don't."
       },
       "exemplar_by_line": {
         "u1-inequality": {
-          "context": "Catherine the Great ruled Russia from 1762 to 1796 and wrote to the Enlightenment thinkers of her day. Most Russians were serfs, peasants bound to their landlords' land.",
+          "context": "In 1767, Catherine the Great ruled Russia and wrote to the Enlightenment thinkers of her day. Most Russians were serfs, peasants bound to their landlords' land.",
           "claim": "Catherine's Russia shows the enduring issue of Inequality, because her government promised equal laws but kept serfs under their landlords' control.",
-          "evidence": "Catherine writes that “the Equality of the Citizens consists in this; that they should all be subject to the same Laws.” Yet her Senate orders that serfs owe their landlords “proper submission and absolute obedience in all matters.”",
+          "evidence": "Document 9 shows Catherine writing that “the Equality of the Citizens consists in this; that they should all be subject to the same Laws.” Yet Document 10 shows her Senate ordering that serfs owe their landlords “proper submission and absolute obedience in all matters.”",
           "explain": "Equal laws for citizens meant nothing to serfs, who had to obey their landlords in everything. The gap between her words and her laws is inequality: some people get rights, and others don't."
         },
         "u1-abuse-of-power": {
-          "context": "Russian serfs could not leave their landlords' land, and many were treated harshly. Some tried to petition the empress herself for help.",
+          "context": "In 1767, Russian serfs could not leave their landlords' land, and many were treated harshly. Some tried to petition the empress herself for help.",
           "claim": "Catherine's decree on serfs shows the enduring issue of Abuse of Power, because the government punished people just for asking for help.",
-          "evidence": "Serfs who complained about their landlords, “and especially to petition Her Imperial Majesty personally,” would be “punished by the knout” and sent to “penal servitude” for life.",
+          "evidence": "Document 10 shows that serfs who complained about their landlords, “and especially to petition Her Imperial Majesty personally,” would be “punished by the knout” and sent to “penal servitude” for life.",
           "explain": "Asking the ruler for help should be a right, but here it earns a whipping and forced labor for life. A government that punishes complaints uses its power to protect the powerful, not the people."
         }
       },
@@ -685,8 +690,8 @@
         {
           "to": "s-1789-third-estate",
           "why": "In France, the people who carry the country on their backs say they have counted for nothing.",
-          "kind": "continuity",
-          "explain": "In Russia, Catherine promises equal laws, but serfs must obey their landlords absolutely. In France, the Third Estate carries the clergy and nobles on its back, so the same inequality exists in two of Europe's great powers."
+          "kind": "similarity_difference",
+          "explain": "Both Catherine's Russia and France before 1789 were built on the work of peasants who had little power. However, Russia's serfs could be whipped and sent to forced labor just for complaining, while in France the Third Estate was about to demand a voice."
         }
       ],
       "atlas": null,
@@ -732,22 +737,22 @@
         }
       ],
       "exemplar": {
-        "context": "By 1789, millions of Africans had been carried across the Atlantic to work as slaves in the Americas. In Britain, people were starting to argue that the trade should end.",
+        "context": "In 1789, millions of Africans had already been carried across the Atlantic to work as slaves in the Americas. In Britain, people were starting to argue that the trade should end.",
         "claim": "The Atlantic slave trade shows the enduring issue of Human Rights Violations, because people were taken from their homes and forced to work for strangers.",
-        "evidence": "Equiano writes that he was robbed “of all chance of returning to my native country” and was told “we were to be carried to these white people's country to work for them.”",
+        "evidence": "Document 8 shows Equiano writing that he was robbed “of all chance of returning to my native country” and was told “we were to be carried to these white people's country to work for them.”",
         "explain": "Being taken from your home, packed below decks and forced to work without pay takes away a person's freedom and dignity. Even Wilberforce, speaking in Parliament, calls the trade a “wickedness” that must be abolished."
       },
       "exemplar_by_line": {
         "u1": {
-          "context": "By 1789, millions of Africans had been carried across the Atlantic to work as slaves in the Americas. In Britain, people were starting to argue that the trade should end.",
+          "context": "In 1789, millions of Africans had already been carried across the Atlantic to work as slaves in the Americas. In Britain, people were starting to argue that the trade should end.",
           "claim": "The Atlantic slave trade shows the enduring issue of Human Rights Violations, because people were taken from their homes and forced to work for strangers.",
-          "evidence": "Equiano writes that he was robbed “of all chance of returning to my native country” and was told “we were to be carried to these white people's country to work for them.”",
+          "evidence": "Document 8 shows Equiano writing that he was robbed “of all chance of returning to my native country” and was told “we were to be carried to these white people's country to work for them.”",
           "explain": "Being taken from your home, packed below decks and forced to work without pay takes away a person's freedom and dignity. Even Wilberforce, speaking in Parliament, calls the trade a “wickedness” that must be abolished."
         },
         "u6": {
-          "context": "Between the 1500s and the 1800s, the Atlantic slave trade moved millions of Africans to the Americas. It was one of the largest forced migrations in history.",
+          "context": "In the 1700s, the Atlantic slave trade was moving millions of Africans to the Americas. It was one of the largest forced migrations in history.",
           "claim": "Equiano's story shows the enduring issue of Population and Migration, because he was moved across an ocean by force, with no way home.",
-          "evidence": "Equiano writes that he was “put down under the decks” and learned that “we were to be carried to these white people's country to work for them.”",
+          "evidence": "Document 8 shows Equiano being “put down under the decks” and learning that “we were to be carried to these white people's country to work for them.”",
           "explain": "Most migrants choose to move, but Equiano had no choice and no chance of return. Forced migration on this scale moved whole populations and changed who lives in the Americas to this day."
         }
       },
@@ -755,8 +760,8 @@
         {
           "to": "s-1791-haiti",
           "why": "Two years later, enslaved people in Saint-Domingue take their freedom by force.",
-          "kind": "change",
-          "explain": "In 1789, Equiano and Wilberforce speak out against the slave trade. Two years later, enslaved people in Saint-Domingue stop waiting for others to end it and take their freedom by force."
+          "kind": "turning_point",
+          "explain": "Before 1791, people like Equiano and Wilberforce spoke out against slavery, but enslaved people had not won their freedom anywhere in the Caribbean. In 1791, enslaved people in Saint-Domingue rose up and began to take their freedom by force. After that, Haiti became the first nation to end slavery by revolution, and slaveholders everywhere feared it would happen again."
         }
       ],
       "atlas": null,
@@ -791,15 +796,15 @@
       "exemplar": {
         "context": "In 1791, France wrote a new constitution after its Revolution, but women could not vote or hold office under it. Mary Wollstonecraft, an English writer, answered by writing to one of the men who made it.",
         "claim": "Wollstonecraft's writing shows the enduring issue of Inequality, because women were left out of the rights the Revolution promised.",
-        "evidence": "She writes that if women are “to be excluded,” the men in charge must “prove first” that women lack reason, or else the “flaw in your NEW CONSTITUTION” will show they “act like a tyrant.”",
+        "evidence": "Document 7 shows Wollstonecraft writing that if women are “to be excluded,” the men in charge must “prove first” that women lack reason, or else the “flaw in your NEW CONSTITUTION” will show they “act like a tyrant.”",
         "explain": "The Revolution promised rights to all, but it gave them only to men. Wollstonecraft shows that leaving half the people out for no good reason is inequality, the same unfairness the Revolution said it was ending."
       },
       "links": [
         {
           "to": "s-1791-gouges",
           "why": "A year earlier in Paris, Olympe de Gouges rewrote France's declaration for women.",
-          "kind": "continuity",
-          "explain": "Wollstonecraft in London and Olympe de Gouges in Paris make the same argument a year apart: the Revolution's rights must include women. Inequality between men and women stayed the same even as the Revolution changed everything else."
+          "kind": "similarity_difference",
+          "explain": "Both Wollstonecraft and Olympe de Gouges argued that the Revolution's rights must include women. However, Wollstonecraft wrote from England about women's reason and education, while Olympe de Gouges, in Paris, rewrote the Declaration itself article by article."
         }
       ],
       "atlas": null,
@@ -839,17 +844,17 @@
         }
       ],
       "exemplar": {
-        "context": "Before 1789, French society was split into three estates: the clergy, the nobles, and everyone else. The Third Estate was almost all of the people, and it paid most of the taxes.",
+        "context": "In 1789, French society was still split into three estates: the clergy, the nobles, and everyone else. The Third Estate was almost all of the people, and it paid most of the taxes.",
         "claim": "The Third Estate shows the enduring issue of Inequality, because the people who did the work and paid the taxes had no power.",
-        "evidence": "Sieyès says the Third Estate is “Everything” but has been “Nothing” in the political order, and in “Le Grand Abus” a bent-over peasant carries a priest and a noble on his back.",
+        "evidence": "Document 1 shows Sieyès saying the Third Estate is “Everything” but has been “Nothing” in the political order, and Document 2 shows a bent-over peasant carrying a priest and a noble on his back.",
         "explain": "The Third Estate carries France the way the peasant carries the priest and the noble. When most people pay for everything and have no voice, that is inequality, and it is what the Revolution set out to end."
       },
       "links": [
         {
           "to": "s-1789-rights-of-man",
           "why": "The same year, the National Assembly declares that men are born free and equal in rights.",
-          "kind": "change",
-          "explain": "Sieyès says the Third Estate has been nothing in the political order. The same year, the Declaration says men are born and remain free and equal in rights, a sudden change from a society where birth decided your place."
+          "kind": "turning_point",
+          "explain": "Before 1789, the Third Estate had been nothing in the political order, and birth decided a person's rights. In 1789, the National Assembly declared that men are born and remain free and equal in rights. After that, the old privileges of the clergy and nobles could no longer be defended by law."
         }
       ],
       "atlas": null,
@@ -884,21 +889,21 @@
       "exemplar": {
         "context": "In 1789, the Third Estate broke away and named itself the National Assembly. That summer it wrote down the rights it said every French citizen should have.",
         "claim": "The Declaration of the Rights of Man shows the enduring issue of Inequality, because it tries to end a system where birth decided your rights.",
-        "evidence": "Article 1 says “men are born and remain free and equal in rights,” and Article 6 says all citizens are “equally eligible to all dignities and to all public positions” by their abilities.",
+        "evidence": "Document 3 shows Article 1 saying “men are born and remain free and equal in rights,” and Article 6 saying all citizens are “equally eligible to all dignities and to all public positions” by their abilities.",
         "explain": "Under the old system, nobles got the top jobs because of who their parents were. The Declaration says ability, not birth, should decide, though it says “men,” and women would soon ask whether it meant them too."
       },
       "links": [
         {
           "to": "s-1791-gouges",
           "why": "Two years later, Olympe de Gouges rewrites it for women.",
-          "kind": "continuity",
-          "explain": "The Declaration promises equal rights to men. Olympe de Gouges keeps its words and adds woman, showing that for women the old inequality had not changed."
+          "kind": "cause_effect",
+          "explain": "The Declaration of the Rights of Man contributed to Olympe de Gouges's declaration because it promised equal rights but spoke only of men. She copied its articles and added woman, to show exactly who it had left out."
         },
         {
           "to": "s-1791-haiti",
           "why": "In Saint-Domingue, Toussaint L'Ouverture fights for the same Liberty and Equality.",
-          "kind": "continuity",
-          "explain": "The Declaration's ideas of liberty and equality don't stay in France. Toussaint L'Ouverture uses the same words, Liberty and Equality, to lead enslaved people in Saint-Domingue, so the idea spreads across the Atlantic."
+          "kind": "cause_effect",
+          "explain": "The Declaration of the Rights of Man contributed to the Haitian Revolution because its ideas of liberty and equality reached France's colony of Saint-Domingue. Toussaint L'Ouverture used those same words to call enslaved people to fight for their freedom."
         }
       ],
       "atlas": null,
@@ -931,17 +936,17 @@
         }
       ],
       "exemplar": {
-        "context": "In 1789 the National Assembly declared the Rights of Man, but women still could not vote or hold office in France. Olympe de Gouges, a writer in Paris, answered in 1791.",
+        "context": "In 1791, women still could not vote or hold office in France, even after the National Assembly declared the Rights of Man. Olympe de Gouges, a writer in Paris, answered.",
         "claim": "Olympe de Gouges's declaration shows the enduring issue of Inequality, because it shows exactly who the Rights of Man left out.",
-        "evidence": "Her first article says “woman is born free and remains equal to man in rights,” and she says the only limit on women's rights has been “the perpetual tyranny of man.”",
+        "evidence": "Document 4 shows her first article saying “woman is born free and remains equal to man in rights,” and her claim that the only limit on women's rights has been “the perpetual tyranny of man.”",
         "explain": "She copies the Declaration's own words and adds woman, so the gap is impossible to miss. A promise of equal rights that leaves out half the people is still inequality."
       },
       "links": [
         {
           "to": "s-1792-wollstonecraft",
           "why": "A year later in London, Mary Wollstonecraft makes the same argument.",
-          "kind": "continuity",
-          "explain": "Olympe de Gouges demands equal rights for women in 1791, and Mary Wollstonecraft makes the same demand in 1792. Two writers in two countries saw the same gap, so women's inequality was not just a French problem."
+          "kind": "similarity_difference",
+          "explain": "Both Olympe de Gouges and Mary Wollstonecraft said women were being left out of the rights the Revolution promised. However, Olympe de Gouges answered by rewriting France's own Declaration for women, while Wollstonecraft argued that only proof that women lack reason could justify shutting them out."
         }
       ],
       "atlas": null,
@@ -999,28 +1004,28 @@
         }
       ],
       "exemplar": {
-        "context": "By 1793, France was at war with much of Europe and fighting rebels at home. Robespierre and the Committee of Public Safety took control of the government.",
+        "context": "In 1793, France was at war with much of Europe and fighting rebels at home. Robespierre and the Committee of Public Safety took control of the government.",
         "claim": "The Reign of Terror shows the enduring issue of Abuse of Power, because the government turned the courts into a weapon against its own people.",
-        "evidence": "The Law of Suspects created courts to try anyone “suspected of treason against the Republic,” and in effect “made the penal justice system into the enforcement arm of the revolutionary government.”",
+        "evidence": "Document 6 shows that the Law of Suspects created courts to try anyone “suspected of treason against the Republic,” and in effect “made the penal justice system into the enforcement arm of the revolutionary government.”",
         "explain": "Courts are supposed to protect people from the government, but here they work for it. A government that can put people to death on suspicion has power with no limit."
       },
       "exemplar_by_line": {
         "u1-abuse-of-power": {
-          "context": "By 1793, France was at war with much of Europe and fighting rebels at home. Robespierre and the Committee of Public Safety took control of the government.",
+          "context": "In 1793, France was at war with much of Europe and fighting rebels at home. Robespierre and the Committee of Public Safety took control of the government.",
           "claim": "The Reign of Terror shows the enduring issue of Abuse of Power, because the government turned the courts into a weapon against its own people.",
-          "evidence": "The Law of Suspects created courts to try anyone “suspected of treason against the Republic,” and in effect “made the penal justice system into the enforcement arm of the revolutionary government.”",
+          "evidence": "Document 6 shows that the Law of Suspects created courts to try anyone “suspected of treason against the Republic,” and in effect “made the penal justice system into the enforcement arm of the revolutionary government.”",
           "explain": "Courts are supposed to protect people from the government, but here they work for it. A government that can put people to death on suspicion has power with no limit."
         },
         "u1-human-rights-violations": {
-          "context": "During the Reign of Terror, from 1793 to 1794, revolutionary courts sent thousands of people to the guillotine. The Revolution had begun by declaring the rights of man.",
+          "context": "In 1793 and 1794, during the Reign of Terror, revolutionary courts sent thousands of people to the guillotine. The Revolution had begun by declaring the rights of man.",
           "claim": "The Reign of Terror shows the enduring issue of Human Rights Violations, because people could be put to death on suspicion, and most of the dead were ordinary people.",
-          "evidence": "The chart shows 3,961 peasants and 4,389 working-class people were executed, more than the nobles and clergy put together.",
+          "evidence": "Document 7 shows that 3,961 peasants and 4,389 working-class people were executed, more than the nobles and clergy put together.",
           "explain": "The Revolution promised liberty and security to every citizen, but thousands lost their lives on suspicion alone. When your right to life depends on whether the government trusts you, human rights are being violated."
         },
         "u2": {
           "context": "In 1793, France's revolutionary government was at war with Austria, Prussia and Britain, and fighting rebels inside France. Robespierre defended the harsh measures of the Committee of Public Safety.",
           "claim": "The Terror shows the enduring issue of Conflict, because war inside and outside France was the reason given for it.",
-          "evidence": "Robespierre warns of “the foreigners and internal enemies” and describes “a Republic surrounded by enemies.”",
+          "evidence": "Document 5 shows Robespierre warning of “the foreigners and internal enemies” and describing “a Republic surrounded by enemies.”",
           "explain": "Robespierre uses the war to explain why the government needs so much power. Conflict made the Terror possible: when a country is fighting for its life, leaders can call anyone who disagrees an enemy."
         }
       },
@@ -1028,8 +1033,8 @@
         {
           "to": "s-1812-napoleon",
           "why": "The Republic's war at home becomes one general's war across Europe.",
-          "kind": "change",
-          "explain": "In 1793 a committee rules France and fights to save the Republic. By 1812 one man, Napoleon, rules as emperor and fights to conquer Europe, so France goes from defending its revolution to building an empire."
+          "kind": "turning_point",
+          "explain": "Before Napoleon, revolutionary France was ruled by assemblies and committees, like the one that ran the Terror. In 1804, Napoleon, a general, crowned himself emperor. After that, France's wars were no longer about defending the Revolution but about building an empire across Europe."
         }
       ],
       "atlas": null,
@@ -1068,22 +1073,22 @@
         }
       ],
       "exemplar": {
-        "context": "Napoleon Bonaparte, a general of the Revolution, crowned himself emperor of France in 1804. By 1812 his armies had conquered or controlled most of Europe.",
+        "context": "In 1812, Napoleon Bonaparte, a general of the Revolution who had crowned himself emperor in 1804, controlled most of Europe.",
         "claim": "Napoleon's empire shows the enduring issue of Imperialism, because France ruled other peoples' lands directly or through rulers it controlled.",
-        "evidence": "The map's key shows the “French Empire” in dark gray and uses stripes for each “Country indirectly controlled by Napoleon,” like Spain, the Confederation of the Rhine and the Grand Duchy of Warsaw.",
+        "evidence": "Document 8 shows the map's key marking the “French Empire” in dark gray and using stripes for each “Country indirectly controlled by Napoleon,” like Spain, the Confederation of the Rhine and the Grand Duchy of Warsaw.",
         "explain": "Spain, Warsaw and the German states didn't choose French rule; Napoleon took it. Imperialism is a stronger country taking control of other lands and peoples, and this map shows most of a continent under one emperor."
       },
       "exemplar_by_line": {
         "u1": {
-          "context": "Napoleon Bonaparte, a general of the Revolution, crowned himself emperor of France in 1804. By 1812 his armies had conquered or controlled most of Europe.",
+          "context": "In 1812, Napoleon Bonaparte, a general of the Revolution who had crowned himself emperor in 1804, controlled most of Europe.",
           "claim": "Napoleon's empire shows the enduring issue of Imperialism, because France ruled other peoples' lands directly or through rulers it controlled.",
-          "evidence": "The map's key shows the “French Empire” in dark gray and uses stripes for each “Country indirectly controlled by Napoleon,” like Spain, the Confederation of the Rhine and the Grand Duchy of Warsaw.",
+          "evidence": "Document 8 shows the map's key marking the “French Empire” in dark gray and using stripes for each “Country indirectly controlled by Napoleon,” like Spain, the Confederation of the Rhine and the Grand Duchy of Warsaw.",
           "explain": "Spain, Warsaw and the German states didn't choose French rule; Napoleon took it. Imperialism is a stronger country taking control of other lands and peoples, and this map shows most of a continent under one emperor."
         },
         "u2": {
-          "context": "From 1799 to 1815, France fought almost all of Europe in the Napoleonic Wars. Every border on the 1812 map was drawn by war.",
+          "context": "In 1812, France had been at war with almost all of Europe for more than a decade, in the Napoleonic Wars. Every border on this map was drawn by war.",
           "claim": "Napoleon's empire shows the enduring issue of Conflict, because it was built, and lost, through war.",
-          "evidence": "The map marks battle sites across Europe: Austerlitz (1805) and Friedland (1807) as the empire grew, then Borodino (1812), Leipzig (1813) and Waterloo (1815).",
+          "evidence": "Document 8 shows battle sites across Europe: Austerlitz (1805) and Friedland (1807) as the empire grew, then Borodino (1812), Leipzig (1813) and Waterloo (1815).",
           "explain": "The early battles built the empire and the later ones tore it down, ending at Waterloo. Conflict decided who ruled Europe, and the land France took by war it also lost by war."
         }
       },
@@ -1091,8 +1096,8 @@
         {
           "to": "s-1808-spain",
           "why": "The same empire reached Spain, and through Spain, a whole continent across the ocean.",
-          "kind": "continuity",
-          "explain": "Napoleon's empire doesn't stop at Europe's edge. When he puts his brother on Spain's throne, Spain's colonies across the ocean come under his family's rule too, so the same imperialism reaches a whole new continent."
+          "kind": "similarity_difference",
+          "explain": "Both Napoleon's Europe and Spain's American colonies were claimed by Napoleon's family empire. However, in Europe his armies held those lands by force, while across the ocean Spanish Americans refused his brother as king and took over their own governments."
         }
       ],
       "atlas": "10.2-B-01",
@@ -1150,34 +1155,34 @@
         }
       ],
       "exemplar": {
-        "context": "Saint-Domingue was France's richest colony, where hundreds of thousands of enslaved Africans grew sugar and coffee. In 1791 they rose up, and after years of war they won.",
+        "context": "In 1791, enslaved Africans in Saint-Domingue, France's richest colony, rose up. After years of war, they won.",
         "claim": "The Haitian Revolution shows the enduring issue of Nationalism, because the people of Saint-Domingue fought to create their own independent nation.",
-        "evidence": "In 1804, Dessalines calls for “one last act of national authority” to secure liberty “in the country of our birth,” and declares, “we must live independent or die.”",
+        "evidence": "Document 2 shows Dessalines, in 1804, calling for “one last act of national authority” to secure liberty “in the country of our birth,” and declaring, “we must live independent or die.”",
         "explain": "People who had been enslaved now call Haiti “the country of our birth” and choose independence over French rule. Nationalism is a people's push to rule itself, and Haiti became the first free Black republic."
       },
       "exemplar_by_line": {
         "u3-nationalism": {
-          "context": "Saint-Domingue was France's richest colony, where hundreds of thousands of enslaved Africans grew sugar and coffee. In 1791 they rose up, and after years of war they won.",
+          "context": "In 1791, enslaved Africans in Saint-Domingue, France's richest colony, rose up. After years of war, they won.",
           "claim": "The Haitian Revolution shows the enduring issue of Nationalism, because the people of Saint-Domingue fought to create their own independent nation.",
-          "evidence": "In 1804, Dessalines calls for “one last act of national authority” to secure liberty “in the country of our birth,” and declares, “we must live independent or die.”",
+          "evidence": "Document 2 shows Dessalines, in 1804, calling for “one last act of national authority” to secure liberty “in the country of our birth,” and declaring, “we must live independent or die.”",
           "explain": "People who had been enslaved now call Haiti “the country of our birth” and choose independence over French rule. Nationalism is a people's push to rule itself, and Haiti became the first free Black republic."
         },
         "u1": {
-          "context": "For two centuries, the French colony of Saint-Domingue ran on the labor of enslaved Africans. When the enslaved rose up in 1791, France later sent an army to take back control.",
+          "context": "In 1804, when Dessalines declared independence, Saint-Domingue had run on the labor of enslaved Africans for two centuries. Only two years before, France had sent an army to take back control.",
           "claim": "The Haitian Revolution shows the enduring issue of Human Rights Violations, because it was a fight to end slavery for good.",
-          "evidence": "Dessalines calls the colonizers “barbarians who have bloodied our land for two centuries,” and says Haiti must take away “any hope of re-enslaving us.”",
+          "evidence": "Document 2 shows Dessalines calling the colonizers “barbarians who have bloodied our land for two centuries,” and saying Haiti must take away “any hope of re-enslaving us.”",
           "explain": "Slavery takes away every right a person should have: life, freedom and safety. Dessalines declares independence so that no government can ever take those rights away again."
         },
         "u3-cultural-exchange-and-diffusion": {
           "context": "In 1789, the French Revolution declared that men are born free and equal in rights. News of it crossed the Atlantic to France's colony of Saint-Domingue.",
           "claim": "Toussaint L'Ouverture's letter shows the enduring issue of Cultural Exchange and Diffusion, because the ideas of the French Revolution spread to the Caribbean.",
-          "evidence": "Toussaint writes, “I want Liberty and Equality to reign in San Domingo,” using the French Revolution's own words.",
+          "evidence": "Document 1 shows Toussaint writing, “I want Liberty and Equality to reign in San Domingo,” using the French Revolution's own words.",
           "explain": "Ideas don't stay where they start. Liberty and Equality traveled from Paris to the Caribbean, and enslaved people used them to fight for their own freedom."
         },
         "u2": {
           "context": "In 1793, Saint-Domingue was at war: enslaved people against planters, with France, Spain and Britain all fighting over the colony.",
           "claim": "Toussaint's letter shows the enduring issue of Conflict, because freedom in Saint-Domingue would have to be won by fighting.",
-          "evidence": "Toussaint writes, “I have undertaken vengeance,” and calls on others: “Unite yourselves to us, brothers, and fight with us for the same cause.”",
+          "evidence": "Document 1 shows Toussaint writing, “I have undertaken vengeance,” and calling on others: “Unite yourselves to us, brothers, and fight with us for the same cause.”",
           "explain": "Toussaint knows no one will hand over freedom, so he calls people to war. The fighting lasted until 1804, when Haiti won its independence."
         }
       },
@@ -1185,8 +1190,8 @@
         {
           "to": "s-1815-bolivar",
           "why": "Haiti wins its independence; in 1815 Bolívar plans South America's.",
-          "kind": "continuity",
-          "explain": "Haiti wins its independence from France in 1804. In 1815, Bolívar plans the same kind of fight against Spain, so the push for colonies to rule themselves spreads across the Americas."
+          "kind": "cause_effect",
+          "explain": "The Haitian Revolution contributed to Bolívar's fight because Haiti showed that a colony in the Americas could defeat a European army and win its independence. In 1816, the year after the Jamaica Letter, Haiti gave Bolívar ships, soldiers and weapons."
         }
       ],
       "atlas": null,
@@ -1225,22 +1230,22 @@
         }
       ],
       "exemplar": {
-        "context": "For three hundred years, Spain ruled a huge empire in the Americas, from Mexico to Argentina. In 1808 Napoleon invaded Spain itself.",
+        "context": "In 1808, Napoleon invaded Spain, which had ruled a huge empire in the Americas, from Mexico to Argentina, for three hundred years.",
         "claim": "Napoleon's takeover of Spain shows the enduring issue of Imperialism, because millions of Spanish Americans suddenly had a foreign ruler they never chose.",
-        "evidence": "The historian writes that Napoleon “presented the Spanish crown to his brother Joseph,” and “at a stroke, Spanish America became part of the Bonaparte family empire.”",
+        "evidence": "Document 3 shows that Napoleon “presented the Spanish crown to his brother Joseph,” and that “at a stroke, Spanish America became part of the Bonaparte family empire.”",
         "explain": "One family in France now claimed a whole continent across the ocean. That is imperialism: people ruled by a stronger power far away, with no say in who it is."
       },
       "exemplar_by_line": {
         "u1": {
-          "context": "For three hundred years, Spain ruled a huge empire in the Americas, from Mexico to Argentina. In 1808 Napoleon invaded Spain itself.",
+          "context": "In 1808, Napoleon invaded Spain, which had ruled a huge empire in the Americas, from Mexico to Argentina, for three hundred years.",
           "claim": "Napoleon's takeover of Spain shows the enduring issue of Imperialism, because millions of Spanish Americans suddenly had a foreign ruler they never chose.",
-          "evidence": "The historian writes that Napoleon “presented the Spanish crown to his brother Joseph,” and “at a stroke, Spanish America became part of the Bonaparte family empire.”",
+          "evidence": "Document 3 shows that Napoleon “presented the Spanish crown to his brother Joseph,” and that “at a stroke, Spanish America became part of the Bonaparte family empire.”",
           "explain": "One family in France now claimed a whole continent across the ocean. That is imperialism: people ruled by a stronger power far away, with no say in who it is."
         },
         "u3": {
-          "context": "Spanish Americans had been ruled from Spain for three hundred years. When Napoleon put his brother on Spain's throne in 1808, they had to decide where their loyalty lay.",
+          "context": "In 1808, Spanish Americans had been ruled from Spain for three hundred years. When Napoleon put his brother on Spain's throne, they had to decide where their loyalty lay.",
           "claim": "The reaction in Spanish America shows the enduring issue of Nationalism, because Spanish Americans began to govern themselves.",
-          "evidence": "Spanish Americans “refused to accept Joseph Bonaparte as their king” and “seized control of their local governments,” and their rebellion “turned into a revolution for complete independence.”",
+          "evidence": "Document 3 shows that Spanish Americans “refused to accept Joseph Bonaparte as their king” and “seized control of their local governments,” and that their rebellion “turned into a revolution for complete independence.”",
           "explain": "Once they ran their own governments, Spanish Americans saw they didn't need a king across the ocean. Nationalism grows when a people decide to rule themselves, and the historian says there could be “no turning back.”"
         }
       },
@@ -1248,8 +1253,8 @@
         {
           "to": "s-1815-bolivar",
           "why": "Seven years later, Bolívar says independence will take union.",
-          "kind": "continuity",
-          "explain": "Spanish Americans first take over their local governments in 1808, and their rebellion turns into a war for independence. By 1815 that war is still going, and Bolívar says it can only be won if they unite."
+          "kind": "cause_effect",
+          "explain": "Napoleon's takeover of Spain contributed to Bolívar's war because it gave Spanish Americans the chance to run their own governments. Once they had, there was no going back, and by 1815 Bolívar was leading a war for complete independence."
         }
       ],
       "atlas": null,
@@ -1288,22 +1293,22 @@
         }
       ],
       "exemplar": {
-        "context": "By 1815, Spain had crushed the first independence movements in South America, and Simón Bolívar was living in exile in Jamaica. He wrote a letter explaining what South America would need to win.",
+        "context": "In 1815, Spain had crushed the first independence movements in South America, and Simón Bolívar was living in exile in Jamaica. He wrote a letter explaining what South America would need to win.",
         "claim": "Bolívar's Jamaica Letter shows the enduring issue of Nationalism, because he says Spanish Americans must unite to build their own nation.",
-        "evidence": "Bolívar writes that to “expel the Spaniards and to found a free government,” what they need is “union, obviously.”",
+        "evidence": "Document 4 shows Bolívar writing that to “expel the Spaniards and to found a free government,” what they need is “union, obviously.”",
         "explain": "Bolívar knows separate colonies can't beat Spain alone, so he asks them to see themselves as one people. Nationalism is that loyalty to a nation of your own, and Bolívar wants it to become a free government."
       },
       "exemplar_by_line": {
         "u3": {
-          "context": "By 1815, Spain had crushed the first independence movements in South America, and Simón Bolívar was living in exile in Jamaica. He wrote a letter explaining what South America would need to win.",
+          "context": "In 1815, Spain had crushed the first independence movements in South America, and Simón Bolívar was living in exile in Jamaica. He wrote a letter explaining what South America would need to win.",
           "claim": "Bolívar's Jamaica Letter shows the enduring issue of Nationalism, because he says Spanish Americans must unite to build their own nation.",
-          "evidence": "Bolívar writes that to “expel the Spaniards and to found a free government,” what they need is “union, obviously.”",
+          "evidence": "Document 4 shows Bolívar writing that to “expel the Spaniards and to found a free government,” what they need is “union, obviously.”",
           "explain": "Bolívar knows separate colonies can't beat Spain alone, so he asks them to see themselves as one people. Nationalism is that loyalty to a nation of your own, and Bolívar wants it to become a free government."
         },
         "u2": {
           "context": "In 1815, the wars for independence in South America were going badly, and Bolívar was in exile in Jamaica.",
           "claim": "Bolívar's Jamaica Letter shows the enduring issue of Conflict, because independence would have to be won in a war against a stronger enemy.",
-          "evidence": "He writes that America “is attacked by Spain, which has more military supplies than any we can possibly acquire.”",
+          "evidence": "Document 4 shows Bolívar warning that America “is attacked by Spain, which has more military supplies than any we can possibly acquire.”",
           "explain": "Spanish America has no allies and fewer weapons, so the fight will be long and hard. Conflict is how this independence gets decided, and Bolívar went on to lead the armies that won it."
         }
       },
@@ -1311,8 +1316,8 @@
         {
           "to": "s-1846-cavour",
           "why": "In Italy, Cavour also says a divided people must unite before it can be free and strong.",
-          "kind": "continuity",
-          "explain": "Bolívar says Spanish Americans need union to found a free government. Thirty years later in Europe, Cavour says Italians must silence the questions that divide them, so both say a nation is built by uniting first."
+          "kind": "similarity_difference",
+          "explain": "Both Bolívar and Cavour said a divided people had to unite before it could be free and strong. However, Bolívar called on Spanish Americans to unite against Spain, an empire across the ocean, while Cavour called on Italians to unite the small states of their own peninsula."
         }
       ],
       "atlas": null,
@@ -1347,15 +1352,15 @@
       "exemplar": {
         "context": "In 1846, Italy was split into many small states, with Austria ruling the north and the pope ruling the middle. Cavour, from the Kingdom of Sardinia, wanted one Italy.",
         "claim": "Cavour's writing shows the enduring issue of Nationalism, because he calls on Italians to set aside what divides them and build one nation.",
-        "evidence": "Cavour writes that in the face of “this great question,” Italian unity, “all the petty questions that divide us must be silenced,” so that Italy can be “glorious and powerful.”",
+        "evidence": "Document 5 shows Cavour writing that in the face of “this great question,” Italian unity, “all the petty questions that divide us must be silenced,” so that Italy can be “glorious and powerful.”",
         "explain": "Cavour wants Italians to think of themselves as one people first. That loyalty to a shared nation is nationalism, and by 1870 it had united Italy."
       },
       "links": [
         {
           "to": "s-1862-bismarck",
           "why": "Germany unites too, but Bismarck says it will take blood and iron.",
-          "kind": "continuity",
-          "explain": "Italy and Germany both start as many small states, and both are united by one strong kingdom. The goal is the same, one nation, but Cavour talks about setting aside small differences, while Bismarck says it will take blood and iron."
+          "kind": "similarity_difference",
+          "explain": "Both Cavour and Bismarck led a powerful kingdom, Sardinia and Prussia, in uniting many small states into one nation. However, Cavour asked Italians to silence the petty questions that divide them, while Bismarck said Germany would be united by blood and iron."
         }
       ],
       "atlas": "10.2-C-03",
@@ -1396,20 +1401,20 @@
       "exemplar": {
         "context": "In 1862, Germany was still split into dozens of states, and Prussia and Austria were the strongest. Otto von Bismarck had just become Prussia's leader.",
         "claim": "Bismarck's speech shows the enduring issue of Nationalism, because his goal was one German nation, led by Prussia.",
-        "evidence": "Bismarck tells the Prussian parliament, “Not by democracy or liberal standards will our goal be achieved but by blood and iron.”",
+        "evidence": "Document 6 shows Bismarck telling the Prussian parliament, “Not by democracy or liberal standards will our goal be achieved but by blood and iron.”",
         "explain": "His “goal” is a united Germany, and he will do whatever it takes to reach it. By 1871 the German states were one nation under Prussia's king."
       },
       "exemplar_by_line": {
         "u3": {
           "context": "In 1862, Germany was still split into dozens of states, and Prussia and Austria were the strongest. Otto von Bismarck had just become Prussia's leader.",
           "claim": "Bismarck's speech shows the enduring issue of Nationalism, because his goal was one German nation, led by Prussia.",
-          "evidence": "Bismarck tells the Prussian parliament, “Not by democracy or liberal standards will our goal be achieved but by blood and iron.”",
+          "evidence": "Document 6 shows Bismarck telling the Prussian parliament, “Not by democracy or liberal standards will our goal be achieved but by blood and iron.”",
           "explain": "His “goal” is a united Germany, and he will do whatever it takes to reach it. By 1871 the German states were one nation under Prussia's king."
         },
         "u2": {
-          "context": "Prussia wanted to unite the German states, but Austria and France stood in the way. Bismarck believed only war could settle it.",
+          "context": "In 1862, Prussia wanted to unite the German states, but Austria and France stood in the way. Bismarck believed only war could settle it.",
           "claim": "Bismarck's speech shows the enduring issue of Conflict, because he planned to unite Germany by war.",
-          "evidence": "He says the goal will be won “not by democracy or liberal standards” but “by blood and iron.”",
+          "evidence": "Document 6 shows Bismarck saying the goal will be won “not by democracy or liberal standards” but “by blood and iron.”",
           "explain": "Blood and iron means soldiers and weapons. Bismarck fought three wars, against Denmark, Austria and France, and Germany was united in 1871 because Prussia won them."
         }
       },
@@ -1417,8 +1422,8 @@
         {
           "to": "s-1912-balkans",
           "why": "The same force that unites Germany is pulling Austria-Hungary apart.",
-          "kind": "continuity",
-          "explain": "Nationalism unites the German states into one nation in 1871. In Austria-Hungary, the same force works the other way: many peoples inside one border each want a nation of their own, and it pulls the empire apart."
+          "kind": "similarity_difference",
+          "explain": "Both German unification and the Balkan crisis were driven by nationalism. However, in Germany nationalism joined many states into one nation, while in Austria-Hungary and the Balkans it was pulling an empire apart."
         }
       ],
       "atlas": "10.2-C-04",
@@ -1464,22 +1469,22 @@
         }
       ],
       "exemplar": {
-        "context": "By 1911, Austria-Hungary ruled many different peoples inside one border, and the Balkan peoples were pushing the Ottoman Empire out. Each group wanted a nation of its own.",
+        "context": "In 1911, Austria-Hungary ruled many different peoples inside one border, and the Balkan peoples were pushing the Ottoman Empire out. Each group wanted a nation of its own.",
         "claim": "The map of Austria-Hungary shows the enduring issue of Nationalism, because many peoples lived inside one empire, and each could claim to be a nation.",
-        "evidence": "The map's legend lists ten peoples, including Germans, Magyars, Czechs, Poles and Rumanians, and groups six of them under the word Slavs.",
+        "evidence": "Document 7 shows a legend listing ten peoples, including Germans, Magyars, Czechs, Poles and Rumanians, with six of them grouped under the word Slavs.",
         "explain": "Each of those peoples had its own language and could demand its own state. Nationalism pulled Germany and Italy together, but here it was pulling an empire apart."
       },
       "exemplar_by_line": {
         "u3": {
-          "context": "By 1911, Austria-Hungary ruled many different peoples inside one border, and the Balkan peoples were pushing the Ottoman Empire out. Each group wanted a nation of its own.",
+          "context": "In 1911, Austria-Hungary ruled many different peoples inside one border, and the Balkan peoples were pushing the Ottoman Empire out. Each group wanted a nation of its own.",
           "claim": "The map of Austria-Hungary shows the enduring issue of Nationalism, because many peoples lived inside one empire, and each could claim to be a nation.",
-          "evidence": "The map's legend lists ten peoples, including Germans, Magyars, Czechs, Poles and Rumanians, and groups six of them under the word Slavs.",
+          "evidence": "Document 7 shows a legend listing ten peoples, including Germans, Magyars, Czechs, Poles and Rumanians, with six of them grouped under the word Slavs.",
           "explain": "Each of those peoples had its own language and could demand its own state. Nationalism pulled Germany and Italy together, but here it was pulling an empire apart."
         },
         "u2": {
           "context": "In 1912, the Balkan states were about to go to war with the Ottoman Empire, and Europe's great powers had interests on every side. Days after this cartoon ran, the First Balkan War began.",
           "claim": "“The Boiling Point” shows the enduring issue of Conflict, because the Balkans were about to explode into war.",
-          "evidence": "The cartoon shows a pot labeled “BALKAN TROUBLES” with steam pouring out, and five men pressing on the lid to keep it closed.",
+          "evidence": "Document 8 shows a pot labeled “BALKAN TROUBLES” with steam pouring out, and five men pressing on the lid to keep it closed.",
           "explain": "The great powers can't hold the lid on much longer, and the steam is already escaping. The fighting that started in the Balkans would lead to World War I two years later."
         }
       },
