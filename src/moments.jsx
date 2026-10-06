@@ -20,7 +20,8 @@ export const MOMENTS_WORDS = {
     { n: 2, name: 'Work the documents.', q: 'What is this, and what does it say?' },
     { n: 3, name: 'Build your case.', q: 'How do the pieces fit together?' },
     // BK 2026-10-06 09:20 ("yes as it is."): why Make the Case matters, and where to see it done.
-    { n: 4, name: 'Make the Case.', q: 'On your own. Everything above gets you here.',
+    // BK 09:25 ("yes. approved. signed. push it."): where it is, at the end of the casefile.
+    { n: 4, name: 'Make the Case.', q: 'On your own, at the end of your casefile. Everything above gets you here.',
       more: 'Your document work is building toward this paragraph, and your skill grades come from it. Strong paragraphs here are what unlock the essay.' },
     { n: 5, name: 'Read your gauges.', q: 'What do I work on next?' },
   ],
