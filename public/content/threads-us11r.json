@@ -1,14 +1,16 @@
 {
   "_course": "US History & Government 11R",
-  "_built": "2026-09-27 by Sam (us11r-curriculum) · build_threads_us11r.py · stops from what students read in 11.1 and 11.2 · SIGNED by BK 2026-09-27 09:56",
-  "threads": [
+  "_built": "2026-09-27 by Sam · SIGNED by BK 2026-09-27 09:56 · v2 2026-10-05: every line an event belongs to (on_lines), the shared stop shape (map-stop-shape.md), atlas links · build_threads_us11r.py",
+  "_shape": "map-stop-shape v1 · Sam + Will 2026-10-05 · revises Josh's 9/27 Data Brief §2 · Josh confirms",
+  "_you_are_here": "Read the door's current_unit in the Arena manifest; no field here.",
+  "lines": [
     {
       "id": "t1",
       "number": 1,
       "name": "Is There One America?",
       "question": "Is there one America, with the same rights for everyone in it?",
       "_note": "The card gives Thread 1 no single recurring question. This line approved by BK 2026-09-27 09:56 (\"yes to your suggestions. approved. signed\").",
-      "arcs": [
+      "subs": [
         {
           "id": "t1-aa",
           "name": "African Americans",
@@ -30,61 +32,75 @@
       "id": "t2",
       "number": 2,
       "name": "America in the World",
-      "question": "When should the United States intervene in the affairs of other nations — and at what cost to its own democratic principles?"
+      "question": "When should the United States intervene in the affairs of other nations — and at what cost to its own democratic principles?",
+      "subs": []
     },
     {
       "id": "t3",
       "number": 3,
       "name": "The Role and Size of Government",
-      "question": "How much should the federal government do for its citizens — and at what point does government intervention become a threat to liberty?"
+      "question": "How much should the federal government do for its citizens — and at what point does government intervention become a threat to liberty?",
+      "subs": []
     },
     {
       "id": "t4",
       "number": 4,
       "name": "Presidential Power",
-      "question": "How much power should one person have in a democracy — and who checks the president when the Constitution is silent?"
+      "question": "How much power should one person have in a democracy — and who checks the president when the Constitution is silent?",
+      "subs": []
     },
     {
       "id": "t5",
       "number": 5,
       "name": "Reform in America",
-      "question": "When the system fails to deliver on its promises, what methods of reform are available — and which ones actually work?"
+      "question": "When the system fails to deliver on its promises, what methods of reform are available — and which ones actually work?",
+      "subs": []
     },
     {
       "id": "t6",
       "number": 6,
       "name": "Immigration and the American Identity",
-      "question": "Who counts as American — and when the country restricts entry based on race, religion, or national origin, is it protecting its character or betraying it?"
+      "question": "Who counts as American — and when the country restricts entry based on race, religion, or national origin, is it protecting its character or betraying it?",
+      "subs": []
     },
     {
       "id": "t7",
       "number": 7,
       "name": "Civil Liberties in Wartime",
-      "question": "When national security conflicts with constitutional rights, which wins — and who decides?"
+      "question": "When national security conflicts with constitutional rights, which wins — and who decides?",
+      "subs": []
     }
   ],
   "stops": [
     {
       "id": "s-1600s-disease",
-      "thread": "t1",
-      "arc": "t1-native",
       "unit": "11.1",
+      "casefile": "A",
       "when": "1600s",
       "title": "Contact brings disease",
       "what_happened": "Europeans brought diseases Native peoples had never faced, like smallpox. Over the 1600s, Native populations along the coast collapsed.",
-      "question": "When does sovereignty get respected?",
       "document": {
         "title": "A traveler describes disease in New England",
         "citation": "Source: John Josselyn, An Account of Two Voyages to New-England, Made during the Years 1638, 1663",
         "source_ref": "11.1 Casefile A, Document 2",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": "t1-native",
+          "reason": "Native nations lose huge numbers of people to European diseases they had never met.",
+          "question": "When does sovereignty get respected?"
+        }
+      ],
       "links": [
         {
           "to": "s-1642-miantonomo",
           "why": "The people, land and animals lost here are what Miantonomo warns about."
         }
       ],
+      "atlas": "11.1-A-01",
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -92,19 +108,26 @@
     },
     {
       "id": "s-1642-miantonomo",
-      "thread": "t1",
-      "arc": "t1-native",
       "unit": "11.1",
+      "casefile": "A",
       "when": "c. 1642",
       "title": "Miantonomo's warning",
       "what_happened": "A Narragansett leader tells a neighboring nation that the English are taking their land, their animals and their food. His answer: Native nations must act as one, or lose everything.",
-      "question": "When does sovereignty get respected?",
       "document": {
         "title": "Miantonomo, speaking to the Montaukett",
         "citation": "Source: Miantonomo, Narragansett sachem, speaking to the Montaukett on Long Island, c. 1642. Recorded by an English listener and printed later in Great Native American Speeches.",
         "source_ref": "11.1 Casefile A, Document 4",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": "t1-native",
+          "reason": "A Narragansett leader warns that his people's land and food are being taken.",
+          "question": "When does sovereignty get respected?"
+        }
+      ],
       "links": [
         {
           "to": "s-1744-lancaster",
@@ -115,6 +138,7 @@
           "why": "Franklin makes the same argument, act as one or lose everything, for the colonists."
         }
       ],
+      "atlas": "11.1-A-01",
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -122,25 +146,33 @@
     },
     {
       "id": "s-1744-lancaster",
-      "thread": "t1",
-      "arc": "t1-native",
       "unit": "11.1",
+      "casefile": "A",
       "when": "1744",
       "title": "The Lancaster Treaty",
       "what_happened": "Haudenosaunee (Iroquois) leaders meet negotiators from Virginia, Maryland and Pennsylvania. Their speaker, Gachradodow, reminds them that the colonists grew rich on land Native peoples lost for good.",
-      "question": "When does sovereignty get respected?",
       "document": {
         "title": "Gachradodow at the Lancaster Treaty",
         "citation": "Source: The Lancaster Treaty of 1744. The speaker, Gachradodow, was an Iroquois (Haudenosaunee) orator addressing colonial negotiators from Virginia, Maryland and Pennsylvania.",
         "source_ref": "11.1 Casefile A, Document 5",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": "t1-native",
+          "reason": "Six Nations leaders bargain with colonial governments over land settlers have already taken.",
+          "question": "When does sovereignty get respected?"
+        }
+      ],
       "links": [
         {
           "to": "s-1763-proclamation",
           "why": "Twenty years later, Britain draws a line to keep colonists off Native land, and the colonists are furious."
         }
       ],
+      "atlas": "11.1-A-01",
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -148,19 +180,26 @@
     },
     {
       "id": "s-1619-1705-slave-law",
-      "thread": "t1",
-      "arc": "t1-aa",
       "unit": "11.1",
+      "casefile": "B",
       "when": "1619–1705",
       "title": "Slavery built by law",
       "what_happened": "In 1619 the first captive Africans at Jamestown were classed as servants. Law by law, the colonies turned that into slavery for life, passed from mother to child, until Virginia's 1705 code declared enslaved people property.",
-      "question": "When do we become full citizens?",
       "document": {
         "title": "How a law gets built, 1619–1705",
         "citation": "Compiled by New Visions for Public Schools from Ferris State University, PBS Slavery in America, and Colonial Williamsburg.",
         "source_ref": "11.1 Casefile B, Document 13",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": "t1-aa",
+          "reason": "Colonial law turns slavery into a condition for life, passed from mother to child.",
+          "question": "When do we become full citizens?"
+        }
+      ],
       "links": [
         {
           "to": "s-1738-venture-smith",
@@ -168,7 +207,7 @@
         },
         {
           "to": "s-1787-constitution",
-          "why": "The Constitution counts an enslaved person as three-fifths of a person. The law is still doing the work."
+          "why": "The Constitution counts three of every five enslaved people toward seats in Congress. The law is still doing the work."
         }
       ],
       "status": "open",
@@ -178,19 +217,26 @@
     },
     {
       "id": "s-1738-venture-smith",
-      "thread": "t1",
-      "arc": "t1-aa",
       "unit": "11.1",
+      "casefile": "B",
       "when": "1738",
       "title": "Venture Smith is kidnapped and sold",
       "what_happened": "Venture Smith was kidnapped in Africa as a child and sold for four gallons of rum and a piece of calico. He was enslaved in New England, later bought his own freedom, and told his story himself.",
-      "question": "When do we become full citizens?",
       "document": {
         "title": "Venture Smith tells his own story",
         "citation": "Source: Documenting the American South. Narrative of the Life and Adventures of Venture Smith, a Native of Africa, but resident above sixty years in the United States, related by himself.",
         "source_ref": "11.1 Casefile B, Document 12",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": "t1-aa",
+          "reason": "A man kidnapped as a child in Africa and enslaved in New England has to buy his own freedom.",
+          "question": "When do we become full citizens?"
+        }
+      ],
       "links": [
         {
           "to": "s-1776-declaration",
@@ -204,25 +250,33 @@
     },
     {
       "id": "s-1754-join-or-die",
-      "thread": "t3",
-      "arc": null,
       "unit": "11.1",
+      "casefile": "B",
       "when": "1754",
       "title": "Join, or Die",
       "what_happened": "Benjamin Franklin prints a snake cut into pieces labeled with the colonies' names. His message: the colonies must unite against France, or they won't survive.",
-      "question": "Can a government be too weak to protect democracy — just as it can be too strong?",
       "document": {
         "title": "The first American political cartoon",
         "citation": "Source: political cartoon, Pennsylvania Gazette, 9 May 1754. Attributed to Benjamin Franklin.",
         "source_ref": "11.1 Casefile B, Document 16",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t3",
+          "sub": null,
+          "reason": "Franklin argues the colonies are too weak apart to survive.",
+          "question": "Can a government be too weak to protect democracy — just as it can be too strong?"
+        }
+      ],
       "links": [
         {
           "to": "s-1781-articles",
           "why": "When the colonies finally unite, their first government is so weak it can barely act."
         }
       ],
+      "atlas": "11.1-B-01",
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -230,19 +284,26 @@
     },
     {
       "id": "s-1765-blackstone",
-      "thread": "t1",
-      "arc": "t1-women",
       "unit": "11.1",
+      "casefile": "B",
       "when": "1765",
       "title": "Coverture: a wife disappears in law",
       "what_happened": "An English legal guide the colonies followed spells out the rule: when a woman marries, her legal existence is “suspended.” She can't own property, sign a contract or sue in her own name.",
-      "question": "When does equality mean us too?",
       "document": {
         "title": "Blackstone on marriage",
         "citation": "Source: William Blackstone, Commentaries on the Laws of England, Book I, Chapter 15, “Of Husband and Wife,” 1765.",
         "source_ref": "11.1 Casefile B, Document 18",
         "excerpt": "“By marriage, the husband and wife are one person in law: that is, the very being or legal existence of the woman is suspended during the marriage…”"
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": "t1-women",
+          "reason": "English law, which the colonies follow, suspends a married woman's legal existence.",
+          "question": "When does equality mean us too?"
+        }
+      ],
       "links": [
         {
           "to": "s-1776-abigail-adams",
@@ -256,25 +317,33 @@
     },
     {
       "id": "s-1763-proclamation",
-      "thread": "t1",
-      "arc": "t1-native",
       "unit": "11.2",
+      "casefile": "A",
       "when": "1763",
       "title": "The Proclamation Line",
       "what_happened": "After winning the French and Indian War, Britain bans colonists from settling west of the Appalachian Mountains to keep peace with Native nations. Colonists who fought for that land are angry.",
-      "question": "When does sovereignty get respected?",
       "document": {
         "title": "The Proclamation Line of 1763",
         "citation": "Source: Exploring American History, Globe Book Company (adapted)",
         "source_ref": "11.2 Casefile A, Document 1",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": "t1-native",
+          "reason": "Britain sets aside land west of the mountains for Native nations, and colonists resent it.",
+          "question": "When does sovereignty get respected?"
+        }
+      ],
       "links": [
         {
           "to": "s-1765-stamp-act-congress",
           "why": "Then Britain starts taxing the colonies to pay for the war."
         }
       ],
+      "atlas": "11.2-A-02",
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -282,19 +351,26 @@
     },
     {
       "id": "s-1765-stamp-act-congress",
-      "thread": "t1",
-      "arc": null,
       "unit": "11.2",
+      "casefile": "A",
       "when": "1765",
       "title": "The Stamp Act Congress",
       "what_happened": "Parliament taxes printed paper in the colonies. Delegates from nine colonies meet and answer: only our own elected assemblies can tax us.",
-      "question": "Is there one America, with the same rights for everyone in it?",
       "document": {
         "title": "The colonies answer the Stamp Act",
         "citation": "Source: Declaration of Rights and Grievances, Stamp Act Congress, October 19, 1765 (adapted)",
         "source_ref": "11.2 Casefile A, Document 3",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": null,
+          "reason": "The colonists claim the rights of English people for themselves: no tax without their own vote.",
+          "question": "Is there one America, with the same rights for everyone in it?"
+        }
+      ],
       "links": [
         {
           "to": "s-1776-declaration",
@@ -308,25 +384,40 @@
     },
     {
       "id": "s-1770-boston",
-      "thread": "t1",
-      "arc": null,
       "unit": "11.2",
+      "casefile": "A",
       "when": "1770",
       "title": "The Boston Massacre, told two ways",
       "what_happened": "British soldiers fire into a crowd in Boston, and five colonists die, among them Crispus Attucks, a sailor of African and Native descent. Paul Revere's engraving and Captain Preston's testimony tell the story very differently.",
-      "question": "Is there one America, with the same rights for everyone in it?",
       "document": {
         "title": "Paul Revere's engraving",
         "citation": "Source: Paul Revere, engraver, 1770 (adapted)",
         "source_ref": "11.2 Casefile A, Document 4",
         "excerpt": null
       },
+      "also_read": [
+        {
+          "title": "Captain Preston tells his side",
+          "citation": "Source: Transcript of British Captain Thomas Preston's testimony, from “The Boston Massacre, The British View, 1770,” EyeWitness to History, 2009 (adapted)",
+          "source_ref": "11.2 Casefile A, Document 5",
+          "excerpt": null
+        }
+      ],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": null,
+          "reason": "Among the five killed is Crispus Attucks, a sailor of African and Native descent.",
+          "question": "Is there one America, with the same rights for everyone in it?"
+        }
+      ],
       "links": [
         {
           "to": "s-1798-sedition",
           "why": "In 1770, printing an attack on the government made Revere a patriot. In 1798, it could land a printer in jail."
         }
       ],
+      "atlas": "11.2-A-03",
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -334,23 +425,49 @@
     },
     {
       "id": "s-1776-declaration",
-      "thread": "t1",
-      "arc": "t1-aa",
       "unit": "11.2",
+      "casefile": "A",
       "when": "1776",
       "title": "“All men are created equal”",
       "what_happened": "The Continental Congress declares independence and claims that all men are created equal, with rights no government can take away. About one in five people in the colonies is enslaved.",
-      "question": "When do we become full citizens?",
       "document": {
         "title": "The Declaration of Independence",
         "citation": "Source: Declaration of Independence, July 4, 1776 (adapted)",
         "source_ref": "11.2 Casefile A, Document 8",
         "excerpt": null
       },
+      "also_read": [
+        {
+          "title": "The Virginia Declaration of Rights",
+          "citation": "Source: Virginia Declaration of Rights, June 12, 1776 (adapted)",
+          "source_ref": "11.2 Casefile A, Document 9",
+          "excerpt": null
+        }
+      ],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": null,
+          "reason": "The promise itself: all men are created equal, with rights no government can take away.",
+          "question": "Is there one America, with the same rights for everyone in it?"
+        },
+        {
+          "line": "t1",
+          "sub": "t1-aa",
+          "reason": "About one in five people in the colonies is enslaved when the promise is made.",
+          "question": "When do we become full citizens?"
+        },
+        {
+          "line": "t1",
+          "sub": "t1-women",
+          "reason": "“All men” leaves women out, months after Abigail Adams asked John to “remember the ladies.”",
+          "question": "When does equality mean us too?"
+        }
+      ],
       "links": [
         {
           "to": "s-1787-constitution",
-          "why": "Eleven years later, the Constitution counts an enslaved person as three-fifths of a person."
+          "why": "Eleven years later, the Constitution counts three of every five enslaved people toward seats in Congress, and gives them no vote."
         }
       ],
       "status": "open",
@@ -360,19 +477,26 @@
     },
     {
       "id": "s-1776-abigail-adams",
-      "thread": "t1",
-      "arc": "t1-women",
       "unit": "11.2",
+      "casefile": "A",
       "when": "1776",
       "title": "“Remember the ladies”",
       "what_happened": "While Congress debates independence, Abigail Adams asks her husband John to remember the ladies in the new laws. He laughs it off, and women get no vote.",
-      "question": "When does equality mean us too?",
       "document": {
         "title": "Abigail Adams writes to John Adams",
         "citation": "Source: Abigail Adams, letter to John Adams, March 31, 1776 (adapted)",
         "source_ref": "11.2 Casefile A, Document 10",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t1",
+          "sub": "t1-women",
+          "reason": "She asks for women to have a voice in the new laws, and is laughed off.",
+          "question": "When does equality mean us too?"
+        }
+      ],
       "links": [
         {
           "to": "s-1776-declaration",
@@ -386,25 +510,39 @@
     },
     {
       "id": "s-1781-articles",
-      "thread": "t3",
-      "arc": null,
       "unit": "11.2",
+      "casefile": "B",
       "when": "1781",
       "title": "The Articles of Confederation",
       "what_happened": "After years of fighting a king, the states build a national government that is weak on purpose. Congress can't tax, can't regulate trade and can't make the states do anything.",
-      "question": "Can a government be too weak to protect democracy — just as it can be too strong?",
       "document": {
         "title": "The Articles of Confederation",
         "citation": "Source: Articles of Confederation, 1781 (adapted)",
         "source_ref": "11.2 Casefile B, Document 11",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t3",
+          "sub": null,
+          "reason": "The first national government is too weak to tax, regulate trade or keep order.",
+          "question": "Can a government be too weak to protect democracy — just as it can be too strong?"
+        },
+        {
+          "line": "t4",
+          "sub": null,
+          "reason": "People who just fought a king build a government with no executive branch to lead it.",
+          "question": "How much power should one person have in a democracy — and who checks the president when the Constitution is silent?"
+        }
+      ],
       "links": [
         {
           "to": "s-1787-constitution",
           "why": "Shays' Rebellion scares the country's leaders, and they write a stronger government."
         }
       ],
+      "atlas": "11.2-B-01",
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -412,22 +550,39 @@
     },
     {
       "id": "s-1787-constitution",
-      "thread": [
-        "t3",
-        "t1"
-      ],
-      "arc": "t1-aa",
       "unit": "11.2",
+      "casefile": "B",
       "when": "1787",
       "title": "The Constitution: who gets counted, and who gets power",
-      "what_happened": "The Constitution builds a stronger national government and splits its power among three branches that check each other. It also counts each enslaved person as three-fifths of a person, which gives slave states more seats in Congress.",
-      "question": "Can a government be too weak to protect democracy — just as it can be too strong?",
+      "what_happened": "The Constitution builds a stronger national government and splits its power among three branches that check each other. It also counts three of every five enslaved people toward a state's seats in the House, which gives slave states more power in Congress.",
       "document": {
         "title": "The Constitution, Article I",
         "citation": "Source: United States Constitution, Article I, 1787 (adapted)",
         "source_ref": "11.2 Casefile B, Document 14",
         "excerpt": null
       },
+      "also_read": [
+        {
+          "title": "Madison on checks",
+          "citation": "Source: James Madison, Federalist No. 51, 1788 (adapted)",
+          "source_ref": "11.2 Casefile B, Document 15",
+          "excerpt": null
+        }
+      ],
+      "on_lines": [
+        {
+          "line": "t3",
+          "sub": null,
+          "reason": "A stronger national government, with its power split so no branch can take over.",
+          "question": "Can a government be too weak to protect democracy — just as it can be too strong?"
+        },
+        {
+          "line": "t1",
+          "sub": "t1-aa",
+          "reason": "To divide up seats in Congress, the Constitution counts three of every five enslaved people.",
+          "question": "When do we become full citizens?"
+        }
+      ],
       "links": [
         {
           "to": "s-1791-bill-of-rights",
@@ -441,22 +596,32 @@
     },
     {
       "id": "s-1791-bill-of-rights",
-      "thread": [
-        "t7",
-        "t3"
-      ],
-      "arc": null,
       "unit": "11.2",
+      "casefile": "B",
       "when": "1791",
       "title": "The Bill of Rights",
       "what_happened": "Anti-Federalists warn that the new government could crush people's liberties. The first ten amendments answer them with freedom of speech, press and religion, and protection from unfair searches and trials.",
-      "question": "When the Constitution says “no law,” does it mean no exceptions — or does it mean “no law except in emergencies”?",
       "document": {
         "title": "The Bill of Rights",
         "citation": "Source: United States Constitution, Amendments I–X, 1791 (adapted)",
         "source_ref": "11.2 Casefile B, Document 17",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t7",
+          "sub": null,
+          "reason": "The First Amendment's promise: “Congress shall make no law” limiting speech or the press.",
+          "question": "When the Constitution says “no law,” does it mean no exceptions — or does it mean “no law except in emergencies”?"
+        },
+        {
+          "line": "t3",
+          "sub": null,
+          "reason": "Critics feared the new government was too strong, so its limits were written down.",
+          "question": "Can a government be too weak to protect democracy — just as it can be too strong?"
+        }
+      ],
       "links": [
         {
           "to": "s-1798-sedition",
@@ -470,22 +635,32 @@
     },
     {
       "id": "s-1796-farewell",
-      "thread": [
-        "t4",
-        "t2"
-      ],
-      "arc": null,
       "unit": "11.2",
+      "casefile": "C",
       "when": "1796",
       "title": "Washington's Farewell Address",
       "what_happened": "Washington steps down after two terms, setting a limit presidents follow for almost 150 years. He warns the country against permanent alliances with foreign nations and against political parties.",
-      "question": "When the Constitution doesn't address a situation, does the president have the power to act anyway?",
       "document": {
         "title": "Washington's Farewell Address",
         "citation": "Source: President George Washington, Farewell Address, 1796 (adapted)",
         "source_ref": "NYSED U.S. History and Government Regents, August 2023, Part I, items 5–6",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t4",
+          "sub": null,
+          "reason": "Washington steps down after two terms, a limit no law required.",
+          "question": "When the Constitution doesn't address a situation, does the president have the power to act anyway?"
+        },
+        {
+          "line": "t2",
+          "sub": null,
+          "reason": "He warns the country against permanent alliances with foreign nations.",
+          "question": "When should the United States intervene in the affairs of other nations — and at what cost to its own democratic principles?"
+        }
+      ],
       "links": [
         {
           "to": "s-1798-sedition",
@@ -499,19 +674,26 @@
     },
     {
       "id": "s-1798-sedition",
-      "thread": "t7",
-      "arc": null,
       "unit": "11.2",
+      "casefile": "C",
       "when": "1798",
       "title": "The Sedition Act",
       "what_happened": "With war with France feared, Congress makes it a crime to publish false or malicious writing against the government. Newspaper editors who criticize President Adams are jailed.",
-      "question": "Is it sedition to criticize the government — or is that criticism exactly what the First Amendment is designed to protect?",
       "document": {
         "title": "The Sedition Act",
         "citation": "Source: An Act for the Punishment of Certain Crimes (the Sedition Act), July 14, 1798 (adapted)",
         "source_ref": "United States Statutes at Large, vol. 1, p. 596 (public domain)",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t7",
+          "sub": null,
+          "reason": "Congress makes “false, scandalous” writing against the government a crime, and editors go to jail.",
+          "question": "Is it sedition to criticize the government — or is that criticism exactly what the First Amendment is designed to protect?"
+        }
+      ],
       "links": [],
       "status": "building",
       "image": null,
@@ -520,19 +702,26 @@
     },
     {
       "id": "s-1803-marbury",
-      "thread": "t3",
-      "arc": null,
       "unit": "11.2",
+      "casefile": "C",
       "when": "1803",
       "title": "Marbury v. Madison",
       "what_happened": "For the first time, the Supreme Court strikes down part of a law passed by Congress. Chief Justice John Marshall claims the power of judicial review: the Court decides what the Constitution means.",
-      "question": "How much should the federal government do for its citizens — and at what point does government intervention become a threat to liberty?",
       "document": {
         "title": "Marbury v. Madison",
         "citation": "Source: Marbury v. Madison, 5 U.S. (1 Cranch) 137 (1803)",
         "source_ref": "U.S. Reports, vol. 5 (public domain)",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t3",
+          "sub": null,
+          "reason": "The Supreme Court claims the power to strike down laws that break the Constitution.",
+          "question": "How much should the federal government do for its citizens — and at what point does government intervention become a threat to liberty?"
+        }
+      ],
       "links": [
         {
           "to": "s-1819-mcculloch",
@@ -546,19 +735,26 @@
     },
     {
       "id": "s-1819-mcculloch",
-      "thread": "t3",
-      "arc": null,
       "unit": "11.2",
+      "casefile": "C",
       "when": "1819",
       "title": "McCulloch v. Maryland",
       "what_happened": "Maryland tries to tax the national bank. The Supreme Court rules that Congress had the power to create the bank under the necessary and proper clause, and that a state can't tax it.",
-      "question": "How much should the federal government do for its citizens — and at what point does government intervention become a threat to liberty?",
       "document": {
         "title": "McCulloch v. Maryland",
         "citation": "Source: McCulloch v. Maryland, 17 U.S. (4 Wheat.) 316 (1819)",
         "source_ref": "U.S. Reports, vol. 17 (public domain)",
         "excerpt": null
       },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "t3",
+          "sub": null,
+          "reason": "The Court rules Congress has powers beyond the ones listed, and a state can't tax the national bank.",
+          "question": "How much should the federal government do for its citizens — and at what point does government intervention become a threat to liberty?"
+        }
+      ],
       "links": [
         {
           "to": "s-1781-articles",

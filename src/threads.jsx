@@ -31,7 +31,11 @@ const COLOR = {
 }
 const UNITS = ['11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9', '11.10']
 
-const threadsOf = s => (Array.isArray(s.thread) ? s.thread : [s.thread])
+// map-stop-shape v1 (Sam + Will 10/5, Josh confirmed 21:29; BK approved Sam's v2 23:12): a stop
+// names every line it sits on in on_lines, each with its own reason and question. The 9/27 file
+// (one thread, one arc) still reads, so an older copy never blanks the map.
+const threadsOf = s => (s.on_lines ? [...new Set(s.on_lines.map(e => e.line))] : (Array.isArray(s.thread) ? s.thread : [s.thread]))
+const arcsOf = s => (s.on_lines ? s.on_lines.filter(e => e.line === 't1' && e.sub).map(e => e.sub) : (s.arc ? [s.arc] : []))
 const yearOf = s => { const m = String(s.when || '').match(/\d{4}/); return m ? +m[0] : 9999 }
 
 // The map's rows, top to bottom. Thread 1 is a trunk plus one row per arc.
@@ -45,15 +49,20 @@ function rowsOf(data) {
 }
 // Which rows a stop sits on: each of its threads, on the arc's strand where it has one.
 function rowKeysOf(s) {
+  if (s.on_lines) return [...new Set(s.on_lines.map(e => (e.line === 't1' && e.sub ? e.sub : e.line)))]
   return threadsOf(s).map(t => (t === 't1' && s.arc ? s.arc : t))
 }
+// The shared shape's lines become the map's threads (Thread 1's subs are its arcs).
+const normalize = d => (d && d.lines && !d.threads
+  ? { ...d, threads: d.lines.map(l => ({ id: l.id, number: l.number, name: l.name, question: l.question, arcs: (l.subs || []).map(x => ({ id: x.id, name: x.name, question: x.question })) })) }
+  : d)
 
 export function useThreads(ref) {
   const [data, setData] = useState(null)
   useEffect(() => {
     if (!ref) { setData(false); return }
     const r = String(ref).replace(/^content\//, '')
-    fetch(`/content/${r}`).then(x => (x.ok ? x.json() : false)).then(setData).catch(() => setData(false))
+    fetch(`/content/${r}`).then(x => (x.ok ? x.json() : false)).then(d => setData(normalize(d))).catch(() => setData(false))
   }, [ref])
   return data
 }
@@ -197,9 +206,10 @@ function ThreadsPhone({ data, open, onPick, byId, threadById }) {
       <ol className="thread-line" style={{ '--c': COLOR[tid] }}>
         {stops.map(s => {
           const building = s.status === 'building'
-          const strand = tid === 't1' && s.arc ? arcName(s.arc) : null
+          const arc = tid === 't1' ? arcsOf(s)[0] : null
+          const strand = arc ? arcName(arc) : null
           return (
-            <li key={s.id} style={{ '--c': COLOR[tid === 't1' && s.arc ? s.arc : tid] }}>
+            <li key={s.id} style={{ '--c': COLOR[arc || tid] }}>
               <button type="button" className={`line-stop${building ? ' building' : ''}${open === s.id ? ' open' : ''}`}
                       disabled={building} onClick={() => onPick(s.id)}>
                 <span className="ls-when">{s.unit} · {s.when}</span>
@@ -220,13 +230,15 @@ function ThreadsPhone({ data, open, onPick, byId, threadById }) {
 function StopCard({ stop, byId, threadById, onPick, onClose, mapId, onOpenMap }) {
   const ts = threadsOf(stop).map(id => threadById[id]).filter(Boolean)
   const doc = stop.document
+  const arc = arcsOf(stop)[0]
+  const arcNameOf = (t, id) => (t.arcs || []).find(a => a.id === id)?.name || ''
   return (
     <article className="stop-card" aria-labelledby="stop-card-h">
       <div className="stop-card-top">
         <div className="stop-chips">
           {ts.map(t => (
-            <span key={t.id} className="stop-chip" style={{ '--c': COLOR[t.id === 't1' && stop.arc ? stop.arc : t.id] }}>
-              {t.number} · {t.name}{t.id === 't1' && stop.arc ? ` · ${(t.arcs || []).find(a => a.id === stop.arc)?.name || ''}` : ''}
+            <span key={t.id} className="stop-chip" style={{ '--c': COLOR[t.id === 't1' && arc ? arc : t.id] }}>
+              {t.number} · {t.name}{t.id === 't1' && arc ? ` · ${arcNameOf(t, arc)}` : ''}
             </span>
           ))}
           {ts.length > 1 && <span className="stop-chip two">On two threads</span>}
@@ -240,8 +252,21 @@ function StopCard({ stop, byId, threadById, onPick, onClose, mapId, onOpenMap })
       {/* A stop with an Atlas map (its `atlas` field names the map id) opens it (10/5). */}
       {mapId && <button type="button" className="btn-now stop-map" onClick={() => onOpenMap(mapId)}>Open the map</button>}
 
-      <h4 className="stop-h">The thread&rsquo;s question</h4>
-      <p className="stop-q">{stop.question}</p>
+      {/* v2: each line the stop sits on, with Sam's reason and that line's question. */}
+      {stop.on_lines ? stop.on_lines.map((e, i) => {
+        const t = threadById[e.line]
+        return (
+          <div key={i} className="thread-entry" style={{ '--c': COLOR[e.line === 't1' && e.sub ? e.sub : e.line] }}>
+            {stop.on_lines.length > 1 && t && <div className="thread-entry-name">{t.number} · {t.name}{e.sub ? ` · ${arcNameOf(t, e.sub)}` : ''}</div>}
+            {e.reason && <p className="thread-entry-why">{e.reason}</p>}
+            <h4 className="stop-h">The thread&rsquo;s question</h4>
+            <p className="stop-q">{e.question}</p>
+          </div>
+        )
+      }) : <>
+        <h4 className="stop-h">The thread&rsquo;s question</h4>
+        <p className="stop-q">{stop.question}</p>
+      </>}
 
       {doc && <>
         <h4 className="stop-h">The document</h4>
@@ -250,6 +275,17 @@ function StopCard({ stop, byId, threadById, onPick, onClose, mapId, onOpenMap })
           {doc.excerpt && <blockquote className="stop-excerpt">{doc.excerpt}</blockquote>}
           {doc.citation && <div className="stop-cite">{doc.citation}</div>}
         </div>
+      </>}
+
+      {(stop.also_read || []).length > 0 && <>
+        <h4 className="stop-h">Also read</h4>
+        {stop.also_read.map((d, i) => (
+          <div key={i} className="stop-doc" style={{ marginTop: i ? 8 : 0 }}>
+            {d.title && <div className="stop-doc-title">{d.title}</div>}
+            {d.excerpt && <blockquote className="stop-excerpt">{d.excerpt}</blockquote>}
+            {d.citation && <div className="stop-cite">{d.citation}</div>}
+          </div>
+        ))}
       </>}
 
       {(stop.links || []).length > 0 && <>
@@ -334,6 +370,9 @@ export const THREADS_STYLES = `
 .stop-title{font-family:'Barlow Condensed',sans-serif;font-size:28px;line-height:1.05;color:var(--white);margin:2px 0 8px}
 .stop-what{color:var(--white);font-size:17px;line-height:1.6;margin:0 0 12px}
 .stop-h{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);font-size:15px;margin:14px 0 4px}
+.thread-entry{border-left:5px solid var(--c,var(--edge));padding:2px 0 2px 12px;margin-top:12px}
+.thread-entry-name{color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:17px;letter-spacing:.04em}
+.thread-entry-why{color:var(--white);font-size:16px;line-height:1.55;margin:4px 0 0}
 .stop-q{color:var(--white);font-size:16.5px;line-height:1.55;font-style:italic;margin:0}
 .stop-doc{background:color-mix(in srgb,var(--canvas) 55%,var(--card));border:1px solid var(--edge);border-radius:8px;padding:10px 12px}
 .stop-doc-title{color:var(--white);font-weight:600;font-size:15.5px}

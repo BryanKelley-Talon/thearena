@@ -313,6 +313,26 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
     const tf = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
     if (!f || !fs.existsSync(path.join(CONTENT, f))) { tf(`threads file '${f}' is not in public/content.`); continue }
     const d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8'))
+    // map-stop-shape v1 (10/5): lines with subs, on_lines per stop. Same checks as the stop map.
+    if (d.lines) {
+      const L = new Map(d.lines.map(l => [l.id, new Set((l.subs || []).map(x => x.id))]))
+      const ids2 = new Set((d.stops || []).map(x => x.id))
+      for (const st of d.stops || []) {
+        const w = `stop ${st.id}`
+        if (!['open', 'building'].includes(st.status)) tf(`${w}: status must be open or building.`)
+        if (!(st.on_lines || []).length) tf(`${w}: on no line.`)
+        for (const e of st.on_lines || []) {
+          if (!L.has(e.line)) tf(`${w}: line '${e.line}' is not defined.`)
+          else if (e.sub && !L.get(e.line).has(e.sub)) tf(`${w}: sub '${e.sub}' is not under '${e.line}'.`)
+          if (!e.reason || !e.question) tf(`${w}: a line entry needs a reason and a question.`)
+        }
+        for (const l of st.links || []) if (!ids2.has(l.to)) tf(`${w}: link to '${l.to}' goes nowhere.`)
+        for (const doc of [st.document, ...(st.also_read || [])]) if (doc && !doc.citation) tf(`${w}: a document has no citation.`)
+        if (st.atlas != null && !/^[A-Za-z0-9._-]+$/.test(st.atlas)) tf(`${w}: atlas id is not a map id.`)
+        if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(JSON.stringify([st.title, st.what_happened]))) tf(`${w}: reads like a class date.`)
+      }
+      continue
+    }
     const threads = new Set((d.threads || []).map(x => x.id))
     const arcs = new Set((d.threads || []).flatMap(x => (x.arcs || []).map(a => a.id)))
     const ids = new Set((d.stops || []).map(x => x.id))
