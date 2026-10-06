@@ -124,10 +124,13 @@ function IssuesMap({ data, lineById, units, here, open, onPick }) {
   const y = id => HEAD_H + L.rowIndex[id] * ROW_H + ROW_H / 2
   const lastLive = Math.max(UNIT_PAD, ...(data.stops || []).map(s => L.slotX[s.id] || 0))
   // Open on You are here: the unit we're in is in view without a kid hunting for it.
+  // Once, on arrival: tapping a stop later must never yank the map back.
   const scroller = useRef(null)
+  const placed = useRef(false)
   useEffect(() => {
+    if (placed.current) return
     const c = L.cols.find(x => x.unit === String(here)), el = scroller.current
-    if (c && el) el.scrollLeft = Math.max(0, c.x0 - UNIT_PAD - 24)
+    if (c && el) { el.scrollLeft = Math.max(0, c.x0 - UNIT_PAD - 24); placed.current = true }
   }, [L, here])
   return (
     <div className="threads-map issues-map" role="group" aria-label="Enduring Issues map">
