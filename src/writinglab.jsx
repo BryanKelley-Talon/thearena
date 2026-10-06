@@ -35,6 +35,8 @@ export const WL_WORDS = {
 const W = WL_WORDS
 
 // ── what the device remembers: level numbers done, per set, nothing else ──
+const today = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
+const PREVIEW = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'writing-lab' } catch { return false } })()
 const KEY = 'arena-writinglab-v1'
 const readDone = () => { try { return JSON.parse(localStorage.getItem(KEY) || '{}') } catch { return {} } }
 const markDone = (slug, n) => {
@@ -53,7 +55,9 @@ const shuffle = (arr, seed) => {
 export function useWritingLab(course) {
   const [sets, setSets] = useState(null)
   useEffect(() => {
-    const entries = (course?.writing_lab || []).filter(e => e.published === true)
+    // A set ships ahead and appears on its day (opens_on, the device's own date, like 11.1 Test
+    // Practice): Global Tue 10/20, US Fri 10/23. A reviewer sees it early with ?preview=writing-lab.
+    const entries = (course?.writing_lab || []).filter(e => e.published === true && (PREVIEW || !e.opens_on || today() >= String(e.opens_on)))
     if (!course) { setSets(null); return }
     if (!entries.length) { setSets([]); return }
     let live = true

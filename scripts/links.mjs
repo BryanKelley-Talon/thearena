@@ -36,7 +36,8 @@ for (const c of m.courses || []) {
   const atlasFiles = (c.atlas || []).filter(a => a.published).map(a => read(ref(a.content_ref))).filter(Boolean)
   const maps = atlasFiles.flatMap(f => f.maps || []).filter(x => x.status === 'open')
   if ((c.atlas || []).some(a => a.published)) { C.lanes.atlas = `${BASE}#/${k}/atlas`; md.push(`- Atlas: ${C.lanes.atlas}`) }
-  const wl = (c.writing_lab || []).filter(e => e.published)
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' })
+  const wl = (c.writing_lab || []).filter(e => e.published && (!e.opens_on || today >= e.opens_on))
   if (wl.length) { C.lanes.writing_lab = `${BASE}#/${k}/writing-lab`; md.push(`- Writing Lab: ${C.lanes.writing_lab}`) }
   md.push('')
   for (const u of c.units || []) {

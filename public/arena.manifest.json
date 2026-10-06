@@ -578,6 +578,7 @@
           "unit": "10.2",
           "casefile": "C",
           "published": true,
+          "opens_on": "2026-10-20",
           "image_map": {
             "blueprint-global10r-set1-doc7.jpg": "blueprint-global10r-set1-doc7.webp",
             "blueprint-global10r-set1-doc8.jpg": "blueprint-global10r-set1-doc8.webp"
@@ -1535,6 +1536,7 @@
           "unit": "11.2",
           "casefile": "C",
           "published": true,
+          "opens_on": "2026-10-23",
           "image_map": {
             "blueprint-us11r-set1-doc2b.png": "blueprint-us11r-set1-doc2b.webp"
           },
