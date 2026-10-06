@@ -58,9 +58,11 @@ export function useRefCards(course) {
       const out = {}
       if (pack?.umbrellas) out.umbrellas = { card: pack.umbrellas, label: pack.labels?.umbrellas || pack.umbrellas.button }
       if (pack?.q4_card) out.civic = { card: pack.q4_card, label: pack.labels?.q4_card || pack.q4_card.button }
-      if (th?.threads?.length) out.threads = {
+      // The Threads file in either shape: v2 lines/subs (10/5) or the 9/27 threads/arcs.
+      const lines = th?.lines || th?.threads
+      if (lines?.length) out.threads = {
         label: REF_WORDS.threads,
-        card: { title: REF_WORDS.threads, items: th.threads.map(t => ({ n: t.number, name: t.name, question: t.question, issues: (t.arcs || []).map(a => a.name).join(' · ') || null })) },
+        card: { title: REF_WORDS.threads, items: lines.map(t => ({ n: t.number, name: t.name, question: t.question, issues: (t.subs || t.arcs || []).map(a => a.name).join(' · ') || null })) },
       }
       setRefs(out)
     })
