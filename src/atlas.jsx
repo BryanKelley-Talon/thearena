@@ -30,7 +30,10 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 const PROOF = import.meta.env.VITE_ATLAS_PROOF === '1'
 
 export const ATLAS_WORDS = {
-  section: 'Maps',
+  section: 'Atlas',
+  // BK 21:53 ("4. yes"): each unit gets its own atlas; a finished unit's card reads "11.1 Atlas · Colonial Foundations".
+  unitAtlas: (n, title) => `${n} Atlas · ${title}`,
+  intro: 'Every map from this unit. Tap one to open it big.',
   open: 'Open',
   fullscreen: 'Full screen',
   exitFullscreen: 'Full screen',   // the same button toggles; its pressed state says which
@@ -99,34 +102,57 @@ export function MapCards({ maps, onOpen }) {
   )
 }
 
-// ── The Atlas lane on the door: the unit we're in first, then finished units, newest first ──
-export function AtlasLane({ course, maps, currentUnit, unitName, onOpen, Empty }) {
+const unitTitle = u => String(u?.label || '').replace(/^\d+\.\d+\s*·\s*/, '')
+export const unitAtlasName = u => ATLAS_WORDS.unitAtlas(u.number, unitTitle(u))
+
+// ── The Atlas lane on the door (BK 21:28: "each unit gets their own atlas"): the atlas of the
+// unit we're in, then one card per finished unit, newest first, opening that unit's atlas. ──
+export function AtlasLane({ course, maps, currentUnit, unitName, onOpen, onOpenUnitAtlas, Empty }) {
   if (maps === null) return null
-  if (!maps.length) return (
-    <>
-      <span className="flag building atlas-flag">Under construction</span>
-      <Empty what="Maps" />
-    </>
-  )
-  const units = [...(course.units || [])]
   const now = currentUnit
-  const order = [now, ...units.filter(u => u.slug !== now?.slug).reverse()].filter(Boolean)
+  const nowMaps = mapsForUnit(maps, now)
+  const past = [...(course.units || [])].filter(u => u.slug !== now?.slug).reverse()
   return (
     <>
-      {order.map(u => {
-        const ms = mapsForUnit(maps, u)
-        if (!ms.length) return null
-        const isNow = u.slug === now?.slug
-        return (
-          <section key={u.slug} className="atlas-unit">
-            {isNow
-              ? <p className="unit-now"><span className="unit-now-tag">Now</span> {unitName(u)}</p>
-              : <h3 className="room-section">{unitName(u)}</h3>}
-            <MapCards maps={ms} onOpen={onOpen} />
-          </section>
-        )
-      })}
+      {now && (
+        <section className="atlas-unit">
+          <p className="unit-now"><span className="unit-now-tag">Now</span> {unitAtlasName(now)}</p>
+          {nowMaps.length
+            ? <MapCards maps={nowMaps} onOpen={onOpen} />
+            : <><span className="flag building atlas-flag">Under construction</span><Empty what="Maps" /></>}
+        </section>
+      )}
+      {past.length > 0 && (
+        <div className="grid atlas-units">
+          {past.map(u => {
+            const n = mapsForUnit(maps, u).length
+            return (
+              <button key={u.slug} type="button" className={`card${n ? '' : ' off'}`} disabled={!n} tabIndex={n ? 0 : -1}
+                      onClick={() => n && onOpenUnitAtlas(u.slug)}>
+                <div className="card-name">{unitAtlasName(u)}</div>
+                {n ? <span className="flag live">{ATLAS_WORDS.open}</span>
+                   : <span className="flag building">Under construction</span>}
+              </button>
+            )
+          })}
+        </div>
+      )}
     </>
+  )
+}
+
+// ── One unit's atlas, on its own page (#/us/11.1/atlas) ──────────────────
+export function UnitAtlasPage({ course, unit, maps, onOpen, onBack, ScreenHeader, BottomBack, Empty }) {
+  const ms = mapsForUnit(maps, unit)
+  return (
+    <div className="wrap">
+      <ScreenHeader label={unitAtlasName(unit)} onBack={onBack} color={course.accent} back={course.label} />
+      <p className="lane-intro">{ATLAS_WORDS.intro}</p>
+      {maps === null ? null : ms.length
+        ? <MapCards maps={ms} onOpen={onOpen} />
+        : <><span className="flag building atlas-flag">Under construction</span><Empty what="Maps" /></>}
+      <BottomBack onBack={onBack} back={course.label} />
+    </div>
   )
 }
 
@@ -503,6 +529,7 @@ export const ATLAS_STYLES = `
 .atlas-walk-nav .btn-now,.atlas-walk-start{font-size:clamp(16px,1.05vw,23px);min-height:44px;padding:8px 18px}
 .atlas-flag{margin:0 0 12px}
 .atlas-unit{margin-bottom:30px}
+.atlas-units{margin-top:6px}
 .atlas-card{display:flex;flex-direction:column;gap:6px}
 .atlas-thumb{display:block;aspect-ratio:16/10;border-radius:8px;overflow:hidden;background:#0E1626;border:1px solid var(--edge);margin-bottom:8px}
 .atlas-thumb img{width:100%;height:100%;object-fit:cover;display:block}

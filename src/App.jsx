@@ -33,7 +33,7 @@ import { parseHash, buildHash } from './deeplinks.js'
 import { Unit0Card, Unit0Room, UNIT0_STYLES } from './unit0.jsx'
 import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
 import { IssuesLane, ISSUES_STYLES } from './issues.jsx'
-import { useAtlas, AtlasLane, AtlasViewer, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
+import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles } from './docassist.jsx'
 import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
@@ -893,12 +893,12 @@ const LANES = [
     intro: 'Six issues the world keeps facing. Follow an issue from unit to unit, and tap any stop to see what happened.' },
   // The Atlas (Leo's order 10/5 21:07): both doors, after Threads. Lane name and intro, BK 21:11 ("yes to all three").
   { key: 'atlas',         src: 'atlas',         label: 'Atlas', optional: true,
-    intro: 'Every map from this unit. Tap one to open it big.' },
+    intro: ATLAS_WORDS.intro },
   { key: 'skills_review', src: 'skills_review', label: 'Review Activities',
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane }) {
+function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane }) {
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   const lane = laneIn || firstWithContent
@@ -965,7 +965,7 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} onOpenUnit0={onOpenUnit0} />}
       {lane === 'threads' && <ThreadsLane course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
       {lane === 'issues' && <IssuesLane course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
-      {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} Empty={EmptyLane} />}
+      {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
   )
@@ -1942,6 +1942,7 @@ export default function App() {
   // The Atlas: this course's maps, and the one open in the viewer (by its id; it lives in links).
   const atlasMaps = useAtlas(course)
   const [atlasId, setAtlasId] = useState(null)
+  const [unitAtlas, setUnitAtlas] = useState(false)      // one unit's atlas page (#/us/11.1/atlas)
   const atlasMap = (atlasMaps || []).find(m => m.id === atlasId) || null
 
   const fetchContent = (ref, set) => {
@@ -1994,6 +1995,7 @@ export default function App() {
     setStationSlug(null); setDrillIndex(null); setSkill(null); setLevel(null); setLevelPack(null)
     setReview(false); setBriefPack(null); setDaOpen(false); setDaDoc(null); setPendingDa(null)
     setActIndex(null); setPack(null); setUnit0(false); setOfficeTheme(null); setOfficePack(null)
+    setUnitAtlas(r.at === 'unitatlas')
     setOffice(r.at === 'office')
     if (r.at === 'office') {
       if (r.theme) {
@@ -2040,12 +2042,12 @@ export default function App() {
     const daCf = daDoc && daPack ? openCasefiles(daPack).find(c => c.id === daDoc.cf) : null
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
-      course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id,
+      course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2085,6 +2087,11 @@ export default function App() {
     screen = <OfficeRoom office={manifest.office} preview={PREVIEW_OFFICE} ui={officeUi}
                          onOpenTheme={openOfficeTheme}
                          onBack={() => { setOffice(false); window.scrollTo(0, 0) }} />
+  }
+  else if (course && unit && unitAtlas) {
+    screen = <UnitAtlasPage course={course} unit={unit} maps={atlasMaps} onOpen={setAtlasId}
+                            ScreenHeader={ScreenHeader} BottomBack={BottomBack} Empty={EmptyLane}
+                            onBack={() => { setUnitAtlas(false); setUnitSlug(null); setDoorLane('atlas'); window.scrollTo(0, 0) }} />
   }
   else if (course && unit0 && course.unit0?.published) {
     screen = <Unit0Room key={`u0-${course.id}-${location.hash}`} course={course} pack={u0Pack} culture={u0Culture || null} ui={officeUi}
@@ -2193,6 +2200,7 @@ export default function App() {
       docAssist={daPack || null}
       atlasMaps={atlasMaps}
       onOpenMap={setAtlasId}
+      onOpenUnitAtlas={slug => { setUnitSlug(slug); setUnitAtlas(true); window.scrollTo(0, 0) }}
       onOpenDocAssist={() => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
       onOpenReview={() => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); openReview(u) }}
       onOpenActivity={i => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); openActivity(u, i) }}

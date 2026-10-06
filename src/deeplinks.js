@@ -12,6 +12,7 @@
 //   #/us/11.1/doc-assist/B/12              one document, by its printed number
 //   #/global/issues                        the Enduring Issues map (10/5)
 //   #/us/atlas · #/global/atlas/<map-id>   the Atlas lane, or one map open in the viewer (10/5)
+//   #/us/11.1/atlas                        one unit's atlas (BK 21:53)
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
 //   #/office · #/office/2026-10-halftime-adjustments
 //
@@ -46,6 +47,7 @@ export function parseHash(hash, manifest) {
   if (!unit) return r
   const u = { ...r, at: 'unit', unitSlug: unit.slug }
   if (parts[2] === 'review') return { ...u, at: 'review' }
+  if (parts[2] === 'atlas') return { ...u, at: 'unitatlas' }
   if (parts[2] === 'doc-assist') {
     const da = { ...u, at: 'docassist' }
     if (!parts[3]) return da
@@ -72,6 +74,7 @@ export function buildHash(s) {
     return `${u}/doc-assist`
   }
   if (s.review) return `${u}/review`
+  if (s.unitAtlas) return `${u}/atlas`
   return u
 }
 
