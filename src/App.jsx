@@ -34,6 +34,7 @@ import { Unit0Card, Unit0Room, UNIT0_STYLES } from './unit0.jsx'
 import { THREADS_STYLES } from './threads.jsx'
 import { ISSUES_STYLES } from './issues.jsx'
 import { StopMapLane, STOPMAP_STYLES } from './stopmap.jsx'
+import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
@@ -954,6 +955,8 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
         !unit ? <EmptyLane what="Skills" /> : <>
           <p className="unit-now"><span className="unit-now-tag">Now</span> {unitName(unit)}</p>
           <p className="unit-here">{UNIT_WORDS.here}</p>
+          {/* Leo's ruling 10/5 23:31, item 2: the moments card on each door (words BK-approved). */}
+          <MomentsCard course={course} unit={unit} maps={atlasMaps} />
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={code => onOpenSkill(unit.slug, code)} />
           <div className="door-room">
             <RoomParts unit={unit} games={games} docAssist={docAssist} maps={mapsForUnit(atlasMaps, unit)} onOpenMap={onOpenMap}
@@ -2121,6 +2124,7 @@ export default function App() {
   }
   else if (course && unit0 && course.unit0?.published) {
     screen = <Unit0Room key={`u0-${course.id}-${location.hash}`} course={course} pack={u0Pack} culture={u0Culture || null} ui={officeUi}
+                        moments={<MomentsCard course={course} unit={currentUnit(course)} maps={atlasMaps} />}
                         onBack={() => { setUnit0(false); setDoorLane('units'); window.scrollTo(0, 0) }} />
   }
   else if (!course) screen = <Splash manifest={manifest} onPick={id => { setCourseId(id); window.scrollTo(0, 0) }} onOffice={() => { setOffice(true); window.scrollTo(0, 0) }} />
@@ -2239,7 +2243,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + WRITINGLAB_STYLES + REF_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

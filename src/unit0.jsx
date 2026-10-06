@@ -38,7 +38,7 @@ export function Unit0Card({ course, onOpen }) {
   )
 }
 
-export function Unit0Room({ course, pack, culture, ui, onBack }) {
+export function Unit0Room({ course, pack, culture, ui, moments, onBack }) {
   const { ScreenHeader, BottomBack, McItem } = ui
   const [open, setOpen] = useState(null)              // a skill's code, or null for the room
   const items = forRoom(pack, course.id)
@@ -106,6 +106,8 @@ export function Unit0Room({ course, pack, culture, ui, onBack }) {
           ))}
         </div>
       </>}
+      {/* Leo's ruling 10/5 23:31: the moments card in Unit 0 too, after the six skills. */}
+      {pack && moments}
       {culture && (
         <>
           <h3 className="room-section">{culture.theme?.title}</h3>
