@@ -1,0 +1,173 @@
+{
+  "id": "us11r-blueprint-set1",
+  "course": "us11r",
+  "tool": "blueprint",
+  "name": "Blueprint",
+  "unit": "11.2",
+  "casefile": "C",
+  "opens": "11.2 Casefile C, Day 13",
+  "set_title": "Creation of a Stronger National Government",
+  "set_source": "NYSED U.S. History and Government (Framework) Regents Examination, June 2026, Part III (Civic Literacy Essay), as published",
+  "historical_context": "Throughout United States history, many constitutional and civic issues have been debated by Americans. These debates have resulted in efforts by individuals, groups, and governments to address these issues. These efforts have achieved varying degrees of success. One of these constitutional and civic issues is the creation of a stronger national government.",
+  "jobs": [
+    {
+      "id": "circumstances",
+      "label": "CIRCUMSTANCES",
+      "task": "Describe the historical circumstances surrounding this constitutional or civic issue"
+    },
+    {
+      "id": "efforts",
+      "label": "EFFORTS",
+      "task": "Explain efforts by individuals, groups, and/or governments to address this constitutional or civic issue"
+    },
+    {
+      "id": "impact",
+      "label": "IMPACT",
+      "task": "Discuss the impact of the efforts on the United States and/or on American society"
+    }
+  ],
+  "screens": {
+    "intro": {
+      "title": "BLUEPRINT · Civic Literacy Essay",
+      "line": "Every Civic Literacy Essay asks you to do three things. Each document helps with one of them. Sort the documents before you write a word."
+    },
+    "clue_card": {
+      "title": "THE QUESTION IS THE CLUE",
+      "line": "Read the question under each document before you sort it. It usually names the job.",
+      "clues": {
+        "circumstances": [
+          "historical circumstance",
+          "what led to",
+          "why"
+        ],
+        "efforts": [
+          "effort",
+          "attempt",
+          "to address"
+        ],
+        "impact": [
+          "impact",
+          "result",
+          "effect"
+        ]
+      }
+    },
+    "check": {
+      "right": "Yes. The question asks for one {clue}.",
+      "miss_1": "Look at the question again. Which word names the job?",
+      "miss_2": "This one builds {JOB}. The clue: \"{clue}.\""
+    },
+    "outline": {
+      "opening": "Name the issue in your own words, and say what your essay will show: where it came from, what people did about it, and what it changed.",
+      "circumstances": "Describe what was happening, and why the issue came up.",
+      "efforts": "Explain who tried to address it, and how.",
+      "impact": "Discuss what changed because of those efforts.",
+      "closing": "Come back to the issue. Name the principle on your card it's about, and say what it shows.",
+      "outside_evidence": "Every body paragraph also wants outside evidence: something true you know that isn't in the documents."
+    },
+    "cold_read": {
+      "title": "COLD READ",
+      "line": "No questions this time. Sort by the document alone: does it show the problem, a response to it, or what came after?",
+      "also_fits_label": "ALSO FITS"
+    }
+  },
+  "levels": [
+    {
+      "n": 1,
+      "name": "Read the clue",
+      "questions": "shown",
+      "order": "as printed"
+    },
+    {
+      "n": 2,
+      "name": "Cold read",
+      "questions": "hidden, revealed as the check",
+      "order": "shuffled",
+      "opens_after": 1
+    }
+  ],
+  "docs": [
+    {
+      "n": "1",
+      "text": [
+        "Almost immediately after the Confederation was created, many Americans, including [James] Madison, came to see that it was much too weak to do what they wanted. By the 1780s the problems were severe and conspicuous [obvious]. The Congress could not tax and pay its bills. It could not feed, clothe, or supply the army. It could not levy tariffs to regulate trade or to retaliate against the mercantilist European empires. It was even having trouble gathering a quorum to conduct business.\n\nAttempts to revise the Articles and grant the Congress the power to levy a 5 percent impost [tax] on imported European goods were thwarted by the need to get the unanimous consent of all thirteen states. Internationally the United States were being humiliated. In the Mediterranean the Barbary pirates were seizing American ships and selling their sailors into slavery, and the Confederation was powerless to do anything. It was unable even to guarantee the territorial integrity of the new nation. Great Britain continued to hold posts in the northwestern parts of United States territory in defiance of the peace treaty of 1783. In the southwest Spain was claiming territory that included much of present-day Alabama and Mississippi and plotting with American dissidents to break away from the Union."
+      ],
+      "source": "Source: Gordon Wood, Revolutionary Characters: What Made the Founders Different, Penguin Press, 2006",
+      "question": "According to Gordon Wood, what was one historical circumstance that led to the creation of a stronger national government?",
+      "job": "circumstances",
+      "clue": "historical circumstance",
+      "also_fits": [],
+      "_record": "DOC_BANK/Unit_02/text/unit02C-doc1-wood-2006.json"
+    },
+    {
+      "n": "2a, 2b",
+      "text": [
+        "In Massachusetts, during the winter of 1786, deeply indebted farmers whose land was being foreclosed refused to pay their state taxes, shut down the local courts, and seized a government arsenal. Troops from Massachusetts put down the farmers' revolt — known as Shays's Rebellion after its leader, Daniel Shays — while the Confederation Congress stood helpless in the crisis. “From the high ground we stood upon,” General Washington despaired in a May 18, 1786, letter to John Jay, “to be so fallen! So lost! It is really mortifying.” To national leaders, including Washington, the need for a stronger central government grew increasingly evident. Yet Americans had only recently rebelled against a tyrannical government, and remained suspicious of a concentration of government power."
+      ],
+      "source": "Source: Donald Ritchie, Our Constitution, Oxford University Press, 2006.",
+      "question": "Based on these documents, what was one historical circumstance that led to the creation of a stronger national government?",
+      "job": "circumstances",
+      "clue": "historical circumstance",
+      "also_fits": [],
+      "_record": "DOC_BANK/Unit_02/text/unit02C-doc2-ritchie-2006.json",
+      "image": {
+        "file": "blueprint-us11r-set1-doc2b.png",
+        "image_alt": "Engraved illustration of fighting during Shays' Rebellion of 1786, from the New York Public Library Digital Collections. A crowd of townspeople watches while two men grapple on the ground in the foreground, a village with a church steeple behind them.",
+        "source": "Source: New York Public Library Digital Collections (adapted)"
+      }
+    },
+    {
+      "n": "3",
+      "text": [
+        "Shays' Rebellion brought attention to possible defects in the national government which . . . were becoming increasingly apparent. In fact some two months before the riots in Massachusetts broke out, Congress had debated a motion to reorganize the government. Later that year (1786), a proposal was put forth calling for a convention to meet at Annapolis, Maryland. This convention was to deal exclusively with the many problems which had arisen concerning trade between the various states. Reaction to the Annapolis Convention was mild at best. Indeed, only five states were represented when the meetings opened. However, it was during these meetings that Shays' Rebellion took place.\n\nOn the fourteenth of September, Alexander Hamilton, delegate from New York and, as we have seen, one of the strongest supporters of the need for a strong national government, made an important proposal. He moved that all of the states should send delegates to a new convention at Philadelphia on the second Monday in May of 1787. This convention, said Hamilton, should deal with not only commercial problems but should discuss all matters necessary “to make the Constitution of the Federal Government adequate to the [problems] of the Union.” Once again, reaction was mild, but on February 21, 1787, Congress agreed that a convention whose purpose was “to revise the Articles of Confederation” should be held."
+      ],
+      "source": "Source: Martin W. Sandler et al., The People Make A Nation, Allyn and Bacon, 1971",
+      "question": "Based on this document, what was one effort to address the creation of a stronger national government?",
+      "job": "efforts",
+      "clue": "effort",
+      "also_fits": [
+        "circumstances"
+      ],
+      "_record": "DOC_BANK/Unit_02/text/unit02C-doc3-sandler-1971.json"
+    },
+    {
+      "n": "4",
+      "text": [
+        "What the newspapers would print for the benefit of the sovereign people during the ratification process was itself the subject of debate. Printing the Constitution was fine; publishing commentaries that found fault with it was something else again. Essays on behalf of ratification had no trouble getting printed: Already during the summer of 1787, while the federal Convention labored away in secrecy, newspapers carried articles advocating the adoption of whatever strong national government would be proposed. Once the Convention adjourned, more essays appeared describing the Constitution and singing its praises.\n\nA debate, however, requires two sides. To get criticisms of the Constitution into circulation took a few more weeks and a sturdy dose of stubborn courage. Once they got going, the newspaper debates were more than a mere prelude to the more decisive debates in the state ratifying conventions, which were about to begin. They influenced electors who chose delegates to the conventions and provided those delegates with an array of arguments that they could adopt, perhaps modify, and repeat."
+      ],
+      "source": "Source: Pauline Maier, Ratification: The People Debate the Constitution, 1787-1788, Simon & Schuster, 2010",
+      "question": "According to Pauline Maier, what was one effort to address the creation of a stronger national government?",
+      "job": "efforts",
+      "clue": "effort",
+      "also_fits": [],
+      "_record": "DOC_BANK/Unit_02/text/unit02C-doc4-maier-2010.json"
+    },
+    {
+      "n": "5",
+      "text": [
+        "The weak national government under the Articles of Confederation created many problems. In 1787, these problems finally led to a convention to draft a new charter for the national government, the Constitution of the United States. But the Constitution's lack of a bill of rights became the main reason many people opposed it. Many states refused to ratify the Constitution until they were assured a bill of rights would be added. Even after three-fourths of the states ratified the Constitution in 1788, some states threatened to call a second convention to weaken its powers. The struggle did not end until a bill of rights was finally added to the Constitution."
+      ],
+      "source": "Source: Linda R. Monk, The Bill of Rights: A User's Guide, Hachette Books, 2018",
+      "question": "According to Linda Monk, what was one impact of the efforts to create a stronger national government?",
+      "job": "impact",
+      "clue": "impact",
+      "also_fits": [
+        "circumstances"
+      ],
+      "_record": "DOC_BANK/Unit_02/text/unit02C-doc5-monk-2018.json"
+    },
+    {
+      "n": "6",
+      "text": [
+        "Tasked with the awesome responsibility of building a Government to endure for generations to come, a band of dedicated patriots gathered in Philadelphia in 1787, seeking to build a more stable and permanent framework for a nascent [emerging] democracy. Passionate debates and intense negotiation gave way to lasting compromise, and a document emerged that became the bedrock of America. Signed on September 17, the Constitution of the United States has steered our country through ever-changing times. It guides us as leaders on the world stage and safeguards the fundamental rights of our citizens. And it guarantees that the greatness of our Nation never depends on any one person — it requires the full and active participation of an engaged and vibrant citizenry."
+      ],
+      "source": "Source: President Barack Obama, Presidential Proclamation — Constitution Day and Citizenship Day, September 16, 2016",
+      "question": "According to President Barack Obama, what was one impact of the efforts to create a stronger national government?",
+      "job": "impact",
+      "clue": "impact",
+      "also_fits": [],
+      "_record": "DOC_BANK/Unit_02/text/unit02C-doc6-obama-2016.json"
+    }
+  ],
+  "exemplars": null
+}

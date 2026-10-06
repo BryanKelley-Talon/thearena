@@ -17,6 +17,7 @@
 // chrome lines in CHROME below (proposed to BK in chat 2026-10-01 08:5x).
 // The pack is one file per unit room; casefiles A · B · C sit inside it.
 // ============================================================
+import { RefButtons, mentions } from './refcards.jsx'
 import { useEffect, useMemo, useRef, useState } from 'react'
 
 export const CHROME = {
@@ -331,7 +332,7 @@ function AnnotatePanel({ pack, doc, fr }) {
   )
 }
 
-export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
+export function DocAssistDoc({ pack, doc, refs, portrait, onPrev, onNext }) {
   const voiceEn = useLocalVoice('en')
   const voiceFr = useLocalVoice('fr')
   const walkSteps = pack.walk || []
@@ -402,7 +403,10 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
     ? [close]
     : [step?.step, say, ...qs.flatMap(q => [`${asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), line, tip?.title, ...(tip?.text || [])]
   const card = fr ? frCard(pack) : q4Card(pack)
-  const showUmb = card && q4Label(pack) && at === walkSteps.length - 1
+  // The list's button sits on step 5, and on any step whose words point at the list (BK 22:59).
+  const stepText = at < walkSteps.length ? [step?.tag, step?.step, say, ...qs.map(q => q.text), line, tip?.title, ...(tip?.text || [])].join(' ') : ''
+  const cardKind = pack.umbrellas ? 'umbrellas' : 'civic'
+  const showUmb = card && q4Label(pack) && (at === walkSteps.length - 1 || mentions(stepText, cardKind))
 
   return (
     <div className="da-doc">
@@ -520,6 +524,8 @@ export function DocAssistDoc({ pack, doc, portrait, onPrev, onNext }) {
                     {umbOpen && <Umbrellas u={card} />}
                   </div>
                 )}
+                {/* The Threads list, when a step's words point at a thread (US). */}
+                {!fr && <RefButtons text={stepText} refs={refs?.threads ? { threads: refs.threads } : null} idBase="da-ref" />}
                 {line && (
                   <div className="guide-says da-bk" role="note">
                     {portrait && <img className="guide-face" src={`/${portrait}`} alt="" />}

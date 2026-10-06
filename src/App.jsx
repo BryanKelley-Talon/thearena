@@ -33,6 +33,8 @@ import { parseHash, buildHash } from './deeplinks.js'
 import { Unit0Card, Unit0Room, UNIT0_STYLES } from './unit0.jsx'
 import { ThreadsLane, THREADS_STYLES } from './threads.jsx'
 import { IssuesLane, ISSUES_STYLES } from './issues.jsx'
+import { useRefCards, REF_STYLES } from './refcards.jsx'
+import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles } from './docassist.jsx'
 import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
@@ -894,11 +896,13 @@ const LANES = [
   // The Atlas (Leo's order 10/5 21:07): both doors, after Threads. Lane name and intro, BK 21:11 ("yes to all three").
   { key: 'atlas',         src: 'atlas',         label: 'Atlas', optional: true,
     intro: ATLAS_WORDS.intro },
+  // The Writing Lab (Blueprint, tool 1; BK signed the desks' words 22:46/22:48). Lane words proposed 22:57.
+  { key: 'writing_lab',   src: 'writing_lab',   label: WL_WORDS.lane, optional: true, intro: WL_WORDS.intro },
   { key: 'skills_review', src: 'skills_review', label: 'Review Activities',
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane }) {
+function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane }) {
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   const lane = laneIn || firstWithContent
@@ -952,6 +956,7 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={code => onOpenSkill(unit.slug, code)} />
           <div className="door-room">
             <RoomParts unit={unit} games={games} docAssist={docAssist} maps={mapsForUnit(atlasMaps, unit)} onOpenMap={onOpenMap}
+                       wl={(wlSets || []).filter(s => String(s.entry.unit) === String(unit.number))} onOpenSet={onOpenSet}
                        onOpenDocAssist={onOpenDocAssist} onOpenActivity={onOpenActivity} onOpenReview={onOpenReview} />
           </div>
           {finishedUnits(course).length > 0 && (
@@ -964,6 +969,7 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
       )}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} onOpenUnit0={onOpenUnit0} />}
       {lane === 'threads' && <ThreadsLane course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
+      {lane === 'writing_lab' && <WritingLabLane course={course} sets={wlSets} unitName={unitName} onOpen={onOpenSet} Empty={EmptyLane} />}
       {lane === 'issues' && <IssuesLane course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
       {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
@@ -1215,7 +1221,7 @@ const finishedUnits = course => {
 
 // One unit's Review, Doc Assist and Test practice: in the unit's room, and for the unit
 // we're in, on the door under its gauges.
-function RoomParts({ unit, games, docAssist, maps, onOpenMap, onOpenDocAssist, onOpenActivity, onOpenReview }) {
+function RoomParts({ unit, games, docAssist, maps, onOpenMap, wl, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenReview }) {
   const acts = (unit.activities || []).filter(isLive)
   const asg = unit.assignment && unit.assignment.published !== false ? unit.assignment : null
   const asgGame = asg ? (games || []).find(g => g.id === asg.content_ref) : null
@@ -1257,6 +1263,13 @@ function RoomParts({ unit, games, docAssist, maps, onOpenMap, onOpenDocAssist, o
           <div className="grid room-cards" style={{ marginBottom: 34 }}>
             <DocAssistCard pack={docAssist} onOpen={onOpenDocAssist} />
           </div>
+        </>
+      )}
+      {/* THE WRITING LAB (Blueprint, 10/5): this unit's sets. */}
+      {wl?.length > 0 && (
+        <>
+          <h3 className="room-section">{WL_WORDS.lane}</h3>
+          <div style={{ marginBottom: 34 }}><WritingLabCards sets={wl} onOpen={onOpenSet} /></div>
         </>
       )}
       {/* MAPS (the Atlas, 10/5): this unit's maps, the same cards the Atlas lane shows. */}
@@ -1306,7 +1319,7 @@ function UnitLane({ course, onOpen, onOpenUnit0 }) {
   )
 }
 
-function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenReview, onBack, onGoNow }) {
+function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, wlSets, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenReview, onBack, onGoNow }) {
   const now = currentUnit(course)
   const isCurrent = now?.slug === unit.slug
   return (
@@ -1330,6 +1343,7 @@ function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, 
         </>
       )}
       <RoomParts unit={unit} games={games} docAssist={docAssist} maps={mapsForUnit(atlasMaps, unit)} onOpenMap={onOpenMap}
+                 wl={(wlSets || []).filter(s => String(s.entry.unit) === String(unit.number))} onOpenSet={onOpenSet}
                  onOpenDocAssist={onOpenDocAssist} onOpenActivity={onOpenActivity} onOpenReview={onOpenReview} />
       <BottomBack onBack={onBack} back={course.label} />
     </div>
@@ -1943,6 +1957,12 @@ export default function App() {
   const atlasMaps = useAtlas(course)
   const [atlasId, setAtlasId] = useState(null)
   const [unitAtlas, setUnitAtlas] = useState(false)      // one unit's atlas page (#/us/11.1/atlas)
+  // The Writing Lab: this course's sets, and the one open (by its slug; it lives in links).
+  const wlSets = useWritingLab(course)
+  // The pop-up lists (Six Umbrellas / Civic Principles / Threads), for every screen that names one (BK 22:59).
+  const refs = useRefCards(course)
+  const [wlSlug, setWlSlug] = useState(null)
+  const wlSet = (wlSets || []).find(s => s.entry.slug === wlSlug) || null
   const atlasMap = (atlasMaps || []).find(m => m.id === atlasId) || null
 
   const fetchContent = (ref, set) => {
@@ -1996,6 +2016,7 @@ export default function App() {
     setReview(false); setBriefPack(null); setDaOpen(false); setDaDoc(null); setPendingDa(null)
     setActIndex(null); setPack(null); setUnit0(false); setOfficeTheme(null); setOfficePack(null)
     setUnitAtlas(r.at === 'unitatlas')
+    setWlSlug(r.wlSet || null)
     setOffice(r.at === 'office')
     if (r.at === 'office') {
       if (r.theme) {
@@ -2042,12 +2063,12 @@ export default function App() {
     const daCf = daDoc && daPack ? openCasefiles(daPack).find(c => c.id === daDoc.cf) : null
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
-      course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas,
+      course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2087,6 +2108,10 @@ export default function App() {
     screen = <OfficeRoom office={manifest.office} preview={PREVIEW_OFFICE} ui={officeUi}
                          onOpenTheme={openOfficeTheme}
                          onBack={() => { setOffice(false); window.scrollTo(0, 0) }} />
+  }
+  else if (course && wlSet) {
+    screen = <BlueprintScreen key={wlSet.entry.slug} course={course} set={wlSet} refs={refs} ScreenHeader={ScreenHeader} BottomBack={BottomBack}
+                              onBack={() => { setWlSlug(null); setDoorLane(unitSlug ? doorLane : 'writing_lab'); window.scrollTo(0, 0) }} />
   }
   else if (course && unit && unitAtlas) {
     screen = <UnitAtlasPage course={course} unit={unit} maps={atlasMaps} onOpen={setAtlasId}
@@ -2138,7 +2163,7 @@ export default function App() {
     screen = !doc ? null : (
       <div className="wrap">
         <ScreenHeader label={DA.docLabel(doc.n)} onBack={back} color={course.accent} back={DA.backTo(cf.id, cf)} />
-        <DocAssistDoc pack={daPack} doc={doc} portrait={course.guide?.portrait || BK_PORTRAIT}
+        <DocAssistDoc pack={daPack} doc={doc} refs={refs} portrait={course.guide?.portrait || BK_PORTRAIT}
                       onPrev={daDoc.i > 0 ? () => go(daDoc.i - 1) : null}
                       onNext={daDoc.i < cf.docs.length - 1 ? () => go(daDoc.i + 1) : null} />
         <BottomBack onBack={back} back={DA.backTo(cf.id, cf)} />
@@ -2181,6 +2206,7 @@ export default function App() {
   }
   else if (unit) screen = <UnitRoom course={course} unit={unit} games={games} prog={prog}
                                     docAssist={daPack || null} atlasMaps={atlasMaps} onOpenMap={setAtlasId}
+                                    wlSets={wlSets} onOpenSet={s => { setWlSlug(s); window.scrollTo(0, 0) }}
                                     onOpenDocAssist={() => { setRoomFrom('units'); setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
                                     onOpenSkill={code => { setLadderFrom('unit'); setSkill(code); window.scrollTo(0, 0) }}
                                     onOpenReview={() => { setRoomFrom('units'); openReview(unit) }}
@@ -2201,6 +2227,8 @@ export default function App() {
       atlasMaps={atlasMaps}
       onOpenMap={setAtlasId}
       onOpenUnitAtlas={slug => { setUnitSlug(slug); setUnitAtlas(true); window.scrollTo(0, 0) }}
+      wlSets={wlSets}
+      onOpenSet={s => { setWlSlug(s); window.scrollTo(0, 0) }}
       onOpenDocAssist={() => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
       onOpenReview={() => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); openReview(u) }}
       onOpenActivity={i => { const u = currentUnit(course); setRoomFrom('door'); setUnitSlug(u.slug); openActivity(u, i) }}
@@ -2210,13 +2238,13 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + WRITINGLAB_STYLES + REF_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}
       <div className={course ? 'app-interior' : undefined}>
         {screen}
-        {course && atlasMap && <AtlasViewer key={atlasMap.id} map={atlasMap} onClose={() => setAtlasId(null)} />}
+        {course && atlasMap && <AtlasViewer key={atlasMap.id} map={atlasMap} refs={refs} onClose={() => setAtlasId(null)} />}
         <div className="wrap" style={{ paddingTop: 0, paddingBottom: 28 }}>
           <a href={HOME_URL} className="back-btn">
             &larr; flashpointhistory.com

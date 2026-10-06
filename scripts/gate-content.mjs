@@ -191,6 +191,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   if (DOCASSIST.has(f)) continue   // the DOC ASSIST block below
   if (/^atlas-/.test(f)) continue   // the ATLAS block below
   if (/^enduring-issues-/.test(f)) continue   // the STOP MAP block below
+  if (/^blueprint-/.test(f)) continue   // the WRITING LAB block below
   // A doc_check item names its stimulus by key; the DOC CHECK block below fails one that resolves to nothing.
   if (DOCCHECK.has(f)) continue
   checkDocVisible(f, d)
@@ -623,6 +624,52 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         stops: (d.stops || []).map(x => [x.title, x.what_happened, x.when, (x.on_lines || []).map(e => [e.reason, e.question]), x.links]) })
       if (/\bthreads?\b/i.test(shown)) sf('the word "thread" appears on a Global screen (BK 9/26).')
     }
+  }
+}
+
+// ── THE WRITING LAB · Blueprint (added 2026-10-05, Josh; Sam's and Will's Set 1) ─────
+// Format only, never content. Every document shows its source line and its picture is on disk
+// with an alt. US: every card's job is a defined bin, its clue is in its question, also_fits names
+// bins. Global: every must-find and also-fair issue is under an umbrella, and each must-find has a
+// reason. Levels name what opens them. No score words anywhere a kid reads.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  const WL_SCORE = /\b\d+\s*(of|out of|\/)\s*\d+\b|\b\d+\s*%|\b\d+\s*points?\b|\bscore\b|\bstreak\b/i
+  for (const c of m.courses || []) for (const e of c.writing_lab || []) {
+    const f = String(e.content_ref || '').replace(/^content\//, '')
+    const live = e.published === true
+    const wf = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { wf(`writing lab file '${f}' is not in public/content.`); continue }
+    let d
+    try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) } catch (er) { wf(`not valid JSON - ${er.message}`); continue }
+    const img = file => { const g = (e.image_map && e.image_map[file]) || file; return fs.existsSync(path.join(CONTENT, g)) }
+    if (!(d.docs || []).length) wf('no documents.')
+    for (const l of d.levels || []) if (l.opens_after != null && !(d.levels || []).some(x => x.n === l.opens_after)) wf(`level ${l.n} opens after a level that doesn't exist.`)
+    if (d.multi_tag) {
+      const issues = new Set((d.bins || []).flatMap(b => (b.issues || []).map(i => i.name)))
+      for (const doc of d.docs || []) {
+        const w = `document ${doc.n}`
+        if (!doc.source) wf(`${w}: no source line.`)
+        if (doc.image && !img(doc.image)) wf(`${w}: picture '${doc.image}' is not in public/content.`)
+        if (doc.image && !doc.image_alt) wf(`${w}: picture with no alt.`)
+        if (!(doc.must_find || []).length) wf(`${w}: nothing to find.`)
+        for (const mf of doc.must_find || []) { if (!issues.has(mf.issue)) wf(`${w}: '${mf.issue}' is not an issue on the card.`); if (!mf.reason) wf(`${w}: '${mf.issue}' has no reason.`) }
+        for (const af of doc.also_fair || []) if (!issues.has(af)) wf(`${w}: also-fair '${af}' is not an issue on the card.`)
+      }
+    } else {
+      const jobs = new Set((d.jobs || []).map(j => j.id))
+      for (const doc of d.docs || []) {
+        const w = `document ${doc.n}`
+        if (!doc.source) wf(`${w}: no source line.`)
+        if (!jobs.has(doc.job)) wf(`${w}: job '${doc.job}' is not a bin.`)
+        if (!doc.clue || !String(doc.question || '').toLowerCase().includes(String(doc.clue).toLowerCase())) wf(`${w}: the clue isn't in the question.`)
+        for (const a of doc.also_fits || []) if (!jobs.has(a)) wf(`${w}: also_fits '${a}' is not a bin.`)
+        if (doc.image && !img(doc.image.file)) wf(`${w}: picture '${doc.image.file}' is not in public/content.`)
+        if (doc.image && (!doc.image.image_alt || !doc.image.source)) wf(`${w}: picture needs an alt and a source line.`)
+      }
+    }
+    if (WL_SCORE.test(JSON.stringify(d.screens || {}))) wf('a screen line reads like a score.')
   }
 }
 

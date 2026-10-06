@@ -1,0 +1,339 @@
+{
+  "id": "global10r-blueprint-set1",
+  "course": "global10r",
+  "tool": "blueprint",
+  "name": "Blueprint",
+  "unit": "10.2",
+  "casefile": "C",
+  "opens": "Tue 10/20",
+  "_opens_note": "10.2 test review day; BK ruled 2026-10-05 22:48",
+  "set_title": "Nationalism, 1791–1912: six documents from 10.2 Casefile C",
+  "set_source": "10.2 Casefile C, Documents 1, 2, 4, 6, 7 and 8, as printed (Doc Assist v4.1)",
+  "task": [
+    {
+      "label": "IDENTIFY AND EXPLAIN",
+      "line": "Identify and explain an enduring issue raised by this set of documents"
+    },
+    {
+      "label": "ARGUE",
+      "line": "Argue why the issue you selected is significant and how it has endured across time using your knowledge of social studies and evidence from the documents"
+    }
+  ],
+  "definition": {
+    "label": "WHAT IS AN ENDURING ISSUE?",
+    "line": "An enduring issue is a challenge or problem that has been debated or discussed across time. An enduring issue is one that many societies have attempted to address with varying degrees of success."
+  },
+  "bins": [
+    {
+      "umbrella": "POWER & ITS ABUSE",
+      "line": "Who holds authority, and what happens to the people who did not choose them.",
+      "issues": [
+        {
+          "name": "Abuse of Power",
+          "definition": "when someone with authority uses it to harm people or to serve themselves."
+        },
+        {
+          "name": "Imperialism",
+          "definition": "when a stronger country takes control of another land and its people."
+        },
+        {
+          "name": "Human Rights Violations",
+          "definition": "when people are denied the basic rights every person should have, like life, freedom and safety."
+        },
+        {
+          "name": "Inequality",
+          "definition": "when some groups get fewer rights, chances or resources than others."
+        }
+      ]
+    },
+    {
+      "umbrella": "CONFLICT",
+      "line": "Why people fight, and what is still unsettled when the fighting stops.",
+      "issues": [
+        {
+          "name": "Conflict",
+          "definition": "a struggle between groups, nations or ideas, from argument to war."
+        }
+      ]
+    },
+    {
+      "umbrella": "IDENTITY & NATIONALISM",
+      "line": "Who a people say they are, and who that leaves out.",
+      "issues": [
+        {
+          "name": "Nationalism",
+          "definition": "a people's loyalty to their own nation, and the push for that nation to rule itself."
+        },
+        {
+          "name": "Cultural Exchange and Diffusion",
+          "definition": "when ideas, beliefs, goods and ways of life spread from one people to another."
+        }
+      ]
+    },
+    {
+      "umbrella": "WEALTH & RESOURCES",
+      "line": "Who owns what a place produces, and who does the producing.",
+      "issues": [
+        {
+          "name": "Economic Development",
+          "definition": "how a place grows its wealth, and who that growth helps or leaves behind."
+        },
+        {
+          "name": "Scarcity",
+          "definition": "not having enough of something people need, like food, water or land."
+        }
+      ]
+    },
+    {
+      "umbrella": "TECHNOLOGY & ENVIRONMENT",
+      "line": "What new tools let people do, and what they cost the world around them.",
+      "issues": [
+        {
+          "name": "Scientific and Technological Change",
+          "definition": "new knowledge and tools that change how people live and work."
+        },
+        {
+          "name": "Environmental Crisis",
+          "definition": "serious harm to land, air, water or climate, often caused by people."
+        }
+      ]
+    },
+    {
+      "umbrella": "A CONNECTED WORLD",
+      "line": "What happens when distant places start depending on each other.",
+      "issues": [
+        {
+          "name": "Cooperation",
+          "definition": "when groups or countries work together toward a shared goal."
+        },
+        {
+          "name": "Population and Migration",
+          "definition": "how the number of people in a place changes, and why people move."
+        }
+      ]
+    }
+  ],
+  "multi_tag": true,
+  "screens": {
+    "intro": {
+      "title": "BLUEPRINT · Enduring Issues Essay",
+      "line": "Every Enduring Issues Essay asks you to do two things with a set of documents. Plan it before you write a word."
+    },
+    "margin_card": {
+      "title": "JOT IT IN THE MARGIN",
+      "lines": [
+        "For every document, name every enduring issue that fits. Most documents fit two. Some fit one. Some fit three. Open the Six Umbrellas, and write the exact issue, not the umbrella.",
+        "Do that for every document, and your plan is in front of you: look across the set for three documents that share an issue."
+      ]
+    },
+    "check": {
+      "right": "Yes. Document {n} shows {issue}.",
+      "missed": "There's another issue in this one. Look under {umbrella}.",
+      "wrong": "Where does Document {n} show {issue}? Look again.",
+      "show": "Document {n} also shows {issue}."
+    },
+    "find_three": {
+      "title": "FIND YOUR THREE",
+      "line": "Tap an issue. The documents that carry it light up. You need three.",
+      "no_match": "No issue reaches three documents yet. Go back and name the issues in each document again, cold. That's the move that plans the essay.",
+      "multi_match": "You get to pick. Which one can you identify and explain best? That's the essay's first job."
+    },
+    "outline": [
+      {
+        "label": "OPENING",
+        "card": "Historical context: what was happening, when and where, that these documents come out of."
+      },
+      {
+        "label": "IDENTIFY AND EXPLAIN",
+        "card": "Name the exact issue. Then explain it: define the problem in one sentence."
+      },
+      {
+        "label": "EVIDENCE",
+        "card": "Show where each document shows the issue, and why it matters."
+      },
+      {
+        "label": "SIGNIFICANT AND ENDURING",
+        "card": "Argue why it matters, and how it has lasted across time. Bring outside evidence: something true you know that isn't in the documents."
+      },
+      {
+        "label": "CLOSING",
+        "card": "Come back to the issue, and say what the documents show about it."
+      }
+    ],
+    "cold": {
+      "title": "COLD",
+      "line": "Same documents, shuffled. The definitions are hidden; just the 13 issue names. Name them the way you will on the exam."
+    }
+  },
+  "levels": [
+    {
+      "n": 1,
+      "name": "Card open",
+      "definitions": "shown",
+      "order": "as printed"
+    },
+    {
+      "n": 2,
+      "name": "Cold",
+      "definitions": "hidden",
+      "order": "shuffled",
+      "opens_after": 1
+    }
+  ],
+  "_levels_note": "Each level opens after the one before it is completed, same as US (BK 22:54; replaces 22:48 all-open).",
+  "docs": [
+    {
+      "n": "1",
+      "title": "Toussaint L'Ouverture writes to the people of Saint-Domingue",
+      "source": "Source: C. L. R. James, Lettres de Toussaint L'Ouverture, The Black Jacobins, The Dial Press (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, January 2009",
+      "text": [
+        "August 29, 1793",
+        "Brothers and friends.",
+        "I am Toussaint L'Ouverture, my name is perhaps known to you. I have undertaken vengeance. I want Liberty and Equality to reign in San Domingo. I work to bring them into existence. Unite yourselves to us, brothers, and fight with us for the same cause, etc. . . ."
+      ],
+      "licence": null,
+      "must_find": [
+        {
+          "issue": "Cultural Exchange and Diffusion",
+          "umbrella": "IDENTITY & NATIONALISM",
+          "reason": "Toussaint wants \"Liberty and Equality\" to reign, the French Revolution's own words, carried across the Atlantic."
+        },
+        {
+          "issue": "Conflict",
+          "umbrella": "CONFLICT",
+          "reason": "Toussaint's letter is a call to arms: \"Unite yourselves to us, brothers, and fight with us.\""
+        }
+      ],
+      "also_fair": [
+        "Human Rights Violations"
+      ]
+    },
+    {
+      "n": "2",
+      "title": "Jean-Jacques Dessalines declares Haiti independent",
+      "source": "Source: Jean-Jacques Dessalines, Haitian Declaration of Independence, January 1, 1804 (excerpt), from New Visions lesson G2.02.D.2",
+      "text": [
+        "“It is not enough to have expelled the barbarians who have bloodied our land for two centuries; … We must, with one last act of national authority, forever assure the empire of liberty in the country of our birth; we must take any hope of re-enslaving us away from the inhuman government …. In the end we must live independent or die.”"
+      ],
+      "licence": null,
+      "must_find": [
+        {
+          "issue": "Nationalism",
+          "umbrella": "IDENTITY & NATIONALISM",
+          "reason": "Dessalines calls on the people of \"the country of our birth\" to \"live independent or die.\""
+        },
+        {
+          "issue": "Human Rights Violations",
+          "umbrella": "POWER & ITS ABUSE",
+          "reason": "Dessalines names two centuries of bloodshed and swears to end any hope of re-enslaving them."
+        }
+      ],
+      "also_fair": [
+        "Conflict"
+      ]
+    },
+    {
+      "n": "4",
+      "title": "Simón Bolívar, the Jamaica Letter",
+      "source": "Source: Simón Bolívar, “Reply of a South American to a Gentleman of This Island [Jamaica],” September 6, 1815 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography II Regents Exam, August 2019",
+      "text": [
+        ". . . I shall tell you with what we must provide ourselves in order to expel the Spaniards and to found a free government. It is union, obviously; but such union will come about through sensible planning and well-directed actions rather than by divine magic. America stands together because it is abandoned by all other nations. It is isolated in the center of the world. It has no diplomatic relations, nor does it receive any military assistance; instead, America is attacked by Spain, which has more military supplies than any we can possibly acquire through furtive [stealthy] means.",
+        "When success is not assured, when the state is weak, and when results are distantly seen, all men hesitate; opinion is divided, passions rage, and the enemy fans these passions in order to win an easy victory because of them. As soon as we are strong and under the guidance of a liberal nation which will lend us her protection, we will achieve accord [unity] in cultivating the virtues and talents that lead to glory. Then will we march majestically toward that great prosperity for which South America is destined. Then will those sciences and arts which, born in the East, have enlightened Europe, wing their way to a free Colombia, which will cordially bid them welcome. . . ."
+      ],
+      "licence": null,
+      "must_find": [
+        {
+          "issue": "Nationalism",
+          "umbrella": "IDENTITY & NATIONALISM",
+          "reason": "Bolívar says Spanish Americans must stand together to \"found a free government\" of their own."
+        },
+        {
+          "issue": "Conflict",
+          "umbrella": "CONFLICT",
+          "reason": "He plans the war to \"expel the Spaniards,\" against an enemy with far more military supplies."
+        }
+      ],
+      "also_fair": [
+        "Imperialism"
+      ]
+    },
+    {
+      "n": "6",
+      "title": "Otto von Bismarck, 1862",
+      "source": "Source: Otto von Bismarck, speech to the Prussian parliament, 1862 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam",
+      "text": [
+        "“Not by democracy or liberal standards will our goal be achieved but by blood and iron.”"
+      ],
+      "licence": null,
+      "must_find": [
+        {
+          "issue": "Nationalism",
+          "umbrella": "IDENTITY & NATIONALISM",
+          "reason": "Bismarck's goal is one German nation, and he says exactly how he will get it."
+        },
+        {
+          "issue": "Conflict",
+          "umbrella": "CONFLICT",
+          "reason": "\"Blood and iron\" means war; he puts force ahead of \"democracy or liberal standards.\""
+        }
+      ],
+      "also_fair": []
+    },
+    {
+      "n": "7",
+      "title": "Map: the peoples of Austria-Hungary, 1911",
+      "source": "Source: William R. Shepherd, “Distribution of Races in Austria-Hungary,” Historical Atlas, Henry Holt, 1911 (public domain)",
+      "image": "blueprint-global10r-set1-doc7.jpg",
+      "image_alt": "A color map. Its title is printed sideways down the right edge: “Distribution of Races in Austria-Hungary.” The map covers central and southeastern Europe. A heavy black line marks the border of Austria-Hungary, and the land inside it is filled with colors. Land outside the border is mostly left white. Inside the border, large capital letters name regions, including BOHEMIA, MORAVIA, GALICIA, AUSTRIA, HUNGARY, TRANSYLVANIA, CROATIA-SLAVONIA, BOSNIA, DALMATIA and TYROL. Cities marked inside include Vienna, Budapest, Prague and Serajevo. Outside the border, the map names GERMAN EMPIRE and RUSSIA to the north, ITALY to the southwest, and SERVIA, RUMANIA, BULGARIA and MONTENEGRO to the southeast. The ADRIATIC SEA is in the lower left. Many areas have spots and patches of another color inside them. The legend in the lower left lists ten colors: Germans (pink), Magyars (green), Rumanians (orange), Croats and Servians (olive), Ruthenians (yellow-green), Czechs (light blue), Slovaks (gray-green), Poles (brown), Slovenes (gray) and Italians (yellow). A bracket groups six of them, from Croats and Servians down to Slovenes, under the word Slavs. Under the legend: Scale 1:7 500 000, with a scale bar in miles. Grid letters and numbers run along the edges.",
+      "licence": {
+        "text": "Map, 1911 (public domain).",
+        "sellable": false
+      },
+      "must_find": [
+        {
+          "issue": "Nationalism",
+          "umbrella": "IDENTITY & NATIONALISM",
+          "reason": "The map shows many peoples inside one empire's border, each with its own claim to be a nation."
+        }
+      ],
+      "also_fair": []
+    },
+    {
+      "n": "8",
+      "title": "“The Boiling Point,” Punch, October 2, 1912",
+      "source": "Source: Leonard Raven-Hill, “The Boiling Point,” Punch (London), October 2, 1912 (public domain)",
+      "image": "blueprint-global10r-set1-doc8.jpg",
+      "image_alt": "A black-and-white pen drawing. A large, round, black pot sits in the middle, with a curved handle on its right side. The words “BALKAN TROUBLES” are written across the side of the pot. Five men crowd onto the lid. On the left, a man with a long white beard and a peaked cap leans forward with both hands flat on the lid. Behind him stands a man in a top hat. In the middle sits a man in a spiked helmet and round glasses. At the back right stands a man in a flat-topped military cap with fringed shoulder pieces, one fist clenched. At the front right, a man in a tall military cap sits on the edge of the lid with one leg hanging over the side and one hand on the lid. Swirling clouds of steam rise all around the pot and the men. The artist's signature is in the lower right. The caption under the drawing reads “THE BOILING POINT.”",
+      "licence": {
+        "text": "Punch cartoon, 1912 (public domain).",
+        "sellable": false
+      },
+      "must_find": [
+        {
+          "issue": "Conflict",
+          "umbrella": "CONFLICT",
+          "reason": "The cartoon's pot of \"Balkan Troubles\" is about to boil over, and the great powers can't hold the lid down."
+        }
+      ],
+      "also_fair": [
+        "Nationalism"
+      ]
+    }
+  ],
+  "_shares_three": {
+    "Conflict": [
+      "1",
+      "4",
+      "6",
+      "8"
+    ],
+    "Nationalism": [
+      "2",
+      "4",
+      "6",
+      "7"
+    ]
+  },
+  "exemplars": null,
+  "_built": "2026-10-05 by Will · skills/writing-lab/build_blueprint_global.py · SIGNED by BK 22:48"
+}

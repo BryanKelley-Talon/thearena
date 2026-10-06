@@ -24,6 +24,7 @@
 //     Tab stays inside the viewer while it is open.
 // ============================================================
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { RefButtons } from './refcards.jsx'
 
 // Proof builds (VITE_ATLAS_PROOF=1) read the placeholder file copied into dist/_proof/.
 // A production build never sees it: the files live outside public/.
@@ -162,7 +163,7 @@ export function UnitAtlasPage({ course, unit, maps, onOpen, onBack, ScreenHeader
 const MIN_Z = 1, MAX_Z = 8
 const clamp = (v, a, b) => Math.max(a, Math.min(b, v))
 
-export function AtlasViewer({ map, onClose }) {
+export function AtlasViewer({ map, refs, onClose }) {
   const shell = useRef(null)
   const stage = useRef(null)
   const [nat, setNat] = useState(null)           // the base image's pixel size: every overlay is registered to it
@@ -440,6 +441,7 @@ export function AtlasViewer({ map, onClose }) {
                     <h3 className="atlas-walk-tag">{walk[walkAt].tag}</h3>
                     <p className="atlas-walk-say">{walk[walkAt].say}</p>
                     {walk[walkAt].ask && <p className="atlas-walk-ask">{walk[walkAt].ask}</p>}
+                    <RefButtons text={[walk[walkAt].tag, walk[walkAt].say, walk[walkAt].ask].join(' ')} refs={refs} idBase="atlas-ref" />
                     <div className="atlas-walk-nav">
                       <button type="button" className="atlas-btn" disabled={walkAt === 0} onClick={() => goStep(walkAt - 1)}>{ATLAS_WORDS.back}</button>
                       {walkAt < walk.length - 1

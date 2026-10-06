@@ -36,6 +36,8 @@ for (const c of m.courses || []) {
   const atlasFiles = (c.atlas || []).filter(a => a.published).map(a => read(ref(a.content_ref))).filter(Boolean)
   const maps = atlasFiles.flatMap(f => f.maps || []).filter(x => x.status === 'open')
   if ((c.atlas || []).some(a => a.published)) { C.lanes.atlas = `${BASE}#/${k}/atlas`; md.push(`- Atlas: ${C.lanes.atlas}`) }
+  const wl = (c.writing_lab || []).filter(e => e.published)
+  if (wl.length) { C.lanes.writing_lab = `${BASE}#/${k}/writing-lab`; md.push(`- Writing Lab: ${C.lanes.writing_lab}`) }
   md.push('')
   for (const u of c.units || []) {
     if (u.published !== true) continue
@@ -64,6 +66,15 @@ for (const c of m.courses || []) {
       for (const x of um) {
         U.atlas.maps[x.id] = { title: x.title, casefile: x.casefile, link: `${BASE}#/${k}/atlas/${encodeURIComponent(x.id)}` }
         md.push(`  - ${x.id} · ${x.title}: ${U.atlas.maps[x.id].link}`)
+      }
+    }
+    const ws = wl.filter(e => String(e.unit) === n)
+    if (ws.length) {
+      U.writing_lab = {}
+      for (const e of ws) {
+        const d = read(ref(e.content_ref))
+        U.writing_lab[e.slug] = { title: `${d?.name || e.tool} · Set ${e.set ?? 1} · ${d?.set_title || ''}`, casefile: e.casefile, link: `${BASE}#/${k}/writing-lab/${e.slug}` }
+        md.push(`- Writing Lab, ${U.writing_lab[e.slug].title}: ${U.writing_lab[e.slug].link}`)
       }
     }
     C.units[n] = U

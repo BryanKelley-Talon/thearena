@@ -13,6 +13,7 @@
 //   #/global/issues                        the Enduring Issues map (10/5)
 //   #/us/atlas · #/global/atlas/<map-id>   the Atlas lane, or one map open in the viewer (10/5)
 //   #/us/11.1/atlas                        one unit's atlas (BK 21:53)
+//   #/us/writing-lab · #/us/writing-lab/<set slug>   the Writing Lab, or one Blueprint set (10/5)
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
 //   #/office · #/office/2026-10-halftime-adjustments
 //
@@ -23,7 +24,7 @@
 
 export const COURSE_KEY = { us11r: 'us', global10r: 'global' }
 const KEY_COURSE = Object.fromEntries(Object.entries(COURSE_KEY).map(([k, v]) => [v, k]))
-export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', review: 'skills_review' }
+export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', 'writing-lab': 'writing_lab', review: 'skills_review' }
 const KEY_LANE = Object.fromEntries(Object.entries(LANE_KEYS).map(([k, v]) => [v, k]))
 
 const unitByNumber = (course, n) => (course?.units || []).find(u => String(u.number) === String(n)) || null
@@ -41,6 +42,7 @@ export function parseHash(hash, manifest) {
   if (!parts[1]) return r
   // A map id is checked by the App once the course's maps are in; an unknown one leaves the lane open.
   if (parts[1] === 'atlas' && parts[2]) return { ...r, lane: 'atlas', atlasMap: parts[2] }
+  if (parts[1] === 'writing-lab' && parts[2]) return { ...r, lane: 'writing_lab', wlSet: parts[2] }
   if (KEY_LANE[parts[1]] !== undefined || LANE_KEYS[parts[1]]) return { ...r, lane: LANE_KEYS[parts[1]] || parts[1] }
   if (parts[1] === '0') return { ...r, at: 'unit0' }
   const unit = unitByNumber(course, parts[1])
@@ -65,6 +67,7 @@ export function buildHash(s) {
   if (!s.course) return ''
   const c = `#/${COURSE_KEY[s.course.id] || s.course.id}`
   if (s.atlasMap) return `${c}/atlas/${encodeURIComponent(s.atlasMap)}`
+  if (s.wlSet) return `${c}/writing-lab/${encodeURIComponent(s.wlSet)}`
   if (s.unit0) return `${c}/0`
   if (!s.unit) return s.lane ? `${c}/${KEY_LANE[s.lane] || s.lane}` : c
   const u = `${c}/${s.unit.number}`
