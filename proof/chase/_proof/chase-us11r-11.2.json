@@ -469,12 +469,17 @@
  "end": {
   "photo": "_proof/nine-states-end.webp",
   "alt": "PLACEHOLDER · Sam's alt text for the grave photo",
-  "credit": "Photo: Bryan Kelley",
+  "credit": "PLACEHOLDER · Sam's credit line (photo: Billmckern, Wikimedia Commons, CC BY-SA 4.0; not BK's, BK 11:32)",
   "lines": [
    "Daniel Shays died in Sparta, New York, in 1825, a poor man.",
    "He lived his last years on a small federal pension for his service in the Revolution. The government that could finally collect taxes could finally take care of its old soldiers.",
    "He's buried in Livingston County, New York, not far from this room."
-  ]
+  ],
+  "licence": {
+   "name": "CC BY-SA 4.0",
+   "source": "https://commons.wikimedia.org/wiki/File:ShaysGravestoneSide_B.jpg",
+   "sellable": false
+  }
  },
  "coda": null,
  "reflection": [
