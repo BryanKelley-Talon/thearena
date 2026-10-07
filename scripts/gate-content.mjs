@@ -40,6 +40,7 @@ try {
         if (a.type === 'doc_check' && a.content_ref) DOCCHECK.add(String(a.content_ref).replace(/^content\//, ''))
       }
       if (u.doc_assist?.content_ref) DOCASSIST.add(String(u.doc_assist.content_ref).replace(/^content\//, ''))
+      if (u.chase?.published === true && u.chase.content_ref) LIVE.add(String(u.chase.content_ref).replace(/^content\//, ''))   // a published chase blocks the build (2026-10-07)
       if (u.brief_ref) {
         const f = String(u.brief_ref).replace(/^content\//, '')
         if (!fs.existsSync(path.join(CONTENT, f))) { console.error(`  FAIL  manifest\n        ${u.slug}: brief_ref '${f}' is not in public/content.`); process.exitCode = 1 }
@@ -858,13 +859,32 @@ function checkPopouts(d, f, course, m, fail) {
     const atlas = read(`atlas-${c.id}.json`), maps = new Set((atlas?.maps || []).map(x => x.id))
     const threads = read((c.threads || [])[0]?.content_ref || ''), tstops = new Set((threads?.stops || []).map(x => x.id))
     const issues = read((c.issues || [])[0]?.content_ref || ''), istops = new Set((issues?.stops || []).map(x => x.id))
-    if (!pk.id || !Array.isArray(pk.stops) || !pk.stops.length) cf('needs an id and at least one stop.')
-    if (!Array.isArray(pk.cold) || pk.cold.length < 2) cf('the trail needs at least two states in words (cold).')
+    // One act ({ stops, door? }) or several ({ acts: [{ title, intro, stops, door? }] }), 2026-10-07.
+    const acts = Array.isArray(pk.acts) && pk.acts.length ? pk.acts : [{ stops: pk.stops, door: pk.door }]
+    const allStops = acts.flatMap(a => a.stops || [])
+    if (!pk.id || !allStops.length) cf('needs an id and at least one stop.')
+    if (Array.isArray(pk.acts) && Array.isArray(pk.stops)) cf('use acts or stops, not both.')
+    for (const [ai, a] of acts.entries()) if (ai > 0 && !(a.title || (a.intro || []).length)) cf(`act ${ai + 1}: needs a title or intro lines (its opening screen).`)
+    if (!Array.isArray(pk.cold) || pk.cold.length < 2) cf('the trail needs at least two states in words (cold), warmest first.')
     if (!Array.isArray(pk.warrant) || !pk.warrant.length) cf('needs warrant lines.')
     if (!pk.final || !(pk.final.key_words || []).length) cf('needs the teacher key (final.key_words); the build seals it.')
-    for (const [i, st] of (pk.stops || []).entries()) {
+    const pub = p => fs.existsSync(path.resolve('public', String(p || '').replace(/^\/+/, '')))
+    if (pk.meter) {
+      const mt = pk.meter
+      if (!mt.label || !(Number.isInteger(mt.goal) && mt.goal > 0) || !Number.isInteger(mt.first_try) || !Number.isInteger(mt.after_hint)) cf('meter needs a label, a goal and whole numbers for first_try and after_hint.')
+      if (!acts.some(a => a.door)) cf('a meter needs a door to end at.')
+    }
+    if (pk.suspect?.portrait && (!pub(pk.suspect.portrait) || !pk.suspect.portrait_alt || !pk.suspect.portrait_src)) cf('the suspect portrait needs its file in public/, portrait_alt and portrait_src (where it came from).')
+    if (pk.end && (pk.end.photo && (!pub(pk.end.photo) || !pk.end.alt || !pk.end.credit))) cf('the end photo needs its file in public/, alt and credit.')
+    const qOk = (q, w) => {
+      if (!q.stem || !Array.isArray(q.options) || q.options.length < 2 || !Number.isInteger(q.answer)) cf(`${w}: the question needs a stem, choices and an answer.`)
+      if ((q.hints || []).length !== 2 || !q.why) cf(`${w}: two hints and a Why on the question.`)
+    }
+    if (!allStops.some(st => st.question) && !acts.some(a => a.door)) cf('at least one stop needs a question.')
+    for (const [i, st] of allStops.entries()) {
       const w = `stop ${i + 1}`
       if (!st.place || !st.year) cf(`${w}: a place and a year.`)
+      if (st.trail != null && !(pk.cold || []).includes(st.trail)) cf(`${w}: trail '${st.trail}' isn't one of the pack's cold words.`)
       const cl = st.clue || {}
       if (!cl.text || !['atlas', 'threads', 'doc-assist', 'issues'].includes(cl.tool)) cf(`${w}: a clue with text and a tool (atlas, threads, issues, doc-assist).`)
       if (cl.tool === 'atlas' && !maps.has(cl.link)) cf(`${w}: Atlas map '${cl.link}' isn't in this course's Atlas.`)
@@ -873,11 +893,19 @@ function checkPopouts(d, f, course, m, fail) {
       if (cl.tool === 'doc-assist' && cl.link && !docs.has(String(cl.link).toUpperCase().replace(/^([A-Z])\//, '$1/'))) cf(`${w}: Doc Assist '${cl.link}' isn't in this unit's casefiles.`)
       const ask = cl.ask || {}
       if (!ask.prompt || (ask.type === 'type' ? !(ask.accept || []).length : !(Array.isArray(ask.options) && ask.options.length >= 2 && Number.isInteger(ask.answer)))) cf(`${w}: the clue's question needs a prompt and an answer.`)
-      const q = st.question || {}
-      if (!q.stem || !Array.isArray(q.options) || q.options.length < 2 || !Number.isInteger(q.answer)) cf(`${w}: the question needs a stem, choices and an answer.`)
-      if ((q.hints || []).length !== 2 || !q.why) cf(`${w}: two hints and a Why on the question.`)
+      if (!st.question) continue   // a map-only stop (Will's cold stop): the clue is the whole stop.
+      const q = st.question
+      qOk(q, w)
       if (!q.doc || !docs.has(`${q.doc.casefile}/${q.doc.n}`)) cf(`${w}: the question's document (${q.doc ? `${q.doc.casefile}/${q.doc.n}` : 'none'}) isn't in this unit's Doc Assist.`)
       if (!st.evidence) cf(`${w}: one evidence line for the warrant.`)
+    }
+    for (const [ai, a] of acts.entries()) {
+      if (!a.door) continue
+      const d = a.door, w = `act ${ai + 1} door`
+      if (!d.place || !d.year) cf(`${w}: a place and a year.`)
+      qOk(d.question || {}, w)
+      if (!(d.docs || []).length || (d.docs || []).some(x => !docs.has(`${x.casefile}/${x.n}`))) cf(`${w}: its documents aren't all in this unit's Doc Assist.`)
+      if (pk.meter && (!(d.ratified || []).length || !d.short || !String(d.short).includes('{n}'))) cf(`${w}: with a meter, the door needs ratified lines and a short line carrying {n}.`)
     }
     const student = JSON.stringify({ ...pk, final: { task: pk.final?.task } }).replace(/"_[^"]*":\s*"[^"]*"/g, '')
     if (C_SCORE.test(student)) cf('something reads like a score or a clock.')

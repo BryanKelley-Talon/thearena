@@ -1,311 +1,485 @@
 {
- "_readme": "PROOF ONLY. Stand-in words marked PLACEHOLDER; every student word is Sam's. Real Atlas maps, Threads stops and Doc Assist documents, so every link resolves.",
+ "_readme": "PROOF ONLY (Josh, 2026-10-07). Act I is Sam's BK-approved words (nine_states_words.py, BK 2026-10-06 22:41 '1. Yes'), ported word for word; fields reshaped only (prompt -> stem, shays -> story, doc tuples -> {casefile, n}, the verdict's last line -> final.task). Act titles, Act II, the alt text and the portrait source line are PLACEHOLDER until Sam's pack. Act II's stand-in documents are B 15 and B 16 because Casefile C's Doc Assist doesn't exist yet.",
  "id": "chase-us11r-11.2",
  "course": "us11r",
  "unit": "11.2",
- "title": "PLACEHOLDER · Sam's title for the chase",
- "standing": "PLACEHOLDER · An invented suspect. The history is real. (wording for BK)",
+ "title": "NINE STATES",
  "suspect": {
-  "name": "PLACEHOLDER · the suspect's name",
-  "line": "PLACEHOLDER · who they are, in a sentence",
-  "portrait": null
+  "name": "Daniel Shays",
+  "line": null,
+  "portrait": "_proof/nine-states-suspect.webp",
+  "portrait_alt": "PLACEHOLDER · Sam's alt text for the 1787 woodcut of Shays and Job Shattuck",
+  "portrait_src": "PLACEHOLDER · Sam's source line (as in Casefile B, Day 7)"
  },
  "intro": [
-  "PLACEHOLDER · Sam's opening: the case, in two or three short lines."
+  "February 1787, Massachusetts. Daniel Shays has disappeared into the snow, and the state wants him found.",
+  "Twelve years ago he fought for American independence. Now he's a wanted man. Follow his trail and find out how.",
+  "Every place, date and document in this chase is real."
  ],
- "stops": [
+ "meter": {
+  "label": "States that have ratified",
+  "goal": 9,
+  "first_try": 2,
+  "after_hint": 1,
+  "line": "Every stop is part of the case for a stronger government. Right on the first try: 2 states. Right after a hint: 1. Nine states, and the Constitution is ratified."
+ },
+ "cold": [
+  "The trail is warm.",
+  "The trail is cooling.",
+  "The trail is going cold."
+ ],
+ "fresh": "Fresh tracks!",
+ "acts": [
   {
-   "id": "stop-1",
-   "place": "Proclamation Line",
-   "year": 1763,
-   "clue": {
-    "text": "PLACEHOLDER · Sam's clue 1: it sends the pair to the atlas.",
-    "tool": "atlas",
-    "link": "11.2-A-02",
-    "ask": {
-     "prompt": "PLACEHOLDER · a question only the tool can answer",
+   "title": "PLACEHOLDER · Act I title (the manhunt, 1763–1788)",
+   "stops": [
+    {
+     "id": "s1-debt-1765",
+     "place": "Massachusetts",
+     "year": "1763–1765",
+     "story": "Daniel Shays is a teenager in Massachusetts when Britain wins its war with France and is left with the bill.",
+     "clue": {
+      "text": "Start where the bill started. Open the Atlas: The Proclamation Line of 1763.",
+      "tool": "atlas",
+      "link": "11.2-A-02",
+      "ask": {
+       "prompt": "What does the gray-blue color on the map stand for?",
+       "type": "choose",
+       "options": [
+        "Land the Crown reserved for Native nations",
+        "Land the colonies could sell to settlers",
+        "Land Spain held",
+        "Land France kept after the war"
+       ],
+       "answer": 0,
+       "hints": [
+        "Find the key on the map.",
+        "Who was the land set aside for?"
+       ]
+      }
+     },
+     "question": {
+      "stem": "Based on Document 2, which historical circumstance led Britain to tax the colonies in 1765?",
+      "type": "choose",
+      "options": [
+       "Britain owed a huge debt from a war fought to protect the colonies.",
+       "The colonists asked Parliament to help pay for their governments.",
+       "France demanded payment from Britain after the war.",
+       "The colonies had no governments of their own."
+      ],
+      "answer": 0,
+      "hints": [
+       "Find the word “debt” in Document 2.",
+       "Who was the war fought to protect?"
+      ],
+      "why": "Whately says Britain carries a huge national debt, most of it from a war fought to protect the colonies. The debt is the circumstance; the tax came next. Keep an eye on debt. It follows Shays all the way to 1786.",
+      "doc": {
+       "casefile": "A",
+       "n": 2
+      }
+     },
+     "evidence": "1763–1765 · War debt leads Britain to tax the colonies · Document 2"
+    },
+    {
+     "id": "s2-boston-1775",
+     "place": "Boston",
+     "year": "1775",
+     "story": "In April 1775, after the fighting at Lexington and Concord, Shays's militia company marches to Boston. That June he fights at Bunker Hill.",
+     "clue": {
+      "text": "Follow him to Boston. Open the Atlas: Boston, 1775.",
+      "tool": "atlas",
+      "link": "11.2-A-03",
+      "ask": {
+       "prompt": "Boston was almost an island. How is it joined to the mainland?",
+       "type": "choose",
+       "options": [
+        "By a thin strip of land called Boston Neck",
+        "By a long bridge to Cambridge",
+        "By Castle Island",
+        "It isn't joined at all"
+       ],
+       "answer": 0,
+       "hints": [
+        "Look for the narrowest strip of land on the map.",
+        "It's named after a part of the body."
+       ]
+      }
+     },
+     "question": {
+      "stem": "Paul Revere made Document 4 in 1770 and sold copies of it. What was the most likely purpose of this engraving?",
+      "type": "choose",
+      "options": [
+       "To turn colonists against the British soldiers",
+       "To show that the soldiers fired in self-defense",
+       "To record the event exactly as it happened",
+       "To ask Parliament to end the tax on tea"
+      ],
+      "answer": 0,
+      "hints": [
+       "Look at how the soldiers and the crowd are drawn.",
+       "Who does the picture show as the victims?"
+      ],
+      "why": "Revere drew the soldiers in a neat line, firing into the crowd. The picture took a side, and that's why it spread. Five years later, militia from all over Massachusetts, Shays's company among them, marched to Boston.",
+      "doc": {
+       "casefile": "A",
+       "n": 4
+      }
+     },
+     "evidence": "1770 · Revere's picture turns colonists against the soldiers · Document 4"
+    },
+    {
+     "id": "s3-saratoga-1777",
+     "place": "Saratoga, New York",
+     "year": "1776–1780",
+     "story": "Shays is made a captain in 1777 and fights at Saratoga. But the army can't pay him in full. He leaves the army in 1780, and, the story goes, he sells a sword the Marquis de Lafayette gave him to help pay his debts.",
+     "clue": {
+      "text": "Find what he was fighting for. Open the Threads map.",
+      "tool": "threads",
+      "link": "s-1776-declaration",
+      "ask": {
+       "prompt": "Find the stop from July 1776. What is it called?",
+       "type": "choose",
+       "options": [
+        "“All men are created equal”",
+        "“Remember the ladies”",
+        "The Articles of Confederation",
+        "Join, or Die"
+       ],
+       "answer": 0,
+       "hints": [
+        "Look at the stops dated 1776.",
+        "Read the line from “Remember the ladies” to the next stop."
+       ]
+      }
+     },
+     "question": {
+      "stem": "Document 8 says people have “certain rights that cannot be taken away.” Which principle from your Civic Principles card is this?",
+      "type": "choose",
+      "options": [
+       "Natural Rights",
+       "Federalism",
+       "Judicial Review",
+       "Separation of Powers"
+      ],
+      "answer": 0,
+      "hints": [
+       "Where do these rights come from, according to Document 8?",
+       "Rights you're born with have a name on your card."
+      ],
+      "why": "Rights you're born with, that no government gives and no government can take away, are natural rights. Shays fought under those words. By 1780 he couldn't even get paid for it.",
+      "doc": {
+       "casefile": "A",
+       "n": 8
+      }
+     },
+     "evidence": "1776 · Rights no government can take away · Document 8"
+    },
+    {
+     "id": "s4-articles-1781",
+     "place": "The thirteen states",
+     "year": "1781",
+     "story": "Why wasn't Shays paid? Congress never had the power to tax. In 1781 the states wrote that weakness into their first plan of government.",
+     "clue": {
+      "text": "Open Doc Assist: Document 11.",
+      "tool": "doc-assist",
+      "link": "B/11",
+      "ask": {
+       "prompt": "Which article says how the national government gets its money?",
+       "type": "choose",
+       "options": [
+        "Article VIII",
+        "Article II",
+        "Article V",
+        "Article XIII"
+       ],
+       "answer": 0,
+       "hints": [
+        "Look for the word “taxes.”",
+        "It's the article about the costs of war."
+       ]
+      }
+     },
+     "question": {
+      "stem": "Based on Document 11, why did the national government have trouble paying its soldiers?",
+      "type": "choose",
+      "options": [
+       "Only the state legislatures could set and collect taxes.",
+       "Congress spent its money on a navy.",
+       "Each state had two votes in Congress.",
+       "The Articles let Congress tax only foreign trade."
+      ],
+      "answer": 0,
+      "hints": [
+       "Who collects the taxes in Article VIII?",
+       "If Congress can't collect money, can it pay anyone?"
+      ],
+      "why": "Article VIII leaves the taxes to “the legislatures of the several states.” Congress could ask the states for money, but it couldn't collect any. No money meant no pay for soldiers like Shays.",
+      "doc": {
+       "casefile": "B",
+       "n": 11
+      }
+     },
+     "evidence": "1781 · Congress can't collect taxes, so it can't pay its soldiers · Document 11"
+    },
+    {
+     "id": "s5-shays-1786",
+     "place": "Springfield and Petersham, Massachusetts",
+     "year": "1786–1787",
+     "story": "Back home, Massachusetts taxes its farmers hard, and the courts take farms for unpaid debts. In 1786, armed farmers close the courts. In January 1787, Shays and about 1,500 men march on the arsenal at Springfield and are driven off. In February, the state's army surprises them at Petersham in a snowstorm.",
+     "clue": {
+      "text": "Open the Threads map. Follow the line from the Articles of Confederation to the Constitution.",
+      "tool": "threads",
+      "link": "s-1781-articles",
+      "ask": {
+       "prompt": "What kind of connection is that line?",
+       "type": "choose",
+       "options": [
+        "Cause and Effect",
+        "Similarity/Difference",
+        "Turning Point",
+        "There's no line between them"
+       ],
+       "answer": 0,
+       "hints": [
+        "Look at the tag on the line.",
+        "Did one help bring about the other?"
+       ]
+      }
+     },
+     "question": {
+      "stem": "In November 1786, after farmers closed the courts, Washington writes about “these disorders” in Document 12. What did he think they showed?",
+      "type": "choose",
+      "options": [
+       "The national government was too weak to keep order.",
+       "The farmers were secretly working for Britain.",
+       "Massachusetts needed a king of its own.",
+       "The states should leave the Union."
+      ],
+      "answer": 0,
+      "hints": [
+       "Find the sentence with the word “weakness.”",
+       "Read his question that starts “If no power exists…”"
+      ],
+      "why": "Washington asks, “What stronger evidence can be given of the weakness of our governments than these disorders?” Shays' Rebellion scared the country's leaders into acting.",
+      "doc": {
+       "casefile": "B",
+       "n": 12
+      }
+     },
+     "evidence": "1786–1787 · Shays' Rebellion shows the government is too weak · Document 12",
+     "nearMiss": "You just missed him. Shays has escaped north, to Vermont."
+    },
+    {
+     "id": "s6-philadelphia-1787",
+     "place": "Philadelphia",
+     "year": "1787",
+     "story": "While Shays hides in Vermont, delegates from the states meet in Philadelphia that summer and write a new plan of government.",
+     "clue": {
+      "text": "Open Doc Assist: Document 14.",
+      "tool": "doc-assist",
+      "link": "B/14",
+      "ask": {
+       "prompt": "Which section gives Congress the power to “lay and collect taxes”?",
+       "type": "choose",
+       "options": [
+        "Section 8",
+        "Section 1",
+        "Section 2",
+        "Section 3"
+       ],
+       "answer": 0,
+       "hints": [
+        "“Lay” a tax means set a tax. Look for the word “taxes.”",
+        "It's the last section in the document."
+       ]
+      }
+     },
+     "question": {
+      "stem": "Which problem from the Articles of Confederation did Article I, Section 8 fix?",
+      "type": "choose",
+      "options": [
+       "Congress could not collect taxes.",
+       "Citizens had no freedom of speech.",
+       "The Supreme Court had too much power.",
+       "Congress had too many members."
+      ],
+      "answer": 0,
+      "hints": [
+       "Think back to Article VIII at the 1781 stop.",
+       "What couldn't Congress do under the Articles?"
+      ],
+      "why": "Section 8 says Congress can “lay and collect taxes, to pay the debts.” A Congress that can collect money can pay its soldiers and its debts. Before, it could only ask the states. After, it could collect.",
+      "doc": {
+       "casefile": "B",
+       "n": 14
+      }
+     },
+     "evidence": "1787 · The new Congress can lay and collect taxes · Document 14"
+    }
+   ],
+   "door": {
+    "place": "The states",
+    "year": "1787–1788",
+    "text": "The Constitution goes to the states. It needs nine to ratify. In newspapers across the states, both sides are arguing.",
+    "question": {
+     "stem": "Hamilton (Document 13) and an Antifederalist (Document 16) disagree. What are they arguing about?",
      "type": "choose",
      "options": [
-      "PLACEHOLDER · the right answer",
-      "PLACEHOLDER · a wrong answer",
-      "PLACEHOLDER · another wrong answer"
+      "How much power the national government should have",
+      "Whether to declare independence from Britain",
+      "Whether to end the slave trade",
+      "Whether to go to war with France"
      ],
      "answer": 0,
      "hints": [
-      "PLACEHOLDER · hint 1",
-      "PLACEHOLDER · hint 2"
-     ]
-    }
-   },
-   "question": {
-    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 1",
-    "doc": {
-     "casefile": "A",
-     "n": 1
+      "Hamilton says the states' failures stopped “all the wheels of the national government.”",
+      "The Antifederalist fears “unbounded” power."
+     ],
+     "why": "Hamilton says the states' failures stopped “all the wheels of the national government.” The Antifederalist fears “undefined, unbounded, and immense power.” It's the fight this whole unit is about: too weak, or too strong?"
     },
-    "options": [
-     "PLACEHOLDER · the right answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer"
+    "docs": [
+     {
+      "casefile": "B",
+      "n": 13
+     },
+     {
+      "casefile": "B",
+      "n": 16
+     }
     ],
-    "answer": 0,
-    "hints": [
-     "PLACEHOLDER · hint 1",
-     "PLACEHOLDER · hint 2"
+    "ratified": [
+     "RATIFIED.",
+     "On June 21, 1788, New Hampshire becomes the ninth state. The Constitution is ratified. The new government starts work in 1789.",
+     "And Daniel Shays? He's pardoned that same year. The rebellion named for him helped push the country's leaders to write it."
     ],
-    "why": "PLACEHOLDER · Sam's why"
-   },
-   "evidence": "PLACEHOLDER · 1763 · Proclamation Line · Document 1",
-   "nearMiss": null
+    "short": "Ratified anyway: in June 1788, New Hampshire became the ninth state. Your pair was {n} states short of nine. History didn't wait, but your case for it was weaker."
+   }
   },
   {
-   "id": "stop-2",
-   "place": "Stamp Act Congress",
-   "year": 1765,
-   "clue": {
-    "text": "PLACEHOLDER · Sam's clue 2: it sends the pair to the threads.",
-    "tool": "threads",
-    "link": "s-1765-stamp-act-congress",
-    "ask": {
-     "prompt": "PLACEHOLDER · a question only the tool can answer",
-     "type": "choose",
-     "options": [
-      "PLACEHOLDER · the right answer",
-      "PLACEHOLDER · a wrong answer",
-      "PLACEHOLDER · another wrong answer"
-     ],
-     "answer": 0,
-     "hints": [
-      "PLACEHOLDER · hint 1",
-      "PLACEHOLDER · hint 2"
-     ]
-    }
-   },
-   "question": {
-    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 2",
-    "doc": {
-     "casefile": "A",
-     "n": 2
+   "title": "PLACEHOLDER · Act II title (the trail west, 1798–1819)",
+   "intro": [
+    "PLACEHOLDER · Sam's Act II opening lines (after the pardon)"
+   ],
+   "stops": [
+    {
+     "id": "act2-stand-in-1",
+     "place": "PLACEHOLDER · Act II stop 1 place",
+     "year": "PLACEHOLDER · year",
+     "story": "PLACEHOLDER · Sam's Act II story line 1 (after Casefile C)",
+     "clue": {
+      "text": "PLACEHOLDER · Sam's Act II clue 1",
+      "tool": "threads",
+      "link": "s-1781-articles",
+      "ask": {
+       "prompt": "PLACEHOLDER · a question only the tool can answer",
+       "type": "choose",
+       "options": [
+        "PLACEHOLDER · right",
+        "PLACEHOLDER · wrong",
+        "PLACEHOLDER · wrong"
+       ],
+       "answer": 0,
+       "hints": [
+        "PLACEHOLDER · hint 1",
+        "PLACEHOLDER · hint 2"
+       ]
+      }
+     },
+     "question": {
+      "stem": "PLACEHOLDER · Sam's Regents-style stem on a Casefile C document (stand-in: B 16)",
+      "type": "choose",
+      "options": [
+       "PLACEHOLDER · right",
+       "PLACEHOLDER · wrong",
+       "PLACEHOLDER · wrong",
+       "PLACEHOLDER · wrong"
+      ],
+      "answer": 0,
+      "hints": [
+       "PLACEHOLDER · hint 1",
+       "PLACEHOLDER · hint 2"
+      ],
+      "why": "PLACEHOLDER · Sam's why",
+      "doc": {
+       "casefile": "B",
+       "n": 15
+      }
+     },
+     "evidence": "PLACEHOLDER · Act II evidence line 1"
     },
-    "options": [
-     "PLACEHOLDER · the right answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer"
-    ],
-    "answer": 0,
-    "hints": [
-     "PLACEHOLDER · hint 1",
-     "PLACEHOLDER · hint 2"
-    ],
-    "why": "PLACEHOLDER · Sam's why"
-   },
-   "evidence": "PLACEHOLDER · 1765 · Stamp Act Congress · Document 2",
-   "nearMiss": null
-  },
-  {
-   "id": "stop-3",
-   "place": "Boston",
-   "year": 1770,
-   "clue": {
-    "text": "PLACEHOLDER · Sam's clue 3: it sends the pair to the atlas.",
-    "tool": "atlas",
-    "link": "11.2-A-03",
-    "ask": {
-     "prompt": "PLACEHOLDER · a question only the tool can answer",
-     "type": "choose",
-     "options": [
-      "PLACEHOLDER · the right answer",
-      "PLACEHOLDER · a wrong answer",
-      "PLACEHOLDER · another wrong answer"
-     ],
-     "answer": 0,
-     "hints": [
-      "PLACEHOLDER · hint 1",
-      "PLACEHOLDER · hint 2"
-     ]
+    {
+     "id": "act2-stand-in-2",
+     "place": "PLACEHOLDER · Act II stop 2 place",
+     "year": "PLACEHOLDER · year",
+     "story": "PLACEHOLDER · Sam's Act II story line 2 (after Casefile C)",
+     "clue": {
+      "text": "PLACEHOLDER · Sam's Act II clue 2",
+      "tool": "threads",
+      "link": "s-1781-articles",
+      "ask": {
+       "prompt": "PLACEHOLDER · a question only the tool can answer",
+       "type": "choose",
+       "options": [
+        "PLACEHOLDER · right",
+        "PLACEHOLDER · wrong",
+        "PLACEHOLDER · wrong"
+       ],
+       "answer": 0,
+       "hints": [
+        "PLACEHOLDER · hint 1",
+        "PLACEHOLDER · hint 2"
+       ]
+      }
+     },
+     "question": {
+      "stem": "PLACEHOLDER · Sam's Regents-style stem on a Casefile C document (stand-in: B 17)",
+      "type": "choose",
+      "options": [
+       "PLACEHOLDER · right",
+       "PLACEHOLDER · wrong",
+       "PLACEHOLDER · wrong",
+       "PLACEHOLDER · wrong"
+      ],
+      "answer": 0,
+      "hints": [
+       "PLACEHOLDER · hint 1",
+       "PLACEHOLDER · hint 2"
+      ],
+      "why": "PLACEHOLDER · Sam's why",
+      "doc": {
+       "casefile": "B",
+       "n": 16
+      }
+     },
+     "evidence": "PLACEHOLDER · Act II evidence line 2"
     }
-   },
-   "question": {
-    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 4",
-    "doc": {
-     "casefile": "A",
-     "n": 4
-    },
-    "options": [
-     "PLACEHOLDER · the right answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer"
-    ],
-    "answer": 0,
-    "hints": [
-     "PLACEHOLDER · hint 1",
-     "PLACEHOLDER · hint 2"
-    ],
-    "why": "PLACEHOLDER · Sam's why"
-   },
-   "evidence": "PLACEHOLDER · 1770 · Boston · Document 4",
-   "nearMiss": null
-  },
-  {
-   "id": "stop-4",
-   "place": "Philadelphia",
-   "year": 1776,
-   "clue": {
-    "text": "PLACEHOLDER · Sam's clue 4: it sends the pair to the threads.",
-    "tool": "threads",
-    "link": "s-1776-declaration",
-    "ask": {
-     "prompt": "PLACEHOLDER · a question only the tool can answer",
-     "type": "choose",
-     "options": [
-      "PLACEHOLDER · the right answer",
-      "PLACEHOLDER · a wrong answer",
-      "PLACEHOLDER · another wrong answer"
-     ],
-     "answer": 0,
-     "hints": [
-      "PLACEHOLDER · hint 1",
-      "PLACEHOLDER · hint 2"
-     ]
-    }
-   },
-   "question": {
-    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 8",
-    "doc": {
-     "casefile": "A",
-     "n": 8
-    },
-    "options": [
-     "PLACEHOLDER · the right answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer"
-    ],
-    "answer": 0,
-    "hints": [
-     "PLACEHOLDER · hint 1",
-     "PLACEHOLDER · hint 2"
-    ],
-    "why": "PLACEHOLDER · Sam's why"
-   },
-   "evidence": "PLACEHOLDER · 1776 · Philadelphia · Document 8",
-   "nearMiss": "PLACEHOLDER · Sam's near miss: you just missed them"
-  },
-  {
-   "id": "stop-5",
-   "place": "The Articles",
-   "year": 1781,
-   "clue": {
-    "text": "PLACEHOLDER · Sam's clue 5: it sends the pair to the doc assist.",
-    "tool": "doc-assist",
-    "link": "B/11",
-    "ask": {
-     "prompt": "PLACEHOLDER · a question only the tool can answer",
-     "type": "choose",
-     "options": [
-      "PLACEHOLDER · the right answer",
-      "PLACEHOLDER · a wrong answer",
-      "PLACEHOLDER · another wrong answer"
-     ],
-     "answer": 0,
-     "hints": [
-      "PLACEHOLDER · hint 1",
-      "PLACEHOLDER · hint 2"
-     ]
-    }
-   },
-   "question": {
-    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 11",
-    "doc": {
-     "casefile": "B",
-     "n": 11
-    },
-    "options": [
-     "PLACEHOLDER · the right answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer"
-    ],
-    "answer": 0,
-    "hints": [
-     "PLACEHOLDER · hint 1",
-     "PLACEHOLDER · hint 2"
-    ],
-    "why": "PLACEHOLDER · Sam's why"
-   },
-   "evidence": "PLACEHOLDER · 1781 · The Articles · Document 11",
-   "nearMiss": null
-  },
-  {
-   "id": "stop-6",
-   "place": "The Constitution",
-   "year": 1787,
-   "clue": {
-    "text": "PLACEHOLDER · Sam's clue 6: it sends the pair to the threads.",
-    "tool": "threads",
-    "link": "s-1787-constitution",
-    "ask": {
-     "prompt": "PLACEHOLDER · a question only the tool can answer",
-     "type": "choose",
-     "options": [
-      "PLACEHOLDER · the right answer",
-      "PLACEHOLDER · a wrong answer",
-      "PLACEHOLDER · another wrong answer"
-     ],
-     "answer": 0,
-     "hints": [
-      "PLACEHOLDER · hint 1",
-      "PLACEHOLDER · hint 2"
-     ]
-    }
-   },
-   "question": {
-    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 14",
-    "doc": {
-     "casefile": "B",
-     "n": 14
-    },
-    "options": [
-     "PLACEHOLDER · the right answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer",
-     "PLACEHOLDER · a wrong answer"
-    ],
-    "answer": 0,
-    "hints": [
-     "PLACEHOLDER · hint 1",
-     "PLACEHOLDER · hint 2"
-    ],
-    "why": "PLACEHOLDER · Sam's why"
-   },
-   "evidence": "PLACEHOLDER · 1787 · The Constitution · Document 14",
-   "nearMiss": null
+   ]
   }
  ],
- "cold": [
-  "PLACEHOLDER · the trail is warm",
-  "PLACEHOLDER · the trail is cooling",
-  "PLACEHOLDER · the trail is cold",
-  "PLACEHOLDER · the trail has nearly gone"
- ],
  "warrant": [
-  "PLACEHOLDER · The suspect is headed to ___ in ___ (year).",
-  "PLACEHOLDER · Document ___ shows ___.",
-  "PLACEHOLDER · Document ___ shows ___."
+  "Daniel Shays was a ___ (rebel or patriot) because Document ___ shows ___.",
+  "Document ___ shows ___."
  ],
  "final": {
-  "task": "PLACEHOLDER · Bring the warrant to your teacher for the key.",
+  "task": "Bring it to your teacher for the key.",
   "key_words": [
-   "proof"
+   "pardon"
+  ]
+ },
+ "end": {
+  "photo": "_proof/nine-states-end.webp",
+  "alt": "PLACEHOLDER · Sam's alt text for the grave photo",
+  "credit": "Photo: Bryan Kelley",
+  "lines": [
+   "Daniel Shays died in Sparta, New York, in 1825, a poor man.",
+   "He lived his last years on a small federal pension for his service in the Revolution. The government that could finally collect taxes could finally take care of its old soldiers.",
+   "He's buried in Livingston County, New York, not far from this room."
   ]
  },
  "coda": null,
  "reflection": [
-  "PLACEHOLDER · reflection 1",
-  "PLACEHOLDER · reflection 2",
-  "PLACEHOLDER · reflection 3"
+  "Which stop did you get on the first try, and how?",
+  "Rebel or patriot: what would someone on the other side say?",
+  "What's one thing from today you'll use on the test tomorrow?"
  ]
 }
