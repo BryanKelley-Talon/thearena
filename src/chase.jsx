@@ -18,6 +18,8 @@ import { useEffect, useMemo, useState } from 'react'
 import '@fontsource/courier-prime/latin-400.css'
 import '@fontsource/courier-prime/latin-700.css'
 
+// BK 2026-10-07 11:49 "yes approved." to the engine proof: NINE STATES' shape, and the labels onward ('Keep going'),
+// meterCount ('9 states') and warrantTip ('...finish the lines below...'). The other labels are still working labels.
 export const CHASE_WORDS = {
   _approved: false,
   title: 'The chase',
