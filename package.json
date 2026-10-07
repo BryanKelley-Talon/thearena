@@ -6,12 +6,13 @@
   "description": "Canonical Flashpoint History game template. Clone this per game; only src/gameData.js changes.",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/gate-content.mjs && vite build",
+    "build": "node scripts/gate-content.mjs && vite build && node scripts/seal-chase.mjs",
     "preview": "vite preview",
     "gate": "node scripts/gate-content.mjs",
     "links": "node scripts/links.mjs"
   },
   "dependencies": {
+    "@fontsource/courier-prime": "^5.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

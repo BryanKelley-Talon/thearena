@@ -15,6 +15,8 @@
 //   #/us/11.1/atlas                        one unit's atlas (BK 21:53)
 //   #/us/writing-lab · #/us/writing-lab/<set slug>   the Writing Lab, or one Blueprint set (10/5)
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
+//   #/us/chase/11.2                        the unit's Arena chase (BK 2026-10-06 22:15)
+//   #/us/threads/<stop-id>                 the Threads map with one stop open (for a chase clue)
 //   #/office · #/office/2026-10-halftime-adjustments
 //
 // Numbers, not labels: a unit's title can change, its framework number can't. A link to
@@ -43,6 +45,8 @@ export function parseHash(hash, manifest) {
   // A map id is checked by the App once the course's maps are in; an unknown one leaves the lane open.
   if (parts[1] === 'atlas' && parts[2]) return { ...r, lane: 'atlas', atlasMap: parts[2] }
   if (parts[1] === 'writing-lab' && parts[2]) return { ...r, lane: 'writing_lab', wlSet: parts[2] }
+  if (parts[1] === 'chase' && parts[2]) { const u = unitByNumber(course, parts[2]); return u ? { ...r, at: 'chase', unitSlug: u.slug } : r }
+  if ((parts[1] === 'threads' || parts[1] === 'issues') && parts[2]) return { ...r, lane: parts[1], stopOpen: parts[2] }
   if (KEY_LANE[parts[1]] !== undefined || LANE_KEYS[parts[1]]) return { ...r, lane: LANE_KEYS[parts[1]] || parts[1] }
   if (parts[1] === '0') return { ...r, at: 'unit0' }
   const unit = unitByNumber(course, parts[1])
@@ -68,6 +72,8 @@ export function buildHash(s) {
   const c = `#/${COURSE_KEY[s.course.id] || s.course.id}`
   if (s.atlasMap) return `${c}/atlas/${encodeURIComponent(s.atlasMap)}`
   if (s.wlSet) return `${c}/writing-lab/${encodeURIComponent(s.wlSet)}`
+  if (s.chase && s.unit) return `${c}/chase/${s.unit.number}`
+  if (s.stopOpen && (s.lane === 'threads' || s.lane === 'issues')) return `${c}/${s.lane}/${encodeURIComponent(s.stopOpen)}`
   if (s.unit0) return `${c}/0`
   if (!s.unit) return s.lane ? `${c}/${KEY_LANE[s.lane] || s.lane}` : c
   const u = `${c}/${s.unit.number}`

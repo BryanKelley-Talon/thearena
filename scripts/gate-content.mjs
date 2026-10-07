@@ -835,6 +835,53 @@ function checkPopouts(d, f, course, m, fail) {
   }
 }
 
+// ── THE ARENA CHASE (added 2026-10-06, Josh; BK 22:15 "yes." to Sam's concept) ──────────
+// Format only, never content. A chase pack hangs off a unit (manifest unit.chase). Every stop:
+// a place and a year; a clue with text, a tool the Arena has and a link that resolves (an Atlas
+// map id this course has, a Threads stop id, or a Doc Assist casefile/number); a clue question
+// with an answer; a Regents-style question on a document that exists in the unit's Doc Assist,
+// with two hints and a Why; one evidence line. The trail's words, the warrant lines and a key.
+// No clock, nothing that reads as a score. A key must be in the pack (the build seals it).
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  const C_SCORE = /\b\d+\s*(of|out of|\/)\s*\d+\b|\b\d+\s*%|\b\d+\s*points?\b|\bscore\b|\bstreak\b|\bseconds?\b|\btimer\b/i
+  const read = f => { try { return JSON.parse(fs.readFileSync(path.join(CONTENT, String(f).replace(/^content\//, '')), 'utf8')) } catch { return null } }
+  for (const c of m.courses || []) for (const u of c.units || []) {
+    if (!u.chase) continue
+    const f = String(u.chase.content_ref || '').replace(/^content\//, '')
+    const cf = (msg) => (u.chase.published === true ? fail : warn)(f || `${u.slug} chase`, msg)
+    const pk = read(f)
+    if (!pk) { cf(`${u.slug}: chase content_ref '${f}' is not in public/content.`); continue }
+    const da = u.doc_assist ? read(u.doc_assist.content_ref) : null
+    const docs = new Set((da?.casefiles || []).flatMap(x => (x.docs || []).map(d => `${x.id}/${d.n}`)))
+    const atlas = read(`atlas-${c.id}.json`), maps = new Set((atlas?.maps || []).map(x => x.id))
+    const threads = read((c.threads || [])[0]?.content_ref || ''), tstops = new Set((threads?.stops || []).map(x => x.id))
+    if (!pk.id || !Array.isArray(pk.stops) || !pk.stops.length) cf('needs an id and at least one stop.')
+    if (!Array.isArray(pk.cold) || pk.cold.length < 2) cf('the trail needs at least two states in words (cold).')
+    if (!Array.isArray(pk.warrant) || !pk.warrant.length) cf('needs warrant lines.')
+    if (!pk.final || !(pk.final.key_words || []).length) cf('needs the teacher key (final.key_words); the build seals it.')
+    for (const [i, st] of (pk.stops || []).entries()) {
+      const w = `stop ${i + 1}`
+      if (!st.place || !st.year) cf(`${w}: a place and a year.`)
+      const cl = st.clue || {}
+      if (!cl.text || !['atlas', 'threads', 'doc-assist', 'issues'].includes(cl.tool)) cf(`${w}: a clue with text and a tool (atlas, threads, doc-assist).`)
+      if (cl.tool === 'atlas' && !maps.has(cl.link)) cf(`${w}: Atlas map '${cl.link}' isn't in this course's Atlas.`)
+      if (cl.tool === 'threads' && cl.link && !tstops.has(cl.link)) cf(`${w}: Threads stop '${cl.link}' isn't on the map.`)
+      if (cl.tool === 'doc-assist' && cl.link && !docs.has(String(cl.link).toUpperCase().replace(/^([A-Z])\//, '$1/'))) cf(`${w}: Doc Assist '${cl.link}' isn't in this unit's casefiles.`)
+      const ask = cl.ask || {}
+      if (!ask.prompt || (ask.type === 'type' ? !(ask.accept || []).length : !(Array.isArray(ask.options) && ask.options.length >= 2 && Number.isInteger(ask.answer)))) cf(`${w}: the clue's question needs a prompt and an answer.`)
+      const q = st.question || {}
+      if (!q.stem || !Array.isArray(q.options) || q.options.length < 2 || !Number.isInteger(q.answer)) cf(`${w}: the question needs a stem, choices and an answer.`)
+      if ((q.hints || []).length !== 2 || !q.why) cf(`${w}: two hints and a Why on the question.`)
+      if (!q.doc || !docs.has(`${q.doc.casefile}/${q.doc.n}`)) cf(`${w}: the question's document (${q.doc ? `${q.doc.casefile}/${q.doc.n}` : 'none'}) isn't in this unit's Doc Assist.`)
+      if (!st.evidence) cf(`${w}: one evidence line for the warrant.`)
+    }
+    const student = JSON.stringify({ ...pk, final: { task: pk.final?.task } }).replace(/"_[^"]*":\s*"[^"]*"/g, '')
+    if (C_SCORE.test(student)) cf('something reads like a score or a clock.')
+  }
+}
+
 console.log(`\n${fails} fail (live) - ${warns} warn/dark`)
 if (!fails) console.log('Everything a student can reach today passes.')
 process.exit(fails || process.exitCode ? 1 : 0)

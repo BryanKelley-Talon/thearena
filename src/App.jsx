@@ -37,6 +37,8 @@ import { StopMapLane, STOPMAP_STYLES } from './stopmap.jsx'
 import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
+import { ChaseScreen, ChaseBar, CHASE_STYLES } from './chase.jsx'
+import { COURSE_KEY } from './deeplinks.js'
 import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles, paperOf } from './docassist.jsx'
 import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
@@ -905,7 +907,7 @@ const LANES = [
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane }) {
+function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen }) {
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   const lane = laneIn || firstWithContent
@@ -973,9 +975,9 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
         </>
       )}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} onOpenUnit0={onOpenUnit0} />}
-      {lane === 'threads' && <StopMapLane kind="threads" course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
+      {lane === 'threads' && <StopMapLane kind="threads" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
       {lane === 'writing_lab' && <WritingLabLane course={course} sets={wlSets} unitName={unitName} onOpen={onOpenSet} Empty={EmptyLane} />}
-      {lane === 'issues' && <StopMapLane kind="issues" course={course} maps={atlasMaps} onOpenMap={onOpenMap} />}
+      {lane === 'issues' && <StopMapLane kind="issues" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
       {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
@@ -1934,6 +1936,9 @@ export default function App() {
   const linked = useRef(false)
   const [pendingDa, setPendingDa] = useState(null)      // { cf, docN } waiting on the Doc Assist pack
   const daPackFor = useRef(null)
+  const [stopOpen, setStopOpen] = useState(null)         // a Threads / Enduring Issues stop opened by link (a chase clue)
+  const [chase, setChase] = useState(false)              // the unit's Arena chase (BK 2026-10-06 22:15)
+  const [chasePack, setChasePack] = useState(null)
   const [daCfFocus, setDaCfFocus] = useState(null)       // a casefile link's casefile, kept in the address bar                          // which content_ref the loaded Doc Assist pack is
 
   useEffect(() => {
@@ -2002,6 +2007,16 @@ export default function App() {
     if (course.unit0.culture_ref) fetchContent(course.unit0.culture_ref, setU0Culture); else setU0Culture(false)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [unit0, course])
+  // The Arena chase: the unit's pack (manifest unit.chase), or the proof pack in a proof build.
+  const CHASE_PROOF = import.meta.env.VITE_CHASE_PROOF === '1'
+  useEffect(() => {
+    if (!chase || !course || !unit) { setChasePack(null); return }
+    const c = unit.chase
+    if (c && (c.published === true || CHASE_PROOF) && resolves(c.content_ref)) fetchContent(c.content_ref, setChasePack)
+    else if (CHASE_PROOF) { setChasePack(null); fetch(`/_proof/chase-${course.id}-${unit.number}.json`).then(x => (x.ok ? x.json() : false)).then(setChasePack).catch(() => setChasePack(false)) }
+    else setChasePack(false)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [chase, course, unit])
   const openReview = (u = unit) => { setReview(true); fetchContent(u.brief_ref, setBriefPack); window.scrollTo(0, 0) }
   const openActivity = (u, i) => {
     const a = (u.activities || []).filter(isLive)[i]
@@ -2021,6 +2036,8 @@ export default function App() {
     setReview(false); setBriefPack(null); setDaOpen(false); setDaDoc(null); setPendingDa(null)
     setActIndex(null); setPack(null); setUnit0(false); setOfficeTheme(null); setOfficePack(null)
     setUnitAtlas(r.at === 'unitatlas')
+    setStopOpen(r.stopOpen || null)
+    setChase(r.at === 'chase')
     setWlSlug(r.wlSet || null)
     setOffice(r.at === 'office')
     if (r.at === 'office') {
@@ -2069,11 +2086,12 @@ export default function App() {
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
       course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
+      chase, stopOpen,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2101,7 +2119,14 @@ export default function App() {
     if (!t) return
     setOfficeTheme(slug); fetchContent(t.content_ref, setOfficePack); window.scrollTo(0, 0)
   }
-  if (officeOn && theme) {
+  if (course && unit && chase) {
+    screen = chasePack === null ? <div className="loading">Opening the chase&hellip;</div>
+      : !chasePack ? <div className="wrap"><div className="empty"><div className="empty-title">Not open yet.</div></div></div>
+      : <ChaseScreen key={chasePack.id} course={course} courseKey={COURSE_KEY[course.id] || course.id} unit={unit} pack={chasePack} daPack={daPack || null}
+                     ScreenHeader={ScreenHeader} BottomBack={BottomBack}
+                     onBack={() => { setChase(false); setUnitSlug(null); window.scrollTo(0, 0) }} />
+  }
+  else if (officeOn && theme) {
     // key: a theme-to-theme jump (the back link) starts the new theme's path fresh.
     screen = <OfficeTheme key={theme.slug} office={manifest.office} theme={theme} themes={officeThemes}
                           pack={officePack} ui={officeUi} onOpenTheme={openOfficeTheme}
@@ -2226,6 +2251,7 @@ export default function App() {
       prog={prog}
       lane={doorLane}
       setLane={setDoorLane}
+      stopOpen={stopOpen}
       onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
       onOpenUnit={slug => { setRoomFrom('units'); setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false); window.scrollTo(0, 0) }}
       onOpenUnit0={() => { setUnit0(true); window.scrollTo(0, 0) }}
@@ -2245,13 +2271,14 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES + CHASE_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}
       <div className={course ? 'app-interior' : undefined}>
         {screen}
         {course && atlasMap && <AtlasViewer key={atlasMap.id} map={atlasMap} refs={refs} onClose={() => setAtlasId(null)} />}
+        <ChaseBar hidden={chase} />
         <div className="wrap" style={{ paddingTop: 0, paddingBottom: 28 }}>
           <a href={HOME_URL} className="back-btn">
             &larr; flashpointhistory.com

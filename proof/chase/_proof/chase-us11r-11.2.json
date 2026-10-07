@@ -1,0 +1,311 @@
+{
+ "_readme": "PROOF ONLY. Stand-in words marked PLACEHOLDER; every student word is Sam's. Real Atlas maps, Threads stops and Doc Assist documents, so every link resolves.",
+ "id": "chase-us11r-11.2",
+ "course": "us11r",
+ "unit": "11.2",
+ "title": "PLACEHOLDER · Sam's title for the chase",
+ "standing": "PLACEHOLDER · An invented suspect. The history is real. (wording for BK)",
+ "suspect": {
+  "name": "PLACEHOLDER · the suspect's name",
+  "line": "PLACEHOLDER · who they are, in a sentence",
+  "portrait": null
+ },
+ "intro": [
+  "PLACEHOLDER · Sam's opening: the case, in two or three short lines."
+ ],
+ "stops": [
+  {
+   "id": "stop-1",
+   "place": "Proclamation Line",
+   "year": 1763,
+   "clue": {
+    "text": "PLACEHOLDER · Sam's clue 1: it sends the pair to the atlas.",
+    "tool": "atlas",
+    "link": "11.2-A-02",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the tool can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · the right answer",
+      "PLACEHOLDER · a wrong answer",
+      "PLACEHOLDER · another wrong answer"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 1",
+    "doc": {
+     "casefile": "A",
+     "n": 1
+    },
+    "options": [
+     "PLACEHOLDER · the right answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Sam's why"
+   },
+   "evidence": "PLACEHOLDER · 1763 · Proclamation Line · Document 1",
+   "nearMiss": null
+  },
+  {
+   "id": "stop-2",
+   "place": "Stamp Act Congress",
+   "year": 1765,
+   "clue": {
+    "text": "PLACEHOLDER · Sam's clue 2: it sends the pair to the threads.",
+    "tool": "threads",
+    "link": "s-1765-stamp-act-congress",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the tool can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · the right answer",
+      "PLACEHOLDER · a wrong answer",
+      "PLACEHOLDER · another wrong answer"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 2",
+    "doc": {
+     "casefile": "A",
+     "n": 2
+    },
+    "options": [
+     "PLACEHOLDER · the right answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Sam's why"
+   },
+   "evidence": "PLACEHOLDER · 1765 · Stamp Act Congress · Document 2",
+   "nearMiss": null
+  },
+  {
+   "id": "stop-3",
+   "place": "Boston",
+   "year": 1770,
+   "clue": {
+    "text": "PLACEHOLDER · Sam's clue 3: it sends the pair to the atlas.",
+    "tool": "atlas",
+    "link": "11.2-A-03",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the tool can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · the right answer",
+      "PLACEHOLDER · a wrong answer",
+      "PLACEHOLDER · another wrong answer"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 4",
+    "doc": {
+     "casefile": "A",
+     "n": 4
+    },
+    "options": [
+     "PLACEHOLDER · the right answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Sam's why"
+   },
+   "evidence": "PLACEHOLDER · 1770 · Boston · Document 4",
+   "nearMiss": null
+  },
+  {
+   "id": "stop-4",
+   "place": "Philadelphia",
+   "year": 1776,
+   "clue": {
+    "text": "PLACEHOLDER · Sam's clue 4: it sends the pair to the threads.",
+    "tool": "threads",
+    "link": "s-1776-declaration",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the tool can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · the right answer",
+      "PLACEHOLDER · a wrong answer",
+      "PLACEHOLDER · another wrong answer"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 8",
+    "doc": {
+     "casefile": "A",
+     "n": 8
+    },
+    "options": [
+     "PLACEHOLDER · the right answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Sam's why"
+   },
+   "evidence": "PLACEHOLDER · 1776 · Philadelphia · Document 8",
+   "nearMiss": "PLACEHOLDER · Sam's near miss: you just missed them"
+  },
+  {
+   "id": "stop-5",
+   "place": "The Articles",
+   "year": 1781,
+   "clue": {
+    "text": "PLACEHOLDER · Sam's clue 5: it sends the pair to the doc assist.",
+    "tool": "doc-assist",
+    "link": "B/11",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the tool can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · the right answer",
+      "PLACEHOLDER · a wrong answer",
+      "PLACEHOLDER · another wrong answer"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 11",
+    "doc": {
+     "casefile": "B",
+     "n": 11
+    },
+    "options": [
+     "PLACEHOLDER · the right answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Sam's why"
+   },
+   "evidence": "PLACEHOLDER · 1781 · The Articles · Document 11",
+   "nearMiss": null
+  },
+  {
+   "id": "stop-6",
+   "place": "The Constitution",
+   "year": 1787,
+   "clue": {
+    "text": "PLACEHOLDER · Sam's clue 6: it sends the pair to the threads.",
+    "tool": "threads",
+    "link": "s-1787-constitution",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the tool can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · the right answer",
+      "PLACEHOLDER · a wrong answer",
+      "PLACEHOLDER · another wrong answer"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Sam's Regents-style stem on Document 14",
+    "doc": {
+     "casefile": "B",
+     "n": 14
+    },
+    "options": [
+     "PLACEHOLDER · the right answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer",
+     "PLACEHOLDER · a wrong answer"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Sam's why"
+   },
+   "evidence": "PLACEHOLDER · 1787 · The Constitution · Document 14",
+   "nearMiss": null
+  }
+ ],
+ "cold": [
+  "PLACEHOLDER · the trail is warm",
+  "PLACEHOLDER · the trail is cooling",
+  "PLACEHOLDER · the trail is cold",
+  "PLACEHOLDER · the trail has nearly gone"
+ ],
+ "warrant": [
+  "PLACEHOLDER · The suspect is headed to ___ in ___ (year).",
+  "PLACEHOLDER · Document ___ shows ___.",
+  "PLACEHOLDER · Document ___ shows ___."
+ ],
+ "final": {
+  "task": "PLACEHOLDER · Bring the warrant to your teacher for the key.",
+  "key_words": [
+   "proof"
+  ]
+ },
+ "coda": null,
+ "reflection": [
+  "PLACEHOLDER · reflection 1",
+  "PLACEHOLDER · reflection 2",
+  "PLACEHOLDER · reflection 3"
+ ]
+}

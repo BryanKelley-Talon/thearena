@@ -137,7 +137,7 @@ function useDocAssistPacks(course) {
 }
 
 // ── THE LANE ────────────────────────────────────────────────────────────
-export function StopMapLane({ course, kind, maps, onOpenMap }) {
+export function StopMapLane({ course, kind, maps, onOpenMap, initialOpen }) {
   const W = STOPMAP_WORDS[kind]
   const entry = ((kind === 'threads' ? course.threads : course.issues) || [])[0]
   const data = useStopFile(entry?.content_ref)
@@ -176,6 +176,10 @@ export function StopMapLane({ course, kind, maps, onOpenMap }) {
 
   useEffect(() => { if (!open) return; da.need(byId[open]?.doc_assist?.split('/')[0]); if (pair) da.need(byId[pair]?.doc_assist?.split('/')[0]) }, [open, pair, byId]) // eslint-disable-line react-hooks/exhaustive-deps
 
+  // A link to one stop (#/us/threads/<stop-id>, a chase clue): open it once the file is in.
+  // (Hooks stay above the early returns; pick itself is defined below them.)
+  const pickRef = useRef(null)
+  useEffect(() => { if (initialOpen && byId[initialOpen] && pickRef.current) pickRef.current(initialOpen) }, [initialOpen, byId])
   if (data === null) return <div className="loading">Opening the map&hellip;</div>
   if (!data) return <div className="empty"><div className="empty-title">Not open yet.</div></div>
 
@@ -193,6 +197,7 @@ export function StopMapLane({ course, kind, maps, onOpenMap }) {
     setOpen(id); setVia(row || null); setPair(firstPair(id))
   }
   const close = () => { setOpen(null); setPair(null); setVia(null) }
+  pickRef.current = pick
   const link = open && pair ? (links[open] || []).find(l => l.to === pair) : null
 
   const labels = { ...W.kind, ...((data && data.link_kinds) || {}) }
