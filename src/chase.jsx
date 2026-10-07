@@ -42,7 +42,7 @@ export const CHASE_WORDS = {
   caught: 'CAUGHT',
   again: 'Start over',
   trail: 'The trail',
-  doc: n => `Document ${n}`,
+  doc: (n, cf) => cf ? `Casefile ${cf} · Document ${n}` : `Document ${n}`,
   typeLabel: 'Your answer',
 }
 const W = CHASE_WORDS
@@ -100,12 +100,12 @@ function Footprints({ pack, cold }) {
   )
 }
 
-function Doc({ doc }) {
+function Doc({ doc, cf }) {
   if (!doc) return null
   const img = doc.image_file || (doc.images && doc.images[0] && doc.images[0].file)
   return (
     <figure className="chase-doc">
-      <figcaption>{W.doc(doc.n)} · {doc.title}</figcaption>
+      <figcaption>{W.doc(doc.n, cf)} · {doc.title}</figcaption>
       {doc.kind === 'image' && img
         ? <img src={`/content/${String(img).split('/').pop()}`} alt={doc.image_alt || doc.describe || ''} />
         : <div className="chase-doctext">{(doc.text || []).map((p, i) => <p key={i}>{p}</p>)}</div>}
@@ -181,7 +181,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
 
         {stop && s.step === 'question' && <section className="chase-card">
           <div className="chase-tab">{W.stop(s.i + 1)} · {stop.place} · {stop.year}</div>
-          <Doc doc={docs[`${stop.question.doc.casefile}/${stop.question.doc.n}`]} />
+          <Doc doc={docs[`${stop.question.doc.casefile}/${stop.question.doc.n}`]} cf={stop.question.doc.casefile} />
           <Ask key={`q${s.i}`} ask={stop.question} onMiss={cool} onRight={() => setS(x => ({ ...x, step: 'card', cold: Math.max(0, x.cold - 1), ev: [...x.ev.filter(e => e.i !== x.i), { i: x.i, text: stop.evidence }] }))} />
         </section>}
 

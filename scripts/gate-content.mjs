@@ -857,6 +857,7 @@ function checkPopouts(d, f, course, m, fail) {
     const docs = new Set((da?.casefiles || []).flatMap(x => (x.docs || []).map(d => `${x.id}/${d.n}`)))
     const atlas = read(`atlas-${c.id}.json`), maps = new Set((atlas?.maps || []).map(x => x.id))
     const threads = read((c.threads || [])[0]?.content_ref || ''), tstops = new Set((threads?.stops || []).map(x => x.id))
+    const issues = read((c.issues || [])[0]?.content_ref || ''), istops = new Set((issues?.stops || []).map(x => x.id))
     if (!pk.id || !Array.isArray(pk.stops) || !pk.stops.length) cf('needs an id and at least one stop.')
     if (!Array.isArray(pk.cold) || pk.cold.length < 2) cf('the trail needs at least two states in words (cold).')
     if (!Array.isArray(pk.warrant) || !pk.warrant.length) cf('needs warrant lines.')
@@ -865,9 +866,10 @@ function checkPopouts(d, f, course, m, fail) {
       const w = `stop ${i + 1}`
       if (!st.place || !st.year) cf(`${w}: a place and a year.`)
       const cl = st.clue || {}
-      if (!cl.text || !['atlas', 'threads', 'doc-assist', 'issues'].includes(cl.tool)) cf(`${w}: a clue with text and a tool (atlas, threads, doc-assist).`)
+      if (!cl.text || !['atlas', 'threads', 'doc-assist', 'issues'].includes(cl.tool)) cf(`${w}: a clue with text and a tool (atlas, threads, issues, doc-assist).`)
       if (cl.tool === 'atlas' && !maps.has(cl.link)) cf(`${w}: Atlas map '${cl.link}' isn't in this course's Atlas.`)
       if (cl.tool === 'threads' && cl.link && !tstops.has(cl.link)) cf(`${w}: Threads stop '${cl.link}' isn't on the map.`)
+      if (cl.tool === 'issues' && cl.link && !istops.has(cl.link)) cf(`${w}: Enduring Issues stop '${cl.link}' isn't on the map.`)
       if (cl.tool === 'doc-assist' && cl.link && !docs.has(String(cl.link).toUpperCase().replace(/^([A-Z])\//, '$1/'))) cf(`${w}: Doc Assist '${cl.link}' isn't in this unit's casefiles.`)
       const ask = cl.ask || {}
       if (!ask.prompt || (ask.type === 'type' ? !(ask.accept || []).length : !(Array.isArray(ask.options) && ask.options.length >= 2 && Number.isInteger(ask.answer)))) cf(`${w}: the clue's question needs a prompt and an answer.`)
