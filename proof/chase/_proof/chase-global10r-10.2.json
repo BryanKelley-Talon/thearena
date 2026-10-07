@@ -1,0 +1,353 @@
+{
+ "_readme": "PROOF ONLY (Josh, 2026-10-07). Will's frame from will-pass-2026-10-07-global-chase-trail-ids-for-engine.md: eight stops' places, years, tools, ids and documents are his; every student word is PLACEHOLDER until BK picks the name and Will sends the pack (Tue 10/13).",
+ "id": "chase-global10r-10.2",
+ "course": "global10r",
+ "unit": "10.2",
+ "title": "PLACEHOLDER · the chase's name (BK picks)",
+ "standing": "PLACEHOLDER · the standing line for an invented suspect (wording for BK)",
+ "suspect": {
+  "name": "PLACEHOLDER · the suspect's name (BK picks)",
+  "line": "PLACEHOLDER · who they are, in a sentence",
+  "portrait": null
+ },
+ "intro": [
+  "PLACEHOLDER · Will's opening: the suspect tries to wind the world back to 1788."
+ ],
+ "cold": [
+  "PLACEHOLDER · hot",
+  "PLACEHOLDER · warm",
+  "PLACEHOLDER · stirring",
+  "PLACEHOLDER · cooling",
+  "PLACEHOLDER · cold"
+ ],
+ "stops": [
+  {
+   "id": "stand-in-1",
+   "place": "PLACEHOLDER · Paris",
+   "year": "1789",
+   "trail": "PLACEHOLDER · warm",
+   "story": "PLACEHOLDER · Will's story line, stop 1",
+   "clue": {
+    "text": "PLACEHOLDER · Will's clue 1 (sends the pair to issues → s-1789-rights-of-man)",
+    "tool": "issues",
+    "link": "s-1789-rights-of-man",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the map can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · right",
+      "PLACEHOLDER · wrong",
+      "PLACEHOLDER · wrong"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Will's Regents-style stem on Casefile B Doc 3 (DU)",
+    "type": "choose",
+    "options": [
+     "PLACEHOLDER · right",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Will's why",
+    "doc": {
+     "casefile": "B",
+     "n": 3
+    }
+   },
+   "evidence": "PLACEHOLDER · 1789 · evidence line 1 · Casefile B Document 3"
+  },
+  {
+   "id": "stand-in-2",
+   "place": "PLACEHOLDER · Saint-Domingue",
+   "year": "1791–1804",
+   "trail": "PLACEHOLDER · warm",
+   "story": "PLACEHOLDER · Will's story line, stop 2",
+   "clue": {
+    "text": "PLACEHOLDER · Will's clue 2 (sends the pair to issues → s-1791-haiti)",
+    "tool": "issues",
+    "link": "s-1791-haiti",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the map can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · right",
+      "PLACEHOLDER · wrong",
+      "PLACEHOLDER · wrong"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Will's Regents-style stem on Casefile C Doc 1 (OE)",
+    "type": "choose",
+    "options": [
+     "PLACEHOLDER · right",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Will's why",
+    "doc": {
+     "casefile": "C",
+     "n": 1
+    }
+   },
+   "evidence": "PLACEHOLDER · 1791–1804 · evidence line 2 · Casefile C Document 1"
+  },
+  {
+   "id": "stand-in-3",
+   "place": "PLACEHOLDER · Napoleon's Europe",
+   "year": "1812",
+   "trail": "PLACEHOLDER · cooling",
+   "story": "PLACEHOLDER · Will's story line, stop 3",
+   "clue": {
+    "text": "PLACEHOLDER · Will's clue 3 (sends the pair to atlas → 10.2-B-01)",
+    "tool": "atlas",
+    "link": "10.2-B-01",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the map can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · right",
+      "PLACEHOLDER · wrong",
+      "PLACEHOLDER · wrong"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Will's Regents-style stem on Casefile C Doc 3 (HC)",
+    "type": "choose",
+    "options": [
+     "PLACEHOLDER · right",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Will's why",
+    "doc": {
+     "casefile": "C",
+     "n": 3
+    }
+   },
+   "evidence": "PLACEHOLDER · 1812 · evidence line 3 · Casefile C Document 3"
+  },
+  {
+   "id": "stand-in-4",
+   "place": "PLACEHOLDER · Vienna",
+   "year": "1815",
+   "trail": "PLACEHOLDER · cold",
+   "story": "PLACEHOLDER · Will's story line, stop 4",
+   "clue": {
+    "text": "PLACEHOLDER · Will's clue 4 (sends the pair to atlas → 10.2-C-02)",
+    "tool": "atlas",
+    "link": "10.2-C-02",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the map can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · right",
+      "PLACEHOLDER · wrong",
+      "PLACEHOLDER · wrong"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "after": "PLACEHOLDER · Will's line: the trail goes cold in Vienna, then something stirs"
+  },
+  {
+   "id": "stand-in-5",
+   "place": "PLACEHOLDER · Piedmont",
+   "year": "1846",
+   "trail": "PLACEHOLDER · stirring",
+   "story": "PLACEHOLDER · Will's story line, stop 5",
+   "clue": {
+    "text": "PLACEHOLDER · Will's clue 5 (sends the pair to atlas → 10.2-C-03)",
+    "tool": "atlas",
+    "link": "10.2-C-03",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the map can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · right",
+      "PLACEHOLDER · wrong",
+      "PLACEHOLDER · wrong"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Will's Regents-style stem on Casefile C Doc 5 (TH)",
+    "type": "choose",
+    "options": [
+     "PLACEHOLDER · right",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Will's why",
+    "doc": {
+     "casefile": "C",
+     "n": 5
+    }
+   },
+   "evidence": "PLACEHOLDER · 1846 · evidence line 5 · Casefile C Document 5"
+  },
+  {
+   "id": "stand-in-6",
+   "place": "PLACEHOLDER · Berlin",
+   "year": "1862",
+   "trail": "PLACEHOLDER · warm",
+   "story": "PLACEHOLDER · Will's story line, stop 6",
+   "clue": {
+    "text": "PLACEHOLDER · Will's clue 6 (sends the pair to atlas → 10.2-C-04)",
+    "tool": "atlas",
+    "link": "10.2-C-04",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the map can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · right",
+      "PLACEHOLDER · wrong",
+      "PLACEHOLDER · wrong"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Will's Regents-style stem on Casefile C Doc 6 (EX)",
+    "type": "choose",
+    "options": [
+     "PLACEHOLDER · right",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Will's why",
+    "doc": {
+     "casefile": "C",
+     "n": 6
+    }
+   },
+   "evidence": "PLACEHOLDER · 1862 · evidence line 6 · Casefile C Document 6"
+  },
+  {
+   "id": "stand-in-7",
+   "place": "PLACEHOLDER · the Balkans",
+   "year": "1912",
+   "trail": "PLACEHOLDER · hot",
+   "story": "PLACEHOLDER · Will's story line, stop 7",
+   "clue": {
+    "text": "PLACEHOLDER · Will's clue 7 (sends the pair to atlas → 10.2-C-01)",
+    "tool": "atlas",
+    "link": "10.2-C-01",
+    "ask": {
+     "prompt": "PLACEHOLDER · a question only the map can answer",
+     "type": "choose",
+     "options": [
+      "PLACEHOLDER · right",
+      "PLACEHOLDER · wrong",
+      "PLACEHOLDER · wrong"
+     ],
+     "answer": 0,
+     "hints": [
+      "PLACEHOLDER · hint 1",
+      "PLACEHOLDER · hint 2"
+     ]
+    }
+   },
+   "question": {
+    "stem": "PLACEHOLDER · Will's Regents-style stem on Casefile C Doc 8 (EI)",
+    "type": "choose",
+    "options": [
+     "PLACEHOLDER · right",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong",
+     "PLACEHOLDER · wrong"
+    ],
+    "answer": 0,
+    "hints": [
+     "PLACEHOLDER · hint 1",
+     "PLACEHOLDER · hint 2"
+    ],
+    "why": "PLACEHOLDER · Will's why",
+    "doc": {
+     "casefile": "C",
+     "n": 8
+    }
+   },
+   "evidence": "PLACEHOLDER · 1912 · evidence line 7 · Casefile C Document 8",
+   "nearMiss": "PLACEHOLDER · just missed"
+  }
+ ],
+ "warrant": [
+  "PLACEHOLDER · The suspect strikes next in ___ (a city).",
+  "PLACEHOLDER · The issue: ___ (exact words from the card).",
+  "PLACEHOLDER · Document ___ shows it when ___.",
+  "PLACEHOLDER · Document ___ shows it when ___."
+ ],
+ "final": {
+  "task": "PLACEHOLDER · Bring the warrant to your teacher for the key.",
+  "key_words": [
+   "proof"
+  ]
+ },
+ "coda": null,
+ "reflection": [
+  "PLACEHOLDER · reflection 1",
+  "PLACEHOLDER · reflection 2",
+  "PLACEHOLDER · reflection 3"
+ ]
+}
