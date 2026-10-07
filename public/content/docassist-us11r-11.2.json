@@ -1,1391 +1,1391 @@
 {
- "_built": "Sam (us11r-curriculum) 2026-10-02 · proofread sweep 1 fixes (checklist 19a) and BK's 13:22 rulings applied to the 10/1 re-paged pack; text and pages re-checked against the 10/2 casefile PDFs · HOW TO ANNOTATE added, 11.2 A+B (wording BK 2026-10-02 13:57 'yes'; method words = Global's, signed 11:32)",
- "_signed": "A: as live (v4). B: BK 2026-10-01 13:22 EDT \"approved.\" off US11R_11.2B_DocAssist_WORDING_2026-10-01.pdf",
- "_source": "A: OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileA_STUDENT_2026-10-02.pdf · B: OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileB_STUDENT_2026-10-02.pdf",
- "_ruled": "CARRY-FORWARD §6 DOC ASSIST, RULED (BK 2026-10-01 08:16)",
- "tool": "Doc Assist",
- "room": "11.2",
- "tile": "Every document in your casefile, with a walk-through beside it. It won't answer for you. It shows you how.",
- "walk_name": "THE DOC WALK",
- "walk": [
-  {
-   "tag": "Q1 · SOURCING",
-   "step": "Source line first.",
-   "say": "Before you read a word of the document, read the line above it. Who made it, when, and why?"
-  },
-  {
-   "tag": "READ IT THROUGH",
-   "step": "Read it once, all the way.",
-   "say": "Start to finish, no stopping. Hit a hard word? Keep going. Then say what it's about in a few words.",
-   "say_image": "Look in three passes: the title and labels, then the biggest thing, then the small details."
-  },
-  {
-   "tag": "Q2 · CLAIM & EVIDENCE",
-   "step": "What is it saying?",
-   "say": "Find the words that say it. Your proof is always in the document."
-  },
-  {
-   "tag": "Q3 · PERSPECTIVE CHECK",
-   "step": "Whose view is this?",
-   "say": "Who would tell it differently? Who isn't in it?"
-  },
-  {
-   "tag": "Q4 · CIVIC CONNECTION",
-   "step": "Name the principle.",
-   "say": "Find it on your Civic Principles card. Does the document uphold it, deny it, or fight over it?"
-  }
- ],
- "labels": {
-  "walk": "Walk me through it",
-  "read": "Read it to me",
-  "easier": "Easier to read",
-  "original": "Original",
-  "close": "Close the walk",
-  "next": "Next step",
-  "back": "Back",
-  "stop": "Stop reading",
-  "q4_card": "The Civic Principles",
-  "annotate": "How to annotate"
- },
- "casefiles": [
-  {
-   "id": "A",
-   "title": "11.2 Casefile A · The Break",
-   "status": "open",
-   "docs": [
+  "_built": "Sam (us11r-curriculum) 2026-10-07 11:12 · v7 = v6 with two lines on Document 16 (Casefile B), for Josh's 10:55 gate finding: annotate.notes[1] circles “An Old Whig” (a pen name; Publius); steps[0].line names the pen name and the 1787 date (BK 2026-10-07 11:03 'yes all three'; three cold readers, two fixes applied: John Jay added, 'He' to 'The writer'). Sam (us11r-curriculum) 2026-10-06 22:50 · v6 = v5 with one change: Document 16's source line corrected (BK 22:41 'yes fix in all three places'); the old date was a reprint error. Sam (us11r-curriculum) 2026-10-02 · proofread sweep 1 fixes (checklist 19a) and BK's 13:22 rulings applied to the 10/1 re-paged pack; text and pages re-checked against the 10/2 casefile PDFs · HOW TO ANNOTATE added, 11.2 A+B (wording BK 2026-10-02 13:57 'yes'; method words = Global's, signed 11:32)",
+  "_signed": "A: as live (v4). B: BK 2026-10-01 13:22 EDT \"approved.\" off US11R_11.2B_DocAssist_WORDING_2026-10-01.pdf",
+  "_source": "A: OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileA_STUDENT_2026-10-02.pdf · B: OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileB_STUDENT_2026-10-02.pdf",
+  "_ruled": "CARRY-FORWARD §6 DOC ASSIST, RULED (BK 2026-10-01 08:16)",
+  "tool": "Doc Assist",
+  "room": "11.2",
+  "tile": "Every document in your casefile, with a walk-through beside it. It won't answer for you. It shows you how.",
+  "walk_name": "THE DOC WALK",
+  "walk": [
     {
-     "n": 1,
-     "title": "North America, 1775 (map)",
-     "kind": "image",
-     "src": "Source: Exploring American History, Globe Book Company (adapted)",
-     "page": 4,
-     "steps": [
-      {
-       "question": "Who made this map, and when? Is it from the time it shows?",
-       "mode": null,
-       "line": "Two places to look: the source line under the map and the title on top. Check the year in the title against 1763.",
-       "tip": {
-        "title": "NO NAME ON IT?",
-        "text": [
-         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
-         "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
-        ]
-       }
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Find the key in the lower left first. It tells you what the dotted line means. Then follow that line with your finger, top to bottom."
-      },
-      {
-       "question": "What does the map show about where colonists could settle after 1763?",
-       "mode": null,
-       "line": "Find the shaded colonies, then the dotted line. Which side of the line is off limits? Your KEY VOCABULARY names the mountains it runs along."
-      },
-      {
-       "question": "How would a colonist and a Native nation each see this line?",
-       "mode": null,
-       "line": "Think like a colonist in 1763 who wanted land. Then think like a Native nation living west of the line. Same line, two views."
-      },
-      {
-       "question": "Should a government be able to tell people where they can live?",
-       "mode": null,
-       "line": "This is about how far a government's power should reach. Start with the first group on your card: How power is built and limited."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
-     "image_file": "STIMULUS_BANK/Unit_02/unit02-nv-a3-proclamation-map-1775.png",
-     "image_alt": "A black-and-white map titled North America, 1775. The thirteen colonies are shaded gray along the Atlantic coast, with dashed lines between them. A heavy dotted line runs north to south along the western edge of the shaded colonies. Short mountain marks run along that line from northeast to southwest, some inside the shaded area and some just west of it. Everything west of the dotted line is not shaded. More mountain marks cover a wide area in the western part of the map. The key in the lower left shows two lines: the dotted line is the Proclamation Line of 1763, and the dashed lines are colonial borders. A compass rose sits in the lower right. The source line is printed under the map.",
-     "describe": "A black-and-white map titled North America, 1775. The thirteen colonies are shaded gray along the Atlantic coast, with dashed lines between them. A heavy dotted line runs north to south along the western edge of the shaded colonies. Short mountain marks run along that line from northeast to southwest, some inside the shaded area and some just west of it. Everything west of the dotted line is not shaded. More mountain marks cover a wide area in the western part of the map. The key in the lower left shows two lines: the dotted line is the Proclamation Line of 1763, and the dashed lines are colonial borders. A compass rose sits in the lower right. The source line is printed under the map.",
-     "licence": {
-      "text": "Map as reproduced in New Visions for Public Schools, US.02.A.3, CC BY-NC-SA 4.0.",
-      "sellable": false
-     },
-     "annotate": {
-      "kind": "map",
-      "notes": [
-       {
-        "where": "the key, lower left",
-        "mark": "box",
-        "note": "Two kinds of line. The key tells them apart, so I read it before anything else."
-       },
-       {
-        "where": "the compass rose, lower right",
-        "mark": "circle",
-        "note": "North is up. Use it whenever you name a direction on this map."
-       },
-       {
-        "where": "(adapted)",
-        "mark": "box",
-        "note": "Adapted: changed from the original. Someone redrew or simplified this map."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "In 1768 the Treaty of Fort Stanwix moved the line farther west in parts of New York, Pennsylvania and Virginia. Connects: the line did not stay where it was drawn for long."
-      }
-     }
+      "tag": "Q1 · SOURCING",
+      "step": "Source line first.",
+      "say": "Before you read a word of the document, read the line above it. Who made it, when, and why?"
     },
     {
-     "n": 2,
-     "title": "The British side · Thomas Whately, who wrote the Stamp Act",
-     "kind": "text",
-     "src": "Source: Thomas Whately, The Regulations Lately Made Concerning the Colonies, and the Taxes Imposed Upon Them, Considered, January 1765 (adapted)",
-     "page": 6,
-     "steps": [
-      {
-       "question": "Who wrote this, what was his job, and how might that shape what he says?",
-       "mode": null,
-       "line": "He wrote the tax, and now he's explaining the tax. Ask yourself: would he ever call it a bad idea?"
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Four sentences. Hard words: a national debt is money a country owes. Keep going, then say what it's about."
-      },
-      {
-       "question": "What reason does Whately give for making the colonies pay?",
-       "mode": null,
-       "line": "His reason is in the first sentence and the last two. Look for what the money pays for, and who is paying right now."
-      },
-      {
-       "question": "Who would argue back, and what would they say?",
-       "mode": null,
-       "line": "Who actually has to pay for the stamps? Picture a colonial printer or a lawyer reading this."
-      },
-      {
-       "question": "Is it fair to tax people who had no say in the tax?",
-       "mode": null,
-       "line": "Ask where a government gets the right to tax people at all. Look in the group called Where government's power comes from."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 6. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "The money raised by these taxes goes to pay the costs of defending and protecting the British colonies in America. The colonies have their own governments to pay for, but so does Great Britain. And Britain carries a huge national debt, most of it from a war fought to protect the colonies. Right now, Britain alone is paying it."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "The money from these taxes pays to defend and protect Britain's colonies in America. The colonies pay for their own governments. But Great Britain pays for its government too. Britain also has a huge national debt (money a country owes). Most of that debt came from a war fought to protect the colonies. Right now, Britain is paying it all by itself."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "January 1765",
-        "mark": "circle",
-        "note": "Written about two months before the Stamp Act became law in March 1765."
-       },
-       {
-        "where": "Lately, in the source line",
-        "mark": "box",
-        "note": "Lately: recently. The title says these rules are new."
-       },
-       {
-        "where": "but so does Great Britain",
-        "mark": "margin",
-        "note": "“But” turns the sentence. He admits one side, then answers it."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Britain's national debt nearly doubled during the French and Indian War, to about £130 million by 1763. Connects: why Parliament looked to the colonies for money."
-      }
-     }
+      "tag": "READ IT THROUGH",
+      "step": "Read it once, all the way.",
+      "say": "Start to finish, no stopping. Hit a hard word? Keep going. Then say what it's about in a few words.",
+      "say_image": "Look in three passes: the title and labels, then the biggest thing, then the small details."
     },
     {
-     "n": 3,
-     "title": "The colonists' side · the Stamp Act Congress",
-     "kind": "text",
-     "src": "Source: Declaration of Rights and Grievances, Stamp Act Congress, October 19, 1765 (adapted)",
-     "page": 7,
-     "steps": [
-      {
-       "question": "Who wrote this, and who were they trying to convince?",
-       "mode": null,
-       "line": "The source line names the group. WHAT YOU NEED TO KNOW on Day 1 says who they were. Then ask who could get rid of the tax."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Four sentences. Watch for the word consent: it means agreement. Mark it when you see it."
-      },
-      {
-       "question": "What is the colonists' main complaint, and why does it matter?",
-       "mode": null,
-       "line": "Find the sentence with the word consent. Say it the way you'd explain it to a friend. Then finish: because ___, which means ___."
-      },
-      {
-       "question": "Whose voice is in this document, and whose is missing?",
-       "mode": null,
-       "line": "The writers owned property. Now think of everyone in the colonies in 1765 who couldn't vote or didn't own property."
-      },
-      {
-       "question": "What principle about consent is this document fighting for?",
-       "mode": null,
-       "line": "Consent is the clue word. Read the group Where government's power comes from and find the one that matches."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "The colonists owe the same loyalty to the King as people born in Great Britain, and they have all the same rights. It is the right of free people that no taxes be put on them without their own consent, given in person or through their representatives. The people of these colonies are not, and cannot be, represented in Parliament. The only representatives of the colonists are the people they choose themselves."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "Colonists owe the same loyalty to the King as people born in Great Britain. They have all the same rights. Free people have a right: no taxes can be put on them without their own consent (agreement). They give that consent in person, or through representatives they choose. The people of these colonies are not represented in Parliament, and they cannot be. The only representatives of the colonists are the people they choose themselves."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "October 19, 1765",
-        "mark": "circle",
-        "note": "About two weeks before the Stamp Act was set to start, on November 1, 1765."
-       },
-       {
-        "where": "Rights and Grievances",
-        "mark": "box",
-        "note": "Grievances: complaints. The title tells me this is a list of complaints."
-       },
-       {
-        "where": "owe the same loyalty to the King",
-        "mark": "underline",
-        "note": "They open by saying they're loyal. They are not asking to leave Britain, at least not yet."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Colonists boycotted British goods, and Parliament repealed the Stamp Act in March 1766. Connects: the protest worked, at least for a while."
-      }
-     }
+      "tag": "Q2 · CLAIM & EVIDENCE",
+      "step": "What is it saying?",
+      "say": "Find the words that say it. Your proof is always in the document."
     },
     {
-     "n": 4,
-     "title": "Paul Revere's engraving · Boston, 1770",
-     "kind": "image",
-     "src": "Source: Paul Revere, engraver, 1770 (adapted)",
-     "page": 10,
-     "steps": [
-      {
-       "question": "Who made this picture, and why did he make it?",
-       "mode": null,
-       "line": "Revere was a Boston silversmith and a Patriot, and he had this print for sale within weeks. What would make people want to buy it?"
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Read the title across the top word for word first. Then look at the two groups facing each other. Then the small details: the ground, the signs on the buildings, the sky."
-      },
-      {
-       "question": "What story about that night does the picture tell? Point to two details.",
-       "mode": null,
-       "line": "Read the title again, especially the second word. Then look at the soldiers: are they a mob or a straight line? And look at the man behind them."
-      },
-      {
-       "question": "What might be left out? How would a British soldier tell it?",
-       "mode": null,
-       "line": "Picture the crowd from the soldiers' side of the street. What would a soldier put in the picture that Revere left out?"
-      },
-      {
-       "question": "Should people be free to publish a one-sided picture of events?",
-       "mode": null,
-       "line": "This is about a freedom a person keeps even when the government doesn't like what they say. Look in the group called What government must protect."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 11. Use the sentence stem, or write something of equal or better value.",
-     "image_file": "STIMULUS_BANK/Unit_02/unit02-revere-1770-doc1.png",
-     "image_alt": "An engraving with a printed title across the top: “The Bloody Massacre Perpetrated in King Street, Boston, on March 5th, 1770, by a Party of the 29th Regiment.” On the right, a line of British soldiers stands shoulder to shoulder and fires muskets at close range into a crowd of colonists on the left. Smoke fills the middle of the street. An officer stands behind the soldiers at the far right with his sword raised. In front, colonists lie on the ground while others hold up the wounded. A small dog stands in the street in front of the crowd. Behind them are the buildings of King Street and a tall steeple. A building on the right has a sign that reads “Butcher's Hall.” A moon shows in the sky at the upper left.",
-     "describe": "An engraving with a printed title across the top: “The Bloody Massacre Perpetrated in King Street, Boston, on March 5th, 1770, by a Party of the 29th Regiment.” On the right, a line of British soldiers stands shoulder to shoulder and fires muskets at close range into a crowd of colonists on the left. Smoke fills the middle of the street. An officer stands behind the soldiers at the far right with his sword raised. In front, colonists lie on the ground while others hold up the wounded. A small dog stands in the street in front of the crowd. Behind them are the buildings of King Street and a tall steeple. A building on the right has a sign that reads “Butcher's Hall.” A moon shows in the sky at the upper left.",
-     "licence": {
-      "text": "Engraving by Paul Revere, 1770 (public domain), as printed on the NYSED Regents exam in US History and Government, August 2025.",
-      "sellable": false
-     },
-     "annotate": {
-      "kind": "picture",
-      "notes": [
-       {
-        "where": "“29th Regiment” in the title",
-        "mark": "box",
-        "note": "Regiment: a large unit of soldiers. The title names which unit was there."
-       },
-       {
-        "where": "the moon, upper left",
-        "mark": "circle",
-        "note": "The moon tells me this happened at night."
-       },
-       {
-        "where": "the buildings behind the crowd",
-        "mark": "margin",
-        "note": "A real street, named in the title: King Street, Boston."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Revere copied his design from an engraving by Henry Pelham, who complained that Revere had used his work without credit. Connects: even this picture had a source of its own."
-      }
-     }
+      "tag": "Q3 · PERSPECTIVE CHECK",
+      "step": "Whose view is this?",
+      "say": "Who would tell it differently? Who isn't in it?"
     },
     {
-     "n": 5,
-     "title": "The officer's story · Captain Thomas Preston's own account, March 1770",
-     "kind": "text",
-     "src": "Source: Transcript of British Captain Thomas Preston's testimony, from “The Boston Massacre, The British View, 1770,” EyeWitness to History, 2009 (adapted)",
-     "page": 12,
-     "steps": [
-      {
-       "question": "Who is speaking, when, and what does he need people to believe?",
-       "mode": null,
-       "line": "Preston wrote this in jail, while he waited to be tried for murder. Before you read, ask: what happens to Preston if people don't believe him?"
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Five sentences. Keep track of time: what happened before the shooting, and what he says after it."
-      },
-      {
-       "question": "What does Preston say happened, step by step?",
-       "mode": null,
-       "line": "Mark each thing he says the crowd did before anyone fired. Then find what he says about the order to fire."
-      },
-      {
-       "question": "Is Preston's account reliable? How would someone in the crowd tell it?",
-       "mode": null,
-       "line": "Neither side is neutral. Go back to Step 1: who is talking, and what did he want? Then picture a man in the crowd."
-      },
-      {
-       "question": "Why does a fair trial matter, even for someone the public hates?",
-       "mode": null,
-       "line": "Look in the group called What government must protect. Read each “Look for it when” cue and find the one that fits a trial."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "I saw about 100 people surround the soldier on guard, with clubs and other weapons, threatening to kill him. When I asked my soldiers why they fired without orders, they said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "I saw about 100 people surround the soldier on guard. They had clubs and other weapons, and they said they would kill him. Later I asked my soldiers why they fired without orders. They said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "EyeWitness to History, 2009",
-        "mark": "circle",
-        "note": "2009 is when this website printed it, not when Preston wrote it."
-       },
-       {
-        "where": "(adapted)",
-        "mark": "box",
-        "note": "Adapted: changed from the original. The words may be shortened or made simpler."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "The soldier on guard was Private Hugh White of the 29th Regiment. Connects: “the soldier on guard” in this account has a name."
-      }
-     }
-    },
-    {
-     "n": 6,
-     "title": "Partner A · The Patriot",
-     "kind": "text",
-     "src": "Source: Thomas Paine, Common Sense, 1776 (adapted)",
-     "page": 16,
-     "steps": [
-      {
-       "question": "Who wrote this, when, and who was he trying to reach?",
-       "mode": null,
-       "line": "Paine sold Common Sense as a cheap pamphlet. Who buys a cheap pamphlet in 1776?"
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Two paragraphs. The first fires question after question at you. The second makes the argument. Read it like a speech."
-      },
-      {
-       "question": "What is Paine's main argument, and what reasons does he use?",
-       "mode": null,
-       "line": "Paine argues two ways: the first paragraph goes after your feelings, and the second goes after your common sense."
-      },
-      {
-       "question": "Who in the colonies would push back on Paine?",
-       "mode": null,
-       "line": "Think about who still had a lot to lose from a war with Britain. Then read Document 7."
-      },
-      {
-       "question": "Who does Paine think should govern America?",
-       "mode": null,
-       "line": "Paine's last three sentences are about who should govern America. Look in the group called Where government's power comes from."
-      }
-     ],
-     "close": "That's the walk. Now argue it with your partner. The four questions are on page 16, out loud, no writing.",
-     "text": [
-      "Some people say, “Come, come, we shall be friends again.” But can you still love and faithfully serve the power that has carried fire and sword into your land? Has your house been burned? Has your property been destroyed in front of you? If so, and you can still shake hands with the murderers, you have the heart of a coward.",
-      "There is something very absurd in a continent being governed forever by an island. England belongs to Europe. America belongs to itself."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "Some people say, “Come, come, we shall be friends again.” But think about it. Can you still love and serve the power that brought fire and sword into your land? Has your house been burned? Have you watched your property get destroyed? If so, and you can still shake hands with the murderers, you have the heart of a coward.",
-       "There is something very absurd (silly, making no sense) in a continent being governed forever by an island. England belongs to Europe. America belongs to itself."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "“Come, come, we shall be friends again.”",
-        "mark": "margin",
-        "note": "He quotes the other side first, then knocks it down."
-       },
-       {
-        "where": "absurd",
-        "mark": "box",
-        "note": "Absurd: makes no sense."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Paine had come to America from England only in late 1774, about a year before he wrote Common Sense. Connects: the man calling for a break with Britain had only just left it himself."
-      }
-     }
-    },
-    {
-     "n": 7,
-     "title": "Partner B · The Loyalist",
-     "kind": "text",
-     "src": "Source: Rev. Charles Inglis, The Deceiver Unmasked, 1776 (adapted)",
-     "page": 16,
-     "steps": [
-      {
-       "question": "Who wrote this, when, and who was he answering?",
-       "mode": null,
-       "line": "Inglis was a New York City minister, loyal to the King, answering Paine within weeks. Whose minds was he trying to win back?"
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Four short paragraphs. His first line is a jab at Paine's title. Catch it, then keep going."
-      },
-      {
-       "question": "What is Inglis's argument against independence?",
-       "mode": null,
-       "line": "Inglis gives two lists: what peace keeps and what war would cost. Find one thing on each list."
-      },
-      {
-       "question": "Whose interests does Inglis speak for?",
-       "mode": null,
-       "line": "Look at what Inglis says war would ruin. Who in the colonies made their living from those things?"
-      },
-      {
-       "question": "What kind of government does Inglis want, and how is it different from Paine's?",
-       "mode": null,
-       "line": "His last sentence names a kind of government. Put it next to what Paine wants. Then look in the group called Where government's power comes from."
-      }
-     ],
-     "close": "That's the walk. Now argue it with your partner. The four questions are on page 16, out loud, no writing.",
-     "text": [
-      "I find no common sense in this pamphlet, only uncommon frenzy.",
-      "If we make peace with Britain, the war that has cost so many lives will end. Our trade will still be protected by the greatest navy in the world.",
-      "Suppose we break away from Great Britain and set up a republic of our own. What would happen? My blood runs cold when I think of it. The sword alone would decide the quarrel. Our coasts and ports would be ruined, and thousands would be left poor.",
-      "America is too large for a republic. A limited monarchy is the form of government most favorable to liberty."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "I find no common sense in this pamphlet, only uncommon frenzy (wild, out-of-control excitement).",
-       "If we make peace with Britain, the war will end. It has already cost many lives. The greatest navy in the world will still protect our trade.",
-       "What if we break away from Great Britain and set up a republic (a government with no king) of our own? What would happen? It scares me to think of it. Only fighting would settle it. Our coasts and ports would be ruined. Thousands of people would be left poor.",
-       "America is too large for a republic. A limited monarchy (a king whose power is limited by law) is the form of government most favorable to liberty."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "Rev., in the source line",
-        "mark": "box",
-        "note": "Rev.: short for Reverend, a title for a minister."
-       },
-       {
-        "where": "What would happen?",
-        "mark": "margin",
-        "note": "He asks a question, then answers it himself. Watch for that move."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "After the war Inglis left for England. In 1787 he became the first Anglican bishop of Nova Scotia. Connects: many Loyalists lost their homes and left."
-      }
-     }
-    },
-    {
-     "n": 8,
-     "title": "The Declaration of Independence · July 1776",
-     "kind": "text",
-     "src": "Source: Declaration of Independence, July 4, 1776 (adapted)",
-     "page": 19,
-     "steps": [
-      {
-       "question": "Who wrote this, when, and who was meant to hear it?",
-       "mode": null,
-       "line": "Think about who needed to hear that the colonies were now their own country. Pick an audience, and give your because."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Three long sentences. Break each one at the commas. The middle one ends with a phrase you'll see on the Regents. Mark it."
-      },
-      {
-       "question": "What does the Declaration say governments are for, and where does their power come from?",
-       "mode": null,
-       "line": "Read the middle sentence. Find the words “to protect” and the words “get their power.”"
-      },
-      {
-       "question": "Who signed this, and who was left out of “all men”?",
-       "mode": null,
-       "line": "Picture the room: who were the delegates? Then reread Day 4's OUTSIDE EVIDENCE box, on page 18."
-      },
-      {
-       "question": "What can people do when a government destroys their rights?",
-       "mode": null,
-       "line": "Find the sentence that starts “Whenever.” Then look in the group called Where government's power comes from, and read each “Look for it when” cue."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 19. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "We hold these truths to be self-evident, that all men are created equal, that they are given by their Creator certain rights that cannot be taken away, and that among these are Life, Liberty and the pursuit of Happiness. To protect these rights, governments are created, and they get their power from the consent of the governed. Whenever any government destroys these rights, it is the right of the people to change it or get rid of it, and to create a new government."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "We believe these truths are plain to see: that all men are created equal. Their Creator gave them certain rights that cannot be taken away. Among these rights are Life, Liberty and the pursuit of Happiness. Governments are created to protect these rights. They get their power from the consent of the governed (the agreement of the people). Whenever any government destroys these rights, the people have the right to change it or get rid of it. Then they can create a new government."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "self-evident",
-        "mark": "box",
-        "note": "Self-evident: so clearly true it needs no proof."
-       },
-       {
-        "where": "(adapted)",
-        "mark": "box",
-        "note": "Adapted: changed from the original. Some words here are simpler than the original."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "On July 9, 1776, after the Declaration was read aloud in New York, a crowd pulled down a statue of King George III. Much of its lead was melted into musket balls for the army. Connects: the King's statue became ammunition for the war against him."
-      }
-     }
-    },
-    {
-     "n": 9,
-     "title": "The Virginia Declaration of Rights · one month earlier, June 1776",
-     "kind": "text",
-     "src": "Source: Virginia Declaration of Rights, June 12, 1776 (adapted)",
-     "page": 20,
-     "steps": [
-      {
-       "question": "Who wrote this, when, and how is it connected to the Declaration?",
-       "mode": null,
-       "line": "Check the two dates: June 12 and July 4. Then ask what a writer does with a strong line he's already read."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Two sentences. Trustee is in your KEY VOCABULARY. Read it slowly; every word counts."
-      },
-      {
-       "question": "What does it say about who holds power?",
-       "mode": null,
-       "line": "The first sentence answers it. Find the two things it says about power and the people."
-      },
-      {
-       "question": "When Virginia said “the people,” who did it mean, and who did it leave out?",
-       "mode": null,
-       "line": "Ask who could vote or hold office in Virginia in 1776. Thread 1 on your casefile cover is a good place to start."
-      },
-      {
-       "question": "What idea does this share with the Declaration?",
-       "mode": null,
-       "line": "Put the two side by side. Find one phrase in each about where power comes from. Then find that idea on your card."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 20. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "All power belongs to the people and comes from the people. Government officials are the people's trustees and servants, and they must always answer to the people."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "All power belongs to the people and comes from the people. Government officials are the people's trustees (people trusted to manage something for others) and servants. They must always answer to the people."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "trustees",
-        "mark": "box",
-        "note": "Trustees: people trusted to take care of something for someone else."
-       },
-       {
-        "where": "Virginia Declaration of Rights",
-        "mark": "circle",
-        "note": "Rights came first. Virginia approved this list before it approved its new state constitution, later that June."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "George Mason, who wrote most of it, refused to sign the U.S. Constitution in 1787, partly because it had no bill of rights. Connects: you'll meet that fight in Casefile B."
-      }
-     }
-    },
-    {
-     "n": 10,
-     "title": "“Remember the Ladies” · Abigail Adams to John Adams, March 1776",
-     "kind": "text",
-     "src": "Source: Abigail Adams, letter to John Adams, March 31, 1776 (adapted)",
-     "page": 21,
-     "steps": [
-      {
-       "question": "Who wrote this, to whom, and why might a private letter say more?",
-       "mode": null,
-       "line": "She wrote this to her husband, not for the newspapers. Read it asking: would she say this in public in 1776?"
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Two paragraphs. The first is one sentence, and it's a puzzle: read it twice. Who is taking away whose liberty?"
-      },
-      {
-       "question": "What is Abigail Adams asking for, and what warning does she give?",
-       "mode": null,
-       "line": "Find where she turns from independence to the new laws, then read to the end. What does she say will happen if they're ignored?"
-      },
-      {
-       "question": "Whose liberty is missing from the new country's plans, according to her?",
-       "mode": null,
-       "line": "One group hides in her first sentence. The other runs all through her second paragraph."
-      },
-      {
-       "question": "She uses the colonists' own argument. Which principle is she turning back on them?",
-       "mode": null,
-       "line": "Go back to Document 3. What did the colonists say about taxes and representatives? Find it on your card."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 21. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "I have sometimes thought that the love of liberty cannot be as strong in those who are used to taking away the liberty of others.",
-      "I long to hear that you have declared independence. In the new laws you will make, remember the ladies, and be more generous to them than your ancestors were. Do not put such unlimited power into the hands of husbands. Remember, all men would be tyrants if they could. If attention is not paid to the ladies, we will start a rebellion, and we will not obey any laws in which we have no voice or representation."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "Sometimes I think the love of liberty can't be as strong in those who are used to taking away the liberty of others.",
-       "I can't wait to hear that you have declared independence. In the new laws you will make, remember the ladies. Be more generous to them than your ancestors were. Do not put such unlimited power into the hands of husbands. Remember, all men would be tyrants (cruel, unfair rulers) if they could. If no one pays attention to the ladies, we will start a rebellion. We will not obey any laws in which we have no voice or representation."
-      ]
-     },
-     "before": {
-      "title": "BEFORE WE TALK",
-      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "March 31, 1776",
-        "mark": "circle",
-        "note": "Three months before independence. She is writing about laws that haven't been written yet."
-       },
-       {
-        "where": "tyrants",
-        "mark": "box",
-        "note": "Tyrant: a ruler who uses power cruelly or unfairly."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "John Adams wrote back that he could only laugh at her request. Connects: her warning was heard and brushed off."
-      }
-     }
+      "tag": "Q4 · CIVIC CONNECTION",
+      "step": "Name the principle.",
+      "say": "Find it on your Civic Principles card. Does the document uphold it, deny it, or fight over it?"
     }
-   ]
-  },
-  {
-   "id": "B",
-   "title": "11.2 Casefile B · The Build",
-   "status": "open",
-   "docs": [
-    {
-     "n": 11,
-     "title": "The Articles of Confederation · the first plan of government",
-     "kind": "text",
-     "src": "Source: Articles of Confederation, 1781 (adapted)",
-     "page": 4,
-     "steps": [
-      {
-       "question": "Who wrote these rules, and what were they fighting?",
-       "mode": null,
-       "line": "The source line says 1781. Think about what the colonists were still fighting against, and what kind of power they feared."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Four articles, each its own rule. Read one, say it in your own words, then go to the next. Sovereignty means supreme power."
-      },
-      {
-       "question": "What couldn't the national government do under these rules?",
-       "mode": null,
-       "line": "Look at Article VIII: who collects the taxes? Then look at Article XIII: who has to agree to any change?"
-      },
-      {
-       "question": "Who would like these rules, and who would find them frustrating?",
-       "mode": null,
-       "line": "Think of a small state, a big state, and a soldier waiting to be paid. Article V and Article VIII are good places to look."
-      },
-      {
-       "question": "Who held more power under the Articles, the states or the national government?",
-       "mode": null,
-       "line": "Start with the first line of Article II. Then look in the group called How power is built and limited."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 11's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "Article II. Each state keeps its sovereignty, its freedom, and its independence, along with every power that this confederation does not expressly give to the United States.",
-      "Article V. Delegates shall meet in one Congress. In deciding questions, each state shall have one vote.",
-      "Article VIII. The costs of war and all other common expenses shall be paid out of a common treasury, supplied by the states in proportion to the value of the land in each state. The taxes for that share shall be laid and collected by the legislatures of the several states.",
-      "Article XIII. No change shall ever be made to these articles unless it is agreed to in Congress and afterward confirmed by the legislature of every state."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "Article II. Each state keeps its sovereignty (supreme power), its freedom, and its independence. It also keeps every power that this confederation does not clearly give to the United States.",
-       "Article V. Delegates will meet in one Congress. When they vote, each state gets one vote.",
-       "Article VIII. The costs of war and other shared costs will be paid from a shared treasury. Each state pays in based on the value of its land. Each state's own legislature (its lawmakers) will set and collect the taxes for that share.",
-       "Article XIII. These articles can never be changed unless Congress agrees and then the legislature of every state approves."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "expressly",
-        "mark": "box",
-        "note": "Expressly: clearly, in so many words."
-       },
-       {
-        "where": "1781",
-        "mark": "circle",
-        "note": "1781 is when the last state approved it."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Maryland would not approve the Articles until Virginia and other states agreed to give their western land claims to the whole country. It approved in 1781, the last state to do so. Connects: one state could hold up the whole plan."
-      }
-     }
-    },
-    {
-     "n": 12,
-     "title": "Washington, 1786 · a private letter to James Madison",
-     "kind": "text",
-     "src": "Source: George Washington to James Madison, November 5, 1786 (adapted)",
-     "page": 8,
-     "steps": [
-      {
-       "question": "Who wrote this, to whom, and why might a private letter say more?",
-       "mode": null,
-       "line": "Washington is writing to James Madison, not to the public. Check the date: November 1786. Something had just happened in Massachusetts."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Three paragraphs: how bright things were, the bad news from Massachusetts, and his warning. Anarchy means no working government at all."
-      },
-      {
-       "question": "What is Washington afraid will happen, and why?",
-       "mode": null,
-       "line": "Look at the end of his first paragraph: where does he say the country is heading? Then read his last sentence about thirteen sovereignties."
-      },
-      {
-       "question": "Whose side of the story is missing from Washington's letter?",
-       "mode": null,
-       "line": "He calls them disorders. Ask who was behind them, and what they were losing."
-      },
-      {
-       "question": "If no power can stop disorder, what happens to people's rights?",
-       "mode": null,
-       "line": "Find “life, liberty, or property.” Then look in the group called Where government's power comes from."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 12's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "No morning ever dawned brighter than ours did — and no day was ever more clouded than the present. Without some change in our political thinking, the structure we have spent seven years raising, at the cost of much blood and treasure, must fall. We are fast heading toward anarchy and confusion.",
-      "A letter I have just received from General Knox, who has just returned from Massachusetts, is full of sad information about the temper and designs of a considerable part of that people.",
-      "What stronger evidence can be given of the weakness of our governments than these disorders? If no power exists to check them, what security has a man of life, liberty, or property? Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "No morning ever started brighter than ours did, and no day has ever been cloudier than today. Unless our political thinking changes, the structure we spent seven years building, at the cost of much blood and money, will fall. We are fast heading toward anarchy (no working government) and confusion.",
-       "I just got a letter from General Knox, who is back from Massachusetts. It is full of sad news about the mood and the plans of many of the people there.",
-       "What stronger proof could there be of how weak our governments are than these disorders? If no power exists to stop them, how safe is anyone's life, liberty, or property? Thirteen sovereignties (thirteen states, each with supreme power) pulling against each other, and all tugging at the federal head, will soon ruin the whole country."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "No morning ever dawned brighter",
-        "mark": "margin",
-        "note": "He opens with a picture: a bright morning, then a clouded day. The contrast sets up his warning."
-       },
-       {
-        "where": "blood and treasure",
-        "mark": "box",
-        "note": "Treasure here means money. The war cost lives and money."
-       },
-       {
-        "where": "General Knox",
-        "mark": "circle",
-        "note": "Henry Knox, his old artillery commander, now in charge of the army for Congress. Washington trusts this source."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Washington agreed to go to the convention in Philadelphia in 1787, and the delegates chose him to run it. Connects: the man who wrote this letter helped write the fix."
-      }
-     }
-    },
-    {
-     "n": 13,
-     "title": "Hamilton makes the case · The Federalist No. 15",
-     "kind": "text",
-     "src": "Source: Alexander Hamilton, The Federalist Papers: No. 15, December 1, 1787 (adapted)",
-     "page": 9,
-     "steps": [
-      {
-       "question": "Who wrote this, for whom, and what did he want readers to do?",
-       "mode": null,
-       "line": "Hamilton wrote this for New York newspapers while New York was deciding on the Constitution. Ask what vote he was hoping for."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Three paragraphs: the question, the problem, and the picture he paints. Read the last sentence twice."
-      },
-      {
-       "question": "What does Hamilton say is broken, and how does he show it?",
-       "mode": null,
-       "line": "Find the sentence that starts “Under the Confederation.” Then find the wheels and the building."
-      },
-      {
-       "question": "Who would argue that the Articles were working just fine?",
-       "mode": null,
-       "line": "Think about who held the power under the Articles. Would they want to give it up?"
-      },
-      {
-       "question": "What principle does Hamilton think the Articles took too far?",
-       "mode": null,
-       "line": "He says one state can stop the whole country. Look in the group called How power is built and limited."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 13's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "The next question to examine is whether the present Confederation is enough to preserve the Union.",
-      "Under the Confederation, all thirteen separate sovereign wills must agree before any important measure of the Union can be carried out. What has happened is what should have been expected: the measures of the Union have not been carried out. The failures of the states have grown, step by step, until they have stopped all the wheels of the national government and brought them to a halt.",
-      "Each state, listening to the persuasive voice of its own immediate interest, has withdrawn its support, until the frail and tottering building seems ready to fall upon our heads and crush us beneath its ruins."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "The next question is whether the Confederation we have now is enough to keep the Union together.",
-       "Under the Confederation, all thirteen separate states, each with supreme power, must agree before the Union can do anything important. What happened is what you would expect: the Union's plans have not been carried out. The states' failures have grown, step by step, until they have stopped all the wheels of the national government and brought them to a halt.",
-       "Each state listened to the voice of its own immediate interest (what helps it right now) and pulled back its support. Now the frail and tottering building looks ready to fall on our heads and crush us under its ruins."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "The next question to examine",
-        "mark": "margin",
-        "note": "This essay is one step in a long series: No. 15 of 85."
-       },
-       {
-        "where": "December 1, 1787",
-        "mark": "circle",
-        "note": "About two and a half months after the convention finished the Constitution on September 17, 1787."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Hamilton, Madison and John Jay wrote the Federalist Papers under one shared pen name, Publius. Connects: the Constitution's defenders hid their names too."
-      }
-     }
-    },
-    {
-     "n": 14,
-     "title": "Article I · the bargains, the Constitution, 1787",
-     "kind": "text",
-     "src": "Source: United States Constitution, Article I, 1787 (adapted)",
-     "page": 13,
-     "steps": [
-      {
-       "question": "Who wrote this, and who was not in the room?",
-       "mode": null,
-       "line": "The source line says 1787. Day 8's What You Need to Know tells you who met in Philadelphia. Then ask who wasn't there."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Four sections, each its own rule. Watch for the numbers: every second year, three fifths, two Senators."
-      },
-      {
-       "question": "How does Article I decide how much power each state gets in Congress?",
-       "mode": null,
-       "line": "Compare Section 2 with Section 3. What does each one use to decide how many members a state gets?"
-      },
-      {
-       "question": "Who gained power from the three-fifths clause, and who paid for it?",
-       "mode": null,
-       "line": "Find “all other persons.” Ask who those persons were, and whether they got a vote."
-      },
-      {
-       "question": "What principle does Section 1 put into practice?",
-       "mode": null,
-       "line": "Section 1 gives the power to make laws to one branch only. Look in the group called How power is built and limited."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 14's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "Section 1. All legislative powers granted here shall be vested in a Congress of the United States, which shall consist of a Senate and a House of Representatives.",
-      "Section 2. The House of Representatives shall be made up of members chosen every second year by the people. Representatives shall be divided among the states according to their numbers — adding to the whole number of free persons three fifths of all other persons.",
-      "Section 3. The Senate shall be made up of two Senators from each state, and each Senator shall have one vote.",
-      "Section 8. The Congress shall have power to lay and collect taxes, to pay the debts and provide for the common defense and general welfare of the United States."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "Section 1. All the power to make laws given here belongs to a Congress of the United States. Congress has two parts: a Senate and a House of Representatives.",
-       "Section 2. Members of the House of Representatives are chosen by the people every two years. Each state gets Representatives based on its population: all the free persons, plus three fifths of all other persons (enslaved people).",
-       "Section 3. The Senate has two Senators from each state, and each Senator gets one vote.",
-       "Section 8. Congress has the power to set and collect taxes, to pay the country's debts, and to provide for the common defense and general welfare (the good of everyone) of the United States."
-      ]
-     },
-     "before": {
-      "title": "BEFORE WE TALK",
-      "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "every second year",
-        "mark": "circle",
-        "note": "Every two years. That's why every House seat is on the ballot in each even-numbered year."
-       },
-       {
-        "where": "vested",
-        "mark": "box",
-        "note": "Vested: given to, placed in."
-       },
-       {
-        "where": "lay and collect taxes",
-        "mark": "box",
-        "note": "Lay a tax: create it and set the amount. Collect: gather the money."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "After the Civil War, the 14th Amendment (1868) replaced the three-fifths rule. House seats would now count the whole number of persons in each state. Connects: the bargain on this page lasted until after the Civil War."
-      }
-     }
-    },
-    {
-     "n": 15,
-     "title": "Madison on checks · The Federalist No. 51",
-     "kind": "text",
-     "src": "Source: James Madison, Federalist No. 51, 1788 (adapted)",
-     "page": 15,
-     "steps": [
-      {
-       "question": "Who wrote this, and why was he writing it?",
-       "mode": null,
-       "line": "Madison helped write the Constitution, then wrote this to defend it. Ask what he wants his readers to believe."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Two short paragraphs, but every word counts. A check is something that can stop or limit something else."
-      },
-      {
-       "question": "What does Madison want each part of government to do to the others?",
-       "mode": null,
-       "line": "Read the second paragraph slowly. What does he want each office to be to the others? Then read the words right after that."
-      },
-      {
-       "question": "Is Madison's view of people hopeful or worried? How might someone see it differently?",
-       "mode": null,
-       "line": "He says better motives fail. Ask what he thinks people with power will do if nothing stops them."
-      },
-      {
-       "question": "What principle is Madison describing, and where do you see it in the Constitution?",
-       "mode": null,
-       "line": "Look in the group called How power is built and limited. Then think of a time one branch can block another."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 15's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "This policy of supplying, by opposite and rival interests, what better motives fail to supply can be traced through the whole system of human affairs, private as well as public.",
-      "We see it especially in every lesser distribution of power, where the constant aim is to divide and arrange the several offices so that each may be a check on the others — so that the private interest of every individual becomes a guard over the public's rights. These inventions of prudence are no less necessary in dividing the supreme powers of the state."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "This plan works by setting opposite and rival interests against each other, to make up for what better motives fail to do. You can see it all through human life, in private matters and in public ones.",
-       "You see it especially when smaller amounts of power are handed out. The goal is always to divide and arrange the offices so that each one can be a check on the others. That way, each person's own private interest becomes a guard over the public's rights. These careful, smart inventions are just as necessary when dividing the highest powers of the government."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "prudence",
-        "mark": "box",
-        "note": "Prudence: careful good sense."
-       },
-       {
-        "where": "private as well as public",
-        "mark": "margin",
-        "note": "He says this works everywhere, in families and businesses too, not only in government."
-       },
-       {
-        "where": "1788",
-        "mark": "circle",
-        "note": "Published in February 1788."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "In 1789, Madison wrote the first draft of the Bill of Rights in Congress. Connects: the man defending the Constitution here also wrote its first amendments."
-      }
-     }
-    },
-    {
-     "n": 16,
-     "title": "The case against · Antifederalist No. 46",
-     "kind": "text",
-     "src": "Source: Antifederalist Papers No. 46, November 2, 1788 (adapted)",
-     "page": 16,
-     "steps": [
-      {
-       "question": "Who wrote this, and why might he hide his name?",
-       "mode": null,
-       "line": "The source line names no author. Think about who might be angry at someone attacking the new Constitution in 1788.",
-       "tip": {
-        "title": "NO NAME ON IT?",
-        "text": [
-         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
-        ]
-       }
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Most of the first paragraph is a quote from the Constitution. Find where the quote starts and ends. Then read his one-sentence question."
-      },
-      {
-       "question": "What part of the Constitution worries the author, and what is he afraid of?",
-       "mode": null,
-       "line": "Find the words he puts in quotation marks. Then read his question: what does he think Congress could do?"
-      },
-      {
-       "question": "How would a Federalist like Madison answer this worry?",
-       "mode": null,
-       "line": "Go back to Document 15. What does Madison say stops any one part of government from taking too much?"
-      },
-      {
-       "question": "If a government's power has no clear limits, what protects the people?",
-       "mode": null,
-       "line": "Look in two groups on your card: How power is built and limited, and What government must protect."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 16's questions in your casefile, starting on page 17. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "My object is to consider that undefined, unbounded, and immense power which is contained in the following clause: “And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or offices thereof.”",
-      "Under such a clause as this, can anything be said to be reserved and kept back from Congress?"
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "I want to look at a power that is undefined, unbounded (unlimited), and huge. It is in this clause of the Constitution: “And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or offices thereof.” (In other words: Congress can make any law it needs to carry out its powers.)",
-       "With a clause like this, is anything left that Congress can't do?"
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "thereof",
-        "mark": "box",
-        "note": "Thereof: of it."
-       },
-       {
-        "where": "Antifederalist Papers",
-        "mark": "circle",
-        "note": "A name given much later. An editor collected and numbered these essays long after they were written."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Patrick Henry led the fight against the Constitution at Virginia's convention in 1788. Connects: the Antifederalists had famous names too, not only hidden ones."
-      }
-     }
-    },
-    {
-     "n": 17,
-     "title": "The Bill of Rights · the answer, 1791",
-     "kind": "text",
-     "src": "Source: United States Constitution, Amendments I–X, 1791 (adapted)",
-     "page": 18,
-     "steps": [
-      {
-       "question": "When were these added, and why add them after the Constitution was approved?",
-       "mode": null,
-       "line": "Check the date: 1791. Day 9's What You Need to Know tells you the promise some states were made."
-      },
-      {
-       "question": null,
-       "mode": null,
-       "line": "Four amendments, each its own rule. For each one, ask: what can't the government do?"
-      },
-      {
-       "question": "What does the Bill of Rights stop the government from doing?",
-       "mode": null,
-       "line": "Pick one amendment. Find the words that set the rule (“no law,” “shall not,” “No person shall” or “shall enjoy the right”), and read what comes after."
-      },
-      {
-       "question": "Would the author of Document 16 be satisfied by these amendments?",
-       "mode": null,
-       "line": "His worry was about how much Congress could do. Ask whether these amendments limit that, or protect people in a different way."
-      },
-      {
-       "question": "Which principle on your card appears in these amendments, and what does it protect?",
-       "mode": null,
-       "line": "Read Amendment V slowly. Then look in the group called What government must protect."
-      }
-     ],
-     "close": "That's the walk. Now answer Document 17's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
-     "text": [
-      "Amendment I. Congress shall make no law establishing a religion or prohibiting the free exercise of religion, the freedom of speech or of the press, or the right of the people to assemble and to petition the government.",
-      "Amendment IV. The right of the people to be secure in their persons, houses, papers and effects against unreasonable searches and seizures shall not be violated, and no warrant shall issue except upon probable cause.",
-      "Amendment V. No person shall be compelled to be a witness against himself, nor be deprived of life, liberty or property without due process of law.",
-      "Amendment VI. In all criminal prosecutions the accused shall enjoy the right to a speedy public trial by an impartial jury, and to a lawyer."
-     ],
-     "easier": {
-      "label": "(adapted, easier to read)",
-      "text": [
-       "Amendment I. Congress shall make no law that sets up an official religion or stops people from practicing their religion. It can't limit the freedom of speech or of the press, or the right of the people to gather and to petition (ask) the government.",
-       "Amendment IV. People have the right to be safe in their persons, houses, papers and belongings from unreasonable searches and seizures. No warrant can be given out without probable cause (a good reason to believe a crime happened).",
-       "Amendment V. No person can be forced to be a witness against himself, or lose his life, liberty or property without due process of law (fair legal steps).",
-       "Amendment VI. Anyone accused of a crime has the right to a speedy public trial by a fair jury, and to a lawyer."
-      ]
-     },
-     "annotate": {
-      "kind": "text",
-      "notes": [
-       {
-        "where": "probable cause",
-        "mark": "box",
-        "note": "Probable cause: a good reason, based on facts, to think a crime happened."
-       },
-       {
-        "where": "Amendments I–X",
-        "mark": "circle",
-        "note": "Ten amendments. Only four of them are printed here."
-       }
-      ],
-      "oe": {
-       "kind": "example",
-       "text": "Congress sent twelve amendments to the states in 1789, and ten were ratified. One of the other two was finally ratified in 1992, as the 27th Amendment. Connects: the Bill of Rights could have been longer."
-      }
-     }
-    }
-   ]
-  },
-  {
-   "id": "C",
-   "title": "11.2 Casefile C",
-   "status": "building"
-  }
- ],
- "q4_card": {
-  "title": "Civic Principles",
-  "intro": "Q4 · CIVIC CONNECTION asks which principle is at stake. Name it from this card, then show how the document upholds it, denies it, or fights over it.",
-  "items": [
-   {
-    "n": "1",
-    "group": "HOW POWER IS BUILT AND LIMITED",
-    "name": "Rule of Law",
-    "question": "No one is above the law, not even the people who make it. Look for it when someone powerful is held to the rules, or tries to dodge them."
-   },
-   {
-    "n": "2",
-    "group": "HOW POWER IS BUILT AND LIMITED",
-    "name": "Limited Government",
-    "question": "Government can only do what the Constitution allows. Look for it when someone says the government went too far."
-   },
-   {
-    "n": "3",
-    "group": "HOW POWER IS BUILT AND LIMITED",
-    "name": "Separation of Powers",
-    "question": "Power is split among three branches, each with its own job: make laws, carry out laws, judge laws. Look for it when the fight is about which branch gets to act."
-   },
-   {
-    "n": "4",
-    "group": "HOW POWER IS BUILT AND LIMITED",
-    "name": "Checks and Balances",
-    "question": "Each branch can block or limit the others. Look for it when there's a veto, an override, an impeachment, or a court striking something down."
-   },
-   {
-    "n": "5",
-    "group": "HOW POWER IS BUILT AND LIMITED",
-    "name": "Federalism",
-    "question": "Power is divided between the national government and the states. When they clash, valid federal law wins. Look for it when it's the nation against a state."
-   },
-   {
-    "n": "6",
-    "group": "HOW POWER IS BUILT AND LIMITED",
-    "name": "Judicial Review",
-    "question": "Courts can strike down a law or action that breaks the Constitution. Look for it when a court decides whether something is constitutional."
-   },
-   {
-    "n": "7",
-    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
-    "name": "Popular Sovereignty (consent of the governed)",
-    "question": "Government's power comes from the people, and it rules only with their agreement. Look for it when people give, or take back, their support for a government."
-   },
-   {
-    "n": "8",
-    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
-    "name": "Representative Government",
-    "question": "The people elect officials to make decisions for them. Look for it when the issue is voting, elections, or who speaks for whom."
-   },
-   {
-    "n": "9",
-    "group": "WHERE GOVERNMENT'S POWER COMES FROM",
-    "name": "Natural Rights",
-    "question": "Every person is born with rights (life, liberty, property) that government exists to protect. Look for it when a right is treated as something you're born with, not something government hands out."
-   },
-   {
-    "n": "10",
-    "group": "WHAT GOVERNMENT MUST PROTECT",
-    "name": "Individual Rights (civil liberties)",
-    "question": "Freedoms government can't take away, like speech, religion, press and assembly. Look for it when a personal freedom is limited, defended, or expanded."
-   },
-   {
-    "n": "11",
-    "group": "WHAT GOVERNMENT MUST PROTECT",
-    "name": "Equal Protection",
-    "question": "The law must treat people equally. Look for it when a group is treated differently, shut out, or separated by law."
-   },
-   {
-    "n": "12",
-    "group": "WHAT GOVERNMENT MUST PROTECT",
-    "name": "Due Process",
-    "question": "Government must follow fair steps before it takes your life, liberty, or property. Look for it when someone is arrested, held, or punished. Ask whether it was fair."
-   }
   ],
-  "close": [
-   "Learn these by name. The Regents asks for them. Practice them in the Arena's matching set."
-  ]
- },
- "annotate": {
-  "button": "How to annotate",
-  "methods": {
-   "text": [
-    [
-     "WHO AND WHEN",
-     "Circle who made it and the year. They're in the source line."
-    ],
-    [
-     "THE CLAIM",
-     "Underline the one sentence that makes the main point."
-    ],
-    [
-     "WORDS",
-     "Box any word you don't know. Write your best guess above it."
-    ],
-    [
-     "SO WHAT",
-     "In the margin, write a few words on why it matters."
-    ],
-    [
-     "OUTSIDE",
-     "Add one true thing you already know that isn't in the document."
-    ]
-   ],
-   "picture": [
-    [
-     "LABELS",
-     "Read every word first: the title, the caption, the labels."
-    ],
-    [
-     "WHO'S WHO",
-     "Name every figure. Who is big, and who is small?"
-    ],
-    [
-     "EXAGGERATION",
-     "What is stretched past real life? That's the caricature."
-    ],
-    [
-     "SYMBOLS",
-     "What stands for something else: clothes, tools, animals?"
-    ],
-    [
-     "THE POINT",
-     "What is the artist accusing, and who would agree?"
-    ]
-   ],
-   "map": [
-    [
-     "TITLE, KEY, DATE",
-     "Read the title, the key and the date before anything else."
-    ],
-    [
-     "THE BIG PICTURE",
-     "Circle the biggest or most important part."
-    ],
-    [
-     "COMPARE",
-     "Mark two parts you can compare."
-    ],
-    [
-     "THE POINT",
-     "Write what it shows in one sentence."
-    ],
-    [
-     "OUTSIDE",
-     "Add one true thing you already know that isn't on it."
-    ]
-   ]
+  "labels": {
+    "walk": "Walk me through it",
+    "read": "Read it to me",
+    "easier": "Easier to read",
+    "original": "Original",
+    "close": "Close the walk",
+    "next": "Next step",
+    "back": "Back",
+    "stop": "Stop reading",
+    "q4_card": "The Civic Principles",
+    "annotate": "How to annotate"
   },
-  "model_label": "WATCH IT DONE ON THIS DOCUMENT",
-  "model_note": "These notes are on parts no question asks about. Your questions are yours to do.",
-  "oe_example_label": "OUTSIDE EVIDENCE · AN EXAMPLE",
-  "oe_where_label": "OUTSIDE EVIDENCE · WHERE TO LOOK"
- },
- "_shape_annotate": "Same as Global v4: pack 'annotate' (methods text|picture|map as [tag, step]); docs[].annotate = {kind, notes[{where, mark, note}], oe{kind, text}}. No French on US."
+  "casefiles": [
+    {
+      "id": "A",
+      "title": "11.2 Casefile A · The Break",
+      "status": "open",
+      "docs": [
+        {
+          "n": 1,
+          "title": "North America, 1775 (map)",
+          "kind": "image",
+          "src": "Source: Exploring American History, Globe Book Company (adapted)",
+          "page": 4,
+          "steps": [
+            {
+              "question": "Who made this map, and when? Is it from the time it shows?",
+              "mode": null,
+              "line": "Two places to look: the source line under the map and the title on top. Check the year in the title against 1763.",
+              "tip": {
+                "title": "NO NAME ON IT?",
+                "text": [
+                  "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't.",
+                  "A map or chart has a maker too. Someone chose what to color, what to label, and what to leave blank."
+                ]
+              }
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Find the key in the lower left first. It tells you what the dotted line means. Then follow that line with your finger, top to bottom."
+            },
+            {
+              "question": "What does the map show about where colonists could settle after 1763?",
+              "mode": null,
+              "line": "Find the shaded colonies, then the dotted line. Which side of the line is off limits? Your KEY VOCABULARY names the mountains it runs along."
+            },
+            {
+              "question": "How would a colonist and a Native nation each see this line?",
+              "mode": null,
+              "line": "Think like a colonist in 1763 who wanted land. Then think like a Native nation living west of the line. Same line, two views."
+            },
+            {
+              "question": "Should a government be able to tell people where they can live?",
+              "mode": null,
+              "line": "This is about how far a government's power should reach. Start with the first group on your card: How power is built and limited."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
+          "image_file": "STIMULUS_BANK/Unit_02/unit02-nv-a3-proclamation-map-1775.png",
+          "image_alt": "A black-and-white map titled North America, 1775. The thirteen colonies are shaded gray along the Atlantic coast, with dashed lines between them. A heavy dotted line runs north to south along the western edge of the shaded colonies. Short mountain marks run along that line from northeast to southwest, some inside the shaded area and some just west of it. Everything west of the dotted line is not shaded. More mountain marks cover a wide area in the western part of the map. The key in the lower left shows two lines: the dotted line is the Proclamation Line of 1763, and the dashed lines are colonial borders. A compass rose sits in the lower right. The source line is printed under the map.",
+          "describe": "A black-and-white map titled North America, 1775. The thirteen colonies are shaded gray along the Atlantic coast, with dashed lines between them. A heavy dotted line runs north to south along the western edge of the shaded colonies. Short mountain marks run along that line from northeast to southwest, some inside the shaded area and some just west of it. Everything west of the dotted line is not shaded. More mountain marks cover a wide area in the western part of the map. The key in the lower left shows two lines: the dotted line is the Proclamation Line of 1763, and the dashed lines are colonial borders. A compass rose sits in the lower right. The source line is printed under the map.",
+          "licence": {
+            "text": "Map as reproduced in New Visions for Public Schools, US.02.A.3, CC BY-NC-SA 4.0.",
+            "sellable": false
+          },
+          "annotate": {
+            "kind": "map",
+            "notes": [
+              {
+                "where": "the key, lower left",
+                "mark": "box",
+                "note": "Two kinds of line. The key tells them apart, so I read it before anything else."
+              },
+              {
+                "where": "the compass rose, lower right",
+                "mark": "circle",
+                "note": "North is up. Use it whenever you name a direction on this map."
+              },
+              {
+                "where": "(adapted)",
+                "mark": "box",
+                "note": "Adapted: changed from the original. Someone redrew or simplified this map."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "In 1768 the Treaty of Fort Stanwix moved the line farther west in parts of New York, Pennsylvania and Virginia. Connects: the line did not stay where it was drawn for long."
+            }
+          }
+        },
+        {
+          "n": 2,
+          "title": "The British side · Thomas Whately, who wrote the Stamp Act",
+          "kind": "text",
+          "src": "Source: Thomas Whately, The Regulations Lately Made Concerning the Colonies, and the Taxes Imposed Upon Them, Considered, January 1765 (adapted)",
+          "page": 6,
+          "steps": [
+            {
+              "question": "Who wrote this, what was his job, and how might that shape what he says?",
+              "mode": null,
+              "line": "He wrote the tax, and now he's explaining the tax. Ask yourself: would he ever call it a bad idea?"
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Four sentences. Hard words: a national debt is money a country owes. Keep going, then say what it's about."
+            },
+            {
+              "question": "What reason does Whately give for making the colonies pay?",
+              "mode": null,
+              "line": "His reason is in the first sentence and the last two. Look for what the money pays for, and who is paying right now."
+            },
+            {
+              "question": "Who would argue back, and what would they say?",
+              "mode": null,
+              "line": "Who actually has to pay for the stamps? Picture a colonial printer or a lawyer reading this."
+            },
+            {
+              "question": "Is it fair to tax people who had no say in the tax?",
+              "mode": null,
+              "line": "Ask where a government gets the right to tax people at all. Look in the group called Where government's power comes from."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 6. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "The money raised by these taxes goes to pay the costs of defending and protecting the British colonies in America. The colonies have their own governments to pay for, but so does Great Britain. And Britain carries a huge national debt, most of it from a war fought to protect the colonies. Right now, Britain alone is paying it."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "The money from these taxes pays to defend and protect Britain's colonies in America. The colonies pay for their own governments. But Great Britain pays for its government too. Britain also has a huge national debt (money a country owes). Most of that debt came from a war fought to protect the colonies. Right now, Britain is paying it all by itself."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "January 1765",
+                "mark": "circle",
+                "note": "Written about two months before the Stamp Act became law in March 1765."
+              },
+              {
+                "where": "Lately, in the source line",
+                "mark": "box",
+                "note": "Lately: recently. The title says these rules are new."
+              },
+              {
+                "where": "but so does Great Britain",
+                "mark": "margin",
+                "note": "“But” turns the sentence. He admits one side, then answers it."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Britain's national debt nearly doubled during the French and Indian War, to about £130 million by 1763. Connects: why Parliament looked to the colonies for money."
+            }
+          }
+        },
+        {
+          "n": 3,
+          "title": "The colonists' side · the Stamp Act Congress",
+          "kind": "text",
+          "src": "Source: Declaration of Rights and Grievances, Stamp Act Congress, October 19, 1765 (adapted)",
+          "page": 7,
+          "steps": [
+            {
+              "question": "Who wrote this, and who were they trying to convince?",
+              "mode": null,
+              "line": "The source line names the group. WHAT YOU NEED TO KNOW on Day 1 says who they were. Then ask who could get rid of the tax."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Four sentences. Watch for the word consent: it means agreement. Mark it when you see it."
+            },
+            {
+              "question": "What is the colonists' main complaint, and why does it matter?",
+              "mode": null,
+              "line": "Find the sentence with the word consent. Say it the way you'd explain it to a friend. Then finish: because ___, which means ___."
+            },
+            {
+              "question": "Whose voice is in this document, and whose is missing?",
+              "mode": null,
+              "line": "The writers owned property. Now think of everyone in the colonies in 1765 who couldn't vote or didn't own property."
+            },
+            {
+              "question": "What principle about consent is this document fighting for?",
+              "mode": null,
+              "line": "Consent is the clue word. Read the group Where government's power comes from and find the one that matches."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "The colonists owe the same loyalty to the King as people born in Great Britain, and they have all the same rights. It is the right of free people that no taxes be put on them without their own consent, given in person or through their representatives. The people of these colonies are not, and cannot be, represented in Parliament. The only representatives of the colonists are the people they choose themselves."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Colonists owe the same loyalty to the King as people born in Great Britain. They have all the same rights. Free people have a right: no taxes can be put on them without their own consent (agreement). They give that consent in person, or through representatives they choose. The people of these colonies are not represented in Parliament, and they cannot be. The only representatives of the colonists are the people they choose themselves."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "October 19, 1765",
+                "mark": "circle",
+                "note": "About two weeks before the Stamp Act was set to start, on November 1, 1765."
+              },
+              {
+                "where": "Rights and Grievances",
+                "mark": "box",
+                "note": "Grievances: complaints. The title tells me this is a list of complaints."
+              },
+              {
+                "where": "owe the same loyalty to the King",
+                "mark": "underline",
+                "note": "They open by saying they're loyal. They are not asking to leave Britain, at least not yet."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Colonists boycotted British goods, and Parliament repealed the Stamp Act in March 1766. Connects: the protest worked, at least for a while."
+            }
+          }
+        },
+        {
+          "n": 4,
+          "title": "Paul Revere's engraving · Boston, 1770",
+          "kind": "image",
+          "src": "Source: Paul Revere, engraver, 1770 (adapted)",
+          "page": 10,
+          "steps": [
+            {
+              "question": "Who made this picture, and why did he make it?",
+              "mode": null,
+              "line": "Revere was a Boston silversmith and a Patriot, and he had this print for sale within weeks. What would make people want to buy it?"
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Read the title across the top word for word first. Then look at the two groups facing each other. Then the small details: the ground, the signs on the buildings, the sky."
+            },
+            {
+              "question": "What story about that night does the picture tell? Point to two details.",
+              "mode": null,
+              "line": "Read the title again, especially the second word. Then look at the soldiers: are they a mob or a straight line? And look at the man behind them."
+            },
+            {
+              "question": "What might be left out? How would a British soldier tell it?",
+              "mode": null,
+              "line": "Picture the crowd from the soldiers' side of the street. What would a soldier put in the picture that Revere left out?"
+            },
+            {
+              "question": "Should people be free to publish a one-sided picture of events?",
+              "mode": null,
+              "line": "This is about a freedom a person keeps even when the government doesn't like what they say. Look in the group called What government must protect."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 11. Use the sentence stem, or write something of equal or better value.",
+          "image_file": "STIMULUS_BANK/Unit_02/unit02-revere-1770-doc1.png",
+          "image_alt": "An engraving with a printed title across the top: “The Bloody Massacre Perpetrated in King Street, Boston, on March 5th, 1770, by a Party of the 29th Regiment.” On the right, a line of British soldiers stands shoulder to shoulder and fires muskets at close range into a crowd of colonists on the left. Smoke fills the middle of the street. An officer stands behind the soldiers at the far right with his sword raised. In front, colonists lie on the ground while others hold up the wounded. A small dog stands in the street in front of the crowd. Behind them are the buildings of King Street and a tall steeple. A building on the right has a sign that reads “Butcher's Hall.” A moon shows in the sky at the upper left.",
+          "describe": "An engraving with a printed title across the top: “The Bloody Massacre Perpetrated in King Street, Boston, on March 5th, 1770, by a Party of the 29th Regiment.” On the right, a line of British soldiers stands shoulder to shoulder and fires muskets at close range into a crowd of colonists on the left. Smoke fills the middle of the street. An officer stands behind the soldiers at the far right with his sword raised. In front, colonists lie on the ground while others hold up the wounded. A small dog stands in the street in front of the crowd. Behind them are the buildings of King Street and a tall steeple. A building on the right has a sign that reads “Butcher's Hall.” A moon shows in the sky at the upper left.",
+          "licence": {
+            "text": "Engraving by Paul Revere, 1770 (public domain), as printed on the NYSED Regents exam in US History and Government, August 2025.",
+            "sellable": false
+          },
+          "annotate": {
+            "kind": "picture",
+            "notes": [
+              {
+                "where": "“29th Regiment” in the title",
+                "mark": "box",
+                "note": "Regiment: a large unit of soldiers. The title names which unit was there."
+              },
+              {
+                "where": "the moon, upper left",
+                "mark": "circle",
+                "note": "The moon tells me this happened at night."
+              },
+              {
+                "where": "the buildings behind the crowd",
+                "mark": "margin",
+                "note": "A real street, named in the title: King Street, Boston."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Revere copied his design from an engraving by Henry Pelham, who complained that Revere had used his work without credit. Connects: even this picture had a source of its own."
+            }
+          }
+        },
+        {
+          "n": 5,
+          "title": "The officer's story · Captain Thomas Preston's own account, March 1770",
+          "kind": "text",
+          "src": "Source: Transcript of British Captain Thomas Preston's testimony, from “The Boston Massacre, The British View, 1770,” EyeWitness to History, 2009 (adapted)",
+          "page": 12,
+          "steps": [
+            {
+              "question": "Who is speaking, when, and what does he need people to believe?",
+              "mode": null,
+              "line": "Preston wrote this in jail, while he waited to be tried for murder. Before you read, ask: what happens to Preston if people don't believe him?"
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Five sentences. Keep track of time: what happened before the shooting, and what he says after it."
+            },
+            {
+              "question": "What does Preston say happened, step by step?",
+              "mode": null,
+              "line": "Mark each thing he says the crowd did before anyone fired. Then find what he says about the order to fire."
+            },
+            {
+              "question": "Is Preston's account reliable? How would someone in the crowd tell it?",
+              "mode": null,
+              "line": "Neither side is neutral. Go back to Step 1: who is talking, and what did he want? Then picture a man in the crowd."
+            },
+            {
+              "question": "Why does a fair trial matter, even for someone the public hates?",
+              "mode": null,
+              "line": "Look in the group called What government must protect. Read each “Look for it when” cue and find the one that fits a trial."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "I saw about 100 people surround the soldier on guard, with clubs and other weapons, threatening to kill him. When I asked my soldiers why they fired without orders, they said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "I saw about 100 people surround the soldier on guard. They had clubs and other weapons, and they said they would kill him. Later I asked my soldiers why they fired without orders. They said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "EyeWitness to History, 2009",
+                "mark": "circle",
+                "note": "2009 is when this website printed it, not when Preston wrote it."
+              },
+              {
+                "where": "(adapted)",
+                "mark": "box",
+                "note": "Adapted: changed from the original. The words may be shortened or made simpler."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "The soldier on guard was Private Hugh White of the 29th Regiment. Connects: “the soldier on guard” in this account has a name."
+            }
+          }
+        },
+        {
+          "n": 6,
+          "title": "Partner A · The Patriot",
+          "kind": "text",
+          "src": "Source: Thomas Paine, Common Sense, 1776 (adapted)",
+          "page": 16,
+          "steps": [
+            {
+              "question": "Who wrote this, when, and who was he trying to reach?",
+              "mode": null,
+              "line": "Paine sold Common Sense as a cheap pamphlet. Who buys a cheap pamphlet in 1776?"
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Two paragraphs. The first fires question after question at you. The second makes the argument. Read it like a speech."
+            },
+            {
+              "question": "What is Paine's main argument, and what reasons does he use?",
+              "mode": null,
+              "line": "Paine argues two ways: the first paragraph goes after your feelings, and the second goes after your common sense."
+            },
+            {
+              "question": "Who in the colonies would push back on Paine?",
+              "mode": null,
+              "line": "Think about who still had a lot to lose from a war with Britain. Then read Document 7."
+            },
+            {
+              "question": "Who does Paine think should govern America?",
+              "mode": null,
+              "line": "Paine's last three sentences are about who should govern America. Look in the group called Where government's power comes from."
+            }
+          ],
+          "close": "That's the walk. Now argue it with your partner. The four questions are on page 16, out loud, no writing.",
+          "text": [
+            "Some people say, “Come, come, we shall be friends again.” But can you still love and faithfully serve the power that has carried fire and sword into your land? Has your house been burned? Has your property been destroyed in front of you? If so, and you can still shake hands with the murderers, you have the heart of a coward.",
+            "There is something very absurd in a continent being governed forever by an island. England belongs to Europe. America belongs to itself."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Some people say, “Come, come, we shall be friends again.” But think about it. Can you still love and serve the power that brought fire and sword into your land? Has your house been burned? Have you watched your property get destroyed? If so, and you can still shake hands with the murderers, you have the heart of a coward.",
+              "There is something very absurd (silly, making no sense) in a continent being governed forever by an island. England belongs to Europe. America belongs to itself."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "“Come, come, we shall be friends again.”",
+                "mark": "margin",
+                "note": "He quotes the other side first, then knocks it down."
+              },
+              {
+                "where": "absurd",
+                "mark": "box",
+                "note": "Absurd: makes no sense."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Paine had come to America from England only in late 1774, about a year before he wrote Common Sense. Connects: the man calling for a break with Britain had only just left it himself."
+            }
+          }
+        },
+        {
+          "n": 7,
+          "title": "Partner B · The Loyalist",
+          "kind": "text",
+          "src": "Source: Rev. Charles Inglis, The Deceiver Unmasked, 1776 (adapted)",
+          "page": 16,
+          "steps": [
+            {
+              "question": "Who wrote this, when, and who was he answering?",
+              "mode": null,
+              "line": "Inglis was a New York City minister, loyal to the King, answering Paine within weeks. Whose minds was he trying to win back?"
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Four short paragraphs. His first line is a jab at Paine's title. Catch it, then keep going."
+            },
+            {
+              "question": "What is Inglis's argument against independence?",
+              "mode": null,
+              "line": "Inglis gives two lists: what peace keeps and what war would cost. Find one thing on each list."
+            },
+            {
+              "question": "Whose interests does Inglis speak for?",
+              "mode": null,
+              "line": "Look at what Inglis says war would ruin. Who in the colonies made their living from those things?"
+            },
+            {
+              "question": "What kind of government does Inglis want, and how is it different from Paine's?",
+              "mode": null,
+              "line": "His last sentence names a kind of government. Put it next to what Paine wants. Then look in the group called Where government's power comes from."
+            }
+          ],
+          "close": "That's the walk. Now argue it with your partner. The four questions are on page 16, out loud, no writing.",
+          "text": [
+            "I find no common sense in this pamphlet, only uncommon frenzy.",
+            "If we make peace with Britain, the war that has cost so many lives will end. Our trade will still be protected by the greatest navy in the world.",
+            "Suppose we break away from Great Britain and set up a republic of our own. What would happen? My blood runs cold when I think of it. The sword alone would decide the quarrel. Our coasts and ports would be ruined, and thousands would be left poor.",
+            "America is too large for a republic. A limited monarchy is the form of government most favorable to liberty."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "I find no common sense in this pamphlet, only uncommon frenzy (wild, out-of-control excitement).",
+              "If we make peace with Britain, the war will end. It has already cost many lives. The greatest navy in the world will still protect our trade.",
+              "What if we break away from Great Britain and set up a republic (a government with no king) of our own? What would happen? It scares me to think of it. Only fighting would settle it. Our coasts and ports would be ruined. Thousands of people would be left poor.",
+              "America is too large for a republic. A limited monarchy (a king whose power is limited by law) is the form of government most favorable to liberty."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "Rev., in the source line",
+                "mark": "box",
+                "note": "Rev.: short for Reverend, a title for a minister."
+              },
+              {
+                "where": "What would happen?",
+                "mark": "margin",
+                "note": "He asks a question, then answers it himself. Watch for that move."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "After the war Inglis left for England. In 1787 he became the first Anglican bishop of Nova Scotia. Connects: many Loyalists lost their homes and left."
+            }
+          }
+        },
+        {
+          "n": 8,
+          "title": "The Declaration of Independence · July 1776",
+          "kind": "text",
+          "src": "Source: Declaration of Independence, July 4, 1776 (adapted)",
+          "page": 19,
+          "steps": [
+            {
+              "question": "Who wrote this, when, and who was meant to hear it?",
+              "mode": null,
+              "line": "Think about who needed to hear that the colonies were now their own country. Pick an audience, and give your because."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Three long sentences. Break each one at the commas. The middle one ends with a phrase you'll see on the Regents. Mark it."
+            },
+            {
+              "question": "What does the Declaration say governments are for, and where does their power come from?",
+              "mode": null,
+              "line": "Read the middle sentence. Find the words “to protect” and the words “get their power.”"
+            },
+            {
+              "question": "Who signed this, and who was left out of “all men”?",
+              "mode": null,
+              "line": "Picture the room: who were the delegates? Then reread Day 4's OUTSIDE EVIDENCE box, on page 18."
+            },
+            {
+              "question": "What can people do when a government destroys their rights?",
+              "mode": null,
+              "line": "Find the sentence that starts “Whenever.” Then look in the group called Where government's power comes from, and read each “Look for it when” cue."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 19. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "We hold these truths to be self-evident, that all men are created equal, that they are given by their Creator certain rights that cannot be taken away, and that among these are Life, Liberty and the pursuit of Happiness. To protect these rights, governments are created, and they get their power from the consent of the governed. Whenever any government destroys these rights, it is the right of the people to change it or get rid of it, and to create a new government."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "We believe these truths are plain to see: that all men are created equal. Their Creator gave them certain rights that cannot be taken away. Among these rights are Life, Liberty and the pursuit of Happiness. Governments are created to protect these rights. They get their power from the consent of the governed (the agreement of the people). Whenever any government destroys these rights, the people have the right to change it or get rid of it. Then they can create a new government."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "self-evident",
+                "mark": "box",
+                "note": "Self-evident: so clearly true it needs no proof."
+              },
+              {
+                "where": "(adapted)",
+                "mark": "box",
+                "note": "Adapted: changed from the original. Some words here are simpler than the original."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "On July 9, 1776, after the Declaration was read aloud in New York, a crowd pulled down a statue of King George III. Much of its lead was melted into musket balls for the army. Connects: the King's statue became ammunition for the war against him."
+            }
+          }
+        },
+        {
+          "n": 9,
+          "title": "The Virginia Declaration of Rights · one month earlier, June 1776",
+          "kind": "text",
+          "src": "Source: Virginia Declaration of Rights, June 12, 1776 (adapted)",
+          "page": 20,
+          "steps": [
+            {
+              "question": "Who wrote this, when, and how is it connected to the Declaration?",
+              "mode": null,
+              "line": "Check the two dates: June 12 and July 4. Then ask what a writer does with a strong line he's already read."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Two sentences. Trustee is in your KEY VOCABULARY. Read it slowly; every word counts."
+            },
+            {
+              "question": "What does it say about who holds power?",
+              "mode": null,
+              "line": "The first sentence answers it. Find the two things it says about power and the people."
+            },
+            {
+              "question": "When Virginia said “the people,” who did it mean, and who did it leave out?",
+              "mode": null,
+              "line": "Ask who could vote or hold office in Virginia in 1776. Thread 1 on your casefile cover is a good place to start."
+            },
+            {
+              "question": "What idea does this share with the Declaration?",
+              "mode": null,
+              "line": "Put the two side by side. Find one phrase in each about where power comes from. Then find that idea on your card."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 20. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "All power belongs to the people and comes from the people. Government officials are the people's trustees and servants, and they must always answer to the people."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "All power belongs to the people and comes from the people. Government officials are the people's trustees (people trusted to manage something for others) and servants. They must always answer to the people."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "trustees",
+                "mark": "box",
+                "note": "Trustees: people trusted to take care of something for someone else."
+              },
+              {
+                "where": "Virginia Declaration of Rights",
+                "mark": "circle",
+                "note": "Rights came first. Virginia approved this list before it approved its new state constitution, later that June."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "George Mason, who wrote most of it, refused to sign the U.S. Constitution in 1787, partly because it had no bill of rights. Connects: you'll meet that fight in Casefile B."
+            }
+          }
+        },
+        {
+          "n": 10,
+          "title": "“Remember the Ladies” · Abigail Adams to John Adams, March 1776",
+          "kind": "text",
+          "src": "Source: Abigail Adams, letter to John Adams, March 31, 1776 (adapted)",
+          "page": 21,
+          "steps": [
+            {
+              "question": "Who wrote this, to whom, and why might a private letter say more?",
+              "mode": null,
+              "line": "She wrote this to her husband, not for the newspapers. Read it asking: would she say this in public in 1776?"
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Two paragraphs. The first is one sentence, and it's a puzzle: read it twice. Who is taking away whose liberty?"
+            },
+            {
+              "question": "What is Abigail Adams asking for, and what warning does she give?",
+              "mode": null,
+              "line": "Find where she turns from independence to the new laws, then read to the end. What does she say will happen if they're ignored?"
+            },
+            {
+              "question": "Whose liberty is missing from the new country's plans, according to her?",
+              "mode": null,
+              "line": "One group hides in her first sentence. The other runs all through her second paragraph."
+            },
+            {
+              "question": "She uses the colonists' own argument. Which principle is she turning back on them?",
+              "mode": null,
+              "line": "Go back to Document 3. What did the colonists say about taxes and representatives? Find it on your card."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 21. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "I have sometimes thought that the love of liberty cannot be as strong in those who are used to taking away the liberty of others.",
+            "I long to hear that you have declared independence. In the new laws you will make, remember the ladies, and be more generous to them than your ancestors were. Do not put such unlimited power into the hands of husbands. Remember, all men would be tyrants if they could. If attention is not paid to the ladies, we will start a rebellion, and we will not obey any laws in which we have no voice or representation."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Sometimes I think the love of liberty can't be as strong in those who are used to taking away the liberty of others.",
+              "I can't wait to hear that you have declared independence. In the new laws you will make, remember the ladies. Be more generous to them than your ancestors were. Do not put such unlimited power into the hands of husbands. Remember, all men would be tyrants (cruel, unfair rulers) if they could. If no one pays attention to the ladies, we will start a rebellion. We will not obey any laws in which we have no voice or representation."
+            ]
+          },
+          "before": {
+            "title": "BEFORE WE TALK",
+            "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "March 31, 1776",
+                "mark": "circle",
+                "note": "Three months before independence. She is writing about laws that haven't been written yet."
+              },
+              {
+                "where": "tyrants",
+                "mark": "box",
+                "note": "Tyrant: a ruler who uses power cruelly or unfairly."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "John Adams wrote back that he could only laugh at her request. Connects: her warning was heard and brushed off."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "11.2 Casefile B · The Build",
+      "status": "open",
+      "docs": [
+        {
+          "n": 11,
+          "title": "The Articles of Confederation · the first plan of government",
+          "kind": "text",
+          "src": "Source: Articles of Confederation, 1781 (adapted)",
+          "page": 4,
+          "steps": [
+            {
+              "question": "Who wrote these rules, and what were they fighting?",
+              "mode": null,
+              "line": "The source line says 1781. Think about what the colonists were still fighting against, and what kind of power they feared."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Four articles, each its own rule. Read one, say it in your own words, then go to the next. Sovereignty means supreme power."
+            },
+            {
+              "question": "What couldn't the national government do under these rules?",
+              "mode": null,
+              "line": "Look at Article VIII: who collects the taxes? Then look at Article XIII: who has to agree to any change?"
+            },
+            {
+              "question": "Who would like these rules, and who would find them frustrating?",
+              "mode": null,
+              "line": "Think of a small state, a big state, and a soldier waiting to be paid. Article V and Article VIII are good places to look."
+            },
+            {
+              "question": "Who held more power under the Articles, the states or the national government?",
+              "mode": null,
+              "line": "Start with the first line of Article II. Then look in the group called How power is built and limited."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 11's questions in your casefile, starting on page 4. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "Article II. Each state keeps its sovereignty, its freedom, and its independence, along with every power that this confederation does not expressly give to the United States.",
+            "Article V. Delegates shall meet in one Congress. In deciding questions, each state shall have one vote.",
+            "Article VIII. The costs of war and all other common expenses shall be paid out of a common treasury, supplied by the states in proportion to the value of the land in each state. The taxes for that share shall be laid and collected by the legislatures of the several states.",
+            "Article XIII. No change shall ever be made to these articles unless it is agreed to in Congress and afterward confirmed by the legislature of every state."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Article II. Each state keeps its sovereignty (supreme power), its freedom, and its independence. It also keeps every power that this confederation does not clearly give to the United States.",
+              "Article V. Delegates will meet in one Congress. When they vote, each state gets one vote.",
+              "Article VIII. The costs of war and other shared costs will be paid from a shared treasury. Each state pays in based on the value of its land. Each state's own legislature (its lawmakers) will set and collect the taxes for that share.",
+              "Article XIII. These articles can never be changed unless Congress agrees and then the legislature of every state approves."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "expressly",
+                "mark": "box",
+                "note": "Expressly: clearly, in so many words."
+              },
+              {
+                "where": "1781",
+                "mark": "circle",
+                "note": "1781 is when the last state approved it."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Maryland would not approve the Articles until Virginia and other states agreed to give their western land claims to the whole country. It approved in 1781, the last state to do so. Connects: one state could hold up the whole plan."
+            }
+          }
+        },
+        {
+          "n": 12,
+          "title": "Washington, 1786 · a private letter to James Madison",
+          "kind": "text",
+          "src": "Source: George Washington to James Madison, November 5, 1786 (adapted)",
+          "page": 8,
+          "steps": [
+            {
+              "question": "Who wrote this, to whom, and why might a private letter say more?",
+              "mode": null,
+              "line": "Washington is writing to James Madison, not to the public. Check the date: November 1786. Something had just happened in Massachusetts."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Three paragraphs: how bright things were, the bad news from Massachusetts, and his warning. Anarchy means no working government at all."
+            },
+            {
+              "question": "What is Washington afraid will happen, and why?",
+              "mode": null,
+              "line": "Look at the end of his first paragraph: where does he say the country is heading? Then read his last sentence about thirteen sovereignties."
+            },
+            {
+              "question": "Whose side of the story is missing from Washington's letter?",
+              "mode": null,
+              "line": "He calls them disorders. Ask who was behind them, and what they were losing."
+            },
+            {
+              "question": "If no power can stop disorder, what happens to people's rights?",
+              "mode": null,
+              "line": "Find “life, liberty, or property.” Then look in the group called Where government's power comes from."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 12's questions in your casefile, starting on page 8. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "No morning ever dawned brighter than ours did — and no day was ever more clouded than the present. Without some change in our political thinking, the structure we have spent seven years raising, at the cost of much blood and treasure, must fall. We are fast heading toward anarchy and confusion.",
+            "A letter I have just received from General Knox, who has just returned from Massachusetts, is full of sad information about the temper and designs of a considerable part of that people.",
+            "What stronger evidence can be given of the weakness of our governments than these disorders? If no power exists to check them, what security has a man of life, liberty, or property? Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "No morning ever started brighter than ours did, and no day has ever been cloudier than today. Unless our political thinking changes, the structure we spent seven years building, at the cost of much blood and money, will fall. We are fast heading toward anarchy (no working government) and confusion.",
+              "I just got a letter from General Knox, who is back from Massachusetts. It is full of sad news about the mood and the plans of many of the people there.",
+              "What stronger proof could there be of how weak our governments are than these disorders? If no power exists to stop them, how safe is anyone's life, liberty, or property? Thirteen sovereignties (thirteen states, each with supreme power) pulling against each other, and all tugging at the federal head, will soon ruin the whole country."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "No morning ever dawned brighter",
+                "mark": "margin",
+                "note": "He opens with a picture: a bright morning, then a clouded day. The contrast sets up his warning."
+              },
+              {
+                "where": "blood and treasure",
+                "mark": "box",
+                "note": "Treasure here means money. The war cost lives and money."
+              },
+              {
+                "where": "General Knox",
+                "mark": "circle",
+                "note": "Henry Knox, his old artillery commander, now in charge of the army for Congress. Washington trusts this source."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Washington agreed to go to the convention in Philadelphia in 1787, and the delegates chose him to run it. Connects: the man who wrote this letter helped write the fix."
+            }
+          }
+        },
+        {
+          "n": 13,
+          "title": "Hamilton makes the case · The Federalist No. 15",
+          "kind": "text",
+          "src": "Source: Alexander Hamilton, The Federalist Papers: No. 15, December 1, 1787 (adapted)",
+          "page": 9,
+          "steps": [
+            {
+              "question": "Who wrote this, for whom, and what did he want readers to do?",
+              "mode": null,
+              "line": "Hamilton wrote this for New York newspapers while New York was deciding on the Constitution. Ask what vote he was hoping for."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Three paragraphs: the question, the problem, and the picture he paints. Read the last sentence twice."
+            },
+            {
+              "question": "What does Hamilton say is broken, and how does he show it?",
+              "mode": null,
+              "line": "Find the sentence that starts “Under the Confederation.” Then find the wheels and the building."
+            },
+            {
+              "question": "Who would argue that the Articles were working just fine?",
+              "mode": null,
+              "line": "Think about who held the power under the Articles. Would they want to give it up?"
+            },
+            {
+              "question": "What principle does Hamilton think the Articles took too far?",
+              "mode": null,
+              "line": "He says one state can stop the whole country. Look in the group called How power is built and limited."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 13's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "The next question to examine is whether the present Confederation is enough to preserve the Union.",
+            "Under the Confederation, all thirteen separate sovereign wills must agree before any important measure of the Union can be carried out. What has happened is what should have been expected: the measures of the Union have not been carried out. The failures of the states have grown, step by step, until they have stopped all the wheels of the national government and brought them to a halt.",
+            "Each state, listening to the persuasive voice of its own immediate interest, has withdrawn its support, until the frail and tottering building seems ready to fall upon our heads and crush us beneath its ruins."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "The next question is whether the Confederation we have now is enough to keep the Union together.",
+              "Under the Confederation, all thirteen separate states, each with supreme power, must agree before the Union can do anything important. What happened is what you would expect: the Union's plans have not been carried out. The states' failures have grown, step by step, until they have stopped all the wheels of the national government and brought them to a halt.",
+              "Each state listened to the voice of its own immediate interest (what helps it right now) and pulled back its support. Now the frail and tottering building looks ready to fall on our heads and crush us under its ruins."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "The next question to examine",
+                "mark": "margin",
+                "note": "This essay is one step in a long series: No. 15 of 85."
+              },
+              {
+                "where": "December 1, 1787",
+                "mark": "circle",
+                "note": "About two and a half months after the convention finished the Constitution on September 17, 1787."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Hamilton, Madison and John Jay wrote the Federalist Papers under one shared pen name, Publius. Connects: the Constitution's defenders hid their names too."
+            }
+          }
+        },
+        {
+          "n": 14,
+          "title": "Article I · the bargains, the Constitution, 1787",
+          "kind": "text",
+          "src": "Source: United States Constitution, Article I, 1787 (adapted)",
+          "page": 13,
+          "steps": [
+            {
+              "question": "Who wrote this, and who was not in the room?",
+              "mode": null,
+              "line": "The source line says 1787. Day 8's What You Need to Know tells you who met in Philadelphia. Then ask who wasn't there."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Four sections, each its own rule. Watch for the numbers: every second year, three fifths, two Senators."
+            },
+            {
+              "question": "How does Article I decide how much power each state gets in Congress?",
+              "mode": null,
+              "line": "Compare Section 2 with Section 3. What does each one use to decide how many members a state gets?"
+            },
+            {
+              "question": "Who gained power from the three-fifths clause, and who paid for it?",
+              "mode": null,
+              "line": "Find “all other persons.” Ask who those persons were, and whether they got a vote."
+            },
+            {
+              "question": "What principle does Section 1 put into practice?",
+              "mode": null,
+              "line": "Section 1 gives the power to make laws to one branch only. Look in the group called How power is built and limited."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 14's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "Section 1. All legislative powers granted here shall be vested in a Congress of the United States, which shall consist of a Senate and a House of Representatives.",
+            "Section 2. The House of Representatives shall be made up of members chosen every second year by the people. Representatives shall be divided among the states according to their numbers — adding to the whole number of free persons three fifths of all other persons.",
+            "Section 3. The Senate shall be made up of two Senators from each state, and each Senator shall have one vote.",
+            "Section 8. The Congress shall have power to lay and collect taxes, to pay the debts and provide for the common defense and general welfare of the United States."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Section 1. All the power to make laws given here belongs to a Congress of the United States. Congress has two parts: a Senate and a House of Representatives.",
+              "Section 2. Members of the House of Representatives are chosen by the people every two years. Each state gets Representatives based on its population: all the free persons, plus three fifths of all other persons (enslaved people).",
+              "Section 3. The Senate has two Senators from each state, and each Senator gets one vote.",
+              "Section 8. Congress has the power to set and collect taxes, to pay the country's debts, and to provide for the common defense and general welfare (the good of everyone) of the United States."
+            ]
+          },
+          "before": {
+            "title": "BEFORE WE TALK",
+            "text": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life."
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "every second year",
+                "mark": "circle",
+                "note": "Every two years. That's why every House seat is on the ballot in each even-numbered year."
+              },
+              {
+                "where": "vested",
+                "mark": "box",
+                "note": "Vested: given to, placed in."
+              },
+              {
+                "where": "lay and collect taxes",
+                "mark": "box",
+                "note": "Lay a tax: create it and set the amount. Collect: gather the money."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "After the Civil War, the 14th Amendment (1868) replaced the three-fifths rule. House seats would now count the whole number of persons in each state. Connects: the bargain on this page lasted until after the Civil War."
+            }
+          }
+        },
+        {
+          "n": 15,
+          "title": "Madison on checks · The Federalist No. 51",
+          "kind": "text",
+          "src": "Source: James Madison, Federalist No. 51, 1788 (adapted)",
+          "page": 15,
+          "steps": [
+            {
+              "question": "Who wrote this, and why was he writing it?",
+              "mode": null,
+              "line": "Madison helped write the Constitution, then wrote this to defend it. Ask what he wants his readers to believe."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Two short paragraphs, but every word counts. A check is something that can stop or limit something else."
+            },
+            {
+              "question": "What does Madison want each part of government to do to the others?",
+              "mode": null,
+              "line": "Read the second paragraph slowly. What does he want each office to be to the others? Then read the words right after that."
+            },
+            {
+              "question": "Is Madison's view of people hopeful or worried? How might someone see it differently?",
+              "mode": null,
+              "line": "He says better motives fail. Ask what he thinks people with power will do if nothing stops them."
+            },
+            {
+              "question": "What principle is Madison describing, and where do you see it in the Constitution?",
+              "mode": null,
+              "line": "Look in the group called How power is built and limited. Then think of a time one branch can block another."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 15's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "This policy of supplying, by opposite and rival interests, what better motives fail to supply can be traced through the whole system of human affairs, private as well as public.",
+            "We see it especially in every lesser distribution of power, where the constant aim is to divide and arrange the several offices so that each may be a check on the others — so that the private interest of every individual becomes a guard over the public's rights. These inventions of prudence are no less necessary in dividing the supreme powers of the state."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "This plan works by setting opposite and rival interests against each other, to make up for what better motives fail to do. You can see it all through human life, in private matters and in public ones.",
+              "You see it especially when smaller amounts of power are handed out. The goal is always to divide and arrange the offices so that each one can be a check on the others. That way, each person's own private interest becomes a guard over the public's rights. These careful, smart inventions are just as necessary when dividing the highest powers of the government."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "prudence",
+                "mark": "box",
+                "note": "Prudence: careful good sense."
+              },
+              {
+                "where": "private as well as public",
+                "mark": "margin",
+                "note": "He says this works everywhere, in families and businesses too, not only in government."
+              },
+              {
+                "where": "1788",
+                "mark": "circle",
+                "note": "Published in February 1788."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "In 1789, Madison wrote the first draft of the Bill of Rights in Congress. Connects: the man defending the Constitution here also wrote its first amendments."
+            }
+          }
+        },
+        {
+          "n": 16,
+          "title": "The case against · Antifederalist No. 46",
+          "kind": "text",
+          "src": "Source: “An Old Whig” II, Philadelphia, October 17, 1787 (Antifederalist No. 46) (adapted)",
+          "page": 16,
+          "steps": [
+            {
+              "question": "Who wrote this, and why might he hide his name?",
+              "mode": null,
+              "line": "The writer signed with a pen name, “An Old Whig.” Writers on both sides did this. Why might someone attacking the new Constitution in 1787 have an extra reason to hide his name?",
+              "tip": {
+                "title": "NO NAME ON IT?",
+                "text": [
+                  "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+                ]
+              }
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Most of the first paragraph is a quote from the Constitution. Find where the quote starts and ends. Then read his one-sentence question."
+            },
+            {
+              "question": "What part of the Constitution worries the author, and what is he afraid of?",
+              "mode": null,
+              "line": "Find the words he puts in quotation marks. Then read his question: what does he think Congress could do?"
+            },
+            {
+              "question": "How would a Federalist like Madison answer this worry?",
+              "mode": null,
+              "line": "Go back to Document 15. What does Madison say stops any one part of government from taking too much?"
+            },
+            {
+              "question": "If a government's power has no clear limits, what protects the people?",
+              "mode": null,
+              "line": "Look in two groups on your card: How power is built and limited, and What government must protect."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 16's questions in your casefile, starting on page 17. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "My object is to consider that undefined, unbounded, and immense power which is contained in the following clause: “And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or offices thereof.”",
+            "Under such a clause as this, can anything be said to be reserved and kept back from Congress?"
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "I want to look at a power that is undefined, unbounded (unlimited), and huge. It is in this clause of the Constitution: “And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or offices thereof.” (In other words: Congress can make any law it needs to carry out its powers.)",
+              "With a clause like this, is anything left that Congress can't do?"
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "thereof",
+                "mark": "box",
+                "note": "Thereof: of it."
+              },
+              {
+                "where": "An Old Whig",
+                "mark": "circle",
+                "note": "A pen name, not a real name. Writers on both sides of the fight used them. Hamilton, Madison and John Jay signed The Federalist as “Publius.”"
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Patrick Henry led the fight against the Constitution at Virginia's convention in 1788. Connects: the Antifederalists had famous names too, not only hidden ones."
+            }
+          }
+        },
+        {
+          "n": 17,
+          "title": "The Bill of Rights · the answer, 1791",
+          "kind": "text",
+          "src": "Source: United States Constitution, Amendments I–X, 1791 (adapted)",
+          "page": 18,
+          "steps": [
+            {
+              "question": "When were these added, and why add them after the Constitution was approved?",
+              "mode": null,
+              "line": "Check the date: 1791. Day 9's What You Need to Know tells you the promise some states were made."
+            },
+            {
+              "question": null,
+              "mode": null,
+              "line": "Four amendments, each its own rule. For each one, ask: what can't the government do?"
+            },
+            {
+              "question": "What does the Bill of Rights stop the government from doing?",
+              "mode": null,
+              "line": "Pick one amendment. Find the words that set the rule (“no law,” “shall not,” “No person shall” or “shall enjoy the right”), and read what comes after."
+            },
+            {
+              "question": "Would the author of Document 16 be satisfied by these amendments?",
+              "mode": null,
+              "line": "His worry was about how much Congress could do. Ask whether these amendments limit that, or protect people in a different way."
+            },
+            {
+              "question": "Which principle on your card appears in these amendments, and what does it protect?",
+              "mode": null,
+              "line": "Read Amendment V slowly. Then look in the group called What government must protect."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 17's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
+          "text": [
+            "Amendment I. Congress shall make no law establishing a religion or prohibiting the free exercise of religion, the freedom of speech or of the press, or the right of the people to assemble and to petition the government.",
+            "Amendment IV. The right of the people to be secure in their persons, houses, papers and effects against unreasonable searches and seizures shall not be violated, and no warrant shall issue except upon probable cause.",
+            "Amendment V. No person shall be compelled to be a witness against himself, nor be deprived of life, liberty or property without due process of law.",
+            "Amendment VI. In all criminal prosecutions the accused shall enjoy the right to a speedy public trial by an impartial jury, and to a lawyer."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Amendment I. Congress shall make no law that sets up an official religion or stops people from practicing their religion. It can't limit the freedom of speech or of the press, or the right of the people to gather and to petition (ask) the government.",
+              "Amendment IV. People have the right to be safe in their persons, houses, papers and belongings from unreasonable searches and seizures. No warrant can be given out without probable cause (a good reason to believe a crime happened).",
+              "Amendment V. No person can be forced to be a witness against himself, or lose his life, liberty or property without due process of law (fair legal steps).",
+              "Amendment VI. Anyone accused of a crime has the right to a speedy public trial by a fair jury, and to a lawyer."
+            ]
+          },
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "probable cause",
+                "mark": "box",
+                "note": "Probable cause: a good reason, based on facts, to think a crime happened."
+              },
+              {
+                "where": "Amendments I–X",
+                "mark": "circle",
+                "note": "Ten amendments. Only four of them are printed here."
+              }
+            ],
+            "oe": {
+              "kind": "example",
+              "text": "Congress sent twelve amendments to the states in 1789, and ten were ratified. One of the other two was finally ratified in 1992, as the 27th Amendment. Connects: the Bill of Rights could have been longer."
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "11.2 Casefile C",
+      "status": "building"
+    }
+  ],
+  "q4_card": {
+    "title": "Civic Principles",
+    "intro": "Q4 · CIVIC CONNECTION asks which principle is at stake. Name it from this card, then show how the document upholds it, denies it, or fights over it.",
+    "items": [
+      {
+        "n": "1",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Rule of Law",
+        "question": "No one is above the law, not even the people who make it. Look for it when someone powerful is held to the rules, or tries to dodge them."
+      },
+      {
+        "n": "2",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Limited Government",
+        "question": "Government can only do what the Constitution allows. Look for it when someone says the government went too far."
+      },
+      {
+        "n": "3",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Separation of Powers",
+        "question": "Power is split among three branches, each with its own job: make laws, carry out laws, judge laws. Look for it when the fight is about which branch gets to act."
+      },
+      {
+        "n": "4",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Checks and Balances",
+        "question": "Each branch can block or limit the others. Look for it when there's a veto, an override, an impeachment, or a court striking something down."
+      },
+      {
+        "n": "5",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Federalism",
+        "question": "Power is divided between the national government and the states. When they clash, valid federal law wins. Look for it when it's the nation against a state."
+      },
+      {
+        "n": "6",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Judicial Review",
+        "question": "Courts can strike down a law or action that breaks the Constitution. Look for it when a court decides whether something is constitutional."
+      },
+      {
+        "n": "7",
+        "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+        "name": "Popular Sovereignty (consent of the governed)",
+        "question": "Government's power comes from the people, and it rules only with their agreement. Look for it when people give, or take back, their support for a government."
+      },
+      {
+        "n": "8",
+        "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+        "name": "Representative Government",
+        "question": "The people elect officials to make decisions for them. Look for it when the issue is voting, elections, or who speaks for whom."
+      },
+      {
+        "n": "9",
+        "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+        "name": "Natural Rights",
+        "question": "Every person is born with rights (life, liberty, property) that government exists to protect. Look for it when a right is treated as something you're born with, not something government hands out."
+      },
+      {
+        "n": "10",
+        "group": "WHAT GOVERNMENT MUST PROTECT",
+        "name": "Individual Rights (civil liberties)",
+        "question": "Freedoms government can't take away, like speech, religion, press and assembly. Look for it when a personal freedom is limited, defended, or expanded."
+      },
+      {
+        "n": "11",
+        "group": "WHAT GOVERNMENT MUST PROTECT",
+        "name": "Equal Protection",
+        "question": "The law must treat people equally. Look for it when a group is treated differently, shut out, or separated by law."
+      },
+      {
+        "n": "12",
+        "group": "WHAT GOVERNMENT MUST PROTECT",
+        "name": "Due Process",
+        "question": "Government must follow fair steps before it takes your life, liberty, or property. Look for it when someone is arrested, held, or punished. Ask whether it was fair."
+      }
+    ],
+    "close": [
+      "Learn these by name. The Regents asks for them. Practice them in the Arena's matching set."
+    ]
+  },
+  "annotate": {
+    "button": "How to annotate",
+    "methods": {
+      "text": [
+        [
+          "WHO AND WHEN",
+          "Circle who made it and the year. They're in the source line."
+        ],
+        [
+          "THE CLAIM",
+          "Underline the one sentence that makes the main point."
+        ],
+        [
+          "WORDS",
+          "Box any word you don't know. Write your best guess above it."
+        ],
+        [
+          "SO WHAT",
+          "In the margin, write a few words on why it matters."
+        ],
+        [
+          "OUTSIDE",
+          "Add one true thing you already know that isn't in the document."
+        ]
+      ],
+      "picture": [
+        [
+          "LABELS",
+          "Read every word first: the title, the caption, the labels."
+        ],
+        [
+          "WHO'S WHO",
+          "Name every figure. Who is big, and who is small?"
+        ],
+        [
+          "EXAGGERATION",
+          "What is stretched past real life? That's the caricature."
+        ],
+        [
+          "SYMBOLS",
+          "What stands for something else: clothes, tools, animals?"
+        ],
+        [
+          "THE POINT",
+          "What is the artist accusing, and who would agree?"
+        ]
+      ],
+      "map": [
+        [
+          "TITLE, KEY, DATE",
+          "Read the title, the key and the date before anything else."
+        ],
+        [
+          "THE BIG PICTURE",
+          "Circle the biggest or most important part."
+        ],
+        [
+          "COMPARE",
+          "Mark two parts you can compare."
+        ],
+        [
+          "THE POINT",
+          "Write what it shows in one sentence."
+        ],
+        [
+          "OUTSIDE",
+          "Add one true thing you already know that isn't on it."
+        ]
+      ]
+    },
+    "model_label": "WATCH IT DONE ON THIS DOCUMENT",
+    "model_note": "These notes are on parts no question asks about. Your questions are yours to do.",
+    "oe_example_label": "OUTSIDE EVIDENCE · AN EXAMPLE",
+    "oe_where_label": "OUTSIDE EVIDENCE · WHERE TO LOOK"
+  },
+  "_shape_annotate": "Same as Global v4: pack 'annotate' (methods text|picture|map as [tag, step]); docs[].annotate = {kind, notes[{where, mark, note}], oe{kind, text}}. No French on US."
 }
