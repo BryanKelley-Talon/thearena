@@ -1,6 +1,6 @@
 {
   "_course": "Global History and Geography II 10R",
-  "_built": "2026-10-05 by Will (global10r-curriculum) · skills/enduring-issues/build_ei_map_gs10r.py · stops from what students read in 10.1 and 10.2 · SIGNED by BK 2026-10-05 21:14 EDT (\"yes agreed to all\")",
+  "_built": "2026-10-08 by Will (global10r-curriculum) · skills/enduring-issues/build_ei_map_gs10r.py · stops from what students read in 10.1 and 10.2 · SIGNED by BK 2026-10-05 21:14 EDT (\"yes agreed to all\")",
   "_shape": "map-stop-shape v1 · Sam + Will 2026-10-05 · Josh confirms. Global: subs = the card's Issues to name; on_lines.sub = the exact issue; also_read optional. No 'thread' anywhere on a Global screen. v2 fields (Josh 23:45 proposal): exemplar, exemplar_by_line (key = line id, or the sub id where one line carries two issues at a stop), links[].kind (SEQ: cause_effect | similarity_difference | turning_point, words in link_kinds; Sam's shape v2.1, BK 08:50) and .explain, doc_assist.",
   "_line_words": "Names, questions and issues are read from skills/casefile/umbrellas.py (the card on page 2); definitions from skills/doc-assist/da_global_common.py. Never typed.",
   "link_kinds": {
@@ -1332,12 +1332,12 @@
       "unit": "10.2",
       "casefile": "C",
       "when": "1846",
-      "title": "Cavour: one Italy",
-      "what_happened": "Camillo di Cavour, who later led the unification of Italy, writes that Italians must silence the small questions that divide them. A united Italy, he argues, could stand with the most civilized nations.",
+      "title": "Cavour: silence what divides Italians",
+      "what_happened": "Camillo di Cavour, who later led the unification of Italy, writes that Italians must silence the small questions that divide them. An Italy freed from foreign rule, he argues, could stand with the most civilized nations.",
       "document": {
         "title": "Camillo di Cavour, 1846",
         "citation": "Source: Camillo di Cavour, 1846, from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, August 2003",
-        "source_ref": "10.2 Casefile C, Document 5 (p. 11)",
+        "source_ref": "10.2 Casefile C, Document 5 (p. 12)",
         "excerpt": null
       },
       "also_read": [],
@@ -1345,14 +1345,14 @@
         {
           "line": "u3",
           "sub": "u3-nationalism",
-          "reason": "Cavour wants Italians to set aside what divides them and build one nation, \"glorious and powerful.\"",
+          "reason": "Cavour wants Italians to set aside what divides them so their country can be \"glorious and powerful.\"",
           "question": "Who a people say they are, and who that leaves out."
         }
       ],
       "exemplar": {
-        "context": "In 1846, Italy was split into many small states, with Austria ruling the north and the pope ruling the middle. Cavour, from the Kingdom of Sardinia, wanted one Italy.",
+        "context": "In 1846, Italy was split into many small states, with Austria ruling Lombardy and Venetia in the north and the pope ruling the middle. Cavour, from the kingdom of Piedmont-Sardinia, wanted Italy freed from foreign rule.",
         "claim": "Cavour's writing shows the enduring issue of Nationalism, because he calls on Italians to set aside what divides them and build one nation.",
-        "evidence": "Document 5 shows Cavour writing that in the face of “this great question,” Italian unity, “all the petty questions that divide us must be silenced,” so that Italy can be “glorious and powerful.”",
+        "evidence": "Document 5 shows Cavour writing that in the face of “this great question,” Italy's emancipation [unification], “all the petty questions that divide us must be silenced,” so that Italy can be “glorious and powerful.”",
         "explain": "Cavour wants Italians to think of themselves as one people first. That loyalty to a shared nation is nationalism, and by 1870 it had united Italy."
       },
       "links": [
@@ -1379,7 +1379,7 @@
       "what_happened": "Otto von Bismarck, leading Prussia, says Germany will be united by blood and iron, not by democracy. Three wars later, in 1871, it is.",
       "document": {
         "title": "Otto von Bismarck, 1862",
-        "citation": "Source: Otto von Bismarck, speech to the Prussian parliament, 1862 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam",
+        "citation": "Source: Otto von Bismarck, to the budget committee of the Prussian parliament, September 30, 1862 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam",
         "source_ref": "10.2 Casefile C, Document 6 (p. 12)",
         "excerpt": null
       },
@@ -1443,14 +1443,14 @@
       "document": {
         "title": "“The Boiling Point,” Punch, October 2, 1912",
         "citation": "Source: Leonard Raven-Hill, “The Boiling Point,” Punch (London), October 2, 1912 (public domain)",
-        "source_ref": "10.2 Casefile C, Document 8 (p. 16)",
+        "source_ref": "10.2 Casefile C, Document 8 (p. 17)",
         "excerpt": null
       },
       "also_read": [
         {
           "title": "Map: the peoples of Austria-Hungary, 1911",
           "citation": "Source: William R. Shepherd, “Distribution of Races in Austria-Hungary,” Historical Atlas, Henry Holt, 1911 (public domain)",
-          "source_ref": "10.2 Casefile C, Document 7 (p. 15)",
+          "source_ref": "10.2 Casefile C, Document 7 (p. 16)",
           "excerpt": null
         }
       ],

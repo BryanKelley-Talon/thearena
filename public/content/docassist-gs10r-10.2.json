@@ -1,5 +1,5 @@
 {
- "_built": "Will (global10r-curriculum) 2026-10-02 13:23 EDT · v4.1: Casefile C to v4 (annotate + français) and matched to printed Casefile C v4; B v4 unchanged; A unchanged at v3 until printed A v12",
+ "_built": "2026-10-08 · Will · 10.2 v5 (C only; A and B as v4.1)",
  "_shape": "same as us11r doc-assist-11.2A_2026-10-01.json, plus: v3, BK 10:16 the four-question arc: steps[k] = {question, mode: null, line} exactly as us11r 11.2 A v2, step 2's question null; optional 'before' (a framing box printed above the document); optional 'before_we_talk' (a line the tool shows above a sensitive document whose page prints none; BK 09:05); optional 'images' (10.1 Document 1 has two maps: show them one after the other, each with its label and describe); 'umbrellas' (the step-5 pop-out list, BK 09:05; items[].issue_defs = one-line definitions, BK 10:28); steps[0].tip = {title, text[]} on 8 docs (NO NAME ON IT?, BK 10:26). v4: pack.annotate = {button, methods{text,picture,map}: [[tag, step]...], model_label, model_note, oe_example_label, oe_where_label}; docs[].annotate = {kind, notes[{where, mark, note}], oe{kind: example|where, text}} (B only for now). pack.fr = French chrome; docs[].fr = {label, title, text[], describe, before, before_we_talk, steps[5 x {question, line}], tip, close} (B only). v4.1: docs[].word_watch = {title, text} (optional; Casefile C Document 5): show it under the document text, in a tinted box, title in bold, as the printed page does; docs[].fr.word_watch = the same in French. pack.fr.note = one line shown under the « (traduit en français) » label on every document.",
  "tool": "Doc Assist",
  "room": "10.2",
@@ -1527,7 +1527,7 @@
    "title": "10.2 Casefile C · The uniter and the divider: nationalism, 1791–1912",
    "book": "casefile",
    "status": "open",
-   "_source": "global10r-curriculum/OUTPUTS/Unit_10.2/GS10R_Unit10.2_CASEFILE-C_v2_2026-09-30.pdf",
+   "_source": "Casefile C v8 (BLESSED 2026-10-08 11:41)",
    "docs": [
     {
      "n": 1,
@@ -1661,9 +1661,9 @@
        "line": "Find the words that come after each we must. Then read his last sentence slowly."
       },
       {
-       "question": "Why does Dessalines choose such strong words for the French, and why isn't freedom alone enough for him?",
+       "question": "Dessalines had been enslaved himself. Why isn't freedom alone enough for him?",
        "mode": null,
-       "line": "Read the words around barbarians and inhuman: what does he say each one did, or still hopes to do? For the second part, read sovereignty in KEY VOCABULARY on page 3, then his last sentence."
+       "line": "Read his last two sentences: what does he say they must take away, and from whom? Then read sovereignty in KEY VOCABULARY on page 3."
       },
       {
        "question": "What lasting problem does this declaration raise? Does Document 1 raise it too?",
@@ -1726,8 +1726,8 @@
         "line": "Trouve les mots qui viennent après chaque nous devons [we must]. Ensuite, lis lentement sa dernière phrase."
        },
        {
-        "question": "Pourquoi Dessalines choisit-il des mots aussi forts pour parler des Français, et pourquoi la liberté seule ne lui suffit-elle pas ?",
-        "line": "Lis ce qui entoure les mots barbares [barbarians] et inhumain [inhuman] : que dit-il de ce que chacun a fait, ou espère encore faire ? Pour la seconde partie, lis souveraineté [sovereignty] dans le KEY VOCABULARY, page 3, puis sa dernière phrase."
+        "question": "Dessalines avait lui-même été réduit en esclavage. Pourquoi la liberté seule ne lui suffit-elle pas ?",
+        "line": "Lis ses deux dernières phrases : que dit-il qu'ils doivent enlever, et à qui ? Ensuite, lis souveraineté [sovereignty] dans le KEY VOCABULARY, page 3."
        },
        {
         "question": "Quel problème durable cette déclaration soulève-t-elle ? Le document 1 le soulève-t-il aussi ?",
@@ -1865,9 +1865,9 @@
        "line": "His first sentence promises to tell you, and his second sentence does. Then read on: what does he say America has, and what doesn't it have?"
       },
       {
-       "question": "Why would Bolívar tell an Englishman that America stands alone?",
+       "question": "How does writing to an Englishman shape what Bolívar says?",
        "mode": null,
-       "line": "Picture the reader: an Englishman on an island Britain rules. Then reread the part of the second paragraph that starts As soon as we are strong."
+       "line": "Picture the reader: an Englishman on an island Britain rules. Then reread the part of the second paragraph that starts As soon as we are strong. What is Bolívar asking this reader's country for?"
       },
       {
        "question": "What lasting problem is Bolívar trying to solve?",
@@ -1928,8 +1928,8 @@
         "line": "Sa première phrase promet de te le dire, et sa deuxième phrase le dit. Ensuite, continue ta lecture : selon lui, qu'est-ce que l'Amérique a, et qu'est-ce qu'elle n'a pas ?"
        },
        {
-        "question": "Pourquoi Bolívar dirait-il à un Anglais que l'Amérique est seule ?",
-        "line": "Représente-toi le lecteur : un Anglais sur une île gouvernée par la Grande-Bretagne. Ensuite, relis la partie du second paragraphe qui commence par Dès que nous serons forts [As soon as we are strong]."
+        "question": "En quoi le fait d'écrire à un Anglais influence-t-il ce que dit Bolívar ?",
+        "line": "Représente-toi le lecteur : un Anglais sur une île gouvernée par la Grande-Bretagne. Ensuite, relis la partie du second paragraphe qui commence par Dès que nous serons forts [As soon as we are strong]. Que demande Bolívar au pays de ce lecteur ?"
        },
        {
         "question": "Quel problème durable Bolívar essaie-t-il de résoudre ?",
@@ -1948,12 +1948,12 @@
      "title": "Camillo di Cavour, 1846",
      "kind": "text",
      "src": "Source: Camillo di Cavour, 1846, from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, August 2003",
-     "page": 11,
+     "page": 12,
      "steps": [
       {
-       "question": "Cavour wrote in 1846. Had Italy come together as one nation by then?",
+       "question": "What happened before 1846 that left Italy divided, and how does that help explain Cavour's call?",
        "mode": null,
-       "line": "Find the year What You Need to Know on page 11 gives for the Kingdom of Italy, and put it next to 1846. Then look at the word in brackets in his first line."
+       "line": "What You Need to Know on page 11 starts in 1815. Read its first paragraph: who split Italy, and who ruled Lombardy and Venetia? Then look at the word in brackets in his first line."
       },
       {
        "question": null,
@@ -1966,9 +1966,9 @@
        "line": "Find the word silenced and read back from it to see what must go quiet. For his hope, read what comes after it, and watch for not only and above all."
       },
       {
-       "question": "How does Cavour want Italy to come together, and how is that different from Bismarck in Document 6?",
+       "question": "Questions 14a and 14b: is Cavour's way of bringing Italy together similar to Bismarck's, or different?",
        "mode": null,
-       "line": "Find the phrase here that shows how Cavour wants Italy to come together. Then open Document 6's walk and do the same for Bismarck."
+       "line": "Find the phrase here that shows how Cavour wants Italy to come together. Then open Document 6's walk and do the same for Bismarck. Pick similar or different, and use a phrase from each document."
       },
       {
        "question": "What lasting problem does the word unification point to?",
@@ -2015,8 +2015,8 @@
       "title": "Camillo di Cavour, 1846",
       "steps": [
        {
-        "question": "Cavour a écrit ce texte en 1846. L'Italie s'était-elle déjà réunie en une seule nation à cette date ?",
-        "line": "Trouve l'année que WHAT YOU NEED TO KNOW, page 11, donne pour le royaume d'Italie, et place-la à côté de 1846. Ensuite, regarde le mot entre crochets dans sa première ligne."
+        "question": "Qu'est-ce qui, avant 1846, a laissé l'Italie divisée, et en quoi cela aide-t-il à expliquer l'appel de Cavour ?",
+        "line": "WHAT YOU NEED TO KNOW, page 11, commence en 1815. Lis son premier paragraphe : qui a divisé l'Italie, et qui gouvernait la Lombardie et la Vénétie ? Ensuite, regarde le mot entre crochets dans sa première ligne."
        },
        {
         "question": null,
@@ -2027,8 +2027,8 @@
         "line": "Trouve les mots réduites au silence [silenced] et lis en remontant à partir d'eux pour voir ce qui doit se taire. Pour son espoir, lis ce qui vient après, et repère pas seulement [not only] et surtout [above all]."
        },
        {
-        "question": "Comment Cavour veut-il que l'Italie s'unisse, et en quoi est-ce différent de Bismarck, dans le document 6 ?",
-        "line": "Trouve ici l'expression qui montre comment Cavour veut que l'Italie s'unisse. Ensuite, ouvre le parcours du document 6 et fais de même pour Bismarck."
+        "question": "Questions 14a et 14b : la façon dont Cavour veut unir l'Italie ressemble-t-elle à celle de Bismarck, ou est-elle différente ?",
+        "line": "Trouve ici l'expression qui montre comment Cavour veut que l'Italie s'unisse. Ensuite, ouvre le parcours du document 6 et fais de même pour Bismarck. Choisis semblable ou différent, et utilise une expression de chaque document."
        },
        {
         "question": "Quel problème durable le mot unification désigne-t-il ?",
@@ -2041,25 +2041,25 @@
       ],
       "word_watch": {
        "title": "WORD WATCH [attention au mot]",
-       "text": "Le jour 1, émancipation [emancipation] voulait dire libérer des personnes de l'esclavage. Ici, Cavour l'emploie pour l'Italie : la libérer de la domination étrangère pour qu'elle puisse devenir une seule nation. C'est pour cela qu'entre crochets, on lit unification."
+       "text": "Le jour 1, émancipation [emancipation] voulait dire libérer des personnes de l'esclavage. Ici, Cavour l'emploie pour l'Italie : la libérer de la domination étrangère. Les crochets de l'examen le lisent comme unification."
       }
      },
      "word_watch": {
       "title": "WORD WATCH",
-      "text": "On Day 1, emancipation meant freeing people from slavery. Here Cavour uses it for Italy: freeing it from foreign rule so it could become one nation. That's why the bracket says unification."
+      "text": "On Day 1, emancipation meant freeing people from slavery. Here Cavour uses it for Italy: freeing it from foreign rule. The exam's bracket reads it as unification."
      }
     },
     {
      "n": 6,
      "title": "Otto von Bismarck, 1862",
      "kind": "text",
-     "src": "Source: Otto von Bismarck, speech to the Prussian parliament, 1862 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam",
+     "src": "Source: Otto von Bismarck, to the budget committee of the Prussian parliament, September 30, 1862 (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam",
      "page": 12,
      "steps": [
       {
-       "question": "When did Bismarck say this, and who was he talking to?",
+       "question": "Who was Bismarck talking to, and what was he trying to get them to accept?",
        "mode": null,
-       "line": "The source line names the year and the audience. Then find Bismarck in What You Need to Know on page 11 to see what came next."
+       "line": "The source line names the date and the audience: a committee of Prussia's parliament. Find Bismarck in What You Need to Know on page 11 to see what came next. What did he want those lawmakers to accept?"
       },
       {
        "question": null,
@@ -2072,17 +2072,17 @@
        "line": "Say his sentence back in your own words. Then ask what blood and iron could stand for."
       },
       {
-       "question": "How is Bismarck's way different from what Cavour hopes for in Document 5?",
+       "question": "Questions 14a and 14b: is Bismarck's way similar to Cavour's, or different?",
        "mode": null,
-       "line": "Bismarck's sentence names what he won't use and what he will. Put that next to the phrase you found in Cavour."
+       "line": "Bismarck's sentence names what he won't use and what he will. Put that next to the phrase you found in Cavour. Your first sentence says similar or different; then prove it with both documents."
       },
       {
        "question": "What lasting problem does Bismarck's plan raise?",
        "mode": null,
-       "line": "Take his last three words, or a clue word from Cavour, and open the Six Umbrellas. Which question do they fit? Then do the OUTSIDE EVIDENCE box on page 13."
+       "line": "Take his last three words, or a clue word from Cavour, and open the Six Umbrellas. Which question do they fit? Then do the OUTSIDE EVIDENCE box on page 14."
       }
      ],
-     "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
      "text": [
       "“Not by democracy or liberal standards will our goal be achieved but by blood and iron.”"
      ],
@@ -2116,8 +2116,8 @@
       "title": "Otto von Bismarck, 1862",
       "steps": [
        {
-        "question": "Quand Bismarck a-t-il dit cela, et à qui parlait-il ?",
-        "line": "La ligne de source donne l'année et dit à qui il parlait. Ensuite, trouve Bismarck dans WHAT YOU NEED TO KNOW, page 11, pour voir la suite."
+        "question": "À qui Bismarck parlait-il, et que voulait-il leur faire accepter ?",
+        "line": "La ligne de source donne la date et le public : une commission du parlement de Prusse. Trouve Bismarck dans WHAT YOU NEED TO KNOW, page 11, pour voir la suite. Que voulait-il faire accepter à ces députés ?"
        },
        {
         "question": null,
@@ -2128,12 +2128,12 @@
         "line": "Redis sa phrase avec tes propres mots. Ensuite, demande-toi ce que le sang et le fer [blood and iron] pourraient représenter."
        },
        {
-        "question": "En quoi la manière de Bismarck est-elle différente de ce qu'espère Cavour dans le document 5 ?",
-        "line": "La phrase de Bismarck nomme ce qu'il n'utilisera pas et ce qu'il utilisera. Place cela à côté de l'expression que tu as trouvée chez Cavour."
+        "question": "Questions 14a et 14b : la manière de Bismarck ressemble-t-elle à celle de Cavour, ou est-elle différente ?",
+        "line": "La phrase de Bismarck nomme ce qu'il n'utilisera pas et ce qu'il utilisera. Place cela à côté de l'expression que tu as trouvée chez Cavour. Ta première phrase dit semblable ou différent ; ensuite, prouve-le avec les deux documents."
        },
        {
         "question": "Quel problème durable le plan de Bismarck soulève-t-il ?",
-        "line": "Prends les cinq derniers mots de sa phrase, ou un mot clé chez Cavour, et ouvre les Six Parapluies [Six Umbrellas]. À quelle question correspondent-ils ? Ensuite, remplis l'encadré OUTSIDE EVIDENCE [connaissances extérieures], page 13."
+        "line": "Prends les cinq derniers mots de sa phrase, ou un mot clé chez Cavour, et ouvre les Six Parapluies [Six Umbrellas]. À quelle question correspondent-ils ? Ensuite, remplis l'encadré OUTSIDE EVIDENCE [connaissances extérieures], page 14."
        }
       ],
       "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 6 dans ton Casefile, à partir de la page 12. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
@@ -2147,12 +2147,12 @@
      "title": "Map: the peoples of Austria-Hungary, 1911",
      "kind": "image",
      "src": "Source: William R. Shepherd, “Distribution of Races in Austria-Hungary,” Historical Atlas, Henry Holt, 1911 (public domain)",
-     "page": 15,
+     "page": 16,
      "steps": [
       {
-       "question": "Who made this map, when, and what do its colors stand for?",
+       "question": "Where is this empire, and why does where it sits matter?",
        "mode": null,
-       "line": "The title runs sideways down the right edge. The date is in the source line, and the note under it tells you what Races means here."
+       "line": "The title runs sideways down the right edge, and the source line has the date. Find the heavy black border, then read the names just outside it: who are the neighbors? The note under the source line tells you what Races means here."
       },
       {
        "question": null,
@@ -2160,9 +2160,9 @@
        "line": "Start with the legend in the lower left and read every name. Then find the heavy black border and look at the colors inside it. Big capital letters are regions; small ones are cities."
       },
       {
-       "question": "Which peoples live inside the empire's border, and what could that mean for one emperor ruling them all?",
+       "question": "Which peoples live inside the empire's border, and why was that a danger in an age of nationalism?",
        "mode": null,
-       "line": "Read every name in the legend and find each color inside the heavy border. Then reread What You Need to Know on page 14, especially the question the other peoples asked."
+       "line": "Read every name in the legend and find each color inside the heavy border. Then reread What You Need to Know on page 15, especially the question the other peoples asked."
       },
       {
        "question": "How would one of these peoples see this map in 1911?",
@@ -2175,7 +2175,7 @@
        "line": "Look at how long the legend's list of names is. Open the Six Umbrellas and ask which question that list could answer. Then look at Document 8."
       }
      ],
-     "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",
      "before": "“Races” in 1911 meant groups of people who spoke the same language. The colors show languages.",
      "image_file": "images/g0202-c3-doc7-austria-hungary-races-1911.jpg",
      "image_alt": "A color map. Its title is printed sideways down the right edge: “Distribution of Races in Austria-Hungary.” The map covers central and southeastern Europe. A heavy black line marks the border of Austria-Hungary, and the land inside it is filled with colors. Land outside the border is mostly left white. Inside the border, large capital letters name regions, including BOHEMIA, MORAVIA, GALICIA, AUSTRIA, HUNGARY, TRANSYLVANIA, CROATIA-SLAVONIA, BOSNIA, DALMATIA and TYROL. Cities marked inside include Vienna, Budapest, Prague and Serajevo. Outside the border, the map names GERMAN EMPIRE and RUSSIA to the north, ITALY to the southwest, and SERVIA, RUMANIA, BULGARIA and MONTENEGRO to the southeast. The ADRIATIC SEA is in the lower left. Many areas have spots and patches of another color inside them. The legend in the lower left lists ten colors: Germans (pink), Magyars (green), Rumanians (orange), Croats and Servians (olive), Ruthenians (yellow-green), Czechs (light blue), Slovaks (gray-green), Poles (brown), Slovenes (gray) and Italians (yellow). A bracket groups six of them, from Croats and Servians down to Slovenes, under the word Slavs. Under the legend: Scale 1:7 500 000, with a scale bar in miles. Grid letters and numbers run along the edges.",
@@ -2213,16 +2213,16 @@
       "title": "Carte : les peuples de l'Autriche-Hongrie [Austria-Hungary], 1911",
       "steps": [
        {
-        "question": "Qui a fait cette carte, quand, et que représentent ses couleurs ?",
-        "line": "Le titre est écrit à la verticale, le long du bord droit. La date est dans la ligne de source, et la note en dessous te dit ce que Races veut dire ici."
+        "question": "Où se trouve cet empire, et pourquoi sa position compte-t-elle ?",
+        "line": "Le titre est écrit à la verticale, le long du bord droit, et la ligne de source donne la date. Trouve l'épaisse frontière noire, puis lis les noms juste à l'extérieur : qui sont les voisins ? La note sous la ligne de source te dit ce que Races veut dire ici."
        },
        {
         "question": null,
         "line": "Commence par la légende en bas à gauche et lis chaque nom. Ensuite, trouve l'épaisse frontière noire et regarde les couleurs à l'intérieur. Les grosses lettres capitales désignent des régions ; les petites, des villes."
        },
        {
-        "question": "Quels peuples vivent à l'intérieur de la frontière de l'empire, et qu'est-ce que cela pourrait signifier pour un seul empereur qui les gouverne tous ?",
-        "line": "Lis chaque nom de la légende et trouve chaque couleur à l'intérieur de l'épaisse frontière. Ensuite, relis WHAT YOU NEED TO KNOW, page 14, surtout la question qu'ont posée les autres peuples."
+        "question": "Quels peuples vivent à l'intérieur de la frontière de l'empire, et pourquoi était-ce un danger à l'époque du nationalisme ?",
+        "line": "Lis chaque nom de la légende et trouve chaque couleur à l'intérieur de l'épaisse frontière. Ensuite, relis WHAT YOU NEED TO KNOW, page 15, surtout la question qu'ont posée les autres peuples."
        },
        {
         "question": "Comment l'un de ces peuples verrait-il cette carte en 1911 ?",
@@ -2243,7 +2243,7 @@
      "title": "“The Boiling Point,” Punch, October 2, 1912",
      "kind": "image",
      "src": "Source: Leonard Raven-Hill, “The Boiling Point,” Punch (London), October 2, 1912 (public domain)",
-     "page": 16,
+     "page": 17,
      "steps": [
       {
        "question": "Where and when was this cartoon printed, and what happened soon after?",
@@ -2263,15 +2263,15 @@
       {
        "question": "Who does the cartoonist put on top of the pot, and who isn't shown at all?",
        "mode": null,
-       "line": "The note under the source line names who is on the lid. Then check Balkans in Day 4's KEY VOCABULARY on page 14: are any of those peoples drawn here?"
+       "line": "The note under the source line names who is on the lid. Then check Balkans in Day 4's KEY VOCABULARY on page 15: are any of those peoples drawn here?"
       },
       {
        "question": "What lasting problem is boiling in this pot?",
        "mode": null,
-       "line": "Start with the two words on the pot. Open the Six Umbrellas and find the question they fit. Then do the OUTSIDE EVIDENCE box on page 17."
+       "line": "Start with the two words on the pot. Open the Six Umbrellas and find the question they fit. Then do the OUTSIDE EVIDENCE box on page 18."
       }
      ],
-     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",
+     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 17. Use the sentence stem, or write something of equal or better value.",
      "before": "The great powers of Europe sit on the lid of a pot labeled BALKAN TROUBLES. Six days later, the First Balkan War began.",
      "image_file": "images/g0202-c3-doc8-punch-boiling-point-1912.jpg",
      "image_alt": "A black-and-white pen drawing. A large, round, black pot sits in the middle, with a curved handle on its right side. The words “BALKAN TROUBLES” are written across the side of the pot. Five men crowd onto the lid. On the left, a man with a long white beard and a peaked cap leans forward with both hands flat on the lid. Behind him stands a man in a top hat. In the middle sits a man in a spiked helmet and round glasses. At the back right stands a man in a flat-topped military cap with fringed shoulder pieces, one fist clenched. At the front right, a man in a tall military cap sits on the edge of the lid with one leg hanging over the side and one hand on the lid. Swirling clouds of steam rise all around the pot and the men. The artist's signature is in the lower right. The caption under the drawing reads “THE BOILING POINT.”",
@@ -2317,11 +2317,11 @@
        },
        {
         "question": "Qui le caricaturiste place-t-il sur la marmite, et qui n'apparaît pas du tout ?",
-        "line": "La note sous la ligne de source nomme ceux qui sont sur le couvercle. Ensuite, vérifie Balkans dans le KEY VOCABULARY du jour 4, page 14 : l'un de ces peuples est-il dessiné ici ?"
+        "line": "La note sous la ligne de source nomme ceux qui sont sur le couvercle. Ensuite, vérifie Balkans dans le KEY VOCABULARY du jour 4, page 15 : l'un de ces peuples est-il dessiné ici ?"
        },
        {
         "question": "Quel problème durable bout dans cette marmite ?",
-        "line": "Commence par les deux mots sur la marmite. Ouvre les Six Parapluies [Six Umbrellas] et trouve la question à laquelle ils correspondent. Ensuite, remplis l'encadré OUTSIDE EVIDENCE [connaissances extérieures], page 17."
+        "line": "Commence par les deux mots sur la marmite. Ouvre les Six Parapluies [Six Umbrellas] et trouve la question à laquelle ils correspondent. Ensuite, remplis l'encadré OUTSIDE EVIDENCE [connaissances extérieures], page 18."
        }
       ],
       "close": "Voilà pour le parcours. Maintenant, réponds aux questions du document 8 dans ton Casefile, à partir de la page 16. Utilise l'amorce de phrase [sentence stem], ou écris quelque chose qui vaut autant, ou mieux.",
