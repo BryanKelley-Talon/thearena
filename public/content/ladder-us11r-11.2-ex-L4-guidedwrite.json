@@ -10,7 +10,7 @@
   "step": 4,
   "type": "guided_write",
   "source_document": "Document 14 — the Constitution, Article I, 1787 (11.2 Casefile B)",
-  "source_text": "Section 2. The House of Representatives shall be made up of members chosen every second year by the people. Representatives shall be divided among the states according to their numbers — adding to the whole number of free persons three fifths of all other persons.",
+  "source_text": "Section 2. The House of Representatives shall be made up of members chosen every second year by the people. Representatives and direct taxes shall be divided among the states according to their numbers — adding to the whole number of free persons three fifths of all other persons.",
   "prompt": "Explain why the three-fifths clause matters. Use the frame.",
   "sentence_starter": "___, because ___, which means ___.",
   "checklist": [

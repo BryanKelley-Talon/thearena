@@ -1,7 +1,7 @@
 {
-  "_built": "Sam (us11r-curriculum) 2026-10-07 11:12 · v7 = v6 with two lines on Document 16 (Casefile B), for Josh's 10:55 gate finding: annotate.notes[1] circles “An Old Whig” (a pen name; Publius); steps[0].line names the pen name and the 1787 date (BK 2026-10-07 11:03 'yes all three'; three cold readers, two fixes applied: John Jay added, 'He' to 'The writer'). Sam (us11r-curriculum) 2026-10-06 22:50 · v6 = v5 with one change: Document 16's source line corrected (BK 22:41 'yes fix in all three places'); the old date was a reprint error. Sam (us11r-curriculum) 2026-10-02 · proofread sweep 1 fixes (checklist 19a) and BK's 13:22 rulings applied to the 10/1 re-paged pack; text and pages re-checked against the 10/2 casefile PDFs · HOW TO ANNOTATE added, 11.2 A+B (wording BK 2026-10-02 13:57 'yes'; method words = Global's, signed 11:32)",
+  "_built": "Sam (us11r-curriculum) 2026-10-07 14:48 · v8 FINAL for BK's bless: v7 + B question lines claim-ready (Doc 12 steps 1, 5; Doc 16 step 1); Doc 11 source 'written 1777, in force 1781'; Doc 14 'and direct taxes'; Doc 17 Amendment I 'respecting an establishment… abridging (limiting)', Amendment X added, walk 'Five amendments'; pages re-read off the 10/9 casefile (Doc 16 p.17, Q p.18; Doc 17 p.19). BK 2026-10-07 13:38-14:45. Text, sources and pages checked against the casefile PDF. Sam (us11r-curriculum) 2026-10-07 11:12 · v7 = v6 with two lines on Document 16 (Casefile B), for Josh's 10:55 gate finding: annotate.notes[1] circles “An Old Whig” (a pen name; Publius); steps[0].line names the pen name and the 1787 date (BK 2026-10-07 11:03 'yes all three'; three cold readers, two fixes applied: John Jay added, 'He' to 'The writer'). Sam (us11r-curriculum) 2026-10-06 22:50 · v6 = v5 with one change: Document 16's source line corrected (BK 22:41 'yes fix in all three places'); the old date was a reprint error. Sam (us11r-curriculum) 2026-10-02 · proofread sweep 1 fixes (checklist 19a) and BK's 13:22 rulings applied to the 10/1 re-paged pack; text and pages re-checked against the 10/2 casefile PDFs · HOW TO ANNOTATE added, 11.2 A+B (wording BK 2026-10-02 13:57 'yes'; method words = Global's, signed 11:32)",
   "_signed": "A: as live (v4). B: BK 2026-10-01 13:22 EDT \"approved.\" off US11R_11.2B_DocAssist_WORDING_2026-10-01.pdf",
-  "_source": "A: OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileA_STUDENT_2026-10-02.pdf · B: OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileB_STUDENT_2026-10-02.pdf",
+  "_source": "A: OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileA_STUDENT_2026-10-02.pdf · B: OUTPUTS/2026-27/Unit_02/STUDENT/US11R_11.2_CasefileB_STUDENT_2026-10-09.pdf (WORK/Unit_02/claim-ready-2026-10-07 until blessed)",
   "_ruled": "CARRY-FORWARD §6 DOC ASSIST, RULED (BK 2026-10-01 08:16)",
   "tool": "Doc Assist",
   "room": "11.2",
@@ -731,7 +731,7 @@
           "n": 11,
           "title": "The Articles of Confederation · the first plan of government",
           "kind": "text",
-          "src": "Source: Articles of Confederation, 1781 (adapted)",
+          "src": "Source: Articles of Confederation, written 1777, in force 1781 (adapted)",
           "page": 4,
           "steps": [
             {
@@ -804,7 +804,7 @@
           "page": 8,
           "steps": [
             {
-              "question": "Who wrote this, to whom, and why might a private letter say more?",
+              "question": "Who wrote this, to whom, and is a private letter good evidence of what he really thought?",
               "mode": null,
               "line": "Washington is writing to James Madison, not to the public. Check the date: November 1786. Something had just happened in Massachusetts."
             },
@@ -824,7 +824,7 @@
               "line": "He calls them disorders. Ask who was behind them, and what they were losing."
             },
             {
-              "question": "If no power can stop disorder, what happens to people's rights?",
+              "question": "Should the government have stopped the farmers, and what principle is at stake?",
               "mode": null,
               "line": "Find “life, liberty, or property.” Then look in the group called Where government's power comes from."
             }
@@ -971,7 +971,7 @@
           "close": "That's the walk. Now answer Document 14's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
           "text": [
             "Section 1. All legislative powers granted here shall be vested in a Congress of the United States, which shall consist of a Senate and a House of Representatives.",
-            "Section 2. The House of Representatives shall be made up of members chosen every second year by the people. Representatives shall be divided among the states according to their numbers — adding to the whole number of free persons three fifths of all other persons.",
+            "Section 2. The House of Representatives shall be made up of members chosen every second year by the people. Representatives and direct taxes shall be divided among the states according to their numbers — adding to the whole number of free persons three fifths of all other persons.",
             "Section 3. The Senate shall be made up of two Senators from each state, and each Senator shall have one vote.",
             "Section 8. The Congress shall have power to lay and collect taxes, to pay the debts and provide for the common defense and general welfare of the United States."
           ],
@@ -979,7 +979,7 @@
             "label": "(adapted, easier to read)",
             "text": [
               "Section 1. All the power to make laws given here belongs to a Congress of the United States. Congress has two parts: a Senate and a House of Representatives.",
-              "Section 2. Members of the House of Representatives are chosen by the people every two years. Each state gets Representatives based on its population: all the free persons, plus three fifths of all other persons (enslaved people).",
+              "Section 2. Members of the House of Representatives are chosen by the people every two years. Each state gets Representatives, and pays direct taxes, based on its population: all the free persons, plus three fifths of all other persons (enslaved people).",
               "Section 3. The Senate has two Senators from each state, and each Senator gets one vote.",
               "Section 8. Congress has the power to set and collect taxes, to pay the country's debts, and to provide for the common defense and general welfare (the good of everyone) of the United States."
             ]
@@ -1088,10 +1088,10 @@
           "title": "The case against · Antifederalist No. 46",
           "kind": "text",
           "src": "Source: “An Old Whig” II, Philadelphia, October 17, 1787 (Antifederalist No. 46) (adapted)",
-          "page": 16,
+          "page": 17,
           "steps": [
             {
-              "question": "Who wrote this, and why might he hide his name?",
+              "question": "Who wrote this, and why would he hide his real name?",
               "mode": null,
               "line": "The writer signed with a pen name, “An Old Whig.” Writers on both sides did this. Why might someone attacking the new Constitution in 1787 have an extra reason to hide his name?",
               "tip": {
@@ -1122,7 +1122,7 @@
               "line": "Look in two groups on your card: How power is built and limited, and What government must protect."
             }
           ],
-          "close": "That's the walk. Now answer Document 16's questions in your casefile, starting on page 17. Use the sentence stem, or write something of equal or better value.",
+          "close": "That's the walk. Now answer Document 16's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
           "text": [
             "My object is to consider that undefined, unbounded, and immense power which is contained in the following clause: “And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or offices thereof.”",
             "Under such a clause as this, can anything be said to be reserved and kept back from Congress?"
@@ -1159,17 +1159,17 @@
           "title": "The Bill of Rights · the answer, 1791",
           "kind": "text",
           "src": "Source: United States Constitution, Amendments I–X, 1791 (adapted)",
-          "page": 18,
+          "page": 19,
           "steps": [
             {
               "question": "When were these added, and why add them after the Constitution was approved?",
               "mode": null,
-              "line": "Check the date: 1791. Day 9's What You Need to Know tells you the promise some states were made."
+              "line": "Check the date: 1791. Day 9's What You Need to Know tells you what some states demanded."
             },
             {
               "question": null,
               "mode": null,
-              "line": "Four amendments, each its own rule. For each one, ask: what can't the government do?"
+              "line": "Five amendments, each its own rule. For each one, ask: what can't the government do, or who keeps the power?"
             },
             {
               "question": "What does the Bill of Rights stop the government from doing?",
@@ -1187,20 +1187,22 @@
               "line": "Read Amendment V slowly. Then look in the group called What government must protect."
             }
           ],
-          "close": "That's the walk. Now answer Document 17's questions in your casefile, starting on page 18. Use the sentence stem, or write something of equal or better value.",
+          "close": "That's the walk. Now answer Document 17's questions in your casefile, starting on page 19. Use the sentence stem, or write something of equal or better value.",
           "text": [
-            "Amendment I. Congress shall make no law establishing a religion or prohibiting the free exercise of religion, the freedom of speech or of the press, or the right of the people to assemble and to petition the government.",
+            "Amendment I. Congress shall make no law respecting an establishment of religion, or prohibiting the free exercise of religion, or abridging (limiting) the freedom of speech or of the press, or the right of the people to assemble and to petition the government.",
             "Amendment IV. The right of the people to be secure in their persons, houses, papers and effects against unreasonable searches and seizures shall not be violated, and no warrant shall issue except upon probable cause.",
             "Amendment V. No person shall be compelled to be a witness against himself, nor be deprived of life, liberty or property without due process of law.",
-            "Amendment VI. In all criminal prosecutions the accused shall enjoy the right to a speedy public trial by an impartial jury, and to a lawyer."
+            "Amendment VI. In all criminal prosecutions the accused shall enjoy the right to a speedy public trial by an impartial jury, and to a lawyer.",
+            "Amendment X. The powers not given to the United States by the Constitution, nor forbidden by it to the states, are reserved to the states or to the people."
           ],
           "easier": {
             "label": "(adapted, easier to read)",
             "text": [
-              "Amendment I. Congress shall make no law that sets up an official religion or stops people from practicing their religion. It can't limit the freedom of speech or of the press, or the right of the people to gather and to petition (ask) the government.",
+              "Amendment I. Congress shall make no law that sets up an official religion or stops people from practicing their religion. It can't abridge (limit) the freedom of speech or of the press, or the right of the people to gather and to petition (ask) the government.",
               "Amendment IV. People have the right to be safe in their persons, houses, papers and belongings from unreasonable searches and seizures. No warrant can be given out without probable cause (a good reason to believe a crime happened).",
               "Amendment V. No person can be forced to be a witness against himself, or lose his life, liberty or property without due process of law (fair legal steps).",
-              "Amendment VI. Anyone accused of a crime has the right to a speedy public trial by a fair jury, and to a lawyer."
+              "Amendment VI. Anyone accused of a crime has the right to a speedy public trial by a fair jury, and to a lawyer.",
+              "Amendment X. Any power the Constitution doesn't give to the United States, and doesn't forbid to the states, belongs to the states or to the people."
             ]
           },
           "annotate": {
