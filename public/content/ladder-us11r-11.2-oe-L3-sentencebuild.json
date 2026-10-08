@@ -35,7 +35,7 @@
       "label": "outside fact",
       "tiles": [
         {
-          "text": "Shays' Rebellion in 1786–87 showed Congress had no army to keep order",
+          "text": "Shays' Rebellion in 1786–87 showed Congress could not pay for an army to keep order",
           "correct": true
         },
         {
@@ -67,7 +67,7 @@
       ]
     }
   ],
-  "correct_sentence": "Document 11 doesn't say it, but Shays' Rebellion in 1786–87 showed Congress had no army to keep order, which helps explain why leaders wrote the Constitution in 1787.",
+  "correct_sentence": "Document 11 doesn't say it, but Shays' Rebellion in 1786–87 showed Congress could not pay for an army to keep order, which helps explain why leaders wrote the Constitution in 1787.",
   "rationale": "Outside evidence is a fact that isn't in the document. “Each state had one vote” is in Document 11, so it doesn't count.",
   "hints": [
     "Which document is the Articles of Confederation?",

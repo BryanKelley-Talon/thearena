@@ -35,7 +35,7 @@
       "label": "what was happening",
       "tiles": [
         {
-          "text": "Massachusetts farmers in debt shut down the courts, and Congress had no army to respond",
+          "text": "Massachusetts farmers in debt shut down the courts, and Congress could not pay for an army to respond",
           "correct": true
         },
         {
@@ -67,7 +67,7 @@
       ]
     }
   ],
-  "correct_sentence": "In 1786, Massachusetts farmers in debt shut down the courts, and Congress had no army to respond, which is why leaders met in Philadelphia to write a stronger government.",
+  "correct_sentence": "In 1786, Massachusetts farmers in debt shut down the courts, and Congress could not pay for an army to respond, which is why leaders met in Philadelphia to write a stronger government.",
   "rationale": "Shays' Rebellion (1786–87) is the scene behind Documents 12 and 13. Wrong tiles are wrong on date, event, or consequence.",
   "hints": [
     "Start with the year Washington wrote Document 12.",

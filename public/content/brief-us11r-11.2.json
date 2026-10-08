@@ -27,7 +27,7 @@
       "After independence, the states built the Articles of Confederation weak on purpose. Congress could not tax, regulate trade or make the states do anything. Shays' Rebellion (1786–87) showed how little it could do in a crisis.",
       "The Constitution (1787) built a stronger national government, then limited it with separation of powers, checks and balances, federalism, and in 1791 a Bill of Rights. Marbury v. Madison (1803) and McCulloch v. Maryland (1819) show the Supreme Court deciding how far that power reaches."
     ],
-    "after": "Thread 1 runs underneath. The Declaration said all men are created equal. The Constitution counted each enslaved person as three-fifths of a person, and Abigail Adams's request to \"remember the ladies\" went unanswered. A stronger government, built for some."
+    "after": "Thread 1 runs underneath. The Declaration said all men are created equal. The Constitution counted three of every five enslaved people toward a state's seats in Congress, and Abigail Adams's request to \"remember the ladies\" went unanswered. A stronger government, built for some."
   },
   "background": {
     "heading": "Background — Threads 2, 4 and 7 open here too",
@@ -79,12 +79,12 @@
       },
       {
         "term": "Shays' Rebellion (1786–87)",
-        "detail": "Massachusetts farmers in debt rose up against taxes and foreclosures. The national government had no army to respond, which pushed leaders to call a convention.",
+        "detail": "Massachusetts farmers in debt rose up against taxes and foreclosures. The national government could not pay for an army to respond, which pushed leaders to call a convention.",
         "thread": "Thread 3 — the crisis that led to the Constitution"
       },
       {
         "term": "Constitution (1787)",
-        "detail": "Built a stronger national government, split among three branches that check each other. The Three-Fifths Compromise counted each enslaved person as three-fifths of a person.",
+        "detail": "Built a stronger national government, split among three branches that check each other. The Three-Fifths Compromise counted three of every five enslaved people toward a state's seats in the House; they couldn't vote.",
         "thread": "Thread 3 and Thread 1 ⚑ — stronger government, and who gets counted"
       },
       {
@@ -174,7 +174,7 @@
       },
       {
         "q": "Name two weaknesses of the Articles of Confederation, and one event that exposed them.",
-        "a": "Congress could not tax, and it could not force the states to follow its laws (it also could not regulate trade). Shays' Rebellion (1786–87) exposed them: the national government had no army and no money to respond."
+        "a": "Congress could not tax, and it could not force the states to follow its laws (it also could not regulate trade). Shays' Rebellion (1786–87) exposed them: the national government had no money to pay an army to respond."
       },
       {
         "q": "How did the Constitution make the national government stronger, and how did it keep that power from growing too strong?",
