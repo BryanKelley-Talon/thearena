@@ -560,9 +560,9 @@
           ],
           "chase": {
             "content_ref": "content/chase-gs10r-10.2.json",
-            "published": false,
+            "published": true,
             "portrait": "content/chase-gs10r-10.2-suspect.webp",
-            "_note": "Will's The Timekeeper v5 (BK ruled 10/8 22:16-22:31); plays Tue 10/20. card = the pack's room_card, word for word. Portrait: BK's Gemini illustration (10/8 22:11), prompt logged in assets/inbox/_processed/. Unpublished until BK's push.",
+            "_note": "Will's The Timekeeper v6 (Will 10/9 08:32; BK 08:27 'yes' to the 19a picks); class play Tue 10/20, published early on BK's word (10/9 08:41: 'it can push early ... share it with some colleagues'). card = the pack's room_card, word for word. Portrait: BK's Gemini illustration (10/8 22:11), prompt logged in assets/inbox/_processed/.",
             "card": {
               "title": "The Timekeeper",
               "line": "Follow the trail from Paris to Sarajevo. Every tool you need is in the Arena."
