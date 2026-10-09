@@ -493,6 +493,25 @@ function checkPopouts(d, f, course, m, fail) {
         if (!Number.isInteger(doc.page) || doc.page < 1) df(`${w}: page must be the casefile page number.`)
         if (!doc.close || !/\bpage \d+/.test(doc.close)) df(`${w}: the close must send the kid back to a casefile page.`)
         const steps = doc.steps || []
+        // Third dialect (US 11.2 C, Sam 10/9; BK's N5 shape): every step carries its own `tag`, so the walk
+        // is the document's own length. Each step: a tag and a BK line; `your_q` a whole number or null (a step may point
+        // at your Q without asking it: Sam's sourcing steps); `mode` null, "oral" (OUT LOUD) or "check" (the last step, no question).
+        if (steps.some(s => s && s.tag)) {
+          if (steps.length < 3 || steps.length > 8) df(`${w}: a tagged walk needs 3 to 8 steps; it has ${steps.length}.`)
+          let asked = 0
+          steps.forEach((s, j) => {
+            const at = `${w} step ${j + 1}`
+            if (!s || !String(s.tag || '').trim()) df(`${at}: every step in a tagged walk needs its own tag.`)
+            if (!s?.line) df(`${at}: no BK line.`)
+            if (s?.your_q != null && !Number.isInteger(s.your_q)) df(`${at}: your_q must be a whole number or null.`)
+            if (![null, undefined, 'oral', 'check'].includes(s?.mode)) df(`${at}: mode must be null, "oral" or "check".`)
+            if (s?.mode === 'check' && (j !== steps.length - 1 || s.question)) df(`${at}: the CHECK step is the last step and asks nothing new.`)
+            if (s?.question) asked++
+          })
+          if (!asked) warn(f, `${w}: no casefile question on any step; check the close sends the kid to where they are.`)
+          if (!doc.annotate || !Array.isArray(doc.annotate.prompts) || doc.annotate.prompts.some(pr => !pr?.mark || !String(pr.prompt || '').trim()))
+            if (doc.annotate?.prompts) df(`${w}: every annotate prompt needs a mark and words.`)
+        } else {
         if (steps.length !== walk.length) df(`${w}: needs one step per walk step (${walk.length}).`)
         // Two dialects (2026-10-01): US 11.2 A puts one `question` + `mode` on steps 1, 3, 4, 5.
         // Global puts a `questions` list (0–2, each { n, text, mode }) on any step but step 2.
@@ -516,6 +535,7 @@ function checkPopouts(d, f, course, m, fail) {
           }
         })
         if (!asked) warn(f, `${w}: no casefile question on any step; check the close sends the kid to where they are.`)
+        }
         steps.forEach((s, j) => { if (s.tip && (!s.tip.title || !(s.tip.text || []).length || s.tip.text.some(t => !String(t).trim()))) df(`${w} step ${j + 1}: a tip needs a title and text.`) })
         if (doc.kind === 'text') {
           if (!(doc.text || []).length || doc.text.some(p => !String(p).trim())) df(`${w}: a text document with no text.`)

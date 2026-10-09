@@ -2,7 +2,7 @@
   "_course": "US History and Government 11R",
   "_unit": "11.2 - Constitutional Foundations",
   "_activity": "Build it: bring what you know",
-  "_skill_lane": "Outside Evidence (OE)",
+  "_skill_lane": "Outside Information (OE)",
   "_ladder_level": 3,
   "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
   "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
@@ -68,7 +68,7 @@
     }
   ],
   "correct_sentence": "Document 11 doesn't say it, but Shays' Rebellion in 1786–87 showed Congress could not pay for an army to keep order, which helps explain why leaders wrote the Constitution in 1787.",
-  "rationale": "Outside evidence is a fact that isn't in the document. “Each state had one vote” is in Document 11, so it doesn't count.",
+  "rationale": "Outside information is a fact that isn't in the document. “Each state had one vote” is in Document 11, so it doesn't count.",
   "hints": [
     "Which document is the Articles of Confederation?",
     "Which fact is outside the Articles and explains what came next?"

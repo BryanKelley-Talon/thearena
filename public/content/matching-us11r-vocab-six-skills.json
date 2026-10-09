@@ -1,77 +1,77 @@
 {
- "_course": "US History & Government 11R",
- "_unit": "Year-round — Tier A course skill language",
- "_activity": "Vocab Match — The Six Graded Skills",
- "_built": "2026-09-21 by Sam; right-hand lines changed 2026-10-03 to the gauge lines (skillbands.py BANDS), BK 15:45: \"yes change to the gauge lines. consistency.\"",
- "_licence": "ORIGINAL. The skill lines are the gauge's own lines (skillbands.py BANDS), word for word, the same as the scoring pages and Arena Unit 0. No new content.",
- "reusable": true,
- "intro": "Match each skill line to what it actually asks you to do.",
- "left": [
-  {
-   "key": "a",
-   "label": "HC — Historical Context"
+  "_course": "US History & Government 11R",
+  "_unit": "Year-round — Tier A course skill language",
+  "_activity": "Vocab Match — The Six Graded Skills",
+  "_built": "2026-09-21 by Sam; right-hand lines changed 2026-10-03 to the gauge lines (skillbands.py BANDS), BK 15:45: \"yes change to the gauge lines. consistency.\" · 2026-10-09 (Sam): Outside Information, one name (BK 10:12/10:20); the six labels lose their codes (CF §2: full words only for students).",
+  "_licence": "ORIGINAL. The skill lines are the gauge's own lines (skillbands.py BANDS), word for word, the same as the scoring pages and Arena Unit 0. No new content.",
+  "reusable": true,
+  "intro": "Match each skill line to what it actually asks you to do.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Historical Context"
+    },
+    {
+      "key": "b",
+      "label": "Thesis"
+    },
+    {
+      "key": "c",
+      "label": "Document Use"
+    },
+    {
+      "key": "d",
+      "label": "Explanation"
+    },
+    {
+      "key": "e",
+      "label": "Outside Information"
+    },
+    {
+      "key": "f",
+      "label": "Civic Principle"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Warm up the document — set the scene before you argue"
+    },
+    {
+      "key": "2",
+      "label": "Take a clear position and hold it. Try: “Although ___, ___ because ___.”"
+    },
+    {
+      "key": "3",
+      "label": "Name the document. Pull a specific detail. Use it as evidence — don't just point at it"
+    },
+    {
+      "key": "4",
+      "label": "The “so what.” After every piece of evidence, say why it matters"
+    },
+    {
+      "key": "5",
+      "label": "Bring in something NOT in the documents — a law, case, or event"
+    },
+    {
+      "key": "6",
+      "label": "Name it out loud — equal protection, federalism, checks and balances. Don't imply it"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "4",
+    "e": "5",
+    "f": "6"
   },
-  {
-   "key": "b",
-   "label": "TH — Thesis"
-  },
-  {
-   "key": "c",
-   "label": "DU — Document Use"
-  },
-  {
-   "key": "d",
-   "label": "EX — Explanation"
-  },
-  {
-   "key": "e",
-   "label": "OE — Outside Evidence"
-  },
-  {
-   "key": "f",
-   "label": "CP — Civic Principle"
+  "rationale": {
+    "a": "Historical Context sets the scene — the circumstances around the document — before you make an argument.",
+    "b": "Thesis is a clear, held position, not just a topic.",
+    "c": "Document Use means naming a specific detail from a document and using it as evidence, not just gesturing at the source.",
+    "d": "Explanation is the \"so what\" — why the evidence matters, not just that it exists.",
+    "e": "Outside Information is knowledge from beyond the documents themselves — what the exam calls \"outside information.\"",
+    "f": "Civic Principle has to be named out loud (\"federalism,\" \"equal protection\") — implying it isn't enough."
   }
- ],
- "right": [
-  {
-   "key": "1",
-   "label": "Warm up the document — set the scene before you argue"
-  },
-  {
-   "key": "2",
-   "label": "Take a clear position and hold it. Try: “Although ___, ___ because ___.”"
-  },
-  {
-   "key": "3",
-   "label": "Name the document. Pull a specific detail. Use it as evidence — don't just point at it"
-  },
-  {
-   "key": "4",
-   "label": "The “so what.” After every piece of evidence, say why it matters"
-  },
-  {
-   "key": "5",
-   "label": "Bring in something NOT in the documents — a law, case, or event"
-  },
-  {
-   "key": "6",
-   "label": "Name it out loud — equal protection, federalism, checks and balances. Don't imply it"
-  }
- ],
- "correct": {
-  "a": "1",
-  "b": "2",
-  "c": "3",
-  "d": "4",
-  "e": "5",
-  "f": "6"
- },
- "rationale": {
-  "a": "Historical Context sets the scene — the circumstances around the document — before you make an argument.",
-  "b": "Thesis is a clear, held position, not just a topic.",
-  "c": "Document Use means naming a specific detail from a document and using it as evidence, not just gesturing at the source.",
-  "d": "Explanation is the \"so what\" — why the evidence matters, not just that it exists.",
-  "e": "Outside Evidence is knowledge from beyond the documents themselves — what the exam calls \"outside information.\"",
-  "f": "Civic Principle has to be named out loud (\"federalism,\" \"equal protection\") — implying it isn't enough."
- }
 }

@@ -45,7 +45,11 @@
   "back": "Back",
   "stop": "Stop reading",
   "q4_card": "The Civic Principles",
-  "annotate": "How to annotate"
+  "annotate": "How to annotate",
+  "your_q": "→ your Q%d",
+  "oral": "OUT LOUD",
+  "check": "CHECK",
+  "prompts": "YOUR TURN · MARK IT UP"
  },
  "casefiles": [
   {
@@ -1229,8 +1233,383 @@
   },
   {
    "id": "C",
-   "title": "11.2 Casefile C",
-   "status": "building"
+   "title": "11.2 Casefile C · The Test",
+   "status": "open",
+   "docs": [
+    {
+     "n": 18,
+     "title": "Washington's Farewell, 1796",
+     "kind": "text",
+     "src": "Source: George Washington, Farewell Address, 1796 (adapted)",
+     "page": 5,
+     "context": "Printed in a Philadelphia newspaper in September 1796, announcing that he would not run for a third term. Never given as a speech.",
+     "steps": [
+      {
+       "tag": "Q1 · SOURCING",
+       "your_q": 1,
+       "mode": null,
+       "question": "Washington chose to leave after two terms and printed this in a newspaper. Why would a president on his way out give the country advice?",
+       "line": "Read the gray line above the document first: printed in a newspaper, never given as a speech, and he would not run again. What is he about to stop doing? Your answer finishes the stem with a reason, not a summary."
+      },
+      {
+       "tag": "READ IT THROUGH",
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Two paragraphs. The first is about parties at home, the second about other countries. Read both once, all the way, then say each one's topic in a few words."
+      },
+      {
+       "tag": "Q2 · CLAIM & EVIDENCE",
+       "your_q": 2,
+       "mode": null,
+       "question": "What does Washington say parties do to a country? Point to his words.",
+       "line": "Claim & Evidence asks for two things: what parties do (your claim) and Washington's words (your evidence). Find one thing parties do in paragraph 1. Retelling the paragraph is not a claim."
+      },
+      {
+       "tag": "Q3 · PERSPECTIVE CHECK",
+       "your_q": 3,
+       "mode": "oral",
+       "question": "In 1796, many Republicans wanted to stand with France, the ally that helped win the Revolution. Would they like Washington's advice to “steer clear of permanent alliances”?",
+       "line": "This one is out loud. Reread the question: who helped win the Revolution? Then reread the advice you boxed. Would these Republicans hear it as good advice, or as a warning aimed at them? Give a because."
+      },
+      {
+       "tag": "Q4 · CIVIC CONNECTION",
+       "your_q": 4,
+       "mode": null,
+       "question": "Washington warns that parties turn one side against the other. Is that still a danger today? Name the principle from the card on page 2 that a divided country puts at risk.",
+       "line": "Two jobs: say yes or no about today, with a because, then name the principle. Read each “Look for it when” cue in the group called Where government's power comes from. Which one does a split country put at risk?"
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 18's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "I have already warned you about the danger of parties, especially parties formed by region. Now I warn you, as seriously as I can, against the harmful effects of the spirit of party in general. It always distracts the government and weakens it. It stirs up the people with groundless suspicions and false alarms, and “kindles the animosity of one part against another” (turns one side against the other). Sometimes it leads to riots and rebellion. It opens the door to foreign influence and corruption.",
+      "Our great rule with foreign nations is to trade with them, but to have as little political connection with them as possible. “It is our true policy to steer clear of permanent alliances with any portion of the foreign world …” (He adds that treaties already signed should still be kept.)"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "I already warned you about parties, especially parties based on one region of the country. Now I warn you, as strongly as I can, about the harm the spirit of party does in general, not just parties based on region. It always distracts the government and makes it weaker. It upsets people with groundless suspicions and false alarms, and “kindles the animosity of one part against another” (turns one side against the other). Sometimes it leads to riots and rebellion. It lets other countries gain influence over us and opens the door to corruption (dishonest use of power).",
+       "Our main rule with other countries is to trade with them but stay out of their politics as much as we can. “It is our true policy to steer clear of permanent alliances with any portion of the foreign world …” (He adds that treaties already signed should still be kept.)"
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "underline",
+        "prompt": "Underline what the spirit of party does (the verbs)."
+       },
+       {
+        "mark": "box",
+        "prompt": "Box Washington's advice about foreign nations."
+       },
+       {
+        "mark": "margin",
+        "prompt": "In the margin: who in 1796 would care most about that advice?"
+       }
+      ],
+      "notes": [
+       {
+        "where": "especially parties formed by region",
+        "mark": "circle",
+        "note": "By region: North against South, East against West. He had already warned about this kind of party."
+       },
+       {
+        "where": "corruption",
+        "mark": "box",
+        "note": "Corruption: using power dishonestly, for money or favors."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Look at the starred lines on your Cornell page (page 4), like the two-term tradition Washington started (made law by the 22nd Amendment in 1951). In your essay, anything true that isn't in the essay's Documents 22–27 counts as outside information, Document 18 included."
+      }
+     }
+    },
+    {
+     "n": 19,
+     "title": "The Sedition Act, 1798",
+     "kind": "text",
+     "src": "Source: The Sedition Act, July 14, 1798 (adapted)",
+     "page": 6,
+     "context": "Passed by a Congress run by the Federalists and signed by President John Adams, a Federalist, while the country was close to war with France.",
+     "steps": [
+      {
+       "tag": "SOURCING",
+       "your_q": 2,
+       "mode": null,
+       "question": null,
+       "line": "Read the gray line first: which party ran Congress in 1798, and which party did the President belong to? Keep both in your head. Your Q2 is about who this law was for."
+      },
+      {
+       "tag": "READ IT THROUGH",
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Three sections. Section 2 is the rule and the punishment; Sections 3 and 4 set its limits. Say what each section does in a few words."
+      },
+      {
+       "tag": "Q2 · CLAIM & EVIDENCE",
+       "your_q": 2,
+       "mode": null,
+       "question": "The Sedition Act protected the government, Congress and the President. It did not protect the Vice President, Thomas Jefferson, who led the other party. What does that tell you about who the law was for?",
+       "line": "Make a list from Section 2: everyone the law protects. Then look for the Vice President on your list. Your claim says what that gap shows; your evidence is the list, in the law's own words."
+      },
+      {
+       "tag": "Q4 · CIVIC CONNECTION",
+       "your_q": 4,
+       "mode": null,
+       "question": "The First Amendment, as you read it in Document 17, says “Congress shall make no law … abridging (limiting) the freedom of speech or of the press.” Did the Sedition Act break that promise? Name the principle from the card on page 2.",
+       "line": "Put the two side by side: the First Amendment's words in the question, and the words you underlined in Section 2. Does Section 2 do what the First Amendment says Congress can't? Then look in the group called What government must protect."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 19's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "Section 2. If any person writes, prints, says or publishes any “false, scandalous and malicious writing” against the government of the United States, either house of Congress, or the President, meant to damage their reputation, turn the people against them, or stir up sedition (rebellion against the government), that person, if convicted, shall be fined up to $2,000 and jailed up to two years.",
+      "Section 3. A person on trial may defend himself by showing that what he wrote was true.",
+      "Section 4. This law lasts until March 3, 1801, and no longer."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Section 2. Anyone who writes, prints, says or publishes “false, scandalous and malicious writing” (lies meant to hurt) against the United States government, either house of Congress, or the President, to hurt their reputation, turn people against them, or stir up sedition (rebellion against the government), can be fined up to $2,000 and jailed up to two years if found guilty.",
+       "Section 3. A person on trial can defend himself by proving that what he wrote was true.",
+       "Section 4. This law ends on March 3, 1801."
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "box",
+        "prompt": "Box every person or group Section 2 protects."
+       },
+       {
+        "mark": "underline",
+        "prompt": "Underline what Section 2 says a person can't do, and the punishment."
+       },
+       {
+        "mark": "margin",
+        "prompt": "In the margin next to Section 4: why might this law end on March 3, 1801?"
+       }
+      ],
+      "notes": [
+       {
+        "where": "malicious",
+        "mark": "box",
+        "note": "Malicious: meant to hurt."
+       },
+       {
+        "where": "scandalous",
+        "mark": "circle",
+        "note": "Scandalous: shocking, meant to disgrace someone."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Your Cornell page (page 4) has a starred fact about how Jefferson and Madison answered this law, and the OUTSIDE INFORMATION box on page 3 prints it too. It isn't in the essay's Documents 22–27, so in your essay it counts as outside information."
+      }
+     }
+    },
+    {
+     "n": 20,
+     "title": "Marbury v. Madison, 1803",
+     "kind": "text",
+     "src": "Source: Marbury v. Madison, 1803, Chief Justice John Marshall, for the Supreme Court (adapted)",
+     "page": 10,
+     "context": null,
+     "steps": [
+      {
+       "tag": "SOURCING",
+       "your_q": 2,
+       "mode": null,
+       "question": null,
+       "line": "Read the line above first: who wrote this, in what job, and in what year? A Chief Justice writing for the Court speaks for the Court's majority, not just himself. What You Need to Know on page 8 tells you why Marbury sued."
+      },
+      {
+       "tag": "READ IT THROUGH",
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Three parts, with … where words were cut. Read all three. The words in parentheses explain the old wording."
+      },
+      {
+       "tag": "Q2 · CLAIM & EVIDENCE",
+       "your_q": 2,
+       "mode": null,
+       "question": "Who does Marshall say gets to decide what the law means? Point to his words.",
+       "line": "Find the sentence you underlined. Your claim names who decides what the law means; your evidence is Marshall's sentence, in quotation marks."
+      },
+      {
+       "tag": "Q4 · CIVIC CONNECTION",
+       "your_q": 4,
+       "mode": null,
+       "question": "Name the principle from the card on page 2 that this case is famous for. What can the Court do because of it?",
+       "line": "Two jobs: name the principle, then say what the Court can do. Reread the word you circled: what happens to a law like that? Then look in the group called How power is built and limited, and read each “Look for it when” cue."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 20's questions in your casefile, starting on page 11. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "The Constitution is either the highest law, which ordinary laws cannot change, or it is just another ordinary law, and Congress can change it whenever it pleases. …",
+      "“It is emphatically the province and duty of the judicial department to say what the law is.” (It is the courts' job to say what the law means.) …",
+      "“A law repugnant to the constitution is void” (a law that conflicts with the Constitution is not a real law; it has no force)."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The Constitution is one of two things. Either it is the highest law, and ordinary laws can't change it, or it is just another ordinary law, and Congress can change it whenever it wants. …",
+       "“It is emphatically the province and duty of the judicial department to say what the law is.” (It is the courts' job to say what the law means.) …",
+       "“A law repugnant to the constitution is void” (a law that goes against the Constitution is not a real law; it has no force)."
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "underline",
+        "prompt": "Underline the sentence with “duty.”"
+       },
+       {
+        "mark": "circle",
+        "prompt": "Circle the word that means “not a real law.”"
+       },
+       {
+        "mark": "margin",
+        "prompt": "In the margin: who is Marshall saying gets to decide?"
+       }
+      ],
+      "notes": [
+       {
+        "where": "emphatically",
+        "mark": "box",
+        "note": "Emphatically: as strongly as possible."
+       },
+       {
+        "where": "just another ordinary law",
+        "mark": "circle",
+        "note": "Marshall sets up two choices, then picks one. Watch which one he picks."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Your Cornell page (page 9) has a starred case, and the OUTSIDE INFORMATION box on page 8 prints it too. It isn't in the essay's Documents 22–27, so in your essay it counts as outside information. So does Marbury itself."
+      }
+     }
+    },
+    {
+     "n": 21,
+     "title": "McCulloch v. Maryland, 1819",
+     "kind": "text",
+     "src": "Source: McCulloch v. Maryland, 1819, Chief Justice John Marshall, for the Supreme Court (adapted)",
+     "page": 11,
+     "context": null,
+     "steps": [
+      {
+       "tag": "SOURCING",
+       "your_q": 4,
+       "mode": null,
+       "question": null,
+       "line": "Read the line above: the same Chief Justice as Document 20, sixteen years later. Then reread What You Need to Know on page 8: who was taxing whom? Your Q4 asks who won."
+      },
+      {
+       "tag": "READ IT THROUGH",
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Three parts. The first is about what Congress may do, the middle is one famous sentence, the last is about what states may not do."
+      },
+      {
+       "tag": "Q2 · CLAIM & EVIDENCE",
+       "your_q": 2,
+       "mode": null,
+       "question": "Marshall says “the power to tax involves the power to destroy.” Why does that mean Maryland could not tax the national bank?",
+       "line": "Take the sentence you underlined one step at a time. If a state can tax something, who decides how big the tax gets? What could a big enough tax do?"
+      },
+      {
+       "tag": "Q4 · CIVIC CONNECTION",
+       "your_q": 4,
+       "mode": null,
+       "question": "Who won this case: the national government or the state? Name the principle from the card on page 2.",
+       "line": "Two jobs. First decide who won: reread the last sentence and ask whose power it limits. Then look in the group called How power is built and limited, and read each “Look for it when” cue."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 21's questions in your casefile, starting on page 12. Use the sentence stem, or write something of equal or better value.",
+     "text": [
+      "If the goal is allowed by the Constitution, Congress may use any suitable means that clearly fit that goal, as long as the Constitution does not forbid them and they agree with its letter and spirit. …",
+      "“The power to tax involves the power to destroy.” …",
+      "The states have no power, by taxation or any other way, to slow down, block, burden, or in any way control how the laws Congress makes under the Constitution work."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "If the Constitution allows the goal, Congress can use any suitable way that clearly fits that goal, as long as the Constitution doesn't forbid it and it fits what the Constitution says and means. …",
+       "“The power to tax involves the power to destroy.” …",
+       "States have no power, by taxing or any other way, to slow down, block, burden (weigh down) or control the laws Congress makes under the Constitution."
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "underline",
+        "prompt": "Underline the sentence about the power to tax."
+       },
+       {
+        "mark": "box",
+        "prompt": "Box every word in the last sentence that says what states can't do."
+       },
+       {
+        "mark": "margin",
+        "prompt": "In the margin: who would cheer this ruling, and who would be angry?"
+       }
+      ],
+      "notes": [
+       {
+        "where": "letter and spirit",
+        "mark": "circle",
+        "note": "Letter and spirit: what the Constitution says, and what it was meant to do."
+       },
+       {
+        "where": "means",
+        "mark": "box",
+        "note": "Means: the way you reach a goal."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Marbury (Document 20) and McCulloch aren't in the essay's Documents 22–27 (exam Documents 1–6), so in your essay they count as outside information. So does anything starred on your Cornell pages."
+      }
+     }
+    }
+   ]
   }
  ],
  "q4_card": {
@@ -1386,8 +1765,8 @@
   },
   "model_label": "WATCH IT DONE ON THIS DOCUMENT",
   "model_note": "These notes are on parts no question asks about. Your questions are yours to do.",
-  "oe_example_label": "OUTSIDE EVIDENCE · AN EXAMPLE",
-  "oe_where_label": "OUTSIDE EVIDENCE · WHERE TO LOOK"
+  "oe_example_label": "OUTSIDE INFORMATION · AN EXAMPLE",
+  "oe_where_label": "OUTSIDE INFORMATION · WHERE TO LOOK"
  },
  "_shape_annotate": "Same as Global v4: pack 'annotate' (methods text|picture|map as [tag, step]); docs[].annotate = {kind, notes[{where, mark, note}], oe{kind, text}}. No French on US."
 }

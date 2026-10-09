@@ -734,7 +734,7 @@
               "Look for the clue your card names: a veto, a court case, a right, a vote. Then name the principle."
             ],
             "outside-evidence": [
-              "Outside evidence is what you know that isn't in the documents. Name it, and make it do work.",
+              "Outside information is what you know that isn't in the documents. Name it, and make it do work.",
               "The exam calls it outside information. One specific fact from class, not from the page.",
               "The documents are only part of what you know. This is where you practice using the rest."
             ]
@@ -766,7 +766,7 @@
               "Good. You picked the principle that fits, not just the first one you remembered."
             ],
             "outside-evidence": [
-              "That fact isn't in any document. You brought it yourself. That's outside evidence.",
+              "That fact isn't in any document. You brought it yourself. That's outside information.",
               "Specific and relevant: a name, a date, an event. That's the kind that counts.",
               "You connected what you know to what you read. That's the skill."
             ]
@@ -798,7 +798,7 @@
               "Ask one question first: is this about how power is limited, where it comes from, or what government must protect?"
             ],
             "outside-evidence": [
-              "That's from the document. Outside evidence comes from somewhere else: class, your casefile notes, what you already know.",
+              "That's from the document. Outside information comes from somewhere else: class, your casefile notes, what you already know.",
               "Too general. Give it a name, a place, or a date.",
               "Good fact. Now say how it connects to the question."
             ]
@@ -826,7 +826,7 @@
             ],
             "outside-evidence": [
               "You can bring your own knowledge into the argument. That's what separates a strong essay from a summary of the documents.",
-              "That's outside evidence. What you know counts, so use it."
+              "That's outside information. What you know counts, so use it."
             ]
           },
           "attempt_again": [

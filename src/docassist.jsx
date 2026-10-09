@@ -329,6 +329,18 @@ function AnnotatePanel({ pack, doc, fr }) {
           <li key={i}><span className="da-ann-n">{i + 1}</span><span><b className="da-ann-tag">{tag}</b> {step}</span></li>
         ))}
       </ol>
+      {/* US 11.2 C (Sam 10/9): the student's own marks come first, then the model notes. */}
+      {!fr && (a.prompts || []).length > 0 && <>
+        <div className="da-ann-head">{pack.labels?.prompts}</div>
+        <ol className="da-ann-notes da-ann-prompts" lang="en">
+          {a.prompts.map((pr, i) => (
+            <li key={i}>
+              <span className={`da-ann-key da-mk-${pr.mark}`} aria-hidden="true">{i + 1}</span>
+              <div><b className="da-ann-mark">{CHROME.mark(pr.mark)}</b> <span>{pr.prompt}</span></div>
+            </li>
+          ))}
+        </ol>
+      </>}
       <div className="da-ann-head">{A.model_label}</div>
       {/* (d) In the French view, Will's French line replaces the English one; the notes stay English. */}
       <p className="da-ann-intro" lang={fr && pack.fr?.annotate_note ? 'fr' : 'en'}>
@@ -382,7 +394,8 @@ export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext 
   const bwt = bwtEn && fr && (typeof F.before_we_talk === 'string' || typeof F.before === 'object')
     ? { title: bwtEn.title, text: (typeof F.before_we_talk === 'string' ? F.before_we_talk : F.before?.text) || bwtEn.text, fr: true }
     : bwtEn
-  const printedEn = typeof doc.before === 'string' ? doc.before : null
+  // US 11.2 C (Sam 10/9): `context`, the gray line the casefile prints above a document, shows like Global's printed line.
+  const printedEn = typeof doc.before === 'string' ? doc.before : (typeof doc.context === 'string' ? doc.context : null)
   const printed = printedEn && fr && typeof F.before === 'string' ? F.before : printedEn
   const note = doc.note && doc.note.text ? doc.note : null   // printed on the page above the quote (11.1 B Doc 18)
   const ww = fr && F.word_watch ? F.word_watch : doc.word_watch
@@ -409,8 +422,16 @@ export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext 
        ...(isImage ? images.flatMap(i => [i.label, showEasier && i.describe ? i.describe : i.alt]) : body),
        ww?.title, ww?.text]
 
-  const step = fr ? (pack.fr.walk || [])[at] || walkSteps[at] : walkSteps[at]
+  // US 11.2 C (Sam 10/9, BK's N5 shape): when a document's steps carry their own `tag`, its walk is its own
+  // length and each step shows its own tag; the pack-level walk (step headline + say) is for the A/B shape.
+  const ownTags = !fr && (doc.steps || []).some(x => x && x.tag)
   const dsEn = (doc.steps || [])[at]
+  const step = ownTags ? (dsEn ? { tag: dsEn.tag } : undefined) : fr ? (pack.fr.walk || [])[at] || walkSteps[at] : walkSteps[at]
+  const walkLen = ownTags ? (doc.steps || []).length : walkSteps.length
+  // The chips beside a step's own tag: "→ your Q2" (your_q) and OUT LOUD (mode "oral"); a CHECK step (mode "check") is set apart.
+  const yourQ = ownTags && dsEn?.your_q != null && L.your_q ? String(L.your_q).replace('%d', dsEn.your_q) : null
+  const oral = ownTags && dsEn?.mode === 'oral' ? (L.oral || CHROME.outLoud) : null
+  const isCheck = ownTags && dsEn?.mode === 'check'
   const dsFr = fr ? (F.steps || [])[at] : null
   const qs = fr
     ? (dsFr?.question ? [{ n: null, text: dsFr.question, mode: dsEn?.mode }] : [])
@@ -422,14 +443,14 @@ export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext 
   const tipEn = dsEn?.tip && (dsEn.tip.text || []).length ? dsEn.tip : null
   const tip = tipEn && fr ? (F.tip && (F.tip.text || []).length ? F.tip : null) : tipEn
   const close = fr ? F.close : doc.close
-  const stepParts = at >= walkSteps.length
+  const stepParts = at >= walkLen
     ? [close]
-    : [step?.step, say, ...qs.flatMap(q => [`${asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), line, tip?.title, ...(tip?.text || [])]
+    : [step?.tag, yourQ, oral, step?.step, say, ...qs.flatMap(q => [`${asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), line, tip?.title, ...(tip?.text || [])]
   const card = fr ? frCard(pack) : q4Card(pack)
   // The list's button sits on step 5, and on any step whose words point at the list (BK 22:59).
-  const stepText = at < walkSteps.length ? [step?.tag, step?.step, say, ...qs.map(q => q.text), line, tip?.title, ...(tip?.text || [])].join(' ') : ''
+  const stepText = at < walkLen ? [step?.tag, step?.step, say, ...qs.map(q => q.text), line, tip?.title, ...(tip?.text || [])].join(' ') : ''
   const cardKind = pack.umbrellas ? 'umbrellas' : 'civic'
-  const showUmb = card && q4Label(pack) && (at === walkSteps.length - 1 || mentions(stepText, cardKind))
+  const showUmb = card && q4Label(pack) && (at === walkLen - 1 || mentions(stepText, cardKind))
 
   return (
     <div className="da-doc">
@@ -521,12 +542,15 @@ export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext 
             <div className="da-walk-top">
               <div className="da-walk-name" lang="en">{pack.walk_name}</div>
               <div className="da-dots" aria-hidden="true">
-                {walkSteps.map((_, i) => <span key={i} className={i < at ? 'da-dot done' : i === at ? 'da-dot now' : 'da-dot'} />)}
+                {Array.from({ length: walkLen }, (_, i) => <span key={i} className={i < at ? 'da-dot done' : i === at ? 'da-dot now' : 'da-dot'} />)}
               </div>
             </div>
-            {at < walkSteps.length ? (
-              <div className="da-step" key={`${at}${fr ? 'f' : ''}`} aria-live="polite">
-                <div className="da-tag">{step.tag}</div>
+            {at < walkLen ? (
+              <div className={`da-step${isCheck ? ' da-step-check' : ''}`} key={`${at}${fr ? 'f' : ''}`} aria-live="polite">
+                <div className="da-tag">{step.tag}
+                  {yourQ && <span className="da-chip">{yourQ}</span>}
+                  {oral && <span className="da-chip da-chip-oral">{oral}</span>}
+                </div>
                 <div className="da-stepline">{step.step}</div>
                 {say && <p className="da-say">{say}</p>}
                 {qs.length > 0 && (
@@ -573,7 +597,7 @@ export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext 
             )}
             <div className="da-walk-nav">
               <button type="button" className="btn-ghost" onClick={() => setAt(a => Math.max(0, a - 1))} disabled={at === 0}>{L.back}</button>
-              {at < walkSteps.length && <button type="button" className="da-btn da-btn-main" onClick={() => setAt(a => a + 1)}>{L.next}</button>}
+              {at < walkLen && <button type="button" className="da-btn da-btn-main" onClick={() => setAt(a => a + 1)}>{L.next}</button>}
               <ReadButton voice={voice} speaker={speaker} k={`walk-${at}`} parts={stepParts} labels={L} />
               <button type="button" className="btn-ghost" onClick={closeWalk}>{L.close}</button>
             </div>
@@ -641,6 +665,9 @@ export const DOCASSIST_STYLES = `
 .da-say{color:var(--white);font-size:17px;line-height:1.55;margin:0 0 14px}
 .da-ask{background:var(--card-lit);border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:8px;padding:10px 13px;margin:0 0 6px}
 .da-ask-head{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:13.5px;color:var(--gold);margin-bottom:4px;font-weight:600}
+.da-chip{display:inline-block;margin-left:8px;padding:1px 8px;border:1px solid var(--gold-lit);border-radius:999px;color:var(--white);letter-spacing:.06em;font-size:12px;vertical-align:1px}
+.da-chip-oral{background:var(--gold);color:#0B1220;border-color:var(--gold);font-weight:700}
+.da-step-check{border-left:3px solid var(--gold);padding-left:12px}
 .da-loud{color:var(--gold-lit);font-weight:700;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;white-space:nowrap}
 .da-ask p{color:var(--white);font-size:17px;line-height:1.5;margin:0}
 .da-bk{margin:22px 4px 22px;max-width:none}

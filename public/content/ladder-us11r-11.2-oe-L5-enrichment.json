@@ -1,8 +1,8 @@
 {
   "_course": "US History and Government 11R",
   "_unit": "11.2 - Constitutional Foundations",
-  "_activity": "From a 4 to a 5: outside evidence that reaches",
-  "_skill_lane": "Outside Evidence (OE)",
+  "_activity": "From a 4 to a 5: outside information that reaches",
+  "_skill_lane": "Outside Information (OE)",
   "_ladder_level": 5,
   "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_rest.py",
   "_licence": "ORIGINAL, built on the 11.2 casefile documents (numbered per the signed 11.2 map). Quotes are the casefile's adapted text.",
@@ -13,19 +13,19 @@
   "tidbits": [
     {
       "id": "td-01",
-      "text": "The exam calls it outside information, and your gauge calls it Outside Evidence. Same thing: relevant history you bring that isn't in the documents.",
+      "text": "Outside information is relevant history you bring that isn't in the documents. It's the exam's own name for it.",
       "thread": "The Civic Literacy Essay",
       "source_pointer": "June 2026 CLE guidelines"
     },
     {
       "id": "td-02",
-      "text": "Outside evidence can come from an earlier unit. Magna Carta (1215) and the House of Burgesses (1619) are strong outside evidence for “no taxation without representation.”",
+      "text": "Outside information can come from an earlier unit. Magna Carta (1215) and the House of Burgesses (1619) are strong outside information for “no taxation without representation.”",
       "thread": "Thread 3",
       "source_pointer": "11.1 brief, key facts"
     },
     {
       "id": "td-03",
-      "text": "The Threads lane in the Arena is an outside-evidence bank: every stop is a fact you can bring to a document it connects to.",
+      "text": "The Threads lane in the Arena is an outside-information bank: every stop is a fact you can bring to a document it connects to.",
       "thread": "All threads",
       "source_pointer": "Arena Threads lane, signed 2026-09-27"
     }
@@ -45,7 +45,7 @@
   "techniques": [
     {
       "name": "Name, date, place",
-      "explanation": "Outside evidence counts when it's specific. “Shays' Rebellion, 1786–87, Massachusetts” beats “a rebellion.”"
+      "explanation": "Outside information counts when it's specific. “Shays' Rebellion, 1786–87, Massachusetts” beats “a rebellion.”"
     },
     {
       "name": "Borrow from another unit",
