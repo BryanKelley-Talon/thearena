@@ -562,7 +562,11 @@
             "content_ref": "content/chase-gs10r-10.2.json",
             "published": false,
             "portrait": "content/chase-gs10r-10.2-suspect.webp",
-            "_note": "Will's chase (BK blessed 10/8 13:47; name under review: Clockmaker or Timekeeper); plays Tue 10/20. Portrait: BK's Gemini illustration (10/8 22:11), 5% frame crop, prompt logged in assets/inbox/_processed/. Unpublished until BK's push."
+            "_note": "Will's The Timekeeper v5 (BK ruled 10/8 22:16-22:31); plays Tue 10/20. card = the pack's room_card, word for word. Portrait: BK's Gemini illustration (10/8 22:11), prompt logged in assets/inbox/_processed/. Unpublished until BK's push.",
+            "card": {
+              "title": "The Timekeeper",
+              "line": "Follow the trail from Paris to Sarajevo. Every tool you need is in the Arena."
+            }
           }
         }
       ],

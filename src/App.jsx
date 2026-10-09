@@ -37,7 +37,7 @@ import { StopMapLane, STOPMAP_STYLES } from './stopmap.jsx'
 import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
-import { ChaseScreen, ChaseBar, CHASE_STYLES } from './chase.jsx'
+import { ChaseScreen, ChaseBar, CHASE_STYLES, CHASE_WORDS } from './chase.jsx'
 import { COURSE_KEY } from './deeplinks.js'
 import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles, paperOf } from './docassist.jsx'
@@ -962,7 +962,7 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
           <MomentsCard course={course} unit={unit} maps={atlasMaps} />
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={code => onOpenSkill(unit.slug, code)} />
           <div className="door-room">
-            <RoomParts unit={unit} games={games} docAssist={docAssist} maps={mapsForUnit(atlasMaps, unit)} onOpenMap={onOpenMap}
+            <RoomParts unit={unit} courseKey={COURSE_KEY[course.id] || course.id} games={games} docAssist={docAssist} maps={mapsForUnit(atlasMaps, unit)} onOpenMap={onOpenMap}
                        wl={(wlSets || []).filter(s => String(s.entry.unit) === String(unit.number))} onOpenSet={onOpenSet}
                        onOpenDocAssist={onOpenDocAssist} onOpenActivity={onOpenActivity} onOpenReview={onOpenReview} />
           </div>
@@ -1228,15 +1228,18 @@ const finishedUnits = course => {
 
 // One unit's Review, Doc Assist and Test practice: in the unit's room, and for the unit
 // we're in, on the door under its gauges.
-function RoomParts({ unit, games, docAssist, maps, onOpenMap, wl, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenReview }) {
+function RoomParts({ unit, courseKey, games, docAssist, maps, onOpenMap, wl, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenReview }) {
   const acts = (unit.activities || []).filter(isLive)
   const asg = unit.assignment && unit.assignment.published !== false ? unit.assignment : null
   const asgGame = asg ? (games || []).find(g => g.id === asg.content_ref) : null
   const assignment = asg && asgGame?.status === 'live' && asgGame.url ? { ...asg, href: asgGame.url } : null
+  // The unit's Arena chase card (Will's room_card, copied word for word into manifest unit.chase.card; 10/8).
+  // It shows once the chase is published (or in a proof build), and opens the chase in this tab.
+  const chaseCard = unit.chase?.card && (unit.chase.published === true || import.meta.env.VITE_CHASE_PROOF === '1') && courseKey ? unit.chase.card : null
   return (
     <>
       {/* ROOM ORDER (BK, 2026-09-25): the unit's review, then its test practice. */}
-      {(resolves(unit.brief_ref) || assignment) && (
+      {(resolves(unit.brief_ref) || assignment || chaseCard) && (
         <>
           <h3 className="room-section">Review</h3>
           <div className="grid room-cards" style={{ marginBottom: 34 }}>
@@ -1256,6 +1259,14 @@ function RoomParts({ unit, games, docAssist, maps, onOpenMap, wl, onOpenSet, onO
                 <div className="card-type">{assignment.type_label}</div>
                 <div className="card-name">{assignment.title}</div>
                 <div className="card-blurb">{assignment.blurb}</div>
+                <span className="flag live">Open</span>
+              </a>
+            )}
+            {chaseCard && (
+              <a className="card assignment" href={`#/${courseKey}/chase/${unit.number}`}>
+                <div className="card-type">{CHASE_WORDS.title}</div>
+                <div className="card-name">{chaseCard.title}</div>
+                <div className="card-blurb">{chaseCard.line}</div>
                 <span className="flag live">Open</span>
               </a>
             )}
@@ -1349,7 +1360,7 @@ function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, 
           <div className="door-room" />
         </>
       )}
-      <RoomParts unit={unit} games={games} docAssist={docAssist} maps={mapsForUnit(atlasMaps, unit)} onOpenMap={onOpenMap}
+      <RoomParts unit={unit} courseKey={COURSE_KEY[course.id] || course.id} games={games} docAssist={docAssist} maps={mapsForUnit(atlasMaps, unit)} onOpenMap={onOpenMap}
                  wl={(wlSets || []).filter(s => String(s.entry.unit) === String(unit.number))} onOpenSet={onOpenSet}
                  onOpenDocAssist={onOpenDocAssist} onOpenActivity={onOpenActivity} onOpenReview={onOpenReview} />
       <BottomBack onBack={onBack} back={course.label} />

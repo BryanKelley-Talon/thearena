@@ -17,6 +17,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import '@fontsource/courier-prime/latin-400.css'
 import '@fontsource/courier-prime/latin-700.css'
+import { Umbrellas } from './docassist.jsx'
 
 // BK 2026-10-07 11:49 "yes approved." to the engine proof: NINE STATES' shape, and the labels onward ('Keep going'),
 // meterCount ('9 states') and warrantTip ('...finish the lines below...'). The other labels are still working labels.
@@ -34,6 +35,13 @@ export const CHASE_WORDS = {
   right: 'That\'s them.',
   why: 'Why',
   evidence: 'Evidence for the warrant',
+  // The Case File (Will v5, BK 10/8 22:31): the screen's words follow the paper's.
+  evidenceCard: n => `Evidence card · Box ${n}`,
+  caseFile: 'Case File',
+  evidenceHead: 'Evidence',
+  box: n => `Box ${n}`,
+  writeCase: 'Write the case',
+  close: 'Close',
   next: 'Next stop',
   toWarrant: 'Write the warrant',
   warrant: 'The warrant',
@@ -85,11 +93,15 @@ export function ChaseBar({ hidden }) {
   const [c, setC] = useState(readChase)
   useEffect(() => { const on = () => setC(readChase()); window.addEventListener('hashchange', on); return () => window.removeEventListener('hashchange', on) }, [])
   if (hidden || !c || !c.hash || c.step === 'caught') return null
+  // A spacer at the foot of the page, so the last of any page can scroll clear of the pill (BK 10/8: it covered map text).
   return (
-    <a className="chase-bar" href={c.hash}>
-      <span className="chase-bar-dot" aria-hidden="true" />
-      <b>{W.resume}</b><span>{c.where || ''}</span>
-    </a>
+    <>
+      <div className="chase-bar-space" aria-hidden="true" />
+      <a className="chase-bar" href={c.hash}>
+        <span className="chase-bar-dot" aria-hidden="true" />
+        <b>{W.resume}</b><span>{c.where || ''}</span>
+      </a>
+    </>
   )
 }
 
@@ -158,7 +170,7 @@ function Ask({ ask, onRight, onMiss, tag }) {
   const [missed, setMissed] = useState(false)
   const tryIt = () => {
     let ok = false
-    if (ask.type === 'type') ok = (ask.accept || []).some(a => a.toLowerCase() === typed.trim().toLowerCase())
+    if (ask.type === 'type') ok = (ask.accept || []).some(a => keyNorm(a) === keyNorm(typed))
     else ok = pick === ask.answer
     if (ok) onRight({ clean: !missed && hints === 0 }); else { setMiss(true); setMissed(true); onMiss() }
   }
@@ -175,6 +187,35 @@ function Ask({ ask, onRight, onMiss, tag }) {
         {(ask.hints || []).slice(0, hints).map((h, i) => <p key={i} className="chase-hint">{h}</p>)}
         {hints < (ask.hints || []).length && <button type="button" className="chase-ghost" onClick={() => setHints(h => h + 1)}>{W.hint(hints + 1)}</button>}
       </div>
+    </div>
+  )
+}
+
+// The last question (Will v5): the enduring issue the trail shares. Typed, checked like the key (sealed in
+// the student build), two hints, and a pill that pops up the Six Umbrellas card from the unit's Doc Assist.
+function FinalAsk({ pack, daPack, onRight, onMiss }) {
+  const f = pack.final || {}
+  const [typed, setTyped] = useState('')
+  const [hints, setHints] = useState(0)
+  const [miss, setMiss] = useState(false)
+  const [pill, setPill] = useState(false)
+  const umb = daPack && (daPack.umbrellas || daPack.q4_card)
+  const go = async e => { e.preventDefault(); if (await keyFits(pack, typed)) onRight(); else { setMiss(true); onMiss() } }
+  return (
+    <div className="chase-ask chase-final">
+      <p className="chase-prompt">{f.prompt}</p>
+      {f.pill && umb && <div className="chase-row"><button type="button" className="chase-pill" aria-expanded={pill} onClick={() => setPill(p => !p)}>{pill ? `− ${W.close}` : `+ ${f.pill.label}`}</button></div>}
+      {pill && umb && <div className="chase-umb"><Umbrellas u={umb} /></div>}
+      <form className="chase-row" onSubmit={go}>
+        <label className="chase-field">{W.typeLabel}<input value={typed} onChange={e => { setMiss(false); setTyped(e.target.value) }} autoComplete="off" spellCheck="false" /></label>
+        <button type="submit" className="chase-btn" disabled={!typed.trim()}>{W.tryIt}</button>
+      </form>
+      {miss && <p className="chase-miss" role="status">{W.notYet}</p>}
+      <div className="chase-hints">
+        {(f.hints || []).slice(0, hints).map((h, i) => <p key={i} className="chase-hint">{h}</p>)}
+        {hints < (f.hints || []).length && <button type="button" className="chase-ghost" onClick={() => setHints(h => h + 1)}>{W.hint(hints + 1)}</button>}
+      </div>
+      {f.callout && <p className="chase-callout">{f.callout}</p>}
     </div>
   )
 }
@@ -266,7 +307,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <p className="chase-read">{stop.clue.text}</p>
           <div className="chase-row"><a className="chase-tool" href={toolHash(courseKey, unit.number, stop.clue.tool, stop.clue.link)}>{W.open[stop.clue.tool] || stop.clue.tool} →</a></div>
           <Ask key={`a${s.b}`} ask={stop.clue.ask} onMiss={cool}
-               onRight={() => setS(x => stop.question ? { ...x, step: 'question' } : { ...x, step: 'card', cold: warm(x) })} />
+               onRight={() => setS(x => stop.question ? { ...x, step: 'question' } : { ...x, step: 'card' })} />
         </section>}
 
         {stop && stop.question && s.step === 'question' && <section className="chase-card">
@@ -274,7 +315,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           {/* A question may show more than one document (question.docs, as a door does; 2026-10-08 for Will's stop 2). */}
           {(stop.question.docs || [stop.question.doc]).filter(Boolean).map((d, i) => <Doc key={i} doc={docs[`${d.casefile}/${d.n}`]} cf={d.casefile} />)}
           <Ask key={`q${s.b}`} ask={stop.question} onMiss={cool} tag={stop.skill}
-               onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, text: stop.evidence }] : x.ev }))} />
+               onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence }] : x.ev }))} />
         </section>}
 
         {stop && s.step === 'card' && <section className="chase-card">
@@ -282,7 +323,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <p className="chase-right" role="status">✓ {pack.fresh || W.right}</p>
           {stop.question?.why && <p className="chase-read"><b>{W.why}.</b> {stop.question.why}</p>}
           {stop.after && <p className="chase-read">{stop.after}</p>}
-          {stop.evidence && stop.question && <div className="chase-evcard"><span>{W.evidence}</span>{stop.evidence}</div>}
+          {stop.evidence && stop.question && <div className="chase-evcard"><span>{pack.final?.prompt ? W.evidenceCard(beat.n) : W.evidence}</span>{stop.evidence}</div>}
           {stop.nearMiss && <p className="chase-near">{stop.nearMiss}</p>}
           <div className="chase-row"><button type="button" className="chase-btn" onClick={next}>{s.b + 1 >= beats.length ? W.toWarrant : W.next}</button></div>
         </section>}
@@ -305,7 +346,14 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <div className="chase-row"><button type="button" className="chase-btn" onClick={next}>{s.b + 1 >= beats.length ? W.toWarrant : W.next}</button></div>
         </section>}
 
-        {s.step === 'warrant' && <section className="chase-card">
+        {s.step === 'warrant' && pack.final?.prompt && <section className="chase-card">
+          <div className="chase-tab">{W.caseFile}</div>
+          <h2 className="chase-h">{W.evidenceHead}</h2>
+          <ol className="chase-boxes">{s.ev.map(e => <li key={e.b}><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span></li>)}</ol>
+          <FinalAsk pack={pack} daPack={daPack} onMiss={cool} onRight={() => setS(x => ({ ...x, step: 'caught', cold: 0 }))} />
+        </section>}
+
+        {s.step === 'warrant' && !pack.final?.prompt && <section className="chase-card">
           <div className="chase-tab">{pack.final?.title || W.warrant}</div>
           <p className="chase-read">{W.warrantTip}</p>
           <ol className="chase-evlist">{s.ev.map(e => <li key={e.b}>{e.text}</li>)}</ol>
@@ -320,12 +368,19 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
 
         {s.step === 'caught' && <section className="chase-card">
           <div className="chase-stamp" aria-label={pack.final?.stamp || W.caught}>{pack.final?.stamp || W.caught}</div>
+          {pack.final?.after && <p className="chase-read chase-after">{pack.final.after}</p>}
+          {Array.isArray(pack.case_file) && pack.case_file.length > 0 && <div className="chase-casefile">
+            <h2 className="chase-h">{W.writeCase}</h2>
+            <ol>{pack.case_file.map((c, i) => <li key={i}><p><b>{c.step}</b> <em>{c.coach}</em></p><p className="chase-fill">{c.fill}</p></li>)}</ol>
+            {pack.case_file_foot && <p className="chase-foot">{pack.case_file_foot}</p>}
+          </div>}
           {pack.coda && <p className="chase-read">{pack.coda.text}{pack.coda.source && <small className="chase-src"> {pack.coda.source}</small>}</p>}
           {pack.end && <div className="chase-end">
             {pack.end.photo && <figure className="chase-photo"><img src={pic(pack.end.photo)} alt={pack.end.alt || ''} /><figcaption className="chase-src">{pack.end.credit}</figcaption></figure>}
             {(pack.end.lines || []).map((l, i) => <p key={i} className="chase-read">{l}</p>)}
           </div>}
           <ol className="chase-reflect">{(pack.reflection || []).map((q, i) => <li key={i}>{q}</li>)}</ol>
+          {pack.toolkit && <p className="chase-toolkit">{pack.toolkit}</p>}
           <div className="chase-row"><button type="button" className="chase-ghost" onClick={() => { writeChase(null); setS({ ...fresh(), step: 'intro' }) }}>{W.again}</button></div>
         </section>}
       </div>
@@ -379,10 +434,11 @@ export const CHASE_STYLES = `
 .chase-stamp{display:inline-block;font:700 44px/1 "Courier Prime",monospace;letter-spacing:6px;color:var(--cc-red);border:4px solid var(--cc-red);border-radius:6px;padding:6px 16px;transform:rotate(-3deg);margin:6px 0 14px}
 .chase-trail{display:flex;flex-wrap:wrap;align-items:center;gap:6px 12px;margin:0 0 12px;color:#F4F6FA}
 .chase-pin{font:700 13px/1 "Courier Prime",monospace;letter-spacing:.1em;text-transform:uppercase;color:#E8B04B}
-.chase-prints{display:flex;gap:6px}
-.chase-prints i{width:14px;height:20px;border-radius:50% 50% 45% 45%;background:#E8D6A6;transition:opacity .4s ease, transform .4s ease}
-.chase-prints i:nth-child(even){transform:translateY(5px)}
-.chase-prints i.faded{opacity:.18;transform:scale(.8)}
+.chase-prints{display:flex;gap:4px;align-items:flex-start}
+.chase-prints i{width:13px;height:30px;background:url(/content/chase-print-left.webp) center/contain no-repeat;transition:opacity .4s ease, transform .4s ease}
+.chase-prints i:nth-child(even){background-image:url(/content/chase-print-right.webp);transform:translateY(6px)}
+.chase-prints i.faded{opacity:.2;transform:scale(.85)}
+.chase-prints i:nth-child(even).faded{transform:translateY(6px) scale(.85)}
 .chase-trail em{font-style:normal;font-weight:600}
 .chase-bar{position:fixed;right:12px;bottom:12px;z-index:1100;display:flex;align-items:center;gap:8px;background:#E8D6A6;color:#1F1A14;border:2px solid #1F1A14;border-radius:999px;padding:8px 14px;text-decoration:none;box-shadow:0 8px 22px -8px #000;font:700 14px/1.1 "Courier Prime",monospace;max-width:calc(100vw - 24px)}
 .chase-bar span:last-child{font-weight:400;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -394,6 +450,22 @@ export const CHASE_STYLES = `
 .chase-pips i.on{background:#E3B341;border-color:#E3B341;transform:scale(1.06)}
 .chase-meter em{font-style:normal;font-weight:600}
 .chase-meterline{font-size:16px;background:var(--cc-paper);border:1px dashed var(--cc-edge);padding:8px 10px}
+.chase-boxes{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:6px}
+.chase-boxes li{display:flex;gap:10px;align-items:baseline;background:var(--cc-paper);border:1px solid var(--cc-edge);padding:8px 10px;font:700 15px/1.35 "Courier Prime",monospace}
+.chase-boxn{flex:none;background:var(--cc-ink);color:var(--cc-paper);border-radius:999px;padding:2px 9px;font-size:13px}
+.chase-final{border-top:2px dashed var(--cc-edge)}
+.chase-pill{background:#0B1220;color:#E3B341;border:2px solid #E3B341;border-radius:999px;padding:7px 14px;font:700 15px/1 "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;min-height:40px;cursor:pointer}
+.chase-umb{background:#0B1220;border-radius:8px;padding:6px;margin:8px 0}
+.chase-callout{background:var(--cc-paper);border:2px solid var(--cc-ink);padding:8px 10px;font-weight:600;margin-top:10px}
+.chase-after{font-weight:700}
+.chase-casefile{background:var(--cc-paper);border:1px solid var(--cc-edge);padding:10px 14px;margin:8px 0 12px}
+.chase-casefile ol{padding-left:0;list-style:none;margin:0}
+.chase-casefile li{margin:0 0 10px}
+.chase-casefile li p{margin:0 0 4px}
+.chase-casefile em{color:var(--cc-ink-2)}
+.chase-fill{font:16px/1.5 "Courier Prime",monospace}
+.chase-foot{font-style:italic;color:var(--cc-ink-2);margin:4px 0 0}
+.chase-toolkit{border:2px dashed var(--cc-edge);padding:8px 10px;font-size:15px}
 .chase-stamp-door{font-size:34px;color:var(--cc-green);border-color:var(--cc-green)}
 .chase-suspect figure{margin:0;flex:none;max-width:140px}
 .chase-suspect figure img{width:120px;height:auto;max-height:150px}
@@ -401,5 +473,6 @@ export const CHASE_STYLES = `
 .chase-photo{margin:6px 0 12px}
 .chase-photo img{width:100%;max-width:560px;display:block;border:2px solid var(--cc-ink);background:var(--cc-paper)}
 @media (prefers-reduced-motion:reduce){.chase-prints i,.chase-pips i{transition:none}.chase-stamp{transform:none}.chase-pips i.on{transform:none}}
-@media (max-width:560px){.chase-bar{left:12px;right:12px;bottom:56px}}
+.chase-bar-space{height:72px}
+@media (max-width:560px){.chase-bar{left:auto;right:12px;bottom:12px;padding:7px 12px}.chase-bar span:last-child{display:none}}
 `

@@ -223,7 +223,7 @@ const boxOf = b => (b && typeof b === 'object' && b.text ? b : null)
 const q4Card = pack => pack.q4_card || pack.umbrellas || null
 const q4Label = pack => pack.labels?.q4_card || pack.labels?.umbrellas || q4Card(pack)?.button
 
-function Umbrellas({ u }) {
+export function Umbrellas({ u }) {
   return (
     <div className="da-umb" id="da-umbrellas">
       <div className="da-umb-title">{u.title}</div>

@@ -2,20 +2,21 @@
   "id": "chase-gs10r-10.2",
   "course": "gs10r",
   "unit": "10.2",
-  "title": "THE CLOCKMAKER",
+  "title": "THE TIMEKEEPER",
   "standing": "An invented suspect. The history is real.",
   "suspect": {
-    "name": "The Clockmaker",
+    "name": "The Timekeeper",
     "line": "Wanted: for trying to wind the world back to 1788.",
     "portrait": null,
-    "portrait_note": "No real image: Josh draws an original silhouette (a figure holding a pocket watch).",
+    "portrait_note": "BK's Gemini illustration (22:11), placed by Josh with the prompt logged.",
     "portrait_alt": "An invented figure in silhouette, holding a pocket watch.",
-    "portrait_src": "Original art. The suspect is invented."
+    "portrait_src": "Illustration made with Gemini (AI) by Mr. Kelley. The suspect is invented."
   },
   "intro": [
     "Someone is winding the clocks back.",
-    "The Clockmaker wants the world the way it was in 1788, before the French Revolution's ideas got out. Everywhere those ideas took root, he tried to stop the clock.",
-    "Follow his trail. Every place, date and document in this chase is real. He isn't."
+    "The Timekeeper wants the world the way it was in 1788, before the French Revolution's ideas got out. Everywhere those ideas took root, he tried to stop the clock.",
+    "Follow his trail. Every place, date and document in this chase is real. He isn't.",
+    "At the end, you'll name the enduring issue that ties his trail together, and prove it."
   ],
   "cold": [
     "hot",
@@ -37,20 +38,18 @@
       "place": "Paris",
       "year": "1789",
       "trail": "warm",
-      "story": "In 1789, France's National Assembly writes down that men are born free and equal in rights. The Clockmaker arrives too late: the words are already printed.",
+      "story": "In 1789, France's National Assembly writes down that men are born free and equal in rights. The Timekeeper arrives too late: the words are already printed.",
       "clue": {
         "text": "Open the Enduring Issues map: The Declaration of the Rights of Man.",
-        "tool": "map",
+        "tool": "issues",
         "link": "s-1789-rights-of-man",
         "ask": {
-          "stem": "According to the Enduring Issues map stop, what is law supposed to express?",
-          "options": [
-            "The general will",
-            "The king's wishes",
-            "The Church's teaching",
-            "The nobles' interests"
+          "stem": "According to the Enduring Issues map stop, law is supposed to be the expression of what? Type it.",
+          "type": "type",
+          "accept": [
+            "the general will",
+            "general will"
           ],
-          "answer": 0,
           "hints": [
             "Read what happened at the map stop.",
             "Look for the word law."
@@ -84,20 +83,19 @@
       "place": "Saint-Domingue (Haiti)",
       "year": "1791–1804",
       "trail": "warm",
-      "story": "In 1791, the enslaved people of Saint-Domingue rise up against slavery. In 1804, Haiti declares its independence. The Clockmaker can't wind this clock back.",
+      "story": "In 1791, the enslaved people of Saint-Domingue rise up against slavery. In 1804, Haiti declares its independence. The Timekeeper can't wind this clock back.",
       "clue": {
         "text": "Open the Enduring Issues map: The Haitian Revolution.",
-        "tool": "map",
+        "tool": "issues",
         "link": "s-1791-haiti",
         "ask": {
-          "stem": "According to the Enduring Issues map stop, who declared Haiti independent in 1804?",
-          "options": [
-            "Jean-Jacques Dessalines",
-            "Toussaint L'Ouverture",
-            "Napoleon Bonaparte",
-            "Simón Bolívar"
+          "stem": "According to the Enduring Issues map stop, who declared Haiti independent in 1804? Type his last name.",
+          "type": "type",
+          "accept": [
+            "dessalines",
+            "jean-jacques dessalines",
+            "jean jacques dessalines"
           ],
-          "answer": 0,
           "hints": [
             "Read what happened at the map stop.",
             "Look for the year 1804."
@@ -119,10 +117,16 @@
           "Outside evidence is true, and missing from the documents."
         ],
         "why": "France's 1794 vote is true and in neither document, so it's outside evidence.",
-        "doc": {
-          "casefile": "C",
-          "n": 1
-        }
+        "docs": [
+          {
+            "casefile": "C",
+            "n": 1
+          },
+          {
+            "casefile": "C",
+            "n": 2
+          }
+        ]
       },
       "evidence": "1793 · Toussaint calls his brothers to fight for Liberty and Equality · Casefile C, Document 1"
     },
@@ -131,23 +135,22 @@
       "place": "Napoleon's Europe",
       "year": "1812",
       "trail": "cooling",
-      "story": "By 1812, Napoleon's reach crosses Europe and the ocean to Spain's colonies. The Clockmaker is one step behind.",
+      "story": "By 1812, Napoleon's reach crosses Europe and the ocean to Spain's colonies. The Timekeeper is one step behind.",
       "clue": {
         "text": "Open the Atlas: Central Europe in 1812. Look at the small map.",
         "tool": "atlas",
         "link": "10.2-B-01",
         "ask": {
-          "stem": "Which country stayed independent of Napoleon in 1812?",
-          "options": [
-            "Russia",
-            "The Confederation of the Rhine",
-            "The Duchy of Warsaw",
-            "The Kingdom of Spain"
+          "stem": "On the small map, which giant empire in the east stayed independent of Napoleon in 1812? Type its name.",
+          "type": "type",
+          "accept": [
+            "russia",
+            "russian empire",
+            "the russian empire"
           ],
-          "answer": 0,
           "hints": [
             "Find the color for independent states.",
-            "Three of these are under Napoleon's control."
+            "Look east of the Duchy of Warsaw."
           ]
         }
       },
@@ -184,14 +187,14 @@
         "tool": "atlas",
         "link": "10.2-C-02",
         "ask": {
-          "stem": "Who holds Lombardy and the city of Venice in northern Italy?",
-          "options": [
-            "Austria",
-            "Prussia",
-            "France",
-            "Russia"
+          "stem": "Who holds Lombardy and the city of Venice in northern Italy? Type the empire.",
+          "type": "type",
+          "accept": [
+            "austria",
+            "empire of austria",
+            "austrian empire",
+            "the empire of austria"
           ],
-          "answer": 0,
           "hints": [
             "Find northern Italy at the bottom of the map.",
             "Match its color to the key."
@@ -205,20 +208,18 @@
       "place": "Piedmont, Italy",
       "year": "1846",
       "trail": "stirring",
-      "story": "In 1846, Camillo di Cavour, a nobleman from Piedmont, writes that Italians must silence the small questions that divide them. The idea the Clockmaker buried in Vienna has come up again.",
+      "story": "In 1846, Camillo di Cavour, a nobleman from Piedmont, writes that Italians must silence the small questions that divide them. The idea the Timekeeper buried in Vienna has come up again.",
       "clue": {
         "text": "Open the Atlas: The Unification of Italy, 1815–1870.",
         "tool": "atlas",
         "link": "10.2-C-03",
         "ask": {
-          "stem": "Italy's unification starts in the Kingdom of Sardinia, ruled from Piedmont. Which city is its capital?",
-          "options": [
-            "Turin",
-            "Rome",
-            "Venice",
-            "Naples"
+          "stem": "Italy's unification starts in the Kingdom of Sardinia, ruled from Piedmont. Which city is its capital? Type it.",
+          "type": "type",
+          "accept": [
+            "turin",
+            "torino"
           ],
-          "answer": 0,
           "hints": [
             "Find Piedmont in the top left.",
             "Look for the city marked there."
@@ -258,14 +259,12 @@
         "tool": "atlas",
         "link": "10.2-C-04",
         "ask": {
-          "stem": "On the top map, which state's customs union grows into the German Zollverein?",
-          "options": [
-            "Prussia",
-            "Austria",
-            "Bavaria",
-            "Denmark"
+          "stem": "On the top map, which state's customs union grows into the German Zollverein? Type it.",
+          "type": "type",
+          "accept": [
+            "prussia",
+            "kingdom of prussia"
           ],
-          "answer": 0,
           "hints": [
             "Read the first line of the top key.",
             "Find Berlin."
@@ -299,23 +298,26 @@
       "place": "The Balkans",
       "year": "1912",
       "trail": "hot",
-      "story": "October 1912. The Balkan states are about to go to war with the Ottoman Empire, and Europe's great powers are trying to hold the lid on. The Clockmaker was here minutes ago.",
+      "story": "October 1912. The Balkan states are about to go to war with the Ottoman Empire, and Europe's great powers are trying to hold the lid on. The Timekeeper was here minutes ago.",
       "clue": {
         "text": "Open the Atlas: The peoples of Austria-Hungary, 1911.",
         "tool": "atlas",
         "link": "10.2-C-01",
         "ask": {
-          "stem": "According to the map, which people live in Bosnia?",
-          "options": [
-            "Croats and Serbs",
-            "Germans",
-            "Magyars",
-            "Poles"
+          "stem": "According to the map, which people live in Bosnia? Type one of them.",
+          "type": "type",
+          "accept": [
+            "croats",
+            "serbs",
+            "servians",
+            "croat",
+            "serb",
+            "croats and serbs",
+            "croats and servians"
           ],
-          "answer": 0,
           "hints": [
             "Find Bosnia in the south of the empire.",
-            "Match its color to the key. The map spells it “Servians.”"
+            "Match its color to the key. The map spells Serbs “Servians.”"
           ]
         }
       },
@@ -340,26 +342,38 @@
         }
       },
       "evidence": "1912 · BALKAN TROUBLES about to boil over · Casefile C, Document 8",
-      "nearMiss": "You just missed him. He left a map open on the table: the peoples of Austria-Hungary. One city is circled, inside Bosnia. The map spells it the old way."
+      "nearMiss": "You just missed him. He left a map open on the table: the peoples of Austria-Hungary. Bosnia is circled."
     }
   ],
   "warrant": [
-    "The Clockmaker goes next to ____________ (a city on the last map).",
-    "Three stops share one enduring issue: ____________ (its exact name from the Six Umbrellas card).",
-    "Casefile ___, Document ___ shows it when ______________________.",
-    "Casefile ___, Document ___ shows it when ______________________."
+    "1 · Set the scene. When and where? Use the years and places on your evidence cards.",
+    "2 · Name the issue. Which enduring issue shows up at three of your stops? Use its exact name from the Six Umbrellas card.",
+    "3 · Explain it. What does it mean? Say it in your own words. Stuck? Open the enduring issues list in the Arena. It's always there.",
+    "4 · Prove it. Pick one evidence card. What happens in that document that shows the issue?",
+    "5 · Prove it again. Use a different stop."
   ],
   "final": {
-    "task": "Type the city to seal the warrant. Then finish your four lines and bring your warrant to your teacher.",
+    "prompt": "Which enduring issue do three of his stops share? Use its exact name from the Six Umbrellas card.",
     "key_words": [
-      "sarajevo",
-      "serajevo"
+      "nationalism",
+      "conflict"
     ],
-    "stamp": "WARRANT SEALED"
+    "hints": [
+      "Look at your evidence cards. What do stops 5, 6 and 7 have in common?",
+      "Check the Six Umbrellas card for the exact name."
+    ],
+    "pill": {
+      "label": "Enduring issues",
+      "shows": "the list of enduring issues and their definitions (the Six Umbrellas card)"
+    },
+    "callout": "Learn these. They're on every Regents exam. Practice them anytime in the Arena: Enduring Issue, Level 1 (the matching game).",
+    "after": "That's it. Now finish steps 3, 4 and 5 on your Case File.",
+    "stamp": "CASE SOLVED"
   },
   "end": {
     "lines": [
-      "The warrant reaches Sarajevo. The Clockmaker is gone, and he never made history happen. People did.",
+      "That's it. Every time he wound the clock back, the idea came back.",
+      "His trail ends in Sarajevo, in Bosnia. The Timekeeper is gone, and he never made history happen. People did.",
       "On June 28, 1914, a Bosnian Serb nationalist shot the heir to Austria-Hungary's throne in Sarajevo.",
       "A month later, Austria-Hungary declared war on Serbia, and Europe went to war. That's World War I, in Unit 10.5.",
       "You can't wind back an idea. You can only follow where it goes."
@@ -368,8 +382,41 @@
   },
   "reflection": [
     "Which question did you get right on the first try, and how?",
-    "At Vienna, the Clockmaker wound the clocks back. Why didn't it hold?",
-    "What's one thing from today you'll use on a test?"
+    "At Vienna, the Timekeeper wound the clocks back. Why didn't it hold?",
+    "Which Arena tool will you use before Friday's essay, and for what?"
   ],
+  "case_file": [
+    {
+      "step": "1 · Set the scene.",
+      "coach": "When and where? Use the years and places on your evidence cards.",
+      "fill": "From ______ to ______, in ______________________, ______________________."
+    },
+    {
+      "step": "2 · Name the issue.",
+      "coach": "Which enduring issue shows up at three of your stops? Use its exact name from the Six Umbrellas card.",
+      "fill": "Three stops share the enduring issue of ______________."
+    },
+    {
+      "step": "3 · Explain it.",
+      "coach": "What does it mean? Say it in your own words. Stuck? Open the enduring issues list in the Arena. It's always there.",
+      "fill": "______________ is when ______________________________."
+    },
+    {
+      "step": "4 · Prove it.",
+      "coach": "Pick one evidence card. What happens in that document that shows the issue?",
+      "fill": "Casefile ___, Document ___ shows it when ______________________."
+    },
+    {
+      "step": "5 · Prove it again.",
+      "coach": "Use a different stop.",
+      "fill": "Casefile ___, Document ___ shows it when ______________________."
+    }
+  ],
+  "case_file_foot": "Put these five sentences together and you have the opening of an Enduring Issues essay.",
+  "toolkit": "Your toolkit, always open: the Enduring Issues map · the Atlas · Doc Assist · the matching games. thearena.flashpointhistory.com",
+  "room_card": {
+    "title": "The Timekeeper",
+    "line": "Follow the trail from Paris to Sarajevo. Every tool you need is in the Arena."
+  },
   "_built": "2026-10-08 by Will (global10r-curriculum) · skills/chase/build_chase_pack_102.py from chase_words_102.py"
 }
