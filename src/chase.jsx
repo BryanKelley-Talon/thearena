@@ -18,6 +18,7 @@ import { useEffect, useMemo, useState } from 'react'
 import '@fontsource/courier-prime/latin-400.css'
 import '@fontsource/courier-prime/latin-700.css'
 import { Umbrellas } from './docassist.jsx'
+import { keyNorm, answerFor } from './chase-norm.js'
 
 // BK 2026-10-07 11:49 "yes approved." to the engine proof: NINE STATES' shape, and the labels onward ('Keep going'),
 // meterCount ('9 states') and warrantTip ('...finish the lines below...'). The other labels are still working labels.
@@ -52,7 +53,8 @@ export const CHASE_WORDS = {
   caught: 'CAUGHT',
   again: 'Start over',
   trail: 'The trail',
-  doc: (n, cf) => cf ? `Casefile ${cf} · Document ${n}` : `Document ${n}`,
+  // Will v6 (BK 08:27): "Document N (Casefile X)", so kids don't mix it up with their paper Case File.
+  doc: (n, cf) => cf ? `Document ${n} (Casefile ${cf})` : `Document ${n}`,
   typeLabel: 'Your answer',
   onward: 'Keep going',
   meterCount: (n, m) => `${n} ${n === 1 ? (m.one || 'state') : (m.many || 'states')}`,
@@ -75,18 +77,28 @@ export const chaseHash = (courseKey, unitNumber) => `#/${courseKey}/chase/${unit
 
 // A key typed at the last door: plain in dev, hashed in the student build (scripts/seal-chase.mjs).
 // Case and every space are ignored (Will 2026-10-08: "Serajevo" or "sarajevo", any spacing).
-export const keyNorm = k => String(k || '').replace(/\s+/g, '').toLowerCase()
+// Will v6 (2026-10-09): accents, punctuation and a leading "the" / "kingdom of" / "empire of" too (chase-norm.js).
+export { keyNorm }
+// Returns false, or { after }: the line for that answer (final.after_by_answer, Will v6), else final.after.
 async function keyFits(pack, typed) {
   const w = keyNorm(typed)
   if (!w) return false
   const f = pack.final || {}
-  if (Array.isArray(f.key_words)) return f.key_words.some(k => keyNorm(k) === w)
+  if (Array.isArray(f.key_words)) {
+    const k = f.key_words.find(x => keyNorm(x) === w)
+    if (k === undefined) return false
+    const by = f.after_by_answer
+    return { after: by ? by[answerFor(k, Object.keys(by))] : (f.after || null) }
+  }
   try {
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${pack.id}|${w}`))
     const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('')
-    return (f.key_hashes || []).includes(hex)
+    if (!(f.key_hashes || []).includes(hex)) return false
+    return { after: (f.after_hashes && f.after_hashes[hex]) || f.after || null }
   } catch { return false }
 }
+// A known wrong answer gets its own short reply (final.wrong_feedback, Will v6); anything else, the usual line.
+const wrongLine = (f, typed) => { const w = keyNorm(typed); const hit = Object.keys(f.wrong_feedback || {}).find(k => keyNorm(k) === w); return hit ? f.wrong_feedback[hit] : null }
 
 // "Back to the chase": shown on every Arena page while a chase is running in this tab.
 export function ChaseBar({ hidden }) {
@@ -200,7 +212,7 @@ function FinalAsk({ pack, daPack, onRight, onMiss, calloutHref }) {
   const [miss, setMiss] = useState(false)
   const [pill, setPill] = useState(false)
   const umb = daPack && (daPack.umbrellas || daPack.q4_card)
-  const go = async e => { e.preventDefault(); if (await keyFits(pack, typed)) onRight(); else { setMiss(true); onMiss() } }
+  const go = async e => { e.preventDefault(); const r = await keyFits(pack, typed); if (r) onRight(r); else { setMiss(wrongLine(f, typed) || true); onMiss() } }
   return (
     <div className="chase-ask chase-final">
       <p className="chase-prompt">{f.prompt}</p>
@@ -210,7 +222,7 @@ function FinalAsk({ pack, daPack, onRight, onMiss, calloutHref }) {
         <label className="chase-field">{W.typeLabel}<input value={typed} onChange={e => { setMiss(false); setTyped(e.target.value) }} autoComplete="off" spellCheck="false" /></label>
         <button type="submit" className="chase-btn" disabled={!typed.trim()}>{W.tryIt}</button>
       </form>
-      {miss && <p className="chase-miss" role="status">{W.notYet}</p>}
+      {miss && <p className="chase-miss" role="status">{typeof miss === 'string' ? miss : W.notYet}</p>}
       <div className="chase-hints">
         {(f.hints || []).slice(0, hints).map((h, i) => <p key={i} className="chase-hint">{h}</p>)}
         {hints < (f.hints || []).length && <button type="button" className="chase-ghost" onClick={() => setHints(h => h + 1)}>{W.hint(hints + 1)}</button>}
@@ -310,7 +322,9 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <p className="chase-read">{stop.clue.text}</p>
           <div className="chase-row"><a className="chase-tool" href={toolHash(courseKey, unit.number, stop.clue.tool, stop.clue.link)}>{W.open[stop.clue.tool] || stop.clue.tool} →</a></div>
           <Ask key={`a${s.b}`} ask={stop.clue.ask} onMiss={cool}
-               onRight={() => setS(x => stop.question ? { ...x, step: 'question' } : { ...x, step: 'card' })} />
+               onRight={() => setS(x => stop.question ? { ...x, step: 'question' }
+                 // A map-only stop may still hand out an evidence card (Will v6, stops 1-3): it lands in its box now.
+                 : { ...x, step: 'card', ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence, doc: null }] : x.ev })} />
         </section>}
 
         {stop && stop.question && s.step === 'question' && <section className="chase-card">
@@ -326,7 +340,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <p className="chase-right" role="status">✓ {pack.fresh || W.right}</p>
           {stop.question?.why && <p className="chase-read"><b>{W.why}.</b> {stop.question.why}</p>}
           {stop.after && <p className="chase-read">{stop.after}</p>}
-          {stop.evidence && stop.question && <div className="chase-evcard"><span>{pack.final?.prompt ? W.evidenceCard(beat.n) : W.evidence}</span>{stop.evidence}</div>}
+          {stop.evidence && <div className="chase-evcard"><span>{pack.final?.prompt ? W.evidenceCard(beat.n) : W.evidence}</span>{stop.evidence}</div>}
           {stop.nearMiss && <p className="chase-near">{stop.nearMiss}</p>}
           <div className="chase-row"><button type="button" className="chase-btn" onClick={next}>{s.b + 1 >= beats.length ? W.toWarrant : W.next}</button></div>
         </section>}
@@ -355,7 +369,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <ol className="chase-boxes">{s.ev.map(e => <li key={e.b}>{e.doc
             ? <a href={toolHash(courseKey, unit.number, 'doc-assist', `${e.doc.casefile}/${e.doc.n}`)}><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span><i className="chase-go" aria-hidden="true">→</i></a>
             : <><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span></>}</li>)}</ol>
-          <FinalAsk pack={pack} daPack={daPack} calloutHref={unit.chase?.callout_href || null} onMiss={cool} onRight={() => setS(x => ({ ...x, step: 'caught', cold: 0 }))} />
+          <FinalAsk pack={pack} daPack={daPack} calloutHref={unit.chase?.callout_href || null} onMiss={cool} onRight={r => setS(x => ({ ...x, step: 'caught', cold: 0, after: (r && r.after) || null }))} />
         </section>}
 
         {s.step === 'warrant' && !pack.final?.prompt && <section className="chase-card">
@@ -373,7 +387,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
 
         {s.step === 'caught' && <section className="chase-card">
           <div className="chase-stamp" aria-label={pack.final?.stamp || W.caught}>{pack.final?.stamp || W.caught}</div>
-          {pack.final?.after && <p className="chase-read chase-after">{pack.final.after}</p>}
+          {(s.after || pack.final?.after) && <p className="chase-read chase-after">{s.after || pack.final.after}</p>}
           {Array.isArray(pack.case_file) && pack.case_file.length > 0 && <div className="chase-casefile">
             <h2 className="chase-h">{W.writeCase}</h2>
             <ol>{pack.case_file.map((c, i) => <li key={i}><p><b>{c.step}</b> <em>{c.coach}</em></p><p className="chase-fill">{c.fill}</p></li>)}</ol>

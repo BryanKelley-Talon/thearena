@@ -10,13 +10,13 @@
     "portrait": null,
     "portrait_note": "BK's Gemini illustration (22:11), placed by Josh with the prompt logged.",
     "portrait_alt": "An invented figure in silhouette, holding a pocket watch.",
-    "portrait_src": "Illustration made with Gemini (AI) by Mr. Kelley. The suspect is invented."
+    "portrait_src": "Illustration: Mr. Kelley, made with Google Gemini (AI)."
   },
   "intro": [
     "Someone is winding the clocks back.",
-    "The Timekeeper wants the world the way it was in 1788, before the French Revolution's ideas got out. Everywhere those ideas took root, he tried to stop the clock.",
+    "The Timekeeper wants the world the way it was in 1788, before France's revolution carried new ideas across Europe and the world. Everywhere those ideas spread, he tried to stop the clock.",
     "Follow his trail. Every place, date and document in this chase is real. He isn't.",
-    "At the end, you'll name the enduring issue that ties his trail together, and prove it."
+    "At the end, you'll name an enduring issue three of his stops share, and prove it."
   ],
   "cold": [
     "hot",
@@ -48,7 +48,12 @@
           "type": "type",
           "accept": [
             "the general will",
-            "general will"
+            "general will",
+            "general wil",
+            "genral will",
+            "generel will",
+            "will of the people",
+            "the will of the people"
           ],
           "hints": [
             "Read what happened at the map stop.",
@@ -56,27 +61,8 @@
           ]
         }
       },
-      "skill": "Document Use",
-      "question": {
-        "stem": "According to Document 3, which of these is one of the natural rights in Article 2?",
-        "options": [
-          "Resistance to oppression",
-          "Choosing the king",
-          "Freedom from all taxes",
-          "Freedom from serving in the army"
-        ],
-        "answer": 0,
-        "hints": [
-          "Find Article 2.",
-          "Read the sentence that starts “These rights are…”"
-        ],
-        "why": "Article 2 names four natural rights: “liberty, property, security, and resistance to oppression.”",
-        "doc": {
-          "casefile": "B",
-          "n": 3
-        }
-      },
-      "evidence": "1789 · Article 2: liberty, property, security and resistance to oppression · Casefile B, Document 3"
+      "evidence": "1789 · Article 2: liberty, property, security and resistance to oppression · Document 3 (Casefile B)",
+      "after": "You found it. Copy the evidence card into box 1."
     },
     {
       "id": "g2-saint-domingue-1791",
@@ -94,7 +80,14 @@
           "accept": [
             "dessalines",
             "jean-jacques dessalines",
-            "jean jacques dessalines"
+            "jean jacques dessalines",
+            "desalines",
+            "dessaline",
+            "desaline",
+            "dessalins",
+            "dessallines",
+            "desallines",
+            "jean-jacques dessaline"
           ],
           "hints": [
             "Read what happened at the map stop.",
@@ -102,51 +95,33 @@
           ]
         }
       },
-      "skill": "Outside Evidence",
-      "question": {
-        "stem": "Which of these is outside evidence for Documents 1 and 2: true, and not in either document?",
-        "options": [
-          "In 1794, France's government voted to end slavery in all its colonies.",
-          "Toussaint wanted Liberty and Equality to reign.",
-          "The letter asks its readers to fight for the same cause.",
-          "Toussaint said his name was perhaps known."
-        ],
-        "answer": 0,
-        "hints": [
-          "Three of these are in Document 1. Find them.",
-          "Outside evidence is true, and missing from the documents."
-        ],
-        "why": "France's 1794 vote is true and in neither document, so it's outside evidence.",
-        "docs": [
-          {
-            "casefile": "C",
-            "n": 1
-          },
-          {
-            "casefile": "C",
-            "n": 2
-          }
-        ]
-      },
-      "evidence": "1793 · Toussaint calls his brothers to fight for Liberty and Equality · Casefile C, Document 1"
+      "evidence": "1793 · Toussaint calls his brothers to fight for Liberty and Equality · Document 1 (Casefile C)",
+      "after": "You found it. Copy the evidence card into box 2."
     },
     {
       "id": "g3-europe-1812",
-      "place": "Napoleon's Europe",
-      "year": "1812",
+      "place": "Spain and its colonies",
+      "year": "1808",
       "trail": "cooling",
-      "story": "By 1812, Napoleon's reach crosses Europe and the ocean to Spain's colonies. The Timekeeper is one step behind.",
+      "story": "In 1808, Napoleon puts his brother on Spain's throne, and Spain's colonies across the ocean must decide whether to obey a French king. The Timekeeper is one step behind.",
       "clue": {
         "text": "Open the Atlas: Central Europe in 1812. Look at the small map.",
         "tool": "atlas",
         "link": "10.2-B-01",
         "ask": {
-          "stem": "On the small map, which giant empire in the east stayed independent of Napoleon in 1812? Type its name.",
+          "stem": "On the small map, which giant empire directly east of the Duchy of Warsaw stayed independent of Napoleon in 1812? Type its name.",
           "type": "type",
           "accept": [
             "russia",
             "russian empire",
-            "the russian empire"
+            "the russian empire",
+            "russian",
+            "empire of russia",
+            "rusia",
+            "russa",
+            "russain",
+            "russain empire",
+            "rusian empire"
           ],
           "hints": [
             "Find the color for independent states.",
@@ -154,27 +129,8 @@
           ]
         }
       },
-      "skill": "Historical Context",
-      "question": {
-        "stem": "Based on Document 3, which event in 1808 led Spanish Americans to take control of their own local governments?",
-        "options": [
-          "Napoleon placed his brother Joseph on the Spanish throne.",
-          "Spain freed its colonies after a war with Britain.",
-          "Bolívar had already freed all of South America.",
-          "The king of Spain asked the colonies to rule themselves."
-        ],
-        "answer": 0,
-        "hints": [
-          "Find the year 1808 in the document.",
-          "Who ended up wearing Spain's crown?"
-        ],
-        "why": "Napoleon gave Spain's crown to his brother Joseph, and Spanish Americans refused a French king and took over their own local governments.",
-        "doc": {
-          "casefile": "C",
-          "n": 3
-        }
-      },
-      "evidence": "1808 · Spain gets a French king, and its colonies soon take over their own governments · Casefile C, Document 3"
+      "evidence": "1808 · Spain gets a French king, and its colonies soon take over their own governments · Document 3 (Casefile C)",
+      "after": "You found it. Copy the evidence card into box 3."
     },
     {
       "id": "g4-vienna-1815",
@@ -187,28 +143,35 @@
         "tool": "atlas",
         "link": "10.2-C-02",
         "ask": {
-          "stem": "Who holds Lombardy and the city of Venice in northern Italy? Type the empire.",
+          "stem": "In 1815, who holds Lombardy and the city of Venice in northern Italy? Type the empire.",
           "type": "type",
           "accept": [
             "austria",
             "empire of austria",
             "austrian empire",
-            "the empire of austria"
+            "the empire of austria",
+            "the austrian empire",
+            "austrian",
+            "austria empire",
+            "habsburg empire",
+            "hapsburg empire",
+            "austira",
+            "austrain empire"
           ],
           "hints": [
             "Find northern Italy at the bottom of the map.",
-            "Match its color to the key."
+            "Lombardy and Venetia aren't filled in. Match the colored line along their border to the key."
           ]
         }
       },
-      "after": "Austria takes back Lombardy and adds Venice. The trail has gone cold. But you can't wind back an idea."
+      "after": "Austria takes back Lombardy and gets Venice too. The old Republic of Venice never comes back. The trail has gone cold. But you can't wind back an idea."
     },
     {
       "id": "g5-piedmont-1846",
       "place": "Piedmont, Italy",
       "year": "1846",
       "trail": "stirring",
-      "story": "In 1846, Camillo di Cavour, a nobleman from Piedmont, writes that Italians must silence the small questions that divide them. The idea the Timekeeper buried in Vienna has come up again.",
+      "story": "In 1846, Camillo di Cavour, a nobleman from Piedmont, writes that Italians must silence the small questions that divide them. The idea the Timekeeper buried in Vienna is back: people who share a language and a history should rule themselves. That's nationalism.",
       "clue": {
         "text": "Open the Atlas: The Unification of Italy, 1815–1870.",
         "tool": "atlas",
@@ -218,11 +181,15 @@
           "type": "type",
           "accept": [
             "turin",
-            "torino"
+            "torino",
+            "turino",
+            "turen",
+            "torin",
+            "tourin"
           ],
           "hints": [
             "Find Piedmont in the top left.",
-            "Look for the city marked there."
+            "It's the city just left of the word Piedmont."
           ]
         }
       },
@@ -240,13 +207,13 @@
           "A thesis answers the question, and someone could argue with it.",
           "Which one picks a side?"
         ],
-        "why": "The first answer picks a side and gives a reason; the other three only repeat Document 5.",
+        "why": "The first answer picks a side and gives a reason; the other three only repeat Document 5. Strongest thesis doesn't mean the only answer: Italy also went to war in 1859, 1860, 1866 and 1870.",
         "doc": {
           "casefile": "C",
           "n": 5
         }
       },
-      "evidence": "1846 · Cavour: silence what divides Italians · Casefile C, Document 5"
+      "evidence": "1846 · Cavour: silence what divides Italians · Document 5 (Casefile C)"
     },
     {
       "id": "g6-berlin-1862",
@@ -259,11 +226,19 @@
         "tool": "atlas",
         "link": "10.2-C-04",
         "ask": {
-          "stem": "On the top map, which state's customs union grows into the German Zollverein? Type it.",
+          "stem": "On the top map, which state's customs union (a trade group with no taxes at its borders) grows into the German Zollverein? Type the state's name.",
           "type": "type",
           "accept": [
             "prussia",
-            "kingdom of prussia"
+            "kingdom of prussia",
+            "prussian",
+            "prussian customs union",
+            "the prussian customs union",
+            "the kingdom of prussia",
+            "prusia",
+            "prussa",
+            "prussian-hessian customs union",
+            "prussia and hesse"
           ],
           "hints": [
             "Read the first line of the top key.",
@@ -285,13 +260,13 @@
           "What does he say will NOT reach the goal?",
           "What could blood and iron stand for?"
         ],
-        "why": "In the exam's version, “blood and iron” means war and weapons: Prussia fought Denmark, Austria and France, and in 1871 the German Empire was proclaimed.",
+        "why": "His actual words were “iron and blood,” and he meant war: Prussia fought Denmark, Austria and France, and in 1871 the German Empire was proclaimed.",
         "doc": {
           "casefile": "C",
           "n": 6
         }
       },
-      "evidence": "1862 · Bismarck: blood and iron, not democracy · Casefile C, Document 6"
+      "evidence": "1862 · Bismarck: blood and iron, not democracy · Document 6 (Casefile C)"
     },
     {
       "id": "g7-balkans-1912",
@@ -310,14 +285,24 @@
             "croats",
             "serbs",
             "servians",
+            "servian",
             "croat",
             "serb",
             "croats and serbs",
-            "croats and servians"
+            "croats and servians",
+            "serbs and croats",
+            "croatians",
+            "croatian",
+            "serbians",
+            "serbian",
+            "slavs",
+            "slav",
+            "south slavs",
+            "serbo-croats"
           ],
           "hints": [
             "Find Bosnia in the south of the empire.",
-            "Match its color to the key. The map spells Serbs “Servians.”"
+            "Match its color to the key: it's the fourth color down. The map spells Serbs “Servians.”"
           ]
         }
       },
@@ -333,7 +318,7 @@
         "answer": 0,
         "hints": [
           "What's about to boil over?",
-          "Check the Six Umbrellas: why people fight."
+          "Open the Six Umbrellas card: why people fight."
         ],
         "why": "A pot about to boil over, with the great powers holding the lid, is Conflict; six days later, the First Balkan War began.",
         "doc": {
@@ -341,38 +326,57 @@
           "n": 8
         }
       },
-      "evidence": "1912 · BALKAN TROUBLES about to boil over · Casefile C, Document 8",
+      "evidence": "1912 · BALKAN TROUBLES about to boil over · Document 8 (Casefile C)",
       "nearMiss": "You just missed him. He left a map open on the table: the peoples of Austria-Hungary. Bosnia is circled."
     }
   ],
   "warrant": [
-    "1 · Set the scene. When and where? Use the years and places on your evidence cards.",
-    "2 · Name the issue. Which enduring issue shows up at three of your stops? Use its exact name from the Six Umbrellas card.",
-    "3 · Explain it. What does it mean? Say it in your own words. Stuck? Open the enduring issues list in the Arena. It's always there.",
-    "4 · Prove it. Pick one evidence card. What happens in that document that shows the issue?",
-    "5 · Prove it again. Use a different stop."
+    "1 · Name the issue. Which enduring issue shows up at three of your stops? Use a name from the Six Umbrellas card.",
+    "2 · Set the scene. When and where? Use the first and last years of those three stops, and their places. Then say what people wanted.",
+    "3 · Explain it. What does it mean, and why is it a problem? Stuck? Open the Six Umbrellas card in the Arena. Read it, close it, then say it in your own words.",
+    "4 · Prove it. Pick one of your three stops. Who says or shows what? Then say how it shows the issue.",
+    "5 · Prove it again. Use another of your three stops.",
+    "6 · Once more, if you have time. On the test you'll need three documents."
   ],
   "final": {
-    "prompt": "Which enduring issue do three of his stops share? Use its exact name from the Six Umbrellas card.",
+    "prompt": "Which enduring issue shows up at three of your stops? Type its name from the Six Umbrellas card.",
     "key_words": [
       "nationalism",
-      "conflict"
+      "conflict",
+      "nationalisim",
+      "nationlism",
+      "nationalsim",
+      "natonalism",
+      "nationalizm",
+      "the conflict",
+      "conflicts",
+      "confilct",
+      "conflit"
     ],
     "hints": [
-      "Look at your evidence cards. What do stops 5, 6 and 7 have in common?",
-      "Check the Six Umbrellas card for the exact name."
+      "Look at your evidence cards. Which issue shows up at three of them?",
+      "Open the Six Umbrellas card for the issue's name."
     ],
-    "pill": {
-      "label": "Enduring issues",
-      "shows": "the list of enduring issues and their definitions (the Six Umbrellas card)"
+    "after_by_answer": {
+      "nationalism": "That's it: Nationalism. You'll find it at stops 3, 5 and 6. Now write your case on your Case File, steps 1 to 6.",
+      "conflict": "That's it: Conflict. You'll find it at stops 2, 6 and 7. Now write your case on your Case File, steps 1 to 6."
     },
-    "callout": "Learn these. They're on every Regents exam. Practice them anytime in the Arena: Enduring Issue, Level 1 (the matching game).",
-    "after": "That's it. Now finish steps 3, 4 and 5 on your Case File.",
+    "wrong_feedback": {
+      "identity and nationalism": "That's the umbrella's title. Type the issue under it.",
+      "identity & nationalism": "That's the umbrella's title. Type the issue under it.",
+      "unification": "That's what happened. Which enduring issue drove it?",
+      "war": "Close. What's its name on the card?"
+    },
+    "pill": {
+      "label": "Six Umbrellas card",
+      "shows": "the Six Umbrellas card with every issue's one-line definition (the Doc Assist pop-up, ruled 10/1)"
+    },
+    "callout": "LEARN THE ENDURING ISSUES. On the Regents you name one yourself, with no list. Know these and you'll always have one ready. Practice anytime in the Arena: Enduring Issue, Level 1 (the matching game).",
     "stamp": "CASE SOLVED"
   },
   "end": {
     "lines": [
-      "That's it. Every time he wound the clock back, the idea came back.",
+      "He wound the clocks back at Vienna, and the idea came back anyway.",
       "His trail ends in Sarajevo, in Bosnia. The Timekeeper is gone, and he never made history happen. People did.",
       "On June 28, 1914, a Bosnian Serb nationalist shot the heir to Austria-Hungary's throne in Sarajevo.",
       "A month later, Austria-Hungary declared war on Serbia, and Europe went to war. That's World War I, in Unit 10.5.",
@@ -381,42 +385,46 @@
     "photo": null
   },
   "reflection": [
-    "Which question did you get right on the first try, and how?",
-    "At Vienna, the Timekeeper wound the clocks back. Why didn't it hold?",
-    "Which Arena tool will you use before Friday's essay, and for what?"
+    "Talk with your partner: which Arena tool will you use before Friday's essay, and for what?"
   ],
   "case_file": [
     {
-      "step": "1 · Set the scene.",
-      "coach": "When and where? Use the years and places on your evidence cards.",
-      "fill": "From ______ to ______, in ______________________, ______________________."
+      "step": "1 · Name the issue.",
+      "coach": "Which enduring issue shows up at three of your stops? Use a name from the Six Umbrellas card.",
+      "fill": "One enduring issue in these documents is ______________."
     },
     {
-      "step": "2 · Name the issue.",
-      "coach": "Which enduring issue shows up at three of your stops? Use its exact name from the Six Umbrellas card.",
-      "fill": "Three stops share the enduring issue of ______________."
+      "step": "2 · Set the scene.",
+      "coach": "When and where? Use the first and last years of those three stops, and their places. Then say what people wanted.",
+      "fill": "From ______ to ______, people in ______, ______ and ______ were trying to ______________."
     },
     {
       "step": "3 · Explain it.",
-      "coach": "What does it mean? Say it in your own words. Stuck? Open the enduring issues list in the Arena. It's always there.",
+      "coach": "What does it mean, and why is it a problem? Stuck? Open the Six Umbrellas card in the Arena. Read it, close it, then say it in your own words.",
       "fill": "______________ is when ______________________________."
     },
     {
       "step": "4 · Prove it.",
-      "coach": "Pick one evidence card. What happens in that document that shows the issue?",
-      "fill": "Casefile ___, Document ___ shows it when ______________________."
+      "coach": "Pick one of your three stops. Who says or shows what? Then say how it shows the issue.",
+      "fill": "In Document ___ (Casefile ___), ______________ shows ______________. This shows ______________ because ______________."
     },
     {
       "step": "5 · Prove it again.",
-      "coach": "Use a different stop.",
-      "fill": "Casefile ___, Document ___ shows it when ______________________."
+      "coach": "Use another of your three stops.",
+      "fill": "In Document ___ (Casefile ___), ______________ shows ______________. This shows ______________ because ______________."
+    },
+    {
+      "step": "6 · Once more, if you have time.",
+      "coach": "On the test you'll need three documents.",
+      "fill": "In Document ___ (Casefile ___), ______________ shows ______________."
     }
   ],
-  "case_file_foot": "Put these five sentences together and you have the opening of an Enduring Issues essay.",
-  "toolkit": "Your toolkit, always open: the Enduring Issues map · the Atlas · Doc Assist · the matching games. thearena.flashpointhistory.com",
+  "case_file_foot": "Put these sentences together and you have the opening of an Enduring Issues essay.",
+  "toolkit": "Your toolkit, always open: the Six Umbrellas card · the Enduring Issues map · the Atlas · Doc Assist · the matching games. thearena.flashpointhistory.com",
   "room_card": {
     "title": "The Timekeeper",
     "line": "Follow the trail from Paris to Sarajevo. Every tool you need is in the Arena."
   },
+  "teacher": "Call “pencils: Write the Case” at minute 30, wherever pairs are.",
   "_built": "2026-10-08 by Will (global10r-curriculum) · skills/chase/build_chase_pack_102.py from chase_words_102.py"
 }
