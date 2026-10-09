@@ -458,6 +458,9 @@ export const CHASE_STYLES = `
 .chase-boxes li>a{margin:-8px -10px;flex:1}
 .chase-boxes li>a:hover,.chase-boxes li>a:focus-visible{background:#FFF7DA;outline:2px solid var(--cc-ink);outline-offset:-2px}
 .chase-go{margin-left:auto;font-style:normal;font-weight:700}
+.chase-roomcard{position:relative;padding-right:104px}
+.chase-roomcard-img{position:absolute;top:16px;right:16px;width:76px;height:76px;object-fit:cover;border:2px solid #E3B341;border-radius:6px;box-shadow:0 6px 14px -6px #000}
+@media (max-width:420px){.chase-roomcard{padding-right:96px}.chase-roomcard-img{width:68px;height:68px}}
 .chase-intro{position:relative;overflow:hidden;isolation:isolate}
 .chase-intro::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--chase-mark) right -40px center/auto 115% no-repeat;opacity:.14;mix-blend-mode:multiply;pointer-events:none}
 .chase-boxn{flex:none;background:var(--cc-ink);color:var(--cc-paper);border-radius:999px;padding:2px 9px;font-size:13px}

@@ -1263,7 +1263,9 @@ function RoomParts({ unit, courseKey, games, docAssist, maps, onOpenMap, wl, onO
               </a>
             )}
             {chaseCard && (
-              <a className="card assignment" href={`#/${courseKey}/chase/${unit.number}`}>
+              <a className={`card assignment${unit.chase.portrait ? ' chase-roomcard' : ''}`} href={`#/${courseKey}/chase/${unit.number}`}>
+                {/* The suspect on the card (BK 10/8 23:02): the same face kids meet on the chase's opening card. */}
+                {unit.chase.portrait && <img className="chase-roomcard-img" src={`/${String(unit.chase.portrait).replace(/^\/+/, '')}`} alt="" />}
                 <div className="card-type">{CHASE_WORDS.title}</div>
                 <div className="card-name">{chaseCard.title}</div>
                 <div className="card-blurb">{chaseCard.line}</div>
