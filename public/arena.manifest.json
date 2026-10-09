@@ -1031,7 +1031,7 @@
         },
         {
           "slug": "outside-evidence",
-          "name": "Outside Evidence",
+          "name": "Outside Information",
           "skill_lines": [
             "OE"
           ],
@@ -1523,7 +1523,7 @@
                 {
                   "level": 2,
                   "type": "mc_bestfit",
-                  "label": "Pick the best outside evidence: 11.2",
+                  "label": "Pick the best outside information: 11.2",
                   "content_ref": "content/ladder-us11r-11.2-oe-L2-bestfit.json",
                   "published": true
                 },
@@ -1537,14 +1537,14 @@
                 {
                   "level": 4,
                   "type": "guided_write",
-                  "label": "Write it: outside evidence for Hamilton",
+                  "label": "Write it: outside information for Hamilton",
                   "content_ref": "content/ladder-us11r-11.2-oe-L4-guidedwrite.json",
                   "published": true
                 },
                 {
                   "level": 5,
                   "type": "enrichment",
-                  "label": "From a 4 to a 5: outside evidence that reaches",
+                  "label": "From a 4 to a 5: outside information that reaches",
                   "content_ref": "content/ladder-us11r-11.2-oe-L5-enrichment.json",
                   "published": true
                 }
@@ -1644,7 +1644,7 @@
           },
           {
             "code": "OE",
-            "label": "Outside Evidence",
+            "label": "Outside Information",
             "shared": true
           },
           {
