@@ -80,16 +80,28 @@ const linesOf = s => [...new Set((s.on_lines || []).map(e => e.line))]
 const assetSrc = f => (/^(https?:)?\//.test(String(f)) ? f : `/content/${String(f || '').split('/').pop()}`)
 
 // ── DATA ────────────────────────────────────────────────────────────────
-function useStopFile(ref) {
+function useStopFile(ref, opens) {
   const [data, setData] = useState(null)
+  const opensKey = JSON.stringify(opens || null)
   useEffect(() => {
     if (!ref) { setData(false); return }
     const name = String(ref).replace(/^content\//, '')
     const url = PROOF ? `/_proof/${name}` : `/content/${name}`
     fetch(url).then(x => (x.ok ? x.json() : (PROOF ? fetch(`/content/${name}`).then(y => (y.ok ? y.json() : false)) : false)))
-      .then(setData).catch(() => setData(false))
-  }, [ref])
+      .then(d => setData(openOnDate(d, opens))).catch(() => setData(false))
+  }, [ref, opensKey]) // eslint-disable-line react-hooks/exhaustive-deps
   return data
+}
+
+// The manifest may open stops on a day (`opens`: [{ on: 'YYYY-MM-DD', stops: [id] }], the device's
+// own date). The author's file stays byte for byte; on that day a 'building' stop reads as open.
+// First use: Global 10.2 Casefile C's six stops, Tue 10/13 (BK 10/8 14:08 "you on my word"; 10/9 08:38).
+const localDay = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
+export function openOnDate(d, opens, today = localDay()) {
+  if (!d || !Array.isArray(d.stops) || !Array.isArray(opens) || !opens.length) return d
+  const ids = new Set(opens.filter(o => o && o.on && today >= String(o.on)).flatMap(o => o.stops || []))
+  if (!ids.size) return d
+  return { ...d, stops: d.stops.map(s => (ids.has(s.id) && s.status === 'building' ? { ...s, status: 'open' } : s)) }
 }
 
 // Every link both ways: a stop shows the connections it names and the ones that name it.
@@ -140,7 +152,7 @@ function useDocAssistPacks(course) {
 export function StopMapLane({ course, kind, maps, onOpenMap, initialOpen }) {
   const W = STOPMAP_WORDS[kind]
   const entry = ((kind === 'threads' ? course.threads : course.issues) || [])[0]
-  const data = useStopFile(entry?.content_ref)
+  const data = useStopFile(entry?.content_ref, entry?.opens)
   const [open, setOpen] = useState(null)     // the stop the kid tapped
   const [pair, setPair] = useState(null)     // the stop it's connected to, shown beside it
   const [via, setVia] = useState(null)       // the row it was tapped on (for exemplar_by_line)
