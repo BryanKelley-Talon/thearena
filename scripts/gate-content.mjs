@@ -897,7 +897,8 @@ function checkPopouts(d, f, course, m, fail) {
       if (!st.question) continue   // a map-only stop (Will's cold stop): the clue is the whole stop.
       const q = st.question
       qOk(q, w)
-      if (!q.doc || !docs.has(`${q.doc.casefile}/${q.doc.n}`)) cf(`${w}: the question's document (${q.doc ? `${q.doc.casefile}/${q.doc.n}` : 'none'}) isn't in this unit's Doc Assist.`)
+      const qd = Array.isArray(q.docs) && q.docs.length ? q.docs : [q.doc]
+      for (const d of qd) if (!d || !docs.has(`${d.casefile}/${d.n}`)) cf(`${w}: the question's document (${d ? `${d.casefile}/${d.n}` : 'none'}) isn't in this unit's Doc Assist.`)
       if (!st.evidence) cf(`${w}: one evidence line for the warrant.`)
     }
     for (const [ai, a] of acts.entries()) {

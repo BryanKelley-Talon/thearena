@@ -271,7 +271,8 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
 
         {stop && stop.question && s.step === 'question' && <section className="chase-card">
           <div className="chase-tab">{tab}</div>
-          <Doc doc={docs[`${stop.question.doc.casefile}/${stop.question.doc.n}`]} cf={stop.question.doc.casefile} />
+          {/* A question may show more than one document (question.docs, as a door does; 2026-10-08 for Will's stop 2). */}
+          {(stop.question.docs || [stop.question.doc]).filter(Boolean).map((d, i) => <Doc key={i} doc={docs[`${d.casefile}/${d.n}`]} cf={d.casefile} />)}
           <Ask key={`q${s.b}`} ask={stop.question} onMiss={cool} tag={stop.skill}
                onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, text: stop.evidence }] : x.ev }))} />
         </section>}
