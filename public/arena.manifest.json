@@ -561,8 +561,8 @@
           "chase": {
             "content_ref": "content/chase-gs10r-10.2.json",
             "published": false,
-            "portrait": "content/chase-gs10r-10.2-clockmaker.svg",
-            "_note": "Will's The Clockmaker (BK blessed 10/8 13:47); plays Tue 10/20. Portrait: Josh's original silhouette (BK ruling via Will 10/8). Unpublished until BK's push."
+            "portrait": "content/chase-gs10r-10.2-suspect.webp",
+            "_note": "Will's chase (BK blessed 10/8 13:47; name under review: Clockmaker or Timekeeper); plays Tue 10/20. Portrait: BK's Gemini illustration (10/8 22:11), 5% frame crop, prompt logged in assets/inbox/_processed/. Unpublished until BK's push."
           }
         }
       ],
