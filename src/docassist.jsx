@@ -55,6 +55,7 @@ export const PAPER = {
   blue:   { name: 'Blue',   sheet: '#CFE6F8', tint: '#6DB5F0' },
   coral:  { name: 'Coral',  sheet: '#FBD0BF', tint: '#FF9A78' },   // BK 10:54: "Coral is fine" (11.1 B, coral/salmon paper)
   green:  { name: 'Green',  sheet: '#D3EFCC', tint: '#7FD66E' },
+  purple: { name: 'Purple', sheet: '#E6DAF5', tint: '#B48BE6' },   // BK 10/9 13:57: "10.2 C copies are done, purple paper."
 }
 export const paperOf = (map, cfId) => PAPER[String(map?.[cfId] || map?.[String(cfId).toUpperCase()] || '').toLowerCase()] || null
 const paperLabel = p => `${p.name} Copy`
@@ -665,7 +666,7 @@ export const DOCASSIST_STYLES = `
 .da-say{color:var(--white);font-size:17px;line-height:1.55;margin:0 0 14px}
 .da-ask{background:var(--card-lit);border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:8px;padding:10px 13px;margin:0 0 6px}
 .da-ask-head{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:13.5px;color:var(--gold);margin-bottom:4px;font-weight:600}
-.da-chip{display:inline-block;margin-left:8px;padding:1px 8px;border:1px solid var(--gold-lit);border-radius:999px;color:var(--white);letter-spacing:.06em;font-size:12px;vertical-align:1px}
+.da-chip{display:inline-block;margin-left:8px;text-transform:none;padding:1px 8px;border:1px solid var(--gold-lit);border-radius:999px;color:var(--white);letter-spacing:.06em;font-size:12px;vertical-align:1px}
 .da-chip-oral{background:var(--gold);color:#0B1220;border-color:var(--gold);font-weight:700}
 .da-step-check{border-left:3px solid var(--gold);padding-left:12px}
 .da-loud{color:var(--gold-lit);font-weight:700;font-family:'Barlow Condensed',sans-serif;letter-spacing:.08em;white-space:nowrap}
