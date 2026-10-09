@@ -1955,6 +1955,7 @@ export default function App() {
   const [stopOpen, setStopOpen] = useState(null)         // a Threads / Enduring Issues stop opened by link (a chase clue)
   const [chase, setChase] = useState(false)              // the unit's Arena chase (BK 2026-10-06 22:15)
   const [chasePack, setChasePack] = useState(null)
+  const [here, setHere] = useState('')                  // the current page's address (the chase pill shows only where a chase link sent the kid)
   const [daCfFocus, setDaCfFocus] = useState(null)       // a casefile link's casefile, kept in the address bar                          // which content_ref the loaded Doc Assist pack is
 
   useEffect(() => {
@@ -2110,6 +2111,7 @@ export default function App() {
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
+    setHere(h)                                              // where the kid is, for the chase pill (10/9)
   }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
@@ -2297,7 +2299,7 @@ export default function App() {
       <div className={course ? 'app-interior' : undefined}>
         {screen}
         {course && atlasMap && <AtlasViewer key={atlasMap.id} map={atlasMap} refs={refs} onClose={() => setAtlasId(null)} />}
-        <ChaseBar hidden={chase} />
+        <ChaseBar hidden={chase} here={here} />
         <div className="wrap" style={{ paddingTop: 0, paddingBottom: 28 }}>
           <a href={HOME_URL} className="back-btn">
             &larr; flashpointhistory.com

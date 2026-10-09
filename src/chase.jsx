@@ -100,11 +100,41 @@ async function keyFits(pack, typed) {
 // A known wrong answer gets its own short reply (final.wrong_feedback, Will v6); anything else, the usual line.
 const wrongLine = (f, typed) => { const w = keyNorm(typed); const hit = Object.keys(f.wrong_feedback || {}).find(k => keyNorm(k) === w); return hit ? f.wrong_feedback[hit] : null }
 
-// "Back to the chase": shown on every Arena page while a chase is running in this tab.
-export function ChaseBar({ hidden }) {
+// "Back to the chase" shows only on the page the chase sent the kid to (BK 2026-10-09 10:20: "makes sense
+// for playing the game but not otherwise"; 10:23 "A. go."). A chase link (a clue's tool, a Case File box,
+// the callout) marks where it sent them; the pill shows while they stay on that page (the same map, Atlas,
+// Doc Assist or unit room) and is forgotten the moment they go anywhere else or back to the chase.
+// The chase itself keeps its place either way: opening it again picks up at the same stop.
+const SENT = 'arena-chase:sent'
+const readSent = () => { try { return JSON.parse(sessionStorage.getItem(SENT) || 'null') } catch { return null } }
+const writeSent = v => { try { v ? sessionStorage.setItem(SENT, JSON.stringify(v)) : sessionStorage.removeItem(SENT) } catch { /* convenience only */ } }
+// A page, not an item: #/global/issues/<stop> → global/issues; #/global/10.2/doc-assist/C/5 → global/10.2/doc-assist.
+export function pageKey(hash) {
+  const seg = String(hash || '').replace(/^#\/?/, '').split('/').filter(Boolean)
+  if (['issues', 'threads', 'atlas'].includes(seg[1])) return seg.slice(0, 2).join('/')
+  if (seg[2] === 'doc-assist') return seg.slice(0, 3).join('/')
+  return seg.slice(0, 2).join('/')
+}
+// Marked when a chase link is followed. A map, Atlas or Doc Assist link names its page; a gauge link lands
+// in the unit room under the room's own address, so that page is learned from where the kid lands (`adopt`).
+// Until the kid has landed, addresses passed on the way in (Doc Assist opens through the room) don't count.
+const TOOL_PAGE = /\/(issues|threads|atlas|doc-assist)(\/|$)/
+const sendFromChase = e => { const href = e?.currentTarget?.getAttribute('href') || ''; writeSent(TOOL_PAGE.test(href) ? { key: pageKey(href), landed: false } : { adopt: true }) }
+export function ChaseBar({ hidden, here }) {
   const [c, setC] = useState(readChase)
+  const [sent, setSent] = useState(readSent)
   useEffect(() => { const on = () => setC(readChase()); window.addEventListener('hashchange', on); return () => window.removeEventListener('hashchange', on) }, [])
-  if (hidden || !c || !c.hash || c.step === 'caught') return null
+  useEffect(() => {
+    const s0 = readSent()
+    if (hidden) { if (s0) writeSent(null); setSent(null); setC(readChase()); return }  // on the chase itself: forget the jump
+    if (!s0 || !here) { setSent(s0); return }
+    if (/\/chase\//.test(here)) { setSent(s0); return }                                 // still on the chase's own address
+    if (s0.adopt) { const v = { key: pageKey(here), landed: true }; writeSent(v); setSent(v); return }
+    if (!s0.landed) { if (pageKey(here) === s0.key) { const v = { ...s0, landed: true }; writeSent(v); setSent(v) } else setSent(s0); return }
+    if (pageKey(here) !== s0.key) { writeSent(null); setSent(null); return }           // left that page: the pill goes
+    setSent(s0)
+  }, [hidden, here])
+  if (hidden || !c || !c.hash || c.step === 'caught' || !sent || sent.adopt || !sent.landed || pageKey(here) !== sent.key) return null
   // A spacer at the foot of the page, so the last of any page can scroll clear of the pill (BK 10/8: it covered map text).
   return (
     <>
@@ -229,7 +259,7 @@ function FinalAsk({ pack, daPack, onRight, onMiss, calloutHref }) {
       </div>
       {/* The callout opens the gauge level it names (manifest unit.chase.callout_href; BK 10/8 23:03). */}
       {f.callout && (calloutHref
-        ? <a className="chase-callout chase-callout-link" href={calloutHref}><span>{f.callout}</span><i className="chase-go" aria-hidden="true">→</i></a>
+        ? <a className="chase-callout chase-callout-link" href={calloutHref} onClick={sendFromChase}><span>{f.callout}</span><i className="chase-go" aria-hidden="true">→</i></a>
         : <p className="chase-callout">{f.callout}</p>)}
     </div>
   )
@@ -320,7 +350,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           {stop.story && <p className="chase-story">{stop.story}</p>}
           <h2 className="chase-h">{W.clue}</h2>
           <p className="chase-read">{stop.clue.text}</p>
-          <div className="chase-row"><a className="chase-tool" href={toolHash(courseKey, unit.number, stop.clue.tool, stop.clue.link)}>{W.open[stop.clue.tool] || stop.clue.tool} →</a></div>
+          <div className="chase-row"><a className="chase-tool" href={toolHash(courseKey, unit.number, stop.clue.tool, stop.clue.link)} onClick={sendFromChase}>{W.open[stop.clue.tool] || stop.clue.tool} →</a></div>
           <Ask key={`a${s.b}`} ask={stop.clue.ask} onMiss={cool}
                onRight={() => setS(x => stop.question ? { ...x, step: 'question' }
                  // A map-only stop may still hand out an evidence card (Will v6, stops 1-3): it lands in its box now.
@@ -367,7 +397,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <div className="chase-tab">{W.caseFile}</div>
           <h2 className="chase-h">{W.evidenceHead}</h2>
           <ol className="chase-boxes">{s.ev.map(e => <li key={e.b}>{e.doc
-            ? <a href={toolHash(courseKey, unit.number, 'doc-assist', `${e.doc.casefile}/${e.doc.n}`)}><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span><i className="chase-go" aria-hidden="true">→</i></a>
+            ? <a href={toolHash(courseKey, unit.number, 'doc-assist', `${e.doc.casefile}/${e.doc.n}`)} onClick={sendFromChase}><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span><i className="chase-go" aria-hidden="true">→</i></a>
             : <><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span></>}</li>)}</ol>
           <FinalAsk pack={pack} daPack={daPack} calloutHref={unit.chase?.callout_href || null} onMiss={cool} onRight={r => setS(x => ({ ...x, step: 'caught', cold: 0, after: (r && r.after) || null }))} />
         </section>}
