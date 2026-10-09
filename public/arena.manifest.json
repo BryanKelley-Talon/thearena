@@ -561,6 +561,7 @@
           "chase": {
             "content_ref": "content/chase-gs10r-10.2.json",
             "published": true,
+            "card_opens_on": "2026-10-20",
             "portrait": "content/chase-gs10r-10.2-suspect.webp",
             "_note": "Will's The Timekeeper v6 (Will 10/9 08:32; BK 08:27 'yes' to the 19a picks); class play Tue 10/20, published early on BK's word (10/9 08:41: 'it can push early ... share it with some colleagues'). card = the pack's room_card, word for word. Portrait: BK's Gemini illustration (10/8 22:11), prompt logged in assets/inbox/_processed/.",
             "card": {
@@ -578,9 +579,14 @@
           "published": true,
           "opens": [
             {
+              "on": "2026-10-09",
+              "stops": ["s-1791-haiti"],
+              "_note": "The Haiti stop opens now: the Timekeeper's stop 2 clue opens it, and the chase link is live for colleagues (BK 10/9 09:12)."
+            },
+            {
               "on": "2026-10-13",
-              "stops": ["s-1791-haiti", "s-1808-spain", "s-1815-bolivar", "s-1846-cavour", "s-1862-bismarck", "s-1912-balkans"],
-              "_note": "Global 10.2 Casefile C's six stops open on each device Tue 10/13 (BK 10/8 14:08 'you on my word'; 10/9 08:38 'go on 1 and 2. approved.'). Will's file is unchanged; the engine reads 'building' as open from that day."
+              "stops": ["s-1808-spain", "s-1815-bolivar", "s-1846-cavour", "s-1862-bismarck", "s-1912-balkans"],
+              "_note": "Global 10.2 Casefile C's other five stops open on each device Tue 10/13 (BK 10/8 14:08 'you on my word'; 10/9 08:38 'go on 1 and 2. approved.'). Will's file is unchanged; the engine reads 'building' as open from that day."
             }
           ],
           "_note": "Will's signed stops (BK 2026-10-05 21:14), byte-identical copy of global10r-curriculum/OUTPUTS/2026-27/Course/enduring-issues-gs10r.json. map-stop-shape v1; Josh confirmed 21:29."

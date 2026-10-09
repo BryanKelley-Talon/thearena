@@ -1235,7 +1235,9 @@ function RoomParts({ unit, courseKey, games, docAssist, maps, onOpenMap, wl, onO
   const assignment = asg && asgGame?.status === 'live' && asgGame.url ? { ...asg, href: asgGame.url } : null
   // The unit's Arena chase card (Will's room_card, copied word for word into manifest unit.chase.card; 10/8).
   // It shows once the chase is published (or in a proof build), and opens the chase in this tab.
-  const chaseCard = unit.chase?.card && (unit.chase.published === true || import.meta.env.VITE_CHASE_PROOF === '1') && courseKey ? unit.chase.card : null
+  // A published chase may keep its card out of the room until a day (unit.chase.card_opens_on, the device's
+  // date): the link works for colleagues before kids find it in the Arena (BK 2026-10-09 09:12).
+  const chaseCard = unit.chase?.card && ((unit.chase.published === true && onDate({ opens_on: unit.chase.card_opens_on })) || import.meta.env.VITE_CHASE_PROOF === '1') && courseKey ? unit.chase.card : null
   return (
     <>
       {/* ROOM ORDER (BK, 2026-09-25): the unit's review, then its test practice. */}
