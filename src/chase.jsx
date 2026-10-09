@@ -193,7 +193,7 @@ function Ask({ ask, onRight, onMiss, tag }) {
 
 // The last question (Will v5): the enduring issue the trail shares. Typed, checked like the key (sealed in
 // the student build), two hints, and a pill that pops up the Six Umbrellas card from the unit's Doc Assist.
-function FinalAsk({ pack, daPack, onRight, onMiss }) {
+function FinalAsk({ pack, daPack, onRight, onMiss, calloutHref }) {
   const f = pack.final || {}
   const [typed, setTyped] = useState('')
   const [hints, setHints] = useState(0)
@@ -215,7 +215,10 @@ function FinalAsk({ pack, daPack, onRight, onMiss }) {
         {(f.hints || []).slice(0, hints).map((h, i) => <p key={i} className="chase-hint">{h}</p>)}
         {hints < (f.hints || []).length && <button type="button" className="chase-ghost" onClick={() => setHints(h => h + 1)}>{W.hint(hints + 1)}</button>}
       </div>
-      {f.callout && <p className="chase-callout">{f.callout}</p>}
+      {/* The callout opens the gauge level it names (manifest unit.chase.callout_href; BK 10/8 23:03). */}
+      {f.callout && (calloutHref
+        ? <a className="chase-callout chase-callout-link" href={calloutHref}><span>{f.callout}</span><i className="chase-go" aria-hidden="true">→</i></a>
+        : <p className="chase-callout">{f.callout}</p>)}
     </div>
   )
 }
@@ -352,7 +355,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <ol className="chase-boxes">{s.ev.map(e => <li key={e.b}>{e.doc
             ? <a href={toolHash(courseKey, unit.number, 'doc-assist', `${e.doc.casefile}/${e.doc.n}`)}><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span><i className="chase-go" aria-hidden="true">→</i></a>
             : <><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span></>}</li>)}</ol>
-          <FinalAsk pack={pack} daPack={daPack} onMiss={cool} onRight={() => setS(x => ({ ...x, step: 'caught', cold: 0 }))} />
+          <FinalAsk pack={pack} daPack={daPack} calloutHref={unit.chase?.callout_href || null} onMiss={cool} onRight={() => setS(x => ({ ...x, step: 'caught', cold: 0 }))} />
         </section>}
 
         {s.step === 'warrant' && !pack.final?.prompt && <section className="chase-card">
@@ -468,6 +471,8 @@ export const CHASE_STYLES = `
 .chase-pill{background:#0B1220;color:#E3B341;border:2px solid #E3B341;border-radius:999px;padding:7px 14px;font:700 15px/1 "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;min-height:40px;cursor:pointer}
 .chase-umb{background:#0B1220;border-radius:8px;padding:6px;margin:8px 0}
 .chase-callout{background:var(--cc-paper);border:2px solid var(--cc-ink);padding:8px 10px;font-weight:600;margin-top:10px}
+.chase-callout-link{display:flex;gap:10px;align-items:baseline;color:var(--cc-ink);text-decoration:none}
+.chase-callout-link:hover,.chase-callout-link:focus-visible{background:#FFF7DA;outline:2px solid var(--cc-ink);outline-offset:2px}
 .chase-after{font-weight:700}
 .chase-casefile{background:var(--cc-paper);border:1px solid var(--cc-edge);padding:10px 14px;margin:8px 0 12px}
 .chase-casefile ol{padding-left:0;list-style:none;margin:0}

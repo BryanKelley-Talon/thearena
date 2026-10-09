@@ -566,7 +566,8 @@
             "card": {
               "title": "The Timekeeper",
               "line": "Follow the trail from Paris to Sarajevo. Every tool you need is in the Arena."
-            }
+            },
+            "callout_href": "#/global/gauge/EI/1"
           }
         }
       ],
