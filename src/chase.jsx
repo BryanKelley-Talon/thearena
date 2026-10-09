@@ -283,7 +283,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
         {s.step !== 'intro' && s.step !== 'caught' && s.step !== 'act' && s.step !== 'doorcard' && <Footprints pack={pack} cold={s.cold} />}
         {showMeter && <Meter meter={pack.meter} n={s.meter || 0} />}
 
-        {s.step === 'intro' && <section className="chase-card">
+        {s.step === 'intro' && <section className={`chase-card${portrait ? ' chase-intro' : ''}`} style={portrait ? { '--chase-mark': `url(${pic(portrait)})` } : undefined}>
           <div className="chase-tab">{W.title}</div>
           {pack.suspect && <div className="chase-suspect">
             {portrait && <figure><img src={pic(portrait)} alt={pack.suspect.portrait_alt || ''} />{pack.suspect.portrait_src && <figcaption className="chase-src">{pack.suspect.portrait_src}</figcaption>}</figure>}
@@ -315,7 +315,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           {/* A question may show more than one document (question.docs, as a door does; 2026-10-08 for Will's stop 2). */}
           {(stop.question.docs || [stop.question.doc]).filter(Boolean).map((d, i) => <Doc key={i} doc={docs[`${d.casefile}/${d.n}`]} cf={d.casefile} />)}
           <Ask key={`q${s.b}`} ask={stop.question} onMiss={cool} tag={stop.skill}
-               onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence }] : x.ev }))} />
+               onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence, doc: (stop.question.docs || [stop.question.doc])[0] || null }] : x.ev }))} />
         </section>}
 
         {stop && s.step === 'card' && <section className="chase-card">
@@ -349,7 +349,9 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
         {s.step === 'warrant' && pack.final?.prompt && <section className="chase-card">
           <div className="chase-tab">{W.caseFile}</div>
           <h2 className="chase-h">{W.evidenceHead}</h2>
-          <ol className="chase-boxes">{s.ev.map(e => <li key={e.b}><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span></li>)}</ol>
+          <ol className="chase-boxes">{s.ev.map(e => <li key={e.b}>{e.doc
+            ? <a href={toolHash(courseKey, unit.number, 'doc-assist', `${e.doc.casefile}/${e.doc.n}`)}><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span><i className="chase-go" aria-hidden="true">→</i></a>
+            : <><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span></>}</li>)}</ol>
           <FinalAsk pack={pack} daPack={daPack} onMiss={cool} onRight={() => setS(x => ({ ...x, step: 'caught', cold: 0 }))} />
         </section>}
 
@@ -451,7 +453,13 @@ export const CHASE_STYLES = `
 .chase-meter em{font-style:normal;font-weight:600}
 .chase-meterline{font-size:16px;background:var(--cc-paper);border:1px dashed var(--cc-edge);padding:8px 10px}
 .chase-boxes{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:6px}
-.chase-boxes li{display:flex;gap:10px;align-items:baseline;background:var(--cc-paper);border:1px solid var(--cc-edge);padding:8px 10px;font:700 15px/1.35 "Courier Prime",monospace}
+.chase-boxes li{background:var(--cc-paper);border:1px solid var(--cc-edge);font:700 15px/1.35 "Courier Prime",monospace}
+.chase-boxes li>a,.chase-boxes li{display:flex;gap:10px;align-items:baseline;padding:8px 10px;color:var(--cc-ink);text-decoration:none}
+.chase-boxes li>a{margin:-8px -10px;flex:1}
+.chase-boxes li>a:hover,.chase-boxes li>a:focus-visible{background:#FFF7DA;outline:2px solid var(--cc-ink);outline-offset:-2px}
+.chase-go{margin-left:auto;font-style:normal;font-weight:700}
+.chase-intro{position:relative;overflow:hidden;isolation:isolate}
+.chase-intro::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--chase-mark) right -40px center/auto 115% no-repeat;opacity:.14;mix-blend-mode:multiply;pointer-events:none}
 .chase-boxn{flex:none;background:var(--cc-ink);color:var(--cc-paper);border-radius:999px;padding:2px 9px;font-size:13px}
 .chase-final{border-top:2px dashed var(--cc-edge)}
 .chase-pill{background:#0B1220;color:#E3B341;border:2px solid #E3B341;border-radius:999px;padding:7px 14px;font:700 15px/1 "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;min-height:40px;cursor:pointer}
