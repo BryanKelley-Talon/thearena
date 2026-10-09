@@ -580,13 +580,8 @@
           "opens": [
             {
               "on": "2026-10-09",
-              "stops": ["s-1791-haiti"],
-              "_note": "The Haiti stop opens now: the Timekeeper's stop 2 clue opens it, and the chase link is live for colleagues (BK 10/9 09:12)."
-            },
-            {
-              "on": "2026-10-13",
-              "stops": ["s-1808-spain", "s-1815-bolivar", "s-1846-cavour", "s-1862-bismarck", "s-1912-balkans"],
-              "_note": "Global 10.2 Casefile C's other five stops open on each device Tue 10/13 (BK 10/8 14:08 'you on my word'; 10/9 08:38 'go on 1 and 2. approved.'). Will's file is unchanged; the engine reads 'building' as open from that day."
+              "stops": ["s-1791-haiti", "s-1808-spain", "s-1815-bolivar", "s-1846-cavour", "s-1862-bismarck", "s-1912-balkans"],
+              "_note": "Global 10.2 Casefile C's six stops open now (BK 10/9 09:14: 'The other stops can be open...the colleagues should have the full run to review ahead.'). Will's file is unchanged; the engine reads 'building' as open from this day."
             }
           ],
           "_note": "Will's signed stops (BK 2026-10-05 21:14), byte-identical copy of global10r-curriculum/OUTPUTS/2026-27/Course/enduring-issues-gs10r.json. map-stop-shape v1; Josh confirmed 21:29."
