@@ -228,7 +228,7 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
           <h2>{s?.name || skill}</h2>
           <p className="sub" style={{ marginBottom: 6 }}>{statusLine(top)}</p>
           <p className="ladder-note">{levels.some(levelOpen)
-            ? 'Every step is open. Start anywhere — the tag shows a good place to begin.'
+            ? 'Every level is open. Start anywhere — the tag shows a good place to begin.'
             : 'This gauge isn’t built yet. Its steps open here as they’re added.'}</p>
         </div>
       </div>
@@ -241,7 +241,7 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
             <>
               <span className="rung-n" aria-hidden="true">{lv.level}</span>
               <span className="rung-body">
-                <span className="card-type">Step {lv.level}{t ? ` · ${t.name}` : ''}</span>
+                <span className="card-type">Level {lv.level}{t ? ` · ${t.name}` : ''}</span>
                 <span className="rung-name">{open ? (lv.label || t?.name) : (lv.label || t?.name || 'Not built yet')}</span>
                 {open && t && <span className="card-blurb">{t.blurb}</span>}
               </span>
@@ -334,7 +334,7 @@ export function BestFit({ pack, onComplete, Stimulus, accent }) {
           {stuck && stuck.at === i && <CoachSays portrait={BK_PORTRAIT} line={stuck.line} />}
         </div>
       ))}
-      {items.length > 0 && count >= items.length && <p className="level-done" role="status">Step done. Head back to the gauge for the next one.</p>}
+      {items.length > 0 && count >= items.length && <p className="level-done" role="status">Level done. Head back to the gauge for the next one.</p>}
     </>
   )
 }
@@ -437,7 +437,7 @@ export function SentenceBuild({ pack, onComplete }) {
           <h4>Your sentence</h4>
           <p className="rep-exemplar">{pack.correct_sentence}</p>
           {(pack.rationale || pack.reason) && <p className="mc-why">{pack.rationale || pack.reason}</p>}
-          <p className="level-done">Step done. Head back to the gauge for the next one.</p>
+          <p className="level-done">Level done. Head back to the gauge for the next one.</p>
         </div>
       )}
     </div>
@@ -491,7 +491,7 @@ export function GuidedWrite({ pack, accent, onComplete }) {
           <h4>One strong answer</h4>
           <p className="rep-exemplar">{pack.model_response}</p>
           <p className="rep-focus">Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?</p>
-          <p className="level-done">Step done. Head back to the gauge for the next one.</p>
+          <p className="level-done">Level done. Head back to the gauge for the next one.</p>
         </div>
       )}
     </div>
@@ -555,7 +555,7 @@ export function Enrichment({ pack, onComplete }) {
       )}
       {!done
         ? <button type="button" className="rep-go" onClick={() => { setDone(true); onComplete() }}>I’m done</button>
-        : <p className="level-done" role="status">Step 5 done. That’s every step on this gauge.</p>}
+        : <p className="level-done" role="status">Level 5 done. That’s every level on this gauge.</p>}
     </div>
   )
 }

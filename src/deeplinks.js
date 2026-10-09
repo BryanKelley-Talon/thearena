@@ -15,6 +15,7 @@
 //   #/us/11.1/atlas                        one unit's atlas (BK 21:53)
 //   #/us/writing-lab · #/us/writing-lab/<set slug>   the Writing Lab, or one Blueprint set (10/5)
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
+//   #/global/gauge/EI/1                    one gauge's level, in the unit we're in (10/8)
 //   #/office · #/office/2026-10-halftime-adjustments
 //
 // Numbers, not labels: a unit's title can change, its framework number can't. A link to
@@ -45,6 +46,8 @@ export function parseHash(hash, manifest) {
   if (parts[1] === 'writing-lab' && parts[2]) return { ...r, lane: 'writing_lab', wlSet: parts[2] }
   if (KEY_LANE[parts[1]] !== undefined || LANE_KEYS[parts[1]]) return { ...r, lane: LANE_KEYS[parts[1]] || parts[1] }
   if (parts[1] === '0') return { ...r, at: 'unit0' }
+  // A gauge level in the unit we're in: #/global/gauge/EI/1 (BK 2026-10-08 23:03, for the chase's Regents callout).
+  if (parts[1] === 'gauge' && parts[2]) return { ...r, at: 'gauge', skill: parts[2].toUpperCase(), level: /^[1-5]$/.test(parts[3] || '') ? Number(parts[3]) : null }
   const unit = unitByNumber(course, parts[1])
   if (!unit) return r
   const u = { ...r, at: 'unit', unitSlug: unit.slug }
