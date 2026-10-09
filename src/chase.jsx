@@ -66,11 +66,13 @@ export function toolHash(courseKey, unitNumber, tool, link) {
 export const chaseHash = (courseKey, unitNumber) => `#/${courseKey}/chase/${unitNumber}`
 
 // A key typed at the last door: plain in dev, hashed in the student build (scripts/seal-chase.mjs).
+// Case and every space are ignored (Will 2026-10-08: "Serajevo" or "sarajevo", any spacing).
+export const keyNorm = k => String(k || '').replace(/\s+/g, '').toLowerCase()
 async function keyFits(pack, typed) {
-  const w = String(typed || '').trim().toLowerCase()
+  const w = keyNorm(typed)
   if (!w) return false
   const f = pack.final || {}
-  if (Array.isArray(f.key_words)) return f.key_words.some(k => k.toLowerCase() === w)
+  if (Array.isArray(f.key_words)) return f.key_words.some(k => keyNorm(k) === w)
   try {
     const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(`${pack.id}|${w}`))
     const hex = [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, '0')).join('')
@@ -98,13 +100,14 @@ export function ChaseBar({ hidden }) {
 function Footprints({ pack, cold }) {
   const words = pack.cold || []
   const steps = words.length || 4
+  const said = (pack.trail_lines && pack.trail_lines[words[cold]]) || words[cold] || ''
   return (
-    <div className="chase-trail" aria-label={`${W.trail}: ${words[cold] || ''}`}>
+    <div className="chase-trail" aria-label={`${W.trail}: ${said}`}>
       <span className="chase-pin">{W.trail}</span>
       <span className="chase-prints" aria-hidden="true">
         {Array.from({ length: steps }, (_, i) => <i key={i} className={i >= steps - cold ? 'faded' : ''} />)}
       </span>
-      <em>{words[cold] || ''}</em>
+      <em>{said}</em>
     </div>
   )
 }
@@ -143,7 +146,11 @@ function Doc({ doc, cf }) {
 // A pack picture (the suspect's likeness, the end photo): a path inside the site, never off-site.
 const pic = p => `/${String(p || '').replace(/^\/+/, '')}`
 
-function Ask({ ask, onRight, onMiss }) {
+// Choices are shuffled once per question (the packs list the right answer first, as every Arena set does;
+// unshuffled, the top choice was always right: Josh's catch, 2026-10-08). `pick` keeps the pack's own index.
+const shuffledIdx = n => { const a = Array.from({ length: n }, (_, i) => i); for (let i = n - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]] } return a }
+function Ask({ ask, onRight, onMiss, tag }) {
+  const order = useMemo(() => shuffledIdx((ask.options || []).length), [ask])
   const [pick, setPick] = useState(null)
   const [typed, setTyped] = useState('')
   const [hints, setHints] = useState(0)
@@ -157,10 +164,11 @@ function Ask({ ask, onRight, onMiss }) {
   }
   return (
     <div className="chase-ask">
+      {tag && <div className="chase-skill">{tag}</div>}
       <p className="chase-prompt">{ask.prompt || ask.stem}</p>
       {ask.type === 'type'
         ? <label className="chase-field">{W.typeLabel}<input value={typed} onChange={e => { setMiss(false); setTyped(e.target.value) }} autoComplete="off" spellCheck="false" /></label>
-        : <div className="chase-opts" role="radiogroup">{(ask.options || []).map((o, i) => <button key={i} type="button" role="radio" aria-checked={pick === i} className={`chase-opt${pick === i ? ' on' : ''}`} onClick={() => { setMiss(false); setPick(i) }}>{o}</button>)}</div>}
+        : <div className="chase-opts" role="radiogroup">{order.map(i => <button key={i} type="button" role="radio" aria-checked={pick === i} className={`chase-opt${pick === i ? ' on' : ''}`} onClick={() => { setMiss(false); setPick(i) }}>{ask.options[i]}</button>)}</div>}
       <div className="chase-row"><button type="button" className="chase-btn" disabled={ask.type === 'type' ? !typed.trim() : pick === null} onClick={tryIt}>{W.tryIt}</button></div>
       {miss && <p className="chase-miss" role="status">{W.notYet}</p>}
       <div className="chase-hints">
@@ -188,6 +196,8 @@ export function beatsOf(pack) {
 }
 
 export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeader, BottomBack, onBack }) {
+  // Josh draws a portrait when the pack has none (Will 10/8: BK ruled an original silhouette); it hangs off manifest unit.chase.portrait.
+  const portrait = pack.suspect?.portrait || unit.chase?.portrait || null
   const beats = useMemo(() => beatsOf(pack), [pack])
   const coldOf = w => { const k = (pack.cold || []).indexOf(w); return k < 0 ? null : k }
   const arrive = (x, b) => {
@@ -235,7 +245,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
         {s.step === 'intro' && <section className="chase-card">
           <div className="chase-tab">{W.title}</div>
           {pack.suspect && <div className="chase-suspect">
-            {pack.suspect.portrait && <figure><img src={pic(pack.suspect.portrait)} alt={pack.suspect.portrait_alt || ''} />{pack.suspect.portrait_src && <figcaption className="chase-src">{pack.suspect.portrait_src}</figcaption>}</figure>}
+            {portrait && <figure><img src={pic(portrait)} alt={pack.suspect.portrait_alt || ''} />{pack.suspect.portrait_src && <figcaption className="chase-src">{pack.suspect.portrait_src}</figcaption>}</figure>}
             <div><h2>{pack.suspect.name}</h2>{pack.suspect.line && <p>{pack.suspect.line}</p>}</div>
           </div>}
           {(pack.intro || []).map((l, i) => <p key={i} className="chase-read">{l}</p>)}
@@ -262,7 +272,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
         {stop && stop.question && s.step === 'question' && <section className="chase-card">
           <div className="chase-tab">{tab}</div>
           <Doc doc={docs[`${stop.question.doc.casefile}/${stop.question.doc.n}`]} cf={stop.question.doc.casefile} />
-          <Ask key={`q${s.b}`} ask={stop.question} onMiss={cool}
+          <Ask key={`q${s.b}`} ask={stop.question} onMiss={cool} tag={stop.skill}
                onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, text: stop.evidence }] : x.ev }))} />
         </section>}
 
@@ -345,6 +355,7 @@ export const CHASE_STYLES = `
 .chase-tool{display:inline-block;background:#0B1220;color:#E3B341;border:2px solid #E3B341;border-radius:6px;padding:9px 16px;font:700 17px/1 "Barlow Condensed",sans-serif;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;min-height:44px}
 .chase-ask{border-top:2px dashed var(--cc-edge);padding-top:10px;margin-top:6px}
 .chase-prompt{font-weight:700;font-size:19px}
+.chase-skill{display:inline-block;font:700 12px/1.2 "Courier Prime",monospace;letter-spacing:.08em;text-transform:uppercase;color:var(--cc-paper);background:var(--cc-ink);border-radius:3px;padding:3px 8px;margin:0 0 6px}
 .chase-opts{display:flex;flex-direction:column;gap:8px}
 .chase-opt{text-align:left;background:var(--cc-paper);color:var(--cc-ink);border:1px solid var(--cc-edge);border-left:6px solid var(--cc-edge);border-radius:3px;padding:10px 12px;min-height:44px;cursor:pointer;font:inherit}
 .chase-opt.on{border-color:var(--cc-red);border-left-width:10px;box-shadow:inset 0 0 0 2px var(--cc-red)}

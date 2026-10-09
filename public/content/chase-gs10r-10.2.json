@@ -1,0 +1,375 @@
+{
+  "id": "chase-gs10r-10.2",
+  "course": "gs10r",
+  "unit": "10.2",
+  "title": "THE CLOCKMAKER",
+  "standing": "An invented suspect. The history is real.",
+  "suspect": {
+    "name": "The Clockmaker",
+    "line": "Wanted: for trying to wind the world back to 1788.",
+    "portrait": null,
+    "portrait_note": "No real image: Josh draws an original silhouette (a figure holding a pocket watch).",
+    "portrait_alt": "An invented figure in silhouette, holding a pocket watch.",
+    "portrait_src": "Original art. The suspect is invented."
+  },
+  "intro": [
+    "Someone is winding the clocks back.",
+    "The Clockmaker wants the world the way it was in 1788, before the French Revolution's ideas got out. Everywhere those ideas took root, he tried to stop the clock.",
+    "Follow his trail. Every place, date and document in this chase is real. He isn't."
+  ],
+  "cold": [
+    "hot",
+    "warm",
+    "stirring",
+    "cooling",
+    "cold"
+  ],
+  "trail_lines": {
+    "hot": "The trail is hot.",
+    "warm": "The trail is warm.",
+    "stirring": "Something's stirring.",
+    "cooling": "The trail is cooling.",
+    "cold": "The trail has gone cold."
+  },
+  "stops": [
+    {
+      "id": "g1-paris-1789",
+      "place": "Paris",
+      "year": "1789",
+      "trail": "warm",
+      "story": "In 1789, France's National Assembly writes down that men are born free and equal in rights. The Clockmaker arrives too late: the words are already printed.",
+      "clue": {
+        "text": "Open the Enduring Issues map: The Declaration of the Rights of Man.",
+        "tool": "map",
+        "link": "s-1789-rights-of-man",
+        "ask": {
+          "stem": "According to the Enduring Issues map stop, what is law supposed to express?",
+          "options": [
+            "The general will",
+            "The king's wishes",
+            "The Church's teaching",
+            "The nobles' interests"
+          ],
+          "answer": 0,
+          "hints": [
+            "Read what happened at the map stop.",
+            "Look for the word law."
+          ]
+        }
+      },
+      "skill": "Document Use",
+      "question": {
+        "stem": "According to Document 3, which of these is one of the natural rights in Article 2?",
+        "options": [
+          "Resistance to oppression",
+          "Choosing the king",
+          "Freedom from all taxes",
+          "Freedom from serving in the army"
+        ],
+        "answer": 0,
+        "hints": [
+          "Find Article 2.",
+          "Read the sentence that starts “These rights are…”"
+        ],
+        "why": "Article 2 names four natural rights: “liberty, property, security, and resistance to oppression.”",
+        "doc": {
+          "casefile": "B",
+          "n": 3
+        }
+      },
+      "evidence": "1789 · Article 2: liberty, property, security and resistance to oppression · Casefile B, Document 3"
+    },
+    {
+      "id": "g2-saint-domingue-1791",
+      "place": "Saint-Domingue (Haiti)",
+      "year": "1791–1804",
+      "trail": "warm",
+      "story": "In 1791, the enslaved people of Saint-Domingue rise up against slavery. In 1804, Haiti declares its independence. The Clockmaker can't wind this clock back.",
+      "clue": {
+        "text": "Open the Enduring Issues map: The Haitian Revolution.",
+        "tool": "map",
+        "link": "s-1791-haiti",
+        "ask": {
+          "stem": "According to the Enduring Issues map stop, who declared Haiti independent in 1804?",
+          "options": [
+            "Jean-Jacques Dessalines",
+            "Toussaint L'Ouverture",
+            "Napoleon Bonaparte",
+            "Simón Bolívar"
+          ],
+          "answer": 0,
+          "hints": [
+            "Read what happened at the map stop.",
+            "Look for the year 1804."
+          ]
+        }
+      },
+      "skill": "Outside Evidence",
+      "question": {
+        "stem": "Which of these is outside evidence for Documents 1 and 2: true, and not in either document?",
+        "options": [
+          "In 1794, France's government voted to end slavery in all its colonies.",
+          "Toussaint wanted Liberty and Equality to reign.",
+          "The letter asks its readers to fight for the same cause.",
+          "Toussaint said his name was perhaps known."
+        ],
+        "answer": 0,
+        "hints": [
+          "Three of these are in Document 1. Find them.",
+          "Outside evidence is true, and missing from the documents."
+        ],
+        "why": "France's 1794 vote is true and in neither document, so it's outside evidence.",
+        "doc": {
+          "casefile": "C",
+          "n": 1
+        }
+      },
+      "evidence": "1793 · Toussaint calls his brothers to fight for Liberty and Equality · Casefile C, Document 1"
+    },
+    {
+      "id": "g3-europe-1812",
+      "place": "Napoleon's Europe",
+      "year": "1812",
+      "trail": "cooling",
+      "story": "By 1812, Napoleon's reach crosses Europe and the ocean to Spain's colonies. The Clockmaker is one step behind.",
+      "clue": {
+        "text": "Open the Atlas: Central Europe in 1812. Look at the small map.",
+        "tool": "atlas",
+        "link": "10.2-B-01",
+        "ask": {
+          "stem": "Which country stayed independent of Napoleon in 1812?",
+          "options": [
+            "Russia",
+            "The Confederation of the Rhine",
+            "The Duchy of Warsaw",
+            "The Kingdom of Spain"
+          ],
+          "answer": 0,
+          "hints": [
+            "Find the color for independent states.",
+            "Three of these are under Napoleon's control."
+          ]
+        }
+      },
+      "skill": "Historical Context",
+      "question": {
+        "stem": "Based on Document 3, which event in 1808 led Spanish Americans to take control of their own local governments?",
+        "options": [
+          "Napoleon placed his brother Joseph on the Spanish throne.",
+          "Spain freed its colonies after a war with Britain.",
+          "Bolívar had already freed all of South America.",
+          "The king of Spain asked the colonies to rule themselves."
+        ],
+        "answer": 0,
+        "hints": [
+          "Find the year 1808 in the document.",
+          "Who ended up wearing Spain's crown?"
+        ],
+        "why": "Napoleon gave Spain's crown to his brother Joseph, and Spanish Americans refused a French king and took over their own local governments.",
+        "doc": {
+          "casefile": "C",
+          "n": 3
+        }
+      },
+      "evidence": "1808 · Spain gets a French king, and its colonies soon take over their own governments · Casefile C, Document 3"
+    },
+    {
+      "id": "g4-vienna-1815",
+      "place": "Vienna",
+      "year": "1815",
+      "trail": "cold",
+      "story": "Napoleon has been beaten. In Vienna, the winners redraw the map, and old ruling families take back their thrones. Every clock in the city reads 1788.",
+      "clue": {
+        "text": "Open the Atlas: Central Europe, 1815–1866.",
+        "tool": "atlas",
+        "link": "10.2-C-02",
+        "ask": {
+          "stem": "Who holds Lombardy and the city of Venice in northern Italy?",
+          "options": [
+            "Austria",
+            "Prussia",
+            "France",
+            "Russia"
+          ],
+          "answer": 0,
+          "hints": [
+            "Find northern Italy at the bottom of the map.",
+            "Match its color to the key."
+          ]
+        }
+      },
+      "after": "Austria takes back Lombardy and adds Venice. The trail has gone cold. But you can't wind back an idea."
+    },
+    {
+      "id": "g5-piedmont-1846",
+      "place": "Piedmont, Italy",
+      "year": "1846",
+      "trail": "stirring",
+      "story": "In 1846, Camillo di Cavour, a nobleman from Piedmont, writes that Italians must silence the small questions that divide them. The idea the Clockmaker buried in Vienna has come up again.",
+      "clue": {
+        "text": "Open the Atlas: The Unification of Italy, 1815–1870.",
+        "tool": "atlas",
+        "link": "10.2-C-03",
+        "ask": {
+          "stem": "Italy's unification starts in the Kingdom of Sardinia, ruled from Piedmont. Which city is its capital?",
+          "options": [
+            "Turin",
+            "Rome",
+            "Venice",
+            "Naples"
+          ],
+          "answer": 0,
+          "hints": [
+            "Find Piedmont in the top left.",
+            "Look for the city marked there."
+          ]
+        }
+      },
+      "skill": "Thesis",
+      "question": {
+        "stem": "Casefile C asks: What did more to build Italy and Germany: agreeing to unite, or “blood and iron”? Which sentence is the strongest thesis for Italy, using Document 5?",
+        "options": [
+          "For Italy, agreeing to unite did more, because Cavour argued that Italians had to silence the petty questions that divide them.",
+          "Cavour wanted Italy to be glorious and powerful.",
+          "Cavour wrote Document 5 in 1846.",
+          "Cavour uses the word emancipation."
+        ],
+        "answer": 0,
+        "hints": [
+          "A thesis answers the question, and someone could argue with it.",
+          "Which one picks a side?"
+        ],
+        "why": "The first answer picks a side and gives a reason; the other three only repeat Document 5.",
+        "doc": {
+          "casefile": "C",
+          "n": 5
+        }
+      },
+      "evidence": "1846 · Cavour: silence what divides Italians · Casefile C, Document 5"
+    },
+    {
+      "id": "g6-berlin-1862",
+      "place": "Berlin",
+      "year": "1862",
+      "trail": "warm",
+      "story": "In 1862, Otto von Bismarck tells a committee of Prussia's parliament how Germany will be united.",
+      "clue": {
+        "text": "Open the Atlas: The Unification of Germany, 1815–1871. Look at the top map.",
+        "tool": "atlas",
+        "link": "10.2-C-04",
+        "ask": {
+          "stem": "On the top map, which state's customs union grows into the German Zollverein?",
+          "options": [
+            "Prussia",
+            "Austria",
+            "Bavaria",
+            "Denmark"
+          ],
+          "answer": 0,
+          "hints": [
+            "Read the first line of the top key.",
+            "Find Berlin."
+          ]
+        }
+      },
+      "skill": "Explanation",
+      "question": {
+        "stem": "Document 6 (adapted) says the goal will be achieved “by blood and iron.” Which explanation best shows what that evidence means?",
+        "options": [
+          "This shows he believed war and military strength, not democracy, would unify Germany.",
+          "This shows he wanted Germany to stay divided.",
+          "This shows he trusted voting to unite Germany.",
+          "This shows he planned to sell iron to other countries."
+        ],
+        "answer": 0,
+        "hints": [
+          "What does he say will NOT reach the goal?",
+          "What could blood and iron stand for?"
+        ],
+        "why": "In the exam's version, “blood and iron” means war and weapons: Prussia fought Denmark, Austria and France, and in 1871 the German Empire was proclaimed.",
+        "doc": {
+          "casefile": "C",
+          "n": 6
+        }
+      },
+      "evidence": "1862 · Bismarck: blood and iron, not democracy · Casefile C, Document 6"
+    },
+    {
+      "id": "g7-balkans-1912",
+      "place": "The Balkans",
+      "year": "1912",
+      "trail": "hot",
+      "story": "October 1912. The Balkan states are about to go to war with the Ottoman Empire, and Europe's great powers are trying to hold the lid on. The Clockmaker was here minutes ago.",
+      "clue": {
+        "text": "Open the Atlas: The peoples of Austria-Hungary, 1911.",
+        "tool": "atlas",
+        "link": "10.2-C-01",
+        "ask": {
+          "stem": "According to the map, which people live in Bosnia?",
+          "options": [
+            "Croats and Serbs",
+            "Germans",
+            "Magyars",
+            "Poles"
+          ],
+          "answer": 0,
+          "hints": [
+            "Find Bosnia in the south of the empire.",
+            "Match its color to the key. The map spells it “Servians.”"
+          ]
+        }
+      },
+      "skill": "Enduring Issue",
+      "question": {
+        "stem": "Which enduring issue does Document 8 best show?",
+        "options": [
+          "Conflict",
+          "Economic Development",
+          "Cultural Exchange and Diffusion",
+          "Population and Migration"
+        ],
+        "answer": 0,
+        "hints": [
+          "What's about to boil over?",
+          "Check the Six Umbrellas: why people fight."
+        ],
+        "why": "A pot about to boil over, with the great powers holding the lid, is Conflict; six days later, the First Balkan War began.",
+        "doc": {
+          "casefile": "C",
+          "n": 8
+        }
+      },
+      "evidence": "1912 · BALKAN TROUBLES about to boil over · Casefile C, Document 8",
+      "nearMiss": "You just missed him. He left a map open on the table: the peoples of Austria-Hungary. One city is circled, inside Bosnia. The map spells it the old way."
+    }
+  ],
+  "warrant": [
+    "The Clockmaker goes next to ____________ (a city on the last map).",
+    "Three stops share one enduring issue: ____________ (its exact name from the Six Umbrellas card).",
+    "Casefile ___, Document ___ shows it when ______________________.",
+    "Casefile ___, Document ___ shows it when ______________________."
+  ],
+  "final": {
+    "task": "Type the city to seal the warrant. Then finish your four lines and bring your warrant to your teacher.",
+    "key_words": [
+      "sarajevo",
+      "serajevo"
+    ],
+    "stamp": "WARRANT SEALED"
+  },
+  "end": {
+    "lines": [
+      "The warrant reaches Sarajevo. The Clockmaker is gone, and he never made history happen. People did.",
+      "On June 28, 1914, a Bosnian Serb nationalist shot the heir to Austria-Hungary's throne in Sarajevo.",
+      "A month later, Austria-Hungary declared war on Serbia, and Europe went to war. That's World War I, in Unit 10.5.",
+      "You can't wind back an idea. You can only follow where it goes."
+    ],
+    "photo": null
+  },
+  "reflection": [
+    "Which question did you get right on the first try, and how?",
+    "At Vienna, the Clockmaker wound the clocks back. Why didn't it hold?",
+    "What's one thing from today you'll use on a test?"
+  ],
+  "_built": "2026-10-08 by Will (global10r-curriculum) · skills/chase/build_chase_pack_102.py from chase_words_102.py"
+}

@@ -1,10 +1,10 @@
 // Seal the chase keys in the student build (Josh, 2026-10-06). Runs after `vite build`.
 // The last door's key is the teacher's: dist keeps only a SHA-256 of each word, salted with the
-// pack id, and the chase compares hashes. Same as Case Closed's sealed keys.
+// pack id, and the chase compares hashes. Case and every space are ignored (keyNorm in chase.jsx). Same as Case Closed's sealed keys.
 import fs from 'node:fs'
 import path from 'node:path'
 import crypto from 'node:crypto'
-const hash = (id, w) => crypto.createHash('sha256').update(`${id}|${String(w).trim().toLowerCase()}`).digest('hex')
+const hash = (id, w) => crypto.createHash('sha256').update(`${id}|${String(w).replace(/\s+/g, '').toLowerCase()}`).digest('hex')
 let n = 0
 for (const dir of ['dist/content', 'dist/_proof']) {
   if (!fs.existsSync(dir)) continue

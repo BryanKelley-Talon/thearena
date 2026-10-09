@@ -874,7 +874,8 @@ function checkPopouts(d, f, course, m, fail) {
       if (!mt.label || !(Number.isInteger(mt.goal) && mt.goal > 0) || !Number.isInteger(mt.first_try) || !Number.isInteger(mt.after_hint)) cf('meter needs a label, a goal and whole numbers for first_try and after_hint.')
       if (!acts.some(a => a.door)) cf('a meter needs a door to end at.')
     }
-    if (pk.suspect?.portrait && (!pub(pk.suspect.portrait) || !pk.suspect.portrait_alt || !pk.suspect.portrait_src)) cf('the suspect portrait needs its file in public/, portrait_alt and portrait_src (where it came from).')
+    const portrait = pk.suspect?.portrait || u.chase.portrait
+    if (portrait && (!pub(portrait) || !pk.suspect?.portrait_alt || !pk.suspect?.portrait_src)) cf('the suspect portrait needs its file in public/, portrait_alt and portrait_src (where it came from).')
     if (pk.end && (pk.end.photo && (!pub(pk.end.photo) || !pk.end.alt || !pk.end.credit))) cf('the end photo needs its file in public/, alt and credit.')
     const qOk = (q, w) => {
       if (!q.stem || !Array.isArray(q.options) || q.options.length < 2 || !Number.isInteger(q.answer)) cf(`${w}: the question needs a stem, choices and an answer.`)
@@ -892,7 +893,7 @@ function checkPopouts(d, f, course, m, fail) {
       if (cl.tool === 'issues' && cl.link && !istops.has(cl.link)) cf(`${w}: Enduring Issues stop '${cl.link}' isn't on the map.`)
       if (cl.tool === 'doc-assist' && cl.link && !docs.has(String(cl.link).toUpperCase().replace(/^([A-Z])\//, '$1/'))) cf(`${w}: Doc Assist '${cl.link}' isn't in this unit's casefiles.`)
       const ask = cl.ask || {}
-      if (!ask.prompt || (ask.type === 'type' ? !(ask.accept || []).length : !(Array.isArray(ask.options) && ask.options.length >= 2 && Number.isInteger(ask.answer)))) cf(`${w}: the clue's question needs a prompt and an answer.`)
+      if (!(ask.prompt || ask.stem) || (ask.type === 'type' ? !(ask.accept || []).length : !(Array.isArray(ask.options) && ask.options.length >= 2 && Number.isInteger(ask.answer)))) cf(`${w}: the clue's question needs a prompt and an answer.`)
       if (!st.question) continue   // a map-only stop (Will's cold stop): the clue is the whole stop.
       const q = st.question
       qOk(q, w)

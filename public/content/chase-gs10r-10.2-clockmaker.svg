@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 300" role="img" aria-label="An invented figure in silhouette, holding a pocket watch.">
+  <!-- Original art, Josh (flashpoint), 2026-10-08. The Clockmaker is invented (BK 10/7; silhouette ruled 10/8). -->
+  <rect width="240" height="300" fill="#FBF5E6"/>
+  <rect x="6" y="6" width="228" height="288" fill="none" stroke="#6E5A30" stroke-width="2"/>
+  <!-- faint clock-face backdrop -->
+  <g fill="none" stroke="#D9C285" stroke-width="2">
+    <circle cx="120" cy="118" r="92"/>
+    <g stroke-width="3">
+      <line x1="120" y1="30" x2="120" y2="42"/><line x1="208" y1="118" x2="196" y2="118"/>
+      <line x1="120" y1="206" x2="120" y2="194"/><line x1="32" y1="118" x2="44" y2="118"/>
+    </g>
+  </g>
+  <g fill="#1F1A14">
+    <!-- top hat -->
+    <rect x="86" y="34" width="56" height="50" rx="3"/>
+    <rect x="72" y="80" width="84" height="9" rx="4"/>
+    <!-- head -->
+    <ellipse cx="114" cy="110" rx="27" ry="31"/>
+    <!-- high collar and neck -->
+    <path d="M96 132 L132 132 L138 152 L90 152 Z"/>
+    <!-- long coat, shoulders to the bottom edge -->
+    <path d="M58 300 L58 196 C58 168 76 154 98 150 L114 160 L130 150 C152 154 170 168 172 196 L172 300 Z"/>
+    <!-- raised forearm, holding the watch up -->
+    <path d="M150 196 C166 190 182 176 190 160 L202 168 C194 190 176 206 158 214 Z"/>
+    <!-- hand -->
+    <ellipse cx="196" cy="160" rx="11" ry="9"/>
+  </g>
+  <!-- the pocket watch, hanging from its chain below the hand -->
+  <g>
+    <line x1="197" y1="166" x2="199" y2="178" stroke="#E3B341" stroke-width="2.5" stroke-dasharray="3 2"/>
+    <circle cx="199" cy="196" r="17" fill="#E3B341" stroke="#1F1A14" stroke-width="4"/>
+    <circle cx="199" cy="196" r="11" fill="#FBF5E6"/>
+    <line x1="199" y1="196" x2="199" y2="188" stroke="#1F1A14" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="199" y1="196" x2="193" y2="199" stroke="#1F1A14" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="199" cy="196" r="1.8" fill="#A3261E"/>
+    <rect x="196" y="176" width="6" height="4" rx="1" fill="#1F1A14"/>
+  </g>
+  
+</svg>
