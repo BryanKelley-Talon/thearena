@@ -1879,7 +1879,7 @@ function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onCompl
   else if (!pack) body = (
     <div className="empty" style={{ textAlign: 'left' }}>
       <div className="empty-title">This step didn&rsquo;t load</div>
-      <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which step it was.</p>
+      <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which level it was.</p>
     </div>
   )
   else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} />
@@ -1900,7 +1900,7 @@ function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onCompl
     <div className="wrap">
       <ScreenHeader label={skillName} onBack={onBack} color={course.accent} back={skillName} />
       <div className="detail" style={{ maxWidth: 860 }}>
-        <div className="card-type">Step {lv?.level}{t ? ` · ${t.name}` : ''}</div>
+        <div className="card-type">Level {lv?.level}{t ? ` · ${t.name}` : ''}</div>
         <h2>{lv?.label || t?.name}</h2>
         {body}
         {coachLine && <CoachSays key={coachLine} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'} line={coachLine} />}
@@ -1934,6 +1934,7 @@ export default function App() {
   const [daDoc, setDaDoc] = useState(null)             // { cf, i } — a casefile id and a document index
   const [briefPack, setBriefPack] = useState(null)
   const [prog, markDone] = useProgress()
+  const [pendingLevel, setPendingLevel] = useState(null)   // a gauge link's level, opened once the unit and skill are set
   const [ladderFrom, setLadderFrom] = useState('door')      // where Back from a ladder goes
   const [roomFrom, setRoomFrom] = useState('units')         // where Back from a review, Doc Assist or practice set goes
   const [drillFromLadder, setDrillFromLadder] = useState(false)
@@ -1993,6 +1994,7 @@ export default function App() {
     const r = String(ref).replace(/^content\//, '')
     fetch(`/content/${r}`).then(x => (x.ok ? x.json() : false)).then(set).catch(() => set(false))
   }
+  useEffect(() => { if (pendingLevel && unit && skill) { const n = pendingLevel; setPendingLevel(null); openLevel(n) } }, [pendingLevel, unit, skill])  // eslint-disable-line react-hooks/exhaustive-deps
   const openLevel = n => {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === n)
@@ -2068,6 +2070,8 @@ export default function App() {
     if (r.at === 'unit0') setUnit0(true)
     if (r.at === 'review') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) { setReview(true); fetchContent(u.brief_ref, setBriefPack) } }
     if (r.at === 'docassist') setPendingDa({ cf: r.cf || null, docN: r.docN ?? null })
+    // A gauge level link opens the unit we're in, that gauge, and (once its ladder is in hand) that level.
+    if (r.at === 'gauge') { const u = currentUnit(manifest.courses.find(c => c.id === r.courseId)); if (u && roomSkills(manifest.courses.find(c => c.id === r.courseId), u).some(x => x.code === r.skill)) { setUnitSlug(u.slug); setSkill(r.skill); setLadderFrom('door'); setPendingLevel(r.level) } }
     window.scrollTo(0, 0)
   }
   useEffect(() => {

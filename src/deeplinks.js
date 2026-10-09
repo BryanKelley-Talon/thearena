@@ -17,6 +17,7 @@
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
 //   #/us/chase/11.2                        the unit's Arena chase (BK 2026-10-06 22:15)
 //   #/us/threads/<stop-id>                 the Threads map with one stop open (for a chase clue)
+//   #/global/gauge/EI/1                    one gauge's level, in the unit we're in (10/8)
 //   #/office · #/office/2026-10-halftime-adjustments
 //
 // Numbers, not labels: a unit's title can change, its framework number can't. A link to
@@ -49,6 +50,8 @@ export function parseHash(hash, manifest) {
   if ((parts[1] === 'threads' || parts[1] === 'issues') && parts[2]) return { ...r, lane: parts[1], stopOpen: parts[2] }
   if (KEY_LANE[parts[1]] !== undefined || LANE_KEYS[parts[1]]) return { ...r, lane: LANE_KEYS[parts[1]] || parts[1] }
   if (parts[1] === '0') return { ...r, at: 'unit0' }
+  // A gauge level in the unit we're in: #/global/gauge/EI/1 (BK 2026-10-08 23:03, for the chase's Regents callout).
+  if (parts[1] === 'gauge' && parts[2]) return { ...r, at: 'gauge', skill: parts[2].toUpperCase(), level: /^[1-5]$/.test(parts[3] || '') ? Number(parts[3]) : null }
   const unit = unitByNumber(course, parts[1])
   if (!unit) return r
   const u = { ...r, at: 'unit', unitSlug: unit.slug }
