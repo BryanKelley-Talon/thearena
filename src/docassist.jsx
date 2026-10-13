@@ -56,6 +56,7 @@ export const PAPER = {
   coral:  { name: 'Coral',  sheet: '#FBD0BF', tint: '#FF9A78' },   // BK 10:54: "Coral is fine" (11.1 B, coral/salmon paper)
   green:  { name: 'Green',  sheet: '#D3EFCC', tint: '#7FD66E' },
   purple: { name: 'Purple', sheet: '#E6DAF5', tint: '#B48BE6' },   // BK 10/9 13:57: "10.2 C copies are done, purple paper."
+  gold:   { name: 'Gold',   sheet: '#F0C04A', tint: '#D99A1E' },   // BK 10/13 09:09 (via Sam): "Gold is the color of the paper." 15:12: "it's a deeper gold than pale yellow" (goldenrod); label "Gold Copy" as in his Classroom post
 }
 export const paperOf = (map, cfId) => PAPER[String(map?.[cfId] || map?.[String(cfId).toUpperCase()] || '').toLowerCase()] || null
 const paperLabel = p => `${p.name} Copy`

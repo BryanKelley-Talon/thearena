@@ -1280,7 +1280,8 @@
             "content_ref": "content/docassist-us11r-11.2.json",
             "_note": "Josh, 2026-10-01. Doc Assist, ruled by BK 08:16 at Sam's desk; content Sam's 11.2 Casefile A pack, signed by BK 08:38, ported byte for byte. Casefiles B and C are status building in the pack (Sam). Images: unit02-nv-a3-proclamation-map-1775.png, unit02-revere-1770-doc1.png, byte-identical to us11r-curriculum/STIMULUS_BANK/Unit_02/.",
             "paper": {
-              "A": "green"
+              "A": "green",
+              "B": "gold"
             }
           },
           "activities": [

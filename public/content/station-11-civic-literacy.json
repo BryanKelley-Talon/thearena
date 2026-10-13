@@ -14,7 +14,7 @@
   ],
   "skill_tag_labels": [
     "Civic Principle",
-    "Outside Evidence"
+    "Outside Information"
   ],
   "critical_path": true,
   "meta": false,
@@ -33,9 +33,9 @@
         1,
         3
       ],
-      "note": "RE-CUT 2026-09-19 for 11.1, per BK's ruling: Arena practice should track what's currently being taught. Replaces the January 2026 Prohibition CLE — correct move (name the principle + outside evidence), wrong era. Four documents, all already blessed on the bank (Fundamental Orders and Magna Carta from station 01/08's pair; Josselyn and the Virginia population chart from station 01 rep 3). The CLE task template is the standard NYSED shape — topic-agnostic by design (Out/ruling-2026-09-18-cle-stations-drill-structure-not-era.md); the historical-context line, task, and document selection are Sam's construction for Thread 1 (Is There One America?), not a released exam question.",
+      "note": "RE-CUT 2026-09-19 for 11.1, per BK's ruling: Arena practice should track what's currently being taught. Replaces the January 2026 Prohibition CLE — correct move (name the principle + outside information), wrong era. Four documents, all already blessed on the bank (Fundamental Orders and Magna Carta from station 01/08's pair; Josselyn and the Virginia population chart from station 01 rep 3). The CLE task template is the standard NYSED shape — topic-agnostic by design (Out/ruling-2026-09-18-cle-stations-drill-structure-not-era.md); the historical-context line, task, and document selection are Sam's construction for Thread 1 (Is There One America?), not a released exam question.",
       "prompt": "Historical Context: Government and Liberty in Colonial America. Task: Using information from the documents and your knowledge of United States history, write an essay in which you: • Describe the historical circumstances surrounding this constitutional or civic issue • Explain efforts by individuals, groups, and/or governments to address this constitutional or civic issue • Discuss the impact of the efforts on the United States and/or on American society.",
-      "station_focus": "Drill the 3→4 move: name the civic principle out loud and weave in at least one piece of accurate outside evidence beyond the documents.",
+      "station_focus": "Drill the 3→4 move: name the civic principle out loud and weave in at least one piece of accurate outside information beyond the documents.",
       "exam_meta": {
         "exam": "CPP Unit 11.1 practice set (Sam) — documents from BK's Unit 11.1 End-of-Unit Examination and the bank",
         "administration": "2026-27",
