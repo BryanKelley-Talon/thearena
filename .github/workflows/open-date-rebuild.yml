@@ -1,0 +1,47 @@
+# Rebuild the Arena on the morning something opens (Josh, 2026-10-14).
+# BK 10/14 08:43 "2. yes" (rebuild the same commit on each open date) and 10:21 "work the blueprint rebuilds now".
+# Content dated to open later is left out of the build (scripts/hold-unopened.mjs). On its day, this job makes an
+# empty commit on main, Cloudflare rebuilds the same reviewed code, and the content appears. Nothing else changes.
+# Runs 09:30 and 10:30 UTC (05:30 Corning time in EDT and in EST); the second run sees the first and stops.
+name: open-date rebuild
+on:
+  schedule:
+    - cron: '30 9 * * *'
+    - cron: '30 10 * * *'
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Rebuild even if nothing opens today (a test: same code, same content)'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+jobs:
+  rebuild:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 5
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Anything open today?
+        id: check
+        run: |
+          TODAY=$(TZ=America/New_York date +%F)
+          OPENS=$(node scripts/opens-today.mjs "$TODAY")
+          echo "today=$TODAY" >> "$GITHUB_OUTPUT"
+          if [ -z "$OPENS" ] && [ "${{ inputs.force }}" = "true" ]; then OPENS="(test run: nothing opens today; same build)"; fi
+          if [ -z "$OPENS" ]; then echo "Nothing opens $TODAY."; echo "go=no" >> "$GITHUB_OUTPUT"; exit 0; fi
+          if git log -5 --format=%s | grep -q "Open-date rebuild $TODAY"; then echo "Already rebuilt for $TODAY."; echo "go=no" >> "$GITHUB_OUTPUT"; exit 0; fi
+          echo "Opens $TODAY:"; echo "$OPENS"
+          { echo "go=yes"; echo "opens<<EOF"; echo "$OPENS"; echo "EOF"; } >> "$GITHUB_OUTPUT"
+      - name: Empty commit so Cloudflare rebuilds
+        if: steps.check.outputs.go == 'yes'
+        run: |
+          git config user.name "flashpoint open-date rebuild"
+          git config user.email "noreply@github.com"
+          git commit --allow-empty -m "Open-date rebuild ${{ steps.check.outputs.today }}: same code, today's content opens" -m "${{ steps.check.outputs.opens }}"
+          git push origin HEAD:main
