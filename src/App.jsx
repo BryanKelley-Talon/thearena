@@ -42,6 +42,7 @@ import { COURSE_KEY } from './deeplinks.js'
 import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles, paperOf } from './docassist.jsx'
 import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
+import { PeelBuild, PEEL_STYLES } from './peel.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
@@ -1401,7 +1402,7 @@ function TestPractice({ unit, acts, games, onOpenActivity }) {
                       <span>{a.label}</span><span className="flag live">Open</span></a>
                   : <div key={i} className="practice-row off"><span>{a.label}</span><span className="flag soon">Coming</span></div>
               }
-              const playable = a.type === 'stimulus' || a.type === 'matching' || a.type === 'doc_check'
+              const playable = a.type === 'stimulus' || a.type === 'matching' || a.type === 'doc_check' || a.type === 'peel_build'
               return playable
                 ? <button key={i} type="button" className="practice-row" onClick={() => onOpenActivity(i)}>
                     <span>{a.label}{a.blurb && <span className="row-blurb">{a.blurb}</span>}</span><span className="flag live">Start</span></button>
@@ -1791,6 +1792,23 @@ function DocCheckActivity({ course, activity, pack, onBack }) {
           ? <div className="loading">Opening the set&hellip;</div>
           : <DocCheckSet pack={pack} accent={course.accent} Coach={Coach}
                          onAnswer={(ok, i) => { setReps(r => r + 1); noteStuck(ok, i) }} />}
+        <Counters reps={reps} />
+      </div>
+      <BottomBack onBack={onBack} back={'Back'} />
+    </div>
+  )
+}
+
+// THE PEEL BUILDER (2026-10-14): the room's header, the reps counter and both Backs around peel.jsx.
+function PeelActivity({ course, activity, pack, onBack }) {
+  const [reps, setReps] = useState(0)
+  return (
+    <div className="wrap">
+      <ScreenHeader label={activity.label} onBack={onBack} color={course.accent} back="Back" />
+      <div className="detail" style={{ maxWidth: 820 }}>
+        {!pack || !(pack.slots || []).length
+          ? <div className="loading">Opening the set&hellip;</div>
+          : <PeelBuild pack={pack} onRep={() => setReps(r => r + 1)} />}
         <Counters reps={reps} />
       </div>
       <BottomBack onBack={onBack} back={'Back'} />
@@ -2255,6 +2273,8 @@ export default function App() {
       ? <MatchingActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
       : act?.type === 'doc_check'
         ? <DocCheckActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
+      : act?.type === 'peel_build'
+        ? <PeelActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
         : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
   else if (unit) screen = <UnitRoom course={course} unit={unit} games={games} prog={prog}
@@ -2292,7 +2312,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES + CHASE_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES + CHASE_STYLES + PEEL_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

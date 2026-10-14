@@ -1,0 +1,79 @@
+{
+ "intro": "Build a 30-Second Case. Put one card in each slot. Four cards don't belong.",
+ "before_we_talk": "BEFORE WE TALK: These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life.",
+ "prompt": "Could the Revolution's promise of liberty and equality be kept for everyone?",
+ "source_document": "Document 1 (10.2 Casefile C)",
+ "source_line": "C. L. R. James, Lettres de Toussaint L'Ouverture, The Black Jacobins, The Dial Press (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, January 2009",
+ "citation": "C. L. R. James, Lettres de Toussaint L'Ouverture, The Black Jacobins, The Dial Press (adapted), from the New Visions Global History II Exam Question Bank, Part 1, citing the NYS Global History and Geography Regents Exam, January 2009",
+ "source_text": "August 29, 1793\nBrothers and friends.\nI am Toussaint L'Ouverture, my name is perhaps known to you. I have undertaken vengeance. I want Liberty and Equality to reign in San Domingo. I work to bring them into existence. Unite yourselves to us, brothers, and fight with us for the same cause, etc. . . .",
+ "slots": [
+  {
+   "slot": "HC",
+   "label": "Historical Context",
+   "correct": "c1",
+   "rationale": "Context sets the scene: when, where, and what led to it."
+  },
+  {
+   "slot": "TH",
+   "label": "Thesis",
+   "correct": "c2",
+   "rationale": "A thesis answers the question and takes a side."
+  },
+  {
+   "slot": "DU",
+   "label": "Document Use",
+   "correct": "c3",
+   "rationale": "Document Use names the document and uses its own words."
+  },
+  {
+   "slot": "EX",
+   "label": "Explanation",
+   "correct": "c4",
+   "rationale": "Explanation says why the evidence matters: “This shows…”"
+  }
+ ],
+ "cards": [
+  {
+   "id": "c1",
+   "text": "In 1791, the enslaved people of Saint-Domingue, France's richest colony, rose up against slavery."
+  },
+  {
+   "id": "c2",
+   "text": "The Revolution's promise of liberty and equality could be kept for everyone, but only because the people it left out fought for it themselves."
+  },
+  {
+   "id": "c3",
+   "text": "Document 1 shows Toussaint L'Ouverture wanted “Liberty and Equality to reign in San Domingo” and asked his “brothers” to “fight with us for the same cause.”"
+  },
+  {
+   "id": "c4",
+   "text": "This shows that liberty and equality in Saint-Domingue had to be fought for, not waited for."
+  },
+  {
+   "id": "c5",
+   "text": "Today, people still argue about liberty and equality.",
+   "decoy_for": "HC",
+   "why_not": "This is about today, not 1791."
+  },
+  {
+   "id": "c6",
+   "text": "Document 1 is a letter Toussaint L'Ouverture wrote in 1793.",
+   "decoy_for": "TH",
+   "why_not": "This only says what the document is. It doesn't answer the question."
+  },
+  {
+   "id": "c7",
+   "text": "Toussaint wanted freedom for everyone in the world.",
+   "decoy_for": "DU",
+   "why_not": "“everyone in the world” isn't in Document 1."
+  },
+  {
+   "id": "c8",
+   "text": "Toussaint said he wanted Liberty and Equality to reign.",
+   "decoy_for": "EX",
+   "why_not": "This repeats his words. It doesn't say why they matter."
+  }
+ ],
+ "model_paragraph": "In 1791, the enslaved people of Saint-Domingue, France's richest colony, rose up against slavery. The Revolution's promise of liberty and equality could be kept for everyone, but only because the people it left out fought for it themselves. Document 1 shows Toussaint L'Ouverture wanted “Liberty and Equality to reign in San Domingo” and asked his “brothers” to “fight with us for the same cause.” This shows that liberty and equality in Saint-Domingue had to be fought for, not waited for.",
+ "model_note": "The same exemplar printed on Day 1 of 10.2 Casefile C."
+}

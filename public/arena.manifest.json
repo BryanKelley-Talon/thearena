@@ -309,6 +309,13 @@
               "label": "Casefile A · Checkpoint Practice",
               "published": true,
               "content_ref": "content/checkpoint-gs10r-10.2-casefileA.json"
+            },
+            {
+              "type": "peel_build",
+              "label": "Build a 30-Second Case",
+              "published": true,
+              "content_ref": "content/arena-global10r-10.2-peel.json",
+              "_note": "Josh, 2026-10-14. Will's PEEL pilot (BK wording yes 10/13 14:13; Danny cleared 10/14 10:56, md5 43b6aa75), byte for byte. The label is Will's own intro words; its place in the room is BK's call in the proof."
             }
           ],
           "ladders": [

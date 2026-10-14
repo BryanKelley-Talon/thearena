@@ -27,6 +27,7 @@ const LIVE = new Set()
 const LADDER_TYPE = {}
 const DOCASSIST = new Set()    // Doc Assist packs carry their own shape; the DOC ASSIST block below checks them
 const DOCCHECK = new Set()     // doc_check packs carry their own shape; the THE DOC CHECK block below checks them
+const PEEL = new Set()         // peel_build packs carry their own shape; the PEEL BUILDER block below checks them (2026-10-14)
 const ENRICH_OK = new Set()   // enrichment files whose ladder has an L4 source the shell shows above them
 try {
   const m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8'))
@@ -38,6 +39,7 @@ try {
       for (const a of u.activities || []) {
         if (a.published && a.content_ref) LIVE.add(String(a.content_ref).replace(/^content\//, ''))
         if (a.type === 'doc_check' && a.content_ref) DOCCHECK.add(String(a.content_ref).replace(/^content\//, ''))
+        if (a.type === 'peel_build' && a.content_ref) PEEL.add(String(a.content_ref).replace(/^content\//, ''))
       }
       if (u.doc_assist?.content_ref) DOCASSIST.add(String(u.doc_assist.content_ref).replace(/^content\//, ''))
       if (u.chase?.published === true && u.chase.content_ref) LIVE.add(String(u.chase.content_ref).replace(/^content\//, ''))   // a published chase blocks the build (2026-10-07)
@@ -194,7 +196,7 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   if (/^enduring-issues-/.test(f)) continue   // the STOP MAP block below
   if (/^blueprint-/.test(f)) continue   // the WRITING LAB block below
   // A doc_check item names its stimulus by key; the DOC CHECK block below fails one that resolves to nothing.
-  if (DOCCHECK.has(f)) continue
+  if (DOCCHECK.has(f) || PEEL.has(f)) continue
   checkDocVisible(f, d)
   if (LADDER_TYPE[f]) { checkLadder(f, d, LADDER_TYPE[f]); continue }
   for (const rep of d.reps || []) {
@@ -687,6 +689,28 @@ function checkPopouts(d, f, course, m, fail) {
       if (SCORE.test(student)) df(`${w}: something reads like a score.`)
       if (/\b(Mon|Tue|Wed|Thu|Fri)\w*,? \d{1,2}\/\d{1,2}\b/.test(student)) df(`${w}: reads like a class date.`)
     }
+  }
+}
+
+
+// ── THE PEEL BUILDER (added 2026-10-14, Josh; work order 2026-09-26) ───────────────
+// Format only: a prompt, slots with label/correct/rationale, every correct card present, unique
+// ids, decoy_for names a slot, and a named document carries its text and its citation on screen.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  const { peelProblems } = await import('../src/peel-check.mjs')
+  const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|score|\bpoints\b|streak|\bpercent\b|%)/i
+  for (const c of m.courses || []) for (const u of c.units || []) for (const a of u.activities || []) {
+    if (a.type !== 'peel_build') continue
+    const f = String(a.content_ref || '').replace(/^content\//, '')
+    const live = a.published === true && u.published === true && (c.status ?? 'open') !== 'building'
+    const df = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { df(`peel_build file '${f}' is not in public/content.`); continue }
+    const d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8'))
+    for (const pr of peelProblems(d)) df(pr)
+    const student = [d.intro, d.prompt, ...(d.slots || []).map(s => s.rationale), ...(d.cards || []).flatMap(x => [x.text, x.why_not])].filter(Boolean).join(' ')
+    if (SCORE.test(student)) df('something reads like a score.')
   }
 }
 
