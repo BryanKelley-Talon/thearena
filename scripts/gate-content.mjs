@@ -886,7 +886,9 @@ function checkPopouts(d, f, course, m, fail) {
     if (Array.isArray(pk.acts) && Array.isArray(pk.stops)) cf('use acts or stops, not both.')
     for (const [ai, a] of acts.entries()) if (ai > 0 && !(a.title || (a.intro || []).length)) cf(`act ${ai + 1}: needs a title or intro lines (its opening screen).`)
     if (!Array.isArray(pk.cold) || pk.cold.length < 2) cf('the trail needs at least two states in words (cold), warmest first.')
-    if (!Array.isArray(pk.warrant) || !pk.warrant.length) cf('needs warrant lines.')
+    // Warrant lines show only on the typed-key screen; a pack whose ending is a question (final.prompt) has none on screen (NINE STATES: the verdict stays on paper, BK 10/13).
+    if (!pk.final?.prompt && (!Array.isArray(pk.warrant) || !pk.warrant.length)) cf('needs warrant lines (or a final.prompt).')
+    if (pk.acts) for (const a of pk.acts) if (a.door?.short_one !== undefined && typeof a.door.short_one !== 'string') cf('door.short_one must be a line of words.')
     if (!pk.final || !(pk.final.key_words || []).length) cf('needs the teacher key (final.key_words); the build seals it.')
     const pub = p => fs.existsSync(path.resolve('public', String(p || '').replace(/^\/+/, '')))
     if (pk.meter) {
