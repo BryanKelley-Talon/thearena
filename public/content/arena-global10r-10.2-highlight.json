@@ -1,0 +1,39 @@
+{
+ "intro": "Mark what Dessalines says must happen (Claim) and why he says it (Reason). Then tap Check.",
+ "before_we_talk": "BEFORE WE TALK: These were real people, and what happened to them shaped the world we live in. Use their names and their words. No jokes, and no comparisons to everyday life.",
+ "source_document": "Document 2 (10.2 Casefile C)",
+ "citation": "Jean-Jacques Dessalines, Haitian Declaration of Independence, January 1, 1804 (excerpt), from New Visions lesson G2.02.D.2",
+ "text": "“It is not enough to have expelled the barbarians who have bloodied our land for two centuries; … We must, with one last act of national authority, forever assure the empire of liberty in the country of our birth; we must take any hope of re-enslaving us away from the inhuman government …. In the end we must live independent or die.”",
+ "markers": [
+  {
+   "id": "claim",
+   "label": "Claim"
+  },
+  {
+   "id": "reason",
+   "label": "Reason"
+  }
+ ],
+ "key": [
+  {
+   "marker": "claim",
+   "phrase": "we must live independent or die",
+   "why": "What he says must happen: independence, or death."
+  },
+  {
+   "marker": "claim",
+   "phrase": "forever assure the empire of liberty in the country of our birth",
+   "why": "The same goal, said another way: liberty, for good."
+  },
+  {
+   "marker": "reason",
+   "phrase": "the barbarians who have bloodied our land for two centuries",
+   "why": "What was done to them: they “bloodied our land.”"
+  },
+  {
+   "marker": "reason",
+   "phrase": "hope of re-enslaving us",
+   "why": "The danger he names: that slavery could come back."
+  }
+ ]
+}

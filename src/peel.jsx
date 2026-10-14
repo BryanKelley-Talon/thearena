@@ -191,7 +191,7 @@ export function PeelBuild({ pack, onRep }) {
 export { peelProblems } from './peel-check.mjs'
 
 export const PEEL_STYLES = `
-.peel-talk{border-left:4px solid var(--gold);background:var(--card);padding:10px 14px;border-radius:8px;font-weight:600;line-height:1.45}
+.peel-talk{border-left:4px solid var(--gold);background:var(--card);padding:10px 14px;border-radius:8px;font-weight:600;line-height:1.45;margin:0 0 14px}
 .peel-prompt{font-size:20px;font-weight:700;line-height:1.35;margin:10px 0 12px}
 .peel-doc p{margin:0 0 8px}
 .peel-cite{font-size:13.5px;font-style:italic;margin-top:10px;color:#4a3c22}

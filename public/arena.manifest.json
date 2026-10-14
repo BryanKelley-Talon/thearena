@@ -316,6 +316,13 @@
               "published": true,
               "content_ref": "content/arena-global10r-10.2-peel.json",
               "_note": "Josh, 2026-10-14. Will's PEEL pilot (BK wording yes 10/13 14:13; Danny cleared 10/14 10:56, md5 43b6aa75), byte for byte. The label is Will's own intro words; its place in the room is BK's call in the proof."
+            },
+            {
+              "type": "highlight",
+              "label": "Mark the Claim and the Reason",
+              "published": true,
+              "content_ref": "content/arena-global10r-10.2-highlight.json",
+              "_note": "Josh, 2026-10-14. Will's highlighter pilot (BK wording yes 10/13 14:13; Danny cleared 10/14 11:06, md5 bfeacfb5), byte for byte. The label is Josh's, from Will's intro; BK's call in the proof."
             }
           ],
           "ladders": [
