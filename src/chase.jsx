@@ -58,6 +58,7 @@ export const CHASE_WORDS = {
   typeLabel: 'Your answer',
   onward: 'Keep going',
   meterCount: (n, m) => `${n} ${n === 1 ? (m.one || 'state') : (m.many || 'states')}`,
+  tallyCount: n => `${n} ${n === 1 ? 'stop' : 'stops'}`,
 }
 const W = CHASE_WORDS
 
@@ -179,6 +180,22 @@ function Meter({ meter, n }) {
         {Array.from({ length: goal }, (_, i) => <i key={i} className={i < have ? 'on' : ''}>{i < have ? '★' : ''}</i>)}
       </span>
       <em>{W.meterCount(have, meter)}</em>
+    </div>
+  )
+}
+
+// The tally (Will's Timekeeper v7, BK 11:46 / 11:50): each answered stop's `issue` (any tag the pack
+// uses: an enduring issue, a civic principle), counted. Shown under the trail and on the last question,
+// so "Check your tally" has something to check. A count of stops per idea, never a score.
+function Tally({ tally, ev }) {
+  if (!tally) return null
+  const counts = []
+  for (const e of ev) if (e.issue) { const c = counts.find(x => x.k === e.issue); if (c) c.n++; else counts.push({ k: e.issue, n: 1 }) }
+  if (!counts.length) return null
+  return (
+    <div className="chase-tally" role="group" aria-label={tally.label}>
+      <span className="chase-pin">{tally.label}</span>
+      <ul>{counts.map(c => <li key={c.k}><b>{c.k}</b> <em>{W.tallyCount(c.n)}</em></li>)}</ul>
     </div>
   )
 }
@@ -327,6 +344,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
         {pack.standing && <p className="chase-standing">{pack.standing}</p>}
         {s.step !== 'intro' && s.step !== 'caught' && s.step !== 'act' && s.step !== 'doorcard' && <Footprints pack={pack} cold={s.cold} />}
         {showMeter && <Meter meter={pack.meter} n={s.meter || 0} />}
+        {pack.tally && s.step !== 'intro' && s.step !== 'caught' && <Tally tally={pack.tally} ev={s.ev} />}
 
         {s.step === 'intro' && <section className={`chase-card${portrait ? ' chase-intro' : ''}`} style={portrait ? { '--chase-mark': `url(${pic(portrait)})` } : undefined}>
           <div className="chase-tab">{W.title}</div>
@@ -354,7 +372,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <Ask key={`a${s.b}`} ask={stop.clue.ask} onMiss={cool}
                onRight={() => setS(x => stop.question ? { ...x, step: 'question' }
                  // A map-only stop may still hand out an evidence card (Will v6, stops 1-3): it lands in its box now.
-                 : { ...x, step: 'card', ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence, doc: null }] : x.ev })} />
+                 : { ...x, step: 'card', ev: (stop.evidence || stop.issue) ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence || null, doc: null, issue: stop.issue || null }] : x.ev })} />
         </section>}
 
         {stop && stop.question && s.step === 'question' && <section className="chase-card">
@@ -362,7 +380,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           {/* A question may show more than one document (question.docs, as a door does; 2026-10-08 for Will's stop 2). */}
           {(stop.question.docs || [stop.question.doc]).filter(Boolean).map((d, i) => <Doc key={i} doc={docs[`${d.casefile}/${d.n}`]} cf={d.casefile} />)}
           <Ask key={`q${s.b}`} ask={stop.question} onMiss={cool} tag={stop.skill}
-               onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: stop.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence, doc: (stop.question.docs || [stop.question.doc])[0] || null }] : x.ev }))} />
+               onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: (stop.evidence || stop.issue) ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence || null, doc: (stop.question.docs || [stop.question.doc])[0] || null, issue: stop.issue || null }] : x.ev }))} />
         </section>}
 
         {stop && s.step === 'card' && <section className="chase-card">
@@ -396,7 +414,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
         {s.step === 'warrant' && pack.final?.prompt && <section className="chase-card">
           <div className="chase-tab">{W.caseFile}</div>
           <h2 className="chase-h">{W.evidenceHead}</h2>
-          <ol className="chase-boxes">{s.ev.map(e => <li key={e.b}>{e.doc
+          <ol className="chase-boxes">{s.ev.filter(e => e.text).map(e => <li key={e.b}>{e.doc
             ? <a href={toolHash(courseKey, unit.number, 'doc-assist', `${e.doc.casefile}/${e.doc.n}`)} onClick={sendFromChase}><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span><i className="chase-go" aria-hidden="true">→</i></a>
             : <><b className="chase-boxn">{W.box(e.n)}</b><span>{e.text}</span></>}</li>)}</ol>
           <FinalAsk pack={pack} daPack={daPack} calloutHref={unit.chase?.callout_href || null} onMiss={cool} onRight={r => setS(x => ({ ...x, step: 'caught', cold: 0, after: (r && r.after) || null }))} />
@@ -405,7 +423,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
         {s.step === 'warrant' && !pack.final?.prompt && <section className="chase-card">
           <div className="chase-tab">{pack.final?.title || W.warrant}</div>
           <p className="chase-read">{W.warrantTip}</p>
-          <ol className="chase-evlist">{s.ev.map(e => <li key={e.b}>{e.text}</li>)}</ol>
+          <ol className="chase-evlist">{s.ev.filter(e => e.text).map(e => <li key={e.b}>{e.text}</li>)}</ol>
           <ol className="chase-wlines">{(pack.warrant || []).map((l, i) => <li key={i}>{l}</li>)}</ol>
           {pack.final?.task && <p className="chase-read">{pack.final.task}</p>}
           <form className="chase-row" onSubmit={async e => { e.preventDefault(); if (await keyFits(pack, key)) setS(x => ({ ...x, step: 'caught' })); else setBad(true) }}>
@@ -498,6 +516,10 @@ export const CHASE_STYLES = `
 .chase-pips i{width:22px;height:22px;border:2px solid #E8D6A6;border-radius:4px;display:grid;place-items:center;font:700 13px/1 "Courier Prime",monospace;font-style:normal;color:#1F1A14;transition:background .3s ease, transform .3s ease}
 .chase-pips i.on{background:#E3B341;border-color:#E3B341;transform:scale(1.06)}
 .chase-meter em{font-style:normal;font-weight:600}
+.chase-tally{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px;margin:0 0 12px;color:#F4F6FA}
+.chase-tally ul{list-style:none;display:flex;flex-wrap:wrap;gap:6px 14px;margin:0;padding:0}
+.chase-tally li{background:#1B2A47;border:1px solid #6882AD;border-radius:6px;padding:3px 9px}
+.chase-tally em{font-style:normal;color:#E3B341;margin-left:4px}
 .chase-meterline{font-size:16px;background:var(--cc-paper);border:1px dashed var(--cc-edge);padding:8px 10px}
 .chase-boxes{list-style:none;padding:0;margin:0 0 12px;display:grid;gap:6px}
 .chase-boxes li{background:var(--cc-paper);border:1px solid var(--cc-edge);font:700 15px/1.35 "Courier Prime",monospace}

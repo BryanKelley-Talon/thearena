@@ -888,6 +888,13 @@ function checkPopouts(d, f, course, m, fail) {
     if (!Array.isArray(pk.cold) || pk.cold.length < 2) cf('the trail needs at least two states in words (cold), warmest first.')
     if (!Array.isArray(pk.warrant) || !pk.warrant.length) cf('needs warrant lines.')
     if (!pk.final || !(pk.final.key_words || []).length) cf('needs the teacher key (final.key_words); the build seals it.')
+    // The tally (2026-10-14, Will's Timekeeper v7): stops tagged with an issue need a tally label and a question that asks it.
+    const tagged = allStops.filter(st => st.issue)
+    if (tagged.length && !pk.tally?.label) cf('stops carry an issue, so the pack needs tally.label.')
+    for (const st of tagged) {
+      if (!st.question) cf(`${st.id}: carries an issue but has no question asking it.`)
+      else if ((st.question.options || [])[st.question.answer] !== st.issue && !String((st.question.options || [])[st.question.answer] || '').startsWith(st.issue)) cf(`${st.id}: its question's answer isn't its issue (${st.issue}).`)
+    }
     const pub = p => fs.existsSync(path.resolve('public', String(p || '').replace(/^\/+/, '')))
     if (pk.meter) {
       const mt = pk.meter
@@ -918,8 +925,11 @@ function checkPopouts(d, f, course, m, fail) {
       const q = st.question
       qOk(q, w)
       const qd = Array.isArray(q.docs) && q.docs.length ? q.docs : [q.doc]
-      for (const d of qd) if (!d || !docs.has(`${d.casefile}/${d.n}`)) cf(`${w}: the question's document (${d ? `${d.casefile}/${d.n}` : 'none'}) isn't in this unit's Doc Assist.`)
-      if (!st.evidence) cf(`${w}: one evidence line for the warrant.`)
+      // An issue tap (2026-10-14, Timekeeper v7) asks about the stop itself, not a document: it may come without one,
+      // unless its stem names a document. A tagged stop may also come without an evidence card (Vienna); the tally still counts it.
+      const tap = !!st.issue && !qd.some(Boolean) && !/\bDocument\b/.test(q.stem || '')
+      if (!tap) for (const d of qd) if (!d || !docs.has(`${d.casefile}/${d.n}`)) cf(`${w}: the question's document (${d ? `${d.casefile}/${d.n}` : 'none'}) isn't in this unit's Doc Assist.`)
+      if (!st.evidence && !st.issue) cf(`${w}: one evidence line for the warrant.`)
     }
     for (const [ai, a] of acts.entries()) {
       if (!a.door) continue
