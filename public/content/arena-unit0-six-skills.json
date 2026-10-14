@@ -59,7 +59,7 @@
     }
    ],
    "help": [
-    "The Historical Context station in your unit's Arena room: five steps of practice.",
+    "The Historical Context station in your unit's Arena room: five levels of practice.",
     "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
    ]
   },
@@ -116,7 +116,7 @@
     }
    ],
    "help": [
-    "The Thesis station in your unit's Arena room: five steps of practice.",
+    "The Thesis station in your unit's Arena room: five levels of practice.",
     "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
    ]
   },
@@ -174,7 +174,7 @@
    ],
    "help": [
     "Doc Assist: it walks you through any casefile document, one question at a time.",
-    "The Document Use station in your unit's Arena room: five steps of practice.",
+    "The Document Use station in your unit's Arena room: five levels of practice.",
     "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
    ]
   },
@@ -231,14 +231,14 @@
     }
    ],
    "help": [
-    "The Explanation station in your unit's Arena room: five steps of practice.",
+    "The Explanation station in your unit's Arena room: five levels of practice.",
     "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
    ]
   },
   {
    "n": 5,
    "skill": "OE",
-   "name": "Outside Evidence",
+   "name": "Outside Information",
    "rooms": [
     "us11r",
     "global10r"
@@ -247,7 +247,7 @@
    "scene": "You're deciding whether to buy a pair of headphones. The ad says the battery lasts “all day.”",
    "skip_it": "“It says all day, so it lasts all day.”",
    "do_it": "“The ad says all day, but I had last year's version and it died by sixth period. I'd want to see a real test first.”",
-   "the_skill": "You brought in something true that the ad didn't tell you. That's Outside Evidence, one of your six gauges. The exam calls it “outside information.” In a casefile, the OUTSIDE EVIDENCE boxes show you what it looks like.",
+   "the_skill": "You brought in something true that the ad didn't tell you. That's Outside Information, one of your six gauges. It's the exam's own name for it. In a casefile, the OUTSIDE INFORMATION boxes show you what it looks like.",
    "gauge": [
     {
      "band": "5",
@@ -288,7 +288,7 @@
     }
    ],
    "help": [
-    "The Outside Evidence station in your unit's Arena room: five steps of practice.",
+    "The Outside Information station in your unit's Arena room: five levels of practice.",
     "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
    ]
   },
@@ -342,7 +342,7 @@
    ],
    "help": [
     "Doc Assist, step 5: tap the Civic Principles button to see every principle and what it means.",
-    "The Civic Principle station in your unit's Arena room: five steps of practice.",
+    "The Civic Principle station in your unit's Arena room: five levels of practice.",
     "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
    ]
   },
@@ -397,7 +397,7 @@
    "help": [
     "The Six Umbrellas card, page 2 of every casefile. Scarcity is under Umbrella 4, Wealth & Resources. On the essay, write the exact issue, not the umbrella.",
     "Doc Assist, step 5: tap the Six Umbrellas button to see every issue and what it means.",
-    "The Enduring Issue station in your unit's Arena room: five steps of practice.",
+    "The Enduring Issue station in your unit's Arena room: five levels of practice.",
     "Know Your Next Step, the sheet after every unit test, which names the one step to work on."
    ]
   }
