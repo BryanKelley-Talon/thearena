@@ -42,9 +42,13 @@ pack = {
            {"title": w.ACT_TITLES[1], "intro": w.ACT2_INTRO, "stops": [stop(s) for s in w.STOPS_ACT2]}],
   "tally": w.TALLY,
   "final": {k: w.FINAL[k] for k in ("prompt", "key_words", "hints", "after_by_answer", "wrong_feedback", "wrong_default", "stamp") if k in w.FINAL},
+  # The card button at the last door (BK 2026-10-15 14:08 "Add one"; 14:13 "yes" to the label in chat). It opens US Doc Assist 11.2's q4_card.
+  # Not in Sam's words file yet; it moves there when Sam next touches FINAL (pill.label).
+
   "end": {"photo": "content/chase-us11r-11.2-end.webp", "alt": w.GRAVE_ALT, "credit": w.END["credit"], "lines": w.END["lines"],
           "licence": {"name": "CC BY-SA 4.0", "sellable": False}},
   "reflection": w.REFLECTION,
   "_paper_only": "VERDICT lines 1-2 (rebel or patriot) stay on the paper Case File (BK 10/13 11:27). The CF_* words are the paper sheet's, not the screen's.",
 }
+pack["final"]["pill"] = w.FINAL.get("pill") or {"label": "Civic Principles card"}
 json.dump(pack, sys.stdout, ensure_ascii=False, indent=1); sys.stdout.write("\n")

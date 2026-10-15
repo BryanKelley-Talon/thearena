@@ -496,7 +496,10 @@
    "states' rights": "Close. Check your tally for the card's name."
   },
   "wrong_default": "Not that one. Check your tally.",
-  "stamp": "PARDONED"
+  "stamp": "PARDONED",
+  "pill": {
+   "label": "Civic Principles card"
+  }
  },
  "end": {
   "photo": "content/chase-us11r-11.2-end.webp",
