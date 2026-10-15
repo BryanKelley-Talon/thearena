@@ -14,10 +14,13 @@
   },
   "intro": [
     "Someone is winding the clocks back.",
-    "The Timekeeper wants the world the way it was in 1788, before France's revolution carried new ideas across Europe and the world. Everywhere those ideas spread, he tried to stop the clock.",
+    "The Timekeeper wants the world back the way it was in 1788, before France's revolution spread new ideas everywhere.",
     "Follow his trail. Every place, date and document in this chase is real. He isn't.",
-    "At the end, you'll name an enduring issue three of his stops share, and prove it."
+    "At every stop, name the enduring issue it shows. At the end, find the one three stops share, and prove it."
   ],
+  "tally": {
+    "label": "YOUR ISSUES"
+  },
   "cold": [
     "hot",
     "warm",
@@ -38,7 +41,7 @@
       "place": "Paris",
       "year": "1789",
       "trail": "warm",
-      "story": "In 1789, France's National Assembly writes down that men are born free and equal in rights. The Timekeeper arrives too late: the words are already printed.",
+      "story": "In 1789, France's National Assembly writes down that men are born free and equal in rights. The Timekeeper arrives too late.",
       "clue": {
         "text": "Open the Enduring Issues map: The Declaration of the Rights of Man.",
         "tool": "issues",
@@ -61,15 +64,34 @@
           ]
         }
       },
-      "evidence": "1789 · Article 2: liberty, property, security and resistance to oppression · Document 3 (Casefile B)",
-      "after": "You found it. Copy the evidence card into box 1."
+      "issue": "Abuse of Power",
+      "question": {
+        "stem": "Which enduring issue does this stop show?",
+        "options": [
+          "Abuse of Power",
+          "Cooperation",
+          "Scarcity"
+        ],
+        "answer": 0,
+        "hints": [
+          "Not this one. Check each issue's line on the card.",
+          "Which line describes what happened here?"
+        ],
+        "why": "Abuse of Power is authority used to harm people. The Declaration makes resisting oppression a right.",
+        "doc": {
+          "casefile": "B",
+          "n": 3
+        }
+      },
+      "evidence": "1789 · Article 2: liberty, property, security and resistance to oppression · Document 3 (Casefile B) · Abuse of Power",
+      "after": "Copy the evidence card into box 1."
     },
     {
       "id": "g2-saint-domingue-1791",
       "place": "Saint-Domingue (Haiti)",
       "year": "1791–1804",
       "trail": "warm",
-      "story": "In 1791, the enslaved people of Saint-Domingue rise up against slavery. In 1804, Haiti declares its independence. The Timekeeper can't wind this clock back.",
+      "story": "In 1791, the enslaved people of Saint-Domingue rise up against slavery. In 1804, Haiti declares independence.",
       "clue": {
         "text": "Open the Enduring Issues map: The Haitian Revolution.",
         "tool": "issues",
@@ -95,15 +117,40 @@
           ]
         }
       },
-      "evidence": "1793 · Toussaint calls his brothers to fight for Liberty and Equality · Document 1 (Casefile C)",
-      "after": "You found it. Copy the evidence card into box 2."
+      "issue": "Human Rights Violations",
+      "question": {
+        "stem": "Which enduring issue does this stop show?",
+        "options": [
+          "Human Rights Violations",
+          "Economic Development",
+          "Environmental Crisis"
+        ],
+        "answer": 0,
+        "hints": [
+          "Not this one. Check each issue's line on the card.",
+          "Which line describes what happened here?"
+        ],
+        "why": "Slavery denied people life, freedom and safety. That's Human Rights Violations.",
+        "docs": [
+          {
+            "casefile": "C",
+            "n": 1
+          },
+          {
+            "casefile": "C",
+            "n": 2
+          }
+        ]
+      },
+      "evidence": "1793 · Toussaint calls his brothers to fight for Liberty and Equality · Document 1 (Casefile C) · Human Rights Violations",
+      "after": "Copy the evidence card into box 2."
     },
     {
       "id": "g3-europe-1812",
       "place": "Spain and its colonies",
       "year": "1808",
       "trail": "cooling",
-      "story": "In 1808, Napoleon puts his brother on Spain's throne, and Spain's colonies across the ocean must decide whether to obey a French king. The Timekeeper is one step behind.",
+      "story": "In 1808, Napoleon puts his brother on Spain's throne. Spain's colonies must decide whether to obey a French king.",
       "clue": {
         "text": "Open the Atlas: Central Europe in 1812. Look at the small map.",
         "tool": "atlas",
@@ -129,8 +176,27 @@
           ]
         }
       },
-      "evidence": "1808 · Spain gets a French king, and its colonies soon take over their own governments · Document 3 (Casefile C)",
-      "after": "You found it. Copy the evidence card into box 3."
+      "issue": "Nationalism",
+      "question": {
+        "stem": "Which enduring issue does this stop show?",
+        "options": [
+          "Nationalism",
+          "Scarcity",
+          "Scientific and Technological Change"
+        ],
+        "answer": 0,
+        "hints": [
+          "Not this one. Check each issue's line on the card.",
+          "Which line describes what happened here?"
+        ],
+        "why": "Spain's colonies began ruling themselves: a people's push to rule itself. That's Nationalism.",
+        "doc": {
+          "casefile": "C",
+          "n": 3
+        }
+      },
+      "evidence": "1808 · Spain gets a French king, and its colonies soon take over their own governments · Document 3 (Casefile C) · Nationalism",
+      "after": "Copy the evidence card into box 3."
     },
     {
       "id": "g4-vienna-1815",
@@ -164,14 +230,29 @@
           ]
         }
       },
-      "after": "Austria takes back Lombardy and gets Venice too. The old Republic of Venice never comes back. The trail has gone cold. But you can't wind back an idea."
+      "issue": "Abuse of Power",
+      "question": {
+        "stem": "Which enduring issue does this stop show?",
+        "options": [
+          "Abuse of Power",
+          "Population and Migration",
+          "Scientific and Technological Change"
+        ],
+        "answer": 0,
+        "hints": [
+          "Not this one. Check each issue's line on the card.",
+          "Which line describes what happened here?"
+        ],
+        "why": "The winners redrew the map to serve themselves. That's Abuse of Power."
+      },
+      "after": "Austria takes back Lombardy and gets Venice too. The trail has gone cold."
     },
     {
       "id": "g5-piedmont-1846",
       "place": "Piedmont, Italy",
       "year": "1846",
       "trail": "stirring",
-      "story": "In 1846, Camillo di Cavour, a nobleman from Piedmont, writes that Italians must silence the small questions that divide them. The idea the Timekeeper buried in Vienna is back: people who share a language and a history should rule themselves. That's nationalism.",
+      "story": "In 1846, Camillo di Cavour of Piedmont writes that Italians must silence the small questions that divide them. The idea the Timekeeper buried in Vienna is back.",
       "clue": {
         "text": "Open the Atlas: The Unification of Italy, 1815–1870.",
         "tool": "atlas",
@@ -193,27 +274,27 @@
           ]
         }
       },
-      "skill": "Thesis",
+      "skill": "Enduring Issue",
+      "issue": "Nationalism",
       "question": {
-        "stem": "Casefile C asks: What did more to build Italy and Germany: agreeing to unite, or “blood and iron”? Which sentence is the strongest thesis for Italy, using Document 5?",
+        "stem": "Which enduring issue does this stop show?",
         "options": [
-          "For Italy, agreeing to unite did more, because Cavour argued that Italians had to silence the petty questions that divide them.",
-          "Cavour wanted Italy to be glorious and powerful.",
-          "Cavour wrote Document 5 in 1846.",
-          "Cavour uses the word emancipation."
+          "Nationalism",
+          "Environmental Crisis",
+          "Scarcity"
         ],
         "answer": 0,
         "hints": [
-          "A thesis answers the question, and someone could argue with it.",
-          "Which one picks a side?"
+          "Not this one. Check each issue's line on the card.",
+          "Which line describes what happened here?"
         ],
-        "why": "The first answer picks a side and gives a reason; the other three only repeat Document 5. Strongest thesis doesn't mean the only answer: Italy also went to war in 1859, 1860, 1866 and 1870.",
+        "why": "Cavour wants Italians loyal to one nation, ruling itself. That's Nationalism.",
         "doc": {
           "casefile": "C",
           "n": 5
         }
       },
-      "evidence": "1846 · Cavour: silence what divides Italians · Document 5 (Casefile C)"
+      "evidence": "1846 · Cavour: silence what divides Italians · Document 5 (Casefile C) · Nationalism"
     },
     {
       "id": "g6-berlin-1862",
@@ -246,34 +327,34 @@
           ]
         }
       },
-      "skill": "Explanation",
+      "skill": "Enduring Issue",
+      "issue": "Nationalism",
       "question": {
-        "stem": "Document 6 (adapted) says the goal will be achieved “by blood and iron.” Which explanation best shows what that evidence means?",
+        "stem": "Which enduring issue does this stop show?",
         "options": [
-          "This shows he believed war and military strength, not democracy, would unify Germany.",
-          "This shows he wanted Germany to stay divided.",
-          "This shows he trusted voting to unite Germany.",
-          "This shows he planned to sell iron to other countries."
+          "Nationalism",
+          "Cultural Exchange and Diffusion",
+          "Scarcity"
         ],
         "answer": 0,
         "hints": [
-          "What does he say will NOT reach the goal?",
-          "What could blood and iron stand for?"
+          "Not this one. Check each issue's line on the card.",
+          "Which line describes what happened here?"
         ],
-        "why": "His actual words were “iron and blood,” and he meant war: Prussia fought Denmark, Austria and France, and in 1871 the German Empire was proclaimed.",
+        "why": "Bismarck's goal is one Germany ruling itself. That's Nationalism.",
         "doc": {
           "casefile": "C",
           "n": 6
         }
       },
-      "evidence": "1862 · Bismarck: blood and iron, not democracy · Document 6 (Casefile C)"
+      "evidence": "1862 · Bismarck: blood and iron, not democracy · Document 6 (Casefile C) · Nationalism"
     },
     {
       "id": "g7-balkans-1912",
       "place": "The Balkans",
       "year": "1912",
       "trail": "hot",
-      "story": "October 1912. The Balkan states are about to go to war with the Ottoman Empire, and Europe's great powers are trying to hold the lid on. The Timekeeper was here minutes ago.",
+      "story": "October 1912. The Balkan states are about to fight the Ottoman Empire while Europe's great powers try to hold the lid on. He was here minutes ago.",
       "clue": {
         "text": "Open the Atlas: The peoples of Austria-Hungary, 1911.",
         "tool": "atlas",
@@ -307,13 +388,13 @@
         }
       },
       "skill": "Enduring Issue",
+      "issue": "Conflict",
       "question": {
-        "stem": "Which enduring issue does Document 8 best show?",
+        "stem": "Which enduring issue does this stop show?",
         "options": [
           "Conflict",
           "Economic Development",
-          "Cultural Exchange and Diffusion",
-          "Population and Migration"
+          "Cultural Exchange and Diffusion"
         ],
         "answer": 0,
         "hints": [
@@ -326,7 +407,7 @@
           "n": 8
         }
       },
-      "evidence": "1912 · BALKAN TROUBLES about to boil over · Document 8 (Casefile C)",
+      "evidence": "1912 · BALKAN TROUBLES about to boil over · Document 8 (Casefile C) · Conflict",
       "nearMiss": "You just missed him. He left a map open on the table: the peoples of Austria-Hungary. Bosnia is circled."
     }
   ],
@@ -339,33 +420,30 @@
     "6 · Once more, if you have time. On the test you'll need three documents."
   ],
   "final": {
-    "prompt": "Which enduring issue shows up at three of your stops? Type its name from the Six Umbrellas card.",
+    "prompt": "Check your tally. Which enduring issue shows up at three of your stops? Type its name.",
     "key_words": [
       "nationalism",
-      "conflict",
       "nationalisim",
       "nationlism",
       "nationalsim",
       "natonalism",
-      "nationalizm",
-      "the conflict",
-      "conflicts",
-      "confilct",
-      "conflit"
+      "nationalizm"
     ],
     "hints": [
-      "Look at your evidence cards. Which issue shows up at three of them?",
+      "Check your tally. Which issue has three stops?",
       "Open the Six Umbrellas card for the issue's name."
     ],
     "after_by_answer": {
-      "nationalism": "That's it: Nationalism. You'll find it at stops 3, 5 and 6. Now write your case on your Case File, steps 1 to 6.",
-      "conflict": "That's it: Conflict. You'll find it at stops 2, 6 and 7. Now write your case on your Case File, steps 1 to 6."
+      "nationalism": "That's it: Nationalism, at stops 3, 5 and 6. Nationalism is a people's loyalty to their own nation, and the push for that nation to rule itself. Now write your case on your Case File, steps 1 to 6."
     },
     "wrong_feedback": {
       "identity and nationalism": "That's the umbrella's title. Type the issue under it.",
       "identity & nationalism": "That's the umbrella's title. Type the issue under it.",
       "unification": "That's what happened. Which enduring issue drove it?",
-      "war": "Close. What's its name on the card?"
+      "war": "Close. What's its name on the card?",
+      "conflict": "Conflict shows up at one stop. Check your tally.",
+      "the conflict": "Conflict shows up at one stop. Check your tally.",
+      "abuse of power": "That one shows up at two stops. Check your tally."
     },
     "pill": {
       "label": "Six Umbrellas card",
@@ -379,7 +457,7 @@
       "He wound the clocks back at Vienna, and the idea came back anyway.",
       "His trail ends in Sarajevo, in Bosnia. The Timekeeper is gone, and he never made history happen. People did.",
       "On June 28, 1914, a Bosnian Serb nationalist shot the heir to Austria-Hungary's throne in Sarajevo.",
-      "A month later, Austria-Hungary declared war on Serbia, and Europe went to war. That's World War I, in Unit 10.5.",
+      "A month later, Europe was at war: World War I, in Unit 10.5.",
       "You can't wind back an idea. You can only follow where it goes."
     ],
     "photo": null
@@ -426,5 +504,5 @@
     "line": "Follow the trail from Paris to Sarajevo. Every tool you need is in the Arena."
   },
   "teacher": "Call “pencils: Write the Case” at minute 30, wherever pairs are.",
-  "_built": "2026-10-08 by Will (global10r-curriculum) · skills/chase/build_chase_pack_102.py from chase_words_102.py"
+  "_built": "2026-10-14 by Will (global10r-curriculum) · v7, the issue taps · skills/chase/build_chase_pack_102.py from chase_words_102.py"
 }
