@@ -184,7 +184,7 @@ function Meter({ meter, n }) {
   )
 }
 
-// The tally (Will's Timekeeper v7, BK 11:46 / 11:50): each answered stop's `issue` (any tag the pack
+// The tally (Will's Timekeeper v7, BK 11:46 / 11:50): each answered stop's `issue` or `principle` (any tag the pack
 // uses: an enduring issue, a civic principle), counted. Shown under the trail and on the last question,
 // so "Check your tally" has something to check. A count of stops per idea, never a score.
 function Tally({ tally, ev }) {
@@ -329,7 +329,8 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
   const coldMax = Math.max(0, (pack.cold || []).length - 1)
   const cool = () => setS(x => ({ ...x, cold: Math.min(coldMax, x.cold + 1) }))
   const warm = x => Math.max(0, x.cold - 1)
-  const award = (x, clean) => (pack.meter && doorAct.has(beats[x.b]?.ai)) ? (x.meter || 0) + (clean ? pack.meter.first_try : pack.meter.after_hint) : (x.meter || 0)
+  // after_miss is read as after_hint (Sam's NINE STATES taps draft names it so, 10/14); meter.door: false keeps the door off the meter.
+  const award = (x, clean, isDoor) => (pack.meter && doorAct.has(beats[x.b]?.ai) && !(isDoor && pack.meter.door === false)) ? (x.meter || 0) + (clean ? pack.meter.first_try : (pack.meter.after_hint ?? pack.meter.after_miss ?? 0)) : (x.meter || 0)
   const next = () => setS(x => arrive(x, x.b + 1))
   const [key, setKey] = useState(''), [bad, setBad] = useState(false)
   const tab = stop ? `${W.stop(beat.n)} · ${stop.place} · ${stop.year}` : door ? `${door.place} · ${door.year}` : ''
@@ -372,7 +373,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           <Ask key={`a${s.b}`} ask={stop.clue.ask} onMiss={cool}
                onRight={() => setS(x => stop.question ? { ...x, step: 'question' }
                  // A map-only stop may still hand out an evidence card (Will v6, stops 1-3): it lands in its box now.
-                 : { ...x, step: 'card', ev: (stop.evidence || stop.issue) ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence || null, doc: null, issue: stop.issue || null }] : x.ev })} />
+                 : { ...x, step: 'card', ev: (stop.evidence || stop.issue || stop.principle) ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence || null, doc: null, issue: stop.issue || stop.principle || null }] : x.ev })} />
         </section>}
 
         {stop && stop.question && s.step === 'question' && <section className="chase-card">
@@ -380,7 +381,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           {/* A question may show more than one document (question.docs, as a door does; 2026-10-08 for Will's stop 2). */}
           {(stop.question.docs || [stop.question.doc]).filter(Boolean).map((d, i) => <Doc key={i} doc={docs[`${d.casefile}/${d.n}`]} cf={d.casefile} />)}
           <Ask key={`q${s.b}`} ask={stop.question} onMiss={cool} tag={stop.skill}
-               onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: (stop.evidence || stop.issue) ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence || null, doc: (stop.question.docs || [stop.question.doc])[0] || null, issue: stop.issue || null }] : x.ev }))} />
+               onRight={({ clean }) => setS(x => ({ ...x, step: 'card', cold: warm(x), meter: award(x, clean), ev: (stop.evidence || stop.issue || stop.principle) ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, n: beat.n, text: stop.evidence || null, doc: (stop.question.docs || [stop.question.doc])[0] || null, issue: stop.issue || stop.principle || null }] : x.ev }))} />
         </section>}
 
         {stop && s.step === 'card' && <section className="chase-card">
@@ -398,7 +399,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           {door.text && <p className="chase-read">{door.text}</p>}
           {(door.docs || []).map((d, i) => <Doc key={i} doc={docs[`${d.casefile}/${d.n}`]} cf={d.casefile} />)}
           <Ask key={`d${s.b}`} ask={door.question} onMiss={cool}
-               onRight={({ clean }) => setS(x => ({ ...x, step: 'doorcard', cold: warm(x), meter: award(x, clean), ev: door.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, text: door.evidence }] : x.ev }))} />
+               onRight={({ clean }) => setS(x => ({ ...x, step: 'doorcard', cold: warm(x), meter: award(x, clean, true), ev: door.evidence ? [...x.ev.filter(e => e.b !== x.b), { b: x.b, text: door.evidence }] : x.ev }))} />
         </section>}
 
         {door && s.step === 'doorcard' && <section className="chase-card">
