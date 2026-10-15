@@ -1298,6 +1298,11 @@
               "B": "gold"
             }
           },
+          "chase": {
+            "content_ref": "content/chase-us11r-11.2.json",
+            "published": true,
+            "_note": "Josh, 2026-10-14. NINE STATES, built by scripts/packs/nine_states_pack.py from Sam's words (Danny cleared 08:28). Class play Wed 10/28. No room card until Sam sends its title and line; the link #/us/chase/11.2 works once pushed (BK's call in the proof)."
+          },
           "activities": [
             {
               "type": "stimulus",

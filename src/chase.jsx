@@ -285,7 +285,7 @@ function FinalAsk({ pack, daPack, onRight, onMiss, calloutHref }) {
 // The pack as one run of beats. A pack is either { stops, door? } (one act) or { acts: [{ title,
 // intro, stops, door? }] }. An act after the first opens with its own screen (NINE STATES: the
 // pardon, then the trail west). A door is a stop with two documents and no clue: its question is
-// the last word on the act's meter, then the act's result (door.ratified, or door.short with {n}).
+// the last word on the act's meter, then the act's result (door.ratified, or door.short with {n}; door.short_one when n is 1, Sam 10/13).
 export function beatsOf(pack) {
   const acts = Array.isArray(pack.acts) && pack.acts.length ? pack.acts : [{ stops: pack.stops || [], door: pack.door || null }]
   const out = []
@@ -408,7 +408,7 @@ export function ChaseScreen({ course, courseKey, unit, pack, daPack, ScreenHeade
           {door.question?.why && <p className="chase-read"><b>{W.why}.</b> {door.question.why}</p>}
           {!goal || (s.meter || 0) >= goal
             ? (door.ratified || []).map((l, i) => i === 0 && (door.ratified.length > 1) ? <div key={i} className="chase-stamp chase-stamp-door">{l}</div> : <p key={i} className="chase-read">{l}</p>)
-            : door.short && <p className="chase-read">{String(door.short).replace('{n}', String(goal - (s.meter || 0)))}</p>}
+            : door.short && <p className="chase-read">{(goal - (s.meter || 0) === 1 && door.short_one) ? door.short_one : String(door.short).replace('{n}', String(goal - (s.meter || 0)))}</p>}
           <div className="chase-row"><button type="button" className="chase-btn" onClick={next}>{s.b + 1 >= beats.length ? W.toWarrant : W.next}</button></div>
         </section>}
 
