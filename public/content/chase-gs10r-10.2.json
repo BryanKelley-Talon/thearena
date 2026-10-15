@@ -14,7 +14,7 @@
   },
   "intro": [
     "Someone is winding the clocks back.",
-    "The Timekeeper wants the world back the way it was in 1788, before France's revolution spread new ideas everywhere.",
+    "The Timekeeper wants the world back the way it was in 1788, before France's revolution spread new ideas across Europe and the Americas.",
     "Follow his trail. Every place, date and document in this chase is real. He isn't.",
     "At every stop, name the enduring issue it shows. At the end, find the one three stops share, and prove it."
   ],
@@ -64,26 +64,26 @@
           ]
         }
       },
-      "issue": "Abuse of Power",
+      "issue": "Inequality",
       "question": {
         "stem": "Which enduring issue does this stop show?",
         "options": [
-          "Abuse of Power",
-          "Cooperation",
-          "Scarcity"
+          "Inequality",
+          "Scarcity",
+          "Environmental Crisis"
         ],
         "answer": 0,
         "hints": [
           "Not this one. Check each issue's line on the card.",
           "Which line describes what happened here?"
         ],
-        "why": "Abuse of Power is authority used to harm people. The Declaration makes resisting oppression a right.",
+        "why": "Inequality is when some groups get fewer rights, chances or resources than others. The Declaration says men are born equal in rights, so birth no longer decides.",
         "doc": {
           "casefile": "B",
           "n": 3
         }
       },
-      "evidence": "1789 · Article 2: liberty, property, security and resistance to oppression · Document 3 (Casefile B) · Abuse of Power",
+      "evidence": "1789 · Article 1: men are born and remain free and equal in rights · Document 3 (Casefile B) · Inequality",
       "after": "Copy the evidence card into box 1."
     },
     {
@@ -230,11 +230,11 @@
           ]
         }
       },
-      "issue": "Abuse of Power",
+      "issue": "Cooperation",
       "question": {
         "stem": "Which enduring issue does this stop show?",
         "options": [
-          "Abuse of Power",
+          "Cooperation",
           "Population and Migration",
           "Scientific and Technological Change"
         ],
@@ -243,7 +243,7 @@
           "Not this one. Check each issue's line on the card.",
           "Which line describes what happened here?"
         ],
-        "why": "The winners redrew the map to serve themselves. That's Abuse of Power."
+        "why": "Cooperation is when groups or countries work together toward a shared goal. The winners redraw Europe's map together, and agree to keep meeting to keep the peace."
       },
       "after": "Austria takes back Lombardy and gets Venice too. The trail has gone cold."
     },
@@ -341,13 +341,13 @@
           "Not this one. Check each issue's line on the card.",
           "Which line describes what happened here?"
         ],
-        "why": "Bismarck's goal is one Germany ruling itself. That's Nationalism.",
+        "why": "Bismarck's goal is one Germany, united under Prussia's king. That's Nationalism.",
         "doc": {
           "casefile": "C",
           "n": 6
         }
       },
-      "evidence": "1862 · Bismarck: blood and iron, not democracy · Document 6 (Casefile C) · Nationalism"
+      "evidence": "1862 · Bismarck: blood and iron, not democracy · Document 6 (Casefile C, adapted) · Nationalism"
     },
     {
       "id": "g7-balkans-1912",
@@ -420,7 +420,7 @@
     "6 · Once more, if you have time. On the test you'll need three documents."
   ],
   "final": {
-    "prompt": "Check your tally. Which enduring issue shows up at three of your stops? Type its name.",
+    "prompt": "Check YOUR ISSUES. Which enduring issue shows up at three of your stops? Type its name.",
     "key_words": [
       "nationalism",
       "nationalisim",
@@ -430,7 +430,7 @@
       "nationalizm"
     ],
     "hints": [
-      "Check your tally. Which issue has three stops?",
+      "Check YOUR ISSUES. Which issue has three stops?",
       "Open the Six Umbrellas card for the issue's name."
     ],
     "after_by_answer": {
@@ -440,10 +440,13 @@
       "identity and nationalism": "That's the umbrella's title. Type the issue under it.",
       "identity & nationalism": "That's the umbrella's title. Type the issue under it.",
       "unification": "That's what happened. Which enduring issue drove it?",
-      "war": "Close. What's its name on the card?",
-      "conflict": "Conflict shows up at one stop. Check your tally.",
-      "the conflict": "Conflict shows up at one stop. Check your tally.",
-      "abuse of power": "That one shows up at two stops. Check your tally."
+      "war": "Conflict shows up at one stop. Check YOUR ISSUES.",
+      "conflict": "Conflict shows up at one stop. Check YOUR ISSUES.",
+      "the conflict": "Conflict shows up at one stop. Check YOUR ISSUES.",
+      "abuse of power": "That one isn't in YOUR ISSUES. Check them again.",
+      "inequality": "Inequality shows up at one stop. Check YOUR ISSUES.",
+      "cooperation": "Cooperation shows up at one stop. Check YOUR ISSUES.",
+      "human rights violations": "That one shows up at one stop. Check YOUR ISSUES."
     },
     "pill": {
       "label": "Six Umbrellas card",
@@ -504,5 +507,5 @@
     "line": "Follow the trail from Paris to Sarajevo. Every tool you need is in the Arena."
   },
   "teacher": "Call “pencils: Write the Case” at minute 30, wherever pairs are.",
-  "_built": "2026-10-14 by Will (global10r-curriculum) · v7, the issue taps · skills/chase/build_chase_pack_102.py from chase_words_102.py"
+  "_built": "2026-10-15 by Will (global10r-curriculum) · v9 · skills/chase/build_chase_pack_102.py from chase_words_102.py"
 }
