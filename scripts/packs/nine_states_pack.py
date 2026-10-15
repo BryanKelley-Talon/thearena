@@ -1,6 +1,6 @@
 # Builds the NINE STATES chase pack from Sam's words file, read in place, never retyped (Josh, 2026-10-14).
-# Source: us11r-curriculum/WORK/Unit_02/nine-states-taps-2026-10-14/nine_states_words_taps_v3.py (Danny CLEAN 10/15 13:41, md5 ba771521...),
-# the same bytes Sam now keeps at skills/arena-chase/nine_states_words.py. (Was the 10/14 words file, md5 c98913ed..., cleared 08:28.)
+# Source: us11r-curriculum/skills/arena-chase/nine_states_words.py (Sam 10/15, md5 8fc464dc...: taps v3 (ba771521..., Danny CLEAN 13:41)
+# plus FINAL["pill"] and one paper-only Case File line). Earlier: the 10/14 words file, md5 c98913ed..., cleared 08:28.
 # v3 is the taps shape (the Timekeeper's fix): a principle tap at every stop (stop.issue), TALLY, and a final kids earn from the tally.
 # Every student-facing value comes from that file; this script only reshapes it into the engine's fields (pack shape, Josh 10/7).
 # Usage: python3 scripts/packs/nine_states_pack.py <path/to/nine_states_words.py> > public/content/chase-us11r-11.2.json
@@ -43,7 +43,7 @@ pack = {
   "tally": w.TALLY,
   "final": {k: w.FINAL[k] for k in ("prompt", "key_words", "hints", "after_by_answer", "wrong_feedback", "wrong_default", "stamp") if k in w.FINAL},
   # The card button at the last door (BK 2026-10-15 14:08 "Add one"; 14:13 "yes" to the label in chat). It opens US Doc Assist 11.2's q4_card.
-  # Not in Sam's words file yet; it moves there when Sam next touches FINAL (pill.label).
+  # Sam's words file carries it from 10/15 15:11 (FINAL["pill"]); the fallback below is the same words.
 
   "end": {"photo": "content/chase-us11r-11.2-end.webp", "alt": w.GRAVE_ALT, "credit": w.END["credit"], "lines": w.END["lines"],
           "licence": {"name": "CC BY-SA 4.0", "sellable": False}},
