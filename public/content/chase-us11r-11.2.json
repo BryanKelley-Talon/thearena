@@ -1,5 +1,5 @@
 {
- "_built": "Josh, 2026-10-14, by scripts/packs/nine_states_pack.py from Sam's nine_states_words.py (md5 c98913ed408eef2124f7fa758c35a71a); Danny cleared 10/14 08:28 (three cold readers 10/13; 20 of 20 fixed or held on BK's word). Act I words BK 10/6 22:41; Act II and the final key BK 10/13 11:27; stamp PARDONED (call 2).",
+ "_built": "Josh, 2026-10-15, by scripts/packs/nine_states_pack.py from Sam's nine_states_words_taps_v3.py (md5 ba77152185b735de1a497dd223f5780d); Danny CLEAN 10/15 13:41 (taps v2 check 10/14 21:19: 13 items, last 2 closed in v3). Taps wording BK 10/14 20:54; Act I words BK 10/6 22:41; Act II BK 10/13 11:27; stamp PARDONED.",
  "id": "chase-us11r-11.2",
  "course": "us11r",
  "unit": "11.2",
@@ -11,16 +11,18 @@
   "portrait_src": "Daniel Shays and Job Shattuck, woodcut, 1787 · National Portrait Gallery, Smithsonian Institution · public domain (CC0)"
  },
  "intro": [
-  "February 1787, Massachusetts. Daniel Shays has disappeared into the snow, and the state wants him found.",
-  "Twelve years ago he fought for American independence. Now he's a wanted man. Follow his trail and find out how.",
-  "Every place, date and document in this chase is real."
+  "February 1787. Daniel Shays has vanished into the Massachusetts snow, and the state wants him found.",
+  "Twelve years ago he fought for independence. Follow his trail and find out how he became a wanted man.",
+  "At every stop, name the principle it shows. At the end, find the one three stops share.",
+  "Every place, date and document is real."
  ],
  "meter": {
   "label": "States that have ratified",
   "goal": 9,
   "first_try": 2,
   "after_hint": 1,
-  "line": "Every stop is part of the case for a stronger government. Right on the first try: 2 states. Right after a hint: 1. Nine states, and the Constitution is ratified."
+  "door": false,
+  "line": "Right principle on the first try: 2 states. After a miss: 1. Nine states ratify the Constitution."
  },
  "cold": [
   "The trail is warm.",
@@ -36,9 +38,9 @@
      "id": "s1-debt-1765",
      "place": "Massachusetts",
      "year": "1763–1765",
-     "story": "Daniel Shays is a teenager in Massachusetts when Britain wins its war with France and is left with the bill.",
+     "story": "Shays is a Massachusetts teenager when Britain wins its war with France and is left with the bill.",
      "clue": {
-      "text": "Start where the bill started. Open the Atlas: The Proclamation Line of 1763.",
+      "text": "Open the Atlas: The Proclamation Line of 1763.",
       "tool": "atlas",
       "link": "11.2-A-02",
       "ask": {
@@ -47,8 +49,7 @@
        "options": [
         "Land the Crown reserved for Native nations",
         "Land the colonies could sell to settlers",
-        "Land Spain held",
-        "Land France kept after the war"
+        "Land Spain held"
        ],
        "answer": 0,
        "hints": [
@@ -58,43 +59,42 @@
       }
      },
      "question": {
-      "stem": "Based on Document 2, which historical circumstance led Britain to tax the colonies in 1765?",
+      "stem": "Which principle does this stop show?",
       "type": "choose",
       "options": [
-       "Britain owed a huge debt from a war fought to protect the colonies.",
-       "The colonists asked Parliament to help pay for their governments.",
-       "France demanded payment from Britain after the war.",
-       "The colonies had no governments of their own."
+       "Representative Government",
+       "Judicial Review",
+       "Checks and Balances"
       ],
       "answer": 0,
       "hints": [
-       "Find the word “debt” in Document 2.",
-       "Who was the war fought to protect?"
+       "Not this one. Check each principle's line on the card.",
+       "Which line describes what happened here?"
       ],
-      "why": "Whately says Britain carries a huge national debt, most of it from a war fought to protect the colonies. The debt is the circumstance; the tax came next. Keep an eye on debt. It follows Shays all the way to 1786.",
+      "why": "Britain, deep in war debt, taxed the colonies to pay for defending them (Document 2), but colonists elected no one to Parliament: Representative Government.",
       "doc": {
        "casefile": "A",
        "n": 2
       }
      },
-     "evidence": "1763–1765 · War debt leads Britain to tax the colonies · Document 2"
+     "evidence": "1765 · Britain taxes the colonies to pay for defending them · Document 2 · Representative Government",
+     "issue": "Representative Government"
     },
     {
      "id": "s2-boston-1775",
      "place": "Boston",
      "year": "1775",
-     "story": "In April 1775, after the fighting at Lexington and Concord, Shays's militia company marches to Boston. That June he fights at Bunker Hill.",
+     "story": "In 1775 Shays's militia company marches to Boston. That June he fights at Bunker Hill.",
      "clue": {
-      "text": "Follow him to Boston. Open the Atlas: Boston, 1775.",
+      "text": "Open the Atlas: Boston, 1775.",
       "tool": "atlas",
       "link": "11.2-A-03",
       "ask": {
-       "prompt": "Boston was almost an island. How is it joined to the mainland?",
+       "prompt": "How is Boston joined to the mainland?",
        "type": "choose",
        "options": [
         "By a thin strip of land called Boston Neck",
         "By a long bridge to Cambridge",
-        "By Castle Island",
         "It isn't joined at all"
        ],
        "answer": 0,
@@ -105,43 +105,42 @@
       }
      },
      "question": {
-      "stem": "Paul Revere made Document 4 in 1770 and sold copies of it. What was the most likely purpose of this engraving?",
+      "stem": "Which principle does this stop show?",
       "type": "choose",
       "options": [
-       "To turn colonists against the British soldiers",
-       "To show that the soldiers fired in self-defense",
-       "To record the event exactly as it happened",
-       "To ask Parliament to end the tax on tea"
+       "Individual Rights (civil liberties)",
+       "Federalism",
+       "Judicial Review"
       ],
       "answer": 0,
       "hints": [
-       "Look at how the soldiers and the crowd are drawn.",
-       "Who does the picture show as the victims?"
+       "Not this one. Check each principle's line on the card.",
+       "Which line describes what happened here?"
       ],
-      "why": "Revere drew the soldiers in a neat line, firing into the crowd. The picture took a side, and that's why it spread. Five years later, militia from all over Massachusetts, Shays's company among them, marched to Boston.",
+      "why": "Revere sold a one-sided picture of the 1770 shooting (Document 4). Freedom of the press protects it: Individual Rights.",
       "doc": {
        "casefile": "A",
        "n": 4
       }
      },
-     "evidence": "1770 · Revere's picture turns colonists against the soldiers · Document 4"
+     "evidence": "1770 · Revere sells a one-sided picture of the shooting · Document 4 · Individual Rights (civil liberties)",
+     "issue": "Individual Rights (civil liberties)"
     },
     {
      "id": "s3-saratoga-1777",
      "place": "Saratoga, New York",
      "year": "1776–1780",
-     "story": "Shays is made a captain in 1777 and fights at Saratoga. But the army can't pay him in full. He leaves the army in 1780, and, the story goes, he sells a sword the Marquis de Lafayette gave him to help pay his debts.",
+     "story": "Captain Shays fights at Saratoga in 1777, but the army can't pay him in full. He leaves in 1780.",
      "clue": {
-      "text": "Find what he was fighting for. Open the Threads map.",
+      "text": "Open the Threads map.",
       "tool": "threads",
       "link": "s-1776-declaration",
       "ask": {
-       "prompt": "Find the stop from July 1776. What is it called?",
+       "prompt": "What is the July 1776 stop called?",
        "type": "choose",
        "options": [
         "“All men are created equal”",
         "“Remember the ladies”",
-        "The Articles of Confederation",
         "Join, or Die"
        ],
        "answer": 0,
@@ -152,32 +151,32 @@
       }
      },
      "question": {
-      "stem": "Document 8 says people have “certain rights that cannot be taken away.” Which principle from your Civic Principles card is this?",
+      "stem": "Which principle does this stop show?",
       "type": "choose",
       "options": [
        "Natural Rights",
        "Federalism",
-       "Judicial Review",
-       "Separation of Powers"
+       "Judicial Review"
       ],
       "answer": 0,
       "hints": [
-       "Where do these rights come from, according to Document 8?",
-       "Rights you're born with have a name on your card."
+       "Not this one. Check each principle's line on the card.",
+       "Which line describes what happened here?"
       ],
-      "why": "Rights you're born with, that no government gives and no government can take away, are natural rights. Shays fought under those words. By 1780 he couldn't even get paid for it.",
+      "why": "Document 8 says people have “certain rights that cannot be taken away.” Rights you're born with are Natural Rights.",
       "doc": {
        "casefile": "A",
        "n": 8
       }
      },
-     "evidence": "1776 · Rights no government can take away · Document 8"
+     "evidence": "1776 · Rights no government can take away · Document 8 · Natural Rights",
+     "issue": "Natural Rights"
     },
     {
      "id": "s4-articles-1781",
      "place": "The thirteen states",
      "year": "1781",
-     "story": "Why wasn't Shays paid? Congress never had the power to tax. That weakness was written into their first plan of government, which took effect in 1781.",
+     "story": "Why wasn't Shays paid? The country's first plan of government gave Congress no power to tax.",
      "clue": {
       "text": "Open Doc Assist: Document 11.",
       "tool": "doc-assist",
@@ -188,8 +187,7 @@
        "options": [
         "Article VIII",
         "Article II",
-        "Article V",
-        "Article XIII"
+        "Article V"
        ],
        "answer": 0,
        "hints": [
@@ -199,34 +197,34 @@
       }
      },
      "question": {
-      "stem": "Based on Document 11, why did the national government have trouble paying its soldiers?",
+      "stem": "Which principle does this stop show?",
       "type": "choose",
       "options": [
-       "Only the state legislatures could set and collect taxes.",
-       "Congress spent its money on a navy.",
-       "Each state had two votes in Congress.",
-       "The Articles let Congress tax only foreign trade."
+       "Federalism",
+       "Separation of Powers",
+       "Natural Rights"
       ],
       "answer": 0,
       "hints": [
-       "Who collects the taxes in Article VIII?",
-       "If Congress can't collect money, can it pay anyone?"
+       "Not this one. Check each principle's line on the card.",
+       "Which line describes what happened here?"
       ],
-      "why": "Article VIII leaves the taxes to “the legislatures of the several states.” Congress could ask the states for money, but it couldn't collect any. No money meant no pay for soldiers like Shays.",
+      "why": "Articles II and VIII leave the states their power and their taxes (Document 11). Splitting power between nation and states is Federalism.",
       "doc": {
        "casefile": "B",
        "n": 11
       }
      },
-     "evidence": "1781 · Congress can't collect taxes, so it can't pay its soldiers · Document 11"
+     "evidence": "1781 · The states keep the power to tax · Document 11 · Federalism",
+     "issue": "Federalism"
     },
     {
      "id": "s5-shays-1786",
-     "place": "Springfield and Petersham",
+     "place": "Springfield",
      "year": "1786–1787",
-     "story": "Back home, Massachusetts taxes its farmers hard, and the courts take farms for unpaid debts. In 1786, armed farmers close the courts. In January 1787, Shays and about 1,500 men march on the arsenal at Springfield and are driven off. In February, the state's army surprises them at Petersham in a snowstorm.",
+     "story": "Massachusetts taxes farmers hard, and courts take farms for debt. In 1786 armed farmers close the courts. In January 1787 Shays and about 1,500 men march on the Springfield arsenal and are driven off.",
      "clue": {
-      "text": "Open the Threads map. Follow the line from the Articles of Confederation to the Constitution.",
+      "text": "Open the Threads map. Follow the line from the Articles to the Constitution.",
       "tool": "threads",
       "link": "s-1781-articles",
       "ask": {
@@ -235,8 +233,7 @@
        "options": [
         "Cause and Effect",
         "Similarity/Difference",
-        "Turning Point",
-        "There's no line between them"
+        "Turning Point"
        ],
        "answer": 0,
        "hints": [
@@ -246,33 +243,33 @@
       }
      },
      "question": {
-      "stem": "In November 1786, after farmers closed the courts, Washington writes about “these disorders” in Document 12. What did he think they showed?",
+      "stem": "Which principle does this stop show?",
       "type": "choose",
       "options": [
-       "The national government was too weak to keep order.",
-       "The farmers were secretly working for Britain.",
-       "Massachusetts needed a king of its own.",
-       "The states should leave the Union."
+       "Rule of Law",
+       "Judicial Review",
+       "Equal Protection"
       ],
       "answer": 0,
       "hints": [
-       "Find the sentence with the word “weakness.”",
-       "Read his question that starts “If no power exists…”"
+       "Not this one. Check each principle's line on the card.",
+       "Which line describes what happened here?"
       ],
-      "why": "Washington asks, “What stronger evidence can be given of the weakness of our governments than these disorders?” Shays' Rebellion scared the country's leaders into acting.",
+      "why": "If no power can stop the disorders, Washington writes, no one's life, liberty or property is safe (Document 12): Rule of Law.",
       "doc": {
        "casefile": "B",
        "n": 12
       }
      },
-     "evidence": "1786–1787 · Shays' Rebellion shows the government is too weak · Document 12",
+     "evidence": "1786–1787 · Farmers close the courts · Document 12 · Rule of Law",
+     "issue": "Rule of Law",
      "nearMiss": "You just missed him. Shays has escaped north, to Vermont."
     },
     {
      "id": "s6-philadelphia-1787",
      "place": "Philadelphia",
      "year": "1787",
-     "story": "While Shays hides in Vermont, delegates from the states meet in Philadelphia that summer and write a new plan of government.",
+     "story": "While Shays hides in Vermont, delegates meet in Philadelphia to write a new plan of government.",
      "clue": {
       "text": "Open Doc Assist: Document 14.",
       "tool": "doc-assist",
@@ -283,8 +280,7 @@
        "options": [
         "Section 8",
         "Section 1",
-        "Section 2",
-        "Section 3"
+        "Section 2"
        ],
        "answer": 0,
        "hints": [
@@ -294,47 +290,46 @@
       }
      },
      "question": {
-      "stem": "Which problem from the Articles of Confederation did Article I, Section 8 fix?",
+      "stem": "Which principle does this stop show?",
       "type": "choose",
       "options": [
-       "Congress could not collect taxes.",
-       "Citizens had no freedom of speech.",
-       "The Supreme Court had too much power.",
-       "Congress had too many members."
+       "Federalism",
+       "Natural Rights",
+       "Due Process"
       ],
       "answer": 0,
       "hints": [
-       "Think back to Article VIII at the 1781 stop.",
-       "What couldn't Congress do under the Articles?"
+       "Not this one. Check each principle's line on the card.",
+       "Which line describes what happened here?"
       ],
-      "why": "Section 8 says Congress can “lay and collect taxes … to pay the debts.” A Congress that can collect money can pay its soldiers and its debts. Before, it could only ask the states. After, it could collect.",
+      "why": "Section 8 lets Congress “lay and collect taxes” (Document 14). Now Congress can tax too, not just the states: Federalism.",
       "doc": {
        "casefile": "B",
        "n": 14
       }
      },
-     "evidence": "1787 · The new Congress can lay and collect taxes · Document 14"
+     "evidence": "1787 · Now Congress can tax too, not just the states · Document 14 · Federalism",
+     "issue": "Federalism"
     }
    ],
    "door": {
     "place": "The states",
     "year": "1787–1788",
-    "text": "The Constitution goes to the states. It needs nine to ratify. In newspapers across the states, both sides are arguing.",
+    "text": "The Constitution needs nine states to ratify. Both sides argue in the newspapers.",
     "question": {
      "stem": "Hamilton (Document 13) and an Antifederalist (Document 16) disagree. What are they arguing about?",
      "type": "choose",
      "options": [
       "How much power the national government should have",
       "Whether to declare independence from Britain",
-      "Whether to end the slave trade",
-      "Whether to go to war with France"
+      "Whether to end the slave trade"
      ],
      "answer": 0,
      "hints": [
       "Hamilton says the states' failures stopped “all the wheels of the national government.”",
       "The Antifederalist fears “unbounded” power."
      ],
-     "why": "Hamilton says the states' failures stopped “all the wheels of the national government.” The Antifederalist fears “undefined, unbounded and immense power.” It's the fight this whole unit is about: too weak, or too strong?",
+     "why": "Too weak, or too strong? That fight decides the vote.",
      "docs": [
       {
        "casefile": "B",
@@ -358,8 +353,8 @@
     ],
     "ratified": [
      "RATIFIED.",
-     "On June 21, 1788, New Hampshire becomes the ninth state. The Constitution is ratified. The new government starts work in 1789.",
-     "And Daniel Shays? He's pardoned that same year. The rebellion named for him helped push the country's leaders to write it."
+     "June 21, 1788: New Hampshire is the ninth state. The Constitution is ratified.",
+     "And Shays? He's pardoned that same year."
     ],
     "short": "Ratified anyway: in June 1788, New Hampshire became the ninth state. Your pair was {n} states short of nine. History didn't wait, but your case for it was weaker.",
     "short_one": "Ratified anyway: in June 1788, New Hampshire became the ninth state. Your pair was 1 state short of nine. History didn't wait, but your case for it was weaker."
@@ -368,27 +363,26 @@
   {
    "title": "Act II · The new government's first tests, 1788–1825",
    "intro": [
-    "Pardoned in 1788, Daniel Shays is out of the fight. He later moves to western New York.",
-    "The new government isn't out of the fight. It can collect taxes now. The question is how far its power reaches.",
-    "Two more stops. No meter this time: just the trail."
+    "Pardoned in 1788, Shays later moves to western New York.",
+    "The new government can tax now. How far does its power reach?",
+    "Two more stops. No meter: just the trail."
    ],
    "stops": [
     {
      "id": "s7-sedition-1798",
      "place": "Philadelphia",
      "year": "1798",
-     "story": "Washington warned the country about political parties in 1796. Two years later, with war with France feared, the party in power passes a law against criticizing the government.",
+     "story": "In 1798, fearing war with France, the party in power makes some criticism of the government a crime.",
      "clue": {
       "text": "Open the Threads map. Follow the line from the Bill of Rights to the Sedition Act.",
       "tool": "threads",
       "link": "s-1791-bill-of-rights",
       "ask": {
-       "prompt": "The line's reason says the Sedition Act tests five words. Which ones?",
+       "prompt": "The line says the Sedition Act tests five words. Which ones?",
        "type": "choose",
        "options": [
         "“Congress shall make no law”",
         "“We the People”",
-        "“All men are created equal”",
         "“lay and collect taxes”"
        ],
        "answer": 0,
@@ -399,84 +393,110 @@
       }
      },
      "question": {
-      "stem": "Critics said the Sedition Act broke the First Amendment's promise of free speech and a free press. Which principle from your Civic Principles card is that?",
+      "stem": "Which principle does this stop show?",
       "type": "choose",
       "options": [
        "Individual Rights (civil liberties)",
        "Separation of Powers",
-       "Judicial Review",
-       "Representative Government"
+       "Judicial Review"
       ],
       "answer": 0,
       "hints": [
-       "Look at what Section 2 of Document 19 makes a crime: writing, printing, saying.",
-       "Which principle covers freedoms like speech and the press?"
+       "Not this one. Check each principle's line on the card.",
+       "Which line describes what happened here?"
       ],
-      "why": "Section 2 makes it a crime to write, print or say false and malicious things against the government. Critics said that broke the First Amendment's promise that Congress would make no law abridging freedom of speech or of the press. Many of the people charged were newspaper editors and printers on the other side.",
+      "why": "Document 19 makes some criticism of the government a crime. Critics said it broke the promise of free speech and press: Individual Rights.",
       "doc": {
        "casefile": "C",
        "n": 19
       }
      },
-     "evidence": "1798 · The Sedition Act tests freedom of speech and the press · Document 19"
+     "evidence": "1798 · A law against criticizing the government · Document 19 · Individual Rights (civil liberties)",
+     "issue": "Individual Rights (civil liberties)"
     },
     {
      "id": "s8-marshall-1819",
      "place": "Washington, D.C.",
-     "year": "1803–1819",
-     "story": "The Supreme Court, led by Chief Justice John Marshall, settles two big questions: who decides what the Constitution means (1803), and how far the national government's power reaches (1819).",
+     "year": "1819",
+     "story": "Chief Justice John Marshall's Supreme Court decides how far the national government's power reaches.",
      "clue": {
-      "text": "Open the Threads map. Follow the line from Marbury v. Madison to McCulloch v. Maryland.",
-      "tool": "threads",
-      "link": "s-1803-marbury",
+      "text": "Open Doc Assist: Document 21.",
+      "tool": "doc-assist",
+      "link": "C/21",
       "ask": {
-       "prompt": "What kind of connection is that line?",
+       "prompt": "Marshall says the power to tax involves the power to do what?",
        "type": "choose",
        "options": [
-        "Cause and Effect",
-        "Similarity/Difference",
-        "Turning Point",
-        "There's no line between them"
+        "To destroy",
+        "To protect",
+        "To create"
        ],
        "answer": 0,
        "hints": [
-        "Look at the tag on the line.",
-        "Did the power the Court claimed in 1803 help bring about the 1819 ruling?"
+        "Find the sentence in quotation marks.",
+        "What could a state's tax do to the national bank?"
        ]
       }
      },
      "question": {
-      "stem": "Based on Document 21, how did McCulloch v. Maryland change the balance between the national government and the states?",
+      "stem": "Which principle does this stop show?",
       "type": "choose",
       "options": [
-       "A state could not tax or control the national government's lawful work.",
-       "A state could cancel any federal law it disliked.",
-       "Congress lost the power to create a national bank.",
-       "The Supreme Court gave up the power to review laws."
+       "Federalism",
+       "Natural Rights",
+       "Representative Government"
       ],
       "answer": 0,
       "hints": [
-       "Read the last sentence of Document 21.",
-       "Who wins when a state tries to tax the national bank?"
+       "Not this one. Check each principle's line on the card.",
+       "Which line describes what happened here?"
       ],
-      "why": "Marshall wrote, “The power to tax involves the power to destroy.” If a state could tax the national bank, it could tax it out of existence, so the Court said no state may tax the bank's work. Under the Articles, Congress couldn't collect a tax. By 1819, a state couldn't even tax the national bank's work.",
+      "why": "No state may tax or control the national government's lawful work (Document 21). When they clash, valid federal law wins: Federalism.",
       "doc": {
        "casefile": "C",
        "n": 21
       }
      },
-     "evidence": "1819 · No state can tax or control the national government's lawful work · Document 21"
+     "evidence": "1819 · No state may tax the national government's work · Document 21 · Federalism",
+     "issue": "Federalism"
     }
    ]
   }
  ],
+ "tally": {
+  "label": "YOUR PRINCIPLES"
+ },
  "final": {
-  "prompt": "Last question. From 1781 on, stop after stop was a fight over one thing: how much power the national government gets, and how much the states keep. Which principle from your Civic Principles card is that?",
+  "prompt": "Check your tally. Which principle shows up at three of your stops? Type its name.",
   "key_words": [
-   "federalism"
+   "federalism",
+   "federalisim",
+   "fedralism",
+   "federelism",
+   "federalizm",
+   "federlism",
+   "federalsim",
+   "federal ism"
   ],
-  "stamp": "PARDONED",
-  "after": "Federalism: Power is divided between the national government and the states. When they clash, valid federal law wins."
+  "hints": [
+   "Check your tally. Which principle has three stops?",
+   "Open the Civic Principles card for its name."
+  ],
+  "after_by_answer": {
+   "federalism": "That's it: Federalism, at stops 4, 6 and 8. Federalism: Power is divided between the national government and the states. When they clash, valid federal law wins. Now write your case."
+  },
+  "wrong_feedback": {
+   "individual rights": "That one shows up at two stops. Check your tally.",
+   "individual rights (civil liberties)": "That one shows up at two stops. Check your tally.",
+   "civil liberties": "That one shows up at two stops. Check your tally.",
+   "rule of law": "That one shows up at one stop. Check your tally.",
+   "natural rights": "That one shows up at one stop. Check your tally.",
+   "representative government": "That one shows up at one stop. Check your tally.",
+   "states rights": "Close. Check your tally for the card's name.",
+   "states' rights": "Close. Check your tally for the card's name."
+  },
+  "wrong_default": "Not that one. Check your tally.",
+  "stamp": "PARDONED"
  },
  "end": {
   "photo": "content/chase-us11r-11.2-end.webp",
@@ -484,8 +504,8 @@
   "credit": "Photo: Billmckern, Wikimedia Commons, CC BY-SA 4.0",
   "lines": [
    "Daniel Shays died in Sparta, New York, in 1825, a poor man.",
-   "He lived his last years on a federal pension for his service in the Revolution. Think back to 1781: a government that can collect taxes can pay its old soldiers.",
-   "He's buried in Livingston County, New York, about 50 miles from this room."
+   "He lived on a federal pension for his service in the Revolution. A government that can collect taxes can pay its old soldiers.",
+   "He's buried in Livingston County, about 50 miles from this room."
   ],
   "licence": {
    "name": "CC BY-SA 4.0",
@@ -493,9 +513,9 @@
   }
  },
  "reflection": [
-  "Which stop did you get on the first try, and how?",
-  "Rebel or patriot: what would someone on the other side say?",
-  "What's one thing from today you'll use on the test tomorrow?"
+  "Which principle did you get on the first try, and how?",
+  "Rebel or patriot: what would the other side say?",
+  "What will you use on the test tomorrow?"
  ],
  "_paper_only": "VERDICT lines 1-2 (rebel or patriot) stay on the paper Case File (BK 10/13 11:27). The CF_* words are the paper sheet's, not the screen's."
 }

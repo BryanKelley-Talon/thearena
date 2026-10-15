@@ -98,7 +98,8 @@ async function keyFits(pack, typed) {
     return { after: (f.after_hashes && f.after_hashes[hex]) || f.after || null }
   } catch { return false }
 }
-// A known wrong answer gets its own short reply (final.wrong_feedback, Will v6); anything else, the usual line.
+// A known wrong answer gets its own short reply (final.wrong_feedback, Will v6); anything else, the pack's final.wrong_default
+// (Sam's NINE STATES taps v3, 10/15), else the usual line.
 const wrongLine = (f, typed) => { const w = keyNorm(typed); const hit = Object.keys(f.wrong_feedback || {}).find(k => keyNorm(k) === w); return hit ? f.wrong_feedback[hit] : null }
 
 // "Back to the chase" shows only on the page the chase sent the kid to (BK 2026-10-09 10:20: "makes sense
@@ -259,7 +260,7 @@ function FinalAsk({ pack, daPack, onRight, onMiss, calloutHref }) {
   const [miss, setMiss] = useState(false)
   const [pill, setPill] = useState(false)
   const umb = daPack && (daPack.umbrellas || daPack.q4_card)
-  const go = async e => { e.preventDefault(); const r = await keyFits(pack, typed); if (r) onRight(r); else { setMiss(wrongLine(f, typed) || true); onMiss() } }
+  const go = async e => { e.preventDefault(); const r = await keyFits(pack, typed); if (r) onRight(r); else { setMiss(wrongLine(f, typed) || f.wrong_default || true); onMiss() } }
   return (
     <div className="chase-ask chase-final">
       <p className="chase-prompt">{f.prompt}</p>
