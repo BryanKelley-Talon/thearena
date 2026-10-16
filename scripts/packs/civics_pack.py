@@ -24,13 +24,15 @@ if kind == 'machine':
     stop_label = w.CHART[-1][0]
     def rows_for(col):
         return [{"label": label, "lines": list(cells[col - 1])} for (label, *cells) in w.CHART if label != stop_label]
-    congress = {"head": w.BRANCHES[0], "kicker": [w.JOB[0], w.JOB_SUB[0]],
+    NAMES = getattr(w, 'BRANCH_NAMES', None) or w.BRANCHES     # BK 21:31: Legislative / Executive / Judicial, in Sam's words when they land
+    WHO = getattr(w, 'BRANCH_WHO', None) or [None, None, None]
+    congress = {"head": NAMES[0], "who": WHO[0], "kicker": [w.JOB[0], w.JOB_SUB[0]],
                 "split": [{"head": title[1], "rows": rows_for(1)}, {"head": title[2], "rows": rows_for(2)}],
                 "rows": [{"label": w.CONGRESS_BOTH[0], "lines": [w.CONGRESS_BOTH[1]]},
                          {"label": stop_label, "lines": list(w.CHART[-1][1])}]}
     if getattr(w, 'CONGRESS_WHY', None):   # Sam's callout, when his words land (BK 20:53 "maybe a callout as to why")
         congress["callout"] = {"head": getattr(w, 'CONGRESS_WHY_HEAD', None), "lines": list(w.CONGRESS_WHY) if isinstance(w.CONGRESS_WHY, (list, tuple)) else [w.CONGRESS_WHY]}
-    cards = [congress] + [{"head": w.BRANCHES[b], "kicker": [w.JOB[b], w.JOB_SUB[b]],
+    cards = [congress] + [{"head": NAMES[b], "who": WHO[b], "kicker": [w.JOB[b], w.JOB_SUB[b]],
                            "rows": [{"label": label, "lines": list(cells[col - 1])} for (label, *cells) in w.CHART]}
                           for (b, col) in ((1, 3), (2, 4))]
     pack = {

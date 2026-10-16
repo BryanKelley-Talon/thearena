@@ -15,6 +15,7 @@
     "cards": [
      {
       "head": "CONGRESS",
+      "who": null,
       "kicker": [
        "Make laws",
        "Article I"
@@ -98,6 +99,7 @@
      },
      {
       "head": "THE PRESIDENT",
+      "who": null,
       "kicker": [
        "Carry out laws",
        "Article II"
@@ -144,6 +146,7 @@
      },
      {
       "head": "THE SUPREME COURT",
+      "who": null,
       "kicker": [
        "Judge laws",
        "Article III"

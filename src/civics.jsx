@@ -27,6 +27,7 @@ function RefCard({ card, big }) {
   return (
     <article className={`civ-card${(card.split || []).length ? ' civ-card-split' : ''}`}>
       <div className={`civ-head${big ? ' civ-num' : ''}`} aria-label={big ? `Amendment ${card.head}` : undefined}>{card.head}</div>
+      {card.who && <div className="civ-who">{card.who}</div>}
       {(card.kicker || []).length > 0 && <div className="civ-kicker">{card.kicker.join(' · ')}</div>}
       {/* Why one branch has two parts (BK 10/15 20:53): Sam's words, when they land. */}
       {card.callout && <aside className="civ-callout">{card.callout.head && <div className="civ-callout-h">{card.callout.head}</div>}{card.callout.lines.map((l, i) => <p key={i}>{l}</p>)}</aside>}
@@ -124,6 +125,7 @@ export const CIVICS_STYLES = `
 .civ-card{background:#1B2A47;border:1px solid #6882AD;border-radius:10px;padding:12px 14px;box-shadow:0 8px 20px -12px #000c}
 .civ-head{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;letter-spacing:.04em;color:var(--white);text-transform:uppercase}
 .civ-num{font-size:34px;line-height:1;color:var(--gold)}
+.civ-who{color:var(--white);font-size:16px;font-weight:600;margin:2px 0 0}
 .civ-kicker{color:var(--gold);font-size:13px;letter-spacing:.06em;text-transform:uppercase;margin:2px 0 6px}
 .civ-row{border-top:1px solid #2E4370;padding:6px 0 2px}
 .civ-label{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.12em;color:var(--grey);text-transform:uppercase}
