@@ -9,7 +9,7 @@
  "number_cards": true,
  "layer1": {
   "title": "Meet the amendments",
-  "line": "One card per amendment. Same words as your chart.",
+  "line": "One card per amendment.",
   "groups": [
    {
     "title": "THE BILL OF RIGHTS",
@@ -626,5 +626,5 @@
   ],
   "done": "You know your rights. When one shows up in a document or a headline, name it."
  },
- "_built": "Josh, 2026-10-15, by scripts/packs/civics_pack.py from Sam's amendments_words.py (md5 5eb944a608289628bd48db3cb11a2ecf)."
+ "_built": "Josh, 2026-10-16, by scripts/packs/civics_pack.py from Sam's amendments_words.py (md5 5460e6ba8eb3b13ece1f929c62d12229)."
 }

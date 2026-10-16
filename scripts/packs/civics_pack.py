@@ -3,7 +3,7 @@
 # reshapes them into the room's fields (layer 1 cards, layer 2 tap items).
 # Sources (Danny clean; BK 15:12 "all else approved", Room Check Bless):
 #   us11r-curriculum/skills/machine/machine_words.py      md5 9f189159... (Danny-cleared 10/16 10:34)
-#   us11r-curriculum/skills/amendments/amendments_words.py md5 5eb944a6...
+#   us11r-curriculum/skills/amendments/amendments_words.py md5 5460e6ba...
 # Usage: python3 scripts/packs/civics_pack.py machine <machine_words.py> > public/content/room-us11r-11.2-machine.json
 #        python3 scripts/packs/civics_pack.py amendments <amendments_words.py> > public/content/room-us11r-11.2-amendments.json
 import importlib.util, json, sys, hashlib, datetime, zoneinfo
