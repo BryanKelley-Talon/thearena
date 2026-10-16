@@ -696,6 +696,11 @@
     {
       "id": "us11r",
       "label": "US History and Government 11R",
+      "constitution": {
+        "opens_after_unit": "11.2",
+        "rooms": [{ "unit": "11.2", "slug": "machine" }, { "unit": "11.2", "slug": "amendments" }],
+        "_note": "THE CONSTITUTION lane (BK 2026-10-16 11:42 'Once we move beyond Unit 11.2--I'd like the Machine and the Amendments to get their own button across the top'; 11:46 one button; 11:48 name and line, 'yes.'). Appears when the US door's current unit comes after 11.2; Landmark Supreme Court Cases joins as a third room when Sam's words land. The cards stay on the 11.2 Review row too."
+      },
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
       "accent": "#E3B341",
       "_accent_note": "Adopted from Josh's own token file, builds/thearena/src/tokens/arena-navy.css — --course-us11r, the house gold, measured 9.62:1 on the navy canvas. The skeleton's #C17700 was 11.5's ERA accent out of canon/tokens and would have collided the first time an 11.5 room was built.",

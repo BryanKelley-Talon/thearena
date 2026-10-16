@@ -17,6 +17,7 @@
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
 //   #/us/chase/11.2                        the unit's Arena chase (BK 2026-10-06 22:15)
 //   #/us/11.2/machine · #/us/11.2/amendments   a unit's reference room (manifest unit.rooms; 10/15)
+//   #/us/constitution                      THE CONSTITUTION lane: the reference rooms in one place (BK 10/16 11:48)
 //   #/us/threads/<stop-id>                 the Threads map with one stop open (for a chase clue)
 //   #/global/gauge/EI/1                    one gauge's level, in the unit we're in (10/8)
 //   #/office · #/office/2026-10-halftime-adjustments
@@ -28,7 +29,7 @@
 
 export const COURSE_KEY = { us11r: 'us', global10r: 'global' }
 const KEY_COURSE = Object.fromEntries(Object.entries(COURSE_KEY).map(([k, v]) => [v, k]))
-export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', 'writing-lab': 'writing_lab', review: 'skills_review' }
+export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', 'writing-lab': 'writing_lab', constitution: 'constitution', review: 'skills_review' }
 const KEY_LANE = Object.fromEntries(Object.entries(LANE_KEYS).map(([k, v]) => [v, k]))
 
 const unitByNumber = (course, n) => (course?.units || []).find(u => String(u.number) === String(n)) || null

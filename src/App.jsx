@@ -881,6 +881,30 @@ function Splash({ manifest, onPick, onOffice }) {
 // ============================================================
 // COURSE DOOR — three lanes, peer to each other (ruling B)
 // ============================================================
+// THE CONSTITUTION lane's words (BK 11:48 "yes." to Josh's proposal; Sam keeps or returns them; Danny reads them).
+const CONST_WORDS = {
+  lane: 'The Constitution',
+  intro: 'How the government works, the rights it can’t take from you, and how the Court decides what it means.',
+}
+// The lane's cards: manifest course.constitution = { opens_after_unit, rooms: [{ unit, slug }] }. Each card is a
+// published unit room (unit.rooms[]), with the room's own card words. The lane appears only once the unit we're in
+// comes after opens_after_unit in the course's unit order (BK 11:42 "Once we move beyond Unit 11.2"), or in a proof build.
+const CONST_PROOF = import.meta.env.VITE_CONSTITUTION_PROOF === '1'
+function constitutionCards(course) {
+  const k = course?.constitution
+  if (!k) return []
+  const units = course.units || []
+  const now = currentUnit(course)
+  const after = units.findIndex(u => String(u.number) === String(k.opens_after_unit))
+  const open = CONST_PROOF || (now && after >= 0 && units.indexOf(now) > after)
+  if (!open) return []
+  return (k.rooms || []).map(x => {
+    const u = units.find(v => String(v.number) === String(x.unit))
+    const r = (u?.rooms || []).find(y => y.slug === x.slug && y.published === true && y.card)
+    return u && r ? { unit: u, room: r } : null
+  }).filter(Boolean)
+}
+
 const LANES = [
   // BK, 2026-09-25. The gauges are front and center: a kid opens the course and
   // sees their skills. Tap a gauge, climb that skill's ladder (content from the
@@ -906,11 +930,16 @@ const LANES = [
     intro: ATLAS_WORDS.intro },
   // The Writing Lab (Blueprint, tool 1; BK signed the desks' words 22:46/22:48). Lane words proposed 22:57.
   { key: 'writing_lab',   src: 'writing_lab',   label: WL_WORDS.lane, optional: true, intro: WL_WORDS.intro },
+  // THE CONSTITUTION (BK 2026-10-16 11:42 "their own button across the top", 11:46 one button, 11:48 the name and line):
+  // the course's reference rooms in one lane, once the door moves past their home unit (manifest course.constitution).
+  { key: 'constitution',  src: 'constitution_cards', label: CONST_WORDS.lane, optional: true, intro: CONST_WORDS.intro },
   { key: 'skills_review', src: 'skills_review', label: 'Review Activities',
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen }) {
+function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution }) {
+  const constCards = constitutionCards(courseIn)
+  const course = constCards.length ? { ...courseIn, constitution_cards: constCards } : courseIn
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   const lane = laneIn || firstWithContent
@@ -982,6 +1011,16 @@ function CourseDoor({ course, prog, games, docAssist, atlasMaps, onOpenMap, onOp
       {lane === 'writing_lab' && <WritingLabLane course={course} sets={wlSets} unitName={unitName} onOpen={onOpenSet} Empty={EmptyLane} />}
       {lane === 'issues' && <StopMapLane kind="issues" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
       {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
+      {lane === 'constitution' && (constCards.length ? (
+        <div className="grid room-cards">
+          {constCards.map(({ unit: u, room: r }) => (
+            <a key={`${u.number}-${r.slug}`} className="card" href={`#/${COURSE_KEY[course.id] || course.id}/${u.number}/${r.slug}`} onClick={() => onFromConstitution?.()}>
+              <div className="card-name">{r.card.title}</div>
+              <div className="card-blurb">{r.card.line}</div>
+              <span className="flag live">Open</span>
+            </a>
+          ))}
+        </div>) : <EmptyLane what={CONST_WORDS.lane} />)}
       {lane === 'skills_review' && <SkillsReviewLane course={course} />}
     </div>
   )
@@ -1988,6 +2027,7 @@ export default function App() {
   const [chasePack, setChasePack] = useState(null)
   const [civics, setCivics] = useState(null)            // a unit's reference room slug (THE MACHINE, THE AMENDMENTS; 10/15)
   const [civicsPack, setCivicsPack] = useState(null)
+  const [civicsFrom, setCivicsFrom] = useState(null)    // 'constitution' when the room was opened from THE CONSTITUTION lane (Back goes there)
   const [here, setHere] = useState('')                  // the current page's address (the chase pill shows only where a chase link sent the kid)
   const [daCfFocus, setDaCfFocus] = useState(null)       // a casefile link's casefile, kept in the address bar                          // which content_ref the loaded Doc Assist pack is
 
@@ -2096,6 +2136,7 @@ export default function App() {
     setStopOpen(r.stopOpen || null)
     setChase(r.at === 'chase')
     setCivics(r.at === 'civics' ? r.civicsSlug : null)
+    if (r.at !== 'civics') setCivicsFrom(null)
     setWlSlug(r.wlSet || null)
     setOffice(r.at === 'office')
     if (r.at === 'office') {
@@ -2184,8 +2225,8 @@ export default function App() {
     screen = civicsPack === null ? <div className="loading">Opening&hellip;</div>
       : !civicsPack ? <div className="wrap"><div className="empty"><div className="empty-title">Not open yet.</div></div></div>
       : <CivicsRoom key={civicsPack.id} pack={civicsPack} ScreenHeader={ScreenHeader} BottomBack={BottomBack}
-                    back={unit.label && String(unit.label).startsWith(String(unit.number)) ? unit.label : `${unit.number} · ${unit.label}`}
-                    onBack={() => { setCivics(null); window.scrollTo(0, 0) }} />
+                    back={civicsFrom === 'constitution' ? CONST_WORDS.lane : unit.label && String(unit.label).startsWith(String(unit.number)) ? unit.label : `${unit.number} · ${unit.label}`}
+                    onBack={() => { setCivics(null); if (civicsFrom === 'constitution') { setCivicsFrom(null); setUnitSlug(null); setDoorLane('constitution') } window.scrollTo(0, 0) }} />
   }
   else if (course && unit && chase) {
     screen = chasePack === null ? <div className="loading">Opening the chase&hellip;</div>
@@ -2322,6 +2363,7 @@ export default function App() {
       lane={doorLane}
       setLane={setDoorLane}
       stopOpen={stopOpen}
+      onFromConstitution={() => setCivicsFrom('constitution')}
       onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
       onOpenUnit={slug => { setRoomFrom('units'); setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false); window.scrollTo(0, 0) }}
       onOpenUnit0={() => { setUnit0(true); window.scrollTo(0, 0) }}
