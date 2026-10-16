@@ -99,7 +99,7 @@
       "callout": {
        "head": "Two houses, one branch",
        "lines": [
-        "Why two? The Great Compromise of 1787. Big states wanted seats by population; small states wanted every state equal. They got both: the House counts people, and the Senate gives every state two. A bill needs both to become law."
+        "Why are they different? The Great Compromise of 1787. Big states wanted seats by population; small states wanted every state equal. They got both: the House counts people, and the Senate gives every state two. A bill needs both to become law."
        ]
       },
       "image": {
@@ -178,7 +178,7 @@
         "lines": [
          "No age or citizenship rule in the Constitution",
          "Nominated by the President, approved by the Senate",
-         "Serves \"during good Behaviour\": for life, unless impeached and removed"
+         "Serves \"during good Behaviour\" (the Constitution's 1787 spelling): for life, unless impeached and removed"
         ]
        },
        {
@@ -350,5 +350,5 @@
   ],
   "done": "You worked the machine. When it shows up in a unit, you'll know what you're looking at."
  },
- "_built": "Josh, 2026-10-16, by scripts/packs/civics_pack.py from Sam's machine_words.py (md5 0ef3d29afb0254cb1f47c78d044dcdec)."
+ "_built": "Josh, 2026-10-16, by scripts/packs/civics_pack.py from Sam's machine_words.py (md5 9b00df6d87460974fe6c0c5b1bc58cd5)."
 }
