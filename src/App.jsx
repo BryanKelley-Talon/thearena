@@ -897,7 +897,7 @@ function constitutionCards(course) {
   const units = course.units || []
   const now = currentUnit(course)
   const after = units.findIndex(u => String(u.number) === String(k.opens_after_unit))
-  const open = CONST_PROOF || (now && after >= 0 && units.indexOf(now) > after)
+  const open = CONST_PROOF || (k.opens_on && onDate({ opens_on: k.opens_on })) || (now && after >= 0 && units.indexOf(now) > after)
   if (!open) return []
   return (k.rooms || []).map(x => {
     const u = units.find(v => String(v.number) === String(x.unit))
