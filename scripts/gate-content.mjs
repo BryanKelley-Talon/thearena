@@ -346,6 +346,11 @@ function checkPopouts(d, f, course, m, fail) {
       if (back && l.kind && back.kind && back.kind !== l.kind) fail(`${w}: calls its link to '${l.to}' ${l.kind}; '${l.to}' calls it ${back.kind}.`)
       else if (back && ONE_WAY.has(l.kind) && back.kind === l.kind) fail(`${w}: ${l.kind} runs one way, but '${l.to}' names it back to this stop too.`)
     }
+    // A context stop (Vienna, BK 10/15 19:38 'b'): not from a casefile, so it carries its own document and says so.
+    if (st.context === true) {
+      if (typeof st.context_label !== 'string' || !st.context_label.trim()) fail(`${w}: a context stop needs context_label in words.`)
+      if (!st.document?.excerpt || !st.document?.citation || !st.document?.source_ref) fail(`${w}: a context stop needs its document's excerpt, citation and source_ref.`)
+    } else if (st.casefile == null && st.status === 'open') fail(`${w}: an open stop with no casefile must be a context stop (context: true).`)
     if (st.doc_assist != null) {
       const mm = String(st.doc_assist).match(/^(\d+\.\d+)\/([A-Z])\/(\d+[a-z]?)$/)
       if (!mm) fail(`${w}: doc_assist '${st.doc_assist}' must read unit/casefile/number, like 11.1/A/2.`)

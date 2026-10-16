@@ -597,6 +597,11 @@
               "on": "2026-10-09",
               "stops": ["s-1791-haiti", "s-1808-spain", "s-1815-bolivar", "s-1846-cavour", "s-1862-bismarck", "s-1912-balkans"],
               "_note": "Global 10.2 Casefile C's six stops open now (BK 10/9 09:14: 'The other stops can be open...the colleagues should have the full run to review ahead.'). Will's file is unchanged; the engine reads 'building' as open from this day."
+            },
+            {
+              "on": "2026-10-15",
+              "stops": ["s-1815-vienna"],
+              "_note": "The Vienna context stop (BK 10/15 19:38 'b', 19:39 words, 19:47 item 6; Danny CLEAN 20:23, map file 0b5f3b09). Opens on BK's push; before the Timekeeper room opens Tue 10/20."
             }
           ],
           "_note": "Will's signed stops (BK 2026-10-05 21:14), byte-identical copy of global10r-curriculum/OUTPUTS/2026-27/Course/enduring-issues-gs10r.json. map-stop-shape v1; Josh confirmed 21:29."

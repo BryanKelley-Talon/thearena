@@ -1,6 +1,6 @@
 {
   "_course": "Global History and Geography II 10R",
-  "_built": "2026-10-08 by Will (global10r-curriculum) · skills/enduring-issues/build_ei_map_gs10r.py · stops from what students read in 10.1 and 10.2 · SIGNED by BK 2026-10-05 21:14 EDT (\"yes agreed to all\")",
+  "_built": "2026-10-15 by Will (global10r-curriculum) · skills/enduring-issues/build_ei_map_gs10r.py · stops from what students read in 10.1 and 10.2 · SIGNED by BK 2026-10-05 21:14 EDT (\"yes agreed to all\")",
   "_shape": "map-stop-shape v1 · Sam + Will 2026-10-05 · Josh confirms. Global: subs = the card's Issues to name; on_lines.sub = the exact issue; also_read optional. No 'thread' anywhere on a Global screen. v2 fields (Josh 23:45 proposal): exemplar, exemplar_by_line (key = line id, or the sub id where one line carries two issues at a stop), links[].kind (SEQ: cause_effect | similarity_difference | turning_point, words in link_kinds; Sam's shape v2.1, BK 08:50) and .explain, doc_assist.",
   "_line_words": "Names, questions and issues are read from skills/casefile/umbrellas.py (the card on page 2); definitions from skills/doc-assist/da_global_common.py. Never typed.",
   "link_kinds": {
@@ -1106,6 +1106,51 @@
       "image_alt": null,
       "status": "open",
       "_note": ""
+    },
+    {
+      "id": "s-1815-vienna",
+      "unit": "10.2",
+      "casefile": null,
+      "context": true,
+      "context_label": "FROM OUTSIDE YOUR CASEFILE",
+      "when": "1815",
+      "title": "Vienna: the powers settle Europe together",
+      "what_happened": "After Napoleon's defeat, the great powers of Europe meet at the Congress of Vienna and redraw the map together. In November 1815, at Paris, Austria, Britain, Prussia and Russia sign a treaty and agree to keep meeting to keep the peace.",
+      "document": {
+        "title": "The Quadruple Alliance, Article VI, Paris, November 20, 1815",
+        "citation": "Source: The Quadruple Alliance, Article VI, Paris, November 20, 1815 (adapted)",
+        "source_ref": "Outside source, not in a casefile: Wikisource, \"Quadruple Alliance\" (text from Hansard), https://en.wikisource.org/wiki/Quadruple_Alliance; print: Hertslet, The Map of Europe by Treaty, vol. 1 (1875), No. 44, pp. 372–375.",
+        "excerpt": "“…the High Contracting Parties have agreed to renew their meetings at fixed periods … for the purpose of consulting upon their common interests … and for the maintenance of the Peace of Europe.”"
+      },
+      "also_read": [],
+      "on_lines": [
+        {
+          "line": "u6",
+          "sub": "u6-cooperation",
+          "reason": "Four powers that had fought Napoleon promise to meet again and again “for the maintenance of the Peace of Europe.”",
+          "question": "What happens when distant places start depending on each other."
+        }
+      ],
+      "exemplar": {
+        "context": "In 1814, Napoleon had been defeated after years of war across Europe. The winners met in Vienna to decide what Europe would look like next.",
+        "claim": "The Vienna settlement shows the enduring issue of Cooperation, because Europe's great powers agreed to work together to keep the peace.",
+        "evidence": "In 1815, Austria, Britain, Prussia and Russia agreed in a treaty to “renew their meetings at fixed periods” for “the maintenance of the Peace of Europe.”",
+        "explain": "Cooperation is when groups or countries work together toward a shared goal. Here the goal was peace, and historians call these meetings the Congress System, which ran from 1815 to at least 1822."
+      },
+      "links": [
+        {
+          "to": "s-1846-cavour",
+          "why": "The Vienna settlement left Austria ruling Lombardy and Venetia, and Italian nationalists like Cavour wanted them freed.",
+          "kind": "cause_effect",
+          "explain": "The Vienna settlement contributed to Italian nationalism because it left Austria ruling Lombardy and Venetia. Cavour wanted Italy freed from that foreign rule."
+        }
+      ],
+      "atlas": null,
+      "doc_assist": null,
+      "image": null,
+      "image_alt": null,
+      "status": "building",
+      "_note": "Context stop (BK 10/15 19:38, option b). The 1822 date: Stella Ghervas, \"What was the Congress of Vienna?\", History Today (\"the so-called Congress System, which functioned at least from 1815 to 1822\"), the source the Timekeeper's Vienna line rests on."
     },
     {
       "id": "s-1791-haiti",

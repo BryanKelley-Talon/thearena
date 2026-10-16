@@ -565,6 +565,9 @@ function PopBoxInner({ ctx, stop, via, headRef, onClose, pair, onPair, onPick, m
         {main && <button type="button" className="btn-ghost pop-close" onClick={onClose} aria-label="Close this stop">{W.close}</button>}
       </div>
       <div className="stop-when-lg">{stop.unit} &middot; {stop.when}</div>
+      {/* A context stop (Global, BK 10/15 19:38 option b): the one kind not drawn from a casefile. The mark is the
+          author's own words (context_label, Will; BK 19:39 "yes"), in words and a dashed edge, never colour alone. */}
+      {stop.context && stop.context_label && <div className="stop-context">{stop.context_label}</div>}
       <h3 id={hid} className="stop-title pop-title" ref={headRef} tabIndex={-1}>
         {main ? stop.title : <button type="button" className="pop-title-btn" onClick={() => onPick(stop.id)}>{stop.title}</button>}
       </h3>
@@ -698,6 +701,7 @@ function StopMapPhone({ ctx, open, pair, via, link, onPick, onPair, onClose }) {
 }
 
 export const STOPMAP_STYLES = `
+.stop-context{display:inline-block;margin:6px 0 4px;padding:3px 10px;border:2px dashed #DCE3EE;border-radius:6px;color:#F4F6FA;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
 /* ---------- THE STOP MAP: pop-out boxes, the connecting line, lit and faded rows ---------- */
 .stopmap-canvas{position:relative}
 .stopmap-svg{display:block;position:absolute;left:0;top:0}
