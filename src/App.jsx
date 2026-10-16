@@ -881,10 +881,11 @@ function Splash({ manifest, onPick, onOffice }) {
 // ============================================================
 // COURSE DOOR — three lanes, peer to each other (ruling B)
 // ============================================================
-// THE CONSTITUTION lane's words (BK 11:48 "yes." to Josh's proposal; Sam keeps or returns them; Danny reads them).
+// THE CONSTITUTION lane's words (BK 11:48 "yes." to the button; 12:16 "yes" to the line; Danny reads them).
 const CONST_WORDS = {
   lane: 'The Constitution',
-  intro: 'How the government works, the rights it can’t take from you, and how the Court decides what it means.',
+  // Danny 12:01 C1–C3; BK 12:16 "yes" to Josh's fix. When THE LANDMARK CASES ships, the end can return to "…and how the Court decides what it means."
+  intro: 'How the government is built, the 27 changes made to the Constitution, and the Court’s power to say what it means.',
 }
 // The lane's cards: manifest course.constitution = { opens_after_unit, rooms: [{ unit, slug }] }. Each card is a
 // published unit room (unit.rooms[]), with the room's own card words. The lane appears only once the unit we're in
