@@ -1301,7 +1301,8 @@
           "chase": {
             "content_ref": "content/chase-us11r-11.2.json",
             "published": true,
-            "_note": "Josh, 2026-10-15. NINE STATES taps v3, built by scripts/packs/nine_states_pack.py from Sam's skills/arena-chase/nine_states_words.py. Class play Wed 10/28. card = Sam's room card, word for word (BK 14:14 'all approved', 15:03 'just approve it'; Danny clean 15:03).",
+            "_note": "Josh, 2026-10-15. NINE STATES taps v3, built by scripts/packs/nine_states_pack.py from Sam's skills/arena-chase/nine_states_words.py. Class play Wed 10/28. card = Sam's room card, word for word (BK 14:14 'all approved', 15:03 'just approve it'; Danny clean 15:03). Card hidden until Wed 10/28, the class play (BK 19:47: 'live (direct link) but not have the room card open ... like we did for Timekeeper').",
+            "card_opens_on": "2026-10-28",
             "card": {
               "title": "NINE STATES",
               "line": "Daniel Shays is on the run. Follow his trail from 1763 to 1819 and find the principle three stops share."
