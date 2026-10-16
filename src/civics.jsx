@@ -25,7 +25,9 @@ function Rows({ r, wide }) {
 
 function RefCard({ card, big }) {
   return (
-    <article className={`civ-card${(card.split || []).length ? ' civ-card-split' : ''}`}>
+    <article className={`civ-card${(card.split || []).length ? ' civ-card-split' : ''}${card.image ? ' civ-card-img' : ''}`}>
+      {/* The branch's building, faded behind the card (BK 10/15 21:51). Decorative only: the words carry the meaning. */}
+      {card.image && <img className="civ-bg" src={`/${String(card.image.src).replace(/^\/+/, '')}`} alt="" aria-hidden="true" loading="lazy" />}
       <div className={`civ-head${big ? ' civ-num' : ''}`} aria-label={big ? `Amendment ${card.head}` : undefined}>{card.head}</div>
       {card.who && <div className="civ-who">{card.who}</div>}
       {(card.kicker || []).length > 0 && <div className="civ-kicker">{card.kicker.join(' · ')}</div>}
@@ -122,6 +124,13 @@ export const CIVICS_STYLES = `
 .civ-years{color:var(--grey);font-weight:500}
 .civ-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
 .civ-grid-num{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.civ-card-img{position:relative;overflow:hidden}
+.civ-card-img>*:not(.civ-bg){position:relative}
+/* The building sits behind the branch name (top band), baked as a navy duotone (card navy to #344E6E), so the brightest pixel behind any word is known:
+   white 8.4:1, gold 4.7:1, labels (lifted to #B4C2D4 on these cards) 5.0:1. No CSS opacity, so the numbers hold. */
+.civ-bg{position:absolute;left:0;right:0;top:0;width:100%;height:210px;object-fit:cover;object-position:center 35%;pointer-events:none;-webkit-mask-image:linear-gradient(to bottom,#000 55%,transparent);mask-image:linear-gradient(to bottom,#000 55%,transparent)}
+.civ-card-img .civ-label{color:#B4C2D4}
+.civ-card-img .civ-part{background:rgba(22,35,61,.55)}
 .civ-card{background:#1B2A47;border:1px solid #6882AD;border-radius:10px;padding:12px 14px;box-shadow:0 8px 20px -12px #000c}
 .civ-head{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:700;letter-spacing:.04em;color:var(--white);text-transform:uppercase}
 .civ-num{font-size:34px;line-height:1;color:var(--gold)}

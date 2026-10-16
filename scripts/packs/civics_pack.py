@@ -35,6 +35,14 @@ if kind == 'machine':
     cards = [congress] + [{"head": NAMES[b], "who": WHO[b], "kicker": [w.JOB[b], w.JOB_SUB[b]],
                            "rows": [{"label": label, "lines": list(cells[col - 1])} for (label, *cells) in w.CHART]}
                           for (b, col) in ((1, 3), (2, 4))]
+    # The three buildings behind the cards (BK 2026-10-15 21:51; Sam's spec 21:56): Carol M. Highsmith Archive, Library of
+    # Congress, public domain; pulled by BK from the pages Josh linked (10/16 09:03). Decorative: the card's words carry the meaning.
+    BUILDINGS = [
+      {"src": "content/room-us11r-11.2-machine-legislative.webp", "_source": "Highsmith, Carol M., U.S. Capitol building, Washington D.C., Library of Congress Prints & Photographs, Carol M. Highsmith Archive, https://www.loc.gov/pictures/item/2011630843/ (no known restrictions)"},
+      {"src": "content/room-us11r-11.2-machine-executive.webp", "_source": "Highsmith, Carol M., The White House, Washington, D.C., Library of Congress, Carol M. Highsmith Archive, https://www.loc.gov/resource/highsm.04961/ (no known restrictions)"},
+      {"src": "content/room-us11r-11.2-machine-judicial.webp", "_source": "Highsmith, Carol M., U.S. Supreme Court building, Washington, D.C., Library of Congress, Carol M. Highsmith Archive, https://www.loc.gov/resource/highsm.11889/ (no known restrictions)"},
+    ]
+    for c, b in zip(cards, BUILDINGS): c["image"] = b
     pack = {
       "id": "room-us11r-11.2-machine", "course": "us11r", "unit": "11.2", "slug": "machine",
       "title": w.TITLE, "sub": w.SUB,

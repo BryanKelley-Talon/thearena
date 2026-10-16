@@ -7,15 +7,15 @@
  "sub": "How the federal government is wired: who does what, how they get the seat, and who can stop them.",
  "layer1": {
   "title": "Meet the branches",
-  "line": "Four cards: the House, the Senate, the President and the Supreme Court. Same words as your chart.",
+  "line": "Three branches. Congress is one branch with two houses. Same words as your chart.",
   "groups": [
    {
     "title": null,
     "years": null,
     "cards": [
      {
-      "head": "CONGRESS",
-      "who": null,
+      "head": "LEGISLATIVE BRANCH",
+      "who": "Congress: the House and the Senate",
       "kicker": [
        "Make laws",
        "Article I"
@@ -95,11 +95,21 @@
          "The Court can strike down its laws"
         ]
        }
-      ]
+      ],
+      "callout": {
+       "head": "Two houses, one branch",
+       "lines": [
+        "Why two? The Great Compromise of 1787. Big states wanted seats by population; small states wanted every state equal. They got both: the House counts people, and the Senate gives every state two. A bill needs both to become law."
+       ]
+      },
+      "image": {
+       "src": "content/room-us11r-11.2-machine-legislative.webp",
+       "_source": "Highsmith, Carol M., U.S. Capitol building, Washington D.C., Library of Congress Prints & Photographs, Carol M. Highsmith Archive, https://www.loc.gov/pictures/item/2011630843/ (no known restrictions)"
+      }
      },
      {
-      "head": "THE PRESIDENT",
-      "who": null,
+      "head": "EXECUTIVE BRANCH",
+      "who": "The President, with the Vice President",
       "kicker": [
        "Carry out laws",
        "Article II"
@@ -142,11 +152,15 @@
          "The Court can rule an action unconstitutional"
         ]
        }
-      ]
+      ],
+      "image": {
+       "src": "content/room-us11r-11.2-machine-executive.webp",
+       "_source": "Highsmith, Carol M., The White House, Washington, D.C., Library of Congress, Carol M. Highsmith Archive, https://www.loc.gov/resource/highsm.04961/ (no known restrictions)"
+      }
      },
      {
-      "head": "THE SUPREME COURT",
-      "who": null,
+      "head": "JUDICIAL BRANCH",
+      "who": "The Supreme Court and the lower federal courts",
       "kicker": [
        "Judge laws",
        "Article III"
@@ -183,7 +197,11 @@
          "An amendment can overturn a ruling"
         ]
        }
-      ]
+      ],
+      "image": {
+       "src": "content/room-us11r-11.2-machine-judicial.webp",
+       "_source": "Highsmith, Carol M., U.S. Supreme Court building, Washington, D.C., Library of Congress, Carol M. Highsmith Archive, https://www.loc.gov/resource/highsm.11889/ (no known restrictions)"
+      }
      }
     ]
    }
@@ -332,5 +350,5 @@
   ],
   "done": "You worked the machine. When it shows up in a unit, you'll know what you're looking at."
  },
- "_built": "Josh, 2026-10-15, by scripts/packs/civics_pack.py from Sam's machine_words.py (md5 9a89d26c2befc5cbea481ecc7b259da5)."
+ "_built": "Josh, 2026-10-16, by scripts/packs/civics_pack.py from Sam's machine_words.py (md5 0ef3d29afb0254cb1f47c78d044dcdec)."
 }
