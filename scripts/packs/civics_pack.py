@@ -2,7 +2,7 @@
 # never retyped (Josh, 2026-10-15). Every student-facing value comes from those files; this script only
 # reshapes them into the room's fields (layer 1 cards, layer 2 tap items).
 # Sources (Danny clean; BK 15:12 "all else approved", Room Check Bless):
-#   us11r-curriculum/skills/machine/machine_words.py      md5 9a89d26c...
+#   us11r-curriculum/skills/machine/machine_words.py      md5 9f189159... (Danny-cleared 10/16 10:34)
 #   us11r-curriculum/skills/amendments/amendments_words.py md5 5eb944a6...
 # Usage: python3 scripts/packs/civics_pack.py machine <machine_words.py> > public/content/room-us11r-11.2-machine.json
 #        python3 scripts/packs/civics_pack.py amendments <amendments_words.py> > public/content/room-us11r-11.2-amendments.json
@@ -38,9 +38,9 @@ if kind == 'machine':
     # The three buildings behind the cards (BK 2026-10-15 21:51; Sam's spec 21:56): Carol M. Highsmith Archive, Library of
     # Congress, public domain; pulled by BK from the pages Josh linked (10/16 09:03). Decorative: the card's words carry the meaning.
     BUILDINGS = [
-      {"src": "content/room-us11r-11.2-machine-legislative.webp", "_source": "Highsmith, Carol M., U.S. Capitol building, Washington D.C., Library of Congress Prints & Photographs, Carol M. Highsmith Archive, https://www.loc.gov/pictures/item/2011630843/ (no known restrictions)"},
-      {"src": "content/room-us11r-11.2-machine-executive.webp", "_source": "Highsmith, Carol M., The White House, Washington, D.C., Library of Congress, Carol M. Highsmith Archive, https://www.loc.gov/resource/highsm.04961/ (no known restrictions)"},
-      {"src": "content/room-us11r-11.2-machine-judicial.webp", "_source": "Highsmith, Carol M., U.S. Supreme Court building, Washington, D.C., Library of Congress, Carol M. Highsmith Archive, https://www.loc.gov/resource/highsm.11889/ (no known restrictions)"},
+      {"src": "content/room-us11r-11.2-machine-legislative.webp", "_source": "Carol M. Highsmith, \"U.S. Capitol building, Washington D.C.\" Photographs in the Carol M. Highsmith Archive, Library of Congress, Prints and Photographs Division. No known restrictions on publication. https://www.loc.gov/pictures/item/2011630843/"},
+      {"src": "content/room-us11r-11.2-machine-executive.webp", "_source": "Carol M. Highsmith, \"The White House, Washington, D.C.\" Carol M. Highsmith's America, Library of Congress, Prints and Photographs Division. No known restrictions on publication. https://www.loc.gov/resource/highsm.04961/"},
+      {"src": "content/room-us11r-11.2-machine-judicial.webp", "_source": "Carol M. Highsmith, \"U.S. Supreme Court building, Washington, D.C.\" Photographs in the Carol M. Highsmith Archive, Library of Congress, Prints and Photographs Division. No known restrictions on publication. https://www.loc.gov/resource/highsm.11889/"},
     ]
     for c, b in zip(cards, BUILDINGS): c["image"] = b
     pack = {

@@ -7,7 +7,7 @@
  "sub": "How the federal government is wired: who does what, how they get the seat, and who can stop them.",
  "layer1": {
   "title": "Meet the branches",
-  "line": "Three branches. Congress is one branch with two houses. Same words as your chart.",
+  "line": "Three branches. Congress is one branch with two houses.",
   "groups": [
    {
     "title": null,
@@ -75,7 +75,7 @@
           "lines": [
            "Holds the impeachment trial (two-thirds of the senators present to remove)",
            "Approves treaties (two-thirds of the senators present)",
-           "Approves the President's picks for judges and top jobs"
+           "Approves the President's picks for judges and top officials"
           ]
          }
         ]
@@ -104,7 +104,7 @@
       },
       "image": {
        "src": "content/room-us11r-11.2-machine-legislative.webp",
-       "_source": "Highsmith, Carol M., U.S. Capitol building, Washington D.C., Library of Congress Prints & Photographs, Carol M. Highsmith Archive, https://www.loc.gov/pictures/item/2011630843/ (no known restrictions)"
+       "_source": "Carol M. Highsmith, \"U.S. Capitol building, Washington D.C.\" Photographs in the Carol M. Highsmith Archive, Library of Congress, Prints and Photographs Division. No known restrictions on publication. https://www.loc.gov/pictures/item/2011630843/"
       }
      },
      {
@@ -155,7 +155,7 @@
       ],
       "image": {
        "src": "content/room-us11r-11.2-machine-executive.webp",
-       "_source": "Highsmith, Carol M., The White House, Washington, D.C., Library of Congress, Carol M. Highsmith Archive, https://www.loc.gov/resource/highsm.04961/ (no known restrictions)"
+       "_source": "Carol M. Highsmith, \"The White House, Washington, D.C.\" Carol M. Highsmith's America, Library of Congress, Prints and Photographs Division. No known restrictions on publication. https://www.loc.gov/resource/highsm.04961/"
       }
      },
      {
@@ -200,7 +200,7 @@
       ],
       "image": {
        "src": "content/room-us11r-11.2-machine-judicial.webp",
-       "_source": "Highsmith, Carol M., U.S. Supreme Court building, Washington, D.C., Library of Congress, Carol M. Highsmith Archive, https://www.loc.gov/resource/highsm.11889/ (no known restrictions)"
+       "_source": "Carol M. Highsmith, \"U.S. Supreme Court building, Washington, D.C.\" Photographs in the Carol M. Highsmith Archive, Library of Congress, Prints and Photographs Division. No known restrictions on publication. https://www.loc.gov/resource/highsm.11889/"
       }
      }
     ]
@@ -350,5 +350,5 @@
   ],
   "done": "You worked the machine. When it shows up in a unit, you'll know what you're looking at."
  },
- "_built": "Josh, 2026-10-16, by scripts/packs/civics_pack.py from Sam's machine_words.py (md5 9b00df6d87460974fe6c0c5b1bc58cd5)."
+ "_built": "Josh, 2026-10-16, by scripts/packs/civics_pack.py from Sam's machine_words.py (md5 9f18915979500594a72b7c4fd704bb49)."
 }
