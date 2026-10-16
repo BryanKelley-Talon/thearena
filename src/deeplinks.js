@@ -16,6 +16,7 @@
 //   #/us/writing-lab · #/us/writing-lab/<set slug>   the Writing Lab, or one Blueprint set (10/5)
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
 //   #/us/chase/11.2                        the unit's Arena chase (BK 2026-10-06 22:15)
+//   #/us/11.2/machine · #/us/11.2/amendments   a unit's reference room (manifest unit.rooms; 10/15)
 //   #/us/threads/<stop-id>                 the Threads map with one stop open (for a chase clue)
 //   #/global/gauge/EI/1                    one gauge's level, in the unit we're in (10/8)
 //   #/office · #/office/2026-10-halftime-adjustments
@@ -57,6 +58,7 @@ export function parseHash(hash, manifest) {
   const u = { ...r, at: 'unit', unitSlug: unit.slug }
   if (parts[2] === 'review') return { ...u, at: 'review' }
   if (parts[2] === 'atlas') return { ...u, at: 'unitatlas' }
+  if (parts[2] && (unit.rooms || []).some(x => x.slug === parts[2] && x.published === true)) return { ...u, at: 'civics', civicsSlug: parts[2] }
   if (parts[2] === 'doc-assist') {
     const da = { ...u, at: 'docassist' }
     if (!parts[3]) return da
@@ -87,6 +89,7 @@ export function buildHash(s) {
   }
   if (s.review) return `${u}/review`
   if (s.unitAtlas) return `${u}/atlas`
+  if (s.civics) return `${u}/${s.civics}`
   return u
 }
 

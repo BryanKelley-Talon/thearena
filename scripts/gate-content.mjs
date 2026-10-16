@@ -977,6 +977,37 @@ function checkPopouts(d, f, course, m, fail) {
   }
 }
 
+// ── A UNIT'S REFERENCE ROOMS (THE MACHINE, THE AMENDMENTS; 10/15) ─────────────
+// Every published room's file is here; its card carries words; layer 1 has cards; every tap item has a
+// situation, a question, one answer and two wrong choices (none equal to the answer), a why and a principle.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  for (const c of m.courses || []) for (const u of c.units || []) for (const r of u.rooms || []) {
+    const f = String(r.content_ref || '').replace(/^content\//, '')
+    const live = r.published === true
+    const rf = (msg) => { if (live) { console.error(`  FAIL  ${f || r.slug}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f || r.slug}\n        ${msg}`); warns++ } }
+    if (!r.slug || !/^[a-z][a-z0-9-]*$/.test(r.slug)) rf(`room slug '${r.slug}' must be lower-case letters, numbers and dashes.`)
+    if (!r.card?.title || !r.card?.line) rf(`room '${r.slug}': its card needs a title and a line.`)
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { rf(`room file '${f}' is not in public/content.`); continue }
+    let d
+    try { d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8')) } catch (e) { rf(`not valid JSON - ${e.message}`); continue }
+    if (!d.title || !d.sub) rf('needs a title and a sub.')
+    if (r.card && (r.card.title !== d.title || r.card.line !== d.sub)) rf(`the manifest card must be the pack's title and sub, word for word.`)
+    const cards = (d.layer1?.groups || []).flatMap(g => g.cards || [])
+    if (!d.layer1?.title || !cards.length) rf('layer 1 needs a title and cards.')
+    for (const [i, cd] of cards.entries()) if (!cd.head || !(cd.rows || []).some(x => (x.lines || []).length)) rf(`layer 1 card ${i + 1}: needs a head and at least one line.`)
+    const items = d.layer2?.items || []
+    if (!d.layer2?.title || !items.length) rf('layer 2 needs a title and items.')
+    for (const [i, it] of items.entries()) {
+      const w = `layer 2 item ${i + 1}`
+      for (const k of ['situation', 'question', 'answer', 'why', 'principle']) if (!String(it[k] || '').trim()) rf(`${w}: no ${k}.`)
+      if (!Array.isArray(it.wrong) || it.wrong.length !== 2) rf(`${w}: needs exactly two wrong choices.`)
+      else if (it.wrong.includes(it.answer) || it.wrong[0] === it.wrong[1]) rf(`${w}: the three choices must all differ.`)
+    }
+  }
+}
+
 console.log(`\n${fails} fail (live) - ${warns} warn/dark`)
 if (!fails) console.log('Everything a student can reach today passes.')
 process.exit(fails || process.exitCode ? 1 : 0)
