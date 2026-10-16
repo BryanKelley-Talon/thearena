@@ -696,6 +696,12 @@
     {
       "id": "us11r",
       "label": "US History and Government 11R",
+      "constitution": {
+        "opens_after_unit": "11.2",
+        "opens_on": "2026-11-03",
+        "rooms": [{ "unit": "11.2", "slug": "machine" }, { "unit": "11.2", "slug": "amendments" }],
+        "_note": "THE CONSTITUTION lane (BK 2026-10-16 11:42 'Once we move beyond Unit 11.2--I'd like the Machine and the Amendments to get their own button across the top'; 11:46 one button; 11:48 name and line, 'yes.'). Appears on Tue 11/3 (Sam 12:25: the 11.3 room isn't ready, so by date) or when the US door's current unit comes after 11.2, whichever is first; Landmark Supreme Court Cases joins as a third room when Sam's words land. The cards stay on the 11.2 Review row too."
+      },
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
       "accent": "#E3B341",
       "_accent_note": "Adopted from Josh's own token file, builds/thearena/src/tokens/arena-navy.css — --course-us11r, the house gold, measured 9.62:1 on the navy canvas. The skeleton's #C17700 was 11.5's ERA accent out of canon/tokens and would have collided the first time an 11.5 room was built.",
@@ -1306,8 +1312,8 @@
           "chase": {
             "content_ref": "content/chase-us11r-11.2.json",
             "published": true,
-            "_note": "Josh, 2026-10-15. NINE STATES taps v3, built by scripts/packs/nine_states_pack.py from Sam's skills/arena-chase/nine_states_words.py. Class play Wed 10/28. card = Sam's room card, word for word (BK 14:14 'all approved', 15:03 'just approve it'; Danny clean 15:03). Card hidden until Wed 10/28, the class play (BK 19:47: 'live (direct link) but not have the room card open ... like we did for Timekeeper').",
-            "card_opens_on": "2026-10-28",
+            "_note": "Josh, 2026-10-15. NINE STATES taps v3, built by scripts/packs/nine_states_pack.py from Sam's skills/arena-chase/nine_states_words.py. Class play Wed 10/28. card = Sam's room card, word for word (BK 14:14 'all approved', 15:03 'just approve it'; Danny clean 15:03). Card hidden until Wed 10/28, the class play (BK 19:47: 'live (direct link) but not have the room card open ... like we did for Timekeeper'). Moved to Thu 10/29 (BK 11:22 'yes' to Sam's calendar, 10/16; Sam 11:27 item 1: period 9 at the pep rally).",
+            "card_opens_on": "2026-10-29",
             "card": {
               "title": "NINE STATES",
               "line": "Daniel Shays is on the run. Follow his trail from 1763 to 1819 and find the principle three stops share."
