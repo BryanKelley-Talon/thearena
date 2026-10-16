@@ -1308,6 +1308,28 @@
               "line": "Daniel Shays is on the run. Follow his trail from 1763 to 1819 and find the principle three stops share."
             }
           },
+          "rooms": [
+            {
+              "slug": "machine",
+              "content_ref": "content/room-us11r-11.2-machine.json",
+              "published": true,
+              "card": {
+                "title": "THE MACHINE",
+                "line": "How the federal government is wired: who does what, how they get the seat, and who can stop them."
+              },
+              "_note": "THE MACHINE (Leo 10/15 13:24; BK 13:46/13:49; blessed 15:12, Bless). Sam's machine_words.py 9a89d26c via civics_pack.py. card = the pack's title and sub, word for word."
+            },
+            {
+              "slug": "amendments",
+              "content_ref": "content/room-us11r-11.2-amendments.json",
+              "published": true,
+              "card": {
+                "title": "THE AMENDMENTS",
+                "line": "27 changes to the Constitution. The first ten, the Bill of Rights, protect you from your own government."
+              },
+              "_note": "THE AMENDMENTS (BK 13:48; blessed 15:12, Bless). Sam's amendments_words.py 5eb944a6 via civics_pack.py. card = the pack's title and sub, word for word."
+            }
+          ],
           "activities": [
             {
               "type": "stimulus",

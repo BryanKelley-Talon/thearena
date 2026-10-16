@@ -38,6 +38,7 @@ import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { ChaseScreen, ChaseBar, CHASE_STYLES, CHASE_WORDS } from './chase.jsx'
+import { CivicsRoom, CIVICS_STYLES } from './civics.jsx'
 import { COURSE_KEY } from './deeplinks.js'
 import { useAtlas, AtlasLane, AtlasViewer, UnitAtlasPage, MapCards, mapsForUnit, ATLAS_STYLES, ATLAS_WORDS } from './atlas.jsx'
 import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as DA, openCasefiles, paperOf } from './docassist.jsx'
@@ -1240,10 +1241,12 @@ function RoomParts({ unit, courseKey, games, docAssist, maps, onOpenMap, wl, onO
   // A published chase may keep its card out of the room until a day (unit.chase.card_opens_on, the device's
   // date): the link works for colleagues before kids find it in the Arena (BK 2026-10-09 09:12).
   const chaseCard = unit.chase?.card && ((unit.chase.published === true && onDate({ opens_on: unit.chase.card_opens_on })) || import.meta.env.VITE_CHASE_PROOF === '1') && courseKey ? unit.chase.card : null
+  // A unit's reference rooms (THE MACHINE, THE AMENDMENTS; 10/15): card words are the pack's title and sub, copied into the manifest.
+  const roomCards = courseKey ? (unit.rooms || []).filter(r => r.published === true && r.card && onDate({ opens_on: r.card_opens_on })) : []
   return (
     <>
       {/* ROOM ORDER (BK, 2026-09-25): the unit's review, then its test practice. */}
-      {(resolves(unit.brief_ref) || assignment || chaseCard) && (
+      {(resolves(unit.brief_ref) || assignment || chaseCard || roomCards.length > 0) && (
         <>
           <h3 className="room-section">Review</h3>
           <div className="grid room-cards" style={{ marginBottom: 34 }}>
@@ -1276,6 +1279,13 @@ function RoomParts({ unit, courseKey, games, docAssist, maps, onOpenMap, wl, onO
                 <span className="flag live">Open</span>
               </a>
             )}
+            {roomCards.map(r => (
+              <a key={r.slug} className="card" href={`#/${courseKey}/${unit.number}/${r.slug}`}>
+                <div className="card-name">{r.card.title}</div>
+                <div className="card-blurb">{r.card.line}</div>
+                <span className="flag live">Open</span>
+              </a>
+            ))}
           </div>
         </>
       )}
@@ -1976,6 +1986,8 @@ export default function App() {
   const [stopOpen, setStopOpen] = useState(null)         // a Threads / Enduring Issues stop opened by link (a chase clue)
   const [chase, setChase] = useState(false)              // the unit's Arena chase (BK 2026-10-06 22:15)
   const [chasePack, setChasePack] = useState(null)
+  const [civics, setCivics] = useState(null)            // a unit's reference room slug (THE MACHINE, THE AMENDMENTS; 10/15)
+  const [civicsPack, setCivicsPack] = useState(null)
   const [here, setHere] = useState('')                  // the current page's address (the chase pill shows only where a chase link sent the kid)
   const [daCfFocus, setDaCfFocus] = useState(null)       // a casefile link's casefile, kept in the address bar                          // which content_ref the loaded Doc Assist pack is
 
@@ -2056,6 +2068,12 @@ export default function App() {
     else setChasePack(false)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [chase, course, unit])
+  // A unit's reference room (manifest unit.rooms[]: slug, content_ref, published).
+  useEffect(() => {
+    if (!civics || !unit) { setCivicsPack(null); return }
+    const r = (unit.rooms || []).find(x => x.slug === civics && x.published === true)
+    if (r && resolves(r.content_ref)) { setCivicsPack(null); fetchContent(r.content_ref, setCivicsPack) } else setCivicsPack(false)
+  }, [civics, unit])
   const openReview = (u = unit) => { setReview(true); fetchContent(u.brief_ref, setBriefPack); window.scrollTo(0, 0) }
   const openActivity = (u, i) => {
     const a = (u.activities || []).filter(isLive)[i]
@@ -2077,6 +2095,7 @@ export default function App() {
     setUnitAtlas(r.at === 'unitatlas')
     setStopOpen(r.stopOpen || null)
     setChase(r.at === 'chase')
+    setCivics(r.at === 'civics' ? r.civicsSlug : null)
     setWlSlug(r.wlSet || null)
     setOffice(r.at === 'office')
     if (r.at === 'office') {
@@ -2127,13 +2146,13 @@ export default function App() {
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
       course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
-      chase, stopOpen,
+      chase, stopOpen, civics,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
     setHere(h)                                              // where the kid is, for the chase pill (10/9)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2161,7 +2180,14 @@ export default function App() {
     if (!t) return
     setOfficeTheme(slug); fetchContent(t.content_ref, setOfficePack); window.scrollTo(0, 0)
   }
-  if (course && unit && chase) {
+  if (course && unit && civics) {
+    screen = civicsPack === null ? <div className="loading">Opening&hellip;</div>
+      : !civicsPack ? <div className="wrap"><div className="empty"><div className="empty-title">Not open yet.</div></div></div>
+      : <CivicsRoom key={civicsPack.id} pack={civicsPack} ScreenHeader={ScreenHeader} BottomBack={BottomBack}
+                    back={unit.label && String(unit.label).startsWith(String(unit.number)) ? unit.label : `${unit.number} · ${unit.label}`}
+                    onBack={() => { setCivics(null); window.scrollTo(0, 0) }} />
+  }
+  else if (course && unit && chase) {
     screen = chasePack === null ? <div className="loading">Opening the chase&hellip;</div>
       : !chasePack ? <div className="wrap"><div className="empty"><div className="empty-title">Not open yet.</div></div></div>
       : <ChaseScreen key={chasePack.id} course={course} courseKey={COURSE_KEY[course.id] || course.id} unit={unit} pack={chasePack} daPack={daPack || null}
@@ -2315,7 +2341,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES + CHASE_STYLES + PEEL_STYLES + HL_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

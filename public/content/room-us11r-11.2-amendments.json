@@ -1,0 +1,630 @@
+{
+ "id": "room-us11r-11.2-amendments",
+ "course": "us11r",
+ "unit": "11.2",
+ "slug": "amendments",
+ "title": "THE AMENDMENTS",
+ "sub": "27 changes to the Constitution. The first ten, the Bill of Rights, protect you from your own government.",
+ "how": "How one gets added (Article V): two-thirds of both houses of Congress propose it, and three-fourths of the states ratify it.",
+ "number_cards": true,
+ "layer1": {
+  "title": "Meet the amendments",
+  "line": "One card per amendment. Same words as your chart.",
+  "groups": [
+   {
+    "title": "THE BILL OF RIGHTS",
+    "years": "1791",
+    "cards": [
+     {
+      "head": "1",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Freedom of religion, speech and the press; the right to gather peacefully and to petition (ask the government to fix a wrong)."
+        ]
+       }
+      ],
+      "tags": [
+       "Individual Rights (civil liberties)"
+      ]
+     },
+     {
+      "head": "2",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "\"A well regulated Militia, being necessary to the security of a free State, the right of the people to keep and bear Arms, shall not be infringed.\""
+        ]
+       }
+      ],
+      "tags": [
+       "Individual Rights (civil liberties)"
+      ]
+     },
+     {
+      "head": "3",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "No soldiers housed in your home in peacetime without your consent."
+        ]
+       }
+      ],
+      "tags": [
+       "Individual Rights (civil liberties)"
+      ]
+     },
+     {
+      "head": "4",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "No unreasonable searches or seizures. A warrant needs probable cause."
+        ]
+       }
+      ],
+      "tags": [
+       "Due Process"
+      ]
+     },
+     {
+      "head": "5",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "No trial twice for the same crime; you can't be forced to be a witness against yourself; due process; fair payment if the government takes your property."
+        ]
+       }
+      ],
+      "tags": [
+       "Due Process"
+      ]
+     },
+     {
+      "head": "6",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "A speedy, public trial by a fair jury. You hear the charges, face the witnesses, and get a lawyer."
+        ]
+       }
+      ],
+      "tags": [
+       "Due Process"
+      ]
+     },
+     {
+      "head": "7",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "A jury trial in lawsuits worth more than $20."
+        ]
+       }
+      ],
+      "tags": [
+       "Due Process"
+      ]
+     },
+     {
+      "head": "8",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "No excessive bail or fines. No cruel and unusual punishment."
+        ]
+       }
+      ],
+      "tags": [
+       "Due Process"
+      ]
+     },
+     {
+      "head": "9",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Rights not listed here still belong to the people."
+        ]
+       }
+      ],
+      "tags": [
+       "Natural Rights"
+      ]
+     },
+     {
+      "head": "10",
+      "kicker": [
+       "1791"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Powers not given to the national government belong to the states or the people."
+        ]
+       }
+      ],
+      "tags": [
+       "Federalism"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "EARLY FIXES",
+    "years": "1795–1804",
+    "cards": [
+     {
+      "head": "11",
+      "kicker": [
+       "1795"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Limits lawsuits in federal court against a state by people from another state or country."
+        ]
+       }
+      ],
+      "tags": [
+       "Federalism"
+      ]
+     },
+     {
+      "head": "12",
+      "kicker": [
+       "1804"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Electors cast separate votes for President and Vice President."
+        ]
+       }
+      ],
+      "tags": [
+       "Representative Government"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "AFTER THE CIVIL WAR",
+    "years": "1865–1870",
+    "cards": [
+     {
+      "head": "13",
+      "kicker": [
+       "1865"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Ends slavery."
+        ]
+       }
+      ],
+      "tags": [
+       "Equal Protection"
+      ]
+     },
+     {
+      "head": "14",
+      "kicker": [
+       "1868"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Anyone born or naturalized here, and subject to its laws, is a citizen. No state may deny due process or the equal protection of the laws."
+        ]
+       }
+      ],
+      "tags": [
+       "Equal Protection"
+      ]
+     },
+     {
+      "head": "15",
+      "kicker": [
+       "1870"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "The right to vote can't be denied because of race or color."
+        ]
+       }
+      ],
+      "tags": [
+       "Equal Protection",
+       "VOTE"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "THE PROGRESSIVE ERA",
+    "years": "1913–1920",
+    "cards": [
+     {
+      "head": "16",
+      "kicker": [
+       "1913"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Congress can tax incomes, a power the Supreme Court had said it lacked."
+        ]
+       }
+      ],
+      "tags": [
+       "Limited Government"
+      ]
+     },
+     {
+      "head": "17",
+      "kicker": [
+       "1913"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Voters elect their senators directly."
+        ]
+       }
+      ],
+      "tags": [
+       "Representative Government"
+      ]
+     },
+     {
+      "head": "18",
+      "kicker": [
+       "1919"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Bans making, selling or moving alcohol (Prohibition)."
+        ]
+       }
+      ],
+      "tags": [
+       "Individual Rights (civil liberties)"
+      ]
+     },
+     {
+      "head": "19",
+      "kicker": [
+       "1920"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "The right to vote can't be denied because of sex."
+        ]
+       }
+      ],
+      "tags": [
+       "Equal Protection",
+       "VOTE"
+      ]
+     }
+    ]
+   },
+   {
+    "title": "THE MODERN AMENDMENTS",
+    "years": "1933–1992",
+    "cards": [
+     {
+      "head": "20",
+      "kicker": [
+       "1933"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "New terms start sooner: January 20 for the President, January 3 for Congress."
+        ]
+       }
+      ],
+      "tags": [
+       "Representative Government"
+      ]
+     },
+     {
+      "head": "21",
+      "kicker": [
+       "1933"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Ends Prohibition (repeals the 18th)."
+        ]
+       }
+      ],
+      "tags": [
+       "Individual Rights (civil liberties)"
+      ]
+     },
+     {
+      "head": "22",
+      "kicker": [
+       "1951"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "A President can be elected only twice."
+        ]
+       }
+      ],
+      "tags": [
+       "Limited Government"
+      ]
+     },
+     {
+      "head": "23",
+      "kicker": [
+       "1961"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "Washington, D.C., gets electoral votes for President."
+        ]
+       }
+      ],
+      "tags": [
+       "Representative Government"
+      ]
+     },
+     {
+      "head": "24",
+      "kicker": [
+       "1964"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "No poll tax in federal elections."
+        ]
+       }
+      ],
+      "tags": [
+       "Equal Protection",
+       "VOTE"
+      ]
+     },
+     {
+      "head": "25",
+      "kicker": [
+       "1967"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "If the President dies, resigns or can't serve, the Vice President takes over; a vacant Vice Presidency gets filled."
+        ]
+       }
+      ],
+      "tags": [
+       "Checks and Balances"
+      ]
+     },
+     {
+      "head": "26",
+      "kicker": [
+       "1971"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "The right to vote can't be denied to citizens 18 or older because of age."
+        ]
+       }
+      ],
+      "tags": [
+       "Representative Government",
+       "VOTE"
+      ]
+     },
+     {
+      "head": "27",
+      "kicker": [
+       "1992"
+      ],
+      "rows": [
+       {
+        "label": null,
+        "lines": [
+         "A pay raise Congress votes itself waits until after the next House election."
+        ]
+       }
+      ],
+      "tags": [
+       "Limited Government"
+      ]
+     }
+    ]
+   }
+  ],
+  "foot": [
+   "The tag beside each amendment is the principle from your card that it connects to. VOTE marks the four that say the vote can't be denied because of race, sex, a poll tax, or age."
+  ]
+ },
+ "layer2": {
+  "title": "Know Your Rights",
+  "line": "Something happens. Tap the amendment that answers it.",
+  "items": [
+   {
+    "situation": "The government orders a newspaper to stop printing articles that criticize the President.",
+    "question": "Which amendment protects the paper?",
+    "answer": "1st Amendment",
+    "wrong": [
+     "4th Amendment",
+     "9th Amendment"
+    ],
+    "why": "\"Congress shall make no law… abridging the freedom of speech, or of the press\" (1st Amendment).",
+    "principle": "Individual Rights (civil liberties)"
+   },
+   {
+    "situation": "Congress passes a law making one church the official national church that everyone must pay to support.",
+    "question": "Which amendment blocks it?",
+    "answer": "1st Amendment",
+    "wrong": [
+     "10th Amendment",
+     "5th Amendment"
+    ],
+    "why": "\"Congress shall make no law respecting an establishment of religion\" (1st Amendment).",
+    "principle": "Individual Rights (civil liberties)"
+   },
+   {
+    "situation": "Police search a man's house without a warrant and with no reason to think he did anything wrong.",
+    "question": "Which amendment did they break?",
+    "answer": "4th Amendment",
+    "wrong": [
+     "5th Amendment",
+     "8th Amendment"
+    ],
+    "why": "No unreasonable searches; a warrant needs probable cause (4th Amendment).",
+    "principle": "Due Process"
+   },
+   {
+    "situation": "At her trial, a woman is told she must take the stand and answer questions that could prove her guilty.",
+    "question": "Which amendment says she doesn't have to?",
+    "answer": "5th Amendment",
+    "wrong": [
+     "6th Amendment",
+     "1st Amendment"
+    ],
+    "why": "No one can be \"compelled in any criminal case to be a witness against himself\" (5th Amendment).",
+    "principle": "Due Process"
+   },
+   {
+    "situation": "A jury finds a man not guilty of a robbery. The prosecutor wants to try him again for the same robbery.",
+    "question": "Which amendment stops a second trial?",
+    "answer": "5th Amendment",
+    "wrong": [
+     "7th Amendment",
+     "8th Amendment"
+    ],
+    "why": "No one can be tried twice for the same crime. That's called double jeopardy (5th Amendment).",
+    "principle": "Due Process"
+   },
+   {
+    "situation": "A city wants to build a highway through a family's land and take it without paying.",
+    "question": "Which amendment says the family gets paid?",
+    "answer": "5th Amendment",
+    "wrong": [
+     "3rd Amendment",
+     "10th Amendment"
+    ],
+    "why": "Private property can't be taken for public use \"without just compensation\" (5th Amendment).",
+    "principle": "Due Process"
+   },
+   {
+    "situation": "A man waits in jail for three years with no trial, and nobody gives him a lawyer.",
+    "question": "Which amendment did the government break?",
+    "answer": "6th Amendment",
+    "wrong": [
+     "4th Amendment",
+     "2nd Amendment"
+    ],
+    "why": "The accused gets \"a speedy and public trial\" and a lawyer (6th Amendment).",
+    "principle": "Due Process"
+   },
+   {
+    "situation": "A judge fines a driver $10 million for a parking ticket.",
+    "question": "Which amendment says that's too much?",
+    "answer": "8th Amendment",
+    "wrong": [
+     "6th Amendment",
+     "9th Amendment"
+    ],
+    "why": "\"Excessive bail shall not be required, nor excessive fines imposed\" (8th Amendment).",
+    "principle": "Due Process"
+   },
+   {
+    "situation": "In peacetime, the army orders a family to let soldiers live in their house.",
+    "question": "Which amendment lets the family say no?",
+    "answer": "3rd Amendment",
+    "wrong": [
+     "2nd Amendment",
+     "4th Amendment"
+    ],
+    "why": "No soldier can be housed in a home in peacetime \"without the consent of the Owner\" (3rd Amendment).",
+    "principle": "Individual Rights (civil liberties)"
+   },
+   {
+    "situation": "Your state, not Congress, decides how many credits you need to graduate from high school.",
+    "question": "Which amendment leaves that power with the states?",
+    "answer": "10th Amendment",
+    "wrong": [
+     "9th Amendment",
+     "1st Amendment"
+    ],
+    "why": "Powers not given to the national government are \"reserved to the States respectively, or to the people\" (10th Amendment).",
+    "principle": "Federalism"
+   }
+  ],
+  "done": "You know your rights. When one shows up in a document or a headline, name it."
+ },
+ "_built": "Josh, 2026-10-15, by scripts/packs/civics_pack.py from Sam's amendments_words.py (md5 5eb944a608289628bd48db3cb11a2ecf)."
+}

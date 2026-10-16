@@ -1,0 +1,343 @@
+{
+ "id": "room-us11r-11.2-machine",
+ "course": "us11r",
+ "unit": "11.2",
+ "slug": "machine",
+ "title": "THE MACHINE",
+ "sub": "How the federal government is wired: who does what, how they get the seat, and who can stop them.",
+ "layer1": {
+  "title": "Meet the branches",
+  "line": "Four cards: the House, the Senate, the President and the Supreme Court. Same words as your chart.",
+  "groups": [
+   {
+    "title": null,
+    "years": null,
+    "cards": [
+     {
+      "head": "The House",
+      "kicker": [
+       "Make laws",
+       "Article I"
+      ],
+      "rows": [
+       {
+        "label": "WHO",
+        "lines": [
+         "House of Representatives",
+         "435 members*, seats split by each state's population"
+        ]
+       },
+       {
+        "label": "HOW YOU GET THE SEAT",
+        "lines": [
+         "At least 25 years old",
+         "A citizen for 7 years",
+         "Lives in the state",
+         "Elected by the voters in their district*",
+         "2-year term, no limit"
+        ]
+       },
+       {
+        "label": "ITS POWERS",
+        "lines": [
+         "Starts every tax bill",
+         "Impeaches: brings the charges"
+        ]
+       },
+       {
+        "label": "BOTH HOUSES, TOGETHER",
+        "lines": [
+         "Pass laws (both must agree) · tax and borrow · regulate trade · coin money · declare war · raise an army and navy · the Elastic Clause: make all laws \"necessary and proper\" to carry out these powers. It lets Congress use tools the Constitution never names, like a bank, to carry out the powers it does name."
+        ]
+       },
+       {
+        "label": "WHO CAN STOP IT",
+        "lines": [
+         "The President can veto its bills",
+         "The Court can strike down its laws"
+        ]
+       }
+      ]
+     },
+     {
+      "head": "The Senate",
+      "kicker": [
+       "Make laws",
+       "Article I"
+      ],
+      "rows": [
+       {
+        "label": "WHO",
+        "lines": [
+         "Senate",
+         "100 senators, 2 from every state"
+        ]
+       },
+       {
+        "label": "HOW YOU GET THE SEAT",
+        "lines": [
+         "At least 30 years old",
+         "A citizen for 9 years",
+         "Lives in the state",
+         "Elected by the voters of the whole state (since 1913, 17th Amendment)",
+         "6-year term, no limit"
+        ]
+       },
+       {
+        "label": "ITS POWERS",
+        "lines": [
+         "Holds the impeachment trial (two-thirds of the senators present to remove)",
+         "Approves treaties (two-thirds of the senators present)",
+         "Approves the President's picks for judges and top jobs"
+        ]
+       },
+       {
+        "label": "BOTH HOUSES, TOGETHER",
+        "lines": [
+         "Pass laws (both must agree) · tax and borrow · regulate trade · coin money · declare war · raise an army and navy · the Elastic Clause: make all laws \"necessary and proper\" to carry out these powers. It lets Congress use tools the Constitution never names, like a bank, to carry out the powers it does name."
+        ]
+       },
+       {
+        "label": "WHO CAN STOP IT",
+        "lines": [
+         "The President can veto its bills",
+         "The Court can strike down its laws"
+        ]
+       }
+      ]
+     },
+     {
+      "head": "The President",
+      "kicker": [
+       "Carry out laws",
+       "Article II"
+      ],
+      "rows": [
+       {
+        "label": "WHO",
+        "lines": [
+         "The President",
+         "plus the Vice President"
+        ]
+       },
+       {
+        "label": "HOW YOU GET THE SEAT",
+        "lines": [
+         "At least 35 years old",
+         "A natural-born citizen",
+         "Lived in the U.S. 14 years",
+         "Chosen by the Electoral College: 270 of 538 votes wins*",
+         "4-year term, elected twice at most (22nd Amendment)"
+        ]
+       },
+       {
+        "label": "ITS POWERS",
+        "lines": [
+         "Carries out the laws",
+         "Commander in Chief of the military",
+         "Signs or vetoes bills",
+         "Makes treaties",
+         "Picks judges and top officials",
+         "Pardons federal crimes"
+        ]
+       },
+       {
+        "label": "WHO CAN STOP IT",
+        "lines": [
+         "Congress can override a veto (two-thirds of both houses)",
+         "The Senate can reject treaties and picks",
+         "The House impeaches; the Senate can remove",
+         "The Court can rule an action unconstitutional"
+        ]
+       }
+      ]
+     },
+     {
+      "head": "The Supreme Court",
+      "kicker": [
+       "Judge laws",
+       "Article III"
+      ],
+      "rows": [
+       {
+        "label": "WHO",
+        "lines": [
+         "9 justices*: the Chief Justice and 8 others",
+         "plus the lower federal courts Congress creates"
+        ]
+       },
+       {
+        "label": "HOW YOU GET THE SEAT",
+        "lines": [
+         "No age or citizenship rule in the Constitution",
+         "Nominated by the President, approved by the Senate",
+         "Serves \"during good Behaviour\": for life, unless impeached and removed"
+        ]
+       },
+       {
+        "label": "ITS POWERS",
+        "lines": [
+         "Decides cases about the Constitution and federal law",
+         "Judicial Review: can strike down a law or action that breaks the Constitution"
+        ]
+       },
+       {
+        "label": "WHO CAN STOP IT",
+        "lines": [
+         "The President picks the justices",
+         "The Senate can reject them",
+         "Congress can impeach and remove judges",
+         "An amendment can overturn a ruling"
+        ]
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "foot": [
+   "* Set by law, not by the Constitution's words.",
+   "Judicial Review isn't written in the Constitution. The Court claimed it in Marbury v. Madison (1803)."
+  ]
+ },
+ "layer2": {
+  "title": "Final Say",
+  "line": "Something happens. Tap the power that answers it.",
+  "items": [
+   {
+    "situation": "Congress passes a bill. The President hates it.",
+    "question": "What can the President do?",
+    "answer": "Veto it",
+    "wrong": [
+     "Strike it down",
+     "Impeach Congress"
+    ],
+    "why": "The President sends it back unsigned, with the objections (Article I, Section 7).",
+    "principle": "Checks and Balances"
+   },
+   {
+    "situation": "The President vetoed the bill. Congress still wants it.",
+    "question": "What can Congress do back?",
+    "answer": "Override the veto with two-thirds of both houses",
+    "wrong": [
+     "Ask the Court to sign it",
+     "Pass it again by a simple majority"
+    ],
+    "why": "Two-thirds of the House and two-thirds of the Senate make it law anyway (Article I, Section 7).",
+    "principle": "Checks and Balances"
+   },
+   {
+    "situation": "A law is challenged in court. The justices decide it breaks the Constitution.",
+    "question": "What can the Court do?",
+    "answer": "Strike the law down",
+    "wrong": [
+     "Veto the law",
+     "Rewrite the law"
+    ],
+    "why": "That's Judicial Review. The Court claimed it in Marbury v. Madison (1803).",
+    "principle": "Judicial Review"
+   },
+   {
+    "situation": "A seat on the Supreme Court opens.",
+    "question": "Who fills it?",
+    "answer": "The President nominates; the Senate approves",
+    "wrong": [
+     "The voters elect a justice",
+     "The House picks one"
+    ],
+    "why": "\"by and with the Advice and Consent of the Senate\" (Article II, Section 2).",
+    "principle": "Checks and Balances"
+   },
+   {
+    "situation": "The President signs a treaty with another country.",
+    "question": "What has to happen before it counts?",
+    "answer": "Two-thirds of the senators present approve it",
+    "wrong": [
+     "The Supreme Court approves it",
+     "The House votes on it"
+    ],
+    "why": "Treaties need two-thirds of the senators present (Article II, Section 2).",
+    "principle": "Checks and Balances"
+   },
+   {
+    "situation": "A President is accused of bribery.",
+    "question": "Who brings the charges, and who holds the trial?",
+    "answer": "The House impeaches; the Senate holds the trial",
+    "wrong": [
+     "The Court charges; Congress decides",
+     "The Senate charges; the House decides"
+    ],
+    "why": "Removal takes two-thirds of the senators present (Article I, Sections 2 and 3; Article II, Section 4).",
+    "principle": "Checks and Balances"
+   },
+   {
+    "situation": "The country needs more money for the army.",
+    "question": "Where does the tax bill have to start?",
+    "answer": "In the House",
+    "wrong": [
+     "In the Senate",
+     "In the President's office"
+    ],
+    "why": "\"All Bills for raising Revenue shall originate in the House of Representatives\" (Article I, Section 7). The House is the part that faces the voters every two years.",
+    "principle": "Representative Government"
+   },
+   {
+    "situation": "Another country attacks the United States.",
+    "question": "Who can declare war? Who commands the troops?",
+    "answer": "Congress declares war; the President commands",
+    "wrong": [
+     "The President does both",
+     "The Court declares war; Congress commands"
+    ],
+    "why": "Article I, Section 8 gives war to Congress; Article II, Section 2 makes the President Commander in Chief.",
+    "principle": "Separation of Powers"
+   },
+   {
+    "situation": "A 32-year-old senator wants to run for President.",
+    "question": "Can she?",
+    "answer": "Not yet: a President must be at least 35",
+    "wrong": [
+     "Yes, any senator can run",
+     "No, senators can never run"
+    ],
+    "why": "Article II, Section 1 sets the age at 35. Even a senator has to follow the rules.",
+    "principle": "Rule of Law"
+   },
+   {
+    "situation": "A popular President has been elected twice.",
+    "question": "Can he run for a third term?",
+    "answer": "No: the 22nd Amendment allows two elected terms",
+    "wrong": [
+     "Yes, if the people want him",
+     "Yes, if Congress agrees"
+    ],
+    "why": "Ratified in 1951, after FDR won four times.",
+    "principle": "Limited Government"
+   },
+   {
+    "situation": "Congress creates a national bank. The Constitution never mentions a bank.",
+    "question": "How can Congress do it?",
+    "answer": "The Elastic Clause",
+    "wrong": [
+     "The President ordered it",
+     "The states asked for it"
+    ],
+    "why": "Article I, Section 8. In McCulloch v. Maryland (1819), the Court upheld the bank and struck down Maryland's tax on it.",
+    "principle": "Federalism"
+   },
+   {
+    "situation": "Your state wants to raise the age for a driver's license.",
+    "question": "Who decides?",
+    "answer": "The state: it's a reserved power",
+    "wrong": [
+     "Congress",
+     "The Supreme Court"
+    ],
+    "why": "The 10th Amendment keeps powers like this with the states.",
+    "principle": "Federalism"
+   }
+  ],
+  "done": "You worked the machine. When it shows up in a unit, you'll know what you're looking at."
+ },
+ "_built": "Josh, 2026-10-15, by scripts/packs/civics_pack.py from Sam's machine_words.py (md5 9a89d26c2befc5cbea481ecc7b259da5)."
+}
