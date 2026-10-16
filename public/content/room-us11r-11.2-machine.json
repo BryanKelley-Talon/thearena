@@ -14,36 +14,73 @@
     "years": null,
     "cards": [
      {
-      "head": "The House",
+      "head": "CONGRESS",
       "kicker": [
        "Make laws",
        "Article I"
       ],
+      "split": [
+       {
+        "head": "The House",
+        "rows": [
+         {
+          "label": "WHO",
+          "lines": [
+           "House of Representatives",
+           "435 members*, seats split by each state's population"
+          ]
+         },
+         {
+          "label": "HOW YOU GET THE SEAT",
+          "lines": [
+           "At least 25 years old",
+           "A citizen for 7 years",
+           "Lives in the state",
+           "Elected by the voters in their district*",
+           "2-year term, no limit"
+          ]
+         },
+         {
+          "label": "ITS POWERS",
+          "lines": [
+           "Starts every tax bill",
+           "Impeaches: brings the charges"
+          ]
+         }
+        ]
+       },
+       {
+        "head": "The Senate",
+        "rows": [
+         {
+          "label": "WHO",
+          "lines": [
+           "Senate",
+           "100 senators, 2 from every state"
+          ]
+         },
+         {
+          "label": "HOW YOU GET THE SEAT",
+          "lines": [
+           "At least 30 years old",
+           "A citizen for 9 years",
+           "Lives in the state",
+           "Elected by the voters of the whole state (since 1913, 17th Amendment)",
+           "6-year term, no limit"
+          ]
+         },
+         {
+          "label": "ITS POWERS",
+          "lines": [
+           "Holds the impeachment trial (two-thirds of the senators present to remove)",
+           "Approves treaties (two-thirds of the senators present)",
+           "Approves the President's picks for judges and top jobs"
+          ]
+         }
+        ]
+       }
+      ],
       "rows": [
-       {
-        "label": "WHO",
-        "lines": [
-         "House of Representatives",
-         "435 members*, seats split by each state's population"
-        ]
-       },
-       {
-        "label": "HOW YOU GET THE SEAT",
-        "lines": [
-         "At least 25 years old",
-         "A citizen for 7 years",
-         "Lives in the state",
-         "Elected by the voters in their district*",
-         "2-year term, no limit"
-        ]
-       },
-       {
-        "label": "ITS POWERS",
-        "lines": [
-         "Starts every tax bill",
-         "Impeaches: brings the charges"
-        ]
-       },
        {
         "label": "BOTH HOUSES, TOGETHER",
         "lines": [
@@ -60,54 +97,7 @@
       ]
      },
      {
-      "head": "The Senate",
-      "kicker": [
-       "Make laws",
-       "Article I"
-      ],
-      "rows": [
-       {
-        "label": "WHO",
-        "lines": [
-         "Senate",
-         "100 senators, 2 from every state"
-        ]
-       },
-       {
-        "label": "HOW YOU GET THE SEAT",
-        "lines": [
-         "At least 30 years old",
-         "A citizen for 9 years",
-         "Lives in the state",
-         "Elected by the voters of the whole state (since 1913, 17th Amendment)",
-         "6-year term, no limit"
-        ]
-       },
-       {
-        "label": "ITS POWERS",
-        "lines": [
-         "Holds the impeachment trial (two-thirds of the senators present to remove)",
-         "Approves treaties (two-thirds of the senators present)",
-         "Approves the President's picks for judges and top jobs"
-        ]
-       },
-       {
-        "label": "BOTH HOUSES, TOGETHER",
-        "lines": [
-         "Pass laws (both must agree) · tax and borrow · regulate trade · coin money · declare war · raise an army and navy · the Elastic Clause: make all laws \"necessary and proper\" to carry out these powers. It lets Congress use tools the Constitution never names, like a bank, to carry out the powers it does name."
-        ]
-       },
-       {
-        "label": "WHO CAN STOP IT",
-        "lines": [
-         "The President can veto its bills",
-         "The Court can strike down its laws"
-        ]
-       }
-      ]
-     },
-     {
-      "head": "The President",
+      "head": "THE PRESIDENT",
       "kicker": [
        "Carry out laws",
        "Article II"
@@ -153,7 +143,7 @@
       ]
      },
      {
-      "head": "The Supreme Court",
+      "head": "THE SUPREME COURT",
       "kicker": [
        "Judge laws",
        "Article III"

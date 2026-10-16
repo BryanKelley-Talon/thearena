@@ -16,19 +16,23 @@ def items(rows):
     return [{"situation": s, "question": q, "answer": a, "wrong": list(wr), "why": why, "principle": p} for (s, q, a, wr, why, p) in rows]
 
 if kind == 'machine':
-    rowv = {label: cells for (label, *cells) in w.CHART}           # label -> [House, Senate, President, Court]
-    cards = []
-    for (title, col, both) in w.CARDS:
-        b = 0 if col in (1, 2) else col - 2                        # BRANCHES / JOB index: Congress, President, Court
-        rows = []
-        for (label, *cells) in w.CHART:
-            lines = cells[col - 1]
-            if not lines and label == w.CHART[-1][0] and col == 2:  # the chart prints Congress's checks once, across both houses
-                lines = cells[0]
-            rows.append({"label": label, "lines": list(lines)})
-            if both and label == "ITS POWERS":
-                rows.append({"label": w.CONGRESS_BOTH[0], "lines": [w.CONGRESS_BOTH[1]]})
-        cards.append({"head": title, "kicker": [w.JOB[b], w.JOB_SUB[b]], "rows": rows})
+    # Three branches, not four cards (BK 2026-10-15 20:53: "we have three branches ... congress is two parts ...
+    # but its still one branch"). Congress is one card: its House and Senate cells side by side (split), and the rows
+    # the chart prints once across both houses (BOTH HOUSES, TOGETHER; WHO CAN STOP IT) print once, across the card.
+    # The branch names are the chart's own column heads (BRANCHES); House and Senate are CARDS' titles.
+    title = {col: t for (t, col, both) in w.CARDS}
+    stop_label = w.CHART[-1][0]
+    def rows_for(col):
+        return [{"label": label, "lines": list(cells[col - 1])} for (label, *cells) in w.CHART if label != stop_label]
+    congress = {"head": w.BRANCHES[0], "kicker": [w.JOB[0], w.JOB_SUB[0]],
+                "split": [{"head": title[1], "rows": rows_for(1)}, {"head": title[2], "rows": rows_for(2)}],
+                "rows": [{"label": w.CONGRESS_BOTH[0], "lines": [w.CONGRESS_BOTH[1]]},
+                         {"label": stop_label, "lines": list(w.CHART[-1][1])}]}
+    if getattr(w, 'CONGRESS_WHY', None):   # Sam's callout, when his words land (BK 20:53 "maybe a callout as to why")
+        congress["callout"] = {"head": getattr(w, 'CONGRESS_WHY_HEAD', None), "lines": list(w.CONGRESS_WHY) if isinstance(w.CONGRESS_WHY, (list, tuple)) else [w.CONGRESS_WHY]}
+    cards = [congress] + [{"head": w.BRANCHES[b], "kicker": [w.JOB[b], w.JOB_SUB[b]],
+                           "rows": [{"label": label, "lines": list(cells[col - 1])} for (label, *cells) in w.CHART]}
+                          for (b, col) in ((1, 3), (2, 4))]
     pack = {
       "id": "room-us11r-11.2-machine", "course": "us11r", "unit": "11.2", "slug": "machine",
       "title": w.TITLE, "sub": w.SUB,

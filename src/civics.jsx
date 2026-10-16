@@ -12,19 +12,32 @@ import { useMemo, useState } from 'react'
 
 const shuffled = arr => { const a = arr.slice(); for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]] } return a }
 
+function Rows({ r, wide }) {
+  return (
+    <div className={`civ-row${wide ? ' civ-row-wide' : ''}`}>
+      {r.label && <div className="civ-label">{r.label}</div>}
+      {r.lines.length > 1
+        ? <ul className="civ-lines">{r.lines.map((l, j) => <li key={j}>{l}</li>)}</ul>
+        : r.lines.map((l, j) => <p key={j} className="civ-line">{l}</p>)}
+    </div>
+  )
+}
+
 function RefCard({ card, big }) {
   return (
-    <article className="civ-card">
+    <article className={`civ-card${(card.split || []).length ? ' civ-card-split' : ''}`}>
       <div className={`civ-head${big ? ' civ-num' : ''}`} aria-label={big ? `Amendment ${card.head}` : undefined}>{card.head}</div>
       {(card.kicker || []).length > 0 && <div className="civ-kicker">{card.kicker.join(' · ')}</div>}
-      {(card.rows || []).map((r, i) => (
-        <div key={i} className="civ-row">
-          {r.label && <div className="civ-label">{r.label}</div>}
-          {r.lines.length > 1
-            ? <ul className="civ-lines">{r.lines.map((l, j) => <li key={j}>{l}</li>)}</ul>
-            : r.lines.map((l, j) => <p key={j} className="civ-line">{l}</p>)}
+      {/* Why one branch has two parts (BK 10/15 20:53): Sam's words, when they land. */}
+      {card.callout && <aside className="civ-callout">{card.callout.head && <div className="civ-callout-h">{card.callout.head}</div>}{card.callout.lines.map((l, i) => <p key={i}>{l}</p>)}</aside>}
+      {/* One branch, two parts: Congress's House and Senate side by side inside the one Congress card. */}
+      {(card.split || []).length > 0 && <div className="civ-split">{card.split.map((h, k) => (
+        <div key={k} className="civ-part">
+          <div className="civ-part-h">{h.head}</div>
+          {h.rows.map((r, i) => <Rows key={i} r={r} />)}
         </div>
-      ))}
+      ))}</div>}
+      {(card.rows || []).map((r, i) => <Rows key={`r${i}`} r={r} wide={(card.split || []).length > 0} />)}
       {(card.tags || []).length > 0 && <div className="civ-tags">{card.tags.map(t => <span key={t} className={`civ-tag${t === 'VOTE' ? ' vote' : ''}`}>{t}</span>)}</div>}
     </article>
   )
@@ -78,7 +91,7 @@ export function CivicsRoom({ pack, ScreenHeader, BottomBack, onBack, back }) {
         {pack.layer1.groups.map((g, gi) => (
           <section key={gi} className="civ-group">
             {g.title && <h4 className="civ-group-h">{g.title}{g.years ? <span className="civ-years"> · {g.years}</span> : null}</h4>}
-            <div className={`civ-grid${pack.number_cards ? ' civ-grid-num' : ''}`}>
+            <div className={`civ-grid${pack.number_cards ? ' civ-grid-num' : ''}${g.cards.some(c => (c.split || []).length) ? ' civ-grid-branches' : ''}`}>
               {g.cards.map((c, i) => <RefCard key={i} card={c} big={!!pack.number_cards} />)}
             </div>
           </section>
@@ -119,6 +132,16 @@ export const CIVICS_STYLES = `
 .civ-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 .civ-tag{border:1px solid #DCE3EE;border-radius:999px;padding:2px 10px;font-size:12.5px;color:#F4F6FA}
 .civ-tag.vote{border:2px solid var(--gold);color:var(--gold);font-weight:700;letter-spacing:.08em}
+.civ-grid-branches{grid-template-columns:2fr 1fr 1fr;align-items:start}
+.civ-split{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:4px}
+.civ-part{border:1px solid #2E4370;border-radius:8px;padding:6px 10px 4px;background:#16233D}
+.civ-part-h{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--white);margin:2px 0 2px}
+.civ-row-wide{margin-top:6px}
+.civ-callout{border:2px dashed #DCE3EE;border-radius:8px;padding:8px 12px;margin:6px 0 8px;color:var(--white)}
+.civ-callout-h{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);font-size:14px}
+.civ-callout p{margin:3px 0;font-size:15px}
+@media (max-width:1000px){.civ-grid-branches{grid-template-columns:1fr}}
+@media (max-width:520px){.civ-split{grid-template-columns:1fr}}
 .civ-foot{color:var(--grey);font-size:14px;margin:6px 0}
 .civ-item{margin-bottom:14px}
 .civ-sit{color:var(--white);font-size:16px;margin:4px 0 2px}
