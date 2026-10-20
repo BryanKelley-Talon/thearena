@@ -1344,12 +1344,11 @@
               "slug": "cases",
               "content_ref": "content/room-us11r-11.2-cases.json",
               "published": true,
-              "card_opens_on": "2026-11-03",
               "card": {
                 "title": "THE LANDMARK CASES",
                 "line": "The Supreme Court decides what the Constitution means. These are the decisions that changed the country."
               },
-              "_note": "THE LANDMARK CASES, the third room in THE CONSTITUTION (BK 2026-10-16 11:42/11:48; the name RULED 13:19 'THE LANDMARK CASES sounds better ... I change my mind'). Sam's skills/cases/cases_words.py md5 b799ca27b234e467a36b5ae8d2440eae (Danny CLEAN 10/16 14:44, 3 readers 38/37/43) via scripts/packs/cases_pack.py. card = the pack's title and sub, word for word. The five cleared cases are two 11.2 and three 11.3; the room opens as one set, because layer 2's taps use all five (Josh's finding, 10/19). Card held to Tue 11/3 with THE CONSTITUTION button; the link works before that, the Timekeeper way. BK rules the date."
+              "_note": "THE LANDMARK CASES, the third room in THE CONSTITUTION (BK 2026-10-16 11:42/11:48; the name RULED 13:19 'THE LANDMARK CASES sounds better ... I change my mind'). Sam's skills/cases/cases_words.py md5 b799ca27b234e467a36b5ae8d2440eae (Danny CLEAN 10/16 14:44, 3 readers 38/37/43) via scripts/packs/cases_pack.py. card = the pack's title and sub, word for word. The five cleared cases are two 11.2 and three 11.3; the room opens as one set, because layer 2's taps use all five (Josh's finding, 10/19). Card live on the 11.2 Review row from 2026-10-19 (BK 21:27: \u201cit can go live now, not worried about early access...gives kids a chance to review Marbury etc.\u201d); Room Check Bless, same message. The room also joins THE CONSTITUTION lane when that button opens Tue 11/3."
             }
           ],
           "activities": [
