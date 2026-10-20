@@ -699,7 +699,7 @@
       "constitution": {
         "opens_after_unit": "11.2",
         "opens_on": "2026-11-03",
-        "rooms": [{ "unit": "11.2", "slug": "machine" }, { "unit": "11.2", "slug": "amendments" }],
+        "rooms": [{ "unit": "11.2", "slug": "machine" }, { "unit": "11.2", "slug": "amendments" }, { "unit": "11.2", "slug": "cases" }],
         "_note": "THE CONSTITUTION lane (BK 2026-10-16 11:42 'Once we move beyond Unit 11.2--I'd like the Machine and the Amendments to get their own button across the top'; 11:46 one button; 11:48 name and line, 'yes.'). Appears on Tue 11/3 (Sam 12:25: the 11.3 room isn't ready, so by date) or when the US door's current unit comes after 11.2, whichever is first; Landmark Supreme Court Cases joins as a third room when Sam's words land. The cards stay on the 11.2 Review row too."
       },
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
@@ -1339,6 +1339,17 @@
                 "line": "27 changes to the Constitution. The first ten, the Bill of Rights, protect you from your own government."
               },
               "_note": "THE AMENDMENTS (BK 13:48; blessed 15:12, Bless). Sam's amendments_words.py 5460e6ba (room line 'One card per amendment.', BK 11:44, Danny CLEAN 12:01) via civics_pack.py. card = the pack's title and sub, word for word."
+            },
+            {
+              "slug": "cases",
+              "content_ref": "content/room-us11r-11.2-cases.json",
+              "published": true,
+              "card_opens_on": "2026-11-03",
+              "card": {
+                "title": "THE LANDMARK CASES",
+                "line": "The Supreme Court decides what the Constitution means. These are the decisions that changed the country."
+              },
+              "_note": "THE LANDMARK CASES, the third room in THE CONSTITUTION (BK 2026-10-16 11:42/11:48; the name RULED 13:19 'THE LANDMARK CASES sounds better ... I change my mind'). Sam's skills/cases/cases_words.py md5 b799ca27b234e467a36b5ae8d2440eae (Danny CLEAN 10/16 14:44, 3 readers 38/37/43) via scripts/packs/cases_pack.py. card = the pack's title and sub, word for word. The five cleared cases are two 11.2 and three 11.3; the room opens as one set, because layer 2's taps use all five (Josh's finding, 10/19). Card held to Tue 11/3 with THE CONSTITUTION button; the link works before that, the Timekeeper way. BK rules the date."
             }
           ],
           "activities": [

@@ -26,13 +26,16 @@ if kind == 'machine':
         return [{"label": label, "lines": list(cells[col - 1])} for (label, *cells) in w.CHART if label != stop_label]
     NAMES = getattr(w, 'BRANCH_NAMES', None) or w.BRANCHES     # BK 21:31: Legislative / Executive / Judicial, in Sam's words when they land
     WHO = getattr(w, 'BRANCH_WHO', None) or [None, None, None]
-    congress = {"head": NAMES[0], "who": WHO[0], "kicker": [w.JOB[0], w.JOB_SUB[0]],
+    # Card addresses (Josh 2026-10-19): the branch slug is the first word of Sam's own BRANCH_NAMES, so a
+    # landmark case's THE CONSTITUTION row can point at #/us/11.2/machine/<slug>. No student word changes.
+    slug = lambda nm: nm.split()[0].lower()
+    congress = {"id": slug(NAMES[0]), "head": NAMES[0], "who": WHO[0], "kicker": [w.JOB[0], w.JOB_SUB[0]],
                 "split": [{"head": title[1], "rows": rows_for(1)}, {"head": title[2], "rows": rows_for(2)}],
                 "rows": [{"label": w.CONGRESS_BOTH[0], "lines": [w.CONGRESS_BOTH[1]]},
                          {"label": stop_label, "lines": list(w.CHART[-1][1])}]}
     if getattr(w, 'CONGRESS_WHY', None):   # Sam's callout, when his words land (BK 20:53 "maybe a callout as to why")
         congress["callout"] = {"head": getattr(w, 'CONGRESS_WHY_HEAD', None), "lines": list(w.CONGRESS_WHY) if isinstance(w.CONGRESS_WHY, (list, tuple)) else [w.CONGRESS_WHY]}
-    cards = [congress] + [{"head": NAMES[b], "who": WHO[b], "kicker": [w.JOB[b], w.JOB_SUB[b]],
+    cards = [congress] + [{"id": slug(NAMES[b]), "head": NAMES[b], "who": WHO[b], "kicker": [w.JOB[b], w.JOB_SUB[b]],
                            "rows": [{"label": label, "lines": list(cells[col - 1])} for (label, *cells) in w.CHART]}
                           for (b, col) in ((1, 3), (2, 4))]
     # The three buildings behind the cards (BK 2026-10-15 21:51; Sam's spec 21:56): Carol M. Highsmith Archive, Library of

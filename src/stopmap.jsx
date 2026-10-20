@@ -213,7 +213,14 @@ export function StopMapLane({ course, kind, maps, onOpenMap, initialOpen }) {
   const link = open && pair ? (links[open] || []).find(l => l.to === pair) : null
 
   const labels = { ...W.kind, ...((data && data.link_kinds) || {}) }
-  const ctx = { W, kind, byId, rows, rowByKey, rowKeysOf, lineById, subById, units, here, links, maps, onOpenMap, da, labels }
+  // A stop's refs (Sam 2026-10-16): where this event lives in a reference room. Returns null when that room
+  // isn't a published room in this course, which is how the LANDMARK CASES refs stay dark until the room is live.
+  const roomHref = (room, card) => {
+    const u = (course.units || []).find(x => (x.rooms || []).some(r => r.slug === room && r.published === true))
+    if (!u) return null
+    return `#/${COURSE_KEY[course.id] || course.id}/${u.number}/${room}${card ? `/${encodeURIComponent(card)}` : ''}`
+  }
+  const ctx = { W, kind, byId, rows, rowByKey, rowKeysOf, lineById, subById, units, here, links, maps, onOpenMap, da, labels, roomHref }
   return (
     <div className={`threads stopmap${kind === 'issues' ? ' issues' : ''}`}>
       <StopMapWide ctx={ctx} open={open} pair={pair} via={via} link={link} onPick={pick} onPair={setPair} onClose={close} />
@@ -573,6 +580,13 @@ function PopBoxInner({ ctx, stop, via, headRef, onClose, pair, onPair, onPick, m
       </h3>
       <p className="stop-what">{stop.what_happened}</p>
 
+      {/* Sam's label and nothing else; a ref whose room isn't published doesn't render. */}
+      {(() => {
+        const out = (stop.refs || []).map(r => ({ r, href: ctx.roomHref?.(r.room, (r.cards || []).length === 1 ? r.cards[0] : null) })).filter(x => x.href)
+        return out.length ? <div className="stop-refs">{out.map(({ r, href }, i) =>
+          <a key={i} className={`stop-ref kind-${r.kind || 'ref'}`} href={href}>{r.label}</a>)}</div> : null
+      })()}
+
       {doc && (
         <div className="pop-doc">
           {thumb && (dl?.link
@@ -748,6 +762,10 @@ export const STOPMAP_STYLES = `
 .pop-title-btn:hover{text-decoration-color:var(--gold)}
 .pop-title-btn:focus-visible{outline:3px solid var(--gold-lit);outline-offset:3px;border-radius:4px}
 .pop .stop-what{font-size:16px;line-height:1.55}
+/* Where this event lives in a reference room. Gold, underlined, never colour alone. */
+.pop .stop-refs{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 2px}
+.pop .stop-ref{display:inline-block;border:1px solid var(--gold);border-radius:999px;padding:3px 12px;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+.pop .stop-ref:hover,.pop .stop-ref:focus-visible{background:color-mix(in srgb,var(--gold) 14%,transparent)}
 .pop-doc{display:flex;gap:12px;align-items:flex-start;background:color-mix(in srgb,var(--canvas) 55%,var(--card));border:1px solid var(--edge);
   border-radius:10px;padding:10px;margin:4px 0 12px}
 .pop-thumb{flex:none;width:92px;height:92px;border-radius:6px;overflow:hidden;background:#F4F1E8;display:flex;align-items:center;justify-content:center;

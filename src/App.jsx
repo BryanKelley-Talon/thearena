@@ -2029,6 +2029,7 @@ export default function App() {
   const [civics, setCivics] = useState(null)            // a unit's reference room slug (THE MACHINE, THE AMENDMENTS; 10/15)
   const [civicsPack, setCivicsPack] = useState(null)
   const [civicsFrom, setCivicsFrom] = useState(null)    // 'constitution' when the room was opened from THE CONSTITUTION lane (Back goes there)
+  const [civicsCard, setCivicsCard] = useState(null)    // a card address: #/us/11.2/amendments/14 (10/19)
   const [here, setHere] = useState('')                  // the current page's address (the chase pill shows only where a chase link sent the kid)
   const [daCfFocus, setDaCfFocus] = useState(null)       // a casefile link's casefile, kept in the address bar                          // which content_ref the loaded Doc Assist pack is
 
@@ -2137,6 +2138,7 @@ export default function App() {
     setStopOpen(r.stopOpen || null)
     setChase(r.at === 'chase')
     setCivics(r.at === 'civics' ? r.civicsSlug : null)
+    setCivicsCard(r.at === 'civics' ? (r.civicsCard || null) : null)
     if (r.at !== 'civics') setCivicsFrom(null)
     setWlSlug(r.wlSet || null)
     setOffice(r.at === 'office')
@@ -2188,13 +2190,13 @@ export default function App() {
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
       course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
-      chase, stopOpen, civics,
+      chase, stopOpen, civics, civicsCard,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
     setHere(h)                                              // where the kid is, for the chase pill (10/9)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2225,7 +2227,7 @@ export default function App() {
   if (course && unit && civics) {
     screen = civicsPack === null ? <div className="loading">Opening&hellip;</div>
       : !civicsPack ? <div className="wrap"><div className="empty"><div className="empty-title">Not open yet.</div></div></div>
-      : <CivicsRoom key={civicsPack.id} pack={civicsPack} ScreenHeader={ScreenHeader} BottomBack={BottomBack}
+      : <CivicsRoom key={civicsPack.id} pack={civicsPack} cardTarget={civicsCard} ScreenHeader={ScreenHeader} BottomBack={BottomBack}
                     back={civicsFrom === 'constitution' ? CONST_WORDS.lane : unit.label && String(unit.label).startsWith(String(unit.number)) ? unit.label : `${unit.number} · ${unit.label}`}
                     onBack={() => { setCivics(null); if (civicsFrom === 'constitution') { setCivicsFrom(null); setUnitSlug(null); setDoorLane('constitution') } window.scrollTo(0, 0) }} />
   }

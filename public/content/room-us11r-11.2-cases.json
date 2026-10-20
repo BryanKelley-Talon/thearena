@@ -1,0 +1,296 @@
+{
+ "id": "room-us11r-11.2-cases",
+ "course": "us11r",
+ "unit": "11.2",
+ "slug": "cases",
+ "title": "THE LANDMARK CASES",
+ "sub": "The Supreme Court decides what the Constitution means. These are the decisions that changed the country.",
+ "card_ids": true,
+ "wide_cards": true,
+ "layer1": {
+  "title": "Meet the cases",
+  "groups": [
+   {
+    "title": null,
+    "years": null,
+    "cards": [
+     {
+      "id": "marbury",
+      "head": "Marbury v. Madison",
+      "kicker": [
+       "1803"
+      ],
+      "unit": "11.2",
+      "rows": [
+       {
+        "label": "THE ISSUE",
+        "lines": [
+         "Can the Supreme Court cancel a law that breaks the Constitution?"
+        ]
+       },
+       {
+        "label": "THE DECISION",
+        "lines": [
+         "Yes. Chief Justice John Marshall wrote that it is the Court's job \"to say what the law is,\" and that a law that goes against the Constitution is void. The Court struck down part of a law Congress had passed in 1789."
+        ]
+       },
+       {
+        "label": "THE CONSTITUTION",
+        "lines": [
+         {
+          "t": "Article III, the courts",
+          "link": "machine:judicial"
+         }
+        ]
+       },
+       {
+        "label": "WHY IT MATTERS",
+        "lines": [
+         "This is judicial review. The Court became a real check on Congress and the President."
+        ]
+       }
+      ],
+      "tags": [
+       "Judicial Review"
+      ]
+     },
+     {
+      "id": "mcculloch",
+      "head": "McCulloch v. Maryland",
+      "kicker": [
+       "1819"
+      ],
+      "unit": "11.2",
+      "rows": [
+       {
+        "label": "THE ISSUE",
+        "lines": [
+         "Can Congress create a national bank, and can a state tax it?"
+        ]
+       },
+       {
+        "label": "THE DECISION",
+        "lines": [
+         "Congress can create the bank, even though the Constitution never says \"bank,\" because the necessary and proper clause lets it carry out its listed powers. Maryland can't tax it: Marshall wrote that \"the power to tax involves the power to destroy.\""
+        ]
+       },
+       {
+        "label": "THE CONSTITUTION",
+        "lines": [
+         {
+          "t": "Article I, Section 8, the necessary and proper clause",
+          "link": "machine:legislative"
+         },
+         "Article VI, the supremacy clause"
+        ]
+       },
+       {
+        "label": "WHY IT MATTERS",
+        "lines": [
+         "The national government's powers reach past the exact words of the Constitution, and a valid national law beats a state law."
+        ]
+       }
+      ],
+      "tags": [
+       "Federalism"
+      ]
+     },
+     {
+      "id": "gibbons",
+      "head": "Gibbons v. Ogden",
+      "kicker": [
+       "1824"
+      ],
+      "unit": "11.3",
+      "rows": [
+       {
+        "label": "THE ISSUE",
+        "lines": [
+         "Can New York give one company the only right to run steamboats between New York and New Jersey?"
+        ]
+       },
+       {
+        "label": "THE DECISION",
+        "lines": [
+         "No. Congress has the power to regulate trade between states, including boats carrying people and goods. Thomas Gibbons had a federal license, and a valid federal law beats a state law, so it beat New York's monopoly."
+        ]
+       },
+       {
+        "label": "THE CONSTITUTION",
+        "lines": [
+         {
+          "t": "Article I, Section 8, the commerce clause",
+          "link": "machine:legislative"
+         }
+        ]
+       },
+       {
+        "label": "WHY IT MATTERS",
+        "lines": [
+         "When a state law and a federal law clash over trade between states, the federal law wins. With the monopoly gone, steamboats spread, and the commerce clause became one of Congress's biggest powers."
+        ]
+       }
+      ],
+      "tags": [
+       "Federalism"
+      ],
+      "badge": "REGENTS FAVORITE"
+     },
+     {
+      "id": "worcester",
+      "head": "Worcester v. Georgia",
+      "kicker": [
+       "1832"
+      ],
+      "unit": "11.3",
+      "rows": [
+       {
+        "label": "THE ISSUE",
+        "lines": [
+         "Can Georgia make laws for the Cherokee Nation's land?"
+        ]
+       },
+       {
+        "label": "THE DECISION",
+        "lines": [
+         "No. Marshall wrote that the Cherokee Nation is \"a distinct community\" where Georgia's laws \"can have no force.\" Dealing with the Cherokee belongs to the national government, through its treaties."
+        ]
+       },
+       {
+        "label": "THE CONSTITUTION",
+        "lines": [
+         {
+          "t": "Article I, Section 8, Congress regulates trade with the Indian tribes",
+          "link": "machine:legislative"
+         },
+         "Article VI, treaties are the supreme law"
+        ]
+       },
+       {
+        "label": "WHY IT MATTERS",
+        "lines": [
+         "Georgia ignored the ruling, and Jackson did nothing to make it obey. Six years later the Cherokee were forced west on the Trail of Tears."
+        ]
+       }
+      ],
+      "tags": [
+       "Rule of Law"
+      ]
+     },
+     {
+      "id": "dred-scott",
+      "head": "Dred Scott v. Sandford",
+      "kicker": [
+       "1857"
+      ],
+      "unit": "11.3",
+      "rows": [
+       {
+        "label": "THE ISSUE",
+        "lines": [
+         "Dred Scott was enslaved, and he had lived for years in a free state and a free territory. Did that make him free, and could he sue in federal court?"
+        ]
+       },
+       {
+        "label": "THE DECISION",
+        "lines": [
+         "No. Chief Justice Roger Taney wrote that Black Americans, enslaved or free, were not citizens and could not sue in federal court. He also said Congress had no power to ban slavery in the territories."
+        ]
+       },
+       {
+        "label": "THE CONSTITUTION",
+        "lines": [
+         {
+          "t": "The Fifth Amendment: Taney called enslaved people property that can't be taken without due process",
+          "link": "amendments:5"
+         }
+        ]
+       },
+       {
+        "label": "WHY IT MATTERS",
+        "lines": [
+         "It ruled the Missouri Compromise line unconstitutional, so Congress could not keep slavery out of any territory. It pushed the country closer to civil war."
+        ]
+       },
+       {
+        "label": "LATER",
+        "lines": [
+         {
+          "t": "Overturned by the 14th Amendment, 1868: everyone born here is a citizen.",
+          "link": "amendments:14"
+         }
+        ]
+       }
+      ],
+      "tags": [
+       "Equal Protection"
+      ],
+      "badge": "REGENTS FAVORITE"
+     }
+    ]
+   }
+  ]
+ },
+ "layer2": {
+  "title": "Which Case?",
+  "line": "Something happens. Tap the case that answers it.",
+  "items": [
+   {
+    "situation": "Congress passes a law. The Supreme Court reads it against the Constitution and says the law can't stand. Which case first gave the Court that power?",
+    "question": null,
+    "answer": "Marbury v. Madison",
+    "wrong": [
+     "McCulloch v. Maryland",
+     "Gibbons v. Ogden"
+    ],
+    "why": "Marbury v. Madison (1803) set judicial review: the Court decides whether a law breaks the Constitution.",
+    "principle": "Judicial Review"
+   },
+   {
+    "situation": "A state puts a tax on the branch of a national bank inside its borders. The bank's cashier refuses to pay.",
+    "question": null,
+    "answer": "McCulloch v. Maryland",
+    "wrong": [
+     "Gibbons v. Ogden",
+     "Worcester v. Georgia"
+    ],
+    "why": "A state can't tax the national government. A valid national law beats a state law.",
+    "principle": "Federalism"
+   },
+   {
+    "situation": "A state gives one company the only right to run steamboats between two states. A rival with a federal license runs boats anyway.",
+    "question": null,
+    "answer": "Gibbons v. Ogden",
+    "wrong": [
+     "McCulloch v. Maryland",
+     "Marbury v. Madison"
+    ],
+    "why": "Congress regulates trade between states, and a federal license beats a state monopoly.",
+    "principle": "Federalism"
+   },
+   {
+    "situation": "A missionary living on Cherokee land is arrested for breaking a state law. The Supreme Court says the state's laws have no force there. The state ignores the ruling.",
+    "question": null,
+    "answer": "Worcester v. Georgia",
+    "wrong": [
+     "Dred Scott v. Sandford",
+     "Marbury v. Madison"
+    ],
+    "why": "The Court ruled for the Cherokee, but a ruling only works if someone enforces it. Georgia ignored it.",
+    "principle": "Rule of Law"
+   },
+   {
+    "situation": "An enslaved man who lived for years in a free state sues for his freedom. The Court says he isn't a citizen, so he can't even bring the case.",
+    "question": null,
+    "answer": "Dred Scott v. Sandford",
+    "wrong": [
+     "Worcester v. Georgia",
+     "Gibbons v. Ogden"
+    ],
+    "why": "Taney's Court said Black Americans couldn't be citizens. The 14th Amendment overturned that in 1868.",
+    "principle": "Equal Protection"
+   }
+  ]
+ },
+ "_built": "Josh, 2026-10-19, by scripts/packs/cases_pack.py from Sam's cases_words.py (md5 b799ca27b234e467a36b5ae8d2440eae)."
+}

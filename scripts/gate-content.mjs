@@ -977,12 +977,26 @@ function checkPopouts(d, f, course, m, fail) {
   }
 }
 
-// ── A UNIT'S REFERENCE ROOMS (THE MACHINE, THE AMENDMENTS; 10/15) ─────────────
+// ── A UNIT'S REFERENCE ROOMS (THE MACHINE, THE AMENDMENTS, THE LANDMARK CASES) ─────────────
 // Every published room's file is here; its card carries words; layer 1 has cards; every tap item has a
-// situation, a question, one answer and two wrong choices (none equal to the answer), a why and a principle.
+// situation, one answer and two wrong choices (none equal to the answer), a why and a principle. An item's
+// own question is required unless layer 2 asks it once in its line (THE LANDMARK CASES, 10/19).
+// A card link ({t, link: '<room>:<card>'}) must name a published room in this course and a card that is
+// really in it, or the kid taps through to nothing.
 {
   let m = {}
   try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  // Every card a link could point at: course id -> room slug -> set of card ids (or heads).
+  const cardIndex = {}
+  for (const c of m.courses || []) for (const u of c.units || []) for (const r of u.rooms || []) {
+    if (r.published !== true) continue
+    const f0 = String(r.content_ref || '').replace(/^content\//, '')
+    try {
+      const d0 = JSON.parse(fs.readFileSync(path.join(CONTENT, f0), 'utf8'))
+      const ids = (d0.layer1?.groups || []).flatMap(g => g.cards || []).map(cd => String(cd.id ?? cd.head))
+      ;(cardIndex[c.id] ||= {})[r.slug] = new Set(ids)
+    } catch {}
+  }
   for (const c of m.courses || []) for (const u of c.units || []) for (const r of u.rooms || []) {
     const f = String(r.content_ref || '').replace(/^content\//, '')
     const live = r.published === true
@@ -997,11 +1011,27 @@ function checkPopouts(d, f, course, m, fail) {
     const cards = (d.layer1?.groups || []).flatMap(g => g.cards || [])
     if (!d.layer1?.title || !cards.length) rf('layer 1 needs a title and cards.')
     for (const [i, cd] of cards.entries()) if (!cd.head || !(cd.rows || []).some(x => (x.lines || []).length)) rf(`layer 1 card ${i + 1}: needs a head and at least one line.`)
+    // Card ids must be unique, so an address lands on exactly one card.
+    const ids = cards.map(cd => String(cd.id ?? cd.head))
+    for (const dupe of ids.filter((x, i) => ids.indexOf(x) !== i)) rf(`two layer 1 cards answer to the same address '${dupe}'.`)
+    // Every card link points at a real card in a published room of this course.
+    for (const cd of cards) for (const row of cd.rows || []) for (const l of row.lines || []) {
+      if (!l || typeof l === 'string') continue
+      if (!String(l.t || '').trim()) rf(`a linked line on card '${cd.id ?? cd.head}' has no words.`)
+      const [room, card] = String(l.link || '').split(':')
+      const have = cardIndex[c.id]?.[room]
+      if (!room || !card) rf(`a line on card '${cd.id ?? cd.head}' has a link that isn't '<room>:<card>'.`)
+      else if (!have) rf(`card '${cd.id ?? cd.head}' links to room '${room}', which is not a published room in this course.`)
+      else if (!have.has(card)) rf(`card '${cd.id ?? cd.head}' links to '${room}:${card}', and that room has no such card.`)
+    }
     const items = d.layer2?.items || []
     if (!d.layer2?.title || !items.length) rf('layer 2 needs a title and items.')
     for (const [i, it] of items.entries()) {
       const w = `layer 2 item ${i + 1}`
-      for (const k of ['situation', 'question', 'answer', 'why', 'principle']) if (!String(it[k] || '').trim()) rf(`${w}: no ${k}.`)
+      const need = ['situation', 'answer', 'why', 'principle']
+      for (const k of need) if (!String(it[k] || '').trim()) rf(`${w}: no ${k}.`)
+      // The question may live once in layer 2's line instead of on every item (THE LANDMARK CASES).
+      if (!String(it.question || '').trim() && !String(d.layer2?.line || '').trim()) rf(`${w}: no question, and layer 2 has no line that asks one.`)
       if (!Array.isArray(it.wrong) || it.wrong.length !== 2) rf(`${w}: needs exactly two wrong choices.`)
       else if (it.wrong.includes(it.answer) || it.wrong[0] === it.wrong[1]) rf(`${w}: the three choices must all differ.`)
     }

@@ -822,6 +822,25 @@
           "explain": "After the Articles proved too weak, the Constitution swung toward strength, and the Bill of Rights pulled back toward liberty. That back-and-forth is exactly what this thread tracks."
         }
       },
+      "refs": [
+        {
+          "room": "amendments",
+          "cards": [
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10"
+          ],
+          "kind": "added",
+          "label": "AMENDMENTS 1–10 · ADDED HERE"
+        }
+      ],
       "status": "open",
       "image": null,
       "image_alt": null,
@@ -888,7 +907,7 @@
       "casefile": "C",
       "when": "1798",
       "title": "The Sedition Act",
-      "what_happened": "With war with France feared, Congress makes it a crime to publish false or malicious writing against the government. Newspaper editors who criticize President Adams are jailed.",
+      "what_happened": "With war with France feared, Congress makes it a crime to publish false, scandalous and malicious writing against the government. Newspaper editors who criticize President Adams are jailed.",
       "document": {
         "title": "The Sedition Act",
         "citation": "Source: An Act for the Punishment of Certain Crimes (the Sedition Act), July 14, 1798 (adapted)",
@@ -911,6 +930,16 @@
         "evidence": "It punished \"any false, scandalous and malicious writing or writings against the government of the United States,\" Congress or the President.",
         "explain": "Newspaper editors who criticized President Adams went to jail only seven years after \"Congress shall make no law.\" Fear of war was used to limit speech, the exact conflict this thread follows."
       },
+      "refs": [
+        {
+          "room": "amendments",
+          "cards": [
+            "1"
+          ],
+          "kind": "tested",
+          "label": "AMENDMENT 1 · TESTED HERE"
+        }
+      ],
       "status": "building",
       "image": null,
       "image_alt": null,
@@ -952,6 +981,16 @@
         "evidence": "Chief Justice John Marshall wrote that \"it is emphatically the province and duty of the judicial department to say what the law is.\"",
         "explain": "Judicial review let the Court check Congress and the President, a new limit on how far the national government can go. It became one of the main ways this thread decides when government power has gone too far."
       },
+      "refs": [
+        {
+          "room": "cases",
+          "cards": [
+            "marbury"
+          ],
+          "kind": "case",
+          "label": "LANDMARK CASE · Marbury v. Madison"
+        }
+      ],
       "status": "building",
       "image": null,
       "image_alt": null,
@@ -993,6 +1032,16 @@
         "evidence": "Marshall held that the necessary and proper clause let Congress create the bank, and warned that \"the power to tax involves the power to destroy.\"",
         "explain": "The decision made the national government far stronger than the Articles ever allowed. The fight this thread follows, over how far federal power can reach, kept going long after it."
       },
+      "refs": [
+        {
+          "room": "cases",
+          "cards": [
+            "mcculloch"
+          ],
+          "kind": "case",
+          "label": "LANDMARK CASE · McCulloch v. Maryland"
+        }
+      ],
       "status": "building",
       "image": null,
       "image_alt": null,
