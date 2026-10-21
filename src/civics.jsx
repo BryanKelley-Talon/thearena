@@ -168,8 +168,12 @@ export const CIVICS_STYLES = `
 .civ-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
 /* REGENTS FAVORITE: the gold pill the VOTE tag already uses, so the two reference rooms read the same. */
 .civ-badge{display:inline-block;border:2px solid var(--gold);border-radius:999px;padding:1px 10px;font-family:'Barlow Condensed',sans-serif;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:var(--gold);margin:2px 0 4px}
-/* A clause that points at its card in THE MACHINE or THE AMENDMENTS. Underlined, so it is not colour alone. */
-.civ-link{color:var(--gold);text-decoration:underline;text-underline-offset:2px}
+/* A clause that points at its card in THE MACHINE or THE AMENDMENTS. Underlined, so it is not colour alone.
+   The tap area (Danny 2026-10-21): a single-line clause link was 19px tall at 390 wide, so a thumb missed it.
+   The link carries its own vertical padding, with a smaller negative margin to give most of that height back to
+   the row. Padding only on the top and bottom: a horizontal pad on a link that wraps inside a 300px card would
+   push the card wider than the screen. */
+.civ-link{display:inline-block;padding:10px 0;margin:-4px 0;color:var(--gold);text-decoration:underline;text-underline-offset:2px}
 .civ-link:hover,.civ-link:focus-visible{color:#F2D37A}
 .civ-row-later .civ-label{color:var(--gold)}
 /* The card an address landed on: a ring, not a wash. */
