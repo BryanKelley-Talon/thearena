@@ -1,0 +1,8 @@
+# Response headers for the Arena's static assets (Cloudflare Workers static assets).
+# Josh 2026-10-21, on CJ's pass of 10/16 and BK's ruling: search engines do not index the Arena.
+#
+# X-Robots-Tag carries the same instruction as the meta tag in index.html, but in the response
+# header, so a crawler that fetches the page without running its JavaScript still sees it.
+# See public/robots.txt for why crawling itself stays open.
+/*
+  X-Robots-Tag: noindex, nofollow

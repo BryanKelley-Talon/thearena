@@ -1,0 +1,15 @@
+# The Arena · thearena.flashpointhistory.com
+#
+# This address is handed out by link — a teacher's Google Classroom post, a QR code on a
+# casefile, a conference handout. It is not meant to be found by searching.
+#
+# Crawling is ALLOWED on purpose. The thing that keeps these pages out of search results is
+# the noindex signal, sent two ways: the robots meta tag in index.html and the X-Robots-Tag
+# response header in _headers. A crawler has to be able to fetch a page to see either one.
+# Blocking the crawl here instead would stop that, and a bare link to the Arena could still
+# be listed in results with no description. So: let them in, and tell them not to index.
+#
+# No accounts, no logins, no student information. Nothing here is personal data.
+
+User-agent: *
+Allow: /

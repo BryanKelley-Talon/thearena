@@ -7,6 +7,11 @@
     <title>The Arena — Flashpoint History</title>
     <meta name="description" content="The Arena — train the exact skills the Regents tests, on your own time. A Flashpoint History skills trainer." />
 
+    <!-- The Arena is reached by link, never by search (CJ's pass 2026-10-16; BK's ruling). The same
+         instruction is sent as a response header in public/_headers, and public/robots.txt explains
+         why crawling stays open: a crawler must fetch the page to see this tag. -->
+    <meta name="robots" content="noindex, nofollow" />
+
     <!-- Arena sub-brand fonts: Barlow Condensed (display) + Outfit (body). -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
