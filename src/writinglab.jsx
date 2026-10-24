@@ -66,8 +66,11 @@ export function useWritingLab(course) {
     if (!course) { setSets(null); return }
     if (!entries.length) { setSets([]); return }
     let live = true
-    Promise.all(entries.map(e => fetch(`/content/${String(e.content_ref).replace(/^content\//, '')}`)
-      .then(r => (r.ok ? r.json() : null)).catch(() => null).then(data => (data ? { entry: e, data } : null))))
+    // `levels_ref` is optional: the level viewer (Step 3) only exists where a desk has sent the papers.
+    const get = ref => fetch(`/content/${String(ref).replace(/^content\//, '')}`)
+      .then(r => (r.ok ? r.json() : null)).catch(() => null)
+    Promise.all(entries.map(e => Promise.all([get(e.content_ref), e.levels_ref ? get(e.levels_ref) : null])
+      .then(([data, levels]) => (data ? { entry: e, data, levels } : null))))
       .then(xs => { if (live) setSets(xs.filter(Boolean)) })
     return () => { live = false }
   }, [course])
@@ -112,7 +115,7 @@ export function WritingLabLane({ course, sets, unitName, onOpen, Empty }) {
 // ONE SET
 // ============================================================
 export function BlueprintScreen({ course, set, refs, onBack, ScreenHeader, BottomBack }) {
-  const { entry, data } = set
+  const { entry, data, levels } = set
   const isGlobal = !!data.multi_tag
   // One level (US, from 2026-10-24) means no picker: a menu holding a single card is a tap for nothing.
   const single = (data.levels || []).length <= 1
@@ -165,8 +168,19 @@ export function BlueprintScreen({ course, set, refs, onBack, ScreenHeader, Botto
         : <UsSort key={`${level}-${seed}`} entry={entry} data={data} cold={level > 1} seed={seed} onDone={finish} />)}
       {level != null && stage === 'three' && <GlThree data={data} tags={result} onPlan={finish} onBack={toPicker} />}
       {level != null && stage === 'outline' && (isGlobal ? <GlOutline data={data} plan={result} refs={refs} /> : <UsOutline data={data} placed={result?.placed} marks={result?.marks} refs={refs} />)}
+      {/* Step 3, where a desk has sent the papers: the next step after the outline is seeing the end goal.
+          BK 2026-10-24 14:05: "the extra layer or next step after the outline is the rubric...they need to
+          be abvle to see the end goal." The button's words are the levels file's own title. */}
+      {level != null && stage === 'levels' && <UsLevels lv={levels} onBack={() => { setStage('outline'); window.scrollTo(0, 0) }} />}
       {level != null && stage === 'outline' && (
-        <div className="wl-actions"><button type="button" className="btn-now" onClick={toPicker}>{W.done}</button></div>
+        <div className="wl-actions wl-after">
+          {!isGlobal && levels && (levels.levels || []).length > 0 && (
+            <button type="button" className="btn-now" onClick={() => { setStage('levels'); window.scrollTo(0, 0) }}>
+              {(levels.screens && levels.screens.title) || W.next}
+            </button>
+          )}
+          <button type="button" className="btn-plain" onClick={toPicker}>{W.done}</button>
+        </div>
       )}
 
       <BottomBack onBack={level == null ? onBack : toPicker} back={backLabel} />
@@ -445,6 +459,53 @@ function UsOutline({ data, placed, marks, refs }) {
       <div className="wl-slot teach"><b>CLOSING</b> · {o.closing}<RefButtons text={o.closing} refs={refs} idBase="wl-ref" /></div>
       <p className="wl-line">{o.outside_evidence}</p>
       {o.last_line && <p className="wl-last">{o.last_line}</p>}
+    </section>
+  )
+}
+
+// ── Step 3: what each level looks like ──
+// Five real anchor papers from the June 2026 CLE Rating Guide, with the state's own rater commentary.
+// BK 2026-10-24: "we're not scoring kids on arena per the rule..we are showing them what scores look
+// like." So nothing here grades anybody and nothing is stored — a kid reads a paper and, when they
+// want it, why it scored there. The level buttons stay on screen so a 2 can be read beside a 4.
+// Every word is Sam's file, word for word; the only interaction choice is that the commentary starts
+// folded, so a kid can form their own view of a paper before the state tells them. Flagged to BK.
+function UsLevels({ lv, onBack }) {
+  const s = lv.screens || {}
+  const [pick, setPick] = useState(null)
+  const [why, setWhy] = useState(false)
+  const cur = pick != null ? (lv.levels || []).find(l => l.n === pick) : null
+  const choose = n => { setPick(n); setWhy(false); window.scrollTo(0, 0) }
+  return (
+    <section className="wl-levelview">
+      {s.title && <h2 className="wl-title">{s.title}</h2>}
+      {s.line && <p className="wl-line">{s.line}</p>}
+      {s.pick && <p className="wl-put">{s.pick}</p>}
+      <div className="wl-bins" role="group" aria-label={s.pick || s.title}>
+        {(lv.levels || []).map(l => (
+          <button key={l.n} type="button" className="wl-bin" aria-pressed={pick === l.n} onClick={() => choose(l.n)}>
+            <span className="atlas-check" aria-hidden="true">{pick === l.n ? '✓' : ''}</span>{l.label}
+          </button>
+        ))}
+      </div>
+      {cur && (
+        <article className="wl-paper" aria-label={cur.label}>
+          <h3 className="wl-doc-h">{cur.label}</h3>
+          <div className="wl-doc">
+            {(cur.paper || []).map((p, i) => <p key={i} className="wl-doc-p">{p}</p>)}
+          </div>
+          {cur.source && <div className="wl-cite">{cur.source}</div>}
+          {(cur.why || []).length > 0 && s.why_head && (
+            <div className="wl-why">
+              <button type="button" className="wl-why-b" aria-expanded={why} onClick={() => setWhy(w => !w)}>
+                <span className="wl-why-sign" aria-hidden="true">{why ? '−' : '+'}</span>{s.why_head}
+              </button>
+              {why && <ul className="wl-why-list">{cur.why.map((w, i) => <li key={i}>{w}</li>)}</ul>}
+            </div>
+          )}
+        </article>
+      )}
+      <div className="wl-actions"><button type="button" className="btn-now" onClick={onBack}>{W.back}</button></div>
     </section>
   )
 }
@@ -740,6 +801,26 @@ export const WRITINGLAB_STYLES = `
 .wl-bp-doc-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .wl-bp-blank{margin-top:7px;padding-bottom:5px;border-bottom:1.5px dashed var(--arena-choice-edge);color:var(--grey);font-size:13.5px;font-style:italic}
 .wl-last{color:var(--gold-lit);font-size:16.5px;line-height:1.5;margin:4px 0 0}
+
+/* ---------- STEP 3 · WHAT EACH LEVEL LOOKS LIKE ---------- */
+.wl-levelview{display:grid;gap:12px;max-width:900px;justify-items:start}
+.wl-levelview .wl-bins{margin-top:2px}
+.wl-after{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.btn-plain{min-height:44px;padding:10px 16px;border-radius:9px;background:transparent;border:1.5px solid var(--arena-choice-edge);
+  color:var(--white);font:inherit;font-size:15.5px;letter-spacing:.03em;cursor:pointer}
+.btn-plain:hover{border-color:var(--gold)}
+.wl-paper{background:var(--card);border:1px solid var(--edge);border-radius:12px;padding:16px 18px;box-shadow:var(--arena-lift);max-width:900px;width:100%}
+.wl-why{margin-top:12px}
+.wl-why-b{min-height:44px;display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border-radius:10px;
+  background:var(--arena-choice);border:1.5px solid var(--arena-choice-edge);color:var(--white);font:inherit;
+  font-family:'Barlow Condensed',sans-serif;font-size:17px;letter-spacing:.05em;cursor:pointer;text-align:left}
+.wl-why-b:hover{border-color:var(--gold)}
+.wl-why-b[aria-expanded=true]{border-color:var(--gold);background:#33496F}
+.wl-why-sign{flex:none;width:22px;height:22px;display:inline-flex;align-items:center;justify-content:center;
+  background:var(--gold);color:#0B1220;border-radius:5px;font-size:16px;line-height:1;font-weight:700}
+.wl-why-list{list-style:none;margin:12px 0 0;padding:0;display:grid;gap:8px}
+.wl-why-list li{color:var(--white);font-size:16px;line-height:1.5;padding:8px 12px;border-radius:8px;
+  border-left:4px solid var(--gold);background:color-mix(in srgb,var(--canvas) 45%,var(--card))}
 
 @media (max-width:560px){
   .wl-tray{grid-template-columns:1fr}

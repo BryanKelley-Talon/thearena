@@ -1635,6 +1635,8 @@
           "set": 1,
           "slug": "us11r-blueprint-set1",
           "content_ref": "content/blueprint-us11r-set1.json",
+          "levels_ref": "content/blueprint-us11r-set1-levels.json",
+          "_note_levels": "Josh, 2026-10-24. Step 3, the level viewer. Sam's file, md5 dba56bb28cd821a334ef2a390de3e6a1: the June 2026 CLE Rating Guide's own anchor papers L1-L5 and their rater commentary, ported word for word. BK 14:05 moved Step 3 into Monday; BK 14:13 ruled no cold reader for this set (published NYSED material is itself the source); BK 14:15 confirmed canon 1's 'never taken from a real paper' is Ed Law 2-d about CPP students' own work, not NYSED's published anchor papers. Nothing scored, nothing stored.",
           "unit": "11.2",
           "casefile": "C",
           "published": true,
