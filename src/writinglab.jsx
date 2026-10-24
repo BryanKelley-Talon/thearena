@@ -795,6 +795,20 @@ export const WRITINGLAB_STYLES = `
   text-transform:uppercase;padding:7px 13px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.45)}
 
 /* ---------- THE FINISHED BLUEPRINT ---------- */
+/* BK 2026-10-24 14:37: "i think we need a visual aesthetic related to writing...lined paper, something
+   that sets it apart a bit as a thing...blueprint type stuff around that?" Drawn in CSS, not an image:
+   nothing to download on school wifi, scales at any width, and it reverts in one commit. The plan is
+   drafting paper; the anchor papers are a real ruled sheet. */
+.wl-outline{position:relative;padding:22px 18px;border-radius:12px;
+  border:1.5px solid color-mix(in srgb,#7FB0E0 42%,transparent);
+  background-color:#0A1526;
+  background-image:
+    linear-gradient(color-mix(in srgb,#7FB0E0 10%,transparent) 1px,transparent 1px),
+    linear-gradient(90deg,color-mix(in srgb,#7FB0E0 10%,transparent) 1px,transparent 1px);
+  background-size:26px 26px,26px 26px}
+.wl-outline::before{content:'';position:absolute;inset:8px;border:1px dashed color-mix(in srgb,#7FB0E0 32%,transparent);
+  border-radius:8px;pointer-events:none;z-index:0}
+.wl-outline > *{position:relative;z-index:1}
 .wl-bp-head{margin-bottom:6px}
 .wl-bp-docs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .wl-bp-doc{background:color-mix(in srgb,var(--canvas) 50%,var(--card));border:1px solid var(--edge);border-radius:8px;padding:9px 11px}
@@ -810,6 +824,17 @@ export const WRITINGLAB_STYLES = `
   color:var(--white);font:inherit;font-size:15.5px;letter-spacing:.03em;cursor:pointer}
 .btn-plain:hover{border-color:var(--gold)}
 .wl-paper{background:var(--card);border:1px solid var(--edge);border-radius:12px;padding:16px 18px;box-shadow:var(--arena-lift);max-width:900px;width:100%}
+/* A real paper, so it looks like one: a warm ruled sheet with a margin line, ink on cream. The rule
+   spacing and the line-height are the same 28px, so the writing sits ON the lines. Scoped to .wl-paper —
+   the document cards and the reader keep the Arena's dark treatment. Ink #1E2430 on #F6F2E7 is ~13:1. */
+.wl-paper .wl-doc{position:relative;background-color:#F6F2E7;border:1px solid #CFC6AF;border-radius:4px;
+  padding:16px 20px 18px 58px;box-shadow:0 2px 10px rgba(0,0,0,.35);
+  background-image:repeating-linear-gradient(to bottom,transparent 0 27px,color-mix(in srgb,#2C4A7A 20%,transparent) 27px 28px);
+  background-position:0 15px}
+.wl-paper .wl-doc::before{content:'';position:absolute;top:0;bottom:0;left:42px;width:1.5px;
+  background:color-mix(in srgb,#B3261E 40%,transparent)}
+.wl-paper .wl-doc-p{position:relative;color:#1E2430;font-size:16.5px;line-height:28px;margin:0 0 28px}
+.wl-paper .wl-doc-p:last-child{margin-bottom:0}
 .wl-why{margin-top:12px}
 .wl-why-b{min-height:44px;display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border-radius:10px;
   background:var(--arena-choice);border:1.5px solid var(--arena-choice-edge);color:var(--white);font:inherit;
