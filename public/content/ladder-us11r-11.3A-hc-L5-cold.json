@@ -1,0 +1,32 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - OPENING STATEMENT",
+  "_built": "2026-10-23 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_hc.py",
+  "_blessed": "BK 2026-10-23 11:38 EDT on US11R_11.3A_THEJUMP-HCgauge_WORDING_v2_2026-10-23.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "HC",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 5,
+  "_activity": "On your own: Documents 5 and 6",
+  "type": "guided_write",
+  "cold": true,
+  "badge": "LEVEL 5  -  COUNTS FOR COMPLETION  -  ON YOUR OWN",
+  "source_documents": [
+    "Document 5 - President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
+    "Document 6 - General Council of the Cherokee Nation, address to the people of the United States, New Echota, July 1830"
+  ],
+  "prompt": "Describe the historical context surrounding these documents.",
+  "intro": "No hints, no starter, no checklist. This is the one you do the way you would on the exam.",
+  "sentence_starter": null,
+  "checklist": [],
+  "lines": 3,
+  "write_it_in": "BONUS - 11.3A Gauge Run (Google Classroom). Write it there, not here.",
+  "counts_for": "completion",
+  "model_response": "After gold was found on Cherokee land in 1829 and Georgia pressed to take it, Congress passed the Indian Removal Act in 1830. By the end of that year, Jackson was telling Congress that removal was nearly finished and good for everyone, while the Cherokee - who had a written constitution, a newspaper and their own government - were asking the American people to stop it.",
+  "model_visible": "unit_close",
+  "_model_note": "NOT served before the unit closes. Level 5 is Arena work; its finished product goes in the Google Classroom BONUS log for the Gauge Run, graded 100 for Completion, and BK gives feedback there so a student knows where it stands (BK 2026-10-23 13:31, correcting Sam's 11:50 misreading - see RULING-LOG). The required Day 3 jump is five minutes INTO the gauge, not a Level 5 write; a student enters the ladder where they are. The gauge gets the model when the unit closes, the same rule as the exemplar casefile (CARRY-FORWARD 6).",
+  "practice_only": false,
+  "submitted_to_teacher": false
+}

@@ -49,6 +49,7 @@ import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLi
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
   UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone,
+  CasefileDoors, casefileUnit, unitCasefile, unitHere, ModeledMatch,
 } from './ladder.jsx'
 import {
   OFFICE_STYLES, OfficeDoor, OfficeRoom, OfficeTheme, officeVisible, visibleThemes,
@@ -938,7 +939,7 @@ const LANES = [
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution }) {
+function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenCasefile, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution }) {
   const constCards = constitutionCards(courseIn)
   const course = constCards.length ? { ...courseIn, constitution_cards: constCards } : courseIn
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
@@ -993,7 +994,9 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
           <p className="unit-here">{UNIT_WORDS.here}</p>
           {/* Leo's ruling 10/5 23:31, item 2: the moments card on each door (words BK-approved). */}
           <MomentsCard course={course} unit={unit} maps={atlasMaps} />
-          <SkillGauges course={course} unit={unit} prog={prog} onOpen={code => onOpenSkill(unit.slug, code)} />
+          {(unit.casefiles || []).length
+            ? <CasefileDoors unit={unit} onOpen={id => onOpenCasefile(unit.slug, id)} />
+            : <SkillGauges course={course} unit={unit} prog={prog} onOpen={code => onOpenSkill(unit.slug, code)} />}
           <div className="door-room">
             <RoomParts unit={unit} courseKey={COURSE_KEY[course.id] || course.id} games={games} docAssist={docAssist} maps={mapsForUnit(atlasMaps, unit)} onOpenMap={onOpenMap}
                        wl={(wlSets || []).filter(s => String(s.entry.unit) === String(unit.number))} onOpenSet={onOpenSet}
@@ -1266,7 +1269,7 @@ export const unitName = u => {
 }
 const finishedUnits = course => {
   const now = currentUnit(course)?.slug
-  return [...(course.units || [])].filter(u => u.slug !== now).reverse()   // newest first
+  return [...(course.units || [])].filter(u => u.slug !== now && unitHere(u)).reverse()   // newest first; a unit not open yet isn't finished
 }
 
 // One unit's Review, Doc Assist and Test practice: in the unit's room, and for the unit
@@ -1393,7 +1396,7 @@ function UnitLane({ course, onOpen, onOpenUnit0 }) {
   )
 }
 
-function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, wlSets, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenReview, onBack, onGoNow }) {
+function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, wlSets, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenCasefile, onOpenReview, onBack, onGoNow }) {
   const now = currentUnit(course)
   const isCurrent = now?.slug === unit.slug
   return (
@@ -1409,7 +1412,14 @@ function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, 
       {/* Gauges first, as on the door: a casefile back is why a kid is in here (Josh, 2026-10-02).
           A past unit's room shows only the gauges that unit actually built: an empty
           ladder in a room kids revisit is exactly the "empty" BK ruled out (17:19). */}
-      {!isCurrent && roomSkills(course, unit).some(s => s.ladder) && (
+      {/* A unit organised by casefile shows its three doors, current or finished (BK 2026-10-24 17:13). */}
+      {(unit.casefiles || []).length > 0 && (
+        <>
+          <CasefileDoors unit={unit} onOpen={onOpenCasefile} />
+          <div className="door-room" />
+        </>
+      )}
+      {!(unit.casefiles || []).length && !isCurrent && roomSkills(course, unit).some(s => s.ladder) && (
         <>
           <h3 className="room-section" >{unitNum(unit) ? UNIT_WORDS.skillsIn(unitNum(unit)) : 'Your skills in this unit'}</h3>
           <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} builtOnly />
@@ -1935,7 +1945,7 @@ function SkillExtras({ course, skill, onOpenDrill }) {
 // the manifest's `type`; the content arrives by reference, like everything else.
 // ============================================================
 function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onComplete: markComplete, onBack }) {
-  const t = LEVEL_TYPES[lv?.type]
+  const t = lv?.modeled ? null : LEVEL_TYPES[lv?.type]
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
   const [coachLine, setCoachLine] = useState(null)
@@ -1955,6 +1965,7 @@ function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onCompl
       <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which level it was.</p>
     </div>
   )
+  else if (lv.type === 'matching' && pack.modeled) body = <ModeledMatch pack={pack} accent={course.accent} onComplete={onComplete} />
   else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} />
   else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} />
   else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
@@ -2009,6 +2020,8 @@ export default function App() {
   const [prog, markDone] = useProgress()
   const [pendingLevel, setPendingLevel] = useState(null)   // a gauge link's level, opened once the unit and skill are set
   const [ladderFrom, setLadderFrom] = useState('door')      // where Back from a ladder goes
+  const [casefile, setCasefile] = useState(null)            // a casefile door's letter (#/us/11.3A/gauges/A; BK 10/24 16:55-17:15)
+  const [cfFrom, setCfFrom] = useState('unit')              // where Back from a casefile door goes: 'unit' or 'door'
   const [roomFrom, setRoomFrom] = useState('units')         // where Back from a review, Doc Assist or practice set goes
   const [drillFromLadder, setDrillFromLadder] = useState(false)
   const [doorLane, setDoorLane] = useState(null)
@@ -2047,10 +2060,12 @@ export default function App() {
     () => (manifest?.courses || []).find(c => c.id === courseId) || null,
     [manifest, courseId]
   )
-  const unit = useMemo(
+  const baseUnit = useMemo(
     () => (course?.units || []).find(u => u.slug === unitSlug) || null,
     [course, unitSlug]
   )
+  // Inside a casefile door, the gauges, ladders and progress are that casefile's own (ladder.jsx casefileUnit).
+  const unit = useMemo(() => (casefile && baseUnit ? casefileUnit(baseUnit, casefile) : null) || baseUnit, [baseUnit, casefile])
   const station = useMemo(
     () => (course?.stations || []).find(s => s.slug === stationSlug) || null,
     [course, stationSlug]
@@ -2135,6 +2150,7 @@ export default function App() {
     setReview(false); setBriefPack(null); setDaOpen(false); setDaDoc(null); setPendingDa(null)
     setActIndex(null); setPack(null); setUnit0(false); setOfficeTheme(null); setOfficePack(null)
     setUnitAtlas(r.at === 'unitatlas')
+    setCasefile(r.at === 'casefile' ? r.cf : null); setCfFrom('unit')
     setStopOpen(r.stopOpen || null)
     setChase(r.at === 'chase')
     setCivics(r.at === 'civics' ? r.civicsSlug : null)
@@ -2190,13 +2206,13 @@ export default function App() {
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
       course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
-      chase, stopOpen, civics, civicsCard,
+      chase, stopOpen, civics, civicsCard, casefile: unit?._cf ? unit._cf.id : null,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
     setHere(h)                                              // where the kid is, for the chase pill (10/9)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard, casefile])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2284,17 +2300,17 @@ export default function App() {
   else if (unit && skill) {
     screen = (
       <div className="wrap">
-        <ScreenHeader label={unit.label} color={course.accent}
-                      onBack={() => { setSkill(null); if (ladderFrom === 'door') setUnitSlug(null) }}
-                      back={ladderFrom === 'door' ? course.label : unit.label} />
+        <ScreenHeader label={unit._cf ? `${unitName(unit)} · ${unit._cf.name}` : unit.label} color={course.accent}
+                      onBack={() => { setSkill(null); if (ladderFrom === 'door' && !unit._cf) setUnitSlug(null) }}
+                      back={unit._cf ? unit._cf.name : ladderFrom === 'door' ? course.label : unit.label} />
         {/* The bank's line for this skill, plus the course desk's own station lines for it. */}
         <CoachSays key={`skill-${course.id}-${skill}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
                    line={skillLine(skill, course.guide?.lines?.station_enter?.[(course.stations || []).find(x => (x.skill_lines || [])[0] === skill)?.slug] || [])} />
         <Ladder course={course} unit={unit} skill={skill} prog={prog} onOpenLevel={openLevel} />
         <SkillExtras course={course} skill={skill}
                      onOpenDrill={(slug, i) => { setStationSlug(slug); setDrillIndex(i); setDrillFromLadder(true); window.scrollTo(0, 0) }} />
-        <BottomBack onBack={() => { setSkill(null); if (ladderFrom === 'door') setUnitSlug(null) }}
-                    back={ladderFrom === 'door' ? course.label : unit.label} />
+        <BottomBack onBack={() => { setSkill(null); if (ladderFrom === 'door' && !unit._cf) setUnitSlug(null) }}
+                    back={unit._cf ? unit._cf.name : ladderFrom === 'door' ? course.label : unit.label} />
       </div>
     )
   }
@@ -2350,7 +2366,20 @@ export default function App() {
         ? <PeelActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
         : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
+  else if (unit && unit._cf) {
+    // One casefile door: its own gauges, in its scoring page's order (BK 2026-10-24 17:15).
+    const leaveCf = () => { setCasefile(null); if (cfFrom === 'door') setUnitSlug(null); window.scrollTo(0, 0) }
+    const backTo = cfFrom === 'door' ? course.label : unitName(baseUnit)
+    screen = (
+      <div className="wrap">
+        <ScreenHeader label={`${unitName(baseUnit)} · ${unit._cf.name}`} onBack={leaveCf} color={course.accent} back={backTo} />
+        <SkillGauges course={course} unit={unit} prog={prog} onOpen={code => { setLadderFrom('unit'); setSkill(code); window.scrollTo(0, 0) }} />
+        <BottomBack onBack={leaveCf} back={backTo} />
+      </div>
+    )
+  }
   else if (unit) screen = <UnitRoom course={course} unit={unit} games={games} prog={prog}
+                                    onOpenCasefile={id => { setCfFrom('unit'); setCasefile(id); window.scrollTo(0, 0) }}
                                     docAssist={daPack || null} atlasMaps={atlasMaps} onOpenMap={setAtlasId}
                                     wlSets={wlSets} onOpenSet={s => { setWlSlug(s); window.scrollTo(0, 0) }}
                                     onOpenDocAssist={() => { setRoomFrom('units'); setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
@@ -2358,7 +2387,7 @@ export default function App() {
                                     onOpenReview={() => { setRoomFrom('units'); openReview(unit) }}
                                     onOpenActivity={i => { setRoomFrom('units'); openActivity(unit, i) }}
                                     onGoNow={() => { setUnitSlug(null); setSkill(null); setLevel(null); setReview(false); setDoorLane('skills'); window.scrollTo(0, 0) }}
-                                    onBack={() => { setUnitSlug(null); setSkill(null); setLevel(null); setReview(false) }} />
+                                    onBack={() => { setUnitSlug(null); setCasefile(null); setSkill(null); setLevel(null); setReview(false) }} />
   else screen = (
     <CourseDoor
       course={course}
@@ -2367,8 +2396,9 @@ export default function App() {
       setLane={setDoorLane}
       stopOpen={stopOpen}
       onFromConstitution={() => setCivicsFrom('constitution')}
-      onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
-      onOpenUnit={slug => { setRoomFrom('units'); setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false); window.scrollTo(0, 0) }}
+      onOpenSkill={(slug, code) => { setLadderFrom('door'); setCasefile(null); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
+      onOpenCasefile={(slug, id) => { setCfFrom('door'); setUnitSlug(slug); setCasefile(id); setSkill(null); window.scrollTo(0, 0) }}
+      onOpenUnit={slug => { setRoomFrom('units'); setCasefile(null); setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false); window.scrollTo(0, 0) }}
       onOpenUnit0={() => { setUnit0(true); window.scrollTo(0, 0) }}
       games={games}
       docAssist={daPack || null}

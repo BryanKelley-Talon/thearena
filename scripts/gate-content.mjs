@@ -48,7 +48,9 @@ try {
         if (!fs.existsSync(path.join(CONTENT, f))) { console.error(`  FAIL  manifest\n        ${u.slug}: brief_ref '${f}' is not in public/content.`); process.exitCode = 1 }
         else { LADDER_TYPE[f] = 'unit_brief'; LIVE.add(f) }
       }
-      for (const l of u.ladders || []) for (const lv of l.levels || []) {
+      // A unit organised by casefile (BK 2026-10-24) keeps its ladders inside each published casefile door.
+      const allLadders = [...(u.ladders || []), ...(u.casefiles || []).filter(cf => cf.published === true).flatMap(cf => cf.ladders || [])]
+      for (const l of allLadders) for (const lv of l.levels || []) {
         if (!lv.content_ref) continue
         const f = String(lv.content_ref).replace(/^content\//, '')
         if (!fs.existsSync(path.join(CONTENT, f))) {
@@ -130,9 +132,20 @@ function checkLadder(f, d, type) {
     }
     need('correct_sentence')
   } else if (type === 'guided_write') {
-    need('source_text'); need('prompt'); need('model_response', "guided_write: no 'model_response' — 'I'm done' would reveal nothing.")
-    if (!(d.checklist || []).length) fail(f, 'guided_write: no checklist — it is the scaffold at L4.')
-    if (!d.source_document) fail(f, 'guided_write: source text with no source_document pointer (canon 6, quotation provenance).')
+    // The document is on the page: one source_text, or documents: [{ source_document, source_text }] for a pair.
+    const docs = Array.isArray(d.documents) && d.documents.length ? d.documents : [{ source_document: d.source_document, source_text: d.source_text }]
+    docs.forEach((x, i) => {
+      if (!x.source_text || !String(x.source_text).trim()) fail(f, `guided_write: no source_text${docs.length > 1 ? ` on document ${i + 1}` : ''} — the student would write about a document they cannot see (BK 2026-09-25).`)
+      if (!x.source_document) fail(f, `guided_write: source text with no source_document pointer${docs.length > 1 ? ` on document ${i + 1}` : ''} (canon 6, quotation provenance).`)
+    })
+    need('prompt')
+    // A cold level (Sam 2026-10-23) has no starter and no checklist by design, and its model may be held to unit close.
+    if (d.cold === true) {
+      if (!d.write_it_in) fail(f, "guided_write (cold): no 'write_it_in' — the student must be told where the writing goes, since the Arena keeps none.")
+    } else {
+      need('model_response', "guided_write: no 'model_response' — 'I'm done' would reveal nothing.")
+      if (!(d.checklist || []).length) fail(f, 'guided_write: no checklist — it is the scaffold at L4.')
+    }
   } else if (type === 'enrichment') {
     for (const t of d.tidbits || []) if (!t.source_pointer) fail(f, `tidbit ${t.id}: no source_pointer (canon 6, quotation provenance).`)
     for (const e of d.exemplars || []) if (![4, 5].includes(e.level)) fail(f, `exemplar level '${e.level}' — must be 4 or 5.`)
@@ -179,7 +192,7 @@ function checkDocVisible(f, d) {
     const p = [it.question, it.stem, it.prompt].filter(Boolean).join(' ')
     if (DOC_RX.test(p) && !hasStim(it.stimulus)) fail(f, `item ${it.n ?? it.id}: asks about a document it does not show — "${p.slice(0, 70)}"`)
   }
-  if (d.prompt && DOC_RX.test(d.prompt) && !d.source_text) fail(f, `prompt asks about a document it does not show.`)
+  if (d.prompt && DOC_RX.test(d.prompt) && !d.source_text && !(Array.isArray(d.documents) && d.documents.some(x => String(x.source_text || '').trim()))) fail(f, `prompt asks about a document it does not show.`)
   // enrichment try_it: the shell shows the ladder's L4 source above L5, so this is covered
   // when the ladder has a guided_write level; ENRICH_OK carries that fact in from the manifest.
   if (d.try_it?.prompt && DOC_RX.test(d.try_it.prompt) && !ENRICH_OK.has(f)) fail(f, `try_it asks about a document the page does not show.`)

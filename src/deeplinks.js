@@ -23,6 +23,10 @@
 //   #/us/constitution                      THE CONSTITUTION lane: the reference rooms in one place (BK 10/16 11:48)
 //   #/us/threads/<stop-id>                 the Threads map with one stop open (for a chase clue)
 //   #/global/gauge/EI/1                    one gauge's level, in the unit we're in (10/8)
+//   #/us/11.3A/gauges · #/us/11.3A/gauges/A   a unit's casefile doors, or one casefile's own gauges
+//                                          (BK 2026-10-24 16:55-17:15). Unit-scoped, so a code printed on a
+//                                          casefile stays true after the door moves on. An unknown letter
+//                                          opens the unit's doors.
 //   #/office · #/office/2026-10-halftime-adjustments
 //
 // Numbers, not labels: a unit's title can change, its framework number can't. A link to
@@ -35,7 +39,7 @@ const KEY_COURSE = Object.fromEntries(Object.entries(COURSE_KEY).map(([k, v]) =>
 export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', 'writing-lab': 'writing_lab', constitution: 'constitution', review: 'skills_review' }
 const KEY_LANE = Object.fromEntries(Object.entries(LANE_KEYS).map(([k, v]) => [v, k]))
 
-const unitByNumber = (course, n) => (course?.units || []).find(u => String(u.number) === String(n)) || null
+const unitByNumber = (course, n) => (course?.units || []).find(u => u.slug && String(u.number).toUpperCase() === String(n).toUpperCase()) || null
 
 // '#/us/11.1/doc-assist/B/12' → a route the App can apply. Unknown parts are dropped from the
 // right until what's left exists, so a bad link still opens the nearest real place.
@@ -62,6 +66,10 @@ export function parseHash(hash, manifest) {
   const u = { ...r, at: 'unit', unitSlug: unit.slug }
   if (parts[2] === 'review') return { ...u, at: 'review' }
   if (parts[2] === 'atlas') return { ...u, at: 'unitatlas' }
+  if (parts[2] === 'gauges') {
+    const cf = (unit.casefiles || []).find(c => String(c.id).toUpperCase() === String(parts[3] || '').toUpperCase())
+    return cf && cf.published === true && (cf.skills || []).length ? { ...u, at: 'casefile', cf: cf.id } : u
+  }
   if (parts[2] && (unit.rooms || []).some(x => x.slug === parts[2] && x.published === true))
     return { ...u, at: 'civics', civicsSlug: parts[2], ...(parts[3] ? { civicsCard: parts[3] } : {}) }
   if (parts[2] === 'doc-assist') {
@@ -94,6 +102,7 @@ export function buildHash(s) {
   }
   if (s.review) return `${u}/review`
   if (s.unitAtlas) return `${u}/atlas`
+  if (s.casefile) return `${u}/gauges/${s.casefile}`
   if (s.civics) return s.civicsCard ? `${u}/${s.civics}/${encodeURIComponent(s.civicsCard)}` : `${u}/${s.civics}`
   return u
 }
@@ -107,10 +116,12 @@ export function linkList(manifest, base, daPacks = {}) {
     out.push({ what: `${c.label}: the door`, href: `${base}#/${k}` })
     if (c.unit0?.published) out.push({ what: `${c.label}: Unit 0, the six skills`, href: `${base}#/${k}/0` })
     for (const u of c.units || []) {
-      if (u.published !== true) continue
+      if (u.published !== true || !u.slug) continue
       const nm = String(u.label).startsWith(String(u.number)) ? u.label : `${u.number} · ${u.label}`
       out.push({ what: `${nm}: the room`, href: `${base}#/${k}/${u.number}` })
       if (u.brief_ref) out.push({ what: `${u.number}: the unit review`, href: `${base}#/${k}/${u.number}/review` })
+      for (const cf of (u.casefiles || []).filter(c => c.published === true && (c.skills || []).length))
+        out.push({ what: `${u.number}: ${cf.name}, its gauges`, href: `${base}#/${k}/${u.number}/gauges/${cf.id}` })
       if (u.doc_assist?.published) {
         out.push({ what: `${u.number}: Doc Assist`, href: `${base}#/${k}/${u.number}/doc-assist` })
         for (const cf of (daPacks[u.doc_assist.content_ref]?.casefiles || []).filter(x => x.status === 'open' && (x.docs || []).length))

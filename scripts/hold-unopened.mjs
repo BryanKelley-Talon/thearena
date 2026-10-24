@@ -74,4 +74,33 @@ if (goneImgs.size) {
   for (const dir of ['dist/content', 'dist/images', 'dist/atlas']) if (fs.existsSync(dir))
     for (const f of fs.readdirSync(dir)) if (IMG.test(f) && gone.has(stem(f))) { fs.unlinkSync(path.join(dir, f)); removed++ }
 }
+// A model answer held to the unit's close (Sam 2026-10-23: `model_visible: "unit_close"`, the exemplar-casefile
+// rule). It leaves the served file until the ladder level that names the file carries `model_opens_on` and that
+// day has come. No date means never served: the safe failure, since a model served early turns a cold write
+// into a copy exercise.
+const SRC = JSON.parse(fs.readFileSync('public/arena.manifest.json', 'utf8'))
+const modelDates = {}
+const findLevels = o => {
+  if (Array.isArray(o)) o.forEach(findLevels)
+  else if (o && typeof o === 'object') {
+    if (typeof o.content_ref === 'string' && o.model_opens_on) modelDates[o.content_ref.replace(/^content\//, '')] = String(o.model_opens_on)
+    Object.values(o).forEach(findLevels)
+  }
+}
+findLevels(SRC)
+const modelsHeld = []
+if (fs.existsSync('dist/content')) for (const f of fs.readdirSync('dist/content')) {
+  if (!f.endsWith('.json')) continue
+  const p = path.join('dist/content', f)
+  const raw = fs.readFileSync(p, 'utf8')
+  if (!raw.includes('"unit_close"')) continue
+  const d = JSON.parse(raw)
+  if (d.model_visible !== 'unit_close' || !('model_response' in d)) continue
+  const on = modelDates[f]
+  if (on && on <= today) continue
+  delete d.model_response
+  fs.writeFileSync(p, JSON.stringify(d, null, 2) + '\n')
+  modelsHeld.push(`${f} (${on ? `model opens ${on}` : 'no model date'})`)
+}
+if (modelsHeld.length) console.log(`hold-unopened: ${modelsHeld.length} model answers held to unit close: ${modelsHeld.join('; ')}`)
 console.log(`hold-unopened: today ${today}; ${labels.length} entries held (${labels.join('; ')}); ${removed} files left out of dist`)

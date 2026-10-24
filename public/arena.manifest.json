@@ -1619,6 +1619,96 @@
               ]
             }
           ]
+        },
+        {
+          "slug": "unit-3",
+          "number": "11.3A",
+          "label": "Building a Nation, 1801–1850",
+          "published": true,
+          "opens_on": "2026-11-03",
+          "_note": "Josh, 2026-10-24. The 11.3A room, organised by casefile (BK 2026-10-24 16:55 'separate by Casefile, easier to refer to for kids'; 17:13 'the main unit page gets the three doors a, b, c casefile...we are just organizing them'; 17:15 'if we match casefiles we're good'; 17:33 '11.3A'). Name and dates from Sam's CARRY-FORWARD v3.14 and the SIGNED 11.3A map v2 (BK 13:50): Day 0 Tue 11/3. Held out of the served build until its open-date push (scripts/hold-unopened.mjs); that push also moves the door to it (current_unit).",
+          "assignment": {
+            "type_label": "Classroom assignment",
+            "title": "1800: The Fragile Republic",
+            "blurb": "Missed it in class, or want another run? Play all seven chapters here.",
+            "content_ref": "us11r-1800",
+            "published": true,
+            "_source": "Sam, In/sam-pass-2026-10-04-fragile-republic-room-card-RULED.md (BK 2026-10-04 09:02 'Yes'): the card ships with the 11.3 room, with the line BK ruled for 1776 on 10/3 22:55. Resolves through games.json us11r-1800 (live). The timeline keeps std 11.2."
+          },
+          "casefiles": [
+            {
+              "id": "A",
+              "name": "Casefile A · Discovery",
+              "published": true,
+              "skills": [
+                "CP",
+                "DU",
+                "EX",
+                "HC",
+                "OE",
+                "TH"
+              ],
+              "_skills_note": "Sam, In/sam-to-josh-2026-10-24-1720 (BK 17:15): A's door shows exactly the gauges A's scoring page scores, all six, in this order. A gauge with no 11.3A ladder yet reads Coming on every level.",
+              "ladders": [
+                {
+                  "skill": "HC",
+                  "_source": "Sam, OUTPUTS/2026-27/Games/arena-11.3A/ (BK blessed 2026-10-23 11:38); Danny CLEAN, one reader, 5 checked 0 fixed 0 unsupported (In/danny-to-josh-2026-10-23-1343). Ported byte for byte; md5s match Danny's. Labels are each file's own _activity line. L4 and L5 wait on their documents' text (no task without its document, BK 2026-09-25), asked of Sam 2026-10-24. L5's model is held to unit close: set model_opens_on on level 5 when Sam gives the date.",
+                  "levels": [
+                    {
+                      "level": 1,
+                      "type": "matching",
+                      "modeled": true,
+                      "label": "Watch one get built: the Louisiana Purchase, 1803",
+                      "content_ref": "content/ladder-us11r-11.3A-hc-L1-modeled.json",
+                      "published": true
+                    },
+                    {
+                      "level": 2,
+                      "type": "mc_bestfit",
+                      "label": "Pick the scene: 11.3A",
+                      "content_ref": "content/ladder-us11r-11.3A-hc-L2-bestfit.json",
+                      "published": true
+                    },
+                    {
+                      "level": 3,
+                      "type": "sentence_build",
+                      "label": "Build the scene: the Monroe Doctrine, 1823",
+                      "content_ref": "content/ladder-us11r-11.3A-hc-L3-sentencebuild.json",
+                      "published": true
+                    },
+                    {
+                      "level": 4,
+                      "type": "guided_write",
+                      "label": "Write the scene: the embargo song, 1808",
+                      "content_ref": "content/ladder-us11r-11.3A-hc-L4-guidedwrite.json",
+                      "published": false
+                    },
+                    {
+                      "level": 5,
+                      "type": "guided_write",
+                      "label": "On your own: Documents 5 and 6",
+                      "content_ref": "content/ladder-us11r-11.3A-hc-L5-cold.json",
+                      "published": false
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "B",
+              "name": "Casefile B · Cross-Examination",
+              "published": false,
+              "status": "building",
+              "_note": "Waits on Sam: B's scoring-page list arrives with B (Sam 17:20)."
+            },
+            {
+              "id": "C",
+              "name": "Casefile C · Closing Argument",
+              "published": false,
+              "status": "building",
+              "_note": "Waits on Sam: C's scoring-page list arrives with C (Sam 17:20)."
+            }
+          ]
         }
       ],
       "atlas": [
@@ -1686,8 +1776,8 @@
       ],
       "_blurbs_note": "Six card blurbs, RULED by BK 2026-09-18 13:17 EDT, written verbatim as he approved them — one line per card, second person, no station vocabulary, no acronyms. They are addressed to the student, which is why none of them explains what the card 'drills': the drill names inside the card do that. Curly apostrophes and curly quotes are intentional and are the house typography.",
       "status": "open",
-      "current_unit": "unit-2",
-      "_current_unit_note": "Josh 18:27 2026-09-27: door moves to NOW 11.2 on the port of Sam's arena-pack (BK signed 18:11). 11.1 gauges move into the 11.1 room.",
+      "current_unit": "unit-3",
+      "_current_unit_note": "Josh 18:27 2026-09-27: door moves to NOW 11.2 on the port of Sam's arena-pack (BK signed 18:11). 11.1 gauges move into the 11.1 room. Josh 2026-10-24: set to unit-3 (11.3A); until its open-date push on Tue 11/3 that unit is held out of the served build, so the door stays on 11.2 (ladder.jsx currentUnit skips a unit not yet open).",
       "skill_lines": {
         "_README": "The course's graded skill lines, in the words the student reads on the scoring page. THIS IS THE CROSSWALK: a student sees a line on their grade, and every station and item that drills it declares the same CODE. Five lines are shared across both courses; the sixth is the course's own essay line and the two are NOT interchangeable.",
         "_contract": "Stations declare skill_lines: [CODE]. Items declare skill_line: CODE. The LABEL is resolved from this list and is never repeated on an item - one place to change a word. A code not in this list is a defect, not a new line.",

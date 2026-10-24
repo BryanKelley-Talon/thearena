@@ -76,7 +76,12 @@ export const levelsDone = (prog, course, unit, skill) => prog?.[roomKey(course, 
 export function roomSkills(course, unit) {
   const lines = course?.skill_lines?.lines || []
   const ladders = unit?.ladders || []
-  return (course?.stations || []).map(s => {
+  // A casefile door (casefileUnit below) carries its own skill list, in its scoring page's order.
+  const order = Array.isArray(unit?._cfSkills) ? unit._cfSkills : null
+  const stations = order
+    ? order.map(code => (course?.stations || []).find(s => (s.skill_lines || [])[0] === code)).filter(Boolean)
+    : (course?.stations || [])
+  return stations.map(s => {
     const code = (s.skill_lines || [])[0]
     const line = lines.find(l => l.code === code)
     return {
@@ -90,8 +95,43 @@ export function roomSkills(course, unit) {
 
 // The CURRENT unit: the manifest's course.current_unit if set and live, else the
 // latest live unit that has ladders, else the first live unit.
+// A unit dated to open later (`opens_on`, device date) isn't a unit yet: not the one we're in, not
+// a finished one. hold-unopened leaves only a stub in the served manifest until its open-date push.
+const todayYMD = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
+export const unitHere = u => !!u?.slug && (!u.opens_on || todayYMD() >= String(u.opens_on))
+
+// ── CASEFILE DOORS (BK 2026-10-24 16:55 "separate by Casefile", 17:13 three doors, 17:15 "if we
+// match casefiles we're good"). A unit may carry `casefiles: [{ id, name, skills: [CODES], ladders }]`.
+// A door shows exactly the gauges its casefile's scoring page scores, in that page's order. Its
+// progress is its own (room key course:unit~A), so A's Historical Context and B's never mix.
+export const unitCasefile = (unit, id) => (unit?.casefiles || []).find(c => String(c.id).toUpperCase() === String(id || '').toUpperCase()) || null
+export const casefileOpen = cf => !!cf && cf.published === true && (cf.status ?? 'open') !== 'building' && (cf.skills || []).length > 0
+export function casefileUnit(unit, id) {
+  const cf = unitCasefile(unit, id)
+  if (!casefileOpen(cf)) return null
+  return { ...unit, slug: `${unit.slug}~${cf.id}`, _baseSlug: unit.slug, _cf: cf, _cfSkills: cf.skills, ladders: cf.ladders || [] }
+}
+
+export function CasefileDoors({ unit, onOpen }) {
+  return (
+    <div className="grid room-cards cf-doors">
+      {(unit.casefiles || []).map(cf => {
+        const on = casefileOpen(cf)
+        return (
+          <button key={cf.id} type="button" className={`card cf-door${on ? '' : ' off'}`} disabled={!on}
+                  tabIndex={on ? 0 : -1} onClick={() => on && onOpen(cf.id)}>
+            <div className="cf-letter" aria-hidden="true">{cf.id}</div>
+            <div className="card-name">{cf.name}</div>
+            {on ? <span className="flag live">Open</span> : <span className="flag building">Under construction</span>}
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
 export function currentUnit(course) {
-  const live = (course?.units || []).filter(u => u.published === true && (u.status ?? 'open') !== 'building')
+  const live = (course?.units || []).filter(u => u.published === true && (u.status ?? 'open') !== 'building' && unitHere(u))
   return live.find(u => u.slug === course?.current_unit)
     || [...live].reverse().find(u => (u.ladders || []).length)
     || live[0] || null
@@ -234,7 +274,8 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
       </div>
       <ol className="ladder">
         {levels.map(lv => {
-          const t = LEVEL_TYPES[lv.type]
+          // A modeled level (nothing to answer) carries no type name: "Match it" would promise a task that isn't there.
+          const t = lv.modeled ? null : LEVEL_TYPES[lv.type]
           const open = levelOpen(lv)
           const isDone = done.includes(lv.level)
           const body = (
@@ -448,6 +489,11 @@ export function SentenceBuild({ pack, onComplete }) {
 // Checklist visible the whole time, not a hint you ask for. What the kid types
 // is React state and nothing else: never stored, never sent, gone with the tab.
 export function GuidedWrite({ pack, accent, onComplete }) {
+  return pack?.cold
+    ? <ColdWrite pack={pack} accent={accent} onComplete={onComplete} />
+    : <WarmWrite pack={pack} accent={accent} onComplete={onComplete} />
+}
+function WarmWrite({ pack, accent, onComplete }) {
   const starter = String(pack?.sentence_starter || '').replace(/_{2,}\s*$/, '').trimEnd()
   const seed = starter ? `${starter} ` : ''
   const [text, setText] = useState(seed)
@@ -488,12 +534,83 @@ export function GuidedWrite({ pack, accent, onComplete }) {
         </button>
       ) : (
         <div className="rep-reveal" role="status">
-          <h4>One strong answer</h4>
-          <p className="rep-exemplar">{pack.model_response}</p>
-          <p className="rep-focus">Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?</p>
+          {pack.model_response && <>
+            <h4>One strong answer</h4>
+            <p className="rep-exemplar">{pack.model_response}</p>
+            <p className="rep-focus">Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?</p>
+          </>}
           <p className="level-done">Level done. Head back to the gauge for the next one.</p>
         </div>
       )}
+    </div>
+  )
+}
+
+// ── L1 · WATCH ONE GET BUILT (`modeled: true` on a matching file; Sam 2026-10-23) ──
+// The "I do" level: every pair arrives solved, its reason showing, and the frame filled in.
+// Nothing to answer, so nothing can be missed. "I'm done" moves the gauge like any level.
+export function ModeledMatch({ pack, accent, onComplete }) {
+  const [done, setDone] = useState(false)
+  const right = Object.fromEntries((pack.right || []).map(r => [r.key, r]))
+  return (
+    <div className="modeled">
+      {pack.intro && <p className="rep-why" style={{ marginTop: 0 }}>{pack.intro}</p>}
+      {pack.source_document && <div className="doc-tag">{pack.source_document}</div>}
+      {(pack.left || []).map(l => (
+        <article key={l.key} className="modeled-pair" style={{ borderColor: `${accent}66` }}>
+          <div className="modeled-left">{l.label}</div>
+          <div className="modeled-right">{right[pack.correct?.[l.key]]?.label}</div>
+          {pack.rationale?.[l.key] && <p className="rep-focus">{pack.rationale[l.key]}</p>}
+        </article>
+      ))}
+      {pack.frame && <p className="modeled-frame">{pack.frame}</p>}
+      {pack.frame_fill && <p className="rep-exemplar">{pack.frame_fill}</p>}
+      {!done
+        ? <button type="button" className="rep-go" onClick={() => { setDone(true); onComplete() }}>I’m done</button>
+        : <p className="level-done" role="status">Level done. Head back to the gauge for the next one.</p>}
+    </div>
+  )
+}
+
+// The document(s) a write is about, on the same screen (BK 2026-09-25). One `source_text` with
+// its `source_document`, or `documents: [{ source_document, source_text }]` for a pair.
+function WriteDocs({ pack, accent }) {
+  const docs = Array.isArray(pack?.documents) && pack.documents.length
+    ? pack.documents
+    : (pack?.source_text ? [{ source_document: pack.source_document, source_text: pack.source_text }] : [])
+  return docs.map((d, i) => (
+    <figure key={i} className="stimulus" style={{ borderColor: `${accent}44` }}>
+      {d.source_document && <div className="doc-tag">{d.source_document}</div>}
+      <div className="stimulus-text">{String(d.source_text || '').split(/\n{2,}/).map((p, j) => <p key={j}>{p}</p>)}</div>
+    </figure>
+  ))
+}
+
+// ── L5 · ON YOUR OWN (`cold: true`; Sam 2026-10-23, Danny clear 13:43) ────
+// The exam's way: no starter, no checklist, no box. The writing goes where the file says
+// (`write_it_in`, the Classroom BONUS), never into the Arena, which holds no student work.
+// The model shows only if the served file carries it: a `model_visible: "unit_close"` file is
+// served without it until its date (scripts/hold-unopened.mjs), so a cold level can't become a copy.
+function ColdWrite({ pack, accent, onComplete }) {
+  const [done, setDone] = useState(false)
+  return (
+    <div className="write cold">
+      {pack.badge && <div className="cold-badge">{pack.badge}</div>}
+      {pack.intro && <p className="rep-why" style={{ marginTop: 0 }}>{pack.intro}</p>}
+      <WriteDocs pack={pack} accent={accent} />
+      <p className="rep-prompt">{pack.prompt}</p>
+      {pack.write_it_in && <p className="cold-where">{pack.write_it_in}</p>}
+      {!done
+        ? <button type="button" className="rep-go" onClick={() => { setDone(true); onComplete() }}>I’m done</button>
+        : (
+          <div className="rep-reveal" role="status">
+            {pack.model_response && <>
+              <h4>One strong answer</h4>
+              <p className="rep-exemplar">{pack.model_response}</p>
+            </>}
+            <p className="level-done">Level 5 done. That’s every level on this gauge.</p>
+          </div>
+        )}
     </div>
   )
 }
@@ -806,7 +923,24 @@ button.rung:hover{background:var(--card-lit);border-color:var(--gold);transform:
   .facts td::before,.facts th::before{content:attr(data-label);display:block;font-family:'Barlow Condensed',sans-serif;
     text-transform:uppercase;letter-spacing:.1em;font-size:11px;color:var(--gold);margin-bottom:2px}
 }
+/* Casefile doors (BK 2026-10-24 17:13): three cards, the letter large so a kid matches it to the paper. */
+.cf-doors{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cf-door{min-height:132px}
+.cf-letter{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:46px;line-height:1;color:var(--gold);margin-bottom:6px}
+.cf-door.off .cf-letter{color:var(--grey)}
+.cf-head{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;color:var(--gold);font-size:14px;margin:0 0 4px}
+/* L5 on your own: the badge reads as a label, not a score; the where-it-goes line stands out. */
+.cold-badge{display:inline-block;font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;font-size:14px;
+  color:var(--gold);border:1px solid #7A5F20;background:#2A2312;border-radius:6px;padding:5px 10px;margin-bottom:12px;white-space:pre-wrap}
+.cold-where{font-size:17px;color:var(--white);border-left:3px solid var(--gold);padding:8px 0 8px 12px;margin:14px 0 18px}
+/* L1 modeled: the solved pair. */
+.modeled-pair{border:1px solid;border-radius:10px;background:var(--card, #1B2A47);padding:14px 16px;margin:10px 0 16px}
+.modeled-left{font-family:'Barlow Condensed',sans-serif;font-size:20px;color:var(--gold);margin-bottom:6px}
+.modeled-right{font-size:17px;line-height:1.6;color:var(--white)}
+.modeled-frame{font-family:'Barlow Condensed',sans-serif;letter-spacing:.06em;font-size:18px;color:var(--grey);margin:8px 0 4px}
 @media (max-width:560px){
+  .cf-doors{grid-template-columns:1fr}
+  .cf-door{min-height:0}
   .gauges{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
   .rung{padding:13px 12px;gap:11px}
   .rung-flags{flex-direction:column}

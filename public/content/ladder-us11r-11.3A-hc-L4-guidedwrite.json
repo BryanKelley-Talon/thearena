@@ -1,0 +1,26 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - OPENING STATEMENT",
+  "_built": "2026-10-23 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_hc.py",
+  "_blessed": "BK 2026-10-23 11:38 EDT on US11R_11.3A_THEJUMP-HCgauge_WORDING_v2_2026-10-23.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "HC",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 4,
+  "_activity": "Write the scene: the embargo song, 1808",
+  "type": "guided_write",
+  "source_document": "Document 2 - Henry Mellen, 1808, Massachusetts Historical Society Broadsides",
+  "prompt": "Describe the historical context surrounding this document.",
+  "sentence_starter": "In 1807, ___",
+  "checklist": [
+    "Did you name when?",
+    "Did you name what Britain and France were doing?",
+    "Did you connect it to why Jefferson acted?"
+  ],
+  "model_response": "In 1807, Britain and France were at war and both seized American ships on the ocean, which is why Jefferson's Embargo Act stopped American ships from trading overseas - a law the song blames him for, even though it hurt New England's own shippers most.",
+  "model_visible": "always",
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

@@ -1,0 +1,67 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - OPENING STATEMENT",
+  "_built": "2026-10-23 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_hc.py",
+  "_blessed": "BK 2026-10-23 11:38 EDT on US11R_11.3A_THEJUMP-HCgauge_WORDING_v2_2026-10-23.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "HC",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 2,
+  "_activity": "Pick the scene: 11.3A",
+  "type": "mc_bestfit",
+  "intro": "Pick the statement that best sets the scene. Hints are here if you want them.",
+  "items": [
+    {
+      "id": "ctx113A-01",
+      "stem": "Which statement best gives the historical context for the Embargo Act, 1807?",
+      "options": {
+        "1": "The Constitution said nothing about buying land, and Jefferson read it strictly, so the purchase worried him even as he made it",
+        "2": "Britain and France were at war and both seized American ships, so Jefferson stopped American ships from trading overseas",
+        "3": "New York had linked the Great Lakes to the Hudson River, and canals and steamboats were tying farms to markets",
+        "4": "The war with Britain had ended with no land changing hands, and Americans had come out of it proud"
+      },
+      "correct": "2",
+      "hints": [
+        "Which two countries were at war, and what were they doing to American ships?",
+        "Jefferson's answer was to stop trade, not to fight."
+      ],
+      "reason": "Britain and France were at war, and both seized American ships. The Embargo Act of 1807 stopped American ships from trading overseas - and it hurt New England's shippers more than it hurt Britain or France."
+    },
+    {
+      "id": "ctx113A-02",
+      "stem": "Which statement best places the Monroe Doctrine, 1823, in time and cause?",
+      "options": {
+        "1": "Written in the years after the War of 1812 ended with no land changing hands, with Americans feeling proud",
+        "2": "Written while Britain and France were at war with each other and both of them were seizing American ships on the ocean",
+        "3": "Written just after France sold the land between the Mississippi River and the Rocky Mountains to the United States for $15 million",
+        "4": "Written once canals, roads and steamboats had begun tying western farms to markets in the cities of the East"
+      },
+      "correct": "1",
+      "hints": [
+        "The War of 1812 came first. How did Americans come out of it?",
+        "Check the years: the war ended in 1815, the Doctrine is 1823."
+      ],
+      "reason": "The War of 1812 ended in 1815 with no land changing hands, but Americans came out of it proud. In 1823, the Monroe Doctrine told Europe to stay out of the Western Hemisphere."
+    },
+    {
+      "id": "ctx113A-03",
+      "stem": "Which statement best gives the historical context for the Erie Canal's completion, 1825?",
+      "options": {
+        "1": "New York linked the Great Lakes to the Hudson River, and canals, roads and steamboats were tying farms to markets: the market revolution",
+        "2": "Britain and France were at war, and American ships had been stopped from trading overseas entirely to keep the country out of it",
+        "3": "The United States had just bought the Louisiana Territory from France for $15 million, doubling the size of the country in one treaty",
+        "4": "The war with Britain had not yet started, and Americans were still arguing about trade with Europe and the seizing of ships at sea"
+      },
+      "correct": "1",
+      "hints": [
+        "What changed about how farms sold their goods once the canal opened?",
+        "The vocabulary word is on your Day 1 page: market revolution."
+      ],
+      "reason": "In 1825, New York finished the Erie Canal, linking the Great Lakes to the Hudson River and New York City. Canals, roads and steamboats tied farms to markets: the market revolution."
+    }
+  ],
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

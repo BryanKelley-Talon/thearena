@@ -46,6 +46,16 @@ for (const c of m.courses || []) {
     const U = { name: u.label, room: `${BASE}#/${k}/${n}` }
     md.push(`### ${String(u.label).startsWith(n) ? u.label : `${n} · ${u.label}`}`, '', `- The room: ${U.room}`)
     if (u.brief_ref) { U.review = `${BASE}#/${k}/${n}/review`; md.push(`- Unit review: ${U.review}`) }
+    // Casefile doors (BK 2026-10-24 16:55-17:15): one link per casefile, to that casefile's own gauges.
+    // Listed with the unit's open day, so a casefile printed before the room opens can carry its code.
+    const cfs = (u.casefiles || []).filter(x => x.published === true && (x.skills || []).length)
+    if (cfs.length) {
+      U.gauges = {}
+      for (const x of cfs) {
+        U.gauges[x.id] = { name: x.name, skills: x.skills, opens_on: u.opens_on || null, link: `${BASE}#/${k}/${n}/gauges/${x.id}` }
+        md.push(`- ${x.name}, its gauges${u.opens_on ? ` (opens ${u.opens_on})` : ''}: ${U.gauges[x.id].link}`)
+      }
+    }
     if (u.doc_assist?.published) {
       const pack = read(ref(u.doc_assist.content_ref))
       U.doc_assist = { link: `${BASE}#/${k}/${n}/doc-assist`, casefiles: {} }
