@@ -154,7 +154,7 @@ export function BlueprintScreen({ course, set, refs, onBack, ScreenHeader, Botto
         </div>
       )}
 
-      {level != null && stage === 'intro' && (isGlobal ? <GlIntro data={data} onNext={() => setStage('teach')} /> : <UsIntro data={data} showSource={single} onNext={() => setStage('teach')} />)}
+      {level != null && stage === 'intro' && (isGlobal ? <GlIntro data={data} onNext={() => setStage('teach')} /> : <UsIntro entry={entry} data={data} showSource={single} onNext={() => setStage('teach')} />)}
       {level != null && stage === 'teach' && (isGlobal ? <GlTeach data={data} refs={refs} onStart={() => setStage('sort')} /> : <UsTeach data={data} onStart={() => setStage('sort')} />)}
       {level != null && stage === 'cold' && (isGlobal ? data.screens.cold : data.screens.cold_read) && (
         <section className="wl-panel">
@@ -217,16 +217,41 @@ const Dots = ({ n, at }) => (
 // ============================================================
 // US · the Civic Literacy Essay sort
 // ============================================================
-function UsIntro({ data, showSource, onNext }) {
+function UsIntro({ entry, data, showSource, onNext }) {
   const s = data.screens.intro
+  const ti = s.task_image
+  const [big, setBig] = useState(false)
   return (
     <section className="wl-panel">
       <h2 className="wl-title">{s.title}</h2>
       <p className="wl-line">{s.line}</p>
       <ul className="wl-jobs">{data.jobs.map(j => <li key={j.id}><b>{j.label}</b> · {j.task}</li>)}</ul>
+      {/* The real task page, so a kid sees what they're planning for before they sort (BK 2026-10-24
+          14:41). The thumbnail crops to the top of the page because a full exam page is illegible at
+          375px; the tap opens the whole thing, footer and all, so nothing about the real page is lost. */}
+      {ti && ti.file && (
+        <>
+          <button type="button" className="wl-task" onClick={() => setBig(true)}>
+            <img src={imgUrl(entry, ti.file)} alt={ti.image_alt || ''} loading="lazy" decoding="async" />
+            <span className="wl-task-zoom">{W.readIt}</span>
+          </button>
+          {ti.source && <div className="wl-cite">{ti.source}</div>}
+        </>
+      )}
       {/* With no level picker the set's source line has nowhere else to sit, and it never goes unprinted. */}
       {showSource && data.set_source && <p className="wl-source">{data.set_source}</p>}
       <button type="button" className="btn-now" onClick={onNext}>{W.next}</button>
+      {big && ti && (
+        <div className="wl-reader" role="dialog" aria-modal="true" aria-label={s.title}>
+          <div className="wl-reader-in">
+            <figure className="wl-fig wl-task-full">
+              <img src={imgUrl(entry, ti.file)} alt={ti.image_alt || ''} />
+              {ti.source && <figcaption className="wl-cite">{ti.source}</figcaption>}
+            </figure>
+            <div className="wl-actions"><button type="button" className="btn-now" onClick={() => setBig(false)}>{W.closeIt}</button></div>
+          </div>
+        </div>
+      )}
     </section>
   )
 }
@@ -790,6 +815,17 @@ export const WRITINGLAB_STYLES = `
 .wl-reader-in{background:var(--card);border:1px solid var(--edge);border-radius:12px;padding:18px;
   box-shadow:var(--arena-lift);max-width:720px;width:100%}
 .wl-put{color:var(--gold-lit);font-family:'Barlow Condensed',sans-serif;letter-spacing:.07em;font-size:16px;margin:14px 0 0}
+/* The real task page: a cropped thumbnail that opens whole on a tap. 17/14 shows roughly the top
+   two-thirds — the directions, the context, the three task bullets and the guidelines — and the
+   enlarge carries the footer, which is part of what makes it recognisably the real page. */
+.wl-task{display:block;width:100%;max-width:430px;padding:0;margin:4px 0 0;cursor:pointer;position:relative;
+  background:#fff;border:1.5px solid var(--arena-choice-edge);border-radius:8px;overflow:hidden}
+.wl-task:hover,.wl-task:focus-visible{border-color:var(--gold)}
+.wl-task img{display:block;width:100%;height:auto;aspect-ratio:17/14;object-fit:cover;object-position:top center}
+.wl-task-zoom{position:absolute;right:8px;bottom:8px;background:var(--gold);color:#0B1220;
+  font-family:'Barlow Condensed',sans-serif;font-size:14px;letter-spacing:.09em;text-transform:uppercase;
+  padding:5px 10px;border-radius:6px;font-weight:700}
+.wl-task-full img{background:#fff}
 .wl-ghost{position:fixed;z-index:80;transform:translate(-50%,-50%);pointer-events:none;
   background:var(--gold);color:#0B1220;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.06em;
   text-transform:uppercase;padding:7px 13px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.45)}

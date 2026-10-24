@@ -29,7 +29,12 @@
   "screens": {
     "intro": {
       "title": "BLUEPRINT · Civic Literacy Essay",
-      "line": "Every Civic Literacy Essay asks you to do three things. Each document helps with one of them. You already answered each document's question on paper. Now sort them: drag each document to the job it does."
+      "line": "Every Civic Literacy Essay asks you to do three things. Each document helps with one of them. You already answered each document's question on paper. Now sort them: drag each document to the job it does.",
+      "task_image": {
+        "file": "blueprint-us11r-set1-task.webp",
+        "image_alt": "A page from a Regents exam booklet, headed Part B, Civic Literacy Essay Question 37. The directions say to write a well-organized essay with an introduction, several paragraphs and a conclusion, using evidence from at least four documents, supported with relevant facts, examples and details, and including additional outside information. Below that, a heading reading Historical Context: Creation of a Stronger National Government, and a paragraph saying that many constitutional and civic issues have been debated throughout United States history, that those debates have resulted in efforts by individuals, groups and governments to address them, and that the efforts have achieved varying degrees of success. Then a Task heading and a boxed list of three bullets: describe the historical circumstances surrounding this constitutional or civic issue; explain efforts by individuals, groups and/or governments to address it; discuss the impact of the efforts on the United States and/or on American society. A Guidelines section follows, headed “In your essay, be sure to”, with six bullets: develop all aspects of the task; explain at least two efforts to address the issue; incorporate information from at least four documents; incorporate relevant outside information; support the theme with relevant facts, examples and details; and use a logical and clear plan of organization, including an introduction and a conclusion that are beyond a restatement of the theme. The foot of the page reads U.S. Hist. and Gov't., June 2026, page 31.",
+        "source": "Source: New York State Education Department, U.S. History and Government (Framework) Regents Examination, June 2026, Part III B — Civic Literacy Essay Question (37), page 31, as published."
+      }
     },
     "clue_card": {
       "title": "THE QUESTION IS THE CLUE",
