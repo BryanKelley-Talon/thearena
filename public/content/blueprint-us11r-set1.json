@@ -63,12 +63,16 @@
     "outline": {
       "title": "YOUR BLUEPRINT",
       "line": "This is the plan of your essay: your documents, in the jobs you gave them.",
-      "opening": "The issue is ___. My essay would show that ___.",
-      "circumstances": "what was happening, and why the issue came up",
-      "efforts": "who tried to address it, and how",
-      "impact": "what changed because of those efforts",
-      "closing": "back to the issue: the principle on your card it's about, and what it shows",
-      "what_it_shows": "One line each: what it shows.",
+      "opening": "A good introduction opens in your own words, not the prompt's. It sets the scene the issue came out of, names the issue, and ends with the claim the rest of your essay will prove.",
+      "opening_more": "Read Level 1 next to Level 5. Level 1 opens by copying the prompt — the state calls that a restatement. Level 5 opens with a sentence nobody handed it.",
+      "circumstances": "A good body paragraph names its job first. This one's job: what was going on before, and why the issue came up. Give the time and place, evidence from a document, and what it shows.",
+      "circumstances_more": "Same order every time: the claim, then the evidence with its source called before it, then “This shows ___, which matters because ___.”",
+      "efforts": "Who tried to address the issue, and how. Name them, say what they actually did, and prove it from a document. The state wants at least two efforts explained — not listed.",
+      "efforts_more": "“Explain” is the exam's own word. Two efforts named and explained beats five efforts listed.",
+      "impact": "What changed because of those efforts, for the country or for the people in it. Prove it from a document, then say why it mattered — not just that something happened.",
+      "closing": "A good conclusion is not your introduction again. Come back to the issue, say how well it was addressed, and name the principle from your card that the whole case was about.",
+      "closing_more": "The state's guideline, word for word: an introduction and a conclusion “beyond a restatement of the theme.” A one-sentence conclusion is a Level 3.",
+      "what_it_shows": "One line: what this document shows, and why it matters to this job.",
       "also_fits_label": "ALSO FITS",
       "outside_evidence": "Every body paragraph also wants outside information: something true you know that isn't in the documents."
     }

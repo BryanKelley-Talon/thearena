@@ -463,10 +463,19 @@ function UsOutline({ data, placed, marks, refs }) {
     <section className="wl-outline">
       {o.title && <h2 className="wl-title">{o.title}</h2>}
       {o.line && <p className="wl-line">{o.line}</p>}
-      <div className="wl-slot teach"><b>OPENING</b> · {o.opening}</div>
+      {/* Each slot says what a good one of these has (BK 2026-10-24 15:01). The `_more` line is the
+          coaching behind the instruction — kept on screen rather than folded, because "fleshed out" was
+          the ask, and set quieter so the kid's own documents stay the thing they're reading. */}
+      <div className="wl-slot teach">
+        <div className="wl-bp-head"><b>OPENING</b></div>
+        <p className="wl-bp-teach">{o.opening}</p>
+        {o.opening_more && <p className="wl-bp-more">{o.opening_more}</p>}
+      </div>
       {data.jobs.map(j => (
         <div key={j.id} className="wl-slot">
-          <div className="wl-bp-head"><b>{j.label}</b>{o[j.id] ? <> · {o[j.id]}</> : null}</div>
+          <div className="wl-bp-head"><b>{j.label}</b></div>
+          {o[j.id] && <p className="wl-bp-teach">{o[j.id]}</p>}
+          {o[`${j.id}_more`] && <p className="wl-bp-more">{o[`${j.id}_more`]}</p>}
           <ul className="wl-bp-docs">
             {inJob(j.id).map(d => (
               <li key={d.n} className="wl-bp-doc">
@@ -481,7 +490,12 @@ function UsOutline({ data, placed, marks, refs }) {
           </ul>
         </div>
       ))}
-      <div className="wl-slot teach"><b>CLOSING</b> · {o.closing}<RefButtons text={o.closing} refs={refs} idBase="wl-ref" /></div>
+      <div className="wl-slot teach">
+        <div className="wl-bp-head"><b>CLOSING</b></div>
+        <p className="wl-bp-teach">{o.closing}</p>
+        {o.closing_more && <p className="wl-bp-more">{o.closing_more}</p>}
+        <RefButtons text={o.closing} refs={refs} idBase="wl-ref" />
+      </div>
       <p className="wl-line">{o.outside_evidence}</p>
       {o.last_line && <p className="wl-last">{o.last_line}</p>}
     </section>
@@ -846,6 +860,9 @@ export const WRITINGLAB_STYLES = `
   border-radius:8px;pointer-events:none;z-index:0}
 .wl-outline > *{position:relative;z-index:1}
 .wl-bp-head{margin-bottom:6px}
+.wl-bp-teach{color:var(--white);font-size:16.5px;line-height:1.55;margin:0 0 7px}
+.wl-bp-more{color:#C9D3E3;font-size:15px;line-height:1.5;margin:0 0 10px;padding-left:11px;
+  border-left:3px solid color-mix(in srgb,var(--gold) 55%,transparent)}
 .wl-bp-docs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
 .wl-bp-doc{background:color-mix(in srgb,var(--canvas) 50%,var(--card));border:1px solid var(--edge);border-radius:8px;padding:9px 11px}
 .wl-bp-doc-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
