@@ -18,7 +18,7 @@
 //   • The device remembers only "Level 1 done" per set, to open Level 2. Nothing typed, nothing
 //     picked, nothing sent. A wiped device just plays Level 1 again (Ed Law 2-d; canon §1).
 // ============================================================
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { RefButtons } from './refcards.jsx'
 
 export const WL_WORDS = {
@@ -31,6 +31,11 @@ export const WL_WORDS = {
   docs: 'Documents',
   plan: 'Plan my essay',
   card: (tool, n, title) => `${tool} · Set ${n} · ${title}`,
+  // The board (US). Container words, BK 2026-10-24 13:33 ("shape: yes"); "Drop documents here." on the proof.
+  empty: 'Drop documents here.',
+  readIt: 'Read it',
+  closeIt: 'Close',
+  putIn: 'Put this document in:',
 }
 const W = WL_WORDS
 
@@ -109,7 +114,9 @@ export function WritingLabLane({ course, sets, unitName, onOpen, Empty }) {
 export function BlueprintScreen({ course, set, refs, onBack, ScreenHeader, BottomBack }) {
   const { entry, data } = set
   const isGlobal = !!data.multi_tag
-  const [level, setLevel] = useState(null)        // null = the level picker
+  // One level (US, from 2026-10-24) means no picker: a menu holding a single card is a tap for nothing.
+  const single = (data.levels || []).length <= 1
+  const [level, setLevel] = useState(single ? 1 : null)   // null = the level picker
   const [stage, setStage] = useState('intro')
   const [result, setResult] = useState(null)      // what the sort produced, for the outline
   const [done, setDone] = useState(() => readDone()[entry.slug] || [])
@@ -118,12 +125,16 @@ export function BlueprintScreen({ course, set, refs, onBack, ScreenHeader, Botto
   const open = n => { const l = lv(n); return !l.opens_after || done.includes(l.opens_after) }
   const go = n => { setLevel(n); setStage(n === 1 ? 'intro' : 'cold'); setResult(null); window.scrollTo(0, 0) }
   const finish = r => { setResult(r); setStage('outline'); markDone(entry.slug, level); setDone(readDone()[entry.slug] || []); window.scrollTo(0, 0) }
-  const toPicker = () => { setLevel(null); window.scrollTo(0, 0) }
-  const backLabel = level == null ? course.label : W.card(data.name, entry.set ?? 1, data.set_title)
+  const toPicker = () => { if (single) { onBack(); return } setLevel(null); window.scrollTo(0, 0) }
+  const atTop = level == null || single
+  const backLabel = atTop ? course.label : W.card(data.name, entry.set ?? 1, data.set_title)
+  // Sam's `name` grew to "Civic Literacy Essay Blueprint" (2026-10-24), which wraps to three lines on a
+  // phone in the header. The header carries the set title; the tool names itself on the intro screen.
+  const headLabel = single ? data.set_title : W.card(data.name, entry.set ?? 1, data.set_title)
 
   return (
     <div className="wrap wl">
-      <ScreenHeader label={W.card(data.name, entry.set ?? 1, data.set_title)} onBack={level == null ? onBack : toPicker} color={course.accent} back={level == null ? course.label : W.back} />
+      <ScreenHeader label={headLabel} onBack={atTop ? onBack : toPicker} color={course.accent} back={atTop ? course.label : W.back} />
 
       {level == null && (
         <div className="wl-levels">
@@ -140,9 +151,9 @@ export function BlueprintScreen({ course, set, refs, onBack, ScreenHeader, Botto
         </div>
       )}
 
-      {level != null && stage === 'intro' && (isGlobal ? <GlIntro data={data} onNext={() => setStage('teach')} /> : <UsIntro data={data} onNext={() => setStage('teach')} />)}
+      {level != null && stage === 'intro' && (isGlobal ? <GlIntro data={data} onNext={() => setStage('teach')} /> : <UsIntro data={data} showSource={single} onNext={() => setStage('teach')} />)}
       {level != null && stage === 'teach' && (isGlobal ? <GlTeach data={data} refs={refs} onStart={() => setStage('sort')} /> : <UsTeach data={data} onStart={() => setStage('sort')} />)}
-      {level != null && stage === 'cold' && (
+      {level != null && stage === 'cold' && (isGlobal ? data.screens.cold : data.screens.cold_read) && (
         <section className="wl-panel">
           <h2 className="wl-title">{(isGlobal ? data.screens.cold : data.screens.cold_read).title}</h2>
           <p className="wl-line">{(isGlobal ? data.screens.cold : data.screens.cold_read).line}</p>
@@ -153,7 +164,7 @@ export function BlueprintScreen({ course, set, refs, onBack, ScreenHeader, Botto
         ? <GlName key={`${level}-${seed}`} entry={entry} data={data} cold={level > 1} seed={seed} onDone={r => { setResult(r); setStage('three'); window.scrollTo(0, 0) }} />
         : <UsSort key={`${level}-${seed}`} entry={entry} data={data} cold={level > 1} seed={seed} onDone={finish} />)}
       {level != null && stage === 'three' && <GlThree data={data} tags={result} onPlan={finish} onBack={toPicker} />}
-      {level != null && stage === 'outline' && (isGlobal ? <GlOutline data={data} plan={result} refs={refs} /> : <UsOutline data={data} placed={result} refs={refs} />)}
+      {level != null && stage === 'outline' && (isGlobal ? <GlOutline data={data} plan={result} refs={refs} /> : <UsOutline data={data} placed={result?.placed} marks={result?.marks} refs={refs} />)}
       {level != null && stage === 'outline' && (
         <div className="wl-actions"><button type="button" className="btn-now" onClick={toPicker}>{W.done}</button></div>
       )}
@@ -192,13 +203,15 @@ const Dots = ({ n, at }) => (
 // ============================================================
 // US · the Civic Literacy Essay sort
 // ============================================================
-function UsIntro({ data, onNext }) {
+function UsIntro({ data, showSource, onNext }) {
   const s = data.screens.intro
   return (
     <section className="wl-panel">
       <h2 className="wl-title">{s.title}</h2>
       <p className="wl-line">{s.line}</p>
       <ul className="wl-jobs">{data.jobs.map(j => <li key={j.id}><b>{j.label}</b> · {j.task}</li>)}</ul>
+      {/* With no level picker the set's source line has nowhere else to sit, and it never goes unprinted. */}
+      {showSource && data.set_source && <p className="wl-source">{data.set_source}</p>}
       <button type="button" className="btn-now" onClick={onNext}>{W.next}</button>
     </section>
   )
@@ -217,85 +230,221 @@ function UsTeach({ data, onStart }) {
   )
 }
 
+// ── the board: six document cards, three job bins, one screen ──
+// The 2026-10-24 diagnosis of the old sort: 9.3 screens of scroll on a phone; the jobs and clue words
+// left the screen before the work started; Check was disabled until all six were placed, so a kid got no
+// feedback for the whole activity; and `also_fits` did nothing on the only level a kid reaches on Day 13,
+// so a defensible answer came back "Look at the question again." The board answers all four.
+// BK 2026-10-24 13:33: "1. yes" to this shape.
+//
+//   • Card face is the document number, its source line and its question (Sam, 10/24). The passage opens
+//     on a tap, with the three job buttons inside the panel, so the decision sits beside the text.
+//   • Three ways in, and every drag has a tap that does the same job: drag a card by its grip into a bin,
+//     open the card and choose, or keyboard it (the grip is skipped; the card and the buttons are real
+//     buttons). The grip is what drags, so a kid can still scroll the page with a finger on a card.
+//   • The jobs and their clue words live on the bins and never leave the screen.
+//   • A miss leaves the card where the kid put it, with the hint beside it (Sam, 10/24). The second miss
+//     moves it and says why.
+//   • A document in its second job is right, tagged ALSO FITS, never corrected.
+//   • Nothing is counted on screen: no "X of Y", no score (canon §7). The bins are the progress.
 function UsSort({ entry, data, cold, seed, onDone }) {
   const jobs = data.jobs
   const jobBy = Object.fromEntries(jobs.map(j => [j.id, j]))
+  const clues = (data.screens.clue_card && data.screens.clue_card.clues) || {}
   const docs = useMemo(() => (cold ? shuffle(data.docs, seed) : data.docs), [data, cold, seed])
-  const [st, setSt] = useState(() => Object.fromEntries(docs.map(d => [d.n, { pick: null, also: null, misses: 0, status: 'open', msg: null }])))
-  const set = (n, patch) => setSt(s => ({ ...s, [n]: { ...s[n], ...patch } }))
-  const ready = docs.every(d => st[d.n].status !== 'open' || st[d.n].pick)
-  const resolved = docs.every(d => ['right', 'shown'].includes(st[d.n].status))
-  const checked = docs.some(d => st[d.n].msg)
-  const check = () => setSt(s => {
-    const out = { ...s }
-    for (const d of docs) {
-      const x = s[d.n]
-      if (x.status !== 'open') continue
-      const ok = x.pick === d.job || (cold && ((d.also_fits || []).includes(x.pick) || x.also === d.job))
-      if (ok) out[d.n] = { ...x, status: 'right', msg: { kind: 'right', text: fill(data.screens.check.right, { clue: d.clue }) } }
-      else if (x.misses + 1 >= 2) out[d.n] = { ...x, misses: 2, status: 'shown', pick: d.job, msg: { kind: 'show', text: fill(data.screens.check.miss_2, { JOB: jobBy[d.job].label, clue: d.clue }) } }
-      else out[d.n] = { ...x, misses: 1, pick: null, also: null, msg: { kind: 'miss', text: data.screens.check.miss_1 } }
+
+  const [place, setPlace] = useState({})                 // doc n -> job id
+  const [st, setSt] = useState(() => Object.fromEntries(docs.map(d => [d.n, { misses: 0, status: 'open', msg: null }])))
+  const [open, setOpen] = useState(null)                 // the doc whose passage is open
+  const [drag, setDrag] = useState(null)                 // { n, x, y, over }
+  const binRefs = useRef({})
+  const press = useRef(null)
+
+  const settled = n => st[n].status !== 'open'
+  const ready = docs.every(d => place[d.n])
+  const resolved = docs.every(d => settled(d.n))
+
+  const put = (n, jobId) => { if (!settled(n)) { setPlace(p => ({ ...p, [n]: jobId })); setOpen(null) } }
+
+  const hit = (x, y) => {
+    for (const j of jobs) {
+      const el = binRefs.current[j.id]
+      if (!el) continue
+      const r = el.getBoundingClientRect()
+      if (x >= r.left && x <= r.right && y >= r.top && y <= r.bottom) return j.id
     }
-    return out
+    return null
+  }
+  const onDown = (e, n) => { if (!settled(n)) press.current = { n, x: e.clientX, y: e.clientY, id: e.pointerId, moved: false } }
+  const onMove = e => {
+    const p = press.current
+    if (!p) return
+    if (!p.moved && Math.hypot(e.clientX - p.x, e.clientY - p.y) < 8) return
+    if (!p.moved) { p.moved = true; try { e.currentTarget.setPointerCapture(p.id) } catch {} }
+    setDrag({ n: p.n, x: e.clientX, y: e.clientY, over: hit(e.clientX, e.clientY) })
+  }
+  const onUp = e => {
+    const p = press.current
+    press.current = null
+    if (!p || !p.moved) { setDrag(null); return }
+    const over = hit(e.clientX, e.clientY)
+    setDrag(null)
+    if (over) put(p.n, over)
+  }
+
+  // One Check for the board. A right answer, or a second job the document legitimately does, is right.
+  const check = () => {
+    const C = data.screens.check
+    const nextSt = { ...st }, nextPlace = { ...place }
+    for (const d of docs) {
+      const x = st[d.n]
+      if (x.status !== 'open') continue
+      const pick = place[d.n]
+      if (pick === d.job) {
+        nextSt[d.n] = { ...x, status: 'right', msg: { kind: 'right', text: fill(C.right, { clue: d.clue }) } }
+      } else if ((d.also_fits || []).includes(pick)) {
+        nextSt[d.n] = { ...x, status: 'also', msg: { kind: 'also', text: C.also || fill(C.right, { clue: d.clue }) } }
+      } else if (x.misses + 1 >= 2) {
+        nextPlace[d.n] = d.job                           // only the second miss moves a card
+        nextSt[d.n] = { ...x, misses: 2, status: 'shown', msg: { kind: 'show', text: fill(C.miss_2, { JOB: jobBy[d.job].label, clue: d.clue }) } }
+      } else {
+        nextSt[d.n] = { ...x, misses: 1, status: 'open', msg: { kind: 'miss', text: C.miss_1 } }
+      }
+    }
+    setSt(nextSt); setPlace(nextPlace)
+  }
+
+  const finishUp = () => onDone({
+    placed: Object.fromEntries(docs.map(d => [d.n, place[d.n]])),
+    marks: Object.fromEntries(docs.map(d => [d.n, st[d.n].status])),
   })
+
+  const tray = docs.filter(d => !place[d.n])
+  const reader = open != null ? docs.find(d => d.n === open) : null
+
+  const Chip = ({ d }) => {
+    const x = st[d.n]
+    return (
+      <li className={`wl-chip s-${x.status}`}>
+        <div className="wl-chip-row">
+          {!settled(d.n) && (
+            <span className="wl-grip" aria-hidden="true" onPointerDown={e => onDown(e, d.n)} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}>⠿</span>
+          )}
+          <button type="button" className="wl-chip-b" onClick={() => setOpen(d.n)}>
+            <span className="wl-chip-n">{W.doc(d.n)}</span>
+            <span className="wl-chip-src">{d.source}</span>
+          </button>
+          {x.status === 'also' && <span className="wl-tag">{(data.screens.outline && data.screens.outline.also_fits_label) || 'ALSO FITS'}</span>}
+          {x.status !== 'open' && <span className="wl-mark" aria-hidden="true">{x.status === 'shown' ? '→' : '✓'}</span>}
+        </div>
+        {x.msg && <p className={`wl-msg ${x.msg.kind}`} role="status">{x.msg.text}</p>}
+      </li>
+    )
+  }
+
   return (
-    <section>
-      <div className="wl-cards">
-        {docs.map(d => {
-          const x = st[d.n]
-          const showQ = !cold || checked
-          const lockd = x.status !== 'open'
+    <section className="wl-board">
+      {/* the tray: documents not yet placed */}
+      <ol className="wl-tray">
+        {tray.map(d => (
+          <li key={d.n} className={`wl-tcard${drag && drag.n === d.n ? ' lifting' : ''}`}>
+            <span className="wl-grip" aria-hidden="true" onPointerDown={e => onDown(e, d.n)} onPointerMove={onMove} onPointerUp={onUp} onPointerCancel={onUp}>⠿</span>
+            <button type="button" className="wl-tcard-b" onClick={() => setOpen(d.n)} aria-label={`${W.doc(d.n)} — ${W.readIt}`}>
+              <span className="wl-chip-n">{W.doc(d.n)}</span>
+              <span className="wl-chip-src">{d.source}</span>
+              <span className="wl-tcard-q">{d.question}</span>
+              <span className="wl-read">{W.readIt}</span>
+            </button>
+          </li>
+        ))}
+        {!tray.length && <li className="wl-tray-done" />}
+      </ol>
+
+      {/* the bins: the jobs and their clue words, always on screen */}
+      <div className="wl-binsrow">
+        {jobs.map(j => {
+          const here = docs.filter(d => place[d.n] === j.id)
           return (
-            <article key={d.n} className={`wl-card${lockd ? ' locked' : ''}`} aria-label={W.doc(d.n)}>
-              <h3 className="wl-doc-h">{W.doc(d.n)}</h3>
-              <DocBody entry={entry} doc={d} imageFile={d.image?.file} imageAlt={d.image?.image_alt} imageSource={d.image?.source} />
-              {showQ && <p className="wl-q"><Mark text={d.question} clue={x.msg && x.status !== 'open' ? d.clue : null} /></p>}
-              <div className="wl-bins" role="group" aria-label={W.doc(d.n)}>
-                {jobs.map(j => (
-                  <button key={j.id} type="button" className="wl-bin" aria-pressed={x.pick === j.id} disabled={lockd}
-                          onClick={() => set(d.n, { pick: j.id, also: x.also === j.id ? null : x.also })}>
-                    <span className="atlas-check" aria-hidden="true">{x.pick === j.id ? '✓' : ''}</span>{j.label}
-                  </button>
-                ))}
-              </div>
-              {cold && !lockd && (
-                <div className="wl-also">
-                  <span className="wl-also-l">{data.screens.cold_read.also_fits_label}</span>
-                  {jobs.filter(j => j.id !== x.pick).map(j => (
-                    <button key={j.id} type="button" className="wl-bin wl-bin-sm" aria-pressed={x.also === j.id}
-                            onClick={() => set(d.n, { also: x.also === j.id ? null : j.id })}>
-                      <span className="atlas-check" aria-hidden="true">{x.also === j.id ? '✓' : ''}</span>{j.label}
-                    </button>
-                  ))}
-                </div>
-              )}
-              {x.msg && <p className={`wl-msg ${x.msg.kind}`} role="status">{x.msg.text}</p>}
-            </article>
+            <section key={j.id} ref={el => { binRefs.current[j.id] = el }}
+                     className={`wl-binbox${drag && drag.over === j.id ? ' over' : ''}`}>
+              <h3 className="wl-bin-h">{j.label}</h3>
+              <p className="wl-bin-clue">{(clues[j.id] || []).map(c => `“${c}”`).join(' · ')}</p>
+              <ul className="wl-chips">{here.map(d => <Chip key={d.n} d={d} />)}</ul>
+              {!here.length && <p className="wl-bin-empty">{W.empty}</p>}
+            </section>
           )
         })}
       </div>
+
+      {/* the passage, and the decision beside it */}
+      {reader && (
+        <div className="wl-reader" role="dialog" aria-modal="true" aria-label={W.doc(reader.n)}>
+          <div className="wl-reader-in">
+            <h3 className="wl-doc-h">{W.doc(reader.n)}</h3>
+            <DocBody entry={entry} doc={reader} imageFile={reader.image?.file} imageAlt={reader.image?.image_alt} imageSource={reader.image?.source} />
+            <p className="wl-q"><Mark text={reader.question} clue={settled(reader.n) ? reader.clue : null} /></p>
+            {!settled(reader.n) && (
+              <>
+                <p className="wl-put">{W.putIn}</p>
+                <div className="wl-bins" role="group" aria-label={W.putIn}>
+                  {jobs.map(j => (
+                    <button key={j.id} type="button" className="wl-bin" aria-pressed={place[reader.n] === j.id} onClick={() => put(reader.n, j.id)}>
+                      <span className="atlas-check" aria-hidden="true">{place[reader.n] === j.id ? '✓' : ''}</span>{j.label}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+            <div className="wl-actions"><button type="button" className="btn-now" onClick={() => setOpen(null)}>{W.closeIt}</button></div>
+          </div>
+        </div>
+      )}
+
+      {/* what the finger is carrying */}
+      {drag && <div className="wl-ghost" style={{ left: drag.x, top: drag.y }} aria-hidden="true">{W.doc(drag.n)}</div>}
+
       <div className="wl-actions">
         {!resolved
           ? <button type="button" className="btn-now" disabled={!ready} onClick={check}>{W.check}</button>
-          : <button type="button" className="btn-now" onClick={() => onDone(Object.fromEntries(docs.map(d => [d.n, st[d.n].pick])))}>{W.next}</button>}
+          : <button type="button" className="btn-now" onClick={finishUp}>{W.next}</button>}
       </div>
     </section>
   )
 }
 
-function UsOutline({ data, placed, refs }) {
+// ── the finished blueprint: the board, turned into the plan of their essay ──
+// The old screen printed five generic lines and a list of bare numbers, and because a second miss
+// overwrote the kid's pick it always showed the corrected sort. This one holds the cards they placed,
+// in Sam's order, with an empty "what it shows" line under each — the shape of what they write on
+// pages 19–20. Nothing is stored and nothing is typed into (canon §1, §8).
+function UsOutline({ data, placed, marks, refs }) {
   const o = data.screens.outline
-  const by = id => data.docs.filter(d => placed[d.n] === id).map(d => d.n)
+  const inJob = id => data.docs.filter(d => placed[d.n] === id)
   return (
     <section className="wl-outline">
+      {o.title && <h2 className="wl-title">{o.title}</h2>}
+      {o.line && <p className="wl-line">{o.line}</p>}
       <div className="wl-slot teach"><b>OPENING</b> · {o.opening}</div>
       {data.jobs.map(j => (
         <div key={j.id} className="wl-slot">
-          <b>{j.label}</b> · {W.docs} {by(j.id).join(', ')} · {o[j.id]}
+          <div className="wl-bp-head"><b>{j.label}</b>{o[j.id] ? <> · {o[j.id]}</> : null}</div>
+          <ul className="wl-bp-docs">
+            {inJob(j.id).map(d => (
+              <li key={d.n} className="wl-bp-doc">
+                <div className="wl-bp-doc-h">
+                  <span className="wl-chip-n">{W.doc(d.n)}</span>
+                  {marks && marks[d.n] === 'also' && o.also_fits_label && <span className="wl-tag">{o.also_fits_label}</span>}
+                </div>
+                {d.source && <div className="wl-cite">{d.source}</div>}
+                {o.what_it_shows && <div className="wl-bp-blank">{o.what_it_shows}</div>}
+              </li>
+            ))}
+          </ul>
         </div>
       ))}
       <div className="wl-slot teach"><b>CLOSING</b> · {o.closing}<RefButtons text={o.closing} refs={refs} idBase="wl-ref" /></div>
       <p className="wl-line">{o.outside_evidence}</p>
+      {o.last_line && <p className="wl-last">{o.last_line}</p>}
     </section>
   )
 }
@@ -530,4 +679,72 @@ export const WRITINGLAB_STYLES = `
 .wl-slot b{color:var(--gold-lit);letter-spacing:.05em}
 .wl-pick{background:#FFE34A;color:#0B1220;padding:0 4px;border-radius:3px;font-weight:700}
 @media (prefers-reduced-motion: reduce){ .wl-tile{transition:none} }
+
+/* ---------- THE BOARD (US, 2026-10-24) ---------- */
+.wl-board{display:grid;gap:18px;max-width:1040px}
+.wl-tray{list-style:none;margin:0;padding:0;display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(258px,1fr))}
+.wl-tray-done{display:none}
+.wl-tcard{display:flex;align-items:stretch;gap:0;background:var(--card);border:1.5px solid var(--edge);border-radius:10px;box-shadow:var(--arena-lift);overflow:hidden}
+.wl-tcard.lifting{opacity:.45;border-style:dashed}
+.wl-grip{flex:none;width:44px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center;cursor:grab;
+  color:var(--gold-lit);font-size:23px;line-height:1;background:color-mix(in srgb,var(--gold) 14%,var(--card));
+  border-right:1.5px solid var(--arena-choice-edge);touch-action:none;user-select:none}
+.wl-grip:hover{background:color-mix(in srgb,var(--gold) 26%,var(--card))}
+.wl-grip:active{cursor:grabbing}
+/* A disabled Check must not look like a live one: the Feel Floor forbids dead taps, and the Arena has
+   no disabled rule for btn-now of its own (finding, 2026-10-24 - scoped here for Monday, raised for a
+   separate push). Dimmed and cursor-blocked, so the state reads without relying on colour alone. */
+.wl .btn-now:disabled{opacity:.42;cursor:not-allowed;filter:grayscale(.55)}
+.wl-tcard-b{flex:1;min-height:44px;display:flex;flex-direction:column;align-items:flex-start;gap:3px;
+  padding:10px 12px;background:transparent;border:0;color:var(--white);font:inherit;text-align:left;cursor:pointer}
+.wl-tcard-b:hover,.wl-tcard-b:focus-visible{background:color-mix(in srgb,var(--gold) 10%,transparent)}
+.wl-chip-n{font-family:'Barlow Condensed',sans-serif;color:var(--gold);font-size:17px;letter-spacing:.06em;text-transform:uppercase}
+.wl-chip-src{color:#B7C3D6;font-size:12.5px;line-height:1.35;overflow-wrap:anywhere}
+.wl-tcard-q{color:var(--white);font-size:14.5px;line-height:1.4;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.wl-read{color:var(--gold-lit);font-size:13px;letter-spacing:.06em;text-transform:uppercase;font-family:'Barlow Condensed',sans-serif}
+
+.wl-binsrow{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));align-items:start}
+.wl-binbox{background:color-mix(in srgb,var(--canvas) 55%,var(--card));border:2px dashed var(--arena-choice-edge);
+  border-radius:12px;padding:12px 13px;min-height:132px}
+.wl-binbox.over{border-style:solid;border-color:var(--gold);background:color-mix(in srgb,var(--gold) 12%,var(--card));box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 35%,transparent)}
+.wl-bin-h{font-family:'Barlow Condensed',sans-serif;color:var(--gold);font-size:19px;letter-spacing:.07em;margin:0 0 2px}
+.wl-bin-clue{color:#C9D3E3;font-size:13px;line-height:1.4;margin:0 0 9px}
+.wl-bin-empty{color:var(--grey);font-size:14px;margin:0;font-style:italic}
+.wl-chips{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.wl-chip{background:var(--card);border:1.5px solid var(--arena-choice-edge);border-left-width:6px;border-radius:9px;padding:8px 10px}
+.wl-chip.s-right,.wl-chip.s-also{border-left-color:#3FB37A}
+.wl-chip.s-shown{border-left-color:#6FA8FF}
+.wl-chip-row{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.wl-chip-b{flex:1 1 150px;min-height:40px;display:flex;flex-direction:column;align-items:flex-start;gap:2px;
+  background:transparent;border:0;color:var(--white);font:inherit;text-align:left;cursor:pointer;padding:2px 0}
+.wl-chip-b:hover .wl-chip-n,.wl-chip-b:focus-visible .wl-chip-n{text-decoration:underline}
+.wl-mark{flex:none;color:#8FE0B8;font-size:17px;line-height:1}
+.wl-chip.s-shown .wl-mark{color:#9CC6FF}
+.wl-tag{flex:none;background:var(--gold);color:#0B1220;font-family:'Barlow Condensed',sans-serif;font-size:12px;
+  letter-spacing:.09em;padding:2px 7px;border-radius:4px;font-weight:700}
+.wl-msg.also{border-left:6px solid #3FB37A}
+
+.wl-reader{position:fixed;inset:0;z-index:60;background:color-mix(in srgb,#000 68%,transparent);
+  overflow-y:auto;padding:18px 14px;display:flex;justify-content:center;align-items:flex-start}
+.wl-reader-in{background:var(--card);border:1px solid var(--edge);border-radius:12px;padding:18px;
+  box-shadow:var(--arena-lift);max-width:720px;width:100%}
+.wl-put{color:var(--gold-lit);font-family:'Barlow Condensed',sans-serif;letter-spacing:.07em;font-size:16px;margin:14px 0 0}
+.wl-ghost{position:fixed;z-index:80;transform:translate(-50%,-50%);pointer-events:none;
+  background:var(--gold);color:#0B1220;font-family:'Barlow Condensed',sans-serif;font-size:16px;letter-spacing:.06em;
+  text-transform:uppercase;padding:7px 13px;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.45)}
+
+/* ---------- THE FINISHED BLUEPRINT ---------- */
+.wl-bp-head{margin-bottom:6px}
+.wl-bp-docs{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.wl-bp-doc{background:color-mix(in srgb,var(--canvas) 50%,var(--card));border:1px solid var(--edge);border-radius:8px;padding:9px 11px}
+.wl-bp-doc-h{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.wl-bp-blank{margin-top:7px;padding-bottom:5px;border-bottom:1.5px dashed var(--arena-choice-edge);color:var(--grey);font-size:13.5px;font-style:italic}
+.wl-last{color:var(--gold-lit);font-size:16.5px;line-height:1.5;margin:4px 0 0}
+
+@media (max-width:560px){
+  .wl-tray{grid-template-columns:1fr}
+  .wl-tcard-q{-webkit-line-clamp:2}
+  .wl-reader{padding:10px 8px}
+}
+@media (prefers-reduced-motion: reduce){ .wl-tcard,.wl-binbox,.wl-ghost{transition:none} }
 `

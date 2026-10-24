@@ -2,10 +2,10 @@
   "id": "us11r-blueprint-set1",
   "course": "us11r",
   "tool": "blueprint",
-  "name": "Blueprint",
+  "name": "Civic Literacy Essay Blueprint",
   "unit": "11.2",
   "casefile": "C",
-  "opens": "11.2 Casefile C, Day 13",
+  "opens": "11.2 Casefile C, Day 13 (the sort); Day 14 writes it down, pages 19–20",
   "set_title": "Creation of a Stronger National Government",
   "set_source": "NYSED U.S. History and Government (Framework) Regents Examination, June 2026, Part III (Civic Literacy Essay), as published",
   "historical_context": "Throughout United States history, many constitutional and civic issues have been debated by Americans. These debates have resulted in efforts by individuals, groups, and governments to address these issues. These efforts have achieved varying degrees of success. One of these constitutional and civic issues is the creation of a stronger national government.",
@@ -29,7 +29,7 @@
   "screens": {
     "intro": {
       "title": "BLUEPRINT · Civic Literacy Essay",
-      "line": "Every Civic Literacy Essay asks you to do three things. Each document helps with one of them. Sort the documents before you write a word."
+      "line": "Every Civic Literacy Essay asks you to do three things. Each document helps with one of them. You already answered each document's question on paper. Now sort them: drag each document to the job it does."
     },
     "clue_card": {
       "title": "THE QUESTION IS THE CLUE",
@@ -37,53 +37,44 @@
       "clues": {
         "circumstances": [
           "historical circumstance",
-          "what led to",
-          "why"
+          "what led to"
         ],
         "efforts": [
           "effort",
-          "attempt",
           "to address"
         ],
         "impact": [
           "impact",
-          "result",
-          "effect"
+          "result"
         ]
       }
     },
     "check": {
       "right": "Yes. The question asks for one {clue}.",
+      "also": "Yes. This one fits here too. Its question names another job, but the document shows this one as well. A document can do two jobs.",
       "miss_1": "Look at the question again. Which word names the job?",
       "miss_2": "This one builds {JOB}. The clue: \"{clue}.\""
     },
     "outline": {
-      "opening": "Name the issue in your own words, and say what your essay will show: where it came from, what people did about it, and what it changed.",
-      "circumstances": "Describe what was happening, and why the issue came up.",
-      "efforts": "Explain who tried to address it, and how.",
-      "impact": "Discuss what changed because of those efforts.",
-      "closing": "Come back to the issue. Name the principle on your card it's about, and say what it shows.",
-      "outside_evidence": "Every body paragraph also wants outside information: something true you know that isn't in the documents."
-    },
-    "cold_read": {
-      "title": "COLD READ",
-      "line": "No questions this time. Sort by the document alone: does it show the problem, a response to it, or what came after?",
-      "also_fits_label": "ALSO FITS"
+      "title": "YOUR BLUEPRINT",
+      "line": "This is the plan of your essay: your documents, in the jobs you gave them.",
+      "opening": "The issue is ___. My essay would show that ___.",
+      "circumstances": "what was happening, and why the issue came up",
+      "efforts": "who tried to address it, and how",
+      "impact": "what changed because of those efforts",
+      "closing": "back to the issue: the principle on your card it's about, and what it shows",
+      "what_it_shows": "One line each: what it shows.",
+      "also_fits_label": "ALSO FITS",
+      "outside_evidence": "Every body paragraph also wants outside information: something true you know that isn't in the documents.",
+      "last_line": "You write this down on pages 19–20."
     }
   },
   "levels": [
     {
       "n": 1,
-      "name": "Read the clue",
+      "name": "Sort the documents",
       "questions": "shown",
       "order": "as printed"
-    },
-    {
-      "n": 2,
-      "name": "Cold read",
-      "questions": "hidden, revealed as the check",
-      "order": "shuffled",
-      "opens_after": 1
     }
   ],
   "docs": [
