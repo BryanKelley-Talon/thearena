@@ -1625,7 +1625,6 @@
           "number": "11.3A",
           "label": "Building a Nation, 1801–1850",
           "published": true,
-          "opens_on": "2026-11-03",
           "_note": "Josh, 2026-10-24. The 11.3A room, organised by casefile (BK 2026-10-24 16:55 'separate by Casefile, easier to refer to for kids'; 17:13 'the main unit page gets the three doors a, b, c casefile...we are just organizing them'; 17:15 'if we match casefiles we're good'; 17:33 '11.3A'). Name and dates from Sam's CARRY-FORWARD v3.14 and the SIGNED 11.3A map v2 (BK 13:50): Day 0 Tue 11/3. Held out of the served build until its open-date push (scripts/hold-unopened.mjs); that push also moves the door to it (current_unit).",
           "assignment": {
             "type_label": "Classroom assignment",
