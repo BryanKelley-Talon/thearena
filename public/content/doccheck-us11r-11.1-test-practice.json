@@ -52,7 +52,7 @@
     },
     "harbor": {
       "kind": "image",
-      "src": "View of Boston Harbor. Hand-colored etching by Francois Xavier Habermann, 1770–1780. Library of Congress. · Life of George Washington — The Farmer. Washington standing among enslaved African-American field workers harvesting grain; his Virginia home, Mount Vernon, in the background. Junius Brutus Stearns, 1853. Library of Congress.",
+      "src": "View of Boston Harbor. Hand-colored etching by Francois Xavier Habermann, 1770–1780. Library of Congress. · Life of George Washington — The Farmer. Washington standing among enslaved African-American field workers harvesting grain; his Virginia home, Mount Vernon, in the background. Lithograph by Claude Régnier after the 1851 painting by Junius Brutus Stearns, 1853. Library of Congress.",
       "file": "STIMULUS_BANK/Unit_01/unit01-bostonharbor-mtvernon-pair.png",
       "image_ref": "unit01-bostonharbor-mtvernon-pair.png",
       "image_alt": "Two hand-coloured pictures side by side. LEFT: a 1770s etching of Boston harbour seen across the water. Tall-masted merchant and naval ships lie at anchor in the foreground, one flying red pennants; behind them a dense waterfront of brick and timber buildings runs along the shore under a tall church steeple. Small figures in red coats stand on the grassy bank in front. Engraved captions in German and French run along the bottom. RIGHT: an 1853 painting of harvest at Mount Vernon. George Washington, in a dark coat, breeches and tricorn hat, stands at the right holding a cane and watching. Around him enslaved African-American men and women cut, rake, bundle and load grain; a boy sits on top of a loaded hay wagon drawn by two pale horses; a woman in a white dress and two children rest in the shade at the left. Rolling Virginia fields run back to a low horizon. The pair sets a northern port beside a southern plantation, and the two pictures were made about eighty years apart.",
@@ -173,7 +173,7 @@
         "IMAGE · Children sit in the grass in the foreground"
       ],
       "feedback": "One picture is a seaport, the other a plantation field. Two regions, two ways of making a living: that's \"varied by region.\"",
-      "proof_region": "Boston etching: the ships in the harbor (left two-thirds of the left image). Stearns painting: the field workers and hay wagon (center of the right image). Mark both.",
+      "proof_region": "Boston etching: the ships in the harbor (left two-thirds of the left image). The Farmer (right image): the field workers and hay wagon (center of the right image). Mark both.",
       "hints": [
         "Compare the two pictures: how does each place make a living?",
         "One is a port and one is a field. What does that say about regions?"
