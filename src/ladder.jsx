@@ -796,6 +796,13 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 .skill-about{color:var(--white);font-size:18px;line-height:1.55;padding:14px 16px;border-left:3px solid var(--gold);
   background:color-mix(in srgb,var(--gold) 8%,transparent);border-radius:0 8px 8px 0;margin:0 0 18px}
 
+/* ---------- MATCHING HINTS ---------- */
+/* The desk's hints on a matching item, shown on the item a kid is working. Indented under it
+   so it reads as belonging to that pair, and never wider than the column. */
+.match-item{display:flex;flex-direction:column;gap:6px}
+.match-hints{margin:0 0 4px 10px;padding-left:10px;border-left:2px solid var(--edge)}
+.match-hints .hint{margin:0 0 6px}
+
 /* ---------- CASEFILE DOORS: a unit's gauge work, grouped the way the paper is ---------- */
 /* Same card language as everything else a kid taps. The count is honest about what is ready
    behind the door, so a kid is never sent through one to find nothing. */

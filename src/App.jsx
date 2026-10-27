@@ -1671,6 +1671,22 @@ function shuffle(arr) {
   return a
 }
 
+// One matching item's hints, revealed on request, one at a time — the same shape and the
+// same words as the L2 question's hint control, so a kid meets one mechanic, not two.
+function MatchHints({ hints }) {
+  const [shown, setShown] = useState(0)
+  return (
+    <div className="hints match-hints">
+      {hints.slice(0, shown).map((h, i) => <p key={i} className="hint"><b>Hint {i + 1}</b> {h}</p>)}
+      {shown < hints.length && (
+        <button type="button" className="btn-ghost" onClick={() => setShown(s => s + 1)}>
+          {shown === 0 ? 'Show a hint' : 'Show the second hint'}
+        </button>
+      )}
+    </div>
+  )
+}
+
 function MatchingSet({ pack, accent, onChecked }) {
   const left = pack.left || []
   const right = pack.right || []
@@ -1722,8 +1738,8 @@ function MatchingSet({ pack, accent, onChecked }) {
             if (selectedLeft === l.key) cls += ' selected'
             if (checked) cls += (correct[l.key] === pairs[l.key]) ? ' correct' : ' incorrect'
             else if (isPaired) cls += ' paired'
-            return (
-              <button key={l.key} type="button" className={cls} disabled={checked}
+            const btn = (
+              <button type="button" className={cls} disabled={checked}
                       onClick={() => isPaired ? unpair(l.key) : pickLeft(l.key)}>
                 <span style={{ display: 'flex', flexDirection: 'column', gap: 4, flex: 1 }}>
                   <span>{l.label}</span>
@@ -1733,6 +1749,19 @@ function MatchingSet({ pack, accent, onChecked }) {
                   ? <em className="mc-mark">Correct</em>
                   : <em className="mc-mark">Not this one</em>)}
               </button>
+            )
+            // The desk writes hints on a matching item the same way it does on an L2 question,
+            // and until BK's 2026-10-27 ruling ("switch em") this renderer never read them —
+            // 144 written hint lines across both courses that no student had ever seen.
+            // They appear on the item a kid is working, on request, escalating one at a time,
+            // the same shape BestFit uses. Never after checking: then the answer is already shown.
+            const hints = l.hints || []
+            if (!hints.length) return <div key={l.key} className="match-item">{btn}</div>
+            return (
+              <div key={l.key} className="match-item">
+                {btn}
+                {selectedLeft === l.key && !checked && <MatchHints hints={hints} />}
+              </div>
             )
           })}
         </div>
