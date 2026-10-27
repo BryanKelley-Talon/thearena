@@ -72,13 +72,79 @@ function Figure({ src, alt, caption, credit, label, className = '' }) {
 
 // One story, opened: the body, its pictures, its source line, and the OI fact in a badge
 // beside the reading (BK: "badge next to it, call out").
-function Story({ card, onBack, words }) {
+const Quote = ({ text, cite }) => (
+  <blockquote className="tb-quote"><p>{text}</p>{cite && <cite>{cite}</cite>}</blockquote>
+)
+
+// Every block below is a field Sam wrote and Danny cleared. The headings are the
+// data's own (_label, counter_voice.label, the row categories, now_label) - this
+// component adds no words of its own to the page.
+function Story({ card, onBack, words, nowLabel }) {
+  const body = card.body || []
+  const said = card.said || []
+  const cv = card.counter_voice
+  const census = card.census || []
+  const rows = card.rows || []
   return (
     <article className="tb-story">
       <button type="button" className="tb-story-back" onClick={onBack}>&larr; {words.backToPage}</button>
+      {card.label && <p className="tb-kicker">{card.label}</p>}
       <h3 className="tb-story-head">{card.headline}</h3>
+      {(card.name || card.term_line) && (
+        <p className="tb-byline">{[card.name, card.term_line].filter(Boolean).join(' \u00b7 ')}</p>
+      )}
       {card.lede && <p className="tb-lede">{card.lede}</p>}
-      {(card.body || []).map((p, i) => <p key={i} className="tb-body">{p}</p>)}
+      {card.image?.src && (
+        <Figure src={card.image.src} alt={card.image.alt} caption={card.image.caption}
+                credit={card.image.credit}
+                label={card.image.kind === 'archival' ? 'Archival' : card.image.kind === 'ai' ? 'Made for this room' : null} />
+      )}
+      {body.map((t, i) => <p key={i} className="tb-body">{t}</p>)}
+      {said.length > 0 && <div className="tb-said">{said.map((q, i) => <Quote key={i} text={q.text} cite={q.cite} />)}</div>}
+      {card.record_line && (
+        <aside className="tb-record">
+          <p>{card.record_line}</p>
+          {card.record_src && <span className="tb-src">{card.record_src}</span>}
+        </aside>
+      )}
+      {cv && (
+        <aside className="tb-counter">
+          {cv.label && <span className="tb-tag">{cv.label}</span>}
+          {(cv.who || cv.when) && <p className="tb-who">{[cv.who, cv.when].filter(Boolean).join(' \u00b7 ')}</p>}
+          {cv.line && <blockquote className="tb-quote"><p>{cv.line}</p></blockquote>}
+          {cv.after && <p className="tb-after">{cv.after}</p>}
+          {cv.source_line && <span className="tb-src">{cv.source_line}</span>}
+        </aside>
+      )}
+      {census.length > 0 && (
+        <dl className="tb-census">
+          {census.map((r, i) => (
+            <div key={i} className="tb-census-row"><dt>{r.category}</dt><dd>{r.value}</dd></div>
+          ))}
+        </dl>
+      )}
+      {card.leaves_out && <aside className="tb-leaves"><p>{card.leaves_out}</p></aside>}
+      {rows.length > 0 && (
+        <div className="tb-then">
+          {rows.map((r, i) => (
+            <section key={i} className="tb-then-row">
+              <h4>{r.heading}</h4>
+              <p className="tb-then-then">{r.then}</p>
+              {r.now && (
+                <p className="tb-then-now">
+                  {nowLabel && <span className="tb-now-tag">{nowLabel}</span>}{r.now}
+                </p>
+              )}
+            </section>
+          ))}
+        </div>
+      )}
+      {card.not_in_room && (
+        <aside className="tb-absent">
+          <span className="tb-absent-tag">{words.whoIsNotHere}</span>
+          <p>{card.not_in_room}</p>
+        </aside>
+      )}
       {(card.images || []).map((im, i) => (
         <Figure key={i} src={im.src} alt={im.alt} caption={im.caption} credit={im.credit}
                 label={im.kind === 'archival' ? 'Archival' : im.kind === 'ai' ? 'Made for this room' : null} />
@@ -90,13 +156,14 @@ function Story({ card, onBack, words }) {
           {card.oi.source_ref && <span className="tb-oi-src">{card.oi.source_ref}</span>}
         </aside>
       )}
+      {card.footnote && <p className="tb-foot">{card.footnote}</p>}
       {card.source_line && <p className="tb-source">{card.source_line}</p>}
     </article>
   )
 }
 
-// The paper, open and big in the foreground over the room.
-function Paper({ era, onClose, words }) {
+
+function Paper({ era, onClose, words, nowLabel }) {
   const [openCard, setOpenCard] = useState(null)
   // BK, 2026-10-27: "I want nothing locked on this paper...open the thing up."
   // Every story on the front page is readable. No held cards, no count of what
@@ -109,11 +176,15 @@ function Paper({ era, onClose, words }) {
       <div className="tb-paper-sheet">
         <header className="tb-masthead">
           <h2>{era.skin?.masthead}</h2>
-          {era.skin?.edition_line && <p className="tb-edition">{era.skin.edition_line}</p>}
+          {/* Sam's _dateline is the real one - town and month. skin.edition_line is
+              the old self-describing placeholder BK called out; it is the fallback only. */}
+          {(era.dateline || era.skin?.edition_line) &&
+            <p className="tb-edition">{era.dateline || era.skin.edition_line}</p>}
           <button type="button" className="tb-close" onClick={onClose} aria-label={words.closePaper}>&times;</button>
         </header>
+        {era.moment && !card && <p className="tb-moment">{era.moment}</p>}
         {card
-          ? <Story card={card} onBack={() => setOpenCard(null)} words={words} />
+          ? <Story card={card} onBack={() => setOpenCard(null)} words={words} nowLabel={nowLabel} />
           : (
             <div className="tb-front">
               {lead && (
@@ -135,6 +206,16 @@ function Paper({ era, onClose, words }) {
                   ))}
                 </div>
               )}
+              {(era.what_changed?.rows || []).length > 0 && (
+                <section className="tb-changed">
+                  {era.what_changed.rows.map((r, i) => (
+                    <div key={i} className="tb-changed-row">
+                      <h4>{r.category}</h4>
+                      <p>{r.text}</p>
+                    </div>
+                  ))}
+                </section>
+              )}
             </div>
           )}
       </div>
@@ -143,7 +224,7 @@ function Paper({ era, onClose, words }) {
 }
 
 
-function Room({ era, onOpenPaper, paperOpen, onClose, words }) {
+function Room({ era, onOpenPaper, paperOpen, onClose, words, nowLabel }) {
   const rect = era.room?.panel_rect
   const stand = era.silhouettes?.stand
   const pic = era.room?.panel_image     // the period picture, when one has been chosen
@@ -169,9 +250,15 @@ function Room({ era, onOpenPaper, paperOpen, onClose, words }) {
         )}
       </div>
       <div className="tb-room-under">
+        {/* BK, 2026-10-27: "i need the information about the people to be in a callout,
+            its hard to read the screen." One box, bigger type, real contrast. */}
+        {(era.silhouettes?.caption || era.silhouettes?.attire_note) && (
+          <aside className="tb-people">
+            {era.silhouettes?.caption && <p className="tb-people-who">{era.silhouettes.caption}</p>}
+            {era.silhouettes?.attire_note && <p className="tb-people-wear">{era.silhouettes.attire_note}</p>}
+          </aside>
+        )}
         {era.room?.caption && <p className="tb-note">{era.room.caption}</p>}
-        {era.silhouettes?.caption && <p className="tb-note">{era.silhouettes.caption}</p>}
-        {era.silhouettes?.attire_note && <p className="tb-note">{era.silhouettes.attire_note}</p>}
         {era.who_is_not_in_this_room && (
           <aside className="tb-absent">
             <span className="tb-absent-tag">{words.whoIsNotHere}</span>
@@ -180,7 +267,7 @@ function Room({ era, onOpenPaper, paperOpen, onClose, words }) {
         )}
         {era.take_it_with_you && <p className="tb-take">{era.take_it_with_you}</p>}
       </div>
-      {paperOpen && <Paper era={era} onClose={onClose} words={words} />}
+      {paperOpen && <Paper era={era} onClose={onClose} words={words} nowLabel={nowLabel} />}
     </div>
   )
 }
@@ -203,7 +290,7 @@ export function ThrowbackView({ course, data, unitNumbers, year, onPickYear, wor
             <button key={e.id} type="button" className={`tb-year${String(e.year) === String(year) ? ' on' : ''}`}
                     onClick={() => onPickYear(String(e.year))}>
               <span className="tb-year-n">{e.year}</span>
-              {e.label && <span className="tb-year-label">{e.label}</span>}
+              {e.label && String(e.label) !== String(e.year) && <span className="tb-year-label">{e.label}</span>}
             </button>
           ) : (
             <div key={e.id} className="tb-year off">
@@ -214,7 +301,7 @@ export function ThrowbackView({ course, data, unitNumbers, year, onPickYear, wor
         })}
       </div>
       {era && isOpen(era, unitNumbers)
-        ? <Room era={era} words={words} paperOpen={paperOpen}
+        ? <Room era={era} words={words} paperOpen={paperOpen} nowLabel={data?.young_person_headings?.now_label}
                 onOpenPaper={() => setPaperOpen(true)} onClose={() => setPaperOpen(false)} />
         : <p className="tb-pick">{words.pickOne}</p>}
     </div>
@@ -269,10 +356,12 @@ export const THROWBACK_STYLES = `
 .tb-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .tb-panel-empty{color:#E8DCC3;font-size:clamp(11px,1.15vw,14px);line-height:1.35;padding:6%;text-align:center;
   font-family:'Libre Baskerville',Georgia,serif}
-.tb-panel-go{position:absolute;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--canvas) 78%,transparent);
-  color:var(--gold);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;
-  font-size:clamp(10px,1.1vw,13px);padding:3px 0;text-align:center;opacity:0;transition:opacity .15s}
-.tb-panel:hover .tb-panel-go,.tb-panel:focus-visible .tb-panel-go{opacity:1}
+.tb-panel-go{position:absolute;left:0;right:0;bottom:0;
+  background:linear-gradient(to top,rgba(10,8,5,.92),rgba(10,8,5,.74));
+  color:#F6EDD8;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;
+  font-size:clamp(10px,1.15vw,13.5px);padding:5px 4px;text-align:center;
+  border-top:1px solid rgba(246,237,216,.45)}
+.tb-panel:hover .tb-panel-go,.tb-panel:focus-visible .tb-panel-go{background:#7A1F12;color:#FFF6E6}
 .tb-panel:hover{outline:2px solid var(--gold);outline-offset:-2px}
 /* The figures, standing in the room. */
 .tb-stand{position:absolute;width:auto;display:block;pointer-events:none;
@@ -286,8 +375,16 @@ export const THROWBACK_STYLES = `
     drop-shadow(0 0 calc(var(--rim) * 4) rgba(252,245,228,.5))
     drop-shadow(0 0 calc(var(--rim) * 9) rgba(0,0,0,.45))
     drop-shadow(0 calc(var(--rim) * 2.5) calc(var(--rim) * 4) rgba(0,0,0,.6))}
-.tb-room-under{display:flex;flex-direction:column;gap:10px;max-width:760px}
-.tb-note,.tb-take{color:var(--grey);font-size:15px;line-height:1.5;margin:0}
+.tb-room-under{display:flex;flex-direction:column;gap:14px;max-width:860px}
+.tb-note{color:var(--grey);font-size:15px;line-height:1.55;margin:0}
+.tb-take{color:var(--white);font-size:17px;line-height:1.55;margin:0;font-weight:600}
+/* Who these people are. BK asked for a callout; it is the first thing read
+   under the scene, so it gets size, contrast and room to breathe. */
+.tb-people{border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:0 10px 10px 0;
+  padding:14px 18px;background:color-mix(in srgb,var(--white) 7%,transparent)}
+.tb-people-who{margin:0 0 7px;color:var(--white);font-size:clamp(16px,1.9vw,18px);line-height:1.45;
+  font-weight:600}
+.tb-people-wear{margin:0;color:var(--grey);font-size:clamp(14.5px,1.65vw,16px);line-height:1.6}
 .tb-absent{border-left:3px solid var(--arena-signal);padding:10px 13px;border-radius:0 8px 8px 0;
   background:color-mix(in srgb,var(--arena-signal) 10%,transparent)}
 .tb-absent-tag{display:block;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;
@@ -319,7 +416,7 @@ export const THROWBACK_STYLES = `
   cursor:pointer;color:#17130D;padding:4px 8px}
 .tb-close:hover{color:#7A1F12}
 /* Every story is a button, but it has to read as type on a page. */
-.tb-item{text-align:left;background:none;border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;
+.tb-item{text-align:left;background:none;border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;min-width:0;overflow-wrap:break-word;
   gap:7px;color:#17130D;font-family:'Libre Baskerville',Georgia,serif}
 .tb-item:hover .tb-item-head,.tb-item:focus-visible .tb-item-head{text-decoration:underline}
 .tb-item-head{font-family:'Playfair Display',Georgia,serif;font-weight:800;text-shadow:none;font-size:19px;line-height:1.18;
@@ -337,7 +434,9 @@ export const THROWBACK_STYLES = `
 .tb-cols{display:grid;grid-template-columns:1fr;gap:0}
 .tb-cols .tb-item{padding:16px 0;border-top:1px solid #C0B094}
 .tb-cols .tb-item:first-child{border-top:0;padding-top:14px}
-@media (min-width:600px){
+/* Bounded, or the two-column padding rules leak into the three-column layout
+   and knock the right padding off every second story. */
+@media (min-width:600px) and (max-width:879.98px){
   .tb-cols{grid-template-columns:1fr 1fr}
   .tb-cols .tb-item{padding:16px 20px}
   .tb-cols .tb-item:nth-child(2n+1){padding-left:0}
@@ -349,9 +448,63 @@ export const THROWBACK_STYLES = `
   .tb-cols .tb-item{padding:16px 20px;border-left:1px solid #C0B094}
   .tb-cols .tb-item:nth-child(3n+1){padding-left:0;border-left:0}
   .tb-cols .tb-item:nth-child(3n){padding-right:0}
-  .tb-cols .tb-item:nth-child(2n){border-left:1px solid #C0B094}
   .tb-cols .tb-item:nth-child(-n+3){border-top:0;padding-top:14px}
 }
+
+/* The moment, standing under the masthead. */
+.tb-moment{margin:0 0 18px;padding:0 0 16px;border-bottom:1px solid #C0B094;text-align:center;
+  font-size:clamp(14px,1.8vw,16.5px);line-height:1.6;color:#2C251A;font-style:italic;
+  max-width:62ch;margin-left:auto;margin-right:auto}
+/* What changed since the last room. The headings are the data's own SEQ categories. */
+.tb-changed{margin:22px 0 0;padding:18px 0 0;border-top:3px double #17130D;display:grid;gap:16px}
+.tb-changed-row h4{margin:0 0 5px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
+  letter-spacing:.17em;font-size:12px;color:#7A1F12}
+.tb-changed-row p{margin:0;font-size:14.5px;line-height:1.62;color:#2C251A;text-align:justify;hyphens:auto}
+@media (min-width:760px){.tb-changed{grid-template-columns:repeat(3,1fr);gap:0}
+  .tb-changed-row{padding:0 20px;border-left:1px solid #C0B094}
+  .tb-changed-row:first-child{padding-left:0;border-left:0}
+  .tb-changed-row:last-child{padding-right:0}}
+/* A story, read on the page. */
+.tb-kicker{margin:0 0 6px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
+  letter-spacing:.19em;font-size:12px;color:#7A1F12}
+.tb-byline{margin:0 0 12px;font-size:14px;color:#4A3F2C;font-style:italic}
+.tb-lede{font-size:clamp(15.5px,1.9vw,17.5px);line-height:1.6;margin:0 0 14px;color:#1E1810;font-weight:600}
+.tb-body{font-size:15px;line-height:1.68;margin:0 0 13px;color:#2C251A}
+.tb-quote{margin:0 0 12px;padding:0 0 0 16px;border-left:3px solid #7A1F12}
+.tb-quote p{margin:0 0 4px;font-size:15.5px;line-height:1.56;color:#1E1810}
+.tb-quote cite{display:block;font-style:normal;font-size:12.5px;color:#5A4C39}
+.tb-said{margin:0 0 16px}
+/* The record, and the counter-voice. Both are the accountability half of a
+   president's card; they get their own weight on the page. */
+.tb-record,.tb-counter,.tb-leaves{margin:0 0 16px;padding:14px 16px;border:1px solid #C0B094}
+.tb-record{background:rgba(122,31,18,.05);border:1px solid #C9A99A}
+.tb-counter{background:rgba(23,19,13,.055);border:1px solid #B5A48A}
+.tb-leaves{background:rgba(23,19,13,.045);border:1px solid #C0B094}
+.tb-record p,.tb-counter p,.tb-leaves p{margin:0 0 6px;font-size:14.5px;line-height:1.62;color:#2C251A}
+.tb-tag{display:block;margin:0 0 8px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
+  letter-spacing:.17em;font-size:11.5px;color:#7A1F12}
+.tb-who{font-style:italic;color:#4A3F2C!important}
+.tb-after{color:#4A3F2C!important}
+.tb-src{display:block;font-size:12px;line-height:1.5;color:#6B5B44}
+/* The census strip. */
+.tb-census{margin:0 0 16px;display:grid;gap:0;border-top:1px solid #C0B094}
+.tb-census-row{display:flex;justify-content:space-between;gap:16px;padding:9px 0;
+  border-bottom:1px solid #D6CAB2}
+.tb-census-row dt{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.11em;
+  font-size:12.5px;color:#5A4C39}
+.tb-census-row dd{margin:0;font-size:15px;font-weight:700;color:#17130D;text-align:right}
+/* Being sixteen then, beside now. */
+.tb-then{margin:0 0 16px;display:grid;gap:14px}
+.tb-then-row{border-top:1px solid #C0B094;padding:13px 0 0}
+.tb-then-row h4{margin:0 0 7px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
+  letter-spacing:.15em;font-size:12.5px;color:#7A1F12}
+.tb-then-then{margin:0 0 9px;font-size:14.5px;line-height:1.64;color:#2C251A}
+.tb-then-now{margin:0;font-size:14px;line-height:1.6;color:#4A3F2C;padding:9px 12px;
+  background:rgba(23,19,13,.05);border-left:3px solid #7A1F12}
+.tb-now-tag{display:inline-block;margin-right:9px;font-family:'Barlow Condensed',sans-serif;
+  text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:#7A1F12}
+.tb-foot{margin:14px 0 0;font-size:13.5px;line-height:1.6;color:#4A3F2C;padding-top:12px;
+  border-top:1px solid #C0B094}
 .tb-story-back{background:none;border:0;cursor:pointer;color:#7A1F12;font-size:15px;padding:0 0 10px}
 .tb-story-head{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3.4vw,30px);margin:0 0 8px;color:#17130D}
 .tb-lede{font-size:17px;line-height:1.55;font-weight:600;margin:0 0 10px}

@@ -1,46 +1,36 @@
 {
   "_course": "us11r",
-  "_built": "2026-10-26 22:5x · Josh (flashpoint) · SCRATCH SHAPE v1.1 · both panel pictures in",
-  "_shape": "throwback-era-shape v1 · one file per course · eras keyed by year · story cards are medium-agnostic; the era's skin decides how they are drawn (newspaper now; radio, film, TV, web later) · fields starting with _ never render",
-  "_rules": [
-    "No accounts, no student data, no saved state. Nothing typed is kept. The kid's log is on paper in the Casefile A packet.",
-    "Rooms and silhouettes are AI-made and carry the AI-made label. Archival images are real, dated and credited and carry the archival label. A president's image is a real, sourced image, never AI-made.",
-    "Every quotation points to a record. Adapted text says (adapted). Invented text is never a quotation. A president's card uses words he said or signed, cut from the public record, or a plain paraphrase of it.",
-    "Content words come from Sam through Danny with BK's yes. Josh owns the container fields only: era ids, panel rectangles, unlock flags, skin ids, image paths."
-  ],
-  "name": {
-    "label": "Throwback",
-    "subtitle": "Pick a moment. See where the seven Threads stood, and what it was like to be your age then.",
-    "_note": "BK ruled 22:38: 'Throwback is the name.' It is one data slot."
-  },
+  "_built": "2026-10-27 by Sam (us11r-curriculum) -- skills/live-from/build_throwback_json.py -- content from live_from_words*.py, BK-blessed, Danny-cleared wording",
+  "_shape": "throwback-era-shape v1, per Josh's In/throwback-us11r.json (flashpoint, 2026-10-26)",
   "young_person_headings": {
-    "_note": "Sam proposes 5-6 fixed headings, the same in every era, with a 'now' column last (BK 22:07). These six are Josh's placeholders to size the table, not a proposal.",
     "headings": [
-      "School",
-      "Work",
-      "Home",
-      "Free time",
-      "What you wear",
-      "Who decides for you"
+      "AT 16, I'D BE…",
+      "WHO DECIDED FOR ME",
+      "WHAT I'D WEAR",
+      "HOW I'D GET THE NEWS",
+      "HOW FAR I'D GO",
+      "WHAT WAS MINE TO DECIDE"
     ],
     "now_label": "Now"
   },
   "census_categories": {
-    "_note": "Fixed categories every era so change can be tracked (BK 21:48, item 4). Placeholders to size the strip; Sam and Danny settle the real list and the source for each number.",
     "categories": [
-      "People in the United States",
-      "Living on farms",
-      "Living in cities",
-      "Held in slavery",
-      "Could vote",
-      "Under 20"
+      "People counted",
+      "Enslaved people",
+      "Born in another country",
+      "Living in a town or city (2,500+)",
+      "States in the Union",
+      "Biggest city"
     ]
   },
   "units": {
-    "_note": "Which eras a unit's two-frame view shows. 1801 is shared: the end of 11.2 and the start of 11.3A. 'here' comes from the Arena manifest's current_unit, like the Threads map; no field here.",
+    "11.1": {
+      "start": "1607",
+      "end": "1763"
+    },
     "11.2": {
       "start": "1763",
-      "end": "1801"
+      "end": "1824"
     },
     "11.3": {
       "start": "1801",
@@ -49,169 +39,627 @@
   },
   "eras": [
     {
+      "id": "1607",
+      "year": 1607,
+      "label": "1607",
+      "status": "open",
+      "skin": {
+        "medium": "letter",
+        "masthead": "A LETTER HOME",
+        "edition_line": "May 1607 . carried by the next ship to London"
+      },
+      "silhouettes": {
+        "image": "img/sil-1607.png",
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
+        "caption": "A young woman and a young man, 1607.",
+        "attire_note": "An English boy: a short close-fitting jacket (a doublet), loose breeches to the knee, stockings, a linen shirt, a felt hat. A Powhatan young person: deerskin, a breechcloth or an apron, a mantle in cold weather. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
+        "kind": "ai",
+        "credit": "AI-made silhouette.",
+        "stand": {
+          "left": 3.1,
+          "bottom": 10.0,
+          "height": 56.8
+        }
+      },
+      "room": {
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
+        "image": "img/room-1607.jpg",
+        "panel_rect": {
+          "left": 39.941,
+          "top": 22.203,
+          "width": 20.117,
+          "height": 30.07
+        }
+      },
+      "who_is_not_in_this_room": "Powhatan young people: the land is theirs, and the English room is not. English girls: none came in 1607. African young people: none are recorded in Virginia until 1619. London's poorest children: their ships start in 1617.",
+      "take_it_with_you": "The charter calls the people of Virginia \"Infidels and Savages.\" Whose eyes made Document 1, and does the town in it look like the charter's words?",
+      "cards": [
+        {
+          "id": "1607-t1",
+          "kind": "thread",
+          "line": "t1",
+          "unlocked": true,
+          "headline": "An English company lands in Powhatan's country.",
+          "lede": "In May 1607, 104 English men and boys built a fort on the James River, inside the land of about 30 tribes that paid tribute to one leader, Powhatan.",
+          "body": [
+            "The English call the place Virginia. The people who live there call it Tsenacomoco: about 15,000 people, by modern estimates, in towns of bark- and mat-covered houses, with fields of corn, beans and squash. They outnumber the English by more than a hundred to one.",
+            "There is no African in the colony. The first documented Africans arrive in 1619, twelve years from now (the first line of your Document 13). There is no English woman either: the first two come in 1608.",
+            "The King's charter promises the colonists every liberty of the English (the King's card). It promises nothing to the people already here. Within ten years an epidemic will empty Native towns on the New England coast (your Document 2).",
+            "So the line starts here, with three arcs not yet begun and a fourth people, the Powhatan, who are not waiting for anyone's promise."
+          ],
+          "oi": {
+            "fact": "The first English women at Jamestown, Mistress Forrest and her maid Anne Burras, arrived in 1608.",
+            "source_ref": "Jamestown-Yorktown Foundation, \"What were the roles of women and children at Jamestown?\" Not in 11.1's documents (checked). Danny checks the month (autumn 1608)."
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "Threads map stop: 1600s contact brings disease (11.1 Document 2). Encyclopedia Virginia, \"Tsenacomoco (Powhatan Paramount Chiefdom)\": about 15,000 people, 28 to 32 tribes. NPS, A Short History of Jamestown: 104 men and boys; 1619. First Charter of Virginia, April 10, 1606 (Avalon)."
+        },
+        {
+          "id": "1607-t2",
+          "kind": "thread",
+          "line": "t2",
+          "unlocked": false
+        },
+        {
+          "id": "1607-t3",
+          "kind": "thread",
+          "line": "t3",
+          "unlocked": false
+        },
+        {
+          "id": "1607-t4",
+          "kind": "thread",
+          "line": "t4",
+          "unlocked": false
+        },
+        {
+          "id": "1607-t5",
+          "kind": "thread",
+          "line": "t5",
+          "unlocked": false
+        },
+        {
+          "id": "1607-t6",
+          "kind": "thread",
+          "line": "t6",
+          "unlocked": false
+        },
+        {
+          "id": "1607-t7",
+          "kind": "thread",
+          "line": "t7",
+          "unlocked": false
+        },
+        {
+          "id": "1607-president",
+          "kind": "president",
+          "name": "King James I",
+          "term_line": "King of England and Scotland since 1603; he chartered the Virginia Company on April 10, 1606",
+          "image": {
+            "src": null,
+            "alt": null,
+            "caption": "A real portrait, with its record on the source sheet (a portrait of about 1605 attributed to John de Critz is the candidate). No AI-made likeness.",
+            "credit": null,
+            "kind": "archival",
+            "_danny_checked": false
+          },
+          "headline": "Liberties, for the King's own.",
+          "lede": "The King's charter promises the colonists and their children every liberty of the English, \"as if they had been abiding and born, within this our Realm of England.\"",
+          "said": [
+            {
+              "text": "\"…shall HAVE and enjoy all Liberties, Franchises, and Immunities, within any of our other Dominions…\"",
+              "cite": "First Charter of Virginia, April 10, 1606 (Avalon Project)",
+              "source_ref": "First Charter of Virginia, April 10, 1606 (Avalon Project)"
+            },
+            {
+              "text": "\"…and may in time bring the Infidels and Savages, living in those parts, to human Civility…\"",
+              "cite": "First Charter of Virginia, April 10, 1606 (Avalon)",
+              "source_ref": "First Charter of Virginia, April 10, 1606 (Avalon)"
+            }
+          ],
+          "footnote": null,
+          "oi": {
+            "fact": "On April 10, 1606, King James I chartered the Virginia Company, a company of investors who paid for the voyage and expected a profit.",
+            "source_ref": "First Charter of Virginia, April 10, 1606 (Avalon; the date line, \"the tenth Day of April, in the fourth Year of our Reign\"). \"Investors who expected a profit\": NPS, A Short History of Jamestown. Danny checks."
+          },
+          "images": [],
+          "source_line": "First Charter of Virginia, April 10, 1606 (Avalon). Danny checks.",
+          "label": "THE ONE IN CHARGE",
+          "record_line": "Public record, plain paraphrase: James never crossed the ocean. The charter is the King's grant, made in London, to a company of investors, of land where Powhatan's people already lived.",
+          "record_src": "First Charter of Virginia, April 10, 1606 (Avalon). Danny checks.",
+          "counter_voice": {
+            "label": "THE COUNTER-VOICE · the people the charter never asked",
+            "who": "Powhatan (Wahunsonacock), paramount chief of Tsenacomoco, to John Smith",
+            "when": "a meeting of 1608–09, as Smith recorded it and printed it in 1624",
+            "line": "\"What will it availe you to take that by force you may quickly have by love…\" · \"What can you get by warre, when we can hide our provisions and fly to the woods?\"",
+            "after": "Smith wrote these words down years later, in his own book, for English readers: the same source problem as Miantonomo in Document 4. It is still the closest record we have of what Powhatan said.",
+            "source_line": "John Smith, The Generall Historie of Virginia, New-England, and the Summer Isles (London, 1624), Book 3; reprint Glasgow, 1907, vol. 1, pp. 158–59, via History Matters (George Mason University), which dates the meeting 1608. Danny checks the date."
+          }
+        },
+        {
+          "id": "1607-family",
+          "kind": "family",
+          "headline": "The average family, 1607",
+          "lede": "The fort holds men and boys and no families at all. The families in this frame are Powhatan: households in houses called yehakins, framed with saplings and covered with bark or reed mats, in towns along the rivers.",
+          "body": [
+            "The fort holds men and boys and no families at all. The families in this frame are Powhatan: households in houses called yehakins, framed with saplings and covered with bark or reed mats, in towns along the rivers.",
+            "Powhatan women farm the corn, beans and squash, gather firewood, make the clothing and cook; men hunt, fish, make tools and clear the fields. Corn is the most important crop."
+          ],
+          "census": [
+            {
+              "category": "People counted",
+              "value": "No census. 104 English settlers at Jamestown by June 1607; Tsenacomoco, about 15,000 people (modern estimate)",
+              "source_ref": "Encyclopedia Virginia, \"Tsenacomoco\" (about 15,000, other estimates 13,000 to 22,000; 104 at Jamestown by June 1607; Werowocomoco); Jamestown-Yorktown Foundation, \"Who were the Powhatan Indians and how did they live?\" (yehakin; women's and men's work; corn). Your Document 3 tracks both peoples' numbers from about 1610 on. Danny checks."
+            },
+            {
+              "category": "Enslaved people",
+              "value": "None recorded. First documented Africans arrive 1619, as indentured servants, not yet enslaved by law (Document 13)",
+              "source_ref": "Encyclopedia Virginia, \"Tsenacomoco\" (about 15,000, other estimates 13,000 to 22,000; 104 at Jamestown by June 1607; Werowocomoco); Jamestown-Yorktown Foundation, \"Who were the Powhatan Indians and how did they live?\" (yehakin; women's and men's work; corn). Your Document 3 tracks both peoples' numbers from about 1610 on. Danny checks."
+            },
+            {
+              "category": "Born in another country",
+              "value": "Every English colonist",
+              "source_ref": "Encyclopedia Virginia, \"Tsenacomoco\" (about 15,000, other estimates 13,000 to 22,000; 104 at Jamestown by June 1607; Werowocomoco); Jamestown-Yorktown Foundation, \"Who were the Powhatan Indians and how did they live?\" (yehakin; women's and men's work; corn). Your Document 3 tracks both peoples' numbers from about 1610 on. Danny checks."
+            },
+            {
+              "category": "Living in a town or city (2,500+)",
+              "value": "None. The fort is the only English settlement",
+              "source_ref": "Encyclopedia Virginia, \"Tsenacomoco\" (about 15,000, other estimates 13,000 to 22,000; 104 at Jamestown by June 1607; Werowocomoco); Jamestown-Yorktown Foundation, \"Who were the Powhatan Indians and how did they live?\" (yehakin; women's and men's work; corn). Your Document 3 tracks both peoples' numbers from about 1610 on. Danny checks."
+            },
+            {
+              "category": "States in the Union",
+              "value": "None. One English colony, Virginia, run by a company under a royal charter",
+              "source_ref": "Encyclopedia Virginia, \"Tsenacomoco\" (about 15,000, other estimates 13,000 to 22,000; 104 at Jamestown by June 1607; Werowocomoco); Jamestown-Yorktown Foundation, \"Who were the Powhatan Indians and how did they live?\" (yehakin; women's and men's work; corn). Your Document 3 tracks both peoples' numbers from about 1610 on. Danny checks."
+            },
+            {
+              "category": "Biggest city",
+              "value": "No English town. Powhatan's capital is Werowocomoco, on the York River",
+              "source_ref": "Encyclopedia Virginia, \"Tsenacomoco\" (about 15,000, other estimates 13,000 to 22,000; 104 at Jamestown by June 1607; Werowocomoco); Jamestown-Yorktown Foundation, \"Who were the Powhatan Indians and how did they live?\" (yehakin; women's and men's work; corn). Your Document 3 tracks both peoples' numbers from about 1610 on. Danny checks."
+            }
+          ],
+          "leaves_out": "The average English family is not in this frame at all, and that is the point: the households of 1607 Virginia are Powhatan. What a census would count (houses, farms, people) is theirs. The English count only themselves, and in January they will count 38.",
+          "oi": {
+            "fact": "Only 38 of the first Jamestown colonists were still alive when the first supply ship arrived in January 1608.",
+            "source_ref": "Jamestown-Yorktown Foundation, Life at Jamestown (2014), p. 6, as cited for \"reduced… to only 38 survivors.\" Danny checks against John Smith's own count."
+          },
+          "images": [],
+          "source_line": "Encyclopedia Virginia, \"Tsenacomoco\" (about 15,000, other estimates 13,000 to 22,000; 104 at Jamestown by June 1607; Werowocomoco); Jamestown-Yorktown Foundation, \"Who were the Powhatan Indians and how did they live?\" (yehakin; women's and men's work; corn). Your Document 3 tracks both peoples' numbers from about 1610 on. Danny checks."
+        },
+        {
+          "id": "1607-young",
+          "kind": "young_person",
+          "headline": "Being 16 in 1607",
+          "lede": "What it was like to be sixteen in 1607, set beside what it's like to be a teenager now.",
+          "rows": [
+            {
+              "heading": "AT 16, I'D BE…",
+              "then": "If I am English, in Virginia: one of the boys who came with the first men, cutting timber and hauling water for the fort. Thomas Savage, about 13, and Henry Spelman, about 14, were later sent to live with the Powhatan to learn their language, and became interpreters. If I am Powhatan: a boy learns to fish and hunt; a girl works the gardens of corn, beans and squash with the women. There is no school in the colony.",
+              "now": "In school: New York law requires it until at least 16. Working papers from 14."
+            },
+            {
+              "heading": "WHO DECIDED FOR ME",
+              "then": "If I am English: my father or my master, and in the fort the council the Virginia Company named. If I am Powhatan: my family, my town's leader, and above him Powhatan.",
+              "now": "Parents or guardians until 18, the age of majority in New York; the school for the school day."
+            },
+            {
+              "heading": "WHAT I'D WEAR",
+              "then": "An English boy: a short close-fitting jacket (a doublet), loose breeches to the knee, stockings, a linen shirt, a felt hat. A Powhatan young person: deerskin, a breechcloth or an apron, a mantle in cold weather. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
+              "now": "Mostly your own choice, inside a dress code. Nothing here is about your closet."
+            },
+            {
+              "heading": "HOW I'D GET THE NEWS",
+              "then": "By word of mouth, and by letters carried by ship, months late. There is no newspaper anywhere in English America. London learns about Jamestown from John Smith's A True Relation, printed in 1608.",
+              "now": "A phone. In 2023 about 95 of every 100 U.S. teens said they had access to a smartphone."
+            },
+            {
+              "heading": "HOW FAR I'D GO",
+              "then": "The crossing from England took about four months, December 1606 to April 1607. In Virginia, as far as a canoe or my own feet go.",
+              "now": "A learner permit at 16 in New York; a bus, a car, a plane. Farther in an afternoon than the 1850 kid went in a year."
+            },
+            {
+              "heading": "WHAT WAS MINE TO DECIDE",
+              "then": "Almost nothing. Between 1617 and 1623, London's parishes shipped about 250 poor children to Virginia, and many of them did not want to go.",
+              "now": "The vote at 18 (Twenty-sixth Amendment, 1971). Your own wages are yours."
+            }
+          ],
+          "not_in_room": "Powhatan young people: the land is theirs, and the English room is not. English girls: none came in 1607. African young people: none are recorded in Virginia until 1619. London's poorest children: their ships start in 1617.",
+          "oi": {
+            "fact": "Thomas Savage, about 13, was sent to live with the Powhatan in 1608 to learn their language, and became one of the colony's interpreters.",
+            "source_ref": "Jamestown-Yorktown Foundation, \"What were the roles of women and children at Jamestown?\" (Savage, 13; Spelman, 14). Danny checks the year."
+          },
+          "images": [],
+          "source_line": "Jamestown-Yorktown Foundation essays: \"What were the roles of women and children at Jamestown?\" (boys among the first settlers; Savage; Spelman; about 250 children, 1617–1623) and \"Who were the Powhatan Indians and how did they live?\" (boys learned to fish and hunt; girls weeded gardens). NPS, A Short History of Jamestown (the voyage, December 1606). No school: Danny checks. Publick Occurrences, Boston, 1690 (one issue). Danny checks each."
+        }
+      ],
+      "dateline": "May 1607 · the James River, in Powhatan's country",
+      "moment": "Three English ships have come up the river. The Virginia Company's men and boys are building a fort on a marshy island. The land is Tsenacomoco, and its paramount chief is Powhatan."
+    },
+    {
       "id": "1763",
       "year": 1763,
       "label": "1763",
-      "boundary": "start of 11.2",
-      "status": "building",
-      "_note": "Listed so the selector shows the pattern (a moment that exists but isn't built). No room image yet. Shown and labeled, never hidden (CONVENTIONS §7)."
+      "status": "open",
+      "skin": {
+        "medium": "newspaper",
+        "masthead": "THE SEVENTEEN SIXTY-THREE",
+        "edition_line": "October 1763 . recreated front page"
+      },
+      "silhouettes": {
+        "image": "img/sil-1763.png",
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
+        "caption": "A young woman and a young man, 1763.",
+        "attire_note": "A young woman: a gown open in front over a petticoat, a laced bodice, an apron, a linen cap, a shawl or cloak. A young man: a long coat, a waistcoat, knee breeches with stockings, buckled shoes, a three-cornered hat. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
+        "kind": "ai",
+        "credit": "AI-made silhouette.",
+        "stand": {
+          "left": 1.2,
+          "bottom": 6.6,
+          "height": 78.5
+        }
+      },
+      "room": {
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
+        "image": "img/room-1763.jpg",
+        "panel_rect": {
+          "left": 41.797,
+          "top": 13.112,
+          "width": 16.309,
+          "height": 22.378
+        }
+      },
+      "who_is_not_in_this_room": "Native young people: on the far side of the King's line, and not counted. Enslaved young people: Phillis Wheatley, about seven or eight, was kidnapped from West Africa and sold in Boston in 1761; she will be a published poet at about twenty. Free Black young people: counted in no census, voting nowhere. Girls: everything above says \"he\" for a reason.",
+      "take_it_with_you": "Franklin's snake has eight pieces. Who lived on the same land and is not in the snake?",
+      "cards": [
+        {
+          "id": "1763-t1",
+          "kind": "thread",
+          "line": "t1",
+          "unlocked": true,
+          "headline": "A line down the mountains.",
+          "lede": "The King's new proclamation keeps the land west of the Appalachians for the Native nations, and forbids his colonists to settle on it or buy it.",
+          "body": [
+            "The war is over, and Britain claims everything east of the Mississippi. The nations who live there did not sign the treaty. This spring many of them went to war against the British forts around the Great Lakes, and in October the King's government answered with a line.",
+            "About one person in five in the thirteen colonies is of African descent, nearly all of them enslaved for life by laws the colonies built one statute at a time (your Document 13). Venture Smith, kidnapped as a child, is enslaved in New England (Document 12).",
+            "A married woman's legal existence is suspended under her husband's (coverture); in two years an English judge will describe it in a book (Document 18).",
+            "So the line stands three ways at once. One America is not even a question yet: there are thirteen colonies, a King, and the nations the King's line is drawn around."
+          ],
+          "oi": {
+            "fact": "Pontiac's War began in May 1763, when Native nations around the Great Lakes attacked British forts; the King's Proclamation came that October.",
+            "source_ref": "Royal Proclamation, Oct. 7, 1763 (Avalon Project); Pontiac's War, May 1763 (siege of Detroit). Not in 11.1's or 11.2's documents or context pages (checked). Danny checks the date."
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "Threads map stops: 1763 the Proclamation Line (11.2); 1619–1705 slavery built by law; 1738 Venture Smith; 1765 coverture (11.1). Treaty of Paris, Feb. 10, 1763. Historical Statistics of the United States, series Z 1–19 (1760)."
+        },
+        {
+          "id": "1763-t2",
+          "kind": "thread",
+          "line": "t2",
+          "unlocked": false
+        },
+        {
+          "id": "1763-t3",
+          "kind": "thread",
+          "line": "t3",
+          "unlocked": true,
+          "headline": "Nine years after \"Join, or Die.\"",
+          "lede": "The colonies never did join. The war against France was won with the King's army and navy and London's money, and now London decides what comes next.",
+          "body": [
+            "In 1754 Benjamin Franklin printed a snake cut into pieces, one for most of the colonies, with the words JOIN, OR DIE (your Document 16). That summer, delegates at Albany approved his plan for a union of the colonies.",
+            "No colonial assembly would adopt it. Each colony kept its own assembly, its own governor and its own taxes, and colonial soldiers fought beside the King's regulars, each colony on its own terms.",
+            "Now the war is over and the questions are London's to answer: where the colonists may live, how many soldiers stay, and who pays. A government can be too weak to protect its people. Can it also reach too far?"
+          ],
+          "oi": {
+            "fact": "In 1754 the Albany Congress approved Benjamin Franklin's Plan of Union; no colonial assembly adopted it.",
+            "source_ref": "Albany Plan of Union, July 10, 1754 (Avalon Project); its rejection by the colonial assemblies. On 11.1's Reps sheet as a term heard in class (\"Albany Plan\"), not in any document. Danny checks."
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "Threads map stop: 1754 Join, or Die (11.1 Document 16). Albany Plan of Union, 1754 (Avalon). Who fought and paid for the war: Danny checks the wording."
+        },
+        {
+          "id": "1763-t4",
+          "kind": "thread",
+          "line": "t4",
+          "unlocked": false
+        },
+        {
+          "id": "1763-t5",
+          "kind": "thread",
+          "line": "t5",
+          "unlocked": false
+        },
+        {
+          "id": "1763-t6",
+          "kind": "thread",
+          "line": "t6",
+          "unlocked": false
+        },
+        {
+          "id": "1763-t7",
+          "kind": "thread",
+          "line": "t7",
+          "unlocked": false
+        },
+        {
+          "id": "1763-president",
+          "kind": "president",
+          "name": "King George III",
+          "term_line": "King of Great Britain since October 1760, when he was 22",
+          "image": {
+            "src": null,
+            "alt": null,
+            "caption": "A real portrait, with its record on the source sheet (studio of Allan Ramsay, coronation portrait, c. 1761–62, is the candidate). No AI-made likeness.",
+            "credit": null,
+            "kind": "archival",
+            "_danny_checked": false
+          },
+          "headline": "\"…should not be molested or disturbed…\"",
+          "lede": "On October 7 the King proclaims that the land beyond the mountains is reserved to the Native nations \"as their Hunting Grounds.\"",
+          "said": [
+            {
+              "text": "\"…the several Nations or Tribes of Indians with whom We are connected, and who live under our Protection, should not be molested or disturbed…\"",
+              "cite": "Royal Proclamation, Oct. 7, 1763 (Avalon Project)",
+              "source_ref": "Royal Proclamation, Oct. 7, 1763 (Avalon Project)"
+            },
+            {
+              "text": "\"We do hereby strictly forbid, on Pain of our Displeasure, all our loving Subjects from making any Purchases or Settlements whatever…\"",
+              "cite": "Royal Proclamation, Oct. 7, 1763 (Avalon)",
+              "source_ref": "Royal Proclamation, Oct. 7, 1763 (Avalon)"
+            }
+          ],
+          "footnote": null,
+          "oi": {
+            "fact": "George III became king in 1760 at 22 and reigned until 1820, the king for the whole of the American Revolution.",
+            "source_ref": "Public record (Royal Collection Trust; British Monarchy). Danny checks."
+          },
+          "images": [],
+          "source_line": "Royal Proclamation, Oct. 7, 1763 (Avalon); Threads map stop 1763 (\"colonists resent it\"). Danny checks.",
+          "label": "THE ONE IN CHARGE",
+          "record_line": "Public record, plain paraphrase: George III never crossed the ocean. The Proclamation was his government's order, written in London; colonists who wanted the western land resented it, and in the end the line did not hold.",
+          "record_src": "Royal Proclamation, Oct. 7, 1763 (Avalon); Threads map stop 1763 (\"colonists resent it\"). Danny checks.",
+          "counter_voice": {
+            "label": "THE COUNTER-VOICE · a nation the treaty never asked",
+            "who": "Minavavana, an Ojibwe leader at Michilimackinac, to the English trader Alexander Henry",
+            "when": "1761; recorded by Henry and printed in 1809",
+            "line": "\"Englishman, although you have conquered the French, you have not yet conquered us! We are not your slaves.\"",
+            "after": "He went on: \"These lakes, these woods and mountains were left to us by our ancestors. They are our inheritance, and we will part with them to none.\" An English trader wrote this down and printed it nearly fifty years later: a Native voice through an English pen, the same problem as Document 4.",
+            "source_line": "Alexander Henry, Travels and Adventures in Canada and the Indian Territories (New York, 1809); ed. Milo Quaife (Chicago, 1921), pp. 40–45. Danny checks the wording against the 1809 printing."
+          }
+        },
+        {
+          "id": "1763-family",
+          "kind": "family",
+          "headline": "The average family, 1763",
+          "lede": "There is no census yet. The numbers below are modern estimates the Census Bureau built from colonial records, for 1760.",
+          "body": [
+            "There is no census yet. The numbers below are modern estimates the Census Bureau built from colonial records, for 1760.",
+            "The average free family farms, and it is large: Franklin wrote in 1751 that the colonies' people doubled about every 20 years, faster than any in Europe. Light is a candle or the hearth; most of what the family eats, it grew; the cloth is often spun at home."
+          ],
+          "census": [
+            {
+              "category": "People counted",
+              "value": "No census. About 1.59 million in 1760 (estimate)",
+              "source_ref": "Historical Statistics, series Z 1–19 (Sutherland, 1975), p. 1168; Benjamin Franklin, Observations Concerning the Increase of Mankind (1751). City sizes: estimates vary by historian. Danny checks the range and Franklin's \"doubled every 20 Years.\""
+            },
+            {
+              "category": "Enslaved people",
+              "value": "No count. About 326,000 people of African descent in 1760, nearly all enslaved: about 1 in 5 (estimate)",
+              "source_ref": "Historical Statistics, series Z 1–19 (Sutherland, 1975), p. 1168; Benjamin Franklin, Observations Concerning the Increase of Mankind (1751). City sizes: estimates vary by historian. Danny checks the range and Franklin's \"doubled every 20 Years.\""
+            },
+            {
+              "category": "Born in another country",
+              "value": "Not counted",
+              "source_ref": "Historical Statistics, series Z 1–19 (Sutherland, 1975), p. 1168; Benjamin Franklin, Observations Concerning the Increase of Mankind (1751). City sizes: estimates vary by historian. Danny checks the range and Franklin's \"doubled every 20 Years.\""
+            },
+            {
+              "category": "Living in a town or city (2,500+)",
+              "value": "Not counted. A handful of port towns: Philadelphia, New York, Boston, Charleston, Newport",
+              "source_ref": "Historical Statistics, series Z 1–19 (Sutherland, 1975), p. 1168; Benjamin Franklin, Observations Concerning the Increase of Mankind (1751). City sizes: estimates vary by historian. Danny checks the range and Franklin's \"doubled every 20 Years.\""
+            },
+            {
+              "category": "States in the Union",
+              "value": "None. Thirteen British colonies on the mainland that will become states",
+              "source_ref": "Historical Statistics, series Z 1–19 (Sutherland, 1975), p. 1168; Benjamin Franklin, Observations Concerning the Increase of Mankind (1751). City sizes: estimates vary by historian. Danny checks the range and Franklin's \"doubled every 20 Years.\""
+            },
+            {
+              "category": "Biggest city",
+              "value": "Philadelphia, about 20,000 to 25,000 (estimates differ)",
+              "source_ref": "Historical Statistics, series Z 1–19 (Sutherland, 1975), p. 1168; Benjamin Franklin, Observations Concerning the Increase of Mankind (1751). City sizes: estimates vary by historian. Danny checks the range and Franklin's \"doubled every 20 Years.\""
+            }
+          ],
+          "leaves_out": "The average leaves out the enslaved family, which the law does not recognize as a family and which can be sold apart; every Native family, on the far side of the line and outside any count; and the servants and the poor, who live in someone else's household.",
+          "oi": {
+            "fact": "In 1760, about 1 in 5 people in the thirteen colonies was of African descent, nearly all of them enslaved.",
+            "source_ref": "U.S. Census Bureau, Historical Statistics of the United States, Colonial Times to 1970, series Z 1–19 (1760: total 1,593,625; Black population about 326,000). The total is confirmed against the series; Danny checks the Black population figure."
+          },
+          "images": [],
+          "source_line": "Historical Statistics, series Z 1–19 (Sutherland, 1975), p. 1168; Benjamin Franklin, Observations Concerning the Increase of Mankind (1751). City sizes: estimates vary by historian. Danny checks the range and Franklin's \"doubled every 20 Years.\""
+        },
+        {
+          "id": "1763-young",
+          "kind": "young_person",
+          "headline": "Being 16 in 1763",
+          "lede": "What it was like to be sixteen in 1763, set beside what it's like to be a teenager now.",
+          "rows": [
+            {
+              "heading": "AT 16, I'D BE…",
+              "then": "On a farm, almost surely. A boy in a trade is an apprentice, bound by a signed paper until 21: Benjamin Franklin was bound to his brother, a printer, at 12, and ran away at 17. A New England girl learns to read at home or at a dame school and learns the work of a household. One young person in five is of African descent, and nearly all of them are enslaved.",
+              "now": "In school: New York law requires it until at least 16. Working papers from 14."
+            },
+            {
+              "heading": "WHO DECIDED FOR ME",
+              "then": "My father, by law, until I turn 21. If I am bound out, my master. If I am a girl who marries, my husband: a married woman's property and wages are his (coverture). If I am enslaved, the person who claims to own me.",
+              "now": "Parents or guardians until 18, the age of majority in New York; the school for the school day."
+            },
+            {
+              "heading": "WHAT I'D WEAR",
+              "then": "A young woman: a gown open in front over a petticoat, a laced bodice, an apron, a linen cap, a shawl or cloak. A young man: a long coat, a waistcoat, knee breeches with stockings, buckled shoes, a three-cornered hat. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
+              "now": "Mostly your own choice, inside a dress code. Nothing here is about your closet."
+            },
+            {
+              "heading": "HOW I'D GET THE NEWS",
+              "then": "A weekly newspaper, if my town has a printer, read aloud at the tavern or the meetinghouse. News from London comes by ship, a month or two behind. Franklin's paper ran the snake (Document 16).",
+              "now": "A phone. In 2023 about 95 of every 100 U.S. teens said they had access to a smartphone."
+            },
+            {
+              "heading": "HOW FAR I'D GO",
+              "then": "As far as a horse walks in a day, or a sailing ship goes with the wind. Crossing the ocean to London takes one to two months.",
+              "now": "A learner permit at 16 in New York; a bus, a car, a plane. Farther in an afternoon than the 1850 kid went in a year."
+            },
+            {
+              "heading": "WHAT WAS MINE TO DECIDE",
+              "then": "Almost nothing in law. The vote comes at 21, and only to men who own property. Most colonies enroll free white men in the militia from 16. A girl's property passes to her husband the day she marries.",
+              "now": "The vote at 18 (Twenty-sixth Amendment, 1971). Your own wages are yours."
+            }
+          ],
+          "not_in_room": "Native young people: on the far side of the King's line, and not counted. Enslaved young people: Phillis Wheatley, about seven or eight, was kidnapped from West Africa and sold in Boston in 1761; she will be a published poet at about twenty. Free Black young people: counted in no census, voting nowhere. Girls: everything above says \"he\" for a reason.",
+          "oi": {
+            "fact": "A Massachusetts law of 1647 required every town of 50 households to appoint a teacher to teach its children to read and write.",
+            "source_ref": "Massachusetts General Court, 1647 (the \"Old Deluder Satan\" law), Records of the Governor and Company of the Massachusetts Bay. Danny checks the wording and the number."
+          },
+          "images": [],
+          "source_line": "Benjamin Franklin, Autobiography (bound at 12; left Boston at 17, 1723); Phillis Wheatley, arrived Boston 1761 (Massachusetts Historical Society; her Poems, 1773); coverture: Threads map stop 1765; colonial militia ages vary by colony (Massachusetts 16 to 60). Danny checks each."
+        }
+      ],
+      "dateline": "October 1763 · London and the colonies",
+      "moment": "The war with France ended in February with the Treaty of Paris. Since May, Native nations around the Great Lakes have been at war with the British forts. On October 7 the King draws a line down the mountains."
     },
     {
       "id": "1801",
       "year": 1801,
       "label": "1801",
-      "boundary": "end of 11.2 · start of 11.3A",
       "status": "open",
       "skin": {
         "medium": "newspaper",
         "masthead": "THE EIGHTEEN-OH-ONE",
-        "edition_line": "Spring 1801 · recreated front page",
-        "_note": "Masthead and edition line are placeholders. Sam names the paper; it must not borrow a real paper's name."
-      },
-      "room": {
-        "image": "img/room-1801.jpg",
-        "image_alt": "A plain 1801 parlor: ochre plaster walls over wooden wainscoting, a brick hearth with a wooden mantel, a tall candle stand at left, a Windsor settee with a fringed coverlet at right, a small pumpkin and a basket on the floor, and a framed notice above the mantel where the front page appears.",
-        "caption": "A middle-class American parlor as it might have looked in 1801.",
-        "kind": "ai",
-        "credit": "AI-made picture. Not a photograph.",
-        "panel": {
-          "base": [
-            1024,
-            572
-          ],
-          "x": 414,
-          "y": 34,
-          "w": 195,
-          "h": 158
-        },
-        "_prompt_ref": "In/live-from-pack-2026-10-26/live-from-image-prompts-v1.md · PROMPT 1",
-        "panel_image": {
-          "src": "img/panel-1801.jpg",
-          "alt": "An American landscape painting in the style of about 1801: a farming valley in autumn with log and brick farmhouses, a split-rail fence, stacked grain shocks in the fields, a small stone mill with a waterwheel on a stream, and wooded hills under a cloudy sky.",
-          "caption": "A landscape picture in the style of an 1801 painting.",
-          "kind": "ai",
-          "credit": "AI-made picture. Not a real painting.",
-          "_source": "BK, Gemini, Josh's Prompt B (1801 swap), 2026-10-26 22:49; no crop needed. In/live-from-pack-2026-10-26/throwback-panel-picture-1801-v1.jpg",
-          "_danny_checked": false
-        },
-        "panel_rect": {
-          "left": 40.039,
-          "top": 5.07,
-          "width": 19.824,
-          "height": 29.371
-        },
-        "_panel_rect_note": "Percent of the scene box. Measured off the chroma panel in the room art and grown 3px all round (Josh, 2026-10-27) so the picture over-covers it and no green survives at the edge."
+        "edition_line": "March 1801 . recreated front page"
       },
       "silhouettes": {
         "image": "img/sil-1801.png",
-        "image_alt": "Two solid black silhouettes: a young woman in a high-waisted gown with short puffed sleeves and a small cap, and a young man in a tailcoat, knee breeches, stockings and a tall round hat.",
-        "caption": "A young woman and a young man, town family, 1801.",
-        "attire_note": "[Sam: one line on what the clothes were made of and who wore them. Danny checks against a costume source.]",
+        "image_alt": "Two solid black silhouettes, full length, facing forward: a young woman in a high-waisted gown with short puffed sleeves and a small cap, a shawl over one arm; a young man in a tailcoat with a high collar, knee breeches, stockings and a tall round hat.",
+        "caption": "A young woman and a young man, 1801.",
+        "attire_note": "A young woman: a high-waisted gown, short sleeves, a cap or small bonnet, a shawl. A young man: a tailcoat, a cravat, knee breeches with stockings, a tall round hat. (Attire note: Leo's, from the silhouette prompts; not yet checked against a costume collection. Danny's gate.)",
         "kind": "ai",
         "credit": "AI-made silhouette.",
         "stand": {
           "left": 1.0,
           "bottom": 7.7,
           "height": 78.0
-        },
-        "_stand_note": "Measured off the room art (Josh, 2026-10-27): left/bottom/height are percent of the scene box; the figures stand on the floor to the left of the hearth, clear of the panel."
+        }
       },
-      "who_is_not_in_this_room": "[Sam: one sentence naming who this parlor leaves out in 1801.]",
-      "take_it_with_you": "[Sam: the one question a kid carries out of 1801 into the casefile.]",
+      "room": {
+        "image_alt": "A small 1801 parlor: brick hearth with a wooden mantel, a framed notice above it, a candle on a tall stand at left, a window with a plain linen curtain, a wooden settee with a woven coverlet at right, wide pine floorboards, a braided rug, and a small pumpkin by the hearth.",
+        "image": "img/room-1801.jpg",
+        "panel_rect": {
+          "left": 40.039,
+          "top": 5.07,
+          "width": 19.824,
+          "height": 29.371
+        },
+        "panel_image": {
+          "src": "img/panel-1801.jpg",
+          "alt": "An American landscape painting in the style of about 1801: a farming valley in autumn with log and brick farmhouses, a split-rail fence, stacked grain shocks in the fields, a small stone mill with a waterwheel on a stream, and wooded hills under a cloudy sky.",
+          "caption": "A landscape picture in the style of an 1801 painting.",
+          "kind": "ai",
+          "credit": "AI-made picture. Not a real painting.",
+          "_danny_checked": true
+        }
+      },
+      "who_is_not_in_this_room": "Native young people: the census does not count them. Enslaved young people: counted, but not by name, under the head of the household that claims them. Free Black young people: counted, and in most states barred from voting at 21 anyway. Girls: everything above says \"he\" for a reason.",
+      "take_it_with_you": "Jefferson takes for granted that France can sell the land. Who was living on it, and are they anywhere in this room?",
       "cards": [
         {
           "id": "1801-t1",
           "kind": "thread",
           "line": "t1",
           "unlocked": true,
-          "headline": "[Thread 1 headline, 1801]",
-          "lede": "[One sentence a kid reads on the front page. Where Thread 1 stood in 1801.]",
+          "headline": "Five million counted. One in six is enslaved.",
+          "lede": "The new census says 5,308,483 people live in the United States, and 893,602 of them are enslaved.",
           "body": [
-            "[Paragraph 1.]",
-            "[Paragraph 2.]"
+            "The promise of 1776 says all men are created equal. In 1801 the law counts three of every five enslaved people toward a state's seats in the House, and no enslaved person can vote, own property or keep a family together by right.",
+            "A married woman's legal existence is suspended under her husband's (coverture). Native nations are not counted at all: the Constitution says \"Indians not taxed\" are left out.",
+            "So the line stands where 1787 put it. The promise is written down. Who it reaches is still being decided."
           ],
           "oi": {
-            "fact": "[One specific, easy-to-remember fact that is NOT in the unit's documents.]",
-            "source_ref": "[record]"
+            "fact": "New Jersey let women who owned property vote under its 1776 constitution; the state took the vote away from them in 1807.",
+            "source_ref": "New Jersey Constitution of 1776, Art. IV (\"all inhabitants\" worth £50); N.J. act of Nov. 16, 1807, limiting the vote to white male taxpayers. Danny checks."
           },
-          "images": [
-            {
-              "src": null,
-              "alt": "[describes the picture]",
-              "caption": "[what it shows, with its date]",
-              "credit": "[Repository, record ID]",
-              "kind": "archival",
-              "_danny_checked": false
-            }
-          ],
+          "images": [],
           "refs": {
-            "stops": [
-              "s-1600s-disease"
-            ],
-            "doc_assist": null,
-            "atlas": null
+            "stops": []
           },
-          "source_line": "[Sam's source line for the card]"
+          "source_line": "Threads map stops: 1776 \"All men are created equal\"; 1787 who gets counted; 1765 coverture; 1600s–1744 Native nations. U.S. Constitution, Art. I §2. 1800 census (U.S. Census Bureau)."
         },
         {
           "id": "1801-t2",
           "kind": "thread",
           "line": "t2",
           "unlocked": true,
-          "headline": "[Thread 2 headline, 1801]",
-          "lede": "[Lede.]",
+          "headline": "No alliances. Jefferson says so on day one.",
+          "lede": "The new president promises \"peace, commerce, and honest friendship with all nations, entangling alliances with none.\"",
           "body": [
-            "[Body.]"
+            "Washington's Farewell Address (1796) warned the country against permanent alliances. The only one it ever had, the 1778 treaty with France, has just been ended by the Convention of 1800, which also closed an undeclared naval war with France.",
+            "Britain and France are at war with each other. The United States is small, far away, and trying to trade with both."
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "The Convention of 1800 ended the United States' only alliance, the 1778 treaty with France, and the undeclared \"Quasi-War\" at sea.",
+            "source_ref": "Convention of 1800 (Treaty of Mortefontaine), signed Sept. 30, 1800; Avalon Project. Danny checks."
           },
           "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "Threads map stop: 1796 Washington's Farewell Address. Jefferson, First Inaugural Address, March 4, 1801 (Avalon Project, Yale Law School)."
         },
         {
           "id": "1801-t3",
           "kind": "thread",
           "line": "t3",
           "unlocked": true,
-          "headline": "[Thread 3 headline, 1801]",
-          "lede": "[Lede.]",
+          "headline": "\"A wise and frugal Government.\"",
+          "lede": "Jefferson's party won by promising a smaller national government. Now it has to run one.",
           "body": [
-            "[Body.]"
+            "The Articles of Confederation (1781) were too weak to tax or keep order, so the Constitution (1787) built a stronger government and the Bill of Rights (1791) wrote down its limits. Federalists and Republicans have argued ever since about how much that government should do.",
+            "In his inaugural, Jefferson says the government should \"restrain men from injuring one another\" and otherwise leave them free. In his last weeks, President Adams filled new judgeships created by the Judiciary Act of 1801; the Republicans call them the midnight judges."
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "In 1802, Jefferson's Congress repealed every internal tax, including the whiskey tax. The national government lived on tariffs and land sales.",
+            "source_ref": "Act of April 6, 1802, repealing the internal taxes (2 Stat. 148). Danny checks."
           },
           "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "Threads map stops: 1781 Articles; 1787 Constitution; 1791 Bill of Rights. Jefferson, First Inaugural, March 4, 1801 (Avalon). Judiciary Act of Feb. 13, 1801."
         },
         {
           "id": "1801-t4",
           "kind": "thread",
           "line": "t4",
           "unlocked": true,
-          "headline": "[Thread 4 headline, 1801]",
-          "lede": "[Lede.]",
+          "headline": "Thirty-six ballots to pick a president.",
+          "lede": "The election of 1800 ended in a tie between Jefferson and Aaron Burr. The House of Representatives took 36 ballots, in February 1801, to choose Jefferson.",
           "body": [
-            "[Body.]"
+            "Washington set the precedents: he stepped down after two terms, which no law required. Now, for the first time, power passes from one party to the other, and it passes peacefully.",
+            "The Constitution never planned for parties, so the tie it produced has to be fixed by amendment (the Twelfth, in 1804)."
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "The election of 1800 tied at 73 electoral votes each for Jefferson and Burr; the House needed 36 ballots to break it, on Feb. 17, 1801.",
+            "source_ref": "Electoral count of 1800; House Journal, Feb. 11–17, 1801. National Archives, Electoral College records. Danny checks."
           },
           "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "Threads map stop: 1796 Washington steps down. U.S. Constitution, Art. II §1 and the Twelfth Amendment (1804)."
         },
         {
           "id": "1801-t5",
@@ -230,325 +678,624 @@
           "kind": "thread",
           "line": "t7",
           "unlocked": true,
-          "headline": "[Thread 7 headline, 1801]",
-          "lede": "[Lede.]",
+          "headline": "The Sedition Act dies. Editors walk free.",
+          "lede": "The 1798 law that jailed editors for \"false, scandalous\" writing against the government expired on March 3, 1801, the day before Jefferson took office.",
           "body": [
-            "[Body.]"
+            "The First Amendment (1791) says \"Congress shall make no law\" limiting the press. Seven years later Congress made one, during the undeclared war with France, and editors went to jail.",
+            "Jefferson pardons the men convicted under it and tells the country that \"error of opinion may be tolerated where reason is left free to combat it.\""
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "The Sedition Act expired March 3, 1801, the day before Jefferson's inauguration; Jefferson pardoned the men convicted under it.",
+            "source_ref": "An Act for the Punishment of Certain Crimes (Sedition Act), July 14, 1798, §4 (expiry March 3, 1801); Jefferson's pardons, 1801 (e.g., James T. Callender). Danny checks."
           },
           "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "Threads map stops: 1791 Bill of Rights; 1798 Sedition Act. Jefferson, First Inaugural, March 4, 1801 (Avalon)."
         },
         {
           "id": "1801-president",
           "kind": "president",
           "name": "Thomas Jefferson",
-          "term_line": "President from March 1801",
+          "term_line": "President, inaugurated March 4, 1801",
           "image": {
             "src": null,
-            "alt": "[describes the portrait]",
-            "caption": "[title, artist, date]",
-            "credit": "[Repository, record ID, rights statement]",
+            "alt": null,
+            "caption": "A real portrait, with its record on the source sheet (Rembrandt Peale's 1800 portrait, White House Collection, is the candidate). No AI-made likeness.",
+            "credit": null,
             "kind": "archival",
             "_danny_checked": false
           },
-          "headline": "[What the president said, 1801]",
-          "lede": "[Lede: his public position against the Threads, in a kid's words, no invented thoughts.]",
+          "headline": "\"We are all Republicans, we are all Federalists.\"",
+          "lede": "On his first day Jefferson tells a divided country that the two parties are \"brethren of the same principle.\"",
           "said": [
             {
-              "text": "[A sentence he actually wrote or said. (adapted) if adapted.]",
-              "cite": "[document, date]",
-              "source_ref": "[record]"
+              "text": "\"Equal and exact justice to all men, of whatever state or persuasion, religious or political.\"",
+              "cite": "First Inaugural Address, March 4, 1801 (Avalon Project)",
+              "source_ref": "First Inaugural Address, March 4, 1801 (Avalon Project)"
+            },
+            {
+              "text": "\"Peace, commerce, and honest friendship with all nations, entangling alliances with none.\"",
+              "cite": "First Inaugural, March 4, 1801 (Avalon)",
+              "source_ref": "First Inaugural, March 4, 1801 (Avalon)"
+            },
+            {
+              "text": "\"A wise and frugal Government, which shall restrain men from injuring one another, shall leave them otherwise free…\"",
+              "cite": "First Inaugural, March 4, 1801 (Avalon)",
+              "source_ref": "First Inaugural, March 4, 1801 (Avalon)"
+            },
+            {
+              "text": "\"…the minority possess their equal rights, which equal law must protect, and to violate would be oppression.\"",
+              "cite": "First Inaugural, March 4, 1801 (Avalon)",
+              "source_ref": "First Inaugural, March 4, 1801 (Avalon)"
+            },
+            {
+              "text": "\"Freedom of the press, and freedom of person under the protection of the habeas corpus, and trial by juries…\"",
+              "cite": "First Inaugural, March 4, 1801 (Avalon)",
+              "source_ref": "First Inaugural, March 4, 1801 (Avalon)"
             }
           ],
           "footnote": null,
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "Jefferson sent his first annual message to Congress in writing (December 1801) instead of giving it as a speech; presidents kept that habit until 1913.",
+            "source_ref": "Jefferson, First Annual Message, Dec. 8, 1801 (delivered in writing); Woodrow Wilson addressed Congress in person April 8, 1913. Danny checks."
           },
           "images": [],
-          "source_line": "[source]"
+          "source_line": "Thomas Jefferson Foundation (Monticello), \"Slavery at Monticello\" (more than 600 people enslaved over his lifetime). Danny checks.",
+          "label": "THE PRESIDENT CARD",
+          "record_line": "Public record, plain paraphrase: Jefferson owned Monticello and the people enslaved there; over his life he enslaved more than 600 people. The man who wrote \"all men are created equal\" said \"equal and exact justice to all men\" and did not free them.",
+          "record_src": "Thomas Jefferson Foundation (Monticello), \"Slavery at Monticello\" (more than 600 people enslaved over his lifetime). Danny checks.",
+          "counter_voice": {
+            "label": "THE COUNTER-VOICE",
+            "who": "Absalom Jones and 70 other free Black men of Philadelphia",
+            "when": "Petition to Congress, Dec. 30, 1799; presented Jan. 2, 1800",
+            "line": "\"…we beseech that we as men, we may be admitted to partake of the Liberties and unalienable Rights…\"",
+            "after": "The petition asked Congress to end the slave trade and to protect free Black people from being kidnapped under the 1793 fugitive law. On Jan. 3, 1800, the House voted that it \"ought therefore to receive no encouragement or countenance.\"",
+            "source_line": "National Park Service, Independence NHP: \"Petition of Absalom Jones and others,\" Dec. 30, 1799, with the House's Jan. 2–3, 1800 action. Danny checks the vote."
+          }
         },
         {
           "id": "1801-family",
           "kind": "family",
-          "headline": "[The average American family, 1801]",
-          "lede": "[Lede, and who 'average' leaves out.]",
+          "headline": "The average family, 1801",
+          "lede": "The census counts households by the name of one person, the head, and sorts everyone else into boxes by age and sex. It does not ask where you were born or whether you went to school.",
           "body": [
-            "[Body.]"
+            "The census counts households by the name of one person, the head, and sorts everyone else into boxes by age and sex. It does not ask where you were born or whether you went to school.",
+            "The average free family is a farm family. Women have, on average, about seven children over a lifetime. Light is a candle or the hearth; water is carried; most of what the family eats, it grew."
           ],
           "census": [
             {
-              "category": "People in the United States",
-              "value": "[n]",
-              "source_ref": "[1800 census table]"
+              "category": "People counted",
+              "value": "5,308,483",
+              "source_ref": "1800 census (Aug. 4, 1800; U.S. Census Bureau); total fertility rate c. 1800 about 7.0 births per woman (Historical Statistics of the United States, series B5). Danny checks."
             },
             {
-              "category": "Living on farms",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "Enslaved people",
+              "value": "893,602 (about 1 in 6)",
+              "source_ref": "1800 census (Aug. 4, 1800; U.S. Census Bureau); total fertility rate c. 1800 about 7.0 births per woman (Historical Statistics of the United States, series B5). Danny checks."
             },
             {
-              "category": "Living in cities",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "Born in another country",
+              "value": "Not asked",
+              "source_ref": "1800 census (Aug. 4, 1800; U.S. Census Bureau); total fertility rate c. 1800 about 7.0 births per woman (Historical Statistics of the United States, series B5). Danny checks."
             },
             {
-              "category": "Held in slavery",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "Living in a town or city (2,500+)",
+              "value": "6 of every 100",
+              "source_ref": "1800 census (Aug. 4, 1800; U.S. Census Bureau); total fertility rate c. 1800 about 7.0 births per woman (Historical Statistics of the United States, series B5). Danny checks."
             },
             {
-              "category": "Could vote",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "States in the Union",
+              "value": "16",
+              "source_ref": "1800 census (Aug. 4, 1800; U.S. Census Bureau); total fertility rate c. 1800 about 7.0 births per woman (Historical Statistics of the United States, series B5). Danny checks."
             },
             {
-              "category": "Under 20",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "Biggest city",
+              "value": "New York, 60,515",
+              "source_ref": "1800 census (Aug. 4, 1800; U.S. Census Bureau); total fertility rate c. 1800 about 7.0 births per woman (Historical Statistics of the United States, series B5). Danny checks."
             }
           ],
+          "leaves_out": "The average leaves out the enslaved family, which the law does not recognize as a family and which can be sold apart; every Native family, which the census does not count; and the poor, who have no household of their own and are counted in someone else's.",
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "In 1800, only 6 of every 100 Americans lived in a town of 2,500 people or more.",
+            "source_ref": "U.S. Census Bureau, Population: 1790 to 1990, Table 4 (percent urban, 1800: 6.1). Danny checks."
           },
           "images": [],
-          "source_line": "[source]"
+          "source_line": "1800 census (Aug. 4, 1800; U.S. Census Bureau); total fertility rate c. 1800 about 7.0 births per woman (Historical Statistics of the United States, series B5). Danny checks."
         },
         {
           "id": "1801-young",
           "kind": "young_person",
-          "headline": "[Being 16 in 1801]",
-          "lede": "[Lede. Before about the 1920s this card says 'a young person your age', not 'teenager'.]",
+          "headline": "Being 16 in 1801",
+          "lede": "What it was like to be sixteen in 1801, set beside what it's like to be a teenager now.",
           "rows": [
             {
-              "heading": "School",
-              "then": "[then]",
-              "now": "[now, about teens in general, never a kid's own home]"
+              "heading": "AT 16, I'D BE…",
+              "then": "On a farm, almost surely: 94 of every 100 Americans live outside any town of 2,500 people. A boy in a trade is an apprentice, bound by a signed paper to his master until 21. A few winters of district school is the usual schooling; there is no public high school anywhere in the country yet. One young person in six is enslaved: working with no pay, and able to be sold.",
+              "now": "In school: New York law requires it until at least 16. Working papers from 14."
             },
             {
-              "heading": "Work",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "WHO DECIDED FOR ME",
+              "then": "My father, by law, until I turn 21. If I am bound out, my master. If I am a girl who marries, my husband: a married woman's property and wages are his (coverture). If I am enslaved, the person who claims to own me.",
+              "now": "Parents or guardians until 18, the age of majority in New York; the school for the school day."
             },
             {
-              "heading": "Home",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "WHAT I'D WEAR",
+              "then": "A young woman: a high-waisted gown, short sleeves, a cap or small bonnet, a shawl. A young man: a tailcoat, a cravat, knee breeches with stockings, a tall round hat. (Attire note: Leo's, from the silhouette prompts; not yet checked against a costume collection. Danny's gate.)",
+              "now": "Mostly your own choice, inside a dress code. Nothing here is about your closet."
             },
             {
-              "heading": "Free time",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "HOW I'D GET THE NEWS",
+              "then": "A weekly newspaper, often read aloud at the tavern or the post office, days or weeks after the event. Since the Post Office Act of 1792, papers travel by mail cheaply, so a town paper reprints the city papers.",
+              "now": "A phone. In 2023 about 95 of every 100 U.S. teens said they had access to a smartphone."
             },
             {
-              "heading": "What you wear",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "HOW FAR I'D GO",
+              "then": "As far as a horse walks in a day, or a sailing ship goes with the wind. No canals of any length, no railroads, no steamboats (Fulton's first runs the Hudson in 1807).",
+              "now": "A learner permit at 16 in New York; a bus, a car, a plane. Farther in an afternoon than the 1850 kid went in a year."
             },
             {
-              "heading": "Who decides for you",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "WHAT WAS MINE TO DECIDE",
+              "then": "Almost nothing in law. The vote comes at 21, and in most states only to white men who own property. At 18 every free white man is enrolled in the militia whether he chooses it or not (Militia Act of 1792). A girl's property passes to her husband the day she marries.",
+              "now": "The vote at 18 (Twenty-sixth Amendment, 1971). Your own wages are yours."
             }
           ],
+          "not_in_room": "Native young people: the census does not count them. Enslaved young people: counted, but not by name, under the head of the household that claims them. Free Black young people: counted, and in most states barred from voting at 21 anyway. Girls: everything above says \"he\" for a reason.",
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "The Militia Act of 1792 enrolled every free, able-bodied white male citizen from 18 to 45: a 17-year-old boy was one year from the muster.",
+            "source_ref": "Militia Act of May 8, 1792, §1 (1 Stat. 271). Danny checks."
           },
           "images": [],
-          "source_line": "[source]"
+          "source_line": "1800 census, percent urban 6.1 (U.S. Census Bureau, Population: 1790 to 1990, Table 4); Militia Act of 1792; Post Office Act of 1792; Boston English High School opened 1821 (first public high school); coverture: Threads map stop 1765; apprenticeship indentures (bound until 21): standard form, period examples in state archives. Danny checks each."
         }
-      ]
+      ],
+      "dateline": "March 1801 · Washington City",
+      "moment": "Thomas Jefferson has just taken the oath. The capital moved to Washington last year. The 1800 census count is being printed."
+    },
+    {
+      "id": "1824",
+      "year": 1824,
+      "label": "1824",
+      "status": "open",
+      "skin": {
+        "medium": "newspaper",
+        "masthead": "THE EIGHTEEN TWENTY-FOUR",
+        "edition_line": "December 1824 . recreated front page"
+      },
+      "silhouettes": {
+        "image": "img/sil-1824.png",
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
+        "caption": "A young woman and a young man, 1824.",
+        "attire_note": "A young woman: a high-waisted gown, the waist starting to drop and the sleeves to fill out, a bonnet, a shawl. A young man: a tailcoat, a high collar and a cravat, and long trousers, which have replaced knee breeches for most young men. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
+        "kind": "ai",
+        "credit": "AI-made silhouette.",
+        "stand": {
+          "left": 61.7,
+          "bottom": 7.2,
+          "height": 78.7
+        }
+      },
+      "room": {
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
+        "image": "img/room-1824.jpg",
+        "panel_rect": {
+          "left": 42.188,
+          "top": 10.49,
+          "width": 18.359,
+          "height": 24.825
+        }
+      },
+      "who_is_not_in_this_room": "Enslaved young people: one in six, counted by age and sex under the name of the person who claims them. Native young people: not counted; in the Cherokee Nation, children are about to learn to read their own language from Sequoyah's new writing system. Free Black young people: in New York, held to a property test no white neighbor faces. Girls: everything above says \"he\" for a reason.",
+      "take_it_with_you": "Article I counted three of every five enslaved people toward a state's seats in the House. In the 1824 room, who is counted that way, and who is not counted at all?",
+      "cards": [
+        {
+          "id": "1824-t1",
+          "kind": "thread",
+          "line": "t1",
+          "unlocked": true,
+          "headline": "The Cherokee say no. The War Department opens an office.",
+          "lede": "In February, Cherokee leaders told the Secretary of War their nation would never give up any more land. In March, the same department set up an office to manage the Native nations.",
+          "body": [
+            "The 1820 census counted 1,538,022 enslaved people, about one person in six. In 1820 Congress also drew a line across the Louisiana Purchase at 36°30′: no slavery north of it, except in Missouri.",
+            "No woman votes anywhere in the country. New Jersey, the one state that once let some women vote, took that away in 1807.",
+            "The promise of 1776 is 48 years old (your Document 8). The Constitution still counts three of every five enslaved people toward a state's seats in the House (Document 14). Each arc of this thread is still open, and each is being argued in writing now."
+          ],
+          "oi": {
+            "fact": "On March 11, 1824, Secretary of War John C. Calhoun set up the office that became the Bureau of Indian Affairs.",
+            "source_ref": "Bureau of Indian Affairs, \"What is BIA's history?\" (bia.gov): \"administratively established the BIA within his department on March 11, 1824.\" Not in 11.2's documents (checked). Danny checks."
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "Threads map stops: 1776 the Declaration; 1787 who gets counted (11.2 Documents 8 and 14). 1820 census (U.S. Census Bureau). Missouri Compromise, March 6, 1820. John Ross to John C. Calhoun, Feb. 11, 1824 (Teaching American History). N.J. act of 1807 (the 1801 frame's badge)."
+        },
+        {
+          "id": "1824-t2",
+          "kind": "thread",
+          "line": "t2",
+          "unlocked": true,
+          "headline": "\"We have not interfered.\"",
+          "lede": "Last December, Monroe told Europe the Americas were closed to new colonies. This December he tells Congress the United States has not interfered with the new republics to its south.",
+          "body": [
+            "Washington's Farewell Address (1796) warned the country against permanent alliances (your Document 18). Since then Spain's colonies from Mexico to Chile have broken away and set up governments of their own.",
+            "Monroe answers with a warning to Europe, not an alliance: stay out of the Western Hemisphere. The United States has no navy strong enough to enforce it alone.",
+            "The one alliance the country ever made, with France in 1778, is walking the streets this year: Lafayette came back in August, and crowds met him in every city."
+          ],
+          "oi": {
+            "fact": "Monroe announced the Monroe Doctrine in his annual message to Congress on Dec. 2, 1823: the Americas were closed to new European colonies.",
+            "source_ref": "James Monroe, Seventh Annual Message, Dec. 2, 1823 (American Presidency Project, UCSB). Not in 11.2's documents; 11.3A's Day 1 context names it. Danny checks."
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "Threads map stop: 1796 Washington's Farewell Address (11.2 Document 18). Monroe, Eighth Annual Message, Dec. 7, 1824 (UCSB): \"we have not interfered\"; \"In August last he arrived at New York.\" Navy: Danny checks the wording."
+        },
+        {
+          "id": "1824-t3",
+          "kind": "thread",
+          "line": "t3",
+          "unlocked": true,
+          "headline": "Roads, canals, and the Constitution.",
+          "lede": "Monroe wants roads and canals that tie the Union together, but only by powers that keep \"a faithful regard to the great principles of our Constitution.\"",
+          "body": [
+            "Five years ago Chief Justice Marshall ruled that Congress has powers beyond the ones the Constitution lists (McCulloch v. Maryland, your Document 21). This March his Court ruled that Congress's power over trade between the states covers steamboats (Gibbons v. Ogden, the Outside Information box in Casefile C).",
+            "The president reads the Constitution more narrowly than his Chief Justice. How much should the national government build, and who decides what it may do?"
+          ],
+          "oi": {
+            "fact": "In 1822 President Monroe vetoed a bill to collect tolls on the Cumberland Road, saying the Constitution did not give Congress that power.",
+            "source_ref": "James Monroe, veto message, May 4, 1822 (American Presidency Project, UCSB). Not in 11.2's documents. Danny checks the date and wording."
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "Threads map stops: 1791 Bill of Rights; 1803 Marbury; 1819 McCulloch (11.2 Documents 17, 20, 21). Gibbons v. Ogden, March 2, 1824 (11.2 Casefile C's OI box). Monroe, Eighth Annual Message, Dec. 7, 1824 (UCSB)."
+        },
+        {
+          "id": "1824-t4",
+          "kind": "thread",
+          "line": "t4",
+          "unlocked": true,
+          "headline": "Four candidates. No majority. The House will choose.",
+          "lede": "The electors have voted and no one has the 131 votes needed to win. For the second time in the country's history, the House of Representatives will pick the president.",
+          "body": [
+            "The Twelfth Amendment (1804) sends the top three to the House, where each state casts one vote. The first time the House chose was 1801, after a tie (the 1801 frame).",
+            "Monroe is stepping down after two terms. No law makes him. Washington set that example (your Document 18), and Jefferson and Madison followed it."
+          ],
+          "oi": {
+            "fact": "In 1824 Andrew Jackson won the most electoral votes, 99, but not a majority; the House of Representatives chose John Quincy Adams on Feb. 9, 1825.",
+            "source_ref": "Electoral count of 1824 (Jackson 99, Adams 84, Crawford 41, Clay 37; 131 needed); House vote, Feb. 9, 1825. National Archives, Electoral College results. Danny checks."
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "Threads map stops: 1781 Articles; 1796 Washington steps down (11.2 Documents 11 and 18). U.S. Constitution, Twelfth Amendment (1804)."
+        },
+        {
+          "id": "1824-t5",
+          "kind": "thread",
+          "line": "t5",
+          "unlocked": false
+        },
+        {
+          "id": "1824-t6",
+          "kind": "thread",
+          "line": "t6",
+          "unlocked": false
+        },
+        {
+          "id": "1824-t7",
+          "kind": "thread",
+          "line": "t7",
+          "unlocked": true,
+          "headline": "Peace since 1815. Watch this thread anyway.",
+          "lede": "The country has been at peace since the war with Britain ended. The last test of this thread came at the end of that war, in New Orleans.",
+          "body": [
+            "The Sedition Act jailed editors in 1798 and expired in 1801 (your Document 19).",
+            "In the War of 1812, General Andrew Jackson put New Orleans under martial law. When a federal judge ordered a jailed man freed, Jackson had the judge arrested and jailed. After the war the judge fined the general for contempt of court. Jackson paid.",
+            "This year Jackson won the most electoral votes for president. Nothing on this line moves in 1824; the next time the country goes to war, this is the thread to open first."
+          ],
+          "oi": {
+            "fact": "In 1815 Judge Dominic Hall fined General Andrew Jackson $1,000 for jailing him under martial law in New Orleans; Congress paid Jackson back, with interest, in 1844.",
+            "source_ref": "U.S. District Court, Eastern District of Louisiana, court history (\"arrested by his troops and jailed for one night\"; the $1,000 fine; refunded with interest in 1844). Danny checks."
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "Threads map stops: 1791 Bill of Rights; 1798 Sedition Act (11.2 Documents 17 and 19). No stop on the map for 1815 (C30)."
+        },
+        {
+          "id": "1824-president",
+          "kind": "president",
+          "name": "James Monroe",
+          "term_line": "President since March 4, 1817; this is his second and last term",
+          "image": {
+            "src": null,
+            "alt": null,
+            "caption": "A real portrait, with its record on the source sheet (Samuel F. B. Morse's 1819 portrait, White House Collection, is the candidate). No AI-made likeness.",
+            "credit": null,
+            "kind": "archival",
+            "_danny_checked": false
+          },
+          "headline": "\"…in the highest degree prosperous and happy.\"",
+          "lede": "In his last annual message, Dec. 7, 1824, Monroe tells Congress that \"the situation of the United States is in the highest degree prosperous and happy.\"",
+          "said": [
+            {
+              "text": "\"To remove them from it by force, even with a view to their own security and happiness, would be revolting to humanity and utterly unjustifiable.\"",
+              "cite": "Eighth Annual Message, Dec. 7, 1824 (American Presidency Project, UCSB)",
+              "source_ref": "Eighth Annual Message, Dec. 7, 1824 (American Presidency Project, UCSB)"
+            },
+            {
+              "text": "\"In this, their career, however, we have not interfered, believing that every people have a right to institute for themselves the government which, in their judgment, may suit them best.\"",
+              "cite": "Eighth Annual Message, Dec. 7, 1824 (UCSB)",
+              "source_ref": "Eighth Annual Message, Dec. 7, 1824 (UCSB)"
+            },
+            {
+              "text": "\"The intercourse between every part of our Union should also be promoted and facilitated by the exercise of those powers which may comport with a faithful regard to the great principles of our Constitution.\"",
+              "cite": "Eighth Annual Message, Dec. 7, 1824 (UCSB)",
+              "source_ref": "Eighth Annual Message, Dec. 7, 1824 (UCSB)"
+            },
+            {
+              "text": "\"I can not conclude this communication, the last of the kind which I shall have to make…\"",
+              "cite": "Eighth Annual Message, Dec. 7, 1824 (UCSB)",
+              "source_ref": "Eighth Annual Message, Dec. 7, 1824 (UCSB)"
+            },
+            {
+              "text": "Public record, paraphrase: Monroe was Secretary of War when Jackson put New Orleans under martial law in December 1814.",
+              "cite": "Public record; Monroe was acting and then Secretary of War, 1814–15. Danny checks.",
+              "source_ref": "Public record; Monroe was acting and then Secretary of War, 1814–15. Danny checks."
+            }
+          ],
+          "footnote": null,
+          "oi": {
+            "fact": "Monroe ran for a second term in 1820 with no opponent and won every electoral vote but one.",
+            "source_ref": "Electoral count of 1820 (231 of 232; one New Hampshire elector voted for John Quincy Adams). National Archives. Danny checks."
+          },
+          "images": [],
+          "source_line": "White House Historical Association, \"The Enslaved Households of President James Monroe\" (\"about 60. or 70. young & old, male & female\"). Monroe's special message on removal, Jan. 1825 (UCSB): Danny checks the date and wording before this sentence prints.",
+          "label": "THE PRESIDENT CARD",
+          "record_line": "Public record, plain paraphrase: Monroe enslaved people all his adult life. In 1823 he estimated he owned \"about 60. or 70.\" people, and he brought enslaved workers to the White House. Weeks after calling removal by force \"utterly unjustifiable,\" he asked Congress to move the eastern nations west of the Mississippi by treaty.",
+          "record_src": "White House Historical Association, \"The Enslaved Households of President James Monroe\" (\"about 60. or 70. young & old, male & female\"). Monroe's special message on removal, Jan. 1825 (UCSB): Danny checks the date and wording before this sentence prints.",
+          "counter_voice": {
+            "label": "THE COUNTER-VOICE · a nation with no vote in Congress",
+            "who": "John Ross and the Cherokee delegation, to Secretary of War John C. Calhoun",
+            "when": "Washington, Feb. 11, 1824",
+            "line": "\"…the Cherokees have come to a decisive and unalterable conclusion, never to cede away any more lands.\"",
+            "after": "They wrote that land twice as large west of the Mississippi, or \"all the money now in the coffers of your treasury,\" would not make them trade their country. Ten months later the president told Congress that removal by force would be \"utterly unjustifiable.\" In 1838 the army marched the Cherokee west on the Trail of Tears.",
+            "source_line": "John Ross to John C. Calhoun, Feb. 11, 1824 (Teaching American History, \"Letter to John C. Calhoun\"; original in the Digital Library of Georgia). Danny checks the wording against the original."
+          }
+        },
+        {
+          "id": "1824-family",
+          "kind": "family",
+          "headline": "The average family, 1824",
+          "lede": "The 1820 census still lists households by the name of the head and sorts everyone else into boxes by age and sex. It is the first to ask how people earn a living: in agriculture, in commerce, or in manufactures.",
+          "body": [
+            "The 1820 census still lists households by the name of the head and sorts everyone else into boxes by age and sex. It is the first to ask how people earn a living: in agriculture, in commerce, or in manufactures.",
+            "The average free family still farms. Women have about six or seven children over a lifetime. Light is a candle or an oil lamp; the cloth is starting to come from a mill instead of the family's own spinning wheel."
+          ],
+          "census": [
+            {
+              "category": "People counted",
+              "value": "9,638,453 (1820 census)",
+              "source_ref": "1820 census (U.S. Census Bureau): total 9,638,453; enslaved 1,538,022; New York City 123,706; percent urban 7.2. Missouri admitted Aug. 10, 1821. Total fertility about 6.7 births per woman c. 1820 (Historical Statistics, series B5). Danny checks the fertility figure."
+            },
+            {
+              "category": "Enslaved people",
+              "value": "1,538,022 (about 1 in 6)",
+              "source_ref": "1820 census (U.S. Census Bureau): total 9,638,453; enslaved 1,538,022; New York City 123,706; percent urban 7.2. Missouri admitted Aug. 10, 1821. Total fertility about 6.7 births per woman c. 1820 (Historical Statistics, series B5). Danny checks the fertility figure."
+            },
+            {
+              "category": "Born in another country",
+              "value": "Not asked (the 1820 census counted only foreigners not yet naturalized)",
+              "source_ref": "1820 census (U.S. Census Bureau): total 9,638,453; enslaved 1,538,022; New York City 123,706; percent urban 7.2. Missouri admitted Aug. 10, 1821. Total fertility about 6.7 births per woman c. 1820 (Historical Statistics, series B5). Danny checks the fertility figure."
+            },
+            {
+              "category": "Living in a town or city (2,500+)",
+              "value": "7 of every 100",
+              "source_ref": "1820 census (U.S. Census Bureau): total 9,638,453; enslaved 1,538,022; New York City 123,706; percent urban 7.2. Missouri admitted Aug. 10, 1821. Total fertility about 6.7 births per woman c. 1820 (Historical Statistics, series B5). Danny checks the fertility figure."
+            },
+            {
+              "category": "States in the Union",
+              "value": "24 (Missouri, the 24th, in 1821)",
+              "source_ref": "1820 census (U.S. Census Bureau): total 9,638,453; enslaved 1,538,022; New York City 123,706; percent urban 7.2. Missouri admitted Aug. 10, 1821. Total fertility about 6.7 births per woman c. 1820 (Historical Statistics, series B5). Danny checks the fertility figure."
+            },
+            {
+              "category": "Biggest city",
+              "value": "New York, 123,706",
+              "source_ref": "1820 census (U.S. Census Bureau): total 9,638,453; enslaved 1,538,022; New York City 123,706; percent urban 7.2. Missouri admitted Aug. 10, 1821. Total fertility about 6.7 births per woman c. 1820 (Historical Statistics, series B5). Danny checks the fertility figure."
+            }
+          ],
+          "leaves_out": "The average leaves out the enslaved family, which the law does not recognize as a family and which can be sold apart; every Native family, still outside the count; and the free Black family, counted, and in most states kept from the vote.",
+          "oi": {
+            "fact": "The 1820 census was the first to ask how Americans earned a living: in agriculture, in commerce, or in manufactures.",
+            "source_ref": "1820 census (Aug. 7, 1820), counts of persons engaged in agriculture, commerce and manufactures (U.S. Census Bureau, 1821 publication of the Fourth Census). Danny checks."
+          },
+          "images": [],
+          "source_line": "1820 census (U.S. Census Bureau): total 9,638,453; enslaved 1,538,022; New York City 123,706; percent urban 7.2. Missouri admitted Aug. 10, 1821. Total fertility about 6.7 births per woman c. 1820 (Historical Statistics, series B5). Danny checks the fertility figure."
+        },
+        {
+          "id": "1824-young",
+          "kind": "young_person",
+          "headline": "Being 16 in 1824",
+          "lede": "What it was like to be sixteen in 1824, set beside what it's like to be a teenager now.",
+          "rows": [
+            {
+              "heading": "AT 16, I'D BE…",
+              "then": "On a farm, almost surely: 93 of every 100 Americans live outside any town of 2,500 people. A boy in a trade is still an apprentice, bound until 21. In New England the first big cotton mills are hiring farm girls: the mill at East Chelmsford, soon renamed Lowell, began weaving in 1823. A few months a year of district school; a public high school is almost unheard of. One young person in six is enslaved.",
+              "now": "In school: New York law requires it until at least 16. Working papers from 14."
+            },
+            {
+              "heading": "WHO DECIDED FOR ME",
+              "then": "My father, by law, until I turn 21. If I am bound out, my master. If I am a girl who marries, my husband: her property and wages are his (coverture). If I am enslaved, the person who claims to own me.",
+              "now": "Parents or guardians until 18, the age of majority in New York; the school for the school day."
+            },
+            {
+              "heading": "WHAT I'D WEAR",
+              "then": "A young woman: a high-waisted gown, the waist starting to drop and the sleeves to fill out, a bonnet, a shawl. A young man: a tailcoat, a high collar and a cravat, and long trousers, which have replaced knee breeches for most young men. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
+              "now": "Mostly your own choice, inside a dress code. Nothing here is about your closet."
+            },
+            {
+              "heading": "HOW I'D GET THE NEWS",
+              "then": "A newspaper: weekly in a small town, daily in New York. News moves by stagecoach and steamboat, days behind. There is no telegraph until 1844. Lafayette's landing in New York in August was in every paper.",
+              "now": "A phone. In 2023 about 95 of every 100 U.S. teens said they had access to a smartphone."
+            },
+            {
+              "heading": "HOW FAR I'D GO",
+              "then": "Up the Hudson by steamboat (since 1807). The Erie Canal is being dug across New York, and parts of it are open; the whole canal opens in October 1825. No railroad yet. A stagecoach on a good road, or a horse.",
+              "now": "A learner permit at 16 in New York; a bus, a car, a plane. Farther in an afternoon than the 1850 kid went in a year."
+            },
+            {
+              "heading": "WHAT WAS MINE TO DECIDE",
+              "then": "At 21, if I am a white man, I get the vote in most states, more and more without owning property. In New York the 1821 constitution let a white man vote if he paid a tax or served in the militia; a Black man needed $250 of property. A woman: no vote. At 18, the militia (the Militia Act of 1792 is still the law).",
+              "now": "The vote at 18 (Twenty-sixth Amendment, 1971). Your own wages are yours."
+            }
+          ],
+          "not_in_room": "Enslaved young people: one in six, counted by age and sex under the name of the person who claims them. Native young people: not counted; in the Cherokee Nation, children are about to learn to read their own language from Sequoyah's new writing system. Free Black young people: in New York, held to a property test no white neighbor faces. Girls: everything above says \"he\" for a reason.",
+          "oi": {
+            "fact": "In November 1824 Stephen Van Rensselaer founded a school in Troy, New York, for \"the application of science to the common purposes of life\"; today it is Rensselaer Polytechnic Institute.",
+            "source_ref": "Stephen Van Rensselaer to Samuel Blatchford, Nov. 5, 1824 (Rensselaer Polytechnic Institute Archives, transcript): \"the application of science to the common purposes of life\"; for \"sons and daughters of farmers and mechanics.\" Danny checks."
+          },
+          "images": [],
+          "source_line": "1820 census, percent urban 7.2 (U.S. Census Bureau, Population: 1790 to 1990, Table 4); 1820 census, 1,538,022 enslaved; Merrimack Manufacturing Company, East Chelmsford, 1823; Erie Canal, opened Oct. 26, 1825 (11.3A Document 3 is the canal, next unit); N.Y. Constitution of 1821, Art. II; Militia Act of 1792; Sequoyah's syllabary (completed 1821, adopted by the Cherokee Nation 1825). Danny checks each."
+        }
+      ],
+      "dateline": "December 1824 · Washington",
+      "moment": "President Monroe has sent Congress his last annual message. The electors have voted and no one has a majority; the House will choose the next president. Lafayette, who joined the Revolution at 19, is touring the country."
     },
     {
       "id": "1850",
       "year": 1850,
       "label": "1850",
-      "boundary": "end of 11.3A",
       "status": "open",
       "skin": {
         "medium": "newspaper",
         "masthead": "THE EIGHTEEN-FIFTY",
-        "edition_line": "Autumn 1850 · recreated front page"
-      },
-      "room": {
-        "image": "img/room-1850.jpg",
-        "image_alt": "An 1850 parlor: deep burgundy patterned wallpaper, a carved walnut cabinet with brass candlesticks and a small leather case, an oil lamp on a tall stand at left, a velvet curtain at the window, a horsehair sofa with a patchwork quilt at right, a small pumpkin on a floral carpet, and a gilt-framed print above the cabinet where the front page appears.",
-        "caption": "A comfortable middle-class American parlor as it might have looked in 1850.",
-        "kind": "ai",
-        "credit": "AI-made picture. Not a photograph.",
-        "panel": {
-          "base": [
-            1024,
-            572
-          ],
-          "x": 408,
-          "y": 103,
-          "w": 208,
-          "h": 149
-        },
-        "_prompt_ref": "In/live-from-pack-2026-10-26/live-from-image-prompts-v1.md · PROMPT 2",
-        "panel_image": {
-          "src": "img/panel-1850.jpg",
-          "alt": "An American landscape painting in the style of about 1850: a river valley in autumn, a covered wooden bridge, a white church steeple above a small town, hay in the fields, and a horse and cart on a dirt road.",
-          "caption": "A landscape picture in the style of an 1850 painting.",
-          "kind": "ai",
-          "credit": "AI-made picture. Not a real painting.",
-          "_source": "BK, Gemini, Josh's Prompt B, 2026-10-26 22:41; cropped to the canvas. In/live-from-pack-2026-10-26/throwback-panel-picture-1850-v1.jpg",
-          "_danny_checked": false
-        },
-        "panel_rect": {
-          "left": 39.453,
-          "top": 17.133,
-          "width": 21.094,
-          "height": 27.622
-        },
-        "_panel_rect_note": "Percent of the scene box. Measured off the chroma panel in the room art and grown 3px all round (Josh, 2026-10-27) so the picture over-covers it and no green survives at the edge."
+        "edition_line": "September 1850 . recreated front page"
       },
       "silhouettes": {
         "image": "img/sil-1850.png",
-        "image_alt": "Two solid black silhouettes: a young woman in a fitted bodice and a wide bell-shaped skirt with a bonnet, and a young man in a knee-length frock coat, straight trousers and a tall stovepipe hat.",
-        "caption": "A young woman and a young man, town family, 1850.",
-        "attire_note": "[Sam: one line. Danny checks against a costume source.]",
+        "image_alt": "Two solid black silhouettes, full length, facing forward: a young woman in a fitted bodice with sloping shoulders, a wide bell-shaped skirt to the floor, a bonnet tied under the chin and a small shawl; a young man in a knee-length frock coat over a waistcoat, straight trousers, a cravat and a tall stovepipe hat.",
+        "caption": "A young woman and a young man, 1850.",
+        "attire_note": "A young woman: a fitted bodice, a wide bell skirt over petticoats, long sleeves, a bonnet tied under the chin, a shawl. A young man: a frock coat over a waistcoat, straight trousers, a cravat, a tall stovepipe hat. (Attire note: Leo's, from the silhouette prompts; not yet checked against a costume collection. Danny's gate.)",
         "kind": "ai",
         "credit": "AI-made silhouette.",
         "stand": {
           "left": 2.3,
           "bottom": 7.0,
           "height": 70.0
+        }
+      },
+      "room": {
+        "image_alt": "A comfortable 1850 parlor: burgundy patterned wallpaper, a framed print above a low carved cabinet, an oil lamp with a glass globe on a stand at left, a window with a dark velvet curtain tied back, a carved sofa in dark fabric with a patchwork quilt over its arm at right, a floral woven carpet, brass candlesticks on the cabinet, and a small pumpkin at its foot.",
+        "image": "img/room-1850.jpg",
+        "panel_rect": {
+          "left": 39.453,
+          "top": 17.133,
+          "width": 21.094,
+          "height": 27.622
         },
-        "_stand_note": "Measured off the room art (Josh, 2026-10-27): left/bottom/height are percent of the scene box; the figures stand on the floor to the left of the hearth, clear of the panel."
+        "panel_image": {
+          "src": "img/panel-1850.jpg",
+          "alt": "A New England river village in the style of about 1850: a covered bridge over the river, a white church with a steeple, houses along the road and a horse and wagon, under an evening sky.",
+          "caption": "A river-village picture in the style of an 1850 painting.",
+          "kind": "ai",
+          "credit": "AI-made picture. Not a real painting.",
+          "_danny_checked": true
+        }
       },
-      "who_is_not_in_this_room": "[Sam: one sentence naming who this parlor leaves out in 1850.]",
-      "take_it_with_you": "[Sam: the one question a kid carries out of 1850 into the casefile.]",
-      "what_changed": {
-        "from": "1801",
-        "_note": "The strip that makes the drastic change the thing the kid sees (Leo's two-frame read, BK 21:35). Written in the course's SEQ words. Shows on the later frame only.",
-        "rows": [
-          {
-            "line": "t1",
-            "then": "[1801 in one line]",
-            "now": "[1850 in one line]"
-          },
-          {
-            "line": "t2",
-            "then": "[1801]",
-            "now": "[1850]"
-          },
-          {
-            "line": "t3",
-            "then": "[1801]",
-            "now": "[1850]"
-          },
-          {
-            "line": "t4",
-            "then": "[1801]",
-            "now": "[1850]"
-          },
-          {
-            "line": "t7",
-            "then": "[1801]",
-            "now": "[1850]"
-          }
-        ]
-      },
+      "who_is_not_in_this_room": "3,204,313 enslaved people, listed on separate schedules by age and sex, with no name. Native nations, still uncounted. The people of the Mexican Cession, Americans since 1848 by treaty, on land that was Mexico two years ago. The newest arrivals: nearly 1 in 10 people this year was born in another country, many of them from Ireland's famine years.",
+      "take_it_with_you": "O'Sullivan counts \"our yearly multiplying millions.\" The strip has the number. Who is in his millions, and who is not?",
       "cards": [
         {
           "id": "1850-t1",
           "kind": "thread",
           "line": "t1",
           "unlocked": true,
-          "headline": "[Thread 1 headline, 1850]",
-          "lede": "[Lede.]",
+          "headline": "California free. A fugitive law with no jury.",
+          "lede": "On Sept. 9 California entered the Union as a free state. On Sept. 18 the president signed a law letting a federal commissioner send an accused fugitive south with no jury and no chance to testify.",
           "body": [
-            "[Body.]"
+            "Twenty-three million people are counted this year; 3,204,313 of them are enslaved, on separate schedules that list them by age and sex, not by name.",
+            "Two years ago at Seneca Falls, women declared that a married woman is \"civilly dead\" in the eye of the law (your Document 11). Twelve years ago the army marched the Cherokee west on the Trail of Tears (Documents 5 and 6). The people of the Mexican Cession became Americans in 1848 whether they chose it or not.",
+            "The promise is still written down. Every arc of this thread is being argued out loud now."
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "Under the Fugitive Slave Act of 1850 a commissioner was paid $10 if he ruled the accused a slave and $5 if he ruled the person free.",
+            "source_ref": "Fugitive Slave Act, Sept. 18, 1850, §8 (9 Stat. 462). Danny checks."
           },
-          "images": [
-            {
-              "src": null,
-              "alt": "[alt]",
-              "caption": "[caption, date]",
-              "credit": "[Repository, record ID]",
-              "kind": "archival",
-              "_danny_checked": false
-            }
-          ],
+          "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "Threads map stops: 1776 promise; 1787 count; 1765 coverture. 11.3A Documents 5, 6, 11 (not outside information). 1850 census (U.S. Census Bureau). Acts of Sept. 9 and Sept. 18, 1850."
         },
         {
           "id": "1850-t2",
           "kind": "thread",
           "line": "t2",
           "unlocked": true,
-          "headline": "[Thread 2 headline, 1850]",
-          "lede": "[Lede.]",
+          "headline": "A canal across Central America: nobody builds it alone.",
+          "lede": "In April the United States and Britain agreed that neither would control a canal across Central America by itself (the Clayton-Bulwer Treaty).",
           "body": [
-            "[Body.]"
+            "The Monroe Doctrine (1823) told Europe to stay out of the Western Hemisphere. Then the United States fought a war with Mexico (1846–1848) and took a third of Mexico's land (Document 10 calls the war unjust).",
+            "In December, Fillmore will tell Congress it is \"an imperative duty not to interfere in the government or internal policy of other nations.\" The country intervenes next door and says it does not intervene."
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "The Clayton-Bulwer Treaty (April 19, 1850): the United States and Britain agreed that neither would build or control a Central American canal alone.",
+            "source_ref": "Clayton-Bulwer Treaty, signed April 19, 1850, Art. I (Avalon Project). Danny checks."
           },
           "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "Monroe Doctrine (1823); Threads map stop queued, not yet live (Josh building). 11.3A Document 10. Fillmore, First Annual Message, Dec. 2, 1850 (American Presidency Project, UCSB)."
         },
         {
           "id": "1850-t3",
           "kind": "thread",
           "line": "t3",
           "unlocked": true,
-          "headline": "[Thread 3 headline, 1850]",
-          "lede": "[Lede.]",
+          "headline": "Washington gives a railroad 2.6 million acres.",
+          "lede": "Congress has just handed Illinois about 2.6 million acres of public land to build the Illinois Central, the first federal land grant to a railroad.",
           "body": [
-            "[Body.]"
+            "Jackson vetoed the national bank in 1832 because, he said, it made \"the rich richer and the potent more powerful\" (Document 4). Eighteen years later the argument is about roads, harbors and rails: should the national government pay for them?",
+            "Fillmore's answer in December: \"I entertain no doubt of the authority of Congress to make appropriations for leading objects.\""
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "The Illinois Central land grant (Sept. 20, 1850) was the first federal land grant to a railroad: about 2.6 million acres.",
+            "source_ref": "Act of Sept. 20, 1850 (9 Stat. 466). Danny checks the acreage against the statute and the Illinois Central's own history."
           },
           "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "11.3A Document 4; Threads map stop 1819 McCulloch v. Maryland. Fillmore, First Annual Message, Dec. 2, 1850 (UCSB)."
         },
         {
           "id": "1850-t4",
           "kind": "thread",
           "line": "t4",
           "unlocked": true,
-          "headline": "[Thread 4 headline, 1850]",
-          "lede": "[Lede.]",
+          "headline": "A president dies. His successor signs what he would not.",
+          "lede": "Zachary Taylor died on July 9. Millard Fillmore took the oath the next day, and in September signed all five compromise laws.",
           "body": [
-            "[Body.]"
+            "Jackson vetoed the bank and let Georgia ignore the Supreme Court (Documents 4 and 7). Polk sent troops into disputed land and got his war (Document 10). The presidency has grown by what presidents did when the Constitution was silent.",
+            "Now the office changes hands by a death, for the second time in the country's history. No election chose the man who signed the fugitive law."
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "Zachary Taylor died July 9, 1850, and Millard Fillmore took the oath July 10, the second vice president to succeed on a death in office (after John Tyler, 1841).",
+            "source_ref": "Public record; Senate Historical Office; Fillmore, First Annual Message, Dec. 2, 1850 (\"suddenly called… by a painful dispensation of Divine Providence\"). Danny checks."
           },
           "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "11.3A Documents 4, 7, 10; WYNK Days 2–3. Threads map stop 1796."
         },
         {
           "id": "1850-t5",
@@ -567,152 +1314,213 @@
           "kind": "thread",
           "line": "t7",
           "unlocked": true,
-          "headline": "[Thread 7 headline, 1850]",
-          "lede": "[Lede.]",
+          "headline": "No war this year. Watch this thread anyway.",
+          "lede": "The United States is at peace. The last test of this thread was the Sedition Act, dead since 1801.",
           "body": [
-            "[Body.]"
+            "Peace has its own test. The new fugitive law orders bystanders to help a marshal catch an accused fugitive; a marshal who refused to act faced a $1,000 fine, and the accused cannot speak in their own defense.",
+            "Nothing on this line moves in 1850. The next time the country goes to war, this is the thread to open first."
           ],
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "The Fugitive Slave Act of 1850 (§5) let marshals summon bystanders to help seize an accused fugitive; a marshal who refused to act faced a $1,000 fine.",
+            "source_ref": "Fugitive Slave Act, Sept. 18, 1850, §5 and §7 (9 Stat. 462). Danny checks."
           },
           "images": [],
           "refs": {
             "stops": []
           },
-          "source_line": "[source]"
+          "source_line": "Threads map stops: 1791 Bill of Rights; 1798 Sedition Act."
         },
         {
           "id": "1850-president",
           "kind": "president",
           "name": "Millard Fillmore",
-          "term_line": "President from July 1850",
+          "term_line": "President since July 10, 1850",
           "image": {
             "src": null,
-            "alt": "[describes the portrait]",
-            "caption": "[title, artist, date]",
-            "credit": "[Repository, record ID, rights statement]",
+            "alt": null,
+            "caption": "A real portrait, with its record on the source sheet (a daguerreotype or an engraving from the Library of Congress Prints & Photographs is the candidate). No AI-made likeness.",
+            "credit": null,
             "kind": "archival",
             "_danny_checked": false
           },
-          "headline": "[What the president said, 1850]",
-          "lede": "[Lede.]",
+          "headline": "\"A final settlement.\"",
+          "lede": "In December Fillmore tells Congress the five laws are \"a settlement in principle and substance, a final settlement, of the dangerous and exciting subjects which they embraced.\"",
           "said": [
             {
-              "text": "[A sentence he actually wrote or signed.]",
-              "cite": "[document, date]",
-              "source_ref": "[record]"
+              "text": "\"They were adopted in the spirit of conciliation and for the purpose of conciliation.\"",
+              "cite": "First Annual Message, Dec. 2, 1850 (American Presidency Project, UCSB)",
+              "source_ref": "First Annual Message, Dec. 2, 1850 (American Presidency Project, UCSB)"
+            },
+            {
+              "text": "\"…it becomes an imperative duty not to interfere in the government or internal policy of other nations.\"",
+              "cite": "First Annual Message, Dec. 2, 1850 (UCSB)",
+              "source_ref": "First Annual Message, Dec. 2, 1850 (UCSB)"
+            },
+            {
+              "text": "\"I entertain no doubt of the authority of Congress to make appropriations for leading objects.\"",
+              "cite": "First Annual Message, Dec. 2, 1850 (UCSB)",
+              "source_ref": "First Annual Message, Dec. 2, 1850 (UCSB)"
+            },
+            {
+              "text": "\"Being suddenly called in the midst of the last session of Congress by a painful dispensation of Divine Providence…\"",
+              "cite": "First Annual Message, Dec. 2, 1850 (UCSB)",
+              "source_ref": "First Annual Message, Dec. 2, 1850 (UCSB)"
+            },
+            {
+              "text": "Public record, paraphrase: Fillmore signed the Fugitive Slave Act on Sept. 18, 1850, and ordered it enforced.",
+              "cite": "9 Stat. 462; Fillmore's proclamations and orders, 1850–51 (UCSB). Danny checks the enforcement order.",
+              "source_ref": "9 Stat. 462; Fillmore's proclamations and orders, 1850–51 (UCSB). Danny checks the enforcement order."
             }
           ],
-          "footnote": "Zachary Taylor was president until he died in office in July 1850. [Sam's wording; BK 21:57: more press to Fillmore, a footnote for Taylor.]",
+          "footnote": "Zachary Taylor was president from March 4, 1849, until he died in office on July 9, 1850. His sixteen months were spent largely on the fight over whether slavery would spread into the land taken from Mexico; the laws were signed by Fillmore, not by him.",
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "Fillmore signed the Fugitive Slave Act on September 18, 1850.",
+            "source_ref": "9 Stat. 462, approved Sept. 18, 1850. Danny checks."
           },
           "images": [],
-          "source_line": "[source]"
+          "source_line": "Senate Historical Office; Whig convention, June 1852. Danny checks.",
+          "label": "THE PRESIDENT CARD",
+          "record_line": "Public record, plain paraphrase: Fillmore was never elected president. He was vice president for sixteen months, served out Taylor's term, and his own party passed him over in 1852.",
+          "record_src": "Senate Historical Office; Whig convention, June 1852. Danny checks.",
+          "counter_voice": {
+            "label": "THE COUNTER-VOICE",
+            "who": "The Boston Vigilance Committee, to the \"Colored People of Boston\"",
+            "when": "Broadside, April 24, 1851 (seven months after the law)",
+            "line": "\"CAUTION!! Colored People of Boston, one & all, you are hereby respectfully cautioned and advised, to avoid conversing with the Watchmen and Police Officers of Boston…\"",
+            "after": "The poster warned that under the new law Boston's own police were \"empowered to act as kidnappers and slave catchers.\" The president called the law a final settlement; the people it was aimed at called it a hunt.",
+            "source_line": "Library of Congress, Printed Ephemera Collection (Theodore Parker, Boston, 1851). Danny confirms the record, date and exact wording; the card quotes only what the record shows."
+          }
         },
         {
           "id": "1850-family",
           "kind": "family",
-          "headline": "[The average American family, 1850]",
-          "lede": "[Lede, and who 'average' leaves out.]",
+          "headline": "The average family, 1850",
+          "lede": "This census is the first to write down every free person by name, where each was born, and whether each child went to school. A family can be found by name for the first time. An enslaved family cannot: it is counted on a separate schedule by age and sex.",
           "body": [
-            "[Body.]"
+            "This census is the first to write down every free person by name, where each was born, and whether each child went to school. A family can be found by name for the first time. An enslaved family cannot: it is counted on a separate schedule by age and sex.",
+            "Women now have about five children over a lifetime, down from seven. Fifteen of every 100 people live in a town or city. Nearly one in ten was born in another country."
           ],
           "census": [
             {
-              "category": "People in the United States",
-              "value": "[n]",
-              "source_ref": "[1850 census table]"
+              "category": "People counted",
+              "value": "23,191,876",
+              "source_ref": "1850 census (June 1, 1850; U.S. Census Bureau); total fertility rate c. 1850 about 5.4 (Historical Statistics, series B5). Danny checks."
             },
             {
-              "category": "Living on farms",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "Enslaved people",
+              "value": "3,204,313 (about 1 in 7)",
+              "source_ref": "1850 census (June 1, 1850; U.S. Census Bureau); total fertility rate c. 1850 about 5.4 (Historical Statistics, series B5). Danny checks."
             },
             {
-              "category": "Living in cities",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "Born in another country",
+              "value": "About 2.2 million (9.7 of every 100; asked for the first time)",
+              "source_ref": "1850 census (June 1, 1850; U.S. Census Bureau); total fertility rate c. 1850 about 5.4 (Historical Statistics, series B5). Danny checks."
             },
             {
-              "category": "Held in slavery",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "Living in a town or city (2,500+)",
+              "value": "15 of every 100",
+              "source_ref": "1850 census (June 1, 1850; U.S. Census Bureau); total fertility rate c. 1850 about 5.4 (Historical Statistics, series B5). Danny checks."
             },
             {
-              "category": "Could vote",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "States in the Union",
+              "value": "31 (California, Sept. 9)",
+              "source_ref": "1850 census (June 1, 1850; U.S. Census Bureau); total fertility rate c. 1850 about 5.4 (Historical Statistics, series B5). Danny checks."
             },
             {
-              "category": "Under 20",
-              "value": "[n]",
-              "source_ref": "[record]"
+              "category": "Biggest city",
+              "value": "New York, 515,547",
+              "source_ref": "1850 census (June 1, 1850; U.S. Census Bureau); total fertility rate c. 1850 about 5.4 (Historical Statistics, series B5). Danny checks."
             }
           ],
+          "leaves_out": "The average leaves out the enslaved family (no name, no legal marriage, and this year's law reaching north for it); every Native family; the families of the Mexican Cession, counted for the first time in a country they did not choose; and the newest arrivals, counted but not yet welcome.",
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "In 1850, nearly 1 in 10 people in the United States was born in another country: the first year the census asked.",
+            "source_ref": "U.S. Census Bureau, Historical Census Statistics on the Foreign-Born Population, 1850–2000 (Working Paper 81), Table 1: 1850, 9.7 percent. Danny checks."
           },
           "images": [],
-          "source_line": "[source]"
+          "source_line": "1850 census (June 1, 1850; U.S. Census Bureau); total fertility rate c. 1850 about 5.4 (Historical Statistics, series B5). Danny checks."
         },
         {
           "id": "1850-young",
           "kind": "young_person",
-          "headline": "[Being 16 in 1850]",
-          "lede": "[Lede.]",
+          "headline": "Being 16 in 1850",
+          "lede": "What it was like to be sixteen in 1850, set beside what it's like to be a teenager now.",
           "rows": [
             {
-              "heading": "School",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "AT 16, I'D BE…",
+              "then": "Most likely still on a farm: 85 of every 100 Americans live outside any town. But a mill is possible now. In Lowell, Massachusetts, girls started in the mills at 10 or 11 (Lucy Larcom started at 11, in 1835), twelve hours a day, six days a week. This year's census asks, for the first time, whether you attended school in the past year. A public high school is still rare. One young person in seven is enslaved, and this year's law reaches into the free states to take back anyone who ran.",
+              "now": "In school: New York law requires it until at least 16. Working papers from 14."
             },
             {
-              "heading": "Work",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "WHO DECIDED FOR ME",
+              "then": "My father, by law, until 21. In a mill, the overseer and the bell. A married woman is \"civilly dead\" in the eye of the law: the words are Seneca Falls', 1848 (Document 11). If I am enslaved, the person who claims to own me, and now any federal commissioner.",
+              "now": "Parents or guardians until 18, the age of majority in New York; the school for the school day."
             },
             {
-              "heading": "Home",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "WHAT I'D WEAR",
+              "then": "A young woman: a fitted bodice, a wide bell skirt over petticoats, long sleeves, a bonnet tied under the chin, a shawl. A young man: a frock coat over a waistcoat, straight trousers, a cravat, a tall stovepipe hat. (Attire note: Leo's, from the silhouette prompts; not yet checked against a costume collection. Danny's gate.)",
+              "now": "Mostly your own choice, inside a dress code. Nothing here is about your closet."
             },
             {
-              "heading": "Free time",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "HOW I'D GET THE NEWS",
+              "then": "A daily paper for a penny in a city (the New York Sun since 1833). News moves by telegraph since 1844, so a city paper can print yesterday's news from Washington. In the country, still days behind.",
+              "now": "A phone. In 2023 about 95 of every 100 U.S. teens said they had access to a smartphone."
             },
             {
-              "heading": "What you wear",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "HOW FAR I'D GO",
+              "then": "By canal boat, steamboat or train. The Erie Canal has run across New York since 1825, and the country has about 9,000 miles of railroad this year, up from 23 miles in 1830. Last year tens of thousands went to California by wagon or by ship.",
+              "now": "A learner permit at 16 in New York; a bus, a car, a plane. Farther in an afternoon than the 1850 kid went in a year."
             },
             {
-              "heading": "Who decides for you",
-              "then": "[then]",
-              "now": "[now]"
+              "heading": "WHAT WAS MINE TO DECIDE",
+              "then": "At 21, if I am a white man, the vote, in almost every state without owning property now. If I am a Black man in New York, only with $250 of property (the 1821 state constitution). If I am a woman, no vote, and my wages go to my husband. I can go west; I can sign on to a ship; I can sign a mill contract.",
+              "now": "The vote at 18 (Twenty-sixth Amendment, 1971). Your own wages are yours."
             }
           ],
+          "not_in_room": "3,204,313 enslaved people, listed on separate schedules by age and sex, with no name. Native nations, still uncounted. The people of the Mexican Cession, Americans since 1848 by treaty, on land that was Mexico two years ago. The newest arrivals: nearly 1 in 10 people this year was born in another country, many of them from Ireland's famine years.",
           "oi": {
-            "fact": "[OI fact]",
-            "source_ref": "[record]"
+            "fact": "Boston opened the first public high school in the country in 1821; in 1850 a public high school was still rare.",
+            "source_ref": "Boston English High School, est. 1821 (Boston Public Schools; Massachusetts Historical Society). \"Still rare\": U.S. Dept. of Education, 120 Years of American Education (NCES 93-442). Danny checks."
           },
           "images": [],
-          "source_line": "[source]"
+          "source_line": "1850 census, percent urban 15.4 (U.S. Census Bureau, Population: 1790 to 1990, Table 4); Lucy Larcom, A New England Girlhood (1889); Massachusetts act of 1842 (children under 12, ten hours a day); New York Sun, 1833; Morse telegraph, 1844; railroad mileage (Historical Statistics of the United States, series Q321: 1830, 23 mi.; 1850, 9,021 mi.); N.Y. Constitution of 1821, Art. II §1 ($250 for \"men of colour\"). Danny checks each."
         }
-      ]
-    },
-    {
-      "id": "1877",
-      "year": 1877,
-      "label": "1877",
-      "boundary": "end of 11.3B",
-      "status": "building",
-      "_note": "Placeholder boundary so the selector shows a locked future moment. Sam sets the real boundaries."
+      ],
+      "dateline": "September 1850 · Washington",
+      "moment": "President Taylor died in July. Millard Fillmore is signing the five laws Congress calls a compromise. The census takers have been out since June 1.",
+      "what_changed": {
+        "from": "1801",
+        "_shape_note": "SEQ-category rows (turning point / cause-effect / similarity-difference), not per-thread-line then/now -- flagged for Josh to wire.",
+        "rows": [
+          {
+            "category": "TURNING POINT",
+            "text": "Before 1825, nothing moved faster than a horse or the wind. The Erie Canal opened in 1825 (Document 3); then came the railroad. After: about 9,000 miles of track by 1850, and news by telegraph since 1844. A kid in 1850 can get farther in a day than a kid in 1801 could in a week."
+          },
+          {
+            "category": "CAUSE AND EFFECT",
+            "text": "The country kept buying and taking land: Louisiana (1803), Texas (1845), the Mexican Cession (1848). Every new piece raised the same question, whether slavery goes with it. The effect in 1850 is a Congress that has to pass five laws at once to keep the Union together, and a fugitive law that reaches into the free states."
+          },
+          {
+            "category": "SIMILARITY / DIFFERENCE",
+            "text": "Similar: in both years no woman votes, enslaved people are counted but not named, and Native nations are not counted at all. Different: the country grew from 5.3 million people to 23.2 million, and the enslaved population from 893,602 to 3,204,313. Watch the trap: the share of people enslaved fell (1 in 6 to 1 in 7) while the number more than tripled."
+          }
+        ]
+      }
     }
   ],
-  "lines_ref": "content/threads-us11r.json · lines[] (the seven Threads, their numbers, names and questions). Not copied here; the room reads the same file the map reads."
+  "_schema_notes": [
+    "Era list is 1607/1763/1801/1824/1850, no 1877 -- confirmed against Josh's 10/27 12:35 memo ('Yours is right').",
+    "President/leader card carries two fields beyond Josh's placeholder: record_line/record_src (the plain-paraphrase accountability sentence -- what each man did alongside what he said) and counter_voice (the counter-voice quote block: present for 1607, 1763, 1824, 1850; 1801's own is the Absalom Jones petition). Dropping them cuts content already blessed and cleared.",
+    "Family card carries one extra field: leaves_out (who the census average excludes).",
+    "1850 what_changed is SEQ-category rows (turning point/cause-effect/similarity-difference), the richer, already-written form -- not Josh's placeholder's per-thread-line then/now shape.",
+    "images[] left empty on every card: the words files' own images= lists are keyed by a loose label, not a card id, and several (dated front-page candidates, a broadside tied to a counter-voice) have no clean 1:1 card home in this shape. Left for Danny/Josh to match against each words file's images= list, which carries repo/why/alt/flag already written."
+  ],
+  "_josh": {
+    "ported_from": "throwback-us11r-BUILT-2026-10-27.json",
+    "danny_md5": "c158387e228c76d50bace9d95f455621",
+    "danny_cleared": "2026-10-27 13:39 EDT",
+    "bk_yes": "2026-10-27 13:41 EDT",
+    "ported": "2026-10-27",
+    "josh_added": "room.image, room.panel_rect, room.panel_image, silhouettes.image, silhouettes.stand; renamed _dateline/_moment/_label to dateline/moment/label so strip-notes does not drop page content. No copy changed."
+  }
 }
