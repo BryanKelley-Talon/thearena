@@ -513,6 +513,9 @@ export function GuidedWrite({ pack, accent, onComplete }) {
   const warnings = [...new Set(docs.map(d => d?.before_we_talk).filter(Boolean))]
   const warning = warnings.length === 1 ? warnings[0] : null
   const checklist = pack?.checklist || []
+  const SCORED = /counts? for|completion|graded|\bbonus\b|\bscore[sd]?\b|\bpoints?\b|gradebook/i
+  const badge = String(pack?.badge || '').split(/\s+[-\u2013\u2022\u00b7]\s+/)
+    .filter(seg => seg.trim() && !SCORED.test(seg)).join(' \u00b7 ') || null
   const starter = String(pack?.sentence_starter || '').replace(/_{2,}\s*$/, '').trimEnd()
   const seed = starter ? `${starter} ` : ''
   const [text, setText] = useState(seed)
@@ -527,7 +530,12 @@ export function GuidedWrite({ pack, accent, onComplete }) {
           the badge (LEVEL 5 · COUNTS FOR COMPLETION · ON YOUR OWN) and the intro
           ("No hints, no starter, no checklist"). Without them a cold rung reads as a
           broken L4 — same page, scaffold mysteriously missing. */}
-      {pack.badge && <div className="rep-badge">{pack.badge}</div>}
+      {/* BK, 2026-10-27 12:32: "take the references to kid being scored." The Arena's own
+          standing rule is that nothing in here reads as a score (CARRY-FORWARD: nothing is
+          graded, a miss is information); a desk badge had drifted from it. Any segment of a
+          badge that reads as scoring is dropped at render, so the desk's file is untouched
+          and the rung still names itself. */}
+      {badge && <div className="rep-badge">{badge}</div>}
       {pack.intro && <p className="rep-intro">{pack.intro}</p>}
       {/* BEFORE WE TALK: the desk's framing for a document about real people and real
           harm. It is written per document and is usually the same line for all of them,
