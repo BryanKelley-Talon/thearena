@@ -116,6 +116,11 @@ export const LEVEL_TYPES = {
   guided_write:   { name: 'Write it',          blurb: 'Two or three sentences, with the checklist right beside you.' },
   enrichment:     { name: 'Gold dust',         blurb: 'Already writing at a 4? Here’s what gets it to a 5.' },
 }
+// A COLD rung is a guided_write with the scaffold taken away, so the L4 line ("with the
+// checklist right beside you") is false on it — there is no checklist. Its name and blurb are
+// the authoring desk's own words, from the pack's badge and intro, never written here.
+const COLD_TYPE = { name: 'On your own', blurb: 'No hints, no starter, no checklist. This is the one you do the way you would on the exam.' }
+export const levelType = lv => (lv?.cold === true ? COLD_TYPE : LEVEL_TYPES[lv?.type])
 
 // ── THE GAUGE ─────────────────────────────────────────────────────────────
 // Brass face is raster art (Gemini, BK approved 2026-09-24). Everything that
@@ -234,7 +239,7 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
       </div>
       <ol className="ladder">
         {levels.map(lv => {
-          const t = LEVEL_TYPES[lv.type]
+          const t = levelType(lv)
           const open = levelOpen(lv)
           const isDone = done.includes(lv.level)
           const body = (
@@ -466,6 +471,14 @@ export function SentenceBuild({ pack, onComplete }) {
 // Checklist visible the whole time, not a hint you ask for. What the kid types
 // is React state and nothing else: never stored, never sent, gone with the tab.
 export function GuidedWrite({ pack, accent, onComplete }) {
+  // L4 carries one document in `source_text`; a cold rung carries several in `documents[]`.
+  // Both are read the same way here, so neither shape renders an empty source box.
+  const docs = (pack?.documents || []).length
+    ? pack.documents
+    : (pack?.source_text ? [{ source_document: pack.source_document, source_text: pack.source_text }] : [])
+  const warnings = [...new Set(docs.map(d => d?.before_we_talk).filter(Boolean))]
+  const warning = warnings.length === 1 ? warnings[0] : null
+  const checklist = pack?.checklist || []
   const starter = String(pack?.sentence_starter || '').replace(/_{2,}\s*$/, '').trimEnd()
   const seed = starter ? `${starter} ` : ''
   const [text, setText] = useState(seed)
@@ -476,29 +489,47 @@ export function GuidedWrite({ pack, accent, onComplete }) {
   const ready = written >= MIN
   return (
     <div className="write">
-      <figure className="stimulus" style={{ borderColor: `${accent}44` }}>
-        {pack.source_document && <div className="doc-tag">{pack.source_document}</div>}
-        <div className="stimulus-text"><p>{pack.source_text}</p></div>
-      </figure>
+      {/* A COLD rung says what it is before the kid starts, in the desk's own words:
+          the badge (LEVEL 5 · COUNTS FOR COMPLETION · ON YOUR OWN) and the intro
+          ("No hints, no starter, no checklist"). Without them a cold rung reads as a
+          broken L4 — same page, scaffold mysteriously missing. */}
+      {pack.badge && <div className="rep-badge">{pack.badge}</div>}
+      {pack.intro && <p className="rep-intro">{pack.intro}</p>}
+      {/* BEFORE WE TALK: the desk's framing for a document about real people and real
+          harm. It is written per document and is usually the same line for all of them,
+          so it shows once, above them, and never gets lost between two documents. */}
+      {warning && <p className="rep-before">{warning}</p>}
+      {/* One document or several. A cold rung carries its documents inline (plural), which
+          is how it satisfies BK's 2026-10-27 document rule without a casefile resolver:
+          its documents sit OUTSIDE the casefile by design. */}
+      {docs.map((d, i) => (
+        <figure key={i} className="stimulus" style={{ borderColor: `${accent}44` }}>
+          {d.source_document && <div className="doc-tag">{d.source_document}</div>}
+          {/* If the documents carry DIFFERENT framings, each one rides its own document
+              rather than being dropped for not matching the others. */}
+          {!warning && d.before_we_talk && <p className="rep-before in-doc">{d.before_we_talk}</p>}
+          <div className="stimulus-text"><p>{d.source_text}</p></div>
+        </figure>
+      ))}
       <p className="rep-prompt">{pack.prompt}</p>
-      <div className="write-grid">
+      <div className={checklist.length ? 'write-grid' : 'write-grid solo'}>
         <div>
           <label className="rep-label" htmlFor="l4-write">Your answer</label>
           <textarea id="l4-write" className="rep-box" rows={7} value={text} readOnly={done}
                     onChange={e => setText(e.target.value)} />
           <p className="rep-why">Nothing you write here is saved or sent. It’s gone when you close the tab.</p>
         </div>
-        <aside className="checklist" aria-label="Checklist">
+        {checklist.length > 0 && <aside className="checklist" aria-label="Checklist">
           <div className="rep-label">Before you’re done</div>
           <ul className="rep-check">
-            {(pack.checklist || []).map((c, i) => (
+            {checklist.map((c, i) => (
               <li key={i}><label>
                 <input type="checkbox" checked={!!checks[i]} onChange={e => setChecks(s => ({ ...s, [i]: e.target.checked }))} />
                 <span>{c}</span>
               </label></li>
             ))}
           </ul>
-        </aside>
+        </aside>}
       </div>
       {!done ? (
         <button type="button" className="rep-go" disabled={!ready} onClick={() => { setDone(true); onComplete() }}>
@@ -508,7 +539,10 @@ export function GuidedWrite({ pack, accent, onComplete }) {
         <div className="rep-reveal" role="status">
           <h4>One strong answer</h4>
           <p className="rep-exemplar">{pack.model_response}</p>
-          <p className="rep-focus">Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?</p>
+          {/* The checklist line is false on a cold rung — there is no checklist and no "three". */}
+          <p className="rep-focus">{checklist.length
+            ? 'Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?'
+            : 'Hold yours next to it. What did this one do that yours didn’t?'}</p>
           <p className="level-done">Level done. Head back to the gauge for the next one.</p>
         </div>
       )}
@@ -714,6 +748,19 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 .practice-row.off{opacity:.5;cursor:default}
 .skill-about{color:var(--white);font-size:18px;line-height:1.55;padding:14px 16px;border-left:3px solid var(--gold);
   background:color-mix(in srgb,var(--gold) 8%,transparent);border-radius:0 8px 8px 0;margin:0 0 18px}
+
+/* ---------- A COLD RUNG: badge, intro, and the BEFORE WE TALK framing ---------- */
+/* The badge and intro are the desk's own words naming what this rung is. BEFORE WE TALK is
+   set apart from the document it frames — it is about how to treat real people, not evidence
+   to read — so it is not styled as a source. With no checklist the write column runs full
+   width rather than leaving an empty aside. */
+.rep-badge{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.12em;font-size:13px;
+  font-weight:700;color:var(--canvas);background:var(--gold);display:inline-block;padding:3px 9px;border-radius:5px;margin:0 0 10px}
+.rep-intro{color:var(--white);font-size:17px;line-height:1.55;margin:0 0 14px}
+.rep-before{color:var(--white);font-size:16px;line-height:1.55;margin:0 0 14px;padding:11px 14px;
+  border-left:3px solid var(--arena-signal);background:color-mix(in srgb,var(--arena-signal) 10%,transparent);border-radius:0 8px 8px 0}
+.rep-before.in-doc{margin:0 0 10px;font-size:15px}
+.write-grid.solo{grid-template-columns:1fr}
 
 /* ---------- REVIEW EXTRAS: the term to know cold, and the rooms to work it in ---------- */
 /* Gold-edged so it reads as the one thing on the page that is not optional, and built from

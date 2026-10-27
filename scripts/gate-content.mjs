@@ -147,7 +147,23 @@ function checkLadder(f, d, type) {
     }
     need('correct_sentence')
   } else if (type === 'guided_write') {
-    need('source_text'); need('prompt'); need('model_response', "guided_write: no 'model_response' — 'I'm done' would reveal nothing.")
+    // L4 carries ONE document (source_text + source_document). A cold rung may carry SEVERAL,
+    // in `documents[]`, each with its own source_document, source_text and BEFORE WE TALK line
+    // (Sam's us11r 11.3A L5, two documents). Either shape is fine; what is never fine is a
+    // write rung with no document on the page at all, so exactly one of the two must be there
+    // and every document in the plural shape must carry its text and its source pointer.
+    const plural = Array.isArray(d.documents) && d.documents.length
+    if (plural) {
+      d.documents.forEach((doc, i) => {
+        const w = `documents[${i}]`
+        if (!doc?.source_text || !String(doc.source_text).trim()) fail(f, `${w}: no source_text — the rung would show an empty document box.`)
+        if (!doc?.source_document) fail(f, `${w}: source text with no source_document pointer (canon 6, quotation provenance).`)
+      })
+    } else {
+      need('source_text')
+      if (!d.source_document) fail(f, 'guided_write: source text with no source_document pointer (canon 6, quotation provenance).')
+    }
+    need('prompt'); need('model_response', "guided_write: no 'model_response' — 'I'm done' would reveal nothing.")
     // A COLD rung (`cold: true`) is the same activity with the scaffold taken away: the kid writes
     // against a document they have not seen, with no checklist and no sentence starter. That is the
     // whole point of it, so the L4 scaffold contract is inverted rather than waived — a cold rung
@@ -160,7 +176,6 @@ function checkLadder(f, d, type) {
       if ((d.checklist || []).length) fail(f, 'cold guided_write: carries a checklist — a cold rung is the one with the scaffold taken away.')
       if (d.sentence_starter) fail(f, 'cold guided_write: carries a sentence_starter — a cold rung starts from the blank page.')
     } else if (!(d.checklist || []).length) fail(f, 'guided_write: no checklist — it is the scaffold at L4.')
-    if (!d.source_document) fail(f, 'guided_write: source text with no source_document pointer (canon 6, quotation provenance).')
   } else if (type === 'enrichment') {
     for (const t of d.tidbits || []) if (!t.source_pointer) fail(f, `tidbit ${t.id}: no source_pointer (canon 6, quotation provenance).`)
     for (const e of d.exemplars || []) if (![4, 5].includes(e.level)) fail(f, `exemplar level '${e.level}' — must be 4 or 5.`)
@@ -215,7 +230,10 @@ function checkDocVisible(f, d) {
     if (have && n) { fail(f, `item ${it.n ?? it.id}: names Document ${Number(n[1])}, which the casefile pack does not carry — "${p.slice(0, 70)}"`); continue }
     fail(f, `item ${it.n ?? it.id}: asks about a document it does not show — "${p.slice(0, 70)}"`)
   }
-  if (d.prompt && DOC_RX.test(d.prompt) && !d.source_text) fail(f, `prompt asks about a document it does not show.`)
+  // The prompt may point at its documents either way: one inline `source_text`, or several in
+  // `documents[]` (a cold rung). Both put the document on the kid's screen.
+  const showsDocs = !!d.source_text || (Array.isArray(d.documents) && d.documents.some(x => x?.source_text))
+  if (d.prompt && DOC_RX.test(d.prompt) && !showsDocs) fail(f, `prompt asks about a document it does not show.`)
   // enrichment try_it: the shell shows the ladder's L4 source above L5, so this is covered
   // when the ladder has a guided_write level; ENRICH_OK carries that fact in from the manifest.
   if (d.try_it?.prompt && DOC_RX.test(d.try_it.prompt) && !ENRICH_OK.has(f)) fail(f, `try_it asks about a document the page does not show.`)

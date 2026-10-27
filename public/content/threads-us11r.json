@@ -855,7 +855,7 @@
       "what_happened": "Washington steps down after two terms, setting a limit presidents follow for almost 150 years. He warns the country against permanent alliances with foreign nations and against political parties.",
       "document": {
         "title": "Washington's Farewell Address",
-        "citation": "Source: President George Washington, Farewell Address, 1796 (adapted)",
+        "citation": "Source: George Washington, Farewell Address, 1796 (adapted)",
         "source_ref": "NYSED U.S. History and Government Regents, August 2023, Part I, items 5–6",
         "excerpt": null
       },
@@ -896,7 +896,7 @@
           "explain": "His advice shaped American foreign policy for more than a century. Every later debate on this thread about when to intervene starts from Washington's answer: as little as possible."
         }
       },
-      "status": "building",
+      "status": "open",
       "image": null,
       "image_alt": null,
       "_note": "Transfer point (t4 first, so the question is Thread 4's). Card key document for Threads 2 and 4. STIMULUS_BANK/_catalog_nysed-ushg-0823.json items 5-6. Casefile C Day 11."
@@ -910,7 +910,7 @@
       "what_happened": "With war with France feared, Congress makes it a crime to publish false, scandalous and malicious writing against the government. Newspaper editors who criticize President Adams are jailed.",
       "document": {
         "title": "The Sedition Act",
-        "citation": "Source: An Act for the Punishment of Certain Crimes (the Sedition Act), July 14, 1798 (adapted)",
+        "citation": "Source: The Sedition Act, July 14, 1798 (adapted)",
         "source_ref": "United States Statutes at Large, vol. 1, p. 596 (public domain)",
         "excerpt": null
       },
@@ -927,7 +927,7 @@
       "exemplar": {
         "context": "In 1798, the United States feared war with France, and the Federalists in power faced harsh criticism from Republican newspapers.",
         "claim": "The Sedition Act tested the First Amendment by making some criticism of the government a crime.",
-        "evidence": "It punished \"any false, scandalous and malicious writing or writings against the government of the United States,\" Congress or the President.",
+        "evidence": "It punished any \"false, scandalous and malicious writing\" against the government of the United States, Congress or the President.",
         "explain": "Newspaper editors who criticized President Adams went to jail only seven years after \"Congress shall make no law.\" Fear of war was used to limit speech, the exact conflict this thread follows."
       },
       "refs": [
@@ -940,10 +940,10 @@
           "label": "AMENDMENT 1 · TESTED HERE"
         }
       ],
-      "status": "building",
+      "status": "open",
       "image": null,
       "image_alt": null,
-      "_note": "Card key document, Thread 7 'First Test'. New public-domain cut pending for Casefile C Day 11; citation to be matched to the cut."
+      "_note": "Card key document, Thread 7 'First Test'. Casefile C Day 11, Document 19; citation and quote matched to the printed cut 2026-10-24."
     },
     {
       "id": "s-1803-marbury",
@@ -954,7 +954,7 @@
       "what_happened": "For the first time, the Supreme Court strikes down part of a law passed by Congress. Chief Justice John Marshall claims the power of judicial review: the Court decides what the Constitution means.",
       "document": {
         "title": "Marbury v. Madison",
-        "citation": "Source: Marbury v. Madison, 5 U.S. (1 Cranch) 137 (1803)",
+        "citation": "Source: Marbury v. Madison, 1803, Chief Justice John Marshall, for the Supreme Court",
         "source_ref": "U.S. Reports, vol. 5 (public domain)",
         "excerpt": null
       },
@@ -991,7 +991,7 @@
           "label": "LANDMARK CASE · Marbury v. Madison"
         }
       ],
-      "status": "building",
+      "status": "open",
       "image": null,
       "image_alt": null,
       "_note": "Casefile C Day 12 case box. The card's 1800-1870 era question is about emergencies, so this stop carries Thread 3's recurring question."
@@ -1005,7 +1005,7 @@
       "what_happened": "Maryland tries to tax the national bank. The Supreme Court rules that Congress had the power to create the bank under the necessary and proper clause, and that a state can't tax it.",
       "document": {
         "title": "McCulloch v. Maryland",
-        "citation": "Source: McCulloch v. Maryland, 17 U.S. (4 Wheat.) 316 (1819)",
+        "citation": "Source: McCulloch v. Maryland, 1819, Chief Justice John Marshall, for the Supreme Court",
         "source_ref": "U.S. Reports, vol. 17 (public domain)",
         "excerpt": null
       },
@@ -1042,7 +1042,7 @@
           "label": "LANDMARK CASE · McCulloch v. Maryland"
         }
       ],
-      "status": "building",
+      "status": "open",
       "image": null,
       "image_alt": null,
       "_note": "Card key document, Thread 3. Casefile C Day 12 case box; same question rule as Marbury."

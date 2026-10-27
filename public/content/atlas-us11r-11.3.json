@@ -1,0 +1,385 @@
+{
+ "_course": "us11r",
+ "_built": "2026-10-23",
+ "_note": "Unit 11.3 maps. Drawn for this course; see each map's source line.",
+ "maps": [
+  {
+   "id": "11.3-A-01",
+   "unit": "11.3A",
+   "casefile": "A",
+   "status": "open",
+   "title": "The Louisiana Purchase, 1803",
+   "caption": "The purchase that roughly doubled the country, and the river city it was really about.",
+   "image": "atlas/us11r/11.3-A-01.webp",
+   "image_alt": "A drawn map of North America in 1803. The Louisiana Purchase is shaded darkest, a broad band running from the Gulf of Mexico north to the Canadian border, between the Mississippi River and the Rocky Mountains. The United States of 1783 is lightest, east of the Mississippi. Land claimed by Spain or Britain is a middle grey to the west, north and in Florida. New Orleans and St. Louis are marked with dots on the Mississippi, which forms the purchase's eastern edge. A white line running northwest from St. Louis is the Missouri River, not labelled.",
+   "source": "Drawn for this course from U.S. Census Bureau state boundary data (public domain) and Natural Earth country outlines (public domain). The purchase boundary follows the Mississippi, the 49th parallel and the Continental Divide, as the United States understood it in 1803.",
+   "origin": "drawn-new",
+   "supports": "Presidential Power",
+   "walk": [
+    {
+     "tag": "TITLE",
+     "say": "Read the title first.",
+     "ask": "What did the United States get in 1803 — a country, or land?",
+     "answer": "Land. The United States bought the Louisiana Territory from France, and it roughly doubled the size of the country."
+    },
+    {
+     "tag": "KEY",
+     "say": "Read the key at the lower right before anything else.",
+     "ask": "What do the three shades stand for?",
+     "answer": "Darkest is the Louisiana Purchase of 1803. Lightest is the United States as it already was in 1783. The middle grey is land claimed by Spain or Britain.",
+     "focus": [
+      1797,
+      1005,
+      522,
+      333
+     ]
+    },
+    {
+     "tag": "WHERE",
+     "say": "Find the purchase's eastern edge. That line is the Mississippi River. Find the two cities marked on it with a dot.",
+     "ask": "Which two cities are marked, and why would a river city matter this much?",
+     "answer": "New Orleans and St. Louis. Whoever held New Orleans held the mouth of the Mississippi, and every farmer upriver depended on shipping through it.",
+     "focus": [
+      1296,
+      936,
+      324,
+      342
+     ]
+    },
+    {
+     "tag": "WHAT IT SHOWS",
+     "say": "Put the purchase beside the United States of 1783.",
+     "ask": "Which is bigger?",
+     "answer": "They are close in size. One purchase, in one year, roughly doubled the country.",
+     "focus": [
+      758,
+      455,
+      861,
+      579
+     ]
+    },
+    {
+     "tag": "THREAD",
+     "say": "Jefferson believed a president had only the powers the Constitution named, and it did not name buying land. He bought it anyway.",
+     "ask": "Open the Threads map. Which thread does this map pull?",
+     "answer": "Presidential Power. Jefferson stretched what a president could do, and he knew he was doing it."
+    }
+   ]
+  },
+  {
+   "id": "11.3-A-02",
+   "unit": "11.3A",
+   "casefile": "A",
+   "status": "open",
+   "title": "The War of 1812: Where It Was Fought",
+   "caption": "Nine places the war reached, from Detroit to New Orleans.",
+   "image": "atlas/us11r/11.3-A-02.webp",
+   "image_alt": "A drawn map of the eastern United States and British North America during the War of 1812. Nine black dots mark battles and events, each labelled with its year: Detroit, Queenston Heights, Lake Erie, the Thames, Plattsburgh, Washington burned, Fort McHenry at Baltimore, Horseshoe Bend and New Orleans. The United States is light grey, British North America and Spanish Florida darker.",
+   "source": "Drawn for this course from U.S. Census Bureau state boundary data (public domain) and Natural Earth country outlines (public domain). Battle and campaign sites are placed at the places they are named for.",
+   "origin": "drawn-new",
+   "supports": "America in the World",
+   "walk": [
+    {
+     "tag": "TITLE",
+     "say": "Read the title first.",
+     "ask": "Does the title promise why the war happened, or where it happened?",
+     "answer": "Where. This map shows the places the fighting reached. It does not tell you the causes."
+    },
+    {
+     "tag": "KEY",
+     "say": "Read the key at the lower right.",
+     "ask": "What does a black dot mean here?",
+     "answer": "A battle or an event, with the year it happened.",
+     "focus": [
+      1333,
+      1156,
+      594,
+      387
+     ]
+    },
+    {
+     "tag": "WHERE",
+     "say": "Find the Great Lakes, the Atlantic coast and the Gulf.",
+     "ask": "Where is most of the fighting?",
+     "answer": "Along the border with British North America and on the water — the Great Lakes, the Canadian frontier, and the Atlantic and Gulf ports.",
+     "focus": [
+      759,
+      403,
+      618,
+      559
+     ]
+    },
+    {
+     "tag": "WHAT IT SHOWS",
+     "say": "Find Washington, burned in 1814, and then find New Orleans, 1815.",
+     "ask": "What do those two dates together tell you about how this war ended?",
+     "answer": "That the fighting went on past the war's worst day for the United States. New Orleans, its greatest victory, was fought after the peace treaty had already been signed in Europe.",
+     "focus": [
+      244,
+      832,
+      836,
+      619
+     ]
+    },
+    {
+     "tag": "THREAD",
+     "say": "Ask what this map puts on the table.",
+     "ask": "Open the Threads map. Which thread does this map pull?",
+     "answer": "America in the World. The war asked whether other nations would treat the United States as a country to be respected."
+    }
+   ]
+  },
+  {
+   "id": "11.3-A-03",
+   "unit": "11.3A",
+   "casefile": null,
+   "status": "open",
+   "title": "The Erie Canal and the Routes West, 1825–1850",
+   "caption": "How goods and people moved once the canal opened the West to the Atlantic.",
+   "image": "atlas/us11r/11.3-A-03.webp",
+   "image_alt": "A drawn map of the eastern United States between 1825 and 1850. A thick black line marks the Erie Canal running across New York from Albany to Buffalo. A dashed black line marks the National Road from Cumberland west through Wheeling, Ohio and Indiana to Vandalia, Illinois. Grey lines trace the Mississippi, Ohio and Hudson rivers. Black dots mark New York, Albany, Buffalo, Pittsburgh, Wheeling, Cincinnati, Chicago and St. Louis.",
+   "source": "Drawn for this course from U.S. Census Bureau state boundary data (public domain) and Natural Earth country outlines (public domain). The canal and the National Road are drawn through the towns they ran between, and the rivers through the cities named on this map.",
+   "origin": "drawn-new",
+   "supports": "The Role and Size of Government",
+   "walk": [
+    {
+     "tag": "TITLE",
+     "say": "Read the title first.",
+     "ask": "What two kinds of thing does the title say this map shows?",
+     "answer": "A canal, and the routes west — this is a map about how people and goods moved."
+    },
+    {
+     "tag": "KEY",
+     "say": "Read the key at the right.",
+     "ask": "What is the difference between the solid line and the dashed line?",
+     "answer": "The solid line is the Erie Canal, finished in 1825. The dashed line is the National Road.",
+     "focus": [
+      1654,
+      1009,
+      565,
+      441
+     ]
+    },
+    {
+     "tag": "WHERE",
+     "say": "Follow the canal from one end to the other.",
+     "ask": "Which two cities does it join, and what water does each one reach?",
+     "answer": "Albany and Buffalo. Albany sits on the Hudson, which runs down to New York City and the Atlantic. Buffalo sits on Lake Erie, which opens onto the Great Lakes and the West.",
+     "focus": [
+      1065,
+      411,
+      514,
+      402
+     ]
+    },
+    {
+     "tag": "WHAT IT SHOWS",
+     "say": "The canal is 363 miles long, and New York State paid for all of it.",
+     "ask": "Why would a state spend that much to dig a ditch?",
+     "answer": "Because it joined the Great Lakes to the Atlantic. Western farm goods could reach New York City cheaply, and New York became the busiest port in the country.",
+     "focus": [
+      928,
+      407,
+      761,
+      522
+     ]
+    },
+    {
+     "tag": "THREAD",
+     "say": "The canal was built by New York State. The National Road was built by the federal government.",
+     "ask": "Open the Threads map. Which thread does this map pull?",
+     "answer": "The Role and Size of Government. Who should pay for roads and canals — the states, or the federal government — was one of the hardest arguments of the era."
+    }
+   ]
+  },
+  {
+   "id": "11.3-A-04",
+   "unit": "11.3A",
+   "casefile": null,
+   "status": "open",
+   "title": "Indian Removal, 1830–1842",
+   "caption": "Five nations, their homelands, and the direction every arrow points.",
+   "image": "atlas/us11r/11.3-A-04.webp",
+   "image_alt": "A drawn map of the southeastern United States between 1830 and 1842. Five grey shapes mark roughly where the Cherokee, Chickasaw, Choctaw, Creek and Seminole nations lived. Five black arrows run west from them to a hatched rectangle labelled Indian Territory, in what is now Oklahoma. State outlines are drawn faintly behind. Texas, independent after 1836, is darker grey to the west. The source line states that the homelands and routes are generalised.",
+   "source": "Drawn for this course from U.S. Census Bureau state boundary data (public domain) and Natural Earth country outlines (public domain). THE HOMELANDS AND ROUTES ARE GENERALISED: each nation held and lost land over many years, and people were forced west by several routes, by land and by water.",
+   "origin": "drawn-new",
+   "supports": "Is There One America?",
+   "walk": [
+    {
+     "tag": "TITLE",
+     "say": "Read the title first.",
+     "ask": "The title says removal. Removal from where, and to where?",
+     "answer": "From homelands in the Southeast to Indian Territory in the west, in what is now Oklahoma."
+    },
+    {
+     "tag": "KEY",
+     "say": "Read the key at the upper left. Read the word 'roughly' twice.",
+     "ask": "Why would a map tell you it is only roughly right?",
+     "answer": "Because the truth is bigger than a map. Each nation held and lost land over many years, and people were forced west by several different routes, by land and by water. This map shows the shape of what happened, not an exact record of it — and it says so rather than letting you think otherwise.",
+     "focus": [
+      277,
+      220,
+      654,
+      374
+     ]
+    },
+    {
+     "tag": "WHERE",
+     "say": "Find the five shaded homelands and the states they sit in today.",
+     "ask": "Name the five nations.",
+     "answer": "Cherokee, in Georgia, Tennessee, North Carolina and Alabama. Chickasaw, in Mississippi and Tennessee. Choctaw, in Mississippi. Creek, in Alabama and Georgia. Seminole, in Florida.",
+     "focus": [
+      861,
+      481,
+      1002,
+      745
+     ]
+    },
+    {
+     "tag": "WHAT IT SHOWS",
+     "say": "Look at the arrows, all five of them.",
+     "ask": "Every arrow points the same way. What does that tell you?",
+     "answer": "That this was not people choosing to move. Five nations were pushed in one direction, west, by one federal policy.",
+     "focus": [
+      331,
+      445,
+      916,
+      488
+     ]
+    },
+    {
+     "tag": "THREAD",
+     "say": "In 1832 the Supreme Court ruled for the Cherokee in Worcester v. Georgia. Georgia ignored the ruling, and Jackson did nothing to make it obey.",
+     "ask": "Open the Threads map. Which thread does this map pull?",
+     "answer": "Is There One America? The question is whether the law's protection reached everyone living inside the country's borders — and here it did not."
+    }
+   ]
+  },
+  {
+   "id": "11.3-A-05",
+   "unit": "11.3A",
+   "casefile": "A",
+   "status": "open",
+   "title": "The Republic of Texas Boundary Dispute, 1836",
+   "caption": "Two rivers, two claims, and the land caught between them.",
+   "image": "atlas/us11r/11.3-A-05.webp",
+   "image_alt": "A drawn map of Texas and northern Mexico in 1836. The accepted territory of Texas is the lightest shade. The area both Texas and Mexico claimed is a middle grey: a strip along the Gulf coast between the Nueces and the Rio Grande, and a long claim running far north and west. Two dashed lines mark the two claimed boundaries, one along the Nueces and one along the Rio Grande. The United States and Mexico are darker grey.",
+   "source": "Drawn for this course from U.S. Census Bureau state boundary data (public domain) and Natural Earth country outlines (public domain). The two claimed boundaries follow the Nueces and the Rio Grande, the rivers each side named.",
+   "origin": "drawn-new",
+   "supports": "America in the World",
+   "walk": [
+    {
+     "tag": "TITLE",
+     "say": "Read the title first.",
+     "ask": "The title says boundary dispute. Between whom?",
+     "answer": "Between the Republic of Texas and Mexico."
+    },
+    {
+     "tag": "KEY",
+     "say": "Read the key at the lower left.",
+     "ask": "Three shades and a dashed line. What does the dashed line mean?",
+     "answer": "A claimed boundary. Each side drew its own line, and this map shows both of them.",
+     "focus": [
+      294,
+      1253,
+      629,
+      413
+     ]
+    },
+    {
+     "tag": "WHERE",
+     "say": "Find the two rivers the two claims follow.",
+     "ask": "Which river did each side name?",
+     "answer": "Mexico said the border was the Nueces. Texas said it was the Rio Grande, much further south and west.",
+     "focus": [
+      698,
+      1121,
+      746,
+      451
+     ]
+    },
+    {
+     "tag": "WHAT IT SHOWS",
+     "say": "Put the accepted territory of Texas beside the land in dispute.",
+     "ask": "How much land sits between the two claims?",
+     "answer": "A great deal: the strip along the Gulf, and a long claim running far to the north. Neither side would give it up.",
+     "focus": [
+      486,
+      516,
+      765,
+      970
+     ]
+    },
+    {
+     "tag": "THREAD",
+     "say": "In 1845 the United States annexed Texas, and took on this argument with it.",
+     "ask": "Open the Threads map. Which thread does this map pull?",
+     "answer": "America in the World. Annexing Texas meant inheriting its quarrel, and the quarrel became a war."
+    }
+   ]
+  },
+  {
+   "id": "11.3-A-06",
+   "unit": "11.3A",
+   "casefile": "A",
+   "status": "open",
+   "title": "What the United States Took by 1853",
+   "caption": "Every piece the country added, and the year each one came.",
+   "image": "atlas/us11r/11.3-A-06.webp",
+   "image_alt": "A drawn map of the United States showing every territorial addition up to 1853, each labelled on the land with its year: the United States of 1783, the Louisiana Purchase of 1803, the strip annexed by the United States in 1810–1812, Florida ceded by Spain in 1819, the Texas Annexation of 1845, Oregon Territory in 1846, the Mexican Cession of 1848 and the Gadsden Purchase of 1853. Bold black lines separate each addition. Canada and Mexico are darker grey.",
+   "source": "Drawn for this course from U.S. Census Bureau state boundary data (public domain) and Natural Earth country outlines (public domain). Acquisition boundaries follow the treaty lines of 1803, 1818, 1819, 1845, 1846, 1848 and 1853.",
+   "origin": "drawn-new",
+   "supports": "America in the World",
+   "walk": [
+    {
+     "tag": "TITLE",
+     "say": "Read the title first.",
+     "ask": "Does the title promise one event, or many?",
+     "answer": "Many. This map shows every piece the United States added, and the year each one came."
+    },
+    {
+     "tag": "KEY",
+     "say": "Read the key at the lower right.",
+     "ask": "What do the bold black lines mark?",
+     "answer": "The boundary of each addition. Every bold line separates one acquisition from the next.",
+     "focus": [
+      1817,
+      1117,
+      538,
+      335
+     ]
+    },
+    {
+     "tag": "WHERE",
+     "say": "Find the Texas Annexation of 1845. Now look just west and north of it.",
+     "ask": "What is the land on the other side of that line?",
+     "answer": "The Mexican Cession of 1848.",
+     "focus": [
+      569,
+      707,
+      564,
+      467
+     ]
+    },
+    {
+     "tag": "WHAT IT SHOWS",
+     "say": "You have seen the land Texas and Mexico both claimed in 1836, on the casefile's map.",
+     "ask": "What does this map say happened to that land?",
+     "answer": "It became part of the United States. The two claims led to the Mexican-American War, and in 1848 the Treaty of Guadalupe Hidalgo ceded the land to the United States — it is inside the Mexican Cession of 1848 on this map.",
+     "focus": [
+      439,
+      726,
+      662,
+      568
+     ]
+    },
+    {
+     "tag": "THREAD",
+     "say": "Read the years down the map: 1803, 1819, 1845, 1846, 1848, 1853.",
+     "ask": "Open the Threads map. Which thread does this map pull?",
+     "answer": "America in the World. Every date on this map was a decision about how far the country should reach, and at whose cost."
+    }
+   ]
+  }
+ ]
+}

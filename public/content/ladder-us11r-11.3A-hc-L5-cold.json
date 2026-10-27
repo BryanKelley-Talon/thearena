@@ -1,0 +1,43 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-10-23 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_hc.py",
+  "_blessed": "BK 2026-10-23 11:38 EDT on US11R_11.3A_THEJUMP-HCgauge_WORDING_v2_2026-10-23.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "HC",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 5,
+  "_activity": "On your own: Documents 5 and 6",
+  "type": "guided_write",
+  "cold": true,
+  "badge": "LEVEL 5  -  COUNTS FOR COMPLETION  -  ON YOUR OWN",
+  "documents": [
+    {
+      "source_document": "Document 5 - President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
+      "source_text": ". . . The consequences of a speedy removal will be important to the United States, to individual States, and to the Indians [Native Americans] themselves. The pecuniary [financial] advantages which it promises to the Government are the least of its recommendations. It puts an end to all possible danger of collision between the authorities of the General [Federal] and State Governments on account of the Indians. It will place a dense and civilized population in large tracts of country now occupied by a few savage hunters. By opening the whole territory between Tennessee on the north and Louisiana on the south to the settlement of the whites it will incalculably [greatly] strengthen the SW [southwestern] frontier and render the adjacent States strong enough to repel future invasions without remote aid. It will relieve the whole State of Mississippi and the western part of Alabama of Indian occupancy, and enable those States to advance rapidly in population, wealth, and power. It will separate the Indians from immediate contact with settlements of whites; free them from the power of the States. . . .",
+      "before_we_talk": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life.",
+      "_pointer": "NYS Regents, June 2025, Q9–10 (ushg-62025-exam.pdf p. 6), word for word. (Jan 2026 Q5–6 prints a different excerpt of the same message, under its own source line.) BEFORE WE TALK."
+    },
+    {
+      "source_document": "Document 6 - General Council of the Cherokee Nation, address to the people of the United States, New Echota, July 17, 1830",
+      "source_text": ". . . We are not willing to remove; and if we could be brought to this extremity [last step], it would be not by argument, not because our judgment was satisfied, not because our condition will be improved; but only because we cannot endure to be deprived of our national and individual rights and subjected to a process of intolerable oppression.\nWe wish to remain on the land of our fathers. We have a perfect and original right to claim without interruption or molestation [being bothered]. The treaties with us, and laws of the United States made in pursuance of treaties, guaranty our residence, and our privileges and secure us against intruders. Our only request is that these treaties may be fulfilled, and these laws executed. . . .",
+      "before_we_talk": "These were real people, and what happened to them shaped the country we live in. Use their names and their words. No jokes, and no comparisons to everyday life.",
+      "_pointer": "Cherokee Phoenix, July 24, 1830. Text follows TAH ('Address to the People of the United States, by the General Council of the Cherokee Nation') and WCU Hunter Library transcription no. 14 ('claim', 'residence, and'), which agree; WCU no. 99 reads 'remain' and 'residence and', and carries the dateline 'New Echota, C. N. July 17' (its '1930' is a typo). Two records to one (D-U1); page scan not checked. Dateline: TAH gives only 'July 1830' and the Phoenix prints no dateline; 'New Echota, C.N. · July 17, 1830' is printed after the signatures in the 1830 pamphlet Removal of the Cherokee Indians, Digital Library of Georgia, dlg_zlna_pam008 (https://dlg.usg.edu/record/dlg_zlna_pam008). Bracketed glosses ours. BEFORE WE TALK."
+    }
+  ],
+  "prompt": "Describe the historical context surrounding these documents.",
+  "intro": "No hints, no starter, no checklist. This is the one you do the way you would on the exam.",
+  "sentence_starter": null,
+  "checklist": [],
+  "lines": 3,
+  "write_it_in": "BONUS - 11.3A Gauge Run (Google Classroom). Write it there, not here.",
+  "counts_for": "completion",
+  "model_response": "After gold was found on Cherokee land in 1829 and Georgia pressed to take it, Congress passed the Indian Removal Act in 1830. By the end of that year, Jackson was telling Congress that removal was nearly finished and good for everyone, while the Cherokee - who had a written constitution, a newspaper and their own government - were asking the American people to stop it.",
+  "model_visible": "unit_close",
+  "model_opens_on": "2026-12-14",
+  "_model_note": "NOT served before the unit closes. Level 5 is Arena work; its finished product goes in the Google Classroom BONUS log for the Gauge Run, graded 100 for Completion, and BK gives feedback there so a student knows where it stands (BK 2026-10-23 13:31, correcting Sam's 11:50 misreading - see RULING-LOG). The required Day 3 jump is five minutes INTO the gauge, not a Level 5 write; a student enters the ladder where they are. The gauge gets the model when the unit closes, the same rule as the exemplar casefile (CARRY-FORWARD 6).",
+  "practice_only": false,
+  "submitted_to_teacher": false
+}

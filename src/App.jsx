@@ -48,7 +48,7 @@ import { Highlight, HL_STYLES } from './highlight.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
-  UnitBrief, LEVEL_TYPES, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone,
+  UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone,
 } from './ladder.jsx'
 import {
   OFFICE_STYLES, OfficeDoor, OfficeRoom, OfficeTheme, officeVisible, visibleThemes,
@@ -1951,7 +1951,7 @@ function reviewExtras(course, unit) {
 }
 
 function LevelScreen({ course, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
-  const t = LEVEL_TYPES[lv?.type]
+  const t = levelType(lv)
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
   const [coachLine, setCoachLine] = useState(null)

@@ -1,0 +1,40 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-10-23 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_hc.py",
+  "_blessed": "BK 2026-10-23 11:38 EDT on US11R_11.3A_THEJUMP-HCgauge_WORDING_v2_2026-10-23.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "HC",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 1,
+  "_activity": "Watch one get built: the Louisiana Purchase, 1803",
+  "type": "matching",
+  "modeled": true,
+  "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+  "source_document": "Document 1 - Thomas Jefferson, letter to John Breckinridge, August 12, 1803",
+  "left": [
+    {
+      "key": "a",
+      "label": "Louisiana Purchase, 1803"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "The United States bought the territory from France for $15 million. It doubled the size of the country and gave the United States the Mississippi River and the port of New Orleans."
+    }
+  ],
+  "correct": {
+    "a": "1"
+  },
+  "rationale": {
+    "a": "The Constitution said nothing about buying land. Jefferson read it strictly, and it worried him, but he made the deal anyway - which is why Document 1 is him explaining himself."
+  },
+  "frame": "After ___, ___. By [year], ___.",
+  "frame_fill": "After the Revolution, the young nation needed the Mississippi for trade. By 1803, Jefferson had bought Louisiana from France - even though the Constitution said nothing about buying land, and it worried him.",
+  "models_band": "era + what's happening + tied to the issue",
+  "practice_only": true,
+  "submitted_to_teacher": false
+}
