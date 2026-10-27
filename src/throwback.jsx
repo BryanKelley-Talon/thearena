@@ -259,7 +259,7 @@ export const THROWBACK_STYLES = `
 .tb-pick{color:var(--grey);font-size:17px}
 .tb-room{display:flex;flex-direction:column;gap:14px}
 /* THE SCENE. The room is the background; everything else sits on it. */
-.tb-scene{position:relative;width:100%;max-width:1024px;border-radius:12px;overflow:hidden;border:1px solid var(--edge);line-height:0}
+.tb-scene{position:relative;container-type:inline-size;width:100%;max-width:1024px;border-radius:12px;overflow:hidden;border:1px solid var(--edge);line-height:0}
 .tb-scene .tb-fig{margin:0}
 .tb-scene .tb-fig img{display:block;width:100%;height:auto;border:0;border-radius:0}
 .tb-scene .tb-fig figcaption{display:none}
@@ -277,7 +277,17 @@ export const THROWBACK_STYLES = `
 .tb-panel:hover .tb-panel-go,.tb-panel:focus-visible .tb-panel-go{opacity:1}
 .tb-panel:hover{outline:2px solid var(--gold);outline-offset:-2px}
 /* The figures, standing in the room. */
-.tb-stand{position:absolute;width:auto;display:block;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
+.tb-stand{position:absolute;width:auto;display:block;pointer-events:none;
+  /* The figures have to read against the wall - a dark parlor swallows a black
+     silhouette. A thin light rim lifts them off it, and the shadow under them
+     puts them on the floor instead of on the wallpaper. The rim scales with the
+     scene so it stays a hairline on a phone and on the projector. */
+  --rim:clamp(1px,0.2cqw,3px);
+  filter:
+    drop-shadow(0 0 calc(var(--rim) * 1.5) rgba(252,245,228,.8))
+    drop-shadow(0 0 calc(var(--rim) * 4) rgba(252,245,228,.5))
+    drop-shadow(0 0 calc(var(--rim) * 9) rgba(0,0,0,.45))
+    drop-shadow(0 calc(var(--rim) * 2.5) calc(var(--rim) * 4) rgba(0,0,0,.6))}
 .tb-room-under{display:flex;flex-direction:column;gap:10px;max-width:760px}
 .tb-note,.tb-take{color:var(--grey);font-size:15px;line-height:1.5;margin:0}
 .tb-absent{border-left:3px solid var(--arena-signal);padding:10px 13px;border-radius:0 8px 8px 0;
