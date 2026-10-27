@@ -738,6 +738,7 @@ export const DOCASSIST_STYLES = `
 .da-mk-circle{border:2.5px solid #0A6B34;border-radius:999px;padding:0 7px}
 .da-mk-underline{text-decoration:underline solid #0A6B34;text-decoration-thickness:3px;text-underline-offset:4px}
 .da-mk-margin{text-decoration:underline wavy #0A6B34;text-decoration-thickness:2px;text-underline-offset:5px}
+.da-mk-star{text-decoration:underline dotted #0A6B34;text-decoration-thickness:3px;text-underline-offset:4px}
 .da-mk-n{font-family:'Outfit',sans-serif;font-style:normal;font-weight:700;font-size:11.5px;color:#fff;background:#0A6B34;border-radius:999px;
   padding:1px 5px;margin-left:3px;vertical-align:super;line-height:1}
 .da-ann{margin:16px 0 0;background:var(--card);border:1px solid var(--arena-choice-edge);border-left:4px solid var(--gold);border-radius:10px;padding:14px 16px;box-shadow:0 6px 18px rgba(0,0,0,.28)}
@@ -757,6 +758,7 @@ export const DOCASSIST_STYLES = `
 .da-ann-key.da-mk-circle{border:2.5px solid #2FBF71;border-radius:50%}
 .da-ann-key.da-mk-underline{box-shadow:inset 0 -4px 0 #0A6B34}
 .da-ann-key.da-mk-margin{text-decoration:underline wavy #0A6B34;text-decoration-thickness:2px;text-underline-offset:3px}
+.da-ann-key.da-mk-star{background:#FFE34A;clip-path:polygon(50% 0%,61% 35%,98% 35%,68% 57%,79% 91%,50% 70%,21% 91%,32% 57%,2% 35%,39% 35%);border-radius:0}
 .da-ann-mark{font-family:'Barlow Condensed',sans-serif;letter-spacing:.1em;color:var(--gold-lit);font-size:14.5px}
 .da-ann-where{color:var(--white);font-style:italic;font-size:15.5px}
 .da-ann-oe{margin-top:12px;padding-top:10px;border-top:1px solid var(--edge)}

@@ -1,0 +1,77 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-26 20:14 EDT by Will (global10r-curriculum). CRQ-shaped, on BK's 2026-10-22 10:29 ruling.",
+  "_status": "DRAFT. Wording to BK, then Danny's readers, then Josh. NOT APPROVED.",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own What You Need to Know, Outside Information boxes and documents (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 3,
+  "type": "sentence_build",
+  "_activity": "Build the context sentence: the railway, 1830",
+  "practice_only": true,
+  "intro": "Build the sentence. Choose the right piece for each blank. This is the same starter your casefile uses.",
+  "sentence_frame": "After ___, ___. By 1830, ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "what came first",
+      "tiles": [
+        {
+          "text": "Britain began digging canals in the 1760s to move coal more cheaply",
+          "correct": true
+        },
+        {
+          "text": "the Liverpool and Manchester Railway opened",
+          "correct": false
+        },
+        {
+          "text": "Britain had about 6,000 miles of railway",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "what was still going on",
+      "tiles": [
+        {
+          "text": "Manchester's mills still needed cotton through the port of Liverpool, and coal from the mines",
+          "correct": true
+        },
+        {
+          "text": "one horse could pull a canal boat carrying about 30 tons",
+          "correct": false
+        },
+        {
+          "text": "Adam Smith argued that dividing a job into small steps made workers more productive",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "so this happened",
+      "tiles": [
+        {
+          "text": "a railway ran the 30 miles between the two cities",
+          "correct": true
+        },
+        {
+          "text": "The Bridgewater Canal carried coal about 10 miles from the mines at Worsley to Manchester",
+          "correct": false
+        },
+        {
+          "text": "Parliament passed thousands of enclosure acts",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "After Britain began digging canals in the 1760s to move coal more cheaply, Manchester's mills still needed cotton through the port of Liverpool, and coal from the mines. By 1830, a railway ran the 30 miles between the two cities.",
+  "hints": [
+    "The first blank is the thing that came BEFORE. The last blank is the document itself.",
+    "Two of the wrong tiles are true - they are just in the wrong place in time."
+  ],
+  "rationale": "Context runs forward: the problem, then what was still true, then the thing in front of you. The tiles you left out are not false. 'The railway opened' and '6,000 miles' are the document and what came after it, and neither can explain what led to it."
+}

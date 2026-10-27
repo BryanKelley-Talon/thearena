@@ -585,6 +585,48 @@
             },
             "callout_href": "#/global/gauge/EI/1"
           }
+        },
+        {
+          "slug": "unit-3",
+          "number": "10.3",
+          "label": "10.3",
+          "status": "building",
+          "published": true,
+          "doc_assist": {
+            "published": true,
+            "content_ref": "content/docassist-gs10r-10.3.json",
+            "_note": "Josh, 2026-10-23. Doc Assist, Global, Casefile A only. Ported word for word from Will's WORK/u103A-docassist/da_103A.py (fixed 2026-10-23 09:06) and skills/u103/words_103A.py (the ruled original text). Danny's clearance: 12 claims checked, 12 confirmed, 0 problems (2026-10-22). Will's two 2026-10-23 passes (anchors + walk shape) both say go ahead and build. Needed live Wed 10/28. No paper colour ruled yet for 10.3 A — omitted rather than guessed; flagged in the proof. Unit status is building and current_unit stays unit-2 on BK's own word (CARRY-FORWARD: “Keep the Global door on 10.2 through Mon 10/26”) — this room is wired for its QR/deep links but not on the door yet. Nothing here deploys without BK's yes."
+          },
+          "_note": "Josh, 2026-10-23. Shell only — Doc Assist Casefile A, nothing else. No brief_ref, activities, ladders or chase: none of those exist yet for 10.3 (Josh pulls, Josh never authors). No unit label is ruled either; 'label' is a placeholder (the bare number) until Will or BK names the unit for the door — it doesn't render anywhere while status is building and current_unit is unit-2, so nothing is seen with a made-up title. Amended 2026-10-27 by Josh: HC ladder L1/L3/L4 wired (Danny cleared 10/26 20:47, md5 match). L2 held on Will's fixes; L5 not yet sent. Levels carry a placeholder label ('Historical Context') since no per-level label was supplied in this pack — flagged in the proof for Will/BK to replace if they want the per-document titles 10.2 uses.",
+          "ladders": [
+            {
+              "skill": "HC",
+              "_source": "Will, 10.3 Casefile A HC files; Danny cleared 2026-10-26 20:47 (four files, 24 checked, 0 to fix): docassist-gs10r-10.3.json, L1, L3, L4. L2 (bestfit) is HELD — seven fixes are with Will; do not build md5 1d77e09f1e187b5dd839016d04360050. L5 is not in this package (Will is waiting on the source). Ported byte for byte by Josh 2026-10-27.",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Historical Context",
+                  "content_ref": "content/ladder-gs10r-10.3-hc-L1-matching.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Historical Context",
+                  "content_ref": "content/ladder-gs10r-10.3-hc-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Historical Context",
+                  "content_ref": "content/ladder-gs10r-10.3-hc-L4-guidedwrite.json",
+                  "published": true
+                }
+              ]
+            }
+          ]
         }
       ],
       "issues": [

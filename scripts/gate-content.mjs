@@ -451,8 +451,18 @@ function checkPopouts(d, f, course, m, fail) {
     if (!d.tile) df(`no tile line (the room card shows it).`)
     if (!d.walk_name) df(`no walk_name.`)
     const walk = d.walk || []
-    if (walk.length !== 5) df(`the walk needs five steps; it has ${walk.length}.`)
-    walk.forEach((w, i) => { if (!w.tag || !w.step || !w.say) df(`walk step ${i + 1}: needs tag, step and say.`) })
+    // The shared five-step walk is what the shell reads for a document WITHOUT its own step tags
+    // (docassist.jsx l.431-432). A pack whose every open document carries its own tags never reads it
+    // (Global 10.3 A on, Will's pointer dialect 2026-10-23), so it is required only where it is used --
+    // and checked wherever one is written down. Five generic walk lines invented to satisfy a check
+    // would be student-facing words nobody blessed.
+    const openDocs = (d.casefiles || []).filter(cf => cf.status === 'open').flatMap(cf => cf.docs || [])
+    const usesSharedWalk = openDocs.some(doc => (doc.steps || []).length && !(doc.steps || []).some(s => s && s.tag))
+    if (usesSharedWalk && !walk.length) df(`a document walks on the shared walk, and the pack has none.`)
+    if (walk.length) {
+      if (walk.length !== 5) df(`the walk needs five steps; it has ${walk.length}.`)
+      walk.forEach((w, i) => { if (!w.tag || !w.step || !w.say) df(`walk step ${i + 1}: needs tag, step and say.`) })
+    }
     for (const k of LABELS) if (!d.labels?.[k]) df(`labels.${k} is missing (a button with no word).`)
     // The step-5 card (BK 09:05, 10:26): Global's `umbrellas` (exactly six), or a course's `q4_card`.
     for (const key of ['umbrellas', 'q4_card']) {
@@ -503,12 +513,24 @@ function checkPopouts(d, f, course, m, fail) {
         // Third dialect (US 11.2 C, Sam 10/9; BK's N5 shape): every step carries its own `tag`, so the walk
         // is the document's own length. Each step: a tag and a BK line; `your_q` a whole number or null (a step may point
         // at your Q without asking it: Sam's sourcing steps); `mode` null, "oral" (OUT LOUD) or "check" (the last step, no question).
-        if (steps.some(s => s && s.tag)) {
+        // Pointer sub-dialect (Global 10.3 on, Will's ruling 2026-10-23 08:35, reading CARRY-FORWARD §7): the tag is
+        // just "→ your Q{n}" read off the step's own question number -- a coaching-only step (nothing to point to)
+        // carries NO tag at all, and that is correct, not a miss. So: tag is required only on a step that asks a
+        // question; a question with no tag still fails, and a tag that's present but blank still fails.
+        if (doc.kind === 'map' && !steps.length) {
+          // The Atlas card: checked in the kind block below, not here.
+        } else if (steps.some(s => s && s.tag)) {
           if (steps.length < 3 || steps.length > 8) df(`${w}: a tagged walk needs 3 to 8 steps; it has ${steps.length}.`)
           let asked = 0
           steps.forEach((s, j) => {
             const at = `${w} step ${j + 1}`
-            if (!s || !String(s.tag || '').trim()) df(`${at}: every step in a tagged walk needs its own tag.`)
+            const hasTag = s?.tag != null && String(s.tag).trim()
+            if (s?.tag != null && !hasTag) df(`${at}: tag is present but blank.`)
+            // A step that asks must POINT at what it asks: Sam's dialect names a category in `tag`
+            // ("Q1 · SOURCING"), Will's prints the pointer chip off `your_q` alone and writes no tag
+            // at all (2026-10-23: "never a category word ... no separate tag string to write or bless").
+            // Either points the kid somewhere. Neither is a step that asks into the air.
+            if (s?.question && !hasTag && s?.your_q == null) df(`${at}: a step with a casefile question points nowhere: it needs a tag or a your_q.`)
             if (!s?.line) df(`${at}: no BK line.`)
             if (s?.your_q != null && !Number.isInteger(s.your_q)) df(`${at}: your_q must be a whole number or null.`)
             if (![null, undefined, 'oral', 'check'].includes(s?.mode)) df(`${at}: mode must be null, "oral" or "check".`)
@@ -565,7 +587,15 @@ function checkPopouts(d, f, course, m, fail) {
             if (pic.many && !pic.label) df(`${pw}: with two pictures, each needs a label.`)
             student.push(pic.describe, pic.label)
           }
-        } else df(`${w}: kind must be "text" or "image".`)
+        } else if (doc.kind === 'map') {
+          // THE ATLAS CARD (Global 10.3 A Document 3; Will's da_103A NOTES, BK 10/16 12:39 "Stuck? Walk it
+          // in the Atlas.", Leo's 10/16 ruling). The map's casefile QR is the ATLAS QR, so the map carries
+          // a card that sends the kid to the Atlas instead of a walk: no steps, no easier version, nothing
+          // annotated here. It still names itself, its source and the casefile page it sits on.
+          if (!(doc.text || []).length || doc.text.some(p => !String(p).trim())) df(`${w}: the Atlas card has no words.`)
+          if ((doc.steps || []).length) df(`${w}: a map document's walk lives in the Atlas; it carries a card, not steps.`)
+          if (doc.easier) df(`${w}: a map document takes no easier-to-read version; its help is in the Atlas.`)
+        } else df(`${w}: kind must be "text", "image" or "map".`)
         // A licence is shown in full. Teach-only or NC sources must say sellable: false (CONVENTIONS §7).
         if (doc.licence) {
           if (!doc.licence.text || typeof doc.licence.sellable !== 'boolean') df(`${w}: a licence needs text and sellable true/false.`)

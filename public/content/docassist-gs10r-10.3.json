@@ -1,0 +1,1128 @@
+{
+ "_built": "Will (global10r-curriculum) 2026-10-23, via skills/u103/docassist_103A_pack.py (moved from Josh's flashpoint/.../docassist_103A_pack.py, BK 11:14 EDT). Content imported from Will's da_103A.py (fixed 2026-10-23 09:06, 11:14) and words_103A.py; every shared string imported from da_global_common.py and Sam's da_112C.LABELS. Pages read off GS10R_10.3A_CASEFILE_v21_2026-10-22.pdf (rebuilt 11:14 EDT, THE JUMP dot-spacing fix). Danny's clearance 2026-10-22: 12/12/0. | PAGE REFS RE-VERIFIED AGAINST CASEFILE v23 on 2026-10-26 20:17 by Will: all ten doc page numbers (5,6,11,12,16,17,21,22,26,26) read off GS10R_10.3A_CASEFILE_v23_2026-10-25.pdf and matched. The v23 cuts (THE JUMP band, PICK YOUR BEST) sit after the document pages and moved nothing.",
+ "_ruled": "CARRY-FORWARD §7 (the tagged walk); Will 2026-10-23 08:35 (shape) and 09:06 (anchors).",
+ "_shape": "Documents 1-2 and 4-10 carry their own tagged steps, so the shell reads each document's own length. Document 3 is the Atlas card: no steps, so no walk runs on it.",
+ "_open": [],
+ "tool": "Doc Assist",
+ "room": "10.3",
+ "course": "GS10R",
+ "tile": "Every document in your casefile, with a walk-through beside it. It won't answer for you. It shows you how.",
+ "walk_name": "THE DOC WALK",
+ "labels": {
+  "walk": "Walk me through it",
+  "read": "Read it to me",
+  "easier": "Easier to read",
+  "original": "Original",
+  "close": "Close the walk",
+  "next": "Next step",
+  "back": "Back",
+  "stop": "Stop reading",
+  "umbrellas": "The Six Umbrellas",
+  "annotate": "How to annotate",
+  "your_q": "→ your Q%d",
+  "oral": "OUT LOUD",
+  "prompts": "YOUR TURN · MARK IT UP"
+ },
+ "annotate": {
+  "button": "How to annotate",
+  "methods": {
+   "text": [
+    [
+     "WHO AND WHEN",
+     "Circle who made it and the year. They're in the source line."
+    ],
+    [
+     "THE CLAIM",
+     "Underline the one sentence that makes the main point."
+    ],
+    [
+     "WORDS",
+     "Box any word you don't know. Write your best guess above it."
+    ],
+    [
+     "SO WHAT",
+     "In the margin, write a few words on why it matters."
+    ],
+    [
+     "OUTSIDE",
+     "Add one true thing you already know that isn't in the document."
+    ]
+   ],
+   "picture": [
+    [
+     "LABELS",
+     "Read every word first: the title, the caption, the labels."
+    ],
+    [
+     "WHO'S WHO",
+     "Name every figure. Who is big, and who is small?"
+    ],
+    [
+     "EXAGGERATION",
+     "What is stretched past real life? That's the caricature."
+    ],
+    [
+     "SYMBOLS",
+     "What stands for something else: clothes, tools, animals?"
+    ],
+    [
+     "THE POINT",
+     "What is the artist accusing, and who would agree?"
+    ]
+   ],
+   "map": [
+    [
+     "TITLE, KEY, DATE",
+     "Read the title, the key and the date before anything else."
+    ],
+    [
+     "THE BIG PICTURE",
+     "Circle the biggest or most important part."
+    ],
+    [
+     "COMPARE",
+     "Mark two parts you can compare."
+    ],
+    [
+     "THE POINT",
+     "Write what it shows in one sentence."
+    ],
+    [
+     "OUTSIDE",
+     "Add one true thing you already know that isn't on it."
+    ]
+   ]
+  },
+  "model_label": "WATCH IT DONE ON THIS DOCUMENT",
+  "model_note": "These notes are on parts no question asks about. Your questions are yours to do.",
+  "oe_example_label": "OUTSIDE INFORMATION · AN EXAMPLE",
+  "oe_where_label": "OUTSIDE INFORMATION · WHERE TO LOOK"
+ },
+ "umbrellas": {
+  "_ruled": "BK 2026-10-01 09:05 (the button) and 10:28 (the definitions). Words from Will's da_global_common, imported, not retyped.",
+  "button": "The Six Umbrellas",
+  "title": "THE SIX UMBRELLAS",
+  "intro": "Every enduring issue fits under one of these six. Spot the umbrella fast. Then name the exact issue underneath it, and explain it.",
+  "items": [
+   {
+    "n": "1",
+    "name": "POWER & ITS ABUSE",
+    "question": "Who holds authority, and what happens to the people who did not choose them.",
+    "issues": "Abuse of Power · Imperialism · Human Rights Violations · Inequality",
+    "issue_defs": [
+     {
+      "name": "Abuse of Power",
+      "definition": "when someone with authority uses it to harm people or to serve themselves."
+     },
+     {
+      "name": "Imperialism",
+      "definition": "when a stronger country takes control of another land and its people."
+     },
+     {
+      "name": "Human Rights Violations",
+      "definition": "when people are denied the basic rights every person should have, like life, freedom and safety."
+     },
+     {
+      "name": "Inequality",
+      "definition": "when some groups get fewer rights, chances or resources than others."
+     }
+    ]
+   },
+   {
+    "n": "2",
+    "name": "CONFLICT",
+    "question": "Why people fight, and what is still unsettled when the fighting stops.",
+    "issues": "Conflict",
+    "issue_defs": [
+     {
+      "name": "Conflict",
+      "definition": "a struggle between groups, nations or ideas, from argument to war."
+     }
+    ]
+   },
+   {
+    "n": "3",
+    "name": "IDENTITY & NATIONALISM",
+    "question": "Who a people say they are, and who that leaves out.",
+    "issues": "Nationalism · Cultural Exchange and Diffusion",
+    "issue_defs": [
+     {
+      "name": "Nationalism",
+      "definition": "a people's loyalty to their own nation, and the push for that nation to rule itself."
+     },
+     {
+      "name": "Cultural Exchange and Diffusion",
+      "definition": "when ideas, beliefs, goods and ways of life spread from one people to another."
+     }
+    ]
+   },
+   {
+    "n": "4",
+    "name": "WEALTH & RESOURCES",
+    "question": "Who owns what a place produces, and who does the producing.",
+    "issues": "Economic Development · Scarcity",
+    "issue_defs": [
+     {
+      "name": "Economic Development",
+      "definition": "how a place grows its wealth, and who that growth helps or leaves behind."
+     },
+     {
+      "name": "Scarcity",
+      "definition": "not having enough of something people need, like food, water or land."
+     }
+    ]
+   },
+   {
+    "n": "5",
+    "name": "TECHNOLOGY & ENVIRONMENT",
+    "question": "What new tools let people do, and what they cost the world around them.",
+    "issues": "Scientific and Technological Change · Environmental Crisis",
+    "issue_defs": [
+     {
+      "name": "Scientific and Technological Change",
+      "definition": "new knowledge and tools that change how people live and work."
+     },
+     {
+      "name": "Environmental Crisis",
+      "definition": "serious harm to land, air, water or climate, often caused by people."
+     }
+    ]
+   },
+   {
+    "n": "6",
+    "name": "A CONNECTED WORLD",
+    "question": "What happens when distant places start depending on each other.",
+    "issues": "Cooperation · Population and Migration",
+    "issue_defs": [
+     {
+      "name": "Cooperation",
+      "definition": "when groups or countries work together toward a shared goal."
+     },
+     {
+      "name": "Population and Migration",
+      "definition": "how the number of people in a place changes, and why people move."
+     }
+    ]
+   }
+  ],
+  "close": [
+   "On the essay, write the exact issue, not the umbrella: “Human Rights Violations,” not “Power & Its Abuse.”",
+   "Then EXPLAIN IT: define the problem in one sentence, and show where a document shows it."
+  ]
+ },
+ "casefiles": [
+  {
+   "id": "A",
+   "title": "10.3 Casefile A · Why did the Industrial Revolution begin in Great Britain?",
+   "status": "open",
+   "docs": [
+    {
+     "n": 1,
+     "title": "The Agricultural Revolution in Britain",
+     "kind": "text",
+     "src": "Source: R. R. Palmer et al., A History of the Modern World, 9th edition, McGraw-Hill",
+     "page": 5,
+     "text": [
+      ". . . The English Revolution of 1688, confirming the ascendancy [rise] of Parliament over the king, meant in economic terms the ascendancy of the more well-to-do property-owning classes. Among these the landowners were by far the most important, though they counted the great London merchants among their allies. For a century and a half, from 1688 to 1832, the British government was substantially in the hands of these landowners—the “squirearchy” or “gentlemen of England.” The result was a thorough transformation of farming, an Agricultural Revolution without which the Industrial Revolution could not have occurred.",
+      "Many landowners, seeking to increase their money incomes, began experimenting with improved methods of cultivation and stock raising. They made more use of fertilizers (mainly animal manure); they introduced new implements (such as the drill seeder and horse-hoe); they brought in new crops, such as turnips, and a more scientific system of crop rotation; they attempted to breed larger sheep and fatter cattle.",
+      "An improving landlord, to introduce such changes successfully, needed full control over his land. He saw a mere barrier to progress in the old village system of open fields, common lands, and semicollective methods of cultivation. Improvement also required an investment of capital, which was impossible so long as the soil was tilled by numerous poor and custom-bound small farmers. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The English Revolution of 1688 confirmed that Parliament, not the king, held the power. In money terms that meant the richer property-owning classes held it. The most important of these were the landowners, and the great London merchants were their allies. For a century and a half, from 1688 to 1832, the British government was largely in the hands of these landowners — the “squirearchy” or “gentlemen of England.” The result was a complete change in farming, an Agricultural Revolution, without which the Industrial Revolution could not have happened.",
+       "Many landowners wanted to earn more money, so they began trying better ways of growing crops and raising animals. They used more fertilizer (mostly animal manure); they brought in new tools (such as the drill seeder and horse-hoe); they brought in new crops, such as turnips, and a more scientific system of crop rotation; they tried to breed larger sheep and fatter cattle.",
+       "To make changes like these work, an improving landlord needed full control over his land. He saw a mere barrier to progress in the old village system of open fields, common lands, and shared ways of farming. Improvement also needed money invested, which was impossible while the soil was worked by many poor small farmers bound by custom."
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "underline",
+        "prompt": "Underline every new method of farming you can find. There are more than two."
+       },
+       {
+        "mark": "box",
+        "prompt": "Box the two years that open and close the period this passage describes."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside the phrase the writer uses for the group that ran the government."
+       }
+      ],
+      "notes": [
+       {
+        "where": "without which the Industrial Revolution could not have occurred",
+        "mark": "margin",
+        "note": "this is the whole reason the casefile opens with farming."
+       },
+       {
+        "where": "counted the great London merchants among their allies",
+        "mark": "margin",
+        "note": "land and trade money are on the same side here."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "What You Need to Know on this day's page, which is outside the document. The OI callout under this document on the casefile page. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": 1,
+       "mode": null,
+       "question": "Is Document 1 a primary or a secondary source? How do you know?",
+       "line": "Look at the source line above the passage, not at the words of the passage. Ask when this was written compared with when 1688 happened, and what kind of book it comes from."
+      },
+      {
+       "tag": null,
+       "your_q": 2,
+       "mode": null,
+       "question": "According to Document 1, name two new methods landowners used to change farming.",
+       "line": "The second paragraph is a list, and every item is joined by a semicolon. Read to the end of it before you pick; there are more methods there than the question asks for."
+      },
+      {
+       "tag": null,
+       "your_q": 3,
+       "mode": null,
+       "question": "Why did an improving landlord see the old open fields as “a mere barrier to progress”?",
+       "line": "The third paragraph opens with what such a landlord needed. Read that first sentence, then the sentence with the word barrier. The reason sits in the sentence before the phrase, not in the phrase."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Look again at the last sentence of the passage, about poor small farmers. Nobody asks you about it today, but Document 2 is going to."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No Enduring Issue question on this document. Read the Six Umbrellas card on page 2 and ask which umbrella a change that makes some people richer and pushes others off the land would sit under."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 5. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 2,
+     "title": "Arthur Young on enclosure, 1801",
+     "kind": "text",
+     "src": "Source: Arthur Young, An Inquiry into the Propriety of Applying Wastes to the Better Maintenance and Support of the Poor, 1801",
+     "page": 6,
+     "text": [
+      "Arthur Young was a well-known writer on farming who supported enclosure. In 1801 he wrote:",
+      "“. . . the fact is, that by nineteen enclosure bills in twenty they [the poor] are injured, in some grossly injured. . . .”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "Arthur Young was a well-known writer on farming who supported enclosure. In 1801 he wrote:",
+       "“… the fact is that in nineteen enclosure bills out of twenty they [the poor] are harmed, and in some cases badly harmed. …”"
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "circle",
+        "prompt": "Circle the word that tells you how many of the twenty bills Young is talking about."
+       },
+       {
+        "mark": "underline",
+        "prompt": "Underline who he says is harmed."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside the sentence above the quotation that tells you which side Young was on."
+       }
+      ],
+      "notes": [
+       {
+        "where": "the Poor, in the source line",
+        "mark": "margin",
+        "note": "he is writing about them, and for them, while still backing enclosure."
+       },
+       {
+        "where": "1801",
+        "mark": "margin",
+        "note": "this is more than a hundred years after 1688, where Document 1 starts."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "What You Need to Know on page 3, which is outside the document. The OI callout under this document on the casefile page. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No sourcing question here, but do it anyway in your head: the line above the quotation tells you who Young is and what he supported, and the source line gives you the year."
+      },
+      {
+       "tag": null,
+       "your_q": 4,
+       "mode": null,
+       "question": "Young supported enclosure. What did he admit it did to the poor?",
+       "line": "His sentence is short. Read it twice. The word “admit” in the question is doing work: the point is that this comes from someone on the other side of the argument. Use his own words for what happened to them."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No perspective question here. Still worth asking: why would a supporter of enclosure put this in print at all?"
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Nothing more on this document today beyond your two questions."
+      },
+      {
+       "tag": null,
+       "your_q": 5,
+       "mode": null,
+       "question": "Name one enduring issue Document 2 shows, and explain it.",
+       "line": "Page 2's card, the group about who gets what and who pays for it. Name the card's exact issue, not the umbrella, then say in one sentence why it is a problem, then point to where this document shows it."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 6. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 3,
+     "title": "The Industrial Revolution in Great Britain About 1830",
+     "kind": "map",
+     "src": "Source: Beers, World History: Patterns of Civilization, 1983 (adapted)",
+     "page": 11,
+     "text": [
+      "Document 3 is the map. Its help lives in the Atlas, not here — the QR in the margin of your casefile page opens it. Walk the map there, then come back and answer Questions 6 and 7 in your casefile. NO NAME ON IT? Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't. A map or chart has a maker too — someone chose what to color, what to label, and what to leave blank."
+     ],
+     "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 11. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 4,
+     "title": "Edward Baines on England's position",
+     "kind": "text",
+     "src": "Source: Edward Baines, History of the Cotton Manufacture in Great Britain, A. M. Kelley",
+     "page": 12,
+     "text": [
+      "In comparing the advantages of England for manufactures with those of other countries, we can by no means overlook the excellent commercial position of the country — intermediate between the north and south of Europe; and its insular situation [island location], which, combined with the command of the seas, secures our territory from invasion or annoyance. The German ocean, the Baltic, and the Mediterranean are the regular highways for our ships; and our western ports command an unobstructed [clear] passage to the Atlantic, and to every quarter [part] of the world."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "When we compare England's advantages for manufacturing with those of other countries, we cannot overlook how well placed it is for trade — halfway between the north and south of Europe — and its insular situation [island location], which, together with its control of the seas, keeps our land safe from invasion or trouble. The German ocean, the Baltic, and the Mediterranean are the regular highways for our ships, and our western ports have an unobstructed [clear] route out to the Atlantic and to every quarter [part] of the world."
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "underline",
+        "prompt": "Underline the two things about England's position that Baines names as advantages."
+       },
+       {
+        "mark": "circle",
+        "prompt": "Circle every sea, ocean or body of water he lists."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside the words that say what the island location protects England from."
+       }
+      ],
+      "notes": [
+       {
+        "where": "the regular highways for our ships",
+        "mark": "margin",
+        "note": "he is calling water a road, which is the whole idea."
+       },
+       {
+        "where": "we can by no means overlook",
+        "mark": "margin",
+        "note": "he is English, writing about England, and counting himself in, right from his opening line."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Day 2's OUTSIDE INFORMATION box on the casefile page. The OI callout under this document. WHERE OI FITS on this day's page shows you the three places an outside fact can go. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "The source line here gives you a writer and a book but no date and no audience. When a source line is thin, go to What You Need to Know on this day's page: it tells you the period this casefile covers (around 1760 on), even without Baines's own date."
+      },
+      {
+       "tag": null,
+       "your_q": 8,
+       "mode": null,
+       "question": "What advantage of England's location does Baines describe?",
+       "line": "He names more than one. The question asks for an advantage, so pick the one you can back with his own words, and take the words from the sentence you picked it from."
+      },
+      {
+       "tag": null,
+       "your_q": 9,
+       "mode": null,
+       "question": "Baines says the island location “secures our territory from invasion.” Why would safety from invasion help factories grow?",
+       "line": "This one is not in the document. Baines says England is safe; he does not say what safety does for a factory. Think about what an owner has to risk to build one, and what war does to that."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Look back at Document 3's map. Baines is describing the same island from the outside: coasts and sea routes, where the map showed you what was underground."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No Enduring Issue question on this document. Read page 2 and ask which umbrella covers a country getting rich partly because of where it sits."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 12. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 5,
+     "title": "Adam Smith on the division of labour",
+     "kind": "text",
+     "src": "Source: Adam Smith, The Wealth of Nations, 1776 (adapted)",
+     "page": 16,
+     "text": [
+      "“[A worker alone] could scarce, perhaps, with his utmost industry, make one pin in a day. . . . The important business of making a pin is, in this manner, divided into about eighteen distinct operations. . . . I have seen a small manufactory [factory] of this kind where ten men only were employed. . . . Those ten persons, therefore, could make among them upwards of forty-eight thousand pins in a day.”"
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "“[A worker alone] could hardly, even working his hardest, make one pin in a day. … The important business of making a pin is divided this way into about eighteen separate operations. … I have seen a small manufactory [factory] of this kind where only ten men were employed. … Those ten people, therefore, could make among them more than forty-eight thousand pins in a day.”"
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "circle",
+        "prompt": "Circle all three numbers in this passage."
+       },
+       {
+        "mark": "underline",
+        "prompt": "Underline the words that tell you how the job of making a pin is split up."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside the words that tell you Smith saw this himself."
+       }
+      ],
+      "notes": [
+       {
+        "where": "I have seen",
+        "mark": "margin",
+        "note": "Smith says he saw a workshop like this himself."
+       },
+       {
+        "where": "1776, in the source line",
+        "mark": "margin",
+        "note": "the same year as the American Declaration of Independence, and before the power loom and the railways in this casefile."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Day 3's What You Need to Know, which is outside the document. The OI callout under this document. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No sourcing question here. Do it anyway: the source line gives you a writer, a book and a year, and the word (adapted) tells you the wording has been made easier to read."
+      },
+      {
+       "tag": null,
+       "your_q": 10,
+       "mode": null,
+       "question": "How many pins could one worker make alone? How many could ten workers make by dividing the work?",
+       "line": "Both numbers are in the passage. The first is in the opening sentence; the second is in the last. Watch the word before the big number — it tells you the number is a floor, not an exact count."
+      },
+      {
+       "tag": null,
+       "your_q": 11,
+       "mode": null,
+       "question": "Why would a factory owner like Smith's idea?",
+       "line": "Smith is not talking about owners or profit here at all. Put the two numbers you just found side by side and ask what the difference between them is worth to someone paying ten wages."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Hold on to the number eighteen. Document 7 is about splitting a different job into parts, and it names three."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No Enduring Issue question on this document on its own. Question 13 covers Documents 5 and 6, so read Document 6 before you write it."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 16. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 6,
+     "title": "An introduction to The Wealth of Nations",
+     "kind": "text",
+     "src": "Source: Introduction to a re-publication of Adam Smith's The Wealth of Nations, likely written by Martin Perry in 2013",
+     "page": 17,
+     "text": [
+      "The Wealth of Nations carries the important message of laissez faire, which means that the government should intervene as little as possible in economic affairs and leave the market to its own devices. It advocates the liberation of economic production from all limiting regulation in order to benefit the people . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The Wealth of Nations carries the important message of laissez faire, which means that the government should step in as little as possible in economic matters and leave the market to run itself. It argues for freeing economic production from all limiting regulation in order to benefit the people …"
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "circle",
+        "prompt": "Circle the French phrase this passage is built around."
+       },
+       {
+        "mark": "underline",
+        "prompt": "Underline the words that say what the government should do."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside the reason the passage gives at the very end."
+       }
+      ],
+      "notes": [
+       {
+        "where": "likely, in the source line",
+        "mark": "margin",
+        "note": "even the people who printed this are not certain who wrote it."
+       },
+       {
+        "where": "2013, in the source line",
+        "mark": "margin",
+        "note": "somebody writing about Smith more than two hundred years later, not Smith."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Day 3's OUTSIDE INFORMATION box on the casefile page. The OI callout under this document. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No sourcing question here, but this source line is worth the time. It names a writer with “likely” in front of it and a year that is not Smith's. Ask the three questions on the NO NAME ON IT? card before you treat this as Smith's own voice.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
+      },
+      {
+       "tag": null,
+       "your_q": 12,
+       "mode": null,
+       "question": "According to Document 6, what role should government play in the economy?",
+       "line": "The answer is in the middle of the first sentence, right after the phrase it defines. Use the passage's own words for how much, not just whether."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No perspective question here. Still ask it: this is an introduction written to sell a book. What would it leave out?"
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Put this beside Document 5. One is Smith watching ten men make pins; the other is somebody telling you what Smith's book means. They are not the same kind of source."
+      },
+      {
+       "tag": null,
+       "your_q": 13,
+       "mode": null,
+       "question": "Name one enduring issue Documents 5 and 6 show, and explain it.",
+       "line": "This question covers both documents, so read them together first. On page 2, look at the group about who holds economic power and who decides. Name the card's exact issue, not the umbrella, then say why it is a problem, then point to where a document shows it."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 17. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 7,
+     "title": "Edmund Cartwright and the power loom",
+     "kind": "text",
+     "src": "Source: “Edmund Cartwright & the Invention of the Power Loom,” Our Nottinghamshire, May 9, 2013",
+     "page": 21,
+     "text": [
+      ". . .Once back in Leicestershire, however, Cartwright found that the idea of devising a weaving machine had lodged itself firmly in his mind.",
+      "“It struck me,” he wrote, “that as in plain weaving, according to the conception I then had of the business, that as there could only be three movements which were to follow each other in succession, there would be little difficulty in reproducing and repeating them.”",
+      "“Full of these ideas I immediately employed a carpenter and smith to carry them into effect. . . . To my great delight, a piece of cloth, such as it was, was the produce. . . .”",
+      "Sadly, this first machine of Cartwright's was not at all successful, and was actually slower in its operation than a manual hand loom.",
+      "Nevertheless, it worked and proved that producing cotton cloth by mechanical means was a possibility. All Cartwright had to do now was to improve and refine the process.",
+      "It took a whole series of improvements and new patents before, finally, in 1788, his machine had reached a point where the three component processes of weaving—shedding, picking and beat-up—could be performed with sufficient speed and efficiency. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "… Once back in Leicestershire, though, Cartwright found that the idea of building a weaving machine had lodged itself firmly in his mind.",
+       "“It struck me,” he wrote, “that in plain weaving, from what I understood of the business then, there could only be three movements, one after another, so there would be little difficulty in reproducing and repeating them.”",
+       "“Full of these ideas I immediately employed a carpenter and smith to carry them out. … To my great delight, a piece of cloth, such as it was, was the result. …”",
+       "Sadly, this first machine of Cartwright's was not at all successful, and was actually slower to work than a hand loom worked by a person.",
+       "Even so, it worked, and it proved that making cotton cloth by machine was possible. All Cartwright had to do now was improve and refine the process.",
+       "It took a whole series of improvements and new patents before, finally, in 1788, his machine reached the point where the three parts of weaving — shedding, picking and beat-up — could be done fast and well enough. …"
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "underline",
+        "prompt": "Underline the sentence that says how his first machine compared with a hand loom."
+       },
+       {
+        "mark": "circle",
+        "prompt": "Circle the year his machine finally worked well enough."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside the three named parts of weaving."
+       }
+      ],
+      "notes": [
+       {
+        "where": "lodged itself firmly in his mind",
+        "mark": "margin",
+        "note": "this is the article's voice, not Cartwright's. His own words are the parts inside quotation marks."
+       },
+       {
+        "where": "employed a carpenter and smith",
+        "mark": "margin",
+        "note": "he did not build it himself, and he was not a machine man."
+       },
+       {
+        "where": "2013, in the source line",
+        "mark": "margin",
+        "note": "an article from 2013 writing about 1788, quoting Cartwright's own account."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Day 4's What You Need to Know and the day's OUTSIDE INFORMATION box. The OI callout under this document. WHERE OI FITS in Day 2's box on page 9: the appositive is the easiest place to put a fact about who somebody was. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": 14,
+       "mode": null,
+       "question": "Explain the historical circumstances that led to the economic developments described in this excerpt.",
+       "line": "This one is not answered inside Document 7. The circumstances are what you have already read: Day 1's farming changes, Day 2's position and resources, Day 3's way of organising work. Go to What You Need to Know on Days 1 to 3 and build the run-up, then land on this machine."
+      },
+      {
+       "tag": null,
+       "your_q": 15,
+       "mode": null,
+       "question": "Cartwright's first loom was slower than weaving by hand. Why did he keep going?",
+       "line": "Two sentences in a row do this: one says the machine failed, the next starts with a word that turns it around. Read them as a pair. What did the failure still show him?"
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No perspective question here. Ask it anyway: this piece is celebrating an inventor. Who worked the hand looms this machine was built to replace, and are they in this passage at all?"
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Document 5 split one job into eighteen operations. This one splits weaving into three. Hold them together for Make the Case."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No Enduring Issue question on this document. On page 2, ask which umbrella covers a machine that does a person's job."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 21. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 8,
+     "title": "Andrew Ure on steam engines",
+     "kind": "text",
+     "src": "Source: Andrew Ure, The Philosophy of Manufactures: or, an Exposition of the Scientific, Moral, and Commercial Economy of the Factory System of Great Britain, A. M. Kelley",
+     "page": 22,
+     "text": [
+      ". . . Steam-engines furnish the means not only of their support but of their multiplication. They create a vast demand for fuel; and, while they lend their powerful arms to drain the pits and to raise the coals, they call into employment multitudes of miners, engineers, ship-builders, and sailors, and cause the construction of canals and railways: and, while they enable these rich fields of industry to be cultivated to the utmost, they leave thousands of fine arable fields free for the production of food to man, which must have been otherwise allotted to the food of horses. Steam-engines moreover, by the cheapness and steadiness of their action, fabricate [produce] cheap goods, and procure [acquire] in their exchange a liberal supply of the necessaries and comforts of life, produced in foreign lands. . . ."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "… Steam-engines provide the means not only of their own upkeep but of their multiplication. They create a huge demand for fuel; and while they lend their powerful arms to drain the pits and raise the coal, they put to work crowds of miners, engineers, ship-builders and sailors, and cause canals and railways to be built. While they let these rich fields of industry be worked to the utmost, they leave thousands of good arable fields free to grow food for people, which would otherwise have had to grow food for horses. Steam-engines also, because they work cheaply and steadily, fabricate [produce] cheap goods, and procure [acquire] in exchange for them a generous supply of the necessaries and comforts of life, produced in foreign lands. …"
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "underline",
+        "prompt": "Underline every kind of worker Ure names."
+       },
+       {
+        "mark": "circle",
+        "prompt": "Circle the two kinds of transport he says steam engines caused to be built."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside the full title of his book in the source line."
+       }
+      ],
+      "notes": [
+       {
+        "where": "their powerful arms",
+        "mark": "margin",
+        "note": "he is writing about machines as if they had bodies."
+       },
+       {
+        "where": "the food of horses",
+        "mark": "margin",
+        "note": "this is the farming story from Day 1, turning up again inside a passage about engines."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Day 4's OUTSIDE INFORMATION box. The OI callout under this document. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No sourcing question here, but read the source line all the way through. The title is long, and it tells you what the book is for before you read a word of the passage."
+      },
+      {
+       "tag": null,
+       "your_q": 16,
+       "mode": null,
+       "question": "According to Ure, name two kinds of workers steam engines put to work.",
+       "line": "They come in one run, inside a single sentence. Read to the end of that list before you choose two."
+      },
+      {
+       "tag": null,
+       "your_q": 17,
+       "mode": null,
+       "question": "Ure wrote a book praising the factory system. How does that shape what he says about steam engines?",
+       "line": "Go back to the title you starred. Then read the passage again asking what is missing: every effect he names points the same way. Who is not here, and what is not here?"
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Documents 7 and 8 are both about machines, but one is a story of one inventor and the other is an argument about a whole system. Notice which one names people who lost work."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No Enduring Issue question on this document. On page 2, ask which umbrella covers a new technology changing who works and at what."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 22. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 9,
+     "title": "The Bridgewater Canal",
+     "kind": "text",
+     "src": "Sources: Encyclopaedia Britannica, “Bridgewater Canal”; Historic UK, “The Bridgewater Canal” (adapted)",
+     "page": 26,
+     "text": [
+      "The Bridgewater Canal opened in 1761. It carried coal about 10 miles from the mines at Worsley to Manchester. One horse could pull a canal boat carrying about 30 tons, more than ten times what a horse and cart could carry. By 1762, the price of coal in Manchester had fallen by about half."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The Bridgewater Canal opened in 1761. It carried coal about 10 miles from the mines at Worsley to Manchester. One horse could pull a canal boat carrying about 30 tons, more than ten times what a horse and cart could carry. By 1762, the price of coal in Manchester had fallen by about half."
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "circle",
+        "prompt": "Circle the two years."
+       },
+       {
+        "mark": "underline",
+        "prompt": "Underline the two places the canal ran between."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside what happened to the price of coal."
+       }
+      ],
+      "notes": [
+       {
+        "where": "about 10 miles",
+        "mark": "margin",
+        "note": "a short distance, and it was still worth digging a canal for it."
+       },
+       {
+        "where": "1761",
+        "mark": "margin",
+        "note": "one year between the canal opening and the price falling."
+       },
+       {
+        "where": "1762",
+        "mark": "margin",
+        "note": "one year between the canal opening and the price falling."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Day 5's What You Need to Know and the day's OUTSIDE INFORMATION box. The OI callout under this document. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No sourcing question here. The source line names two reference works and no person, and it says (adapted). Use the NO NAME ON IT? card: when was it made, what is it for, and who would know this?",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
+      },
+      {
+       "tag": null,
+       "your_q": 18,
+       "mode": null,
+       "question": "What happened to the price of coal in Manchester after the canal opened? Why?",
+       "line": "The what is the last sentence, and the document gives you the amount. The why is the sentence before it, about what one horse could pull. Put the two together: the question asks for both halves."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No perspective question here. Ask it anyway: who paid to dig this, and what did they expect back?"
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "What You Need to Know on Day 5 tells you how coal moved before canals. Read it before you write, because the document only tells you what changed, not what it replaced."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Question 21 covers Documents 9 and 10, so read Document 10 before you write it."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 26. Use the sentence starter, or write something of equal or better value."
+    },
+    {
+     "n": 10,
+     "title": "The Liverpool and Manchester Railway",
+     "kind": "text",
+     "src": "Sources: Encyclopaedia Britannica and Wikipedia, “Liverpool and Manchester Railway” (adapted)",
+     "page": 26,
+     "text": [
+      "The Liverpool and Manchester Railway opened on September 15, 1830. It ran about 30 miles between the port of Liverpool and the mill town of Manchester. It was the first railway to run scheduled passenger and freight trains pulled only by steam locomotives. Huge loads of raw materials for the textile mills came into Liverpool by ship and went on by rail."
+     ],
+     "easier": {
+      "label": "(adapted, easier to read)",
+      "text": [
+       "The Liverpool and Manchester Railway opened on September 15, 1830. It ran about 30 miles between the port of Liverpool and the mill town of Manchester. It was the first railway to run scheduled passenger and freight trains pulled only by steam locomotives. Huge loads of raw materials for the textile mills came into Liverpool by ship and went on by rail."
+      ]
+     },
+     "annotate": {
+      "kind": "text",
+      "prompts": [
+       {
+        "mark": "underline",
+        "prompt": "Underline the words that describe what each of the two towns was."
+       },
+       {
+        "mark": "circle",
+        "prompt": "Circle what this passage says the railway was the first to do."
+       },
+       {
+        "mark": "star",
+        "prompt": "Put a star beside where the raw materials came from and where they went."
+       }
+      ],
+      "notes": [
+       {
+        "where": "scheduled",
+        "mark": "margin",
+        "note": "trains running to a timetable, which is new."
+       },
+       {
+        "where": "pulled only by steam locomotives",
+        "mark": "margin",
+        "note": "no horses anywhere on this line."
+       },
+       {
+        "where": "the mill town of Manchester",
+        "mark": "margin",
+        "note": "one faces the sea, one makes cloth, and the railway is the line between them."
+       }
+      ],
+      "oe": {
+       "kind": "where",
+       "text": "Day 5's OUTSIDE INFORMATION box. The OI callout under this document. WHERE OI FITS in Day 2's box on page 9: “what happened next” sits well after a date like 1830. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+      }
+     },
+     "steps": [
+      {
+       "tag": null,
+       "your_q": 20,
+       "mode": null,
+       "question": "Why did it matter that Liverpool was a port?",
+       "line": "The passage tells you what a port let in. Then ask what Manchester could not do without it. The sentence about raw materials does half the work; your geography does the other half.",
+       "tip": {
+        "title": "NO NAME ON IT?",
+        "text": [
+         "Not every source tells you who made it. When it doesn't, ask three things: When was it made? Who published it, and where did it first appear? Who was it made for? Then say what the source line tells you, and what it can't."
+        ]
+       }
+      },
+      {
+       "tag": null,
+       "your_q": 19,
+       "mode": null,
+       "question": "Where did raw materials come into Britain, and where did the railway take them?",
+       "line": "This is the last sentence, start to finish. Both ends of the journey are named in it, and so is how each leg was travelled."
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "No perspective question here. Ask it anyway: this is a reference-work summary. It gives you dates and firsts, but nobody's voice. Who is missing from it?"
+      },
+      {
+       "tag": null,
+       "your_q": null,
+       "mode": null,
+       "question": null,
+       "line": "Go back to Document 3's map in the Atlas, and to Document 4. Baines told you the seas were highways; this document tells you what happened once the goods landed."
+      },
+      {
+       "tag": null,
+       "your_q": 21,
+       "mode": null,
+       "question": "Name one enduring issue Documents 9 and 10 show, and explain it.",
+       "line": "This covers both. Read them together: one is water, one is rail, and both are about moving things faster and more cheaply. On page 2, look at the group about technology and the world around it. Name the card's exact issue, not the umbrella, then say why it is a problem, then point to where a document shows it."
+      },
+      {
+       "tag": "CHECK",
+       "your_q": null,
+       "mode": "check",
+       "question": null,
+       "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+      }
+     ],
+     "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 26. Use the sentence starter, or write something of equal or better value."
+    }
+   ]
+  }
+ ]
+}

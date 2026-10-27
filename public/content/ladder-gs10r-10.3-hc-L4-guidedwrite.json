@@ -1,0 +1,25 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-26 20:14 EDT by Will (global10r-curriculum). CRQ-shaped, on BK's 2026-10-22 10:29 ruling.",
+  "_status": "DRAFT. Wording to BK, then Danny's readers, then Josh. NOT APPROVED.",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own What You Need to Know, Outside Information boxes and documents (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 4,
+  "type": "guided_write",
+  "_activity": "Arthur Young on enclosure, 1801",
+  "practice_only": true,
+  "source_document": "Document 2 - Arthur Young on enclosure, 1801",
+  "source_citation": "Source: Arthur Young, An Inquiry into the Propriety of Applying Wastes to the Better Maintenance and Support of the Poor, 1801",
+  "source_text": "Arthur Young was a well-known writer on farming who supported enclosure. In 1801 he wrote:\n“. . . the fact is, that by nineteen enclosure bills in twenty they [the poor] are injured, in some grossly injured. . . .”",
+  "prompt": "Explain the historical circumstances that led to the creation of this document. [1]    Write 2 to 3 sentences. Read the question twice: it asks what led to this being WRITTEN, not what it says.",
+  "sentence_starter": "After ___, ___. By 1801, ___.",
+  "checklist": [
+    "Did you name something that was already happening before 1801?",
+    "Did you say what was going on for ordinary families, instead of repeating what the document says?",
+    "Did you connect it to why Young wrote this down?"
+  ],
+  "model_response": "After Parliament passed thousands of enclosure acts, the open fields and common land that poor families had grazed their animals on were fenced into private farms. Farms grew more food with fewer workers, and many families who lost their land moved to towns to look for work. By 1801 that cost was plain enough that Arthur Young, a well-known writer on farming who had supported enclosure, put it in print anyway.",
+  "submitted_to_teacher": false
+}

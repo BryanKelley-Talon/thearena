@@ -1,0 +1,93 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-26 20:14 EDT by Will (global10r-curriculum). CRQ-shaped, on BK's 2026-10-22 10:29 ruling.",
+  "_status": "DRAFT. Wording to BK, then Danny's readers, then Josh. NOT APPROVED.",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own What You Need to Know, Outside Information boxes and documents (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 1,
+  "type": "matching",
+  "_activity": "Before, in, after: the Liverpool and Manchester Railway, 1830",
+  "intro": "Document 10 opened in 1830. Sort each card by WHEN it belongs. Only one pile is historical context. Pick a card, then pick its pile.",
+  "left": [
+    {
+      "key": "a",
+      "label": "Moving coal and cotton by packhorse over rough roads, or by river boat, was slow and expensive.",
+      "hints": [
+        "Did this stop in 1830, or was it already true before?",
+        "If it was the problem the railway answered, it came first."
+      ]
+    },
+    {
+      "key": "b",
+      "label": "By the 1760s, Britain was digging canals.",
+      "hints": [
+        "The 1760s is seventy years before 1830.",
+        "Canals came before railways, and for the same reason."
+      ]
+    },
+    {
+      "key": "c",
+      "label": "Britain's mills were spinning raw cotton brought in by ship from the American South.",
+      "hints": [
+        "Where did the cotton in Britain's mills come from before 1830?",
+        "If the mills already needed that cotton, the need came first."
+      ]
+    },
+    {
+      "key": "d",
+      "label": "The railway opened on September 15, 1830.",
+      "hints": [
+        "Where would you read this?",
+        "If the document tells you, it is not context."
+      ]
+    },
+    {
+      "key": "e",
+      "label": "It ran about 30 miles between Liverpool and Manchester.",
+      "hints": [
+        "Is this something you know, or something the document says?",
+        "Read the document again - it is right there."
+      ]
+    },
+    {
+      "key": "f",
+      "label": "By 1850, Britain had about 6,000 miles of railway.",
+      "hints": [
+        "1850 is twenty years after this document.",
+        "What came after cannot explain what led to it."
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "BEFORE THIS DOCUMENT  -  this is historical context"
+    },
+    {
+      "key": "2",
+      "label": "IN THIS DOCUMENT  -  this is evidence, not context"
+    },
+    {
+      "key": "3",
+      "label": "AFTER IT  -  this is what came next"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "1",
+    "c": "1",
+    "d": "2",
+    "e": "2",
+    "f": "3"
+  },
+  "rationale": {
+    "a": "This was the problem. Slow, costly transport is what a railway was built to fix, so it came first.",
+    "b": "Canals were the first answer to that problem, from the 1760s. The railway is the next answer, seventy years on.",
+    "c": "The mills and the cotton they spun were already there. Cheaper transport between the port and the mills is what the line was worth building for.",
+    "d": "The date is in the document. A fact you read off the page is evidence, not context.",
+    "e": "The distance is in the document too. Context is what you bring, not what you copy.",
+    "f": "1850 is twenty years later. Something that happened after cannot explain what led to this."
+  }
+}
