@@ -98,9 +98,12 @@ function Story({ card, onBack, words }) {
 // The paper, open and big in the foreground over the room.
 function Paper({ era, onClose, words }) {
   const [openCard, setOpenCard] = useState(null)
-  const cards = (era.cards || []).filter(c => c.unlocked !== false)
-  const shut = (era.cards || []).filter(c => c.unlocked === false).length
+  // BK, 2026-10-27: "I want nothing locked on this paper...open the thing up."
+  // Every story on the front page is readable. No held cards, no count of what
+  // is still shut, no "as the class gets there".
+  const cards = (era.cards || []).filter(c => String(c.headline || '').trim())
   const card = openCard ? cards.find(c => c.id === openCard) : null
+  const [lead, ...rest] = cards
   return (
     <div className="tb-paper" role="dialog" aria-modal="true" aria-label={era.skin?.masthead || words.paper}>
       <div className="tb-paper-sheet">
@@ -112,38 +115,34 @@ function Paper({ era, onClose, words }) {
         {card
           ? <Story card={card} onBack={() => setOpenCard(null)} words={words} />
           : (
-            <>
-              <div className="tb-front">
-                {cards.map(c => (
-                  <button key={c.id} type="button" className={`tb-item${c.kind === 'thread' ? ' thread' : ''}`}
-                          onClick={() => setOpenCard(c.id)}>
-                    <span className="tb-item-head">{c.headline}</span>
-                    {c.lede && <span className="tb-item-lede">{c.lede}</span>}
-                    <span className="tb-item-go">{words.readIt}</span>
-                  </button>
-                ))}
-              </div>
-              {shut > 0 && <p className="tb-shut">{words.notYetCards(shut)}</p>}
-            </>
+            <div className="tb-front">
+              {lead && (
+                <button type="button" className="tb-item tb-lead" onClick={() => setOpenCard(lead.id)}>
+                  <span className="tb-item-head">{lead.headline}</span>
+                  {lead.lede && <span className="tb-item-lede">{lead.lede}</span>}
+                  <span className="tb-item-go">{words.readIt}</span>
+                </button>
+              )}
+              {rest.length > 0 && (
+                <div className="tb-cols">
+                  {rest.map(c => (
+                    <button key={c.id} type="button" className={`tb-item${c.kind === 'thread' ? ' thread' : ''}`}
+                            onClick={() => setOpenCard(c.id)}>
+                      <span className="tb-item-head">{c.headline}</span>
+                      {c.lede && <span className="tb-item-lede">{c.lede}</span>}
+                      <span className="tb-item-go">{words.readIt}</span>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
           )}
       </div>
     </div>
   )
 }
 
-// ONE ERA, AS A SCENE — not a layout. BK's ruling, 2026-10-26: "the green panel holds a
-// period piece of artwork or a picture, the room becomes the background, the newspaper is
-// foreground and big." The room art is shot with a CHROMA-GREEN PANEL on the wall and the
-// figures are supplied as TRANSPARENT cut-outs, because both are meant to be composited into
-// the scene. Rendering either one as a card in a sidebar is not a smaller version of this
-// idea; it is a different idea, and it was wrong.
-//
-// Two rules fall out of that and are enforced here:
-//   • The chroma panel is NEVER shown. Raw green on the wall is a broken scene, so when no
-//     picture has been chosen the frame renders as a frame and says what belongs in it.
-//   • The figures stand IN the room, on the floor, at the scale a person would be — never
-//     beside it.
-// The rectangles are Josh's fields (the file's own _rules say so), measured off the chroma.
+
 function Room({ era, onOpenPaper, paperOpen, onClose, words }) {
   const rect = era.room?.panel_rect
   const stand = era.silhouettes?.stand
@@ -235,7 +234,6 @@ export const THROWBACK_WORDS = {
   oiBadge: 'Outside Information',
   panelEmpty: 'The picture for this room has not been chosen yet.',
   openPaper: where => `Open the front page for ${where}`,
-  notYetCards: n => `${n} more ${n === 1 ? 'story opens' : 'stories open'} as the class gets there.`,
 }
 
 export const THROWBACK_STYLES = `
@@ -296,23 +294,64 @@ export const THROWBACK_STYLES = `
   font-size:12px;color:var(--arena-signal);margin-bottom:4px}
 .tb-absent p{margin:0;color:var(--white);font-size:15px;line-height:1.5}
 /* The paper, big in the foreground over the room. */
-.tb-paper{position:fixed;inset:0;z-index:40;background:rgba(6,10,18,.82);display:flex;align-items:flex-start;
+/* THE FRONT PAGE. It has to read as a newspaper at a glance - masthead rules,
+   a story that dominates, column rules, dense serif - or a kid does not know
+   what he is holding. Nothing here is locked: every story on the page opens. */
+.tb-paper{position:fixed;inset:0;z-index:40;background:rgba(6,10,18,.86);display:flex;align-items:flex-start;
   justify-content:center;padding:22px 14px;overflow:auto}
-.tb-paper-sheet{width:min(840px,100%);background:#F3EBD8;color:#17130D;border-radius:6px;padding:20px 22px 26px;
-  box-shadow:0 20px 60px rgba(0,0,0,.6)}
-.tb-masthead{position:relative;border-bottom:3px double #17130D;padding-bottom:10px;margin-bottom:14px}
-.tb-masthead h2{font-family:'Playfair Display','Barlow Condensed',serif;font-size:clamp(26px,5vw,44px);
-  letter-spacing:.02em;margin:0;text-align:center;color:#17130D}
-.tb-edition{text-align:center;margin:4px 0 0;font-size:14px;color:#5A4C39}
-.tb-close{position:absolute;right:0;top:0;background:none;border:0;font-size:30px;line-height:1;cursor:pointer;color:#17130D}
-.tb-front{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
-.tb-item{text-align:left;background:none;border:0;border-top:1px solid #C9BCA2;padding:12px 2px 14px;cursor:pointer;
-  display:flex;flex-direction:column;gap:5px;color:#17130D;font-family:'Libre Baskerville',Georgia,serif}
-.tb-item:hover .tb-item-head{text-decoration:underline}
-.tb-item-head{font-size:19px;line-height:1.25;font-weight:700}
-.tb-item-lede{font-size:15px;line-height:1.5;color:#3A3123}
-.tb-item-go{font-size:13px;color:#7A1F12;letter-spacing:.04em}
-.tb-shut{margin:14px 0 0;font-size:14px;color:#5A4C39;font-style:italic}
+.tb-paper-sheet{width:min(960px,100%);color:#120F0A;text-shadow:none;border-radius:2px;padding:26px clamp(18px,3.5vw,38px) 34px;
+  font-family:'Libre Baskerville',Georgia,serif;
+  background:#F0E6CE;
+  background-image:
+    radial-gradient(circle at 18% 12%,rgba(140,112,64,.07),transparent 42%),
+    radial-gradient(circle at 82% 78%,rgba(140,112,64,.06),transparent 46%);
+  box-shadow:0 24px 70px rgba(0,0,0,.65),inset 0 0 0 1px rgba(23,19,13,.18)}
+/* Masthead: thin rule, name, thin rule, dateline, heavy rule. */
+.tb-masthead{position:relative;border-top:1px solid #17130D;border-bottom:4px solid #17130D;
+  padding:10px 0 0;margin:0 0 18px}
+.tb-masthead h2{font-family:'Playfair Display',Georgia,serif;font-weight:900;text-shadow:none;
+  font-size:clamp(30px,7.2vw,62px);line-height:1.02;letter-spacing:.01em;margin:0;text-align:center;
+  color:#17130D;text-transform:uppercase}
+.tb-edition{text-align:center;margin:8px 0 0;padding:5px 0;font-size:clamp(10px,1.5vw,12px);
+  color:#3A3123;text-transform:uppercase;letter-spacing:.22em;font-family:'Barlow Condensed',sans-serif;
+  border-top:1px solid #17130D;border-bottom:1px solid #17130D}
+.tb-close{position:absolute;right:-6px;top:-10px;background:none;border:0;font-size:30px;line-height:1;
+  cursor:pointer;color:#17130D;padding:4px 8px}
+.tb-close:hover{color:#7A1F12}
+/* Every story is a button, but it has to read as type on a page. */
+.tb-item{text-align:left;background:none;border:0;padding:0;cursor:pointer;display:flex;flex-direction:column;
+  gap:7px;color:#17130D;font-family:'Libre Baskerville',Georgia,serif}
+.tb-item:hover .tb-item-head,.tb-item:focus-visible .tb-item-head{text-decoration:underline}
+.tb-item-head{font-family:'Playfair Display',Georgia,serif;font-weight:800;text-shadow:none;font-size:19px;line-height:1.18;
+  letter-spacing:-.01em}
+.tb-item-lede{font-size:14.5px;line-height:1.62;color:#2C251A;text-align:justify;hyphens:auto}
+.tb-item-go{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;
+  font-size:11.5px;color:#7A1F12}
+/* The lead. One story runs the width of the page above the fold. */
+.tb-lead{border-bottom:2px solid #17130D;padding-bottom:18px;margin-bottom:4px;gap:10px}
+.tb-lead .tb-item-head{font-size:clamp(25px,4.6vw,40px);line-height:1.04;text-align:center;letter-spacing:-.015em}
+.tb-lead .tb-item-lede{font-size:clamp(14.5px,1.7vw,16px);line-height:1.6;columns:2;column-gap:28px;
+  column-rule:1px solid #C7B897}
+.tb-lead .tb-item-go{align-self:center}
+/* The columns under the fold, with rules between them. */
+.tb-cols{display:grid;grid-template-columns:1fr;gap:0}
+.tb-cols .tb-item{padding:16px 0;border-top:1px solid #C0B094}
+.tb-cols .tb-item:first-child{border-top:0;padding-top:14px}
+@media (min-width:600px){
+  .tb-cols{grid-template-columns:1fr 1fr}
+  .tb-cols .tb-item{padding:16px 20px}
+  .tb-cols .tb-item:nth-child(2n+1){padding-left:0}
+  .tb-cols .tb-item:nth-child(2n){padding-right:0;border-left:1px solid #C0B094}
+  .tb-cols .tb-item:nth-child(-n+2){border-top:0;padding-top:14px}
+}
+@media (min-width:880px){
+  .tb-cols{grid-template-columns:repeat(3,1fr)}
+  .tb-cols .tb-item{padding:16px 20px;border-left:1px solid #C0B094}
+  .tb-cols .tb-item:nth-child(3n+1){padding-left:0;border-left:0}
+  .tb-cols .tb-item:nth-child(3n){padding-right:0}
+  .tb-cols .tb-item:nth-child(2n){border-left:1px solid #C0B094}
+  .tb-cols .tb-item:nth-child(-n+3){border-top:0;padding-top:14px}
+}
 .tb-story-back{background:none;border:0;cursor:pointer;color:#7A1F12;font-size:15px;padding:0 0 10px}
 .tb-story-head{font-family:'Playfair Display',Georgia,serif;font-size:clamp(22px,3.4vw,30px);margin:0 0 8px;color:#17130D}
 .tb-lede{font-size:17px;line-height:1.55;font-weight:600;margin:0 0 10px}
