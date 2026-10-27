@@ -131,22 +131,47 @@ function Paper({ era, onClose, words }) {
   )
 }
 
-// One era: the room, with the paper on the wall. Tapping the picture opens the paper.
+// ONE ERA, AS A SCENE — not a layout. BK's ruling, 2026-10-26: "the green panel holds a
+// period piece of artwork or a picture, the room becomes the background, the newspaper is
+// foreground and big." The room art is shot with a CHROMA-GREEN PANEL on the wall and the
+// figures are supplied as TRANSPARENT cut-outs, because both are meant to be composited into
+// the scene. Rendering either one as a card in a sidebar is not a smaller version of this
+// idea; it is a different idea, and it was wrong.
+//
+// Two rules fall out of that and are enforced here:
+//   • The chroma panel is NEVER shown. Raw green on the wall is a broken scene, so when no
+//     picture has been chosen the frame renders as a frame and says what belongs in it.
+//   • The figures stand IN the room, on the floor, at the scale a person would be — never
+//     beside it.
+// The rectangles are Josh's fields (the file's own _rules say so), measured off the chroma.
 function Room({ era, onOpenPaper, paperOpen, onClose, words }) {
+  const rect = era.room?.panel_rect
+  const stand = era.silhouettes?.stand
+  const pic = era.room?.panel_image     // the period picture, when one has been chosen
   return (
     <div className="tb-room">
-      <div className="tb-room-art">
-        <Figure src={era.room?.image} alt={era.room?.image_alt} caption={era.room?.caption} className="tb-room-fig" />
-        <button type="button" className="tb-panel" onClick={onOpenPaper} aria-label={words.openPaper(era.label || era.year)}>
-          <span className="tb-panel-word">{era.skin?.masthead || words.paper}</span>
-          <span className="tb-panel-go">{words.openIt}</span>
-        </button>
-      </div>
-      <div className="tb-room-side">
-        {era.silhouettes && (
-          <Figure src={era.silhouettes.image} alt={era.silhouettes.image_alt}
-                  caption={era.silhouettes.caption} className="tb-sil" />
+      <div className="tb-scene">
+        <Figure src={era.room?.image} alt={era.room?.image_alt} className="tb-scene-bg" />
+        {/* The picture on the wall, sitting exactly where the panel is in the art. */}
+        {rect && (
+          <button type="button" className="tb-panel" onClick={onOpenPaper}
+                  style={{ left: `${rect.left}%`, top: `${rect.top}%`, width: `${rect.width}%`, height: `${rect.height}%` }}
+                  aria-label={words.openPaper(era.label || era.year)}>
+            {pic
+              ? <img src={assetUrl(pic.src)} alt={pic.alt || ''} />
+              : <span className="tb-panel-empty">{words.panelEmpty}</span>}
+            <span className="tb-panel-go">{words.openIt}</span>
+          </button>
         )}
+        {/* The figures, standing in the room. */}
+        {era.silhouettes?.image && stand && (
+          <img className="tb-stand" src={assetUrl(era.silhouettes.image)} alt={era.silhouettes.image_alt || ''}
+               style={{ left: `${stand.left}%`, bottom: `${stand.bottom}%`, height: `${stand.height}%` }} />
+        )}
+      </div>
+      <div className="tb-room-under">
+        {era.room?.caption && <p className="tb-note">{era.room.caption}</p>}
+        {era.silhouettes?.caption && <p className="tb-note">{era.silhouettes.caption}</p>}
         {era.silhouettes?.attire_note && <p className="tb-note">{era.silhouettes.attire_note}</p>}
         {era.who_is_not_in_this_room && (
           <aside className="tb-absent">
@@ -208,6 +233,7 @@ export const THROWBACK_WORDS = {
   pickOne: 'Pick a year to step into.',
   whoIsNotHere: 'Who is not in this room',
   oiBadge: 'Outside Information',
+  panelEmpty: 'The picture for this room has not been chosen yet.',
   openPaper: where => `Open the front page for ${where}`,
   notYetCards: n => `${n} more ${n === 1 ? 'story opens' : 'stories open'} as the class gets there.`,
 }
@@ -231,24 +257,28 @@ export const THROWBACK_STYLES = `
 .tb-year-n{font-family:'Barlow Condensed',sans-serif;font-size:23px;letter-spacing:.04em}
 .tb-year-label{color:var(--grey);font-size:14px}
 .tb-pick{color:var(--grey);font-size:17px}
-.tb-room{position:relative;display:grid;grid-template-columns:minmax(0,2fr) minmax(0,1fr);gap:18px}
-@media (max-width:880px){.tb-room{grid-template-columns:1fr}}
-.tb-room-art{position:relative}
-.tb-fig{margin:0}
-.tb-fig img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--edge)}
-.tb-fig figcaption{color:var(--grey);font-size:14px;line-height:1.45;margin-top:6px}
-.tb-credit,.tb-label{display:block;color:var(--dim);font-size:13px;margin-top:2px}
-.tb-fig-missing{border:1px dashed var(--edge);border-radius:12px;padding:16px;background:var(--card);color:var(--grey);font-size:15px;line-height:1.5}
-.tb-fig-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;
-  font-size:12px;color:var(--canvas);background:var(--grey);padding:2px 7px;border-radius:4px;margin-bottom:8px}
-/* The panel on the wall: the way into the paper, sitting on the room art. */
-.tb-panel{position:absolute;left:50%;top:34%;transform:translate(-50%,-50%);display:flex;flex-direction:column;
-  align-items:center;gap:4px;padding:14px 20px;border-radius:10px;cursor:pointer;
-  background:color-mix(in srgb,var(--canvas) 72%,transparent);border:2px solid var(--gold);color:var(--white)}
-.tb-panel:hover{background:var(--canvas)}
-.tb-panel-word{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:20px}
-.tb-panel-go{color:var(--gold);font-size:14px}
-.tb-room-side{display:flex;flex-direction:column;gap:12px}
+.tb-room{display:flex;flex-direction:column;gap:14px}
+/* THE SCENE. The room is the background; everything else sits on it. */
+.tb-scene{position:relative;width:100%;max-width:1024px;border-radius:12px;overflow:hidden;border:1px solid var(--edge);line-height:0}
+.tb-scene .tb-fig{margin:0}
+.tb-scene .tb-fig img{display:block;width:100%;height:auto;border:0;border-radius:0}
+.tb-scene .tb-fig figcaption{display:none}
+.tb-scene .tb-fig-missing{border-radius:0;line-height:1.5}
+/* The picture on the wall, placed on the panel. It is a picture, not a label - and it is
+   never the raw chroma green the room was shot with. */
+.tb-panel{position:absolute;padding:0;margin:0;border:0;cursor:pointer;overflow:hidden;
+  background:linear-gradient(160deg,#6E5A3C,#4A3B26);display:flex;align-items:center;justify-content:center}
+.tb-panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.tb-panel-empty{color:#E8DCC3;font-size:clamp(11px,1.15vw,14px);line-height:1.35;padding:6%;text-align:center;
+  font-family:'Libre Baskerville',Georgia,serif}
+.tb-panel-go{position:absolute;left:0;right:0;bottom:0;background:color-mix(in srgb,var(--canvas) 78%,transparent);
+  color:var(--gold);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;
+  font-size:clamp(10px,1.1vw,13px);padding:3px 0;text-align:center;opacity:0;transition:opacity .15s}
+.tb-panel:hover .tb-panel-go,.tb-panel:focus-visible .tb-panel-go{opacity:1}
+.tb-panel:hover{outline:2px solid var(--gold);outline-offset:-2px}
+/* The figures, standing in the room. */
+.tb-stand{position:absolute;width:auto;display:block;pointer-events:none;filter:drop-shadow(0 6px 10px rgba(0,0,0,.45))}
+.tb-room-under{display:flex;flex-direction:column;gap:10px;max-width:760px}
 .tb-note,.tb-take{color:var(--grey);font-size:15px;line-height:1.5;margin:0}
 .tb-absent{border-left:3px solid var(--arena-signal);padding:10px 13px;border-radius:0 8px 8px 0;
   background:color-mix(in srgb,var(--arena-signal) 10%,transparent)}

@@ -93,7 +93,14 @@
           "credit": "AI-made picture. Not a real painting.",
           "_source": "BK, Gemini, Josh's Prompt B (1801 swap), 2026-10-26 22:49; no crop needed. In/live-from-pack-2026-10-26/throwback-panel-picture-1801-v1.jpg",
           "_danny_checked": false
-        }
+        },
+        "panel_rect": {
+          "left": 40.039,
+          "top": 5.07,
+          "width": 19.824,
+          "height": 29.371
+        },
+        "_panel_rect_note": "Percent of the scene box. Measured off the chroma panel in the room art and grown 3px all round (Josh, 2026-10-27) so the picture over-covers it and no green survives at the edge."
       },
       "silhouettes": {
         "image": "img/sil-1801.png",
@@ -101,7 +108,13 @@
         "caption": "A young woman and a young man, town family, 1801.",
         "attire_note": "[Sam: one line on what the clothes were made of and who wore them. Danny checks against a costume source.]",
         "kind": "ai",
-        "credit": "AI-made silhouette."
+        "credit": "AI-made silhouette.",
+        "stand": {
+          "left": 1.0,
+          "bottom": 7.7,
+          "height": 74.5
+        },
+        "_stand_note": "Measured off the room art (Josh, 2026-10-27): left/bottom/height are percent of the scene box; the figures stand on the floor to the left of the hearth, clear of the panel."
       },
       "who_is_not_in_this_room": "[Sam: one sentence naming who this parlor leaves out in 1801.]",
       "take_it_with_you": "[Sam: the one question a kid carries out of 1801 into the casefile.]",
@@ -391,7 +404,14 @@
           "credit": "AI-made picture. Not a real painting.",
           "_source": "BK, Gemini, Josh's Prompt B, 2026-10-26 22:41; cropped to the canvas. In/live-from-pack-2026-10-26/throwback-panel-picture-1850-v1.jpg",
           "_danny_checked": false
-        }
+        },
+        "panel_rect": {
+          "left": 39.453,
+          "top": 17.133,
+          "width": 21.094,
+          "height": 27.622
+        },
+        "_panel_rect_note": "Percent of the scene box. Measured off the chroma panel in the room art and grown 3px all round (Josh, 2026-10-27) so the picture over-covers it and no green survives at the edge."
       },
       "silhouettes": {
         "image": "img/sil-1850.png",
@@ -399,7 +419,13 @@
         "caption": "A young woman and a young man, town family, 1850.",
         "attire_note": "[Sam: one line. Danny checks against a costume source.]",
         "kind": "ai",
-        "credit": "AI-made silhouette."
+        "credit": "AI-made silhouette.",
+        "stand": {
+          "left": 2.3,
+          "bottom": 7.2,
+          "height": 63.3
+        },
+        "_stand_note": "Measured off the room art (Josh, 2026-10-27): left/bottom/height are percent of the scene box; the figures stand on the floor to the left of the hearth, clear of the panel."
       },
       "who_is_not_in_this_room": "[Sam: one sentence naming who this parlor leaves out in 1850.]",
       "take_it_with_you": "[Sam: the one question a kid carries out of 1850 into the casefile.]",
