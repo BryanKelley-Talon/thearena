@@ -188,8 +188,42 @@ export function GaugeFace({ value = 0, dark = false, size = 160 }) {
 
 export const statusLine = top => (top ? `Needle at ${top}` : 'Not started')
 
-export function SkillGauges({ course, unit, prog, onOpen, builtOnly = false }) {
-  const skills = roomSkills(course, unit).filter(s => !builtOnly || s.ladder)
+// A unit's gauge work can be grouped BY CASEFILE rather than listed flat (manifest
+// unit.casefiles). BK, 2026-10-24 16:55: "separate by Casefile, easier to refer to for kids";
+// 17:13: the unit's room carries a door per casefile. 17:15: "a door shows the gauges its
+// casefile's scoring page scores, no more and no fewer" — so the codes come from the desk's
+// own scoring-page list in the manifest and are never typed here. A casefile with no scoring
+// page yet simply has no door: an empty room is the thing BK ruled out.
+export function CasefileDoors({ unit, prog, course, onOpen }) {
+  const cfs = unit?.casefiles || []
+  if (!cfs.length) return null
+  return (
+    <div className="cf-doors">
+      {cfs.map(cf => {
+        const codes = cf.skills || []
+        const built = roomSkills(course, unit).filter(s => codes.includes(s.code) && s.ladder).length
+        return (
+          <button key={cf.id} type="button" className="cf-door" onClick={() => onOpen(cf.id)}
+                  aria-label={`Casefile ${cf.id}${cf.label ? `, ${cf.label}` : ''}. ${codes.length} gauges. Open.`}>
+            <span className="cf-door-id">Casefile {cf.id}</span>
+            {cf.label && <span className="cf-door-label">{cf.label}</span>}
+            <span className="cf-door-count">{built} of {codes.length} ready</span>
+          </button>
+        )
+      })}
+    </div>
+  )
+}
+
+export function SkillGauges({ course, unit, prog, onOpen, builtOnly = false, only = null }) {
+  // Behind a casefile door the list is fixed by that casefile's scoring page, so a gauge it
+  // scores but nobody has authored yet still SHOWS — it just can't be opened. Tapping through
+  // to an empty ladder is the "empty" BK ruled out (2026-10-24 17:19), and a kid who scanned
+  // the casefile's QR should not find five dead doors behind it.
+  const skills = roomSkills(course, unit)
+    .filter(s => !builtOnly || s.ladder)
+    .filter(s => !only || only.includes(s.code))
+    .map(s => (only && !s.ladder ? { ...s, live: false } : s))
   if (!skills.length) return null
   return (
     <div className="gauges">
@@ -748,6 +782,19 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 .practice-row.off{opacity:.5;cursor:default}
 .skill-about{color:var(--white);font-size:18px;line-height:1.55;padding:14px 16px;border-left:3px solid var(--gold);
   background:color-mix(in srgb,var(--gold) 8%,transparent);border-radius:0 8px 8px 0;margin:0 0 18px}
+
+/* ---------- CASEFILE DOORS: a unit's gauge work, grouped the way the paper is ---------- */
+/* Same card language as everything else a kid taps. The count is honest about what is ready
+   behind the door, so a kid is never sent through one to find nothing. */
+.cf-doors{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-bottom:34px}
+.cf-door{display:flex;flex-direction:column;align-items:flex-start;gap:4px;text-align:left;padding:18px 18px 16px;
+  border-radius:14px;background:var(--card);border:2px solid var(--arena-signal);color:inherit;cursor:pointer;
+  box-shadow:0 1px 0 rgba(255,255,255,.07) inset,0 8px 22px rgba(0,0,0,.55)}
+.cf-door:hover{border-color:var(--gold);background:var(--card-lit);transform:translateY(-2px)}
+.cf-door-id{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;
+  font-size:23px;font-weight:600;color:var(--white);line-height:1.1}
+.cf-door-label{color:var(--white);font-size:16px;line-height:1.45}
+.cf-door-count{color:var(--grey);font-size:15px;margin-top:2px}
 
 /* ---------- A COLD RUNG: badge, intro, and the BEFORE WE TALK framing ---------- */
 /* The badge and intro are the desk's own words naming what this rung is. BEFORE WE TALK is

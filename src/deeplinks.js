@@ -60,6 +60,14 @@ export function parseHash(hash, manifest) {
   const unit = unitByNumber(course, parts[1])
   if (!unit) return r
   const u = { ...r, at: 'unit', unitSlug: unit.slug }
+  // A casefile's own gauge work: #/us/11.3A/gauges/A. BK, 2026-10-24 16:55 ("separate by
+  // Casefile, easier to refer to for kids") and 17:13 (the room carries a door per casefile).
+  // The printed scoring page's QR points here, so the id is the casefile letter and nothing else.
+  // An unknown or unbuilt casefile falls back to the unit room, never a blank page.
+  if (parts[2] === 'gauges') {
+    const cf = String(parts[3] || '').toUpperCase()
+    return cf && (unit.casefiles || []).some(c => c.id === cf) ? { ...u, at: 'gauges', cf } : u
+  }
   if (parts[2] === 'review') return { ...u, at: 'review' }
   if (parts[2] === 'atlas') return { ...u, at: 'unitatlas' }
   if (parts[2] && (unit.rooms || []).some(x => x.slug === parts[2] && x.published === true))
@@ -92,6 +100,7 @@ export function buildHash(s) {
     if (s.daCf) return `${u}/doc-assist/${s.daCf}`
     return `${u}/doc-assist`
   }
+  if (s.gaugesCf) return `${u}/gauges/${s.gaugesCf}`
   if (s.review) return `${u}/review`
   if (s.unitAtlas) return `${u}/atlas`
   if (s.civics) return s.civicsCard ? `${u}/${s.civics}/${encodeURIComponent(s.civicsCard)}` : `${u}/${s.civics}`

@@ -47,7 +47,7 @@ import { PeelBuild, PEEL_STYLES } from './peel.jsx'
 import { Highlight, HL_STYLES } from './highlight.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
-  LADDER_STYLES, SkillGauges, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
+  LADDER_STYLES, SkillGauges, CasefileDoors, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
   UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone,
 } from './ladder.jsx'
 import {
@@ -1393,7 +1393,7 @@ function UnitLane({ course, onOpen, onOpenUnit0 }) {
   )
 }
 
-function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, wlSets, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenReview, onBack, onGoNow }) {
+function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, wlSets, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenCasefile, onOpenReview, onBack, onGoNow }) {
   const now = currentUnit(course)
   const isCurrent = now?.slug === unit.slug
   return (
@@ -1412,7 +1412,12 @@ function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, 
       {!isCurrent && roomSkills(course, unit).some(s => s.ladder) && (
         <>
           <h3 className="room-section" >{unitNum(unit) ? UNIT_WORDS.skillsIn(unitNum(unit)) : 'Your skills in this unit'}</h3>
-          <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} builtOnly />
+          {/* A unit that groups its gauge work by casefile shows doors instead of a flat
+              list (BK 2026-10-24 17:13). Units built before that rule keep the flat list,
+              so nothing already live moves. */}
+          {(unit.casefiles || []).length
+            ? <CasefileDoors unit={unit} course={course} prog={prog} onOpen={onOpenCasefile} />
+            : <SkillGauges course={course} unit={unit} prog={prog} onOpen={onOpenSkill} builtOnly />}
           <div className="door-room" />
         </>
       )}
@@ -2019,6 +2024,7 @@ export default function App() {
   const [levelSource, setLevelSource] = useState(null)   // undefined-while-loading is `null`; a failed fetch is `false`
   const [levelDocs, setLevelDocs] = useState(null)       // {"5": doc, …} for a level that carries its documents
   const [review, setReview] = useState(false)
+  const [gaugesCf, setGaugesCf] = useState(null)      // a casefile id when the kid is in that casefile's gauges
   const [daPack, setDaPack] = useState(null)          // the unit's Doc Assist pack; false = none or failed
   const [daOpen, setDaOpen] = useState(false)
   const [daDoc, setDaDoc] = useState(null)             // { cf, i } — a casefile id and a document index
@@ -2161,7 +2167,7 @@ export default function App() {
   }
   const applyRoute = r => {
     setStationSlug(null); setDrillIndex(null); setSkill(null); setLevel(null); setLevelPack(null)
-    setReview(false); setBriefPack(null); setDaOpen(false); setDaDoc(null); setPendingDa(null)
+    setReview(false); setGaugesCf(null); setBriefPack(null); setDaOpen(false); setDaDoc(null); setPendingDa(null)
     setActIndex(null); setPack(null); setUnit0(false); setOfficeTheme(null); setOfficePack(null)
     setUnitAtlas(r.at === 'unitatlas')
     setStopOpen(r.stopOpen || null)
@@ -2184,6 +2190,7 @@ export default function App() {
     setUnitSlug(r.unitSlug || null)
     setRoomFrom('units')
     if (r.at === 'unit0') setUnit0(true)
+    if (r.at === 'gauges') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) setGaugesCf(r.cf) }
     if (r.at === 'review') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) { setReview(true); fetchContent(u.brief_ref, setBriefPack) } }
     if (r.at === 'docassist') setPendingDa({ cf: r.cf || null, docN: r.docN ?? null })
     // A gauge level link opens the unit we're in, that gauge, and (once its ladder is in hand) that level.
@@ -2218,14 +2225,14 @@ export default function App() {
     const daCf = daDoc && daPack ? openCasefiles(daPack).find(c => c.id === daDoc.cf) : null
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
-      course, unit0, unit, lane: doorLane, review, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
+      course, unit0, unit, lane: doorLane, review, gaugesCf, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
       chase, stopOpen, civics, civicsCard,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
     setHere(h)                                              // where the kid is, for the chase pill (10/9)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2354,6 +2361,25 @@ export default function App() {
       </div>
     )
   }
+  else if (unit && gaugesCf) {
+    // One casefile's own gauge work. This is where the casefile's printed scoring-page QR
+    // lands (#/us/11.3A/gauges/A), so a kid scanning it arrives at the gauges that casefile
+    // is scored on — not the course's front door, and not a flat list of everything.
+    const cf = (unit.casefiles || []).find(c => c.id === gaugesCf)
+    const leave = () => { setGaugesCf(null); window.scrollTo(0, 0) }
+    screen = (
+      <div className="wrap">
+        <ScreenHeader label={`Casefile ${gaugesCf}`} onBack={leave} color={course.accent} back={unitName(unit)} />
+        <div className="detail">
+          <h2>{cf?.label ? `Casefile ${gaugesCf} · ${cf.label}` : `Casefile ${gaugesCf}`}</h2>
+          {cf?.blurb && <p className="room-sub">{cf.blurb}</p>}
+          <SkillGauges course={course} unit={unit} prog={prog} only={cf?.skills || []}
+                       onOpen={code => { setGaugesCf(null); setLadderFrom('unit'); setSkill(code); window.scrollTo(0, 0) }} />
+        </div>
+        <BottomBack onBack={leave} back={unitName(unit)} />
+      </div>
+    )
+  }
   else if (unit && review) {
     screen = (
       <div className="wrap">
@@ -2385,6 +2411,7 @@ export default function App() {
                                     wlSets={wlSets} onOpenSet={s => { setWlSlug(s); window.scrollTo(0, 0) }}
                                     onOpenDocAssist={() => { setRoomFrom('units'); setDaOpen(true); setDaDoc(null); window.scrollTo(0, 0) }}
                                     onOpenSkill={code => { setLadderFrom('unit'); setSkill(code); window.scrollTo(0, 0) }}
+                                    onOpenCasefile={id => { setGaugesCf(id); window.scrollTo(0, 0) }}
                                     onOpenReview={() => { setRoomFrom('units'); openReview(unit) }}
                                     onOpenActivity={i => { setRoomFrom('units'); openActivity(unit, i) }}
                                     onGoNow={() => { setUnitSlug(null); setSkill(null); setLevel(null); setReview(false); setDoorLane('skills'); window.scrollTo(0, 0) }}

@@ -1350,7 +1350,7 @@
           "published": true,
           "brief_ref": "content/brief-us11r-11.2.json",
         "review_extras": {
-        "_source": "Josh, 2026-10-27, on BK's 2026-10-26 20:27 order via Sam ('lets make sure the Unit Test Review on Arena is updated to support success on this test. Elastic Clause highlight...they have to know Necessary and Proper/Elastic Clause. i've said it aloud in class a lot.'). Every student-facing line below is lifted word for word from already-blessed files, nothing authored here: the definitions are Casefile B and C Key Vocabulary (Sam's casefile-wording source), the 'why elastic' line is THE MACHINE's own Congress card, the Antifederalist line is Casefile B Document 16 as Doc Assist prints it, and the McCulloch line is THE LANDMARK CASES' own holding row. The four short labels are the only words Josh set, and they follow Sam's own order ('what it is, why it is called elastic, why Antifederalists feared it, and how McCulloch v. Maryland used it'). TEST WALL: nothing here comes from a Part I item; Friday's released NYSED items were never read. Lives in the manifest, not in Sam's brief file, so brief-us11r-11.2.json stays byte for byte as ported.",
+        "_source": "Josh, 2026-10-27, on BK's 2026-10-26 20:27 order via Sam ('lets make sure the Unit Test Review on Arena is updated to support success on this test. Elastic Clause highlight...they have to know Necessary and Proper/Elastic Clause. i've said it aloud in class a lot.'). Every student-facing line below is lifted word for word from already-blessed files, nothing authored here: the definitions are Casefile B and C Key Vocabulary (Sam's casefile-wording source), the 'why elastic' line is THE MACHINE's own Congress card, the Antifederalist line is Casefile B Document 16 as Doc Assist prints it, and the McCulloch line is THE LANDMARK CASES' own holding row. The five short labels are the only words Josh set, and they follow Sam's own order ('what it is, why it is called elastic, why Antifederalists feared it, and how McCulloch v. Maryland used it'). TEST WALL: nothing here comes from a Part I item; Friday's released NYSED items were never read. Lives in the manifest, not in Sam's brief file, so brief-us11r-11.2.json stays byte for byte as ported.",
         "highlight": {
           "flag": "KNOW THIS ONE COLD",
           "term": "Necessary and Proper (Elastic) Clause",
@@ -1730,6 +1730,14 @@
         },
         {
           "slug": "unit-3",
+          "casefiles": [
+            {
+              "id": "A",
+              "label": "Discovery",
+              "skills": ["HC", "OE", "TH", "DU", "EX", "CP"],
+              "_source": "BK 2026-10-24 16:55 ('separate by Casefile, easier to refer to for kids'), 17:13 (the unit's room carries a door per casefile) and 17:15 ('a door shows the gauges its casefile's scoring page scores, no more and no fewer'). Casefile A posts all six US skill lines (CARRY-FORWARD: the four-part bundle yields HC and OE off part 1, TH off part 2, DU and EX off part 3, CP off part 4), so A's door carries all six and the five not yet authored read Coming, the same way an unbuilt gauge has always shown. Casefiles B and C get their doors when their scoring pages are built and Sam sends their code lists - a door to an empty room is the thing BK ruled out, so there is no B or C door today. This is the address Sam's printed Casefile A v17 scoring-page QR already points at: #/us/11.3A/gauges/A."
+            }
+          ],
           "number": "11.3A",
           "label": "11.3A \u00b7 Building a Nation, 1801\u20131850",
           "status": "building",
