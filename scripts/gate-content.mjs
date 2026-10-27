@@ -148,7 +148,18 @@ function checkLadder(f, d, type) {
     need('correct_sentence')
   } else if (type === 'guided_write') {
     need('source_text'); need('prompt'); need('model_response', "guided_write: no 'model_response' — 'I'm done' would reveal nothing.")
-    if (!(d.checklist || []).length) fail(f, 'guided_write: no checklist — it is the scaffold at L4.')
+    // A COLD rung (`cold: true`) is the same activity with the scaffold taken away: the kid writes
+    // against a document they have not seen, with no checklist and no sentence starter. That is the
+    // whole point of it, so the L4 scaffold contract is inverted rather than waived — a cold rung
+    // that still carries a checklist or a starter is a defect too. Will, 2026-10-27 11:26 (Global
+    // 10.3A HC L5), matching Sam's us11r 11.3A cold rung so both courses render alike.
+    // Note a cold rung's document is NOT in the unit's casefile pack by design, so it carries its
+    // own `source_text`/`source_citation` inline and satisfies BK's 2026-10-27 document rule that
+    // way, never through `docs_from_casefile`. Both routes are compliant; this one needs no resolver.
+    if (d.cold === true) {
+      if ((d.checklist || []).length) fail(f, 'cold guided_write: carries a checklist — a cold rung is the one with the scaffold taken away.')
+      if (d.sentence_starter) fail(f, 'cold guided_write: carries a sentence_starter — a cold rung starts from the blank page.')
+    } else if (!(d.checklist || []).length) fail(f, 'guided_write: no checklist — it is the scaffold at L4.')
     if (!d.source_document) fail(f, 'guided_write: source text with no source_document pointer (canon 6, quotation provenance).')
   } else if (type === 'enrichment') {
     for (const t of d.tidbits || []) if (!t.source_pointer) fail(f, `tidbit ${t.id}: no source_pointer (canon 6, quotation provenance).`)
