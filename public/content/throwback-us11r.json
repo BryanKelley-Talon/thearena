@@ -62,7 +62,6 @@
         }
       },
       "room": {
-        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
         "image": "img/room-1607.jpg",
         "panel_rect": {
           "left": 39.941,
@@ -301,7 +300,6 @@
         }
       },
       "room": {
-        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
         "image": "img/room-1763.jpg",
         "panel_rect": {
           "left": 41.797,
@@ -877,7 +875,6 @@
         }
       },
       "room": {
-        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
         "image": "img/room-1824.jpg",
         "panel_rect": {
           "left": 42.188,
