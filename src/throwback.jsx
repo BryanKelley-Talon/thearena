@@ -183,6 +183,12 @@ function Paper({ era, onClose, words, nowLabel }) {
           <button type="button" className="tb-close" onClick={onClose} aria-label={words.closePaper}>&times;</button>
         </header>
         {era.moment && !card && <p className="tb-moment">{era.moment}</p>}
+        {!card && era.front_image?.src && (
+          <Figure className="tb-cut" src={era.front_image.src} alt={era.front_image.alt}
+                  caption={era.front_image.caption} credit={era.front_image.credit}
+                  label={era.front_image.kind === 'archival' ? 'Archival'
+                       : era.front_image.kind === 'ai' ? 'Made for this room' : null} />
+        )}
         {card
           ? <Story card={card} onBack={() => setOpenCard(null)} words={words} nowLabel={nowLabel} />
           : (
@@ -464,6 +470,20 @@ export const THROWBACK_STYLES = `
   .tb-changed-row{padding:0 20px;border-left:1px solid #C0B094}
   .tb-changed-row:first-child{padding-left:0;border-left:0}
   .tb-changed-row:last-child{padding-right:0}}
+/* The cut on the front page - a picture of what life looked like, run across the
+   page under the dateline and above the lead. BK, 2026-10-27: "one image should
+   appear on front page." */
+.tb-cut{margin:0 0 20px;padding:0 0 18px;border-bottom:2px solid #17130D}
+.tb-cut img{display:block;width:100%;height:auto;max-height:min(34vh,380px);object-fit:cover;object-position:center;
+  border:1px solid #17130D;border-radius:0}
+.tb-cut figcaption{margin:9px 0 0;font-size:13.5px;line-height:1.55;color:#2C251A;text-align:center}
+.tb-cut .tb-credit,.tb-cut .tb-label{display:block;font-size:11.5px;color:#6B5B44;
+  font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.13em;margin-top:4px}
+.tb-cut .tb-fig-missing{border:1px dashed #B5A48A;background:rgba(23,19,13,.045);
+  padding:22px;text-align:center;color:#5A4C39;font-size:13.5px;line-height:1.55}
+.tb-cut .tb-fig-tag{display:block;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
+  letter-spacing:.15em;font-size:11.5px;color:#7A1F12;margin-bottom:6px}
+
 /* A story, read on the page. */
 .tb-kicker{margin:0 0 6px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
   letter-spacing:.19em;font-size:12px;color:#7A1F12}
