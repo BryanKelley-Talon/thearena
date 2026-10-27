@@ -865,7 +865,7 @@
       "id": "1824",
       "year": 1824,
       "label": "1824",
-      "status": "building",
+      "status": "open",
       "skin": {
         "medium": "newspaper",
         "masthead": "THE EIGHTEEN TWENTY-FOUR",
@@ -890,6 +890,16 @@
           "top": 10.49,
           "width": 18.359,
           "height": 24.825
+        },
+        "panel_image": {
+          "src": "img/panel-1824.jpg",
+          "alt": "A hand-coloured aquatint looking across the Hudson River at West Point: a steamboat and a sailboat on wide calm water, a rowing boat with three figures near the near shore, pine trees and rocks in the foreground with two people seated on them, and the long low buildings of the military post on the bluff opposite under a pale cloudy sky.",
+          "caption": "West Point, plate 16 of The Hudson River Portfolio.",
+          "credit": "Painted by William Guy Wall, engraved by John Hill, published by Henry I. Megarey, New York, 1821–1825. The New York Public Library, Spencer Collection. The Library believes this item is in the public domain under the laws of the United States.",
+          "kind": "archival",
+          "_danny_checked": false,
+          "_source": "https://digitalcollections.nypl.org/items/ebab2ea0-c6b5-012f-a8cd-58d385a7bc34",
+          "_note": "Cropped to the aquatint image only - the source scan carries the lettering and a colour-target strip. The Hudson River Portfolio was the print series Americans actually framed and hung in these years, which is what the frame on this wall is."
         }
       },
       "who_is_not_in_this_room": "Enslaved young people: one in six, counted by age and sex under the name of the person who claims them. Native young people: not counted; in the Cherokee Nation, children are about to learn to read their own language from Sequoyah's new writing system. Free Black young people: in New York, held to a property test no white neighbor faces. Girls: everything above says \"he\" for a reason.",
@@ -1173,7 +1183,16 @@
       ],
       "dateline": "December 1824 · Washington",
       "moment": "President Monroe has sent Congress his last annual message. The electors have voted and no one has a majority; the House will choose the next president. Lafayette, who joined the Revolution at 19, is touring the country.",
-      "_held": "BK 2026-10-27 15:1x: publish 1801 and 1850 only. Held until Sam sends the front-page and panel pictures, real alt text for the room and figures, and threads 5 and 6."
+      "front_image": {
+        "src": "img/front-1824.jpg",
+        "alt": "An engraving titled Travelling on the Erie Canal: a flat packet boat with passengers standing on its roof is towed along the canal by a team of horses on the towpath, past a split-rail fence and a rider, with wooded hills rising steeply on the right and the canal running away into a gap between the hills.",
+        "caption": "Travelling on the Erie Canal.",
+        "credit": "Drawn by Henry Inman, engraved by Peter Maverick, 1825, from the memoir of the celebration of the completion of the New York canals. The New York Public Library, Wallach Division, Print Collection. The Library believes this item is in the public domain under the laws of the United States.",
+        "kind": "archival",
+        "_danny_checked": false,
+        "_source": "https://digitalcollections.nypl.org/items/510d47d9-7e82-a3d9-e040-e00a18064a99",
+        "_note": "Cropped to the plate with a IIIF region request; the source scan is a photograph of the whole book page with a colour target. 1825, a year after this room."
+      }
     },
     {
       "id": "1850",
