@@ -1715,7 +1715,13 @@ function MatchHints({ hints }) {
   )
 }
 
-function MatchingSet({ pack, accent, onChecked }) {
+// `hintsCleared` is Danny's gate, not a style switch. BK ruled the hints on (2026-10-27
+// 12:08) and they went live the same hour; Danny then reported at 12:17 that his clearances
+// covered only 16 of the 144 lines, with readers dispatched on the other 128. A hint is
+// student-facing text and the Benin error proves the risk is real, not theoretical, so a
+// pack shows its hints only where the manifest says a reader has been through them.
+// DEFAULT IS HELD: an unmarked pack keeps its hints dark until someone says otherwise.
+function MatchingSet({ pack, accent, onChecked, hintsCleared = false }) {
   const left = pack.left || []
   const right = pack.right || []
   const rightShuffled = useMemo(() => shuffle(right), [pack])
@@ -1783,7 +1789,7 @@ function MatchingSet({ pack, accent, onChecked }) {
             // 144 written hint lines across both courses that no student had ever seen.
             // They appear on the item a kid is working, on request, escalating one at a time,
             // the same shape BestFit uses. Never after checking: then the answer is already shown.
-            const hints = l.hints || []
+            const hints = hintsCleared ? (l.hints || []) : []
             if (!hints.length) return <div key={l.key} className="match-item">{btn}</div>
             return (
               <div key={l.key} className="match-item">
@@ -1883,7 +1889,7 @@ function MatchingActivity({ course, activity, pack, onBack }) {
               <p>The mechanic is built. Its pairs arrive by reference from the desk that
                  owns this course, as a matching pack named in <code>content_ref</code>.</p>
             </div>
-          : <MatchingSet pack={pack} accent={course.accent} />}
+          : <MatchingSet pack={pack} accent={course.accent} hintsCleared={activity?.hints_cleared === true} />}
       </div>
       <BottomBack onBack={onBack} back={'Back'} />
     </div>
@@ -2033,7 +2039,7 @@ function LevelScreen({ course, skillName, lv, pack, source, docs, prevTop = 0, o
       <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which level it was.</p>
     </div>
   )
-  else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} />
+  else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} />
   else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} docs={docs} />
   else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
   else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} />
