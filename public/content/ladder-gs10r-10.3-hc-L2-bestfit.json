@@ -1,0 +1,95 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-27 08:56 EDT by Will (global10r-curriculum). CRQ-shaped, on BK's 2026-10-22 10:29 ruling.",
+  "_status": "DRAFT. Re-cut 2026-10-26/27 on Danny's fix list; his second read (changed lines only) pending.",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own What You Need to Know, Outside Information boxes and documents (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 2,
+  "type": "mc_bestfit",
+  "_activity": "This, not this: four answers, one credit",
+  "_hint_model": "2 escalating hints per item. Each item carries the three ways a Historical Context answer earns nothing: DESCRIBES THE DOCUMENT, THE ARROW BACKWARDS, and TRUE BUT NOT CONNECTED. The renderer does NOT shuffle (verified in ladder.jsx, 2026-10-26), so SLOTS varies which key holds the correct answer and every option is written to a comparable length. Rationales name each wrong answer by its content, never by its option number. Items 4 and 5 ask the OTHER FORM of the question on purpose.",
+  "items": [
+    {
+      "id": "hc-01",
+      "stem": "Document 5 is from Adam Smith's The Wealth of Nations, 1776. Which answer explains the historical circumstances that led to the creation of this document?",
+      "options": {
+        "1": "Smith describes a pin factory in which about ten workers divide the job into roughly eighteen separate operations. He reports that between them they can make upwards of forty-eight thousand pins in a single day.",
+        "2": "Smith's book persuaded British workshop owners to begin dividing their work into separate steps. In the years after 1776, manufacturers who had read his argument started putting that method into mills and machines.",
+        "3": "By the 1770s some British workshops were dividing a job into small steps, and owners with money were putting it into mills and machines. Smith wrote to explain why that made a nation richer.",
+        "4": "In the 1730s Charles Townshend promoted turnips in crop rotation so hard that people nicknamed him Turnip Townshend. By the 1760s, Robert Bakewell was breeding New Leicester sheep at Dishley, raised for meat."
+      },
+      "correct": "3",
+      "hints": [
+        "What was already happening in British workshops before 1776?",
+        "Smith said he SAW a workshop like this. So the workshops came first."
+      ],
+      "rationale": "The question asks what led to the book being written. The pin factory answer is what the document says, not what came before it. The answer where the book persuades the owners turns the arrow around: the workshops came first, and Smith explained them. The turnips and the sheep are true, and from the same century, but they are not why Smith wrote about pins."
+    },
+    {
+      "id": "hc-02",
+      "stem": "Document 2 is Arthur Young writing in 1801. Which answer explains the historical circumstances that led to the creation of this document?",
+      "options": {
+        "1": "Parliament had passed thousands of enclosure acts, fencing the open fields and common land into private farms, and many families moved to towns to look for work. By 1801 the cost to the poor was plain enough that Young put it in print.",
+        "2": "Young, a well-known writer who supported enclosure, writes that by nineteen enclosure bills in twenty the poor are injured. He adds that in some cases they are grossly injured.",
+        "3": "Young's account of what enclosure had done to poor families was read aloud in Parliament. In the years after 1801, it persuaded members to begin passing the thousands of enclosure acts that fenced the open fields and the common land into private farms.",
+        "4": "James Watt improved the steam engine during the 1760s and the 1770s. In 1785, a steam engine drove a cotton-spinning mill's machines directly for the first time, at Papplewick in Nottinghamshire, which let mills be built away from the fast rivers."
+      },
+      "correct": "1",
+      "hints": [
+        "What had Parliament been doing to the open fields and common land?",
+        "Young is writing about something that had already happened to poor families."
+      ],
+      "rationale": "The answer that quotes nineteen enclosure bills in twenty starts from the document's own sentence. The answer where Young persuades Parliament reverses it: the acts came first, and Young was writing about what they had already done. The steam engine is true and from the same period, but it is not why Young wrote about enclosure."
+    },
+    {
+      "id": "hc-03",
+      "stem": "Document 9 is about the Bridgewater Canal, which opened in 1761. Which answer explains the historical circumstances that led to the historical development shown in this document?",
+      "options": {
+        "1": "The document sets out that one horse could pull a canal boat carrying about thirty tons, far more than the same horse could haul along a road.",
+        "2": "The Bridgewater Canal was dug first, and it was the canal that left Britain's roads rough and its river boats slow, because the traffic moved off them once it opened.",
+        "3": "Britain is an island with many ports, and Edward Baines wrote that its command of the seas kept the country safe from invasion.",
+        "4": "Moving coal and cotton by packhorse over rough roads, or by river boat, was slow and expensive, and Britain's mines and towns needed coal moved cheaply."
+      },
+      "correct": "4",
+      "hints": [
+        "What was moving coal like BEFORE canals?",
+        "A canal was built to fix something. What was the something?"
+      ],
+      "rationale": "The thirty tons is a number off the page, not the circumstance behind it. The answer that has the canal making the roads rough points the arrow backwards: the bad roads came first, and the canal was the answer to them. Britain's command of the seas is true and it helped the Industrial Revolution, but it is not what a canal from Worsley to Manchester was answering."
+    },
+    {
+      "id": "hc-04",
+      "stem": "Document 10 shows a railway running between Liverpool and Manchester in 1830. Which answer explains the historical circumstances that led to the historical development shown in this document?",
+      "options": {
+        "1": "The railway shown ran about thirty miles between the two cities and opened on September 15, 1830. It was the first railway anywhere to run scheduled trains pulled only by steam locomotives rather than by horses.",
+        "2": "By the 1760s Britain was digging canals to move coal more cheaply, and Manchester's mills still needed cotton through the port of Liverpool. Cheaper, faster transport was worth paying for, and by the 1830s railways were spreading.",
+        "3": "The railway between Liverpool and Manchester is the reason Manchester became a mill town. The line was built first, and the cotton mills followed afterwards to make use of the cheap transport it offered.",
+        "4": "In 1846, Parliament repealed the Corn Laws, cutting the taxes on imported grain and taking a big step toward free trade. Britain's population had also roughly doubled between 1750 and 1820."
+      },
+      "correct": "2",
+      "hints": [
+        "This question asks about the railway itself, not about who wrote the document.",
+        "What were canals already doing, and what did Manchester's mills already need?"
+      ],
+      "rationale": "Read the question again: this one asks what led to the RAILWAY, not to the document. The thirty miles and the opening date are the document's own facts. The answer that has the railway making Manchester a mill town reverses it: Manchester was already a mill town, which is why the line was worth building. The Corn Laws come sixteen years after."
+    },
+    {
+      "id": "hc-05",
+      "stem": "Document 8 describes how steam engines transformed industry. Which answer explains the historical circumstances that led to the historical development shown in this document?",
+      "options": {
+        "1": "The document says that steam engines create a vast demand for fuel. It adds that they put miners, engineers, ship-builders and sailors to work, cause canals and railways to be built, and free thousands of fields that would otherwise feed horses.",
+        "2": "Factories were built first and filled with machines, and the steam engine was then invented to supply them with power. That is why Watt turned to the problem in the 1760s and 1770s, once the mills already standing had more machines than water could drive.",
+        "3": "In 1805, Britain's Royal Navy defeated the French and Spanish fleets at Trafalgar. The victory came decades before Document 8's own account of steam engines remaking British industry.",
+        "4": "New machines had sped up cloth making, and James Watt improved the steam engine in the 1760s and 1770s. Steam let factories be built wherever coal could reach, not only beside fast rivers, so machines, a building and workers came together in one place."
+      },
+      "correct": "4",
+      "hints": [
+        "What did Watt's engine let builders stop depending on?",
+        "Before steam, a mill had to sit beside a fast river. What changed?"
+      ],
+      "rationale": "This one asks what led to the development steam engines made possible, not to the document itself. The vast demand for fuel is the page's own words. The answer that has factories first and the engine after reverses the order: the engine came first and made the factory possible anywhere. Trafalgar is true and from the same decades, but a naval victory is not what put machines under one roof."
+    }
+  ]
+}

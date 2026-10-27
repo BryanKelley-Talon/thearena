@@ -1,5 +1,5 @@
 {
- "_built": "Josh, 2026-10-15, by scripts/packs/nine_states_pack.py from Sam's nine_states_words_taps_v3.py (md5 8fc464dc2fe2fe9e69dd72fb1b290d1c); Danny CLEAN 10/15 13:41 (taps v2 check 10/14 21:19: 13 items, last 2 closed in v3). Taps wording BK 10/14 20:54; Act I words BK 10/6 22:41; Act II BK 10/13 11:27; stamp PARDONED.",
+ "_built": "Josh, 2026-10-27, by scripts/packs/nine_states_pack.py from Sam's nine_states_words.py, taps v4 (md5 7abb5265fa99d0b6a5de5caa5a2bdcc5), his RULED pass of 2026-10-26 21:05 (BK 21:00 'yes to all'). Two ruled edits: (1) the final asks for the MOST stops, not three, so Act II is safely cuttable in a 44-minute period — the old wording contradicted the on-screen tally whenever Act II was cut (Sam's finding, chase.jsx l.97 matches a hash and never checks the tally, so nothing crashed; the screen just disagreed with itself); (2) stop 5 (s5-shays-1786) carries a new why-line so a student can reach Rule of Law from it. Key words and hashes are unchanged. Earlier: taps v3 (md5 8fc464dc2fe2fe9e69dd72fb1b290d1c), Danny CLEAN 10/15 13:41; taps wording BK 10/14 20:54; Act I words BK 10/6 22:41; Act II BK 10/13 11:27; stamp PARDONED.",
  "id": "chase-us11r-11.2",
  "course": "us11r",
  "unit": "11.2",
@@ -13,7 +13,7 @@
  "intro": [
   "February 1787. Daniel Shays has vanished into the Massachusetts snow, and the state wants him found.",
   "Twelve years ago he fought for independence. Follow his trail and find out how he became a wanted man.",
-  "At every stop, name the principle it shows. At the end, find the one three stops share.",
+  "At every stop, name the principle it shows. At the end, find the one that shows up at the most stops.",
   "Every place, date and document is real."
  ],
  "meter": {
@@ -255,7 +255,7 @@
        "Not this one. Check each principle's line on the card.",
        "Which line describes what happened here?"
       ],
-      "why": "If no power can stop the disorders, Washington writes, no one's life, liberty or property is safe (Document 12): Rule of Law.",
+      "why": "When armed men shut the courts, the law stops working for everyone — and Washington asks what protects a man's life, liberty or property then (Document 12). That is Rule of Law.",
       "doc": {
        "casefile": "B",
        "n": 12
@@ -467,7 +467,7 @@
   "label": "YOUR PRINCIPLES"
  },
  "final": {
-  "prompt": "Check your tally. Which principle shows up at three of your stops? Type its name.",
+  "prompt": "Check your tally. Which principle shows up at the most stops? Type its name.",
   "key_words": [
    "federalism",
    "federalisim",
@@ -479,19 +479,19 @@
    "federal ism"
   ],
   "hints": [
-   "Check your tally. Which principle has three stops?",
+   "Check your tally. Which principle has the most stops?",
    "Open the Civic Principles card for its name."
   ],
   "after_by_answer": {
-   "federalism": "That's it: Federalism, at stops 4, 6 and 8. Federalism: Power is divided between the national government and the states. When they clash, valid federal law wins. Now write your case."
+   "federalism": "That's it: Federalism. Federalism: Power is divided between the national government and the states. When they clash, valid federal law wins. Now write your case."
   },
   "wrong_feedback": {
-   "individual rights": "That one shows up at two stops. Check your tally.",
-   "individual rights (civil liberties)": "That one shows up at two stops. Check your tally.",
-   "civil liberties": "That one shows up at two stops. Check your tally.",
-   "rule of law": "That one shows up at one stop. Check your tally.",
-   "natural rights": "That one shows up at one stop. Check your tally.",
-   "representative government": "That one shows up at one stop. Check your tally.",
+   "individual rights": "Another principle has more stops. Check your tally.",
+   "individual rights (civil liberties)": "Another principle has more stops. Check your tally.",
+   "civil liberties": "Another principle has more stops. Check your tally.",
+   "rule of law": "Another principle has more stops. Check your tally.",
+   "natural rights": "Another principle has more stops. Check your tally.",
+   "representative government": "Another principle has more stops. Check your tally.",
    "states rights": "Close. Check your tally for the card's name.",
    "states' rights": "Close. Check your tally for the card's name."
   },

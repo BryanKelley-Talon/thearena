@@ -597,11 +597,11 @@
             "content_ref": "content/docassist-gs10r-10.3.json",
             "_note": "Josh, 2026-10-23. Doc Assist, Global, Casefile A only. Ported word for word from Will's WORK/u103A-docassist/da_103A.py (fixed 2026-10-23 09:06) and skills/u103/words_103A.py (the ruled original text). Danny's clearance: 12 claims checked, 12 confirmed, 0 problems (2026-10-22). Will's two 2026-10-23 passes (anchors + walk shape) both say go ahead and build. Needed live Wed 10/28. No paper colour ruled yet for 10.3 A — omitted rather than guessed; flagged in the proof. Unit status is building and current_unit stays unit-2 on BK's own word (CARRY-FORWARD: “Keep the Global door on 10.2 through Mon 10/26”) — this room is wired for its QR/deep links but not on the door yet. Nothing here deploys without BK's yes."
           },
-          "_note": "Josh, 2026-10-23. Shell only — Doc Assist Casefile A, nothing else. No brief_ref, activities, ladders or chase: none of those exist yet for 10.3 (Josh pulls, Josh never authors). No unit label is ruled either; 'label' is a placeholder (the bare number) until Will or BK names the unit for the door — it doesn't render anywhere while status is building and current_unit is unit-2, so nothing is seen with a made-up title. Amended 2026-10-27 by Josh: HC ladder L1/L3/L4 wired (Danny cleared 10/26 20:47, md5 match). L2 held on Will's fixes; L5 not yet sent. Levels carry a placeholder label ('Historical Context') since no per-level label was supplied in this pack — flagged in the proof for Will/BK to replace if they want the per-document titles 10.2 uses.",
+          "_note": "Josh, 2026-10-23. Shell only — Doc Assist Casefile A, nothing else. No brief_ref, activities, ladders or chase: none of those exist yet for 10.3 (Josh pulls, Josh never authors). No unit label is ruled either; 'label' is a placeholder (the bare number) until Will or BK names the unit for the door — it doesn't render anywhere while status is building and current_unit is unit-2, so nothing is seen with a made-up title. Amended 2026-10-27 by Josh: the HC ladder is now wired L1-L4 published and L5 dark (Danny closed the package at 09:25; see the ladder _source and _note_l5). Levels carry a placeholder label ('Historical Context') since no per-level label was supplied in this pack — flagged in the proof for Will/BK to replace if they want the per-document titles 10.2 uses.",
           "ladders": [
             {
               "skill": "HC",
-              "_source": "Will, 10.3 Casefile A HC files; Danny cleared 2026-10-26 20:47 (four files, 24 checked, 0 to fix): docassist-gs10r-10.3.json, L1, L3, L4. L2 (bestfit) is HELD — seven fixes are with Will; do not build md5 1d77e09f1e187b5dd839016d04360050. L5 is not in this package (Will is waiting on the source). Ported byte for byte by Josh 2026-10-27.",
+              "_source": "Will, 10.3 Casefile A HC files. Danny cleared 2026-10-26 20:47 (docassist, L1, L3, L4) and 2026-10-27 09:25 (L2, second read, changed lines only — this CLOSES the 10.3A HC door package). Final md5 set is Danny\u0027s 09:25 memo, superseding Will\u0027s 08:48 set: L1 17685bc202e649b25fcb3d06d0cc2e4b, L2 624066ac723dc0ad9145473817084994, L3 f6bc62c849608668506130e404ebefa5, L4 56c3279c254748704970decf3c96e8bf, L5 fad82cd9ca7461c43d3910eaa495510c. L1/L3/L4 content is unchanged since the 10/22 clear; only the per-level _status line moved (Will 08:56, on BK\u0027s 08:54 ruling). L2\u0027s own _status line still reads \u0027second read pending\u0027 — stale, written 08:56 before Danny read it at 09:25; Danny\u0027s memo governs. L5 is ported but dark, see _note_l5. Ported byte for byte by Josh 2026-10-27.",
               "levels": [
                 {
                   "level": 1,
@@ -609,6 +609,15 @@
                   "label": "Historical Context",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L1-matching.json",
                   "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Historical Context",
+                  "content_ref": "content/ladder-gs10r-10.3-hc-L2-bestfit.json",
+                  "published": true,
+                  "docs_from_casefile": "A",
+                  "_note_l2": "Josh, 2026-10-27. Ported byte for byte (md5 624066ac723dc0ad9145473817084994, exactly as Danny cleared it 09:25 — this file is NOT edited). Its five stems each open by naming a casefile document (5, 2, 9, 10, 8), which failed the content gate on BK's 2026-09-25 rule: no task without its document. BK ruled 2026-10-27 10:18: \u0027no document pointing if they dont have a document ... always add a document for the activity so a kid without paper docs can still get something from it.\u0027 So docs_from_casefile resolves each stem\u0027s Document N from this unit\u0027s own blessed Doc Assist pack at render, text and source line byte for byte, and shows it above the question. Nothing is authored and no content file diverges from its clearance. Same mechanism the shell already uses to show L4\u0027s source above L5 (openLevel, BK\u0027s same rule). The gate verifies every referenced document number exists in the pack."
                 },
                 {
                   "level": 3,
@@ -623,6 +632,14 @@
                   "label": "Historical Context",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L4-guidedwrite.json",
                   "published": true
+                }
+                ,{
+                  "level": 5,
+                  "type": "enrichment",
+                  "label": "Historical Context",
+                  "content_ref": "content/ladder-gs10r-10.3-hc-L5-enrichment.json",
+                  "published": false,
+                  "_note_l5": "Josh, 2026-10-27. Ported byte for byte (md5 fad82cd9ca7461c43d3910eaa495510c) on Danny's 09:25 'port all five', but NOT published: the file's own _status reads 'DRAFT. Not in Danny's 2026-10-26 package; not yet reviewed,' and Danny's same memo calls it 'correctly marked not yet reviewed.' No reader has been through it, so it stays dark rather than put unreviewed words in front of a student. One line flips it once Danny clears L5."
                 }
               ]
             }
@@ -1332,6 +1349,55 @@
           "label": "11.2 · Constitutional Foundations",
           "published": true,
           "brief_ref": "content/brief-us11r-11.2.json",
+        "review_extras": {
+        "_source": "Josh, 2026-10-27, on BK's 2026-10-26 20:27 order via Sam ('lets make sure the Unit Test Review on Arena is updated to support success on this test. Elastic Clause highlight...they have to know Necessary and Proper/Elastic Clause. i've said it aloud in class a lot.'). Every student-facing line below is lifted word for word from already-blessed files, nothing authored here: the definitions are Casefile B and C Key Vocabulary (Sam's casefile-wording source), the 'why elastic' line is THE MACHINE's own Congress card, the Antifederalist line is Casefile B Document 16 as Doc Assist prints it, and the McCulloch line is THE LANDMARK CASES' own holding row. The four short labels are the only words Josh set, and they follow Sam's own order ('what it is, why it is called elastic, why Antifederalists feared it, and how McCulloch v. Maryland used it'). TEST WALL: nothing here comes from a Part I item; Friday's released NYSED items were never read. Lives in the manifest, not in Sam's brief file, so brief-us11r-11.2.json stays byte for byte as ported.",
+        "highlight": {
+          "flag": "KNOW THIS ONE COLD",
+          "term": "Necessary and Proper (Elastic) Clause",
+          "rows": [
+            {
+              "label": "What it is",
+              "text": "The part of Article I letting Congress make any law needed to carry out its listed powers.",
+              "from": "Casefile B and C Key Vocabulary"
+            },
+            {
+              "label": "Why it is called elastic",
+              "text": "It lets Congress use tools the Constitution never names, like a bank, to carry out the powers it does name.",
+              "from": "THE MACHINE · what Congress does"
+            },
+            {
+              "label": "The power it creates",
+              "text": "Implied powers: powers Congress can use even though the Constitution doesn't list them, because they help carry out a power it does have.",
+              "from": "Casefile B and C Key Vocabulary"
+            },
+            {
+              "label": "Why the Antifederalists feared it",
+              "text": "“undefined, unbounded and immense power … can anything be said to be reserved and kept back from Congress?”",
+              "from": "Casefile B, Document 16 · Antifederalist No. 46"
+            },
+            {
+              "label": "How the Court used it",
+              "text": "Congress can create the bank, even though the Constitution never says “bank,” because the necessary and proper clause lets it carry out its listed powers. Maryland can't tax it.",
+              "from": "THE LANDMARK CASES · McCulloch v. Maryland (1819)"
+            }
+          ]
+        },
+        "rooms_lead": "Work it in the rooms:",
+        "rooms": [
+          {
+            "unit": "11.2",
+            "slug": "machine"
+          },
+          {
+            "unit": "11.2",
+            "slug": "amendments"
+          },
+          {
+            "unit": "11.2",
+            "slug": "cases"
+          }
+        ]
+      },
           "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
           "_test_wall": "Sam: none of the 8 reps is on the 11.2 Part I. Add no other MC_BANK/Unit_02 item to this room or the Bowl without asking him.",
           "assignment": {
@@ -1354,11 +1420,11 @@
           "chase": {
             "content_ref": "content/chase-us11r-11.2.json",
             "published": true,
-            "_note": "Josh, 2026-10-15. NINE STATES taps v3, built by scripts/packs/nine_states_pack.py from Sam's skills/arena-chase/nine_states_words.py. Class play Wed 10/28. card = Sam's room card, word for word (BK 14:14 'all approved', 15:03 'just approve it'; Danny clean 15:03). Card hidden until Wed 10/28, the class play (BK 19:47: 'live (direct link) but not have the room card open ... like we did for Timekeeper'). Moved to Thu 10/29 (BK 11:22 'yes' to Sam's calendar, 10/16; Sam 11:27 item 1: period 9 at the pep rally).",
+            "_note": "Josh, 2026-10-15. NINE STATES taps v3, built by scripts/packs/nine_states_pack.py from Sam's skills/arena-chase/nine_states_words.py. Class play Wed 10/28. card = Sam's room card, word for word (BK 14:14 'all approved', 15:03 'just approve it'; Danny clean 15:03). Card hidden until Wed 10/28, the class play (BK 19:47: 'live (direct link) but not have the room card open ... like we did for Timekeeper'). Moved to Thu 10/29 (BK 11:22 'yes' to Sam's calendar, 10/16; Sam 11:27 item 1: period 9 at the pep rally). Rebuilt to taps v4 by Josh 2026-10-27 from Sam's RULED 10/26 21:05 pass (BK 21:00, yes to all): the final asks for the MOST stops, not three, so Act II can be cut for time without the screen contradicting the tally; stop 5 gets a why-line a kid can reach Rule of Law from. The card line above moved with the screen (Sam: the shipped 10/14 card still said three stops share), and the paper Case File v2 already reads the most stops, so sheet and screen now agree. Key words and hashes unchanged.",
             "card_opens_on": "2026-10-29",
             "card": {
               "title": "NINE STATES",
-              "line": "Daniel Shays is on the run. Follow his trail from 1763 to 1819 and find the principle three stops share."
+              "line": "Daniel Shays is on the run. Follow his trail from 1763 to 1819 and find the principle that shows up at the most stops."
             }
           },
           "rooms": [

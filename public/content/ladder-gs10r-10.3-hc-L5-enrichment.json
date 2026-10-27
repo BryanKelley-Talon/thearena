@@ -1,0 +1,66 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-27 08:56 EDT by Will (global10r-curriculum). CRQ-shaped, on BK's 2026-10-22 10:29 ruling.",
+  "_status": "DRAFT. Not in Danny's 2026-10-26 package; not yet reviewed.",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own What You Need to Know, Outside Information boxes and documents (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "HC",
+  "skill_label": "Historical Context",
+  "level": 5,
+  "type": "enrichment",
+  "_activity": "From a 4 to a 5: Historical Context",
+  "practice_only": true,
+  "tidbits": [
+    {
+      "id": "td-01",
+      "thread": "Who gets the credit",
+      "text": "In the 1730s, Charles Townshend promoted turnips in crop rotation so hard that people nicknamed him “Turnip” Townshend.",
+      "source_pointer": "10.3 Casefile A, Day 1 Outside Information box"
+    },
+    {
+      "id": "td-02",
+      "thread": "One kingdom, no tolls",
+      "text": "In 1707, England and Scotland united as one kingdom, Great Britain, with no trade barriers between them.",
+      "source_pointer": "10.3 Casefile A, Day 2 Outside Information box"
+    },
+    {
+      "id": "td-03",
+      "thread": "The first modern factory",
+      "text": "In 1771, Richard Arkwright opened Cromford Mill in Derbyshire, often called the first modern factory.",
+      "source_pointer": "10.3 Casefile A, Day 4 Outside Information box"
+    },
+    {
+      "id": "td-04",
+      "thread": "How fast it went",
+      "text": "By 1850, Britain had about 6,000 miles of railway.",
+      "source_pointer": "10.3 Casefile A, Day 5 Outside Information box"
+    }
+  ],
+  "exemplars": [
+    {
+      "level": 4,
+      "text": "After Parliament passed the enclosure acts, poor families lost the common land. By 1801, Arthur Young wrote that the poor were injured by nineteen enclosure bills in twenty.",
+      "what_changed": null
+    },
+    {
+      "level": 5,
+      "text": "After Parliament passed thousands of enclosure acts, families who had grazed animals on common land lost it, and many moved to towns to look for work. By 1801, Arthur Young - a well-known writer on farming who had spent years arguing FOR enclosure - put the cost to the poor in print anyway.",
+      "what_changed": "The 4 sets the scene and stops. The 5 says why THIS writer saying THIS, in THIS year, is worth quoting. Historical context is not only what was happening - it is what made this person write this down, then."
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Name the turn",
+      "explanation": "When a writer argues against his own side, say so. A supporter of enclosure admitting it hurt the poor is stronger context than any date, because it tells the reader why the document exists."
+    },
+    {
+      "name": "Start one step further back",
+      "explanation": "Most answers begin at the event itself. Ask what caused the event and begin there instead. The exam asks for the circumstances that LED TO it, which means the sentence before the one you wanted to write."
+    }
+  ],
+  "try_it": {
+    "prompt": "Document 10 is a railway that opened in 1830. Write the historical circumstances that led to it - and start before the canals, not with them.",
+    "status": "Untimed, optional, never scored, never saved."
+  },
+  "submitted_to_teacher": false
+}

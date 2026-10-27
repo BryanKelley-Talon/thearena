@@ -29,6 +29,14 @@ const DOCASSIST = new Set()    // Doc Assist packs carry their own shape; the DO
 const DOCCHECK = new Set()     // doc_check packs carry their own shape; the THE DOC CHECK block below checks them
 const PEEL = new Set()         // peel_build and highlight packs carry their own shape; the PEEL BUILDER block below checks them (2026-10-14)
 const ENRICH_OK = new Set()   // enrichment files whose ladder has an L4 source the shell shows above them
+// Levels that CARRY their documents rather than point at them: manifest level
+// `docs_from_casefile` names a casefile in the unit's own Doc Assist pack, and the shell
+// puts the named document on the screen above the question (BK 2026-10-27 10:18, "always
+// add a document for the activity so a kid without paper docs can still get something from
+// it"). The map holds the document numbers that pack actually has, so a stem pointing at a
+// document the pack does NOT carry still fails — the rule is the document is there, not that
+// a key was set.
+const DOCS_FROM = new Map()   // ladder file -> Set of document numbers the shell can show
 try {
   const m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8'))
   for (const c of m.courses || []) {
@@ -58,6 +66,15 @@ try {
         if (lv.type !== 'matching') LADDER_TYPE[f] = lv.type
         if (lv.published) LIVE.add(f)
         if (lv.type === 'enrichment' && (l.levels || []).some(x => x.type === 'guided_write' && x.published)) ENRICH_OK.add(f)
+        if (lv.docs_from_casefile && u.doc_assist?.content_ref) {
+          const daf = path.join(CONTENT, String(u.doc_assist.content_ref).replace(/^content\//, ''))
+          try {
+            const da = JSON.parse(fs.readFileSync(daf, 'utf8'))
+            const cf = (da.casefiles || []).find(c => c.id === lv.docs_from_casefile)
+            if (!cf) { console.error(`  FAIL  manifest\n        ${u.slug} ${l.skill} L${lv.level}: docs_from_casefile '${lv.docs_from_casefile}' is not a casefile in ${path.basename(daf)}.`); process.exitCode = 1 }
+            else DOCS_FROM.set(f, new Set((cf.docs || []).filter(d => (d.text || []).length).map(d => String(d.n))))
+          } catch { console.error(`  FAIL  manifest\n        ${u.slug} ${l.skill} L${lv.level}: docs_from_casefile is set but ${path.basename(daf)} could not be read.`); process.exitCode = 1 }
+        }
       }
     }
   }
@@ -177,7 +194,15 @@ function checkDocVisible(f, d) {
   }
   for (const it of d.items || []) {
     const p = [it.question, it.stem, it.prompt].filter(Boolean).join(' ')
-    if (DOC_RX.test(p) && !hasStim(it.stimulus)) fail(f, `item ${it.n ?? it.id}: asks about a document it does not show — "${p.slice(0, 70)}"`)
+    if (!DOC_RX.test(p) || hasStim(it.stimulus)) continue
+    // The shell can put the named document on the screen for this level (docs_from_casefile).
+    // That counts only when the pack really carries the document the stem names.
+    const have = DOCS_FROM.get(f)
+    const n = /\bDocument\s+(\d+)/i.exec(p)
+    if (have && n && have.has(String(Number(n[1])))) continue
+    if (have && !n) { fail(f, `item ${it.n ?? it.id}: points at a document without naming one, so the shell cannot fetch it — "${p.slice(0, 70)}"`); continue }
+    if (have && n) { fail(f, `item ${it.n ?? it.id}: names Document ${Number(n[1])}, which the casefile pack does not carry — "${p.slice(0, 70)}"`); continue }
+    fail(f, `item ${it.n ?? it.id}: asks about a document it does not show — "${p.slice(0, 70)}"`)
   }
   if (d.prompt && DOC_RX.test(d.prompt) && !d.source_text) fail(f, `prompt asks about a document it does not show.`)
   // enrichment try_it: the shell shows the ladder's L4 source above L5, so this is covered

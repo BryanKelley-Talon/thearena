@@ -1934,7 +1934,23 @@ function SkillExtras({ course, skill, onOpenDrill }) {
 // LADDER LEVEL — one screen, five activity types. The renderer is picked by
 // the manifest's `type`; the content arrives by reference, like everything else.
 // ============================================================
-function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onComplete: markComplete, onBack }) {
+// A unit's review extras (manifest unit.review_extras), with its room links resolved against
+// the manifest's own room cards. A room is linked only when a kid could open it today: the
+// same published + card-date test the unit room uses, so the review never offers a door that
+// isn't there. The names and lines are each room's own blessed card words, never retyped.
+function reviewExtras(course, unit) {
+  const x = unit?.review_extras
+  if (!x) return null
+  const rooms = (x.rooms || []).map(ref => {
+    const u = (course.units || []).find(y => String(y.number) === String(ref.unit)) || unit
+    const r = (u.rooms || []).find(y => y.slug === ref.slug)
+    if (!r || r.published !== true || !r.card || !onDate({ opens_on: r.card_opens_on })) return null
+    return { slug: r.slug, unitSlug: u.slug, title: r.card.title, line: r.card.line }
+  }).filter(Boolean)
+  return { ...x, _rooms: rooms }
+}
+
+function LevelScreen({ course, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
   const t = LEVEL_TYPES[lv?.type]
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
@@ -1956,7 +1972,7 @@ function LevelScreen({ course, skillName, lv, pack, source, prevTop = 0, onCompl
     </div>
   )
   else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} />
-  else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} />
+  else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} docs={docs} />
   else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
   else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} />
   else if (lv.type === 'enrichment') body = <>
@@ -2001,6 +2017,7 @@ export default function App() {
   const [level, setLevel] = useState(null)
   const [levelPack, setLevelPack] = useState(null)
   const [levelSource, setLevelSource] = useState(null)   // undefined-while-loading is `null`; a failed fetch is `false`
+  const [levelDocs, setLevelDocs] = useState(null)       // {"5": doc, …} for a level that carries its documents
   const [review, setReview] = useState(false)
   const [daPack, setDaPack] = useState(null)          // the unit's Doc Assist pack; false = none or failed
   const [daOpen, setDaOpen] = useState(false)
@@ -2084,6 +2101,18 @@ export default function App() {
     setLevelSource(null)
     const src = lv.type === 'enrichment' && ladderLevels(s?.ladder).find(l => l.type === 'guided_write' && levelOpen(l))
     if (src) fetchContent(src.content_ref, setLevelSource)
+    // Same rule, the other way round: a level whose questions NAME a document carries that
+    // document instead of pointing at it (manifest level `docs_from_casefile`). BK, 2026-10-27
+    // 10:18: "always add a document for the activity so a kid without paper docs can still get
+    // something from it." The documents come from this unit's own blessed Doc Assist pack, so
+    // nothing is authored here and the ladder file stays byte for byte as its desk cleared it.
+    setLevelDocs(null)
+    if (lv.docs_from_casefile && unit.doc_assist?.content_ref) {
+      fetchContent(unit.doc_assist.content_ref, p => {
+        const cf = (p?.casefiles || []).find(c => c.id === lv.docs_from_casefile)
+        setLevelDocs(Object.fromEntries((cf?.docs || []).map(d => [String(d.n), d])))
+      })
+    }
     window.scrollTo(0, 0)
   }
   // Doc Assist: the unit's pack loads with the room, so the card can carry the desk's own tile line.
@@ -2277,9 +2306,9 @@ export default function App() {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
-    screen = <LevelScreen course={course} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} prevTop={prevTop}
+    screen = <LevelScreen course={course} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
-                          onBack={() => { setLevel(null); setLevelPack(null) }} />
+                          onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
   else if (unit && skill) {
     screen = (
@@ -2333,7 +2362,8 @@ export default function App() {
           <h2>{briefPack?.title || unit.label}</h2>
           {briefPack === null && <div className="loading">Opening the review&hellip;</div>}
           {briefPack === false && <EmptyLane what="Unit review" />}
-          {briefPack && <UnitBrief brief={briefPack} />}
+          {briefPack && <UnitBrief brief={briefPack} extras={reviewExtras(course, unit)}
+                                   onOpenRoom={r => { setReview(false); setBriefPack(null); setUnitSlug(r.unitSlug); setCivics(r.slug); window.scrollTo(0, 0) }} />}
         </div>
         <BottomBack onBack={() => { setReview(false); setBriefPack(null); leaveRoomPage() }} back={fromDoor ? course.label : unitName(unit)} />
       </div>

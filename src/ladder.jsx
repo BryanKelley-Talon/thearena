@@ -270,7 +270,22 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
 // escalating hints on request, verdict as a WORD first. The Review Bowl's
 // season/playoff rule is a game rule and stays in the game — the ladder always
 // offers both hints (Josh, 2026-09-24 pass; Sam did not object).
-function BestFitItem({ item, n, total, onAnswered, Stimulus, accent }) {
+// A level may carry its documents instead of pointing at them (manifest level
+// `docs_from_casefile`, resolved by the shell from the unit's own Doc Assist pack).
+// BK, 2026-10-27 10:18: "no document pointing if they dont have a document ...
+// always add a document for the activity so a kid without paper docs can still get
+// something from it." So a stem that says "Document 5" gets Document 5 on the screen,
+// text and source line byte for byte from the blessed pack — the authoring desk's
+// file is never edited and never diverges from the version Danny cleared.
+// Same intent as the L4-source box the shell shows above L5 (App.openLevel).
+export const docStimulus = (stem, docs) => {
+  const m = /\bDocument\s+(\d+)/i.exec(String(stem || ''))
+  const doc = m && docs ? docs[String(Number(m[1]))] : null
+  if (!doc || !(doc.text || []).length) return null
+  return { kind: 'text', content: (doc.text || []).join('\n\n'), citation: doc.src || '' }
+}
+
+function BestFitItem({ item, n, total, onAnswered, Stimulus, accent, docs }) {
   const [picked, setPicked] = useState(null)
   const [shown, setShown] = useState(0)
   const opts = Object.entries(item.options || {}).map(([key, text]) => ({ key, text }))
@@ -283,7 +298,10 @@ function BestFitItem({ item, n, total, onAnswered, Stimulus, accent }) {
       <div className="mc-head"><span className="mc-count">Question {n} of {total}</span></div>
       {/* A question that points at a document carries it on the same screen (BK, 2026-09-25;
           the gate enforces it). Same `stimulus` shape as the Part I rooms, source line and all. */}
-      {item.stimulus && Stimulus && <Stimulus stimulus={item.stimulus} accent={accent || '#C9A646'} />}
+      {(() => {
+        const stim = item.stimulus || docStimulus(item.stem, docs)
+        return stim && Stimulus ? <Stimulus stimulus={stim} accent={accent || '#C9A646'} /> : null
+      })()}
       <div className="mc-q">{item.stem}</div>
       <div className="mc-choices">
         {opts.map(o => {
@@ -320,7 +338,7 @@ function BestFitItem({ item, n, total, onAnswered, Stimulus, accent }) {
   )
 }
 
-export function BestFit({ pack, onComplete, Stimulus, accent }) {
+export function BestFit({ pack, onComplete, Stimulus, accent, docs }) {
   const items = pack?.items || []
   const [count, setCount] = useState(0)
   const [stuck, noteStuck] = useStuck()
@@ -330,7 +348,7 @@ export function BestFit({ pack, onComplete, Stimulus, accent }) {
       <p className="mc-preamble">Pick the statement that fits best. Stuck? Take a hint — there are two on every question. Nothing here is scored or saved.</p>
       {items.map((it, i) => (
         <div key={it.id || i}>
-          <BestFitItem item={it} n={i + 1} total={items.length} Stimulus={Stimulus} accent={accent} onAnswered={ok => { setCount(c => c + 1); noteStuck(ok, i) }} />
+          <BestFitItem item={it} n={i + 1} total={items.length} Stimulus={Stimulus} accent={accent} docs={docs} onAnswered={ok => { setCount(c => c + 1); noteStuck(ok, i) }} />
           {stuck && stuck.at === i && <CoachSays portrait={BK_PORTRAIT} line={stuck.line} />}
         </div>
       ))}
@@ -570,7 +588,48 @@ export function Enrichment({ pack, onComplete }) {
 const Sec = ({ h, children }) => (
   <section className="brief-sec"><h3 className="set-heading">{h}</h3>{children}</section>
 )
-export function UnitBrief({ brief }) {
+// A unit's review may carry an extra the desk asked for on top of its brief (manifest
+// unit.review_extras): a term a kid must not leave review without meeting, and links into
+// the unit's reference rooms. BK, 2026-10-26 20:27 via Sam: "lets make sure the Unit Test
+// Review on Arena is updated to support success on this test. Elastic Clause highlight."
+// Every student-facing string is the authoring desk's, lifted from a blessed file and
+// carried in the manifest, so the brief file itself stays byte for byte as it was ported.
+export function ReviewHighlight({ x }) {
+  if (!x) return null
+  return (
+    <section className="brief-sec">
+      <article className="rv-hi">
+        {x.flag && <div className="rv-hi-flag">{x.flag}</div>}
+        <h3 className="rv-hi-term">{x.term}</h3>
+        <dl className="rv-hi-rows">
+          {(x.rows || []).map((r, i) => (
+            <div key={i} className="rv-hi-row">
+              <dt>{r.label}</dt>
+              <dd>{r.text}{r.from && <span className="rv-hi-from">{r.from}</span>}</dd>
+            </div>
+          ))}
+        </dl>
+      </article>
+    </section>
+  )
+}
+export function ReviewRooms({ lead, rooms, onOpen }) {
+  if (!rooms?.length) return null
+  return (
+    <section className="brief-sec">
+      {lead && <p className="practice-head">{lead}</p>}
+      <div className="rv-rooms">
+        {rooms.map(r => (
+          <button key={r.slug} type="button" className="rv-room" onClick={() => onOpen(r)}>
+            <span className="rv-room-name">{r.title}</span>
+            <span className="rv-room-line">{r.line}</span>
+          </button>
+        ))}
+      </div>
+    </section>
+  )
+}
+export function UnitBrief({ brief, extras, onOpenRoom }) {
   if (!brief) return null
   const hu = brief.how_to_use, ta = brief.thread_anchor, bg = brief.background
   const kf = brief.key_facts, ex = brief.exam, tm = brief.three_move, qc = brief.quick_check
@@ -583,6 +642,9 @@ export function UnitBrief({ brief }) {
         <ol className="brief-list">{(hu.steps || []).map((x, i) => <li key={i}>{x}</li>)}</ol>
         {hu.connects_to && <p className="brief-note">{hu.connects_to}</p>}
       </Sec>}
+      {/* High on the page, right after how-to-use: a kid cannot work this review without
+          meeting the term (Sam's ask, BK's order). */}
+      <ReviewHighlight x={extras?.highlight} />
       {ta && <Sec h={ta.heading}>
         <article className="anchor primary">
           <div className="card-name">{ta.label}</div>
@@ -627,6 +689,8 @@ export function UnitBrief({ brief }) {
           <li key={i}><p className="qc-q">{it.q}</p>{it.a && <p className="qc-a">{it.a}</p>}</li>
         ))}</ol>
       </Sec>}
+      {/* The unit's reference rooms, at the end: review, then go work it. */}
+      <ReviewRooms lead={extras?.rooms_lead} rooms={extras?._rooms} onOpen={onOpenRoom} />
     </div>
   )
 }
@@ -650,6 +714,29 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 .practice-row.off{opacity:.5;cursor:default}
 .skill-about{color:var(--white);font-size:18px;line-height:1.55;padding:14px 16px;border-left:3px solid var(--gold);
   background:color-mix(in srgb,var(--gold) 8%,transparent);border-radius:0 8px 8px 0;margin:0 0 18px}
+
+/* ---------- REVIEW EXTRAS: the term to know cold, and the rooms to work it in ---------- */
+/* Gold-edged so it reads as the one thing on the page that is not optional, and built from
+   the same card tokens as everything else a kid taps. Prints and reflows like the brief. */
+.rv-hi{border:2px solid var(--gold);border-radius:12px;background:color-mix(in srgb,var(--gold) 9%,var(--card));
+  padding:16px 18px 14px;margin:0 0 6px}
+.rv-hi-flag{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;font-size:13px;
+  font-weight:700;color:var(--canvas);background:var(--gold);display:inline-block;padding:3px 9px;border-radius:5px;margin-bottom:10px}
+.rv-hi-term{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:26px;
+  line-height:1.1;color:var(--white);margin:0 0 12px}
+.rv-hi-rows{margin:0;display:flex;flex-direction:column;gap:11px}
+.rv-hi-row{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:6px 18px;align-items:start}
+@media (max-width:760px){.rv-hi-row{grid-template-columns:1fr;gap:3px}}
+.rv-hi-row dt{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.08em;font-size:15px;
+  color:var(--gold);padding-top:2px}
+.rv-hi-row dd{margin:0;color:var(--white);font-size:17px;line-height:1.5}
+.rv-hi-from{display:block;color:var(--grey);font-size:14px;font-style:italic;margin-top:3px}
+.rv-rooms{display:flex;flex-direction:column;gap:9px}
+.rv-room{display:flex;flex-direction:column;align-items:flex-start;gap:3px;width:100%;text-align:left;
+  padding:13px 16px;border-radius:10px;background:var(--card);border:1px solid var(--edge);cursor:pointer}
+.rv-room:hover{border-color:var(--gold);background:var(--card-lit)}
+.rv-room-name{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;font-size:19px;color:var(--white)}
+.rv-room-line{color:var(--grey);font-size:16px;line-height:1.45}
 
 /* ---------- GAUGES ---------- */
 .room-section{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;
