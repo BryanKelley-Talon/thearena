@@ -571,12 +571,25 @@ export function GuidedWrite({ pack, accent, onComplete }) {
         </button>
       ) : (
         <div className="rep-reveal" role="status">
-          <h4>One strong answer</h4>
-          <p className="rep-exemplar">{pack.model_response}</p>
-          {/* The checklist line is false on a cold rung — there is no checklist and no "three". */}
-          <p className="rep-focus">{checklist.length
-            ? 'Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?'
-            : 'Hold yours next to it. What did this one do that yours didn’t?'}</p>
+          {/* The model may be held out of the served file until the unit closes (scripts/
+              hold-models.mjs, BK's answer-key rule). When it is, the page says so plainly
+              rather than showing an empty box — and there is nothing here to reveal, because
+              the words never reached the browser. */}
+          {pack.model_response ? (
+            <>
+              <h4>One strong answer</h4>
+              <p className="rep-exemplar">{pack.model_response}</p>
+              {/* The checklist line is false on a cold rung — there is no checklist and no "three". */}
+              <p className="rep-focus">{checklist.length
+                ? 'Hold yours next to it. Go down the checklist again — which of the three did yours do, and which did this one do?'
+                : 'Hold yours next to it. What did this one do that yours didn’t?'}</p>
+            </>
+          ) : (
+            <>
+              <h4>Nice work</h4>
+              <p className="rep-focus">One strong answer to hold yours next to opens when this unit closes.</p>
+            </>
+          )}
           <p className="level-done">Level done. Head back to the gauge for the next one.</p>
         </div>
       )}
