@@ -39,7 +39,12 @@ const walk = o => {
       else walk(x)
     }
   } else if (o && typeof o === 'object') {
-    if (o.published === false) { const before = held.size; dropRefs(o); if (held.size > before) labels.push(`${o.label || o.name || o.id || '?'} (unpublished)`) }
+    // `preview_ok` keeps an unpublished entry's ref and file in dist so a reviewer with the
+    // link can play it (BK's P30: interactive work comes to Room Check as a playable link).
+    // Nothing in the UI reaches it - the app only fetches it behind its own ?preview flag -
+    // and it is only ever set on a shape file of Josh's own placeholders, never on a desk's
+    // unreviewed student content.
+    if (o.published === false && o.preview_ok !== true) { const before = held.size; dropRefs(o); if (held.size > before) labels.push(`${o.label || o.name || o.id || '?'} (unpublished)`) }
     for (const v of Object.values(o)) walk(v)
   }
 }

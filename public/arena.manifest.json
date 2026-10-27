@@ -761,6 +761,12 @@
         "rooms": [{ "unit": "11.2", "slug": "machine" }, { "unit": "11.2", "slug": "amendments" }, { "unit": "11.2", "slug": "cases" }],
         "_note": "THE CONSTITUTION lane (BK 2026-10-16 11:42 'Once we move beyond Unit 11.2--I'd like the Machine and the Amendments to get their own button across the top'; 11:46 one button; 11:48 name and line, 'yes.'). Appears on Tue 11/3 (Sam 12:25: the 11.3 room isn't ready, so by date) or when the US door's current unit comes after 11.2, whichever is first; Landmark Supreme Court Cases joins as a third room when Sam's words land. The cards stay on the 11.2 Review row too."
       },
+      "throwback": {
+        "content_ref": "content/throwback-us11r.json",
+        "published": false,
+        "preview_ok": true,
+        "_note": "Josh, 2026-10-27. THROWBACK, Leo's order 2026-10-26 22:01, ruled by BK 22:38-22:40. DARK on purpose: this is the SHAPE file Josh sent Sam on 10/26 with placeholder text in every slot, not Sam's content. Not one word or picture here has cleared Danny - as of this morning he has two open findings on the imagery (the 1824 silhouette reads 1830s; the 1801/1850 images never reached his In/), and Sam's three frame-wording PDFs are still for-yes at his desk. BK approved Throwback to Josh in chat 2026-10-27 12:16 ('i approve throwback..lets move on it'); read as the order to BUILD, not as a clearance for words or art, and Sam was told so in writing. Publishing waits on Danny's md5s. The room renders without art by design, so the mechanic can be reviewed before a picture exists."
+      },
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
       "accent": "#E3B341",
       "_accent_note": "Adopted from Josh's own token file, builds/thearena/src/tokens/arena-navy.css — --course-us11r, the house gold, measured 9.62:1 on the navy canvas. The skeleton's #C17700 was 11.5's ERA accent out of canon/tokens and would have collided the first time an 11.5 room was built.",

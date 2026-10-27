@@ -50,6 +50,7 @@ import {
   LADDER_STYLES, SkillGauges, CasefileDoors, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
   UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone,
 } from './ladder.jsx'
+import { ThrowbackView, THROWBACK_WORDS, THROWBACK_STYLES, useThrowback } from './throwback.jsx'
 import {
   OFFICE_STYLES, OfficeDoor, OfficeRoom, OfficeTheme, officeVisible, visibleThemes,
   OFFICE_COURSE, OFFICE_SKILL, officeUnit,
@@ -59,6 +60,13 @@ import {
 // branch preview with ?preview=office to see it, placeholders and all.
 const PREVIEW_OFFICE = (() => {
   try { return new URLSearchParams(window.location.search).get('preview') === 'office' } catch { return false }
+})()
+
+// Throwback the same way: BK's Room Check needs a PLAYABLE link, not a render (P30, his own
+// 2026-10-24 finding), and a room full of placeholder words must never reach a student. So it
+// ships dark and `?preview=throwback` opens it for whoever has the link.
+const PREVIEW_THROWBACK = (() => {
+  try { return new URLSearchParams(window.location.search).get('preview') === 'throwback' } catch { return false }
 })()
 
 const HOME_URL = 'https://flashpointhistory.com'
@@ -938,7 +946,7 @@ const LANES = [
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution }) {
+function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution, tbData, throwback, tbYear, onThrowback, onPickYear }) {
   const constCards = constitutionCards(courseIn)
   const course = constCards.length ? { ...courseIn, constitution_cards: constCards } : courseIn
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
@@ -1008,7 +1016,27 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
         </>
       )}
       {lane === 'units' && <UnitLane course={course} onOpen={onOpenUnit} onOpenUnit0={onOpenUnit0} />}
-      {lane === 'threads' && <StopMapLane kind="threads" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
+      {/* THREADS carries two views of the same material (BK 2026-10-26, "I agree with two"):
+          the map, which runs one thread forward through time, and THROWBACK, which stops at
+          one moment and shows where all seven stood at once. The door stays at four lanes.
+          The switch only appears where a course has a published Throwback file. */}
+      {lane === 'threads' && (
+        <>
+          {tbData && (tbData.eras || []).length > 0 && (
+            <div className="tb-switch" role="tablist" aria-label="Threads view">
+              <button type="button" role="tab" aria-selected={!throwback} className={`tb-tab${!throwback ? ' on' : ''}`}
+                      onClick={() => onThrowback(false)}>The map</button>
+              <button type="button" role="tab" aria-selected={!!throwback} className={`tb-tab${throwback ? ' on' : ''}`}
+                      onClick={() => onThrowback(true)}>{tbData.name?.label || 'Throwback'}</button>
+            </div>
+          )}
+          {throwback
+            ? <ThrowbackView course={course} data={tbData} year={tbYear} onPickYear={onPickYear}
+                             unitNumbers={(course.units || []).filter(u => u.published === true).map(u => String(u.number))}
+                             words={THROWBACK_WORDS} />
+            : <StopMapLane kind="threads" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
+        </>
+      )}
       {lane === 'writing_lab' && <WritingLabLane course={course} sets={wlSets} unitName={unitName} onOpen={onOpenSet} Empty={EmptyLane} />}
       {lane === 'issues' && <StopMapLane kind="issues" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
       {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
@@ -2054,6 +2082,8 @@ export default function App() {
   const [levelDocs, setLevelDocs] = useState(null)       // {"5": doc, …} for a level that carries its documents
   const [review, setReview] = useState(false)
   const [gaugesCf, setGaugesCf] = useState(null)      // a casefile id when the kid is in that casefile's gauges
+  const [throwback, setThrowback] = useState(false)   // the Threads lane's second view
+  const [tbYear, setTbYear] = useState(null)          // the era a kid stepped into
   const [daPack, setDaPack] = useState(null)          // the unit's Doc Assist pack; false = none or failed
   const [daOpen, setDaOpen] = useState(false)
   const [daDoc, setDaDoc] = useState(null)             // { cf, i } — a casefile id and a document index
@@ -2109,6 +2139,7 @@ export default function App() {
   )
   // The Atlas: this course's maps, and the one open in the viewer (by its id; it lives in links).
   const atlasMaps = useAtlas(course)
+  const tbData = useThrowback(course, PREVIEW_THROWBACK)
   const [atlasId, setAtlasId] = useState(null)
   const [unitAtlas, setUnitAtlas] = useState(false)      // one unit's atlas page (#/us/11.1/atlas)
   // The Writing Lab: this course's sets, and the one open (by its slug; it lives in links).
@@ -2219,6 +2250,7 @@ export default function App() {
     setUnitSlug(r.unitSlug || null)
     setRoomFrom('units')
     if (r.at === 'unit0') setUnit0(true)
+    setThrowback(!!r.throwback); if (r.throwback) setTbYear(r.tbYear || null)
     if (r.at === 'gauges') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) setGaugesCf(r.cf) }
     if (r.at === 'review') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) { setReview(true); fetchContent(u.brief_ref, setBriefPack) } }
     if (r.at === 'docassist') setPendingDa({ cf: r.cf || null, docN: r.docN ?? null })
@@ -2255,13 +2287,13 @@ export default function App() {
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
       course, unit0, unit, lane: doorLane, review, gaugesCf, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
-      chase, stopOpen, civics, civicsCard,
+      chase, stopOpen, civics, civicsCard, throwback, tbYear,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
     setHere(h)                                              // where the kid is, for the chase pill (10/9)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, throwback, tbYear, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2452,6 +2484,11 @@ export default function App() {
       lane={doorLane}
       setLane={setDoorLane}
       stopOpen={stopOpen}
+      tbData={tbData}
+      throwback={throwback}
+      tbYear={tbYear}
+      onThrowback={on => { setThrowback(on); if (!on) setTbYear(null); window.scrollTo(0, 0) }}
+      onPickYear={y => { setTbYear(y); window.scrollTo(0, 0) }}
       onFromConstitution={() => setCivicsFrom('constitution')}
       onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}
       onOpenUnit={slug => { setRoomFrom('units'); setUnitSlug(slug); setSkill(null); setLevel(null); setReview(false); window.scrollTo(0, 0) }}
@@ -2472,7 +2509,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES + THROWBACK_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

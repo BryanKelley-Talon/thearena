@@ -52,6 +52,10 @@ export function parseHash(hash, manifest) {
   if (parts[1] === 'atlas' && parts[2]) return { ...r, lane: 'atlas', atlasMap: parts[2] }
   if (parts[1] === 'writing-lab' && parts[2]) return { ...r, lane: 'writing_lab', wlSet: parts[2] }
   if (parts[1] === 'chase' && parts[2]) { const u = unitByNumber(course, parts[2]); return u ? { ...r, at: 'chase', unitSlug: u.slug } : r }
+  // THROWBACK lives inside the Threads lane as its second view (BK 2026-10-26, "I agree
+  // with two"), so its link opens that lane with the view switched — the door stays at
+  // four lanes. #/us/throwback, or #/us/throwback/1801 for one era.
+  if (parts[1] === 'throwback') return { ...r, lane: 'threads', throwback: true, tbYear: /^\d{4}$/.test(parts[2] || '') ? parts[2] : null }
   if ((parts[1] === 'threads' || parts[1] === 'issues') && parts[2]) return { ...r, lane: parts[1], stopOpen: parts[2] }
   if (KEY_LANE[parts[1]] !== undefined || LANE_KEYS[parts[1]]) return { ...r, lane: LANE_KEYS[parts[1]] || parts[1] }
   if (parts[1] === '0') return { ...r, at: 'unit0' }
@@ -91,6 +95,7 @@ export function buildHash(s) {
   if (s.atlasMap) return `${c}/atlas/${encodeURIComponent(s.atlasMap)}`
   if (s.wlSet) return `${c}/writing-lab/${encodeURIComponent(s.wlSet)}`
   if (s.chase && s.unit) return `${c}/chase/${s.unit.number}`
+  if (s.throwback) return s.tbYear ? `${c}/throwback/${s.tbYear}` : `${c}/throwback`
   if (s.stopOpen && (s.lane === 'threads' || s.lane === 'issues')) return `${c}/${s.lane}/${encodeURIComponent(s.stopOpen)}`
   if (s.unit0) return `${c}/0`
   if (!s.unit) return s.lane ? `${c}/${KEY_LANE[s.lane] || s.lane}` : c

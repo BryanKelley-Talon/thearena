@@ -1,0 +1,692 @@
+{
+  "_course": "us11r",
+  "_built": "2026-10-26 22:5x · Josh (flashpoint) · SCRATCH SHAPE v1.1 · both panel pictures in",
+  "_shape": "throwback-era-shape v1 · one file per course · eras keyed by year · story cards are medium-agnostic; the era's skin decides how they are drawn (newspaper now; radio, film, TV, web later) · fields starting with _ never render",
+  "_rules": [
+    "No accounts, no student data, no saved state. Nothing typed is kept. The kid's log is on paper in the Casefile A packet.",
+    "Rooms and silhouettes are AI-made and carry the AI-made label. Archival images are real, dated and credited and carry the archival label. A president's image is a real, sourced image, never AI-made.",
+    "Every quotation points to a record. Adapted text says (adapted). Invented text is never a quotation. A president's card uses words he said or signed, cut from the public record, or a plain paraphrase of it.",
+    "Content words come from Sam through Danny with BK's yes. Josh owns the container fields only: era ids, panel rectangles, unlock flags, skin ids, image paths."
+  ],
+  "name": {
+    "label": "Throwback",
+    "subtitle": "Pick a moment. See where the seven Threads stood, and what it was like to be your age then.",
+    "_note": "BK ruled 22:38: 'Throwback is the name.' It is one data slot."
+  },
+  "young_person_headings": {
+    "_note": "Sam proposes 5-6 fixed headings, the same in every era, with a 'now' column last (BK 22:07). These six are Josh's placeholders to size the table, not a proposal.",
+    "headings": [
+      "School",
+      "Work",
+      "Home",
+      "Free time",
+      "What you wear",
+      "Who decides for you"
+    ],
+    "now_label": "Now"
+  },
+  "census_categories": {
+    "_note": "Fixed categories every era so change can be tracked (BK 21:48, item 4). Placeholders to size the strip; Sam and Danny settle the real list and the source for each number.",
+    "categories": [
+      "People in the United States",
+      "Living on farms",
+      "Living in cities",
+      "Held in slavery",
+      "Could vote",
+      "Under 20"
+    ]
+  },
+  "units": {
+    "_note": "Which eras a unit's two-frame view shows. 1801 is shared: the end of 11.2 and the start of 11.3A. 'here' comes from the Arena manifest's current_unit, like the Threads map; no field here.",
+    "11.2": {
+      "start": "1763",
+      "end": "1801"
+    },
+    "11.3": {
+      "start": "1801",
+      "end": "1850"
+    }
+  },
+  "eras": [
+    {
+      "id": "1763",
+      "year": 1763,
+      "label": "1763",
+      "boundary": "start of 11.2",
+      "status": "building",
+      "_note": "Listed so the selector shows the pattern (a moment that exists but isn't built). No room image yet. Shown and labeled, never hidden (CONVENTIONS §7)."
+    },
+    {
+      "id": "1801",
+      "year": 1801,
+      "label": "1801",
+      "boundary": "end of 11.2 · start of 11.3A",
+      "status": "open",
+      "skin": {
+        "medium": "newspaper",
+        "masthead": "THE EIGHTEEN-OH-ONE",
+        "edition_line": "Spring 1801 · recreated front page",
+        "_note": "Masthead and edition line are placeholders. Sam names the paper; it must not borrow a real paper's name."
+      },
+      "room": {
+        "image": "img/room-1801.jpg",
+        "image_alt": "A plain 1801 parlor: ochre plaster walls over wooden wainscoting, a brick hearth with a wooden mantel, a tall candle stand at left, a Windsor settee with a fringed coverlet at right, a small pumpkin and a basket on the floor, and a framed notice above the mantel where the front page appears.",
+        "caption": "A middle-class American parlor as it might have looked in 1801.",
+        "kind": "ai",
+        "credit": "AI-made picture. Not a photograph.",
+        "panel": {
+          "base": [
+            1024,
+            572
+          ],
+          "x": 414,
+          "y": 34,
+          "w": 195,
+          "h": 158
+        },
+        "_prompt_ref": "In/live-from-pack-2026-10-26/live-from-image-prompts-v1.md · PROMPT 1",
+        "panel_image": {
+          "src": "img/panel-1801.jpg",
+          "alt": "An American landscape painting in the style of about 1801: a farming valley in autumn with log and brick farmhouses, a split-rail fence, stacked grain shocks in the fields, a small stone mill with a waterwheel on a stream, and wooded hills under a cloudy sky.",
+          "caption": "A landscape picture in the style of an 1801 painting.",
+          "kind": "ai",
+          "credit": "AI-made picture. Not a real painting.",
+          "_source": "BK, Gemini, Josh's Prompt B (1801 swap), 2026-10-26 22:49; no crop needed. In/live-from-pack-2026-10-26/throwback-panel-picture-1801-v1.jpg",
+          "_danny_checked": false
+        }
+      },
+      "silhouettes": {
+        "image": "img/sil-1801.png",
+        "image_alt": "Two solid black silhouettes: a young woman in a high-waisted gown with short puffed sleeves and a small cap, and a young man in a tailcoat, knee breeches, stockings and a tall round hat.",
+        "caption": "A young woman and a young man, town family, 1801.",
+        "attire_note": "[Sam: one line on what the clothes were made of and who wore them. Danny checks against a costume source.]",
+        "kind": "ai",
+        "credit": "AI-made silhouette."
+      },
+      "who_is_not_in_this_room": "[Sam: one sentence naming who this parlor leaves out in 1801.]",
+      "take_it_with_you": "[Sam: the one question a kid carries out of 1801 into the casefile.]",
+      "cards": [
+        {
+          "id": "1801-t1",
+          "kind": "thread",
+          "line": "t1",
+          "unlocked": true,
+          "headline": "[Thread 1 headline, 1801]",
+          "lede": "[One sentence a kid reads on the front page. Where Thread 1 stood in 1801.]",
+          "body": [
+            "[Paragraph 1.]",
+            "[Paragraph 2.]"
+          ],
+          "oi": {
+            "fact": "[One specific, easy-to-remember fact that is NOT in the unit's documents.]",
+            "source_ref": "[record]"
+          },
+          "images": [
+            {
+              "src": null,
+              "alt": "[describes the picture]",
+              "caption": "[what it shows, with its date]",
+              "credit": "[Repository, record ID]",
+              "kind": "archival",
+              "_danny_checked": false
+            }
+          ],
+          "refs": {
+            "stops": [
+              "s-1600s-disease"
+            ],
+            "doc_assist": null,
+            "atlas": null
+          },
+          "source_line": "[Sam's source line for the card]"
+        },
+        {
+          "id": "1801-t2",
+          "kind": "thread",
+          "line": "t2",
+          "unlocked": true,
+          "headline": "[Thread 2 headline, 1801]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1801-t3",
+          "kind": "thread",
+          "line": "t3",
+          "unlocked": true,
+          "headline": "[Thread 3 headline, 1801]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1801-t4",
+          "kind": "thread",
+          "line": "t4",
+          "unlocked": true,
+          "headline": "[Thread 4 headline, 1801]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1801-t5",
+          "kind": "thread",
+          "line": "t5",
+          "unlocked": false
+        },
+        {
+          "id": "1801-t6",
+          "kind": "thread",
+          "line": "t6",
+          "unlocked": false
+        },
+        {
+          "id": "1801-t7",
+          "kind": "thread",
+          "line": "t7",
+          "unlocked": true,
+          "headline": "[Thread 7 headline, 1801]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1801-president",
+          "kind": "president",
+          "name": "Thomas Jefferson",
+          "term_line": "President from March 1801",
+          "image": {
+            "src": null,
+            "alt": "[describes the portrait]",
+            "caption": "[title, artist, date]",
+            "credit": "[Repository, record ID, rights statement]",
+            "kind": "archival",
+            "_danny_checked": false
+          },
+          "headline": "[What the president said, 1801]",
+          "lede": "[Lede: his public position against the Threads, in a kid's words, no invented thoughts.]",
+          "said": [
+            {
+              "text": "[A sentence he actually wrote or said. (adapted) if adapted.]",
+              "cite": "[document, date]",
+              "source_ref": "[record]"
+            }
+          ],
+          "footnote": null,
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "source_line": "[source]"
+        },
+        {
+          "id": "1801-family",
+          "kind": "family",
+          "headline": "[The average American family, 1801]",
+          "lede": "[Lede, and who 'average' leaves out.]",
+          "body": [
+            "[Body.]"
+          ],
+          "census": [
+            {
+              "category": "People in the United States",
+              "value": "[n]",
+              "source_ref": "[1800 census table]"
+            },
+            {
+              "category": "Living on farms",
+              "value": "[n]",
+              "source_ref": "[record]"
+            },
+            {
+              "category": "Living in cities",
+              "value": "[n]",
+              "source_ref": "[record]"
+            },
+            {
+              "category": "Held in slavery",
+              "value": "[n]",
+              "source_ref": "[record]"
+            },
+            {
+              "category": "Could vote",
+              "value": "[n]",
+              "source_ref": "[record]"
+            },
+            {
+              "category": "Under 20",
+              "value": "[n]",
+              "source_ref": "[record]"
+            }
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "source_line": "[source]"
+        },
+        {
+          "id": "1801-young",
+          "kind": "young_person",
+          "headline": "[Being 16 in 1801]",
+          "lede": "[Lede. Before about the 1920s this card says 'a young person your age', not 'teenager'.]",
+          "rows": [
+            {
+              "heading": "School",
+              "then": "[then]",
+              "now": "[now, about teens in general, never a kid's own home]"
+            },
+            {
+              "heading": "Work",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "Home",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "Free time",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "What you wear",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "Who decides for you",
+              "then": "[then]",
+              "now": "[now]"
+            }
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "source_line": "[source]"
+        }
+      ]
+    },
+    {
+      "id": "1850",
+      "year": 1850,
+      "label": "1850",
+      "boundary": "end of 11.3A",
+      "status": "open",
+      "skin": {
+        "medium": "newspaper",
+        "masthead": "THE EIGHTEEN-FIFTY",
+        "edition_line": "Autumn 1850 · recreated front page"
+      },
+      "room": {
+        "image": "img/room-1850.jpg",
+        "image_alt": "An 1850 parlor: deep burgundy patterned wallpaper, a carved walnut cabinet with brass candlesticks and a small leather case, an oil lamp on a tall stand at left, a velvet curtain at the window, a horsehair sofa with a patchwork quilt at right, a small pumpkin on a floral carpet, and a gilt-framed print above the cabinet where the front page appears.",
+        "caption": "A comfortable middle-class American parlor as it might have looked in 1850.",
+        "kind": "ai",
+        "credit": "AI-made picture. Not a photograph.",
+        "panel": {
+          "base": [
+            1024,
+            572
+          ],
+          "x": 408,
+          "y": 103,
+          "w": 208,
+          "h": 149
+        },
+        "_prompt_ref": "In/live-from-pack-2026-10-26/live-from-image-prompts-v1.md · PROMPT 2",
+        "panel_image": {
+          "src": "img/panel-1850.jpg",
+          "alt": "An American landscape painting in the style of about 1850: a river valley in autumn, a covered wooden bridge, a white church steeple above a small town, hay in the fields, and a horse and cart on a dirt road.",
+          "caption": "A landscape picture in the style of an 1850 painting.",
+          "kind": "ai",
+          "credit": "AI-made picture. Not a real painting.",
+          "_source": "BK, Gemini, Josh's Prompt B, 2026-10-26 22:41; cropped to the canvas. In/live-from-pack-2026-10-26/throwback-panel-picture-1850-v1.jpg",
+          "_danny_checked": false
+        }
+      },
+      "silhouettes": {
+        "image": "img/sil-1850.png",
+        "image_alt": "Two solid black silhouettes: a young woman in a fitted bodice and a wide bell-shaped skirt with a bonnet, and a young man in a knee-length frock coat, straight trousers and a tall stovepipe hat.",
+        "caption": "A young woman and a young man, town family, 1850.",
+        "attire_note": "[Sam: one line. Danny checks against a costume source.]",
+        "kind": "ai",
+        "credit": "AI-made silhouette."
+      },
+      "who_is_not_in_this_room": "[Sam: one sentence naming who this parlor leaves out in 1850.]",
+      "take_it_with_you": "[Sam: the one question a kid carries out of 1850 into the casefile.]",
+      "what_changed": {
+        "from": "1801",
+        "_note": "The strip that makes the drastic change the thing the kid sees (Leo's two-frame read, BK 21:35). Written in the course's SEQ words. Shows on the later frame only.",
+        "rows": [
+          {
+            "line": "t1",
+            "then": "[1801 in one line]",
+            "now": "[1850 in one line]"
+          },
+          {
+            "line": "t2",
+            "then": "[1801]",
+            "now": "[1850]"
+          },
+          {
+            "line": "t3",
+            "then": "[1801]",
+            "now": "[1850]"
+          },
+          {
+            "line": "t4",
+            "then": "[1801]",
+            "now": "[1850]"
+          },
+          {
+            "line": "t7",
+            "then": "[1801]",
+            "now": "[1850]"
+          }
+        ]
+      },
+      "cards": [
+        {
+          "id": "1850-t1",
+          "kind": "thread",
+          "line": "t1",
+          "unlocked": true,
+          "headline": "[Thread 1 headline, 1850]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [
+            {
+              "src": null,
+              "alt": "[alt]",
+              "caption": "[caption, date]",
+              "credit": "[Repository, record ID]",
+              "kind": "archival",
+              "_danny_checked": false
+            }
+          ],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1850-t2",
+          "kind": "thread",
+          "line": "t2",
+          "unlocked": true,
+          "headline": "[Thread 2 headline, 1850]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1850-t3",
+          "kind": "thread",
+          "line": "t3",
+          "unlocked": true,
+          "headline": "[Thread 3 headline, 1850]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1850-t4",
+          "kind": "thread",
+          "line": "t4",
+          "unlocked": true,
+          "headline": "[Thread 4 headline, 1850]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1850-t5",
+          "kind": "thread",
+          "line": "t5",
+          "unlocked": false
+        },
+        {
+          "id": "1850-t6",
+          "kind": "thread",
+          "line": "t6",
+          "unlocked": false
+        },
+        {
+          "id": "1850-t7",
+          "kind": "thread",
+          "line": "t7",
+          "unlocked": true,
+          "headline": "[Thread 7 headline, 1850]",
+          "lede": "[Lede.]",
+          "body": [
+            "[Body.]"
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "refs": {
+            "stops": []
+          },
+          "source_line": "[source]"
+        },
+        {
+          "id": "1850-president",
+          "kind": "president",
+          "name": "Millard Fillmore",
+          "term_line": "President from July 1850",
+          "image": {
+            "src": null,
+            "alt": "[describes the portrait]",
+            "caption": "[title, artist, date]",
+            "credit": "[Repository, record ID, rights statement]",
+            "kind": "archival",
+            "_danny_checked": false
+          },
+          "headline": "[What the president said, 1850]",
+          "lede": "[Lede.]",
+          "said": [
+            {
+              "text": "[A sentence he actually wrote or signed.]",
+              "cite": "[document, date]",
+              "source_ref": "[record]"
+            }
+          ],
+          "footnote": "Zachary Taylor was president until he died in office in July 1850. [Sam's wording; BK 21:57: more press to Fillmore, a footnote for Taylor.]",
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "source_line": "[source]"
+        },
+        {
+          "id": "1850-family",
+          "kind": "family",
+          "headline": "[The average American family, 1850]",
+          "lede": "[Lede, and who 'average' leaves out.]",
+          "body": [
+            "[Body.]"
+          ],
+          "census": [
+            {
+              "category": "People in the United States",
+              "value": "[n]",
+              "source_ref": "[1850 census table]"
+            },
+            {
+              "category": "Living on farms",
+              "value": "[n]",
+              "source_ref": "[record]"
+            },
+            {
+              "category": "Living in cities",
+              "value": "[n]",
+              "source_ref": "[record]"
+            },
+            {
+              "category": "Held in slavery",
+              "value": "[n]",
+              "source_ref": "[record]"
+            },
+            {
+              "category": "Could vote",
+              "value": "[n]",
+              "source_ref": "[record]"
+            },
+            {
+              "category": "Under 20",
+              "value": "[n]",
+              "source_ref": "[record]"
+            }
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "source_line": "[source]"
+        },
+        {
+          "id": "1850-young",
+          "kind": "young_person",
+          "headline": "[Being 16 in 1850]",
+          "lede": "[Lede.]",
+          "rows": [
+            {
+              "heading": "School",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "Work",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "Home",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "Free time",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "What you wear",
+              "then": "[then]",
+              "now": "[now]"
+            },
+            {
+              "heading": "Who decides for you",
+              "then": "[then]",
+              "now": "[now]"
+            }
+          ],
+          "oi": {
+            "fact": "[OI fact]",
+            "source_ref": "[record]"
+          },
+          "images": [],
+          "source_line": "[source]"
+        }
+      ]
+    },
+    {
+      "id": "1877",
+      "year": 1877,
+      "label": "1877",
+      "boundary": "end of 11.3B",
+      "status": "building",
+      "_note": "Placeholder boundary so the selector shows a locked future moment. Sam sets the real boundaries."
+    }
+  ],
+  "lines_ref": "content/threads-us11r.json · lines[] (the seven Threads, their numbers, names and questions). Not copied here; the room reads the same file the map reads."
+}
