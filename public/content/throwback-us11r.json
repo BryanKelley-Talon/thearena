@@ -847,7 +847,17 @@
         }
       ],
       "dateline": "March 1801 · Washington City",
-      "moment": "Thomas Jefferson has just taken the oath. The capital moved to Washington last year. The 1800 census count is being printed."
+      "moment": "Thomas Jefferson has just taken the oath. The capital moved to Washington last year. The 1800 census count is being printed.",
+      "front_image": {
+        "src": "img/front-1801.jpg",
+        "alt": "A hand-coloured print of a Philadelphia street in 1799: brick houses and shopfronts along a wide unpaved street, market stalls under an arcade at the left, a man riding a horse down the middle of the road, women carrying baskets, a boy, hand carts and a dog, with the tall white steeple of Christ Church behind.",
+        "caption": "Second Street north from Market Street, with Christ Church, Philadelphia.",
+        "credit": "Drawn and engraved by W. Birch & Son, Philadelphia, 1799. The New York Public Library, Wallach Division, I. N. Phelps Stokes Collection of American Historical Prints. The Library believes this item is in the public domain under the laws of the United States.",
+        "kind": "archival",
+        "_danny_checked": false,
+        "_source": "https://digitalcollections.nypl.org/items/510d47d9-7e5f-a3d9-e040-e00a18064a99",
+        "_note": "Catalog dates the suite 1800; the plate itself is lettered 1799. Credit follows the plate."
+      }
     },
     {
       "id": "1824",
@@ -1499,6 +1509,16 @@
             "text": "Similar: in both years no woman votes, enslaved people are counted but not named, and Native nations are not counted at all. Different: the country grew from 5.3 million people to 23.2 million, and the enslaved population from 893,602 to 3,204,313. Watch the trap: the share of people enslaved fell (1 in 6 to 1 in 7) while the number more than tripled."
           }
         ]
+      },
+      "front_image": {
+        "src": "img/front-1850.jpg",
+        "alt": "A printed broadside headed CAUTION!! in very large letters, addressed to the colored people of Boston, warning them that since a recent order of the mayor and aldermen the watchmen and police officers are empowered to act as kidnappers and slave catchers, and telling them to keep a sharp look out. Dated April 24, 1851.",
+        "caption": "Broadside posted in Boston seven months after the Fugitive Slave Act, April 24, 1851.",
+        "credit": "Broadside, Boston, April 24, 1851. The New York Public Library, Schomburg Center for Research in Black Culture, Photographs and Prints Division. The Library believes this item is in the public domain under the laws of the United States.",
+        "kind": "archival",
+        "_danny_checked": false,
+        "_source": "https://digitalcollections.nypl.org/items/510d47db-bbee-a3d9-e040-e00a18064a99",
+        "_note": "Text read off the image by Josh 2026-10-27 and it matches the broadside the cleared 1850 president card quotes and cites."
       }
     }
   ],

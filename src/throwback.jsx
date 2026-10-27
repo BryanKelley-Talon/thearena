@@ -474,11 +474,13 @@ export const THROWBACK_STYLES = `
    page under the dateline and above the lead. BK, 2026-10-27: "one image should
    appear on front page." */
 .tb-cut{margin:0 0 20px;padding:0 0 18px;border-bottom:2px solid #17130D}
-.tb-cut img{display:block;width:100%;height:auto;max-height:min(34vh,380px);object-fit:cover;object-position:center;
-  border:1px solid #17130D;border-radius:0}
+.tb-cut img{display:block;margin:0 auto;max-width:100%;max-height:min(58vh,520px);width:auto;height:auto;
+  border:1px solid #17130D;border-radius:0;background:#F6EFDD}
 .tb-cut figcaption{margin:9px 0 0;font-size:13.5px;line-height:1.55;color:#2C251A;text-align:center}
-.tb-cut .tb-credit,.tb-cut .tb-label{display:block;font-size:11.5px;color:#6B5B44;
-  font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.13em;margin-top:4px}
+.tb-cut .tb-credit{display:block;font-size:11.5px;line-height:1.5;color:#6B5B44;margin-top:5px;
+  font-family:'Libre Baskerville',Georgia,serif;max-width:70ch;margin-left:auto;margin-right:auto}
+.tb-cut .tb-label{display:block;font-size:10.5px;color:#7A1F12;margin-top:6px;
+  font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.17em}
 .tb-cut .tb-fig-missing{border:1px dashed #B5A48A;background:rgba(23,19,13,.045);
   padding:22px;text-align:center;color:#5A4C39;font-size:13.5px;line-height:1.55}
 .tb-cut .tb-fig-tag{display:block;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
