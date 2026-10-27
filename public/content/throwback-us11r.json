@@ -42,7 +42,7 @@
       "id": "1607",
       "year": 1607,
       "label": "1607",
-      "status": "open",
+      "status": "building",
       "skin": {
         "medium": "letter",
         "masthead": "A LETTER HOME",
@@ -273,13 +273,14 @@
         }
       ],
       "dateline": "May 1607 · the James River, in Powhatan's country",
-      "moment": "Three English ships have come up the river. The Virginia Company's men and boys are building a fort on a marshy island. The land is Tsenacomoco, and its paramount chief is Powhatan."
+      "moment": "Three English ships have come up the river. The Virginia Company's men and boys are building a fort on a marshy island. The land is Tsenacomoco, and its paramount chief is Powhatan.",
+      "_held": "BK 2026-10-27 15:1x: publish 1801 and 1850 only. Held until Sam sends the front-page and panel pictures, real alt text for the room and figures, and threads 5 and 6."
     },
     {
       "id": "1763",
       "year": 1763,
       "label": "1763",
-      "status": "open",
+      "status": "building",
       "skin": {
         "medium": "newspaper",
         "masthead": "THE SEVENTEEN SIXTY-THREE",
@@ -526,7 +527,8 @@
         }
       ],
       "dateline": "October 1763 · London and the colonies",
-      "moment": "The war with France ended in February with the Treaty of Paris. Since May, Native nations around the Great Lakes have been at war with the British forts. On October 7 the King draws a line down the mountains."
+      "moment": "The war with France ended in February with the Treaty of Paris. Since May, Native nations around the Great Lakes have been at war with the British forts. On October 7 the King draws a line down the mountains.",
+      "_held": "BK 2026-10-27 15:1x: publish 1801 and 1850 only. Held until Sam sends the front-page and panel pictures, real alt text for the room and figures, and threads 5 and 6."
     },
     {
       "id": "1801",
@@ -863,7 +865,7 @@
       "id": "1824",
       "year": 1824,
       "label": "1824",
-      "status": "open",
+      "status": "building",
       "skin": {
         "medium": "newspaper",
         "masthead": "THE EIGHTEEN TWENTY-FOUR",
@@ -1170,7 +1172,8 @@
         }
       ],
       "dateline": "December 1824 · Washington",
-      "moment": "President Monroe has sent Congress his last annual message. The electors have voted and no one has a majority; the House will choose the next president. Lafayette, who joined the Revolution at 19, is touring the country."
+      "moment": "President Monroe has sent Congress his last annual message. The electors have voted and no one has a majority; the House will choose the next president. Lafayette, who joined the Revolution at 19, is touring the country.",
+      "_held": "BK 2026-10-27 15:1x: publish 1801 and 1850 only. Held until Sam sends the front-page and panel pictures, real alt text for the room and figures, and threads 5 and 6."
     },
     {
       "id": "1850",

@@ -602,7 +602,7 @@
           "ladders": [
             {
               "skill": "HC",
-              "_source": "Will, 10.3 Casefile A HC files. Danny cleared 2026-10-26 20:47 (docassist, L1, L3, L4) and 2026-10-27 09:25 (L2, second read, changed lines only — this CLOSES the 10.3A HC door package). Final md5 set is Danny\u0027s 09:25 memo, superseding Will\u0027s 08:48 set: L1 17685bc202e649b25fcb3d06d0cc2e4b, L2 624066ac723dc0ad9145473817084994, L3 f6bc62c849608668506130e404ebefa5, L4 56c3279c254748704970decf3c96e8bf, L5 fad82cd9ca7461c43d3910eaa495510c. L1/L3/L4 content is unchanged since the 10/22 clear; only the per-level _status line moved (Will 08:56, on BK\u0027s 08:54 ruling). L2\u0027s own _status line still reads \u0027second read pending\u0027 — stale, written 08:56 before Danny read it at 09:25; Danny\u0027s memo governs. L5 is ported but dark, see _note_l5. Ported byte for byte by Josh 2026-10-27.",
+              "_source": "Will, 10.3 Casefile A HC files. Danny cleared 2026-10-26 20:47 (docassist, L1, L3, L4) and 2026-10-27 09:25 (L2, second read, changed lines only — this CLOSES the 10.3A HC door package). Final md5 set is Danny's 09:25 memo, superseding Will's 08:48 set: L1 17685bc202e649b25fcb3d06d0cc2e4b, L2 624066ac723dc0ad9145473817084994, L3 f6bc62c849608668506130e404ebefa5, L4 56c3279c254748704970decf3c96e8bf, L5 fad82cd9ca7461c43d3910eaa495510c. L1/L3/L4 content is unchanged since the 10/22 clear; only the per-level _status line moved (Will 08:56, on BK's 08:54 ruling). L2's own _status line still reads 'second read pending' — stale, written 08:56 before Danny read it at 09:25; Danny's memo governs. L5 is ported but dark, see _note_l5. Ported byte for byte by Josh 2026-10-27.",
               "levels": [
                 {
                   "level": 1,
@@ -618,7 +618,7 @@
                   "content_ref": "content/ladder-gs10r-10.3-hc-L2-bestfit.json",
                   "published": true,
                   "docs_from_casefile": "A",
-                  "_note_l2": "Josh, 2026-10-27. Ported byte for byte (md5 624066ac723dc0ad9145473817084994, exactly as Danny cleared it 09:25 — this file is NOT edited). Its five stems each open by naming a casefile document (5, 2, 9, 10, 8), which failed the content gate on BK's 2026-09-25 rule: no task without its document. BK ruled 2026-10-27 10:18: \u0027no document pointing if they dont have a document ... always add a document for the activity so a kid without paper docs can still get something from it.\u0027 So docs_from_casefile resolves each stem\u0027s Document N from this unit\u0027s own blessed Doc Assist pack at render, text and source line byte for byte, and shows it above the question. Nothing is authored and no content file diverges from its clearance. Same mechanism the shell already uses to show L4\u0027s source above L5 (openLevel, BK\u0027s same rule). The gate verifies every referenced document number exists in the pack."
+                  "_note_l2": "Josh, 2026-10-27. Ported byte for byte (md5 624066ac723dc0ad9145473817084994, exactly as Danny cleared it 09:25 — this file is NOT edited). Its five stems each open by naming a casefile document (5, 2, 9, 10, 8), which failed the content gate on BK's 2026-09-25 rule: no task without its document. BK ruled 2026-10-27 10:18: 'no document pointing if they dont have a document ... always add a document for the activity so a kid without paper docs can still get something from it.' So docs_from_casefile resolves each stem's Document N from this unit's own blessed Doc Assist pack at render, text and source line byte for byte, and shows it above the question. Nothing is authored and no content file diverges from its clearance. Same mechanism the shell already uses to show L4's source above L5 (openLevel, BK's same rule). The gate verifies every referenced document number exists in the pack."
                 },
                 {
                   "level": 3,
@@ -633,8 +633,8 @@
                   "label": "Historical Context",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L4-guidedwrite.json",
                   "published": true
-                }
-                ,{
+                },
+                {
                   "level": 5,
                   "type": "enrichment",
                   "label": "Historical Context",
@@ -655,12 +655,21 @@
           "opens": [
             {
               "on": "2026-10-09",
-              "stops": ["s-1791-haiti", "s-1808-spain", "s-1815-bolivar", "s-1846-cavour", "s-1862-bismarck", "s-1912-balkans"],
+              "stops": [
+                "s-1791-haiti",
+                "s-1808-spain",
+                "s-1815-bolivar",
+                "s-1846-cavour",
+                "s-1862-bismarck",
+                "s-1912-balkans"
+              ],
               "_note": "Global 10.2 Casefile C's six stops open now (BK 10/9 09:14: 'The other stops can be open...the colleagues should have the full run to review ahead.'). Will's file is unchanged; the engine reads 'building' as open from this day."
             },
             {
               "on": "2026-10-15",
-              "stops": ["s-1815-vienna"],
+              "stops": [
+                "s-1815-vienna"
+              ],
               "_note": "The Vienna context stop (BK 10/15 19:38 'b', 19:39 words, 19:47 item 6; Danny CLEAN 20:23, map file 0b5f3b09). Opens on BK's push; before the Timekeeper room opens Tue 10/20."
             }
           ],
@@ -759,14 +768,27 @@
       "constitution": {
         "opens_after_unit": "11.2",
         "opens_on": "2026-11-03",
-        "rooms": [{ "unit": "11.2", "slug": "machine" }, { "unit": "11.2", "slug": "amendments" }, { "unit": "11.2", "slug": "cases" }],
+        "rooms": [
+          {
+            "unit": "11.2",
+            "slug": "machine"
+          },
+          {
+            "unit": "11.2",
+            "slug": "amendments"
+          },
+          {
+            "unit": "11.2",
+            "slug": "cases"
+          }
+        ],
         "_note": "THE CONSTITUTION lane (BK 2026-10-16 11:42 'Once we move beyond Unit 11.2--I'd like the Machine and the Amendments to get their own button across the top'; 11:46 one button; 11:48 name and line, 'yes.'). Appears on Tue 11/3 (Sam 12:25: the 11.3 room isn't ready, so by date) or when the US door's current unit comes after 11.2, whichever is first; Landmark Supreme Court Cases joins as a third room when Sam's words land. The cards stay on the 11.2 Review row too."
       },
       "throwback": {
         "content_ref": "content/throwback-us11r.json",
-        "published": false,
+        "published": true,
         "preview_ok": true,
-        "_note": "Josh, 2026-10-27. THROWBACK, Leo's order 2026-10-26 22:01, ruled by BK 22:38-22:40. DARK on purpose: this is the SHAPE file Josh sent Sam on 10/26 with placeholder text in every slot, not Sam's content. Not one word or picture here has cleared Danny - as of this morning he has two open findings on the imagery (the 1824 silhouette reads 1830s; the 1801/1850 images never reached his In/), and Sam's three frame-wording PDFs are still for-yes at his desk. BK approved Throwback to Josh in chat 2026-10-27 12:16 ('i approve throwback..lets move on it'); read as the order to BUILD, not as a clearance for words or art, and Sam was told so in writing. Publishing waits on Danny's md5s. The room renders without art by design, so the mechanic can be reviewed before a picture exists."
+        "_note": "Josh, 2026-10-27 15:1x. LIVE TO STUDENTS, BK ruled in chat: 1801 and 1850 only. Content is Sam’s build throwback-us11r-BUILT-2026-10-27.json, Danny-cleared 13:39 at md5 c158387e228c76d50bace9d95f455621 with 0 WRONG / 0 UNSUPPORTED; BK’s yes in chat 13:41. 1607, 1763 and 1824 carry status \"building\" and read as Not yet - they are short of threads 5 and 6, a front-page picture, a panel picture and real alt text, all owed by the curriculum desk. The two front-page pictures were pulled by Josh on BK’s 14:06 order outside the Danny lane and carry _danny_checked false; captions and alt texts on those two are Josh’s and await the copy desk."
       },
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
       "accent": "#E3B341",
@@ -1356,55 +1378,55 @@
           "label": "11.2 · Constitutional Foundations",
           "published": true,
           "brief_ref": "content/brief-us11r-11.2.json",
-        "review_extras": {
-        "_source": "Josh, 2026-10-27, on BK's 2026-10-26 20:27 order via Sam ('lets make sure the Unit Test Review on Arena is updated to support success on this test. Elastic Clause highlight...they have to know Necessary and Proper/Elastic Clause. i've said it aloud in class a lot.'). Every student-facing line below is lifted word for word from already-blessed files, nothing authored here: the definitions are Casefile B and C Key Vocabulary (Sam's casefile-wording source), the 'why elastic' line is THE MACHINE's own Congress card, the Antifederalist line is Casefile B Document 16 as Doc Assist prints it, and the McCulloch line is THE LANDMARK CASES' own holding row. The five short labels are the only words Josh set, and they follow Sam's own order ('what it is, why it is called elastic, why Antifederalists feared it, and how McCulloch v. Maryland used it'). TEST WALL: nothing here comes from a Part I item; Friday's released NYSED items were never read. Lives in the manifest, not in Sam's brief file, so brief-us11r-11.2.json stays byte for byte as ported.",
-        "highlight": {
-          "flag": "KNOW THIS ONE COLD",
-          "term": "Necessary and Proper (Elastic) Clause",
-          "rows": [
-            {
-              "label": "What it is",
-              "text": "The part of Article I letting Congress make any law needed to carry out its listed powers.",
-              "from": "Casefile B and C Key Vocabulary"
+          "review_extras": {
+            "_source": "Josh, 2026-10-27, on BK's 2026-10-26 20:27 order via Sam ('lets make sure the Unit Test Review on Arena is updated to support success on this test. Elastic Clause highlight...they have to know Necessary and Proper/Elastic Clause. i've said it aloud in class a lot.'). Every student-facing line below is lifted word for word from already-blessed files, nothing authored here: the definitions are Casefile B and C Key Vocabulary (Sam's casefile-wording source), the 'why elastic' line is THE MACHINE's own Congress card, the Antifederalist line is Casefile B Document 16 as Doc Assist prints it, and the McCulloch line is THE LANDMARK CASES' own holding row. The five short labels are the only words Josh set, and they follow Sam's own order ('what it is, why it is called elastic, why Antifederalists feared it, and how McCulloch v. Maryland used it'). TEST WALL: nothing here comes from a Part I item; Friday's released NYSED items were never read. Lives in the manifest, not in Sam's brief file, so brief-us11r-11.2.json stays byte for byte as ported.",
+            "highlight": {
+              "flag": "KNOW THIS ONE COLD",
+              "term": "Necessary and Proper (Elastic) Clause",
+              "rows": [
+                {
+                  "label": "What it is",
+                  "text": "The part of Article I letting Congress make any law needed to carry out its listed powers.",
+                  "from": "Casefile B and C Key Vocabulary"
+                },
+                {
+                  "label": "Why it is called elastic",
+                  "text": "It lets Congress use tools the Constitution never names, like a bank, to carry out the powers it does name.",
+                  "from": "THE MACHINE · what Congress does"
+                },
+                {
+                  "label": "The power it creates",
+                  "text": "Implied powers: powers Congress can use even though the Constitution doesn't list them, because they help carry out a power it does have.",
+                  "from": "Casefile B and C Key Vocabulary"
+                },
+                {
+                  "label": "Why the Antifederalists feared it",
+                  "text": "“undefined, unbounded and immense power … can anything be said to be reserved and kept back from Congress?”",
+                  "from": "Casefile B, Document 16 · Antifederalist No. 46"
+                },
+                {
+                  "label": "How the Court used it",
+                  "text": "Congress can create the bank, even though the Constitution never says “bank,” because the necessary and proper clause lets it carry out its listed powers. Maryland can't tax it.",
+                  "from": "THE LANDMARK CASES · McCulloch v. Maryland (1819)"
+                }
+              ]
             },
-            {
-              "label": "Why it is called elastic",
-              "text": "It lets Congress use tools the Constitution never names, like a bank, to carry out the powers it does name.",
-              "from": "THE MACHINE · what Congress does"
-            },
-            {
-              "label": "The power it creates",
-              "text": "Implied powers: powers Congress can use even though the Constitution doesn't list them, because they help carry out a power it does have.",
-              "from": "Casefile B and C Key Vocabulary"
-            },
-            {
-              "label": "Why the Antifederalists feared it",
-              "text": "“undefined, unbounded and immense power … can anything be said to be reserved and kept back from Congress?”",
-              "from": "Casefile B, Document 16 · Antifederalist No. 46"
-            },
-            {
-              "label": "How the Court used it",
-              "text": "Congress can create the bank, even though the Constitution never says “bank,” because the necessary and proper clause lets it carry out its listed powers. Maryland can't tax it.",
-              "from": "THE LANDMARK CASES · McCulloch v. Maryland (1819)"
-            }
-          ]
-        },
-        "rooms_lead": "Work it in the rooms:",
-        "rooms": [
-          {
-            "unit": "11.2",
-            "slug": "machine"
+            "rooms_lead": "Work it in the rooms:",
+            "rooms": [
+              {
+                "unit": "11.2",
+                "slug": "machine"
+              },
+              {
+                "unit": "11.2",
+                "slug": "amendments"
+              },
+              {
+                "unit": "11.2",
+                "slug": "cases"
+              }
+            ]
           },
-          {
-            "unit": "11.2",
-            "slug": "amendments"
-          },
-          {
-            "unit": "11.2",
-            "slug": "cases"
-          }
-        ]
-      },
           "_source": "Sam, arena-pack-us11r-11.2.md, SIGNED by BK 2026-09-27 18:11 ('approved'); ported word for word by Josh 18:27 (md5 match)",
           "_test_wall": "Sam: none of the 8 reps is on the 11.2 Part I. Add no other MC_BANK/Unit_02 item to this room or the Bowl without asking him.",
           "assignment": {
@@ -1463,7 +1485,7 @@
                 "title": "THE LANDMARK CASES",
                 "line": "The Supreme Court decides what the Constitution means. These are the decisions that changed the country."
               },
-              "_note": "THE LANDMARK CASES, the third room in THE CONSTITUTION (BK 2026-10-16 11:42/11:48; the name RULED 13:19 'THE LANDMARK CASES sounds better ... I change my mind'). Sam's skills/cases/cases_words.py md5 b799ca27b234e467a36b5ae8d2440eae (Danny CLEAN 10/16 14:44, 3 readers 38/37/43) via scripts/packs/cases_pack.py. card = the pack's title and sub, word for word. The five cleared cases are two 11.2 and three 11.3; the room opens as one set, because layer 2's taps use all five (Josh's finding, 10/19). Card live on the 11.2 Review row from 2026-10-19 (BK 21:27: \u201cit can go live now, not worried about early access...gives kids a chance to review Marbury etc.\u201d); Room Check Bless, same message. The room also joins THE CONSTITUTION lane when that button opens Tue 11/3."
+              "_note": "THE LANDMARK CASES, the third room in THE CONSTITUTION (BK 2026-10-16 11:42/11:48; the name RULED 13:19 'THE LANDMARK CASES sounds better ... I change my mind'). Sam's skills/cases/cases_words.py md5 b799ca27b234e467a36b5ae8d2440eae (Danny CLEAN 10/16 14:44, 3 readers 38/37/43) via scripts/packs/cases_pack.py. card = the pack's title and sub, word for word. The five cleared cases are two 11.2 and three 11.3; the room opens as one set, because layer 2's taps use all five (Josh's finding, 10/19). Card live on the 11.2 Review row from 2026-10-19 (BK 21:27: “it can go live now, not worried about early access...gives kids a chance to review Marbury etc.”); Room Check Bless, same message. The room also joins THE CONSTITUTION lane when that button opens Tue 11/3."
             }
           ],
           "activities": [
@@ -1741,12 +1763,19 @@
             {
               "id": "A",
               "label": "Discovery",
-              "skills": ["HC", "OE", "TH", "DU", "EX", "CP"],
+              "skills": [
+                "HC",
+                "OE",
+                "TH",
+                "DU",
+                "EX",
+                "CP"
+              ],
               "_source": "BK 2026-10-24 16:55 ('separate by Casefile, easier to refer to for kids'), 17:13 (the unit's room carries a door per casefile) and 17:15 ('a door shows the gauges its casefile's scoring page scores, no more and no fewer'). Casefile A posts all six US skill lines (CARRY-FORWARD: the four-part bundle yields HC and OE off part 1, TH off part 2, DU and EX off part 3, CP off part 4), so A's door carries all six and the five not yet authored read Coming, the same way an unbuilt gauge has always shown. Casefiles B and C get their doors when their scoring pages are built and Sam sends their code lists - a door to an empty room is the thing BK ruled out, so there is no B or C door today. This is the address Sam's printed Casefile A v17 scoring-page QR already points at: #/us/11.3A/gauges/A."
             }
           ],
           "number": "11.3A",
-          "label": "11.3A \u00b7 Building a Nation, 1801\u20131850",
+          "label": "11.3A · Building a Nation, 1801–1850",
           "status": "building",
           "published": true,
           "_source": "Sam, 11.3A Casefile A Historical Context gauge, blessed by BK 2026-10-23 11:38 on US11R_11.3A_THEJUMP-HCgauge_WORDING_v2. Danny cleared the claims 2026-10-23 13:43 (5 files, 0 fixed, 0 unsupported) and this exact build 2026-10-25 10:33 (11 claims, 1 fixed, 0 unsupported; the fix is L5 Doc 6's dateline pointer, a hidden field). Ported byte for byte by Josh 2026-10-27 at Danny's md5s: L1 693007ef71ee91deb98773926fbd51ed, L2 3b7ddfebe44b1ce3901dfbdd9bd3b129, L3 5ebb9631a9b928067a034bd91f2ebbcc, L4 8fe8a3615ae41d31f5261f819c6f1474, L5 5ca760dcc54e270745d8509ac3c0fa64. Level labels are Sam's own _activity lines, not written here. L5 is a COLD rung: it carries its own two documents inline (Jackson's 1830 message and the Cherokee General Council's address) with a BEFORE WE TALK framing. Those documents sit outside Casefile A by design, so it meets BK's 2026-10-27 document rule by the inline route and needs no docs_from_casefile. No checklist and no starter, on purpose.",
@@ -1755,42 +1784,42 @@
             {
               "skill": "HC",
               "levels": [
-            {
-              "level": 1,
-              "type": "matching",
-              "label": "Watch one get built: the Louisiana Purchase, 1803",
-              "content_ref": "content/ladder-us11r-11.3A-hc-L1-modeled.json",
-              "published": true
-            },
-            {
-              "level": 2,
-              "type": "mc_bestfit",
-              "label": "Pick the scene: 11.3A",
-              "content_ref": "content/ladder-us11r-11.3A-hc-L2-bestfit.json",
-              "published": true
-            },
-            {
-              "level": 3,
-              "type": "sentence_build",
-              "label": "Build the scene: the Monroe Doctrine, 1823",
-              "content_ref": "content/ladder-us11r-11.3A-hc-L3-sentencebuild.json",
-              "published": true
-            },
-            {
-              "level": 4,
-              "type": "guided_write",
-              "label": "Write the scene: the embargo song, 1808",
-              "content_ref": "content/ladder-us11r-11.3A-hc-L4-guidedwrite.json",
-              "published": true
-            },
-            {
-              "level": 5,
-              "type": "guided_write",
-              "label": "On your own: Documents 5 and 6",
-              "content_ref": "content/ladder-us11r-11.3A-hc-L5-cold.json",
-              "published": true,
-              "cold": true
-            }
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: the Louisiana Purchase, 1803",
+                  "content_ref": "content/ladder-us11r-11.3A-hc-L1-modeled.json",
+                  "published": true
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the scene: 11.3A",
+                  "content_ref": "content/ladder-us11r-11.3A-hc-L2-bestfit.json",
+                  "published": true
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build the scene: the Monroe Doctrine, 1823",
+                  "content_ref": "content/ladder-us11r-11.3A-hc-L3-sentencebuild.json",
+                  "published": true
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write the scene: the embargo song, 1808",
+                  "content_ref": "content/ladder-us11r-11.3A-hc-L4-guidedwrite.json",
+                  "published": true
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Documents 5 and 6",
+                  "content_ref": "content/ladder-us11r-11.3A-hc-L5-cold.json",
+                  "published": true,
+                  "cold": true
+                }
               ]
             }
           ]
