@@ -642,11 +642,13 @@
                 },
                 {
                   "level": 5,
-                  "type": "enrichment",
-                  "label": "Historical Context",
-                  "content_ref": "content/ladder-gs10r-10.3-hc-L5-enrichment.json",
-                  "published": false,
-                  "_note_l5": "Josh, 2026-10-27. Ported byte for byte (md5 fad82cd9ca7461c43d3910eaa495510c) on Danny's 09:25 'port all five', but NOT published: the file's own _status reads 'DRAFT. Not in Danny's 2026-10-26 package; not yet reviewed,' and Danny's same memo calls it 'correctly marked not yet reviewed.' No reader has been through it, so it stays dark rather than put unreviewed words in front of a student. One line flips it once Danny clears L5."
+                  "type": "guided_write",
+                  "label": "On your own: the railway debate, 1825",
+                  "content_ref": "content/ladder-gs10r-10.3-hc-L5-cold.json",
+                  "published": true,
+                  "cold": true,
+                  "model_opens_on": "2026-11-30",
+                  "_note_l5": "Josh, 2026-10-30. Danny cleared the railway-debate L5 2026-10-27 (md5 567f0d1d8e20dad6544d52163e979f10) and the 2026-10-30 restamp (md5 932c00e1a5a9489ad5acca0dbcf0982b; model_opens_on added, status line and model note only). It replaces the old enrichment draft fad82cd9..., removed. BK 2026-10-30 14:08 via Will 14:09: a Level 5 model opens on the unit's Data Day, Mon 11/30. The hold-models script reads the date from this line, not from the content file."
                 }
               ]
             }
