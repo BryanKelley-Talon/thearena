@@ -883,7 +883,8 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 button.gauge:hover{border-color:var(--gold);background:var(--card-lit);transform:translateY(-2px)}
 .gauge.off{cursor:default}
 .gauge-name{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.06em;
-  font-size:21px;font-weight:600;color:var(--white);text-align:center;line-height:1.1;margin-top:4px}
+  font-size:clamp(17px,1.7vw,21px);font-weight:600;color:var(--white);text-align:center;line-height:1.1;margin-top:4px;
+  max-width:100%;overflow-wrap:break-word}
 .gauge.off .gauge-name{color:var(--dim)}
 .gauge-status{color:var(--grey);font-size:15px}
 .gauge-face{position:relative;flex:none;max-width:100%;aspect-ratio:1}

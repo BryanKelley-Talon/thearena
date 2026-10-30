@@ -34,6 +34,9 @@ const walk = o => {
         refsIn(x).forEach(r => held.add(r)); labels.push(`${x.label || x.title || x.name || x.id || [...refsIn(x)][0] || '?'} (opens ${x.opens_on})`)
         // Only the open date stays, so the page can still say "opens Oct 23" (the moments card) exactly as it does today.
         const stub = { published: x.published, opens_on: x.opens_on }; if (x.tool) stub.tool = x.tool
+        // A casefile door (id A-C) keeps its name and its desk-worded open day: the door shows them locked ("Casefile B · Cross-Examination · Opens Mon 11/9").
+        // Its gauge list, documents and refs still leave. (Josh, 2026-10-30: the first full build showed "Casefile undefined".)
+        if (/^[A-Z]$/.test(String(x.id || '')) && x.label) { stub.id = x.id; stub.label = x.label; if (x.opens_label) stub.opens_label = x.opens_label }
         o[i] = stub
       }
       else walk(x)

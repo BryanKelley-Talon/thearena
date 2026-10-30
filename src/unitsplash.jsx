@@ -142,7 +142,7 @@ export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThree
       </div>
       {cf.blurb && <p className="room-sub">{cf.blurb}</p>}
       <h3 className="room-section">{W.gauges}</h3>
-      <SkillGauges course={course} unit={unit} prog={prog} only={cf?.skills || []} onOpen={onOpenSkill} />
+      <div className="cf-gauges"><SkillGauges course={course} unit={unit} prog={prog} only={cf?.skills || []} onOpen={onOpenSkill} /></div>
       {hasDocs && (
         <>
           <h3 className="room-section">{W.docs}</h3>
@@ -188,6 +188,9 @@ export function NextStepBody({ course, unit, prog, onOpenGauge, onOpenLab }) {
 }
 
 export const SPLASH_STYLES = `
+/* A casefile holds three to six gauges, not the six-wide row of a full course: keep each card wide enough to read its name on one line. */
+.cf-gauges .gauges{grid-template-columns:repeat(auto-fill,minmax(150px,200px));justify-content:start}
+@media (max-width:600px){.cf-gauges .gauges{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .us-splash{margin-top:6px}
 .us-doors{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-bottom:18px}
 .us-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px;margin-bottom:28px}

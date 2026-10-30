@@ -29,7 +29,7 @@
       "blurb": "Your course. The moves you're being graded on, the units you've finished, and the exam at the end of it.",
       "accent": "#7FB2D9",
       "status": "open",
-      "current_unit": "unit-2",
+      "current_unit": "unit-3",
       "_current_unit_note": "Josh, 2026-09-25 (BK: 'we're in unit 2 now'). Door gauges follow this unit; Unit 1's gauges move to its own page.",
       "guide": {
         "name": "BK",
@@ -591,7 +591,7 @@
           "slug": "unit-3",
           "number": "10.3",
           "label": "10.3",
-          "status": "building",
+          "status": "open",
           "published": true,
           "doc_assist": {
             "published": true,
