@@ -596,7 +596,13 @@
           "doc_assist": {
             "published": true,
             "content_ref": "content/docassist-gs10r-10.3.json",
-            "_note": "Josh, 2026-10-23. Doc Assist, Global, Casefile A only. Ported word for word from Will's WORK/u103A-docassist/da_103A.py (fixed 2026-10-23 09:06) and skills/u103/words_103A.py (the ruled original text). Danny's clearance: 12 claims checked, 12 confirmed, 0 problems (2026-10-22). Will's two 2026-10-23 passes (anchors + walk shape) both say go ahead and build. Needed live Wed 10/28. No paper colour ruled yet for 10.3 A — omitted rather than guessed; flagged in the proof. Unit status is building and current_unit stays unit-2 on BK's own word (CARRY-FORWARD: “Keep the Global door on 10.2 through Mon 10/26”) — this room is wired for its QR/deep links but not on the door yet. Nothing here deploys without BK's yes."
+            "_note": "Josh, 2026-10-23. Doc Assist, Global, Casefile A only. Ported word for word from Will's WORK/u103A-docassist/da_103A.py (fixed 2026-10-23 09:06) and skills/u103/words_103A.py (the ruled original text). Danny's clearance: 12 claims checked, 12 confirmed, 0 problems (2026-10-22). Will's two 2026-10-23 passes (anchors + walk shape) both say go ahead and build. Needed live Wed 10/28. No paper colour ruled yet for 10.3 A — omitted rather than guessed; flagged in the proof. Unit status is building and current_unit stays unit-2 on BK's own word (CARRY-FORWARD: “Keep the Global door on 10.2 through Mon 10/26”) — this room is wired for its QR/deep links but not on the door yet. Nothing here deploys without BK's yes.",
+            "paper": {
+              "A": "green",
+              "B": "coral",
+              "C": "yellow"
+            },
+            "_paper_source": "BK 2026-10-30 13:04 via Will 13:05: 'A is green. B can be coral , and C can be yellow'."
           },
           "_note": "Josh, 2026-10-23. Shell only — Doc Assist Casefile A, nothing else. No brief_ref, activities, ladders or chase: none of those exist yet for 10.3 (Josh pulls, Josh never authors). No unit label is ruled either; 'label' is a placeholder (the bare number) until Will or BK names the unit for the door — it doesn't render anywhere while status is building and current_unit is unit-2, so nothing is seen with a made-up title. Amended 2026-10-27 by Josh: the HC ladder is now wired L1-L4 published and L5 dark (Danny closed the package at 09:25; see the ladder _source and _note_l5). Levels carry a placeholder label ('Historical Context') since no per-level label was supplied in this pack — flagged in the proof for Will/BK to replace if they want the per-document titles 10.2 uses.",
           "ladders": [
@@ -643,6 +649,37 @@
                   "_note_l5": "Josh, 2026-10-27. Ported byte for byte (md5 fad82cd9ca7461c43d3910eaa495510c) on Danny's 09:25 'port all five', but NOT published: the file's own _status reads 'DRAFT. Not in Danny's 2026-10-26 package; not yet reviewed,' and Danny's same memo calls it 'correctly marked not yet reviewed.' No reader has been through it, so it stays dark rather than put unreviewed words in front of a student. One line flips it once Danny clears L5."
                 }
               ]
+            }
+          ],
+          "casefiles": [
+            {
+              "id": "A",
+              "label": "Discovery",
+              "skills": [
+                "DU",
+                "HC",
+                "TH"
+              ],
+              "_source": "Will 2026-10-30 13:24 (BK 13:23 'yes'): names A · Discovery, B · Cross-Examination, C · Closing Argument; the three Casefile A scored, Global gauge order: Document Use · Historical Context · Thesis."
+            },
+            {
+              "id": "B",
+              "label": "Cross-Examination",
+              "opens_on": "2026-11-09",
+              "opens_label": "Mon 11/9",
+              "skills": [
+                "DU",
+                "HC",
+                "TH"
+              ],
+              "_source": "Will 2026-10-26 14:55 and 2026-10-30 13:24: B1 Mon 11/9, doors locked until then; B's Group-door gauges are the three A scored. The five Group doors inside B are next week's build."
+            },
+            {
+              "id": "C",
+              "label": "Closing Argument",
+              "locked": true,
+              "skills": [],
+              "_source": "Will 2026-10-30 13:24. C's first day and gauge list not yet sent: shows locked, 'Coming', until they are."
             }
           ]
         }
@@ -1772,6 +1809,21 @@
                 "CP"
               ],
               "_source": "BK 2026-10-24 16:55 ('separate by Casefile, easier to refer to for kids'), 17:13 (the unit's room carries a door per casefile) and 17:15 ('a door shows the gauges its casefile's scoring page scores, no more and no fewer'). Casefile A posts all six US skill lines (CARRY-FORWARD: the four-part bundle yields HC and OE off part 1, TH off part 2, DU and EX off part 3, CP off part 4), so A's door carries all six and the five not yet authored read Coming, the same way an unbuilt gauge has always shown. Casefiles B and C get their doors when their scoring pages are built and Sam sends their code lists - a door to an empty room is the thing BK ruled out, so there is no B or C door today. This is the address Sam's printed Casefile A v17 scoring-page QR already points at: #/us/11.3A/gauges/A."
+            },
+            {
+              "id": "B",
+              "label": "Cross-Examination",
+              "opens_on": "2026-11-13",
+              "opens_label": "Fri 11/13",
+              "skills": [],
+              "_source": "Sam 2026-10-24 13:53: B1 is Fri 11/13. Name per the ruled three-axis shape (10/24). Gauge list from B's scoring page, asked of Sam 2026-10-30 13:45; locked until its day, so the list can follow."
+            },
+            {
+              "id": "C",
+              "label": "Closing Argument",
+              "locked": true,
+              "skills": [],
+              "_source": "C's first day not on record; asked of Sam 2026-10-30 13:45. Shows locked, 'Coming', until it is."
             }
           ],
           "number": "11.3A",

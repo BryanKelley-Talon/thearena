@@ -23,7 +23,8 @@ import { WritingLabCards } from './writinglab.jsx'
 
 const PREVIEW_DOORS = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'unit-doors' } catch { return false } })()
 const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
-export const cfOpen = cf => PREVIEW_DOORS || !cf?.opens_on || todayLocal() >= String(cf.opens_on)
+// `locked`: a door whose day the desk hasn't sent yet. It shows, reads Coming, and stays shut.
+export const cfOpen = cf => PREVIEW_DOORS || (!!cf && !cf.locked && (!cf.opens_on || todayLocal() >= String(cf.opens_on)))
 
 export const usesSplash = unit => Array.isArray(unit?.casefiles) && unit.casefiles.length > 0
 
@@ -33,6 +34,7 @@ const isUS = course => /us11r|^us$/.test(String(course?.id || course || ''))
 export const SPLASH_WORDS = {
   skillsIntro: 'Start here. Open a casefile to climb its gauges.',
   casefile: id => `Casefile ${id}`,
+  now: 'Now',
   opens: label => `Opens ${label}`,
   open: 'Open',
   coming: 'Coming',
@@ -69,11 +71,12 @@ const NEXT_PARTS = course => [
   { code: isUS(course) ? 'CP' : 'EI', room: 'read-the-doc', roomName: 'Read the Doc' },
 ]
 
-function DoorCard({ id, title, sub, paper, open, label, onOpen, kind }) {
+function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now }) {
   const style = paper ? { '--paper': paper.sheet, '--paper-tint': paper.tint } : undefined
   const cls = `us-door${paper ? ' paper' : ''}${open ? '' : ' shut'}${kind ? ` ${kind}` : ''}`
   const body = (
     <>
+      {now && <span className="us-now">{W.now}</span>}
       <span className="us-door-id">{title}</span>
       {sub && <span className="us-door-sub">{sub}</span>}
       {paper && <span className="us-door-copy"><span className="us-swatch" aria-hidden="true" />{W.copy(paper)}</span>}
@@ -88,13 +91,15 @@ function DoorCard({ id, title, sub, paper, open, label, onOpen, kind }) {
 // ── the splash itself ──
 export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile, onOpenNextStep, onOpenAtlas, onOpenTestReview }) {
   const cfs = unit.casefiles || []
+  // The NOW tag sits on the casefile that is running: the last one open (Will 13:24, point 1, BK 13:23 "yes").
+  const running = [...cfs].reverse().find(cfOpen)?.id
   return (
     <div className="us-splash">
       <div className="us-doors">
         {cfs.map(cf => {
           const open = cfOpen(cf)
           return (
-            <DoorCard key={cf.id} id={`us-door-${cf.id}`} title={W.casefile(cf.id)} sub={cf.label}
+            <DoorCard key={cf.id} id={`us-door-${cf.id}`} title={W.casefile(cf.id)} sub={cf.label} now={cf.id === running}
                       paper={paperOf(unit.doc_assist?.paper, cf.id)} open={open}
                       label={open ? W.open : (cf.opens_label ? W.opens(cf.opens_label) : W.coming)}
                       onOpen={() => onOpenCasefile(cf.id)} />
@@ -193,6 +198,7 @@ button.us-door:focus-visible{outline:3px solid var(--gold-lit);outline-offset:2p
 .us-door.shut .us-door-id{opacity:.85}
 .us-door.paper.shut{filter:saturate(.55)}
 .us-door.next{border-color:var(--gold)}
+.us-now{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.08em;font-size:13px;color:var(--canvas);background:var(--gold);border-radius:4px;padding:2px 8px}
 .us-door.side{min-height:120px}
 .us-door.side .us-door-id{font-size:24px}
 .us-cf-mast{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;padding:14px 16px;border-radius:12px;margin-bottom:12px;
