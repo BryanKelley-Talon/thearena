@@ -38,13 +38,24 @@ for (const c of m.courses || []) {
   if ((c.atlas || []).some(a => a.published)) { C.lanes.atlas = `${BASE}#/${k}/atlas`; md.push(`- Atlas: ${C.lanes.atlas}`) }
   // A set that ships ahead is listed with its open day, so a deck built now can carry its link.
   const wl = (c.writing_lab || []).filter(e => e.published)
-  if (wl.length) { C.lanes.writing_lab = `${BASE}#/${k}/writing-lab`; md.push(`- Writing Lab: ${C.lanes.writing_lab}`) }
+  // The Writing Lab lane left the top 2026-10-30 (Blueprint lives in Casefile C); its sets are listed under their units.
+  // SKILLS LAB (2026-10-30): the lane, and each room by its link name, so a deck or a Classroom post can point at one.
+  C.lanes.skills_lab = `${BASE}#/${k}/skills-lab`; md.push(`- Skills Lab: ${C.lanes.skills_lab}`)
+  for (const [slug, name] of [['read-the-doc', 'Read the Doc'], ['call-your-witness', 'Call Your Witness'], ['make-the-case', 'Make the Case']]) {
+    C.lanes[`skills_lab_${slug}`] = `${BASE}#/${k}/skills-lab/${slug}`; md.push(`  - ${name}: ${C.lanes[`skills_lab_${slug}`]}`)
+  }
   md.push('')
   for (const u of c.units || []) {
     if (u.published !== true) continue
     const n = String(u.number)
     const U = { name: u.label, room: `${BASE}#/${k}/${n}` }
     md.push(`### ${String(u.label).startsWith(n) ? u.label : `${n} · ${u.label}`}`, '', `- The room: ${U.room}`)
+    // A splash unit (2026-10-30): each casefile door, Door 4 and the Test Review card.
+    if ((u.casefiles || []).length) {
+      for (const cf of u.casefiles) { U[`casefile_${cf.id}`] = `${BASE}#/${k}/${n}/gauges/${cf.id}`; md.push(`- Casefile ${cf.id}${cf.opens_label ? ` (opens ${cf.opens_label})` : ''}: ${U[`casefile_${cf.id}`]}`) }
+      U.next_step = `${BASE}#/${k}/${n}/next-step`; md.push(`- Know Your Next Step: ${U.next_step}`)
+      U.test_review = `${BASE}#/${k}/${n}/test-review`; md.push(`- Unit Test Review: ${U.test_review}`)
+    }
     if (u.brief_ref) { U.review = `${BASE}#/${k}/${n}/review`; md.push(`- Unit review: ${U.review}`) }
     if (u.doc_assist?.published) {
       const pack = read(ref(u.doc_assist.content_ref))

@@ -77,12 +77,12 @@ export function useWritingLab(course) {
   return sets
 }
 
-export function WritingLabCards({ sets, onOpen }) {
+export function WritingLabCards({ sets, onOpen, lane = W.lane }) {
   return (
     <div className="grid room-cards">
       {sets.map(({ entry, data }) => (
         <button key={entry.slug} type="button" className="card" onClick={() => onOpen(entry.slug)}>
-          <div className="card-type">{W.lane}</div>
+          <div className="card-type">{lane}</div>
           <div className="card-name">{W.card(data.name, entry.set ?? 1, data.set_title)}</div>
           <span className="flag live">{W.start}</span>
         </button>
@@ -91,9 +91,9 @@ export function WritingLabCards({ sets, onOpen }) {
   )
 }
 
-export function WritingLabLane({ course, sets, unitName, onOpen, Empty }) {
+export function WritingLabLane({ course, sets, unitName, onOpen, Empty, label = W.lane }) {
   if (sets === null) return null
-  if (!sets.length) return <><span className="flag building atlas-flag">Under construction</span><Empty what={W.lane} /></>
+  if (!sets.length) return <><span className="flag building atlas-flag">Under construction</span><Empty what={label} /></>
   const units = [...(course.units || [])].reverse()
   return (
     <>
@@ -103,7 +103,7 @@ export function WritingLabLane({ course, sets, unitName, onOpen, Empty }) {
         return (
           <section key={u.slug} className="atlas-unit">
             <h3 className="room-section">{unitName(u)}</h3>
-            <WritingLabCards sets={here} onOpen={onOpen} />
+            <WritingLabCards sets={here} onOpen={onOpen} lane={label} />
           </section>
         )
       })}

@@ -98,7 +98,7 @@ export function MomentsCard({ course, unit, maps, preview, compact }) {
               {tools[s.n] && (
                 <div className="mo-tools">
                   <span className="mo-arrow" aria-hidden="true">&rarr; </span>
-                  {s.n === 3 && <><Tool t={tools[3][0]} />, in the Writing Lab</>}
+                  {s.n === 3 && <><Tool t={tools[3][0]} />, in Casefile C</>}
                   {s.n === 5 && <>{W.backInto} {tools[5].map((t, i) => <span key={i}>{i > 0 && <Dot />}<Tool t={t} /></span>)}</>}
                   {s.n === 4 && <>{W.seeHow} <Tool t={tools[4][0]} /> {W.modelPara}</>}
                   {s.n !== 3 && s.n !== 4 && s.n !== 5 && tools[s.n].map((t, i) => <span key={i}>{i > 0 && <Dot />}<Tool t={t} /></span>)}

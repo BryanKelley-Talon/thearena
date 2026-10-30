@@ -7,13 +7,17 @@
 //   #/us/units · #/us/threads · …          a lane on the door
 //   #/us/11.1                              a unit room, by its framework number
 //   #/us/11.1/review                       the unit's review
+//   #/us/11.3A/next-step                   Door 4, Know Your Next Step (a splash unit, 2026-10-30)
+//   #/us/11.3A/test-review                 the Unit Test Review card: review + Part I practice (2026-10-30)
 //   #/us/11.1/doc-assist                   the unit's Doc Assist
 //   #/us/11.1/doc-assist/B                 one casefile (the page opens at Casefile B)
 //   #/us/11.1/doc-assist/B/12              one document, by its printed number
 //   #/global/issues                        the Enduring Issues map (10/5)
 //   #/us/atlas · #/global/atlas/<map-id>   the Atlas lane, or one map open in the viewer (10/5)
 //   #/us/11.1/atlas                        one unit's atlas (BK 21:53)
-//   #/us/writing-lab · #/us/writing-lab/<set slug>   the Writing Lab, or one Blueprint set (10/5)
+//   #/us/writing-lab/<set slug>            one Blueprint set (10/5). The Writing Lab lane left the top 2026-10-30 (the
+//                                          Blueprint lives in Casefile C), so the bare #/us/writing-lab lands on the door
+//   #/us/skills-lab · #/us/skills-lab/call-your-witness   SKILLS LAB, or one of its rooms (2026-10-30)
 //   #/us/0                                 Unit 0 (the six skills, for a new student or a parent)
 //   #/us/chase/11.2                        the unit's Arena chase (BK 2026-10-06 22:15)
 //   #/us/11.2/machine · #/us/11.2/amendments   a unit's reference room (manifest unit.rooms; 10/15)
@@ -32,7 +36,7 @@
 
 export const COURSE_KEY = { us11r: 'us', global10r: 'global' }
 const KEY_COURSE = Object.fromEntries(Object.entries(COURSE_KEY).map(([k, v]) => [v, k]))
-export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', 'writing-lab': 'writing_lab', constitution: 'constitution', review: 'skills_review' }
+export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', 'writing-lab': 'writing_lab', 'skills-lab': 'skills_lab', constitution: 'constitution', review: 'skills_review' }
 const KEY_LANE = Object.fromEntries(Object.entries(LANE_KEYS).map(([k, v]) => [v, k]))
 
 const unitByNumber = (course, n) => (course?.units || []).find(u => String(u.number) === String(n)) || null
@@ -51,6 +55,8 @@ export function parseHash(hash, manifest) {
   // A map id is checked by the App once the course's maps are in; an unknown one leaves the lane open.
   if (parts[1] === 'atlas' && parts[2]) return { ...r, lane: 'atlas', atlasMap: parts[2] }
   if (parts[1] === 'writing-lab' && parts[2]) return { ...r, lane: 'writing_lab', wlSet: parts[2] }
+  // An unknown room name opens the Skills Lab's three cards, never a blank page.
+  if (parts[1] === 'skills-lab' && parts[2]) return { ...r, lane: 'skills_lab', slModule: parts[2] }
   if (parts[1] === 'chase' && parts[2]) { const u = unitByNumber(course, parts[2]); return u ? { ...r, at: 'chase', unitSlug: u.slug } : r }
   // THROWBACK lives inside the Threads lane as its second view (BK 2026-10-26, "I agree
   // with two"), so its link opens that lane with the view switched — the door stays at
@@ -73,6 +79,9 @@ export function parseHash(hash, manifest) {
     return cf && (unit.casefiles || []).some(c => c.id === cf) ? { ...u, at: 'gauges', cf } : u
   }
   if (parts[2] === 'review') return { ...u, at: 'review' }
+  // The unit splash's own cards (BK 2026-10-30): Door 4 and the Unit Test Review.
+  if (parts[2] === 'next-step') return { ...u, at: 'kyns' }
+  if (parts[2] === 'test-review') return { ...u, at: 'testreview' }
   if (parts[2] === 'atlas') return { ...u, at: 'unitatlas' }
   if (parts[2] && (unit.rooms || []).some(x => x.slug === parts[2] && x.published === true))
     return { ...u, at: 'civics', civicsSlug: parts[2], ...(parts[3] ? { civicsCard: parts[3] } : {}) }
@@ -98,6 +107,7 @@ export function buildHash(s) {
   if (s.throwback) return s.tbYear ? `${c}/throwback/${s.tbYear}` : `${c}/throwback`
   if (s.stopOpen && (s.lane === 'threads' || s.lane === 'issues')) return `${c}/${s.lane}/${encodeURIComponent(s.stopOpen)}`
   if (s.unit0) return `${c}/0`
+  if (!s.unit && s.lane === 'skills_lab' && s.slModule) return `${c}/skills-lab/${encodeURIComponent(s.slModule)}`
   if (!s.unit) return s.lane ? `${c}/${KEY_LANE[s.lane] || s.lane}` : c
   const u = `${c}/${s.unit.number}`
   if (s.daOpen) {
@@ -108,6 +118,8 @@ export function buildHash(s) {
   if (s.gaugesCf) return `${u}/gauges/${s.gaugesCf}`
   if (s.review) return `${u}/review`
   if (s.unitAtlas) return `${u}/atlas`
+  if (s.kyns) return `${u}/next-step`
+  if (s.testReview) return `${u}/test-review`
   if (s.civics) return s.civicsCard ? `${u}/${s.civics}/${encodeURIComponent(s.civicsCard)}` : `${u}/${s.civics}`
   return u
 }
