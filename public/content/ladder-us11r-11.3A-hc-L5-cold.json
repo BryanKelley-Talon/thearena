@@ -12,7 +12,7 @@
   "_activity": "On your own: Documents 5 and 6",
   "type": "guided_write",
   "cold": true,
-  "badge": "LEVEL 5  -  COUNTS FOR COMPLETION  -  ON YOUR OWN",
+  "badge": "LEVEL 5  -  PRACTICE  -  ON YOUR OWN",
   "documents": [
     {
       "source_document": "Document 5 - President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
@@ -32,12 +32,11 @@
   "sentence_starter": null,
   "checklist": [],
   "lines": 3,
-  "write_it_in": "BONUS - 11.3A Gauge Run (Google Classroom). Write it there, not here.",
-  "counts_for": "completion",
+  "write_it_in": "Right here. This one is practice -- it does not get turned in or graded.",
+  "counts_for": null,
   "model_response": "After gold was found on Cherokee land in 1829 and Georgia pressed to take it, Congress passed the Indian Removal Act in 1830. By the end of that year, Jackson was telling Congress that removal was nearly finished and good for everyone, while the Cherokee - who had a written constitution, a newspaper and their own government - were asking the American people to stop it.",
-  "model_visible": "unit_close",
-  "model_opens_on": "2026-12-14",
-  "_model_note": "NOT served before the unit closes. Level 5 is Arena work; its finished product goes in the Google Classroom BONUS log for the Gauge Run, graded 100 for Completion, and BK gives feedback there so a student knows where it stands (BK 2026-10-23 13:31, correcting Sam's 11:50 misreading - see RULING-LOG). The required Day 3 jump is five minutes INTO the gauge, not a Level 5 write; a student enters the ladder where they are. The gauge gets the model when the unit closes, the same rule as the exemplar casefile (CARRY-FORWARD 6).",
-  "practice_only": false,
+  "model_visible": "always",
+  "_model_note": "PULLED FROM REQUIRED, PRACTICE ONLY (BK 2026-10-27 12:25 RULING-LOG: \"the jump gets pulled...practice\"). Level 5 is Arena practice -- ungraded, not routed to the BONUS Gauge Run log, not submitted anywhere. The 10/23 BONUS-log/Completion design this rung carried is superseded; it is NOT the required cold rep under the 10/27 11:05 one-per-casefile ruling. Casefile A's actual required cold rep is parked, not yet built -- see CARRY-FORWARD 8 and RULING-LOG.",
+  "practice_only": true,
   "submitted_to_teacher": false
 }
