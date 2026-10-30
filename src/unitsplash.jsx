@@ -26,6 +26,10 @@ const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${St
 // `locked`: a door whose day the desk hasn't sent yet. It shows, reads Coming, and stays shut.
 export const cfOpen = cf => PREVIEW_DOORS || (!!cf && !cf.locked && (!cf.opens_on || todayLocal() >= String(cf.opens_on)))
 
+// Door 4 opens after the unit test (BK 2026-10-30 13:58: "Know your next step wont open until after a unit test"),
+// on the desk's own day (`unit.next_step.opens_on` / `opens_label`). No day sent yet: it shows, reads Coming, stays shut.
+export const nextStepOpen = unit => PREVIEW_DOORS || (!!unit?.next_step?.opens_on && todayLocal() >= String(unit.next_step.opens_on))
+
 export const usesSplash = unit => Array.isArray(unit?.casefiles) && unit.casefiles.length > 0
 
 const isUS = course => /us11r|^us$/.test(String(course?.id || course || ''))
@@ -105,7 +109,8 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
                       onOpen={() => onOpenCasefile(cf.id)} />
           )
         })}
-        <DoorCard id="us-door-next" kind="next" title={W.next} sub={W.nextLine} open label={W.open} onOpen={onOpenNextStep} />
+        <DoorCard id="us-door-next" kind="next" title={W.next} sub={W.nextLine} open={nextStepOpen(unit)}
+                  label={nextStepOpen(unit) ? W.open : (unit.next_step?.opens_label ? W.opens(unit.next_step.opens_label) : W.coming)} onOpen={onOpenNextStep} />
       </div>
       <div className="us-cards">
         <DoorCard id="us-card-atlas" kind="side" title={W.atlas} sub={W.atlasLine} open={maps.length > 0}
@@ -197,7 +202,7 @@ button.us-door:focus-visible{outline:3px solid var(--gold-lit);outline-offset:2p
 .us-door.shut{cursor:default;border-style:dashed;box-shadow:none}
 .us-door.shut .us-door-id{opacity:.85}
 .us-door.paper.shut{filter:saturate(.55)}
-.us-door.next{border-color:var(--gold)}
+.us-door.next:not(.shut){border-color:var(--gold)}
 .us-now{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.08em;font-size:13px;color:var(--canvas);background:var(--gold);border-radius:4px;padding:2px 8px}
 .us-door.side{min-height:120px}
 .us-door.side .us-door-id{font-size:24px}

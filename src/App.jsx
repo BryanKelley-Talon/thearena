@@ -38,7 +38,7 @@ import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { SkillsLabLane, partThreeLabel, SKILLSLAB_WORDS, SKILLSLAB_STYLES } from './skillslab.jsx'
-import { UnitSplash, CasefileRoomBody, NextStepBody, usesSplash, cfOpen, SPLASH_WORDS, SPLASH_STYLES } from './unitsplash.jsx'
+import { UnitSplash, CasefileRoomBody, NextStepBody, usesSplash, cfOpen, nextStepOpen, SPLASH_WORDS, SPLASH_STYLES } from './unitsplash.jsx'
 import { ChaseScreen, ChaseBar, CHASE_STYLES, CHASE_WORDS } from './chase.jsx'
 import { CivicsRoom, CIVICS_STYLES } from './civics.jsx'
 import { COURSE_KEY } from './deeplinks.js'
@@ -2526,7 +2526,8 @@ export default function App() {
         ? <PeelActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
         : <StimulusActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
   }
-  else if (unit && kyns) {
+  // Door 4 before its day isn't reachable by link either: the splash shows instead.
+  else if (unit && kyns && nextStepOpen(unit)) {
     const leave = () => { setKyns(false); leaveRoomPage(); window.scrollTo(0, 0) }
     const backLabel = fromDoor ? course.label : unitName(unit)
     const now = currentUnit(course)
@@ -2535,7 +2536,7 @@ export default function App() {
         <ScreenHeader label={SPLASH_WORDS.next} onBack={leave} color={course.accent} back={backLabel} />
         <div className="detail">
           <h2>{SPLASH_WORDS.next}</h2>
-          {/* Door 4 is the same in every unit (BK 13:24, item 3); its gauges are the unit we're in. */}
+          {/* Door 4 is the same in every unit (BK 13:24, item 3), opening after that unit's test (13:58); its gauges are the unit we're in. */}
           <NextStepBody course={course} unit={now || unit} prog={prog}
                         onOpenGauge={code => { const u = now || unit; setUnitSlug(u.slug); setLadderFrom('kyns'); setSkill(code); window.scrollTo(0, 0) }}
                         onOpenLab={room => { setKyns(false); setUnitSlug(null); setDoorLane('skills_lab'); setSlModule(room); window.scrollTo(0, 0) }} />

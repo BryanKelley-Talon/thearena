@@ -681,7 +681,12 @@
               "skills": [],
               "_source": "Will 2026-10-30 13:24. C's first day and gauge list not yet sent: shows locked, 'Coming', until they are."
             }
-          ]
+          ],
+          "next_step": {
+            "opens_on": "2026-11-30",
+            "opens_label": "Mon 11/30",
+            "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Will's signed unit calendar (words_103A.UNIT_GLANCE), 'Data Day · everything back' Mon 11/30. Josh's pick of Data Day over the Part I day, on BK's proof."
+          }
         }
       ],
       "issues": [
@@ -1874,7 +1879,12 @@
                 }
               ]
             }
-          ]
+          ],
+          "next_step": {
+            "opens_on": "2026-12-07",
+            "opens_label": "Mon 12/7",
+            "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Sam's signed unit calendar (words_113A.UNIT_CAL, BK 10/24 14:12), 'Data Day · everything back' Mon 12/7. Josh's pick of Data Day over the Part I day, on BK's proof."
+          }
         }
       ],
       "atlas": [
