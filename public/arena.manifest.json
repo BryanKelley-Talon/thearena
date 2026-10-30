@@ -677,9 +677,17 @@
             {
               "id": "C",
               "label": "Closing Argument",
-              "locked": true,
-              "skills": [],
-              "_source": "Will 2026-10-30 13:24. C's first day and gauge list not yet sent: shows locked, 'Coming', until they are."
+              "skills": [
+                "EX",
+                "OE",
+                "DU",
+                "EI",
+                "HC",
+                "TH"
+              ],
+              "_source": "Will 2026-10-30 14:09: C's first day Tue 11/17; C's gauges all six in Global order EX · OE · DU · EI · HC · TH (plus one essay grade, not a gauge).",
+              "opens_on": "2026-11-17",
+              "opens_label": "Tue 11/17"
             }
           ],
           "next_step": {
@@ -1821,14 +1829,15 @@
               "opens_on": "2026-11-13",
               "opens_label": "Fri 11/13",
               "skills": [],
-              "_source": "Sam 2026-10-24 13:53: B1 is Fri 11/13. Name per the ruled three-axis shape (10/24). Gauge list from B's scoring page, asked of Sam 2026-10-30 13:45; locked until its day, so the list can follow."
+              "_source": "Sam 2026-10-24 13:53: B1 Fri 11/13. Gauge list comes the day B's scoring page is blessed (Sam 2026-10-30 14:25); the door stays locked until both the day and the list are in."
             },
             {
               "id": "C",
               "label": "Closing Argument",
-              "locked": true,
               "skills": [],
-              "_source": "C's first day not on record; asked of Sam 2026-10-30 13:45. Shows locked, 'Coming', until it is."
+              "_source": "Sam 2026-10-30 14:25: C1 is Mon 11/23. Gauge list comes the day C's scoring page is blessed; until then the door stays locked (Sam 14:25).",
+              "opens_on": "2026-11-23",
+              "opens_label": "Mon 11/23"
             }
           ],
           "number": "11.3A",
@@ -1884,7 +1893,13 @@
             "opens_on": "2026-12-07",
             "opens_label": "Mon 12/7",
             "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Sam's signed unit calendar (words_113A.UNIT_CAL, BK 10/24 14:12), 'Data Day · everything back' Mon 12/7. Josh's pick of Data Day over the Part I day, on BK's proof."
-          }
+          },
+          "paper": {
+            "A": "purple",
+            "B": "blue",
+            "C": "gold"
+          },
+          "_paper_source": "Sam 2026-10-30 14:25: 'A · Purple, B · Blue, C · Golden'. 'Golden' read as the Arena's gold (goldenrod, 'Gold Copy', BK 10/13) - Josh's reading, asked back to Sam. Moves to doc_assist.paper when 11.3A's Doc Assist pack is ported."
         }
       ],
       "atlas": [

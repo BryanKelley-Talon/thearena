@@ -24,7 +24,12 @@ import { WritingLabCards } from './writinglab.jsx'
 const PREVIEW_DOORS = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'unit-doors' } catch { return false } })()
 const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
 // `locked`: a door whose day the desk hasn't sent yet. It shows, reads Coming, and stays shut.
-export const cfOpen = cf => PREVIEW_DOORS || (!!cf && !cf.locked && (!cf.opens_on || todayLocal() >= String(cf.opens_on)))
+// And a door opens only once its scoring page's gauge list exists (Sam 14:25: "Doors can stay locked with their dates
+// until those lists exist"): an open door with nothing behind it is the empty room BK ruled out.
+export const cfOpen = cf => PREVIEW_DOORS || (!!cf && !cf.locked && (cf.skills || []).length > 0 && (!cf.opens_on || todayLocal() >= String(cf.opens_on)))
+const cfLabel = cf => (cf.opens_label && cf.opens_on && todayLocal() < String(cf.opens_on) ? W.opens(cf.opens_label) : W.coming)
+// A unit's copy colours: Doc Assist's map when the pack is in, else the unit's own (11.3A's arrived before its pack).
+const paperMap = unit => unit?.doc_assist?.paper || unit?.paper || null
 
 // Door 4 opens after the unit test (BK 2026-10-30 13:58: "Know your next step wont open until after a unit test"),
 // on the desk's own day (`unit.next_step.opens_on` / `opens_label`). No day sent yet: it shows, reads Coming, stays shut.
@@ -104,8 +109,8 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
           const open = cfOpen(cf)
           return (
             <DoorCard key={cf.id} id={`us-door-${cf.id}`} title={W.casefile(cf.id)} sub={cf.label} now={cf.id === running}
-                      paper={paperOf(unit.doc_assist?.paper, cf.id)} open={open}
-                      label={open ? W.open : (cf.opens_label ? W.opens(cf.opens_label) : W.coming)}
+                      paper={paperOf(paperMap(unit), cf.id)} open={open}
+                      label={open ? W.open : cfLabel(cf)}
                       onOpen={() => onOpenCasefile(cf.id)} />
           )
         })}
@@ -125,7 +130,7 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
 
 // ── behind a casefile door ──
 export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThreeLabel, onOpenSkill, onOpenDoc, onOpenSet }) {
-  const paper = paperOf(unit.doc_assist?.paper, cf?.id)
+  const paper = paperOf(paperMap(unit), cf?.id)
   const docs = daPack ? { ...daPack, tile: null, casefiles: (daPack.casefiles || []).filter(c => c.id === cf?.id) } : null
   const hasDocs = !!docs && docs.casefiles.some(c => c.status === 'open' && (c.docs || []).length)
   return (

@@ -223,6 +223,9 @@ export function SkillGauges({ course, unit, prog, onOpen, builtOnly = false, onl
   const skills = roomSkills(course, unit)
     .filter(s => !builtOnly || s.ladder)
     .filter(s => !only || only.includes(s.code))
+    // Behind a casefile door the gauges run in the scoring page's own order, not the ladder order
+    // (Will 2026-10-30 14:09: Global's is Document Use · Historical Context · Thesis, as SchoolTool has it).
+    .sort((a, b) => (only ? only.indexOf(a.code) - only.indexOf(b.code) : 0))
     .map(s => (only && !s.ladder ? { ...s, live: false } : s))
   if (!skills.length) return null
   return (
