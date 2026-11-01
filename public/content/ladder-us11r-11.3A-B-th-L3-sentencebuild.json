@@ -1,0 +1,63 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "B - the Group door (revising A's own bundle)",
+  "_built": "2026-10-30 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_B_groupdoor.py",
+  "_blessed": "BK 2026-10-30 10:33 EDT (\"I like it\") on 113A_groupdoor_ladders_draft.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "TH",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "group_door_note": "One ladder, five starts (BK, via Josh's memo). Group n's door opens this ladder at Level n. The printed casefile (B1 cover sheet) is identical for every Group.",
+  "step": 3,
+  "_activity": "Build the thesis: Worcester v. Georgia, 1832",
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "source_document": "Document 7 - Chief Justice John Marshall, Worcester v. Georgia, 1832",
+  "source_text": ". . . The Cherokee nation, then, is a distinct community occupying its own territory, with boundaries accurately described, in which the laws of Georgia can have no force, and which the citizens of Georgia have no right to enter, but with the assent [agreement] of the Cherokees themselves, or in conformity with treaties, and with the acts of congress. . . .",
+  "_pointer": "Worcester v. Georgia, 31 U.S. 515 (1832), opinion of Marshall, C.J.; Legal Information Institute, law.cornell.edu/supremecourt/text/31/515, checked 2026-10-15. Gloss ours.",
+  "sentence_frame": "[Document] shows ___ because ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "shows what",
+      "tiles": [
+        {
+          "text": "the Supreme Court sided with Cherokee sovereignty over Georgia's claims",
+          "correct": true
+        },
+        {
+          "text": "Georgia wanted Cherokee land after gold was found there",
+          "correct": false
+        },
+        {
+          "text": "the Cherokee were forced west on the Trail of Tears",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "because what",
+      "tiles": [
+        {
+          "text": "Marshall ruled that Georgia's laws “can have no force” on Cherokee land",
+          "correct": true
+        },
+        {
+          "text": "gold had been found on Cherokee land in 1829",
+          "correct": false
+        },
+        {
+          "text": "about 4,000 Cherokee died on the way west",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Document 7 shows that the Supreme Court sided with Cherokee sovereignty over Georgia's claims, because Marshall ruled that Georgia's laws “can have no force” on Cherokee land.",
+  "rationale": "The gold discovery is historical context, not Marshall's reasoning. The death toll on the Trail of Tears is an effect of what happened after this ruling, not part of it.",
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "write_it_in": "On your B1 cover sheet, in the casefile."
+}

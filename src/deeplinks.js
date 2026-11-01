@@ -26,6 +26,11 @@
 //                                          An unknown card id opens the room at the top, never a blank page.
 //   #/us/constitution                      THE CONSTITUTION lane: the reference rooms in one place (BK 10/16 11:48)
 //   #/us/threads/<stop-id>                 the Threads map with one stop open (for a chase clue)
+//   #/us/scene                             THE SCENE, the dated spine every layer sits on (2026-10-31)
+//   #/us/scene/1850                        the Scene with one era marked on the spine
+//   #/us/scene/1850/platform,t2            that era with named layers already lit
+//   #/us/scene/-/deficit                   layers lit, no era marked (the dash holds the year's place).
+//                                          A casefile doc or a review packet can point at one reading.
 //   #/global/gauge/EI/1                    one gauge's level, in the unit we're in (10/8)
 //   #/office · #/office/2026-10-halftime-adjustments
 //
@@ -36,7 +41,7 @@
 
 export const COURSE_KEY = { us11r: 'us', global10r: 'global' }
 const KEY_COURSE = Object.fromEntries(Object.entries(COURSE_KEY).map(([k, v]) => [v, k]))
-export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', issues: 'issues', atlas: 'atlas', 'writing-lab': 'writing_lab', 'skills-lab': 'skills_lab', constitution: 'constitution', review: 'skills_review' }
+export const LANE_KEYS = { skills: 'skills', units: 'units', threads: 'threads', scene: 'scene', issues: 'issues', atlas: 'atlas', 'writing-lab': 'writing_lab', 'skills-lab': 'skills_lab', constitution: 'constitution', review: 'skills_review' }
 const KEY_LANE = Object.fromEntries(Object.entries(LANE_KEYS).map(([k, v]) => [v, k]))
 
 const unitByNumber = (course, n) => (course?.units || []).find(u => String(u.number) === String(n)) || null
@@ -61,7 +66,18 @@ export function parseHash(hash, manifest) {
   // THROWBACK lives inside the Threads lane as its second view (BK 2026-10-26, "I agree
   // with two"), so its link opens that lane with the view switched — the door stays at
   // four lanes. #/us/throwback, or #/us/throwback/1801 for one era.
-  if (parts[1] === 'throwback') return { ...r, lane: 'threads', throwback: true, tbYear: /^\d{4}$/.test(parts[2] || '') ? parts[2] : null }
+  // An era is usually a year, but not always: the pre-contact card has no year to be named
+  // by, so a slug is allowed too (#/us/throwback/before-contact). BK agreed 2026-10-31 15:34.
+  if (parts[1] === 'throwback') return { ...r, lane: 'threads', throwback: true, tbYear: /^[a-z0-9][a-z0-9-]{0,40}$/i.test(parts[2] || '') ? parts[2] : null }
+  // THE SCENE (Leo's order 2026-10-31). A link can land on one era, on a set of layers, or
+  // both, because a Regents review needs to point at one reading and not at a room to hunt
+  // through. An unknown layer name is simply not lit; the room still opens.
+  if (parts[1] === 'scene') {
+    const y = /^\d{4}$/.test(parts[2] || '') ? parts[2] : null
+    const raw = (y ? parts[3] : (parts[2] && parts[2] !== '-' ? parts[2] : parts[3])) || ''
+    const ls = raw ? raw.split(',').map(s => s.trim()).filter(Boolean) : []
+    return { ...r, lane: 'scene', sceneYear: y, sceneLayers: ls }
+  }
   if ((parts[1] === 'threads' || parts[1] === 'issues') && parts[2]) return { ...r, lane: parts[1], stopOpen: parts[2] }
   if (KEY_LANE[parts[1]] !== undefined || LANE_KEYS[parts[1]]) return { ...r, lane: LANE_KEYS[parts[1]] || parts[1] }
   if (parts[1] === '0') return { ...r, at: 'unit0' }
@@ -105,6 +121,13 @@ export function buildHash(s) {
   if (s.wlSet) return `${c}/writing-lab/${encodeURIComponent(s.wlSet)}`
   if (s.chase && s.unit) return `${c}/chase/${s.unit.number}`
   if (s.throwback) return s.tbYear ? `${c}/throwback/${s.tbYear}` : `${c}/throwback`
+  if (s.lane === 'scene' && !s.unit) {
+    const ls = (s.sceneLayers || []).join(',')
+    if (s.sceneYear && ls) return `${c}/scene/${s.sceneYear}/${ls}`
+    if (s.sceneYear) return `${c}/scene/${s.sceneYear}`
+    if (ls) return `${c}/scene/-/${ls}`
+    return `${c}/scene`
+  }
   if (s.stopOpen && (s.lane === 'threads' || s.lane === 'issues')) return `${c}/${s.lane}/${encodeURIComponent(s.stopOpen)}`
   if (s.unit0) return `${c}/0`
   if (!s.unit && s.lane === 'skills_lab' && s.slModule) return `${c}/skills-lab/${encodeURIComponent(s.slModule)}`

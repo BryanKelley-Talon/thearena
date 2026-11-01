@@ -42,7 +42,7 @@
       "id": "1607",
       "year": 1607,
       "label": "1607",
-      "status": "building",
+      "status": "open",
       "skin": {
         "medium": "letter",
         "masthead": "A LETTER HOME",
@@ -50,24 +50,14 @@
       },
       "silhouettes": {
         "image": "img/sil-1607.png",
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
         "caption": "A young woman and a young man, 1607.",
         "attire_note": "An English boy: a short close-fitting jacket (a doublet), loose breeches to the knee, stockings, a linen shirt, a felt hat. A Powhatan young person: deerskin, a breechcloth or an apron, a mantle in cold weather. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
         "kind": "ai",
-        "credit": "AI-made silhouette.",
-        "stand": {
-          "left": 3.1,
-          "bottom": 10.0,
-          "height": 56.8
-        }
+        "credit": "AI-made silhouette."
       },
       "room": {
-        "image": "img/room-1607.jpg",
-        "panel_rect": {
-          "left": 39.941,
-          "top": 22.203,
-          "width": 20.117,
-          "height": 30.07
-        }
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists."
       },
       "who_is_not_in_this_room": "Powhatan young people: the land is theirs, and the English room is not. English girls: none came in 1607. African young people: none are recorded in Virginia until 1619. London's poorest children: their ships start in 1617.",
       "take_it_with_you": "The charter calls the people of Virginia \"Infidels and Savages.\" Whose eyes made Document 1, and does the town in it look like the charter's words?",
@@ -165,7 +155,7 @@
           },
           "images": [],
           "source_line": "First Charter of Virginia, April 10, 1606 (Avalon). Danny checks.",
-          "label": "THE ONE IN CHARGE",
+          "_label": "THE ONE IN CHARGE",
           "record_line": "Public record, plain paraphrase: James never crossed the ocean. The charter is the King's grant, made in London, to a company of investors, of land where Powhatan's people already lived.",
           "record_src": "First Charter of Virginia, April 10, 1606 (Avalon). Danny checks.",
           "counter_voice": {
@@ -272,15 +262,14 @@
           "source_line": "Jamestown-Yorktown Foundation essays: \"What were the roles of women and children at Jamestown?\" (boys among the first settlers; Savage; Spelman; about 250 children, 1617–1623) and \"Who were the Powhatan Indians and how did they live?\" (boys learned to fish and hunt; girls weeded gardens). NPS, A Short History of Jamestown (the voyage, December 1606). No school: Danny checks. Publick Occurrences, Boston, 1690 (one issue). Danny checks each."
         }
       ],
-      "dateline": "May 1607 · the James River, in Powhatan's country",
-      "moment": "Three English ships have come up the river. The Virginia Company's men and boys are building a fort on a marshy island. The land is Tsenacomoco, and its paramount chief is Powhatan.",
-      "_held": "BK 2026-10-27 15:1x: publish 1801 and 1850 only. Held until Sam sends the front-page and panel pictures, real alt text for the room and figures, and threads 5 and 6."
+      "_dateline": "May 1607 · the James River, in Powhatan's country",
+      "_moment": "Three English ships have come up the river. The Virginia Company's men and boys are building a fort on a marshy island. The land is Tsenacomoco, and its paramount chief is Powhatan."
     },
     {
       "id": "1763",
       "year": 1763,
       "label": "1763",
-      "status": "building",
+      "status": "open",
       "skin": {
         "medium": "newspaper",
         "masthead": "THE SEVENTEEN SIXTY-THREE",
@@ -288,24 +277,14 @@
       },
       "silhouettes": {
         "image": "img/sil-1763.png",
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
         "caption": "A young woman and a young man, 1763.",
         "attire_note": "A young woman: a gown open in front over a petticoat, a laced bodice, an apron, a linen cap, a shawl or cloak. A young man: a long coat, a waistcoat, knee breeches with stockings, buckled shoes, a three-cornered hat. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
         "kind": "ai",
-        "credit": "AI-made silhouette.",
-        "stand": {
-          "left": 1.2,
-          "bottom": 6.6,
-          "height": 78.5
-        }
+        "credit": "AI-made silhouette."
       },
       "room": {
-        "image": "img/room-1763.jpg",
-        "panel_rect": {
-          "left": 41.797,
-          "top": 13.112,
-          "width": 16.309,
-          "height": 22.378
-        }
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists."
       },
       "who_is_not_in_this_room": "Native young people: on the far side of the King's line, and not counted. Enslaved young people: Phillis Wheatley, about seven or eight, was kidnapped from West Africa and sold in Boston in 1761; she will be a published poet at about twenty. Free Black young people: counted in no census, voting nowhere. Girls: everything above says \"he\" for a reason.",
       "take_it_with_you": "Franklin's snake has eight pieces. Who lived on the same land and is not in the snake?",
@@ -419,7 +398,7 @@
           },
           "images": [],
           "source_line": "Royal Proclamation, Oct. 7, 1763 (Avalon); Threads map stop 1763 (\"colonists resent it\"). Danny checks.",
-          "label": "THE ONE IN CHARGE",
+          "_label": "THE ONE IN CHARGE",
           "record_line": "Public record, plain paraphrase: George III never crossed the ocean. The Proclamation was his government's order, written in London; colonists who wanted the western land resented it, and in the end the line did not hold.",
           "record_src": "Royal Proclamation, Oct. 7, 1763 (Avalon); Threads map stop 1763 (\"colonists resent it\"). Danny checks.",
           "counter_voice": {
@@ -526,9 +505,8 @@
           "source_line": "Benjamin Franklin, Autobiography (bound at 12; left Boston at 17, 1723); Phillis Wheatley, arrived Boston 1761 (Massachusetts Historical Society; her Poems, 1773); coverture: Threads map stop 1765; colonial militia ages vary by colony (Massachusetts 16 to 60). Danny checks each."
         }
       ],
-      "dateline": "October 1763 · London and the colonies",
-      "moment": "The war with France ended in February with the Treaty of Paris. Since May, Native nations around the Great Lakes have been at war with the British forts. On October 7 the King draws a line down the mountains.",
-      "_held": "BK 2026-10-27 15:1x: publish 1801 and 1850 only. Held until Sam sends the front-page and panel pictures, real alt text for the room and figures, and threads 5 and 6."
+      "_dateline": "October 1763 · London and the colonies",
+      "_moment": "The war with France ended in February with the Treaty of Paris. Since May, Native nations around the Great Lakes have been at war with the British forts. On October 7 the King draws a line down the mountains."
     },
     {
       "id": "1801",
@@ -546,30 +524,10 @@
         "caption": "A young woman and a young man, 1801.",
         "attire_note": "A young woman: a high-waisted gown, short sleeves, a cap or small bonnet, a shawl. A young man: a tailcoat, a cravat, knee breeches with stockings, a tall round hat. (Attire note: Leo's, from the silhouette prompts; not yet checked against a costume collection. Danny's gate.)",
         "kind": "ai",
-        "credit": "AI-made silhouette.",
-        "stand": {
-          "left": 1.0,
-          "bottom": 7.7,
-          "height": 78.0
-        }
+        "credit": "AI-made silhouette."
       },
       "room": {
-        "image_alt": "A small 1801 parlor: brick hearth with a wooden mantel, a framed notice above it, a candle on a tall stand at left, a window with a plain linen curtain, a wooden settee with a woven coverlet at right, wide pine floorboards, a braided rug, and a small pumpkin by the hearth.",
-        "image": "img/room-1801.jpg",
-        "panel_rect": {
-          "left": 40.039,
-          "top": 5.07,
-          "width": 19.824,
-          "height": 29.371
-        },
-        "panel_image": {
-          "src": "img/panel-1801.jpg",
-          "alt": "An American landscape painting in the style of about 1801: a farming valley in autumn with log and brick farmhouses, a split-rail fence, stacked grain shocks in the fields, a small stone mill with a waterwheel on a stream, and wooded hills under a cloudy sky.",
-          "caption": "A landscape picture in the style of an 1801 painting.",
-          "kind": "ai",
-          "credit": "AI-made picture. Not a real painting.",
-          "_danny_checked": true
-        }
+        "image_alt": "A small 1801 parlor: brick hearth with a wooden mantel, a framed notice above it, a candle on a tall stand at left, a window with a plain linen curtain, a wooden settee with a woven coverlet at right, wide pine floorboards, a braided rug, and a small pumpkin by the hearth."
       },
       "who_is_not_in_this_room": "Native young people: the census does not count them. Enslaved young people: counted, but not by name, under the head of the household that claims them. Free Black young people: counted, and in most states barred from voting at 21 anyway. Girls: everything above says \"he\" for a reason.",
       "take_it_with_you": "Jefferson takes for granted that France can sell the land. Who was living on it, and are they anywhere in this room?",
@@ -741,7 +699,7 @@
           },
           "images": [],
           "source_line": "Thomas Jefferson Foundation (Monticello), \"Slavery at Monticello\" (more than 600 people enslaved over his lifetime). Danny checks.",
-          "label": "THE PRESIDENT CARD",
+          "_label": "THE PRESIDENT CARD",
           "record_line": "Public record, plain paraphrase: Jefferson owned Monticello and the people enslaved there; over his life he enslaved more than 600 people. The man who wrote \"all men are created equal\" said \"equal and exact justice to all men\" and did not free them.",
           "record_src": "Thomas Jefferson Foundation (Monticello), \"Slavery at Monticello\" (more than 600 people enslaved over his lifetime). Danny checks.",
           "counter_voice": {
@@ -848,18 +806,8 @@
           "source_line": "1800 census, percent urban 6.1 (U.S. Census Bureau, Population: 1790 to 1990, Table 4); Militia Act of 1792; Post Office Act of 1792; Boston English High School opened 1821 (first public high school); coverture: Threads map stop 1765; apprenticeship indentures (bound until 21): standard form, period examples in state archives. Danny checks each."
         }
       ],
-      "dateline": "March 1801 · Washington City",
-      "moment": "Thomas Jefferson has just taken the oath. The capital moved to Washington last year. The 1800 census count is being printed.",
-      "front_image": {
-        "src": "img/front-1801.jpg",
-        "alt": "A hand-coloured print of a Philadelphia street in 1799: brick houses and shopfronts along a wide unpaved street, market stalls under an arcade at the left, a man riding a horse down the middle of the road, women carrying baskets, a boy, hand carts and a dog, with the tall white steeple of Christ Church behind.",
-        "caption": "Second Street north from Market Street, with Christ Church, Philadelphia.",
-        "credit": "Drawn and engraved by W. Birch & Son, Philadelphia, 1799. The New York Public Library, Wallach Division, I. N. Phelps Stokes Collection of American Historical Prints. The Library believes this item is in the public domain under the laws of the United States.",
-        "kind": "archival",
-        "_danny_checked": false,
-        "_source": "https://digitalcollections.nypl.org/items/510d47d9-7e5f-a3d9-e040-e00a18064a99",
-        "_note": "Catalog dates the suite 1800; the plate itself is lettered 1799. Credit follows the plate."
-      }
+      "_dateline": "March 1801 · Washington City",
+      "_moment": "Thomas Jefferson has just taken the oath. The capital moved to Washington last year. The 1800 census count is being printed."
     },
     {
       "id": "1824",
@@ -873,34 +821,14 @@
       },
       "silhouettes": {
         "image": "img/sil-1824.png",
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists.",
         "caption": "A young woman and a young man, 1824.",
         "attire_note": "A young woman: a high-waisted gown, the waist starting to drop and the sleeves to fill out, a bonnet, a shawl. A young man: a tailcoat, a high collar and a cravat, and long trousers, which have replaced knee breeches for most young men. (Attire note: Sam's proposal, so the silhouette prompt has words to match; not yet checked against a costume collection. Danny's gate.)",
         "kind": "ai",
-        "credit": "AI-made silhouette.",
-        "stand": {
-          "left": 61.7,
-          "bottom": 7.2,
-          "height": 78.7
-        }
+        "credit": "AI-made silhouette."
       },
       "room": {
-        "image": "img/room-1824.jpg",
-        "panel_rect": {
-          "left": 42.188,
-          "top": 10.49,
-          "width": 18.359,
-          "height": 24.825
-        },
-        "panel_image": {
-          "src": "img/panel-1824.jpg",
-          "alt": "A hand-coloured aquatint looking across the Hudson River at West Point: a steamboat and a sailboat on wide calm water, a rowing boat with three figures near the near shore, pine trees and rocks in the foreground with two people seated on them, and the long low buildings of the military post on the bluff opposite under a pale cloudy sky.",
-          "caption": "West Point, plate 16 of The Hudson River Portfolio.",
-          "credit": "Painted by William Guy Wall, engraved by John Hill, published by Henry I. Megarey, New York, 1821–1825. The New York Public Library, Spencer Collection. The Library believes this item is in the public domain under the laws of the United States.",
-          "kind": "archival",
-          "_danny_checked": false,
-          "_source": "https://digitalcollections.nypl.org/items/ebab2ea0-c6b5-012f-a8cd-58d385a7bc34",
-          "_note": "Cropped to the aquatint image only - the source scan carries the lettering and a colour-target strip. The Hudson River Portfolio was the print series Americans actually framed and hung in these years, which is what the frame on this wall is."
-        }
+        "image_alt": "Waits on the image. The room and silhouette prompts for this year are Leo's and BK's (out of scope here); the alt text is written to the picture once it exists."
       },
       "who_is_not_in_this_room": "Enslaved young people: one in six, counted by age and sex under the name of the person who claims them. Native young people: not counted; in the Cherokee Nation, children are about to learn to read their own language from Sequoyah's new writing system. Free Black young people: in New York, held to a property test no white neighbor faces. Girls: everything above says \"he\" for a reason.",
       "take_it_with_you": "Article I counted three of every five enslaved people toward a state's seats in the House. In the 1824 room, who is counted that way, and who is not counted at all?",
@@ -1074,7 +1002,7 @@
           },
           "images": [],
           "source_line": "White House Historical Association, \"The Enslaved Households of President James Monroe\" (\"about 60. or 70. young & old, male & female\"). Monroe's special message on removal, Jan. 1825 (UCSB): Danny checks the date and wording before this sentence prints.",
-          "label": "THE PRESIDENT CARD",
+          "_label": "THE PRESIDENT CARD",
           "record_line": "Public record, plain paraphrase: Monroe enslaved people all his adult life. In 1823 he estimated he owned \"about 60. or 70.\" people, and he brought enslaved workers to the White House. Weeks after calling removal by force \"utterly unjustifiable,\" he asked Congress to move the eastern nations west of the Mississippi by treaty.",
           "record_src": "White House Historical Association, \"The Enslaved Households of President James Monroe\" (\"about 60. or 70. young & old, male & female\"). Monroe's special message on removal, Jan. 1825 (UCSB): Danny checks the date and wording before this sentence prints.",
           "counter_voice": {
@@ -1181,18 +1109,8 @@
           "source_line": "1820 census, percent urban 7.2 (U.S. Census Bureau, Population: 1790 to 1990, Table 4); 1820 census, 1,538,022 enslaved; Merrimack Manufacturing Company, East Chelmsford, 1823; Erie Canal, opened Oct. 26, 1825 (11.3A Document 3 is the canal, next unit); N.Y. Constitution of 1821, Art. II; Militia Act of 1792; Sequoyah's syllabary (completed 1821, adopted by the Cherokee Nation 1825). Danny checks each."
         }
       ],
-      "dateline": "December 1824 · Washington",
-      "moment": "President Monroe has sent Congress his last annual message. The electors have voted and no one has a majority; the House will choose the next president. Lafayette, who joined the Revolution at 19, is touring the country.",
-      "front_image": {
-        "src": "img/front-1824.jpg",
-        "alt": "An engraving titled Travelling on the Erie Canal: a flat packet boat with passengers standing on its roof is towed along the canal by a team of horses on the towpath, past a split-rail fence and a rider, with wooded hills rising steeply on the right and the canal running away into a gap between the hills.",
-        "caption": "Travelling on the Erie Canal.",
-        "credit": "Drawn by Henry Inman, engraved by Peter Maverick, 1825, from the memoir of the celebration of the completion of the New York canals. The New York Public Library, Wallach Division, Print Collection. The Library believes this item is in the public domain under the laws of the United States.",
-        "kind": "archival",
-        "_danny_checked": false,
-        "_source": "https://digitalcollections.nypl.org/items/510d47d9-7e82-a3d9-e040-e00a18064a99",
-        "_note": "Cropped to the plate with a IIIF region request; the source scan is a photograph of the whole book page with a colour target. 1825, a year after this room."
-      }
+      "_dateline": "December 1824 · Washington",
+      "_moment": "President Monroe has sent Congress his last annual message. The electors have voted and no one has a majority; the House will choose the next president. Lafayette, who joined the Revolution at 19, is touring the country."
     },
     {
       "id": "1850",
@@ -1210,30 +1128,10 @@
         "caption": "A young woman and a young man, 1850.",
         "attire_note": "A young woman: a fitted bodice, a wide bell skirt over petticoats, long sleeves, a bonnet tied under the chin, a shawl. A young man: a frock coat over a waistcoat, straight trousers, a cravat, a tall stovepipe hat. (Attire note: Leo's, from the silhouette prompts; not yet checked against a costume collection. Danny's gate.)",
         "kind": "ai",
-        "credit": "AI-made silhouette.",
-        "stand": {
-          "left": 2.3,
-          "bottom": 7.0,
-          "height": 70.0
-        }
+        "credit": "AI-made silhouette."
       },
       "room": {
-        "image_alt": "A comfortable 1850 parlor: burgundy patterned wallpaper, a framed print above a low carved cabinet, an oil lamp with a glass globe on a stand at left, a window with a dark velvet curtain tied back, a carved sofa in dark fabric with a patchwork quilt over its arm at right, a floral woven carpet, brass candlesticks on the cabinet, and a small pumpkin at its foot.",
-        "image": "img/room-1850.jpg",
-        "panel_rect": {
-          "left": 39.453,
-          "top": 17.133,
-          "width": 21.094,
-          "height": 27.622
-        },
-        "panel_image": {
-          "src": "img/panel-1850.jpg",
-          "alt": "A New England river village in the style of about 1850: a covered bridge over the river, a white church with a steeple, houses along the road and a horse and wagon, under an evening sky.",
-          "caption": "A river-village picture in the style of an 1850 painting.",
-          "kind": "ai",
-          "credit": "AI-made picture. Not a real painting.",
-          "_danny_checked": true
-        }
+        "image_alt": "A comfortable 1850 parlor: burgundy patterned wallpaper, a framed print above a low carved cabinet, an oil lamp with a glass globe on a stand at left, a window with a dark velvet curtain tied back, a carved sofa in dark fabric with a patchwork quilt over its arm at right, a floral woven carpet, brass candlesticks on the cabinet, and a small pumpkin at its foot."
       },
       "who_is_not_in_this_room": "3,204,313 enslaved people, listed on separate schedules by age and sex, with no name. Native nations, still uncounted. The people of the Mexican Cession, Americans since 1848 by treaty, on land that was Mexico two years ago. The newest arrivals: nearly 1 in 10 people this year was born in another country, many of them from Ireland's famine years.",
       "take_it_with_you": "O'Sullivan counts \"our yearly multiplying millions.\" The strip has the number. Who is in his millions, and who is not?",
@@ -1405,7 +1303,7 @@
           },
           "images": [],
           "source_line": "Senate Historical Office; Whig convention, June 1852. Danny checks.",
-          "label": "THE PRESIDENT CARD",
+          "_label": "THE PRESIDENT CARD",
           "record_line": "Public record, plain paraphrase: Fillmore was never elected president. He was vice president for sixteen months, served out Taylor's term, and his own party passed him over in 1852.",
           "record_src": "Senate Historical Office; Whig convention, June 1852. Danny checks.",
           "counter_voice": {
@@ -1512,8 +1410,8 @@
           "source_line": "1850 census, percent urban 15.4 (U.S. Census Bureau, Population: 1790 to 1990, Table 4); Lucy Larcom, A New England Girlhood (1889); Massachusetts act of 1842 (children under 12, ten hours a day); New York Sun, 1833; Morse telegraph, 1844; railroad mileage (Historical Statistics of the United States, series Q321: 1830, 23 mi.; 1850, 9,021 mi.); N.Y. Constitution of 1821, Art. II §1 ($250 for \"men of colour\"). Danny checks each."
         }
       ],
-      "dateline": "September 1850 · Washington",
-      "moment": "President Taylor died in July. Millard Fillmore is signing the five laws Congress calls a compromise. The census takers have been out since June 1.",
+      "_dateline": "September 1850 · Washington",
+      "_moment": "President Taylor died in July. Millard Fillmore is signing the five laws Congress calls a compromise. The census takers have been out since June 1.",
       "what_changed": {
         "from": "1801",
         "_shape_note": "SEQ-category rows (turning point / cause-effect / similarity-difference), not per-thread-line then/now -- flagged for Josh to wire.",
@@ -1531,16 +1429,6 @@
             "text": "Similar: in both years no woman votes, enslaved people are counted but not named, and Native nations are not counted at all. Different: the country grew from 5.3 million people to 23.2 million, and the enslaved population from 893,602 to 3,204,313. Watch the trap: the share of people enslaved fell (1 in 6 to 1 in 7) while the number more than tripled."
           }
         ]
-      },
-      "front_image": {
-        "src": "img/front-1850.jpg",
-        "alt": "A printed broadside headed CAUTION!! in very large letters, addressed to the colored people of Boston, warning them that since a recent order of the mayor and aldermen the watchmen and police officers are empowered to act as kidnappers and slave catchers, and telling them to keep a sharp look out. Dated April 24, 1851.",
-        "caption": "Broadside posted in Boston seven months after the Fugitive Slave Act, April 24, 1851.",
-        "credit": "Broadside, Boston, April 24, 1851. The New York Public Library, Schomburg Center for Research in Black Culture, Photographs and Prints Division. The Library believes this item is in the public domain under the laws of the United States.",
-        "kind": "archival",
-        "_danny_checked": false,
-        "_source": "https://digitalcollections.nypl.org/items/510d47db-bbee-a3d9-e040-e00a18064a99",
-        "_note": "Text read off the image by Josh 2026-10-27 and it matches the broadside the cleared 1850 president card quotes and cites."
       }
     }
   ],
@@ -1550,13 +1438,5 @@
     "Family card carries one extra field: leaves_out (who the census average excludes).",
     "1850 what_changed is SEQ-category rows (turning point/cause-effect/similarity-difference), the richer, already-written form -- not Josh's placeholder's per-thread-line then/now shape.",
     "images[] left empty on every card: the words files' own images= lists are keyed by a loose label, not a card id, and several (dated front-page candidates, a broadside tied to a counter-voice) have no clean 1:1 card home in this shape. Left for Danny/Josh to match against each words file's images= list, which carries repo/why/alt/flag already written."
-  ],
-  "_josh": {
-    "ported_from": "throwback-us11r-BUILT-2026-10-27.json",
-    "danny_md5": "c158387e228c76d50bace9d95f455621",
-    "danny_cleared": "2026-10-27 13:39 EDT",
-    "bk_yes": "2026-10-27 13:41 EDT",
-    "ported": "2026-10-27",
-    "josh_added": "room.image, room.panel_rect, room.panel_image, silhouettes.image, silhouettes.stand; renamed _dateline/_moment/_label to dateline/moment/label so strip-notes does not drop page content. No copy changed."
-  }
+  ]
 }

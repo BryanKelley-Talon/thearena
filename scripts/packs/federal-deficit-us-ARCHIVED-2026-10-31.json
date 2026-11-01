@@ -1,0 +1,559 @@
+{
+  "_what": "U.S. federal budget surplus or deficit by fiscal year, nominal dollars.",
+  "_built": "2026-10-31 by Josh (flashpoint desk), sourced not authored.",
+  "_convention": "OMB sign convention: a NEGATIVE value is a deficit, a POSITIVE value is a surplus.",
+  "_unit": "millions of current (nominal) dollars",
+  "_sources": [
+    {
+      "name": "FRED series FYFSD, Federal Surplus or Deficit [-], annual fiscal year, millions of dollars (source agency: U.S. Office of Management and Budget; FRED series last updated 2026-10-28). PRIMARY SOURCE FOR EVERY VALUE IN \"series\". Already in millions of dollars; no unit conversion applied. FRED dates each annual observation at the fiscal year end (1901-06-30 = FY1901, 2026-09-30 = FY2026); those dates were mapped to integer fiscal years.",
+      "url": "https://fred.stlouisfed.org/data/FYFSD.txt",
+      "covers": "FY1901-FY2026",
+      "fetched": "2026-10-31"
+    },
+    {
+      "name": "OMB Historical Tables landing page, Office of Management and Budget. Used only to locate the canonical Table 1.1 asset (hist01z1_fy2027.xlsx). The .xlsx itself could NOT be read in this environment, so no value in this file comes from it.",
+      "url": "https://www.whitehouse.gov/omb/budget/historical-tables/",
+      "covers": "asset discovery only; no data extracted",
+      "fetched": "2026-10-31"
+    },
+    {
+      "name": "Historical Tables, Budget of the U.S. Government, Fiscal Year 2006, Table 1.1, HTML rendering published by GPO/govinfo. CROSS-CHECK ONLY. Also the authority for the statement that OMB publishes no annual pre-1901 figures, only the aggregates 1789-1849 = +70 and 1850-1900 = -991.",
+      "url": "https://www.govinfo.gov/content/pkg/BUDGET-2006-TAB/html/BUDGET-2006-TAB.htm",
+      "covers": "cross-check for FY1901-FY2004 actuals; 1789-1900 aggregates",
+      "fetched": "2026-10-31"
+    },
+    {
+      "name": "U.S. Treasury FiscalData API, Monthly Treasury Statement Table 1. CROSS-CHECK ONLY. Reported in whole dollars with the opposite sign convention (a positive amount is a deficit); divided by 1,000,000 and sign-flipped before comparison.",
+      "url": "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v1/accounting/mts/mts_table_1",
+      "covers": "cross-check for FY2015-FY2026 fiscal-year totals",
+      "fetched": "2026-10-31"
+    },
+    {
+      "name": "FRED series MTSDS133FMS, Federal Surplus or Deficit [-], monthly, millions of dollars (source agency: U.S. Department of the Treasury, Fiscal Service, Monthly Treasury Statement). CROSS-CHECK ONLY, and an imperfect one: summing its twelve months does not exactly reproduce the OMB annual total (see _crosschecked).",
+      "url": "https://fred.stlouisfed.org/data/MTSDS133FMS.txt",
+      "covers": "cross-check, monthly 1980-10 to 2026-09",
+      "fetched": "2026-10-31"
+    }
+  ],
+  "_coverage": "Every fiscal year from FY1901 through FY2026 is present, 126 consecutive entries with no gaps. Nothing before FY1901 is included: the canonical OMB Table 1.1 does not publish annual figures for 1789-1900, only two multi-decade aggregates (1789-1849 = +70 million, 1850-1900 = -991 million), so individual years such as 1865 could not be sourced and were omitted rather than estimated. The July-September 1976 transition quarter (-14,744 million, created when the fiscal year moved from a June 30 to a September 30 end) is also omitted because it is not a fiscal year and has no integer fiscal-year label; FY1976 and FY1977 are both present and neither includes it.",
+  "_crosschecked": [
+    "FY1901 (+63), FY1902 (+77) and FY1903 (+45): exact match between FRED FYFSD and GPO/govinfo Table 1.1 from the FY2006 Historical Tables.",
+    "FY1919 (-13,363): exact match between FRED FYFSD and GPO/govinfo Table 1.1, FY2006 Historical Tables.",
+    "FY1943 (-54,554): exact match between FRED FYFSD and GPO/govinfo Table 1.1, FY2006 Historical Tables.",
+    "FY1968 (-25,161) and FY1976 (-73,732): exact match between FRED FYFSD and GPO/govinfo Table 1.1, FY2006 Historical Tables.",
+    "FY1983 (-207,802): exact match between FRED FYFSD and GPO/govinfo Table 1.1, FY2006 Historical Tables. NOTE: summing the twelve Treasury Monthly Treasury Statement months Oct-1982 through Sep-1983 from FRED MTSDS133FMS gives -195,354, which is 12,448 million off. The as-reported monthly statements do not reconcile to the revised annual budget accounts for this era, so the monthly sum was treated as non-authoritative and did not override the two agreeing annual sources.",
+    "FY2009 (-1,412,688): confirmed only by FRED FYFSD / OMB. Summing the twelve Treasury MTS months Oct-2008 through Sep-2009 from FRED MTSDS133FMS gives -1,415,725, which corroborates to within 3,037 million (0.2%) but is not an exact match. NOT independently confirmed to the dollar.",
+    "FY2020 (-3,131,917.2488882998): exact match. Treasury FiscalData MTS Table 1, statement dated 2020-09-30, Year-to-Date deficit 3,131,917,248,888.30 dollars = 3,131,917.2488883 million.",
+    "FY2026 (-1,992,473.2243524201): exact match. Treasury FiscalData MTS Table 1, statement dated 2026-09-30, Year-to-Date deficit 1,992,473,224,352.42 dollars. This also confirms FY2026 is a Treasury actual from the final Monthly Treasury Statement, not a budget estimate.",
+    "FY2025 (-1,775,357.2807338701): near match, NOT exact. The FY2025 comparative column of the September 2026 Treasury statement reads 1,775,369,189,818.35 dollars = 1,775,369.1898 million, which is 11.9 million higher than the value in this file. The difference is a prior-year restatement; the FRED/OMB figure was kept for consistency with the rest of the series.",
+    "FY1998 (+69,270), FY2000 (+236,241) and FY2004 (-412,727): these are the CURRENT OMB figures and they deliberately differ from the FY2006 Historical Tables, which showed +69,200, +236,151 and -412,144. The older edition was superseded by later OMB revisions, so the current values were kept. This confirms the two sources are consistent in era but not in vintage.",
+    "FY1865 and all other pre-1901 landmark years: COULD NOT BE CROSS-CHECKED because no annual pre-1901 value was obtained from any source; those years are absent from the series entirely."
+  ],
+  "_danny": false,
+  "series": [
+    {
+      "fy": 1901,
+      "v": 63
+    },
+    {
+      "fy": 1902,
+      "v": 77
+    },
+    {
+      "fy": 1903,
+      "v": 45
+    },
+    {
+      "fy": 1904,
+      "v": -43
+    },
+    {
+      "fy": 1905,
+      "v": -23
+    },
+    {
+      "fy": 1906,
+      "v": 25
+    },
+    {
+      "fy": 1907,
+      "v": 87
+    },
+    {
+      "fy": 1908,
+      "v": -57
+    },
+    {
+      "fy": 1909,
+      "v": -89
+    },
+    {
+      "fy": 1910,
+      "v": -18
+    },
+    {
+      "fy": 1911,
+      "v": 11
+    },
+    {
+      "fy": 1912,
+      "v": 3
+    },
+    {
+      "fy": 1913,
+      "v": 0
+    },
+    {
+      "fy": 1914,
+      "v": 0
+    },
+    {
+      "fy": 1915,
+      "v": -63
+    },
+    {
+      "fy": 1916,
+      "v": 48
+    },
+    {
+      "fy": 1917,
+      "v": -853
+    },
+    {
+      "fy": 1918,
+      "v": -9032
+    },
+    {
+      "fy": 1919,
+      "v": -13363
+    },
+    {
+      "fy": 1920,
+      "v": 291
+    },
+    {
+      "fy": 1921,
+      "v": 509
+    },
+    {
+      "fy": 1922,
+      "v": 736
+    },
+    {
+      "fy": 1923,
+      "v": 713
+    },
+    {
+      "fy": 1924,
+      "v": 963
+    },
+    {
+      "fy": 1925,
+      "v": 717
+    },
+    {
+      "fy": 1926,
+      "v": 865
+    },
+    {
+      "fy": 1927,
+      "v": 1155
+    },
+    {
+      "fy": 1928,
+      "v": 939
+    },
+    {
+      "fy": 1929,
+      "v": 734
+    },
+    {
+      "fy": 1930,
+      "v": 738
+    },
+    {
+      "fy": 1931,
+      "v": -462
+    },
+    {
+      "fy": 1932,
+      "v": -2735
+    },
+    {
+      "fy": 1933,
+      "v": -2602
+    },
+    {
+      "fy": 1934,
+      "v": -3586
+    },
+    {
+      "fy": 1935,
+      "v": -2803
+    },
+    {
+      "fy": 1936,
+      "v": -4304
+    },
+    {
+      "fy": 1937,
+      "v": -2193
+    },
+    {
+      "fy": 1938,
+      "v": -89
+    },
+    {
+      "fy": 1939,
+      "v": -2846
+    },
+    {
+      "fy": 1940,
+      "v": -2920
+    },
+    {
+      "fy": 1941,
+      "v": -4941
+    },
+    {
+      "fy": 1942,
+      "v": -20503
+    },
+    {
+      "fy": 1943,
+      "v": -54554
+    },
+    {
+      "fy": 1944,
+      "v": -47557
+    },
+    {
+      "fy": 1945,
+      "v": -47553
+    },
+    {
+      "fy": 1946,
+      "v": -15936
+    },
+    {
+      "fy": 1947,
+      "v": 4018
+    },
+    {
+      "fy": 1948,
+      "v": 11796
+    },
+    {
+      "fy": 1949,
+      "v": 580
+    },
+    {
+      "fy": 1950,
+      "v": -3119
+    },
+    {
+      "fy": 1951,
+      "v": 6102
+    },
+    {
+      "fy": 1952,
+      "v": -1519
+    },
+    {
+      "fy": 1953,
+      "v": -6493
+    },
+    {
+      "fy": 1954,
+      "v": -1154
+    },
+    {
+      "fy": 1955,
+      "v": -2993
+    },
+    {
+      "fy": 1956,
+      "v": 3947
+    },
+    {
+      "fy": 1957,
+      "v": 3412
+    },
+    {
+      "fy": 1958,
+      "v": -2769
+    },
+    {
+      "fy": 1959,
+      "v": -12849
+    },
+    {
+      "fy": 1960,
+      "v": 301
+    },
+    {
+      "fy": 1961,
+      "v": -3335
+    },
+    {
+      "fy": 1962,
+      "v": -7146
+    },
+    {
+      "fy": 1963,
+      "v": -4756
+    },
+    {
+      "fy": 1964,
+      "v": -5915
+    },
+    {
+      "fy": 1965,
+      "v": -1411
+    },
+    {
+      "fy": 1966,
+      "v": -3698
+    },
+    {
+      "fy": 1967,
+      "v": -8643
+    },
+    {
+      "fy": 1968,
+      "v": -25161
+    },
+    {
+      "fy": 1969,
+      "v": 3242
+    },
+    {
+      "fy": 1970,
+      "v": -2842
+    },
+    {
+      "fy": 1971,
+      "v": -23033
+    },
+    {
+      "fy": 1972,
+      "v": -23373
+    },
+    {
+      "fy": 1973,
+      "v": -14908
+    },
+    {
+      "fy": 1974,
+      "v": -6135
+    },
+    {
+      "fy": 1975,
+      "v": -53242
+    },
+    {
+      "fy": 1976,
+      "v": -73732
+    },
+    {
+      "fy": 1977,
+      "v": -53659
+    },
+    {
+      "fy": 1978,
+      "v": -59185
+    },
+    {
+      "fy": 1979,
+      "v": -40726
+    },
+    {
+      "fy": 1980,
+      "v": -73830
+    },
+    {
+      "fy": 1981,
+      "v": -78968
+    },
+    {
+      "fy": 1982,
+      "v": -127977
+    },
+    {
+      "fy": 1983,
+      "v": -207802
+    },
+    {
+      "fy": 1984,
+      "v": -185367
+    },
+    {
+      "fy": 1985,
+      "v": -212308
+    },
+    {
+      "fy": 1986,
+      "v": -221227
+    },
+    {
+      "fy": 1987,
+      "v": -149730
+    },
+    {
+      "fy": 1988,
+      "v": -155178
+    },
+    {
+      "fy": 1989,
+      "v": -152639
+    },
+    {
+      "fy": 1990,
+      "v": -221036
+    },
+    {
+      "fy": 1991,
+      "v": -269238
+    },
+    {
+      "fy": 1992,
+      "v": -290321
+    },
+    {
+      "fy": 1993,
+      "v": -255051
+    },
+    {
+      "fy": 1994,
+      "v": -203186
+    },
+    {
+      "fy": 1995,
+      "v": -163952
+    },
+    {
+      "fy": 1996,
+      "v": -107431
+    },
+    {
+      "fy": 1997,
+      "v": -21884
+    },
+    {
+      "fy": 1998,
+      "v": 69270
+    },
+    {
+      "fy": 1999,
+      "v": 125610
+    },
+    {
+      "fy": 2000,
+      "v": 236241
+    },
+    {
+      "fy": 2001,
+      "v": 128236
+    },
+    {
+      "fy": 2002,
+      "v": -157758
+    },
+    {
+      "fy": 2003,
+      "v": -377585
+    },
+    {
+      "fy": 2004,
+      "v": -412727
+    },
+    {
+      "fy": 2005,
+      "v": -318346
+    },
+    {
+      "fy": 2006,
+      "v": -248181
+    },
+    {
+      "fy": 2007,
+      "v": -160701
+    },
+    {
+      "fy": 2008,
+      "v": -458553
+    },
+    {
+      "fy": 2009,
+      "v": -1412688
+    },
+    {
+      "fy": 2010,
+      "v": -1294373
+    },
+    {
+      "fy": 2011,
+      "v": -1299599
+    },
+    {
+      "fy": 2012,
+      "v": -1076573
+    },
+    {
+      "fy": 2013,
+      "v": -679775
+    },
+    {
+      "fy": 2014,
+      "v": -484793
+    },
+    {
+      "fy": 2015,
+      "v": -438898.85812271
+    },
+    {
+      "fy": 2016,
+      "v": -587411.7696363
+    },
+    {
+      "fy": 2017,
+      "v": -665711.51306226
+    },
+    {
+      "fy": 2018,
+      "v": -778996.25186611
+    },
+    {
+      "fy": 2019,
+      "v": -984388.02633138
+    },
+    {
+      "fy": 2020,
+      "v": -3131917.2488883
+    },
+    {
+      "fy": 2021,
+      "v": -2772178.78828942
+    },
+    {
+      "fy": 2022,
+      "v": -1375388.552955
+    },
+    {
+      "fy": 2023,
+      "v": -1695148.30053077
+    },
+    {
+      "fy": 2024,
+      "v": -1832815.98907404
+    },
+    {
+      "fy": 2025,
+      "v": -1775357.28073387
+    },
+    {
+      "fy": 2026,
+      "v": -1992473.22435242
+    }
+  ]
+}

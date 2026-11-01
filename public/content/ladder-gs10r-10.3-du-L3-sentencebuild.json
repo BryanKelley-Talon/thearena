@@ -1,0 +1,84 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-30 14:53 EDT by Will (global10r-curriculum). Wording: BK's yes 2026-10-30 14:42 EDT.",
+  "_status": "DRAFT. To Danny's readers, then BK, then Josh. NOT APPROVED, NOT LIVE.",
+  "_shape": "Levels 1-4 only. No Level 5: the cold rep is one per casefile and Casefile A's is Historical Context's (RULED BK 2026-10-27 11:05).",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own documents, What You Need to Know and day questions (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "counts_for": null,
+  "arena_scores": false,
+  "practice_only": true,
+  "level": 3,
+  "type": "sentence_build",
+  "_activity": "Build the witness sentence: the railway, 1830",
+  "docs_from_casefile": [
+    10
+  ],
+  "intro": "Build the sentence. Choose the right piece for each blank. This is the witness starter your casefile uses.",
+  "sentence_frame": "___ showed that ___ (Doc ___).",
+  "_starter_printed": "In [year], [who] [wrote / said / showed] that ___ (Doc __).",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "who, and when",
+      "tiles": [
+        {
+          "text": "In 1830, the Liverpool and Manchester Railway's own record",
+          "correct": true
+        },
+        {
+          "text": "In 1761, the record of the Bridgewater Canal",
+          "correct": false
+        },
+        {
+          "text": "Document 10",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "what it showed",
+      "tiles": [
+        {
+          "text": "raw materials for the textile mills came into Liverpool by ship and went on by rail",
+          "correct": true
+        },
+        {
+          "text": "one horse could pull a canal boat carrying about 30 tons",
+          "correct": false
+        },
+        {
+          "text": "Britain industrialized before any other country in Europe",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "the document you used",
+      "tiles": [
+        {
+          "text": "10",
+          "correct": true
+        },
+        {
+          "text": "9",
+          "correct": false
+        },
+        {
+          "text": "leave it blank",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "In 1830, the Liverpool and Manchester Railway's own record showed that raw materials for the textile mills came into Liverpool by ship and went on by rail (Doc 10).",
+  "hints": [
+    "The first blank is your witness. A source with no author is still a witness: call it by what it is and when.",
+    "Two of the wrong tiles are true. They belong to Document 9, or to no document at all."
+  ],
+  "rationale": "A witness sentence has three parts and loses credit if any one is missing: who and when, the evidence itself, and the number. 'Document 10' in the first blank is the weak opening - it names a page, not a witness. The 30 tons is Document 9's, and 'Britain industrialized first' is on neither page."
+}

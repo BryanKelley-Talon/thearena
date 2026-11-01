@@ -1,0 +1,30 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "B - the Group door (revising A's own bundle)",
+  "_built": "2026-10-30 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_B_groupdoor.py",
+  "_blessed": "BK 2026-10-30 10:33 EDT (\"I like it\") on 113A_groupdoor_ladders_draft.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "TH",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "group_door_note": "One ladder, five starts (BK, via Josh's memo). Group n's door opens this ladder at Level n. The printed casefile (B1 cover sheet) is identical for every Group.",
+  "step": 1,
+  "_activity": "Watch one get built: Jackson's Bank veto, 1832",
+  "type": "matching",
+  "modeled": true,
+  "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+  "source_document": "Document 4 - President Andrew Jackson, veto message on the Bank of the United States, July 10, 1832",
+  "source_text": "It is to be regretted that the rich and powerful too often bend the acts of government to their selfish purposes. Distinctions in society will always exist under every just government. Equality of talents, of education, or of wealth can not be produced by human institutions. In the full enjoyment of the gifts of Heaven and the fruits of superior industry, economy, and virtue, every man is equally entitled to protection by law; but when the laws undertake to add to these natural and just advantages artificial distinctions, to grant titles, gratuities [gifts], and exclusive privileges, to make the rich richer and the potent [powerful] more powerful, the humble members of society—the farmers, mechanics [skilled workers], and laborers—who have neither the time nor the means of securing like favors to themselves, have a right to complain of the injustice of their Government. . . .",
+  "_pointer": "Avalon Project, Yale Law School, avalon.law.yale.edu/19th_century/ajveto01.asp, checked segment by segment 2026-10-15 (the page prints single hyphens for the dashes). Bracketed glosses ours. The map v1 listed Jackson's veto from last year's 3A; this excerpt is ours, from Avalon (D-U2).",
+  "frame": "[Document] shows ___ because ___.",
+  "frame_fill": "Document 4 shows that Jackson sided with ordinary people over “the rich and powerful,” because he vetoed the Bank's charter rather than let the law “make the rich richer and the potent more powerful.”",
+  "checklist": [
+    "Answers the question that was asked",
+    "Takes a side you can prove",
+    "Gives a reason (“because”)"
+  ],
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "write_it_in": "On your B1 cover sheet, in the casefile."
+}

@@ -1,0 +1,30 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "B - the Group door (revising A's own bundle)",
+  "_built": "2026-10-30 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_B_groupdoor.py",
+  "_blessed": "BK 2026-10-30 10:33 EDT (\"I like it\") on 113A_groupdoor_ladders_draft.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "TH",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "group_door_note": "One ladder, five starts (BK, via Josh's memo). Group n's door opens this ladder at Level n. The printed casefile (B1 cover sheet) is identical for every Group.",
+  "step": 4,
+  "_activity": "Write the scene: Jackson's removal message, 1830",
+  "type": "guided_write",
+  "source_document": "Document 5 - President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
+  "source_text": ". . . The consequences of a speedy removal will be important to the United States, to individual States, and to the Indians [Native Americans] themselves. The pecuniary [financial] advantages which it promises to the Government are the least of its recommendations. It puts an end to all possible danger of collision between the authorities of the General [Federal] and State Governments on account of the Indians. It will place a dense and civilized population in large tracts of country now occupied by a few savage hunters. By opening the whole territory between Tennessee on the north and Louisiana on the south to the settlement of the whites it will incalculably [greatly] strengthen the SW [southwestern] frontier and render the adjacent States strong enough to repel future invasions without remote aid. It will relieve the whole State of Mississippi and the western part of Alabama of Indian occupancy, and enable those States to advance rapidly in population, wealth, and power. It will separate the Indians from immediate contact with settlements of whites; free them from the power of the States. . . .",
+  "_pointer": "NYS Regents, June 2025, Q9–10 (ushg-62025-exam.pdf p. 6), word for word. (Jan 2026 Q5–6 prints a different excerpt of the same message, under its own source line.) BEFORE WE TALK.",
+  "prompt": "Take a side: did Jackson's reasons for removal hold up?",
+  "sentence_starter": "Document 5 shows that ___",
+  "checklist": [
+    "Answers the question that was asked",
+    "Takes a side you can prove",
+    "Gives a reason (“because”)"
+  ],
+  "model_response": "Document 5 shows that Jackson's case for removal rested on claims he never had to prove -- that it would “strengthen” the frontier and let settlers “advance” -- while treating Native nations as obstacles to clear, not people with a claim of their own.",
+  "model_visible": "always",
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "write_it_in": "On your B1 cover sheet, in the casefile."
+}

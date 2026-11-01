@@ -1,0 +1,99 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-30 14:53 EDT by Will (global10r-curriculum). Wording: BK's yes 2026-10-30 14:42 EDT.",
+  "_status": "DRAFT. To Danny's readers, then BK, then Josh. NOT APPROVED, NOT LIVE.",
+  "_shape": "Levels 1-4 only. No Level 5: the cold rep is one per casefile and Casefile A's is Historical Context's (RULED BK 2026-10-27 11:05).",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own documents, What You Need to Know and day questions (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "counts_for": null,
+  "arena_scores": false,
+  "practice_only": true,
+  "level": 2,
+  "type": "mc_bestfit",
+  "_activity": "The strongest claim: four answers, one credit",
+  "_hint_model": "2 escalating hints per item. Each item carries the three ways a Thesis earns nothing: RESTATES THE QUESTION, NO REASON (a because that explains nothing, including a circular one), and ANOTHER DAY'S ANSWER - a good claim for a question nobody asked here. The renderer does not shuffle, so SLOTS_TH varies which key holds the credit and every option is a full-length claim sentence. Items 4 and 5 ask Days 2 and 3 again in the exam's phrasing, on purpose.",
+  "items": [
+    {
+      "id": "th-01",
+      "stem": "Day 2's question: Why did the Industrial Revolution start in Great Britain and not somewhere else? Which answer is the strongest thesis?",
+      "options": {
+        "1": "The Industrial Revolution started in Great Britain and not somewhere else, which means Britain was the first country in the world to go through a change of that kind.",
+        "2": "The Industrial Revolution started in Great Britain because the conditions in Britain at that time were right for it, and because it was ready for that change before anywhere else.",
+        "3": "The Industrial Revolution started in Great Britain because Britain had coal and iron ore, rivers for power and ports for trade, and no rival had all three together.",
+        "4": "New ideas about work and business helped Britain industrialize because Adam Smith argued that dividing a job into small steps made workers far more productive."
+      },
+      "correct": "3",
+      "hints": [
+        "Which one names something about Britain you could point to in a document?",
+        "'The conditions were right' is not a reason. Ask what the conditions were."
+      ],
+      "rationale": "The answer about conditions being right has a because and explains nothing - you could write it about any country in any century. The one that stops at 'the first country in the world' says the question back to you. The Adam Smith answer is a strong thesis for Day 3's question, not for this one. Read the question before you pick."
+    },
+    {
+      "id": "th-02",
+      "stem": "Day 3's question: How did new ideas about work and business help? Which answer is the strongest thesis?",
+      "options": {
+        "1": "New ideas about work and business helped Britain industrialize because Smith's argument for dividing a job into small steps pushed owners to invest their money in mills and machines.",
+        "2": "New ideas about work and business were a help to Britain's industry, and the new thinking of that time made a real difference to the way that things were done.",
+        "3": "New ideas about work and business helped Britain industrialize because they were powerful ideas, and powerful ideas usually end up changing the way a country does things.",
+        "4": "New machines and new power changed how goods were made by bringing workers, machines and steam power together inside one building instead of into separate homes."
+      },
+      "correct": "1",
+      "hints": [
+        "Name the idea and the person. Then say what owners actually did about it.",
+        "Division of labour and laissez-faire are Day 3's two ideas."
+      ],
+      "rationale": "'Because they were powerful ideas' is the same sentence twice with a because in the middle. The one about 'a real difference' rewrites the question as a statement. The machines answer is Day 4's, and a strong one there. Here it answers a question nobody asked."
+    },
+    {
+      "id": "th-03",
+      "stem": "Day 4's question: How did new machines and new power change how goods were made? Which answer is the strongest thesis?",
+      "options": {
+        "1": "New machines and new power made a real change to how goods were made in Britain, and the way things were produced was different afterwards than it had been before.",
+        "2": "New machines and new power changed how goods were made because machines are faster than people, and faster production always changes the way that goods get made.",
+        "3": "Canals and railways helped Britain industrialize because they cut the cost of moving coal and cotton below what packhorses and river boats had cost.",
+        "4": "New machines and new power changed how goods were made by bringing workers, machines and steam into one building, so cloth was no longer made by hand at home."
+      },
+      "correct": "4",
+      "hints": [
+        "What came together in one place that had been apart before?",
+        "The domestic system is the before. What is the after?"
+      ],
+      "rationale": "'Machines are faster than people' is true of every machine ever built and says nothing about the factory. The 'real change' answer swaps the question's words for a phrase and stops. The canals answer belongs to Day 5."
+    },
+    {
+      "id": "th-04",
+      "stem": "Day 2 again, asked the way the exam asks it: why Great Britain, and not another country? Which answer is the strongest thesis?",
+      "options": {
+        "1": "Great Britain industrialized before any of the other countries of Europe did, so Britain is where this change in the way goods were made started first.",
+        "2": "Great Britain industrialized first because it already had the coal, the money to invest and the sea trade that rivals would have had to build.",
+        "3": "Great Britain industrialized first because it was Britain that went first, and once a country has gone first the others always have to follow along behind it.",
+        "4": "Farming in Britain changed in the 1700s because landowners wanted more profit and had the power in Parliament to take control of the land."
+      },
+      "correct": "2",
+      "hints": [
+        "Say what Britain already had that its rivals did not.",
+        "Three things from What You Need to Know: coal, money to invest, and the sea."
+      ],
+      "rationale": "'Because it was Britain that went first' is a circle: it uses the claim as its own reason. The short answer restates. The farming answer is Day 1's thesis, and a good one - on Day 1."
+    },
+    {
+      "id": "th-05",
+      "stem": "Day 3 again, in the exam's words: explain how new ideas about business affected Britain's economy. Which answer is the strongest thesis?",
+      "options": {
+        "1": "Ideas about business changed Britain's economy because laissez-faire meant government left owners free to invest and keep their profits, so money went into mills.",
+        "2": "Ideas about business had an effect on Britain's economy, and the economy was affected by the way that people were thinking about business at the time.",
+        "3": "Ideas about business changed Britain's economy because ideas about business matter to any economy, and Britain's economy was certainly changing in those years.",
+        "4": "Canals and railways helped Britain industrialize because cheaper transportation meant cheaper coal, cheaper cotton and cheaper goods, sold farther away."
+      },
+      "correct": "1",
+      "hints": [
+        "Name the idea - laissez-faire - and say what it let owners do.",
+        "Finish the day's starter: New ideas about work and business helped Britain industrialize because ___."
+      ],
+      "rationale": "The 'had an effect' answer is the question with two words bolted on. The one that says ideas matter to any economy puts a truism after a because. The transport answer is Day 5's thesis."
+    }
+  ]
+}

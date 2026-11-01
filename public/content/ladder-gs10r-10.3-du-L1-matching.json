@@ -1,0 +1,100 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-30 14:53 EDT by Will (global10r-curriculum). Wording: BK's yes 2026-10-30 14:42 EDT.",
+  "_status": "DRAFT. To Danny's readers, then BK, then Josh. NOT APPROVED, NOT LIVE.",
+  "_shape": "Levels 1-4 only. No Level 5: the cold rep is one per casefile and Casefile A's is Historical Context's (RULED BK 2026-10-27 11:05).",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own documents, What You Need to Know and day questions (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "counts_for": null,
+  "arena_scores": false,
+  "practice_only": true,
+  "level": 1,
+  "type": "matching",
+  "_activity": "Calls the witness, or does not: Document 5, 1776",
+  "docs_from_casefile": [
+    5
+  ],
+  "intro": "Document 5 is Adam Smith on the pin factory, 1776. Each card is a student using it as evidence. Sort each one by whether it calls its witness. Pick a card, then pick its pile.",
+  "left": [
+    {
+      "key": "a",
+      "label": "In 1776, Adam Smith wrote that making a pin was divided into about eighteen distinct operations, and that ten men working that way could make upwards of forty-eight thousand pins in a day (Doc 5).",
+      "hints": [
+        "Does it say who, and does it say when?",
+        "Read the first four words. A witness sentence puts the year and the name in front of the evidence."
+      ]
+    },
+    {
+      "key": "b",
+      "label": "Document 5 says that the important business of making a pin is divided into about eighteen distinct operations, and that ten men together could make upwards of forty-eight thousand pins.",
+      "hints": [
+        "The evidence is right. What is missing in front of it?",
+        "Who wrote this, and in what year? The sentence never says."
+      ]
+    },
+    {
+      "key": "c",
+      "label": "In 1776, Adam Smith wrote that steam engines create a vast demand for fuel and call multitudes of miners, engineers, ship-builders and sailors into employment (Doc 5).",
+      "hints": [
+        "Is that what Document 5 is about?",
+        "Somebody did write this. Check whether it was Smith."
+      ]
+    },
+    {
+      "key": "d",
+      "label": "It says that dividing up the work made a big difference to how many pins could be produced in a single day in a factory of that kind (Doc 5).",
+      "hints": [
+        "Who said it, and when?",
+        "The number is there. Is the witness?"
+      ]
+    },
+    {
+      "key": "e",
+      "label": "In 1801, Arthur Young wrote that ten men dividing the work of making a pin could produce upwards of forty-eight thousand pins in a day (Doc 5).",
+      "hints": [
+        "The number is right. Is the name?",
+        "Arthur Young wrote about enclosure, in a different document."
+      ]
+    },
+    {
+      "key": "f",
+      "label": "Writing in 1776, Adam Smith reported seeing a small manufactory where ten men only were employed, and between them they made upwards of forty-eight thousand pins in a day (Doc 5).",
+      "hints": [
+        "Does it name who and when?",
+        "The year can come first or second. What matters is that it is there before the evidence."
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "CALLS THE WITNESS  -  who, when, and what they said, tied to the right document"
+    },
+    {
+      "key": "2",
+      "label": "NO WITNESS  -  the evidence is there, but nothing says who said it or when"
+    },
+    {
+      "key": "3",
+      "label": "MISMATCHED  -  the witness and the evidence do not belong to the same document"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "2",
+    "e": "3",
+    "f": "1"
+  },
+  "rationale": {
+    "a": "The full form: the year, the name, what he wrote, and the number. A reader who has never seen Document 5 still knows who is talking and when.",
+    "b": "Everything after 'says' is accurate, and it still earns less. 'Document 5 says' is not a witness. Put the year and the name in front of the same evidence and it counts.",
+    "c": "The witness is called properly and the evidence is real - it is Andrew Ure's, in Document 8. Smith's document is about dividing a job into steps. A confident lead-in on the wrong evidence is still wrong.",
+    "d": "The number is there and the witness is not. 'It says' names nobody - a reader cannot tell whether this is Adam Smith, a textbook, or you. Put the year and the name in front of it.",
+    "e": "The evidence is Smith's, from 1776. Arthur Young and 1801 belong to Document 2, which is about enclosure. The shape is perfect and the pairing is broken, which is the hardest version of this to catch in your own writing.",
+    "f": "Also the full form. 'Writing in 1776' does the same work as 'In 1776' - the starter is a pattern, not a formula you copy word for word."
+  }
+}

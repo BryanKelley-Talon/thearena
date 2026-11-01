@@ -97,8 +97,17 @@ export function currentUnit(course) {
     || live[0] || null
 }
 
-// A level is playable only if it is published AND its content resolves.
+// A level is playable only if it is published, its content resolves, and (if it carries an
+// open date) today has reached it. Two fields, same shape as a casefile door (unitsplash.cfOpen/
+// cfLabel) and Door 4: `opens_on` is the machinery date nobody sees; `opens_label` is the full
+// sentence a kid reads while it waits and never names a day (BK 2026-10-31 09:16, via Will:
+// "a gated resource carries two things: a date you count down to, and a label a kid reads").
+const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
 export const levelOpen = lv => lv?.published === true && typeof lv.content_ref === 'string' && lv.content_ref.length > 0
+  && (!lv.opens_on || todayLocal() >= String(lv.opens_on))
+// What the rung shows while closed for a date, not for being unbuilt: the desk's own sentence,
+// never the bare "Coming" a kid would read as "not built" when it is really "not yet".
+const levelComing = lv => (lv?.opens_label && lv.opens_on && todayLocal() < String(lv.opens_on)) ? lv.opens_label : 'Coming'
 
 // Five slots, always. A skill with no ladder yet, or a ladder missing a level,
 // still shows all five — the missing ones read "Coming".
@@ -288,7 +297,7 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
                 {open && t && <span className="card-blurb">{t.blurb}</span>}
               </span>
               <span className="rung-flags">
-                {!open && <span className="flag soon">Coming</span>}
+                {!open && <span className="flag soon">{levelComing(lv)}</span>}
                 {open && isDone && <span className="flag done">Done</span>}
                 {open && !isDone && lv.level === startHere && <span className="flag live">Start here</span>}
               </span>

@@ -32,6 +32,7 @@ import { useState, useEffect, useMemo, useRef } from 'react'
 import { parseHash, buildHash } from './deeplinks.js'
 import { Unit0Card, Unit0Room, UNIT0_STYLES } from './unit0.jsx'
 import { THREADS_STYLES } from './threads.jsx'
+import { SceneView, SCENE_STYLES, SCENE_WORDS, useScene } from './thescene.jsx'
 import { ISSUES_STYLES } from './issues.jsx'
 import { StopMapLane, STOPMAP_STYLES } from './stopmap.jsx'
 import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
@@ -69,6 +70,13 @@ const PREVIEW_OFFICE = (() => {
 // ships dark and `?preview=throwback` opens it for whoever has the link.
 const PREVIEW_THROWBACK = (() => {
   try { return new URLSearchParams(window.location.search).get('preview') === 'throwback' } catch { return false }
+})()
+
+// THE SCENE ships the same way. The mechanics are built ahead of the content (Leo's order
+// 2026-10-31, on BK's word in chat), so the room exists with two of its layers still empty.
+// A student must not walk into that; `?preview=scene` opens it for BK and for Danny.
+const PREVIEW_SCENE = (() => {
+  try { return new URLSearchParams(window.location.search).get('preview') === 'scene' } catch { return false }
 })()
 
 const HOME_URL = 'https://flashpointhistory.com'
@@ -938,6 +946,12 @@ const LANES = [
     intro: 'Seven questions America keeps asking. Follow a thread from unit to unit, and tap any stop to see what happened, and a model paragraph to learn from.' },
   // The Enduring Issues map: Global's counterpart to Threads (Leo 20:59; BK 21:38 "EI Map moves above case closed").
   // Lane name and intro proposed to BK 21:41.
+  // THE SCENE (Leo's order 2026-10-31 10:13, from BK's brainstorm with Leo; spec in
+  // In/the-scene-brief-2026-10-31.pdf): one dated spine, every layer stacked on top of it.
+  // `scene_lane` rather than `scene` so the tab appears only once the manifest publishes it
+  // or a reviewer opens it with ?preview=scene — the manifest key alone must not light it up.
+  { key: 'scene',         src: 'scene_lane',    label: 'The Scene', optional: true, always: true,
+    intro: SCENE_WORDS.laneIntro },
   { key: 'issues',        src: 'issues',        label: 'Enduring Issues', optional: true,
     intro: 'Six issues the world keeps facing. Follow an issue from unit to unit, and tap any stop to see what happened, and a model paragraph to learn from.' },
   // The Atlas (Leo's order 10/5 21:07): both doors, after Threads. Lane name and intro, BK 21:11 ("yes to all three").
@@ -956,9 +970,13 @@ const LANES = [
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution, tbData, throwback, tbYear, onThrowback, onPickYear, refs, slModule, onPickModule, onOpenCasefile, onOpenNextStep, onOpenTestReview }) {
+function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution, tbData, throwback, tbYear, onThrowback, onPickYear, refs, slModule, onPickModule, onOpenCasefile, onOpenNextStep, onOpenTestReview, sceneYear, sceneLayers, onSceneLayers, onOpenSceneYear }) {
   const constCards = constitutionCards(courseIn)
-  const course = constCards.length ? { ...courseIn, constitution_cards: constCards } : courseIn
+  // The Scene's files, fetched only where the room is actually open to whoever is looking.
+  const sceneOn = !!courseIn?.scene && (courseIn.scene.published === true || PREVIEW_SCENE)
+  const scene = useScene(courseIn, PREVIEW_SCENE)
+  const courseWithScene = sceneOn ? { ...courseIn, scene_lane: courseIn.scene } : courseIn
+  const course = constCards.length ? { ...courseWithScene, constitution_cards: constCards } : courseWithScene
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
   // A lane this door doesn't carry (an old link, or a lane that has left the top) lands on the first that it does.
@@ -1058,6 +1076,14 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
                              words={THROWBACK_WORDS} />
             : <StopMapLane kind="threads" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
         </>
+      )}
+      {/* THE SCENE: the spine is the room. Clicking a marked year does not redraw Throwback,
+          it opens the Throwback that has been built since 10/26 — the only thing that drills in. */}
+      {lane === 'scene' && (
+        <SceneView course={course} courseKey={COURSE_KEY[course.id] || course.id} scene={scene} tbData={tbData}
+                   unitNumbers={(course.units || []).filter(u => u.published === true).map(u => String(u.number))}
+                   year={sceneYear} onOpenYear={onOpenSceneYear}
+                   layers={sceneLayers} onLayers={onSceneLayers} />
       )}
       {lane === 'issues' && <StopMapLane kind="issues" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
       {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
@@ -2128,6 +2154,8 @@ export default function App() {
   const [gaugesCf, setGaugesCf] = useState(null)      // a casefile id when the kid is in that casefile's gauges
   const [throwback, setThrowback] = useState(false)   // the Threads lane's second view
   const [tbYear, setTbYear] = useState(null)          // the era a kid stepped into
+  const [sceneYear, setSceneYear] = useState(null)    // the era a Scene link marks on the spine
+  const [sceneLayers, setSceneLayers] = useState([])  // which of the Scene's layers are lit, in the order they were lit
   const [slModule, setSlModule] = useState(null)      // the Skills Lab room open, by its link name
   const [kyns, setKyns] = useState(false)             // Door 4, Know Your Next Step (a splash unit)
   const [testReview, setTestReview] = useState(false) // a splash unit's Test Review card
@@ -2300,6 +2328,7 @@ export default function App() {
     setRoomFrom('units')
     if (r.at === 'unit0') setUnit0(true)
     setThrowback(!!r.throwback); if (r.throwback) setTbYear(r.tbYear || null)
+    if (r.lane === 'scene') { setSceneYear(r.sceneYear || null); setSceneLayers(r.sceneLayers || []) }
     setSlModule(r.slModule || null)
     setKyns(r.at === 'kyns'); setTestReview(r.at === 'testreview'); setDaFromCf(false)
     if (r.at === 'gauges') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) setGaugesCf(r.cf) }
@@ -2338,13 +2367,13 @@ export default function App() {
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
       course, unit0, unit, lane: doorLane, review, gaugesCf, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
-      chase, stopOpen, civics, civicsCard, throwback, tbYear, slModule, kyns, testReview,
+      chase, stopOpen, civics, civicsCard, throwback, tbYear, sceneYear, sceneLayers, slModule, kyns, testReview,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
     setHere(h)                                              // where the kid is, for the chase pill (10/9)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, throwback, tbYear, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard, slModule, kyns, testReview])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, throwback, tbYear, sceneYear, sceneLayers, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard, slModule, kyns, testReview])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
@@ -2594,6 +2623,10 @@ export default function App() {
       tbYear={tbYear}
       onThrowback={on => { setThrowback(on); if (!on) setTbYear(null); window.scrollTo(0, 0) }}
       onPickYear={y => { setTbYear(y); window.scrollTo(0, 0) }}
+      sceneYear={sceneYear}
+      sceneLayers={sceneLayers}
+      onSceneLayers={ls => setSceneLayers(ls)}
+      onOpenSceneYear={y => { setSceneYear(y); setDoorLane('threads'); setThrowback(true); setTbYear(y); window.scrollTo(0, 0) }}
       refs={refs}
       slModule={slModule}
       onPickModule={m => setSlModule(m)}
@@ -2620,7 +2653,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + SKILLSLAB_STYLES + SPLASH_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES + THROWBACK_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + SKILLSLAB_STYLES + SPLASH_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES + THROWBACK_STYLES + SCENE_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

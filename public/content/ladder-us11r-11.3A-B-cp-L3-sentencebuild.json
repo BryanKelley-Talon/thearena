@@ -1,0 +1,63 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "B - the Group door (revising A's own bundle)",
+  "_built": "2026-10-30 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_B_groupdoor.py",
+  "_blessed": "BK 2026-10-30 10:33 EDT (\"I like it\") on 113A_groupdoor_ladders_draft.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "CP",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "group_door_note": "One ladder, five starts (BK, via Josh's memo). Group n's door opens this ladder at Level n. The printed casefile (B1 cover sheet) is identical for every Group.",
+  "step": 3,
+  "_activity": "Build the civic-principle sentence: the Texas boundary map, 1836",
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag the correct piece into each blank.",
+  "sentence_frame": "Document ___ (upholds / denies / fights over) ___ because ___.",
+  "note_doc9_is_image": "Document 9 is the Regents map (image), not text -- printed inline on the page, the same crop as Casefile A's own Document 9.",
+  "source_document": "Document 9 - maps.com (adapted)",
+  "image": "STIMULUS_BANK/Unit_03/unit03-0124-mc07.png",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "upholds / denies / fights over",
+      "tiles": [
+        {
+          "text": "fights over Popular Sovereignty",
+          "correct": true
+        },
+        {
+          "text": "upholds Due Process",
+          "correct": false
+        },
+        {
+          "text": "denies Natural Rights",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "because what",
+      "tiles": [
+        {
+          "text": "Texas's settlers had withdrawn their consent to Mexican rule and formed their own government, and the map shows where they claimed that new government's reach went -- a line Mexico never recognized",
+          "correct": true
+        },
+        {
+          "text": "Texas became independent from Mexico in 1836",
+          "correct": false
+        },
+        {
+          "text": "the dispute was eventually settled by war",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "Document 9 fights over Popular Sovereignty, because Texas's settlers had withdrawn their consent to Mexican rule and formed their own government, and the map shows where they claimed that new government's reach went -- a line Mexico never recognized.",
+  "rationale": "Texas's 1836 independence and the later war are both true, but neither is the reason tied to this principle on its own -- what makes this Popular Sovereignty is that Texans stopped consenting to be governed by Mexico and set up their own government instead. The map is what that looks like on paper: two boundary lines, because there are now two governments and no agreement between them on where one's authority ends and the other's begins.",
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "write_it_in": "On your B1 cover sheet, in the casefile."
+}

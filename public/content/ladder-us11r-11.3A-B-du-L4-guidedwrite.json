@@ -1,0 +1,31 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "B - the Group door (revising A's own bundle)",
+  "_built": "2026-10-30 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_B_groupdoor.py",
+  "_blessed": "BK 2026-10-30 10:33 EDT (\"I like it\") on 113A_groupdoor_ladders_draft.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "DU",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "group_door_note": "One ladder, five starts (BK, via Josh's memo). Group n's door opens this ladder at Level n. The printed casefile (B1 cover sheet) is identical for every Group.",
+  "step": 4,
+  "_activity": "Write the scene: O'Sullivan's “Annexation,” 1845",
+  "type": "guided_write",
+  "source_document": "Document 8 - John L. O'Sullivan, “Annexation,” United States Magazine and Democratic Review, 1845 (adapted)",
+  "source_text": ". . . other nations have undertaken to intrude themselves into it [the question of Texas], between us and the proper parties to the case, in a spirit of hostile interference against us, for the avowed [openly stated] object of thwarting [blocking] our policy and hampering our power, limiting our greatness and checking the fulfillment of our manifest destiny to overspread the continent allotted by Providence [God] for the free development of our yearly multiplying millions. . . .",
+  "context_line": "In 1845, Texas was about to join the United States. A New York magazine argued for it.",
+  "_pointer": "Teaching American History, 'Annexation' (United States Magazine and Democratic Review, July–August 1845; unsigned, attributed to O'Sullivan), checked 2026-10-15. Cut to the sentence's second half; glosses ours.",
+  "prompt": "Use Document 8 as evidence for a claim about how supporters of expansion saw it.",
+  "sentence_starter": "In 1845, John L. O'Sullivan wrote that ___",
+  "checklist": [
+    "Calls the witness: who and when, before the evidence",
+    "The evidence proves the claim, not just the topic",
+    "No “Doc __ says” anywhere"
+  ],
+  "model_response": "In 1845, John L. O'Sullivan wrote that other nations were trying to “overspread the continent allotted by Providence” for America's “manifest destiny” -- treating expansion as a right no other power had standing to question.",
+  "model_visible": "always",
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "write_it_in": "On your B1 cover sheet, in the casefile."
+}

@@ -1,0 +1,63 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-30 14:53 EDT by Will (global10r-curriculum). Wording: BK's yes 2026-10-30 14:42 EDT.",
+  "_status": "DRAFT. To Danny's readers, then BK, then Josh. NOT APPROVED, NOT LIVE.",
+  "_shape": "Levels 1-4 only. No Level 5: the cold rep is one per casefile and Casefile A's is Historical Context's (RULED BK 2026-10-27 11:05).",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own documents, What You Need to Know and day questions (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "counts_for": null,
+  "arena_scores": false,
+  "practice_only": true,
+  "level": 3,
+  "type": "sentence_build",
+  "_activity": "Build the claim: Day 4's starter",
+  "intro": "Build the claim. Choose the right piece for each blank. This is Day 4's own starter, the one in your 30-Second Case box.",
+  "sentence_frame": "New machines and new power changed how goods were made by ___, so ___.",
+  "_starter_printed": "New machines and new power changed how goods were made by ___.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "what actually changed",
+      "tiles": [
+        {
+          "text": "bringing workers, machines and steam power together in one building",
+          "correct": true
+        },
+        {
+          "text": "digging canals to carry coal from the mines to the towns",
+          "correct": false
+        },
+        {
+          "text": "making a real difference to the way that things were produced",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "why that mattered",
+      "tiles": [
+        {
+          "text": "cloth was no longer made by hand at home the way it had been under the domestic system",
+          "correct": true
+        },
+        {
+          "text": "machines are always faster than people working on their own",
+          "correct": false
+        },
+        {
+          "text": "Britain was the first country in the world to industrialize",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "New machines and new power changed how goods were made by bringing workers, machines and steam power together in one building, so cloth was no longer made by hand at home the way it had been under the domestic system.",
+  "hints": [
+    "The first blank is the change itself. The second is what the change did to how people worked.",
+    "One wrong tile belongs to Day 5, and one of them says nothing at all."
+  ],
+  "rationale": "A claim names the change and what the change did. 'Making a real difference' names no change, and 'machines are faster than people' would be true in any century. The factory is the answer: power, machines and workers in one place, instead of a family spinning at home."
+}

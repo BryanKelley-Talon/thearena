@@ -1,0 +1,1267 @@
+{
+  "_built": "Josh (flashpoint) 2026-10-31, ported from Sam's In/da_113A.py and us11r-curriculum/skills/u113/words_113A.py.",
+  "_signed": "Danny (copy-desk) 2026-10-30 14:24 EDT (113 claims, 1 fix applied, 0 unsupported) and 2026-10-31 08:48 EDT (pack file itself, unchanged since the 14:24 clearance).",
+  "_source": "US11R_11.3A_DocAssist_WORDING_SIGNED_2026-10-30.pdf, md5 8cb31726acbda0d0d52aebf21102403e.",
+  "_ruled": "CARRY-FORWARD §6 DOC ASSIST (BK 2026-10-01 08:16); shape unchanged since 11.2 (BK 2026-10-08 21:37 N5; BK 10/1 09:25 the four-question walk).",
+  "tool": "Doc Assist",
+  "room": "11.3A",
+  "tile": "Every document in your casefile, with a walk-through beside it. It won't answer for you. It shows you how.",
+  "walk_name": "THE DOC WALK",
+  "walk": [
+    {
+      "tag": "Q1 · SOURCING",
+      "step": "Source line first.",
+      "say": "Before you read a word of the document, read the line above it. Who made it, when, and why?"
+    },
+    {
+      "tag": "READ IT THROUGH",
+      "step": "Read it once, all the way.",
+      "say": "Start to finish, no stopping. Hit a hard word? Keep going. Then say what it's about in a few words.",
+      "say_image": "Look in three passes: the title and labels, then the biggest thing, then the small details."
+    },
+    {
+      "tag": "Q2 · CLAIM & EVIDENCE",
+      "step": "What is it saying?",
+      "say": "Find the words that say it. Your proof is always in the document."
+    },
+    {
+      "tag": "Q3 · PERSPECTIVE CHECK",
+      "step": "Whose view is this?",
+      "say": "Who would tell it differently? Who isn't in it?"
+    },
+    {
+      "tag": "Q4 · CIVIC CONNECTION",
+      "step": "Name the principle.",
+      "say": "Find it on your Civic Principles card. Does the document uphold it, deny it, or fight over it?"
+    }
+  ],
+  "labels": {
+    "walk": "Walk me through it",
+    "read": "Read it to me",
+    "easier": "Easier to read",
+    "original": "Original",
+    "close": "Close the walk",
+    "next": "Next step",
+    "back": "Back",
+    "stop": "Stop reading",
+    "q4_card": "The Civic Principles",
+    "annotate": "How to annotate",
+    "your_q": "→ your Q%d",
+    "oral": "OUT LOUD",
+    "check": "CHECK",
+    "prompts": "YOUR TURN · MARK IT UP"
+  },
+  "casefiles": [
+    {
+      "id": "A",
+      "title": "11.3A Casefile A · Discovery",
+      "status": "open",
+      "docs": [
+        {
+          "n": 1,
+          "title": "Jefferson on buying Louisiana, 1803",
+          "kind": "text",
+          "src": "Source: Thomas Jefferson, letter to John Breckinridge, August 12, 1803 (adapted)",
+          "page": 5,
+          "steps": [
+            {
+              "tag": "Q1 · SOURCING",
+              "your_q": 1,
+              "mode": null,
+              "question": "Call your witness: who wrote Document 1, to whom, and when?",
+              "line": "Call your witness from the source line: who wrote it, to whom, and the date. The last blank, the “that,” comes from the letter itself: one thing Jefferson says."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "Three ideas: what Congress has to do with the treaty, what Jefferson thinks it will take after that, and his problem with the Constitution. Read it once, all the way, and say each idea in a few words."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 2,
+              "mode": null,
+              "question": "What problem did Jefferson see with buying Louisiana?",
+              "line": "Your claim is the problem. Find the sentence where Jefferson names something the Constitution doesn't do. That sentence, in quotation marks, is your evidence."
+            },
+            {
+              "tag": "Q4 · CIVIC CONNECTION",
+              "your_q": 3,
+              "mode": null,
+              "question": "Name the principle from the card on page 2. Does Jefferson's letter uphold it, deny it, or fight over it?",
+              "line": "Read each “Look for it when” cue in the group How power is built and limited. Which one fits a president who believes in reading the rules strictly but wants a deal the rules don't cover? Then pick: uphold, deny, or fight over. Give a because."
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 1's questions in your casefile, starting on page 5. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "laid before both houses",
+                "mark": "circle",
+                "note": "Shown to both houses of Congress. The Senate approves treaties, and the House has to vote for the money."
+              },
+              {
+                "where": "authorised",
+                "mark": "box",
+                "note": "Authorised (the old spelling): given permission."
+              },
+              {
+                "where": "incorporating foreign nations into our union",
+                "mark": "circle",
+                "note": "Making the people who live there part of the United States."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline what Jefferson says Congress has to do with the treaty."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box the sentence where Jefferson names a problem with the Constitution."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: is Jefferson pleased, worried, or both?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 1 is ready to use: what happened to Jefferson's amendment idea. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "text": [
+            ". . . This treaty [Louisiana Purchase] must of course be laid before both houses, because both have important functions to exercise respecting it. They I presume will see their duty to their country in ratifying & paying for it, so as to secure a good which would otherwise probably be never again in their power. But I suppose they must then appeal to the nation for an additional article to the constitution, approving & confirming an act which the nation had not previously authorised. The constitution has made no provision for our holding foreign territory, still less for incorporating foreign nations into our union. . . ."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "This treaty [the Louisiana Purchase] has to go to both houses of Congress, because both have a job to do on it. I expect they'll do their duty to the country: approve it and pay for it, so we get a good thing we might never get another chance at. But then I suppose they'll have to ask the nation for an amendment to the Constitution, approving something the nation never gave permission for. The Constitution says nothing about letting us hold land that belonged to another country, and even less about making the people there part of our union."
+            ]
+          }
+        },
+        {
+          "n": 2,
+          "title": "A song against the embargo, 1808",
+          "kind": "text",
+          "src": "Source: Henry Mellen, 1808, Massachusetts Historical Society Broadsides",
+          "page": 6,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 4,
+              "mode": null,
+              "question": null,
+              "line": "Read the gray line and the source line first: a song from 1808, the embargo's first year. What had just stopped American ships? Keep it in your head while you read."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "Six short lines. The first three are before; the last three are now. Read it to yourself like a song, then say what changed."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 4,
+              "mode": null,
+              "question": "What does the song say happened to the ships, and who does it blame?",
+              "line": "Two jobs: what happened to the ships, and who gets blamed. Both are in the last three lines. The last line names more than one thing. Who or what does the song blame? You can name more than one."
+            },
+            {
+              "tag": "Q3 · PERSPECTIVE CHECK",
+              "your_q": 5,
+              "mode": null,
+              "question": "Why was New England concerned about President Thomas Jefferson's embargo?",
+              "line": "This is the Regents' own question. Think about who made a living from ships that came home with cargo. Where did New England's money come from? Your because names it."
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 2's questions in your casefile, starting on page 7. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "whiten'd the ocean",
+                "mark": "circle",
+                "note": "Covered the ocean with white sails: there were a lot of ships."
+              },
+              {
+                "where": "doom'd to decay",
+                "mark": "box",
+                "note": "Doomed to rot."
+              },
+              {
+                "where": "fallen a prey",
+                "mark": "circle",
+                "note": "Become a victim."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline what the ships did before the embargo."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box what is happening to them now."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: who in Massachusetts loses money when ships sit in port?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 2 is ready to use: how the embargo ended. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "context": "A song from 1808, after the Embargo Act stopped American ships from trading overseas.",
+          "text": [
+            "Our ships all in motion,",
+            "Once whiten'd the ocean",
+            "They sail'd and return'd with a Cargo;",
+            "Now doom'd to decay",
+            "They are fallen a prey,",
+            "To Jefferson, worms, and EMBARGO."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "All our ships, on the move, once covered the ocean with white sails.",
+              "They sailed out and came back with cargo.",
+              "Now they're doomed to rot.",
+              "They've become victims of Jefferson, worms, and the EMBARGO."
+            ]
+          }
+        },
+        {
+          "n": 3,
+          "title": "The Erie Canal, looking back from 1853",
+          "kind": "text",
+          "src": "Source: James Guthrie, Secretary of the Treasury, “The Impact of the Erie Canal,” 1853",
+          "page": 9,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 6,
+              "mode": null,
+              "question": null,
+              "line": "Read the gray line first: who was Guthrie, what was his job, and what year is it? He is looking back on the canal, not watching it open."
+            },
+            {
+              "tag": "Q1 · HISTORICAL CONTEXT",
+              "your_q": 6,
+              "mode": null,
+              "question": "Describe the historical context surrounding this document.",
+              "line": "This is the Regents' own SEQ task, reworded for one document -- hold it to the same bar as Q5 and Q11. Context is what was going on before and around the document, not what it says. Use Day 1's What You Need to Know and your notes: where did western farmers need to send their crops? Then: what did the canal connect? Finish the sentence starter with the document's own year."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "Four paragraphs: how far the water route reached, how big the canal's effect was, the West without it, the East without it. Say each paragraph's topic in a few words."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 7,
+              "mode": null,
+              "question": "According to Guthrie, how did the canal help both the West and the East?",
+              "line": "Two halves: the West and the East. Paragraph 3 is the West and paragraph 4 is the East. Paragraph 3 says what the West would have been without the canal. Turn that around to say what the canal gave it."
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 3's questions in your casefile, starting on page 9. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "navigable",
+                "mark": "circle",
+                "note": "Deep and wide enough for boats."
+              },
+              {
+                "where": "commenced",
+                "mark": "box",
+                "note": "Began."
+              },
+              {
+                "where": "manufactures",
+                "mark": "circle",
+                "note": "Goods made in workshops and factories."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline what the West would have been without the canal."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box what the canal gave the East."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: one word for what the canal did to the two regions."
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 3 is ready to use: the canal's nickname and who pushed it through. A Historical Context answer often brings in outside information, so tag each fact. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "context": "President Franklin Pierce appointed James Guthrie as secretary of the Treasury in 1853. Guthrie was responsible for presenting detailed annual reports to Congress about the nation's economy.",
+          "text": [
+            ". . . As soon as the [Great] Lakes were reached, the line of navigable water was extended through them nearly one thousand miles farther into the interior. The Western states immediately commenced the construction of similar works, for the purpose of opening a communication, from the more remote portions of their territories, with this great water-line. All these works took their direction and character from the Erie Canal, which in this manner became the outlet for almost the greater part of the West.",
+            "It is difficult to estimate the influence which this Canal has exerted upon the commerce, growth, and prosperity of the whole country, for it is impossible to imagine what would have been the state of things without it.",
+            "But for this work, the West would have held out few inducements [incentives] to the settler, who would have been without a market for his most important products, and consequently without the means of supplying many of his most essential wants. That portion of the country would have remained comparatively unsettled up to the present time; and, where now exist rich and populous communities, we should find an uncultivated wilderness.",
+            "The East would have been equally without the elements of growth. The Canal has supplied it with cheap food, and has opened an outlet and created a market for the products of its manufactures and commerce. . . ."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Once boats reached the Great Lakes, the water route ran almost a thousand miles farther inland. The western states right away started building canals of their own to connect their far-off land to this great water route. All of them followed the Erie Canal's lead, and the canal became the way out to market for most of the West.",
+              "It's hard to measure how much the canal has done for the trade, growth and wealth of the whole country, because it's impossible to picture things without it.",
+              "Without the canal, the West would have given settlers few reasons to come. A settler would have had no market for his main crops, and so no way to pay for many of the things he needed most. That part of the country would still be mostly unsettled. Where rich, crowded towns stand today, we would find wilderness.",
+              "The East would have had nothing to grow on, either. The canal has given it cheap food, and it has opened a way out and a market for the goods it makes and sells."
+            ]
+          }
+        },
+        {
+          "n": 4,
+          "title": "Jackson's Bank veto, 1832",
+          "kind": "text",
+          "src": "Source: President Andrew Jackson, veto message on the Bank of the United States, July 10, 1832",
+          "page": 13,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 8,
+              "mode": null,
+              "question": null,
+              "line": "Read the source line: who, what kind of document, and what date? A veto message is the President telling Congress why he said no."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "One long paragraph. The first sentence is his complaint. Then it turns at the word “but.” Before the turn: the differences between people he calls fair. After it: what is unfair when the laws add to them. Find the turn."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 8,
+              "mode": null,
+              "question": "Who does Jackson say the laws are helping, and who has “a right to complain”?",
+              "line": "Two groups. One is near the start of the paragraph; the other comes between the dashes, near the end. Use his words for both."
+            },
+            {
+              "tag": "Q3 · PERSPECTIVE CHECK",
+              "your_q": 9,
+              "mode": null,
+              "question": "Jackson ran as the champion of the common man. How does that shape what he says about the Bank?",
+              "line": "Reread the question's first sentence. A man running as the champion of the common man: which group in the document would he want to stand with? Now look at how he describes the other side."
+            },
+            {
+              "tag": "Q4 · CIVIC CONNECTION",
+              "your_q": 10,
+              "mode": null,
+              "question": "Name the principle from the card on page 2. Jackson says every man is “equally entitled to protection by law.” Which principle is that?",
+              "line": "The question's quote is in the middle of the paragraph. Read each “Look for it when” cue in the group What government must protect, and pick the one that matches it."
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 4's questions in your casefile, starting on page 13. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "Distinctions in society",
+                "mark": "circle",
+                "note": "Differences between people: richer and poorer, more and less educated."
+              },
+              {
+                "where": "artificial distinctions",
+                "mark": "box",
+                "note": "Advantages the law hands out, not ones people earned."
+              },
+              {
+                "where": "exclusive privileges",
+                "mark": "circle",
+                "note": "Special rights only a few people get."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline who Jackson says bends the government to their own purposes."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box the three kinds of workers he names."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: whose side is Jackson on?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 4 is ready to use: where Jackson moved the government's money, and what followed. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "text": [
+            "It is to be regretted that the rich and powerful too often bend the acts of government to their selfish purposes. Distinctions in society will always exist under every just government. Equality of talents, of education, or of wealth can not be produced by human institutions. In the full enjoyment of the gifts of Heaven and the fruits of superior industry, economy, and virtue, every man is equally entitled to protection by law; but when the laws undertake to add to these natural and just advantages artificial distinctions, to grant titles, gratuities [gifts], and exclusive privileges, to make the rich richer and the potent [powerful] more powerful, the humble members of society—the farmers, mechanics [skilled workers], and laborers—who have neither the time nor the means of securing like favors to themselves, have a right to complain of the injustice of their Government. . . ."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "It's too bad that the rich and powerful so often bend the government's actions to serve themselves. Some differences between people will always exist, under any fair government. No law can make people equal in talent, education or wealth. In enjoying what God gave him and what his own hard work, saving and good character earned him, every man has the same right to the law's protection. But when the laws pile extra, unearned advantages on top of those, handing out titles, gifts and special rights to make the rich richer and the powerful more powerful, then the ordinary people of the country, the farmers, the skilled workers and the laborers, who have neither the time nor the money to win favors like that for themselves, have a right to complain that their government is treating them unfairly."
+            ]
+          }
+        },
+        {
+          "n": 5,
+          "title": "Jackson on removal, 1830",
+          "kind": "text",
+          "src": "Source: President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
+          "page": 14,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 11,
+              "mode": null,
+              "question": null,
+              "line": "Read the source line: who, to whom, and when? In his yearly message, a President reports to Congress and defends his policies. The Removal Act was already law when he wrote this."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "Jackson lists the good things he says removal will do, about one to a sentence. Count them as you read."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 11,
+              "mode": null,
+              "question": "What was the primary reason President Andrew Jackson supported the removal of Native Americans from their tribal lands?",
+              "line": "This is the Regents' own question, and it asks for the main reason. Look through Jackson's list for the reason that keeps coming back: what happens to the land once the Native nations are gone? Name that one reason, not every item."
+            },
+            {
+              "tag": "Q3 · PERSPECTIVE CHECK",
+              "your_q": 12,
+              "mode": null,
+              "question": "Jackson calls the Native nations “a few savage hunters.” What do those words show about how he saw them?",
+              "line": "Put two descriptions side by side: how he describes the people living there now, and how he describes the people who would replace them. What does the contrast show about how he saw Native Americans? Then: how does that help him argue for removal?"
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 5's questions in your casefile, starting on page 15. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "collision",
+                "mark": "circle",
+                "note": "A clash: here, a fight between the national government and a state."
+              },
+              {
+                "where": "render",
+                "mark": "box",
+                "note": "Make."
+              },
+              {
+                "where": "without remote aid",
+                "mark": "circle",
+                "note": "Without help from far away."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline every group Jackson says removal will help."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box how he describes who lives on the land now, and who would live there after."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: whose voice is missing from this message?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 5 is ready to use: how close the House vote was. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "before": {
+            "title": "BEFORE WE TALK",
+            "text": "This document is about forcing people off their land, in the words of the man who pushed for it. Some of his words are insults. Read them as evidence of how he thought, not as the truth about the Cherokee or any Native nation."
+          },
+          "text": [
+            ". . . The consequences of a speedy removal will be important to the United States, to individual States, and to the Indians [Native Americans] themselves. The pecuniary [financial] advantages which it promises to the Government are the least of its recommendations. It puts an end to all possible danger of collision between the authorities of the General [Federal] and State Governments on account of the Indians. It will place a dense and civilized population in large tracts of country now occupied by a few savage hunters. By opening the whole territory between Tennessee on the north and Louisiana on the south to the settlement of the whites it will incalculably [greatly] strengthen the SW [southwestern] frontier and render the adjacent States strong enough to repel future invasions without remote aid. It will relieve the whole State of Mississippi and the western part of Alabama of Indian occupancy, and enable those States to advance rapidly in population, wealth, and power. It will separate the Indians from immediate contact with settlements of whites; free them from the power of the States. . . ."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Removing the Native nations quickly will matter a great deal to the United States, to some of the states, and to the Native Americans themselves. The money the government would gain is the smallest reason. Removal ends any chance of a clash between the national government and the states over the Native nations. It will put “a dense and civilized population” [his words] on huge areas of land that a small number of people now use for hunting. [Jackson calls them “savage hunters”: his insult, and the casefile's question 12 asks what it shows.] Opening all the land between Tennessee and Louisiana to white settlers will make the southwestern border much stronger, and let the states there fight off future attacks without help from far away. It will free Mississippi and western Alabama of Native people, so those states can grow quickly in people, wealth and power. It will move the Native nations away from white towns and out from under the states' power."
+            ]
+          }
+        },
+        {
+          "n": 6,
+          "title": "The Cherokee answer, 1830",
+          "kind": "text",
+          "src": "Source: General Council of the Cherokee Nation, address to the people of the United States, New Echota, July 17, 1830",
+          "page": 15,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 13,
+              "mode": null,
+              "question": null,
+              "line": "Read the source line: who is speaking, to whom, where, and when? Compare the date with Document 5's."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "Two paragraphs. The first says why they would ever leave; the second says what they have a right to. Say each one in a few words."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 13,
+              "mode": null,
+              "question": "What are the Cherokee asking for in their last sentence?",
+              "line": "The question sends you to the last sentence. Read it, say it in your own words, and keep one phrase of theirs as your evidence."
+            },
+            {
+              "tag": "Q3 · PERSPECTIVE CHECK",
+              "your_q": 14,
+              "mode": null,
+              "question": "Documents 5 and 6 describe the same removal. Why do they see it so differently?",
+              "line": "Line them up: what Jackson says removal will do (Document 5) and what the Cherokee say it will do (Document 6). Then your because: what does each side gain or lose?"
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 6's questions in your casefile, starting on page 16. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "deprived",
+                "mark": "circle",
+                "note": "Have something taken away."
+              },
+              {
+                "where": "guaranty",
+                "mark": "box",
+                "note": "Guarantee (the old spelling): promise and protect."
+              },
+              {
+                "where": "in pursuance of treaties",
+                "mark": "circle",
+                "note": "Made to carry out the treaties."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline the only reason the Cherokee say they would ever leave."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box what they say guarantees their right to stay."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: what do they want the United States to do?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 6 is ready to use: the Cherokee Nation's own newspaper and writing system. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "before": {
+            "title": "BEFORE WE TALK",
+            "text": "This is the Cherokee Nation speaking for itself, seven weeks after the Removal Act became law. Read it the way you'd want your own words read: carefully, and all the way through."
+          },
+          "text": [
+            ". . . We are not willing to remove; and if we could be brought to this extremity [last step], it would be not by argument, not because our judgment was satisfied, not because our condition will be improved; but only because we cannot endure to be deprived of our national and individual rights and subjected to a process of intolerable oppression.",
+            "We wish to remain on the land of our fathers. We have a perfect and original right to claim without interruption or molestation [being bothered]. The treaties with us, and laws of the United States made in pursuance of treaties, guaranty our residence, and our privileges and secure us against intruders. Our only request is that these treaties may be fulfilled, and these laws executed. . . ."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "We are not willing to leave. If we were ever pushed that far, it would not be because an argument convinced us, or because we think our lives would be better. It would only be because we can't stand to lose our rights as a nation and as people, and to be put through cruelty we can't bear.",
+              "We want to stay on the land of our fathers. We have a full right to it, from the beginning, without being bothered. The treaties with us, and the laws of the United States made to carry them out, promise that we can live here, protect our rights, and keep intruders out. All we ask is that these treaties be kept and these laws be carried out."
+            ]
+          }
+        },
+        {
+          "n": 7,
+          "title": "Worcester v. Georgia, 1832",
+          "kind": "text",
+          "src": "Source: Chief Justice John Marshall, Worcester v. Georgia, 1832",
+          "page": 16,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 15,
+              "mode": null,
+              "question": null,
+              "line": "Read the source line: who wrote this, and what is it? A Supreme Court ruling is the law of the land."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "One sentence. Break it at the commas: what the Cherokee nation is, whose laws have no force there, and who can enter. Say each part."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 15,
+              "mode": null,
+              "question": "According to Marshall, whose laws have “no force” on Cherokee land, and why?",
+              "line": "Two parts: whose laws, and why. The why is at the very start of the sentence: what Marshall says the Cherokee nation is."
+            },
+            {
+              "tag": "Q4 · CIVIC CONNECTION",
+              "your_q": 16,
+              "mode": null,
+              "question": "Name the principle from the card on page 2. Does Worcester v. Georgia uphold it, deny it, or fight over it?",
+              "line": "Read the group How power is built and limited. More than one cue could fit a court telling a state what it can't do. Pick one, then decide: does the ruling uphold it, deny it, or fight over it? Your because uses the ruling's words."
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 7's questions in your casefile, starting on page 17. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "distinct community",
+                "mark": "circle",
+                "note": "A separate people with its own government."
+              },
+              {
+                "where": "boundaries accurately described",
+                "mark": "box",
+                "note": "Borders written down exactly, in the treaties."
+              },
+              {
+                "where": "in conformity with",
+                "mark": "circle",
+                "note": "Following the rules of."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline what Marshall says the Cherokee nation is."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box whose laws can have no force there."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: who would have to make this ruling stick?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 7 comes with a warning: Jackson is often quoted, but historians doubt he said it. If you use the quote, write “is often quoted as saying.” Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "text": [
+            ". . . The Cherokee nation, then, is a distinct community occupying its own territory, with boundaries accurately described, in which the laws of Georgia can have no force, and which the citizens of Georgia have no right to enter, but with the assent [agreement] of the Cherokees themselves, or in conformity with treaties, and with the acts of congress. . . ."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "So the Cherokee nation is a separate people with its own land and borders, written down exactly. Georgia's laws have no force there. People from Georgia have no right to go there unless the Cherokee agree, or unless the treaties and the laws of Congress allow it."
+            ]
+          }
+        },
+        {
+          "n": 8,
+          "title": "Manifest destiny, 1845",
+          "kind": "text",
+          "src": "Source: John L. O'Sullivan, “Annexation,” United States Magazine and Democratic Review, 1845 (adapted)",
+          "page": 20,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 17,
+              "mode": null,
+              "question": null,
+              "line": "Read the gray line and the source line: who wrote it, where it was printed, and what was about to happen to Texas."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "One long sentence. Find the complaint (what other nations are doing) and the belief (what America is meant to do). The belief comes at the end."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 17,
+              "mode": null,
+              "question": "Put “manifest destiny” in your own words.",
+              "line": "Find the famous two words near the end, then read what comes right after them: what is America meant to do, and who does he say gave it the land? Say it in your own words."
+            },
+            {
+              "tag": "Q3 · PERSPECTIVE CHECK",
+              "your_q": 18,
+              "mode": null,
+              "question": "O'Sullivan says other nations want to block “our greatness.” Who was he writing to, and what did he want them to do?",
+              "line": "Who reads a New York magazine in 1845? What did he want them to support that year? Then look at who “our” and “us” mean in the sentence."
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 20. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "hampering",
+                "mark": "circle",
+                "note": "Holding back."
+              },
+              {
+                "where": "overspread",
+                "mark": "box",
+                "note": "Spread across."
+              },
+              {
+                "where": "allotted",
+                "mark": "circle",
+                "note": "Handed out, given."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline what O'Sullivan says other nations are trying to do."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box the phrase that names America's destiny, and what it is."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: who is in the way, as he tells it?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 8 is ready to use: how Texas finally joined. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "context": "In 1845, Texas was about to join the United States. A New York magazine argued for it.",
+          "text": [
+            ". . . other nations have undertaken to intrude themselves into it [the question of Texas], between us and the proper parties to the case, in a spirit of hostile interference against us, for the avowed [openly stated] object of thwarting [blocking] our policy and hampering our power, limiting our greatness and checking the fulfillment of our manifest destiny to overspread the continent allotted by Providence [God] for the free development of our yearly multiplying millions. . . ."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "Other countries have pushed their way into the question of Texas, between us and the people it actually concerns. They are acting against us, and they say openly that they want to block our plans, limit our power and greatness, and stop us from fulfilling “our manifest destiny to overspread the continent allotted by Providence” (question 17 asks you to put that in your own words), so that our millions of people, growing every year, can live and grow freely."
+            ]
+          }
+        },
+        {
+          "n": 9,
+          "title": "The Texas border map, 1836",
+          "kind": "image",
+          "src": "Source: maps.com (adapted)",
+          "page": 21,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": null,
+              "mode": "oral",
+              "question": null,
+              "line": "Read the source line above the map. Was it made in 1836, or long after?"
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "Read the key before the map. The dashed lines mark the land in dispute, not the shading. Find both dashed lines and read the label on each."
+            },
+            {
+              "tag": "Q1 · GEOGRAPHIC CONTEXT",
+              "your_q": 19,
+              "mode": null,
+              "question": "Scan the code. In the Atlas, open **11.3A → What the United States took by 1853** and find the land that is in dispute on this map. Texas and Mexico both claimed it. What happened to that land, and how did the two claims lead to war?",
+              "line": "The first two blanks are on this map. Follow the line Texas claimed to the river it runs along, and read its name. Then find Mexico's line: which way does it sit from Texas's claim?"
+            },
+            {
+              "tag": "Q1 · GEOGRAPHIC CONTEXT",
+              "your_q": 19,
+              "mode": null,
+              "question": "Scan the code. In the Atlas, open **11.3A → What the United States took by 1853** and find the land that is in dispute on this map. Texas and Mexico both claimed it. What happened to that land, and how did the two claims lead to war?",
+              "line": "The last two blanks need the Atlas. Scan the ATLAS code in the margin and open 11.3A → What the United States took by 1853. Find the same land and read its label and its year. For what the two claims led to, go back to Day 3's What You Need to Know: what happened in 1846?"
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 22. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "map",
+            "notes": [
+              {
+                "where": "Republic of Texas",
+                "mark": "circle",
+                "note": "Texas as its own country, from 1836 until it joined the United States in 1845."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Trace the river Texas claimed."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box the label for the land between the claims."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: why would both sides want that strip of land?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 9 is ready to use: a young congressman who doubted where the war began. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "image_file": "STIMULUS_BANK/Unit_03/unit03-0124-mc07.png",
+          "licence": {
+            "text": "As printed on the NYSED Regents exam in US History and Government, January 2024.",
+            "sellable": false
+          },
+          "image_alt": "A black-and-white map titled \"Republic of Texas Boundary Dispute with Mexico, 1836.\" A legend at the upper right uses light gray for the accepted territory of Texas, dark gray for the land in dispute claimed by both Texas and Mexico, and a thick dashed line for the disputed boundary. The accepted, light-gray Texas sits as a wedge in the southeast, between the Red River and the Gulf of Mexico. Two dashed lines run northwest from there: the outer one, labeled \"as claimed by Texas,\" follows the Rio Grande down from the Arkansas River; a shorter inner line, labeled \"as claimed by Mexico,\" sits closer to accepted Texas, near the Adams-Onis Treaty line of 1819. The large dark-gray area between those two claim lines is the disputed land. The United States lies to the north, Mexico to the south and west; a compass rose and a mile/kilometer scale bar sit in the lower left.",
+          "image": "STIMULUS_BANK/Unit_03/unit03-0124-mc07.png",
+          "describe": "A black-and-white map titled \"Republic of Texas Boundary Dispute with Mexico, 1836.\" A legend at the upper right uses light gray for the accepted territory of Texas, dark gray for the land in dispute claimed by both Texas and Mexico, and a thick dashed line for the disputed boundary. The accepted, light-gray Texas sits as a wedge in the southeast, between the Red River and the Gulf of Mexico. Two dashed lines run northwest from there: the outer one, labeled \"as claimed by Texas,\" follows the Rio Grande down from the Arkansas River; a shorter inner line, labeled \"as claimed by Mexico,\" sits closer to accepted Texas, near the Adams-Onis Treaty line of 1819. The large dark-gray area between those two claim lines is the disputed land. The United States lies to the north, Mexico to the south and west; a compass rose and a mile/kilometer scale bar sit in the lower left."
+        },
+        {
+          "n": 10,
+          "title": "Massachusetts against the war, 1847",
+          "kind": "text",
+          "src": "Source: Massachusetts legislature, resolutions on the war with Mexico, April 26, 1847",
+          "page": 23,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 21,
+              "mode": null,
+              "question": null,
+              "line": "Read the source line: who passed this, about what, and when? A state legislature's resolution speaks for the whole state."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "One long sentence in three parts: what caused the war, how it was started, and how it is being fought and what for. Say each part."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 21,
+              "mode": null,
+              "question": "Give two reasons the Massachusetts legislature opposed the war.",
+              "line": "You need two reasons. One is about how the war was started; the other is about what it's for. The second is in the last lines, where the resolution names three goals at once."
+            },
+            {
+              "tag": "Q3 · PERSPECTIVE CHECK",
+              "your_q": 22,
+              "mode": null,
+              "question": "Massachusetts was a free state. How does that shape what its legislature says about the war?",
+              "line": "Reread the question's first sentence. A free state: what would it fear from new land won to the south and west? Look at what the last lines say the war is for."
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 23. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "commenced",
+                "mark": "circle",
+                "note": "Began."
+              },
+              {
+                "where": "waged",
+                "mark": "box",
+                "note": "Fought."
+              },
+              {
+                "where": "excluded",
+                "mark": "circle",
+                "note": "Kept out."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline how Massachusetts says the war was started."
+              },
+              {
+                "mark": "box",
+                "prompt": "Box the three goals the resolution says the war is for."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: who in Washington would be angry to read this?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 10 is ready to use: the Wilmot Proviso. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "text": [
+            "Resolved, That the present war with Mexico had its primary origin in the unconstitutional annexation to the United States of the foreign State of Texas; that it was unconstitutionally commenced by the order of the President, to General Taylor, to take military possession of territory in dispute between the United States and Mexico, and in the occupation of Mexico; and that it is now waged by a powerful nation against a weak neighbor—unnecessarily and without just cause, at immense cost of treasure [money] and life, for the dismemberment [carving up] of Mexico, and for the conquest of a portion of her territory, from which slavery has already been excluded, with the triple object of extending slavery, of strengthening the slave power [slaveholders' power in government], and of obtaining the control of the Free States, under the Constitution of the United States."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "We resolve that the war with Mexico started mainly because the United States took in Texas, a foreign country, against the Constitution. The war itself was started against the Constitution, when the President ordered General Taylor to take over land that the United States and Mexico both claimed, and Mexican land. It is now being fought by a powerful country against a weak neighbor, for no good reason and at a huge cost in money and lives. It is being fought to carve up Mexico and take part of its land, land where slavery is already banned, with three goals: to spread slavery, to give slaveholders more power in the government, and to take control of the Free States, under the Constitution of the United States."
+            ]
+          }
+        },
+        {
+          "n": 11,
+          "title": "The Declaration of Sentiments, 1848",
+          "kind": "text",
+          "src": "Source: Declaration of Sentiments, Seneca Falls, 1848",
+          "page": 24,
+          "steps": [
+            {
+              "tag": "SOURCING",
+              "your_q": 23,
+              "mode": null,
+              "question": null,
+              "line": "Read the source line: what is it, where, and when? Then hear its first sentence: whose famous document is it copying? You read that one in 11.2."
+            },
+            {
+              "tag": "READ IT THROUGH",
+              "your_q": null,
+              "mode": null,
+              "question": null,
+              "line": "An opening, then a list. Each “He has” is one wrong. Count them."
+            },
+            {
+              "tag": "Q2 · CLAIM & EVIDENCE",
+              "your_q": 23,
+              "mode": null,
+              "question": "Name two rights the Declaration says women were denied.",
+              "line": "Pick two items from the “He has” list. Each one names a right women were denied. Say each in your own words, with the document's words as evidence."
+            },
+            {
+              "tag": "Q4 · CIVIC CONNECTION",
+              "your_q": 24,
+              "mode": null,
+              "question": "Name the principle from the card on page 2. Does the Declaration of Sentiments uphold it, deny it, or fight over it?",
+              "line": "Read each “Look for it when” cue in the group What government must protect, and pick the one that fits the “He has” list. Then decide: does the Declaration uphold it, deny it, or fight over it?"
+            },
+            {
+              "tag": "CHECK",
+              "your_q": null,
+              "mode": "check",
+              "question": null,
+              "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
+            }
+          ],
+          "close": "That's the walk. Now answer Document 11's questions in your casefile, starting on page 24. Use the sentence stem, or write something of equal or better value.",
+          "annotate": {
+            "kind": "text",
+            "notes": [
+              {
+                "where": "candid world",
+                "mark": "circle",
+                "note": "A fair, honest world: words borrowed from the Declaration of Independence."
+              },
+              {
+                "where": "elective franchise",
+                "mark": "box",
+                "note": "The right to vote."
+              },
+              {
+                "where": "civilly dead",
+                "mark": "circle",
+                "note": "Dead in the eyes of the law: no legal rights of her own."
+              }
+            ],
+            "prompts": [
+              {
+                "mark": "underline",
+                "prompt": "Underline every “He has.”"
+              },
+              {
+                "mark": "box",
+                "prompt": "Box the right the Declaration calls a citizen's first right."
+              },
+              {
+                "mark": "margin",
+                "prompt": "In the margin: who is “He”?"
+              }
+            ],
+            "oe": {
+              "kind": "where",
+              "text": "The OI box under Document 11 is ready to use: who organized Seneca Falls, and who signed. Star it. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+            }
+          },
+          "text": [
+            ". . . The history of mankind is a history of repeated injuries and usurpations [wrongdoings] on the part of man toward woman, having in direct object the establishment of an absolute tyranny over her. To prove this, let facts be submitted to a candid world.",
+            "He has never permitted her to exercise her inalienable right to the elective franchise.",
+            "He has compelled her to submit to laws, in the formation of which she had no voice.",
+            "He has withheld from her rights which are given to the most ignorant and degraded men—both natives and foreigners.",
+            "Having deprived her of this first right of a citizen, the elective franchise, thereby leaving her without representation in the halls of legislation, he has oppressed her on all sides.",
+            "He has made her, if married, in the eye of the law, civilly dead.",
+            "He has taken from her all right in property, even to the wages she earns. . . ."
+          ],
+          "easier": {
+            "label": "(adapted, easier to read)",
+            "text": [
+              "The history of the human race is a history of men wronging women again and again and taking power that wasn't theirs, all aimed at ruling over women completely. To prove it, here are the facts, for a fair world to judge.",
+              "He has never let her use her right to vote, a right no one can take away.",
+              "He has made her obey laws she had no say in making.",
+              "He has kept from her rights that are given to the most ignorant and lowest men, born here or abroad.",
+              "By taking away her first right as a citizen, the vote, he has left her with no one to speak for her in the lawmaking bodies, and he has held her down in every way.",
+              "If she is married, he has made her dead in the eyes of the law.",
+              "He has taken away all her right to property, even the wages she earns."
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "q4_card": {
+    "title": "Civic Principles",
+    "intro": "Q4 · CIVIC CONNECTION asks which principle is at stake. Name it from this card, then show how the document upholds it, denies it, or fights over it.",
+    "items": [
+      {
+        "n": "1",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Rule of Law",
+        "question": "No one is above the law, not even the people who make it. Look for it when someone powerful is held to the rules, or tries to dodge them."
+      },
+      {
+        "n": "2",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Limited Government",
+        "question": "Government can only do what the Constitution allows. Look for it when someone says the government went too far."
+      },
+      {
+        "n": "3",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Separation of Powers",
+        "question": "Power is split among three branches, each with its own job: make laws, carry out laws, judge laws. Look for it when the fight is about which branch gets to act."
+      },
+      {
+        "n": "4",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Checks and Balances",
+        "question": "Each branch can block or limit the others. Look for it when there's a veto, an override, an impeachment, or a court striking something down."
+      },
+      {
+        "n": "5",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Federalism",
+        "question": "Power is divided between the national government and the states. When they clash, valid federal law wins. Look for it when it's the nation against a state."
+      },
+      {
+        "n": "6",
+        "group": "HOW POWER IS BUILT AND LIMITED",
+        "name": "Judicial Review",
+        "question": "Courts can strike down a law or action that breaks the Constitution. Look for it when a court decides whether something is constitutional."
+      },
+      {
+        "n": "7",
+        "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+        "name": "Popular Sovereignty (consent of the governed)",
+        "question": "Government's power comes from the people, and it rules only with their agreement. Look for it when people give, or take back, their support for a government."
+      },
+      {
+        "n": "8",
+        "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+        "name": "Representative Government",
+        "question": "The people elect officials to make decisions for them. Look for it when the issue is voting, elections, or who speaks for whom."
+      },
+      {
+        "n": "9",
+        "group": "WHERE GOVERNMENT'S POWER COMES FROM",
+        "name": "Natural Rights",
+        "question": "Every person is born with rights (life, liberty, property) that government exists to protect. Look for it when a right is treated as something you're born with, not something government hands out."
+      },
+      {
+        "n": "10",
+        "group": "WHAT GOVERNMENT MUST PROTECT",
+        "name": "Individual Rights (civil liberties)",
+        "question": "Freedoms government can't take away, like speech, religion, press and assembly. Look for it when a personal freedom is limited, defended, or expanded."
+      },
+      {
+        "n": "11",
+        "group": "WHAT GOVERNMENT MUST PROTECT",
+        "name": "Equal Protection",
+        "question": "The law must treat people equally. Look for it when a group is treated differently, shut out, or separated by law."
+      },
+      {
+        "n": "12",
+        "group": "WHAT GOVERNMENT MUST PROTECT",
+        "name": "Due Process",
+        "question": "Government must follow fair steps before it takes your life, liberty, or property. Look for it when someone is arrested, held, or punished. Ask whether it was fair."
+      }
+    ],
+    "close": [
+      "Learn these by name. The Regents asks for them. Practice them in the Arena's matching set."
+    ]
+  },
+  "annotate": {
+    "button": "How to annotate",
+    "methods": {
+      "text": [
+        [
+          "WHO AND WHEN",
+          "Circle who made it and the year. They're in the source line."
+        ],
+        [
+          "THE CLAIM",
+          "Underline the one sentence that makes the main point."
+        ],
+        [
+          "WORDS",
+          "Box any word you don't know. Write your best guess above it."
+        ],
+        [
+          "SO WHAT",
+          "In the margin, write a few words on why it matters."
+        ],
+        [
+          "OUTSIDE",
+          "Add one true thing you already know that isn't in the document."
+        ]
+      ],
+      "picture": [
+        [
+          "LABELS",
+          "Read every word first: the title, the caption, the labels."
+        ],
+        [
+          "WHO'S WHO",
+          "Name every figure. Who is big, and who is small?"
+        ],
+        [
+          "EXAGGERATION",
+          "What is stretched past real life? That's the caricature."
+        ],
+        [
+          "SYMBOLS",
+          "What stands for something else: clothes, tools, animals?"
+        ],
+        [
+          "THE POINT",
+          "What is the artist accusing, and who would agree?"
+        ]
+      ],
+      "map": [
+        [
+          "TITLE, KEY, DATE",
+          "Read the title, the key and the date before anything else."
+        ],
+        [
+          "THE BIG PICTURE",
+          "Circle the biggest or most important part."
+        ],
+        [
+          "COMPARE",
+          "Mark two parts you can compare."
+        ],
+        [
+          "THE POINT",
+          "Write what it shows in one sentence."
+        ],
+        [
+          "OUTSIDE",
+          "Add one true thing you already know that isn't on it."
+        ]
+      ]
+    },
+    "model_label": "WATCH IT DONE ON THIS DOCUMENT",
+    "model_note": "These notes are on parts no question asks about. Your questions are yours to do.",
+    "oe_example_label": "OUTSIDE INFORMATION · AN EXAMPLE",
+    "oe_where_label": "OUTSIDE INFORMATION · WHERE TO LOOK"
+  },
+  "_shape_annotate": "Same as Global v4: pack 'annotate' (methods text|picture|map as [tag, step]); docs[].annotate = {kind, notes[{where, mark, note}], oe{kind, text}}. No French on US."
+}

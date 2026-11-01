@@ -1,0 +1,106 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-30 14:53 EDT by Will (global10r-curriculum). Wording: BK's yes 2026-10-30 14:42 EDT.",
+  "_status": "DRAFT. To Danny's readers, then BK, then Josh. NOT APPROVED, NOT LIVE.",
+  "_shape": "Levels 1-4 only. No Level 5: the cold rep is one per casefile and Casefile A's is Historical Context's (RULED BK 2026-10-27 11:05).",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own documents, What You Need to Know and day questions (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "counts_for": null,
+  "arena_scores": false,
+  "practice_only": true,
+  "level": 2,
+  "type": "mc_bestfit",
+  "_activity": "Call your witness: four answers, one credit",
+  "docs_from_casefile": [
+    2,
+    7,
+    9,
+    4,
+    8
+  ],
+  "_hint_model": "2 escalating hints per item. Each item carries the three ways Document Use earns less than it could: NO WITNESS (quotes plenty, sources nothing), MISMATCHED (a confident lead-in on another document's evidence, or another document's witness on this one's evidence), and NO EVIDENCE (an assertion about the writer with nothing taken off the page). The renderer does not shuffle, so SLOTS_DU varies which key holds the credit and every option is a full-length attempt at the task. Rationales name each wrong answer by its content, never by its number.",
+  "items": [
+    {
+      "id": "du-01",
+      "stem": "You are using Document 2 as evidence that enclosure hurt poor families. Which sentence calls your witness properly?",
+      "options": {
+        "1": "Document 2 says that by nineteen enclosure bills in twenty the poor are injured, and that in some cases they are grossly injured by the bills of enclosure.",
+        "2": "In 1801, Arthur Young, a farming writer who supported enclosure, wrote that by nineteen enclosure bills in twenty the poor are injured, and in some grossly injured (Doc 2).",
+        "3": "In 1776, Adam Smith wrote that by nineteen enclosure bills in twenty the poor are injured, and in some grossly injured, in his book on the wealth of nations (Doc 2).",
+        "4": "Arthur Young was one of the best known farming writers of his day, and his honesty about what enclosure did to poor families is why his writing still matters (Doc 2)."
+      },
+      "correct": "2",
+      "hints": [
+        "Who wrote it, and in what year? Both go in front of the evidence.",
+        "For top marks, say why he is worth hearing: he supported enclosure and admitted this anyway."
+      ],
+      "rationale": "The sentence beginning 'Document 2 says' has the quotation and no witness: a reader learns nothing about who is talking or when. The one in Smith's name hands Young's words to the wrong writer, in the wrong year, out of the wrong book. The last one praises Young and quotes nothing, so there is no evidence in it to mark."
+    },
+    {
+      "id": "du-02",
+      "stem": "You are using Document 7 as evidence that early machines often failed before they worked. Which sentence calls your witness properly?",
+      "options": {
+        "1": "Document 7 says that the first machine was not at all successful, and that it was actually slower in its operation than a manual hand loom, although it did work.",
+        "2": "In 1776, Adam Smith wrote that the first weaving machine was actually slower in its operation than a manual hand loom, before the process was refined and improved (Doc 7).",
+        "3": "Edmund Cartwright kept working at his weaving machine for years, and his patience is a good example of how inventors in this period refused to give up on an idea (Doc 7).",
+        "4": "In his own account of inventing the power loom, Edmund Cartwright wrote that his first machine was actually slower in its operation than a manual hand loom (Doc 7)."
+      },
+      "correct": "4",
+      "hints": [
+        "Whose account is Document 7? That is your witness.",
+        "For top marks, say why it matters that the inventor is the one admitting it was slower."
+      ],
+      "rationale": "'Document 7 says' quotes the failure accurately and names nobody, so a reader cannot tell this is the inventor describing his own machine - which is what makes it worth quoting. Smith's name is the wrong witness: Document 5 is his, and it is about dividing a job into steps, not a loom. The last sentence admires Cartwright and takes nothing off the page."
+    },
+    {
+      "id": "du-03",
+      "stem": "You are using Document 9 as evidence that canals made moving coal much cheaper. Which sentence calls your witness properly?",
+      "options": {
+        "1": "The Bridgewater Canal's own record, from 1761, shows that one horse could pull a canal boat carrying about 30 tons, more than ten times what a horse and cart could carry (Doc 9).",
+        "2": "Document 9 says that one horse could pull a canal boat carrying about 30 tons, which was more than ten times what the same horse and cart could carry on the roads.",
+        "3": "The record of the Liverpool and Manchester Railway, opened in 1830, shows that one horse could pull a boat carrying about 30 tons, far more than a horse and cart could carry (Doc 9).",
+        "4": "The Bridgewater Canal was one of the most important transport projects of the whole period, and it changed the way coal reached the growing industrial towns of the north (Doc 9)."
+      },
+      "correct": "1",
+      "hints": [
+        "This document has no single author. Call it by what it is and when: a record of the canal, opened in 1761.",
+        "A source with no author is still a witness. Name what it is and the year."
+      ],
+      "rationale": "'Document 9 says' carries the right number with no source in front of it. The railway version names the wrong document: the 30 tons is the canal's, and the railway is Document 10. The last sentence calls the canal important and gives a reader no figure, no date and nothing to check."
+    },
+    {
+      "id": "du-04",
+      "stem": "You are using Document 4 as evidence that Britain's location helped its factories. Which sentence calls your witness properly?",
+      "options": {
+        "1": "Document 4 says that the island situation of the country, combined with the command of the seas, secures our territory from invasion or annoyance by any other power.",
+        "2": "In his account of the factory system, Andrew Ure wrote that Britain's insular situation, combined with the command of the seas, secures our territory from invasion (Doc 4).",
+        "3": "In his history of the cotton manufacture, Edward Baines wrote that Britain's insular situation, combined with the command of the seas, secures our territory from invasion (Doc 4).",
+        "4": "Edward Baines understood better than most writers of his time how much Britain's position on the map had to do with the success of its cotton factories (Doc 4)."
+      },
+      "correct": "3",
+      "hints": [
+        "Whose history is Document 4? Name him and what the book was about.",
+        "Quote the phrase about the command of the seas. The document's own words beat a summary."
+      ],
+      "rationale": "The 'Document 4 says' version quotes the right line and names no writer. Ure's name on it is the wrong witness: Document 8 is his, and it is about steam engines. The last sentence credits Baines with an insight and quotes none of it, so there is nothing to mark."
+    },
+    {
+      "id": "du-05",
+      "stem": "You are using Document 8 as evidence that steam engines created work beyond the factory itself. Which sentence calls your witness properly?",
+      "options": {
+        "1": "Document 8 says that steam engines create a vast demand for fuel and call into employment multitudes of miners, engineers, ship-builders and sailors, and cause canals and railways.",
+        "2": "In his own account of inventing the power loom, Edmund Cartwright wrote that steam engines create a vast demand for fuel and call multitudes of miners and engineers into employment (Doc 8).",
+        "3": "Andrew Ure was convinced that the factory system was good for Britain, and the range of work that steam power created is one of the strongest parts of the case he makes (Doc 8).",
+        "4": "In his book praising the factory system, Andrew Ure wrote that steam engines create a vast demand for fuel and call into employment multitudes of miners, engineers and sailors (Doc 8)."
+      },
+      "correct": "4",
+      "hints": [
+        "Who wrote Document 8, and what was his book arguing?",
+        "For top marks, say what he wanted readers to think. A witness with a reason to say this is worth flagging."
+      ],
+      "rationale": "'Document 8 says' has the whole list and no witness. Cartwright's name belongs to Document 7 and to a loom, not to this. The last sentence describes Ure's argument instead of quoting it, and a summary is not evidence. For top marks this one also wants why he wrote it: a book praising the factory system is not a neutral witness."
+    }
+  ]
+}

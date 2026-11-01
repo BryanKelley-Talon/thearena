@@ -1,0 +1,29 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-30 14:53 EDT by Will (global10r-curriculum). Wording: BK's yes 2026-10-30 14:42 EDT.",
+  "_status": "DRAFT. To Danny's readers, then BK, then Josh. NOT APPROVED, NOT LIVE.",
+  "_shape": "Levels 1-4 only. No Level 5: the cold rep is one per casefile and Casefile A's is Historical Context's (RULED BK 2026-10-27 11:05).",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own documents, What You Need to Know and day questions (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "DU",
+  "skill_label": "Document Use",
+  "counts_for": null,
+  "arena_scores": false,
+  "practice_only": true,
+  "level": 4,
+  "type": "guided_write",
+  "_activity": "Document 6: laissez faire, in your own witness sentence",
+  "source_document": "Document 6 - an introduction to a re-publication of Adam Smith's The Wealth of Nations",
+  "source_citation": "Source: Introduction to a re-publication of Adam Smith's The Wealth of Nations, likely written by Martin Perry in 2013",
+  "source_text": "The Wealth of Nations carries the important message of laissez faire, which means that the government should intervene as little as possible in economic affairs and leave the market to its own devices. It advocates the liberation of economic production from all limiting regulation in order to benefit the people . . .",
+  "prompt": "Call your witness: use Document 6 to back up a point about how Britain's government treated business. [1]    Write one sentence. Name who wrote it and when, then the evidence, then the number.",
+  "sentence_starter": "In [year], [who] [wrote / said / showed] that ___ (Doc __).",
+  "checklist": [
+    "Did you name who wrote it, and in what year?",
+    "Did you quote the document's own words, or put them in your own words?",
+    "Did you put the document number at the end?"
+  ],
+  "model_response": "In 2013, the introduction to a re-publication of The Wealth of Nations explained that the book carries the message of laissez faire: that the government should intervene as little as possible in economic affairs (Doc 6).",
+  "_authorship_note": "Document 6's author is New Visions' own attribution - its source line reads 'likely written by Martin Perry in 2013'. The model deliberately does NOT assert Perry by name: it calls the witness by what it is and when, which is the ruled move for a source whose author is not certain. Do not 'improve' it by adding his name.",
+  "submitted_to_teacher": false
+}

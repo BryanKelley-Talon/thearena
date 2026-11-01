@@ -281,7 +281,11 @@ function Room({ era, onOpenPaper, paperOpen, onClose, words, nowLabel }) {
 export function ThrowbackView({ course, data, unitNumbers, year, onPickYear, words }) {
   const eras = useMemo(() => (data?.eras || []), [data])
   const [paperOpen, setPaperOpen] = useState(false)
-  const era = useMemo(() => eras.find(e => String(e.year) === String(year)) || null, [eras, year])
+  // An era answers to its year or to its id. The pre-contact card has no year (Josh,
+  // 2026-10-31, on BK's 15:34 ruling that it rides Throwback rather than growing a second
+  // card system); every dated era still matches on its year exactly as it always has.
+  const eraKey = e => String(e.year ?? e.id)
+  const era = useMemo(() => eras.find(e => eraKey(e) === String(year) || String(e.id) === String(year)) || null, [eras, year])
   useEffect(() => { setPaperOpen(false) }, [year])
   if (data === null) return <div className="loading">{words.opening}</div>
   if (!data || !eras.length) return null
@@ -293,9 +297,9 @@ export function ThrowbackView({ course, data, unitNumbers, year, onPickYear, wor
         {eras.map(e => {
           const open = isOpen(e, unitNumbers)
           return open ? (
-            <button key={e.id} type="button" className={`tb-year${String(e.year) === String(year) ? ' on' : ''}`}
-                    onClick={() => onPickYear(String(e.year))}>
-              <span className="tb-year-n">{e.year}</span>
+            <button key={e.id} type="button" className={`tb-year${eraKey(e) === String(year) ? ' on' : ''}`}
+                    onClick={() => onPickYear(eraKey(e))}>
+              <span className="tb-year-n">{e.year ?? e.label}</span>
               {e.label && String(e.label) !== String(e.year) && <span className="tb-year-label">{e.label}</span>}
             </button>
           ) : (

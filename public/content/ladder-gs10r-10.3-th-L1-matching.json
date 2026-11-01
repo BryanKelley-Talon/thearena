@@ -1,0 +1,97 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-30 14:53 EDT by Will (global10r-curriculum). Wording: BK's yes 2026-10-30 14:42 EDT.",
+  "_status": "DRAFT. To Danny's readers, then BK, then Josh. NOT APPROVED, NOT LIVE.",
+  "_shape": "Levels 1-4 only. No Level 5: the cold rep is one per casefile and Casefile A's is Historical Context's (RULED BK 2026-10-27 11:05).",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own documents, What You Need to Know and day questions (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "counts_for": null,
+  "arena_scores": false,
+  "practice_only": true,
+  "level": 1,
+  "type": "matching",
+  "_activity": "Thesis, restatement or fact: Day 2's question",
+  "intro": "Day 2's question: Why did the Industrial Revolution start in Great Britain and not somewhere else?  Each card is a student's one-sentence answer. Sort each one by what it actually is. Pick a card, then pick its pile.",
+  "left": [
+    {
+      "key": "a",
+      "label": "The Industrial Revolution started in Great Britain because Britain had coal and iron ore, rivers for power, and ports that brought raw materials in and sent goods out.",
+      "hints": [
+        "Does it answer the question, and does it give a reason?",
+        "Look for the word because, then check that something real follows it."
+      ]
+    },
+    {
+      "key": "b",
+      "label": "Great Britain was the country where the Industrial Revolution started, and it began there before it began in any other country in Europe or anywhere else.",
+      "hints": [
+        "Does this tell you anything the question did not already tell you?",
+        "Turn the question around and you get this sentence."
+      ]
+    },
+    {
+      "key": "c",
+      "label": "The Industrial Revolution began in Britain around 1760, and from there it spread to Europe and the United States, and later to Japan.",
+      "hints": [
+        "Is this an argument, or a piece of information?",
+        "Could anyone disagree with this sentence? If not, it is not a claim."
+      ]
+    },
+    {
+      "key": "d",
+      "label": "The Industrial Revolution started in Great Britain and not somewhere else because of the reasons that made Britain different from the other countries at the time.",
+      "hints": [
+        "It promises reasons. Does it give one?",
+        "Count the reasons in it."
+      ]
+    },
+    {
+      "key": "e",
+      "label": "The Industrial Revolution started in Great Britain because Britain had better luck than the other countries of Europe during those years.",
+      "hints": [
+        "Does it answer the question? Does it give a reason?",
+        "Now ask whether that reason is one you could prove from a document."
+      ]
+    },
+    {
+      "key": "f",
+      "label": "Britain is an island with many ports, and its navy controlled the seas during the years when its factories were growing fastest.",
+      "hints": [
+        "Is there a claim in here, or only a fact?",
+        "This sentence would be true whether or not Britain industrialized first."
+      ]
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "A THESIS  -  it answers the question and names a reason"
+    },
+    {
+      "key": "2",
+      "label": "RESTATES THE QUESTION  -  it says the question back without answering it"
+    },
+    {
+      "key": "3",
+      "label": "A FACT, NOT A CLAIM  -  true, but it does not argue anything"
+    }
+  ],
+  "correct": {
+    "a": "1",
+    "b": "2",
+    "c": "3",
+    "d": "2",
+    "e": "1",
+    "f": "3"
+  },
+  "rationale": {
+    "a": "A thesis. It answers the question, and the reason is something you could point to in a document: coal, iron ore, rivers, ports.",
+    "b": "Every word is true and none of it answers anything. The question already told you it started in Britain. A thesis has to say why.",
+    "c": "A date and a direction of spread, both straight out of What You Need to Know. Neither one argues that Britain was first for a reason.",
+    "d": "It has a because and it still names nothing. 'The reasons that made Britain different' is the question in a coat: saying reasons exist is not naming one.",
+    "e": "By shape this is a thesis: it answers the question and it gives a because. It would still score low, because 'better luck' names nothing you could point to on any page in this casefile. A claim needs a reason a reader can check.",
+    "f": "True, and straight out of What You Need to Know. It becomes a thesis only when you use it AS a reason: Britain industrialized first because its ports and its navy gave it trade no rival had."
+  }
+}

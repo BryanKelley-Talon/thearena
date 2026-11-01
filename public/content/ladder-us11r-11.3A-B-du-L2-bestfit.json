@@ -1,0 +1,70 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "B - the Group door (revising A's own bundle)",
+  "_built": "2026-10-30 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_B_groupdoor.py",
+  "_blessed": "BK 2026-10-30 10:33 EDT (\"I like it\") on 113A_groupdoor_ladders_draft.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "DU",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "group_door_note": "One ladder, five starts (BK, via Josh's memo). Group n's door opens this ladder at Level n. The printed casefile (B1 cover sheet) is identical for every Group.",
+  "step": 2,
+  "_activity": "Pick the sentence that calls its witness first",
+  "type": "mc_bestfit",
+  "intro": "Pick the sentence that names its witness and the year before using the evidence -- never “Doc __ says.”",
+  "items": [
+    {
+      "id": "du113A-01",
+      "doc": {
+        "source_document": "Document 2 - Henry Mellen, 1808, Massachusetts Historical Society Broadsides",
+        "source_text": "Our ships all in motion,\nOnce whiten'd the ocean\nThey sail'd and return'd with a Cargo;\nNow doom'd to decay\nThey are fallen a prey,\nTo Jefferson, worms, and EMBARGO.",
+        "context_line": "A song from 1808, after the Embargo Act stopped American ships from trading overseas.",
+        "_pointer": "NYS Regents, Jan 2024, Q5–6 (ushg-12024-examw.pdf p. 3), word for word; crop unit03-0124-mc05.png. Context line is ours."
+      },
+      "stem": "Which sentence best uses Document 2 as evidence?",
+      "options": {
+        "1": "In an 1808 broadside, Henry Mellen blamed Jefferson by name for ships left to “decay” and “fallen a prey... to Jefferson, worms, and EMBARGO”",
+        "2": "Doc 2 says the ships decayed because the embargo kept them tied up in port with nowhere left to go and sail to",
+        "3": "The embargo of 1807 was bad for New England shipping and for the song's own unnamed author, among many others"
+      },
+      "correct": "1",
+      "reason": "Option 2 is exactly the 'Doc __ says' pattern to avoid, even with more words around it. Option 3 drops the witness's name and his actual words."
+    },
+    {
+      "id": "du113A-02",
+      "doc": {
+        "source_document": "Document 4 - President Andrew Jackson, veto message on the Bank of the United States, July 10, 1832",
+        "source_text": "It is to be regretted that the rich and powerful too often bend the acts of government to their selfish purposes. Distinctions in society will always exist under every just government. Equality of talents, of education, or of wealth can not be produced by human institutions. In the full enjoyment of the gifts of Heaven and the fruits of superior industry, economy, and virtue, every man is equally entitled to protection by law; but when the laws undertake to add to these natural and just advantages artificial distinctions, to grant titles, gratuities [gifts], and exclusive privileges, to make the rich richer and the potent [powerful] more powerful, the humble members of society—the farmers, mechanics [skilled workers], and laborers—who have neither the time nor the means of securing like favors to themselves, have a right to complain of the injustice of their Government. . . .",
+        "_pointer": "Avalon Project, Yale Law School, avalon.law.yale.edu/19th_century/ajveto01.asp, checked segment by segment 2026-10-15 (the page prints single hyphens for the dashes). Bracketed glosses ours. The map v1 listed Jackson's veto from last year's 3A; this excerpt is ours, from Avalon (D-U2)."
+      },
+      "stem": "Which sentence best uses Document 4 as evidence?",
+      "options": {
+        "1": "In his 1832 veto message, Jackson warned that laws built for “the rich and powerful” gave “farmers, mechanics, and laborers... a right to complain”",
+        "2": "Jackson vetoed the Bank's charter in 1832, around the same time he was running for re-election as president against Henry Clay",
+        "3": "Doc 4 talks about rich and poor people and who the government's own laws end up helping the most out of everyone"
+      },
+      "correct": "1",
+      "reason": "Option 2 has real facts but no witness-and-evidence pairing at all. Option 3 is still the 'Doc __' pattern, just with more words attached."
+    },
+    {
+      "id": "du113A-03",
+      "doc": {
+        "source_document": "Document 11 - Declaration of Sentiments, Seneca Falls, 1848",
+        "source_text": ". . . The history of mankind is a history of repeated injuries and usurpations [wrongdoings] on the part of man toward woman, having in direct object the establishment of an absolute tyranny over her. To prove this, let facts be submitted to a candid world.\nHe has never permitted her to exercise her inalienable right to the elective franchise.\nHe has compelled her to submit to laws, in the formation of which she had no voice.\nHe has withheld from her rights which are given to the most ignorant and degraded men—both natives and foreigners.\nHaving deprived her of this first right of a citizen, the elective franchise, thereby leaving her without representation in the halls of legislation, he has oppressed her on all sides.\nHe has made her, if married, in the eye of the law, civilly dead.\nHe has taken from her all right in property, even to the wages she earns. . . .",
+        "_pointer": "NYS Regents, Aug 2023, Q9–10 (_PROCESSED/nysed-exams/us-82023-examw.pdf p. 6), word for word; crop unit03-0823-mc09.png."
+      },
+      "stem": "Which sentence best uses Document 11 as evidence?",
+      "options": {
+        "1": "The 1848 Declaration of Sentiments, written at Seneca Falls, charged that a married woman was, “in the eye of the law, civilly dead”",
+        "2": "Doc 11 says women had no rights under the law once they were married to a husband who controlled what they owned",
+        "3": "About 300 women and men met at Seneca Falls, New York, in the summer of 1848 to talk about women's rights"
+      },
+      "correct": "1",
+      "reason": "Option 2 is 'Doc __ says,' just dressed up with more detail. Option 3 names the year and the gathering but drops the document's own evidence."
+    }
+  ],
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "write_it_in": "On your B1 cover sheet, in the casefile."
+}

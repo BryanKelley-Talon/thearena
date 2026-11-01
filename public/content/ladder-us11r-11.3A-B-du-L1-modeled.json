@@ -1,0 +1,30 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "B - the Group door (revising A's own bundle)",
+  "_built": "2026-10-30 by Sam (us11r-curriculum) - skills/arena/build_gauges_us11r_113A_B_groupdoor.py",
+  "_blessed": "BK 2026-10-30 10:33 EDT (\"I like it\") on 113A_groupdoor_ladders_draft.pdf",
+  "_licence": "ORIGINAL. Every fact asserted against skills/u113/words_113A.py at build time.",
+  "skill_line": "DU",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "group_door_note": "One ladder, five starts (BK, via Josh's memo). Group n's door opens this ladder at Level n. The printed casefile (B1 cover sheet) is identical for every Group.",
+  "step": 1,
+  "_activity": "Watch one get built: Jefferson's letter, 1803",
+  "type": "matching",
+  "modeled": true,
+  "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+  "source_document": "Document 1 - Thomas Jefferson, letter to John Breckinridge, August 12, 1803 (adapted)",
+  "source_text": ". . . This treaty [Louisiana Purchase] must of course be laid before both houses, because both have important functions to exercise respecting it. They I presume will see their duty to their country in ratifying & paying for it, so as to secure a good which would otherwise probably be never again in their power. But I suppose they must then appeal to the nation for an additional article to the constitution, approving & confirming an act which the nation had not previously authorised. The constitution has made no provision for our holding foreign territory, still less for incorporating foreign nations into our union. . . .",
+  "_pointer": "NYS Regents, Jan 2025, Q7–8 (_PROCESSED/nysed-exams/ushg-12025-exam.pdf p. 4), word for word; crop STIMULUS_BANK/Unit_03/unit03-0125-mc07.png",
+  "frame": "In [year], [who], [doing what], said/wrote/argued that ___.",
+  "frame_fill": "In an 1803 letter to John Breckinridge, Thomas Jefferson admitted the Constitution “made no provision for our holding foreign territory” -- and bought Louisiana anyway.",
+  "checklist": [
+    "Calls the witness: who and when, before the evidence",
+    "The evidence proves the claim, not just the topic",
+    "No “Doc __ says” anywhere"
+  ],
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "write_it_in": "On your B1 cover sheet, in the casefile."
+}

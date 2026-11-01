@@ -651,6 +651,93 @@
                   "_note_l5": "Josh, 2026-10-30. Danny cleared the railway-debate L5 2026-10-27 (md5 567f0d1d8e20dad6544d52163e979f10) and the 2026-10-30 restamp (md5 932c00e1a5a9489ad5acca0dbcf0982b; model_opens_on added, status line and model note only). It replaces the old enrichment draft fad82cd9..., removed. BK 2026-10-30 14:08 via Will 14:09: a Level 5 model opens on the unit's Data Day, Mon 11/30. The hold-models script reads the date from this line, not from the content file."
                 }
               ]
+            },
+            {
+              "skill": "DU",
+              "_source": "Will (global10r-curriculum), 10.3 Casefile A Document Use and Thesis ladders, Levels 1-4. BLESSED by BK 2026-10-31 09:42, cleared by Danny 2026-10-31 08:55 (one cold reader, the ruled count for a practice rung -- 8 packs, 0 fixes, 0 unsupported). File still carries Will's own 10/30 14:53 _status line (\"DRAFT...NOT APPROVED, NOT LIVE\") -- stale, written before the 10/31 clearance; Danny's and BK's later word governs, same as HC's L2 stale-status precedent (2026-10-27). md5s verified byte for byte against Will's 09:45 table before port; nothing edited. practice_only true, counts_for null on every level (none of this is scored). Gated with Historical Context behind the same Fri 11/6 open date per BK 09:16 via Will (\"Opens when Casefile A comes back\" -- the date is machinery, the label is what a kid reads); HC's own four already-live levels are UNCHANGED by this port and are not yet carrying this gate -- flagged back to Josh, not applied here without a separate yes, since it would re-lock content already open to kids. Ported by Josh 2026-10-31.",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Document Use",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L1-matching.json",
+                  "published": true,
+                  "opens_on": "2026-11-06",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Document Use",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L2-bestfit.json",
+                  "published": true,
+                  "opens_on": "2026-11-06",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Document Use",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_on": "2026-11-06",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Document Use",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_on": "2026-11-06",
+                  "opens_label": "Opens when Casefile A comes back"
+                }
+              ]
+            },
+            {
+              "skill": "TH",
+              "_source": "Will (global10r-curriculum), 10.3 Casefile A Document Use and Thesis ladders, Levels 1-4. BLESSED by BK 2026-10-31 09:42, cleared by Danny 2026-10-31 08:55 (one cold reader, the ruled count for a practice rung -- 8 packs, 0 fixes, 0 unsupported). File still carries Will's own 10/30 14:53 _status line (\"DRAFT...NOT APPROVED, NOT LIVE\") -- stale, written before the 10/31 clearance; Danny's and BK's later word governs, same as HC's L2 stale-status precedent (2026-10-27). md5s verified byte for byte against Will's 09:45 table before port; nothing edited. practice_only true, counts_for null on every level (none of this is scored). Gated with Historical Context behind the same Fri 11/6 open date per BK 09:16 via Will (\"Opens when Casefile A comes back\" -- the date is machinery, the label is what a kid reads); HC's own four already-live levels are UNCHANGED by this port and are not yet carrying this gate -- flagged back to Josh, not applied here without a separate yes, since it would re-lock content already open to kids. Ported by Josh 2026-10-31.",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Thesis",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L1-matching.json",
+                  "published": true,
+                  "opens_on": "2026-11-06",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Thesis",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L2-bestfit.json",
+                  "published": true,
+                  "opens_on": "2026-11-06",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Thesis",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_on": "2026-11-06",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Thesis",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_on": "2026-11-06",
+                  "opens_label": "Opens when Casefile A comes back"
+                }
+              ]
             }
           ],
           "casefiles": [
@@ -1896,12 +1983,17 @@
             "opens_label": "Mon 12/7",
             "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Sam's signed unit calendar (words_113A.UNIT_CAL, BK 10/24 14:12), 'Data Day · everything back' Mon 12/7. Josh's pick of Data Day over the Part I day, on BK's proof."
           },
-          "paper": {
-            "A": "purple",
-            "B": "blue",
-            "C": "gold"
-          },
-          "_paper_source": "Sam 2026-10-30 14:25: 'A · Purple, B · Blue, C · Golden'. 'Golden' read as the Arena's gold (goldenrod, 'Gold Copy', BK 10/13) - Josh's reading, asked back to Sam. Moves to doc_assist.paper when 11.3A's Doc Assist pack is ported."
+          "doc_assist": {
+            "published": true,
+            "content_ref": "content/docassist-us11r-11.3A.json",
+            "_note": "Josh, 2026-10-31 13:1x. LIVE. Built from Sam's da_113A.py, 503 checks 0 bad. Document 9's image_alt is Sam's blessed wording (sam-to-josh-2026-10-31-1109-DocAssistA-doc9-alt-text-BLESSED.md, BK blessed it); describe carries the same string, which is exactly what the Danny-cleared 11.2 pack does for both of its pictures (2/2 byte-identical) - no new words were written by this desk. Gate: 0 fail. Awaiting BK's yes in chat before it pushes.",
+            "paper": {
+              "A": "purple",
+              "B": "blue",
+              "C": "gold"
+            },
+            "_paper_source": "Sam 2026-10-30 14:25: 'A · Purple, B · Blue, C · Golden'. 'Golden' read as the Arena's gold (goldenrod, 'Gold Copy', BK 10/13) - Josh's reading, asked back to Sam. Moves to doc_assist.paper when 11.3A's Doc Assist pack is ported."
+          }
         }
       ],
       "atlas": [
@@ -1914,8 +2006,8 @@
         {
           "slug": "atlas-us11r-11.3",
           "content_ref": "content/atlas-us11r-11.3.json",
-          "published": false,
-          "_note": "Josh, 2026-10-27. Unit 11.3A's six maps. HELD DARK, deliberately: Danny's 2026-10-25 clearance covers this file's bytes (md5 ddf242fb55fb7d4a308bb854cdc718a3) and ONE image, 11.3-A-01, which he viewed himself. The other five images (02-06) sit in Sam's WORK/, which Danny said outright on 2026-10-24 21:04 is outside his read tier, so five student-facing maps have never been read by anyone. All six maps are status open in the file, so publishing this ref would put five uncleared images in front of a kid and break the other five on disk besides. The gate agrees: with the ref published it fails each missing image; dark, it warns. Flip to published when Danny clears 02-06 and the images land. Nothing here is edited - the file is byte for byte as cleared."
+          "published": true,
+          "_note": "Josh, 2026-10-27, updated 2026-10-31. Unit 11.3A's six maps. Held dark until Danny's imagery read caught up; cleared in full by Danny 2026-10-27 13:39 (\"All six Atlas maps for 11.3A are now clear -- go live\"), covering maps 02-06 beyond the 2025-10-25 md5 ddf242fb55fb7d4a308bb854cdc718a3 clearance of map 01. File is unchanged, byte for byte as cleared -- only this container's published flag moved."
         }
       ],
       "writing_lab": [
@@ -2024,6 +2116,53 @@
         "content_ref": "content/arena-unit0-six-skills.json",
         "culture_ref": "content/unit0-be-a-hawk-culture-bank-LOCKED-2026-10-03.json",
         "_note": "Unit 0 (Leo's order 2026-10-03 15:17). Skills: Sam's arena-unit0 brief, co-signed by Will (BK ruled 15:24/15:31/15:45), ported byte for byte; each room shows only its own entries. Be a Hawk: BK and Leo's bank, LOCKED 15:47, byte for byte. Last card in Units; link #/<course>/0."
+      },
+      "scene": {
+        "published": false,
+        "preview_ok": true,
+        "span": {
+          "from": 1492,
+          "to": 2026,
+          "before": true
+        },
+        "content_refs": {
+          "platform": "content/platform-us11r.json",
+          "threads_scene": "content/scene-threads-us11r.json"
+        },
+        "_note": "Josh, 2026-10-31. MECHANICS ONLY and DARK TO STUDENTS. Built ahead of content on BK's word in chat, from Leo's order 2026-10-31 10:13 (In/leo-order-2026-10-31-1013-the-scene-josh-mechanics-lead.md) and In/the-scene-brief-2026-10-31.pdf. Opens for a reviewer at ?preview=scene, the way Throwback shipped. The Platform's party eras are Sam's to write and Danny's to clear - platform-us11r.json does not exist yet and its toggle reads Coming until it does. THE FEDERAL DEFICIT LAYER WAS BUILT AND THEN CUT on BK's call 2026-10-31 11:37: the annual federal record only starts at 1901 so it could only ever be a fragment on this span, and nominal dollars across 230 years is a concept problem for an 11th grader. It was NOT folded into Thread 3 - deficit size does not measure government size and the room does not assert a contested claim. The sourced series is archived at scripts/packs/federal-deficit-us-ARCHIVED-2026-10-31.json with its sourcing account alongside; if it returns it returns as a share of the economy on a linear axis. Thread heights are read from Sam's already-cleared stops in threads-us11r.json until Sam sends per-era numbers, and each thread now swings above and below its own resting line (BK 11:37). The span is a container decision and BK's to change. THREAD HEIGHTS now come from scene-threads-us11r.json, read mechanically out of Sam's own US11_Regents_Threads.docx grounding document (BK handed it over 2026-10-31 13:08) - every era he dates is a window, every event he dates is a point, no judgement added, _danny false. The timeline past where the class has got is drawn receding into the distance and comes forward as units are taught (BK 13:10); the frontier is scene.taught_through if set, otherwise the last openable Throwback era, which moves on its own. PRE-CONTACT (BK 2026-10-31 15:10 and 15:34): the axis now starts at contact, 1492, and everything before it is a ZONE at the left of the spine - set apart, no ticks, labelled not to scale - because twelve thousand years of Indigenous North America squeezed onto this axis renders as a sliver and the picture ends up saying nothing happened here. A thread's pre-contact level is held flat across the zone, not plotted. Tapping the zone opens a Throwback era with the slug id 'before-contact' rather than a second card system, so the card goes through Danny the same way every other card does; until Sam writes that era the zone is a place and not a button. scene.zone_image takes the vista once BK's art lands and Sam and Danny have checked the depiction - Haudenosaunee / Eastern Woodlands, BK's call 15:34.",
+        "pre_contact_era": "before-contact",
+        "zone_image": {
+          "src": "images/scene/scene-p0-pre-contact.webp",
+          "ground": 0.7413
+        },
+        "surface": [
+          {
+            "from": 1492,
+            "to": 1625,
+            "src": "images/scene/scene-p1-1492-1625.webp",
+            "ground": 0.7395
+          },
+          {
+            "from": 1625,
+            "to": 1760,
+            "src": "images/scene/scene-p2-1625-1760.webp",
+            "ground": 0.9528,
+            "ar": 1.9321
+          },
+          {
+            "from": 1760,
+            "to": 1893,
+            "src": "images/scene/scene-p3-1760-1893.webp",
+            "ground": 0.8129
+          },
+          {
+            "from": 1893,
+            "to": 2026,
+            "src": "images/scene/scene-p4-1893-today.webp",
+            "ground": 0.8129
+          }
+        ],
+        "_art_note": "BK's Gemini run, 2026-10-31 15:49, cropped and converted by Josh. Equal time slices, 133 years each. 'ground' is the measured position of each picture's own horizon, 0-1 down the frame - the panels came back at 74% and 81% and the client places each one by its horizon so the seams line up; do not hand-edit these without re-measuring. The pre-contact card illustration is images/scene/scene-card-pre-contact.webp, for the before-contact Throwback era when Sam writes it. DEPICTION NOT YET CHECKED: Sam and Danny clear it before any of this is in front of a student, per BK 15:34. Panel 2 (1625-1760) was rerolled 2026-10-31 16:00 after the first cut repeated panel 1's sailing ships; the replacement is rider, pack horses, farm cart and water mill, and its horizon sits at 88.3% rather than the 74% of its neighbours - which the client handles, because it places every panel by its own measured horizon. Panel 2 was also trimmed at the bottom: its ground came back as a solid gold slab where its neighbours have a thin line, which read as a raised block in the run. Each panel now carries its own 'ar' (width/height) so a trimmed panel still scales correctly - the aspect used to be a constant hidden in the client."
       }
     }
   ],

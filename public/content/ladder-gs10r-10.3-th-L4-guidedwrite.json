@@ -1,0 +1,30 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3 - The Industrial Revolution in Great Britain",
+  "_built": "2026-10-30 14:53 EDT by Will (global10r-curriculum). Wording: BK's yes 2026-10-30 14:42 EDT.",
+  "_status": "DRAFT. To Danny's readers, then BK, then Josh. NOT APPROVED, NOT LIVE.",
+  "_shape": "Levels 1-4 only. No Level 5: the cold rep is one per casefile and Casefile A's is Historical Context's (RULED BK 2026-10-27 11:05).",
+  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own documents, What You Need to Know and day questions (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+  "skill": "TH",
+  "skill_label": "Thesis",
+  "counts_for": null,
+  "arena_scores": false,
+  "practice_only": true,
+  "level": 4,
+  "type": "guided_write",
+  "_activity": "Day 5's question: write the claim",
+  "source_document": "Document 9 - the Bridgewater Canal, opened 1761",
+  "source_citation": "Sources: Encyclopaedia Britannica, “Bridgewater Canal”; Historic UK, “The Bridgewater Canal” (adapted)",
+  "source_text": "The Bridgewater Canal opened in 1761. It carried coal about 10 miles from the mines at Worsley to Manchester. One horse could pull a canal boat carrying about 30 tons, more than ten times what a horse and cart could carry. By 1762, the price of coal in Manchester had fallen by about half.",
+  "prompt": "Day 5's question: How did canals and railways help Britain industrialize? Write your claim in one sentence. [1]    Answer the question, then say why. Do not say the question back to me.",
+  "sentence_starter": "Canals and railways helped Britain industrialize because ___.",
+  "checklist": [
+    "Did you answer the question, instead of saying it back?",
+    "Did you name a reason - something you could point to in a document?",
+    "Is it one sentence that could be the claim in your 30-Second Case?"
+  ],
+  "model_response": "Canals and railways helped Britain industrialize because they made moving coal and cotton far cheaper and faster than packhorses or river boats, which let factories buy raw materials and sell finished goods farther away.",
+  "_checklist_note": "W.TH_CHECKS is BK's column under the Thesis gauge on the scoring page, and the ruled rule is BK's checks only, no kid self-check. These three ask the same things in student-facing words. Do not reprint TH_CHECKS here.",
+  "_document_note": "Document 9 rides on this rung so the activity carries its document (RULED BK 2026-10-27 10:18). It is attached inline, the route Josh confirmed is compliant, and the prompt's words are unchanged from BK's yes. TH L1, L2 and L3 name no document and need none - flagged to Josh.",
+  "submitted_to_teacher": false
+}

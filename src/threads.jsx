@@ -29,6 +29,10 @@ const COLOR = {
   t1: '#C3CCDA', 't1-aa': '#5B9BD5', 't1-women': '#B08AD6', 't1-native': '#D08A5F',
   t2: '#3FB8AF', t3: '#7BC96F', t4: '#E07BB0', t5: '#CFC36A', t6: '#56C6E8', t7: '#E8A0A2',
 }
+// THE SCENE draws the same seven threads as waves instead of lines on a map (Leo's order
+// 2026-10-31). One colour table serves both rooms, so a thread cannot be teal here and
+// green there. — Josh, 2026-10-31
+export const THREAD_COLOR = COLOR
 const UNITS = ['11.1', '11.2', '11.3', '11.4', '11.5', '11.6', '11.7', '11.8', '11.9', '11.10']
 
 // map-stop-shape v1 (Sam + Will 10/5, Josh confirmed 21:29; BK approved Sam's v2 23:12): a stop
