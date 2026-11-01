@@ -615,7 +615,9 @@
                   "type": "matching",
                   "label": "Historical Context",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L1-matching.json",
-                  "published": true
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 },
                 {
                   "level": 2,
@@ -624,21 +626,27 @@
                   "content_ref": "content/ladder-gs10r-10.3-hc-L2-bestfit.json",
                   "published": true,
                   "docs_from_casefile": "A",
-                  "_note_l2": "Josh, 2026-10-27. Ported byte for byte (md5 624066ac723dc0ad9145473817084994, exactly as Danny cleared it 09:25 — this file is NOT edited). Its five stems each open by naming a casefile document (5, 2, 9, 10, 8), which failed the content gate on BK's 2026-09-25 rule: no task without its document. BK ruled 2026-10-27 10:18: 'no document pointing if they dont have a document ... always add a document for the activity so a kid without paper docs can still get something from it.' So docs_from_casefile resolves each stem's Document N from this unit's own blessed Doc Assist pack at render, text and source line byte for byte, and shows it above the question. Nothing is authored and no content file diverges from its clearance. Same mechanism the shell already uses to show L4's source above L5 (openLevel, BK's same rule). The gate verifies every referenced document number exists in the pack."
+                  "_note_l2": "Josh, 2026-10-27. Ported byte for byte (md5 624066ac723dc0ad9145473817084994, exactly as Danny cleared it 09:25 — this file is NOT edited). Its five stems each open by naming a casefile document (5, 2, 9, 10, 8), which failed the content gate on BK's 2026-09-25 rule: no task without its document. BK ruled 2026-10-27 10:18: 'no document pointing if they dont have a document ... always add a document for the activity so a kid without paper docs can still get something from it.' So docs_from_casefile resolves each stem's Document N from this unit's own blessed Doc Assist pack at render, text and source line byte for byte, and shows it above the question. Nothing is authored and no content file diverges from its clearance. Same mechanism the shell already uses to show L4's source above L5 (openLevel, BK's same rule). The gate verifies every referenced document number exists in the pack.",
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 },
                 {
                   "level": 3,
                   "type": "sentence_build",
                   "label": "Historical Context",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L3-sentencebuild.json",
-                  "published": true
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 },
                 {
                   "level": 4,
                   "type": "guided_write",
                   "label": "Historical Context",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L4-guidedwrite.json",
-                  "published": true
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 },
                 {
                   "level": 5,
@@ -647,10 +655,13 @@
                   "content_ref": "content/ladder-gs10r-10.3-hc-L5-cold.json",
                   "published": true,
                   "cold": true,
-                  "model_opens_on": "2026-11-30",
-                  "_note_l5": "Josh, 2026-10-30. Danny cleared the railway-debate L5 2026-10-27 (md5 567f0d1d8e20dad6544d52163e979f10) and the 2026-10-30 restamp (md5 932c00e1a5a9489ad5acca0dbcf0982b; model_opens_on added, status line and model note only). It replaces the old enrichment draft fad82cd9..., removed. BK 2026-10-30 14:08 via Will 14:09: a Level 5 model opens on the unit's Data Day, Mon 11/30. The hold-models script reads the date from this line, not from the content file."
+                  "_note_l5": "Josh, 2026-10-30. Danny cleared the railway-debate L5 2026-10-27 (md5 567f0d1d8e20dad6544d52163e979f10) and the 2026-10-30 restamp (md5 932c00e1a5a9489ad5acca0dbcf0982b; model_opens_on added, status line and model note only). It replaces the old enrichment draft fad82cd9..., removed. BK 2026-10-30 14:08 via Will 14:09: a Level 5 model opens on the unit's Data Day, Mon 11/30. The hold-models script reads the date from this line, not from the content file.",
+                  "opens_at": "A_BACK",
+                  "opens_label": "Coming on {day}",
+                  "model_opens_at": "DATA_DAY"
                 }
-              ]
+              ],
+              "_dates": "Will 2026-10-31 19:05 (BK 19:01 'Follow the timing'): HC L1-L4 lock with DU and TH to Fri 11/6, 'Opens when Casefile A comes back'; L5 opens the same day and reads 'Coming on <day>' until then, never naming its document; its model still opens Data Day."
             },
             {
               "skill": "DU",
@@ -662,9 +673,9 @@
                   "label": "Document Use",
                   "content_ref": "content/ladder-gs10r-10.3-du-L1-matching.json",
                   "published": true,
-                  "opens_on": "2026-11-06",
                   "opens_label": "Opens when Casefile A comes back",
-                  "docs_from_casefile": "A"
+                  "docs_from_casefile": "A",
+                  "opens_at": "A_BACK"
                 },
                 {
                   "level": 2,
@@ -672,9 +683,9 @@
                   "label": "Document Use",
                   "content_ref": "content/ladder-gs10r-10.3-du-L2-bestfit.json",
                   "published": true,
-                  "opens_on": "2026-11-06",
                   "opens_label": "Opens when Casefile A comes back",
-                  "docs_from_casefile": "A"
+                  "docs_from_casefile": "A",
+                  "opens_at": "A_BACK"
                 },
                 {
                   "level": 3,
@@ -682,9 +693,9 @@
                   "label": "Document Use",
                   "content_ref": "content/ladder-gs10r-10.3-du-L3-sentencebuild.json",
                   "published": true,
-                  "opens_on": "2026-11-06",
                   "opens_label": "Opens when Casefile A comes back",
-                  "docs_from_casefile": "A"
+                  "docs_from_casefile": "A",
+                  "opens_at": "A_BACK"
                 },
                 {
                   "level": 4,
@@ -692,8 +703,8 @@
                   "label": "Document Use",
                   "content_ref": "content/ladder-gs10r-10.3-du-L4-guidedwrite.json",
                   "published": true,
-                  "opens_on": "2026-11-06",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "opens_at": "A_BACK"
                 }
               ]
             },
@@ -707,8 +718,8 @@
                   "label": "Thesis",
                   "content_ref": "content/ladder-gs10r-10.3-th-L1-matching.json",
                   "published": true,
-                  "opens_on": "2026-11-06",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "opens_at": "A_BACK"
                 },
                 {
                   "level": 2,
@@ -716,8 +727,8 @@
                   "label": "Thesis",
                   "content_ref": "content/ladder-gs10r-10.3-th-L2-bestfit.json",
                   "published": true,
-                  "opens_on": "2026-11-06",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "opens_at": "A_BACK"
                 },
                 {
                   "level": 3,
@@ -725,8 +736,8 @@
                   "label": "Thesis",
                   "content_ref": "content/ladder-gs10r-10.3-th-L3-sentencebuild.json",
                   "published": true,
-                  "opens_on": "2026-11-06",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "opens_at": "A_BACK"
                 },
                 {
                   "level": 4,
@@ -734,8 +745,8 @@
                   "label": "Thesis",
                   "content_ref": "content/ladder-gs10r-10.3-th-L4-guidedwrite.json",
                   "published": true,
-                  "opens_on": "2026-11-06",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "opens_at": "A_BACK"
                 }
               ]
             }
@@ -754,14 +765,14 @@
             {
               "id": "B",
               "label": "Cross-Examination",
-              "opens_on": "2026-11-09",
-              "opens_label": "Mon 11/9",
+              "opens_label": "{day}",
               "skills": [
                 "DU",
                 "HC",
                 "TH"
               ],
-              "_source": "Will 2026-10-26 14:55 and 2026-10-30 13:24: B1 Mon 11/9, doors locked until then; B's Group-door gauges are the three A scored. The five Group doors inside B are next week's build."
+              "_source": "Will 2026-10-26 14:55 and 2026-10-30 13:24: B1 Mon 11/9, doors locked until then; B's Group-door gauges are the three A scored. The five Group doors inside B are next week's build.",
+              "opens_at": "B_BEGINS"
             },
             {
               "id": "C",
@@ -775,15 +786,54 @@
                 "TH"
               ],
               "_source": "Will 2026-10-30 14:09: C's first day Tue 11/17; C's gauges all six in Global order EX · OE · DU · EI · HC · TH (plus one essay grade, not a gauge).",
-              "opens_on": "2026-11-17",
-              "opens_label": "Tue 11/17"
+              "opens_label": "{day}",
+              "opens_at": "C_BEGINS"
             }
           ],
           "next_step": {
-            "opens_on": "2026-11-30",
-            "opens_label": "Mon 11/30",
-            "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Will's signed unit calendar (words_103A.UNIT_GLANCE), 'Data Day · everything back' Mon 11/30. Josh's pick of Data Day over the Part I day, on BK's proof."
-          }
+            "opens_label": "{day}",
+            "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Will's signed unit calendar (words_103A.UNIT_GLANCE), 'Data Day · everything back' Mon 11/30. Josh's pick of Data Day over the Part I day, on BK's proof.",
+            "opens_at": "DATA_DAY"
+          },
+          "calendar": {
+            "DAY_0": {
+              "date": "2026-10-28",
+              "text": "Wed 10/28"
+            },
+            "A_BEGINS": {
+              "date": "2026-10-29",
+              "text": "Thu 10/29"
+            },
+            "A_BACK": {
+              "date": "2026-11-06",
+              "text": "Fri 11/6"
+            },
+            "B_BEGINS": {
+              "date": "2026-11-09",
+              "text": "Mon 11/9"
+            },
+            "B_BACK": {
+              "date": "2026-11-18",
+              "text": "Wed 11/18"
+            },
+            "C_BEGINS": {
+              "date": "2026-11-17",
+              "text": "Tue 11/17"
+            },
+            "REVIEW_DAY": {
+              "date": "2026-11-19",
+              "text": "Thu 11/19"
+            },
+            "PART_I": {
+              "date": "2026-11-20",
+              "text": "Fri 11/20"
+            },
+            "DATA_DAY": {
+              "date": "2026-11-30",
+              "text": "Mon 11/30"
+            }
+          },
+          "_calendar_source": "Will's ruled dates, typed here from his memos because Global has no anchor file yet: 10/31 10:05 (windows: Day 0 Wed 10/28, A Thu 10/29, B Mon 11/9, C Tue 11/17, Test Review Thu 11/19, Data Day Mon 11/30), 09:18 (A rungs Fri 11/6, B rungs Wed 11/18, C rungs Mon 11/30; BK 09:16), 10/26 (Part I Fri 11/20 in UNIT_GLANCE). Josh asks Will to send these as his own file, the way Sam does; until then this block is the one edit a snow day needs."
         }
       ],
       "issues": [
@@ -1910,23 +1960,28 @@
                 "EX",
                 "CP"
               ],
-              "_source": "BK 2026-10-24 16:55 ('separate by Casefile, easier to refer to for kids'), 17:13 (the unit's room carries a door per casefile) and 17:15 ('a door shows the gauges its casefile's scoring page scores, no more and no fewer'). Casefile A posts all six US skill lines (CARRY-FORWARD: the four-part bundle yields HC and OE off part 1, TH off part 2, DU and EX off part 3, CP off part 4), so A's door carries all six and the five not yet authored read Coming, the same way an unbuilt gauge has always shown. Casefiles B and C get their doors when their scoring pages are built and Sam sends their code lists - a door to an empty room is the thing BK ruled out, so there is no B or C door today. This is the address Sam's printed Casefile A v17 scoring-page QR already points at: #/us/11.3A/gauges/A."
+              "_source": "BK 2026-10-24 16:55 ('separate by Casefile, easier to refer to for kids'), 17:13 (the unit's room carries a door per casefile) and 17:15 ('a door shows the gauges its casefile's scoring page scores, no more and no fewer'). Casefile A posts all six US skill lines (CARRY-FORWARD: the four-part bundle yields HC and OE off part 1, TH off part 2, DU and EX off part 3, CP off part 4), so A's door carries all six and the five not yet authored read Coming, the same way an unbuilt gauge has always shown. Casefiles B and C get their doors when their scoring pages are built and Sam sends their code lists - a door to an empty room is the thing BK ruled out, so there is no B or C door today. This is the address Sam's printed Casefile A v17 scoring-page QR already points at: #/us/11.3A/gauges/A.",
+              "opens_at": "A_BEGINS",
+              "opens_label": "Opens when Casefile A begins",
+              "_dates": "Sam's 10/31 table (BK 18:09, 19:02): anchor A_BEGINS, the kid reads 'Opens when Casefile A begins'."
             },
             {
               "id": "B",
               "label": "Cross-Examination",
-              "opens_on": "2026-11-13",
-              "opens_label": "Fri 11/13",
+              "opens_label": "Opens when Casefile B begins",
               "skills": [],
-              "_source": "Sam 2026-10-24 13:53: B1 Fri 11/13. Gauge list comes the day B's scoring page is blessed (Sam 2026-10-30 14:25); the door stays locked until both the day and the list are in."
+              "_source": "Sam 2026-10-24 13:53: B1 Fri 11/13. Gauge list comes the day B's scoring page is blessed (Sam 2026-10-30 14:25); the door stays locked until both the day and the list are in.",
+              "opens_at": "B_BEGINS",
+              "_dates": "Sam's 10/31 table (BK 18:09, 19:02): anchor B_BEGINS, the kid reads 'Opens when Casefile B begins'."
             },
             {
               "id": "C",
               "label": "Closing Argument",
               "skills": [],
               "_source": "Sam 2026-10-30 14:25: C1 is Mon 11/23. Gauge list comes the day C's scoring page is blessed; until then the door stays locked (Sam 14:25).",
-              "opens_on": "2026-11-23",
-              "opens_label": "Mon 11/23"
+              "opens_label": "Coming on {day}",
+              "opens_at": "C_BEGINS",
+              "_dates": "Sam's 10/31 table (BK 18:09, 19:02): anchor C_BEGINS, the kid reads 'Coming on <day>'."
             }
           ],
           "number": "11.3A",
@@ -1944,28 +1999,36 @@
                   "type": "matching",
                   "label": "Watch one get built: the Louisiana Purchase, 1803",
                   "content_ref": "content/ladder-us11r-11.3A-hc-L1-modeled.json",
-                  "published": true
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 },
                 {
                   "level": 2,
                   "type": "mc_bestfit",
                   "label": "Pick the scene: 11.3A",
                   "content_ref": "content/ladder-us11r-11.3A-hc-L2-bestfit.json",
-                  "published": true
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 },
                 {
                   "level": 3,
                   "type": "sentence_build",
                   "label": "Build the scene: the Monroe Doctrine, 1823",
                   "content_ref": "content/ladder-us11r-11.3A-hc-L3-sentencebuild.json",
-                  "published": true
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 },
                 {
                   "level": 4,
                   "type": "guided_write",
                   "label": "Write the scene: the embargo song, 1808",
                   "content_ref": "content/ladder-us11r-11.3A-hc-L4-guidedwrite.json",
-                  "published": true
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 },
                 {
                   "level": 5,
@@ -1973,15 +2036,17 @@
                   "label": "On your own: Documents 5 and 6",
                   "content_ref": "content/ladder-us11r-11.3A-hc-L5-cold.json",
                   "published": true,
-                  "cold": true
+                  "cold": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
                 }
               ]
             }
           ],
           "next_step": {
-            "opens_on": "2026-12-07",
-            "opens_label": "Mon 12/7",
-            "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Sam's signed unit calendar (words_113A.UNIT_CAL, BK 10/24 14:12), 'Data Day · everything back' Mon 12/7. Josh's pick of Data Day over the Part I day, on BK's proof."
+            "opens_label": "Opens on Data Day",
+            "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Sam's signed unit calendar (words_113A.UNIT_CAL, BK 10/24 14:12), 'Data Day · everything back' Mon 12/7. Josh's pick of Data Day over the Part I day, on BK's proof.",
+            "opens_at": "DATA_DAY"
           },
           "doc_assist": {
             "published": true,
@@ -1992,8 +2057,83 @@
               "B": "blue",
               "C": "gold"
             },
-            "_paper_source": "Sam 2026-10-30 14:25: 'A · Purple, B · Blue, C · Golden'. 'Golden' read as the Arena's gold (goldenrod, 'Gold Copy', BK 10/13) - Josh's reading, asked back to Sam. Moves to doc_assist.paper when 11.3A's Doc Assist pack is ported."
-          }
+            "_paper_source": "Sam 2026-10-30 14:25: 'A · Purple, B · Blue, C · Golden'. 'Golden' read as the Arena's gold (goldenrod, 'Gold Copy', BK 10/13) - Josh's reading, asked back to Sam. Moves to doc_assist.paper when 11.3A's Doc Assist pack is ported.",
+            "opens_at": "A_BEGINS",
+            "opens_label": "Opens when Casefile A begins",
+            "_dates": "Sam's table: Doc Assist A opens A_BEGINS (Fri 11/6) and never times out after (BK 10/30 15:19)."
+          },
+          "calendar": {
+            "DAY_0": {
+              "date": "2026-11-04",
+              "text": "Wed 11/4"
+            },
+            "A_BEGINS": {
+              "date": "2026-11-06",
+              "text": "Fri 11/6"
+            },
+            "A_IN": {
+              "date": "2026-11-12",
+              "text": "Thu 11/12"
+            },
+            "BRIDGE": {
+              "date": "2026-11-13",
+              "text": "Fri 11/13"
+            },
+            "A_BACK": {
+              "date": "2026-11-16",
+              "text": "Mon 11/16"
+            },
+            "B_BEGINS": {
+              "date": "2026-11-16",
+              "text": "Mon 11/16"
+            },
+            "B_FINALE": {
+              "date": "2026-11-20",
+              "text": "Fri 11/20"
+            },
+            "AFTER_B_SITTING": {
+              "date": "2026-11-23",
+              "text": "Mon 11/23"
+            },
+            "C_BEGINS": {
+              "date": "2026-11-23",
+              "text": "Mon 11/23"
+            },
+            "B_BACK": {
+              "date": "2026-11-30",
+              "text": "Mon 11/30"
+            },
+            "C_IN": {
+              "date": "2026-12-02",
+              "text": "Wed 12/2"
+            },
+            "REVIEW_DAY": {
+              "date": "2026-12-03",
+              "text": "Thu 12/3"
+            },
+            "AFTER_CLE_SITTING": {
+              "date": "2026-12-03",
+              "text": "Thu 12/3"
+            },
+            "PART_I": {
+              "date": "2026-12-04",
+              "text": "Fri 12/4"
+            },
+            "DATA_DAY": {
+              "date": "2026-12-07",
+              "text": "Mon 12/7"
+            },
+            "HC_L5_MODEL": {
+              "date": "2026-12-14",
+              "text": "Mon 12/14"
+            },
+            "BONUS_CLOSE": {
+              "date": "2026-12-11",
+              "text": "Fri 12/11"
+            }
+          },
+          "_calendar_source": "Sam's FINAL anchors, us11r-curriculum/WORK/Unit_03/open-dates-2026-10-31-1903/open-dates.json (md5 561f627ac37644d06e3f0999e75459e5), built by his skills/arena/build_113A_open_dates.py; BK ruled the calendar 10/31 (Sam 19:05). Copied verbatim, date and text only. A snow day: Sam sends a new file, this block is replaced whole. Josh never types a date.",
+          "status_open_at": "DAY_0"
         }
       ],
       "atlas": [
@@ -2163,7 +2303,14 @@
           }
         ],
         "_art_note": "BK's Gemini run, 2026-10-31 15:49, cropped and converted by Josh. Equal time slices, 133 years each. 'ground' is the measured position of each picture's own horizon, 0-1 down the frame - the panels came back at 74% and 81% and the client places each one by its horizon so the seams line up; do not hand-edit these without re-measuring. The pre-contact card illustration is images/scene/scene-card-pre-contact.webp, for the before-contact Throwback era when Sam writes it. DEPICTION NOT YET CHECKED: Sam and Danny clear it before any of this is in front of a student, per BK 15:34. Panel 2 (1625-1760) was rerolled 2026-10-31 16:00 after the first cut repeated panel 1's sailing ships; the replacement is rider, pack horses, farm cart and water mill, and its horizon sits at 88.3% rather than the 74% of its neighbours - which the client handles, because it places every panel by its own measured horizon. Panel 2 was also trimmed at the bottom: its ground came back as a solid gold slab where its neighbours have a thin line, which read as a raised block in the run. Each panel now carries its own 'ar' (width/height) so a trimmed panel still scales correctly - the aspect used to be a constant hidden in the client."
-      }
+      },
+      "current_unit_schedule": [
+        {
+          "at": "DAY_0",
+          "unit": "unit-3"
+        }
+      ],
+      "_current_unit_schedule_note": "Sam 2026-10-31 18:35: current_unit flips to 11.3 on Wed 11/4 (Day 0); 11.2's Data Day Tue 11/3 stays on 11.2."
     }
   ],
   "office": {

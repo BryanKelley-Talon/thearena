@@ -34,6 +34,10 @@ const walk = o => {
         refsIn(x).forEach(r => held.add(r)); labels.push(`${x.label || x.title || x.name || x.id || [...refsIn(x)][0] || '?'} (opens ${x.opens_on})`)
         // Only the open date stays, so the page can still say "opens Oct 23" (the moments card) exactly as it does today.
         const stub = { published: x.published, opens_on: x.opens_on }; if (x.tool) stub.tool = x.tool
+        // A ladder rung keeps its place and the desk's waiting sentence, never its own label (a cold rung's label can name
+        // its document). Josh, 2026-10-31: without these a held rung read the bare "Coming" a kid takes for "not built".
+        if (x.level != null) { stub.level = x.level; if (x.type) stub.type = x.type }
+        if (x.opens_label && !/^[A-Z]$/.test(String(x.id || ''))) stub.opens_label = x.opens_label
         // A casefile door (id A-C) keeps its name and its desk-worded open day: the door shows them locked ("Casefile B · Cross-Examination · Opens Mon 11/9").
         // Its gauge list, documents and refs still leave. (Josh, 2026-10-30: the first full build showed "Casefile undefined".)
         if (/^[A-Z]$/.test(String(x.id || '')) && x.label) { stub.id = x.id; stub.label = x.label; if (x.opens_label) stub.opens_label = x.opens_label }
@@ -47,6 +51,9 @@ const walk = o => {
     // Nothing in the UI reaches it - the app only fetches it behind its own ?preview flag -
     // and it is only ever set on a shape file of Josh's own placeholders, never on a desk's
     // unreviewed student content.
+    // A gated object that isn't an array entry (a unit's doc_assist): it stays, with its date and waiting sentence, and
+    // loses its content until its day. Josh, 2026-10-31, for 11.3A's Doc Assist (Sam's table: A_BEGINS).
+    if (later(o)) { const before = held.size; dropRefs(o); if (held.size > before) labels.push(`${o.label || o.name || o.id || o.opens_label || '?'} (opens ${o.opens_on})`) }
     if (o.published === false && o.preview_ok !== true) { const before = held.size; dropRefs(o); if (held.size > before) labels.push(`${o.label || o.name || o.id || '?'} (unpublished)`) }
     for (const v of Object.values(o)) walk(v)
   }

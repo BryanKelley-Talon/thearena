@@ -27,7 +27,11 @@ const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${St
 // And a door opens only once its scoring page's gauge list exists (Sam 14:25: "Doors can stay locked with their dates
 // until those lists exist"): an open door with nothing behind it is the empty room BK ruled out.
 export const cfOpen = cf => PREVIEW_DOORS || (!!cf && !cf.locked && (cf.skills || []).length > 0 && (!cf.opens_on || todayLocal() >= String(cf.opens_on)))
-const cfLabel = cf => (cf.opens_label && cf.opens_on && todayLocal() < String(cf.opens_on) ? W.opens(cf.opens_label) : W.coming)
+// A desk may send a whole sentence ("Opens when Casefile B begins", "Coming on Mon 11/23": Sam's 11.3A table, BK 10/31 18:09);
+// a bare day ("Mon 11/9", Global's) still reads "Opens Mon 11/9". Josh, 2026-10-31.
+const cfLabel = cf => (cf.opens_label && cf.opens_on && todayLocal() < String(cf.opens_on)
+  ? sayOpens(cf.opens_label) : W.coming)
+const sayOpens = l => (/^(Opens|Coming)\b/.test(l) ? l : W.opens(l))
 // A unit's copy colours: Doc Assist's map when the pack is in, else the unit's own (11.3A's arrived before its pack).
 const paperMap = unit => unit?.doc_assist?.paper || unit?.paper || null
 
@@ -115,13 +119,13 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
           )
         })}
         <DoorCard id="us-door-next" kind="next" title={W.next} sub={W.nextLine} open={nextStepOpen(unit)}
-                  label={nextStepOpen(unit) ? W.open : (unit.next_step?.opens_label ? W.opens(unit.next_step.opens_label) : W.coming)} onOpen={onOpenNextStep} />
+                  label={nextStepOpen(unit) ? W.open : (unit.next_step?.opens_label ? sayOpens(unit.next_step.opens_label) : W.coming)} onOpen={onOpenNextStep} />
       </div>
       <div className="us-cards">
         <DoorCard id="us-card-atlas" kind="side" title={W.atlas} sub={W.atlasLine} open={maps.length > 0}
                   label={maps.length ? W.open : W.coming} onOpen={onOpenAtlas} />
         <DoorCard id="us-card-review" kind="side" title={W.review} sub={W.reviewLine} open={testReviewReady}
-                  label={testReviewReady ? W.open : (unit.test_review?.opens_label ? W.opens(unit.test_review.opens_label) : W.coming)}
+                  label={testReviewReady ? W.open : (unit.test_review?.opens_label ? sayOpens(unit.test_review.opens_label) : W.coming)}
                   onOpen={onOpenTestReview} />
       </div>
     </div>

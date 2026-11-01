@@ -25,7 +25,7 @@
       "stem": "Which sentence best uses Document 2 as evidence?",
       "options": {
         "1": "In an 1808 broadside, Henry Mellen blamed Jefferson by name for ships left to “decay” and “fallen a prey... to Jefferson, worms, and EMBARGO”",
-        "2": "Doc 2 says the ships decayed because the embargo kept them tied up in port with nowhere left to go and sail to",
+        "2": "Doc 2 says the ships decayed because the embargo kept them tied up in port with nowhere left to go and sail to, and so they rotted",
         "3": "The embargo of 1807 was bad for New England shipping and for the song's own unnamed author, among many others"
       },
       "correct": "1",
@@ -42,7 +42,7 @@
       "options": {
         "1": "In his 1832 veto message, Jackson warned that laws built for “the rich and powerful” gave “farmers, mechanics, and laborers... a right to complain”",
         "2": "Jackson vetoed the Bank's charter in 1832, around the same time he was running for re-election as president against Henry Clay",
-        "3": "Doc 4 talks about rich and poor people and who the government's own laws end up helping the most out of everyone"
+        "3": "Doc 4 talks about rich and poor people and who the government's own laws end up helping the most out of everyone in the country"
       },
       "correct": "1",
       "reason": "Option 2 has real facts but no witness-and-evidence pairing at all. Option 3 is still the 'Doc __' pattern, just with more words attached."
@@ -57,7 +57,7 @@
       "stem": "Which sentence best uses Document 11 as evidence?",
       "options": {
         "1": "The 1848 Declaration of Sentiments, written at Seneca Falls, charged that a married woman was, “in the eye of the law, civilly dead”",
-        "2": "Doc 11 says women had no rights under the law once they were married to a husband who controlled what they owned",
+        "2": "Doc 11 says women had no rights under the law once they were married to a husband who controlled what they owned and earned",
         "3": "About 300 women and men met at Seneca Falls, New York, in the summer of 1848 to talk about women's rights"
       },
       "correct": "1",

@@ -39,6 +39,11 @@ const ENRICH_OK = new Set()   // enrichment files whose ladder has an L4 source 
 const DOCS_FROM = new Map()   // ladder file -> Set of document numbers the shell can show
 try {
   const m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8'))
+  // Anchors resolve first, so every check below reads the dates the page will (src/calendar.js). An anchor that
+  // doesn't resolve is a FAIL: a door with no day is a door that never opens. Josh, 2026-10-31.
+  { const { resolveCalendar } = await import('../src/calendar.js')
+    const T = process.env.ARENA_TODAY || new Intl.DateTimeFormat('en-CA', { timeZone: 'America/New_York' }).format(new Date())
+    for (const p of resolveCalendar(m, T)) { console.error(`  FAIL  calendar\n        ${p}`); process.exitCode = 1 } }
   for (const c of m.courses || []) {
     if ((c.status ?? 'open') === 'building') continue
     for (const st of c.stations || []) if (st.published && st.content_ref) LIVE.add(String(st.content_ref).replace(/^content\//, ''))

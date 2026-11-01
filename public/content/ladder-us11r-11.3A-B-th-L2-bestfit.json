@@ -24,7 +24,7 @@
       "stem": "Which thesis best fits Document 1?",
       "options": {
         "1": "Document 1 shows that Jefferson let the nation's needs override his own reading of the Constitution, because he bought Louisiana even while admitting the Constitution gave him no power to",
-        "2": "Document 1 shows that Jefferson wrote this letter to John Breckinridge mainly to explain and defend the price the United States agreed to pay France for Louisiana",
+        "2": "Document 1 shows that Jefferson wrote this letter to John Breckinridge mainly to explain and defend the price the United States agreed to pay France for all of the Louisiana territory",
         "3": "Document 1 shows that Jefferson came to regret buying Louisiana once members of Congress began raising objections to how the treaty had been negotiated"
       },
       "correct": "1",
@@ -57,7 +57,7 @@
       "stem": "Which thesis best fits Document 11?",
       "options": {
         "1": "Document 11 shows that the Seneca Falls convention argued women were citizens being denied a citizen's rights, because it lists the vote, property and legal standing as rights women were denied",
-        "2": "Document 11 shows that about 300 women and men wanted some kind of change when they gathered together at Seneca Falls, New York, back in the summer of 1848",
+        "2": "Document 11 shows that about 300 women and men wanted some kind of change when they gathered together at Seneca Falls, New York, back in the summer of 1848 to talk it over",
         "3": "Document 11 shows that the Declaration of Sentiments copied the wording of the Declaration of Independence exactly, without changing a single one of its many lines"
       },
       "correct": "1",

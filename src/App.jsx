@@ -80,7 +80,9 @@ const PREVIEW_SCENE = (() => {
 })()
 
 const HOME_URL = 'https://flashpointhistory.com'
+import { resolveCalendar } from './calendar.js'
 const MANIFEST_URL = '/arena.manifest.json'
+const PREVIEW_SKILLS_LAB = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'skills-lab' } catch { return false } })()
 // The SAME list the landing page reads. Canonical copy at builds/_shared/games.json,
 // synced into both sites by builds/_shared/sync-games.sh. A scenario_link points at a
 // game ID, never a raw URL — so when a game moves (1914 is still off-domain), one edit
@@ -578,6 +580,7 @@ a.card{display:block;text-decoration:none}
   text-transform:uppercase;color:var(--white);margin-bottom:8px}
 .card.off .card-name{color:var(--dim)}
 .card-blurb{color:var(--grey);font-size:15.5px;line-height:1.5}
+.rung-wait{display:block;color:var(--gold, #E3B341);font-weight:600;letter-spacing:.02em}
 .card-type{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
   letter-spacing:.13em;font-size:11px;color:var(--gold);margin-bottom:7px}
 
@@ -935,7 +938,9 @@ const LANES = [
   // SKILLS LAB (Leo's order 2026-10-30 10:32): the mechanics under every part of the exam, both courses, one room.
   // Its own lane, apart from the exam-part Labs (BK 2026-10-30 11:3x); lane words BK 11:4x ("yes"). Always open:
   // nothing in it waits on a unit.
-  { key: 'skills_lab',    src: 'skills_lab',    label: SKILLSLAB_WORDS.lane, always: true, intro: SKILLSLAB_WORDS.intro },
+  // HELD OFF THE DOOR (BK 2026-10-30 13:37 "not yet"; no Danny read, no Room Check). `optional` on `skills_lab_lane`, which
+  // only ?preview=skills-lab sets, so the release that carries the unit doors doesn't carry an unblessed lane. Josh, 2026-10-31.
+  { key: 'skills_lab',    src: 'skills_lab_lane', label: SKILLSLAB_WORDS.lane, optional: true, always: true, intro: SKILLSLAB_WORDS.intro },
   { key: 'units',         src: 'units',         label: 'Units',
     // BK 2026-10-02 14:03 ("a. agreed b. yes"): Units holds FINISHED units only; the unit we're in lives on the door.
     intro: 'Units we’ve finished. Got a casefile back? Open the unit it came from and work its gauges there. Nothing in here closes.' },
@@ -975,7 +980,8 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
   // The Scene's files, fetched only where the room is actually open to whoever is looking.
   const sceneOn = !!courseIn?.scene && (courseIn.scene.published === true || PREVIEW_SCENE)
   const scene = useScene(courseIn, PREVIEW_SCENE)
-  const courseWithScene = sceneOn ? { ...courseIn, scene_lane: courseIn.scene } : courseIn
+  const courseWithScene0 = sceneOn ? { ...courseIn, scene_lane: courseIn.scene } : courseIn
+  const courseWithScene = PREVIEW_SKILLS_LAB && courseWithScene0 ? { ...courseWithScene0, skills_lab_lane: [1] } : courseWithScene0
   const course = constCards.length ? { ...courseWithScene, constitution_cards: constCards } : courseWithScene
   // The lane lives in App, so Back from a unit page lands on Units, not the gauges.
   const firstWithContent = LANES.find(l => (course[l.src] || []).length)?.key || 'skills'
@@ -2195,7 +2201,12 @@ export default function App() {
   useEffect(() => {
     fetch(MANIFEST_URL)
       .then(r => { if (!r.ok) throw new Error(`manifest ${r.status}`); return r.json() })
-      .then(m => { setCoachBank(m?.coaching); setManifest(m) })
+      .then(m => {
+        // Anchors to dates, on the device's own day (src/calendar.js). The served manifest is already resolved at build;
+        // this makes a dev or preview build read the same dates, and moves the door on its day.
+        resolveCalendar(m, todayLocal()).forEach(p => console.warn('calendar:', p))
+        setCoachBank(m?.coaching); setManifest(m)
+      })
       .catch(e => setError(e.message))
     // Games are a soft dependency: if the list fails, the Arena still opens and
     // scenario_link activities simply do not render. Never a blank Arena.

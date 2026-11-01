@@ -107,6 +107,7 @@ export const levelOpen = lv => lv?.published === true && typeof lv.content_ref =
   && (!lv.opens_on || todayLocal() >= String(lv.opens_on))
 // What the rung shows while closed for a date, not for being unbuilt: the desk's own sentence,
 // never the bare "Coming" a kid would read as "not built" when it is really "not yet".
+const datedShut = lv => !!(lv?.opens_label && lv.opens_on && todayLocal() < String(lv.opens_on))
 const levelComing = lv => (lv?.opens_label && lv.opens_on && todayLocal() < String(lv.opens_on)) ? lv.opens_label : 'Coming'
 
 // Five slots, always. A skill with no ladder yet, or a ladder missing a level,
@@ -278,9 +279,11 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
         <div>
           <h2>{s?.name || skill}</h2>
           <p className="sub" style={{ marginBottom: 6 }}>{statusLine(top)}</p>
-          <p className="ladder-note">{levels.some(levelOpen)
+          {/* A gauge held for a date is not an unbuilt gauge: its rungs carry the desk's own waiting line, and this note stays
+              quiet rather than tell a kid "isn't built yet" (Josh, 2026-10-31, with the 11.3A / 10.3 open dates). */}
+          {(levels.some(levelOpen) || !levels.some(datedShut)) && <p className="ladder-note">{levels.some(levelOpen)
             ? 'Every level is open. Start anywhere — the tag shows a good place to begin.'
-            : 'This gauge isn’t built yet. Its steps open here as they’re added.'}</p>
+            : 'This gauge isn’t built yet. Its steps open here as they’re added.'}</p>}
         </div>
       </div>
       <ol className="ladder">
@@ -293,11 +296,13 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
               <span className="rung-n" aria-hidden="true">{lv.level}</span>
               <span className="rung-body">
                 <span className="card-type">Level {lv.level}{t ? ` · ${t.name}` : ''}</span>
-                <span className="rung-name">{open ? (lv.label || t?.name) : (lv.label || t?.name || 'Not built yet')}</span>
+                <span className="rung-name">{open ? (lv.label || t?.name) : (lv.label || (datedShut(lv) ? '' : (t?.name || 'Not built yet')))}</span>
                 {open && t && <span className="card-blurb">{t.blurb}</span>}
+                {/* A long waiting sentence sits under the rung, not in a pill: on a phone the pill crushed the level name. */}
+                {!open && datedShut(lv) && <span className="card-blurb rung-wait">{levelComing(lv)}</span>}
               </span>
               <span className="rung-flags">
-                {!open && <span className="flag soon">{levelComing(lv)}</span>}
+                {!open && !datedShut(lv) && <span className="flag soon">{levelComing(lv)}</span>}
                 {open && isDone && <span className="flag done">Done</span>}
                 {open && !isDone && lv.level === startHere && <span className="flag live">Start here</span>}
               </span>
