@@ -98,7 +98,7 @@ export function parseHash(hash, manifest) {
   // The unit splash's own cards (BK 2026-10-30): Door 4 and the Unit Test Review.
   if (parts[2] === 'next-step') return { ...u, at: 'kyns' }
   if (parts[2] === 'test-review') return { ...u, at: 'testreview' }
-  if (parts[2] === 'atlas') return { ...u, at: 'unitatlas' }
+  if (parts[2] === 'atlas' || parts[2] === 'overview') return { ...u, at: 'unitatlas' }   // the Unit Overview holds the Atlas (BK 2026-10-31)
   if (parts[2] && (unit.rooms || []).some(x => x.slug === parts[2] && x.published === true))
     return { ...u, at: 'civics', civicsSlug: parts[2], ...(parts[3] ? { civicsCard: parts[3] } : {}) }
   if (parts[2] === 'doc-assist') {

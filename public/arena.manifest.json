@@ -833,7 +833,12 @@
               "text": "Mon 11/30"
             }
           },
-          "_calendar_source": "Will's ruled dates, typed here from his memos because Global has no anchor file yet: 10/31 10:05 (windows: Day 0 Wed 10/28, A Thu 10/29, B Mon 11/9, C Tue 11/17, Test Review Thu 11/19, Data Day Mon 11/30), 09:18 (A rungs Fri 11/6, B rungs Wed 11/18, C rungs Mon 11/30; BK 09:16), 10/26 (Part I Fri 11/20 in UNIT_GLANCE). Josh asks Will to send these as his own file, the way Sam does; until then this block is the one edit a snow day needs."
+          "_calendar_source": "Will's ruled dates, typed here from his memos because Global has no anchor file yet: 10/31 10:05 (windows: Day 0 Wed 10/28, A Thu 10/29, B Mon 11/9, C Tue 11/17, Test Review Thu 11/19, Data Day Mon 11/30), 09:18 (A rungs Fri 11/6, B rungs Wed 11/18, C rungs Mon 11/30; BK 09:16), 10/26 (Part I Fri 11/20 in UNIT_GLANCE). Josh asks Will to send these as his own file, the way Sam does; until then this block is the one edit a snow day needs.",
+          "overview": {
+            "published": true,
+            "content_ref": "content/overview-gs10r-10.3.json",
+            "_note": "BK 2026-10-31 20:51/20:53: Atlas lives inside the Unit Overview; all key terms defined; a brief What you need to know for the whole unit. Card line BK 'yes'. Will's words, read from his files."
+          }
         }
       ],
       "issues": [
@@ -2133,7 +2138,11 @@
             }
           },
           "_calendar_source": "Sam's FINAL anchors, us11r-curriculum/WORK/Unit_03/open-dates-2026-10-31-1903/open-dates.json (md5 561f627ac37644d06e3f0999e75459e5), built by his skills/arena/build_113A_open_dates.py; BK ruled the calendar 10/31 (Sam 19:05). Copied verbatim, date and text only. A snow day: Sam sends a new file, this block is replaced whole. Josh never types a date.",
-          "status_open_at": "DAY_0"
+          "status_open_at": "DAY_0",
+          "overview": {
+            "published": true,
+            "_note": "BK 2026-10-31 20:51/20:53. No content yet: Sam sends the unit question, the whole-unit What you need to know, every key term defined, and the calendar lines (pass 20:52). Until then the card holds the Atlas and the rest reads Coming."
+          }
         }
       ],
       "atlas": [

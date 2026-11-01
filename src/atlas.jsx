@@ -145,11 +145,14 @@ export function AtlasLane({ course, maps, currentUnit, unitName, onOpen, onOpenU
 }
 
 // ── One unit's atlas, on its own page (#/us/11.1/atlas) ──────────────────
-export function UnitAtlasPage({ course, unit, maps, onOpen, onBack, ScreenHeader, BottomBack, Empty }) {
+// `overview` (from 11.3A / 10.3 on): the page is the Unit Overview, the Atlas sits inside it below the desk's sections
+// (BK 2026-10-31 20:51). Same address as before, so a printed Atlas link still lands here.
+export function UnitAtlasPage({ course, unit, maps, onOpen, onBack, ScreenHeader, BottomBack, Empty, overview, title }) {
   const ms = mapsForUnit(maps, unit)
   return (
     <div className="wrap">
-      <ScreenHeader label={unitAtlasName(unit)} onBack={onBack} color={course.accent} back={course.label} />
+      <ScreenHeader label={title || unitAtlasName(unit)} onBack={onBack} color={course.accent} back={course.label} />
+      {overview}
       <p className="lane-intro">{ATLAS_WORDS.intro}</p>
       {maps === null ? null : ms.length
         ? <MapCards maps={ms} onOpen={onOpen} />

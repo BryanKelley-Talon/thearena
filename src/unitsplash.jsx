@@ -56,6 +56,14 @@ export const SPLASH_WORDS = {
   nextLine: 'Got a test back? Start here.',
   atlas: 'Atlas',
   atlasLine: 'Every map from this unit.',
+  // The Unit Overview (BK 2026-10-31 20:51 "Atlas should live inside unit overview ... All key terms defined in that
+  // overview and a brief what you need to know for the whole unit"; 20:53 "Yes to both": the card line and the order).
+  overview: 'Unit Overview',
+  overviewLine: 'Start here: the big picture, key terms, the calendar and every map.',
+  ovQuestion: 'The big picture',
+  ovWynk: 'What you need to know',
+  ovTerms: 'Key terms',
+  ovCal: 'The calendar',
   review: 'Unit Test Review',
   reviewLine: 'The unit review, and Part I practice for this unit’s test.',
   // behind a casefile door
@@ -106,9 +114,14 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
   const cfs = unit.casefiles || []
   // The NOW tag sits on the casefile that is running: the last one open (Will 13:24, point 1, BK 13:23 "yes").
   const running = [...cfs].reverse().find(cfOpen)?.id
+  // Order, left to right (BK 2026-10-30 22:05/22:07, confirmed 2026-10-31 20:53): Unit Overview (the Atlas inside) ·
+  // Casefile A · B · C · Unit Test Review · Know Your Next Step. Throwback before and after take their places when the
+  // desk names their eras. The Overview always opens: it holds what the desk has sent and says Coming for the rest.
   return (
     <div className="us-splash">
       <div className="us-doors">
+        <DoorCard id="us-card-overview" kind="overview" title={W.overview} sub={W.overviewLine} open={true}
+                  label={W.open} onOpen={onOpenAtlas} />
         {cfs.map(cf => {
           const open = cfOpen(cf)
           return (
@@ -118,16 +131,40 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
                       onOpen={() => onOpenCasefile(cf.id)} />
           )
         })}
-        <DoorCard id="us-door-next" kind="next" title={W.next} sub={W.nextLine} open={nextStepOpen(unit)}
-                  label={nextStepOpen(unit) ? W.open : (unit.next_step?.opens_label ? sayOpens(unit.next_step.opens_label) : W.coming)} onOpen={onOpenNextStep} />
       </div>
       <div className="us-cards">
-        <DoorCard id="us-card-atlas" kind="side" title={W.atlas} sub={W.atlasLine} open={maps.length > 0}
-                  label={maps.length ? W.open : W.coming} onOpen={onOpenAtlas} />
         <DoorCard id="us-card-review" kind="side" title={W.review} sub={W.reviewLine} open={testReviewReady}
                   label={testReviewReady ? W.open : (unit.test_review?.opens_label ? sayOpens(unit.test_review.opens_label) : W.coming)}
                   onOpen={onOpenTestReview} />
+        <DoorCard id="us-door-next" kind="next side" title={W.next} sub={W.nextLine} open={nextStepOpen(unit)}
+                  label={nextStepOpen(unit) ? W.open : (unit.next_step?.opens_label ? sayOpens(unit.next_step.opens_label) : W.coming)} onOpen={onOpenNextStep} />
       </div>
+    </div>
+  )
+}
+
+// ── the Unit Overview: the desk's own words, then the Atlas (rendered by atlas.jsx below this) ──
+// pack: the unit's overview file ({ title, question, wynk[], terms[{term,def}], calendar[{what,when}] }), or null when
+// the desk hasn't sent one. Every section with nothing in it reads Coming. Nothing here is written by this desk.
+export function UnitOverviewBody({ pack }) {
+  const p = pack || {}
+  const coming = <p className="ov-coming"><span className="flag soon">{W.coming}</span></p>
+  return (
+    <div className="ov">
+      {p.title && <p className="ov-title">{p.title}</p>}
+      <h3 className="room-section">{W.ovQuestion}</h3>
+      {p.question ? <p className="ov-question">{p.question}</p> : coming}
+      <h3 className="room-section">{W.ovWynk}</h3>
+      {(p.wynk || []).length ? <ul className="ov-wynk">{p.wynk.map((x, i) => <li key={i}>{x}</li>)}</ul> : coming}
+      <h3 className="room-section">{W.ovTerms}</h3>
+      {(p.terms || []).length
+        ? <dl className="ov-terms">{p.terms.map((t, i) => <div key={i} className="ov-term"><dt>{t.term}</dt><dd>{t.def}</dd></div>)}</dl>
+        : coming}
+      <h3 className="room-section">{W.ovCal}</h3>
+      {(p.calendar || []).length
+        ? <table className="ov-cal"><tbody>{p.calendar.map((r, i) => <tr key={i}><th scope="row">{r.what}</th><td>{r.when}</td></tr>)}</tbody></table>
+        : coming}
+      <h3 className="room-section">{W.atlas}</h3>
     </div>
   )
 }
@@ -192,6 +229,22 @@ export function NextStepBody({ course, unit, prog, onOpenGauge, onOpenLab }) {
 }
 
 export const SPLASH_STYLES = `
+.us-door.overview:not(.shut){border-color:var(--gold)}
+.ov{max-width:820px}
+.ov-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;letter-spacing:.02em;color:var(--white);margin:4px 0 2px}
+.ov-question{font-size:19px;line-height:1.5;color:var(--white);background:var(--card);border-left:4px solid var(--gold);border-radius:8px;padding:10px 14px;margin:0 0 6px}
+.ov-wynk{margin:0 0 6px 20px;padding:0;color:var(--white);font-size:16.5px;line-height:1.55}
+.ov-wynk li{margin:4px 0}
+.ov-terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin:0 0 6px}
+.ov-term{background:var(--card);border:1px solid var(--edge);border-radius:10px;padding:10px 12px}
+.ov-term dt{font-weight:700;color:var(--gold);font-size:16px;margin-bottom:3px}
+.ov-term dd{margin:0;color:var(--white);font-size:15.5px;line-height:1.5}
+.ov-cal{border-collapse:collapse;width:100%;max-width:640px;margin:0 0 6px;font-size:16px}
+.ov-cal th,.ov-cal td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--edge);color:var(--white);vertical-align:top}
+.ov-cal th{font-weight:600}
+.ov-cal td{white-space:nowrap;color:var(--grey)}
+@media (max-width:600px){.ov-cal td{white-space:normal}}
+.ov-coming{margin:0 0 6px}
 /* A casefile holds three to six gauges, not the six-wide row of a full course: keep each card wide enough to read its name on one line. */
 .cf-gauges .gauges{grid-template-columns:repeat(auto-fill,minmax(150px,200px));justify-content:start}
 @media (max-width:600px){.cf-gauges .gauges{grid-template-columns:repeat(2,minmax(0,1fr))}}

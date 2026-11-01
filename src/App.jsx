@@ -39,7 +39,7 @@ import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { SkillsLabLane, partThreeLabel, SKILLSLAB_WORDS, SKILLSLAB_STYLES } from './skillslab.jsx'
-import { UnitSplash, CasefileRoomBody, NextStepBody, usesSplash, cfOpen, nextStepOpen, SPLASH_WORDS, SPLASH_STYLES } from './unitsplash.jsx'
+import { UnitSplash, UnitOverviewBody, CasefileRoomBody, NextStepBody, usesSplash, cfOpen, nextStepOpen, SPLASH_WORDS, SPLASH_STYLES } from './unitsplash.jsx'
 import { ChaseScreen, ChaseBar, CHASE_STYLES, CHASE_WORDS } from './chase.jsx'
 import { CivicsRoom, CIVICS_STYLES } from './civics.jsx'
 import { COURSE_KEY } from './deeplinks.js'
@@ -2230,6 +2230,12 @@ export default function App() {
   const tbData = useThrowback(course, PREVIEW_THROWBACK)
   const [atlasId, setAtlasId] = useState(null)
   const [unitAtlas, setUnitAtlas] = useState(false)      // one unit's atlas page (#/us/11.1/atlas)
+  const [ovPack, setOvPack] = useState(null)            // the Unit Overview's desk file, from 11.3A / 10.3 on (BK 2026-10-31 20:51)
+  useEffect(() => {
+    const ref = unitAtlas && unit && usesSplash(unit) && unit.overview?.published === true ? unit.overview.content_ref : null
+    if (ref) { setOvPack(null); fetchContent(ref, p => setOvPack(p || null)) } else setOvPack(null)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [unitAtlas, unit])
   // The Writing Lab: this course's sets, and the one open (by its slug; it lives in links).
   const wlSets = useWritingLab(course)
   // The pop-up lists (Six Umbrellas / Civic Principles / Threads), for every screen that names one (BK 22:59).
@@ -2446,6 +2452,7 @@ export default function App() {
   }
   else if (course && unit && unitAtlas) {
     screen = <UnitAtlasPage course={course} unit={unit} maps={atlasMaps} onOpen={setAtlasId}
+                            {...(usesSplash(unit) ? { title: SPLASH_WORDS.overview, overview: <UnitOverviewBody pack={ovPack} /> } : {})}
                             ScreenHeader={ScreenHeader} BottomBack={BottomBack} Empty={EmptyLane}
                             onBack={() => { setUnitAtlas(false); if (atlasFromSplash) { setAtlasFromSplash(false); leaveRoomPage() } else { setUnitSlug(null); setDoorLane('atlas') } window.scrollTo(0, 0) }} />
   }

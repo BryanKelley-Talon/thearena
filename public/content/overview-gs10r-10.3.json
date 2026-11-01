@@ -1,0 +1,158 @@
+{
+  "_source": "Will (global10r-curriculum), 10/31 10:05 'Your five notes', item 1 (BK placement ruling): title as given; question = words_103A.UNIT_QUESTION (same string in words_103B); key terms = words_103A.VOCAB (Days 1-5) then words_103B.VOCAB (B2, B3), in that order, no trim ('Read the dicts; nothing here is retyped'); calendar = words_103A.UNIT_GLANCE unchanged. Read from his files 2026-10-31 20:5x by Josh (words_103A.py md5 9587a2414a9c348b802e0e7169ac40a1, words_103B.py md5 cde78383bfc2bc8db74cf9a8ef698a1d). The whole-unit 'What you need to know' is BK's 20:51 ask and is Will's to write: empty until it arrives.",
+  "title": "Causes and Effects of the Industrial Revolution",
+  "question": "Did the benefits of the Industrial Revolution outweigh the costs?",
+  "wynk": [],
+  "terms": [
+    {
+      "term": "Agricultural Revolution",
+      "def": "big changes in farming in the 1700s that let fewer farmers grow more food"
+    },
+    {
+      "term": "enclosure",
+      "def": "fencing off open fields and shared land into private farms"
+    },
+    {
+      "term": "common land",
+      "def": "land a whole village shared for grazing its animals"
+    },
+    {
+      "term": "crop rotation",
+      "def": "planting different crops in a field from year to year so the soil stays rich"
+    },
+    {
+      "term": "Industrial Revolution",
+      "def": "the change from making goods by hand at home to making them by machine in factories, starting in Britain around 1760"
+    },
+    {
+      "term": "natural resources",
+      "def": "things in nature people can use, like coal, iron ore and water"
+    },
+    {
+      "term": "geographic context",
+      "def": "where something happened, and why it happened there"
+    },
+    {
+      "term": "port",
+      "def": "a town with a harbor where ships load and unload goods"
+    },
+    {
+      "term": "division of labor",
+      "def": "splitting a job into small steps, each done by a different worker"
+    },
+    {
+      "term": "capital",
+      "def": "money invested to start or grow a business"
+    },
+    {
+      "term": "laissez-faire",
+      "def": "French for “allow to do”: the idea that government should stay out of business"
+    },
+    {
+      "term": "capitalism",
+      "def": "an economic system in which private owners invest capital to make a profit"
+    },
+    {
+      "term": "domestic system",
+      "def": "making goods by hand at home, often the whole family together"
+    },
+    {
+      "term": "factory system",
+      "def": "workers and machines brought together in one building"
+    },
+    {
+      "term": "steam engine",
+      "def": "a machine that burns coal to boil water; the steam drives the machine"
+    },
+    {
+      "term": "power loom",
+      "def": "a weaving machine driven by water or steam instead of by hand"
+    },
+    {
+      "term": "canal",
+      "def": "a waterway people dig so boats can carry goods"
+    },
+    {
+      "term": "locomotive",
+      "def": "a steam engine on wheels that pulls a train"
+    },
+    {
+      "term": "raw materials",
+      "def": "things like cotton, coal and iron ore that are made into goods"
+    },
+    {
+      "term": "transportation",
+      "def": "the ways people and goods are moved from place to place"
+    },
+    {
+      "term": "urbanization",
+      "def": "people moving from the countryside into cities"
+    },
+    {
+      "term": "sanitation",
+      "def": "keeping water and streets clean: sewers, clean water, trash taken away"
+    },
+    {
+      "term": "cholera",
+      "def": "a deadly disease spread by dirty water"
+    },
+    {
+      "term": "child labor",
+      "def": "children working for pay, often long hours in dangerous places"
+    },
+    {
+      "term": "reform",
+      "def": "a change meant to fix a problem"
+    },
+    {
+      "term": "Factory Act",
+      "def": "a law passed by Parliament to limit work in factories, especially for children"
+    },
+    {
+      "term": "labor union",
+      "def": "workers who join together to bargain for better pay and hours"
+    },
+    {
+      "term": "bourgeoisie",
+      "def": "Marx's word for the owners: the class that owns the factories"
+    },
+    {
+      "term": "proletariat",
+      "def": "Marx's word for the workers: the class that works in them"
+    }
+  ],
+  "calendar": [
+    {
+      "what": "Casefile A in",
+      "when": "Thu 11/5"
+    },
+    {
+      "what": "1832: The Long Day",
+      "when": "Fri 11/6"
+    },
+    {
+      "what": "Casefile B in",
+      "when": "Mon 11/16"
+    },
+    {
+      "what": "Casefile C · the essay",
+      "when": "Tue 11/17 – Wed 11/18 and Mon 11/23"
+    },
+    {
+      "what": "Review",
+      "when": "Thu 11/19"
+    },
+    {
+      "what": "Part I",
+      "when": "Fri 11/20"
+    },
+    {
+      "what": "Data Day · everything back",
+      "when": "Mon 11/30"
+    },
+    {
+      "what": "Bonuses close",
+      "when": "Mon 11/30"
+    }
+  ]
+}
