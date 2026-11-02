@@ -63,10 +63,10 @@
   "lead": "*This is the same four questions you ask of every document, all year — Q1 Sourcing, Q2 Claim & Evidence, Q3 Perspective Check, Q4 Civic Connection. That's why you ask them: fastest way into any document. Part I just tests one of the four at a time. Here's the order, every question:*",
   "steps": [
    "**Read the question first — not the passage.** Know what you're hunting for.",
-   "**Q1 SOURCING.** Hit the source line with your pen — circle the date, underline the author and the kind of document. Free information, before you've read a word of the passage.",
-   "**Q2 CLAIM & EVIDENCE.** Read the whole passage once, start to finish — pen never stops moving. Circle the main idea as you find it. What is this document actually arguing or showing? That's the claim. The four answer choices are what you're testing it against.",
-   "**The answer is already given — go find the exact phrase that proves it.** One phrase, 12 words max. Whatever this particular question is really testing — Perspective Check, Civic Connection, whichever the page names — the proof is sitting in what you just marked up for Q1 and Q2.",
-   "**Underline it, then move on.**"
+   "**Q1 SOURCING.** Start at the source line — the date, the author, and what kind of document it is. Free information, before you've read a word of the passage.",
+   "**Q2 CLAIM & EVIDENCE.** Read the whole passage once, start to finish, before you mark anything. Find the main idea as you go. What is this document actually arguing or showing? That's the claim. The four answer choices are what you're testing it against.",
+   "**The answer is already given — go find the exact phrase that proves it.** One phrase, 12 words max. Whatever this particular question is really testing — Perspective Check, Civic Connection, whichever the page names — the proof is sitting in what you just worked through for Q1 and Q2.",
+   "**Mark it, then move on.**"
   ]
  },
  "notes": [
@@ -91,7 +91,7 @@
   "sub": "11.2 Strategy Lab · data day, Tuesday 11/3",
   "body": [
    "THE ONLY THING THAT COSTS YOU POINTS HERE IS NOT DOING IT",
-   "Eleven questions, worked in order — source line, main idea, proof, next question. Eleven proofs underlined (or stated, for Q14 and Q25). **That is the whole job.** This set is completion, not accuracy, same as every Strategy Lab."
+   "Eleven questions, worked in order — source line, main idea, proof, next question. Eleven proofs marked (or stated, for Q14 and Q25). **That is the whole job.** This set is completion, not accuracy, same as every Strategy Lab."
   ],
   "training_head": "WHAT THIS IS TRAINING, IN THE LANGUAGE YOU ALREADY USE",
   "training": [
@@ -100,7 +100,7 @@
     "**Q1 Sourcing** — free information, every single document, all year."
    ],
    [
-    "**Circling the main idea, then underlining the 12-word proof**",
+    "**Finding the main idea, then marking the 12-word proof**",
     "**DU** Document Use — name the claim, pull the specific detail that proves it."
    ],
    [
@@ -397,5 +397,43 @@
     "_from": "live stimulus-11-2.json item 0126-mc03 - same NYSED crop unit02-centinel-1787-doc1.png, transcribed word for word"
    }
   }
- ]
+ ],
+ "_screen_wording": {
+  "what": "Six of Sam's lines carried paper verbs (pen, circle, underline) into a screen activity. Changed on BK's word.",
+  "bk": "BK in chat 2026-11-02 09:17: 'you can change the lines from paper words to a screen. i can offer that blessing here.' The six replacements were put to him verbatim at 09:1x and he answered 'yes' at 09:20.",
+  "not_changed": "Q26's strategy keeps 'the same clause Q11 and Q18 circle from different angles' - a figure of speech, not an instruction.",
+  "flagged": "Steps 2 and 3 become reading instructions rather than marking ones, because this set has ONE marker (the proof) where the paper has three (source line, main idea, proof). BK was shown this and offered a three-marker build instead; he took the wording change. Sam gets the final wording so his print brief and the screen do not drift.",
+  "edits": [
+   {
+    "where": "how_to_work step 2",
+    "was": "**Q1 SOURCING.** Hit the source line with your pen — circle the date, underline the author and the kind of document. Free information, before you've read a word of the passage.",
+    "now": "**Q1 SOURCING.** Start at the source line — the date, the author, and what kind of document it is. Free information, before you've read a word of the passage."
+   },
+   {
+    "where": "how_to_work step 3",
+    "was": "**Q2 CLAIM & EVIDENCE.** Read the whole passage once, start to finish — pen never stops moving. Circle the main idea as you find it. What is this document actually arguing or showing? That's the claim. The four answer choices are what you're testing it against.",
+    "now": "**Q2 CLAIM & EVIDENCE.** Read the whole passage once, start to finish, before you mark anything. Find the main idea as you go. What is this document actually arguing or showing? That's the claim. The four answer choices are what you're testing it against."
+   },
+   {
+    "where": "how_to_work step 4 (tail only)",
+    "was": "**The answer is already given — go find the exact phrase that proves it.** One phrase, 12 words max. Whatever this particular question is really testing — Perspective Check, Civic Connection, whichever the page names — the proof is sitting in what you just marked up for Q1 and Q2.",
+    "now": "**The answer is already given — go find the exact phrase that proves it.** One phrase, 12 words max. Whatever this particular question is really testing — Perspective Check, Civic Connection, whichever the page names — the proof is sitting in what you just worked through for Q1 and Q2."
+   },
+   {
+    "where": "how_to_work step 5",
+    "was": "**Underline it, then move on.**",
+    "now": "**Mark it, then move on.**"
+   },
+   {
+    "where": "closing body",
+    "was": "Eleven questions, worked in order — source line, main idea, proof, next question. Eleven proofs underlined (or stated, for Q14 and Q25). **That is the whole job.** This set is completion, not accuracy, same as every Strategy Lab.",
+    "now": "Eleven questions, worked in order — source line, main idea, proof, next question. Eleven proofs marked (or stated, for Q14 and Q25). **That is the whole job.** This set is completion, not accuracy, same as every Strategy Lab."
+   },
+   {
+    "where": "closing training row 2",
+    "was": "**Circling the main idea, then underlining the 12-word proof**",
+    "now": "**Finding the main idea, then marking the 12-word proof**"
+   }
+  ]
+ }
 }
