@@ -2,7 +2,7 @@
   "_course": "US History and Government 11R",
   "_unit": "11.2 - Constitutional Foundations",
   "_activity": "Pick the detail that proves it: 11.2",
-  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "_built": "2026-09-27, rewritten 2026-10-26 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py · L2 distractors rewritten to the 2026-10-26 20:49 distractor rule; length gate added; Elastic Clause items added; Danny's 22:58 fix list (1–20) applied 2026-10-27 by Sam, du112-02 untouched per BK's own-fix hold",
   "skill_line": "DU",
   "step": 2,
   "type": "mc_bestfit",
@@ -10,23 +10,23 @@
   "items": [
     {
       "id": "du112-01",
-      "stem": "Claim: The Articles left the states more powerful than Congress. Which detail from Document 11 best supports it?",
+      "stem": "Claim: Under the Articles, any power not clearly handed to Congress stayed with the states. Which detail from Document 11 best supports it?",
       "options": {
-        "1": "“Delegates shall meet in one Congress.”",
-        "2": "“Each state keeps its sovereignty, its freedom, and its independence”",
-        "3": "“remember the ladies”",
-        "4": "The Articles were the first plan of government."
+        "1": "“Delegates shall meet in one Congress. In deciding questions, each state shall have one vote.”",
+        "2": "“Each state keeps its sovereignty, its freedom, and its independence, along with every power that this confederation does not expressly give”",
+        "3": "“The costs of war and all other common expenses shall be paid out of a common treasury…”",
+        "4": "“No change shall ever be made to these articles unless it is agreed to in Congress and afterward confirmed by the legislature of every state.”"
       },
       "correct": "2",
       "hints": [
-        "Which detail is about the states' power?",
-        "Look for “sovereignty.”"
+        "All four are real articles on the screen. Which one is about powers the states keep?",
+        "Look for the article about the powers a state keeps for itself."
       ],
-      "reason": "Article II says each state keeps its sovereignty and every power not given to Congress. That's the detail that proves the claim.",
+      "reason": "Article II says it outright: every power not expressly given to Congress stays with the state. Article XIII is the real temptation, because it does hand the states a veto — but over changing the Articles, not over who holds the powers. Article V is about voting inside Congress, and Article VIII is about a common treasury.",
       "stimulus": {
         "kind": "text",
-        "content": "Article II. Each state keeps its sovereignty, its freedom, and its independence, along with every power that this confederation does not expressly give to the United States.\n\nArticle V. Delegates shall meet in one Congress. In deciding questions, each state shall have one vote.",
-        "citation": "Source: Articles of Confederation, 1781 (adapted)"
+        "content": "Article II. Each state keeps its sovereignty, its freedom, and its independence, along with every power that this confederation does not expressly give to the United States.\n\nArticle V. Delegates shall meet in one Congress. In deciding questions, each state shall have one vote.\n\nArticle VIII. The costs of war and all other common expenses shall be paid out of a common treasury, supplied by the states in proportion to the value of the land in each state. The taxes for that share shall be laid and collected by the legislatures of the several states.\n\nArticle XIII. No change shall ever be made to these articles unless it is agreed to in Congress and afterward confirmed by the legislature of every state.",
+        "citation": "Source: Articles of Confederation, written 1777, in force 1781 (adapted)"
       }
     },
     {
@@ -35,15 +35,15 @@
       "options": {
         "1": "“My words were: don't fire, stop your firing.”",
         "2": "“I saw about 100 people surround the soldier on guard, with clubs and other weapons”",
-        "3": "Revere's engraving shows the soldiers firing in a straight line.",
-        "4": "Boston was the largest town in Massachusetts."
+        "3": "John Adams defended Preston at trial, and the jury found him not guilty.",
+        "4": "Revere's engraving shows the soldiers firing in a straight line at an officer's command."
       },
       "correct": "1",
       "hints": [
-        "The claim is about an order. Which detail is about what Preston said?",
-        "Look for his own words to his men."
+        "All four are true. Which one is Preston's own words to his men?",
+        "The claim is about an order he says he never gave."
       ],
-      "reason": "Preston quotes himself telling the men not to fire. The crowd detail is real, but it proves a different point.",
+      "reason": "Preston quotes himself telling the men not to fire, which is the claim exactly. The crowd detail is real and it is his defense, but it proves the crowd was threatening, not that he gave no order. The verdict sits outside this document, and the engraving is a different document — the one Preston would dispute.",
       "stimulus": {
         "kind": "text",
         "content": "I saw about 100 people surround the soldier on guard, with clubs and other weapons, threatening to kill him. When I asked my soldiers why they fired without orders, they said they heard the word “fire” and thought it came from me. Many in the crowd were shouting “fire.” I told the men I gave no such order. My words were: don't fire, stop your firing.",
@@ -52,19 +52,19 @@
     },
     {
       "id": "du112-03",
-      "stem": "Claim: Washington feared the country could fall apart. Which detail from Document 12 best supports it?",
+      "stem": "Claim: Washington blamed the thirteen states pulling in different directions. Which detail from Document 12 best supports it?",
       "options": {
-        "1": "“A letter I have just received from General Knox”",
-        "2": "“No morning ever dawned brighter than ours did”",
-        "3": "Washington was the first president.",
+        "1": "“No morning ever dawned brighter than ours did — and no day was ever more clouded than the present.”",
+        "2": "“A letter I have just received from General Knox, who has just returned from Massachusetts, is full of sad information…”",
+        "3": "“What stronger evidence can be given of the weakness of our governments than these disorders?”",
         "4": "“Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole.”"
       },
       "correct": "4",
       "hints": [
-        "Which detail shows fear, not just news?",
-        "Look for “ruin.”"
+        "All four are Washington sounding worried. Which one names what he blames?",
+        "Look for the thirteen."
       ],
-      "reason": "Thirteen states pulling apart and “ruin on the whole” is the fear, in his words. In 1786 he wasn't president yet.",
+      "reason": "Only the last names the states themselves as the cause. The first is mood, the second is where his news came from, and the third names weakness in general without saying whose.",
       "stimulus": {
         "kind": "text",
         "content": "No morning ever dawned brighter than ours did — and no day was ever more clouded than the present. Without some change in our political thinking, the structure we have spent seven years raising, at the cost of much blood and treasure, must fall. We are fast heading toward anarchy and confusion.\n\nA letter I have just received from General Knox, who has just returned from Massachusetts, is full of sad information about the temper and designs of a considerable part of that people.\n\nWhat stronger evidence can be given of the weakness of our governments than these disorders? If no power exists to check them, what security has a man of life, liberty, or property? Thirteen sovereignties pulling against each other, and all tugging at the federal head, will soon bring ruin on the whole.",

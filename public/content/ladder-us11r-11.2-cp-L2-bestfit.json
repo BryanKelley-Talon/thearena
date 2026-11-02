@@ -2,7 +2,7 @@
   "_course": "US History and Government 11R",
   "_unit": "11.2 - Constitutional Foundations",
   "_activity": "Which principle is at stake? 11.2",
-  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "_built": "2026-09-27, rewritten 2026-10-26 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py · L2 distractors rewritten to the 2026-10-26 20:49 distractor rule; length gate added; Elastic Clause items added; Danny's 22:58 fix list (1–20) applied 2026-10-27 by Sam, du112-02 untouched per BK's own-fix hold",
   "skill_line": "CP",
   "step": 2,
   "type": "mc_bestfit",
@@ -26,7 +26,7 @@
     },
     {
       "id": "cp112-02",
-      "stem": "Anti-Federalists worry that the national government will crush the states. Which principle are they arguing about?",
+      "stem": "Antifederalists warned that the necessary and proper clause — the elastic clause — would let Congress make any law it pleased and override the laws of the state governments. Which principle were they arguing about?",
       "options": {
         "1": "Due Process",
         "2": "Judicial Review",
@@ -35,10 +35,10 @@
       },
       "correct": "3",
       "hints": [
-        "Who is on each side of the worry?",
-        "The nation versus the states."
+        "Who is on each side of this worry?",
+        "It is the nation against the states."
       ],
-      "reason": "Federalism: how power is divided between the national government and the states."
+      "reason": "Federalism: power is divided between the national government and the states, and when they clash valid federal law wins. The elastic clause is a provision, not a principle — it is what the fight is about, and Federalism is what is at stake."
     },
     {
       "id": "cp112-03",
@@ -55,6 +55,22 @@
         "Think of a trial."
       ],
       "reason": "Due Process: government must follow fair steps before it takes your life, liberty, or property."
+    },
+    {
+      "id": "cp112-04",
+      "stem": "Congress chartered a national bank, though the Constitution never mentions one, arguing the necessary and proper clause allowed it. Opponents said the government had gone beyond what the Constitution allows. Which principle were the opponents arguing?",
+      "options": {
+        "1": "Equal Protection",
+        "2": "Limited Government",
+        "3": "Representative Government",
+        "4": "Due Process"
+      },
+      "correct": "2",
+      "hints": [
+        "Read the opponents' words again: beyond what the Constitution allows.",
+        "Look for the principle about the government going too far."
+      ],
+      "reason": "Limited Government: government can only do what the Constitution allows, and you look for it when someone says the government went too far. The same elastic clause raises Federalism when it is a state against the nation — here it is the question of whether Congress had the power at all."
     }
   ]
 }

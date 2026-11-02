@@ -1,8 +1,8 @@
 {
   "_course": "Global History and Geography 10R",
   "_unit": "10.3 - The Industrial Revolution in Great Britain",
-  "_built": "2026-10-27 08:56 EDT by Will (global10r-curriculum). CRQ-shaped, on BK's 2026-10-22 10:29 ruling.",
-  "_status": "DRAFT. Re-cut 2026-10-26/27 on Danny's fix list; his second read (changed lines only) pending.",
+  "_built": "2026-11-02 10:35 EDT by Will (global10r-curriculum). CRQ-shaped, on BK's 2026-10-22 10:29 ruling.",
+  "_status": "Re-cut 2026-10-26/27 on Danny's fix list; CLEARED by Danny on those bytes (md5 624066ac, RULING-LOG 2026-10-27). The shelf held the 2026-10-26 build until 2026-11-02, when the cleared build was installed (finding, same date). hc-04's key trimmed 2026-11-02 on BK's yes (10:29) to rule 3 of the length gate (RULED BK 2026-10-31 18:09): the key is never the single longest option. Only the key changed. Back to Danny for a changed-lines read, then Josh. NOT APPROVED.",
   "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own What You Need to Know, Outside Information boxes and documents (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
   "skill": "HC",
   "skill_label": "Historical Context",
@@ -64,7 +64,7 @@
       "stem": "Document 10 shows a railway running between Liverpool and Manchester in 1830. Which answer explains the historical circumstances that led to the historical development shown in this document?",
       "options": {
         "1": "The railway shown ran about thirty miles between the two cities and opened on September 15, 1830. It was the first railway anywhere to run scheduled trains pulled only by steam locomotives rather than by horses.",
-        "2": "By the 1760s Britain was digging canals to move coal more cheaply, and Manchester's mills still needed cotton through the port of Liverpool. Cheaper, faster transport was worth paying for, and by the 1830s railways were spreading.",
+        "2": "By the 1760s Britain was digging canals to move coal more cheaply, and Manchester's mills still needed cotton through Liverpool's port. Cheaper, faster transport was worth paying for, and by the 1830s railways were spreading.",
         "3": "The railway between Liverpool and Manchester is the reason Manchester became a mill town. The line was built first, and the cotton mills followed afterwards to make use of the cheap transport it offered.",
         "4": "In 1846, Parliament repealed the Corn Laws, cutting the taxes on imported grain and taking a big step toward free trade. Britain's population had also roughly doubled between 1750 and 1820."
       },

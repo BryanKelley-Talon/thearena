@@ -2,7 +2,7 @@
   "_course": "US History and Government 11R",
   "_unit": "11.2 - Constitutional Foundations",
   "_activity": "Match the question to its thesis",
-  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "_built": "2026-09-27, rewritten 2026-10-26 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py · L2 distractors rewritten to the 2026-10-26 20:49 distractor rule; length gate added; Elastic Clause items added",
   "skill_line": "TH",
   "step": 1,
   "type": "matching",
@@ -22,7 +22,7 @@
     },
     {
       "key": "d",
-      "label": "Did the Bill of Rights answer the Anti-Federalists?"
+      "label": "Did the Bill of Rights answer the Antifederalists?"
     },
     {
       "key": "e",
@@ -44,7 +44,7 @@
     },
     {
       "key": "4",
-      "label": "The Bill of Rights answered most Anti-Federalist fears by putting limits on the national government in writing."
+      "label": "The Bill of Rights answered most Antifederalist fears by putting limits on the national government in writing."
     },
     {
       "key": "5",

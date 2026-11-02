@@ -2,9 +2,9 @@
   "_course": "Global History and Geography 10R",
   "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
   "_activity": "Strongest thesis",
-  "_built": "2026-09-27 17:28 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh. Content from 10.2 Casefile A (taught 9/22-9/29) and, for the umbrellas, the BK-approved Six Umbrellas posters (9/18), word for word.",
-  "_status": "APPROVED by BK 2026-09-27 17:34 EDT (\"yes\"). Passed to Josh 17:34.",
-  "_licence": "ORIGINAL questions and statements by Will. Document details are paraphrased from 10.2 Casefile A; the one short quotation (du-01, option 4) is Document 2's own words: John Locke, Two Treatises of Government, 1690 (adapted).",
+  "_built": "2026-11-02 10:33 EST by Will (global10r-curriculum), rebuilt by emit_102_gauges.py from the pack modules.",
+  "_status": "BLESSED by BK 2026-10-27 11:43 EDT (\"blessed\"), with the correct answer trimmed 2026-11-02 on BK's yes (10:29) to the length gate's rule 3 (RULED BK 2026-10-31 18:09): the key is never the single longest option. Only the key's wording changed; no distractor was padded. Back to Danny for a changed-lines read, then Josh.",
+  "_licence": "ORIGINAL questions and statements by Will, recut 2026-10-27 to BK's distractor rule. Document details are paraphrased from 10.2 Casefile A. No option in this pack quotes a document. Documents shown on screen are Casefile A's own excerpts, word for word, with their source lines.",
   "skill": "TH",
   "skill_label": "Thesis",
   "level": 2,
@@ -15,65 +15,65 @@
       "id": "th-01",
       "stem": "Question: Did Enlightenment ideas threaten absolute monarchy? Which is the strongest thesis?",
       "options": {
-        "1": "The Enlightenment was a movement in Europe in the 1700s.",
-        "2": "Yes. Locke and Montesquieu argued that power comes from the people and must be limited, which undercut kings who claimed to rule by divine right.",
-        "3": "Some people think yes and some people think no.",
-        "4": "Kings were very powerful."
+        "1": "Yes. Locke and Montesquieu argued that power comes from the people and must be limited, which undercut kings who claimed to rule by divine right.",
+        "2": "Enlightenment writers published many influential books across Europe during the 1700s, and absolute monarchs ruled most of the continent for the whole of that same century.",
+        "3": "Yes. Enlightenment writing destroyed absolute monarchy everywhere in Europe within a generation, which is why no king held real power after 1750.",
+        "4": "Enlightenment thinkers disagreed sharply with each other, since Hobbes wanted one strong ruler while Locke insisted the people could remove a government."
       },
-      "correct": "2",
+      "correct": "1",
       "hints": [
-        "A thesis answers the question and takes a side.",
-        "Which choice says yes or no, and gives a reason?"
+        "All four are the same length. Which one answers the question that was asked, and gives a reason you could defend?",
+        "One choice is a summary, one claims more than any document shows, and one answers a question nobody asked."
       ],
-      "rationale": "The strongest thesis answers the question, takes a side and gives a reason. The others state a fact, dodge the question or say something nobody would argue with."
+      "rationale": "The strongest thesis answers the question, takes a side and gives a defensible reason. The choice about books and monarchs only summarizes, the one claiming no king held real power after 1750 goes far past the evidence, and the one about thinkers disagreeing is arguable but answers a different question."
     },
     {
       "id": "th-02",
       "stem": "Question: Was Catherine the Great an enlightened ruler? Which is the strongest thesis?",
       "options": {
-        "1": "Catherine the Great ruled Russia from 1762 to 1796.",
-        "2": "Catherine wrote letters to Voltaire.",
-        "3": "This is a hard question to answer.",
+        "1": "Catherine the Great ruled Russia from 1762 to 1796 and exchanged letters with Voltaire and other French philosophes.",
+        "2": "Catherine was a complete fraud who never believed a word of the Enlightenment and wrote about equal laws only to fool foreigners.",
+        "3": "Russia's serfs could be bought and sold with the land they worked, which made their lives harder than those of most European peasants.",
         "4": "Catherine was enlightened in her words but not her actions: she promised equal laws while giving landlords more power over serfs."
       },
       "correct": "4",
       "hints": [
-        "Two of these are true facts, but a fact isn't a claim.",
-        "Which choice could somebody argue against?"
+        "A thesis answers the question with a claim you could argue against.",
+        "One choice is a summary, one claims to know what she privately believed, and one is true but answers a question about serfs instead of about Catherine."
       ],
-      "rationale": "A thesis is a claim somebody could argue with. This one compares Catherine's words and actions and takes a side. Dates and facts can't be argued with, so they aren't a thesis."
+      "rationale": "A thesis is a claim somebody could argue with, and this one weighs Catherine's words against her actions. Claiming to know her private motives goes past any document, and a true fact about serfs is evidence, not a thesis."
     },
     {
       "id": "th-03",
       "stem": "Task: Explain why power and its abuse is a significant enduring issue. Which is the strongest thesis?",
       "options": {
-        "1": "Power and its abuse is an enduring issue.",
-        "2": "Power and its abuse is significant because absolute rulers like Louis XIV controlled people who had no say, and people have kept fighting to limit that power ever since.",
-        "3": "Louis XIV built Versailles in the 1600s.",
-        "4": "Power is bad and should be stopped."
+        "1": "Power and its abuse shows up in many of this course's units, and it is one of the six umbrellas printed on the posters at the back of our classroom.",
+        "2": "Power and its abuse is significant because rulers like Louis XIV controlled people who had no say, and people have fought to limit that power ever since.",
+        "3": "Power and its abuse is significant because every government in history has abused its power, so no country has ever protected anyone's rights.",
+        "4": "Louis XIV built Versailles and kept his nobles there, where he could watch them and keep them busy with court life instead of politics."
       },
       "correct": "2",
       "hints": [
-        "The task asks why it's significant. Which choice answers why?",
-        "Look for two sides: how it affected people, and how it continued over time."
+        "The task asks why the issue is significant. Which choice answers why?",
+        "Look for two sides: how it affected people then, and how it has continued since."
       ],
-      "rationale": "The strongest thesis says why the issue matters on both sides: how it affected people, and how it has continued. The first choice only repeats the task."
+      "rationale": "The strongest thesis says why the issue matters on both sides: how it affected people who had no say, and how the argument has continued. The choice about units and posters talks about the course instead of history, the one saying no country has ever protected anyone's rights overreaches, and the Versailles choice is evidence you would use, not the claim."
     },
     {
       "id": "th-04",
       "stem": "Which statement is a thesis, not a summary?",
       "options": {
-        "1": "Montesquieu wrote The Spirit of the Laws in 1748.",
-        "2": "Montesquieu talks about the three branches.",
-        "3": "Montesquieu was French.",
-        "4": "Montesquieu's plan to split power was the most practical answer to tyranny, because it didn't depend on finding a good king."
+        "1": "Montesquieu published The Spirit of the Laws in 1748, after years of study and travel through several European countries.",
+        "2": "Montesquieu describes three kinds of power in government, and he explains how each of them works in a separate part of his book.",
+        "3": "Montesquieu feared tyranny more than any other writer of his century, because he had seen it up close in the French courts.",
+        "4": "Montesquieu's plan to split power was the most practical answer to tyranny, because it did not depend on finding a good king."
       },
       "correct": "4",
       "hints": [
-        "A summary tells what happened. A thesis tells what you think it means.",
-        "Which choice uses \"because\"?"
+        "A summary tells what the writer did or said. A thesis tells what you think it means.",
+        "Two choices have a because. Only one of them makes a claim the documents can support."
       ],
-      "rationale": "A thesis makes a claim and backs it with a reason. The other three only report facts about Montesquieu."
+      "rationale": "A thesis makes a claim and backs it with a reason the evidence supports. The choices about when he published and how his book is organized only summarize, and the one saying he feared tyranny more than any other writer has the shape of a thesis but claims a comparison no document in this casefile could prove."
     }
   ]
 }

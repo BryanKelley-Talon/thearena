@@ -1,8 +1,29 @@
 {
-  "_source": "Will (global10r-curriculum), 10/31 10:05 'Your five notes', item 1 (BK placement ruling): title as given; question = words_103A.UNIT_QUESTION (same string in words_103B); key terms = words_103A.VOCAB (Days 1-5) then words_103B.VOCAB (B2, B3), in that order, no trim ('Read the dicts; nothing here is retyped'); calendar = words_103A.UNIT_GLANCE unchanged. Read from his files 2026-10-31 20:5x by Josh (words_103A.py md5 9587a2414a9c348b802e0e7169ac40a1, words_103B.py md5 cde78383bfc2bc8db74cf9a8ef698a1d). The whole-unit 'What you need to know' is BK's 20:51 ask and is Will's to write: empty until it arrives.",
+  "_source": "Will (global10r-curriculum), 10/31 10:05 'Your five notes', item 1 (BK placement ruling): title as given; question = words_103A.UNIT_QUESTION (same string in words_103B); key terms = words_103A.VOCAB (Days 1-5) then words_103B.VOCAB (B2, B3), in that order, no trim ('Read the dicts; nothing here is retyped'); calendar = words_103A.UNIT_GLANCE unchanged. Read from his files 2026-10-31 20:5x by Josh (words_103A.py md5 9587a2414a9c348b802e0e7169ac40a1, words_103B.py md5 cde78383bfc2bc8db74cf9a8ef698a1d). 'What you need to know' (wynk_head + five beats): Will's UNIT_WYNK_HEAD and UNIT_WYNK, ruled by BK 11/2 10:47, cleared by Danny 11:04 (29 claims, 0 to fix); words_103A.py md5 3ebdf214c451f8b363b4dc516a1a3aa6; sha256 of heading then each title and body, newline-joined, 092931b494402366ae87204699c69aaf063c70a9925a6281e75b946facda8d62 (matches Danny's). Beats 4 and 5 are keyed to Casefile B's unblessed build: if B moves, Will sends them back to Danny. 'What you need to know' (wynk_head + five beats): Will's UNIT_WYNK_HEAD and UNIT_WYNK, ruled by BK 11/2 10:47, cleared by Danny 11:04 (29 claims, 0 to fix); words_103A.py md5 3ebdf214c451f8b363b4dc516a1a3aa6; sha256 of heading then each title and body, newline-joined, 092931b494402366ae87204699c69aaf063c70a9925a6281e75b946facda8d62 (matches Danny's). Beats 4 and 5 are keyed to Casefile B's unblessed build: if B moves, Will sends them back to Danny.",
   "title": "Causes and Effects of the Industrial Revolution",
   "question": "Did the benefits of the Industrial Revolution outweigh the costs?",
-  "wynk": [],
+  "wynk": [
+    {
+      "head": "Where it starts",
+      "text": "In 1750 most British people lived in the countryside, and many of them farmed. Villages shared open fields and common land. Wealthy landowners controlled Parliament, and looking for bigger profits they passed thousands of enclosure acts that fenced that land into private farms. New farming methods grew more food with fewer workers. Families who lost their land moved to the towns to look for work."
+    },
+    {
+      "head": "Why Britain first",
+      "text": "Britain had coal, iron ore and rivers, ports and a navy that controlled the seas, people with money to invest, and more workers every year. In 1776 Adam Smith argued that splitting a job into small steps made workers far more productive, and that government should stay out of business."
+    },
+    {
+      "head": "What changed",
+      "text": "Cloth had been made by hand at home. New machines sped it up, and James Watt's improved steam engine meant a mill no longer had to sit beside a fast river. Machines, a building and workers came together in one place: the factory. Canals and then railways made coal, cotton and finished goods cheaper to move."
+    },
+    {
+      "head": "What it cost",
+      "text": "Cities grew faster than clean water, sewers and housing. Children worked long hours in dangerous places. People answered: Parliament's Factory Acts, labor unions, Robert Owen, Karl Marx."
+    },
+    {
+      "head": "What you will argue",
+      "text": "Did the benefits of the Industrial Revolution outweigh the costs? You will need both sides, and the evidence for each."
+    }
+  ],
   "terms": [
     {
       "term": "Agricultural Revolution",
@@ -154,5 +175,6 @@
       "what": "Bonuses close",
       "when": "Mon 11/30"
     }
-  ]
+  ],
+  "wynk_head": "WHAT YOU NEED TO KNOW  ·  THE WHOLE UNIT"
 }

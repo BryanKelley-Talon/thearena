@@ -2,7 +2,7 @@
   "_course": "US History and Government 11R",
   "_unit": "11.2 - Constitutional Foundations",
   "_activity": "Pick the best explanation: 11.2",
-  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "_built": "2026-09-27, rewritten 2026-10-26 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py · L2 distractors rewritten to the 2026-10-26 20:49 distractor rule; length gate added; Elastic Clause items added; Danny's 22:58 fix list (1–20) applied 2026-10-27 by Sam, du112-02 untouched per BK's own-fix hold",
   "skill_line": "EX",
   "step": 2,
   "type": "mc_bestfit",
@@ -12,49 +12,49 @@
       "id": "ex112-01",
       "stem": "Evidence: Abigail Adams asked John to “remember the ladies.” Which sentence best explains why it matters?",
       "options": {
-        "1": "Abigail Adams wrote a letter to John Adams in March 1776.",
+        "1": "This shows that Abigail Adams asked her husband to remember the ladies in the new laws.",
         "2": "This shows the fight for liberty in 1776 left women out, and some women knew it.",
-        "3": "John Adams later became the second president.",
-        "4": "Letters were the main way people communicated in 1776."
+        "3": "This shows that John Adams did not care about women's rights or listen to his wife.",
+        "4": "This shows that women in 1776 held the same legal rights as men but did not use them."
       },
       "correct": "2",
       "hints": [
-        "Which choice says what the evidence shows, not just what it is?",
-        "Look for “This shows…”"
+        "All four start the same way. Which one says why it matters, without repeating it or guessing past it?",
+        "One repeats the evidence, one goes further than it, and one is simply untrue."
       ],
-      "reason": "It goes past what the letter says to why it matters: liberty in 1776 wasn't meant for everyone."
+      "reason": "It says what the letter shows: liberty in 1776 was not meant for everyone, and women knew it. The first only repeats the evidence. The third goes further than the evidence — the letter does not show his answer. The fourth is false."
     },
     {
       "id": "ex112-02",
       "stem": "Evidence: Under Article VIII of the Articles, the states collected the taxes for the national treasury. Which sentence best explains why it matters?",
       "options": {
-        "1": "Article VIII of the Articles is about taxes.",
-        "2": "Taxes are still collected today.",
-        "3": "This shows Congress had to ask the states for money and couldn't make them pay, so the national government stayed broke.",
-        "4": "The Articles were written in 1781."
+        "1": "This shows the states agreed to pay for the war out of a common treasury.",
+        "2": "This shows Congress could tax the states directly whenever it needed money.",
+        "3": "This shows Congress had to ask states for money and could not make them pay.",
+        "4": "This shows the national government went broke and the Constitution was written to fix it."
       },
       "correct": "3",
       "hints": [
-        "Which choice explains a result?",
-        "Look for “so the national government…”"
+        "All four start the same way. Which one says what this one article can prove?",
+        "One repeats it, one reverses it, and one runs years past it."
       ],
-      "reason": "It connects the rule to its effect: a Congress that depends on the states for money stays broke."
+      "reason": "If the states do the collecting, Congress can ask but not compel — that is what Article VIII shows. The second is the reverse. The fourth is true, but it runs well past what one article proves."
     },
     {
       "id": "ex112-03",
       "stem": "Evidence: In Marbury v. Madison, Marshall said the Constitution wins when a law conflicts with it. Which sentence best explains why it matters?",
       "options": {
-        "1": "This shows the Supreme Court claimed the power to strike down laws, a check on Congress courts still use today.",
-        "2": "Marbury v. Madison was decided in 1803.",
-        "3": "John Marshall was Chief Justice.",
-        "4": "The Constitution has seven articles."
+        "1": "This shows the Court claimed the power to strike down a law that breaks the Constitution.",
+        "2": "This shows Marshall decided that a law and the Constitution had conflicted in this case.",
+        "3": "This shows the Court claimed the power to write new laws when Congress will not act.",
+        "4": "This shows the Constitution is the highest law in the United States."
       },
       "correct": "1",
       "hints": [
-        "Three choices are facts. Which one explains?",
-        "Look for what the Court gained."
+        "All four start the same way. Which one names what the Court gained?",
+        "Striking down a law and writing one are not the same power."
       ],
-      "reason": "It says what the ruling did and why it still matters. The other three are facts with no “so what.”"
+      "reason": "The ruling gave the Court the power to void a law that breaks the Constitution — judicial review. The second only restates the case. The third over-claims: courts strike down, they do not write. The fourth is true in general and explains nothing about this ruling."
     }
   ]
 }

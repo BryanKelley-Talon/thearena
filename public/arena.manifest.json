@@ -2149,7 +2149,8 @@
           "status_open_at": "DAY_0",
           "overview": {
             "published": true,
-            "_note": "BK 2026-10-31 20:51/20:53. No content yet: Sam sends the unit question, the whole-unit What you need to know, every key term defined, and the calendar lines (pass 20:52). Until then the card holds the Atlas and the rest reads Coming."
+            "content_ref": "content/overview-us11r-11.3A.json",
+            "_note": "BK 2026-10-31 20:51/20:53; Sam's words blessed by BK 11/2 10:56, Danny cleared the constants 11:34. Read from words_113A.py by scripts/packs/overview_pack.py: unit question, five-paragraph What you need to know, key terms (VOCAB then UNIT_NAMES), the calendar and its notice. The Atlas sits below. Washington's Farewell Address stays off this card until Casefile B (Sam, BK)."
           }
         }
       ],

@@ -1177,6 +1177,44 @@ function checkPopouts(d, f, course, m, fail) {
   }
 }
 
+// ── THE UNIT OVERVIEW (added 2026-11-02, Josh; Sam's 10:30 note, BK's 10/31 20:51 and 11/2 10:56 rulings) ──
+// The desk's words, read from its own file (scripts/packs/overview_pack.py). Format only, never content.
+// Two rules come from the desks: a pack may declare `_keep_off` (a cold document or a retired line that must
+// not reach this card - Sam: Washington's Farewell Address stays off the 11.3A card until Casefile B opens it;
+// Danny: the old paragraph 5 said "said the same thing"), and the retired skill name 'Outside Evidence' may not
+// come back (BK 10/9: Outside Information, both courses from 10.3 on).
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  for (const c of m.courses || []) for (const u of c.units || []) {
+    const ov = u.overview
+    if (!ov?.content_ref) continue
+    const f = String(ov.content_ref).replace(/^content\//, '')
+    const live = ov.published === true && u.published === true && (c.status ?? 'open') !== 'building'
+    const df = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (!fs.existsSync(path.join(CONTENT, f))) { df(`overview file '${f}' is not in public/content.`); continue }
+    const d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8'))
+    if (!String(d.question || '').trim()) df('no unit question.')
+    const wynk = d.wynk || []
+    for (const [i, x] of wynk.entries()) {
+      if (typeof x === 'string') { if (!x.trim()) df(`What you need to know, paragraph ${i + 1}: empty.`) }
+      else if (!String(x?.head || '').trim() || !String(x?.text || '').trim()) df(`What you need to know, beat ${i + 1}: needs a head and its text.`)
+    }
+    const seen = new Set()
+    for (const [i, t] of (d.terms || []).entries()) {
+      if (!String(t?.term || '').trim() || !String(t?.def || '').trim()) { df(`key term ${i + 1}: needs the term and its definition - every term on the card is defined.`); continue }
+      const k = t.term.trim().toLowerCase()
+      if (seen.has(k)) df(`key term '${t.term}' appears twice.`)
+      seen.add(k)
+    }
+    for (const [i, r] of (d.calendar || []).entries()) if (!String(r?.what || '').trim() || !String(r?.when || '').trim()) df(`calendar row ${i + 1}: needs what and when.`)
+    const student = [d.title, d.question, d.wynk_head, ...wynk.flatMap(x => typeof x === 'string' ? [x] : [x?.head, x?.text]),
+      ...(d.terms || []).flatMap(t => [t?.term, t?.def]), ...(d.calendar || []).flatMap(r => [r?.what, r?.when]), d.calendar_notice].filter(Boolean).join(' \n ')
+    for (const bad of d._keep_off || []) if (student.toLowerCase().includes(String(bad).toLowerCase())) df(`'${bad}' is on this card, and the desk said to keep it off.`)
+    if (/outside evidence/i.test(student)) df("'Outside Evidence' is the retired name; the card says Outside Information (BK 10/9).")
+  }
+}
+
 console.log(`\n${fails} fail (live) - ${warns} warn/dark`)
 if (!fails) console.log('Everything a student can reach today passes.')
 process.exit(fails || process.exitCode ? 1 : 0)

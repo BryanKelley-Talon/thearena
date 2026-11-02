@@ -1,0 +1,128 @@
+{
+  "_source": "Sam (us11r-curriculum), 11/2 10:30 + 10:57 + 11:30; Danny cleared the constants 11:34 (UNIT_QUESTION, UNIT_WYNK with the rewritten paragraph 5, UNIT_NAMES). Read from skills/u113/words_113A.py, md5 4604e8835faa6f4ca042d025ac66bf58, by scripts/packs/overview_pack.py. Key terms = VOCAB then UNIT_NAMES. Calendar = UNIT_CAL + CAL_NOTICE (Danny's 11:34: VOCAB, UNIT_CAL and CAL_NOTICE were not re-read in that pass). No tool column on this card (Sam, BK call 6). Washington's Farewell Address stays off this card until Casefile B opens it (Sam 10:30, BK ruled).",
+  "_keep_off": [
+    "Farewell",
+    "said the same thing"
+  ],
+  "question": "Was American expansion worth what it cost, 1801–1850?",
+  "wynk": [
+    "In 1803 Jefferson bought the Louisiana Territory from France for $15 million, and the United States doubled in size. By 1848 it stretched to the Pacific.",
+    "It grew three ways: it bought land, it took land, and it went to war for land. Jefferson bought Louisiana. Congress passed the Indian Removal Act in 1830, and in 1838 the Army forced the Cherokee west on the Trail of Tears, where about 4,000 died. In 1846 Polk sent troops into ground Mexico claimed, and the war that followed ended in 1848 with the Mexican Cession.",
+    "While it spread out, the country was also tying itself together. Canals, roads and steamboats carried farm goods to market, and the market revolution changed how ordinary people made a living.",
+    "Every time the country grew, it had to answer the same question: who is the new land for, and who gets the rights that come with it? The Cherokee fought removal in court, and in 1832 the Supreme Court ruled that Georgia's laws had no force on their land — and Georgia ignored the ruling. In 1848 the women at Seneca Falls wrote their own answer, and listed the rights they were denied.",
+    "Abroad, the answer held for fifty years. In 1796 Washington warned the country to stay out of Europe's quarrels. In 1823 Monroe built on that message and added the other half: keep Europe out of ours."
+  ],
+  "terms": [
+    {
+      "term": "Louisiana Purchase",
+      "def": "the 1803 deal in which the United States bought the land between the Mississippi River and the Rocky Mountains from France"
+    },
+    {
+      "term": "embargo",
+      "def": "a law that stops a country's trade with other countries"
+    },
+    {
+      "term": "nationalism",
+      "def": "pride in your nation and loyalty to it"
+    },
+    {
+      "term": "market revolution",
+      "def": "the change from farms that grew what a family needed to farms and shops that made goods to sell, tied together by canals, roads and steamboats"
+    },
+    {
+      "term": "veto",
+      "def": "the President's power to reject a bill Congress has passed"
+    },
+    {
+      "term": "Indian Removal Act",
+      "def": "the 1830 law that let the President trade land west of the Mississippi for Native nations' land in the East"
+    },
+    {
+      "term": "sovereignty",
+      "def": "a nation's right to govern itself"
+    },
+    {
+      "term": "Trail of Tears",
+      "def": "the forced march of the Cherokee to Indian Territory in 1838–1839, on which thousands died"
+    },
+    {
+      "term": "manifest destiny",
+      "def": "the belief that the United States was meant to spread across the whole continent"
+    },
+    {
+      "term": "annexation",
+      "def": "adding a territory to a country"
+    },
+    {
+      "term": "Mexican Cession",
+      "def": "the land Mexico gave up to the United States in 1848, at the end of the Mexican-American War"
+    },
+    {
+      "term": "Declaration of Sentiments",
+      "def": "the statement written at Seneca Falls in 1848 that listed the rights women were denied"
+    },
+    {
+      "term": "War of 1812",
+      "def": "the war with Britain, 1812–1815; no land changed hands, but Americans came out of it proud"
+    },
+    {
+      "term": "Erie Canal",
+      "def": "the 363-mile canal New York finished in 1825, linking the Great Lakes to the Hudson River and New York City"
+    },
+    {
+      "term": "Monroe Doctrine",
+      "def": "President Monroe's warning in 1823 that Europe should stay out of the Western Hemisphere"
+    },
+    {
+      "term": "Second Bank of the United States",
+      "def": "the national bank Jackson vetoed in 1832, saying it helped the rich and powerful"
+    },
+    {
+      "term": "McCulloch v. Maryland (1819)",
+      "def": "the Supreme Court case that upheld the national bank and ruled a state could not tax it"
+    },
+    {
+      "term": "Worcester v. Georgia (1832)",
+      "def": "the Supreme Court case that ruled Georgia's laws had no force on Cherokee land"
+    },
+    {
+      "term": "Seneca Falls",
+      "def": "the New York town where about 300 women and men met in 1848 and wrote the Declaration of Sentiments"
+    }
+  ],
+  "calendar": [
+    {
+      "what": "Casefile A in",
+      "when": "Thu 11/12"
+    },
+    {
+      "what": "1800: The Fragile Republic",
+      "when": "Fri 11/13"
+    },
+    {
+      "what": "Casefile B in",
+      "when": "Fri 11/20"
+    },
+    {
+      "what": "Casefile C · the essay",
+      "when": "Tue 12/1 – Wed 12/2"
+    },
+    {
+      "what": "Review",
+      "when": "Thu 12/3"
+    },
+    {
+      "what": "Part I · 28 questions",
+      "when": "Fri 12/4"
+    },
+    {
+      "what": "Data Day · everything back",
+      "when": "Mon 12/7"
+    },
+    {
+      "what": "Bonuses close",
+      "when": "Fri 12/11"
+    }
+  ],
+  "calendar_notice": "Dates can change. When a day moves, the Google Classroom post for that day is the one that's right — and it's how you catch up when you were out."
+}

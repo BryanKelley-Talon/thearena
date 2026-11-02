@@ -2,7 +2,7 @@
   "_course": "US History and Government 11R",
   "_unit": "11.2 - Constitutional Foundations",
   "_activity": "Best context statement: 11.2",
-  "_built": "2026-09-27 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py",
+  "_built": "2026-09-27, rewritten 2026-10-26 by Sam (us11r-curriculum) · skills/arena/build_gauges_us11r_112_L1L2.py · L2 distractors rewritten to the 2026-10-26 20:49 distractor rule; length gate added; Elastic Clause items added; Danny's 22:58 fix list (1–20) applied 2026-10-27 by Sam, du112-02 untouched per BK's own-fix hold",
   "skill_line": "HC",
   "step": 2,
   "type": "mc_bestfit",
@@ -12,49 +12,65 @@
       "id": "ctx112-01",
       "stem": "Which statement best gives the historical context for the Stamp Act Congress, 1765?",
       "options": {
-        "1": "The colonies had already declared independence",
-        "2": "Britain had begun taxing the colonies directly to pay war debts, and colonists had no representatives in Parliament",
-        "3": "The Constitution had just been ratified",
-        "4": "The colonies had no local assemblies of their own"
+        "1": "Britain had just lost its war with France, and it taxed the colonies to pay what it owed.",
+        "2": "Britain had begun taxing the colonies directly to pay war debts, and colonists elected no one to Parliament.",
+        "3": "Britain had given the colonies seats in Parliament, and colonists argued the taxes were still too high.",
+        "4": "Britain had begun taxing the colonies directly, and colonists had already stopped buying British goods."
       },
       "correct": "2",
       "hints": [
-        "Think about what Parliament had just done to the colonies.",
-        "It's about a tax and who got a say in it."
+        "All four mention Britain and a tax. Which one gets the war and the representation both right?",
+        "Who won the war with France, and who sat in Parliament?"
       ],
-      "reason": "Parliament taxed the colonies to pay debts from the French and Indian War, and colonists had no seats in Parliament. That's the scene the Stamp Act Congress answered."
+      "reason": "Britain won that war and came out of it deep in debt, then taxed the colonies, who elected nobody to Parliament. The first is the near miss: the debt is right, the loss is not. The third reverses representation, and the fourth never gets to the missing representation this item is about."
     },
     {
       "id": "ctx112-02",
       "stem": "Which statement best places Washington's 1786 letter to Madison in time and cause?",
       "options": {
-        "1": "Written as armed farmers in Massachusetts shut down courts, and the national government could not pay for an army to stop them",
-        "2": "Written during the Revolutionary War, asking France for help",
-        "3": "Written after the Constitution was ratified, praising its success",
-        "4": "Written as president, warning against political parties"
+        "1": "Written as armed Massachusetts farmers shut the courts, and Congress could not pay for an army.",
+        "2": "Written as the Revolutionary War ended, while Washington still commanded the army in the field.",
+        "3": "Written just after the Constitution was ratified, as Washington prepared to take office as president.",
+        "4": "Written as Congress debated the Bill of Rights, which Congress sent to the states for approval."
       },
       "correct": "1",
       "hints": [
-        "Look at the date: 1786. Was there a Constitution yet?",
-        "Washington mentions news from Massachusetts."
+        "All four are real historical moments. Which one is 1786?",
+        "There was no Constitution yet, and no president."
       ],
-      "reason": "In late 1786, Shays' Rebellion was shutting courts in Massachusetts, and Congress had no force to respond. Washington is writing about that."
+      "reason": "In late 1786 Shays' Rebellion was shutting courts in Massachusetts and Congress could not pay for troops to answer it. The other three are the same man a few years early or late: still a general, not yet president, and the Bill of Rights is five years off."
     },
     {
       "id": "ctx112-03",
       "stem": "Which statement best gives the historical context for the Bill of Rights, 1791?",
       "options": {
-        "1": "Britain had just repealed the Stamp Act",
-        "2": "The Supreme Court had just ruled in Marbury v. Madison",
-        "3": "Several states ratified the Constitution only after being promised amendments to protect rights",
-        "4": "The Articles of Confederation were still in force"
+        "1": "Several states refused to ratify the Constitution until Congress agreed to drop the necessary and proper (elastic) clause.",
+        "2": "The Supreme Court had struck down a law for the first time, and Congress answered with amendments.",
+        "3": "Several states ratified the Constitution only after being promised amendments that would protect individual rights.",
+        "4": "The Articles of Confederation were still in force, and Congress added amendments to strengthen them."
       },
       "correct": "3",
       "hints": [
-        "Think about the Anti-Federalists. What did they want added?",
-        "It's about a promise made during ratification."
+        "Two choices are about ratification. Which one says what was actually promised?",
+        "Antifederalists wanted rights written down, not a clause taken out."
       ],
-      "reason": "Anti-Federalists feared the new government, and several states ratified only with the promise of amendments. The Bill of Rights kept that promise."
+      "reason": "Several states ratified only on the promise of amendments protecting rights, and the Bill of Rights kept it. The first is the close one: Antifederalists did fear the necessary and proper (elastic) clause, but no promise to drop it was ever made. The second is twelve years late, and the Articles were gone by 1789."
+    },
+    {
+      "id": "ctx112-04",
+      "stem": "Which statement best gives the historical context for McCulloch v. Maryland, 1819?",
+      "options": {
+        "1": "Congress had chartered a national bank, and when Maryland taxed its Baltimore branch the cashier refused to pay.",
+        "2": "Maryland had refused to ratify the Constitution until Congress agreed to charter a national bank.",
+        "3": "Congress had let the national bank close, and Maryland chartered a bank of its own to replace it.",
+        "4": "The Supreme Court had struck down the national bank, and Maryland sued Congress to recover its taxes."
+      },
+      "correct": "1",
+      "hints": [
+        "Who taxed whom, and who refused to pay?",
+        "Ask which side the case starts with, a state or Congress."
+      ],
+      "reason": "Congress chartered the bank in 1816; in 1818 Maryland taxed its Baltimore branch and the cashier, James McCulloch, refused to pay. That refusal is the case. The other three turn the story around: the bank in this case was open, the Court had not struck it down, and Maryland's ratification had nothing to do with it."
     }
   ]
 }

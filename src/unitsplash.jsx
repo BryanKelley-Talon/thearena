@@ -144,7 +144,8 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
 }
 
 // ── the Unit Overview: the desk's own words, then the Atlas (rendered by atlas.jsx below this) ──
-// pack: the unit's overview file ({ title, question, wynk[], terms[{term,def}], calendar[{what,when}] }), or null when
+// pack: the unit's overview file ({ title, question, wynk_head?, wynk[] (paragraph strings, or {head,text} beats), terms[{term,def}],
+// calendar[{what,when}], calendar_notice? }), or null when
 // the desk hasn't sent one. Every section with nothing in it reads Coming. Nothing here is written by this desk.
 export function UnitOverviewBody({ pack }) {
   const p = pack || {}
@@ -154,15 +155,20 @@ export function UnitOverviewBody({ pack }) {
       {p.title && <p className="ov-title">{p.title}</p>}
       <h3 className="room-section">{W.ovQuestion}</h3>
       {p.question ? <p className="ov-question">{p.question}</p> : coming}
-      <h3 className="room-section">{W.ovWynk}</h3>
-      {(p.wynk || []).length ? <ul className="ov-wynk">{p.wynk.map((x, i) => <li key={i}>{x}</li>)}</ul> : coming}
+      <h3 className="room-section">{p.wynk_head || W.ovWynk}</h3>
+      {(p.wynk || []).length
+        ? <div className="ov-wynk">{p.wynk.map((x, i) => typeof x === 'string'
+            ? <p key={i}>{x}</p>
+            : <div key={i} className="ov-beat"><h4>{x.head}</h4><p>{x.text}</p></div>)}</div>
+        : coming}
       <h3 className="room-section">{W.ovTerms}</h3>
       {(p.terms || []).length
         ? <dl className="ov-terms">{p.terms.map((t, i) => <div key={i} className="ov-term"><dt>{t.term}</dt><dd>{t.def}</dd></div>)}</dl>
         : coming}
       <h3 className="room-section">{W.ovCal}</h3>
       {(p.calendar || []).length
-        ? <table className="ov-cal"><tbody>{p.calendar.map((r, i) => <tr key={i}><th scope="row">{r.what}</th><td>{r.when}</td></tr>)}</tbody></table>
+        ? <><table className="ov-cal"><tbody>{p.calendar.map((r, i) => <tr key={i}><th scope="row">{r.what}</th><td>{r.when}</td></tr>)}</tbody></table>
+            {p.calendar_notice && <p className="ov-cal-note">{p.calendar_notice}</p>}</>
         : coming}
       <h3 className="room-section">{W.atlas}</h3>
     </div>
@@ -233,8 +239,12 @@ export const SPLASH_STYLES = `
 .ov{max-width:820px}
 .ov-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;letter-spacing:.02em;color:var(--white);margin:4px 0 2px}
 .ov-question{font-size:19px;line-height:1.5;color:var(--white);background:var(--card);border-left:4px solid var(--gold);border-radius:8px;padding:10px 14px;margin:0 0 6px}
-.ov-wynk{margin:0 0 6px 20px;padding:0;color:var(--white);font-size:16.5px;line-height:1.55}
-.ov-wynk li{margin:4px 0}
+.ov-wynk{margin:0 0 6px;padding:0;color:var(--white);font-size:16.5px;line-height:1.55;max-width:70ch}
+.ov-wynk p{margin:0 0 10px}
+.ov-beat{margin:0 0 12px}
+.ov-beat h4{margin:0 0 2px;font-size:16px;font-weight:700;color:var(--gold)}
+.ov-beat p{margin:0}
+.ov-cal-note{margin:8px 0 6px;max-width:640px;color:var(--grey);font-size:15px;line-height:1.5}
 .ov-terms{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:10px;margin:0 0 6px}
 .ov-term{background:var(--card);border:1px solid var(--edge);border-radius:10px;padding:10px 12px}
 .ov-term dt{font-weight:700;color:var(--gold);font-size:16px;margin-bottom:3px}

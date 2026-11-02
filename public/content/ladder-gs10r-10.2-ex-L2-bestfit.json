@@ -2,9 +2,9 @@
   "_course": "Global History and Geography 10R",
   "_unit": "10.2 - Enlightenment, Revolution, and Nationalism",
   "_activity": "Explain, don't describe",
-  "_built": "2026-09-27 18:01 EDT by Will (global10r-curriculum), on BK's 17:19 order via Josh (Arena gaps, item 3). Content from 10.2 Casefile A; outside facts are marked.",
-  "_status": "APPROVED by BK 2026-09-27 18:03 EDT (\"yes\"). Passed to Josh 18:04.",
-  "_licence": "ORIGINAL writing by Will. Document text on screen is 10.2 Casefile A's own excerpt, word for word, with its source line.",
+  "_built": "2026-11-02 10:33 EST by Will (global10r-curriculum), rebuilt by emit_102_gauges.py from the pack modules.",
+  "_status": "BLESSED by BK 2026-10-27 11:43 EDT (\"blessed\"), with the correct answer trimmed 2026-11-02 on BK's yes (10:29) to the length gate's rule 3 (RULED BK 2026-10-31 18:09): the key is never the single longest option. Only the key's wording changed; no distractor was padded. Back to Danny for a changed-lines read, then Josh.",
+  "_licence": "ORIGINAL questions and statements by Will, recut 2026-10-27 to BK's distractor rule. Document details are paraphrased from 10.2 Casefile A. No option in this pack quotes a document. Documents shown on screen are Casefile A's own excerpts, word for word, with their source lines.",
   "skill": "EX",
   "skill_label": "Explanation",
   "level": 2,
@@ -16,49 +16,49 @@
       "id": "ex-01",
       "stem": "Evidence: Montesquieu warns that when one person both makes and enforces the laws, there can be no liberty. Which sentence explains it best?",
       "options": {
-        "1": "Montesquieu wrote about liberty.",
-        "2": "Montesquieu says there's no liberty when one person has the power.",
+        "1": "Montesquieu is saying that liberty disappears when one person holds the power to make the laws and the power to enforce them.",
+        "2": "This means Montesquieu proved that any government with a single strong leader will collapse into tyranny within a generation or two.",
         "3": "This means a government is only safe when its power is split, so no one person can pass unfair laws and enforce them too.",
-        "4": "Montesquieu was a French judge."
+        "4": "This means Montesquieu worked as a judge in France, so he had watched courts and lawmakers at close range for most of his long career."
       },
       "correct": "3",
       "hints": [
-        "Two choices just say what he wrote. Which one says why it matters?",
-        "Look for \"this means.\""
+        "One choice says the evidence again in new words. Which one says why it matters?",
+        "Three choices are the same length. Look at what each one does after this means."
       ],
-      "rationale": "Explaining goes past what the document says to why it matters. The third choice says what Montesquieu's warning means for how a government should be built."
+      "rationale": "Explaining goes past what the document says to why it matters. The choice beginning Montesquieu is saying only restates the evidence, the one about tyranny within a generation claims far more than he wrote, and the one about his work as a judge is outside information rather than an explanation."
     },
     {
       "id": "ex-02",
       "stem": "Evidence: Catherine wrote that all citizens should be subject to the same laws, but her government punished serfs who complained about their landlords. Which sentence explains it best?",
       "options": {
-        "1": "Catherine was the ruler of Russia.",
-        "2": "This means Catherine used Enlightenment words to look fair while keeping absolute power, so the equality she wrote about never reached the serfs.",
-        "3": "Catherine wrote one thing and her government did another.",
-        "4": "Serfs were not happy."
+        "1": "Catherine wrote that all citizens should obey the same laws, but her government punished the serfs who complained about their landlords.",
+        "2": "This means Catherine used Enlightenment words to look fair while keeping absolute power, so the equality she described never reached the serfs.",
+        "3": "This means Catherine was lying in every letter she sent to Voltaire, and none of the philosophes believed anything she claimed.",
+        "4": "This means Russia's serfs were bound to the land, which is why landlords could buy and sell them along with the fields."
       },
       "correct": "2",
       "hints": [
-        "One choice notices the gap. Which one says what the gap means?",
-        "Look for the choice that says why the gap matters."
+        "One choice notices the gap without saying anything about it. Which one says what the gap means?",
+        "Two choices go past the evidence. Only one of them stays inside what the document can show."
       ],
-      "rationale": "Noticing the gap is describing. Explaining says what it means: her Enlightenment words covered for absolute power."
+      "rationale": "Noticing the gap is describing it. Explaining says what it means: her Enlightenment words covered for absolute power. The choice about lying to Voltaire claims to know her private motives, and the one about serfs bound to the land explains something the evidence was not about."
     },
     {
       "id": "ex-03",
       "stem": "Evidence: Wollstonecraft dares France's lawmakers to prove women lack reason before shutting them out. Which sentence explains it best?",
       "options": {
-        "1": "Wollstonecraft wrote in 1792.",
-        "2": "Wollstonecraft wanted lawmakers to prove something.",
-        "3": "Women are important.",
+        "1": "Wollstonecraft is asking the lawmakers to prove that women lack reason before they keep women out of the new rights.",
+        "2": "This means the French Assembly could not answer her challenge, so it granted women the same rights as men in 1792.",
+        "3": "This means Wollstonecraft knew the philosophes' arguments well, since she addressed her book to a member of France's National Assembly.",
         "4": "This means she turned the Enlightenment's own idea, that rights come from reason, against the men who left women out."
       },
       "correct": "4",
       "hints": [
-        "Which choice says why her dare matters?",
+        "Which choice says why her dare works, rather than repeating it?",
         "The philosophes said rights come from reason. What does that do to her argument?"
       ],
-      "rationale": "The best choice explains why the dare works: it uses the philosophes' own rule against them. The others describe or give an opinion."
+      "rationale": "The best choice explains why the dare works: it uses the philosophes' own rule against them. The choice beginning Wollstonecraft is asking restates the evidence, the one about the Assembly granting rights states an outcome that never happened, and the one about who she addressed the book to gives a fact instead of an explanation."
     },
     {
       "id": "ex-04",
@@ -80,17 +80,17 @@
       "id": "ex-05",
       "stem": "Evidence: Locke says a legislature that grabs absolute power forfeits it, and the power passes back to the people. Which sentence explains it best?",
       "options": {
-        "1": "Locke says the power goes back to the people.",
-        "2": "Locke lived in England.",
+        "1": "Locke is saying that a legislature which grabs absolute power loses it, and that the power then returns to the people.",
+        "2": "This means Locke was writing in England after Parliament had replaced one king with another on terms it set itself.",
         "3": "This means Locke gave people a reason to overthrow rulers who abuse power, an idea revolutionaries would use a hundred years later.",
-        "4": "Legislatures make laws."
+        "4": "This means Locke believed every government would eventually be overthrown, which is why he told people to expect revolution in each generation."
       },
       "correct": "3",
       "hints": [
-        "The first choice repeats the evidence. Which one goes a step further?",
-        "Look for the choice that says what his idea led to."
+        "One choice repeats the evidence in new words. Which one goes a step further?",
+        "Two choices go further. Only one of them stays with what Locke actually argued."
       ],
-      "rationale": "Repeating evidence isn't explaining it. The third choice says what Locke's idea means and what it led to."
+      "rationale": "Repeating evidence is not explaining it. The choice about revolutionaries a hundred years later says what Locke's idea means and what it led to. The one about Parliament replacing a king gives context instead, and the one about expecting revolution in each generation turns his argument into something he never claimed."
     }
   ]
 }
