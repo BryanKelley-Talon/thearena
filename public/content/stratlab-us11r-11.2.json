@@ -1,7 +1,7 @@
 {
  "_course": "US History and Government 11R",
  "_built": "2026-11-02 by Josh (flashpoint) - ported, not authored",
- "_source": "Sam's US11R_11.2_StrategyLab_BLESSED_2026-10-31 (pdf md5 5b57a77309b3c4cbd62fbb068352cd72, docx md5 c9512508bb8bdc3390b0c8827d3621b7), built by us11r-curriculum/skills/strategy-lab/build_u2_strategylab_112.py. Question text is ast-parsed from that script, byte for byte. Stems and options are MC_BANK records.",
+ "_source": "Sam's US11R_11.2_StrategyLab_BLESSED_2026-10-31 (pdf md5 5b57a77309b3c4cbd62fbb068352cd72, docx md5 c9512508bb8bdc3390b0c8827d3621b7), built by us11r-curriculum/skills/strategy-lab/build_u2_strategylab_112.py. Question text is ast-parsed from that script, byte for byte. Stems and options are MC_BANK records. Passages for Q12, Q13, Q15, Q16 and Q22 are Sam's 2026-11-02 09:01 typed transcriptions (md5 b4c6085aed34f4423757fd5b2c80da00), Danny CLEARED 09:12 COUNT 14-0-0. Q22 REPLACED the desk's own adapted Virginia Declaration wording, which did not carry the phrase 'derived from, the people' that this question's hint sends a kid to find - Sam caught it; it was not in my ask.",
  "_cleared": "Danny 2026-10-31 16:05, COUNT 26-2-0.",
  "_print_only_cut": "Two strings from the brief are print-only and are NOT on screen. (1) The TEACHER NOTE on Q25 - the author marks it 'print only; keep or cut for Arena'. (2) The navigation sentence in WHAT THIS IS, cut verbatim: \"Find it under **Unit Test Review → PART I PRACTICE → Part I reps — 11.2** in the Arena, or work this printed copy on data day.\" - it tells a kid where to find the page they are already standing on, and names the printed copy. Nothing else is changed; no word is rewritten. Both cuts go to BK and Sam in the proof.",
  "title": "11.2 PART I STRATEGY LAB",
@@ -185,7 +185,11 @@
    },
    "correct": "2",
    "no_stimulus": false,
-   "pending_crop": "unit02-washington-newport-doc1.png"
+   "passage": {
+    "text": "To the Hebrew [Jewish] Congregation in Newport, Rhode Island\n[August 18, 1790]\nGentlemen:\n\n. . . The Citizens of the United States of America have a right to applaud themselves for having given to mankind examples of an enlarged and liberal policy: a policy worthy of imitation. All possess alike liberty of conscience and immunities [protections] of citizenship. It is now no more that toleration is spoken of, as if it was by the indulgence of one class of people, that another enjoyed the exercise of their inherent natural rights. For happily the Government of the United States, which gives to bigotry no sanction, to persecution no assistance, requires only that they who live under its protection should demean themselves as good citizens, in giving it on all occasions their effectual support. . . .\n\nMay the Children of the Stock of Abraham, who dwell in this land continue to merit and enjoy the good will of the other inhabitants. . . .\n\nG. Washington",
+    "citation": "Source: President George Washington, Letter to the Hebrew Congregation of Newport, Rhode Island, August 18, 1790 (adapted)",
+    "_from": "Sam 2026-11-02 09:01, typed from the NYSED crop and compared against the exam PDF's own text layer; Danny CLEARED 09:12, COUNT 14-0-0, source file md5 b4c6085aed34f4423757fd5b2c80da00"
+   }
   },
   {
    "n": 13,
@@ -208,7 +212,11 @@
    },
    "correct": "4",
    "no_stimulus": false,
-   "pending_crop": "unit02-washington-newport-doc1.png"
+   "passage": {
+    "text": "To the Hebrew [Jewish] Congregation in Newport, Rhode Island\n[August 18, 1790]\nGentlemen:\n\n. . . The Citizens of the United States of America have a right to applaud themselves for having given to mankind examples of an enlarged and liberal policy: a policy worthy of imitation. All possess alike liberty of conscience and immunities [protections] of citizenship. It is now no more that toleration is spoken of, as if it was by the indulgence of one class of people, that another enjoyed the exercise of their inherent natural rights. For happily the Government of the United States, which gives to bigotry no sanction, to persecution no assistance, requires only that they who live under its protection should demean themselves as good citizens, in giving it on all occasions their effectual support. . . .\n\nMay the Children of the Stock of Abraham, who dwell in this land continue to merit and enjoy the good will of the other inhabitants. . . .\n\nG. Washington",
+    "citation": "Source: President George Washington, Letter to the Hebrew Congregation of Newport, Rhode Island, August 18, 1790 (adapted)",
+    "_from": "Sam 2026-11-02 09:01, typed from the NYSED crop and compared against the exam PDF's own text layer; Danny CLEARED 09:12, COUNT 14-0-0, source file md5 b4c6085aed34f4423757fd5b2c80da00"
+   }
   },
   {
    "n": 14,
@@ -253,7 +261,11 @@
    },
    "correct": "4",
    "no_stimulus": false,
-   "pending_crop": "unit02-0125-mc05.png"
+   "passage": {
+    "text": ". . . The result is a conviction that the States have no power, by taxation or otherwise, to retard [slow down], impede, burden, or in any manner control, the operations of the constitutional laws enacted by Congress to carry into execution the powers vested in the general government. This is, we think, the unavoidable consequence of that supremacy which the constitution has declared. We are unanimously of opinion, that the law passed by the legislature of Maryland, imposing a tax on the Bank of the United States, is unconstitutional and void. . . .",
+    "citation": "Source: McCulloch v. Maryland, 1819",
+    "_from": "Sam 2026-11-02 09:01, typed from the NYSED crop and compared against the exam PDF's own text layer; Danny CLEARED 09:12, COUNT 14-0-0, source file md5 b4c6085aed34f4423757fd5b2c80da00"
+   }
   },
   {
    "n": 16,
@@ -276,7 +288,11 @@
    },
    "correct": "4",
    "no_stimulus": false,
-   "pending_crop": "unit02-0823-mc05.png"
+   "passage": {
+    "text": ". . . The great rule of conduct for us, in regard to foreign Nations is in extending our commercial relations to have with them as little political connection as possible. So far as we have already formed engagements let them be fulfilled with perfect good faith. Here let us stop.\n\nEurope has a set of primary interests, which to us have none, or a very remote relation. Hence she must be engaged in frequent controversies, the causes of which are essentially foreign to our concerns. Hence therefore it must be unwise in us to implicate ourselves, by artificial ties, in the ordinary vicissitudes [shifts] of her politics, or the ordinary combinations and collisions of her friendships, or enmities [hostilities].\n\nOur detached and distant situation invites and enables us to pursue a different course. If we remain one People, under an efficient government, the period is not far off, when we may defy material injury from external annoyance; when we may take such an attitude as will cause the neutrality we may at any time resolve upon to be scrupulously [completely] respected; when belligerent nations, under the impossibility of making acquisitions upon us, will not lightly hazard the giving us provocation; when we may choose peace or War as our interest guided by justice shall counsel. . . .",
+    "citation": "Source: President George Washington, Farewell Address, 1796 (adapted)",
+    "_from": "Sam 2026-11-02 09:01, typed from the NYSED crop and compared against the exam PDF's own text layer; Danny CLEARED 09:12, COUNT 14-0-0, source file md5 b4c6085aed34f4423757fd5b2c80da00"
+   }
   },
   {
    "n": 18,
@@ -327,9 +343,9 @@
    "correct": "3",
    "no_stimulus": false,
    "passage": {
-    "text": "All power belongs to the people and comes from the people. Government officials are the people's trustees and servants, and they must always answer to the people.",
-    "citation": "Source: Virginia Declaration of Rights, June 12, 1776 (adapted)",
-    "_from": "DOC_BANK unit02-vadeclaration-1776-adapted.json - its provenance names crop unit02-0626-mc03-vadecl-1776.png"
+    "text": ". . . That all power is vested in, and consequently derived from, the people; that magistrates are their trustees and servants and at all times amenable to them. . . .",
+    "citation": "Source: Virginia Declaration of Rights, June 12, 1776",
+    "_from": "Sam 2026-11-02 09:01, typed from the NYSED crop and compared against the exam PDF's own text layer; Danny CLEARED 09:12, COUNT 14-0-0, source file md5 b4c6085aed34f4423757fd5b2c80da00"
    }
   },
   {
