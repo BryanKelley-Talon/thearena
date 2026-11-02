@@ -27,6 +27,7 @@ const LIVE = new Set()
 const LADDER_TYPE = {}
 const DOCASSIST = new Set()    // Doc Assist packs carry their own shape; the DOC ASSIST block below checks them
 const DOCCHECK = new Set()     // doc_check packs carry their own shape; the THE DOC CHECK block below checks them
+const STRATLAB = new Set()    // the Part I Strategy Lab's own shape; the STRATEGY LAB block below checks it (2026-11-02)
 const PEEL = new Set()         // peel_build and highlight packs carry their own shape; the PEEL BUILDER block below checks them (2026-10-14)
 const ENRICH_OK = new Set()   // enrichment files whose ladder has an L4 source the shell shows above them
 // Levels that CARRY their documents rather than point at them: manifest level
@@ -53,6 +54,7 @@ try {
         if (a.published && a.content_ref) LIVE.add(String(a.content_ref).replace(/^content\//, ''))
         if (a.type === 'doc_check' && a.content_ref) DOCCHECK.add(String(a.content_ref).replace(/^content\//, ''))
         if ((a.type === 'peel_build' || a.type === 'highlight') && a.content_ref) PEEL.add(String(a.content_ref).replace(/^content\//, ''))
+        if (a.type === 'stratlab' && a.content_ref) STRATLAB.add(String(a.content_ref).replace(/^content\//, ''))
       }
       if (u.doc_assist?.content_ref) DOCASSIST.add(String(u.doc_assist.content_ref).replace(/^content\//, ''))
       if (u.chase?.published === true && u.chase.content_ref) LIVE.add(String(u.chase.content_ref).replace(/^content\//, ''))   // a published chase blocks the build (2026-10-07)
@@ -256,6 +258,9 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
   if (/^blueprint-/.test(f)) continue   // the WRITING LAB block below
   // A doc_check item names its stimulus by key; the DOC CHECK block below fails one that resolves to nothing.
   if (DOCCHECK.has(f) || PEEL.has(f)) continue
+  // A Strategy Lab gives the answer and asks for the proof, so it carries no choices[] and no
+  // reasoning line to check. Its own block below holds the document rule on it, and harder.
+  if (STRATLAB.has(f)) continue
   checkDocVisible(f, d)
   if (LADDER_TYPE[f]) { checkLadder(f, d, LADDER_TYPE[f]); continue }
   for (const rep of d.reps || []) {
@@ -805,6 +810,51 @@ function checkPopouts(d, f, course, m, fail) {
     const d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8'))
     for (const pr of (a.type === 'highlight' ? highlightProblems(d) : peelProblems(d))) df(pr)
     const student = [d.intro, d.prompt, ...(d.slots || []).map(s => s.rationale), ...(d.cards || []).flatMap(x => [x.text, x.why_not]), ...(d.key || []).map(k => k.why)].filter(Boolean).join(' ')
+    if (SCORE.test(student)) df('something reads like a score.')
+  }
+}
+
+// ── THE PART I STRATEGY LAB (added 2026-11-02, Josh; BK's order in chat 07:41) ─────
+// Reverse multiple choice: the answer is given, the kid marks the phrase that proves it.
+// Format only, never content. The rule this gate exists to hold is BK's, 2026-09-25 and again
+// 2026-10-27: AN ACTIVITY CARRIES ITS DOCUMENT, IT NEVER POINTS AT ONE. So a question that is
+// not a recall item must carry its passage and that passage's citation, or this build stops.
+// Completion, not accuracy — so nothing here may read as a score, and no item carries a key.
+{
+  let m = {}
+  try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
+  const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|score|\bpoints\b|streak|\bpercent\b|%)/i
+  for (const c of m.courses || []) for (const u of c.units || []) for (const a of u.activities || []) {
+    if (a.type !== 'stratlab') continue
+    const f = String(a.content_ref || '').replace(/^content\//, '')
+    const live = a.published === true && u.published === true && (c.status ?? 'open') !== 'building'
+    const df = (msg) => { if (live) { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ } else { console.warn(`  dark  ${f}\n        ${msg}`); warns++ } }
+    if (!f || !fs.existsSync(path.join(CONTENT, f))) { df(`stratlab file '${f}' is not in public/content.`); continue }
+    const d = JSON.parse(fs.readFileSync(path.join(CONTENT, f), 'utf8'))
+    if (!d.title || !d.sub) df('the set needs its title and its subtitle.')
+    if (!(d.how_to_work?.steps || []).length) df('the set needs the how-to-work steps.')
+    const items = d.items || []
+    if (!items.length) df('the set has no questions.')
+    for (const q of items) {
+      const w = `Q${q.n ?? '?'}`
+      if (!q.stem) df(`${w}: no stem.`)
+      const opts = q.options || {}
+      if (Object.keys(opts).length < 2) df(`${w}: needs its answer choices.`)
+      if (!opts[q.correct]) df(`${w}: the given answer '${q.correct}' is not one of its choices.`)
+      if (!q.strategy || !q.watch) df(`${w}: needs its strategy and its move.`)
+      if (!q.hint) df(`${w}: needs its hint - the hint is the only help this set gives.`)
+      if (!q.frame || !q.move || !q.line) df(`${w}: needs its frame position, move and skill line.`)
+      // The document rule. A recall item carries no passage BY DESIGN and says so on the page.
+      if (q.no_stimulus) {
+        if (q.passage) df(`${w}: marked a recall item but carries a passage.`)
+      } else if (!q.passage?.text) {
+        df(`${w}: no passage on screen, and it is not a recall item - a kid without the paper has nothing to mark. ${q.pending_crop ? `Waiting on a typed passage for crop ${q.pending_crop}.` : ''}`)
+      } else if (!q.passage.citation) {
+        df(`${w}: its passage has no citation on screen.`)
+      }
+      if (q.key || q.answer_key) df(`${w}: carries a key. This set is completion, not accuracy - there is nothing to mark right.`)
+    }
+    const student = [...(d.what_this_is || []), ...(d.how_to_work?.steps || []), ...items.flatMap(q => [q.strategy, q.watch, q.hint, q.stem, ...Object.values(q.options || {})])].filter(Boolean).join(' ')
     if (SCORE.test(student)) df('something reads like a score.')
   }
 }

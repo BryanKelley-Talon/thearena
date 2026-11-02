@@ -48,6 +48,7 @@ import { DocAssistCard, DocAssistHome, DocAssistDoc, DOCASSIST_STYLES, CHROME as
 import { DocCheckSet, DOCCHECK_STYLES } from './doccheck.jsx'
 import { PeelBuild, PEEL_STYLES } from './peel.jsx'
 import { Highlight, HL_STYLES } from './highlight.jsx'
+import { StrategyLab, STRATLAB_STYLES } from './stratlab.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, CasefileDoors, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
@@ -83,6 +84,9 @@ const HOME_URL = 'https://flashpointhistory.com'
 import { resolveCalendar } from './calendar.js'
 const MANIFEST_URL = '/arena.manifest.json'
 const PREVIEW_SKILLS_LAB = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'skills-lab' } catch { return false } })()
+// The Part I Strategy Lab ships dark until its last four passages arrive from the desk (BK's rule:
+// an activity carries its document). `?preview=stratlab` opens it for BK and Danny in the meantime.
+const PREVIEW_STRATLAB = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'stratlab' } catch { return false } })()
 // The SAME list the landing page reads. Canonical copy at builds/_shared/games.json,
 // synced into both sites by builds/_shared/sync-games.sh. A scenario_link points at a
 // game ID, never a raw URL — so when a game moves (1914 is still off-domain), one edit
@@ -389,7 +393,7 @@ const isOpen = (o) => (o?.status ?? 'open') !== 'building'
 // activity can ship ahead and appear on the day kids start it (11.1 Test Practice, Mon 10/5).
 const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
 const onDate = (o) => !o?.opens_on || todayLocal() >= String(o.opens_on)
-const isLive = (o) => o?.published === true && isOpen(o) && onDate(o)
+const isLive = (o) => (o?.published === true || (o?.type === 'stratlab' && PREVIEW_STRATLAB)) && isOpen(o) && onDate(o)
 
 // A thing is enterable only if it is published, open, AND its content resolves.
 const resolves = (ref) => typeof ref === 'string' && ref.length > 0
@@ -1530,7 +1534,7 @@ function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, 
 // Test practice, grouped so a kid can scan it. A unit activity that is already a
 // ladder level (e.g. HC L1 matching) is left out here — it lives on the ladder.
 const PRACTICE_GROUPS = [
-  { key: 'regents', label: 'Regents-style questions', test: a => a.type === 'stimulus' || a.type === 'doc_check' },
+  { key: 'regents', label: 'Regents-style questions', test: a => a.type === 'stimulus' || a.type === 'doc_check' || a.type === 'stratlab' },
   { key: 'vocab',   label: 'Vocabulary',              test: a => a.type === 'matching' && /vocab/i.test(a.content_ref || '') },
   { key: 'moves',   label: 'Thinking moves',          test: a => a.type === 'matching' },
   { key: 'more',    label: 'More',                    test: () => true },
@@ -1556,7 +1560,7 @@ function TestPractice({ unit, acts, games, onOpenActivity }) {
                       <span>{a.label}</span><span className="flag live">Open</span></a>
                   : <div key={i} className="practice-row off"><span>{a.label}</span><span className="flag soon">Coming</span></div>
               }
-              const playable = a.type === 'stimulus' || a.type === 'matching' || a.type === 'doc_check' || a.type === 'peel_build' || a.type === 'highlight'
+              const playable = a.type === 'stimulus' || a.type === 'matching' || a.type === 'doc_check' || a.type === 'peel_build' || a.type === 'highlight' || a.type === 'stratlab'
               return playable
                 ? <button key={i} type="button" className="practice-row" onClick={() => onOpenActivity(i)}>
                     <span>{a.label}{a.blurb && <span className="row-blurb">{a.blurb}</span>}</span><span className="flag live">Start</span></button>
@@ -2001,6 +2005,22 @@ function PeelActivity({ course, activity, pack, onBack }) {
             ? <Highlight pack={pack} onRep={() => setReps(r => r + 1)} />
             : <PeelBuild pack={pack} onRep={() => setReps(r => r + 1)} />}
         <Counters reps={reps} />
+      </div>
+      <BottomBack onBack={onBack} back={'Back'} />
+    </div>
+  )
+}
+
+// THE PART I STRATEGY LAB (2026-11-02): the room's header and both Backs around stratlab.jsx.
+// No reps counter: this set is completion, not accuracy, so there is nothing to count.
+function StratLabActivity({ course, activity, pack, onBack }) {
+  return (
+    <div className="wrap">
+      <ScreenHeader label={activity.label} onBack={onBack} color={course.accent} back="Back" />
+      <div className="detail" style={{ maxWidth: 820 }}>
+        {!pack || !(pack.items || []).length
+          ? <div className="loading">Opening the set&hellip;</div>
+          : <StrategyLab pack={pack} lineLabel={code => lineLabel(course, code)} />}
       </div>
       <BottomBack onBack={onBack} back={'Back'} />
     </div>
@@ -2565,7 +2585,9 @@ export default function App() {
   else if (unit && actIndex != null) {
     const act = (unit.activities || []).filter(isLive)[actIndex]
     const onActivityBack = () => { setActIndex(null); setPack(null); leaveRoomPage() }
-    screen = act?.type === 'matching'
+    screen = act?.type === 'stratlab'
+      ? <StratLabActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
+      : act?.type === 'matching'
       ? <MatchingActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
       : act?.type === 'doc_check'
         ? <DocCheckActivity course={course} activity={act} pack={pack} onBack={onActivityBack} />
@@ -2671,7 +2693,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + SKILLSLAB_STYLES + SPLASH_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES + THROWBACK_STYLES + SCENE_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + SKILLSLAB_STYLES + SPLASH_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES + STRATLAB_STYLES + THROWBACK_STYLES + SCENE_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}

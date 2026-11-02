@@ -1,0 +1,385 @@
+{
+ "_course": "US History and Government 11R",
+ "_built": "2026-11-02 by Josh (flashpoint) - ported, not authored",
+ "_source": "Sam's US11R_11.2_StrategyLab_BLESSED_2026-10-31 (pdf md5 5b57a77309b3c4cbd62fbb068352cd72, docx md5 c9512508bb8bdc3390b0c8827d3621b7), built by us11r-curriculum/skills/strategy-lab/build_u2_strategylab_112.py. Question text is ast-parsed from that script, byte for byte. Stems and options are MC_BANK records.",
+ "_cleared": "Danny 2026-10-31 16:05, COUNT 26-2-0.",
+ "_print_only_cut": "Two strings from the brief are print-only and are NOT on screen. (1) The TEACHER NOTE on Q25 - the author marks it 'print only; keep or cut for Arena'. (2) The navigation sentence in WHAT THIS IS, cut verbatim: \"Find it under **Unit Test Review → PART I PRACTICE → Part I reps — 11.2** in the Arena, or work this printed copy on data day.\" - it tells a kid where to find the page they are already standing on, and names the printed copy. Nothing else is changed; no word is rewritten. Both cuts go to BK and Sam in the proof.",
+ "title": "11.2 PART I STRATEGY LAB",
+ "sub": "Post-Test Review · US History & Government 11R · Data Day, Tuesday 11/3",
+ "what_this_is": [
+  "**Eleven real questions off your own 11.2 Part I test.** The correct answer is already given on every one. Your job is not to find it — it is to **prove it.**",
+  "**This set is built from items the class actually struggled with or that are worth a second look together** — it is not the whole test, and it is not new material. You have already seen every one of these.",
+  "Two of today's eleven (Q14 and Q25) carry no passage at all — those are recall items, and they tell you so right on the page."
+ ],
+ "types": {
+  "lead": "Every Part I question is one of six moves you already know. Each question below names its move in the same language as your packets and the wall: **the Frame position, the move, and the skill line it feeds.**",
+  "headers": [
+   "QUESTION TYPE",
+   "FRAME",
+   "MOVE",
+   "FEEDS"
+  ],
+  "rows": [
+   [
+    "POINT OF VIEW",
+    "Q3 PERSPECTIVE CHECK",
+    "Source use",
+    "DU"
+   ],
+   [
+    "AUTHOR'S CLAIM",
+    "Q2 CLAIM & EVIDENCE",
+    "Claim support",
+    "TH"
+   ],
+   [
+    "CAUSE / RESULT",
+    "Q2 CLAIM & EVIDENCE",
+    "Causation",
+    "HC"
+   ],
+   [
+    "CONNECTION TO ERA",
+    "Q1 SOURCING",
+    "Identification",
+    "HC"
+   ],
+   [
+    "CONSTITUTIONAL PRINCIPLE",
+    "Q4 CIVIC CONNECTION",
+    "Identification",
+    "CP"
+   ],
+   [
+    "AUTHOR'S PURPOSE",
+    "Q1 SOURCING",
+    "Purpose & audience",
+    "EX"
+   ]
+  ]
+ },
+ "how_to_work": {
+  "head": "HOW TO WORK EACH QUESTION, IN ORDER",
+  "lead": "*This is the same four questions you ask of every document, all year — Q1 Sourcing, Q2 Claim & Evidence, Q3 Perspective Check, Q4 Civic Connection. That's why you ask them: fastest way into any document. Part I just tests one of the four at a time. Here's the order, every question:*",
+  "steps": [
+   "**Read the question first — not the passage.** Know what you're hunting for.",
+   "**Q1 SOURCING.** Hit the source line with your pen — circle the date, underline the author and the kind of document. Free information, before you've read a word of the passage.",
+   "**Q2 CLAIM & EVIDENCE.** Read the whole passage once, start to finish — pen never stops moving. Circle the main idea as you find it. What is this document actually arguing or showing? That's the claim. The four answer choices are what you're testing it against.",
+   "**The answer is already given — go find the exact phrase that proves it.** One phrase, 12 words max. Whatever this particular question is really testing — Perspective Check, Civic Connection, whichever the page names — the proof is sitting in what you just marked up for Q1 and Q2.",
+   "**Underline it, then move on.**"
+  ]
+ },
+ "notes": [
+  {
+   "head": "CONTENT NOTE — THE MARSHALL COURT AND THE ELASTIC CLAUSE",
+   "body": [
+    "SIX OF TODAY'S ELEVEN RUN ON THE SAME FIGHT",
+    "Marbury v. Madison (1803, Q10), the Antifederalist warnings about the “elastic clause” during ratification (Q11, Q18, Q26), and McCulloch v. Maryland (1819, Q14 and Q15) are not six separate topics — they are one argument that runs across thirty years.",
+    "**The Constitution gives Congress power to make laws “necessary and proper” for carrying out its other powers (Article I, Section 8) — the elastic clause.** Antifederalists in 1787-88 warned this clause had no real limit and would let Congress take on power the Constitution never listed. Nobody settled who was right until John Marshall's Court did, case by case: Marbury (1803) first established that the Court itself gets to say what the Constitution means; McCulloch (1819) then used that power to rule that the elastic clause DOES reach new cases Congress never listed by name (chartering a national bank), and that federal law wins when it conflicts with a state's — **federal supremacy.**",
+    "**Q15 is the federalism item on this test — its answer is the word “supremacy” itself.** Read Q10, 11, 14, 15, 18 and 26 as one continuous argument, not six unrelated questions, and the whole test gets easier."
+   ]
+  },
+  {
+   "head": "CONTENT NOTE — THE McCULLOCH PAIR",
+   "body": [
+    "Q14 and Q15 are the same case, back-to-back on the Jan. 2025 exam — Q5 and Q6. Read them as one case doing two jobs: Q14 asks what the ruling settled; Q15 asks what PRINCIPLE it's an example of. Same case, two different six-move questions."
+   ]
+  }
+ ],
+ "closing": {
+  "head": "WHEN YOU ARE DONE",
+  "sub": "11.2 Strategy Lab · data day, Tuesday 11/3",
+  "body": [
+   "THE ONLY THING THAT COSTS YOU POINTS HERE IS NOT DOING IT",
+   "Eleven questions, worked in order — source line, main idea, proof, next question. Eleven proofs underlined (or stated, for Q14 and Q25). **That is the whole job.** This set is completion, not accuracy, same as every Strategy Lab."
+  ],
+  "training_head": "WHAT THIS IS TRAINING, IN THE LANGUAGE YOU ALREADY USE",
+  "training": [
+   [
+    "**Marking the source line before you read**",
+    "**Q1 Sourcing** — free information, every single document, all year."
+   ],
+   [
+    "**Circling the main idea, then underlining the 12-word proof**",
+    "**DU** Document Use — name the claim, pull the specific detail that proves it."
+   ],
+   [
+    "**Reading Q10, 11, 14, 15, 18, 26 as one argument**",
+    "**CP** Civic Principle — federalism and the elastic clause, traced across thirty years."
+   ]
+  ]
+ },
+ "items": [
+  {
+   "n": 10,
+   "item_id": "0824-mc10",
+   "archetype": "CAUSE / RESULT",
+   "era": "Judicial Review · Marbury v. Madison (1803)",
+   "frame": "Q2 CLAIM & EVIDENCE",
+   "move": "Causation",
+   "line": "HC",
+   "minutes": 3,
+   "strategy": "**This is a ‘what changed’ question, not a ‘what happened’ question.** Marbury is one specific ruling. Read all four choices and ask which one names an actual shift in power that happened BECAUSE of this case — not just a true-sounding fact about government in general.",
+   "watch": "Two choices describe a power no branch has ever actually had (a lower court reversing the Supreme Court; the judiciary alone amending the Constitution) — rule those out on structure before you even get to the history.",
+   "hint": "the phrase ‘a law repugnant to the constitution is void’ is the proof itself.",
+   "stem": "What is one important consequence of the Supreme Court’s decision in Marbury v. Madison?",
+   "options": {
+    "1": "The Supreme Court’s decisions may be reversed by a lower court.",
+    "2": "Amending the Constitution became the sole responsibility of the judicial branch.",
+    "3": "The power of the judicial branch was expanded.",
+    "4": "Nominations of Supreme Court Justices had to be approved by a majority vote of Congress."
+   },
+   "correct": "3",
+   "no_stimulus": false,
+   "passage": {
+    "text": "The Constitution is either the highest law, which ordinary laws cannot change, or it is just another ordinary law, and Congress can change it whenever it pleases. …\n\n“It is emphatically the province and duty of the judicial department to say what the law is.” (It is the courts' job to say what the law means.) …\n\n“A law repugnant to the constitution is void” (a law that conflicts with the Constitution is not a real law; it has no force).",
+    "citation": "Source: Marbury v. Madison, 1803, Chief Justice John Marshall, for the Supreme Court (adapted)",
+    "_from": "DOC_BANK unit02C-marbury-1803-adapted.json - named by item 0824-mc10's own stimulus_refs"
+   }
+  },
+  {
+   "n": 11,
+   "item_id": "0823-mc02",
+   "archetype": "AUTHOR'S CLAIM",
+   "era": "Ratification Debate · Antifederalist No. 46 (1788)",
+   "frame": "Q2 CLAIM & EVIDENCE",
+   "move": "Claim support",
+   "line": "TH",
+   "minutes": 3,
+   "strategy": "**Find what the author is afraid Congress will DO, then match it to the one constitutional clause that allows it.** This writer isn't objecting to the Constitution in general — he is naming one specific provision.",
+   "watch": "Due process and equal protection are real constitutional terms, but they protect individuals FROM government power — they are not grants of power TO Congress, which is what a worried Antifederalist in 1788 is writing about.",
+   "hint": "the proof is the phrase where the author names Congress's power to pass laws beyond the ones the Constitution actually lists.",
+   "stem": "Which provision in the Constitution is the author of this passage questioning?",
+   "options": {
+    "1": "due process",
+    "2": "equal protection",
+    "3": "elastic clause",
+    "4": "rule of law"
+   },
+   "correct": "3",
+   "no_stimulus": false,
+   "passage": {
+    "text": ". . . My object is to consider that undefined, unbounded and immense power which is comprised [included] in the following clause—“And to make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States; or in any department or offices thereof.” Under such a clause as this, can anything be said to be reserved and kept back from Congress? . . .",
+    "citation": "Source: Antifederalist Papers No. 46, November 2, 1788 (adapted)",
+    "_from": "live stimulus-11-2.json item 0823-mc01 - same NYSED crop unit02-0823-mc01.png, transcribed word for word"
+   }
+  },
+  {
+   "n": 12,
+   "item_id": "0825-mc05",
+   "archetype": "AUTHOR'S PURPOSE",
+   "era": "The New Republic · Washington & Religious Liberty (1790)",
+   "frame": "Q1 SOURCING",
+   "move": "Purpose & audience",
+   "line": "EX",
+   "minutes": 3,
+   "strategy": "**‘Most useful to a historian studying X’ asks what this document is EVIDENCE OF — not just what it mentions in passing.** Washington's 1790 letter could brush against several real topics; pick the one it actually demonstrates.",
+   "watch": "A choice can name a real historical issue of the era and still be wrong, if THIS letter doesn't actually speak to it. Being a real 1790s topic is not the same as being what this source proves.",
+   "hint": "the line where Washington tells the congregation directly how the new government will treat their worship is the tell.",
+   "stem": "This passage would be most useful to a historian studying",
+   "options": {
+    "1": "colonial ideas about leadership in the Americas",
+    "2": "religious freedom in early United States history",
+    "3": "fair treatment for Native Americans",
+    "4": "presidential authority in immigration legislation"
+   },
+   "correct": "2",
+   "no_stimulus": false,
+   "pending_crop": "unit02-washington-newport-doc1.png"
+  },
+  {
+   "n": 13,
+   "item_id": "0825-mc06",
+   "archetype": "CONNECTION TO ERA",
+   "era": "The New Republic · The Bill of Rights (1791)",
+   "frame": "Q1 SOURCING",
+   "move": "Identification",
+   "line": "HC",
+   "minutes": 3,
+   "strategy": "**Same passage as the question before it — now you're asked which FOUNDING DOCUMENT guarantees the idea, not what the idea is.** Match the right being described to the document that actually contains it.",
+   "watch": "The Articles of Confederation and the Great and Three-Fifths Compromises are all real founding-era deals — but none of them is a list of individual rights. Only one choice is.",
+   "hint": "ask which of the four choices is actually a rights-guarantee, not a structure-of-government deal.",
+   "stem": "The ideas expressed in this passage were guaranteed by the",
+   "options": {
+    "1": "Articles of Confederation",
+    "2": "Great Compromise",
+    "3": "Three-fifths Compromise",
+    "4": "Bill of Rights"
+   },
+   "correct": "4",
+   "no_stimulus": false,
+   "pending_crop": "unit02-washington-newport-doc1.png"
+  },
+  {
+   "n": 14,
+   "item_id": "0125-mc05",
+   "archetype": "CAUSE / RESULT",
+   "era": "Federal Power · McCulloch v. Maryland (1819)",
+   "frame": "Q2 CLAIM & EVIDENCE",
+   "move": "Causation",
+   "line": "HC",
+   "minutes": 2,
+   "strategy": "**No passage on this one — it's straight recall, same as Q25.** ‘Important impact’ questions ask what the ruling SETTLED. McCulloch settled exactly one big fight: whether the National Bank was constitutional.",
+   "watch": "Choice (1) describes the OPPOSITE of what McCulloch actually held. If you remember ‘states vs. federal government’ but not which side won, you will pick the reverse of the real answer — McCulloch is a federal-supremacy case, not a states'-rights case.",
+   "hint": "the necessary-and-proper clause is what makes the bank constitutional — name the clause, not just ‘the Constitution.’",
+   "stem": "What was an important impact of the McCulloch v. Maryland (1819) decision?",
+   "options": {
+    "1": "It established the idea that states should have the power to overturn federal laws.",
+    "2": "It determined that the creation of the National Bank was constitutional.",
+    "3": "It stated that the bicameral legislature established by the Constitution was illegal.",
+    "4": "It limited the power of Congress to add new states to the Union."
+   },
+   "correct": "2",
+   "no_stimulus": true
+  },
+  {
+   "n": 15,
+   "item_id": "0125-mc06",
+   "archetype": "CONSTITUTIONAL PRINCIPLE",
+   "era": "Federal Power · McCulloch v. Maryland (1819)",
+   "frame": "Q4 CIVIC CONNECTION",
+   "move": "Identification",
+   "line": "CP",
+   "minutes": 3,
+   "strategy": "**This is the federalism item — match the ACTION described to the one-word PRINCIPLE it demonstrates.** The excerpt describes a state law losing to the Constitution. Name what that's an example of.",
+   "watch": "Republican government, popular sovereignty, and sectionalism are all real Unit 1-2 vocabulary — none of them is what happens when a STATE law loses to a FEDERAL one. Only one principle names that.",
+   "hint": "the excerpt's own language about a state law working against what the Constitution ‘has declared’ names the principle outright.",
+   "stem": "The Supreme Court decision described in this excerpt is an example of which principle?",
+   "options": {
+    "1": "republican government",
+    "2": "popular sovereignty",
+    "3": "sectionalism",
+    "4": "federal supremacy"
+   },
+   "correct": "4",
+   "no_stimulus": false,
+   "pending_crop": "unit02-0125-mc05.png"
+  },
+  {
+   "n": 16,
+   "item_id": "0823-mc05",
+   "archetype": "POINT OF VIEW",
+   "era": "Washington's Farewell · Foreign Policy (1796)",
+   "frame": "Q3 PERSPECTIVE CHECK",
+   "move": "Source use",
+   "line": "DU",
+   "minutes": 3,
+   "strategy": "**This asks WHY, in Washington's own words, not why in general.** The Farewell Address gives one specific reason the U.S. can avoid foreign entanglements — find the reason HE gives, not the reason that sounds the most impressive.",
+   "watch": "Military strength and industrial capacity are both real later arguments for American power — neither is Washington's 1796 argument, which rests on something the country simply HAS, not something it built.",
+   "hint": "the phrase about the nation's ‘detached and distant situation’ is the whole argument.",
+   "stem": "In this address, President George Washington states that the United States can stay out of foreign entanglements because of its",
+   "options": {
+    "1": "ethnic diversity",
+    "2": "well-established military",
+    "3": "large industrial capacity",
+    "4": "geographical location"
+   },
+   "correct": "4",
+   "no_stimulus": false,
+   "pending_crop": "unit02-0823-mc05.png"
+  },
+  {
+   "n": 18,
+   "item_id": "0824-mc07",
+   "archetype": "AUTHOR'S CLAIM",
+   "era": "Ratification Debate · Antifederalist No. 46 (1788)",
+   "frame": "Q2 CLAIM & EVIDENCE",
+   "move": "Claim support",
+   "line": "TH",
+   "minutes": 3,
+   "strategy": "**What ONE thing is this author arguing?** Same source family as Q11, different worry. Summarize the whole passage in a sentence before you look at the choices.",
+   "watch": "A judiciary did exist under the proposed Constitution, and the president was never popularly elected at the founding — two choices fail on fact alone, before you even weigh them against the passage.",
+   "hint": "the author's complaint is about which BRANCH grows unchecked — find the sentence naming that branch.",
+   "stem": "Based on this passage, why did Antifederalists oppose ratification of the Constitution?",
+   "options": {
+    "1": "The legislative branch had too much power.",
+    "2": "A judicial branch did not exist.",
+    "3": "The executive branch had no limits on its authority.",
+    "4": "The president was elected by popular vote."
+   },
+   "correct": "1",
+   "no_stimulus": false,
+   "passage": {
+    "text": ". . . But to the question—without force what can restrain the Congress from making such laws as they please? What limits are there to their authority? I fear none at all. For surely it cannot be justly said that they have no power but what is expressly given to them, when by the very terms of their creation they are vested with the powers of making laws in all cases—necessary and proper; when from the nature of their power, they must necessarily be the judges what laws are necessary and proper. . . .",
+    "citation": "Source: Antifederalist No. 46, November 2, 1788",
+    "_from": "live stimulus-11-2.json item 0824-mc08 - same NYSED crop unit02-0824-mc07.png, transcribed word for word"
+   }
+  },
+  {
+   "n": 22,
+   "item_id": "0626-mc04",
+   "archetype": "CONSTITUTIONAL PRINCIPLE",
+   "era": "Founding Principles · Virginia Declaration of Rights (1776)",
+   "frame": "Q4 CIVIC CONNECTION",
+   "move": "Identification",
+   "line": "CP",
+   "minutes": 3,
+   "strategy": "**Match the excerpt's claim about where power comes from to the one Declaration-of-Independence principle it reflects.** BK's own key calls this the highest-value Part I item on the exam for Civic Literacy Essay transfer — it is worth slowing down on.",
+   "watch": "Separation of powers and federalism are both real principles — just not from the Declaration; they're structural ideas from the Constitution. This excerpt is about where government's power ORIGINATES, not how it's divided up.",
+   "hint": "the excerpt's own phrase that power is ‘derived from the people’ is the principle, named outright.",
+   "stem": "Which principle of the Declaration of Independence is reflected in this excerpt?",
+   "options": {
+    "1": "separation of powers",
+    "2": "federalism",
+    "3": "consent of the governed",
+    "4": "universal suffrage"
+   },
+   "correct": "3",
+   "no_stimulus": false,
+   "passage": {
+    "text": "All power belongs to the people and comes from the people. Government officials are the people's trustees and servants, and they must always answer to the people.",
+    "citation": "Source: Virginia Declaration of Rights, June 12, 1776 (adapted)",
+    "_from": "DOC_BANK unit02-vadeclaration-1776-adapted.json - its provenance names crop unit02-0626-mc03-vadecl-1776.png"
+   }
+  },
+  {
+   "n": 25,
+   "item_id": "0823-mc03",
+   "archetype": "CONSTITUTIONAL PRINCIPLE",
+   "era": "The Executive · Presidential Succession",
+   "frame": "Q4 CIVIC CONNECTION",
+   "move": "Identification",
+   "line": "CP",
+   "minutes": 2,
+   "strategy": "**No passage here either — pure recall of Article II, Section 1.** The Constitution names who succeeds the president and vice president BY NAME — everyone ELSE in the line of succession is left to one specific body to decide.",
+   "watch": "The Supreme Court, the cabinet, and state governors are all named somewhere else in the Constitution for other jobs — none of them is named here. Only one branch is given this specific power.",
+   "hint": "the clause gives the power to the branch that makes laws, not the one that enforces or interprets them.",
+   "stem": "The Constitution gives the power to determine presidential succession beyond the vice president to",
+   "options": {
+    "1": "the Supreme Court",
+    "2": "the president’s cabinet",
+    "3": "Congress",
+    "4": "state governors"
+   },
+   "correct": "3",
+   "no_stimulus": true
+  },
+  {
+   "n": 26,
+   "item_id": "0126-mc04",
+   "archetype": "AUTHOR'S CLAIM",
+   "era": "Ratification Debate · Centinel (1787)",
+   "frame": "Q2 CLAIM & EVIDENCE",
+   "move": "Claim support",
+   "line": "TH",
+   "minutes": 3,
+   "strategy": "**Third and last Antifederalist voice in this set — find the SPECIFIC worry, not just ‘anti-Constitution.’** Centinel names one clause by its effect, the same clause Q11 and Q18 circle from different angles.",
+   "watch": "Federalism and a two-party system are real later-era topics that do not belong to THIS author's 1787 argument — and ‘enough power to avoid tyranny’ is the Federalist position, the opposite of what an Antifederalist would claim.",
+   "hint": "the author ties the elastic clause directly to Congress gaining power the Constitution never spelled out.",
+   "stem": "Which claim about the proposed United States Constitution is being made by the author of this passage?",
+   "options": {
+    "1": "The new Constitution gave the states enough power to avoid tyranny.",
+    "2": "The elastic clause would give too much power to Congress.",
+    "3": "The system of federalism is best for the new nation.",
+    "4": "The two-party system would lead to rebellion in the future."
+   },
+   "correct": "2",
+   "no_stimulus": false,
+   "passage": {
+    "text": "Centinel, no. 5\n\nFall 1787\n\n. . . But the convention has superadded another power, by which the congress may stamp with the sanction of the constitution every possible law; it is contained in the following clause—“To make all laws which shall be necessary and proper for carrying into execution the foregoing powers, and all other powers vested by this constitution in the government of the United States, or in any department or officer thereof.” Whatever law congress may deem necessary and proper for carrying into execution any of the powers vested in them, may be enacted; and by virtue of this clause, they may controul [control] and abrogate [abolish] any and every of the laws of the state governments, on the allegation that they interfere with the execution of any of their powers, and yet these laws will “be made in pursuance [fulfillment] of the constitution,” and of course will “be the supreme law of the land, and the judges in every state shall be bound thereby, any thing in the constitution or laws of any state to the contrary notwithstanding.”",
+    "citation": "Source: Samuel Bryan, 1787; Herbert J. Storing, ed., The Complete Anti-Federalist, University of Chicago Press, 1981 (adapted)",
+    "_from": "live stimulus-11-2.json item 0126-mc03 - same NYSED crop unit02-centinel-1787-doc1.png, transcribed word for word"
+   }
+  }
+ ]
+}
