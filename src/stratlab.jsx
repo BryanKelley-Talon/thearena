@@ -1,41 +1,34 @@
 // ============================================================
-// THE PART I STRATEGY LAB (Josh, 2026-11-02; BK's order in chat 07:41 "do that build now";
-// destination ruled by Leo 2026-10-30 14:30 on BK's 14:30 word).
+// THE PART I STRATEGY LAB — read-only coaching view (Josh, 2026-11-03).
 //
-// BK's design, from May 2026, now on a screen: REVERSE MULTIPLE CHOICE. The correct answer is
-// given on every question. The job is not to find it — it is to PROVE it, by marking the phrase
-// in the passage that does the proving. One phrase, 12 words maximum.
+// BK, 2026-11-03 08:51, after playing the interactive version as a student: the marking
+// mechanic "is clunky and it's not going to help a kid." 09:03: "take away the student
+// interaction ... i need them to just be able to see the whole question/stimulus and the
+// answer choices and the right answer with an explanation of why it is and specific
+// highlights in the document already done that prove it ... basically coach them through
+// each question." 09:08: "retire it."  10:13/10:18: it is a resource, optional, not an
+// assignment; Strategy and Hint come off the screen; Watch stays; minutes dropped.
 //
-// BK, in Sam's renderer: "Removing the right-vs-wrong stakes is the engine: kids try harder when
-// there's no risk of being wrong." So there is NO check, NO key, NO verdict and NO score here.
-// The paper version is marked for completion, never for accuracy, and the screen matches it: a kid
-// marks a phrase and moves on. The hint is the only thing that ever opens.
+// So this screen has NOTHING to tap, drag, type, keep or score. A kid scrolls. Per question,
+// in order: number, type, Frame, Move, skill line -> the passage with the proof already
+// marked -> the question and its four choices, the right one shown -> WHY IT'S RIGHT ->
+// WATCH FOR. No state, no storage, no handlers. (The tap-a-word marker, src/highlight.jsx,
+// is not used here.)
 //
-// The marking surface is the Highlighter's (src/highlight.jsx, 2026-10-14, BK "yes" 09-26 15:19):
-// tap a word, tap again to clear, drag with a mouse, or arrow keys and Space. One marker, not two
-// or three, because there is one thing to find. Nothing is scored, kept or sent (canon §1, §8).
-//
-// EVERY STUDENT WORD ON THIS PAGE IS LIFTED, NOT AUTHORED. Question text is ast-parsed byte for
-// byte out of Sam's blessed build script; stems and options are MC_BANK records; passages are
-// already-blessed text matched to the same NYSED crop. The builder's own words are the block
-// below, and they go to BK in the proof.
+// EVERY STUDENT WORD ON THIS PAGE IS LIFTED, NOT AUTHORED, except the few builder's words in
+// STRATLAB_WORDS below. The proof spans and the WHY lines are Sam's (BLESSED by BK 10:13,
+// Danny COUNT 49-1-0). A span that is not found in its passage exactly once fails the build
+// (scripts/gate-content.mjs), so a missing or doubled highlight cannot ship.
 // ============================================================
-import { useState, useMemo, useRef } from 'react'
-import { tokensOf } from './highlight-check.mjs'
 
 // Josh's words — every string here is the builder's, not the desk's. BK rules them.
 export const STRATLAB_WORDS = {
-  howMark: 'Tap the words that prove it. Tap a word again to clear it. With a mouse you can drag across words.',
-  clear: 'Clear the highlight',
-  hintBtn: 'Show the hint',
-  words: n => `${n} ${n === 1 ? 'word' : 'words'}`,
-  over: 'Over 12 — tighten it to one phrase.',
-  recall: 'No passage on this one. Say your proof out loud, then check the hint.',
+  correct: 'Correct',
+  why: "WHY IT'S RIGHT",
+  watch: 'WATCH FOR',
+  recall: 'No passage on this one. It is a recall question, so the explanation below does all the work.',
   comingHead: 'The passage is on its way',
   comingBody: 'This one is being typed up. Everything else on the question works now.',
-  answerGiven: 'answer given',
-  correct: 'Correct',
-  target: m => `target ${m} min`,
   feeds: l => `feeds ${l}`,
   move: m => `Move: ${m}`,
 }
@@ -54,86 +47,55 @@ function rich(text) {
   return out
 }
 
-// The marking surface. No key, no check, no verdict — completion, not accuracy.
-function ProofMark({ passage }) {
-  const words = useMemo(() => tokensOf(passage?.text || ''), [passage])
-  const [marks, setMarks] = useState({})
-  const [cursor, setCursor] = useState(0)
-  const paint = useRef(null)
-  const ptype = useRef('mouse')
-  const n = Object.keys(marks).length
-
-  const set = (i, on) => setMarks(m => { const x = { ...m }; if (on) x[i] = true; else delete x[i]; return x })
-  const toggle = i => setMarks(m => { const x = { ...m }; if (x[i]) delete x[i]; else x[i] = true; return x })
-  const onKey = e => {
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') { e.preventDefault(); setCursor(c => Math.min(words.length - 1, c + 1)) }
-    if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); setCursor(c => Math.max(0, c - 1)) }
-    if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); toggle(cursor) }
+// Cut the passage into plain and proof pieces. The gate guarantees each span is found exactly
+// once; if one were ever missing here the passage still shows whole, with no mark, never blank.
+function pieces(text, spans) {
+  const found = (spans || [])
+    .map(s => ({ s, at: text.indexOf(s) }))
+    .filter(x => x.at >= 0)
+    .sort((a, b) => a.at - b.at)
+  const out = []
+  let pos = 0
+  for (const { s, at } of found) {
+    if (at < pos) continue // overlapping spans never double-print words
+    if (at > pos) out.push({ t: text.slice(pos, at), mark: false })
+    out.push({ t: s, mark: true })
+    pos = at + s.length
   }
+  if (pos < text.length) out.push({ t: text.slice(pos), mark: false })
+  return out
+}
 
+function Passage({ passage, spans }) {
   return (
-    <div className="sl-mark">
-      <p className="mc-preamble">{STRATLAB_WORDS.howMark}</p>
-      <figure className="stimulus sl-doc">
-        <p className="hl-text" tabIndex={0} onKeyDown={onKey} aria-label={STRATLAB_WORDS.howMark}
-           onPointerUp={() => { paint.current = null }} onPointerLeave={() => { paint.current = null }}>
-          {words.map((w, i) => (
-            <span key={i}>
-              <span role="button" aria-pressed={!!marks[i]}
-                    className={`hl-w${marks[i] ? ' hl-mark-solid' : ''}${i === cursor ? ' hl-cursor' : ''}`}
-                    onPointerDown={e => {
-                      ptype.current = e.pointerType
-                      if (e.pointerType === 'touch') return
-                      const on = !marks[i]; paint.current = { on }; set(i, on); setCursor(i)
-                    }}
-                    onPointerEnter={() => { if (paint.current) set(i, paint.current.on) }}
-                    onClick={() => { if (ptype.current !== 'touch') return; toggle(i); setCursor(i) }}>
-                {w.text}
-              </span>{' '}
-            </span>
-          ))}
-        </p>
-        {passage.citation && <figcaption className="peel-cite">{passage.citation}</figcaption>}
-      </figure>
-      <div className="hl-row sl-count-row">
-        <span className={`sl-count${n > 12 ? ' over' : ''}`} role="status">
-          {STRATLAB_WORDS.words(n)}{n > 12 ? ` · ${STRATLAB_WORDS.over}` : ''}
-        </span>
-        {n > 0 && <button type="button" className="btn-ghost" onClick={() => setMarks({})}>{STRATLAB_WORDS.clear}</button>}
-      </div>
-    </div>
+    <figure className="stimulus sl-doc">
+      <p className="sl-passage-text">
+        {pieces(passage.text || '', spans).map((p, i) =>
+          p.mark ? <mark key={i} className="sl-proof">{p.t}</mark> : <span key={i}>{p.t}</span>)}
+      </p>
+      {passage.citation && <figcaption className="peel-cite">{passage.citation}</figcaption>}
+    </figure>
   )
 }
 
 function Question({ q, lineLabel }) {
-  const [hint, setHint] = useState(false)
-  // The brief's own headings: a passage is highlighted, a recall item is stated.
-  const head = q.no_stimulus ? 'STATE YOUR PROOF' : 'HIGHLIGHT THE PROOF'
-  const ask = q.no_stimulus
-    ? 'In **one phrase, 12 words maximum,** name the specific rule, clause, or fact that makes this the correct answer.'
-    : 'Mark the phrase in the passage that proves the correct answer. **One phrase, 12 words maximum.**'
   return (
     <section className="sl-q">
       <header className="sl-qhead">
         <h3>QUESTION {q.n} — {q.archetype}</h3>
         <p className="sl-qsub">
-          {q.era} · {STRATLAB_WORDS.answerGiven} · {STRATLAB_WORDS.target(q.minutes)} · {q.frame} ·{' '}
-          {STRATLAB_WORDS.move(q.move)} · {STRATLAB_WORDS.feeds(lineLabel(q.line) || q.line)}
+          {q.era} · {q.frame} · {STRATLAB_WORDS.move(q.move)} · {STRATLAB_WORDS.feeds(lineLabel(q.line) || q.line)}
         </p>
       </header>
 
-      {q.passage && <div className="sl-passage"><ProofMark passage={q.passage} /></div>}
+      {q.passage && <div className="sl-passage"><Passage passage={q.passage} spans={q.spans} /></div>}
+      {q.no_stimulus && !q.passage && <p className="sl-ask">{STRATLAB_WORDS.recall}</p>}
       {q.pending_crop && (
         <div className="empty sl-coming">
           <div className="empty-title">{STRATLAB_WORDS.comingHead}</div>
           <p>{STRATLAB_WORDS.comingBody}</p>
         </div>
       )}
-
-      <dl className="sl-strategy">
-        <dt>STRATEGY — {q.frame}</dt><dd>{rich(q.strategy)}</dd>
-        <dt>THE MOVE</dt><dd><b>{q.move}.</b> {rich(q.watch)}</dd>
-      </dl>
 
       <div className="sl-stem">{rich(q.stem)}</div>
       <ul className="sl-choices">
@@ -145,12 +107,10 @@ function Question({ q, lineLabel }) {
         ))}
       </ul>
 
-      <h4 className="sl-proofhead">{head}</h4>
-      <p className="sl-ask">{rich(ask)}</p>
-      {q.no_stimulus && !q.passage && <p className="sl-ask">{STRATLAB_WORDS.recall}</p>}
-      {hint
-        ? <p className="hint"><b>Hint</b> {rich(q.hint)}</p>
-        : <button type="button" className="btn-ghost" onClick={() => setHint(true)}>{STRATLAB_WORDS.hintBtn}</button>}
+      <h4 className="sl-proofhead">{STRATLAB_WORDS.why}</h4>
+      <p className="sl-explain">{rich(q.why)}</p>
+      <h4 className="sl-proofhead">{STRATLAB_WORDS.watch}</h4>
+      <p className="sl-explain">{rich(q.watch)}</p>
     </section>
   )
 }
@@ -233,9 +193,9 @@ export const STRATLAB_STYLES = `
 .sl-q{border-top:2px solid var(--arena-choice-edge);margin-top:30px;padding-top:18px}
 .sl-qhead h3{margin:0 0 3px;font-family:'Barlow Condensed','Outfit',system-ui,sans-serif;letter-spacing:.03em}
 .sl-qsub{color:var(--muted);font-size:14px;margin:0 0 12px;line-height:1.5}
-.sl-strategy{margin:12px 0;display:grid;grid-template-columns:auto;gap:0}
-.sl-strategy dt{font-family:'Barlow Condensed','Outfit',system-ui,sans-serif;letter-spacing:.03em;color:var(--gold);margin-top:8px}
-.sl-strategy dd{margin:3px 0 0;line-height:1.55}
+.sl-doc{margin:0}
+.sl-passage-text{white-space:pre-line;line-height:1.7;margin:0}
+.sl-proof{background:#F6D86B;color:#1d1a12;font-weight:700;padding:1px 2px;border-radius:2px;text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:4px;text-decoration-color:#6b4d00;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .sl-stem{font-weight:700;font-size:18px;line-height:1.5;margin:14px 0 8px}
 .sl-choices{list-style:none;padding:0;margin:0 0 6px}
 .sl-choice{background:var(--arena-choice);border:1.5px solid var(--arena-choice-edge);border-radius:9px;padding:10px 12px;margin-bottom:7px;line-height:1.5}
@@ -243,10 +203,7 @@ export const STRATLAB_STYLES = `
 .sl-choice .mc-mark{margin-left:8px}
 .sl-proofhead{margin:16px 0 4px;font-family:'Barlow Condensed','Outfit',system-ui,sans-serif;letter-spacing:.03em;color:var(--gold)}
 .sl-ask{margin:0 0 10px;line-height:1.55}
-.sl-count-row{margin-top:8px}
-.sl-count{font-family:'Barlow Condensed','Outfit',system-ui,sans-serif;letter-spacing:.03em;color:var(--muted)}
-.sl-count.over{color:#FF6A13}
-.sl-doc{margin:0}
+.sl-explain{margin:0 0 10px;line-height:1.6}
 .sl-coming{text-align:left;margin:10px 0}
 .sl-close{border-top:2px solid var(--arena-choice-edge);margin-top:32px;padding-top:18px}
 .sl-traininghead{font-family:'Barlow Condensed','Outfit',system-ui,sans-serif;letter-spacing:.03em;margin:14px 0 6px}

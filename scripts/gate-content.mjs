@@ -822,15 +822,16 @@ function checkPopouts(d, f, course, m, fail) {
 }
 
 // ── THE PART I STRATEGY LAB (added 2026-11-02, Josh; BK's order in chat 07:41) ─────
-// Reverse multiple choice: the answer is given, the kid marks the phrase that proves it.
-// Format only, never content. The rule this gate exists to hold is BK's, 2026-09-25 and again
+// Read-only coaching (2026-11-03): the answer is given, the proof is already highlighted, and a
+// WHY explains it. Nothing to tap or score. Format only, never content. The rule this gate exists to hold is BK's, 2026-09-25 and again
 // 2026-10-27: AN ACTIVITY CARRIES ITS DOCUMENT, IT NEVER POINTS AT ONE. So a question that is
 // not a recall item must carry its passage and that passage's citation, or this build stops.
 // Completion, not accuracy — so nothing here may read as a score, and no item carries a key.
 {
   let m = {}
   try { m = JSON.parse(fs.readFileSync(path.resolve('public/arena.manifest.json'), 'utf8')) } catch {}
-  const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|score|\bpoints\b|streak|\bpercent\b|%)/i
+  // "points to" is a verb ("He points to the clause"), not a point total.
+  const SCORE = /\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|score|\bpoints\b(?!\s+to\b)|streak|\bpercent\b|%)/i
   for (const c of m.courses || []) for (const u of c.units || []) for (const a of u.activities || []) {
     if (a.type !== 'stratlab') continue
     const f = String(a.content_ref || '').replace(/^content\//, '')
@@ -848,9 +849,32 @@ function checkPopouts(d, f, course, m, fail) {
       const opts = q.options || {}
       if (Object.keys(opts).length < 2) df(`${w}: needs its answer choices.`)
       if (!opts[q.correct]) df(`${w}: the given answer '${q.correct}' is not one of its choices.`)
-      if (!q.strategy || !q.watch) df(`${w}: needs its strategy and its move.`)
-      if (!q.hint) df(`${w}: needs its hint - the hint is the only help this set gives.`)
+      if (!q.watch) df(`${w}: needs its Watch for line.`)
+      if (!q.why) df(`${w}: needs its Why it's right.`)
       if (!q.frame || !q.move || !q.line) df(`${w}: needs its frame position, move and skill line.`)
+      // READ-ONLY COACHING (2026-11-03, BK + Leo 09:10): the proof spans are already marked on screen.
+      // A span the passage does not hold EXACTLY ONCE would render a missing or doubled highlight, so
+      // this fails the build whether or not the row is published. Never a warning.
+      const hf = (msg) => { console.error(`  FAIL  ${f}\n        ${msg}`); fails++ }
+      const spans = q.spans || []
+      if (q.no_stimulus || !q.passage?.text) {
+        if (spans.length) hf(`${w}: has proof spans but no passage to hold them.`)
+      } else {
+        if (spans.length < 1 || spans.length > 3) hf(`${w}: needs 1-3 proof spans (has ${spans.length}).`)
+        const ranges = []
+        for (const sp of spans) {
+          if (typeof sp !== 'string' || !sp.trim()) { hf(`${w}: an empty proof span.`); continue }
+          if (sp.trim().split(/\s+/).length > 12) hf(`${w}: proof span is over 12 words: "${sp}"`)
+          const at = q.passage.text.indexOf(sp)
+          if (at < 0) { hf(`${w}: proof span not found in its passage, byte for byte: "${sp}"`); continue }
+          if (q.passage.text.indexOf(sp, at + 1) >= 0) { hf(`${w}: proof span appears more than once in its passage: "${sp}"`); continue }
+          ranges.push([at, at + sp.length, sp])
+        }
+        ranges.sort((a, b) => a[0] - b[0])
+        for (let i = 1; i < ranges.length; i++) if (ranges[i][0] < ranges[i - 1][1]) hf(`${w}: proof spans overlap: "${ranges[i - 1][2]}" and "${ranges[i][2]}"`)
+      }
+      // A read-only page keeps nothing and asks for nothing: no leftover marking-era fields.
+      if (q.strategy || q.hint || q.minutes) df(`${w}: still carries strategy, hint or minutes - BK took those off the screen 2026-11-03.`)
       // The document rule. A recall item carries no passage BY DESIGN and says so on the page.
       if (q.no_stimulus) {
         if (q.passage) df(`${w}: marked a recall item but carries a passage.`)
@@ -861,7 +885,7 @@ function checkPopouts(d, f, course, m, fail) {
       }
       if (q.key || q.answer_key) df(`${w}: carries a key. This set is completion, not accuracy - there is nothing to mark right.`)
     }
-    const student = [...(d.what_this_is || []), ...(d.how_to_work?.steps || []), ...items.flatMap(q => [q.strategy, q.watch, q.hint, q.stem, ...Object.values(q.options || {})])].filter(Boolean).join(' ')
+    const student = [...(d.what_this_is || []), ...(d.how_to_work?.steps || []), ...items.flatMap(q => [q.watch, q.why, q.stem, ...Object.values(q.options || {})])].filter(Boolean).join(' ')
     if (SCORE.test(student)) df('something reads like a score.')
   }
 }
