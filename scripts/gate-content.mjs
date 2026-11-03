@@ -334,7 +334,10 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
         if (/\b(\d+\s*(of|\/)\s*\d+\s*(right|correct)|score|\bpoints\b|streak|%)/i.test(str) && !/Completion[- ]points/i.test(str)) console.warn(`  warn  ${f}\n        ${at} reads like a score: "${str.slice(0, 60)}". No score in the Office.`), warns++
       })
       if (d._placeholder || phT.length) oFail(tLive, f, `theme words not approved yet: _placeholder ${d._placeholder ? 'set' : 'clear'}, ${phT.length} PLACEHOLDER string(s).`)
-      for (const k of ['lesson', 'practice', 'mystery', 'bonus']) if (!d[k]) oFail(tLive, f, `missing the ${k} step.`)
+      // The mystery is OPTIONAL (BK 2026-11-02, theme 3: "feels like busy work to a kid").
+      // When a theme carries one it is checked exactly like the practice set below; when it
+      // does not, office.jsx drops the stop. Everything else is still required.
+      for (const k of ['lesson', 'practice', 'bonus']) if (!d[k]) oFail(tLive, f, `missing the ${k} step.`)
       if ((d.bonus?.instructions || []).some(x => /\bemail\b/i.test(x))) oFail(tLive, f, `the bonus still says email; the email is retired (BK 10-01).`)
       if (t.classroom_assignment != null && !String(t.classroom_assignment).trim()) oFail(tLive, f, `classroom_assignment is empty.`)
       for (const [i, c] of (d.lesson?.cards || []).entries()) if (!TRAITS.includes(c.trait)) oFail(tLive, f, `lesson card ${i + 1}: trait '${c.trait}' is not one of the building's four words.`)
@@ -347,8 +350,12 @@ for (const f of fs.readdirSync(CONTENT).filter(f => f.endsWith('.json')).sort())
       // filter_checked: true, or BK's own recorded ship-now decision ("BK ships …; checks …").
       for (const [i, n] of (d.news || []).entries()) if (n.url && !(n.filter_checked === true || (typeof n.filter_checked === 'string' && /^BK\b/.test(n.filter_checked)))) oFail(tLive, f, `news ${i + 1}: has a URL but no filter check and no BK ship-now record.`)
       // Proof questions (ruling 09-27 §2): three per theme, questions only. Answers are BK's and never ship.
+      // A proof question only ever appears in the Classroom turn-in card, so a theme that
+      // names a classroom_assignment must carry three. A theme that turns in another way
+      // (November: the bonus carries its own ruled step 5, and Sam builds the doc) needs
+      // none - but if it carries any, it carries three, so the card can never half-fill.
       const pq = d.proof_questions || []
-      if (pq.length !== 3 || !pq.every(q => typeof q === 'string' && q.trim())) oFail(tLive, f, `needs exactly three proof questions, as plain strings (ruling 09-27 §2).`)
+      if ((t.classroom_assignment != null || pq.length) && (pq.length !== 3 || !pq.every(q => typeof q === 'string' && q.trim()))) oFail(tLive, f, `needs exactly three proof questions, as plain strings (ruling 09-27 §2).`)
       if (/"answers?"\s*:/i.test(JSON.stringify(d.proof_questions || null))) oFail(true, f, `proof questions must not carry answers: those are BK's only.`)
       for (const it of [...(d.practice?.items || []), ...(d.mystery?.items || [])]) for (const c of it.choices || []) if (c.key !== it.correct && !(it.distractors || {})[c.key]) console.warn(`  warn  ${f}\n        item ${it.n}: no note for wrong choice ${c.key}.`), warns++
       // The bonus by month (Leo's ruling 2026-09-28 21:59; BK 2026-09-29 11:21). A graded

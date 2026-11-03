@@ -1,0 +1,513 @@
+{
+  "_README": "BK's Office · Theme 3 · Second Quarter (November). Ported word for word by Josh 2026-11-02 from In/leo-source-2026-11-02-office-second-quarter-THEME-MASTER-CLEARED-by-Danny-md5-ed035b1b.md (md5 ed035b1b56a903f718f0db0642f8cdf8), cleared by Danny 2026-11-02 12:32 (18-0-0). Every student-facing string in this file is copied from that master by script, not retyped. NO MYSTERY and NO BACK-LINK: BK's rulings ('feels like busy work to a kid'; 'Nah we dont need that'). No proof questions and no classroom_assignment: November's bonus carries its own step 5, the 10/3 ruled string, and Sam builds the Classroom doc. No close date in any student text (BK 12:56: both classes close Mon 11/30; it lives on the Classroom post).",
+  "theme": {
+    "n": 3,
+    "title": "Second Quarter",
+    "month": "2026-11"
+  },
+  "lesson": {
+    "intro": "Second quarter. The first marking period is in the books and the grades are real. Now the game plan meets the other team. Some of it works, some of it doesn't. This room is about what you do next.",
+    "cards": [
+      {
+        "trait": "Be Responsible",
+        "heading": "A goal needs a day",
+        "body": "A goal says where you're going. Steps with days say how you get there. \"Study more\" is a wish. \"Tuesday and Thursday, ten minutes on the warm-up\" is a plan."
+      },
+      {
+        "trait": "Be Responsible",
+        "heading": "Small enough for your worst day",
+        "body": "Three steps you'll really do beat ten you won't. Make them small enough to do on a day you don't feel like it."
+      },
+      {
+        "trait": "Be Responsible",
+        "heading": "Build the backup",
+        "body": "Plans break. Decide ahead: \"If this happens, then I'll do that.\" A backup keeps one bad day from turning into a bad month."
+      },
+      {
+        "trait": "Be Respectful",
+        "heading": "Ask to understand",
+        "body": "When feedback surprises you, ask what it means before you decide what it says. Questions get you information. Arguments don't."
+      },
+      {
+        "trait": "Be Respectful",
+        "heading": "Say what's needed",
+        "body": "On a team, say what's needed and by when. People can step up once they know what the job is."
+      },
+      {
+        "trait": "Be Kind",
+        "heading": "Help one step",
+        "body": "Helping someone with a goal doesn't mean doing it for them. Ask what's in the way, offer one idea, and let them do the work."
+      },
+      {
+        "trait": "Be Kind",
+        "heading": "Make coming back easy",
+        "body": "Everyone misses days. A welcome back, and showing someone where to look, makes it easier to keep coming."
+      },
+      {
+        "trait": "Be Safe",
+        "heading": "Too big to carry alone",
+        "body": "Some things are too big for a plan. When something outside school keeps getting in the way, tell an adult you trust. That's not quitting. It's how help finds you."
+      },
+      {
+        "trait": "Be Safe",
+        "heading": "Check the plan early",
+        "body": "Check your plan before the report does. Halfway through, ask what's working, what isn't, and what one step you can change. Fixing it early keeps a small problem small."
+      }
+    ]
+  },
+  "practice": {
+    "intro": "Twelve situations for the second quarter. Pick the choice that fits the four words best.",
+    "items": [
+      {
+        "n": 1,
+        "_label": "S1 · Be Responsible",
+        "question": "Your goal is \"Do better in history.\" What turns it into a plan?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Add words like \"really\" and \"a lot\" so it sounds stronger."
+          },
+          {
+            "key": "B",
+            "text": "Write three things you'll do, and the day you'll do each."
+          },
+          {
+            "key": "C",
+            "text": "Tell everyone about it so you have to follow through."
+          },
+          {
+            "key": "D",
+            "text": "Wait to see what the next progress report says."
+          }
+        ],
+        "correct": "B",
+        "hints": [
+          "Which choice gives you something to do on Tuesday?",
+          "Which one can you check off when it's done?"
+        ],
+        "reasoning": "A goal you can't start on a certain day is still a wish. Steps with days make it a plan. That's Be Responsible.",
+        "distractors": {
+          "A": "Stronger words don't give you anything to do.",
+          "C": "People knowing helps a little, but you still wouldn't know what to do Tuesday.",
+          "D": "Waiting spends the weeks you could be using."
+        }
+      },
+      {
+        "n": 2,
+        "_label": "S2 · Be Responsible",
+        "question": "You were out sick for two days. What's the best plan for the day you're back?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Wait for your teacher to tell you what you missed."
+          },
+          {
+            "key": "B",
+            "text": "Skip the missed work and start fresh with what's next."
+          },
+          {
+            "key": "C",
+            "text": "Check Classroom first thing and list what you missed."
+          },
+          {
+            "key": "D",
+            "text": "Ask a friend for their finished work to hand in."
+          }
+        ],
+        "correct": "C",
+        "hints": [
+          "What can you do before anyone tells you?",
+          "Which choice is yours, not someone else's?"
+        ],
+        "reasoning": "Catching up starts the day you're back, and it starts with you. That's Be Responsible.",
+        "distractors": {
+          "A": "Waiting spends days you could be catching up.",
+          "B": "Skipping leaves a hole, and the next lessons build on it.",
+          "D": "Their work shows what they know, not what you know."
+        }
+      },
+      {
+        "n": 3,
+        "_label": "S3 · Be Responsible",
+        "question": "Your plan is 20 minutes of studying each night. Tonight a family event runs late. What's the best response?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Do ten minutes tomorrow, then stay on plan."
+          },
+          {
+            "key": "B",
+            "text": "Decide the plan doesn't work and stop."
+          },
+          {
+            "key": "C",
+            "text": "Do forty minutes tomorrow to make up for it."
+          },
+          {
+            "key": "D",
+            "text": "Skip it and don't think about it again."
+          }
+        ],
+        "correct": "A",
+        "hints": [
+          "Which choice keeps the plan going without piling on?",
+          "Which one is small enough to actually do?"
+        ],
+        "reasoning": "Plans break. A small backup keeps the habit alive. That's Be Responsible.",
+        "distractors": {
+          "B": "One missed night is a bump, not proof the plan failed.",
+          "C": "A double night is hard to pull off, and a second miss makes it worse.",
+          "D": "Skipping with no backup makes the next skip easier."
+        }
+      },
+      {
+        "n": 4,
+        "_label": "S4 · Be Respectful",
+        "question": "Your teacher's comment on your work seems wrong to you. What's the best way to handle it?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Argue about it in front of the class."
+          },
+          {
+            "key": "B",
+            "text": "Ask after class, \"Can you explain this comment?\""
+          },
+          {
+            "key": "C",
+            "text": "Throw it out without reading the rest."
+          },
+          {
+            "key": "D",
+            "text": "Tell your friends the grading is unfair."
+          }
+        ],
+        "correct": "B",
+        "hints": [
+          "Which choice gets you information?",
+          "Which one keeps it between you and your teacher?"
+        ],
+        "reasoning": "Asking to understand is respectful, and it's how you find your next step. That's Be Respectful.",
+        "distractors": {
+          "A": "The class becomes an audience, and your question gets lost.",
+          "C": "The rest of the comment might be the part that helps.",
+          "D": "Your friends can't change it, and your teacher never hears your question."
+        }
+      },
+      {
+        "n": 5,
+        "_label": "S5 · Be Respectful",
+        "question": "In a group project, one partner isn't doing their part and the deadline is Thursday. What's the best first step?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Do their part yourself and say nothing."
+          },
+          {
+            "key": "B",
+            "text": "Tell the teacher right away without talking to your partner."
+          },
+          {
+            "key": "C",
+            "text": "Ask, \"Which part will you take? We need it Thursday.\""
+          },
+          {
+            "key": "D",
+            "text": "Stop working until they start."
+          }
+        ],
+        "correct": "C",
+        "hints": [
+          "Which choice talks to the person first?",
+          "Which one says what's needed and when?"
+        ],
+        "reasoning": "Say what the group needs and give your partner the chance to step up first. That's Be Respectful.",
+        "distractors": {
+          "A": "Silence hides the problem, and it wears you out.",
+          "B": "Your partner never got the chance to fix it.",
+          "D": "Now two people aren't working, and the deadline hasn't moved."
+        }
+      },
+      {
+        "n": 6,
+        "_label": "S6 · Be Respectful",
+        "question": "You walk in late and the lesson has started. What's the best way to come in?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Walk in loudly and explain your whole morning."
+          },
+          {
+            "key": "B",
+            "text": "Stay in the hall until the period ends."
+          },
+          {
+            "key": "C",
+            "text": "Stop the lesson to ask what you missed."
+          },
+          {
+            "key": "D",
+            "text": "Slip in quietly, start the warm-up, ask later."
+          }
+        ],
+        "correct": "D",
+        "hints": [
+          "Which choice respects the class that's already working?",
+          "Which one gets you started right away?"
+        ],
+        "reasoning": "Late happens. Get in, get started, and ask at a good time. That's Be Respectful.",
+        "distractors": {
+          "A": "A big entrance pulls everyone off the lesson.",
+          "B": "Hiding makes you more late, and you miss the whole period.",
+          "C": "Everyone loses time while you catch up."
+        }
+      },
+      {
+        "n": 7,
+        "_label": "S7 · Be Kind",
+        "question": "A classmate tells you their goal isn't working. What helps most?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Ask what's in the way, then offer one idea."
+          },
+          {
+            "key": "B",
+            "text": "Tell them to try harder."
+          },
+          {
+            "key": "C",
+            "text": "Say nothing. It's their business."
+          },
+          {
+            "key": "D",
+            "text": "Do the work for them so they catch up."
+          }
+        ],
+        "correct": "A",
+        "hints": [
+          "Which choice listens first?",
+          "Which one leaves them able to do it themselves?"
+        ],
+        "reasoning": "Listening first, then one idea, helps someone and leaves the work theirs. That's Be Kind.",
+        "distractors": {
+          "B": "\"Try harder\" is the advice they've already given themselves.",
+          "C": "They told you. Saying nothing leaves them alone with it.",
+          "D": "It helps today and hurts tomorrow, because they still can't do it."
+        }
+      },
+      {
+        "n": 8,
+        "_label": "S8 · Be Kind",
+        "question": "A classmate was out and asks what they missed. What's the kindest help?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Tell them to ask the teacher."
+          },
+          {
+            "key": "B",
+            "text": "Tell them it was easy and they'll figure it out."
+          },
+          {
+            "key": "C",
+            "text": "Send them your finished answers."
+          },
+          {
+            "key": "D",
+            "text": "Show them where the work is posted."
+          }
+        ],
+        "correct": "D",
+        "hints": [
+          "Which choice helps them again next time?",
+          "Which one shows them where to look?"
+        ],
+        "reasoning": "Showing someone where to look helps them today and the next time. That's Be Kind.",
+        "distractors": {
+          "A": "They can ask too, but a quick answer from you helps more.",
+          "B": "Easy for you isn't easy for someone who missed it.",
+          "C": "Answers don't teach the work, and they won't help on the test."
+        }
+      },
+      {
+        "n": 9,
+        "_label": "S9 · Be Kind",
+        "question": "A classmate who's been out a lot is back today. What's the best way to welcome them?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Ignore it. It's not your business."
+          },
+          {
+            "key": "B",
+            "text": "Say you're glad they're back and fill them in."
+          },
+          {
+            "key": "C",
+            "text": "Ask why they've been out so much."
+          },
+          {
+            "key": "D",
+            "text": "Tell the class they're back so everyone can say hi."
+          }
+        ],
+        "correct": "B",
+        "hints": [
+          "Which choice makes coming back easier?",
+          "Which one welcomes them without making a scene?"
+        ],
+        "reasoning": "A simple welcome makes it easier to keep coming back. That's Be Kind.",
+        "distractors": {
+          "A": "Noticing and doing nothing leaves them on their own.",
+          "C": "\"Why\" can feel like blame. A welcome makes it easy.",
+          "D": "Pointing it out makes returning harder."
+        }
+      },
+      {
+        "n": 10,
+        "_label": "S10 · Be Safe",
+        "question": "Something outside school keeps wrecking your plan, and it's too big to handle alone. What's the safest step?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Keep it to yourself and push through."
+          },
+          {
+            "key": "B",
+            "text": "Tell a friend, but keep it from adults."
+          },
+          {
+            "key": "C",
+            "text": "Tell a teacher, counselor or adult you trust."
+          },
+          {
+            "key": "D",
+            "text": "Stop trying until it's over."
+          }
+        ],
+        "correct": "C",
+        "hints": [
+          "Who can actually change something?",
+          "Which choice gets help to you, not just to your plan?"
+        ],
+        "reasoning": "Some things are too big to carry alone. Telling an adult early is how help finds you. That's Be Safe.",
+        "distractors": {
+          "A": "Pushing through alone works until it doesn't.",
+          "B": "A friend can listen. An adult can change things.",
+          "D": "Quitting leaves you with the problem and a gap in your work."
+        }
+      },
+      {
+        "n": 11,
+        "_label": "S11 · Be Safe",
+        "question": "A friend offers to \"keep you on track\" and asks for your school login. What do you do?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Thank them, but keep your login to yourself."
+          },
+          {
+            "key": "B",
+            "text": "Share it just this once."
+          },
+          {
+            "key": "C",
+            "text": "Share it, then change the password later."
+          },
+          {
+            "key": "D",
+            "text": "Share it with the whole group so everyone can help."
+          }
+        ],
+        "correct": "A",
+        "hints": [
+          "Which choice keeps the help and drops the risk?",
+          "Whose login is it?"
+        ],
+        "reasoning": "Support is great. Your login stays yours. That's Be Safe.",
+        "distractors": {
+          "B": "Once is all it takes for someone to use your account.",
+          "C": "Until then, they can see and change your work.",
+          "D": "More people with the login means more chances for something to go wrong."
+        }
+      },
+      {
+        "n": 12,
+        "_label": "S12 · Be Safe",
+        "question": "Three weeks in, your plan isn't working. The progress report is still a few days away. What's the best step?",
+        "choices": [
+          {
+            "key": "A",
+            "text": "Keep going exactly the same and see."
+          },
+          {
+            "key": "B",
+            "text": "Quit and start over next marking period."
+          },
+          {
+            "key": "C",
+            "text": "Wait for the progress report to tell you."
+          },
+          {
+            "key": "D",
+            "text": "Tell your teacher and change one step now."
+          }
+        ],
+        "correct": "D",
+        "hints": [
+          "When is the best time to say so?",
+          "Which choice changes something this week?"
+        ],
+        "reasoning": "Saying so early keeps a small problem small. That's Be Safe.",
+        "distractors": {
+          "A": "The same plan will give the same result.",
+          "B": "Waiting costs weeks you already have.",
+          "C": "You already know. The report would only confirm it."
+        }
+      }
+    ]
+  },
+  "news": [
+    {
+      "title": "Data shows student chronic absenteeism is declining. The solutions are complex.",
+      "source": "Good Morning America, June 18, 2026",
+      "url": "https://www.goodmorningamerica.com/news/story/student-chronic-absenteeism-declining-solutions-complex-133825544",
+      "question": "Students miss school for many reasons, and some aren't in their control. What helped students come back? What could you do to make coming back easier for a classmate?",
+      "filter_checked": "BK checks in build review, before deploy",
+      "_filter_note": "The story centers on a sixth grader's family responsibilities. Mature but not explicit. Sidebar links are unrelated adult stories."
+    },
+    {
+      "title": "New Year, New Goals at Hinsdale Central",
+      "source": "Devils' Advocate (Hinsdale Central High School), Jan. 7, 2026",
+      "url": "https://hcdevilsadvocate.com/news/2026/01/07/new-year-new-goals-at-hinsdale-central/",
+      "question": "Students there wrote their goals down and built a routine around them. What's one idea from their plans you could borrow for yours?",
+      "filter_checked": "BK checks in build review, before deploy",
+      "_filter_note": "The article quotes a named student. The card shows only the headline and source."
+    },
+    {
+      "title": "How Peer Tutoring Can Transform High School Academics — and Benefit Both Student Teachers and the Classmates They're Helping",
+      "source": "The 74, Apr. 3, 2022",
+      "url": "https://www.the74million.org/article/how-peer-tutoring-can-transform-high-school-academics-and-benefit-both-student-teachers-and-the-classmates-theyre-helping/",
+      "question": "Researchers found both the tutors and the students they helped improved. Why might helping someone else help you too?",
+      "filter_checked": "BK checks in build review, before deploy",
+      "_filter_note": "Oldest of the three, but the only one that covers Be Kind. The page itself is clean."
+    }
+  ],
+  "bonus": {
+    "title": "One Goal, Real Steps",
+    "instructions": [
+      "Read one of the three stories in the Office. Write two or three sentences: what it says, and one idea you could use.",
+      "Pick one goal from any of the four words. Write it as one sentence: \"By my MP2 progress report, I will ___.\"",
+      "Write three steps, each with a day. Add one backup (\"If ___ happens, then I will ___\") and one thing you can count or see that shows it's working.",
+      "Optional: leave a note for Mr. Kelley. A question, or anything you want him to know.",
+      "Write it in the BONUS doc on Google Classroom. Mr. Kelley reads these."
+    ],
+    "_step1_required": "Step 1 REQUIRED for the 100 (two or three sentences). Step 4 never required, never graded. (Master, bonus note.)",
+    "_step5_source": "The string ruled 2026-10-03, word for word. Danny 2026-11-02: key the check on the text, not an index."
+  },
+  "coaching": [
+    "Everybody hits a wall. The ones who get better are the ones who come back."
+  ],
+  "_coaching_source": "Leo's LOCKED growth-coaching bank, §5, verbatim (master: 'Coaching line (finish screen; bank §5, verbatim)')."
+}

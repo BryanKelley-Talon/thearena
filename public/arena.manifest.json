@@ -2416,6 +2416,22 @@
         "classroom_assignment": "BONUS · bK's Arena Office · October",
         "_classroom_source": "BK's Classroom post, screenshot 2026-10-01 11:02: the assignment title, verbatim.",
         "_hawk_box_source": "BK 2026-10-01 11:07: \"for October, we can eliminate the Hawk portion of their requirement...i'll just produce a hawk pass for completed assignments...and in future installments we can integrate it into the document\". September carries no email either (BK 10:55); flagged to BK in the proof."
+      },
+      {
+        "slug": "2026-11-second-quarter",
+        "month": "2026-11",
+        "month_label": "November",
+        "title": "Second Quarter",
+        "_title_source": "The LOCKED theme master (theme.title), BK 2026-11-02 11:44-12:11.",
+        "published": false,
+        "_published_note": "DARK ON PURPOSE. BK ruled the launch for Fri 11/6 on Thursday night's push (Danny 12:32, Leo 12:34). November's month has ALREADY ARRIVED, so the month rule that held September and October back cannot hold this one: the day this flag reads true, the theme is open to students. Flipping it is a one-line change and nothing else moves. Also worth BK's eye: the bonus's step 5 sends students to a Google Classroom BONUS doc that Sam builds and BK posts Mon 11/9.",
+        "content_ref": "content/office-2026-11-second-quarter.json",
+        "_locked": "Whole theme LOCKED by BK 2026-11-02 (11:44 to 12:11); cleared by Danny 2026-11-02 12:32 (105-15-0 first read, 18-0-0 on the changed lines), master md5 ed035b1b56a903f718f0db0642f8cdf8. Ported word for word by script, Josh 2026-11-02; 180 student-facing strings checked back against the master, 0 differ.",
+        "hawk_box": false,
+        "_hawk_box_source": "Theme master header, BK: \"No Hawk coupon on this bonus.\"",
+        "_no_mystery": "NO MYSTERY and NO BACK-LINK, both BK's rulings in the master (\"feels like busy work to a kid\"; \"Nah we dont need that\"). The path is three stops: Lesson, Practice set, Bonus. office.jsx drops the mystery stop rather than stubbing it, because an empty stop can never be finished and would put the bonus out of reach.",
+        "_no_classroom_assignment": "No classroom_assignment on purpose, so no turn-in card. October's card reads \"The doc attached to it has two spaces\"; November's doc has five (My story, My goal, My three steps, My backup and how I'll know, Note for Mr. Kelley), and the bonus's own step 5 - the string ruled 10/3 - already says where the work goes. With no card there is no {proof} space to fill, so this theme carries no proof questions.",
+        "_no_bonus_due": "No bonus_due and no bonus_due_line: no student text in this theme carries a date. Both classes close Mon 11/30 (BK 12:56, Danny's 13:04 correction), and that date lives on the Classroom post, not in the room. Leo asked for this to be confirmed; it is."
       }
     ],
     "_blurb_source": "BK 2026-09-27 09:20 (\"yes 1-5\"), via Leo's ruling In/ruling-2026-09-27-bks-office-hawk-pass-email-proof-question.md §1. Replaces option B. Renamed 2026-09-29 12:49 (BK): Hawk Pass → Hawk Proud Coupon.",

@@ -6,7 +6,8 @@
 //   • One theme per MONTH (US and Global run different unit calendars). The
 //     current month is open and past months stay open. Future months stay hidden.
 //   • The path unlocks in order: lesson → practice set → mystery deep dive →
-//     the bonus. News links sit alongside and never gate anything.
+//     the bonus. News links sit alongside and never gate anything. A theme may carry
+//     no mystery (BK 2026-11-02); that stop is dropped and the rest renumber.
 //   • NO SCORE anywhere in the room. Not a count, not a percent, not a streak.
 //   • The prize is the building's pink Hawk Proud Coupon, which BK writes by hand, earned in the PINK BOX, the
 //     4th stop in every theme (Leo's ruling 2026-09-29 12:30). The Arena runs no draw
@@ -30,7 +31,7 @@
 // manifest or the theme file, and anything still marked PLACEHOLDER renders in a
 // dashed box so nobody mistakes it for approved copy.
 // ============================================================
-import { useState, useMemo, useRef } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 
 export const OFFICE_SKILL = 'BK'
 export const officeUnit = theme => ({ slug: theme.slug })
@@ -193,13 +194,20 @@ export function OfficeRoom({ office, preview, onOpenTheme, onBack, ui }) {
 // A theme can drop the pink box (BK 2026-10-01 11:07: October's Hawk portion is
 // eliminated; BK writes coupons for completed assignments instead).
 const hawkOn = (office, theme) => !!office?.hawk_box && theme?.hawk_box !== false
-const stepsFor = (office, theme) => [
-  { n: 1, key: 'lesson', label: 'Lesson' },
-  { n: 2, key: 'practice', label: 'Practice set' },
-  { n: 3, key: 'mystery', label: 'Mystery deep dive' },
-  ...(hawkOn(office, theme) ? [{ n: 4, key: 'hawk', label: office.hawk_box.label, pink: true }] : []),
-  { n: hawkOn(office, theme) ? 5 : 4, key: 'bonus', label: 'Bonus' },
-]
+// A theme may carry NO MYSTERY (BK 2026-11-02, theme 3: "feels like busy work to a
+// kid"). The stop is DROPPED, never stubbed: an empty stop can never be finished, so
+// a stub would lock the path and put the bonus out of reach. The stops are numbered
+// after the list is built, so the numbers a student sees are always 1..n with no gap.
+const stepsFor = (office, theme, pack) => {
+  const out = [
+    { key: 'lesson', label: 'Lesson' },
+    { key: 'practice', label: 'Practice set' },
+  ]
+  if (pack?.mystery) out.push({ key: 'mystery', label: 'Mystery deep dive' })
+  if (hawkOn(office, theme)) out.push({ key: 'hawk', label: office.hawk_box.label, pink: true })
+  out.push({ key: 'bonus', label: 'Bonus' })
+  return out.map((s, i) => ({ ...s, n: i + 1 }))
+}
 
 // ── THE BACK LINK (theme 2 on; BK 2026-09-28 22:11: "point people back to the
 // beginning if they skip it") ──
@@ -221,7 +229,7 @@ function BackLink({ link, themes, current, onOpenTheme }) {
 
 export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack, onOpenTheme, ui }) {
   const { ScreenHeader, BottomBack, McItem } = ui
-  const STEPS = stepsFor(office, theme)
+  const STEPS = stepsFor(office, theme, pack)
   const LAST = STEPS[STEPS.length - 1].n
   // Step n is open when every step before it is done. The lesson is always open.
   const isDone = n => done.includes(n)
@@ -233,6 +241,13 @@ export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack,
   // The done-list arrives from the parent on the next render, so the step just
   // finished opens the next one directly instead of asking isOpenStep() too early.
   const finish = n => { onDone(n); setStep(n + 1); topRef.current?.scrollIntoView({ block: 'start' }) }
+  // The pack arrives a render after this screen opens, and it is what decides whether
+  // this theme has a mystery stop. Re-pick the landing step the first time the real
+  // stop list exists, or a returning student can land on the wrong stop.
+  const packed = useRef(false)
+  useEffect(() => { if (pack && !packed.current) { packed.current = true; setStep(firstOpen) } }, [pack, firstOpen])
+
+  const HERE = STEPS.find(s => s.n === step)
 
   return (
     <div className="office-theme-bg" style={{ '--office-bg': `url(/${office.background})` }}>
@@ -271,11 +286,12 @@ export function OfficeTheme({ office, theme, themes, pack, done, onDone, onBack,
 
           <div className="office-grid">
             <div className="office-main">
-              {step === 1 && <Lesson lesson={pack.lesson} frame={office.frame} done={isDone(1)} onFinish={() => finish(1)} />}
-              {step === 2 && <OfficeSet set={pack.practice} McItem={McItem} done={isDone(2)} onFinish={() => finish(2)} next="the mystery" />}
-              {step === 3 && <OfficeSet set={pack.mystery} McItem={McItem} done={isDone(3)} onFinish={() => finish(3)} titled />}
-              {step === 4 && hawkOn(office, theme) && <HawkBox box={office.hawk_box} frame={office.frame} done={isDone(4)} onFinish={() => finish(4)} />}
-              {step === LAST && <Finish office={office} theme={theme} bonus={pack.bonus} coaching={pack.coaching} proof={pack.proof_questions} />}
+              {/* By KEY, not by number: a theme with no mystery renumbers its stops. */}
+              {HERE?.key === 'lesson' && <Lesson lesson={pack.lesson} frame={office.frame} done={isDone(HERE.n)} onFinish={() => finish(HERE.n)} />}
+              {HERE?.key === 'practice' && <OfficeSet set={pack.practice} McItem={McItem} done={isDone(HERE.n)} onFinish={() => finish(HERE.n)} />}
+              {HERE?.key === 'mystery' && <OfficeSet set={pack.mystery} McItem={McItem} done={isDone(HERE.n)} onFinish={() => finish(HERE.n)} titled />}
+              {HERE?.key === 'hawk' && <HawkBox box={office.hawk_box} frame={office.frame} done={isDone(HERE.n)} onFinish={() => finish(HERE.n)} />}
+              {HERE?.key === 'bonus' && <Finish office={office} theme={theme} bonus={pack.bonus} coaching={pack.coaching} proof={pack.proof_questions} />}
             </div>
             <aside className="office-aside">
               <NewsLinks news={pack.news} />
