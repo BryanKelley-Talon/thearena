@@ -402,6 +402,21 @@ const resolves = (ref) => typeof ref === 'string' && ref.length > 0
 // FEEL FLOOR + COMPONENT STYLES
 // Reduced motion gets its own feedback language, not a worse one.
 // ============================================================
+// PHONE PASS (Leo's order 2026-11-02 19:40; BK 15:47/15:49). Sizes only, phones only: finger-sized
+// tap targets (44 px) and nothing under 12 px. No wording, no content, no layout order changes.
+const PHONE_STYLES = `
+@media (max-width:600px){
+  .lane-tab,.tb-tab,.tb-year,.thread-chip{min-height:44px}
+  .lane-tab,.tb-tab{display:inline-flex;align-items:center;justify-content:center}
+  .back-btn{min-height:44px;display:inline-flex;align-items:center}
+  .tb-story-back,.tb-close{min-height:44px;min-width:44px}
+  .mo-tool{display:inline-block;padding:13px 2px;margin:-13px 0}
+  .link-btn{min-height:44px}
+  .card-type,.flag,.flag.live,.flag.soon{font-size:12px}
+  .tb-panel-go{font-size:12px;letter-spacing:.06em;line-height:1.15}
+}
+`
+
 const STYLES = `
 /* Palette comes from tokens/arena-navy.css. Nothing here hardcodes a colour
    the token file does not own — swap the token file, the Arena re-skins. */
@@ -2693,7 +2708,7 @@ export default function App() {
 
   return (
     <>
-      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + SKILLSLAB_STYLES + SPLASH_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES + STRATLAB_STYLES + THROWBACK_STYLES + SCENE_STYLES}</style>
+      <style>{STYLES + LADDER_STYLES + OFFICE_STYLES + THREADS_STYLES + DOCASSIST_STYLES + DOCCHECK_STYLES + UNIT0_STYLES + ATLAS_STYLES + ISSUES_STYLES + STOPMAP_STYLES + MOMENTS_STYLES + WRITINGLAB_STYLES + SKILLSLAB_STYLES + SPLASH_STYLES + REF_STYLES + CHASE_STYLES + CIVICS_STYLES + PEEL_STYLES + HL_STYLES + STRATLAB_STYLES + THROWBACK_STYLES + SCENE_STYLES + PHONE_STYLES}</style>
       {PREVIEW_OFFICE && !manifest.office?.published && (
         <div className="preview-banner" role="note">Preview: BK&rsquo;s Office is not live yet.</div>
       )}
