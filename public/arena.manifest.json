@@ -2333,7 +2333,8 @@
   ],
   "office": {
     "_README": "BK'S OFFICE — the third splash door, shared by both courses (Leo's order 2026-09-26 23:35, amended 00:31; BK's rulings). Josh built the CONTAINER only, 2026-09-27. Every student-facing word in here is either (a) the building's own wording, given by BK (the Be a Hawk frame), (b) a line BK or Leo's order fixed verbatim (the name, the email line), or (c) Leo's LOCKED theme file. Nothing is marked PLACEHOLDER any more. The gate FAILS the build if this section is published while anything under it still carries _placeholder. Hidden unless published:true; a reviewer sees it with ?preview=office.",
-    "published": true,
+    "published": false,
+    "_published_2026-11-02_2127": "THE WHOLE OFFICE DOOR IS DARK. BK, 21:27: \"whatever prevents a kid from seeing this is what i want right now.\" With November dark and September and October closed, the room had no open month: a student opening the door would have found two closed cards and nothing to do. This takes the third splash door off the splash entirely. It overrides, for now, BK's 21:0x wish that the closed months stay visible to students - his own later word. BK can still see everything with ?preview=office. One flag to bring the door back.",
     "label": "BK's Office",
     "blurb": "Not a course. The stuff that makes the rest of it work. Check back every month for a new theme and another shot at a Hawk Proud Coupon.",
     "intro": "How do we get better, as a person, as a class, as a school? A little at a time. Start here.",
