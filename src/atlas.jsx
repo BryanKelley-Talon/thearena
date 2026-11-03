@@ -110,11 +110,11 @@ export const unitAtlasName = u => ATLAS_WORDS.unitAtlas(u.number, unitTitle(u))
 
 // ── The Atlas lane on the door (BK 21:28: "each unit gets their own atlas"): the atlas of the
 // unit we're in, then one card per finished unit, newest first, opening that unit's atlas. ──
-export function AtlasLane({ course, maps, currentUnit, unitName, onOpen, onOpenUnitAtlas, Empty }) {
+export function AtlasLane({ course, maps, currentUnit, heldSlug, unitName, onOpen, onOpenUnitAtlas, Empty }) {
   if (maps === null) return null
   const now = currentUnit
   const nowMaps = mapsForUnit(maps, now)
-  const past = [...(course.units || [])].filter(u => u.slug !== now?.slug).reverse()
+  const past = [...(course.units || [])].filter(u => u.slug !== now?.slug && u.slug !== heldSlug).reverse()   // heldSlug: door hold (BK 2026-11-03)
   return (
     <>
       {now && (

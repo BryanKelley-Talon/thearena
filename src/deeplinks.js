@@ -58,6 +58,8 @@ export function parseHash(hash, manifest) {
   const r = { at: 'door', courseId }
   if (!parts[1]) return r
   // A map id is checked by the App once the course's maps are in; an unknown one leaves the lane open.
+  // Atlas off (BK 2026-11-03): with no atlas on the course, every Atlas link lands on the door.
+  if (parts[1] === 'atlas' && !course.atlas) return r
   if (parts[1] === 'atlas' && parts[2]) return { ...r, lane: 'atlas', atlasMap: parts[2] }
   if (parts[1] === 'writing-lab' && parts[2]) return { ...r, lane: 'writing_lab', wlSet: parts[2] }
   // An unknown room name opens the Skills Lab's three cards, never a blank page.
@@ -82,9 +84,12 @@ export function parseHash(hash, manifest) {
   if (KEY_LANE[parts[1]] !== undefined || LANE_KEYS[parts[1]]) return { ...r, lane: LANE_KEYS[parts[1]] || parts[1] }
   if (parts[1] === '0') return { ...r, at: 'unit0' }
   // A gauge level in the unit we're in: #/global/gauge/EI/1 (BK 2026-10-08 23:03, for the chase's Regents callout).
+  if (parts[1] === 'gauge' && parts[2] && course.door_hold) return r   // door hold: the current unit's gauges are not open (BK 2026-11-03)
   if (parts[1] === 'gauge' && parts[2]) return { ...r, at: 'gauge', skill: parts[2].toUpperCase(), level: /^[1-5]$/.test(parts[3] || '') ? Number(parts[3]) : null }
   const unit = unitByNumber(course, parts[1])
   if (!unit) return r
+  // DOOR HOLD (BK 2026-11-03): a link into the held current unit lands on the door, which shows nothing.
+  if (course.door_hold && unit.slug === course.current_unit) return r
   const u = { ...r, at: 'unit', unitSlug: unit.slug }
   // A casefile's own gauge work: #/us/11.3A/gauges/A. BK, 2026-10-24 16:55 ("separate by
   // Casefile, easier to refer to for kids") and 17:13 (the room carries a door per casefile).
@@ -98,6 +103,7 @@ export function parseHash(hash, manifest) {
   // The unit splash's own cards (BK 2026-10-30): Door 4 and the Unit Test Review.
   if (parts[2] === 'next-step') return { ...u, at: 'kyns' }
   if (parts[2] === 'test-review') return { ...u, at: 'testreview' }
+  if ((parts[2] === 'atlas' || parts[2] === 'overview') && !course.atlas) return u   // atlas off: the unit's own room
   if (parts[2] === 'atlas' || parts[2] === 'overview') return { ...u, at: 'unitatlas' }   // the Unit Overview holds the Atlas (BK 2026-10-31)
   if (parts[2] && (unit.rooms || []).some(x => x.slug === parts[2] && x.published === true))
     return { ...u, at: 'civics', civicsSlug: parts[2], ...(parts[3] ? { civicsCard: parts[3] } : {}) }

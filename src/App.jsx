@@ -1012,7 +1012,10 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
   const laneLines = touched ? course.guide?.lines?.lane_enter?.[LANE_LINES[lane]] : null
   // The gauges follow the CURRENT unit (BK, 2026-09-25). Past units' gauges move
   // into their own page under Units, so the list grows as the year goes on.
-  const unit = currentUnit(course)
+  // DOOR HOLD (BK 2026-11-03 10:49: "I DO NOT WANT ANY CURRENT UNIT MATERIALS DISPLAYED ON THE MAIN PAGE" ...
+  // "WE ARE PAUSING USE OF THE ARENA"). A course with door_hold shows NO unit on its main page. Past units stay
+  // in Units. Remove the flag from the manifest to bring the door back.
+  const unit = course.door_hold ? null : currentUnit(course)
 
   return (
     <div className="wrap">
@@ -1047,7 +1050,7 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
                  line={welcomeLine(Object.entries(prog || {}).some(([k, v]) => k.startsWith(`${course.id}:`) && Object.values(v || {}).some(a => (a || []).length)),
                                    course.guide?.lines?.door_enter)} />}
       {/* On a splash unit the gauges sit behind the casefile doors, so Your Skills says so (BK 2026-10-30 13:37). */}
-      <p className="lane-intro">{lane === 'skills' && unit && usesSplash(unit) ? SPLASH_WORDS.skillsIntro : LANES.find(l => l.key === lane)?.intro}</p>
+      {!(lane === 'skills' && !unit) && <p className="lane-intro">{lane === 'skills' && unit && usesSplash(unit) ? SPLASH_WORDS.skillsIntro : LANES.find(l => l.key === lane)?.intro}</p>}
 
       {lane === 'skills' && (
         !unit ? <EmptyLane what="Skills" /> : <>
@@ -1109,7 +1112,7 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
                    layers={sceneLayers} onLayers={onSceneLayers} />
       )}
       {lane === 'issues' && <StopMapLane kind="issues" course={course} maps={atlasMaps} onOpenMap={onOpenMap} initialOpen={stopOpen} />}
-      {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
+      {lane === 'atlas' && <AtlasLane course={course} maps={atlasMaps} currentUnit={unit} heldSlug={course.door_hold ? currentUnit(course)?.slug : null} unitName={unitName} onOpen={onOpenMap} onOpenUnitAtlas={onOpenUnitAtlas} Empty={EmptyLane} />}
       {lane === 'constitution' && (constCards.length ? (
         <div className="grid room-cards">
           {constCards.map(({ unit: u, room: r }) => (
@@ -1500,7 +1503,7 @@ function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, 
   if (usesSplash(unit)) return (
     <div className="wrap">
       <ScreenHeader label={unitName(unit)} onBack={onBack} color={course.accent} back={course.label} />
-      {!isCurrent && now && (
+      {!isCurrent && now && !course.door_hold && (
         <div className="unit-finished" role="note">
           <p>{UNIT_WORDS.finished(unitName(unit))}</p>
           <button type="button" className="btn-now" onClick={onGoNow}>{UNIT_WORDS.goNow(unitNum(now) || now.label)}</button>
@@ -1515,7 +1518,7 @@ function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, 
     <div className="wrap">
       <ScreenHeader label={unitName(unit)} onBack={onBack} color={course.accent} back={course.label} />
       {/* A finished unit says so at the top, with the way back to the unit we're in (BK 14:03). */}
-      {!isCurrent && now && (
+      {!isCurrent && now && !course.door_hold && (
         <div className="unit-finished" role="note">
           <p>{UNIT_WORDS.finished(unitName(unit))}</p>
           <button type="button" className="btn-now" onClick={onGoNow}>{UNIT_WORDS.goNow(unitNum(now) || now.label)}</button>
