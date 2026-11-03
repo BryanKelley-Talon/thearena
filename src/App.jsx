@@ -83,9 +83,8 @@ const HOME_URL = 'https://flashpointhistory.com'
 import { resolveCalendar } from './calendar.js'
 const MANIFEST_URL = '/arena.manifest.json'
 const PREVIEW_SKILLS_LAB = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'skills-lab' } catch { return false } })()
-// The Part I Strategy Lab ships dark until its last four passages arrive from the desk (BK's rule:
-// an activity carries its document). `?preview=stratlab` opens it for BK and Danny in the meantime.
-const PREVIEW_STRATLAB = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'stratlab' } catch { return false } })()
+// The Part I Strategy Lab is OFF the internet (BK 2026-11-03 10:3x: "pull it off"): no preview link,
+// no served content file. Its source stays in the repo; putting it back is a build decision, not a flag.
 // The SAME list the landing page reads. Canonical copy at builds/_shared/games.json,
 // synced into both sites by builds/_shared/sync-games.sh. A scenario_link points at a
 // game ID, never a raw URL — so when a game moves (1914 is still off-domain), one edit
@@ -392,7 +391,7 @@ const isOpen = (o) => (o?.status ?? 'open') !== 'building'
 // activity can ship ahead and appear on the day kids start it (11.1 Test Practice, Mon 10/5).
 const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
 const onDate = (o) => !o?.opens_on || todayLocal() >= String(o.opens_on)
-const isLive = (o) => (o?.published === true || (o?.type === 'stratlab' && PREVIEW_STRATLAB)) && isOpen(o) && onDate(o)
+const isLive = (o) => o?.published === true && isOpen(o) && onDate(o)
 
 // A thing is enterable only if it is published, open, AND its content resolves.
 const resolves = (ref) => typeof ref === 'string' && ref.length > 0

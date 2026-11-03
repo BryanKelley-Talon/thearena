@@ -1693,7 +1693,7 @@
               "type": "stratlab",
               "label": "Strategy Lab — your 11.2 test",
               "published": false,
-              "preview_ok": true,
+              "preview_ok": false,
               "content_ref": "content/stratlab-us11r-11.2.json",
               "_note": "THE 11.2 PART I STRATEGY LAB, READ-ONLY COACHING VIEW (rebuilt 2026-11-03). The interactive marking version was RETIRED by BK on 2026-11-03 (08:51 pulled it, 09:08 \"retire it\"). This is the replacement: nothing to tap or score, the proof spans already marked, a WHY for each of the eleven questions. Wording: Sam's COACHING worksheet md5 b1881a324e151934cb4a3f3c66cfef19, BK blessed 10:13, Danny COUNT 49-1-0 at 10:19. DARK ON PURPOSE: published false, preview_ok true. It opens to students only after BK walks ?preview=stratlab himself and says so (Leo 09:10: the preview walk is not optional). Opening it is one line: published false -> true."
             },
