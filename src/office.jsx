@@ -69,6 +69,18 @@ export function bonusSteps(theme, bonus, today = todayNow()) {
   return graded || !theme?.bonus_due_line ? steps : steps.filter(s => s !== theme.bonus_due_line)
 }
 
+// ── A CLOSED MONTH ───────────────────────────────────────────────────────
+// BK, 2026-11-02 21:0x: "darken september and october .. i want kids to see that
+// they missed and only one is open .. that ends the talk of september and october."
+// A closed theme still SHOWS on the room, so the miss is visible, but it does not
+// open: the card is not a button and the router turns a deep link away. This
+// reverses the September rule that past months stay open; BK's word, this chat.
+// The line a student reads is office.closed_label in the manifest, never written here.
+// A reviewer with ?preview=office can still open a closed theme to check it.
+export function isClosed(theme, preview) {
+  return !preview && theme?.closed === true
+}
+
 export function officeVisible(office, preview) {
   return !!office && (office.published === true || preview)
 }
@@ -136,7 +148,8 @@ export function OfficeRoom({ office, preview, onOpenTheme, onBack, ui }) {
   const { ScreenHeader, BottomBack } = ui
   const themes = visibleThemes(office, preview)
   const now = monthNow()
-  const current = themes.find(t => String(t.month) <= now) || themes[0]
+  // The pinned note is this month's open theme; a closed month is never pinned.
+  const current = themes.find(t => String(t.month) <= now && !isClosed(t, preview)) || null
   return (
     <div className="wrap office">
       <ScreenHeader label={office.label} onBack={onBack} color="var(--gold)" back="The Arena" />
@@ -171,16 +184,24 @@ export function OfficeRoom({ office, preview, onOpenTheme, onBack, ui }) {
       {/* Oldest first, left to right (BK 2026-09-29 11:34): the months read in the
           order a kid should work them, so October points back to September. */}
       <div className="office-themes">
-        {[...themes].sort((a, b) => String(a.month).localeCompare(String(b.month))).map(t => (
-          <button key={t.slug} type="button" className="card theme-card" onClick={() => onOpenTheme(t.slug)}>
-            <span className="theme-month">{t.month_label}</span>
-            <span className="theme-title">{t.title}</span>
-            <span className="flag live">
-              {t === current ? 'This month' : String(t.month) > now ? 'Preview: not open yet' : 'Open'}
-            </span>
-            {preview && !t.published && <span className="flag building">Not published</span>}
-          </button>
-        ))}
+        {[...themes].sort((a, b) => String(a.month).localeCompare(String(b.month))).map(t => {
+          const shut = isClosed(t, preview)
+          const Tag = shut ? 'div' : 'button'
+          return (
+            <Tag key={t.slug} {...(shut ? { 'aria-disabled': 'true' } : { type: 'button', onClick: () => onOpenTheme(t.slug) })}
+                 className={`card theme-card${shut ? ' shut' : ''}`}>
+              <span className="theme-month">{t.month_label}</span>
+              <span className="theme-title">{t.title}</span>
+              {shut
+                ? <span className="flag shut-flag">{office.closed_label}</span>
+                : <span className="flag live">
+                    {t === current ? 'This month' : String(t.month) > now ? 'Preview: not open yet' : 'Open'}
+                  </span>}
+              {preview && t.closed === true && <span className="flag building">Closed (open to you in preview)</span>}
+              {preview && !t.published && <span className="flag building">Not published</span>}
+            </Tag>
+          )
+        })}
         {!themes.length && <p className="office-intro">No themes are open yet.</p>}
       </div>
       <BottomBack onBack={onBack} back="The Arena" />
@@ -511,6 +532,12 @@ export const OFFICE_STYLES = `
 button.theme-card{display:flex;flex-direction:column;align-items:flex-start;gap:6px;text-align:left;padding:18px;
   background:var(--card);border-radius:12px;color:var(--white);cursor:pointer}
 button.theme-card:hover{background:var(--card-lit);border-color:var(--gold)}
+/* A closed month: still on the board so the miss is visible, visibly not a door.
+   Dimmed, no hover, no pointer, and its flag is the manifest's own words. */
+.theme-card.shut{opacity:.72;cursor:default;border-style:dashed}
+.theme-card.shut:hover{background:var(--card);border-color:var(--edge)}
+.theme-card.shut .theme-title,.theme-card.shut .theme-month{color:var(--grey)}
+.flag.shut-flag{background:transparent;border:1px solid var(--grey);color:var(--white)}
 .theme-month{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);font-size:14px}
 .theme-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;line-height:1.05}
 

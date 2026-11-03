@@ -57,8 +57,7 @@ import {
 import { ThrowbackView, THROWBACK_WORDS, THROWBACK_STYLES, useThrowback } from './throwback.jsx'
 import {
   OFFICE_STYLES, OfficeDoor, OfficeRoom, OfficeTheme, officeVisible, visibleThemes,
-  OFFICE_COURSE, OFFICE_SKILL, officeUnit,
-} from './office.jsx'
+  OFFICE_COURSE, OFFICE_SKILL, officeUnit, isClosed } from './office.jsx'
 
 // BK's Office stays hidden until the manifest publishes it. A reviewer opens the
 // branch preview with ?preview=office to see it, placeholders and all.
@@ -2368,8 +2367,11 @@ export default function App() {
     setOffice(r.at === 'office')
     if (r.at === 'office') {
       if (r.theme) {
+        // A closed month shows on the room but never opens, by deep link either
+        // (BK 2026-11-02: "only one is open"). The room is what a student lands on.
         const t = visibleThemes(manifest.office, PREVIEW_OFFICE).find(x => x.slug === r.theme)
-        if (t) { setOfficeTheme(t.slug); fetchContent(t.content_ref, setOfficePack) }
+        if (t && !isClosed(t, PREVIEW_OFFICE)) { setOfficeTheme(t.slug); fetchContent(t.content_ref, setOfficePack) }
+        else setOfficeTheme(null)
       }
       setCourseId(null); setUnitSlug(null); window.scrollTo(0, 0); return
     }
