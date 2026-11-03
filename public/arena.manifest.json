@@ -1999,7 +1999,7 @@
           ],
           "number": "11.3A",
           "label": "11.3A · Building a Nation, 1801–1850",
-          "status": "building",
+          "status": "open",
           "published": true,
           "_source": "Sam, 11.3A Casefile A Historical Context gauge, blessed by BK 2026-10-23 11:38 on US11R_11.3A_THEJUMP-HCgauge_WORDING_v2. Danny cleared the claims 2026-10-23 13:43 (5 files, 0 fixed, 0 unsupported) and this exact build 2026-10-25 10:33 (11 claims, 1 fixed, 0 unsupported; the fix is L5 Doc 6's dateline pointer, a hidden field). Ported byte for byte by Josh 2026-10-27 at Danny's md5s: L1 693007ef71ee91deb98773926fbd51ed, L2 3b7ddfebe44b1ce3901dfbdd9bd3b129, L3 5ebb9631a9b928067a034bd91f2ebbcc, L4 8fe8a3615ae41d31f5261f819c6f1474, L5 5ca760dcc54e270745d8509ac3c0fa64 (superseded 2026-10-30, see below). Level labels are Sam's own _activity lines, not written here. L5 is a COLD rung: it carries its own two documents inline (Jackson's 1830 message and the Cherokee General Council's address) with a BEFORE WE TALK framing. Those documents sit outside Casefile A by design, so it meets BK's 2026-10-27 document rule by the inline route and needs no docs_from_casefile. No checklist and no starter, on purpose. L5 RE-PORTED 2026-10-30 by Josh: the 10/27 THE JUMP ruling (practice-only, pulled from required) rebuilt on Sam's desk and cleared by Danny 2026-10-30 09:20 (3 strips checked, 0 WRONG) -- new L5 md5 f5cf1d6a6961de70cdb5cd1c8f0f608a, badge/write_it_in/model_visible updated to practice wording, practice_only true. L1-L4 reconfirmed unchanged at the same md5s above.",
           "_note": "Josh, 2026-10-27. Built to port Danny's 2026-10-25 clearance, which had sat unported for two days. status building and current_unit stays unit-2, so the unit is reachable by deep link and QR but is NOT on the door — the door switches on the day kids start it (CARRY-FORWARD §2 step 7); 11.3A Day 1 is Tue 11/3. Carries the HC gauge only: the Doc Assist pack, the brief, Casefiles B and C and the Group doors are owed by Sam and are not here. Label is Sam's own, from his files' _unit line.",
@@ -2146,7 +2146,7 @@
             }
           },
           "_calendar_source": "Sam's FINAL anchors, us11r-curriculum/WORK/Unit_03/open-dates-2026-10-31-1903/open-dates.json (md5 561f627ac37644d06e3f0999e75459e5), built by his skills/arena/build_113A_open_dates.py; BK ruled the calendar 10/31 (Sam 19:05). Copied verbatim, date and text only. A snow day: Sam sends a new file, this block is replaced whole. Josh never types a date.",
-          "status_open_at": "DAY_0",
+          "_status_note": "BK 2026-11-03 10:4x: the US door switches to 11.3A TODAY instead of Wed 11/4, so 11.2 leaves the main page and sits in Units. status_open_at (DAY_0) is removed because the page recomputes status from it and would put the unit back to building. Every DAY_0 open date inside the unit is unchanged, so nothing inside opens early.",
           "overview": {
             "published": true,
             "content_ref": "content/overview-us11r-11.3A.json",
@@ -2225,7 +2225,7 @@
       ],
       "_blurbs_note": "Six card blurbs, RULED by BK 2026-09-18 13:17 EDT, written verbatim as he approved them — one line per card, second person, no station vocabulary, no acronyms. They are addressed to the student, which is why none of them explains what the card 'drills': the drill names inside the card do that. Curly apostrophes and curly quotes are intentional and are the house typography.",
       "status": "open",
-      "current_unit": "unit-2",
+      "current_unit": "unit-3",
       "_current_unit_note": "Josh 18:27 2026-09-27: door moves to NOW 11.2 on the port of Sam's arena-pack (BK signed 18:11). 11.1 gauges move into the 11.1 room.",
       "skill_lines": {
         "_README": "The course's graded skill lines, in the words the student reads on the scoring page. THIS IS THE CROSSWALK: a student sees a line on their grade, and every station and item that drills it declares the same CODE. Five lines are shared across both courses; the sixth is the course's own essay line and the two are NOT interchangeable.",
