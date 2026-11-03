@@ -547,6 +547,12 @@ export const THROWBACK_STYLES = `
 .tb-story .tb-fig img{border-radius:3px;border:1px solid #C9BCA2}
 .tb-story .tb-fig figcaption,.tb-story .tb-credit,.tb-story .tb-label{color:#5A4C39}
 .tb-story .tb-fig-missing{background:#E8DFC8;border-color:#C9BCA2;color:#5A4C39}
+/* BK 2026-11-02 20:31: the 'Who is not in this room' box on a paper story was white
+   letters on a pink wash over cream (1.15:1). On the paper it is a red wash with black
+   type; the room's own copy of this box stays white on the dark room. */
+.tb-story .tb-absent{border-left:4px solid #A8281A;background:#F2C4BC;border-radius:0 8px 8px 0;margin:14px 0 10px}
+.tb-story .tb-absent-tag{color:#7A1F12;font-weight:700}
+.tb-story .tb-absent p{color:#17130D}
 .tb-oi{border:2px solid #7A1F12;border-radius:6px;padding:12px 14px;margin:14px 0 10px;background:#EFE4CB}
 .tb-oi-badge{display:inline-block;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;
   font-size:12px;font-weight:700;color:#F3EBD8;background:#7A1F12;padding:3px 9px;border-radius:4px;margin-bottom:7px}
