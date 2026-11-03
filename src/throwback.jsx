@@ -236,6 +236,13 @@ function Room({ era, onOpenPaper, paperOpen, onClose, words, nowLabel }) {
   const pic = era.room?.panel_image     // the period picture, when one has been chosen
   return (
     <div className="tb-room">
+      {/* Phone only (BK 2026-11-02 19:55 "yes"): the picture on the wall is the way in, and on a
+          390 px screen it sits at the bottom edge of the first screen. This button says the same
+          words and opens the same paper. */}
+      {rect && (
+        <button type="button" className="tb-open-top" onClick={onOpenPaper}
+                aria-label={words.openPaper(era.label || era.year)}>{words.openIt}</button>
+      )}
       <div className="tb-scene">
         <Figure src={era.room?.image} alt={era.room?.image_alt} className="tb-scene-bg" />
         {/* The picture on the wall, sitting exactly where the panel is in the art. */}
@@ -353,6 +360,8 @@ export const THROWBACK_STYLES = `
 .tb-year-label{color:var(--grey);font-size:14px}
 .tb-pick{color:var(--grey);font-size:17px}
 .tb-room{display:flex;flex-direction:column;gap:14px}
+.tb-open-top{display:none}
+@media (max-width:600px){.tb-open-top{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:10px;border:1px solid var(--gold);background:var(--gold);color:var(--canvas);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:17px;font-weight:700;cursor:pointer}}
 /* THE SCENE. The room is the background; everything else sits on it. */
 .tb-scene{position:relative;container-type:inline-size;width:100%;max-width:1024px;border-radius:12px;overflow:hidden;border:1px solid var(--edge);line-height:0}
 .tb-scene .tb-fig{margin:0}
