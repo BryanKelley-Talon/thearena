@@ -57,7 +57,7 @@ for (const p of namedBy(frontS.buf.toString('utf8'))) paths.add(p)
 
 for (const base of [live, sandbox]) {
   const m = await get(base, '/arena.manifest.json')
-  if (m.status === 200) {
+  if (m.status === 200 && m.buf.toString('utf8').trimStart().startsWith('{')) {   // the SPA fallback is not a manifest
     paths.add('/arena.manifest.json')
     try { for (const p of refsIn(JSON.parse(m.buf.toString('utf8')))) paths.add(p) } catch { /* reported as mismatch below if it differs */ }
   }

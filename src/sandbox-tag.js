@@ -8,6 +8,11 @@
 // The tag does not push the page down (fixed, out of flow) and does not take taps
 // (pointer-events: none), so what BK walks is laid out exactly as a kid gets it.
 // Text is 12 px, black on white, 21:1.
+//
+// It also adds <meta name="robots" content="noindex, nofollow"> on a sandbox address, so a sandbox is
+// never indexed even where the site itself has no noindex (1832). Live is untouched.
+//
+// ONE FILE, IDENTICAL IN EVERY REPO THAT HAS A SANDBOX (thearena, long-day-1832, ...). Change it everywhere or nowhere.
 
 const COMMIT = typeof __COMMIT__ === 'string' ? __COMMIT__ : ''
 const WORDS = 'SANDBOX · not live'
@@ -20,6 +25,13 @@ export function isSandboxHost(host) {
 export function mountSandboxTag(win = typeof window !== 'undefined' ? window : null) {
   if (!win || !isSandboxHost(win.location && win.location.hostname)) return false
   const doc = win.document
+
+  if (!doc.querySelector('meta[name="robots"]')) {
+    const m = doc.createElement('meta')
+    m.name = 'robots'
+    m.content = 'noindex, nofollow'
+    doc.head.appendChild(m)
+  }
 
   const tag = doc.createElement('div')
   tag.className = 'sandbox-tag'
