@@ -2257,6 +2257,10 @@ export default function App() {
     () => (course?.units || []).find(u => u.slug === unitSlug) || null,
     [course, unitSlug]
   )
+  // DOOR HOLD + DOC ASSIST (BK 2026-11-03 door hold; 2026-11-04 "Sandbox first, then promote" for the
+  // printed QRs). Inside a held current unit, ONLY its Doc Assist may show. The unit room never does:
+  // no pack, a held pack, or leaving Doc Assist all land on the empty door.
+  const heldUnit = !!(course?.door_hold && unit && unit.slug === course.current_unit)
   const station = useMemo(
     () => (course?.stations || []).find(s => s.slug === stationSlug) || null,
     [course, stationSlug]
@@ -2431,6 +2435,7 @@ export default function App() {
     setHere(h)                                              // where the kid is, for the chase pill (10/9)
   }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, throwback, tbYear, sceneYear, sceneLayers, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard, slModule, kyns, testReview])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
+  useEffect(() => { if (heldUnit && !daOpen && !pendingDa) setUnitSlug(null) }, [heldUnit, daOpen, pendingDa])
 
   // Back from a review, Doc Assist or practice set opened on the door goes back to the door.
   const fromDoor = roomFrom === 'door'
@@ -2458,7 +2463,10 @@ export default function App() {
     if (!t) return
     setOfficeTheme(slug); fetchContent(t.content_ref, setOfficePack); window.scrollTo(0, 0)
   }
-  if (course && unit && civics) {
+  if (heldUnit && !(daOpen && daPack)) {
+    screen = <div className="loading">Opening&hellip;</div>   // never the held unit room (door hold)
+  }
+  else if (course && unit && civics) {
     screen = civicsPack === null ? <div className="loading">Opening&hellip;</div>
       : !civicsPack ? <div className="wrap"><div className="empty"><div className="empty-title">Not open yet.</div></div></div>
       : <CivicsRoom key={civicsPack.id} pack={civicsPack} cardTarget={civicsCard} ScreenHeader={ScreenHeader} BottomBack={BottomBack}
@@ -2553,7 +2561,7 @@ export default function App() {
   }
   else if (unit && daOpen && daPack) {
     const back = () => { setDaOpen(false); leaveRoomPage(); window.scrollTo(0, 0) }
-    const backLabel = fromDoor ? course.label : unitName(unit)
+    const backLabel = fromDoor || heldUnit ? course.label : unitName(unit)
     screen = (
       <div className="wrap">
         <ScreenHeader label={DA.section} onBack={back} color={course.accent} back={backLabel} />
