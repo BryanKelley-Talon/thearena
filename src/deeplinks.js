@@ -89,7 +89,10 @@ export function parseHash(hash, manifest) {
   const unit = unitByNumber(course, parts[1])
   if (!unit) return r
   // DOOR HOLD (BK 2026-11-03): a link into the held current unit lands on the door, which shows nothing.
-  if (course.door_hold && unit.slug === course.current_unit) return r
+  // EXCEPT Doc Assist: printed casefiles carry a Doc Assist QR beside every document, and paper can't be
+  // recalled (Will 2026-11-04 10:55; Josh's check 13:46 found all nine 10.3A codes landing on the door).
+  // The door stays empty; only a doc-assist link gets through. BK 13:5x: "Sandbox first, then promote."
+  if (course.door_hold && unit.slug === course.current_unit && parts[2] !== 'doc-assist') return r
   const u = { ...r, at: 'unit', unitSlug: unit.slug }
   // A casefile's own gauge work: #/us/11.3A/gauges/A. BK, 2026-10-24 16:55 ("separate by
   // Casefile, easier to refer to for kids") and 17:13 (the room carries a door per casefile).
