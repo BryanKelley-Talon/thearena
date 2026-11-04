@@ -5,9 +5,10 @@
 # Runs 09:30 and 10:30 UTC (05:30 Corning time in EDT and in EST); the second run sees the first and stops.
 name: open-date rebuild
 on:
-  schedule:
-    - cron: '30 9 * * *'
-    - cron: '30 10 * * *'
+  # SCHEDULE OFF 2026-11-03 on BK's order (Leo's 14:19 memo; BK 14:17 "2. yes"). Do not re-enable without BK's word.
+  # schedule:
+  #   - cron: '30 9 * * *'
+  #   - cron: '30 10 * * *'
   workflow_dispatch:
     inputs:
       force:
