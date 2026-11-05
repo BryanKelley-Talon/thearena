@@ -1069,10 +1069,10 @@
           "tag": "KEY",
           "say": "Read the key before anything else on the map: a coal field, an iron-ore district, and two sizes of city.",
           "focus": [
-            456,
-            1882,
-            462,
-            447
+            474,
+            1829,
+            448,
+            433
           ],
           "ask": "What does each symbol stand for?"
         },
@@ -1080,20 +1080,20 @@
           "tag": "SCALE",
           "say": "Find the scale bar. It tells you how big a real mile is on this map.",
           "focus": [
-            1032,
-            2194,
-            385,
-            123
+            1033,
+            2132,
+            373,
+            119
           ]
         },
         {
           "tag": "COMPASS",
           "say": "Find the compass rose in the corner. Which way is north?",
           "focus": [
-            1329,
-            139,
-            238,
-            422
+            1320,
+            140,
+            231,
+            409
           ]
         },
         {
@@ -1111,10 +1111,10 @@
           "tag": "WHAT IT SHOWS",
           "say": "Look at where the coal fields sit and where the cities sit. What pattern do you see?",
           "focus": [
-            542,
-            674,
-            836,
-            1373
+            557,
+            658,
+            810,
+            1331
           ],
           "ask": "Are most of the large cities near the coal fields, or far from them?"
         },
@@ -1122,10 +1122,10 @@
           "tag": "THE ONE THAT'S DIFFERENT",
           "say": "Now find London. It's the biggest city on the map, and it isn't near any coal field at all.",
           "focus": [
-            1208,
-            1757,
-            237,
-            305
+            1203,
+            1708,
+            230,
+            295
           ]
         },
         {
