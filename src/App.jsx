@@ -2409,7 +2409,13 @@ export default function App() {
   // A casefile or document link: once the unit's Doc Assist pack is in, open the document, or
   // scroll the casefile into view. A casefile or number that doesn't exist leaves Doc Assist open.
   useEffect(() => {
-    if (!pendingDa || daPack === null || daPackFor.current !== daRef) return
+    if (!pendingDa) return
+    // This unit has no Doc Assist to open (held until its date, or none). Settle the link now, before looking at
+    // daPack: on a same-tab jump from another unit daPack is still that unit's, and opening it would leave Doc Assist
+    // "open" on a pack that is about to go, so a held unit hung on "Opening…" instead of landing on the door
+    // (Danny 2026-11-05 08:26, fail 1).
+    if (!daRef) { setPendingDa(null); return }
+    if (daPack === null || daPackFor.current !== daRef) return
     setPendingDa(null)
     if (!daPack) return                                   // no Doc Assist in this unit: the room stays
     setDaOpen(true)
