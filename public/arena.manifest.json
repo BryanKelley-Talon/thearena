@@ -870,12 +870,13 @@
           "_note": "Will's signed stops (BK 2026-10-05 21:14), byte-identical copy of global10r-curriculum/OUTPUTS/2026-27/Course/enduring-issues-gs10r.json. map-stop-shape v1; Josh confirmed 21:29."
         }
       ],
-      "_atlas_off_note": "BK 2026-11-03 10:5x: THE ATLAS ... TAKE THEM OFF. Moved out of atlas and unpublished: no lane, no maps in any room, no map files served. To restore: rename _atlas_off back to atlas and set each published to true.",
-      "_atlas_off": [
+      "atlas_hold": ["10.1-A-02", "10.1-A-03", "10.1-A-04", "10.1-A-05", "10.2-B-01", "10.2-C-01", "10.2-C-02", "10.2-C-03", "10.2-C-04", "10.2-C-05"],
+      "_atlas_hold_note": "BK 2026-11-05 12:55: atlas maps must be Regents quality and not hard-to-read historical scans. These maps stay in the files byte for byte but are not shown to students. Remove an id from this list to show it. Josh's read at phone width, BK to overrule.",
+      "atlas": [
         {
           "slug": "atlas-global10r",
           "content_ref": "content/atlas-global10r.json",
-          "published": false,
+          "published": true,
           "_note": "The Atlas (Leo's order 2026-10-05 21:07; BK 21:11). Josh owns the container; the desk owns every map. Maps arrive in the casefile pack; Josh ports them word for word into this file. An empty file shows the lane as Under construction."
         }
       ],
@@ -2155,18 +2156,19 @@
           }
         }
       ],
-      "_atlas_off_note": "BK 2026-11-03 10:5x: THE ATLAS ... TAKE THEM OFF. Moved out of atlas and unpublished: no lane, no maps in any room, no map files served. To restore: rename _atlas_off back to atlas and set each published to true.",
-      "_atlas_off": [
+      "atlas_hold": ["11.1-A-01", "11.1-B-01", "11.2-A-01", "11.2-A-02", "11.2-A-03", "11.2-B-01"],
+      "_atlas_hold_note": "BK 2026-11-05 12:55: atlas maps must be Regents quality and not hard-to-read historical scans. These maps stay in the files byte for byte but are not shown to students. Remove an id from this list to show it. Josh's read at phone width, BK to overrule.",
+      "atlas": [
         {
           "slug": "atlas-us11r",
           "content_ref": "content/atlas-us11r.json",
-          "published": false,
+          "published": true,
           "_note": "The Atlas (Leo's order 2026-10-05 21:07; BK 21:11). Josh owns the container; the desk owns every map. Maps arrive in the casefile pack; Josh ports them word for word into this file. An empty file shows the lane as Under construction."
         },
         {
           "slug": "atlas-us11r-11.3",
           "content_ref": "content/atlas-us11r-11.3.json",
-          "published": false,
+          "published": true,
           "_note": "Josh, 2026-10-27, updated 2026-10-31. Unit 11.3A's six maps. Held dark until Danny's imagery read caught up; cleared in full by Danny 2026-10-27 13:39 (\"All six Atlas maps for 11.3A are now clear -- go live\"), covering maps 02-06 beyond the 2025-10-25 md5 ddf242fb55fb7d4a308bb854cdc718a3 clearance of map 01. File is unchanged, byte for byte as cleared -- only this container's published flag moved."
         }
       ],

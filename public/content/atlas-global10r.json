@@ -1030,6 +1030,111 @@
       ],
       "image": "atlas/global10r/10.2-C-05.webp",
       "thumb": "atlas/global10r/thumbs/10.2-C-05.webp"
+    },
+    {
+      "id": "10.3-A-01",
+      "unit": "10.3",
+      "casefile": "A",
+      "status": "open",
+      "title": "The Industrial Revolution in Great Britain, About 1830",
+      "caption": "Where the coal was, and where the big cities grew.",
+      "image": "atlas/global10r/10.3-A-01.webp",
+      "image_alt": "A grey-and-white drawn map titled “The Industrial Revolution in Great Britain, About 1830.” Six shaded oval regions mark coal fields: Lancashire, Yorkshire, the Midlands (Black Country), the North East, Central Scotland and South Wales. Three tan diamonds mark major, long-established iron-ore districts (Coalbrookdale, Merthyr Tydfil) and one emerging one (Lanarkshire). Six black dots mark cities, five of them (Manchester, Liverpool, Birmingham, Leeds, Glasgow) on or beside a coal field, and a sixth, larger dot for London, in the southeast, far from any coal field. A key in the lower left explains the coal field shading, the iron-ore diamond, and the two city sizes; a scale bar and a compass rose sit along the bottom and upper right.",
+      "source": "Drawn for this course (original work) on Great Britain's shared coastline data (Natural Earth, public domain). Coalfields, iron-ore districts and city populations are general historical geography for the period, placed and sized for teaching, not a scan or copy of any one map. Replaces Document 3's own stimulus (NYS Regents, June 2005, Q24; Beers, World History: Patterns of Civilization, 1983, adapted) for this public page -- that stimulus is licensed and stays teach-only, printed in the casefile.",
+      "origin": "drawn-new",
+      "supports": "WEALTH & RESOURCES",
+      "walk": [
+        {
+          "tag": "TITLE",
+          "say": "Read the title first. Where, and about when.",
+          "focus": [
+            60,
+            20,
+            1960,
+            150
+          ],
+          "ask": "What is this map about?"
+        },
+        {
+          "tag": "DRAWN FOR THIS COURSE",
+          "say": "This map has no printed maker, because it was drawn for this class, not clipped from a book -- the source line at the bottom says so.",
+          "focus": [
+            60,
+            20,
+            1960,
+            150
+          ]
+        },
+        {
+          "tag": "KEY",
+          "say": "Read the key before anything else on the map: a coal field, an iron-ore district, and two sizes of city.",
+          "focus": [
+            456,
+            1882,
+            462,
+            447
+          ],
+          "ask": "What does each symbol stand for?"
+        },
+        {
+          "tag": "SCALE",
+          "say": "Find the scale bar. It tells you how big a real mile is on this map.",
+          "focus": [
+            1032,
+            2194,
+            385,
+            123
+          ]
+        },
+        {
+          "tag": "COMPASS",
+          "say": "Find the compass rose in the corner. Which way is north?",
+          "focus": [
+            1329,
+            139,
+            238,
+            422
+          ]
+        },
+        {
+          "tag": "WHERE",
+          "say": "Name the country this map shows, and what's around it.",
+          "focus": [
+            0,
+            0,
+            2080,
+            2440
+          ],
+          "ask": "What country is this, and what is the long coastline to the east called?"
+        },
+        {
+          "tag": "WHAT IT SHOWS",
+          "say": "Look at where the coal fields sit and where the cities sit. What pattern do you see?",
+          "focus": [
+            542,
+            674,
+            836,
+            1373
+          ],
+          "ask": "Are most of the large cities near the coal fields, or far from them?"
+        },
+        {
+          "tag": "THE ONE THAT'S DIFFERENT",
+          "say": "Now find London. It's the biggest city on the map, and it isn't near any coal field at all.",
+          "focus": [
+            1208,
+            1757,
+            237,
+            305
+          ]
+        },
+        {
+          "tag": "ENDURING ISSUE",
+          "say": "What does this map put on the table? Open the Six Umbrellas and name the issue.",
+          "ask": "Which enduring issue does this map raise?"
+        }
+      ],
+      "thumb": "atlas/global10r/thumbs/10.3-A-01.webp"
     }
   ]
 }

@@ -77,7 +77,9 @@ export function useAtlas(course) {
         if (!live) return
         // A file's `walk` is the desk's generic map-reading steps; a map's own `walk` replaces it.
         const all = files.flatMap(f => (f?.maps || []).map(m => ({ ...m, walk: m.walk || f.walk || [] })))
-        setMaps(all.filter(m => m.status === 'open'))
+        // A map the teacher has held back stays in its file untouched and simply isn't shown (course.atlas_hold).
+        const hold = course.atlas_hold || []
+        setMaps(all.filter(m => m.status === 'open' && !hold.includes(m.id)))
       })
     return () => { live = false }
   }, [course])
