@@ -81,6 +81,7 @@ const PREVIEW_SCENE = (() => {
 
 const HOME_URL = 'https://flashpointhistory.com'
 import { resolveCalendar } from './calendar.js'
+import { isSandboxHost } from './sandbox-tag.js'
 const MANIFEST_URL = '/arena.manifest.json'
 const PREVIEW_SKILLS_LAB = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'skills-lab' } catch { return false } })()
 // The Part I Strategy Lab is OFF the internet (BK 2026-11-03 10:3x: "pull it off"): no preview link,
@@ -390,7 +391,9 @@ const isOpen = (o) => (o?.status ?? 'open') !== 'building'
 // `opens_on` (YYYY-MM-DD, the device's own date, like the Office's month rule): a published
 // activity can ship ahead and appear on the day kids start it (11.1 Test Practice, Mon 10/5).
 const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
-const onDate = (o) => !o?.opens_on || todayLocal() >= String(o.opens_on)
+// On a sandbox address (*.workers.dev, see sandbox-tag.js) no date ever locks a room (BK 2026-11-05 14:41). Live is untouched.
+const SANDBOX_HOST = typeof window !== 'undefined' && isSandboxHost(window.location && window.location.hostname)
+const onDate = (o) => SANDBOX_HOST || !o?.opens_on || todayLocal() >= String(o.opens_on)
 const isLive = (o) => o?.published === true && isOpen(o) && onDate(o)
 
 // A thing is enterable only if it is published, open, AND its content resolves.
@@ -1367,7 +1370,9 @@ export const unitName = u => {
 }
 const finishedUnits = course => {
   const now = currentUnit(course)?.slug
-  return [...(course.units || [])].filter(u => u.slug !== now).reverse()   // newest first
+  // Chronological, left to right, as units are added (BK 2026-11-05 14:41): Unit 0 first (UnitLane), then the manifest's own order.
+  // It was newest first.
+  return [...(course.units || [])].filter(u => u.slug !== now)
 }
 
 // One unit's Review, Doc Assist and Test practice: in the unit's room, and for the unit
@@ -1470,6 +1475,8 @@ function UnitLane({ course, onOpen, onOpenUnit0 }) {
   if (!units.length && !course.unit0?.published) return <EmptyLane what="Unit rooms" />
   return (
     <div className="grid">
+      {/* Unit 0, the oldest, comes first: the six skills outside a history class (Leo's order 10/3; first, BK 2026-11-05 14:41). */}
+      <Unit0Card course={course} onOpen={onOpenUnit0} />
       {units.map(u => {
         const on = isLive(u)
         const n = (u.activities || []).filter(isLive).length
@@ -1491,8 +1498,6 @@ function UnitLane({ course, onOpen, onOpenUnit0 }) {
           </button>
         )
       })}
-      {/* Unit 0, the oldest: the six skills outside a history class (Leo's order 10/3). */}
-      <Unit0Card course={course} onOpen={onOpenUnit0} />
     </div>
   )
 }

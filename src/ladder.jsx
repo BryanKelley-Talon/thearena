@@ -18,6 +18,7 @@
 // Everything here reads from the manifest. Adding the 11.2 room is a manifest
 // edit plus content files — no code change.
 // ============================================================
+import { isSandboxHost } from './sandbox-tag.js'
 import { useState, useEffect, useMemo } from 'react'
 import { useStuck, CoachSays, BK_PORTRAIT } from './coach.jsx'
 
@@ -103,11 +104,13 @@ export function currentUnit(course) {
 // sentence a kid reads while it waits and never names a day (BK 2026-10-31 09:16, via Will:
 // "a gated resource carries two things: a date you count down to, and a label a kid reads").
 const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
+// On a sandbox address (*.workers.dev) no date locks a rung (BK 2026-11-05 14:41). Live is untouched.
+const SANDBOX_HOST = (() => { try { return isSandboxHost(window.location.hostname) } catch { return false } })()
 export const levelOpen = lv => lv?.published === true && typeof lv.content_ref === 'string' && lv.content_ref.length > 0
-  && (!lv.opens_on || todayLocal() >= String(lv.opens_on))
+  && (SANDBOX_HOST || !lv.opens_on || todayLocal() >= String(lv.opens_on))
 // What the rung shows while closed for a date, not for being unbuilt: the desk's own sentence,
 // never the bare "Coming" a kid would read as "not built" when it is really "not yet".
-const datedShut = lv => !!(lv?.opens_label && lv.opens_on && todayLocal() < String(lv.opens_on))
+const datedShut = lv => !SANDBOX_HOST && !!(lv?.opens_label && lv.opens_on && todayLocal() < String(lv.opens_on))
 const levelComing = lv => (lv?.opens_label && lv.opens_on && todayLocal() < String(lv.opens_on)) ? lv.opens_label : 'Coming'
 
 // Five slots, always. A skill with no ladder yet, or a ladder missing a level,

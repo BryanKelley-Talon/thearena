@@ -20,13 +20,20 @@
 import { SkillGauges, roomSkills } from './ladder.jsx'
 import { DocAssistHome, paperOf } from './docassist.jsx'
 import { WritingLabCards } from './writinglab.jsx'
+import { isSandboxHost } from './sandbox-tag.js'
 
 const PREVIEW_DOORS = (() => { try { return new URLSearchParams(window.location.search).get('preview') === 'unit-doors' } catch { return false } })()
 const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}-${String(d.getDate()).padStart(2, '0')}` }
 // `locked`: a door whose day the desk hasn't sent yet. It shows, reads Coming, and stays shut.
 // And a door opens only once its scoring page's gauge list exists (Sam 14:25: "Doors can stay locked with their dates
 // until those lists exist"): an open door with nothing behind it is the empty room BK ruled out.
-export const cfOpen = cf => PREVIEW_DOORS || (!!cf && !cf.locked && (cf.skills || []).length > 0 && (!cf.opens_on || todayLocal() >= String(cf.opens_on)))
+// On a sandbox address (*.workers.dev) no date ever locks a door (BK 2026-11-05 14:41, "in sandbox no rooms are ever date locked"):
+// the day is ignored, the gauge list still has to exist. Live is untouched. `cfRunning` keeps the real date, so the NOW tag
+// still sits on the casefile the calendar says is running, not on the last one the sandbox happens to have open.
+const SANDBOX_HOST = (() => { try { return isSandboxHost(window.location.hostname) } catch { return false } })()
+const cfReady = cf => !!cf && !cf.locked && (cf.skills || []).length > 0
+const cfRunning = cf => PREVIEW_DOORS || (cfReady(cf) && (!cf.opens_on || todayLocal() >= String(cf.opens_on)))
+export const cfOpen = cf => PREVIEW_DOORS || (cfReady(cf) && (SANDBOX_HOST || !cf.opens_on || todayLocal() >= String(cf.opens_on)))
 // A desk may send a whole sentence ("Opens when Casefile B begins", "Coming on Mon 11/23": Sam's 11.3A table, BK 10/31 18:09);
 // a bare day ("Mon 11/9", Global's) still reads "Opens Mon 11/9". Josh, 2026-10-31.
 const cfLabel = cf => (cf.opens_label && cf.opens_on && todayLocal() < String(cf.opens_on)
@@ -37,7 +44,7 @@ const paperMap = unit => unit?.doc_assist?.paper || unit?.paper || null
 
 // Door 4 opens after the unit test (BK 2026-10-30 13:58: "Know your next step wont open until after a unit test"),
 // on the desk's own day (`unit.next_step.opens_on` / `opens_label`). No day sent yet: it shows, reads Coming, stays shut.
-export const nextStepOpen = unit => PREVIEW_DOORS || (!!unit?.next_step?.opens_on && todayLocal() >= String(unit.next_step.opens_on))
+export const nextStepOpen = unit => PREVIEW_DOORS || (!!unit?.next_step?.opens_on && (SANDBOX_HOST || todayLocal() >= String(unit.next_step.opens_on)))
 
 export const usesSplash = unit => Array.isArray(unit?.casefiles) && unit.casefiles.length > 0
 
@@ -113,7 +120,7 @@ function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now }) {
 export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile, onOpenNextStep, onOpenAtlas, onOpenTestReview }) {
   const cfs = unit.casefiles || []
   // The NOW tag sits on the casefile that is running: the last one open (Will 13:24, point 1, BK 13:23 "yes").
-  const running = [...cfs].reverse().find(cfOpen)?.id
+  const running = [...cfs].reverse().find(cfRunning)?.id
   // Order, left to right (BK 2026-10-30 22:05/22:07, confirmed 2026-10-31 20:53): Unit Overview (the Atlas inside) ·
   // Casefile A · B · C · Unit Test Review · Know Your Next Step. Throwback before and after take their places when the
   // desk names their eras. The Overview always opens: it holds what the desk has sent and says Coming for the rest.

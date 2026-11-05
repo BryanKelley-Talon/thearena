@@ -25,7 +25,12 @@ const dropRefs = o => {
     if (typeof v === 'string' && REF.test(v)) { held.add(v); delete o[k] } else dropRefs(v)
   }
 }
-const later = o => typeof o?.opens_on === 'string' && o.opens_on > today
+// A SANDBOX BUILD NEVER HOLDS A ROOM BY DATE (BK 2026-11-05 14:41: "in sandbox no rooms are ever date locked ... i want to be able
+// to open casefile A room"). The sandbox worker builds the `sandbox` branch (Cloudflare sets WORKERS_CI_BRANCH); a local proof sets
+// ARENA_SANDBOX=1. The live build (branch `main`) is untouched: this is the only line that differs between the two builds.
+// Unpublished entries are still held, and hold-models.mjs still removes answer keys: those are not date locks.
+const SANDBOX = process.env.WORKERS_CI_BRANCH === 'sandbox' || process.env.ARENA_SANDBOX === '1'
+const later = o => !SANDBOX && typeof o?.opens_on === 'string' && o.opens_on > today
 const walk = o => {
   if (Array.isArray(o)) {
     for (let i = o.length - 1; i >= 0; i--) {
