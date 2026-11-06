@@ -198,8 +198,11 @@ export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThree
         {paper && <span className="us-door-copy"><span className="us-swatch" aria-hidden="true" />{W.copy(paper)}</span>}
       </div>
       {cf.blurb && <p className="room-sub">{cf.blurb}</p>}
+      {/* A unit whose gauges are hidden (gauge_rules.hidden, BK 2026-11-06 10:01 for Global 10.3: "keep it hidden for now") shows its documents only. */}
+      {!unit?.gauge_rules?.hidden && <>
       <h3 className="room-section">{W.gauges}</h3>
       <div className="cf-gauges"><SkillGauges course={course} unit={unit} prog={prog} only={cf?.skills || []} onOpen={onOpenSkill} /></div>
+      </>}
       {hasDocs && (
         <>
           <h3 className="room-section">{W.docs}</h3>

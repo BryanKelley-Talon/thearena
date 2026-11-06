@@ -588,6 +588,10 @@
           }
         },
         {
+          "gauge_rules": {
+            "hidden": true,
+            "_source": "BK 2026-11-06 10:01: \"for global...we could talk more about it later, keep it hidden for now.\" 10.3's gauges do not show (casefile rooms show documents only; gauge links land on the unit). Content files untouched."
+          },
           "slug": "unit-3",
           "number": "10.3",
           "label": "10.3",

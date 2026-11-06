@@ -1053,12 +1053,13 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
                  line={welcomeLine(Object.entries(prog || {}).some(([k, v]) => k.startsWith(`${course.id}:`) && Object.values(v || {}).some(a => (a || []).length)),
                                    course.guide?.lines?.door_enter)} />}
       {/* On a splash unit the gauges sit behind the casefile doors, so Your Skills says so (BK 2026-10-30 13:37). */}
-      {!(lane === 'skills' && !unit) && <p className="lane-intro">{lane === 'skills' && unit && usesSplash(unit) ? SPLASH_WORDS.skillsIntro : LANES.find(l => l.key === lane)?.intro}</p>}
+      {!(lane === 'skills' && !unit) && !(lane === 'skills' && gaugeRules(unit).hidden) && <p className="lane-intro">{lane === 'skills' && unit && usesSplash(unit) ? SPLASH_WORDS.skillsIntro : LANES.find(l => l.key === lane)?.intro}</p>}
 
       {lane === 'skills' && (
         !unit ? <EmptyLane what="Skills" /> : <>
           <p className="unit-now"><span className="unit-now-tag">Now</span> {unitName(unit)}</p>
-          <p className="unit-here">{UNIT_WORDS.here}</p>
+          {/* Gauges hidden (gauge_rules.hidden): keep the first sentence only; "Gauge work for it goes here" would point at nothing. */}
+          <p className="unit-here">{gaugeRules(unit).hidden ? UNIT_WORDS.here.split('. ')[0] + '.' : UNIT_WORDS.here}</p>
           {/* From 11.3A / 10.3 on, the unit opens on its doors (BK 2026-10-30 13:14). Units built before keep their room. */}
           {usesSplash(unit)
             ? <UnitSplash course={course} unit={unit} maps={mapsForUnit(atlasMaps, unit)} testReviewReady={testReviewReady(unit)}
@@ -2417,7 +2418,7 @@ export default function App() {
     if (r.at === 'review') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) { setReview(true); fetchContent(u.brief_ref, setBriefPack) } }
     if (r.at === 'docassist') setPendingDa({ cf: r.cf || null, docN: r.docN ?? null })
     // A gauge level link opens the unit we're in, that gauge, and (once its ladder is in hand) that level.
-    if (r.at === 'gauge') { const u = currentUnit(manifest.courses.find(c => c.id === r.courseId)); if (u && roomSkills(manifest.courses.find(c => c.id === r.courseId), u).some(x => x.code === r.skill)) { setUnitSlug(u.slug); setSkill(r.skill); setLadderFrom('door'); setPendingLevel(r.level) } }
+    if (r.at === 'gauge') { const u = currentUnit(manifest.courses.find(c => c.id === r.courseId)); if (u && !gaugeRules(u).hidden && roomSkills(manifest.courses.find(c => c.id === r.courseId), u).some(x => x.code === r.skill)) { setUnitSlug(u.slug); setSkill(r.skill); setLadderFrom('door'); setPendingLevel(r.level) } }
     window.scrollTo(0, 0)
   }
   useEffect(() => {
@@ -2544,7 +2545,7 @@ export default function App() {
   else if (station) screen = <StationScreen course={course} station={station}
                                             onOpenDrill={setDrillIndex}
                                             onBack={() => { setStationSlug(null); setDrillIndex(null) }} />
-  else if (unit && skill && level != null) {
+  else if (unit && skill && level != null && !gaugeRules(unit).hidden) {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
@@ -2552,7 +2553,7 @@ export default function App() {
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
-  else if (unit && skill) {
+  else if (unit && skill && !gaugeRules(unit).hidden) {
     const ladderBack = ladderFrom === 'door' ? course.label : ladderFrom === 'cf' && gaugesCf ? SPLASH_WORDS.casefile(gaugesCf)
       : ladderFrom === 'kyns' ? SPLASH_WORDS.next : unit.label
     screen = (
