@@ -2170,8 +2170,8 @@
           }
         }
       ],
-      "atlas_hold": ["11.1-A-01", "11.1-B-01", "11.2-A-01", "11.2-A-02", "11.2-A-03", "11.2-B-01", "11.3-A-01", "11.3-A-02", "11.3-A-03", "11.3-A-04", "11.3-A-05", "11.3-A-06"],
-      "_atlas_hold_1136": "BK 2026-11-06 07:5x (Leo): the six 11.3A maps join the hold (small on a phone, Danny 11/05 13:33).",
+      "atlas_hold": ["11.1-A-01", "11.1-B-01", "11.2-A-01", "11.2-A-02", "11.2-A-03", "11.2-B-01", "11.3-A-03", "11.3-A-04"],
+      "_atlas_hold_1136": "BK 2026-11-06 07:5x (Leo) held the six 11.3A maps; BK 08:23: \"if we can make the atlas work for the maps we have in casefile A, we can use atlas.\" So the four Casefile A maps show (11.3-A-01, -02, -05, -06; -06 is the one Doc 9 sends students to). -03 and -04 (casefile none) stay held.",
       "_atlas_hold_note": "BK 2026-11-05 12:55: atlas maps must be Regents quality and not hard-to-read historical scans. These maps stay in the files byte for byte but are not shown to students. Remove an id from this list to show it. Josh's read at phone width, BK to overrule.",
       "atlas": [
         {
