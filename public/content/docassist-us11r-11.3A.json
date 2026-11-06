@@ -549,7 +549,7 @@
           "title": "The Cherokee answer, 1830",
           "kind": "text",
           "src": "Source: General Council of the Cherokee Nation, address to the people of the United States, New Echota, July 17, 1830",
-          "page": 15,
+          "page": 16,
           "steps": [
             {
               "tag": "SOURCING",
@@ -647,7 +647,7 @@
           "title": "Worcester v. Georgia, 1832",
           "kind": "text",
           "src": "Source: Chief Justice John Marshall, Worcester v. Georgia, 1832",
-          "page": 16,
+          "page": 17,
           "steps": [
             {
               "tag": "SOURCING",
@@ -739,7 +739,7 @@
           "title": "Manifest destiny, 1845",
           "kind": "text",
           "src": "Source: John L. O'Sullivan, “Annexation,” United States Magazine and Democratic Review, 1845 (adapted)",
-          "page": 20,
+          "page": 21,
           "steps": [
             {
               "tag": "SOURCING",
@@ -777,7 +777,7 @@
               "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
             }
           ],
-          "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 20. Use the sentence stem, or write something of equal or better value.",
+          "close": "That's the walk. Now answer Document 8's questions in your casefile, starting on page 21. Use the sentence stem, or write something of equal or better value.",
           "annotate": {
             "kind": "text",
             "notes": [
@@ -832,7 +832,7 @@
           "title": "The Texas border map, 1836",
           "kind": "image",
           "src": "Source: maps.com (adapted)",
-          "page": 21,
+          "page": 22,
           "steps": [
             {
               "tag": "SOURCING",
@@ -870,7 +870,7 @@
               "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
             }
           ],
-          "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 22. Use the sentence stem, or write something of equal or better value.",
+          "close": "That's the walk. Now answer Document 9's questions in your casefile, starting on page 23. Use the sentence stem, or write something of equal or better value.",
           "annotate": {
             "kind": "map",
             "notes": [
@@ -913,7 +913,7 @@
           "title": "Massachusetts against the war, 1847",
           "kind": "text",
           "src": "Source: Massachusetts legislature, resolutions on the war with Mexico, April 26, 1847",
-          "page": 23,
+          "page": 24,
           "steps": [
             {
               "tag": "SOURCING",
@@ -951,7 +951,7 @@
               "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
             }
           ],
-          "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 23. Use the sentence stem, or write something of equal or better value.",
+          "close": "That's the walk. Now answer Document 10's questions in your casefile, starting on page 24. Use the sentence stem, or write something of equal or better value.",
           "annotate": {
             "kind": "text",
             "notes": [
@@ -1005,7 +1005,7 @@
           "title": "The Declaration of Sentiments, 1848",
           "kind": "text",
           "src": "Source: Declaration of Sentiments, Seneca Falls, 1848",
-          "page": 24,
+          "page": 25,
           "steps": [
             {
               "tag": "SOURCING",
@@ -1043,7 +1043,7 @@
               "line": "Read your answer back. Does it start with a claim? Does it use the document's words? Does it say why? If it only retells, add “because…”."
             }
           ],
-          "close": "That's the walk. Now answer Document 11's questions in your casefile, starting on page 24. Use the sentence stem, or write something of equal or better value.",
+          "close": "That's the walk. Now answer Document 11's questions in your casefile, starting on page 25. Use the sentence stem, or write something of equal or better value.",
           "annotate": {
             "kind": "text",
             "notes": [
@@ -1263,5 +1263,6 @@
     "oe_example_label": "OUTSIDE INFORMATION · AN EXAMPLE",
     "oe_where_label": "OUTSIDE INFORMATION · WHERE TO LOOK"
   },
-  "_shape_annotate": "Same as Global v4: pack 'annotate' (methods text|picture|map as [tag, step]); docs[].annotate = {kind, notes[{where, mark, note}], oe{kind, text}}. No French on US."
+  "_shape_annotate": "Same as Global v4: pack 'annotate' (methods text|picture|map as [tag, step]); docs[].annotate = {kind, notes[{where, mark, note}], oe{kind, text}}. No French on US.",
+  "_pages": "Josh 2026-11-06 10:5x: doc pages and each close's 'starting on page N' re-read off the printed footers of Casefile A v23 (US11R_11.3A_CasefileA_STUDENT_v23.pdf, 30 pp); v22's TEST PRACTICE page (15) moved Docs 6-11 by one (Sam 10:48 F1). No other word changed."
 }
