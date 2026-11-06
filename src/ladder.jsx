@@ -121,6 +121,10 @@ const levelComing = lv => (lv?.opens_label && lv.opens_on && todayLocal() < Stri
 // A unit without the key behaves exactly as before.
 export const gaugeRules = unit => unit?.gauge_rules || {}
 export const levelHidden = (unit, n) => (gaugeRules(unit).hide_levels || []).includes(n)
+// In a no-box unit a level may carry its own card line (manifest level `card_blurb`, BK-approved words), which replaces the type's
+// name and blurb ("Match it · Pair each one with its match." on a level that is a read). Danny 2026-11-06 F1, F2.
+export const noBoxCard = (unit, lv) => gaugeRules(unit).write_box === false && typeof lv?.card_blurb === 'string'
+export const gaugeTop = unit => [5, 4, 3, 2, 1].find(n => !levelHidden(unit, n)) || 5
 
 export function ladderLevels(ladder) {
   return [1, 2, 3, 4, 5].map(n => (ladder?.levels || []).find(l => l.level === n) || { level: n, type: null, published: false })
@@ -148,7 +152,7 @@ export const levelType = lv => (lv?.cold === true ? COLD_TYPE : LEVEL_TYPES[lv?.
 // line under the gauge says the same thing in words. The needle is never the
 // only signal.
 const SWEEP = 240, START = -120                // lower-left to lower-right
-const angleOf = v => START + v * (SWEEP / 5)    // v: 0 (E) … 5
+const angleOf = (v, max = 5) => START + v * (SWEEP / max)    // v: 0 (E) … max (5, or 4 when a unit hides Level 5)
 const pt = (deg, r) => {
   const a = (deg * Math.PI) / 180
   return [50 + r * Math.sin(a), 50 - r * Math.cos(a)]
@@ -159,7 +163,9 @@ function prefersReducedMotion() {
   try { return window.matchMedia('(prefers-reduced-motion: reduce)').matches } catch { return true }
 }
 
-export function GaugeFace({ value = 0, dark = false, size = 160 }) {
+// `max`: the top stop. A unit that takes Level 5 off its gauge (gauge_rules.hide_levels) draws E to 4 across the same sweep, so no stop
+// shows that the needle can never reach (Danny 2026-11-06 F3).
+export function GaugeFace({ value = 0, dark = false, size = 160, max = 5 }) {
   // Sweep up from E on first paint — only when motion is welcome.
   const [shown, setShown] = useState(() => (prefersReducedMotion() ? value : 0))
   useEffect(() => {
@@ -168,9 +174,10 @@ export function GaugeFace({ value = 0, dark = false, size = 160 }) {
     return () => cancelAnimationFrame(id)
   }, [value])
 
-  const majors = STOPS.map((_, i) => angleOf(i))
+  const stops = STOPS.slice(0, max + 1)
+  const majors = stops.map((_, i) => angleOf(i, max))
   const minors = []
-  for (let i = 0; i < 5; i++) for (let j = 1; j < 4; j++) minors.push(angleOf(i + j / 4))
+  for (let i = 0; i < max; i++) for (let j = 1; j < 4; j++) minors.push(angleOf(i + j / 4, max))
 
   return (
     <div className={`gauge-face${dark ? ' dark' : ''}`} style={{ width: size }} aria-hidden="true">
@@ -186,14 +193,14 @@ export function GaugeFace({ value = 0, dark = false, size = 160 }) {
                        className={`g-major${!dark && i <= value && value > 0 ? ' lit' : ''}`} />
         })}
         {!dark && (
-          <g className="g-needle" style={{ transform: `rotate(${angleOf(shown)}deg)` }}>
+          <g className="g-needle" style={{ transform: `rotate(${angleOf(Math.min(shown, max), max)}deg)` }}>
             <polygon points="50,17.5 51.8,50 50,55.5 48.2,50" />
           </g>
         )}
         {/* Numbers paint AFTER the needle, with a face-coloured halo, so the needle
             can never cover the stop it is pointing at (fix from the mockup). */}
-        {STOPS.map((s, i) => {
-          const [x, y] = pt(angleOf(i), 23.8)
+        {stops.map((s, i) => {
+          const [x, y] = pt(angleOf(i, max), 23.8)
           const on = !dark && i === value
           return <text key={s} x={x} y={y} className={`g-num${on ? ' on' : ''}`}
                        textAnchor="middle" dominantBaseline="central">{s}</text>
@@ -256,7 +263,7 @@ export function SkillGauges({ course, unit, prog, onOpen, builtOnly = false, onl
         if (!s.live) {
           return (
             <div key={s.code} className="gauge off">
-              <GaugeFace dark />
+              <GaugeFace dark max={gaugeTop(unit)} />
               <div className="gauge-name">{s.name}</div>
               <div className="gauge-status"><span className="flag soon">Coming</span></div>
             </div>
@@ -265,7 +272,7 @@ export function SkillGauges({ course, unit, prog, onOpen, builtOnly = false, onl
         return (
           <button key={s.code} type="button" className="gauge" onClick={() => onOpen(s.code)}
                   aria-label={`${s.name}. ${statusLine(top)}. Open the gauge.`}>
-            <GaugeFace value={top} />
+            <GaugeFace value={top} max={gaugeTop(unit)} />
             <div className="gauge-name">{s.name}</div>
             <div className="gauge-status">{statusLine(top)}</div>
           </button>
@@ -285,7 +292,7 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
   return (
     <div className="detail" style={{ maxWidth: 820 }}>
       <div className="ladder-head">
-        <GaugeFace value={top} size={150} />
+        <GaugeFace value={top} size={150} max={gaugeTop(unit)} />
         <div>
           <h2>{s?.name || skill}</h2>
           <p className="sub" style={{ marginBottom: 6 }}>{statusLine(top)}</p>
@@ -305,9 +312,9 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
             <>
               <span className="rung-n" aria-hidden="true">{lv.level}</span>
               <span className="rung-body">
-                <span className="card-type">Level {lv.level}{t ? ` · ${t.name}` : ''}</span>
+                <span className="card-type">Level {lv.level}{t && !noBoxCard(unit, lv) ? ` · ${t.name}` : ''}</span>
                 <span className="rung-name">{open ? (lv.label || t?.name) : (lv.label || (datedShut(lv) ? '' : (t?.name || 'Not built yet')))}</span>
-                {open && t && <span className="card-blurb">{t.blurb}</span>}
+                {open && t && <span className="card-blurb">{noBoxCard(unit, lv) ? lv.card_blurb : t.blurb}</span>}
                 {/* A long waiting sentence sits under the rung, not in a pill: on a phone the pill crushed the level name. */}
                 {!open && datedShut(lv) && <span className="card-blurb rung-wait">{levelComing(lv)}</span>}
               </span>
@@ -531,7 +538,7 @@ export function SentenceBuild({ pack, onComplete }) {
 // ── L4 · WRITE IT ─────────────────────────────────────────────────────────
 // Checklist visible the whole time, not a hint you ask for. What the kid types
 // is React state and nothing else: never stored, never sent, gone with the tab.
-export function GuidedWrite({ pack, accent, onComplete, noWrite = false }) {
+export function GuidedWrite({ pack, accent, onComplete, noWrite = false, note = null, isTop = false }) {
   // L4 carries one document in `source_text`; a cold rung carries several in `documents[]`.
   // Both are read the same way here, so neither shape renders an empty source box.
   const docs = (pack?.documents || []).length
@@ -589,6 +596,7 @@ export function GuidedWrite({ pack, accent, onComplete, noWrite = false }) {
           <div className="rep-label">Before you’re done</div>
           <ul className="rep-check">{checklist.map((c, i) => <li key={i}><span>{c}</span></li>)}</ul>
         </aside>}
+        {note && <p className="rep-why">{note}</p>}
       </>) : (
       <div className={checklist.length ? 'write-grid' : 'write-grid solo'}>
         <div>
@@ -635,7 +643,7 @@ export function GuidedWrite({ pack, accent, onComplete, noWrite = false }) {
               <p className="rep-focus">One strong answer to hold yours next to opens when this unit closes.</p>
             </>
           )}
-          <p className="level-done">Level done. Head back to the gauge for the next one.</p>
+          <p className="level-done">{isTop ? 'Level done. That’s every level on this gauge.' : 'Level done. Head back to the gauge for the next one.'}</p>
         </div>
       )}
     </div>

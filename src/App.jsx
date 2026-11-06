@@ -52,7 +52,7 @@ import { StrategyLab, STRATLAB_STYLES } from './stratlab.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, CasefileDoors, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
-  UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone, gaugeRules, levelHidden,
+  UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone, gaugeRules, levelHidden, gaugeTop, noBoxCard,
 } from './ladder.jsx'
 import { ThrowbackView, THROWBACK_WORDS, THROWBACK_STYLES, useThrowback } from './throwback.jsx'
 import {
@@ -2146,7 +2146,7 @@ function reviewExtras(course, unit) {
   return { ...x, _rooms: rooms }
 }
 
-function LevelScreen({ course, plain = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
+function LevelScreen({ course, plain = false, cardPlain = false, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
   const t = levelType(lv)
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
@@ -2170,7 +2170,7 @@ function LevelScreen({ course, plain = false, skillName, lv, pack, source, docs,
   else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} noWrite={plain} />
   else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} docs={docs} />
   else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
-  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} noWrite={plain} />
+  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} noWrite={plain} note={plain ? lv?.page_note || null : null} isTop={isTop} />
   else if (lv.type === 'enrichment') body = <>
     {source?.source_text && (
       <figure className="stimulus" style={{ borderColor: `${course.accent}44` }}>
@@ -2185,7 +2185,7 @@ function LevelScreen({ course, plain = false, skillName, lv, pack, source, docs,
     <div className="wrap">
       <ScreenHeader label={skillName} onBack={onBack} color={course.accent} back={skillName} />
       <div className="detail" style={{ maxWidth: 860 }}>
-        <div className="card-type">Level {lv?.level}{t ? ` · ${t.name}` : ''}</div>
+        <div className="card-type">Level {lv?.level}{t && !cardPlain ? ` · ${t.name}` : ''}</div>
         <h2>{lv?.label || t?.name}</h2>
         {body}
         {coachLine && <CoachSays key={coachLine} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'} line={coachLine} />}
@@ -2548,7 +2548,7 @@ export default function App() {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
-    screen = <LevelScreen course={course} plain={gaugeRules(unit).write_box === false} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
+    screen = <LevelScreen course={course} plain={gaugeRules(unit).write_box === false} cardPlain={noBoxCard(unit, lv)} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
@@ -2583,7 +2583,8 @@ export default function App() {
         <DocAssistDoc pack={daPack} doc={doc} refs={refs} portrait={course.guide?.portrait || BK_PORTRAIT}
                       paper={paperOf(unit.doc_assist?.paper, cf.id)}
                       onPrev={daDoc.i > 0 ? () => go(daDoc.i - 1) : null}
-                      onNext={daDoc.i < cf.docs.length - 1 ? () => go(daDoc.i + 1) : null} />
+                      onNext={daDoc.i < cf.docs.length - 1 ? () => go(daDoc.i + 1) : null}
+                      maps={atlasMaps} onOpenMap={setAtlasId} />
         <BottomBack onBack={back} back={DA.backTo(cf.id, cf)} />
       </div>
     )

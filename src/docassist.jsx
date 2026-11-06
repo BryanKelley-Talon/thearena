@@ -369,7 +369,40 @@ function AnnotatePanel({ pack, doc, fr }) {
   )
 }
 
-export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext }) {
+
+// A step's words may name an Atlas map the way the casefile prints it ("open **11.3A → What the United States took by 1853**").
+// Danny 2026-11-06 F4/F5: the asterisks printed literally, and a phone with no paper has no margin code to scan. So the desk's
+// **bold** renders bold, and a "<unit> → <map title>" that names a map this course is showing becomes a tap that opens it
+// in the Atlas viewer, with the desk's own words as the link. No word is added; a title that matches no shown map stays text.
+const MAP_REF = /\*\*(.+?)\*\*|(\d+\.\d+[A-Z]?\s*→\s*[^.?!,;]+)/g
+export function RichText({ text, maps, onOpenMap }) {
+  const str = String(text ?? '')
+  if (!/\*\*|→/.test(str)) return str
+  const findMap = t => {
+    const m = /→\s*(.+)$/.exec(String(t).trim())
+    if (!m || !onOpenMap) return null
+    const want = m[1].trim().toLowerCase()
+    return (maps || []).find(x => String(x.title || '').trim().toLowerCase() === want) || null
+  }
+  const out = []; let last = 0, k = 0, hit
+  MAP_REF.lastIndex = 0
+  while ((hit = MAP_REF.exec(str))) {
+    if (hit.index > last) out.push(str.slice(last, hit.index))
+    const words = hit[1] ?? hit[2]
+    const map = findMap(words)
+    const inner = map
+      ? <span key={k++} role="link" tabIndex={0} className="da-maplink" onClick={() => onOpenMap(map.id)}
+              onKeyDown={e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpenMap(map.id) } }}
+              style={{ fontWeight: 700, color: 'inherit', textDecoration: 'underline', textUnderlineOffset: '2px', cursor: 'pointer' }}>{words}</span>
+      : (hit[1] ? <b key={k++}>{words}</b> : words)
+    out.push(inner)
+    last = hit.index + hit[0].length
+  }
+  if (last < str.length) out.push(str.slice(last))
+  return <>{out}</>
+}
+
+export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext, maps = null, onOpenMap = null }) {
   const voiceEn = useLocalVoice('en')
   const voiceFr = useLocalVoice('fr')
   const walkSteps = pack.walk || []
@@ -445,9 +478,10 @@ export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext 
   const tipEn = dsEn?.tip && (dsEn.tip.text || []).length ? dsEn.tip : null
   const tip = tipEn && fr ? (F.tip && (F.tip.text || []).length ? F.tip : null) : tipEn
   const close = fr ? F.close : doc.close
-  const stepParts = at >= walkLen
+  const stepParts = (at >= walkLen
     ? [close]
-    : [step?.tag, yourQ, oral, step?.step, say, ...qs.flatMap(q => [`${asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), line, tip?.title, ...(tip?.text || [])]
+    : [step?.tag, yourQ, oral, step?.step, say, ...qs.flatMap(q => [`${asks} ${qLine(q)}`, q.mode === 'out loud' ? CHROME.outLoud : null]), line, tip?.title, ...(tip?.text || [])])
+    .map(t => (typeof t === 'string' ? t.replace(/\*\*/g, '') : t))   // read aloud without the desk's ** markers
   const card = fr ? frCard(pack) : q4Card(pack)
   // The list's button sits on step 5, and on any step whose words point at the list (BK 22:59).
   const stepText = at < walkLen ? [step?.tag, step?.step, say, ...qs.map(q => q.text), line, tip?.title, ...(tip?.text || [])].join(' ') : ''
@@ -559,7 +593,7 @@ export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext 
                   <div className="da-ask">
                     <div className="da-ask-head">{asks}</div>
                     {qs.map((q, i) => (
-                      <p key={i}>{q.n != null && <b className="da-qn">{q.n}.</b>} {q.text}
+                      <p key={i}>{q.n != null && <b className="da-qn">{q.n}.</b>} <RichText text={q.text} maps={maps} onOpenMap={onOpenMap} />
                         {q.mode === 'out loud' && <span className="da-loud"> · {CHROME.outLoud}</span>}</p>
                     ))}
                   </div>
@@ -578,7 +612,7 @@ export function DocAssistDoc({ pack, doc, refs, portrait, paper, onPrev, onNext 
                 {line && (
                   <div className="guide-says da-bk" role="note">
                     {portrait && <img className="guide-face" src={`/${portrait}`} alt="" />}
-                    <p>{line}</p>
+                    <p><RichText text={line} maps={maps} onOpenMap={onOpenMap} /></p>
                   </div>
                 )}
                 {/* A tip the step carries (Global v3: NO NAME ON IT?, BK 10:26), under the line. */}
