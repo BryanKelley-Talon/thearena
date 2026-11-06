@@ -1816,7 +1816,11 @@ function MatchHints({ hints }) {
 // student-facing text and the Benin error proves the risk is real, not theoretical, so a
 // pack shows its hints only where the manifest says a reader has been through them.
 // DEFAULT IS HELD: an unmarked pack keeps its hints dark until someone says otherwise.
-function MatchingSet({ pack, accent, onChecked, hintsCleared = false }) {
+function MatchingSet({ pack, accent, onChecked, hintsCleared = false, noWrite = false }) {
+  // A MODELED set (`modeled: true`, a desk's Level 1 "Nothing to answer here") is a read: it arrives already built,
+  // checked and counted, with nothing to tap (BK 2026-11-05 15:13: "Level 1...shoudlnt require me to click anything if its a read").
+  const modeled = pack?.modeled === true
+  useEffect(() => { if (modeled && onChecked) onChecked() }, [pack])
   const left = pack.left || []
   const right = pack.right || []
   const rightShuffled = useMemo(() => shuffle(right), [pack])
@@ -1824,8 +1828,8 @@ function MatchingSet({ pack, accent, onChecked, hintsCleared = false }) {
   const rationale = pack.rationale || {}
 
   const [selectedLeft, setSelectedLeft] = useState(null)
-  const [pairs, setPairs] = useState({})   // leftKey -> rightKey
-  const [checked, setChecked] = useState(false)
+  const [pairs, setPairs] = useState(() => (modeled ? { ...(pack.correct || {}) } : {}))   // leftKey -> rightKey
+  const [checked, setChecked] = useState(modeled)
   const [defendKey, setDefendKey] = useState(null)
   const [defenseText, setDefenseText] = useState('')
   const [defenseRevealed, setDefenseRevealed] = useState(false)
@@ -1874,7 +1878,7 @@ function MatchingSet({ pack, accent, onChecked, hintsCleared = false }) {
                   <span>{l.label}</span>
                   {isPaired && !checked && <span className="match-tag">Paired &mdash; tap to redo</span>}
                 </span>
-                {checked && (correct[l.key] === pairs[l.key]
+                {checked && !modeled && (correct[l.key] === pairs[l.key]
                   ? <em className="mc-mark">Correct</em>
                   : <em className="mc-mark">Not this one</em>)}
               </button>
@@ -1928,6 +1932,12 @@ function MatchingSet({ pack, accent, onChecked, hintsCleared = false }) {
           <p className="rep-why">Every one gets paired before any of them gets checked —
              no picking off the easy ones first.</p>
         </>
+      ) : modeled ? (
+        // The read: each built pair's reasoning, in the desk's words, under the shell's existing heading. Nothing to press.
+        <div className="rep-reveal">
+          <h4>The reasoning</h4>
+          {left.map(l => rationale[l.key] && <p key={l.key} className="rep-exemplar">{rationale[l.key]}</p>)}
+        </div>
       ) : (
         <div className="rep-reveal">
           {stuck && <CoachSays portrait={BK_PORTRAIT} line={stuck.line} />}
@@ -1945,7 +1955,14 @@ function MatchingSet({ pack, accent, onChecked, hintsCleared = false }) {
             ))}
           </div>
 
-          {defendKey && (
+          {/* No box in a front-page unit's gauge (BK 2026-11-05 15:13: "i want no writing in a box"): picking a pair shows its reasoning. */}
+          {defendKey && noWrite && (
+            <div className="rep-reveal">
+              <h4>The reasoning</h4>
+              <p className="rep-exemplar">{rationale[defendKey] || 'No rationale written for this pair yet.'}</p>
+            </div>
+          )}
+          {defendKey && !noWrite && (
             <>
               <label className="rep-label" htmlFor="match-defense">Your defense</label>
               <textarea id="match-defense" className="rep-box" rows={4} value={defenseText}
@@ -2129,7 +2146,7 @@ function reviewExtras(course, unit) {
   return { ...x, _rooms: rooms }
 }
 
-function LevelScreen({ course, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
+function LevelScreen({ course, plain = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
   const t = levelType(lv)
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
@@ -2150,7 +2167,7 @@ function LevelScreen({ course, skillName, lv, pack, source, docs, prevTop = 0, o
       <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which level it was.</p>
     </div>
   )
-  else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} />
+  else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} noWrite={plain} />
   else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} docs={docs} />
   else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
   else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} />
@@ -2531,7 +2548,7 @@ export default function App() {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
-    screen = <LevelScreen course={course} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
+    screen = <LevelScreen course={course} plain={usesSplash(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
@@ -2547,8 +2564,10 @@ export default function App() {
         <CoachSays key={`skill-${course.id}-${skill}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
                    line={skillLine(skill, course.guide?.lines?.station_enter?.[(course.stations || []).find(x => (x.skill_lines || [])[0] === skill)?.slug] || [])} />
         <Ladder course={course} unit={unit} skill={skill} prog={prog} onOpenLevel={openLevel} />
-        <SkillExtras course={course} skill={skill}
-                     onOpenDrill={(slug, i) => { setStationSlug(slug); setDrillIndex(i); setDrillFromLadder(true); window.scrollTo(0, 0) }} />
+        {/* BK 2026-11-05 15:13 (Danny's 1514 relay): "i dont want the 'more reps' thing..i dont like the mechanic of that activity."
+            Off in the units on the new front page (11.3A, 10.3, and every splash unit after them); finished units keep it until BK says. */}
+        {!usesSplash(unit) && <SkillExtras course={course} skill={skill}
+                     onOpenDrill={(slug, i) => { setStationSlug(slug); setDrillIndex(i); setDrillFromLadder(true); window.scrollTo(0, 0) }} />}
         <BottomBack onBack={() => { setSkill(null); if (ladderFrom === 'door') setUnitSlug(null) }}
                     back={ladderBack} />
       </div>

@@ -791,6 +791,8 @@
             }
           ],
           "next_step": {
+            "closed": true,
+            "_closed": "BK 2026-11-05 15:18 (Danny relay 1518): \"Know Your Next Step gets closed for now..it's really for Data Day.\" Shut regardless of date or sandbox until BK reopens it; a post-test section is to be designed (Leo, Sam, Josh).",
             "opens_label": "{day}",
             "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Will's signed unit calendar (words_103A.UNIT_GLANCE), 'Data Day · everything back' Mon 11/30. Josh's pick of Data Day over the Part I day, on BK's proof.",
             "opens_at": "DATA_DAY"
@@ -2059,6 +2061,8 @@
             }
           ],
           "next_step": {
+            "closed": true,
+            "_closed": "BK 2026-11-05 15:18 (Danny relay 1518): \"Know Your Next Step gets closed for now..it's really for Data Day.\" Shut regardless of date or sandbox until BK reopens it; a post-test section is to be designed (Leo, Sam, Josh).",
             "opens_label": "Opens on Data Day",
             "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Sam's signed unit calendar (words_113A.UNIT_CAL, BK 10/24 14:12), 'Data Day · everything back' Mon 12/7. Josh's pick of Data Day over the Part I day, on BK's proof.",
             "opens_at": "DATA_DAY"

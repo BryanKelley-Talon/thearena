@@ -44,7 +44,9 @@ const paperMap = unit => unit?.doc_assist?.paper || unit?.paper || null
 
 // Door 4 opens after the unit test (BK 2026-10-30 13:58: "Know your next step wont open until after a unit test"),
 // on the desk's own day (`unit.next_step.opens_on` / `opens_label`). No day sent yet: it shows, reads Coming, stays shut.
-export const nextStepOpen = unit => PREVIEW_DOORS || (!!unit?.next_step?.opens_on && (SANDBOX_HOST || todayLocal() >= String(unit.next_step.opens_on)))
+// CLOSED overrides every date and the sandbox (BK 2026-11-05 15:18: "Know Your Next Step gets closed for now..it's really for Data Day...");
+// `next_step.closed: true` in the manifest keeps the door shut, its card locked and its link landing on the unit, until BK reopens it.
+export const nextStepOpen = unit => !unit?.next_step?.closed && (PREVIEW_DOORS || (!!unit?.next_step?.opens_on && (SANDBOX_HOST || todayLocal() >= String(unit.next_step.opens_on))))
 
 export const usesSplash = unit => Array.isArray(unit?.casefiles) && unit.casefiles.length > 0
 
