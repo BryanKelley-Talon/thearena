@@ -115,6 +115,13 @@ const levelComing = lv => (lv?.opens_label && lv.opens_on && todayLocal() < Stri
 
 // Five slots, always. A skill with no ladder yet, or a ladder missing a level,
 // still shows all five — the missing ones read "Coming".
+// A unit's gauge rules (manifest `unit.gauge_rules`), BK 2026-11-05 15:13 / 2026-11-06 07:5x, for 11.3A:
+// `more_reps: false` drops the More reps drills under each gauge; `write_box: false` takes every writing box out of
+// the gauge's levels; `hide_levels: [5]` takes a level off the gauge entirely (no rung, no link, no "coming soon").
+// A unit without the key behaves exactly as before.
+export const gaugeRules = unit => unit?.gauge_rules || {}
+export const levelHidden = (unit, n) => (gaugeRules(unit).hide_levels || []).includes(n)
+
 export function ladderLevels(ladder) {
   return [1, 2, 3, 4, 5].map(n => (ladder?.levels || []).find(l => l.level === n) || { level: n, type: null, published: false })
 }
@@ -271,7 +278,7 @@ export function SkillGauges({ course, unit, prog, onOpen, builtOnly = false, onl
 // ── THE LADDER (five level cards) ─────────────────────────────────────────
 export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
   const s = roomSkills(course, unit).find(x => x.code === skill)
-  const levels = ladderLevels(s?.ladder)
+  const levels = ladderLevels(s?.ladder).filter(l => !levelHidden(unit, l.level))
   const done = levelsDone(prog, course, unit, skill)
   const top = done.length ? Math.max(...done) : 0
   const startHere = levels.find(l => levelOpen(l) && !done.includes(l.level))?.level
@@ -524,7 +531,7 @@ export function SentenceBuild({ pack, onComplete }) {
 // ── L4 · WRITE IT ─────────────────────────────────────────────────────────
 // Checklist visible the whole time, not a hint you ask for. What the kid types
 // is React state and nothing else: never stored, never sent, gone with the tab.
-export function GuidedWrite({ pack, accent, onComplete }) {
+export function GuidedWrite({ pack, accent, onComplete, noWrite = false }) {
   // L4 carries one document in `source_text`; a cold rung carries several in `documents[]`.
   // Both are read the same way here, so neither shape renders an empty source box.
   const docs = (pack?.documents || []).length
@@ -574,6 +581,15 @@ export function GuidedWrite({ pack, accent, onComplete }) {
         </figure>
       ))}
       <p className="rep-prompt">{pack.prompt}</p>
+      {/* No box (unit.gauge_rules.write_box false, BK 2026-11-05 15:13 "i want no writing in a box"): the desk's starter and
+          checklist show as plain lines, and the strong answer is one press away. No new words: every string is the desk's or already the shell's. */}
+      {noWrite ? (<>
+        {starter && <p className="rep-prompt">{pack.sentence_starter}</p>}
+        {checklist.length > 0 && <aside className="checklist" aria-label="Checklist">
+          <div className="rep-label">Before you’re done</div>
+          <ul className="rep-check">{checklist.map((c, i) => <li key={i}><span>{c}</span></li>)}</ul>
+        </aside>}
+      </>) : (
       <div className={checklist.length ? 'write-grid' : 'write-grid solo'}>
         <div>
           <label className="rep-label" htmlFor="l4-write">Your answer</label>
@@ -593,9 +609,10 @@ export function GuidedWrite({ pack, accent, onComplete }) {
           </ul>
         </aside>}
       </div>
+      )}
       {!done ? (
-        <button type="button" className="rep-go" disabled={!ready} onClick={() => { setDone(true); onComplete() }}>
-          {ready ? 'I’m done' : `Write a bit more first — ${Math.max(0, MIN - written)} characters to go`}
+        <button type="button" className="rep-go" disabled={!noWrite && !ready} onClick={() => { setDone(true); onComplete() }}>
+          {noWrite || ready ? 'I’m done' : `Write a bit more first — ${Math.max(0, MIN - written)} characters to go`}
         </button>
       ) : (
         <div className="rep-reveal" role="status">

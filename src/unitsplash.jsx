@@ -32,8 +32,9 @@ const todayLocal = () => { const d = new Date(); return `${d.getFullYear()}-${St
 // still sits on the casefile the calendar says is running, not on the last one the sandbox happens to have open.
 const SANDBOX_HOST = (() => { try { return isSandboxHost(window.location.hostname) } catch { return false } })()
 const cfReady = cf => !!cf && !cf.locked && (cf.skills || []).length > 0
-const cfRunning = cf => PREVIEW_DOORS || (cfReady(cf) && (!cf.opens_on || todayLocal() >= String(cf.opens_on)))
-export const cfOpen = cf => PREVIEW_DOORS || (cfReady(cf) && (SANDBOX_HOST || !cf.opens_on || todayLocal() >= String(cf.opens_on)))
+const cfRunning = cf => !cf?.locked && (PREVIEW_DOORS || (cfReady(cf) && (!cf.opens_on || todayLocal() >= String(cf.opens_on))))
+// A `locked` door stays shut on every address and under every flag (BK 2026-11-06 07:5x: Global B and C closed until their documents exist).
+export const cfOpen = cf => !cf?.locked && (PREVIEW_DOORS || (cfReady(cf) && (SANDBOX_HOST || !cf.opens_on || todayLocal() >= String(cf.opens_on))))
 // A desk may send a whole sentence ("Opens when Casefile B begins", "Coming on Mon 11/23": Sam's 11.3A table, BK 10/31 18:09);
 // a bare day ("Mon 11/9", Global's) still reads "Opens Mon 11/9". Josh, 2026-10-31.
 const cfLabel = cf => (cf.opens_label && cf.opens_on && todayLocal() < String(cf.opens_on)
@@ -44,8 +45,8 @@ const paperMap = unit => unit?.doc_assist?.paper || unit?.paper || null
 
 // Door 4 opens after the unit test (BK 2026-10-30 13:58: "Know your next step wont open until after a unit test"),
 // on the desk's own day (`unit.next_step.opens_on` / `opens_label`). No day sent yet: it shows, reads Coming, stays shut.
-// CLOSED overrides every date and the sandbox (BK 2026-11-05 15:18: "Know Your Next Step gets closed for now..it's really for Data Day...");
-// `next_step.closed: true` in the manifest keeps the door shut, its card locked and its link landing on the unit, until BK reopens it.
+// CLOSED overrides every date, the sandbox and the preview flag (BK 2026-11-05 15:18: "Know Your Next Step gets closed for now..it's really for
+// Data Day..."): `next_step.closed: true` keeps Door 4 shut, its card locked and its link landing on the unit, until BK reopens it.
 export const nextStepOpen = unit => !unit?.next_step?.closed && (PREVIEW_DOORS || (!!unit?.next_step?.opens_on && (SANDBOX_HOST || todayLocal() >= String(unit.next_step.opens_on))))
 
 export const usesSplash = unit => Array.isArray(unit?.casefiles) && unit.casefiles.length > 0

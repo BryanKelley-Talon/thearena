@@ -52,7 +52,7 @@ import { StrategyLab, STRATLAB_STYLES } from './stratlab.jsx'
 import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLine, noteSetDone, workedThisVisit, useStuck, BK_PORTRAIT } from './coach.jsx'
 import {
   LADDER_STYLES, SkillGauges, CasefileDoors, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
-  UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone,
+  UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone, gaugeRules, levelHidden,
 } from './ladder.jsx'
 import { ThrowbackView, THROWBACK_WORDS, THROWBACK_STYLES, useThrowback } from './throwback.jsx'
 import {
@@ -1817,10 +1817,10 @@ function MatchHints({ hints }) {
 // pack shows its hints only where the manifest says a reader has been through them.
 // DEFAULT IS HELD: an unmarked pack keeps its hints dark until someone says otherwise.
 function MatchingSet({ pack, accent, onChecked, hintsCleared = false, noWrite = false }) {
-  // A MODELED set (`modeled: true`, a desk's Level 1 "Nothing to answer here") is a read: it arrives already built,
+  // A MODELED set (`modeled: true`, a desk's Level 1 "Nothing to answer here") in a no-box gauge is a read: it arrives built,
   // checked and counted, with nothing to tap (BK 2026-11-05 15:13: "Level 1...shoudlnt require me to click anything if its a read").
-  const modeled = pack?.modeled === true
-  useEffect(() => { if (modeled && onChecked) onChecked() }, [pack])
+  const modeled = noWrite && pack?.modeled === true
+  useEffect(() => { if (modeled && onChecked) onChecked() }, [pack])  // eslint-disable-line react-hooks/exhaustive-deps
   const left = pack.left || []
   const right = pack.right || []
   const rightShuffled = useMemo(() => shuffle(right), [pack])
@@ -1955,7 +1955,7 @@ function MatchingSet({ pack, accent, onChecked, hintsCleared = false, noWrite = 
             ))}
           </div>
 
-          {/* No box in a front-page unit's gauge (BK 2026-11-05 15:13: "i want no writing in a box"): picking a pair shows its reasoning. */}
+          {/* No box (unit.gauge_rules.write_box false): picking a pair shows its reasoning. */}
           {defendKey && noWrite && (
             <div className="rep-reveal">
               <h4>The reasoning</h4>
@@ -2170,7 +2170,7 @@ function LevelScreen({ course, plain = false, skillName, lv, pack, source, docs,
   else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} noWrite={plain} />
   else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} docs={docs} />
   else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
-  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} />
+  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} noWrite={plain} />
   else if (lv.type === 'enrichment') body = <>
     {source?.source_text && (
       <figure className="stimulus" style={{ borderColor: `${course.accent}44` }}>
@@ -2315,7 +2315,7 @@ export default function App() {
   const openLevel = n => {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === n)
-    if (!levelOpen(lv)) return
+    if (!levelOpen(lv) || levelHidden(unit, n)) return   // a hidden level's link lands on the gauge
     setLevel(n); fetchContent(lv.content_ref, setLevelPack)
     // BK, 2026-09-25: a kid never works from a document they cannot see. L5 talks
     // about the ladder's source ("the 1705 law you just read"), so it carries the
@@ -2548,7 +2548,7 @@ export default function App() {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
-    screen = <LevelScreen course={course} plain={usesSplash(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
+    screen = <LevelScreen course={course} plain={gaugeRules(unit).write_box === false} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
@@ -2564,9 +2564,8 @@ export default function App() {
         <CoachSays key={`skill-${course.id}-${skill}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
                    line={skillLine(skill, course.guide?.lines?.station_enter?.[(course.stations || []).find(x => (x.skill_lines || [])[0] === skill)?.slug] || [])} />
         <Ladder course={course} unit={unit} skill={skill} prog={prog} onOpenLevel={openLevel} />
-        {/* BK 2026-11-05 15:13 (Danny's 1514 relay): "i dont want the 'more reps' thing..i dont like the mechanic of that activity."
-            Off in the units on the new front page (11.3A, 10.3, and every splash unit after them); finished units keep it until BK says. */}
-        {!usesSplash(unit) && <SkillExtras course={course} skill={skill}
+        {/* BK 2026-11-05 15:13: "i dont want the 'more reps' thing..i dont like the mechanic of that activity" (unit.gauge_rules.more_reps false). */}
+        {gaugeRules(unit).more_reps !== false && <SkillExtras course={course} skill={skill}
                      onOpenDrill={(slug, i) => { setStationSlug(slug); setDrillIndex(i); setDrillFromLadder(true); window.scrollTo(0, 0) }} />}
         <BottomBack onBack={() => { setSkill(null); if (ladderFrom === 'door') setUnitSlug(null) }}
                     back={ladderBack} />

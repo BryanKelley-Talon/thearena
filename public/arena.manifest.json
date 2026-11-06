@@ -763,6 +763,8 @@
               "_source": "Will 2026-10-30 13:24 (BK 13:23 'yes'): names A · Discovery, B · Cross-Examination, C · Closing Argument; the three Casefile A scored, Global gauge order: Document Use · Historical Context · Thesis."
             },
             {
+              "locked": true,
+              "_locked": "BK 2026-11-06 07:5x (Leo): Global door shows the 10.3 Casefile A card only; B and C stay closed until their documents exist.",
               "id": "B",
               "label": "Cross-Examination",
               "opens_label": "{day}",
@@ -775,6 +777,8 @@
               "opens_at": "B_BEGINS"
             },
             {
+              "locked": true,
+              "_locked": "BK 2026-11-06 07:5x (Leo): Global door shows the 10.3 Casefile A card only; B and C stay closed until their documents exist.",
               "id": "C",
               "label": "Closing Argument",
               "skills": [
@@ -792,7 +796,7 @@
           ],
           "next_step": {
             "closed": true,
-            "_closed": "BK 2026-11-05 15:18 (Danny relay 1518): \"Know Your Next Step gets closed for now..it's really for Data Day.\" Shut regardless of date or sandbox until BK reopens it; a post-test section is to be designed (Leo, Sam, Josh).",
+            "_closed": "BK 2026-11-05 15:18 (Danny 1518) and 2026-11-06 07:5x (Leo): closed everywhere, regardless of date or sandbox, until BK reopens it. Content kept.",
             "opens_label": "{day}",
             "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Will's signed unit calendar (words_103A.UNIT_GLANCE), 'Data Day · everything back' Mon 11/30. Josh's pick of Data Day over the Part I day, on BK's proof.",
             "opens_at": "DATA_DAY"
@@ -1964,6 +1968,12 @@
           ]
         },
         {
+          "gauge_rules": {
+            "more_reps": false,
+            "write_box": false,
+            "hide_levels": [5],
+            "_source": "BK 2026-11-05 15:13 (Danny 1514) and 2026-11-06 07:5x (Leo's go-live order): in the 11.3A gauge, no More reps, Level 1 a read with no click, no writing box or input in Levels 1-4, Level 5 off today (wording to BK first)."
+          },
           "slug": "unit-3",
           "casefiles": [
             {
@@ -2062,7 +2072,7 @@
           ],
           "next_step": {
             "closed": true,
-            "_closed": "BK 2026-11-05 15:18 (Danny relay 1518): \"Know Your Next Step gets closed for now..it's really for Data Day.\" Shut regardless of date or sandbox until BK reopens it; a post-test section is to be designed (Leo, Sam, Josh).",
+            "_closed": "BK 2026-11-05 15:18 (Danny 1518) and 2026-11-06 07:5x (Leo): closed everywhere, regardless of date or sandbox, until BK reopens it. Content kept.",
             "opens_label": "Opens on Data Day",
             "_source": "BK 2026-10-30 13:58: Door 4 opens after the unit test. Day: Sam's signed unit calendar (words_113A.UNIT_CAL, BK 10/24 14:12), 'Data Day · everything back' Mon 12/7. Josh's pick of Data Day over the Part I day, on BK's proof.",
             "opens_at": "DATA_DAY"
@@ -2160,7 +2170,8 @@
           }
         }
       ],
-      "atlas_hold": ["11.1-A-01", "11.1-B-01", "11.2-A-01", "11.2-A-02", "11.2-A-03", "11.2-B-01"],
+      "atlas_hold": ["11.1-A-01", "11.1-B-01", "11.2-A-01", "11.2-A-02", "11.2-A-03", "11.2-B-01", "11.3-A-01", "11.3-A-02", "11.3-A-03", "11.3-A-04", "11.3-A-05", "11.3-A-06"],
+      "_atlas_hold_1136": "BK 2026-11-06 07:5x (Leo): the six 11.3A maps join the hold (small on a phone, Danny 11/05 13:33).",
       "_atlas_hold_note": "BK 2026-11-05 12:55: atlas maps must be Regents quality and not hard-to-read historical scans. These maps stay in the files byte for byte but are not shown to students. Remove an id from this list to show it. Josh's read at phone width, BK to overrule.",
       "atlas": [
         {
