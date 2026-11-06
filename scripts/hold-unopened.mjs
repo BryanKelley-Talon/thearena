@@ -43,6 +43,9 @@ const walk = o => {
         // its document). Josh, 2026-10-31: without these a held rung read the bare "Coming" a kid takes for "not built".
         if (x.level != null) { stub.level = x.level; if (x.type) stub.type = x.type }
         if (x.opens_label && !/^[A-Z]$/.test(String(x.id || ''))) stub.opens_label = x.opens_label
+        // A no-box unit's BK-approved card line (gauge_rules.write_box false) rides on the stub too, so a locked rung reads as it will
+        // when it opens ("LEVEL 1", never "LEVEL 1 · MATCH IT"). Danny 2026-11-06 G1. It is the card's words only, never the level's content.
+        if (typeof x.card_blurb === 'string') stub.card_blurb = x.card_blurb
         // A casefile door (id A-C) keeps its name and its desk-worded open day: the door shows them locked ("Casefile B · Cross-Examination · Opens Mon 11/9").
         // Its gauge list, documents and refs still leave. (Josh, 2026-10-30: the first full build showed "Casefile undefined".)
         if (/^[A-Z]$/.test(String(x.id || '')) && x.label) { stub.id = x.id; stub.label = x.label; if (x.opens_label) stub.opens_label = x.opens_label }
