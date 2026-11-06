@@ -1981,6 +1981,12 @@
           "slug": "unit-3",
           "casefiles": [
             {
+              "dig_deeper": {
+                "flag": "DIG DEEPER · OPTIONAL",
+                "text": "Want more of the story behind these documents? Step into a Throwback newspaper from these years and read the whole front page. In each one, look closely at two stories: the average family, which is what the census counted, and what it was like to be 16 that year. Notice what changes from paper to paper.",
+                "links": [{"label": "1801", "href": "#/us/throwback/1801"}, {"label": "1824", "href": "#/us/throwback/1824"}, {"label": "1850", "href": "#/us/throwback/1850"}],
+                "_source": "BK 2026-11-06 10:31 (direct links to Throwback 1801, 1824, 1850 in Casefile A, a callout to review the papers, the census story, changes over time; a resource, no task), 10:32 (review the whole paper; call out the census and being 16), 10:32 (no Danny review needed: his approval). Words: Josh from BK's, BK approved the first draft 10:32."
+              },
               "id": "A",
               "label": "Discovery",
               "skills": [

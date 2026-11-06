@@ -209,6 +209,19 @@ export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThree
           <DocAssistHome pack={docs} paper={unit.doc_assist?.paper} onOpenDoc={onOpenDoc} />
         </>
       )}
+      {/* DIG DEEPER (manifest casefile `dig_deeper`, BK 2026-11-06 10:31-10:32, his words): an optional pointer to rooms already
+          built (Throwback eras). No task. Each year is a link to that era's paper. */}
+      {cf?.dig_deeper && (
+        <article className="rv-hi" style={{ marginTop: 18 }}>
+          <div className="rv-hi-flag">{cf.dig_deeper.flag}</div>
+          <p style={{ margin: '6px 0 12px' }}>{cf.dig_deeper.text}</p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 10 }}>
+            {(cf.dig_deeper.links || []).map(l => (
+              <a key={l.href} className="btn-ghost" href={l.href} style={{ minWidth: 88, textAlign: 'center', textDecoration: 'none' }}>{l.label}</a>
+            ))}
+          </div>
+        </article>
+      )}
       {/* Door C carries the Blueprint (BK 13:07 "Blueprint can live in C"). */}
       {String(cf.id).toUpperCase() === 'C' && wl?.length > 0 && (
         <>
