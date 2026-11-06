@@ -1973,6 +1973,8 @@
         },
         {
           "gauge_rules": {
+            "hidden": true,
+            "_hidden": "BK 2026-11-06 10:55: hide the gauges until they open after Casefile A comes back (\"keeps it cleaner for them to get to the doc assist as they work this casefile\"). Remove this key in the push that opens the gauge run.",
             "more_reps": false,
             "write_box": false,
             "hide_levels": [5],
