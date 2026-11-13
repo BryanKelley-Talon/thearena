@@ -1,0 +1,71 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "EX",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 3,
+  "_activity": "Build it: the Erie Canal, Document 3",
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag each piece into the blank where it belongs.",
+  "sentence_frame": "This shows ___, which matters because ___.",
+  "_printed_frame": "This shows ________, which matters because ________.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "what it shows, in your words",
+      "tiles": [
+        {
+          "text": "the canal gave western farmers a way to sell what they grew",
+          "correct": true
+        },
+        {
+          "text": "the canal was finished and ran from Buffalo to Albany",
+          "correct": false
+        },
+        {
+          "text": "Guthrie wrote a report to Congress about the economy",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "why it matters",
+      "tiles": [
+        {
+          "text": "growth genuinely paid off for some of the people living through it",
+          "correct": true
+        },
+        {
+          "text": "canals were an important kind of transportation at the time",
+          "correct": false
+        },
+        {
+          "text": "the Secretary of the Treasury was a powerful official",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "This shows the canal gave western farmers a way to sell what they grew, which matters because growth genuinely paid off for some of the people living through it.",
+  "rationale": "The first blank has to be what the evidence means, not what it said. The second has to reach your argument. Every wrong tile is true — and none of them explains anything.",
+  "hints": [
+    "“The canal was finished” is the evidence, not what it shows.",
+    "Why it matters has to matter to the casefile question."
+  ],
+  "practice_only": true,
+  "submitted_to_teacher": false,
+  "documents": [
+    {
+      "source_document": "Document 3 — James Guthrie, Secretary of the Treasury, “The Impact of the Erie Canal,” 1853",
+      "source_text": ". . . As soon as the [Great] Lakes were reached, the line of navigable water was extended through them nearly one thousand miles farther into the interior. The Western states immediately commenced the construction of similar works, for the purpose of opening a communication, from the more remote portions of their territories, with this great water-line. All these works took their direction and character from the Erie Canal, which in this manner became the outlet for almost the greater part of the West.\nIt is difficult to estimate the influence which this Canal has exerted upon the commerce, growth, and prosperity of the whole country, for it is impossible to imagine what would have been the state of things without it.\nBut for this work, the West would have held out few inducements [incentives] to the settler, who would have been without a market for his most important products, and consequently without the means of supplying many of his most essential wants. That portion of the country would have remained comparatively unsettled up to the present time; and, where now exist rich and populous communities, we should find an uncultivated wilderness.\nThe East would have been equally without the elements of growth. The Canal has supplied it with cheap food, and has opened an outlet and created a market for the products of its manufactures and commerce. . . ."
+    }
+  ]
+}

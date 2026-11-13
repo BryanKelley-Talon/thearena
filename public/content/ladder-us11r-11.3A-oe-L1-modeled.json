@@ -1,0 +1,48 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "OE",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 1,
+  "_activity": "Watch one get built: Jackson's promise, 1830",
+  "type": "matching",
+  "modeled": true,
+  "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+  "source_document": "Document 5 — President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
+  "left": [
+    {
+      "key": "a",
+      "label": "Document 5 — Jackson tells Congress a “speedy removal” will be good for everyone"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "On the Trail of Tears (1838–1839), the U.S. Army forced about 16,000 Cherokee west. About 4,000 died on the way or in the camps."
+    }
+  ],
+  "correct": {
+    "a": "1"
+  },
+  "rationale": {
+    "a": "That fact is nowhere in Document 5. Jackson is predicting; the Trail of Tears is what actually happened. Putting them next to each other is what makes the fact do work."
+  },
+  "frame": "Before ________, ________.",
+  "frame_fill": "Before removal was law, Georgia wanted Cherokee land, and wanted it more after gold was found there in 1829 (OI). In 1830 Jackson told Congress a “speedy removal” would be good for everyone, the Indians themselves included (Doc 5). On the Trail of Tears the Army forced about 16,000 Cherokee west and about 4,000 died (OI) — which shows his promise was worth nothing.",
+  "models_band": "substantial, well-chosen, strengthens the argument",
+  "practice_only": true,
+  "submitted_to_teacher": false,
+  "documents": [
+    {
+      "source_document": "Document 5 — President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
+      "source_text": ". . . The consequences of a speedy removal will be important to the United States, to individual States, and to the Indians [Native Americans] themselves. The pecuniary [financial] advantages which it promises to the Government are the least of its recommendations. It puts an end to all possible danger of collision between the authorities of the General [Federal] and State Governments on account of the Indians. It will place a dense and civilized population in large tracts of country now occupied by a few savage hunters. By opening the whole territory between Tennessee on the north and Louisiana on the south to the settlement of the whites it will incalculably [greatly] strengthen the SW [southwestern] frontier and render the adjacent States strong enough to repel future invasions without remote aid. It will relieve the whole State of Mississippi and the western part of Alabama of Indian occupancy, and enable those States to advance rapidly in population, wealth, and power. It will separate the Indians from immediate contact with settlements of whites; free them from the power of the States. . . ."
+    }
+  ]
+}

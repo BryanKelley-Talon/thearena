@@ -1,0 +1,69 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "DU",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 2,
+  "_activity": "Which one calls the witness?",
+  "type": "mc_bestfit",
+  "intro": "Pick the best one. Hints are here if you want them.",
+  "items": [
+    {
+      "id": "du113A-01",
+      "stem": "Which one calls the witness on Document 1?",
+      "options": {
+        "1": "Doc 1 says the Constitution made no provision for holding foreign territory or adding foreign nations",
+        "2": "In 1803, Jefferson wrote to Breckinridge that the Constitution “has made no provision” for foreign territory",
+        "3": "The Constitution had made no provision for holding foreign territory, which worried Jefferson a great deal",
+        "4": "Document 1 is a letter about the Louisiana Purchase that Jefferson wrote to a man named Breckinridge"
+      },
+      "correct": "2",
+      "hints": [
+        "One of these opens with the exact phrasing you are told never to use.",
+        "Which one tells you who and when before it tells you what?"
+      ],
+      "reason": "Option 1 uses “Doc 1 says.” Option 3 gives the evidence with no witness at all. Option 4 describes the document instead of using it. Only option 2 calls the witness and then gives the evidence."
+    },
+    {
+      "id": "du113A-02",
+      "stem": "Which one calls the witness on Document 10?",
+      "options": {
+        "1": "In 1847, the Massachusetts legislature called the war one waged against a weak neighbor without just cause",
+        "2": "Doc 10 says the war with Mexico was unnecessary and was fought without any just cause at all",
+        "3": "The war with Mexico was unconstitutional and was begun by the order of the President to General Taylor",
+        "4": "Document 10 is a set of resolutions from Massachusetts that were passed during the war with Mexico"
+      },
+      "correct": "1",
+      "hints": [
+        "Who said it, and in what year?",
+        "Two of these never name who is speaking."
+      ],
+      "reason": "Option 1 names the speaker and the year before the evidence. Option 2 uses the banned phrasing. Option 3 states the claim with no source. Option 4 describes the document rather than using it."
+    },
+    {
+      "id": "du113A-03",
+      "stem": "Your claim is that expansion cost people their rights. Which use of a document proves that claim?",
+      "options": {
+        "1": "In 1830, the Cherokee Council said they were “not willing to remove” from their land (Doc 6)",
+        "2": "In 1830, the Cherokee Council wrote an address to the people of the United States about removal (Doc 6)",
+        "3": "In 1853, Guthrie reported that the Erie Canal had become the outlet for much of the West (Doc 3)",
+        "4": "The Cherokee had treaties with the United States, and those treaties guaranteed where they could live"
+      },
+      "correct": "1",
+      "hints": [
+        "Three of these call the witness properly. Only one of them proves this claim.",
+        "Option 3 is a good sentence about the wrong thing."
+      ],
+      "reason": "Option 2 calls the witness but only names the topic — it proves an address was written, not that anyone lost a right. Option 3 proves something about canals. Option 4 has no witness. Option 1 is sourced and it proves the claim."
+    }
+  ],
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

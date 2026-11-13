@@ -1,0 +1,43 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "TH",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 5,
+  "_activity": "On your own: Jackson's government",
+  "type": "guided_write",
+  "cold": true,
+  "intro": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+  "prompt": "Did Jackson's government protect the rights of all Americans? Make your claim.",
+  "documents": [
+    {
+      "source_document": "Document 4 — President Andrew Jackson, veto message on the Bank of the United States, July 10, 1832",
+      "source_text": "It is to be regretted that the rich and powerful too often bend the acts of government to their selfish purposes. Distinctions in society will always exist under every just government. Equality of talents, of education, or of wealth can not be produced by human institutions. In the full enjoyment of the gifts of Heaven and the fruits of superior industry, economy, and virtue, every man is equally entitled to protection by law; but when the laws undertake to add to these natural and just advantages artificial distinctions, to grant titles, gratuities [gifts], and exclusive privileges, to make the rich richer and the potent [powerful] more powerful, the humble members of society—the farmers, mechanics [skilled workers], and laborers—who have neither the time nor the means of securing like favors to themselves, have a right to complain of the injustice of their Government. . . ."
+    },
+    {
+      "source_document": "Document 5 — President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
+      "source_text": ". . . The consequences of a speedy removal will be important to the United States, to individual States, and to the Indians [Native Americans] themselves. The pecuniary [financial] advantages which it promises to the Government are the least of its recommendations. It puts an end to all possible danger of collision between the authorities of the General [Federal] and State Governments on account of the Indians. It will place a dense and civilized population in large tracts of country now occupied by a few savage hunters. By opening the whole territory between Tennessee on the north and Louisiana on the south to the settlement of the whites it will incalculably [greatly] strengthen the SW [southwestern] frontier and render the adjacent States strong enough to repel future invasions without remote aid. It will relieve the whole State of Mississippi and the western part of Alabama of Indian occupancy, and enable those States to advance rapidly in population, wealth, and power. It will separate the Indians from immediate contact with settlements of whites; free them from the power of the States. . . ."
+    },
+    {
+      "source_document": "Document 6 — General Council of the Cherokee Nation, address to the people of the United States, New Echota, July 17, 1830",
+      "source_text": ". . . We are not willing to remove; and if we could be brought to this extremity [last step], it would be not by argument, not because our judgment was satisfied, not because our condition will be improved; but only because we cannot endure to be deprived of our national and individual rights and subjected to a process of intolerable oppression.\nWe wish to remain on the land of our fathers. We have a perfect and original right to claim without interruption or molestation [being bothered]. The treaties with us, and laws of the United States made in pursuance of treaties, guaranty our residence, and our privileges and secure us against intruders. Our only request is that these treaties may be fulfilled, and these laws executed. . . ."
+    },
+    {
+      "source_document": "Document 7 — Chief Justice John Marshall, Worcester v. Georgia, 1832",
+      "source_text": ". . . The Cherokee nation, then, is a distinct community occupying its own territory, with boundaries accurately described, in which the laws of Georgia can have no force, and which the citizens of Georgia have no right to enter, but with the assent [agreement] of the Cherokees themselves, or in conformity with treaties, and with the acts of congress. . . ."
+    }
+  ],
+  "sentence_starter": null,
+  "checklist": [],
+  "model_visible": "never",
+  "_model": "No model, before or after the paste: BK 2026-11-06 09:59, 'L5 can't show an answer if that's our cold practice attempt.'",
+  "practice_only": false,
+  "submitted_to_teacher": false
+}

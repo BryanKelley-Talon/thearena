@@ -51,6 +51,20 @@ export const nextStepOpen = unit => !unit?.next_step?.closed && (PREVIEW_DOORS |
 
 export const usesSplash = unit => Array.isArray(unit?.casefiles) && unit.casefiles.length > 0
 
+// THE GAUGE RUN (manifest `unit.gauge_run`). BK 2026-11-06 15:15: "when the gauge run bonus opens after Casefile A, a Gauge Run
+// card slots in between Casefile A and Casefile B. That is where students go to do the work if they choose. The gauges live
+// inside that card, which keeps the main area clean." 15:17: every gauge Casefile A scored opens once A is returned.
+// The card opens on the desk's own day (`opens_at` anchor -> `opens_on`), like every casefile door; on a sandbox address no date
+// locks it (BK 2026-11-05 14:41). Until it opens, the unit's gauges stay out of sight everywhere, the way `gauge_rules.hidden`
+// kept them (BK 2026-11-06 10:55), and every word on the card and in the room is the desk's (Sam's gauge-run package, 1f and 1a).
+export const runOf = unit => unit?.gauge_run || null
+export const runOpen = unit => {
+  const r = runOf(unit)
+  return !!r && (PREVIEW_DOORS || SANDBOX_HOST || !r.opens_on || todayLocal() >= String(r.opens_on))
+}
+export const gaugesHidden = unit => !!unit?.gauge_rules?.hidden || (!!runOf(unit) && !runOpen(unit))
+const runLabel = unit => (runOpen(unit) ? W.open : (runOf(unit)?.opens_label ? sayOpens(runOf(unit).opens_label) : W.coming))
+
 const isUS = course => /us11r|^us$/.test(String(course?.id || course || ''))
 
 // ── words: BK 2026-10-30 13:37 "yes to all" (proof 2, items 1–11) ──
@@ -120,7 +134,8 @@ function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now }) {
 }
 
 // ── the splash itself ──
-export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile, onOpenNextStep, onOpenAtlas, onOpenTestReview }) {
+export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile, onOpenNextStep, onOpenAtlas, onOpenTestReview, onOpenGaugeRun }) {
+  const run = runOf(unit)
   const cfs = unit.casefiles || []
   // The NOW tag sits on the casefile that is running: the last one open (Will 13:24, point 1, BK 13:23 "yes").
   const running = [...cfs].reverse().find(cfRunning)?.id
@@ -134,12 +149,17 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
                   label={W.open} onOpen={onOpenAtlas} />
         {cfs.map(cf => {
           const open = cfOpen(cf)
-          return (
+          return [
             <DoorCard key={cf.id} id={`us-door-${cf.id}`} title={W.casefile(cf.id)} sub={cf.label} now={cf.id === running}
                       paper={paperOf(paperMap(unit), cf.id)} open={open}
                       label={open ? W.open : cfLabel(cf)}
-                      onOpen={() => onOpenCasefile(cf.id)} />
-          )
+                      onOpen={() => onOpenCasefile(cf.id)} />,
+            // The Gauge Run card sits right after the casefile it runs (BK 15:15: "between Casefile A and Casefile B").
+            run && run.casefile === cf.id && (
+              <DoorCard key={`run-${cf.id}`} id="us-card-run" kind="run" title={run.title} sub={run.sub}
+                        open={runOpen(unit)} label={runLabel(unit)} onOpen={onOpenGaugeRun} />
+            ),
+          ]
         })}
       </div>
       <div className="us-cards">
@@ -186,7 +206,9 @@ export function UnitOverviewBody({ pack }) {
 }
 
 // ── behind a casefile door ──
-export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThreeLabel, onOpenSkill, onOpenDoc, onOpenSet }) {
+export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThreeLabel, onOpenSkill, onOpenDoc, onOpenSet, onOpenGaugeRun }) {
+  const run = runOf(unit)
+  const runHere = !!run && run.casefile === cf?.id
   const paper = paperOf(paperMap(unit), cf?.id)
   const docs = daPack ? { ...daPack, tile: null, casefiles: (daPack.casefiles || []).filter(c => c.id === cf?.id) } : null
   const hasDocs = !!docs && docs.casefiles.some(c => c.status === 'open' && (c.docs || []).length)
@@ -199,7 +221,15 @@ export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThree
       </div>
       {cf.blurb && <p className="room-sub">{cf.blurb}</p>}
       {/* A unit whose gauges are hidden (gauge_rules.hidden, BK 2026-11-06 10:01 for Global 10.3: "keep it hidden for now") shows its documents only. */}
-      {!unit?.gauge_rules?.hidden && <>
+      {/* A casefile with a Gauge Run keeps its gauges inside the run's card (BK 2026-11-06 15:15). Its printed QR
+          (#/us/11.3A/gauges/A, "Scan for Casefile A's gauge work") lands here, so the card is one tap away, with its own open day. */}
+      {runHere ? (
+        <div className="practice-rows" style={{ marginBottom: 18 }}>
+          {runOpen(unit)
+            ? <button type="button" className="practice-row" onClick={onOpenGaugeRun}><span>{run.title}<span className="row-blurb">{run.sub}</span></span><span className="flag live">{W.open}</span></button>
+            : <div className="practice-row off"><span>{run.title}<span className="row-blurb">{run.sub}</span></span><span className="flag soon">{runLabel(unit)}</span></div>}
+        </div>
+      ) : !gaugesHidden(unit) && <>
       <h3 className="room-section">{W.gauges}</h3>
       <div className="cf-gauges"><SkillGauges course={course} unit={unit} prog={prog} only={cf?.skills || []} onOpen={onOpenSkill} /></div>
       </>}
@@ -233,6 +263,21 @@ export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThree
   )
 }
 
+// ── the Gauge Run's room: the desk's coaching box (1f), then the gauges its casefile scored ──
+export function GaugeRunBody({ course, unit, prog, onOpenSkill }) {
+  const run = runOf(unit)
+  const cf = (unit?.casefiles || []).find(c => c.id === run?.casefile)
+  if (!run || !cf) return null
+  return (
+    <>
+      <article className="run-box" aria-label={run.title}>
+        {(run.box || []).map((p, i) => <p key={i}>{p}</p>)}
+      </article>
+      <div className="cf-gauges"><SkillGauges course={course} unit={unit} prog={prog} only={cf.skills || []} onOpen={onOpenSkill} /></div>
+    </>
+  )
+}
+
 // ── Door 4: Know Your Next Step ──
 export function NextStepBody({ course, unit, prog, onOpenGauge, onOpenLab }) {
   const skills = roomSkills(course, unit)
@@ -261,6 +306,10 @@ export function NextStepBody({ course, unit, prog, onOpenGauge, onOpenLab }) {
 }
 
 export const SPLASH_STYLES = `
+.us-door.run:not(.shut){border-color:var(--gold)}
+.run-box{background:var(--card);border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:10px;padding:12px 16px;margin:0 0 22px;max-width:760px}
+.run-box p{margin:0 0 9px;color:var(--white);font-size:17px;line-height:1.55}
+.run-box p:last-child{margin-bottom:0;font-weight:600}
 .us-door.overview:not(.shut){border-color:var(--gold)}
 .ov{max-width:820px}
 .ov-title{font-family:'Barlow Condensed',sans-serif;font-size:26px;letter-spacing:.02em;color:var(--white);margin:4px 0 2px}

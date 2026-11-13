@@ -1,0 +1,48 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "DU",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 1,
+  "_activity": "Watch one get built: Jefferson, 1803",
+  "type": "matching",
+  "modeled": true,
+  "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+  "source_document": "Document 1 — Thomas Jefferson, letter to John Breckinridge, August 12, 1803 (adapted)",
+  "left": [
+    {
+      "key": "a",
+      "label": "Document 1 — Jefferson's letter on buying Louisiana"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "In 1803, President Thomas Jefferson wrote to John Breckinridge that the Constitution “has made no provision” for holding foreign territory (Doc 1)."
+    }
+  ],
+  "correct": {
+    "a": "1"
+  },
+  "rationale": {
+    "a": "Who and when sit in front of the evidence. The detail is a specific phrase, not a summary. And “Doc 1 says” appears nowhere — that is the one phrasing Mr. Kelley marks down every time."
+  },
+  "frame": "In [year], [who] [wrote / said / showed] that ________ (Doc __).",
+  "frame_fill": "In 1803, President Thomas Jefferson wrote to John Breckinridge that the Constitution “has made no provision” for holding foreign territory (Doc 1).",
+  "models_band": "named + specific detail used as evidence",
+  "practice_only": true,
+  "submitted_to_teacher": false,
+  "documents": [
+    {
+      "source_document": "Document 1 — Thomas Jefferson, letter to John Breckinridge, August 12, 1803 (adapted)",
+      "source_text": ". . . This treaty [Louisiana Purchase] must of course be laid before both houses, because both have important functions to exercise respecting it. They I presume will see their duty to their country in ratifying & paying for it, so as to secure a good which would otherwise probably be never again in their power. But I suppose they must then appeal to the nation for an additional article to the constitution, approving & confirming an act which the nation had not previously authorised. The constitution has made no provision for our holding foreign territory, still less for incorporating foreign nations into our union. . . ."
+    }
+  ]
+}

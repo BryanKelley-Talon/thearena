@@ -1973,12 +1973,15 @@
         },
         {
           "gauge_rules": {
-            "hidden": true,
-            "_hidden": "BK 2026-11-06 10:55: hide the gauges until they open after Casefile A comes back (\"keeps it cleaner for them to get to the doc assist as they work this casefile\"). Remove this key in the push that opens the gauge run.",
             "more_reps": false,
             "write_box": false,
-            "hide_levels": [5],
-            "_source": "BK 2026-11-05 15:13 (Danny 1514) and 2026-11-06 07:5x (Leo's go-live order): in the 11.3A gauge, no More reps, Level 1 a read with no click, no writing box or input in Levels 1-4, Level 5 off today (wording to BK first)."
+            "hide_levels": [],
+            "_source": "BK 2026-11-05 15:13 (Danny 1514) and 2026-11-06 07:5x (Leo's go-live order): in the 11.3A gauge, no More reps, Level 1 a read with no click, no writing box or input in Levels 1-4, Level 5 off today (wording to BK first). | 2026-11-13 Josh, the gauge-run package (US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07; Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).): `hidden` replaced by the Gauge Run card's own open day (BK 2026-11-06 15:15, the gauges live inside the card); Level 5 back on; Levels 4 and 5 get the type-in box (`box_levels`) with the paste direction under it (1c); Levels 1-3 stay as they were: no box, Level 1 a read.",
+            "box_levels": [
+              4,
+              5
+            ],
+            "paste_line": "Copy your answer and paste it into BONUS · 11.3A Gauge Run on Google Classroom. Mr. Kelley reads it there."
           },
           "slug": "unit-3",
           "casefiles": [
@@ -1986,7 +1989,20 @@
               "dig_deeper": {
                 "flag": "DIG DEEPER · OPTIONAL",
                 "text": "Want more of the story behind these documents? Step into a Throwback newspaper from these years and read the whole front page. In each one, look closely at two stories: the average family, which is what the census counted, and what it was like to be 16 that year. Notice what changes from paper to paper.",
-                "links": [{"label": "1801", "href": "#/us/throwback/1801"}, {"label": "1824", "href": "#/us/throwback/1824"}, {"label": "1850", "href": "#/us/throwback/1850"}],
+                "links": [
+                  {
+                    "label": "1801",
+                    "href": "#/us/throwback/1801"
+                  },
+                  {
+                    "label": "1824",
+                    "href": "#/us/throwback/1824"
+                  },
+                  {
+                    "label": "1850",
+                    "href": "#/us/throwback/1850"
+                  }
+                ],
                 "_source": "BK 2026-11-06 10:31 (direct links to Throwback 1801, 1824, 1850 in Casefile A, a callout to review the papers, the census story, changes over time; a resource, no task), 10:32 (review the whole paper; call out the census and being 16), 10:32 (no Danny review needed: his approval). Words: Josh from BK's, BK approved the first draft 10:32."
               },
               "id": "A",
@@ -2038,7 +2054,6 @@
                   "type": "matching",
                   "label": "Watch one get built: the Louisiana Purchase, 1803",
                   "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
-                  "_card_blurb": "BK 2026-11-06 (Danny F1): the desk's own intro from the L1 pack, in place of Match it / Pair each one with its match.",
                   "content_ref": "content/ladder-us11r-11.3A-hc-L1-modeled.json",
                   "published": true,
                   "opens_at": "A_BACK",
@@ -2051,7 +2066,8 @@
                   "content_ref": "content/ladder-us11r-11.3A-hc-L2-bestfit.json",
                   "published": true,
                   "opens_at": "A_BACK",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "card_blurb": "Pick the best one. Hints are here if you want them."
                 },
                 {
                   "level": 3,
@@ -2060,15 +2076,14 @@
                   "content_ref": "content/ladder-us11r-11.3A-hc-L3-sentencebuild.json",
                   "published": true,
                   "opens_at": "A_BACK",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs."
                 },
                 {
                   "level": 4,
                   "type": "guided_write",
                   "label": "Write the scene: the embargo song, 1808",
-                  "card_blurb": "Write it on paper or say it out loud, with the checklist beside you.",
-                  "page_note": "Write it on paper or say it out loud. Then go down the checklist.",
-                  "_card_blurb": "BK 2026-11-06 (Danny F2): no box in the 11.3A gauge, so the card and the page say where the writing goes.",
+                  "card_blurb": "Now you write it. The sentence starter is the same one on your Make the Case page — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
                   "content_ref": "content/ladder-us11r-11.3A-hc-L4-guidedwrite.json",
                   "published": true,
                   "opens_at": "A_BACK",
@@ -2082,9 +2097,320 @@
                   "published": true,
                   "cold": true,
                   "opens_at": "A_BACK",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam."
                 }
-              ]
+              ],
+              "_constant_frame": "2026-11-13 Josh: every level's card line is the constant frame 1b (US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07); HC Level 4's replaces 'Write it on paper or say it out loud...' as 1b says."
+            },
+            {
+              "skill": "OE",
+              "band": {
+                "head": "WHERE YOURS COMES FROM",
+                "text": "Your outside information is already in your notebook. It's the facts you starred next to the OUTSIDE INFORMATION badge, the ones you caught in the video clips, and what Mr. Kelley said in class. Go back through Casefile A and pull them out. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: Jackson's promise, 1830",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-us11r-11.3A-oe-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the one that does work",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-us11r-11.3A-oe-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: Jefferson, 1803",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-us11r-11.3A-oe-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: Massachusetts against the war, 1847",
+                  "card_blurb": "Now you write it. The sentence starter is the same one on your Make the Case page — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-us11r-11.3A-oe-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Document 7",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-us11r-11.3A-oe-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07. Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader). BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f). Ported by Josh 2026-11-13."
+            },
+            {
+              "skill": "TH",
+              "band": {
+                "head": "THE QUESTION YOU ARE ANSWERING",
+                "text": "Was American expansion worth what it cost, 1801–1850? It is the question on your cover, the question you argued on Day 4, and the question your essay answers in Casefile C. Your thesis is your answer to it."
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: the casefile question",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-us11r-11.3A-th-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Which one is a thesis?",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-us11r-11.3A-th-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: your answer and your reason",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-us11r-11.3A-th-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: the casefile question",
+                  "card_blurb": "Now you write it. The sentence starter is the same one on your Make the Case page — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-us11r-11.3A-th-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Jackson's government",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-us11r-11.3A-th-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07. Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader). BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f). Ported by Josh 2026-11-13."
+            },
+            {
+              "skill": "DU",
+              "band": {
+                "head": "CALL YOUR WITNESS",
+                "text": "Who and when come before the evidence, in the same sentence. A document with no author still gets called by what it is and when: “A map from 1836 shows…” Never “Document 4 says.”"
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: Jefferson, 1803",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-us11r-11.3A-du-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Which one calls the witness?",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-us11r-11.3A-du-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: call the witness on Document 4",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-us11r-11.3A-du-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: Jackson's Bank veto, 1832",
+                  "card_blurb": "Now you write it. The sentence starter is the same one on your Make the Case page — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-us11r-11.3A-du-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Document 11",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-us11r-11.3A-du-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07. Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader). BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f). Ported by Josh 2026-11-13."
+            },
+            {
+              "skill": "EX",
+              "band": {
+                "head": "TWO STEMS, TWO PLACES",
+                "text": "Your 30-Second Case box says “This shows ___.” Make the Case and the essay say “This shows ___, which matters because ___.” The second half is the whole skill. If you stop at the first half, you have described, not explained."
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: Worcester v. Georgia, 1832",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-us11r-11.3A-ex-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Which one explains?",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-us11r-11.3A-ex-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: the Erie Canal, Document 3",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-us11r-11.3A-ex-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: manifest destiny, 1845",
+                  "card_blurb": "Now you write it. The sentence starter is the same one on your Make the Case page — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-us11r-11.3A-ex-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Document 10",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-us11r-11.3A-ex-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07. Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader). BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f). Ported by Josh 2026-11-13."
+            },
+            {
+              "skill": "CP",
+              "band": {
+                "head": "THE CARD IS THE SOURCE",
+                "text": "The principle comes off the Civic Principles card on page 2 of your casefile, by its name on the card. More than one principle can fit a document. Naming a second one that fits is not a miss — what loses points is implying a principle instead of naming it."
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: Jackson's Bank veto, 1832",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-us11r-11.3A-cp-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Which principle, by its card name?",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-us11r-11.3A-cp-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: Document 5, Jackson on removal",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-us11r-11.3A-cp-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: the Cherokee answer, 1830",
+                  "card_blurb": "Now you write it. The sentence starter is the same one on your Make the Case page — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-us11r-11.3A-cp-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Document 8",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-us11r-11.3A-cp-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07. Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader). BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f). Ported by Josh 2026-11-13."
             }
           ],
           "next_step": {
@@ -2184,6 +2510,20 @@
             "published": true,
             "content_ref": "content/overview-us11r-11.3A.json",
             "_note": "BK 2026-10-31 20:51/20:53; Sam's words blessed by BK 11/2 10:56, Danny cleared the constants 11:34. Read from words_113A.py by scripts/packs/overview_pack.py: unit question, five-paragraph What you need to know, key terms (VOCAB then UNIT_NAMES), the calendar and its notice. The Atlas sits below. Washington's Farewell Address stays off this card until Casefile B (Sam, BK)."
+          },
+          "gauge_run": {
+            "casefile": "A",
+            "title": "THE GAUGE RUN · BONUS",
+            "sub": "Casefile A came back. Pick the gauge you scored lowest on — that's where you'll grow fastest.",
+            "box": [
+              "Casefile A is back. Pick your gauge — your lowest one is where you'll grow fastest, and your next reading replaces this one. Start at Level 1.",
+              "Levels 1, 2 and 3 are practice. Nothing is saved and nothing is scored.",
+              "Level 4 you write with coaching. Level 5 you write cold. For those two, type your answer here, then copy it into BONUS · 11.3A Gauge Run on Google Classroom. Mr. Kelley reads it there.",
+              "A bonus can add to your grade. It can never lower it."
+            ],
+            "opens_at": "A_BACK",
+            "opens_label": "Opens when Casefile A comes back",
+            "_source": "BK 2026-11-06 15:15 (Leo's note): a Gauge Run card slots in between Casefile A and Casefile B; the gauges live inside it, which keeps the main area clean. 15:17: every gauge Casefile A scored opens once A is returned. Words: the coaching box 1f (title and four paragraphs, BK 14:14) and the first paragraph of the door 1a as the card's line. US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07. Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader). Open day: Sam's anchor A_BACK, the same one every 11.3A gauge level already uses."
           }
         }
       ],

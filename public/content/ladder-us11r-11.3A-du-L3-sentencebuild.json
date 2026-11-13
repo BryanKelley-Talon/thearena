@@ -1,0 +1,89 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "DU",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 3,
+  "_activity": "Build it: call the witness on Document 4",
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag each piece into the blank where it belongs.",
+  "sentence_frame": "___ ___ ___.",
+  "_printed_frame": "In [year], [who] [wrote / said / showed] that ________ (Doc __).",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "when and who",
+      "tiles": [
+        {
+          "text": "In 1832, President Andrew Jackson",
+          "correct": true
+        },
+        {
+          "text": "In 1832, Chief Justice John Marshall",
+          "correct": false
+        },
+        {
+          "text": "In 1830, the General Council of the Cherokee Nation",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "what they put on the record",
+      "tiles": [
+        {
+          "text": "wrote that the rich and powerful “too often bend the acts of government to their selfish purposes”",
+          "correct": true
+        },
+        {
+          "text": "ruled that the laws of Georgia could have no force on Cherokee land",
+          "correct": false
+        },
+        {
+          "text": "asked that the treaties with the Cherokee be fulfilled and the laws executed",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 3,
+      "label": "the tag",
+      "tiles": [
+        {
+          "text": "(Doc 4)",
+          "correct": true
+        },
+        {
+          "text": "(Doc 6)",
+          "correct": false
+        },
+        {
+          "text": "(Doc 7)",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "In 1832, President Andrew Jackson wrote that the rich and powerful “too often bend the acts of government to their selfish purposes” (Doc 4).",
+  "rationale": "Each wrong tile belongs to a different document in this casefile. Mixing the witness, the evidence and the tag is the most common way Document Use loses points: the quotation is real, but it is credited to the wrong person.",
+  "hints": [
+    "Document 4 is the Bank veto. Who wrote that?",
+    "Marshall and the Cherokee Council each have their own document."
+  ],
+  "practice_only": true,
+  "submitted_to_teacher": false,
+  "documents": [
+    {
+      "source_document": "Document 4 — President Andrew Jackson, veto message on the Bank of the United States, July 10, 1832",
+      "source_text": "It is to be regretted that the rich and powerful too often bend the acts of government to their selfish purposes. Distinctions in society will always exist under every just government. Equality of talents, of education, or of wealth can not be produced by human institutions. In the full enjoyment of the gifts of Heaven and the fruits of superior industry, economy, and virtue, every man is equally entitled to protection by law; but when the laws undertake to add to these natural and just advantages artificial distinctions, to grant titles, gratuities [gifts], and exclusive privileges, to make the rich richer and the potent [powerful] more powerful, the humble members of society—the farmers, mechanics [skilled workers], and laborers—who have neither the time nor the means of securing like favors to themselves, have a right to complain of the injustice of their Government. . . ."
+    }
+  ]
+}

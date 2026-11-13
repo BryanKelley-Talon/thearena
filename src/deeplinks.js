@@ -105,6 +105,8 @@ export function parseHash(hash, manifest) {
   if (parts[2] === 'review') return { ...u, at: 'review' }
   // The unit splash's own cards (BK 2026-10-30): Door 4 and the Unit Test Review.
   if (parts[2] === 'next-step') return { ...u, at: 'kyns' }
+  // The Gauge Run card (BK 2026-11-06 15:15): #/us/11.3A/gauge-run. A unit without one opens its own room.
+  if (parts[2] === 'gauge-run') return unit.gauge_run ? { ...u, at: 'gaugerun' } : u
   if (parts[2] === 'test-review') return { ...u, at: 'testreview' }
   if ((parts[2] === 'atlas' || parts[2] === 'overview') && !course.atlas) return u   // atlas off: the unit's own room
   if (parts[2] === 'atlas' || parts[2] === 'overview') return { ...u, at: 'unitatlas' }   // the Unit Overview holds the Atlas (BK 2026-10-31)
@@ -150,6 +152,7 @@ export function buildHash(s) {
   if (s.gaugesCf) return `${u}/gauges/${s.gaugesCf}`
   if (s.review) return `${u}/review`
   if (s.unitAtlas) return `${u}/atlas`
+  if (s.gaugeRun) return `${u}/gauge-run`
   if (s.kyns) return `${u}/next-step`
   if (s.testReview) return `${u}/test-review`
   if (s.civics) return s.civicsCard ? `${u}/${s.civics}/${encodeURIComponent(s.civicsCard)}` : `${u}/${s.civics}`

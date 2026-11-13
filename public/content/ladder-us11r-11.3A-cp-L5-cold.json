@@ -1,0 +1,31 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "CP",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 5,
+  "_activity": "On your own: Document 8",
+  "type": "guided_write",
+  "cold": true,
+  "intro": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+  "prompt": "Name the principle from the card on page 2, and say what this document does to it.",
+  "documents": [
+    {
+      "source_document": "Document 8 — “Annexation,” United States Magazine and Democratic Review, 1845, attributed to John L. O'Sullivan (adapted)",
+      "source_text": ". . . other nations have undertaken to intrude themselves into it [the question of Texas], between us and the proper parties to the case, in a spirit of hostile interference against us, for the avowed [openly stated] object of thwarting [blocking] our policy and hampering our power, limiting our greatness and checking the fulfillment of our manifest destiny to overspread the continent allotted by Providence [God] for the free development of our yearly multiplying millions. . . ."
+    }
+  ],
+  "sentence_starter": null,
+  "checklist": [],
+  "model_visible": "never",
+  "_model": "No model, before or after the paste: BK 2026-11-06 09:59, 'L5 can't show an answer if that's our cold practice attempt.'",
+  "practice_only": false,
+  "submitted_to_teacher": false
+}

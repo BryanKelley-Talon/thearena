@@ -1,0 +1,31 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "DU",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 5,
+  "_activity": "On your own: Document 11",
+  "type": "guided_write",
+  "cold": true,
+  "intro": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+  "prompt": "Call your witness and give the evidence this document offers.",
+  "documents": [
+    {
+      "source_document": "Document 11 — Declaration of Sentiments, Seneca Falls, 1848",
+      "source_text": ". . . The history of mankind is a history of repeated injuries and usurpations [wrongdoings] on the part of man toward woman, having in direct object the establishment of an absolute tyranny over her. To prove this, let facts be submitted to a candid world.\nHe has never permitted her to exercise her inalienable right to the elective franchise.\nHe has compelled her to submit to laws, in the formation of which she had no voice.\nHe has withheld from her rights which are given to the most ignorant and degraded men—both natives and foreigners.\nHaving deprived her of this first right of a citizen, the elective franchise, thereby leaving her without representation in the halls of legislation, he has oppressed her on all sides.\nHe has made her, if married, in the eye of the law, civilly dead.\nHe has taken from her all right in property, even to the wages she earns. . . ."
+    }
+  ],
+  "sentence_starter": null,
+  "checklist": [],
+  "model_visible": "never",
+  "_model": "No model, before or after the paste: BK 2026-11-06 09:59, 'L5 can't show an answer if that's our cold practice attempt.'",
+  "practice_only": false,
+  "submitted_to_teacher": false
+}

@@ -1,0 +1,69 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "EX",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 2,
+  "_activity": "Which one explains?",
+  "type": "mc_bestfit",
+  "intro": "Pick the best one. Hints are here if you want them.",
+  "items": [
+    {
+      "id": "ex113A-01",
+      "stem": "Which one explains the evidence from Document 7?",
+      "options": {
+        "1": "This shows Marshall said the laws of Georgia could have no force at all on the Cherokee Nation's land",
+        "2": "This shows the Court sided with the Cherokee against a state, which matters because removal went ahead anyway",
+        "3": "This shows the case was decided in 1832 by Chief Justice John Marshall of the Supreme Court",
+        "4": "This shows the Supreme Court was an important part of the government during the Jackson presidency"
+      },
+      "correct": "2",
+      "hints": [
+        "One of these just says the quotation again in different words.",
+        "Look for “which matters because.”"
+      ],
+      "reason": "Option 1 restates the evidence. Option 3 summarises the source line. Option 4 is true and has nothing to do with the claim. Only option 2 says what it shows and why that matters."
+    },
+    {
+      "id": "ex113A-02",
+      "stem": "Which one explains the evidence from Document 3?",
+      "options": {
+        "1": "This shows the canal reached the Great Lakes and extended navigable water a thousand miles inland",
+        "2": "This shows the canal gave western farmers a market, which matters because growth paid off for some Americans",
+        "3": "This shows Guthrie was the Secretary of the Treasury and reported to Congress about the nation's economy",
+        "4": "This shows canals were a very important form of transportation across the United States during the early 1800s"
+      },
+      "correct": "2",
+      "hints": [
+        "Which one gets past what the document said and onto what it meant?",
+        "Only one of these could be used in an argument."
+      ],
+      "reason": "Option 1 repeats the document. Option 3 explains the author, not the evidence. Option 4 is a general fact about canals. Option 2 names the consequence and ties it to the question of whether expansion was worth it."
+    },
+    {
+      "id": "ex113A-03",
+      "stem": "Your claim is that expansion cost more than it was worth. Which explanation ties the evidence back to it?",
+      "options": {
+        "1": "This shows Jackson promised removal would benefit everyone, which matters because the Trail of Tears proved otherwise",
+        "2": "This shows Jackson gave his Second Annual Message to Congress in December of the year 1830",
+        "3": "This shows Jackson thought removal would be good for the United States and for the Native nations",
+        "4": "This shows presidents in the 1830s had a great deal of influence over what Congress decided to do"
+      },
+      "correct": "1",
+      "hints": [
+        "Three of these never mention your claim.",
+        "Which one ends somewhere your argument can use?"
+      ],
+      "reason": "Option 2 is the source line. Option 3 restates Jackson. Option 4 wanders off. Option 1 says what the evidence shows, why it matters, and lands on the cost the claim is about."
+    }
+  ],
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

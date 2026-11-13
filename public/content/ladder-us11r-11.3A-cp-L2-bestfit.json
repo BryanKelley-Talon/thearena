@@ -1,0 +1,69 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "CP",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 2,
+  "_activity": "Which principle, by its card name?",
+  "type": "mc_bestfit",
+  "intro": "Pick the best one. Hints are here if you want them.",
+  "items": [
+    {
+      "id": "cp113A-01",
+      "stem": "Which principle is at stake in Document 7, Worcester v. Georgia?",
+      "options": {
+        "1": "Federalism — Georgia's laws can have no force on Cherokee land, so valid federal treaties win",
+        "2": "Due Process — the Cherokee were given fair steps before their land was taken from them",
+        "3": "Separation of Powers — the Court, Congress and the President each had their own job to do",
+        "4": "Popular Sovereignty — Georgia's voters wanted the land, and government rules with their agreement"
+      },
+      "correct": "1",
+      "hints": [
+        "The card says power is divided between the national government and the states.",
+        "What does Marshall say about whose law applies on Cherokee land?"
+      ],
+      "reason": "Marshall holds that Georgia's law has no force where federal treaties govern, which is Federalism on the card: when the two clash, valid federal law wins. Judicial Review also fits this document and is accepted."
+    },
+    {
+      "id": "cp113A-02",
+      "stem": "Which principle is at stake in Document 11, the Declaration of Sentiments?",
+      "options": {
+        "1": "Representative Government — women had no voice in making the laws they had to obey",
+        "2": "Limited Government — the Constitution did not allow the government to do what it did",
+        "3": "Checks and Balances — one branch of the government blocked or limited the others",
+        "4": "Rule of Law — no one is above the law, not even the people who make it"
+      },
+      "correct": "1",
+      "hints": [
+        "The document says she was compelled to obey laws “in the formation of which she had no voice.”",
+        "Which card name is about electing the people who make decisions for you?"
+      ],
+      "reason": "The Declaration's complaint is that women were denied the vote and so had no representation — Representative Government, denied. Popular Sovereignty and Equal Protection also fit this document and are accepted."
+    },
+    {
+      "id": "cp113A-03",
+      "stem": "Which principle is at stake in Document 1, Jefferson's letter?",
+      "options": {
+        "1": "Limited Government — Jefferson wrote the Constitution “has made no provision” for holding foreign territory",
+        "2": "Judicial Review — a court struck down the treaty because it broke the Constitution",
+        "3": "Equal Protection — the law treated the people of Louisiana exactly the same as everyone",
+        "4": "Individual Rights — the government could not take away freedom of speech or religion"
+      },
+      "correct": "1",
+      "hints": [
+        "The card says government can only do what the Constitution allows.",
+        "No court appears anywhere in this document."
+      ],
+      "reason": "Jefferson's whole problem is that the Constitution does not authorise what he is doing, which is Limited Government — and the document shows it being fought over, since he goes ahead anyway. No court is involved, so Judicial Review cannot be it."
+    }
+  ],
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

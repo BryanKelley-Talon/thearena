@@ -1,0 +1,31 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "EX",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 5,
+  "_activity": "On your own: Document 10",
+  "type": "guided_write",
+  "cold": true,
+  "intro": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+  "prompt": "You have the evidence. Now explain it: what does it show, and why does that matter?",
+  "documents": [
+    {
+      "source_document": "Document 10 — Massachusetts legislature, resolutions on the war with Mexico, April 26, 1847",
+      "source_text": "Resolved, That the present war with Mexico had its primary origin in the unconstitutional annexation to the United States of the foreign State of Texas; that it was unconstitutionally commenced by the order of the President, to General Taylor, to take military possession of territory in dispute between the United States and Mexico, and in the occupation of Mexico; and that it is now waged by a powerful nation against a weak neighbor—unnecessarily and without just cause, at immense cost of treasure [money] and life, for the dismemberment [carving up] of Mexico, and for the conquest of a portion of her territory, from which slavery has already been excluded, with the triple object of extending slavery, of strengthening the slave power [slaveholders' power in government], and of obtaining the control of the Free States, under the Constitution of the United States."
+    }
+  ],
+  "sentence_starter": null,
+  "checklist": [],
+  "model_visible": "never",
+  "_model": "No model, before or after the paste: BK 2026-11-06 09:59, 'L5 can't show an answer if that's our cold practice attempt.'",
+  "practice_only": false,
+  "submitted_to_teacher": false
+}

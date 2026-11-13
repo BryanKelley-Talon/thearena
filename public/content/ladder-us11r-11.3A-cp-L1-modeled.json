@@ -1,0 +1,48 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "CP",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 1,
+  "_activity": "Watch one get built: Jackson's Bank veto, 1832",
+  "type": "matching",
+  "modeled": true,
+  "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+  "source_document": "Document 4 — President Andrew Jackson, veto message on the Bank of the United States, July 10, 1832",
+  "left": [
+    {
+      "key": "a",
+      "label": "Document 4 — “every man is equally entitled to protection by law”"
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "Equal Protection — The law must treat people equally."
+    }
+  ],
+  "correct": {
+    "a": "1"
+  },
+  "rationale": {
+    "a": "Jackson uses the principle and accuses the Bank of breaking it in the same message, so this document is a kid's clearest example of a principle being fought over rather than simply upheld or denied."
+  },
+  "frame": "This case is about ________. The documents show it being (upheld / denied / fought over) because ________.",
+  "frame_fill": "This case is about Equal Protection — the law must treat people equally. Document 4 shows it being fought over, because Jackson says “every man is equally entitled to protection by law” while arguing that the Bank's charter hands the rich “exclusive privileges.”",
+  "models_band": "named and woven through",
+  "practice_only": true,
+  "submitted_to_teacher": false,
+  "documents": [
+    {
+      "source_document": "Document 4 — President Andrew Jackson, veto message on the Bank of the United States, July 10, 1832",
+      "source_text": "It is to be regretted that the rich and powerful too often bend the acts of government to their selfish purposes. Distinctions in society will always exist under every just government. Equality of talents, of education, or of wealth can not be produced by human institutions. In the full enjoyment of the gifts of Heaven and the fruits of superior industry, economy, and virtue, every man is equally entitled to protection by law; but when the laws undertake to add to these natural and just advantages artificial distinctions, to grant titles, gratuities [gifts], and exclusive privileges, to make the rich richer and the potent [powerful] more powerful, the humble members of society—the farmers, mechanics [skilled workers], and laborers—who have neither the time nor the means of securing like favors to themselves, have a right to complain of the injustice of their Government. . . ."
+    }
+  ]
+}

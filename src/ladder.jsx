@@ -125,6 +125,35 @@ export const levelHidden = (unit, n) => (gaugeRules(unit).hide_levels || []).inc
 // name and blurb ("Match it · Pair each one with its match." on a level that is a read). Danny 2026-11-06 F1, F2.
 export const noBoxCard = (unit, lv) => gaugeRules(unit).write_box === false && typeof lv?.card_blurb === 'string'
 export const gaugeTop = unit => [5, 4, 3, 2, 1].find(n => !levelHidden(unit, n)) || 5
+// A no-box unit may give a level its box back (`gauge_rules.box_levels`): the 11.3A gauge run, Levels 4 and 5, where the kid types
+// and then pastes into the BONUS doc (Sam's package 1c/1e, BK 2026-11-06 11:33). Levels 1-3 stay as BK set them on 11/5: no box,
+// Level 1 a read. `plain` is the old no-box rendering; a level listed in box_levels is not plain.
+export const levelPlain = (unit, n) => gaugeRules(unit).write_box === false && !(gaugeRules(unit).box_levels || []).includes(n)
+
+// A gauge's coaching band (manifest ladder `band`: the desk's own head and line), shown on the gauge and on each of its levels.
+export function GaugeBand({ band }) {
+  if (!band?.text) return null
+  return (
+    <aside className="gauge-band" aria-label={band.head || undefined}>
+      {band.head && <div className="gauge-band-head">{band.head}</div>}
+      <p>{band.text}</p>
+    </aside>
+  )
+}
+
+// A level built on a document carries it (`documents` in the pack, text and source line byte for byte from the unit's Doc
+// Assist pack): BK 2026-10-27 10:18, "always add a document for the activity so a kid without paper docs can still get something
+// from it." GuidedWrite shows its own; this is the same figure for a read (Level 1) and a sentence build (Level 3).
+export function DocFigures({ pack, accent }) {
+  const docs = (pack?.documents || []).filter(d => d?.source_text)
+  if (!docs.length) return null
+  return docs.map((d, i) => (
+    <figure key={i} className="stimulus" style={{ borderColor: `${accent}44` }}>
+      {d.source_document && <div className="doc-tag">{d.source_document}</div>}
+      <div className="stimulus-text"><p>{d.source_text}</p></div>
+    </figure>
+  ))
+}
 
 export function ladderLevels(ladder) {
   return [1, 2, 3, 4, 5].map(n => (ladder?.levels || []).find(l => l.level === n) || { level: n, type: null, published: false })
@@ -352,6 +381,12 @@ export function Ladder({ course, unit, skill, prog, onOpenLevel }) {
 // file is never edited and never diverges from the version Danny cleared.
 // Same intent as the L4-source box the shell shows above L5 (App.openLevel).
 export const docStimulus = (stem, docs) => {
+  // "Documents 8 and 10" names two: each comes, in the order named (Josh 2026-11-13, the 11.3A Outside Information gauge).
+  const many = /\bDocuments\s+(\d+(?:\s*(?:,|and|&)\s*\d+)+)/i.exec(String(stem || ''))
+  if (many && docs) {
+    const got = (many[1].match(/\d+/g) || []).map(n => docs[String(Number(n))]).filter(d => d && (d.text || []).length)
+    if (got.length) return { documents: got.map(d => ({ kind: 'text', label: String(d.n), content: (d.text || []).join('\n\n'), citation: d.src || '' })) }
+  }
   const m = /\bDocument\s+(\d+)/i.exec(String(stem || ''))
   const doc = m && docs ? docs[String(Number(m[1]))] : null
   if (!doc || !(doc.text || []).length) return null
@@ -538,7 +573,9 @@ export function SentenceBuild({ pack, onComplete }) {
 // ── L4 · WRITE IT ─────────────────────────────────────────────────────────
 // Checklist visible the whole time, not a hint you ask for. What the kid types
 // is React state and nothing else: never stored, never sent, gone with the tab.
-export function GuidedWrite({ pack, accent, onComplete, noWrite = false, note = null, isTop = false }) {
+export function GuidedWrite({ pack, accent, onComplete, noWrite = false, note = null, paste = null, isTop = false }) {
+  // No model at all, before or after (`model_visible: "never"`): BK 2026-11-06 09:59, "L5 can't show an answer if that's our cold practice attempt."
+  const noModel = pack?.model_visible === 'never'
   // L4 carries one document in `source_text`; a cold rung carries several in `documents[]`.
   // Both are read the same way here, so neither shape renders an empty source box.
   const docs = (pack?.documents || []).length
@@ -604,6 +641,8 @@ export function GuidedWrite({ pack, accent, onComplete, noWrite = false, note = 
           <textarea id="l4-write" className="rep-box" rows={7} value={text} readOnly={done}
                     onChange={e => setText(e.target.value)} />
           <p className="rep-why">Nothing you write here is saved or sent. It’s gone when you close the tab.</p>
+          {/* The one thing that leaves the Arena, and the kid carries it by hand (manifest gauge_rules.paste_line, Sam's 1c). */}
+          {paste && <p className="rep-paste">{paste}</p>}
         </div>
         {checklist.length > 0 && <aside className="checklist" aria-label="Checklist">
           <div className="rep-label">Before you’re done</div>
@@ -628,7 +667,7 @@ export function GuidedWrite({ pack, accent, onComplete, noWrite = false, note = 
               hold-models.mjs, BK's answer-key rule). When it is, the page says so plainly
               rather than showing an empty box — and there is nothing here to reveal, because
               the words never reached the browser. */}
-          {pack.model_response ? (
+          {noModel ? null : pack.model_response ? (
             <>
               <h4>One strong answer</h4>
               <p className="rep-exemplar">{pack.model_response}</p>
@@ -869,6 +908,11 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 .cf-door-label{color:var(--white);font-size:16px;line-height:1.45}
 .cf-door-count{color:var(--grey);font-size:15px;margin-top:2px}
 
+/* ---------- the gauge's coaching band, and the paste direction under a box ---------- */
+.gauge-band{background:var(--card);border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:10px;padding:10px 14px;margin:0 0 16px;max-width:760px}
+.gauge-band-head{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.06em;font-size:14px;color:var(--gold);margin-bottom:3px}
+.gauge-band p{margin:0;color:var(--white);font-size:16px;line-height:1.55}
+.rep-paste{margin:8px 0 0;padding:9px 12px;border-radius:8px;background:rgba(227,179,65,.12);border:1px solid var(--gold);color:var(--white);font-size:16px;line-height:1.5;font-weight:600}
 /* ---------- A COLD RUNG: badge, intro, and the BEFORE WE TALK framing ---------- */
 /* The badge and intro are the desk's own words naming what this rung is. BEFORE WE TALK is
    set apart from the document it frames — it is about how to treat real people, not evidence

@@ -39,7 +39,7 @@ import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
 import { useRefCards, REF_STYLES } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { SkillsLabLane, partThreeLabel, SKILLSLAB_WORDS, SKILLSLAB_STYLES } from './skillslab.jsx'
-import { UnitSplash, UnitOverviewBody, CasefileRoomBody, NextStepBody, usesSplash, cfOpen, nextStepOpen, SPLASH_WORDS, SPLASH_STYLES } from './unitsplash.jsx'
+import { UnitSplash, UnitOverviewBody, CasefileRoomBody, NextStepBody, GaugeRunBody, usesSplash, cfOpen, nextStepOpen, runOf, runOpen, gaugesHidden, SPLASH_WORDS, SPLASH_STYLES } from './unitsplash.jsx'
 import { ChaseScreen, ChaseBar, CHASE_STYLES, CHASE_WORDS } from './chase.jsx'
 import { CivicsRoom, CIVICS_STYLES } from './civics.jsx'
 import { COURSE_KEY } from './deeplinks.js'
@@ -53,6 +53,7 @@ import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLi
 import {
   LADDER_STYLES, SkillGauges, CasefileDoors, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
   UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone, gaugeRules, levelHidden, gaugeTop, noBoxCard,
+  levelPlain, GaugeBand, DocFigures,
 } from './ladder.jsx'
 import { ThrowbackView, THROWBACK_WORDS, THROWBACK_STYLES, useThrowback } from './throwback.jsx'
 import {
@@ -995,7 +996,7 @@ const LANES = [
     intro: 'Practice that runs all year, covering everything taught so far.' },
 ]
 
-function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution, tbData, throwback, tbYear, onThrowback, onPickYear, refs, slModule, onPickModule, onOpenCasefile, onOpenNextStep, onOpenTestReview, sceneYear, sceneLayers, onSceneLayers, onOpenSceneYear }) {
+function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpenMap, onOpenUnitAtlas, wlSets, onOpenSet, onOpenSkill, onOpenUnit, onOpenUnit0, onOpenDocAssist, onOpenActivity, onOpenReview, onBack, lane: laneIn, setLane, stopOpen, onFromConstitution, tbData, throwback, tbYear, onThrowback, onPickYear, refs, slModule, onPickModule, onOpenCasefile, onOpenNextStep, onOpenTestReview, onOpenGaugeRun, sceneYear, sceneLayers, onSceneLayers, onOpenSceneYear }) {
   const constCards = constitutionCards(courseIn)
   // The Scene's files, fetched only where the room is actually open to whoever is looking.
   const sceneOn = !!courseIn?.scene && (courseIn.scene.published === true || PREVIEW_SCENE)
@@ -1053,18 +1054,19 @@ function CourseDoor({ course: courseIn, prog, games, docAssist, atlasMaps, onOpe
                  line={welcomeLine(Object.entries(prog || {}).some(([k, v]) => k.startsWith(`${course.id}:`) && Object.values(v || {}).some(a => (a || []).length)),
                                    course.guide?.lines?.door_enter)} />}
       {/* On a splash unit the gauges sit behind the casefile doors, so Your Skills says so (BK 2026-10-30 13:37). */}
-      {!(lane === 'skills' && !unit) && !(lane === 'skills' && gaugeRules(unit).hidden) && <p className="lane-intro">{lane === 'skills' && unit && usesSplash(unit) ? SPLASH_WORDS.skillsIntro : LANES.find(l => l.key === lane)?.intro}</p>}
+      {!(lane === 'skills' && !unit) && !(lane === 'skills' && gaugesHidden(unit)) && <p className="lane-intro">{lane === 'skills' && unit && usesSplash(unit) ? SPLASH_WORDS.skillsIntro : LANES.find(l => l.key === lane)?.intro}</p>}
 
       {lane === 'skills' && (
         !unit ? <EmptyLane what="Skills" /> : <>
           <p className="unit-now"><span className="unit-now-tag">Now</span> {unitName(unit)}</p>
           {/* Gauges hidden (gauge_rules.hidden): keep the first sentence only; "Gauge work for it goes here" would point at nothing. */}
-          <p className="unit-here">{gaugeRules(unit).hidden ? UNIT_WORDS.here.split('. ')[0] + '.' : UNIT_WORDS.here}</p>
+          <p className="unit-here">{gaugesHidden(unit) ? UNIT_WORDS.here.split('. ')[0] + '.' : UNIT_WORDS.here}</p>
           {/* From 11.3A / 10.3 on, the unit opens on its doors (BK 2026-10-30 13:14). Units built before keep their room. */}
           {usesSplash(unit)
             ? <UnitSplash course={course} unit={unit} maps={mapsForUnit(atlasMaps, unit)} testReviewReady={testReviewReady(unit)}
                           onOpenCasefile={id => onOpenCasefile(unit.slug, id)} onOpenNextStep={() => onOpenNextStep(unit.slug)}
-                          onOpenAtlas={() => onOpenUnitAtlas(unit.slug)} onOpenTestReview={() => onOpenTestReview(unit.slug)} />
+                          onOpenAtlas={() => onOpenUnitAtlas(unit.slug)} onOpenTestReview={() => onOpenTestReview(unit.slug)}
+                          onOpenGaugeRun={() => onOpenGaugeRun(unit.slug)} />
             : <>
           {/* Leo's ruling 10/5 23:31, item 2: the moments card on each door (words BK-approved). */}
           <MomentsCard course={course} unit={unit} maps={atlasMaps} />
@@ -1503,7 +1505,7 @@ function UnitLane({ course, onOpen, onOpenUnit0 }) {
   )
 }
 
-function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, wlSets, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenCasefile, onOpenReview, onOpenNextStep, onOpenAtlas, onOpenTestReview, onBack, onGoNow }) {
+function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, wlSets, onOpenSet, onOpenDocAssist, onOpenActivity, onOpenSkill, onOpenCasefile, onOpenReview, onOpenNextStep, onOpenAtlas, onOpenTestReview, onOpenGaugeRun, onBack, onGoNow }) {
   const now = currentUnit(course)
   const isCurrent = now?.slug === unit.slug
   if (usesSplash(unit)) return (
@@ -1516,7 +1518,8 @@ function UnitRoom({ course, unit, games, prog, docAssist, atlasMaps, onOpenMap, 
         </div>
       )}
       <UnitSplash course={course} unit={unit} maps={mapsForUnit(atlasMaps, unit)} testReviewReady={testReviewReady(unit)}
-                  onOpenCasefile={onOpenCasefile} onOpenNextStep={onOpenNextStep} onOpenAtlas={onOpenAtlas} onOpenTestReview={onOpenTestReview} />
+                  onOpenCasefile={onOpenCasefile} onOpenNextStep={onOpenNextStep} onOpenAtlas={onOpenAtlas} onOpenTestReview={onOpenTestReview}
+                  onOpenGaugeRun={onOpenGaugeRun} />
       <BottomBack onBack={onBack} back={course.label} />
     </div>
   )
@@ -1938,6 +1941,8 @@ function MatchingSet({ pack, accent, onChecked, hintsCleared = false, noWrite = 
         <div className="rep-reveal">
           <h4>The reasoning</h4>
           {left.map(l => rationale[l.key] && <p key={l.key} className="rep-exemplar">{rationale[l.key]}</p>)}
+          {/* The desk's built answer (`frame_fill`, "THE BUILT ANSWER a kid reads, a 5, in ink"), under the shell's L4 heading. */}
+          {pack.frame_fill && <><h4>One strong answer</h4><p className="rep-exemplar">{pack.frame_fill}</p></>}
         </div>
       ) : (
         <div className="rep-reveal">
@@ -2147,7 +2152,7 @@ function reviewExtras(course, unit) {
   return { ...x, _rooms: rooms }
 }
 
-function LevelScreen({ course, plain = false, cardPlain = false, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
+function LevelScreen({ course, plain = false, cardPlain = false, paste = null, band = null, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
   const t = levelType(lv)
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
@@ -2168,10 +2173,10 @@ function LevelScreen({ course, plain = false, cardPlain = false, isTop = false, 
       <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which level it was.</p>
     </div>
   )
-  else if (lv.type === 'matching') body = <MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} noWrite={plain} />
+  else if (lv.type === 'matching') body = <><DocFigures pack={pack} accent={course.accent} /><MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} noWrite={plain} /></>
   else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} docs={docs} />
-  else if (lv.type === 'sentence_build') body = <SentenceBuild pack={pack} onComplete={onComplete} />
-  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} noWrite={plain} note={plain ? lv?.page_note || null : null} isTop={isTop} />
+  else if (lv.type === 'sentence_build') body = <><DocFigures pack={pack} accent={course.accent} /><SentenceBuild pack={pack} onComplete={onComplete} /></>
+  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} noWrite={plain} note={plain ? lv?.page_note || null : null} paste={paste} isTop={isTop} />
   else if (lv.type === 'enrichment') body = <>
     {source?.source_text && (
       <figure className="stimulus" style={{ borderColor: `${course.accent}44` }}>
@@ -2188,6 +2193,7 @@ function LevelScreen({ course, plain = false, cardPlain = false, isTop = false, 
       <div className="detail" style={{ maxWidth: 860 }}>
         <div className="card-type">Level {lv?.level}{t && !cardPlain ? ` · ${t.name}` : ''}</div>
         <h2>{lv?.label || t?.name}</h2>
+        <GaugeBand band={band} />
         {body}
         {coachLine && <CoachSays key={coachLine} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'} line={coachLine} />}
       </div>
@@ -2223,6 +2229,7 @@ export default function App() {
   const [sceneLayers, setSceneLayers] = useState([])  // which of the Scene's layers are lit, in the order they were lit
   const [slModule, setSlModule] = useState(null)      // the Skills Lab room open, by its link name
   const [kyns, setKyns] = useState(false)             // Door 4, Know Your Next Step (a splash unit)
+  const [gaugeRun, setGaugeRun] = useState(false)     // a unit's Gauge Run card (BK 2026-11-06 15:15)
   const [testReview, setTestReview] = useState(false) // a splash unit's Test Review card
   const [daFromCf, setDaFromCf] = useState(false)     // a document opened from inside a casefile door
   const [atlasFromSplash, setAtlasFromSplash] = useState(false)   // a unit's atlas opened from its splash card
@@ -2413,12 +2420,12 @@ export default function App() {
     setThrowback(!!r.throwback); if (r.throwback) setTbYear(r.tbYear || null)
     if (r.lane === 'scene') { setSceneYear(r.sceneYear || null); setSceneLayers(r.sceneLayers || []) }
     setSlModule(r.slModule || null)
-    setKyns(r.at === 'kyns'); setTestReview(r.at === 'testreview'); setDaFromCf(false)
+    setKyns(r.at === 'kyns'); setGaugeRun(r.at === 'gaugerun'); setTestReview(r.at === 'testreview'); setDaFromCf(false)
     if (r.at === 'gauges') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) setGaugesCf(r.cf) }
     if (r.at === 'review') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) { setReview(true); fetchContent(u.brief_ref, setBriefPack) } }
     if (r.at === 'docassist') setPendingDa({ cf: r.cf || null, docN: r.docN ?? null })
     // A gauge level link opens the unit we're in, that gauge, and (once its ladder is in hand) that level.
-    if (r.at === 'gauge') { const u = currentUnit(manifest.courses.find(c => c.id === r.courseId)); if (u && !gaugeRules(u).hidden && roomSkills(manifest.courses.find(c => c.id === r.courseId), u).some(x => x.code === r.skill)) { setUnitSlug(u.slug); setSkill(r.skill); setLadderFrom('door'); setPendingLevel(r.level) } }
+    if (r.at === 'gauge') { const u = currentUnit(manifest.courses.find(c => c.id === r.courseId)); if (u && !gaugesHidden(u) && roomSkills(manifest.courses.find(c => c.id === r.courseId), u).some(x => x.code === r.skill)) { setUnitSlug(u.slug); setSkill(r.skill); setLadderFrom('door'); setPendingLevel(r.level) } }
     window.scrollTo(0, 0)
   }
   useEffect(() => {
@@ -2456,13 +2463,13 @@ export default function App() {
     const h = buildHash({
       office: office && officeVisible(manifest.office, PREVIEW_OFFICE), officeTheme,
       course, unit0, unit, lane: doorLane, review, gaugesCf, daOpen: daOpen && !!daPack, atlasMap: atlasMap?.id, unitAtlas, wlSet: wlSet?.entry.slug,
-      chase, stopOpen, civics, civicsCard, throwback, tbYear, sceneYear, sceneLayers, slModule, kyns, testReview,
+      chase, stopOpen, civics, civicsCard, throwback, tbYear, sceneYear, sceneLayers, slModule, kyns, gaugeRun, testReview,
       daDoc: daCf ? { cf: daCf.id, n: daCf.docs?.[daDoc.i]?.n } : null,
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
     setHere(h)                                              // where the kid is, for the chase pill (10/9)
-  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, throwback, tbYear, sceneYear, sceneLayers, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard, slModule, kyns, testReview])
+  }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, throwback, tbYear, sceneYear, sceneLayers, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard, slModule, kyns, gaugeRun, testReview])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
   useEffect(() => { if (heldUnit && !daOpen && !pendingDa) setUnitSlug(null) }, [heldUnit, daOpen, pendingDa])
 
@@ -2545,17 +2552,18 @@ export default function App() {
   else if (station) screen = <StationScreen course={course} station={station}
                                             onOpenDrill={setDrillIndex}
                                             onBack={() => { setStationSlug(null); setDrillIndex(null) }} />
-  else if (unit && skill && level != null && !gaugeRules(unit).hidden) {
+  else if (unit && skill && level != null && !gaugesHidden(unit)) {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
-    screen = <LevelScreen course={course} plain={gaugeRules(unit).write_box === false} cardPlain={noBoxCard(unit, lv)} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
+    const s0 = (unit.ladders || []).find(l => l.skill === skill)
+    screen = <LevelScreen course={course} plain={levelPlain(unit, level)} cardPlain={noBoxCard(unit, lv)} paste={levelPlain(unit, level) ? null : gaugeRules(unit).paste_line || null} band={s0?.band || null} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
-  else if (unit && skill && !gaugeRules(unit).hidden) {
+  else if (unit && skill && !gaugesHidden(unit)) {
     const ladderBack = ladderFrom === 'door' ? course.label : ladderFrom === 'cf' && gaugesCf ? SPLASH_WORDS.casefile(gaugesCf)
-      : ladderFrom === 'kyns' ? SPLASH_WORDS.next : unit.label
+      : ladderFrom === 'kyns' ? SPLASH_WORDS.next : ladderFrom === 'run' && runOf(unit) ? runOf(unit).title : unit.label
     screen = (
       <div className="wrap">
         <ScreenHeader label={unit.label} color={course.accent}
@@ -2564,6 +2572,8 @@ export default function App() {
         {/* The bank's line for this skill, plus the course desk's own station lines for it. */}
         <CoachSays key={`skill-${course.id}-${skill}`} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'}
                    line={skillLine(skill, course.guide?.lines?.station_enter?.[(course.stations || []).find(x => (x.skill_lines || [])[0] === skill)?.slug] || [])} />
+        {/* The gauge's coaching band (manifest ladder `band`, the desk's own words): shows on the gauge and on every level of it. */}
+        <GaugeBand band={(unit.ladders || []).find(l => l.skill === skill)?.band} />
         <Ladder course={course} unit={unit} skill={skill} prog={prog} onOpenLevel={openLevel} />
         {/* BK 2026-11-05 15:13: "i dont want the 'more reps' thing..i dont like the mechanic of that activity" (unit.gauge_rules.more_reps false). */}
         {gaugeRules(unit).more_reps !== false && <SkillExtras course={course} skill={skill}
@@ -2601,6 +2611,24 @@ export default function App() {
       </div>
     )
   }
+  // THE GAUGE RUN's room (BK 2026-11-06 15:15): the desk's coaching box, then the gauges its casefile scored. Before its day it
+  // is not reachable by link either: the unit's splash shows instead.
+  else if (unit && gaugeRun && runOpen(unit)) {
+    const run = runOf(unit)
+    const leave = () => { setGaugeRun(false); leaveRoomPage(); window.scrollTo(0, 0) }
+    const backLabel = fromDoor ? course.label : unitName(unit)
+    screen = (
+      <div className="wrap">
+        <ScreenHeader label={run.title} onBack={leave} color={course.accent} back={backLabel} />
+        <div className="detail">
+          <h2>{run.title}</h2>
+          <GaugeRunBody course={course} unit={unit} prog={prog}
+                        onOpenSkill={code => { setLadderFrom('run'); setSkill(code); window.scrollTo(0, 0) }} />
+        </div>
+        <BottomBack onBack={leave} back={backLabel} />
+      </div>
+    )
+  }
   // A door that hasn't opened yet (B before its day) is not reachable by link either: the unit's splash shows instead.
   else if (unit && gaugesCf && cfOpen((unit.casefiles || []).find(c => c.id === gaugesCf))) {
     // One casefile's door. This is where the casefile's printed scoring-page QR lands
@@ -2618,7 +2646,8 @@ export default function App() {
                                 wl={(wlSets || []).filter(x => String(x.entry.unit) === String(unit.number))} partThreeLabel={partThreeLabel(course)}
                                 onOpenSkill={code => { setLadderFrom('cf'); setSkill(code); window.scrollTo(0, 0) }}
                                 onOpenDoc={(cfId, i) => { setDaFromCf(true); setDaOpen(true); setDaDoc({ cf: cfId, i }); window.scrollTo(0, 0) }}
-                                onOpenSet={x => { setWlSlug(x); window.scrollTo(0, 0) }} />
+                                onOpenSet={x => { setWlSlug(x); window.scrollTo(0, 0) }}
+                                onOpenGaugeRun={() => { setGaugesCf(null); setGaugeRun(true); window.scrollTo(0, 0) }} />
             : <EmptyLane what={SPLASH_WORDS.casefile(gaugesCf)} />}
         </div>
         <BottomBack onBack={leave} back={backLabel} />
@@ -2703,6 +2732,7 @@ export default function App() {
                                     onOpenSkill={code => { setLadderFrom('unit'); setSkill(code); window.scrollTo(0, 0) }}
                                     onOpenCasefile={id => { setGaugesCf(id); window.scrollTo(0, 0) }}
                                     onOpenNextStep={() => { setKyns(true); window.scrollTo(0, 0) }}
+                                    onOpenGaugeRun={() => { setGaugeRun(true); window.scrollTo(0, 0) }}
                                     onOpenTestReview={() => { setTestReview(true); window.scrollTo(0, 0) }}
                                     onOpenAtlas={() => { setUnitAtlas(true); setAtlasFromSplash(true); window.scrollTo(0, 0) }}
                                     onOpenReview={() => { setRoomFrom('units'); openReview(unit) }}
@@ -2730,6 +2760,7 @@ export default function App() {
       onPickModule={m => setSlModule(m)}
       onOpenCasefile={(slug, id) => { setRoomFrom('door'); setUnitSlug(slug); setGaugesCf(id); window.scrollTo(0, 0) }}
       onOpenNextStep={slug => { setRoomFrom('door'); setUnitSlug(slug); setKyns(true); window.scrollTo(0, 0) }}
+      onOpenGaugeRun={slug => { setRoomFrom('door'); setUnitSlug(slug); setGaugeRun(true); window.scrollTo(0, 0) }}
       onOpenTestReview={slug => { setRoomFrom('door'); setUnitSlug(slug); setTestReview(true); window.scrollTo(0, 0) }}
       onFromConstitution={() => setCivicsFrom('constitution')}
       onOpenSkill={(slug, code) => { setLadderFrom('door'); setUnitSlug(slug); setSkill(code); window.scrollTo(0, 0) }}

@@ -166,11 +166,21 @@ function checkLadder(f, d, type) {
         if (!doc?.source_text || !String(doc.source_text).trim()) fail(f, `${w}: no source_text — the rung would show an empty document box.`)
         if (!doc?.source_document) fail(f, `${w}: source text with no source_document pointer (canon 6, quotation provenance).`)
       })
+    } else if (d.no_document === true) {
+      // A rung the desk built with no document on purpose (the 11.3A Thesis Level 4: "No document. The casefile question, the
+      // one on your cover and on Make the Case."). Allowed only when its prompt points at no document, so the kid is never
+      // sent to one the page does not show (BK 2026-09-25 / 2026-10-27).
+      if (d.prompt && DOC_RX.test(d.prompt)) fail(f, 'guided_write: no_document, but the prompt points at a document.')
+      if (d.source_text) fail(f, 'guided_write: no_document and source_text both set.')
     } else {
       need('source_text')
       if (!d.source_document) fail(f, 'guided_write: source text with no source_document pointer (canon 6, quotation provenance).')
     }
-    need('prompt'); need('model_response', "guided_write: no 'model_response' — 'I'm done' would reveal nothing.")
+    need('prompt')
+    // A rung with no model at all (`model_visible: "never"`, BK 2026-11-06 09:59 for the 11.3A gauge run's Level 5: "L5 can't show
+    // an answer if that's our cold practice attempt.") must carry none, so nothing can leak; every other rung needs one.
+    if (d.model_visible === 'never') { if (d.model_response) fail(f, "guided_write: model_visible 'never' but a model_response is in the file.") }
+    else need('model_response', "guided_write: no 'model_response' — 'I'm done' would reveal nothing.")
     // A COLD rung (`cold: true`) is the same activity with the scaffold taken away: the kid writes
     // against a document they have not seen, with no checklist and no sentence starter. That is the
     // whole point of it, so the L4 scaffold contract is inverted rather than waived — a cold rung

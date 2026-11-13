@@ -1,0 +1,65 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "TH",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 3,
+  "_activity": "Build it: your answer and your reason",
+  "type": "sentence_build",
+  "intro": "Build the sentence. Drag each piece into the blank where it belongs.",
+  "sentence_frame": "The evidence will show that ___ because ___.",
+  "_printed_frame": "The evidence will show that ________ because ________.",
+  "blanks": [
+    {
+      "blank_id": 1,
+      "label": "your answer",
+      "tiles": [
+        {
+          "text": "expansion was not worth what it cost",
+          "correct": true
+        },
+        {
+          "text": "expansion happened between 1801 and 1850",
+          "correct": false
+        },
+        {
+          "text": "many people disagreed about expansion",
+          "correct": false
+        }
+      ]
+    },
+    {
+      "blank_id": 2,
+      "label": "your reason",
+      "tiles": [
+        {
+          "text": "the nation grew by taking land from people who held treaties with it",
+          "correct": true
+        },
+        {
+          "text": "it is an important topic in American history",
+          "correct": false
+        },
+        {
+          "text": "the documents in this casefile look at it from several sides",
+          "correct": false
+        }
+      ]
+    }
+  ],
+  "correct_sentence": "The evidence will show that expansion was not worth what it cost because the nation grew by taking land from people who held treaties with it.",
+  "rationale": "The first blank has to be an answer, not a description. The second has to be a reason you could prove, not a reason the topic is interesting.",
+  "hints": [
+    "“Expansion happened” is a fact. It isn't an answer to “was it worth it.”",
+    "A reason about the documents is not a reason about history."
+  ],
+  "practice_only": true,
+  "submitted_to_teacher": false
+}

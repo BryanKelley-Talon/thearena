@@ -12,7 +12,6 @@
   "_activity": "On your own: Documents 5 and 6",
   "type": "guided_write",
   "cold": true,
-  "badge": "LEVEL 5  -  PRACTICE  -  ON YOUR OWN",
   "documents": [
     {
       "source_document": "Document 5 - President Andrew Jackson, Second Annual Message to Congress, December 6, 1830",
@@ -28,15 +27,14 @@
     }
   ],
   "prompt": "Describe the historical context surrounding these documents.",
-  "intro": "No hints, no starter, no checklist. This is the one you do the way you would on the exam.",
+  "intro": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
   "sentence_starter": null,
   "checklist": [],
   "lines": 3,
-  "write_it_in": "Right here. This one is practice -- it does not get turned in or graded.",
   "counts_for": null,
-  "model_response": "After gold was found on Cherokee land in 1829 and Georgia pressed to take it, Congress passed the Indian Removal Act in 1830. By the end of that year, Jackson was telling Congress that removal was nearly finished and good for everyone, while the Cherokee - who had a written constitution, a newspaper and their own government - were asking the American people to stop it.",
-  "model_visible": "always",
+  "model_visible": "never",
   "_model_note": "PULLED FROM REQUIRED, PRACTICE ONLY (BK 2026-10-27 12:25 RULING-LOG: \"the jump gets pulled...practice\"). Level 5 is Arena practice -- ungraded, not routed to the BONUS Gauge Run log, not submitted anywhere. The 10/23 BONUS-log/Completion design this rung carried is superseded; it is NOT the required cold rep under the 10/27 11:05 one-per-casefile ruling. Casefile A's actual required cold rep is parked, not yet built -- see CARRY-FORWARD 8 and RULING-LOG.",
-  "practice_only": true,
-  "submitted_to_teacher": false
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "_corrected": "Josh 2026-11-13: model removed, before and after (CALL 2, BK 2026-11-06 09:59); the 'does not get turned in or graded' line goes with it (CALL 2: it is turned in now); the PRACTICE badge dropped for the same reason (no new words written); intro = the constant frame 1b. US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07."
 }

@@ -1,0 +1,48 @@
+{
+  "_course": "US History and Government 11R",
+  "_unit": "11.3A - Building a Nation, 1801-1850",
+  "_casefile": "A - DISCOVERY",
+  "_built": "2026-11-13 by Josh (flashpoint), ported from Sam's gauge-runs PDF; documents from the unit's Doc Assist pack.",
+  "_source": "US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07",
+  "_cleared": "Danny 2026-11-09 10:57 EST: 174 claims checked, 8 fixed, 0 unsupported (one cold reader).",
+  "_blessed": "BK 2026-11-06 11:33 (all seven calls), 14:10 (HC Level 4, ruled A), 14:14 (coaching box 1f).",
+  "_licence": "ORIGINAL (Sam). Document text: the casefile's own, as the Doc Assist pack carries it.",
+  "skill_line": "EX",
+  "arena_scores": false,
+  "arena_holds_work": false,
+  "step": 1,
+  "_activity": "Watch one get built: Worcester v. Georgia, 1832",
+  "type": "matching",
+  "modeled": true,
+  "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+  "source_document": "Document 7 — Chief Justice John Marshall, Worcester v. Georgia, 1832",
+  "left": [
+    {
+      "key": "a",
+      "label": "In 1832, Chief Justice Marshall ruled that the laws of Georgia “can have no force” on Cherokee land (Doc 7)."
+    }
+  ],
+  "right": [
+    {
+      "key": "1",
+      "label": "This shows the Supreme Court sided with the Cherokee against a state, which matters because removal went ahead anyway — so the law protected them on paper and not on the ground."
+    }
+  ],
+  "correct": {
+    "a": "1"
+  },
+  "rationale": {
+    "a": "It says what the ruling shows in the student's own words, it says why that matters, and it lands back on the claim that expansion cost people their rights. Notice it does not repeat the quotation."
+  },
+  "frame": "This shows ________, which matters because ________.",
+  "frame_fill": "This shows the Supreme Court sided with the Cherokee against a state, which matters because removal went ahead anyway — so the law protected them on paper and not on the ground.",
+  "models_band": "every piece explained; analysis outweighs description",
+  "practice_only": true,
+  "submitted_to_teacher": false,
+  "documents": [
+    {
+      "source_document": "Document 7 — Chief Justice John Marshall, Worcester v. Georgia, 1832",
+      "source_text": ". . . The Cherokee nation, then, is a distinct community occupying its own territory, with boundaries accurately described, in which the laws of Georgia can have no force, and which the citizens of Georgia have no right to enter, but with the assent [agreement] of the Cherokees themselves, or in conformity with treaties, and with the acts of congress. . . ."
+    }
+  ]
+}

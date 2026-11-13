@@ -16,7 +16,7 @@
   "context_line": "A song from 1808, after the Embargo Act stopped American ships from trading overseas.",
   "_pointer": "NYS Regents, Jan 2024, Q5–6 (ushg-12024-examw.pdf p. 3), word for word; crop unit03-0124-mc05.png. Context line is ours.",
   "prompt": "Describe the historical context surrounding this document.",
-  "sentence_starter": "In 1807, ___",
+  "sentence_starter": "After ___, ___. By [year], ___.",
   "checklist": [
     "Did you name when?",
     "Did you name what Britain and France were doing?",
@@ -24,6 +24,8 @@
   ],
   "model_response": "In 1807, Britain and France were at war and both seized American ships on the ocean, which is why Jefferson's Embargo Act stopped American ships from trading overseas - a law the song blames him for, even though it hurt New England's own shippers most.",
   "model_visible": "always",
-  "practice_only": true,
-  "submitted_to_teacher": false
+  "practice_only": false,
+  "submitted_to_teacher": false,
+  "intro": "Now you write it. The sentence starter is the same one on your Make the Case page — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+  "_corrected": "Josh 2026-11-13: starter 'In 1807, ___' -> 'After ___, ___. By [year], ___.' (CALL 2, BK ruled A 2026-11-06 14:10); intro = the constant frame 1b. US11R_11.3A_GAUGE-RUNS_WORDING_v4_note-fix_2026-11-09.pdf, md5 7a6bb22184687b9ab0cfb79408c62b07."
 }
