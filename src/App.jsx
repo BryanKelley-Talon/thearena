@@ -2262,6 +2262,10 @@ export default function App() {
   const [civicsFrom, setCivicsFrom] = useState(null)    // 'constitution' when the room was opened from THE CONSTITUTION lane (Back goes there)
   const [civicsCard, setCivicsCard] = useState(null)    // a card address: #/us/11.2/amendments/14 (10/19)
   const [here, setHere] = useState('')                  // the current page's address (the chase pill shows only where a chase link sent the kid)
+  const hereRef = useRef('')
+  // A document opened from a Threads or Issues stop goes Back to that stop (Danny 2026-11-13 10:48, item 4: it landed on the
+  // other unit's Doc Assist list, then that unit's page, and the kid lost the thread).
+  const [daReturn, setDaReturn] = useState(null)
   const [daCfFocus, setDaCfFocus] = useState(null)       // a casefile link's casefile, kept in the address bar                          // which content_ref the loaded Doc Assist pack is
 
   useEffect(() => {
@@ -2424,6 +2428,7 @@ export default function App() {
     if (r.at === 'gauges') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) setGaugesCf(r.cf) }
     if (r.at === 'review') { const u = (manifest.courses.find(c => c.id === r.courseId)?.units || []).find(x => x.slug === r.unitSlug); if (u) { setReview(true); fetchContent(u.brief_ref, setBriefPack) } }
     if (r.at === 'docassist') setPendingDa({ cf: r.cf || null, docN: r.docN ?? null })
+    setDaReturn(r.at === 'docassist' && r.docN != null && /\/(threads|issues)\/[^/]+$/.test(hereRef.current || '') ? hereRef.current : null)
     // A gauge level link opens the unit we're in, that gauge, and (once its ladder is in hand) that level.
     if (r.at === 'gauge') { const u = currentUnit(manifest.courses.find(c => c.id === r.courseId)); if (u && !gaugesHidden(u) && roomSkills(manifest.courses.find(c => c.id === r.courseId), u).some(x => x.code === r.skill)) { setUnitSlug(u.slug); setSkill(r.skill); setLadderFrom('door'); setPendingLevel(r.level) } }
     window.scrollTo(0, 0)
@@ -2468,7 +2473,7 @@ export default function App() {
       daCf: daOpen && !daDoc ? daCfFocus : null,
     })
     if (h !== location.hash && !(h === '' && !location.hash)) history.replaceState(null, '', h || location.pathname + location.search)
-    setHere(h)                                              // where the kid is, for the chase pill (10/9)
+    setHere(h); hereRef.current = h                          // where the kid is, for the chase pill (10/9)
   }, [manifest, office, officeTheme, course, unit0, unit, doorLane, review, gaugesCf, throwback, tbYear, sceneYear, sceneLayers, daOpen, daPack, daDoc, daCfFocus, atlasMap, unitAtlas, wlSet, chase, stopOpen, civics, civicsCard, slModule, kyns, gaugeRun, testReview])
   useEffect(() => { if (!daOpen || daDoc) setDaCfFocus(null) }, [daOpen, daDoc])
   useEffect(() => { if (heldUnit && !daOpen && !pendingDa) setUnitSlug(null) }, [heldUnit, daOpen, pendingDa])
@@ -2587,16 +2592,20 @@ export default function App() {
     const cf = openCasefiles(daPack).find(c => c.id === daDoc.cf)
     const doc = cf?.docs?.[daDoc.i]
     const go = i => { setDaDoc({ cf: daDoc.cf, i }); window.scrollTo(0, 0) }
-    const back = () => { setDaDoc(null); if (daFromCf) { setDaOpen(false); setDaFromCf(false) } window.scrollTo(0, 0) }
+    const back = () => {
+      if (daReturn) { const h = daReturn; setDaReturn(null); location.hash = h; return }
+      setDaDoc(null); if (daFromCf) { setDaOpen(false); setDaFromCf(false) } window.scrollTo(0, 0)
+    }
+    const backTo = daReturn ? (LANES.find(l => daReturn.includes(`/${l.key}/`))?.label || DA.backTo(cf.id, cf)) : DA.backTo(cf.id, cf)
     screen = !doc ? null : (
       <div className="wrap">
-        <ScreenHeader label={DA.docLabel(doc.n)} onBack={back} color={course.accent} back={DA.backTo(cf.id, cf)} />
+        <ScreenHeader label={DA.docLabel(doc.n)} onBack={back} color={course.accent} back={backTo} />
         <DocAssistDoc pack={daPack} doc={doc} refs={refs} portrait={course.guide?.portrait || BK_PORTRAIT}
                       paper={paperOf(unit.doc_assist?.paper, cf.id)}
                       onPrev={daDoc.i > 0 ? () => go(daDoc.i - 1) : null}
                       onNext={daDoc.i < cf.docs.length - 1 ? () => go(daDoc.i + 1) : null}
                       maps={atlasMaps} onOpenMap={setAtlasId} />
-        <BottomBack onBack={back} back={DA.backTo(cf.id, cf)} />
+        <BottomBack onBack={back} back={backTo} />
       </div>
     )
   }

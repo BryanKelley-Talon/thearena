@@ -99,7 +99,9 @@ function Story({ card, onBack, words, nowLabel }) {
                 credit={card.image.credit}
                 label={card.image.kind === 'archival' ? 'Archival' : card.image.kind === 'ai' ? 'Made for this room' : null} />
       )}
-      {body.map((t, i) => <p key={i} className="tb-body">{t}</p>)}
+      {/* A body paragraph that repeats the lede word for word prints once (Danny 2026-11-13 10:48, item 3: all five "average
+          family" cards carry their first paragraph as both). The desk's file is untouched; nothing is reworded. */}
+      {body.filter((t, i) => !(i === 0 && card.lede && String(t).trim() === String(card.lede).trim())).map((t, i) => <p key={i} className="tb-body">{t}</p>)}
       {said.length > 0 && <div className="tb-said">{said.map((q, i) => <Quote key={i} text={q.text} cite={q.cite} />)}</div>}
       {card.record_line && (
         <aside className="tb-record">
@@ -428,7 +430,7 @@ export const THROWBACK_STYLES = `
 .tb-masthead h2{font-family:'Playfair Display',Georgia,serif;font-weight:900;text-shadow:none;
   font-size:clamp(30px,7.2vw,62px);line-height:1.02;letter-spacing:.01em;margin:0;text-align:center;
   color:#17130D;text-transform:uppercase}
-.tb-edition{text-align:center;margin:8px 0 0;padding:5px 0;font-size:clamp(10px,1.5vw,12px);
+.tb-edition{text-align:center;margin:8px 0 0;padding:5px 0;font-size:clamp(12px,1.5vw,13px);
   color:#3A3123;text-transform:uppercase;letter-spacing:.22em;font-family:'Barlow Condensed',sans-serif;
   border-top:1px solid #17130D;border-bottom:1px solid #17130D}
 .tb-close{position:absolute;right:-6px;top:-10px;background:none;border:0;font-size:30px;line-height:1;
@@ -442,7 +444,7 @@ export const THROWBACK_STYLES = `
   letter-spacing:-.01em}
 .tb-item-lede{font-size:14.5px;line-height:1.62;color:#2C251A;text-align:justify;hyphens:auto}
 .tb-item-go{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.14em;
-  font-size:11.5px;color:#7A1F12}
+  font-size:12px;color:#7A1F12}
 /* The lead. One story runs the width of the page above the fold. */
 .tb-lead{border-bottom:2px solid #17130D;padding-bottom:18px;margin-bottom:4px;gap:10px}
 .tb-lead .tb-item-head{font-size:clamp(25px,4.6vw,40px);line-height:1.04;text-align:center;letter-spacing:-.015em}
@@ -490,14 +492,14 @@ export const THROWBACK_STYLES = `
 .tb-cut img{display:block;margin:0 auto;max-width:100%;max-height:min(58vh,520px);width:auto;height:auto;
   border:1px solid #17130D;border-radius:0;background:#F6EFDD}
 .tb-cut figcaption{margin:9px 0 0;font-size:13.5px;line-height:1.55;color:#2C251A;text-align:center}
-.tb-cut .tb-credit{display:block;font-size:11.5px;line-height:1.5;color:#6B5B44;margin-top:5px;
+.tb-cut .tb-credit{display:block;font-size:12px;line-height:1.5;color:#6B5B44;margin-top:5px;
   font-family:'Libre Baskerville',Georgia,serif;max-width:70ch;margin-left:auto;margin-right:auto}
-.tb-cut .tb-label{display:block;font-size:10.5px;color:#7A1F12;margin-top:6px;
+.tb-cut .tb-label{display:block;font-size:12px;color:#7A1F12;margin-top:6px;
   font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.17em}
 .tb-cut .tb-fig-missing{border:1px dashed #B5A48A;background:rgba(23,19,13,.045);
   padding:22px;text-align:center;color:#5A4C39;font-size:13.5px;line-height:1.55}
 .tb-cut .tb-fig-tag{display:block;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
-  letter-spacing:.15em;font-size:11.5px;color:#7A1F12;margin-bottom:6px}
+  letter-spacing:.15em;font-size:12px;color:#7A1F12;margin-bottom:6px}
 
 /* A story, read on the page. */
 .tb-kicker{margin:0 0 6px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
@@ -517,7 +519,7 @@ export const THROWBACK_STYLES = `
 .tb-leaves{background:rgba(23,19,13,.045);border:1px solid #C0B094}
 .tb-record p,.tb-counter p,.tb-leaves p{margin:0 0 6px;font-size:14.5px;line-height:1.62;color:#2C251A}
 .tb-tag{display:block;margin:0 0 8px;font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;
-  letter-spacing:.17em;font-size:11.5px;color:#7A1F12}
+  letter-spacing:.17em;font-size:12px;color:#7A1F12}
 .tb-who{font-style:italic;color:#4A3F2C!important}
 .tb-after{color:#4A3F2C!important}
 .tb-src{display:block;font-size:12px;line-height:1.5;color:#6B5B44}
@@ -537,7 +539,7 @@ export const THROWBACK_STYLES = `
 .tb-then-now{margin:0;font-size:14px;line-height:1.6;color:#4A3F2C;padding:9px 12px;
   background:rgba(23,19,13,.05);border-left:3px solid #7A1F12}
 .tb-now-tag{display:inline-block;margin-right:9px;font-family:'Barlow Condensed',sans-serif;
-  text-transform:uppercase;letter-spacing:.14em;font-size:11.5px;color:#7A1F12}
+  text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:#7A1F12}
 .tb-foot{margin:14px 0 0;font-size:13.5px;line-height:1.6;color:#4A3F2C;padding-top:12px;
   border-top:1px solid #C0B094}
 .tb-story-back{background:none;border:0;cursor:pointer;color:#7A1F12;font-size:15px;padding:0 0 10px}

@@ -331,19 +331,19 @@ export const THREADS_STYLES = `
 .threads .col{fill:color-mix(in srgb,var(--white) 3%,transparent);stroke:var(--edge);stroke-width:1}
 .threads .col.coming{fill:none;stroke-dasharray:4 6;opacity:.6}
 .threads .col-label{fill:var(--gold);font-family:'Barlow Condensed',sans-serif;font-size:17px;letter-spacing:.08em}
-.threads .col-coming{fill:var(--grey);font-size:11px;text-transform:uppercase;letter-spacing:.12em}
+.threads .col-coming{fill:var(--grey);font-size:12px;text-transform:uppercase;letter-spacing:.12em}
 .threads .stop{cursor:pointer;outline:none}
 .threads .stop .hit{fill:transparent}
 .threads .stop .dot{fill:var(--canvas);stroke-width:4}
 .threads .stop .interchange{fill:var(--canvas);stroke:var(--white);stroke-width:2.5}
-.threads .stop .stop-when{fill:var(--grey);font-size:11px}
+.threads .stop .stop-when{fill:var(--grey);font-size:12px}
 .threads .stop:hover .dot,.threads .stop:focus-visible .dot{fill:var(--white)}
 .threads .stop:focus-visible .hit{stroke:var(--gold-lit);stroke-width:2;rx:8}
 .threads .stop.open .dot{fill:var(--gold)}
 .threads .stop.open .stop-when{fill:var(--gold);font-weight:700}
 .threads .stop.building{cursor:default}
 .threads .stop.building .dot{stroke-dasharray:3 3;opacity:.55}
-.threads .stop.building .stop-when{fill:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-size:10px}
+.threads .stop.building .stop-when{fill:var(--dim);text-transform:uppercase;letter-spacing:.08em;font-size:12px}
 
 .threads-phone{display:none}
 @media (max-width:700px){
