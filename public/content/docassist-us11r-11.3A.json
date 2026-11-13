@@ -1,6 +1,6 @@
 {
   "_built": "Josh (flashpoint) 2026-10-31, ported from Sam's In/da_113A.py and us11r-curriculum/skills/u113/words_113A.py.",
-  "_signed": "Danny (copy-desk) 2026-10-30 14:24 EDT (113 claims, 1 fix applied, 0 unsupported) and 2026-10-31 08:48 EDT (pack file itself, unchanged since the 14:24 clearance).",
+  "_signed": "Danny (copy-desk) 2026-10-30 14:24 EDT (113 claims, 1 fix applied, 0 unsupported) and 2026-10-31 08:48 EDT (pack file itself, unchanged since the 14:24 clearance). Re-port 2026-11-13: Danny 2026-11-08 19:24 EST cleared US11R_11.3A_DocAssist_A_WORDING_v2_2026-11-06.pdf (md5 43905dca4ea6a6addc810f013cb52f1b), 68 claims, 2 fixed, 0 unsupported.",
   "_source": "US11R_11.3A_DocAssist_WORDING_SIGNED_2026-10-30.pdf, md5 8cb31726acbda0d0d52aebf21102403e.",
   "_ruled": "CARRY-FORWARD §6 DOC ASSIST (BK 2026-10-01 08:16); shape unchanged since 11.2 (BK 2026-10-08 21:37 N5; BK 10/1 09:25 the four-question walk).",
   "tool": "Doc Assist",
@@ -738,7 +738,7 @@
           "n": 8,
           "title": "Manifest destiny, 1845",
           "kind": "text",
-          "src": "Source: John L. O'Sullivan, “Annexation,” United States Magazine and Democratic Review, 1845 (adapted)",
+          "src": "Source: “Annexation,” United States Magazine and Democratic Review, 1845, attributed to John L. O'Sullivan (adapted)",
           "page": 21,
           "steps": [
             {
@@ -852,15 +852,15 @@
               "tag": "Q1 · GEOGRAPHIC CONTEXT",
               "your_q": 19,
               "mode": null,
-              "question": "Scan the code. In the Atlas, open **11.3A → What the United States took by 1853** and find the land that is in dispute on this map. Texas and Mexico both claimed it. What happened to that land, and how did the two claims lead to war?",
+              "question": "Look at the map on page 22. Texas and Mexico both claimed the land between the two dashed lines. What did the United States do about that land, and how did the two claims lead to war?",
               "line": "The first two blanks are on this map. Follow the line Texas claimed to the river it runs along, and read its name. Then find Mexico's line: which way does it sit from Texas's claim?"
             },
             {
               "tag": "Q1 · GEOGRAPHIC CONTEXT",
               "your_q": 19,
               "mode": null,
-              "question": "Scan the code. In the Atlas, open **11.3A → What the United States took by 1853** and find the land that is in dispute on this map. Texas and Mexico both claimed it. What happened to that land, and how did the two claims lead to war?",
-              "line": "The last two blanks need the Atlas. Scan the ATLAS code in the margin and open 11.3A → What the United States took by 1853. Find the same land and read its label and its year. For what the two claims led to, go back to Day 3's What You Need to Know: what happened in 1846?"
+              "question": "Look at the map on page 22. Texas and Mexico both claimed the land between the two dashed lines. What did the United States do about that land, and how did the two claims lead to war?",
+              "line": "The last two blanks are not on the map. In the Atlas, 11.3A → What the United States Took by 1853 shows the same land and what became of it. For what the two claims led to, go back to Day 3's What You Need to Know: what happened in 1846?"
             },
             {
               "tag": "CHECK",
@@ -1264,5 +1264,6 @@
     "oe_where_label": "OUTSIDE INFORMATION · WHERE TO LOOK"
   },
   "_shape_annotate": "Same as Global v4: pack 'annotate' (methods text|picture|map as [tag, step]); docs[].annotate = {kind, notes[{where, mark, note}], oe{kind, text}}. No French on US.",
-  "_pages": "Josh 2026-11-06 10:5x: doc pages and each close's 'starting on page N' re-read off the printed footers of Casefile A v23 (US11R_11.3A_CasefileA_STUDENT_v23.pdf, 30 pp); v22's TEST PRACTICE page (15) moved Docs 6-11 by one (Sam 10:48 F1). No other word changed."
+  "_pages": "Josh 2026-11-06 10:5x: doc pages and each close's 'starting on page N' re-read off the printed footers of Casefile A v23 (US11R_11.3A_CasefileA_STUDENT_v23.pdf, 30 pp); v22's TEST PRACTICE page (15) moved Docs 6-11 by one (Sam 10:48 F1). No other word changed.",
+  "_ported_2026_11_13": "Josh 2026-11-13: four strings re-ported from Sam's current skills/doc-assist/da_113A.py (md5 26fada69) and skills/u113/words_113A.py (md5 f0915ba7), the sources of the cleared v2 PDF: Doc 8 source line (attributed to O'Sullivan), Doc 9 Q19 question at both GEOGRAPHIC CONTEXT steps ({MAPPG} bound to 22, as v2 prints it), Doc 9 walk step 4 line. Every other field already matched the source; image_alt, image, describe and pages kept as served."
 }
