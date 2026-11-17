@@ -592,6 +592,12 @@
             "hidden": true,
             "_source": "BK 2026-11-06 10:01: \"for global...we could talk more about it later, keep it hidden for now.\" 10.3's gauges do not show (casefile rooms show documents only; gauge links land on the unit). Content files untouched."
           },
+          "card_badges": {
+            "casefile": "images/arena/graded-badge.webp",
+            "review": "images/arena/review-badge.webp",
+            "next": "images/arena/next-badge.webp",
+            "_source": "BK 2026-11-17 10:53, \"3. Yes.\" to Global matching the US 11.3A seals (Josh's question at 10:4x). Same art, same rules: decorative, no words, dimmed while a card is shut."
+          },
           "slug": "unit-3",
           "number": "10.3",
           "label": "10.3",
