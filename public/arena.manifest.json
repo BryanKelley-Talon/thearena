@@ -2519,6 +2519,8 @@
           "gauge_run": {
             "casefile": "A",
             "title": "Bonus",
+          "badge": "images/arena/bonus-badge.webp",
+          "_badge": "BK 2026-11-17 10:27 ('needs to have some sort of gold star/badging on it') and 10:29, his own Gemini generation (gold seal, star, ribbons; no text, no logo). Background keyed out, cropped, 192 px WebP; original kept in Josh's assets/inbox/_processed/.",
             "_title": "BK 2026-11-13 10:44 (chat, carried by Sam 10:45): 'its going to be a card slotted between the A and B cards on Arena...titled Bonus'. Replaces 1f's heading as the card's title.",
             "sub": "Casefile A came back. Pick the gauge you scored lowest on — that's where you'll grow fastest.",
             "box": [

@@ -116,12 +116,14 @@ const NEXT_PARTS = course => [
   { code: isUS(course) ? 'CP' : 'EI', room: 'read-the-doc', roomName: 'Read the Doc' },
 ]
 
-function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now }) {
+function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now, badge }) {
   const style = paper ? { '--paper': paper.sheet, '--paper-tint': paper.tint } : undefined
   const cls = `us-door${paper ? ' paper' : ''}${open ? '' : ' shut'}${kind ? ` ${kind}` : ''}`
   const body = (
     <>
       {now && <span className="us-now">{W.now}</span>}
+      {/* A card's badge (manifest gauge_run.badge): decorative, the card already says what it is. BK 2026-11-17 10:27 / 10:29, his Gemini art. */}
+      {badge && <img className="us-badge" src={`/${badge}`} alt="" aria-hidden="true" />}
       <span className="us-door-id">{title}</span>
       {sub && <span className="us-door-sub">{sub}</span>}
       {paper && <span className="us-door-copy"><span className="us-swatch" aria-hidden="true" />{W.copy(paper)}</span>}
@@ -156,7 +158,7 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
                       onOpen={() => onOpenCasefile(cf.id)} />,
             // The Gauge Run card sits right after the casefile it runs (BK 15:15: "between Casefile A and Casefile B").
             run && run.casefile === cf.id && (
-              <DoorCard key={`run-${cf.id}`} id="us-card-run" kind="run" title={run.title} sub={run.sub}
+              <DoorCard key={`run-${cf.id}`} id="us-card-run" kind="run" title={run.title} sub={run.sub} badge={run.badge || null}
                         open={runOpen(unit)} label={runLabel(unit)} onOpen={onOpenGaugeRun} />
             ),
           ]
@@ -307,6 +309,12 @@ export function NextStepBody({ course, unit, prog, onOpenGauge, onOpenLab }) {
 
 export const SPLASH_STYLES = `
 .us-door.run:not(.shut){border-color:var(--gold)}
+/* The Bonus card's gold seal, top right (BK 2026-11-17). Room is kept on the right so the title never runs under it. */
+.us-door{position:relative}
+.us-door.run{padding-right:78px}
+.us-badge{position:absolute;top:8px;right:8px;width:64px;height:64px;pointer-events:none;filter:drop-shadow(0 3px 6px rgba(0,0,0,.45))}
+.us-door.shut .us-badge{opacity:.55;filter:grayscale(.4)}
+@media (max-width:480px){.us-badge{width:56px;height:56px}.us-door.run{padding-right:70px}}
 .run-box{background:var(--card);border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:10px;padding:12px 16px;margin:0 0 22px;max-width:760px}
 .run-box p{margin:0 0 9px;color:var(--white);font-size:17px;line-height:1.55}
 .run-box p:last-child{margin-bottom:0;font-weight:600}
