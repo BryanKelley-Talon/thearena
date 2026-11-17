@@ -19,7 +19,7 @@
 // edit plus content files — no code change.
 // ============================================================
 import { isSandboxHost } from './sandbox-tag.js'
-import { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useStuck, CoachSays, BK_PORTRAIT } from './coach.jsx'
 
 // ── PROGRESS (this device only, level numbers only) ───────────────────────
@@ -131,8 +131,16 @@ export const gaugeTop = unit => [5, 4, 3, 2, 1].find(n => !levelHidden(unit, n))
 export const levelPlain = (unit, n) => gaugeRules(unit).write_box === false && !(gaugeRules(unit).box_levels || []).includes(n)
 
 // A gauge's coaching band (manifest ladder `band`: the desk's own head and line), shown on the gauge and on each of its levels.
-export function GaugeBand({ band }) {
+export function GaugeBand({ band, fold = false }) {
   if (!band?.text) return null
+  // On a level screen the band may fold (manifest gauge_rules.band_fold, Sam 2026-11-17 item 3): the kid read it on the gauge,
+  // so it is one tap away, closed, with the desk's own head as the tap. Wording untouched; no head, no fold.
+  if (fold && band.head) return (
+    <details className="gauge-band gauge-band-fold">
+      <summary>{band.head}</summary>
+      <p>{band.text}</p>
+    </details>
+  )
   return (
     <aside className="gauge-band" aria-label={band.head || undefined}>
       {band.head && <div className="gauge-band-head">{band.head}</div>}
@@ -141,17 +149,27 @@ export function GaugeBand({ band }) {
   )
 }
 
+// The call-out above the first document on a gauge-run level screen (manifest gauge_rules.source_callout, Sam's exact words,
+// 2026-11-17 item 1a). One line, once per screen, printed from the manifest and never retyped.
+export function SourceCallout({ text }) {
+  if (!text) return null
+  return <p className="source-callout" role="note">{text}</p>
+}
+
 // A level built on a document carries it (`documents` in the pack, text and source line byte for byte from the unit's Doc
 // Assist pack): BK 2026-10-27 10:18, "always add a document for the activity so a kid without paper docs can still get something
 // from it." GuidedWrite shows its own; this is the same figure for a read (Level 1) and a sentence build (Level 3).
-export function DocFigures({ pack, accent }) {
+export function DocFigures({ pack, accent, callout = null }) {
   const docs = (pack?.documents || []).filter(d => d?.source_text)
   if (!docs.length) return null
   return docs.map((d, i) => (
-    <figure key={i} className="stimulus" style={{ borderColor: `${accent}44` }}>
-      {d.source_document && <div className="doc-tag">{d.source_document}</div>}
-      <div className="stimulus-text"><p>{d.source_text}</p></div>
-    </figure>
+    <React.Fragment key={i}>
+      {i === 0 && <SourceCallout text={callout} />}
+      <figure className="stimulus" style={{ borderColor: `${accent}44` }}>
+        {d.source_document && <div className="doc-tag">{d.source_document}</div>}
+        <div className="stimulus-text"><p>{d.source_text}</p></div>
+      </figure>
+    </React.Fragment>
   ))
 }
 
@@ -393,7 +411,7 @@ export const docStimulus = (stem, docs) => {
   return { kind: 'text', content: (doc.text || []).join('\n\n'), citation: doc.src || '' }
 }
 
-function BestFitItem({ item, n, total, onAnswered, Stimulus, accent, docs }) {
+function BestFitItem({ item, n, total, onAnswered, Stimulus, accent, docs, callout = null }) {
   const [picked, setPicked] = useState(null)
   const [shown, setShown] = useState(0)
   const opts = Object.entries(item.options || {}).map(([key, text]) => ({ key, text }))
@@ -408,7 +426,7 @@ function BestFitItem({ item, n, total, onAnswered, Stimulus, accent, docs }) {
           the gate enforces it). Same `stimulus` shape as the Part I rooms, source line and all. */}
       {(() => {
         const stim = item.stimulus || docStimulus(item.stem, docs)
-        return stim && Stimulus ? <Stimulus stimulus={stim} accent={accent || '#C9A646'} /> : null
+        return stim && Stimulus ? <><SourceCallout text={callout} /><Stimulus stimulus={stim} accent={accent || '#C9A646'} /></> : null
       })()}
       <div className="mc-q">{item.stem}</div>
       <div className="mc-choices">
@@ -446,8 +464,10 @@ function BestFitItem({ item, n, total, onAnswered, Stimulus, accent, docs }) {
   )
 }
 
-export function BestFit({ pack, onComplete, Stimulus, accent, docs }) {
+export function BestFit({ pack, onComplete, Stimulus, accent, docs, callout = null }) {
   const items = pack?.items || []
+  // The call-out rides the first question that shows a document, and only that one.
+  const firstDoc = callout ? items.findIndex(it => !!(it.stimulus || docStimulus(it.stem, docs))) : -1
   const [count, setCount] = useState(0)
   const [stuck, noteStuck] = useStuck()
   useEffect(() => { if (items.length && count >= items.length) onComplete() }, [count])
@@ -456,7 +476,7 @@ export function BestFit({ pack, onComplete, Stimulus, accent, docs }) {
       <p className="mc-preamble">Pick the statement that fits best. Stuck? Take a hint — there are two on every question. Nothing here is scored or saved.</p>
       {items.map((it, i) => (
         <div key={it.id || i}>
-          <BestFitItem item={it} n={i + 1} total={items.length} Stimulus={Stimulus} accent={accent} docs={docs} onAnswered={ok => { setCount(c => c + 1); noteStuck(ok, i) }} />
+          <BestFitItem item={it} n={i + 1} total={items.length} Stimulus={Stimulus} accent={accent} docs={docs} callout={i === firstDoc ? callout : null} onAnswered={ok => { setCount(c => c + 1); noteStuck(ok, i) }} />
           {stuck && stuck.at === i && <CoachSays portrait={BK_PORTRAIT} line={stuck.line} />}
         </div>
       ))}
@@ -573,7 +593,7 @@ export function SentenceBuild({ pack, onComplete }) {
 // ── L4 · WRITE IT ─────────────────────────────────────────────────────────
 // Checklist visible the whole time, not a hint you ask for. What the kid types
 // is React state and nothing else: never stored, never sent, gone with the tab.
-export function GuidedWrite({ pack, accent, onComplete, noWrite = false, note = null, paste = null, isTop = false }) {
+export function GuidedWrite({ pack, accent, onComplete, noWrite = false, note = null, paste = null, isTop = false, callout = null }) {
   // No model at all, before or after (`model_visible: "never"`): BK 2026-11-06 09:59, "L5 can't show an answer if that's our cold practice attempt."
   const noModel = pack?.model_visible === 'never'
   // L4 carries one document in `source_text`; a cold rung carries several in `documents[]`.
@@ -616,13 +636,16 @@ export function GuidedWrite({ pack, accent, onComplete, noWrite = false, note = 
           is how it satisfies BK's 2026-10-27 document rule without a casefile resolver:
           its documents sit OUTSIDE the casefile by design. */}
       {docs.map((d, i) => (
-        <figure key={i} className="stimulus" style={{ borderColor: `${accent}44` }}>
-          {d.source_document && <div className="doc-tag">{d.source_document}</div>}
-          {/* If the documents carry DIFFERENT framings, each one rides its own document
-              rather than being dropped for not matching the others. */}
-          {!warning && d.before_we_talk && <p className="rep-before in-doc">{d.before_we_talk}</p>}
-          <div className="stimulus-text"><p>{d.source_text}</p></div>
-        </figure>
+        <React.Fragment key={i}>
+          {i === 0 && <SourceCallout text={callout} />}
+          <figure className="stimulus" style={{ borderColor: `${accent}44` }}>
+            {d.source_document && <div className="doc-tag">{d.source_document}</div>}
+            {/* If the documents carry DIFFERENT framings, each one rides its own document
+                rather than being dropped for not matching the others. */}
+            {!warning && d.before_we_talk && <p className="rep-before in-doc">{d.before_we_talk}</p>}
+            <div className="stimulus-text"><p>{d.source_text}</p></div>
+          </figure>
+        </React.Fragment>
       ))}
       <p className="rep-prompt">{pack.prompt}</p>
       {/* No box (unit.gauge_rules.write_box false, BK 2026-11-05 15:13 "i want no writing in a box"): the desk's starter and
@@ -912,6 +935,25 @@ button.practice-row:hover,a.practice-row:hover{border-color:var(--gold);backgrou
 .gauge-band{background:var(--card);border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:10px;padding:10px 14px;margin:0 0 16px;max-width:760px}
 .gauge-band-head{font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.06em;font-size:14px;color:var(--gold);margin-bottom:3px}
 .gauge-band p{margin:0;color:var(--white);font-size:16px;line-height:1.55}
+/* Folded on a level screen (gauge_rules.band_fold): closed, the desk's head is the tap, 44 px high. */
+.gauge-band-fold{padding:0}
+.gauge-band-fold summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;min-height:44px;padding:10px 14px;
+  font-family:'Barlow Condensed',sans-serif;font-weight:700;letter-spacing:.06em;font-size:14px;color:var(--gold)}
+.gauge-band-fold summary::-webkit-details-marker{display:none}
+.gauge-band-fold summary::before{content:'\\25B8';font-size:13px;transition:transform .15s ease}
+.gauge-band-fold[open] summary::before{transform:rotate(90deg)}
+.gauge-band-fold summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:8px}
+.gauge-band-fold p{padding:0 14px 12px}
+@media (prefers-reduced-motion:reduce){.gauge-band-fold summary::before{transition:none}}
+/* START WITH THE SOURCE (gauge_rules.source_callout): one line directly above the first document. */
+.source-callout{margin:0 0 10px;padding:10px 14px;border-radius:9px;background:var(--card);border:1px solid var(--edge);
+  border-left:4px solid var(--gold);color:var(--white);font-size:16.5px;font-weight:700;line-height:1.45}
+/* The document's source line, on a gauge-run level: the first thing the eye finds on the parchment. Navy ink, bold, larger;
+   7.8:1 or better on the darkest part of the paper. Not red or green: those already read as wrong and right here. */
+.gauge-level .stimulus{display:flex;flex-direction:column}
+.gauge-level .stimulus .doc-tag,.gauge-level .stimulus figcaption{order:-1;font-family:'Barlow Condensed',sans-serif;font-style:normal;
+  font-weight:700;text-transform:uppercase;letter-spacing:.06em;font-size:17.5px;line-height:1.3;color:#1B3A6B;margin:0 0 12px;
+  padding-bottom:9px;border-bottom:2px solid rgba(27,58,107,.35)}
 .rep-paste{margin:8px 0 0;padding:9px 12px;border-radius:8px;background:rgba(227,179,65,.12);border:1px solid var(--gold);color:var(--white);font-size:16px;line-height:1.5;font-weight:600}
 /* ---------- A COLD RUNG: badge, intro, and the BEFORE WE TALK framing ---------- */
 /* The badge and intro are the desk's own words naming what this rung is. BEFORE WE TALK is

@@ -53,7 +53,7 @@ import { setCoachBank, CoachSays, welcomeLine, skillLine, setDoneLine, signoffLi
 import {
   LADDER_STYLES, SkillGauges, CasefileDoors, Ladder, BestFit, SentenceBuild, GuidedWrite, Enrichment,
   UnitBrief, levelType, useProgress, roomSkills, ladderLevels, levelOpen, currentUnit, levelsDone, gaugeRules, levelHidden, gaugeTop, noBoxCard,
-  levelPlain, GaugeBand, DocFigures,
+  levelPlain, GaugeBand, DocFigures, SourceCallout,
 } from './ladder.jsx'
 import { ThrowbackView, THROWBACK_WORDS, THROWBACK_STYLES, useThrowback } from './throwback.jsx'
 import {
@@ -2152,12 +2152,16 @@ function reviewExtras(course, unit) {
   return { ...x, _rooms: rooms }
 }
 
-function LevelScreen({ course, plain = false, cardPlain = false, paste = null, band = null, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
+function LevelScreen({ course, plain = false, cardPlain = false, paste = null, callout = null, readEnd = null, foldBand = false, band = null, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
   const t = levelType(lv)
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
   const [coachLine, setCoachLine] = useState(null)
+  // A READ (Level 1 of a no-box gauge: a built set, nothing for the kid to answer) closes with the desk's one line and never a
+  // coaching line: "Most people quit a set when it gets hard. You finished it." praised a finish nobody had to make (Sam 2026-11-17, item 2).
+  const isRead = plain && lv?.type === 'matching' && pack?.modeled === true && !!readEnd
   const onComplete = (...a) => {
+    if (isRead) return markComplete(...a)
     if (!coachLine) {
       const reps = (pack?.items || pack?.pairs || pack?.left || []).length || 1
       noteSetDone(reps)
@@ -2173,11 +2177,12 @@ function LevelScreen({ course, plain = false, cardPlain = false, paste = null, b
       <p>Go back and try it again. If it still won&rsquo;t open, tell your teacher which level it was.</p>
     </div>
   )
-  else if (lv.type === 'matching') body = <><DocFigures pack={pack} accent={course.accent} /><MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} noWrite={plain} /></>
-  else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} docs={docs} />
-  else if (lv.type === 'sentence_build') body = <><DocFigures pack={pack} accent={course.accent} /><SentenceBuild pack={pack} onComplete={onComplete} /></>
-  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} noWrite={plain} note={plain ? lv?.page_note || null : null} paste={paste} isTop={isTop} />
+  else if (lv.type === 'matching') body = <><DocFigures pack={pack} accent={course.accent} callout={callout} /><MatchingSet pack={pack} accent={course.accent} onChecked={onComplete} hintsCleared={lv?.hints_cleared === true} noWrite={plain} /></>
+  else if (lv.type === 'mc_bestfit') body = <BestFit pack={pack} onComplete={onComplete} Stimulus={StimulusBlock} accent={course.accent} docs={docs} callout={callout} />
+  else if (lv.type === 'sentence_build') body = <><DocFigures pack={pack} accent={course.accent} callout={callout} /><SentenceBuild pack={pack} onComplete={onComplete} /></>
+  else if (lv.type === 'guided_write') body = <GuidedWrite pack={pack} accent={course.accent} onComplete={onComplete} noWrite={plain} note={plain ? lv?.page_note || null : null} paste={paste} isTop={isTop} callout={callout} />
   else if (lv.type === 'enrichment') body = <>
+    {source?.source_text && <SourceCallout text={callout} />}
     {source?.source_text && (
       <figure className="stimulus" style={{ borderColor: `${course.accent}44` }}>
         {source.source_document && <div className="doc-tag">{source.source_document}</div>}
@@ -2190,11 +2195,12 @@ function LevelScreen({ course, plain = false, cardPlain = false, paste = null, b
   return (
     <div className="wrap">
       <ScreenHeader label={skillName} onBack={onBack} color={course.accent} back={skillName} />
-      <div className="detail" style={{ maxWidth: 860 }}>
+      <div className={callout ? 'detail gauge-level' : 'detail'} style={{ maxWidth: 860 }}>
         <div className="card-type">Level {lv?.level}{t && !cardPlain ? ` · ${t.name}` : ''}</div>
         <h2>{lv?.label || t?.name}</h2>
-        <GaugeBand band={band} />
+        <GaugeBand band={band} fold={foldBand} />
         {body}
+        {isRead && pack && <p className="level-done" role="status">{readEnd}</p>}
         {coachLine && <CoachSays key={coachLine} portrait={course.guide?.portrait || 'images/arena/guide-bk.png'} line={coachLine} />}
       </div>
       <BottomBack onBack={onBack} back={skillName} />
@@ -2562,7 +2568,7 @@ export default function App() {
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
     const s0 = (unit.ladders || []).find(l => l.skill === skill)
-    screen = <LevelScreen course={course} plain={levelPlain(unit, level)} cardPlain={noBoxCard(unit, lv)} paste={levelPlain(unit, level) ? null : gaugeRules(unit).paste_line || null} band={s0?.band || null} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
+    screen = <LevelScreen course={course} plain={levelPlain(unit, level)} cardPlain={noBoxCard(unit, lv)} paste={levelPlain(unit, level) ? null : gaugeRules(unit).paste_line || null} callout={gaugeRules(unit).source_callout || null} readEnd={gaugeRules(unit).read_end_line || null} foldBand={gaugeRules(unit).band_fold === true} band={s0?.band || null} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
