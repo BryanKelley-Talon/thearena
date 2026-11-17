@@ -1988,6 +1988,12 @@
             "civic_button": true,
             "_source_2026_11_17": "Sam's 10:10 memo, BK chat 10:00 (\"lets get the fixes sent to josh for the arena before a live push\"): source_callout = Sam's exact words for 1(a), printed directly above the first document on every gauge-run level screen that shows one; read_end_line = Sam's item 2 (Level 1, a read, takes this line instead of a coaching line); band_fold = item 3 (the gauge's intro band shows closed on its level screens, open on the gauge page)."
           },
+          "card_badges": {
+            "casefile": "images/arena/graded-badge.webp",
+            "review": "images/arena/review-badge.webp",
+            "next": "images/arena/next-badge.webp",
+            "_source": "BK 2026-11-17 10:31: 'maybe we badge casefiles with some sort of icon that indicates Graded' and 'and for test review...and maybe a know your next steps (some feet?)'; 10:41 his three Gemini seals. Graded on Casefiles A, B and C; the clipboard's red check recoloured navy (red reads as wrong on the answer screens), red original kept in assets/inbox/_processed/. No words."
+          },
           "slug": "unit-3",
           "casefiles": [
             {

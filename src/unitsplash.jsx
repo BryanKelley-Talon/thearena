@@ -118,7 +118,7 @@ const NEXT_PARTS = course => [
 
 function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now, badge }) {
   const style = paper ? { '--paper': paper.sheet, '--paper-tint': paper.tint } : undefined
-  const cls = `us-door${paper ? ' paper' : ''}${open ? '' : ' shut'}${kind ? ` ${kind}` : ''}`
+  const cls = `us-door${paper ? ' paper' : ''}${open ? '' : ' shut'}${kind ? ` ${kind}` : ''}${badge ? ' has-badge' : ''}`
   const body = (
     <>
       {now && <span className="us-now">{W.now}</span>}
@@ -138,6 +138,8 @@ function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now, badge
 // ── the splash itself ──
 export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile, onOpenNextStep, onOpenAtlas, onOpenTestReview, onOpenGaugeRun }) {
   const run = runOf(unit)
+  // Each kind of card wears its own seal (manifest unit.card_badges; BK 2026-11-17 10:31 and 10:41, his Gemini set): decorative, no words.
+  const cb = unit.card_badges || {}
   const cfs = unit.casefiles || []
   // The NOW tag sits on the casefile that is running: the last one open (Will 13:24, point 1, BK 13:23 "yes").
   const running = [...cfs].reverse().find(cfRunning)?.id
@@ -153,7 +155,7 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
           const open = cfOpen(cf)
           return [
             <DoorCard key={cf.id} id={`us-door-${cf.id}`} title={W.casefile(cf.id)} sub={cf.label} now={cf.id === running}
-                      paper={paperOf(paperMap(unit), cf.id)} open={open}
+                      paper={paperOf(paperMap(unit), cf.id)} open={open} badge={cb.casefile || null}
                       label={open ? W.open : cfLabel(cf)}
                       onOpen={() => onOpenCasefile(cf.id)} />,
             // The Gauge Run card sits right after the casefile it runs (BK 15:15: "between Casefile A and Casefile B").
@@ -165,10 +167,10 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
         })}
       </div>
       <div className="us-cards">
-        <DoorCard id="us-card-review" kind="side" title={W.review} sub={W.reviewLine} open={testReviewReady}
+        <DoorCard id="us-card-review" kind="side" title={W.review} sub={W.reviewLine} open={testReviewReady} badge={cb.review || null}
                   label={testReviewReady ? W.open : (unit.test_review?.opens_label ? sayOpens(unit.test_review.opens_label) : W.coming)}
                   onOpen={onOpenTestReview} />
-        <DoorCard id="us-door-next" kind="next side" title={W.next} sub={W.nextLine} open={nextStepOpen(unit)}
+        <DoorCard id="us-door-next" kind="next side" title={W.next} sub={W.nextLine} open={nextStepOpen(unit)} badge={cb.next || null}
                   label={nextStepOpen(unit) ? W.open : (unit.next_step?.opens_label ? sayOpens(unit.next_step.opens_label) : W.coming)} onOpen={onOpenNextStep} />
       </div>
     </div>
@@ -311,10 +313,10 @@ export const SPLASH_STYLES = `
 .us-door.run:not(.shut){border-color:var(--gold)}
 /* The Bonus card's gold seal, top right (BK 2026-11-17). Room is kept on the right so the title never runs under it. */
 .us-door{position:relative}
-.us-door.run{padding-right:78px}
+.us-door.has-badge{padding-right:78px}
 .us-badge{position:absolute;top:8px;right:8px;width:64px;height:64px;pointer-events:none;filter:drop-shadow(0 3px 6px rgba(0,0,0,.45))}
 .us-door.shut .us-badge{opacity:.55;filter:grayscale(.4)}
-@media (max-width:480px){.us-badge{width:56px;height:56px}.us-door.run{padding-right:70px}}
+@media (max-width:480px){.us-badge{width:56px;height:56px}.us-door.has-badge{padding-right:70px}}
 .run-box{background:var(--card);border:1px solid var(--edge);border-left:4px solid var(--gold);border-radius:10px;padding:12px 16px;margin:0 0 22px;max-width:760px}
 .run-box p{margin:0 0 9px;color:var(--white);font-size:17px;line-height:1.55}
 .run-box p:last-child{margin-bottom:0;font-weight:600}
