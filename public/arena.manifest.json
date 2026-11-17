@@ -1985,6 +1985,7 @@
             "source_callout": "START WITH THE SOURCE. Who wrote it? When? Why? That is Question 1, and it comes first, every time.",
             "read_end_line": "Now try Level 2.",
             "band_fold": true,
+            "civic_button": true,
             "_source_2026_11_17": "Sam's 10:10 memo, BK chat 10:00 (\"lets get the fixes sent to josh for the arena before a live push\"): source_callout = Sam's exact words for 1(a), printed directly above the first document on every gauge-run level screen that shows one; read_end_line = Sam's item 2 (Level 1, a read, takes this line instead of a coaching line); band_fold = item 3 (the gauge's intro band shows closed on its level screens, open on the gauge page)."
           },
           "slug": "unit-3",

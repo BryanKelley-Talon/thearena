@@ -36,7 +36,7 @@ import { SceneView, SCENE_STYLES, SCENE_WORDS, useScene } from './thescene.jsx'
 import { ISSUES_STYLES } from './issues.jsx'
 import { StopMapLane, STOPMAP_STYLES } from './stopmap.jsx'
 import { MomentsCard, MOMENTS_STYLES } from './moments.jsx'
-import { useRefCards, REF_STYLES } from './refcards.jsx'
+import { useRefCards, REF_STYLES, RefButtons } from './refcards.jsx'
 import { useWritingLab, WritingLabLane, WritingLabCards, BlueprintScreen, WRITINGLAB_STYLES, WL_WORDS } from './writinglab.jsx'
 import { SkillsLabLane, partThreeLabel, SKILLSLAB_WORDS, SKILLSLAB_STYLES } from './skillslab.jsx'
 import { UnitSplash, UnitOverviewBody, CasefileRoomBody, NextStepBody, GaugeRunBody, usesSplash, cfOpen, nextStepOpen, runOf, runOpen, gaugesHidden, SPLASH_WORDS, SPLASH_STYLES } from './unitsplash.jsx'
@@ -2152,7 +2152,7 @@ function reviewExtras(course, unit) {
   return { ...x, _rooms: rooms }
 }
 
-function LevelScreen({ course, plain = false, cardPlain = false, paste = null, callout = null, readEnd = null, foldBand = false, band = null, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
+function LevelScreen({ course, plain = false, cardPlain = false, paste = null, callout = null, readEnd = null, foldBand = false, civicRef = null, band = null, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
   const t = levelType(lv)
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
@@ -2198,6 +2198,9 @@ function LevelScreen({ course, plain = false, cardPlain = false, paste = null, c
       <div className={callout ? 'detail gauge-level' : 'detail'} style={{ maxWidth: 860 }}>
         <div className="card-type">Level {lv?.level}{t && !cardPlain ? ` · ${t.name}` : ''}</div>
         <h2>{lv?.label || t?.name}</h2>
+        {/* The Civic Principles card, one tap from any gauge-run level (manifest gauge_rules.civic_button; BK 2026-11-17 10:15). The card and its button
+            label are the desk's own, read from the course's Doc Assist pack: the same card Doc Assist pops up. */}
+        {civicRef && <RefButtons text="civic principle" refs={{ civic: civicRef }} idBase="gauge-ref" />}
         <GaugeBand band={band} fold={foldBand} />
         {body}
         {isRead && pack && <p className="level-done" role="status">{readEnd}</p>}
@@ -2568,7 +2571,7 @@ export default function App() {
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
     const s0 = (unit.ladders || []).find(l => l.skill === skill)
-    screen = <LevelScreen course={course} plain={levelPlain(unit, level)} cardPlain={noBoxCard(unit, lv)} paste={levelPlain(unit, level) ? null : gaugeRules(unit).paste_line || null} callout={gaugeRules(unit).source_callout || null} readEnd={gaugeRules(unit).read_end_line || null} foldBand={gaugeRules(unit).band_fold === true} band={s0?.band || null} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
+    screen = <LevelScreen course={course} plain={levelPlain(unit, level)} cardPlain={noBoxCard(unit, lv)} paste={levelPlain(unit, level) ? null : gaugeRules(unit).paste_line || null} callout={gaugeRules(unit).source_callout || null} readEnd={gaugeRules(unit).read_end_line || null} foldBand={gaugeRules(unit).band_fold === true} civicRef={gaugeRules(unit).civic_button === true ? refs.civic || null : null} band={s0?.band || null} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
