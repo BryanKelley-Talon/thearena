@@ -150,7 +150,7 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
     <div className="us-splash">
       <div className="us-doors">
         <DoorCard id="us-card-overview" kind="overview" title={W.overview} sub={W.overviewLine} open={true}
-                  label={W.open} onOpen={onOpenAtlas} />
+                  label={W.open} onOpen={onOpenAtlas} badge={cb.overview || null} />
         {cfs.map(cf => {
           const open = cfOpen(cf)
           return [
