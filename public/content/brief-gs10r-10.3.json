@@ -1,0 +1,266 @@
+{
+  "_course": "Global History and Geography 10R",
+  "_unit": "10.3",
+  "_author": "Will (global10r-curriculum)",
+  "_built": "2026-11-18",
+  "_source": "skills/u103/build_103_testreview_arena.py; words imported from words_103A, words_103B, words_103_overview (the blessed Classroom PDF's sources); screen words in words_103_testreview_arena.py.",
+  "_status": "Wording RULED BK 2026-11-18 13:01 ('yes'). Quick Check opens with the push (call 1 A). Review only: documents and Part I practice are a later push.",
+  "unit": "10.3",
+  "title": "Causes and Effects of the Industrial Revolution",
+  "subtitle": "Global 10R  ·  The test is 25 questions, Regents format. It covers 10.3, with questions from 10.1 and 10.2 coming back.",
+  "how_to_use": {
+    "heading": "How to use this review",
+    "steps": [
+      "Start with the question this unit asks, then read the whole unit in order.",
+      "Work down What you need to know. Each row ends with the words that go with it. Their meanings are under The words.",
+      "Answer the Quick Check without looking. Missed one? Its answer names the section to go back to."
+    ]
+  },
+  "thread_anchor": {
+    "heading": "The question this unit asks",
+    "label": "Did the benefits of the Industrial Revolution outweigh the costs?",
+    "question_note": "In 1750, most British people lived in the countryside, and many of them farmed. Spinners and weavers made cloth by hand at home: the domestic system. Within a hundred years, coal, steam and iron moved that work into mills and factories owned by somebody else, and moved the people into cities. The question is who paid for it.",
+    "lead": "The whole unit, in order:",
+    "points": [
+      "Where it starts. In 1750 most British people lived in the countryside, and many of them farmed. Villages shared open fields and common land. Wealthy landowners controlled Parliament, and looking for bigger profits they passed thousands of enclosure acts that fenced that land into private farms. New farming methods grew more food with fewer workers. Families who lost their land moved to the towns to look for work.",
+      "Why Britain first. Britain had coal, iron ore and rivers, ports and a navy that controlled the seas, people with money to invest, and more workers every year. In 1776 Adam Smith argued that splitting a job into small steps made workers far more productive, and that government should stay out of business.",
+      "What changed. Cloth had been made by hand at home. New machines sped it up, and James Watt's improved steam engine meant a mill no longer had to sit beside a fast river. Machines, a building and workers came together in one place: the factory. Canals and then railways made coal, cotton and finished goods cheaper to move.",
+      "What it cost. Cities grew faster than clean water, sewers and housing. Children worked long hours in dangerous places. People answered: Parliament's Factory Acts, labor unions, Robert Owen, Karl Marx.",
+      "What you will argue. Did the benefits of the Industrial Revolution outweigh the costs? You will need both sides, and the evidence for each."
+    ]
+  },
+  "key_facts": {
+    "heading": "What you need to know",
+    "columns": [
+      "The question",
+      "What you need to know",
+      "The words"
+    ],
+    "rows": [
+      {
+        "term": "Why did farming in Britain change in the 1700s?",
+        "detail": "In 1750, most British people lived in the countryside, and many of them farmed. Village fields were open fields, and poor families grazed their animals on common land. Wealthy landowners controlled Parliament. Looking for bigger profits, they tried new methods: the seed drill, turnips and clover in a crop rotation, and careful breeding of sheep and cattle. Parliament passed thousands of enclosure acts. They fenced the open fields and common land into private farms. Farms grew more food with fewer workers. Britain's population grew, and many families who lost their land moved to towns to look for work.",
+        "thread": "Agricultural Revolution, enclosure, common land, crop rotation"
+      },
+      {
+        "term": "Why did the Industrial Revolution start in Great Britain and not somewhere else?",
+        "detail": "The Industrial Revolution began in Britain around 1760. It spread to Europe and the United States, and later to Japan. Britain had coal and iron ore, and rivers for water power and for moving goods. Britain is an island with many ports, and its navy controlled the seas. Its ships brought in raw cotton, first from the West Indies and later from the American South, and carried British goods all over the world. Britain also had people with money to invest, and more workers every year.",
+        "thread": "Industrial Revolution, natural resources, geographic context, port"
+      },
+      {
+        "term": "How did new ideas about work and business help?",
+        "detail": "In 1776, the Scottish thinker Adam Smith published The Wealth of Nations. Smith argued that dividing a job into small steps made workers far more productive. He also argued that markets work best when government stays out: laissez-faire. People chasing their own profit would end up making the whole nation richer. Some British business owners had money to invest, and they put it into mills and machines.",
+        "thread": "division of labor, capital, laissez-faire, capitalism"
+      },
+      {
+        "term": "How did new machines and new power change how goods were made?",
+        "detail": "Before machines, spinners and weavers made cloth by hand at home: the domestic system. In the 1700s, new machines sped up cloth making: the spinning jenny, Richard Arkwright's water frame, and Edmund Cartwright's power loom. James Watt improved the steam engine in the 1760s and 1770s. Steam let factories be built wherever coal could reach, not only beside fast rivers. Machines needed power, a building and workers in one place. That place was the factory.",
+        "thread": "domestic system, factory system, steam engine, power loom"
+      },
+      {
+        "term": "How did canals and railways help Britain industrialize?",
+        "detail": "Moving coal and cotton by packhorse over rough roads, or by river boat, was slow and expensive. By the 1760s, Britain was digging canals. By the 1830s, railways were spreading. Cheaper transportation meant cheaper coal, cheaper cotton and cheaper goods, sold farther away.",
+        "thread": "canal, locomotive, raw materials, transportation"
+      },
+      {
+        "term": "What did the Industrial Revolution cost the people who lived and worked in its cities?",
+        "detail": "Factories pulled families off farms and into towns. Cities like Manchester and London grew faster than anyone could build homes, sewers or clean water for them. Ireland was part of the United Kingdom, governed from London. About half of its roughly 8 million people lived almost entirely on potatoes, because Ireland's more valuable crops and animals were shipped out and sold. In 1845 a blight rotted the potato crop. Roughly one million people died of starvation and disease. Britain kept exporting Irish grain and livestock through the worst of it. The 1851 census counted 6.55 million people, down from 8.18 million ten years before, and the fall went on for decades. Many who left went to Britain's industrial cities. By 1841 about one person in eight in Manchester was Irish-born, and the famine years brought more. Poor families crowded into cheap, damp housing. More than a hundred people could share one privy, an outdoor toilet. Sewage ran into the same rivers people drank from. Cholera killed tens of thousands of people in Britain in outbreaks in 1832, 1849 and 1854. Children worked too. In mills and mines, children as young as five or six often worked twelve hours a day or more.",
+        "thread": "urbanization, sanitation, cholera, child labor, famine, blight"
+      },
+      {
+        "term": "What did people do about the costs of the Industrial Revolution?",
+        "detail": "Reformers like Richard Oastler campaigned to shorten the working day, especially for children. Workers marched, signed petitions and formed Short Time Committees. Parliament answered with Factory Acts. The 1833 Factory Act banned children under 9 from textile mills, limited hours for older children, and sent inspectors to check. The 1847 Ten Hours Act limited women and teenagers to ten hours a day. Workers also formed labor unions to bargain together for better pay and hours. Robert Owen ran a mill at New Lanark, Scotland, with a school for workers' children and shorter hours. Ideas like his are called utopian socialism. In 1848, Karl Marx and Friedrich Engels published The Communist Manifesto. They said workers would overthrow the owners and own property in common: communism. Cities fixed some costs too. In 1854, Dr. John Snow traced a London cholera outbreak to one water pump. After the Great Stink of 1858, Parliament passed a law letting London's Metropolitan Board of Works borrow money, and its engineer, Joseph Bazalgette, built the sewers.",
+        "thread": "reform, Factory Act, labor union, bourgeoisie, proletariat"
+      }
+    ]
+  },
+  "exam": {
+    "heading": "The words",
+    "watch_for": [
+      {
+        "cue": "Agricultural Revolution",
+        "move": "big changes in farming in the 1700s that let fewer farmers grow more food"
+      },
+      {
+        "cue": "enclosure",
+        "move": "fencing off open fields and shared land into private farms"
+      },
+      {
+        "cue": "common land",
+        "move": "land a whole village shared for grazing its animals"
+      },
+      {
+        "cue": "crop rotation",
+        "move": "planting different crops in a field from year to year so the soil stays rich"
+      },
+      {
+        "cue": "Industrial Revolution",
+        "move": "the change from making goods by hand at home to making them by machine in factories, starting in Britain around 1760"
+      },
+      {
+        "cue": "natural resources",
+        "move": "things in nature people can use, like coal, iron ore and water"
+      },
+      {
+        "cue": "geographic context",
+        "move": "where something happened, and why it happened there"
+      },
+      {
+        "cue": "port",
+        "move": "a town with a harbor where ships load and unload goods"
+      },
+      {
+        "cue": "division of labor",
+        "move": "splitting a job into small steps, each done by a different worker"
+      },
+      {
+        "cue": "capital",
+        "move": "money invested to start or grow a business"
+      },
+      {
+        "cue": "laissez-faire",
+        "move": "French for “allow to do”: the idea that government should stay out of business"
+      },
+      {
+        "cue": "capitalism",
+        "move": "an economic system in which private owners invest capital to make a profit"
+      },
+      {
+        "cue": "domestic system",
+        "move": "making goods by hand at home, often the whole family together"
+      },
+      {
+        "cue": "factory system",
+        "move": "workers and machines brought together in one building"
+      },
+      {
+        "cue": "steam engine",
+        "move": "a machine that burns coal to boil water; the steam drives the machine"
+      },
+      {
+        "cue": "power loom",
+        "move": "a weaving machine driven by water or steam instead of by hand"
+      },
+      {
+        "cue": "canal",
+        "move": "a waterway people dig so boats can carry goods"
+      },
+      {
+        "cue": "locomotive",
+        "move": "a steam engine on wheels that pulls a train"
+      },
+      {
+        "cue": "raw materials",
+        "move": "things like cotton, coal and iron ore that are made into goods"
+      },
+      {
+        "cue": "transportation",
+        "move": "the ways people and goods are moved from place to place"
+      },
+      {
+        "cue": "urbanization",
+        "move": "people moving from the countryside into cities"
+      },
+      {
+        "cue": "sanitation",
+        "move": "keeping water and streets clean: sewers, clean water, trash taken away"
+      },
+      {
+        "cue": "cholera",
+        "move": "a deadly disease spread by dirty water"
+      },
+      {
+        "cue": "child labor",
+        "move": "children working for pay, often long hours in dangerous places"
+      },
+      {
+        "cue": "famine",
+        "move": "a time when a region's food runs out and large numbers of people starve"
+      },
+      {
+        "cue": "blight",
+        "move": "a crop disease; in Ireland it turned potatoes black and rotten"
+      },
+      {
+        "cue": "reform",
+        "move": "a change meant to fix a problem"
+      },
+      {
+        "cue": "Factory Act",
+        "move": "a law passed by Parliament to limit work in factories, especially for children"
+      },
+      {
+        "cue": "labor union",
+        "move": "workers who join together to bargain for better pay and hours"
+      },
+      {
+        "cue": "bourgeoisie",
+        "move": "Marx's word for the owners: the class that owns the factories"
+      },
+      {
+        "cue": "proletariat",
+        "move": "Marx's word for the workers: the class that works in them"
+      }
+    ]
+  },
+  "three_move": {
+    "heading": "The two kinds of context",
+    "intro": "Same: both set the scene before you argue. Both are Question 1 on a CRQ set. Both need something from outside the document. Different: historical context answers when and what came before. Geographic context answers where and why there. Naming a place earns nothing; you have to say why the place mattered.",
+    "moves": [
+      {
+        "move": "Historical context  ·  What led up to it, and what was going on?  ·  Time: earlier events, people, ideas",
+        "starter": "After ___, ___. By [year], ___."
+      },
+      {
+        "move": "Geographic context  ·  Where did it happen, and why there?  ·  Place: resources, rivers, coasts, climate, location",
+        "starter": "This happened in ___ because ___."
+      }
+    ]
+  },
+  "quick_check": {
+    "heading": "Quick Check",
+    "intro": "Answer all eight without looking. Then check each answer and the section it names.",
+    "items": [
+      {
+        "q": "What did enclosure do to village land, and what happened to families who lost their land?",
+        "a": "Enclosure acts fenced the open fields and common land into private farms. Many families who lost their land moved to towns to look for work.  →  What you need to know  ·  Why did farming in Britain change in the 1700s?",
+        "section": "A1"
+      },
+      {
+        "q": "Give two reasons from geography that the Industrial Revolution started in Britain.",
+        "a": "Any two: coal and iron ore; rivers for water power and for moving goods; an island with many ports.  →  What you need to know  ·  Why did the Industrial Revolution start in Great Britain and not somewhere else?",
+        "section": "A2"
+      },
+      {
+        "q": "What was the domestic system, and what replaced it?",
+        "a": "Spinners and weavers made cloth by hand at home. The factory replaced it: machines, power, a building and workers in one place.  →  What you need to know  ·  How did new machines and new power change how goods were made?",
+        "section": "A4"
+      },
+      {
+        "q": "Why did James Watt's improved steam engine change where factories could be built?",
+        "a": "Steam let factories be built wherever coal could reach, not only beside fast rivers.  →  What you need to know  ·  How did new machines and new power change how goods were made?",
+        "section": "A4"
+      },
+      {
+        "q": "Name two costs people paid in Britain's industrial cities.",
+        "a": "Any two: cities grew faster than anyone could build homes, sewers or clean water; poor families crowded into cheap, damp housing; sewage ran into the rivers people drank from, and cholera killed tens of thousands; children as young as five or six worked twelve hours a day or more.  →  What you need to know  ·  What did the Industrial Revolution cost the people who lived and worked in its cities?",
+        "section": "B2"
+      },
+      {
+        "q": "What did the 1833 Factory Act do?",
+        "a": "It banned children under 9 from textile mills, limited hours for older children, and sent inspectors to check.  →  What you need to know  ·  What did people do about the costs of the Industrial Revolution?",
+        "section": "B3"
+      },
+      {
+        "q": "How did the famine in Ireland connect to Britain's industrial cities?",
+        "a": "Many who left Ireland went to Britain's industrial cities. By 1841 about one person in eight in Manchester was Irish-born, and the famine years brought more.  →  What you need to know  ·  What did the Industrial Revolution cost the people who lived and worked in its cities?",
+        "section": "B2"
+      },
+      {
+        "q": "Historical context or geographic context: which one asks where it happened, and why there?",
+        "a": "Geographic context. Naming a place earns nothing; you have to say why the place mattered.  →  The two kinds of context",
+        "section": "CONTEXT"
+      }
+    ]
+  }
+}

@@ -825,6 +825,9 @@ export function ReviewRooms({ lead, rooms, onOpen }) {
     </section>
   )
 }
+// The one word on the Quick Check tap. BK 2026-11-19: "Show answer" (his pick of three).
+export const QC_WORDS = { show: 'Show answer' }
+
 export function UnitBrief({ brief, extras, onOpenRoom }) {
   if (!brief) return null
   const hu = brief.how_to_use, ta = brief.thread_anchor, bg = brief.background
@@ -882,7 +885,13 @@ export function UnitBrief({ brief, extras, onOpenRoom }) {
       {qc && <Sec h={qc.heading}>
         {qc.intro && <p className="brief-note">{qc.intro}</p>}
         <ol className="qc">{(qc.items || []).map((it, i) => (
-          <li key={i}><p className="qc-q">{it.q}</p>{it.a && <p className="qc-a">{it.a}</p>}</li>
+          <li key={i}><p className="qc-q">{it.q}</p>
+            {it.a && (extras?.qc_fold
+              // BK 2026-11-19 08:49, "A": each answer sits behind a tap, so a kid answering "without looking" has to choose to look.
+              // The tap's one word is BK's ("Show answer"); the answer is the desk's, untouched. Manifest-scoped (review_extras.qc_fold).
+              ? <details className="qc-fold"><summary>{QC_WORDS.show}</summary><p className="qc-a">{it.a}</p></details>
+              : <p className="qc-a">{it.a}</p>)}
+          </li>
         ))}</ol>
       </Sec>}
       {/* The unit's reference rooms, at the end: review, then go work it. */}
@@ -1132,6 +1141,15 @@ button.rung:hover{background:var(--card-lit);border-color:var(--gold);transform:
 .qc-q{color:var(--white);font-size:17.5px;line-height:1.5;font-weight:600;margin:0 0 10px}
 .qc-q::before{content:counter(qc) ". ";color:var(--gold)}
 .qc-a{color:var(--white);font-size:16.5px;line-height:1.65;margin:0;padding-top:10px;border-top:1px solid var(--edge)}
+.qc-fold{border-top:1px solid var(--edge)}
+.qc-fold summary{cursor:pointer;list-style:none;display:flex;align-items:center;gap:10px;min-height:44px;padding:8px 2px;
+  color:var(--gold);font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:.1em;font-size:15px;font-weight:600}
+.qc-fold summary::-webkit-details-marker{display:none}
+.qc-fold summary::before{content:'\\25B8';font-size:13px;transition:transform .15s ease}
+.qc-fold[open] summary::before{transform:rotate(90deg)}
+.qc-fold summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:8px}
+.qc-fold .qc-a{border-top:0;padding-top:2px}
+@media (prefers-reduced-motion:reduce){.qc-fold summary::before{transition:none}}
 
 @media (prefers-reduced-motion:reduce){
   .g-needle{transition:none}

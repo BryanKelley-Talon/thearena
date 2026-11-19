@@ -604,6 +604,20 @@
           "label": "10.3",
           "status": "open",
           "published": true,
+          "brief_ref": "content/brief-gs10r-10.3.json",
+          "review_extras": {
+            "qc_fold": true,
+            "_note": "Josh, 2026-11-19. BK 08:49 (to Danny, 'A'): each Quick Check answer sits behind a tap on the 10.3 review. The tap says 'Show answer' (BK 09:0x, Josh's question). Scoped to 10.3: US 11.1 and 11.2 print their answers open and are untouched until BK says otherwise."
+          },
+          "activities": [
+            {
+              "type": "stimulus",
+              "label": "Part I practice \u00b7 10.3",
+              "published": true,
+              "content_ref": "content/practice-gs10r-10.3-partI.json",
+              "_note": "Josh, 2026-11-19. Will's Part I practice (blessed 11/18 15:05; Danny CLEAN 11/19 08:51, 225-1-0), sha256 4005cf1f..., byte for byte. Manifest line is the one in the file's own _manifest."
+            }
+          ],
           "doc_assist": {
             "published": true,
             "content_ref": "content/docassist-gs10r-10.3.json",

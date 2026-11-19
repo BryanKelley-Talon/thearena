@@ -1,0 +1,353 @@
+{
+  "_source": "Will (global10r-curriculum), skills/u103/build_103_partI_practice_arena.py, 2026-11-18. Wording BLESSED BK 15:05. Stimuli: 10.3 Casefile A Docs 2, 4, 5, 7 from the blessed Doc Assist pack (worked; off the Part I wall). Ungraded practice.",
+  "_wall": "No Part I document, stem or keyed answer; nothing from B5's CRQ or Casefile C.",
+  "_manifest": {
+    "type": "stimulus",
+    "label": "Part I practice · 10.3",
+    "published": true,
+    "content_ref": "content/practice-gs10r-10.3-partI.json"
+  },
+  "intro": "Practice, not a grade. Ten Regents-style questions on documents from this unit. Pick an answer and you'll see right away if it's right.",
+  "items": [
+    {
+      "n": 1,
+      "id": "p1-1",
+      "document": "Document — Arthur Young on enclosure, 1801",
+      "stimulus": {
+        "content": "Arthur Young was a well-known writer on farming who supported enclosure. In 1801 he wrote:\n“. . . the fact is, that by nineteen enclosure bills in twenty they [the poor] are injured, in some grossly injured. . . .”",
+        "citation": "Arthur Young, An Inquiry into the Propriety of Applying Wastes to the Better Maintenance and Support of the Poor, 1801"
+      },
+      "question": "According to Arthur Young, how did most enclosure bills affect the poor?",
+      "choices": [
+        {
+          "key": "1",
+          "text": "They gave the poor more common land"
+        },
+        {
+          "key": "2",
+          "text": "They harmed the poor, some of them badly"
+        },
+        {
+          "key": "3",
+          "text": "They had no real effect on the poor"
+        },
+        {
+          "key": "4",
+          "text": "They helped the poor buy their own farms"
+        }
+      ],
+      "correct": "2",
+      "hints": [
+        "Young gives a number: nineteen bills out of twenty. Reread what he says happens to the poor in them.",
+        "The word “injured” means harmed."
+      ],
+      "reasoning": "Young says that in nineteen enclosure bills out of twenty the poor are injured, and in some grossly injured. Enclosure fenced off the common land where poor families grazed their animals."
+    },
+    {
+      "n": 2,
+      "id": "p1-2",
+      "document": "Document — Arthur Young on enclosure, 1801",
+      "stimulus": {
+        "content": "Arthur Young was a well-known writer on farming who supported enclosure. In 1801 he wrote:\n“. . . the fact is, that by nineteen enclosure bills in twenty they [the poor] are injured, in some grossly injured. . . .”",
+        "citation": "Arthur Young, An Inquiry into the Propriety of Applying Wastes to the Better Maintenance and Support of the Poor, 1801"
+      },
+      "question": "Young's statement is strong evidence of the harm enclosure did because Young",
+      "choices": [
+        {
+          "key": "1",
+          "text": "had lost his own family's farm to enclosure"
+        },
+        {
+          "key": "2",
+          "text": "wrote it before any enclosure acts passed"
+        },
+        {
+          "key": "3",
+          "text": "worked in a Manchester cotton mill"
+        },
+        {
+          "key": "4",
+          "text": "supported enclosure himself"
+        }
+      ],
+      "correct": "4",
+      "hints": [
+        "Read the line above the quotation before you read the quotation.",
+        "When someone admits a cost of the thing they support, that admission counts for more."
+      ],
+      "reasoning": "The line above the quotation says Young supported enclosure. A supporter admitting that the poor were harmed is speaking against his own side, which makes his admission hard to dismiss."
+    },
+    {
+      "n": 3,
+      "id": "p1-3",
+      "document": "Document — Edward Baines on England's position",
+      "stimulus": {
+        "content": "In comparing the advantages of England for manufactures with those of other countries, we can by no means overlook the excellent commercial position of the country — intermediate between the north and south of Europe; and its insular situation [island location], which, combined with the command of the seas, secures our territory from invasion or annoyance. The German ocean, the Baltic, and the Mediterranean are the regular highways for our ships; and our western ports command an unobstructed [clear] passage to the Atlantic, and to every quarter [part] of the world.",
+        "citation": "Edward Baines, History of the Cotton Manufacture in Great Britain, A. M. Kelley"
+      },
+      "question": "Baines says England's position helped its manufacturing because England",
+      "choices": [
+        {
+          "key": "1",
+          "text": "was an island that ruled the seas, with routes to the world"
+        },
+        {
+          "key": "2",
+          "text": "shared a long land border with Germany and the Baltic states"
+        },
+        {
+          "key": "3",
+          "text": "sat far from Europe and stayed out of its trade"
+        },
+        {
+          "key": "4",
+          "text": "needed no ports, since its goods moved by canal"
+        }
+      ],
+      "correct": "1",
+      "hints": [
+        "Find the two advantages Baines names: where England sits, and what kind of land it is.",
+        "“Insular situation” means island location."
+      ],
+      "reasoning": "Baines points to England's position between the north and south of Europe and its island location. Together with command of the seas, that kept England safe and gave its ships clear routes to every part of the world."
+    },
+    {
+      "n": 4,
+      "id": "p1-4",
+      "document": "Document — Edward Baines on England's position",
+      "stimulus": {
+        "content": "In comparing the advantages of England for manufactures with those of other countries, we can by no means overlook the excellent commercial position of the country — intermediate between the north and south of Europe; and its insular situation [island location], which, combined with the command of the seas, secures our territory from invasion or annoyance. The German ocean, the Baltic, and the Mediterranean are the regular highways for our ships; and our western ports command an unobstructed [clear] passage to the Atlantic, and to every quarter [part] of the world.",
+        "citation": "Edward Baines, History of the Cotton Manufacture in Great Britain, A. M. Kelley"
+      },
+      "question": "Baines's description is most useful for explaining the",
+      "choices": [
+        {
+          "key": "1",
+          "text": "geographic context of Britain's Industrial Revolution"
+        },
+        {
+          "key": "2",
+          "text": "historical context of the revolutions in France and Haiti"
+        },
+        {
+          "key": "3",
+          "text": "causes of the famine in Ireland in the 1840s"
+        },
+        {
+          "key": "4",
+          "text": "results of the Factory Acts Parliament passed"
+        }
+      ],
+      "correct": "1",
+      "hints": [
+        "Is Baines writing about when and what came before, or about where and why there?",
+        "Seas, ports and an island location are all about place."
+      ],
+      "reasoning": "Baines describes where England is and why that place helped it manufacture and trade. Geographic context answers where it happened and why there."
+    },
+    {
+      "n": 5,
+      "id": "p1-5",
+      "document": "Document — Edward Baines on England's position",
+      "stimulus": {
+        "content": "In comparing the advantages of England for manufactures with those of other countries, we can by no means overlook the excellent commercial position of the country — intermediate between the north and south of Europe; and its insular situation [island location], which, combined with the command of the seas, secures our territory from invasion or annoyance. The German ocean, the Baltic, and the Mediterranean are the regular highways for our ships; and our western ports command an unobstructed [clear] passage to the Atlantic, and to every quarter [part] of the world.",
+        "citation": "Edward Baines, History of the Cotton Manufacture in Great Britain, A. M. Kelley"
+      },
+      "question": "Based on this document and your knowledge of social studies, ships sailing from England's western ports brought back",
+      "choices": [
+        {
+          "key": "1",
+          "text": "silk from Japan for the weavers in British towns"
+        },
+        {
+          "key": "2",
+          "text": "coal from Germany to fuel the mills in British cities"
+        },
+        {
+          "key": "3",
+          "text": "raw cotton from the West Indies and the American South"
+        },
+        {
+          "key": "4",
+          "text": "iron ore from India for the forges of Birmingham"
+        }
+      ],
+      "correct": "3",
+      "hints": [
+        "Baines says the western ports open onto the Atlantic. What lies across the Atlantic?",
+        "Think about what Britain's cloth mills needed most."
+      ],
+      "reasoning": "Britain's ships brought in raw cotton, first from the West Indies and later from the American South, and carried British goods all over the world. Both lie across the Atlantic from the western ports."
+    },
+    {
+      "n": 6,
+      "id": "p1-6",
+      "document": "Document — Adam Smith on the division of labour",
+      "stimulus": {
+        "content": "“[A worker alone] could scarce, perhaps, with his utmost industry, make one pin in a day. . . . The important business of making a pin is, in this manner, divided into about eighteen distinct operations. . . . I have seen a small manufactory [factory] of this kind where ten men only were employed. . . . Those ten persons, therefore, could make among them upwards of forty-eight thousand pins in a day.”",
+        "citation": "Adam Smith, The Wealth of Nations, 1776 (adapted)"
+      },
+      "question": "According to Smith, ten workers could make more than forty-eight thousand pins a day because",
+      "choices": [
+        {
+          "key": "1",
+          "text": "new steam-powered machines made each pin by itself"
+        },
+        {
+          "key": "2",
+          "text": "the government paid them for every pin"
+        },
+        {
+          "key": "3",
+          "text": "each of them worked twenty hours a day"
+        },
+        {
+          "key": "4",
+          "text": "the job was split into about eighteen operations"
+        }
+      ],
+      "correct": "4",
+      "hints": [
+        "Smith never mentions a machine. Reread how he says the work is done.",
+        "Find the number eighteen."
+      ],
+      "reasoning": "Smith says the business of making a pin is divided into about eighteen distinct operations. One worker alone could hardly make one pin a day; ten workers splitting the steps made more than 48,000."
+    },
+    {
+      "n": 7,
+      "id": "p1-7",
+      "document": "Document — Adam Smith on the division of labour",
+      "stimulus": {
+        "content": "“[A worker alone] could scarce, perhaps, with his utmost industry, make one pin in a day. . . . The important business of making a pin is, in this manner, divided into about eighteen distinct operations. . . . I have seen a small manufactory [factory] of this kind where ten men only were employed. . . . Those ten persons, therefore, could make among them upwards of forty-eight thousand pins in a day.”",
+        "citation": "Adam Smith, The Wealth of Nations, 1776 (adapted)"
+      },
+      "question": "The idea Smith describes in this passage is called",
+      "choices": [
+        {
+          "key": "1",
+          "text": "laissez-faire"
+        },
+        {
+          "key": "2",
+          "text": "division of labor"
+        },
+        {
+          "key": "3",
+          "text": "enclosure"
+        },
+        {
+          "key": "4",
+          "text": "the domestic system"
+        }
+      ],
+      "correct": "2",
+      "hints": [
+        "Smith is describing how a job is split up, not what government should do.",
+        "Look under The words in the unit review for splitting a job into small steps."
+      ],
+      "reasoning": "Division of labor means splitting a job into small steps, each done by a different worker. Laissez-faire is Smith's other idea: that government should stay out of business."
+    },
+    {
+      "n": 8,
+      "id": "p1-8",
+      "document": "Document — Edmund Cartwright and the power loom",
+      "stimulus": {
+        "content": ". . .Once back in Leicestershire, however, Cartwright found that the idea of devising a weaving machine had lodged itself firmly in his mind.\n“It struck me,” he wrote, “that as in plain weaving, according to the conception I then had of the business, that as there could only be three movements which were to follow each other in succession, there would be little difficulty in reproducing and repeating them.”\n“Full of these ideas I immediately employed a carpenter and smith to carry them into effect. . . . To my great delight, a piece of cloth, such as it was, was the produce. . . .”\nSadly, this first machine of Cartwright's was not at all successful, and was actually slower in its operation than a manual hand loom.\nNevertheless, it worked and proved that producing cotton cloth by mechanical means was a possibility. All Cartwright had to do now was to improve and refine the process.\nIt took a whole series of improvements and new patents before, finally, in 1788, his machine had reached a point where the three component processes of weaving—shedding, picking and beat-up—could be performed with sufficient speed and efficiency. . . .",
+        "citation": "“Edmund Cartwright & the Invention of the Power Loom,” Our Nottinghamshire, May 9, 2013"
+      },
+      "question": "According to the passage, Cartwright's first power loom",
+      "choices": [
+        {
+          "key": "1",
+          "text": "wove cloth faster than any hand loom from the start"
+        },
+        {
+          "key": "2",
+          "text": "needed a whole factory full of workers to keep it running all day"
+        },
+        {
+          "key": "3",
+          "text": "was slower than a hand loom, but proved machines could weave"
+        },
+        {
+          "key": "4",
+          "text": "was built inside a Manchester cotton mill in 1788"
+        }
+      ],
+      "correct": "3",
+      "hints": [
+        "Find the word “Sadly” in the passage.",
+        "The passage says the machine failed and succeeded at the same time. How?"
+      ],
+      "reasoning": "The first machine was slower than a hand loom, but it worked, and it proved that making cotton cloth by machine was possible. It took a series of improvements, until 1788, to make it fast enough."
+    },
+    {
+      "n": 9,
+      "id": "p1-9",
+      "document": "Document — Edmund Cartwright and the power loom",
+      "stimulus": {
+        "content": ". . .Once back in Leicestershire, however, Cartwright found that the idea of devising a weaving machine had lodged itself firmly in his mind.\n“It struck me,” he wrote, “that as in plain weaving, according to the conception I then had of the business, that as there could only be three movements which were to follow each other in succession, there would be little difficulty in reproducing and repeating them.”\n“Full of these ideas I immediately employed a carpenter and smith to carry them into effect. . . . To my great delight, a piece of cloth, such as it was, was the produce. . . .”\nSadly, this first machine of Cartwright's was not at all successful, and was actually slower in its operation than a manual hand loom.\nNevertheless, it worked and proved that producing cotton cloth by mechanical means was a possibility. All Cartwright had to do now was to improve and refine the process.\nIt took a whole series of improvements and new patents before, finally, in 1788, his machine had reached a point where the three component processes of weaving—shedding, picking and beat-up—could be performed with sufficient speed and efficiency. . . .",
+        "citation": "“Edmund Cartwright & the Invention of the Power Loom,” Our Nottinghamshire, May 9, 2013"
+      },
+      "question": "Based on this passage and your knowledge of social studies, machines like the power loom moved cloth making",
+      "choices": [
+        {
+          "key": "1",
+          "text": "from factories back into workers' homes"
+        },
+        {
+          "key": "2",
+          "text": "from Britain over to the American South"
+        },
+        {
+          "key": "3",
+          "text": "from water and steam back to hand power"
+        },
+        {
+          "key": "4",
+          "text": "from hand work at home into factories"
+        }
+      ],
+      "correct": "4",
+      "hints": [
+        "Before machines, where did spinners and weavers make cloth?",
+        "A machine needed power, a building and workers in one place. What was that place called?"
+      ],
+      "reasoning": "Before machines, spinners and weavers made cloth by hand at home: the domestic system. Machines like the power loom needed power, a building and workers in one place: the factory."
+    },
+    {
+      "n": 10,
+      "id": "p1-10",
+      "document": "Document — Edmund Cartwright and the power loom",
+      "stimulus": {
+        "content": ". . .Once back in Leicestershire, however, Cartwright found that the idea of devising a weaving machine had lodged itself firmly in his mind.\n“It struck me,” he wrote, “that as in plain weaving, according to the conception I then had of the business, that as there could only be three movements which were to follow each other in succession, there would be little difficulty in reproducing and repeating them.”\n“Full of these ideas I immediately employed a carpenter and smith to carry them into effect. . . . To my great delight, a piece of cloth, such as it was, was the produce. . . .”\nSadly, this first machine of Cartwright's was not at all successful, and was actually slower in its operation than a manual hand loom.\nNevertheless, it worked and proved that producing cotton cloth by mechanical means was a possibility. All Cartwright had to do now was to improve and refine the process.\nIt took a whole series of improvements and new patents before, finally, in 1788, his machine had reached a point where the three component processes of weaving—shedding, picking and beat-up—could be performed with sufficient speed and efficiency. . . .",
+        "citation": "“Edmund Cartwright & the Invention of the Power Loom,” Our Nottinghamshire, May 9, 2013"
+      },
+      "question": "The source line shows that this passage is",
+      "choices": [
+        {
+          "key": "1",
+          "text": "a speech Cartwright gave to Parliament"
+        },
+        {
+          "key": "2",
+          "text": "part of Adam Smith's book The Wealth of Nations, 1776"
+        },
+        {
+          "key": "3",
+          "text": "a 2013 article that quotes Cartwright's own words"
+        },
+        {
+          "key": "4",
+          "text": "a diary Cartwright kept in his workshop"
+        }
+      ],
+      "correct": "3",
+      "hints": [
+        "Source line first. Read it before the passage.",
+        "Some sentences are in quotation marks and some are not. Who wrote the parts that are not?"
+      ],
+      "reasoning": "The source line names an article in Our Nottinghamshire from May 9, 2013. Its writer tells Cartwright's story and quotes his own words: the parts in quotation marks."
+    }
+  ]
+}
