@@ -823,6 +823,8 @@
             "slot": "next",
             "title": "Know Your Next Step",
             "tag": "BONUS",
+            "badge": "images/arena/bonus-badge.webp",
+            "_badge": "BK 2026-11-23 10:32: 'add the bonus seal.' The gold star seal from the US Bonus (BK 2026-11-17 10:29, his Gemini art), in place of Door 4's footprints.",
             "sub": "Your 10.3 scores are back. Pick the gauge you scored lowest on \u2014 that's where you'll grow fastest.",
             "_sub": "BK 2026-11-23 10:08 to Will's wording (Will to Josh 10:26). The card does not shut on Fri 12/11: that date is the Classroom due date only; the card moves on BK's word.",
             "skills": ["EX", "OE", "DU", "EI", "HC", "TH"],
