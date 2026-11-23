@@ -1,0 +1,50 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "OE",
+ "skill_label": "Outside Information (OI)",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 1,
+ "level": 1,
+ "_activity": "Watch one get built: Trafalgar and Baines",
+ "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+ "type": "matching",
+ "modeled": true,
+ "source_document": "Document 4 — Edward Baines on England's position",
+ "left": [
+  {
+   "key": "a",
+   "label": "Document 4 — Baines says Britain's island location and its command of the seas kept it safe from invasion"
+  }
+ ],
+ "right": [
+  {
+   "key": "1",
+   "label": "In 1805, Britain's Royal Navy defeated the French and Spanish fleets at Trafalgar (OI). Edward Baines wrote that Britain's island location, together with its command of the seas, kept it safe from invasion (Doc 4)."
+  }
+ ],
+ "correct": {
+  "a": "1"
+ },
+ "rationale": {
+  "a": "Trafalgar is nowhere in Document 4. Baines says Britain commanded the seas; the battle shows how it won that command. Setting the scene first is what makes the fact do work. (This is the example from Day 2's OI box. Baines's source gives no year, so his sentence has none.)"
+ },
+ "frame": "In [year], ___ (OI). In [year], [who] [wrote / said / showed] that ___ (Doc __).",
+ "frame_fill": "In 1805, Britain's Royal Navy defeated the French and Spanish fleets at Trafalgar (OI). Edward Baines wrote that Britain's island location, together with its command of the seas, kept it safe from invasion (Doc 4).",
+ "models_band": "substantial, well-chosen, strengthens the argument",
+ "practice_only": true,
+ "submitted_to_teacher": false,
+ "documents": [
+  {
+   "source_document": "Document 4 — Edward Baines on England's position",
+   "source_citation": "Source: Edward Baines, History of the Cotton Manufacture in Great Britain, A. M. Kelley",
+   "source_text": "In comparing the advantages of England for manufactures with those of other countries, we can by no means overlook the excellent commercial position of the country — intermediate between the north and south of Europe; and its insular situation [island location], which, combined with the command of the seas, secures our territory from invasion or annoyance. The German ocean, the Baltic, and the Mediterranean are the regular highways for our ships; and our western ports command an unobstructed [clear] passage to the Atlantic, and to every quarter [part] of the world."
+  }
+ ]
+}

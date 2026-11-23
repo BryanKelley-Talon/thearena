@@ -1,0 +1,79 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "OE",
+ "skill_label": "Outside Information (OI)",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 2,
+ "level": 2,
+ "_activity": "Pick the one that does work",
+ "intro": "Pick the best one. Hints are here if you want them.",
+ "type": "mc_bestfit",
+ "items": [
+  {
+   "id": "oe103-01",
+   "stem": "Which one is outside information that does work on Document 10?",
+   "options": {
+    "1": "In 1829 the Stephensons' Rocket won the Rainhill Trials, which shows steam was ready to pull the trains",
+    "2": "In 1830 the railway ran about 30 miles between the port of Liverpool and the mill town of Manchester",
+    "3": "Liverpool and Manchester are both cities in the northwest of England, not very far from the sea",
+    "4": "Railways are still used in Britain today to carry people and goods between its largest cities"
+   },
+   "correct": "1",
+   "hints": [
+    "One of these is already inside Document 10. Cross it off first.",
+    "Of the rest, which one proves something about the railway instead of just sitting there?"
+   ],
+   "reason": "Option 2 is in the document, so it can't be outside information. Options 3 and 4 are true but they only sit there. The Rainhill Trials are outside the document and show the railway had an engine ready to run it.",
+   "_docs": [
+    10
+   ]
+  },
+  {
+   "id": "oe103-02",
+   "stem": "Which one is outside information that does work on Document 8?",
+   "options": {
+    "1": "Ure wrote that steam engines put multitudes of miners, engineers, ship-builders and sailors to work, and caused canals to be built",
+    "2": "Andrew Ure was a writer who studied factories, and his book was all about the factory system",
+    "3": "In 1785 a steam engine first drove a cotton mill's machines directly, which shows steam had reached the mills",
+    "4": "Steam engines are machines that use the power of steam from boiling water to make things move"
+   },
+   "correct": "3",
+   "hints": [
+    "One of these is a quotation from Document 8.",
+    "Which one names something that happened, with a date, and proves Ure's point?"
+   ],
+   "reason": "Option 1 is the document. Option 2 comes from the source line. Option 4 is a definition that does no work. Papplewick, 1785, is outside the document and shows steam powering mill machines, which backs up Ure.",
+   "_docs": [
+    8
+   ]
+  },
+  {
+   "id": "oe103-03",
+   "stem": "Which one is outside information that does work on Document 2?",
+   "options": {
+    "1": "Young wrote that by nineteen enclosure bills in twenty the poor were injured, some grossly injured",
+    "2": "Parliament passed thousands of enclosure acts, which shows the harm Young admitted reached families across the country",
+    "3": "Arthur Young was a well-known writer on farming, and he supported the enclosure of the open fields",
+    "4": "Farming has changed a great deal since 1801, and most British people today live in towns"
+   },
+   "correct": "2",
+   "hints": [
+    "Two of these are already in Document 2, its words or its introduction.",
+    "Which fact makes Young's admission bigger?"
+   ],
+   "reason": "Options 1 and 3 are inside the document: its quotation and its introduction. Option 4 sits there. Thousands of enclosure acts, from What You Need to Know, shows the injury Young admitted was not a few villages but the whole country.",
+   "_docs": [
+    2
+   ]
+  }
+ ],
+ "practice_only": true,
+ "submitted_to_teacher": false
+}

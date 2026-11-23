@@ -1,25 +1,33 @@
 {
-  "_course": "Global History and Geography 10R",
-  "_unit": "10.3 - The Industrial Revolution in Great Britain",
-  "_built": "2026-10-27 08:56 EDT by Will (global10r-curriculum). CRQ-shaped, on BK's 2026-10-22 10:29 ruling.",
-  "_status": "BLESSED BK 2026-10-22 11:28 (\"yes\"); Danny-cleared (fix-list 2026-10-26, 2026-10-27).",
-  "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own What You Need to Know, Outside Information boxes and documents (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
-  "skill": "HC",
-  "skill_label": "Historical Context",
-  "level": 4,
-  "type": "guided_write",
-  "_activity": "Arthur Young on enclosure, 1801",
-  "practice_only": true,
-  "source_document": "Document 2 - Arthur Young on enclosure, 1801",
-  "source_citation": "Source: Arthur Young, An Inquiry into the Propriety of Applying Wastes to the Better Maintenance and Support of the Poor, 1801",
-  "source_text": "Arthur Young was a well-known writer on farming who supported enclosure. In 1801 he wrote:\n“. . . the fact is, that by nineteen enclosure bills in twenty they [the poor] are injured, in some grossly injured. . . .”",
-  "prompt": "Explain the historical circumstances that led to the creation of this document. [1]    Write 2 to 3 sentences. Read the question twice: it asks what led to this being WRITTEN, not what it says.",
-  "sentence_starter": "After ___, ___. By 1801, ___.",
-  "checklist": [
-    "Did you name something that was already happening before 1801?",
-    "Did you say what was going on for ordinary families, instead of repeating what the document says?",
-    "Did you connect it to why Young wrote this down?"
-  ],
-  "model_response": "After Parliament passed thousands of enclosure acts, the open fields and common land that poor families had grazed their animals on were fenced into private farms. Farms grew more food with fewer workers, and many families who lost their land moved to towns to look for work. By 1801 that cost was plain enough that Arthur Young, a well-known writer on farming who had supported enclosure, put it in print anyway.",
-  "submitted_to_teacher": false
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - The Industrial Revolution in Great Britain",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_status": "BLESSED; Danny reads the changed fields only. NOT LIVE.",
+ "_licence": "ORIGINAL writing by Will. Every factual clause is drawn from 10.3 Casefile A's own What You Need to Know, Outside Information boxes and documents (skills/u103/words_103A.py), asserted against them at build time. Document text on screen is the casefile's own, with its source line.",
+ "skill": "HC",
+ "skill_label": "Historical Context",
+ "level": 4,
+ "type": "guided_write",
+ "_activity": "Arthur Young on enclosure, 1801",
+ "practice_only": false,
+ "source_document": "Document 2 - Arthur Young on enclosure, 1801",
+ "source_citation": "Source: Arthur Young, An Inquiry into the Propriety of Applying Wastes to the Better Maintenance and Support of the Poor, 1801",
+ "source_text": "Arthur Young was a well-known writer on farming who supported enclosure. In 1801 he wrote:\n“. . . the fact is, that by nineteen enclosure bills in twenty they [the poor] are injured, in some grossly injured. . . .”",
+ "prompt": "Explain the historical circumstances that led to the creation of this document. [1]    Write 2 to 3 sentences. Read the question twice: it asks what led to this being WRITTEN, not what it says.",
+ "sentence_starter": "After ___, ___. By [year], ___.",
+ "checklist": [
+  "Did you name something that was already happening before 1801?",
+  "Did you say what was going on for ordinary families, instead of repeating what the document says?",
+  "Did you connect it to why Young wrote this down?"
+ ],
+ "model_response": "After Parliament passed thousands of enclosure acts, the open fields and common land that poor families had grazed their animals on were fenced into private farms. Farms grew more food with fewer workers, and many families who lost their land moved to towns to look for work. By 1801 that cost was plain enough that Arthur Young, a well-known writer on farming who had supported enclosure, put it in print anyway.",
+ "submitted_to_teacher": false,
+ "_carried_from": "ladder-gs10r-10.3-hc-L4-guidedwrite.json, md5 56c3279c254748704970decf3c96e8bf (live, Danny-cleared)",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_changed_fields": [
+  "intro",
+  "sentence_starter",
+  "practice_only"
+ ],
+ "intro": "Now you write it. The sentence starter is the same one in your casefile — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts."
 }

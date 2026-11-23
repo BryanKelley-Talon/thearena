@@ -1,0 +1,90 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "EI",
+ "skill_label": "Enduring Issue",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 3,
+ "level": 3,
+ "_activity": "Build it: laissez faire, Document 6",
+ "intro": "Build the sentence. Drag each piece into the blank where it belongs.",
+ "type": "sentence_build",
+ "sentence_frame": "One enduring issue in Document ___ is ___. It is a problem because ___.",
+ "blanks": [
+  {
+   "blank_id": 1,
+   "label": "the document",
+   "tiles": [
+    {
+     "text": "6",
+     "correct": true
+    },
+    {
+     "text": "3",
+     "correct": false
+    },
+    {
+     "text": "9",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "blank_id": 2,
+   "label": "the exact issue, from the card",
+   "tiles": [
+    {
+     "text": "Economic Development",
+     "correct": true
+    },
+    {
+     "text": "Wealth & Resources",
+     "correct": false
+    },
+    {
+     "text": "laissez faire",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "blank_id": 3,
+   "label": "why it's a problem",
+   "tiles": [
+    {
+     "text": "when government stays out, a nation's wealth can grow while some people are left behind",
+     "correct": true
+    },
+    {
+     "text": "the government should intervene as little as possible in economic affairs",
+     "correct": false
+    },
+    {
+     "text": "Document 6 was written by Adam Smith himself in 1776",
+     "correct": false
+    }
+   ]
+  }
+ ],
+ "correct_sentence": "One enduring issue in Document 6 is Economic Development. It is a problem because when government stays out, a nation's wealth can grow while some people are left behind.",
+ "rationale": "Wealth & Resources is the umbrella and laissez faire is the topic: the card's exact issue is Economic Development. The problem has to be a problem: the document's own words and a wrong guess about who wrote it aren't.",
+ "hints": [
+  "Which choice is printed under an umbrella on the card, not as the umbrella?",
+  "Why it's a problem is not what the document says."
+ ],
+ "practice_only": true,
+ "submitted_to_teacher": false,
+ "documents": [
+  {
+   "source_document": "Document 6 — An introduction to The Wealth of Nations",
+   "source_citation": "Source: Introduction to a re-publication of Adam Smith's The Wealth of Nations, likely written by Martin Perry in 2013",
+   "source_text": "The Wealth of Nations carries the important message of laissez faire, which means that the government should intervene as little as possible in economic affairs and leave the market to its own devices. It advocates the liberation of economic production from all limiting regulation in order to benefit the people . . ."
+  }
+ ]
+}

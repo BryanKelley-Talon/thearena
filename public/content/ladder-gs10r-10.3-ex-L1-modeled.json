@@ -1,0 +1,50 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "EX",
+ "skill_label": "Explanation",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 1,
+ "level": 1,
+ "_activity": "Watch one get built: the Bridgewater Canal, 1761",
+ "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+ "type": "matching",
+ "modeled": true,
+ "source_document": "Document 9 — The Bridgewater Canal",
+ "left": [
+  {
+   "key": "a",
+   "label": "In 1761, the Bridgewater Canal began carrying coal from the mines at Worsley to Manchester, and by 1762 the price of coal in Manchester had fallen by about half (Doc 9)."
+  }
+ ],
+ "right": [
+  {
+   "key": "1",
+   "label": "This shows moving coal by water cost far less than moving it by road, which matters because cheap fuel helped Manchester grow into a mill town."
+  }
+ ],
+ "correct": {
+  "a": "1"
+ },
+ "rationale": {
+  "a": "The first half says what the evidence shows, in your own words. “Which matters because” is the so what: why it mattered to Britain's factories. Notice it never repeats the price numbers."
+ },
+ "frame": "This shows ___, which matters because ___.",
+ "frame_fill": "This shows moving coal by water cost far less than moving it by road, which matters because cheap fuel helped Manchester grow into a mill town.",
+ "models_band": "every piece explained; analysis outweighs description",
+ "practice_only": true,
+ "submitted_to_teacher": false,
+ "documents": [
+  {
+   "source_document": "Document 9 — The Bridgewater Canal",
+   "source_citation": "Sources: Encyclopaedia Britannica, “Bridgewater Canal”; Historic UK, “The Bridgewater Canal” (adapted)",
+   "source_text": "The Bridgewater Canal opened in 1761. It carried coal about 10 miles from the mines at Worsley to Manchester. One horse could pull a canal boat carrying about 30 tons, more than ten times what a horse and cart could carry. By 1762, the price of coal in Manchester had fallen by about half."
+  }
+ ]
+}

@@ -1,0 +1,44 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "EI",
+ "skill_label": "Enduring Issue",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 4,
+ "level": 4,
+ "_activity": "Write it: canals and railways, Documents 9 and 10",
+ "intro": "Now you write it. The sentence starter is the same one in your casefile — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+ "type": "guided_write",
+ "prompt": "Name one enduring issue Documents 9 and 10 show, and explain it.",
+ "sentence_starter": "One enduring issue in Document __ is ___. It is a problem because ___. In [year], [who] [wrote / said / showed] that ___ (Doc __).",
+ "checklist": [
+  "Names the exact issue from the card, not the umbrella",
+  "Defines the problem in one sentence",
+  "Points to where a document shows it, by number"
+ ],
+ "model_response": "One enduring issue in Document 9 is Scientific and Technological Change. It is a problem because new tools change how people live and work, whether they chose it or not: one canal cut the price of coal in a whole town. In 1761, the Bridgewater Canal began carrying coal from the mines at Worsley to Manchester, and by 1762 the price of coal there had fallen by about half (Doc 9).",
+ "model_visible": "always",
+ "practice_only": false,
+ "submitted_to_teacher": false,
+ "documents": [
+  {
+   "source_document": "Document 9 — The Bridgewater Canal",
+   "source_citation": "Sources: Encyclopaedia Britannica, “Bridgewater Canal”; Historic UK, “The Bridgewater Canal” (adapted)",
+   "source_text": "The Bridgewater Canal opened in 1761. It carried coal about 10 miles from the mines at Worsley to Manchester. One horse could pull a canal boat carrying about 30 tons, more than ten times what a horse and cart could carry. By 1762, the price of coal in Manchester had fallen by about half."
+  },
+  {
+   "source_document": "Document 10 — The Liverpool and Manchester Railway",
+   "source_citation": "Sources: Encyclopaedia Britannica and Wikipedia, “Liverpool and Manchester Railway” (adapted)",
+   "source_text": "The Liverpool and Manchester Railway opened on September 15, 1830. It ran about 30 miles between the port of Liverpool and the mill town of Manchester. It was the first railway to run scheduled passenger and freight trains pulled only by steam locomotives. Huge loads of raw materials for the textile mills came into Liverpool by ship and went on by rail."
+  }
+ ],
+ "source_document": "Document 9 — The Bridgewater Canal",
+ "source_citation": "Sources: Encyclopaedia Britannica, “Bridgewater Canal”; Historic UK, “The Bridgewater Canal” (adapted)",
+ "source_text": "The Bridgewater Canal opened in 1761. It carried coal about 10 miles from the mines at Worsley to Manchester. One horse could pull a canal boat carrying about 30 tons, more than ten times what a horse and cart could carry. By 1762, the price of coal in Manchester had fallen by about half."
+}

@@ -1,0 +1,79 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "EX",
+ "skill_label": "Explanation",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 2,
+ "level": 2,
+ "_activity": "Which one explains?",
+ "intro": "Pick the best one. Hints are here if you want them.",
+ "type": "mc_bestfit",
+ "items": [
+  {
+   "id": "ex103-01",
+   "stem": "Which one explains the evidence from Document 1?",
+   "options": {
+    "1": "This shows R. R. Palmer and other historians wrote A History of the Modern World, a textbook about the past",
+    "2": "This shows farming has been an important way of life in Britain for a very long time, hundreds of years",
+    "3": "This shows landowners ran Parliament, which matters because they could pass the enclosure acts that remade farming",
+    "4": "This shows that from 1688 to 1832 the British government was mostly in the hands of the landowners"
+   },
+   "correct": "3",
+   "hints": [
+    "One of these says the document again in different words.",
+    "Look for “which matters because.”"
+   ],
+   "reason": "Option 4 repeats the document. Option 1 explains the source line. Option 2 is true and explains nothing. Only option 3 says what the evidence shows and why it matters.",
+   "_docs": [
+    1
+   ]
+  },
+  {
+   "id": "ex103-02",
+   "stem": "Which one explains the evidence from Document 4?",
+   "options": {
+    "1": "This shows Baines said the island location and the command of the seas kept England safe from invasion",
+    "2": "This shows Edward Baines wrote a history of cotton manufacture and compared England with other countries",
+    "3": "This shows many countries in Europe fought wars against each other in the 1700s and the early 1800s",
+    "4": "This shows England was safe from invasion, which matters because owners could build factories without war at home"
+   },
+   "correct": "4",
+   "hints": [
+    "Which one gets past what Baines said and onto what it meant?",
+    "Only one of these could help you answer why it started in Britain."
+   ],
+   "reason": "Option 1 is Baines again. Option 2 is about the author, not the evidence. Option 3 is about Europe, not this document. Option 4 names the consequence and ties it to factories.",
+   "_docs": [
+    4
+   ]
+  },
+  {
+   "id": "ex103-03",
+   "stem": "Your claim is that new machines and new power changed how goods were made. Which explanation ties Document 8 back to it?",
+   "options": {
+    "1": "This shows steam engines raised the coal that fed more engines, which matters because factories no longer needed a river",
+    "2": "This shows Andrew Ure wrote The Philosophy of Manufactures, a book about the factory system of Great Britain",
+    "3": "This shows Ure wrote that steam engines lend their powerful arms to drain the pits and to raise the coals",
+    "4": "This shows steam engines were one of the most important inventions in history and are still studied today"
+   },
+   "correct": "1",
+   "hints": [
+    "Two of these are about the book or its words, not what they mean.",
+    "Which one says something about how goods were made?"
+   ],
+   "reason": "Option 2 is the source line. Option 3 quotes the document back. Option 4 is a general opinion. Option 1 says what the evidence shows and why it changed where factories could be built.",
+   "_docs": [
+    8
+   ]
+  }
+ ],
+ "practice_only": true,
+ "submitted_to_teacher": false
+}

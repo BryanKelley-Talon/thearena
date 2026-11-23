@@ -1,0 +1,39 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "TH",
+ "skill_label": "Thesis",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 5,
+ "level": 5,
+ "_activity": "On your own: Day 5's question",
+ "intro": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+ "type": "guided_write",
+ "cold": true,
+ "prompt": "Day 5's question: How did canals and railways help Britain industrialize? Write your thesis in one sentence.",
+ "documents": [
+  {
+   "source_document": "Document 9 — The Bridgewater Canal",
+   "source_citation": "Sources: Encyclopaedia Britannica, “Bridgewater Canal”; Historic UK, “The Bridgewater Canal” (adapted)",
+   "source_text": "The Bridgewater Canal opened in 1761. It carried coal about 10 miles from the mines at Worsley to Manchester. One horse could pull a canal boat carrying about 30 tons, more than ten times what a horse and cart could carry. By 1762, the price of coal in Manchester had fallen by about half."
+  },
+  {
+   "source_document": "Document 10 — The Liverpool and Manchester Railway",
+   "source_citation": "Sources: Encyclopaedia Britannica and Wikipedia, “Liverpool and Manchester Railway” (adapted)",
+   "source_text": "The Liverpool and Manchester Railway opened on September 15, 1830. It ran about 30 miles between the port of Liverpool and the mill town of Manchester. It was the first railway to run scheduled passenger and freight trains pulled only by steam locomotives. Huge loads of raw materials for the textile mills came into Liverpool by ship and went on by rail."
+  }
+ ],
+ "sentence_starter": null,
+ "checklist": [],
+ "model_visible": "never",
+ "_model": "No model, before or after the paste (BK 2026-11-06 09:59; 10.3 BK 2026-11-23 10:08).",
+ "_answer_guide": "No model on screen. Strong: Canals and railways helped Britain industrialize because they made moving coal and cotton cheaper and faster, so goods were cheaper and sold farther away (WYNK Day 5). (BK ruled B 11/23 10:57: moved off Day 4, which th-L3 builds and th-03 keys.)",
+ "practice_only": false,
+ "submitted_to_teacher": false
+}

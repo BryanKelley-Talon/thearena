@@ -1,0 +1,79 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "EI",
+ "skill_label": "Enduring Issue",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 2,
+ "level": 2,
+ "_activity": "Name it, define it, point to it",
+ "intro": "Pick the best one. Hints are here if you want them.",
+ "type": "mc_bestfit",
+ "items": [
+  {
+   "id": "ei103-01",
+   "stem": "Which one names the exact enduring issue Document 1 shows?",
+   "options": {
+    "1": "Power & Its Abuse, because the landowners who ran Parliament used their power to remake farming",
+    "2": "The Agricultural Revolution, because landowners tried fertilizers and new tools like the drill seeder",
+    "3": "Scarcity, because Britain did not have enough food for all of its people before the new farming",
+    "4": "Abuse of Power, because the landowners who ran Parliament used that power to serve their own incomes"
+   },
+   "correct": "4",
+   "hints": [
+    "One of these is the umbrella, not the issue under it.",
+    "One of these is the topic of the document, not an issue on the card."
+   ],
+   "reason": "Option 1 is the umbrella. Option 2 is the topic. Option 3 is an issue Document 1 never shows. Option 4 names the exact issue and says how the document shows it.",
+   "_docs": [
+    1
+   ]
+  },
+  {
+   "id": "ei103-02",
+   "stem": "Which one defines the issue in Document 8 the way the card does?",
+   "options": {
+    "1": "Scientific and Technological Change: Ure wrote that steam engines drain the pits and raise the coals",
+    "2": "Scientific and Technological Change: new tools, like the steam engine, change how people live and work",
+    "3": "Scientific and Technological Change: new inventions are good for everyone because they make life easier",
+    "4": "Wealth & Resources: steam engines made cheap goods and brought in comforts from foreign lands"
+   },
+   "correct": "2",
+   "hints": [
+    "A definition says what the issue is, not what the document says.",
+    "Is option 3 a definition, or an opinion?"
+   ],
+   "reason": "Option 1 is evidence, not a definition. Option 3 is an opinion. Option 4 names an umbrella. Option 2 defines the issue in the card's own words, with an example.",
+   "_docs": [
+    8
+   ]
+  },
+  {
+   "id": "ei103-03",
+   "stem": "Economic Development shows up in Document 5. Which one points to where, by number?",
+   "options": {
+    "1": "Economic Development is how a place grows its wealth, and who that growth helps or leaves behind",
+    "2": "Economic Development shows up all through the Industrial Revolution, when Britain became much richer than it had ever been before",
+    "3": "In 1776, Adam Smith wrote that ten workers splitting the job could make over 48,000 pins a day (Doc 5)",
+    "4": "Economic Development is in all of the documents, because every document is about making money"
+   },
+   "correct": "3",
+   "hints": [
+    "Only one of these has a document number in it.",
+    "Pointing means a witness, a detail and a number."
+   ],
+   "reason": "Option 1 is the definition. Options 2 and 4 never point to a document. Option 3 calls the witness and gives the number: that's where the issue shows.",
+   "_docs": [
+    5
+   ]
+  }
+ ],
+ "practice_only": true,
+ "submitted_to_teacher": false
+}

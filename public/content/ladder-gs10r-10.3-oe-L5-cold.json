@@ -1,0 +1,34 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "OE",
+ "skill_label": "Outside Information (OI)",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 5,
+ "level": 5,
+ "_activity": "On your own: Document 7",
+ "intro": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+ "type": "guided_write",
+ "cold": true,
+ "prompt": "Add one piece of outside information to this document's story, and use it to prove a point.",
+ "documents": [
+  {
+   "source_document": "Document 7 — Edmund Cartwright and the power loom",
+   "source_citation": "Source: “Edmund Cartwright & the Invention of the Power Loom,” Our Nottinghamshire, May 9, 2013",
+   "source_text": ". . .Once back in Leicestershire, however, Cartwright found that the idea of devising a weaving machine had lodged itself firmly in his mind.\n“It struck me,” he wrote, “that as in plain weaving, according to the conception I then had of the business, that as there could only be three movements which were to follow each other in succession, there would be little difficulty in reproducing and repeating them.”\n“Full of these ideas I immediately employed a carpenter and smith to carry them into effect. . . . To my great delight, a piece of cloth, such as it was, was the produce. . . .”\nSadly, this first machine of Cartwright's was not at all successful, and was actually slower in its operation than a manual hand loom.\nNevertheless, it worked and proved that producing cotton cloth by mechanical means was a possibility. All Cartwright had to do now was to improve and refine the process.\nIt took a whole series of improvements and new patents before, finally, in 1788, his machine had reached a point where the three component processes of weaving—shedding, picking and beat-up—could be performed with sufficient speed and efficiency. . . ."
+  }
+ ],
+ "sentence_starter": null,
+ "checklist": [],
+ "model_visible": "never",
+ "_model": "No model, before or after the paste (BK 2026-11-06 09:59; 10.3 BK 2026-11-23 10:08).",
+ "_answer_guide": "No model on screen. Facts a kid is likely to reach for: Cartwright was a clergyman with no training in machines; in 1809 Parliament voted him £10,000 for the power loom (OI box under Doc 7); the spinning jenny and the water frame came first (WYNK Day 4).",
+ "practice_only": false,
+ "submitted_to_teacher": false
+}

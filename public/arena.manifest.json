@@ -590,7 +590,20 @@
         {
           "gauge_rules": {
             "hidden": true,
-            "_source": "BK 2026-11-06 10:01: \"for global...we could talk more about it later, keep it hidden for now.\" 10.3's gauges do not show (casefile rooms show documents only; gauge links land on the unit). Content files untouched."
+            "_source": "BK 2026-11-06 10:01: \"for global...we could talk more about it later, keep it hidden for now.\" 10.3's gauges do not show (casefile rooms show documents only; gauge links land on the unit). Content files untouched.",
+            "more_reps": false,
+            "write_box": false,
+            "hide_levels": [],
+            "box_levels": [
+              4,
+              5
+            ],
+            "paste_line": "Copy your answer and paste it into BONUS · 10.3 Know Your Next Step on Google Classroom. Mr. Kelley reads it there.",
+            "source_callout": "START WITH THE SOURCE. Who wrote it? When? Why? That is Question 1, and it comes first, every time.",
+            "read_end_line": "Now try Level 2.",
+            "band_fold": true,
+            "ref_button": "umbrellas",
+            "_source_2026_11_23": "Josh, 2026-11-23, the 10.3 KYNS BONUS gauge run (BK 09:55; Will's words, BK blessed 10:31; Danny cleared 12:31): the US 11.3A gauge-run rules (no More reps, Levels 1-3 no box, Levels 4-5 the type-in box with Will's paste line, the call-out, the Level 1 end line, the band folded on level screens). ref_button 'umbrellas' = Will's 'button': 'The Six Umbrellas', the Global counterpart of US civic_button. 'hidden' stays true: the gauges show only inside the open run (BK 09:55)."
           },
           "card_badges": {
             "casefile": "images/arena/graded-badge.webp",
@@ -612,7 +625,7 @@
           "activities": [
             {
               "type": "stimulus",
-              "label": "Part I practice \u00b7 10.3",
+              "label": "Part I practice · 10.3",
               "published": true,
               "content_ref": "content/practice-gs10r-10.3-partI.json",
               "_note": "Josh, 2026-11-19. Will's Part I practice (blessed 11/18 15:05; Danny CLEAN 11/19 08:51, 225-1-0), sha256 4005cf1f..., byte for byte. Manifest line is the one in the file's own _manifest."
@@ -632,14 +645,264 @@
           "_note": "Josh, 2026-10-23. Shell only — Doc Assist Casefile A, nothing else. No brief_ref, activities, ladders or chase: none of those exist yet for 10.3 (Josh pulls, Josh never authors). No unit label is ruled either; 'label' is a placeholder (the bare number) until Will or BK names the unit for the door — it doesn't render anywhere while status is building and current_unit is unit-2, so nothing is seen with a made-up title. Amended 2026-10-27 by Josh: the HC ladder is now wired L1-L4 published and L5 dark (Danny closed the package at 09:25; see the ladder _source and _note_l5). Levels carry a placeholder label ('Historical Context') since no per-level label was supplied in this pack — flagged in the proof for Will/BK to replace if they want the per-document titles 10.2 uses.",
           "ladders": [
             {
-              "skill": "HC",
-              "_source": "Will, 10.3 Casefile A HC files. Danny cleared 2026-10-26 20:47 (docassist, L1, L3, L4) and 2026-10-27 09:25 (L2, second read, changed lines only — this CLOSES the 10.3A HC door package). Final md5 set is Danny's 09:25 memo, superseding Will's 08:48 set: L1 17685bc202e649b25fcb3d06d0cc2e4b, L2 624066ac723dc0ad9145473817084994, L3 f6bc62c849608668506130e404ebefa5, L4 56c3279c254748704970decf3c96e8bf, L5 fad82cd9ca7461c43d3910eaa495510c. L1/L3/L4 content is unchanged since the 10/22 clear; only the per-level _status line moved (Will 08:56, on BK's 08:54 ruling). L2's own _status line still reads 'second read pending' — stale, written 08:56 before Danny read it at 09:25; Danny's memo governs. L5 is ported but dark, see _note_l5. Ported byte for byte by Josh 2026-10-27.",
+              "skill": "EX",
+              "band": {
+                "head": "THE SO WHAT",
+                "text": "Most people stop at describing what a document says. Explaining goes one step further: why it matters. After every piece of evidence, keep going: This shows ___, which matters because ___."
+              },
               "levels": [
                 {
                   "level": 1,
                   "type": "matching",
-                  "label": "Historical Context",
-                  "content_ref": "content/ladder-gs10r-10.3-hc-L1-matching.json",
+                  "label": "Watch one get built: the Bridgewater Canal, 1761",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-gs10r-10.3-ex-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Which one explains?",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-gs10r-10.3-ex-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: the railway, Document 10",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-gs10r-10.3-ex-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: laissez faire, Document 6",
+                  "card_blurb": "Now you write it. The sentence starter is the same one in your casefile — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-gs10r-10.3-ex-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Document 7",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-gs10r-10.3-ex-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "Will's 10.3 KNOW YOUR NEXT STEP · BONUS gauge-run package (wording PDF md5 5efa8619, BK blessed 2026-11-23 10:31). Danny CLEARED 2026-11-23 12:31: one cold reader, three passes, 278 claims checked, 11 fixed, 0 unsupported; 30 ladders + manifest-words, md5s in his MD5SUMS.txt, ported byte for byte by Josh. Labels, bands and card blurbs from gaugerun-gs10r-10.3-manifest-words.json (a null label keeps the live label)."
+            },
+            {
+              "skill": "OE",
+              "band": {
+                "head": "WHERE YOURS COMES FROM",
+                "text": "Your outside information is already in your casefile. It's the fact in the OI box under every document, the facts you starred in your notes, and the ones you caught in the video clips. Every fact says where it came from: (Doc #) if it's in a document, (OI) if you brought it."
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: Trafalgar and Baines",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-gs10r-10.3-oe-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Pick the one that does work",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-gs10r-10.3-oe-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: set the scene for Adam Smith",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-gs10r-10.3-oe-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: Arthur Young, 1801",
+                  "card_blurb": "Now you write it. The sentence starter is the same one in your casefile — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-gs10r-10.3-oe-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Document 7",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-gs10r-10.3-oe-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "Will's 10.3 KNOW YOUR NEXT STEP · BONUS gauge-run package (wording PDF md5 5efa8619, BK blessed 2026-11-23 10:31). Danny CLEARED 2026-11-23 12:31: one cold reader, three passes, 278 claims checked, 11 fixed, 0 unsupported; 30 ladders + manifest-words, md5s in his MD5SUMS.txt, ported byte for byte by Josh. Labels, bands and card blurbs from gaugerun-gs10r-10.3-manifest-words.json (a null label keeps the live label)."
+            },
+            {
+              "skill": "DU",
+              "band": {
+                "head": "CALL YOUR WITNESS",
+                "text": "Who wrote it, and when? Then the evidence, in your words or theirs. Then the number: (Doc #). No year in the source line? Leave the year out."
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: Adam Smith, 1776",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Document Use",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Document Use",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Document Use",
+                  "card_blurb": "Now you write it. The sentence starter is the same one in your casefile — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Document 1",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-gs10r-10.3-du-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "Will's 10.3 KNOW YOUR NEXT STEP · BONUS gauge-run package (wording PDF md5 5efa8619, BK blessed 2026-11-23 10:31). Danny CLEARED 2026-11-23 12:31: one cold reader, three passes, 278 claims checked, 11 fixed, 0 unsupported; 30 ladders + manifest-words, md5s in his MD5SUMS.txt, ported byte for byte by Josh. Labels, bands and card blurbs from gaugerun-gs10r-10.3-manifest-words.json (a null label keeps the live label)."
+            },
+            {
+              "skill": "EI",
+              "band": {
+                "head": "USE THE CARD",
+                "text": "Open The Six Umbrellas. Spot the umbrella fast. Then name the exact issue underneath it, not the umbrella, and say why it's a problem."
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: Arthur Young, 1801",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-gs10r-10.3-ei-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Name it, define it, point to it",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-gs10r-10.3-ei-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Build it: laissez faire, Document 6",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-gs10r-10.3-ei-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: canals and railways, Documents 9 and 10",
+                  "card_blurb": "Now you write it. The sentence starter is the same one in your casefile — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-gs10r-10.3-ei-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: Document 7",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-gs10r-10.3-ei-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "Will's 10.3 KNOW YOUR NEXT STEP · BONUS gauge-run package (wording PDF md5 5efa8619, BK blessed 2026-11-23 10:31). Danny CLEARED 2026-11-23 12:31: one cold reader, three passes, 278 claims checked, 11 fixed, 0 unsupported; 30 ladders + manifest-words, md5s in his MD5SUMS.txt, ported byte for byte by Josh. Labels, bands and card blurbs from gaugerun-gs10r-10.3-manifest-words.json (a null label keeps the live label)."
+            },
+            {
+              "skill": "HC",
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: the power loom",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-gs10r-10.3-hc-L1-modeled.json",
                   "published": true,
                   "opens_at": "A_BACK",
                   "opens_label": "Opens when Casefile A comes back"
@@ -648,17 +911,18 @@
                   "level": 2,
                   "type": "mc_bestfit",
                   "label": "Historical Context",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L2-bestfit.json",
                   "published": true,
-                  "docs_from_casefile": "A",
-                  "_note_l2": "Josh, 2026-10-27. Ported byte for byte (md5 624066ac723dc0ad9145473817084994, exactly as Danny cleared it 09:25 — this file is NOT edited). Its five stems each open by naming a casefile document (5, 2, 9, 10, 8), which failed the content gate on BK's 2026-09-25 rule: no task without its document. BK ruled 2026-10-27 10:18: 'no document pointing if they dont have a document ... always add a document for the activity so a kid without paper docs can still get something from it.' So docs_from_casefile resolves each stem's Document N from this unit's own blessed Doc Assist pack at render, text and source line byte for byte, and shows it above the question. Nothing is authored and no content file diverges from its clearance. Same mechanism the shell already uses to show L4's source above L5 (openLevel, BK's same rule). The gate verifies every referenced document number exists in the pack.",
                   "opens_at": "A_BACK",
-                  "opens_label": "Opens when Casefile A comes back"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
                 },
                 {
                   "level": 3,
                   "type": "sentence_build",
                   "label": "Historical Context",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L3-sentencebuild.json",
                   "published": true,
                   "opens_at": "A_BACK",
@@ -667,8 +931,71 @@
                 {
                   "level": 4,
                   "type": "guided_write",
-                  "label": "Historical Context",
+                  "label": "Write it: Arthur Young, 1801",
+                  "card_blurb": "Now you write it. The sentence starter is the same one in your casefile — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
                   "content_ref": "content/ladder-gs10r-10.3-hc-L4-guidedwrite.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "docs_from_casefile": "A"
+                },
+                {
+                  "level": 5,
+                  "type": "guided_write",
+                  "label": "On your own: the railway debate, 1825",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-gs10r-10.3-hc-L5-cold.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
+                }
+              ],
+              "_source": "Will's 10.3 KNOW YOUR NEXT STEP · BONUS gauge-run package (wording PDF md5 5efa8619, BK blessed 2026-11-23 10:31). Danny CLEARED 2026-11-23 12:31: one cold reader, three passes, 278 claims checked, 11 fixed, 0 unsupported; 30 ladders + manifest-words, md5s in his MD5SUMS.txt, ported byte for byte by Josh. Labels, bands and card blurbs from gaugerun-gs10r-10.3-manifest-words.json (a null label keeps the live label)."
+            },
+            {
+              "skill": "TH",
+              "band": {
+                "head": "THE QUESTION YOU ARE ANSWERING",
+                "text": "Why did the Industrial Revolution begin in Great Britain? It is the question on your Casefile A cover. Every day's question was one piece of it. Your thesis is your answer."
+              },
+              "levels": [
+                {
+                  "level": 1,
+                  "type": "matching",
+                  "label": "Watch one get built: Day 1's question",
+                  "card_blurb": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L1-modeled.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 2,
+                  "type": "mc_bestfit",
+                  "label": "Thesis",
+                  "card_blurb": "Pick the best one. Hints are here if you want them.",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L2-bestfit.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 3,
+                  "type": "sentence_build",
+                  "label": "Thesis",
+                  "card_blurb": "Build the sentence. Drag each piece into the blank where it belongs.",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L3-sentencebuild.json",
+                  "published": true,
+                  "opens_at": "A_BACK",
+                  "opens_label": "Opens when Casefile A comes back"
+                },
+                {
+                  "level": 4,
+                  "type": "guided_write",
+                  "label": "Write it: the Make the Case question",
+                  "card_blurb": "Now you write it. The sentence starter is the same one in your casefile — use it. Getting used to it now is how it becomes automatic in June, when every point on the Regents essay counts.",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L4-guidedwrite.json",
                   "published": true,
                   "opens_at": "A_BACK",
                   "opens_label": "Opens when Casefile A comes back"
@@ -676,104 +1003,16 @@
                 {
                   "level": 5,
                   "type": "guided_write",
-                  "label": "On your own: the railway debate, 1825",
-                  "content_ref": "content/ladder-gs10r-10.3-hc-L5-cold.json",
+                  "label": "On your own: Day 5's question",
+                  "card_blurb": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+                  "content_ref": "content/ladder-gs10r-10.3-th-L5-cold.json",
                   "published": true,
-                  "cold": true,
-                  "_note_l5": "Josh, 2026-10-30. Danny cleared the railway-debate L5 2026-10-27 (md5 567f0d1d8e20dad6544d52163e979f10) and the 2026-10-30 restamp (md5 932c00e1a5a9489ad5acca0dbcf0982b; model_opens_on added, status line and model note only). It replaces the old enrichment draft fad82cd9..., removed. BK 2026-10-30 14:08 via Will 14:09: a Level 5 model opens on the unit's Data Day, Mon 11/30. The hold-models script reads the date from this line, not from the content file.",
                   "opens_at": "A_BACK",
-                  "opens_label": "Coming on {day}",
-                  "model_opens_at": "DATA_DAY"
+                  "opens_label": "Opens when Casefile A comes back",
+                  "cold": true
                 }
               ],
-              "_dates": "Will 2026-10-31 19:05 (BK 19:01 'Follow the timing'): HC L1-L4 lock with DU and TH to Fri 11/6, 'Opens when Casefile A comes back'; L5 opens the same day and reads 'Coming on <day>' until then, never naming its document; its model still opens Data Day."
-            },
-            {
-              "skill": "DU",
-              "_source": "Will (global10r-curriculum), 10.3 Casefile A Document Use and Thesis ladders, Levels 1-4. BLESSED by BK 2026-10-31 09:42, cleared by Danny 2026-10-31 08:55 (one cold reader, the ruled count for a practice rung -- 8 packs, 0 fixes, 0 unsupported). File still carries Will's own 10/30 14:53 _status line (\"DRAFT...NOT APPROVED, NOT LIVE\") -- stale, written before the 10/31 clearance; Danny's and BK's later word governs, same as HC's L2 stale-status precedent (2026-10-27). md5s verified byte for byte against Will's 09:45 table before port; nothing edited. practice_only true, counts_for null on every level (none of this is scored). Gated with Historical Context behind the same Fri 11/6 open date per BK 09:16 via Will (\"Opens when Casefile A comes back\" -- the date is machinery, the label is what a kid reads); HC's own four already-live levels are UNCHANGED by this port and are not yet carrying this gate -- flagged back to Josh, not applied here without a separate yes, since it would re-lock content already open to kids. Ported by Josh 2026-10-31.",
-              "levels": [
-                {
-                  "level": 1,
-                  "type": "matching",
-                  "label": "Document Use",
-                  "content_ref": "content/ladder-gs10r-10.3-du-L1-matching.json",
-                  "published": true,
-                  "opens_label": "Opens when Casefile A comes back",
-                  "docs_from_casefile": "A",
-                  "opens_at": "A_BACK"
-                },
-                {
-                  "level": 2,
-                  "type": "mc_bestfit",
-                  "label": "Document Use",
-                  "content_ref": "content/ladder-gs10r-10.3-du-L2-bestfit.json",
-                  "published": true,
-                  "opens_label": "Opens when Casefile A comes back",
-                  "docs_from_casefile": "A",
-                  "opens_at": "A_BACK"
-                },
-                {
-                  "level": 3,
-                  "type": "sentence_build",
-                  "label": "Document Use",
-                  "content_ref": "content/ladder-gs10r-10.3-du-L3-sentencebuild.json",
-                  "published": true,
-                  "opens_label": "Opens when Casefile A comes back",
-                  "docs_from_casefile": "A",
-                  "opens_at": "A_BACK"
-                },
-                {
-                  "level": 4,
-                  "type": "guided_write",
-                  "label": "Document Use",
-                  "content_ref": "content/ladder-gs10r-10.3-du-L4-guidedwrite.json",
-                  "published": true,
-                  "opens_label": "Opens when Casefile A comes back",
-                  "opens_at": "A_BACK"
-                }
-              ]
-            },
-            {
-              "skill": "TH",
-              "_source": "Will (global10r-curriculum), 10.3 Casefile A Document Use and Thesis ladders, Levels 1-4. BLESSED by BK 2026-10-31 09:42, cleared by Danny 2026-10-31 08:55 (one cold reader, the ruled count for a practice rung -- 8 packs, 0 fixes, 0 unsupported). File still carries Will's own 10/30 14:53 _status line (\"DRAFT...NOT APPROVED, NOT LIVE\") -- stale, written before the 10/31 clearance; Danny's and BK's later word governs, same as HC's L2 stale-status precedent (2026-10-27). md5s verified byte for byte against Will's 09:45 table before port; nothing edited. practice_only true, counts_for null on every level (none of this is scored). Gated with Historical Context behind the same Fri 11/6 open date per BK 09:16 via Will (\"Opens when Casefile A comes back\" -- the date is machinery, the label is what a kid reads); HC's own four already-live levels are UNCHANGED by this port and are not yet carrying this gate -- flagged back to Josh, not applied here without a separate yes, since it would re-lock content already open to kids. Ported by Josh 2026-10-31.",
-              "levels": [
-                {
-                  "level": 1,
-                  "type": "matching",
-                  "label": "Thesis",
-                  "content_ref": "content/ladder-gs10r-10.3-th-L1-matching.json",
-                  "published": true,
-                  "opens_label": "Opens when Casefile A comes back",
-                  "opens_at": "A_BACK"
-                },
-                {
-                  "level": 2,
-                  "type": "mc_bestfit",
-                  "label": "Thesis",
-                  "content_ref": "content/ladder-gs10r-10.3-th-L2-bestfit.json",
-                  "published": true,
-                  "opens_label": "Opens when Casefile A comes back",
-                  "opens_at": "A_BACK"
-                },
-                {
-                  "level": 3,
-                  "type": "sentence_build",
-                  "label": "Thesis",
-                  "content_ref": "content/ladder-gs10r-10.3-th-L3-sentencebuild.json",
-                  "published": true,
-                  "opens_label": "Opens when Casefile A comes back",
-                  "opens_at": "A_BACK"
-                },
-                {
-                  "level": 4,
-                  "type": "guided_write",
-                  "label": "Thesis",
-                  "content_ref": "content/ladder-gs10r-10.3-th-L4-guidedwrite.json",
-                  "published": true,
-                  "opens_label": "Opens when Casefile A comes back",
-                  "opens_at": "A_BACK"
-                }
-              ]
+              "_source": "Will's 10.3 KNOW YOUR NEXT STEP · BONUS gauge-run package (wording PDF md5 5efa8619, BK blessed 2026-11-23 10:31). Danny CLEARED 2026-11-23 12:31: one cold reader, three passes, 278 claims checked, 11 fixed, 0 unsupported; 30 ladders + manifest-words, md5s in his MD5SUMS.txt, ported byte for byte by Josh. Labels, bands and card blurbs from gaugerun-gs10r-10.3-manifest-words.json (a null label keeps the live label)."
             }
           ],
           "casefiles": [
@@ -825,13 +1064,26 @@
             "tag": "BONUS",
             "badge": "images/arena/bonus-badge.webp",
             "_badge": "BK 2026-11-23 10:32: 'add the bonus seal.' The gold star seal from the US Bonus (BK 2026-11-17 10:29, his Gemini art), in place of Door 4's footprints.",
-            "sub": "Your 10.3 scores are back. Pick the gauge you scored lowest on \u2014 that's where you'll grow fastest.",
+            "sub": "Your 10.3 scores are back. Pick the gauge you scored lowest on — that's where you'll grow fastest.",
             "_sub": "BK 2026-11-23 10:08 to Will's wording (Will to Josh 10:26). The card does not shut on Fri 12/11: that date is the Classroom due date only; the card moves on BK's word.",
-            "skills": ["EX", "OE", "DU", "EI", "HC", "TH"],
+            "skills": [
+              "EX",
+              "OE",
+              "DU",
+              "EI",
+              "HC",
+              "TH"
+            ],
             "opens_at": "DATA_DAY",
             "opens_label": "{day}",
-            "box": [],
-            "_source": "BK 2026-11-23 09:53-09:55, chat: 'I think KYNS becomes a gauge run bonus (similar to what we did in US after casefile A)'; '1. All Six. 2. KYNS is the name..we can tag that with BONUS beside the name. kids will do data day on 11/30...so they'll indentify gauge to run. we'll do reflection in class. ...and then they can work this bonus until dec 11. Leave it right where KYNS is...' The run holds Door 4's slot and name (slot next), BONUS beside it (tag), all six gauges in Global order, shown only inside this card (gauge_rules.hidden stays true everywhere else). Opens Data Day on BK's push. No sub: the card reads Door 4's own blessed line. box, paste line, call-out, end line, the close on Fri 12/11 and the Level 4-5 box rules wait on Will's package (josh-to-will 2026-11-23 0956, 0957) through BK and Danny. Seal: Door 4's footprints until BK says otherwise. Josh, branch kyns-bonus-10.3."
+            "box": [
+              "Your 10.3 scores are back. Pick your gauge — your lowest one is where you'll grow fastest, and your next reading replaces this one. Start at Level 1.",
+              "Levels 1, 2 and 3 are practice. Nothing is saved and nothing is scored.",
+              "Level 4 you write with coaching. Level 5 you write cold. For those two, type your answer here, then copy it into BONUS · 10.3 Know Your Next Step on Google Classroom. Mr. Kelley reads it there.",
+              "A bonus can add to your grade. It can never lower it."
+            ],
+            "_source": "BK 2026-11-23 09:53-09:55, chat: 'I think KYNS becomes a gauge run bonus (similar to what we did in US after casefile A)'; '1. All Six. 2. KYNS is the name..we can tag that with BONUS beside the name. kids will do data day on 11/30...so they'll indentify gauge to run. we'll do reflection in class. ...and then they can work this bonus until dec 11. Leave it right where KYNS is...' The run holds Door 4's slot and name (slot next), BONUS beside it (tag), all six gauges in Global order, shown only inside this card (gauge_rules.hidden stays true everywhere else). Opens Data Day on BK's push. No sub: the card reads Door 4's own blessed line. box, paste line, call-out, end line, the close on Fri 12/11 and the Level 4-5 box rules wait on Will's package (josh-to-will 2026-11-23 0956, 0957) through BK and Danny. Seal: Door 4's footprints until BK says otherwise. Josh, branch kyns-bonus-10.3.",
+            "_box": "Will's box (BK blessed 2026-11-23 10:31; Danny cleared 12:31). His box_title 'KNOW YOUR NEXT STEP · BONUS' is the room heading: run.title with the BONUS tag."
           },
           "next_step": {
             "closed": true,

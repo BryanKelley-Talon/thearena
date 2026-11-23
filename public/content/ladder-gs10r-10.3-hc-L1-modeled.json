@@ -1,0 +1,50 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "HC",
+ "skill_label": "Historical Context",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 1,
+ "level": 1,
+ "_activity": "Watch one get built: the power loom",
+ "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+ "type": "matching",
+ "modeled": true,
+ "source_document": "Document 7 — Edmund Cartwright and the power loom",
+ "left": [
+  {
+   "key": "a",
+   "label": "Document 7 — Cartwright builds a weaving machine"
+  }
+ ],
+ "right": [
+  {
+   "key": "1",
+   "label": "After new machines like the spinning jenny and Richard Arkwright's water frame sped up cloth making, the old way of making cloth by hand at home began to give way to mills. By 1785, a steam engine was driving a cotton-spinning mill's machines directly for the first time, and inventors like Edmund Cartwright were trying to make weaving work by machine too."
+  }
+ ],
+ "correct": {
+  "a": "1"
+ },
+ "rationale": {
+  "a": "It starts before the document: the spinning machines came first. It says what was going on, not what Cartwright wrote. Its last clause lands on the document's own story. That's historical context: what led up to it."
+ },
+ "frame": "After ___, ___. By [year], ___.",
+ "frame_fill": "After new machines like the spinning jenny and Richard Arkwright's water frame sped up cloth making, the old way of making cloth by hand at home began to give way to mills. By 1785, a steam engine was driving a cotton-spinning mill's machines directly for the first time, and inventors like Edmund Cartwright were trying to make weaving work by machine too.",
+ "models_band": "era + what's happening + tied to the issue",
+ "practice_only": true,
+ "submitted_to_teacher": false,
+ "documents": [
+  {
+   "source_document": "Document 7 — Edmund Cartwright and the power loom",
+   "source_citation": "Source: “Edmund Cartwright & the Invention of the Power Loom,” Our Nottinghamshire, May 9, 2013",
+   "source_text": ". . .Once back in Leicestershire, however, Cartwright found that the idea of devising a weaving machine had lodged itself firmly in his mind.\n“It struck me,” he wrote, “that as in plain weaving, according to the conception I then had of the business, that as there could only be three movements which were to follow each other in succession, there would be little difficulty in reproducing and repeating them.”\n“Full of these ideas I immediately employed a carpenter and smith to carry them into effect. . . . To my great delight, a piece of cloth, such as it was, was the produce. . . .”\nSadly, this first machine of Cartwright's was not at all successful, and was actually slower in its operation than a manual hand loom.\nNevertheless, it worked and proved that producing cotton cloth by mechanical means was a possibility. All Cartwright had to do now was to improve and refine the process.\nIt took a whole series of improvements and new patents before, finally, in 1788, his machine had reached a point where the three component processes of weaving—shedding, picking and beat-up—could be performed with sufficient speed and efficiency. . . ."
+  }
+ ]
+}

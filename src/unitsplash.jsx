@@ -331,7 +331,7 @@ export function NextStepBody({ course, unit, prog, onOpenGauge, onOpenLab }) {
 export const SPLASH_STYLES = `
 .us-door.run:not(.shut){border-color:var(--gold)}
 /* A card's tag beside its name (gauge_run.tag; BK 2026-11-23 09:55 "tag that with BONUS beside the name"). Navy on gold, 9.6:1. */
-.us-tag{display:inline-block;margin-left:10px;padding:2px 8px;border-radius:5px;background:var(--gold);color:#0B1220;font-family:'Barlow Condensed',sans-serif;font-size:.62em;font-weight:700;letter-spacing:.08em;vertical-align:.18em;line-height:1.3}
+.us-tag{display:inline-block;margin-left:10px;padding:2px 8px;border-radius:5px;background:var(--gold);color:#0B1220;font-family:'Barlow Condensed',sans-serif;font-size:.62em;font-weight:700;letter-spacing:.08em;vertical-align:.18em;line-height:1.3;text-shadow:none}
 /* The Bonus card's gold seal, top right (BK 2026-11-17). Room is kept on the right so the title never runs under it. */
 .us-door{position:relative}
 .us-door.has-badge{padding-right:78px}

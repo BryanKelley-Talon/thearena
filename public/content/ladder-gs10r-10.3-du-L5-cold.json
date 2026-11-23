@@ -1,0 +1,34 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "DU",
+ "skill_label": "Document Use",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 5,
+ "level": 5,
+ "_activity": "On your own: Document 1",
+ "intro": "No starter, no checklist, no model. This is the one you do the way you'll do it on the exam.",
+ "type": "guided_write",
+ "cold": true,
+ "prompt": "Call your witness: use Document 1 to back up a point about why farming in Britain changed in the 1700s.",
+ "documents": [
+  {
+   "source_document": "Document 1 — The Agricultural Revolution in Britain",
+   "source_citation": "Source: R. R. Palmer et al., A History of the Modern World, 9th edition, McGraw-Hill",
+   "source_text": ". . . The English Revolution of 1688, confirming the ascendancy [rise] of Parliament over the king, meant in economic terms the ascendancy of the more well-to-do property-owning classes. Among these the landowners were by far the most important, though they counted the great London merchants among their allies. For a century and a half, from 1688 to 1832, the British government was substantially in the hands of these landowners—the “squirearchy” or “gentlemen of England.” The result was a thorough transformation of farming, an Agricultural Revolution without which the Industrial Revolution could not have occurred.\nMany landowners, seeking to increase their money incomes, began experimenting with improved methods of cultivation and stock raising. They made more use of fertilizers (mainly animal manure); they introduced new implements (such as the drill seeder and horse-hoe); they brought in new crops, such as turnips, and a more scientific system of crop rotation; they attempted to breed larger sheep and fatter cattle.\nAn improving landlord, to introduce such changes successfully, needed full control over his land. He saw a mere barrier to progress in the old village system of open fields, common lands, and semicollective methods of cultivation. Improvement also required an investment of capital, which was impossible so long as the soil was tilled by numerous poor and custom-bound small farmers. . . ."
+  }
+ ],
+ "sentence_starter": null,
+ "checklist": [],
+ "model_visible": "never",
+ "_model": "No model, before or after the paste (BK 2026-11-06 09:59; 10.3 BK 2026-11-23 10:08).",
+ "_answer_guide": "No model on screen. Strong: R. R. Palmer and other historians wrote that landowners, “seeking to increase their money incomes,” began trying improved ways of farming (Doc 1). The source line gives no year, so a strong answer leaves the year out rather than inventing one. (BK ruled B 11/23 10:57: moved off Document 4, which du-04 answers.)",
+ "practice_only": false,
+ "submitted_to_teacher": false
+}

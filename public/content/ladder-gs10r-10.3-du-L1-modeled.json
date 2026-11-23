@@ -1,0 +1,50 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "DU",
+ "skill_label": "Document Use",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 1,
+ "level": 1,
+ "_activity": "Watch one get built: Adam Smith, 1776",
+ "intro": "Nothing to answer here. This one is already done, so you can see what it looks like built.",
+ "type": "matching",
+ "modeled": true,
+ "source_document": "Document 5 — Adam Smith on the division of labour",
+ "left": [
+  {
+   "key": "a",
+   "label": "Document 5 — Smith on the pin factory"
+  }
+ ],
+ "right": [
+  {
+   "key": "1",
+   "label": "In 1776, Adam Smith wrote that ten workers who divided pin-making into about eighteen steps could make more than 48,000 pins a day (Doc 5)."
+  }
+ ],
+ "correct": {
+  "a": "1"
+ },
+ "rationale": {
+  "a": "Who and when come first. Then a specific detail, Smith's own numbers, used as evidence. Then the document number. That's calling the witness, not just “Document 5 says.”"
+ },
+ "frame": "In [year], [who] [wrote / said / showed] that ___ (Doc __).",
+ "frame_fill": "In 1776, Adam Smith wrote that ten workers who divided pin-making into about eighteen steps could make more than 48,000 pins a day (Doc 5).",
+ "models_band": "named + specific detail used as evidence",
+ "practice_only": true,
+ "submitted_to_teacher": false,
+ "documents": [
+  {
+   "source_document": "Document 5 — Adam Smith on the division of labour",
+   "source_citation": "Source: Adam Smith, The Wealth of Nations, 1776 (adapted)",
+   "source_text": "“[A worker alone] could scarce, perhaps, with his utmost industry, make one pin in a day. . . . The important business of making a pin is, in this manner, divided into about eighteen distinct operations. . . . I have seen a small manufactory [factory] of this kind where ten men only were employed. . . . Those ten persons, therefore, could make among them upwards of forty-eight thousand pins in a day.”"
+  }
+ ]
+}

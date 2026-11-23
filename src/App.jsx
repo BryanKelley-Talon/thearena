@@ -2152,7 +2152,7 @@ function reviewExtras(course, unit) {
   return { ...x, _rooms: rooms }
 }
 
-function LevelScreen({ course, plain = false, cardPlain = false, paste = null, callout = null, readEnd = null, foldBand = false, civicRef = null, band = null, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
+function LevelScreen({ course, plain = false, cardPlain = false, paste = null, callout = null, readEnd = null, foldBand = false, civicRef = null, refKind = 'civic', band = null, isTop = false, skillName, lv, pack, source, docs, prevTop = 0, onComplete: markComplete, onBack }) {
   const t = levelType(lv)
   // A set finished: count it for this visit (memory only), and pick the coaching line now,
   // while we still know whether this finish moved the gauge.
@@ -2200,7 +2200,9 @@ function LevelScreen({ course, plain = false, cardPlain = false, paste = null, c
         <h2>{lv?.label || t?.name}</h2>
         {/* The Civic Principles card, one tap from any gauge-run level (manifest gauge_rules.civic_button; BK 2026-11-17 10:15). The card and its button
             label are the desk's own, read from the course's Doc Assist pack: the same card Doc Assist pops up. */}
-        {civicRef && <RefButtons text="civic principle" refs={{ civic: civicRef }} idBase="gauge-ref" />}
+        {/* Global's counterpart (manifest gauge_rules.ref_button "umbrellas"; Will's 10.3 KYNS package "button": "The Six Umbrellas", BK blessed 2026-11-23 10:31):
+            the same pop-up Doc Assist uses, card and label read from the course's Doc Assist pack. */}
+        {civicRef && <RefButtons text={refKind === 'umbrellas' ? 'umbrella' : 'civic principle'} refs={{ [refKind]: civicRef }} idBase="gauge-ref" />}
         <GaugeBand band={band} fold={foldBand} />
         {body}
         {isRead && pack && <p className="level-done" role="status">{readEnd}</p>}
@@ -2571,7 +2573,7 @@ export default function App() {
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
     const s0 = (unit.ladders || []).find(l => l.skill === skill)
-    screen = <LevelScreen course={course} plain={levelPlain(unit, level)} cardPlain={noBoxCard(unit, lv)} paste={levelPlain(unit, level) ? null : gaugeRules(unit).paste_line || null} callout={gaugeRules(unit).source_callout || null} readEnd={gaugeRules(unit).read_end_line || null} foldBand={gaugeRules(unit).band_fold === true} civicRef={gaugeRules(unit).civic_button === true ? refs.civic || null : null} band={s0?.band || null} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
+    screen = <LevelScreen course={course} plain={levelPlain(unit, level)} cardPlain={noBoxCard(unit, lv)} paste={levelPlain(unit, level) ? null : gaugeRules(unit).paste_line || null} callout={gaugeRules(unit).source_callout || null} readEnd={gaugeRules(unit).read_end_line || null} foldBand={gaugeRules(unit).band_fold === true} civicRef={gaugeRules(unit).civic_button === true ? refs.civic || null : gaugeRules(unit).ref_button ? refs[gaugeRules(unit).ref_button] || null : null} refKind={gaugeRules(unit).civic_button === true ? 'civic' : gaugeRules(unit).ref_button || 'civic'} band={s0?.band || null} isTop={lv?.level === gaugeTop(unit)} skillName={s?.name || skill} lv={lv} pack={levelPack} source={levelSource || null} docs={levelDocs} prevTop={prevTop}
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
@@ -2639,7 +2641,7 @@ export default function App() {
       <div className="wrap">
         <ScreenHeader label={run.title} onBack={leave} color={course.accent} back={backLabel} />
         <div className="detail">
-          <h2>{run.title}</h2>
+          <h2>{run.title}{run.tag && <span className="us-tag">{run.tag}</span>}</h2>
           <GaugeRunBody course={course} unit={unit} prog={prog}
                         onOpenSkill={code => { setLadderFrom('run'); setSkill(code); window.scrollTo(0, 0) }} />
         </div>

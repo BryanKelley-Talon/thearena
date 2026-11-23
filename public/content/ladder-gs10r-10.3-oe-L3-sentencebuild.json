@@ -1,0 +1,72 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "OE",
+ "skill_label": "Outside Information (OI)",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 3,
+ "level": 3,
+ "_activity": "Build it: set the scene for Adam Smith",
+ "intro": "Build the sentence. Drag each piece into the blank where it belongs.",
+ "type": "sentence_build",
+ "sentence_frame": "In 1766, ___ (OI). In 1776, Adam Smith wrote that ___ (Doc 5).",
+ "blanks": [
+  {
+   "blank_id": 1,
+   "label": "the scene, the fact you brought (OI)",
+   "tiles": [
+    {
+     "text": "Matthew Boulton opened the Soho Manufactory near Birmingham and put hundreds of workers under one roof",
+     "correct": true
+    },
+    {
+     "text": "a worker alone could scarce make one pin in a day",
+     "correct": false
+    },
+    {
+     "text": "Britain was a country with many towns and many workers",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "blank_id": 2,
+   "label": "the evidence (Doc 5)",
+   "tiles": [
+    {
+     "text": "ten workers who divided pin-making into about eighteen steps could make more than 48,000 pins a day",
+     "correct": true
+    },
+    {
+     "text": "the Soho Manufactory put hundreds of workers under one roof",
+     "correct": false
+    },
+    {
+     "text": "factories were important in the Industrial Revolution",
+     "correct": false
+    }
+   ]
+  }
+ ],
+ "correct_sentence": "In 1766, Matthew Boulton opened the Soho Manufactory near Birmingham and put hundreds of workers under one roof (OI). In 1776, Adam Smith wrote that ten workers who divided pin-making into about eighteen steps could make more than 48,000 pins a day (Doc 5).",
+ "rationale": "The first blank has to be something Document 5 never says: Smith's one-pin worker is his own words, so it can't be outside information. The second blank has to be Smith's evidence: Boulton's factory is (OI), so it can't wear (Doc 5).",
+ "hints": [
+  "The first blank has to be something Document 5 never says.",
+  "A fact tagged (Doc 5) has to be in Document 5."
+ ],
+ "practice_only": true,
+ "submitted_to_teacher": false,
+ "documents": [
+  {
+   "source_document": "Document 5 — Adam Smith on the division of labour",
+   "source_citation": "Source: Adam Smith, The Wealth of Nations, 1776 (adapted)",
+   "source_text": "“[A worker alone] could scarce, perhaps, with his utmost industry, make one pin in a day. . . . The important business of making a pin is, in this manner, divided into about eighteen distinct operations. . . . I have seen a small manufactory [factory] of this kind where ten men only were employed. . . . Those ten persons, therefore, could make among them upwards of forty-eight thousand pins in a day.”"
+  }
+ ]
+}

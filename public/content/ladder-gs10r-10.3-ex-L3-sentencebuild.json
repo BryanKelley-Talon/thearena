@@ -1,0 +1,72 @@
+{
+ "_course": "Global History and Geography 10R",
+ "_unit": "10.3 - Causes and Effects of the Industrial Revolution",
+ "_casefile": "Know Your Next Step · BONUS (gauge run, Casefile A documents)",
+ "_built": "2026-11-23 by Will (global10r-curriculum), skills: WORK/u103-kyns-bonus-2026-11-23/build_gaugerun_json_103.py",
+ "_blessed": "BK 2026-11-23 10:31, chat: \"blessed\" (wording PDF md5 5efa8619, all eight calls, the two corrected Level 4 starters included). Card words and build calls RULED 10:08; label 10:10.",
+ "_status": "BLESSED; to Danny's one cold reader, then Josh. NOT LIVE.",
+ "_licence": "ORIGINAL (Will). Facts from 10.3 Casefile A as printed and cleared. Document text: the Casefile A Doc Assist pack, byte for byte.",
+ "skill_line": "EX",
+ "skill_label": "Explanation",
+ "arena_scores": false,
+ "arena_holds_work": false,
+ "step": 3,
+ "level": 3,
+ "_activity": "Build it: the railway, Document 10",
+ "intro": "Build the sentence. Drag each piece into the blank where it belongs.",
+ "type": "sentence_build",
+ "sentence_frame": "This shows ___, which matters because ___.",
+ "blanks": [
+  {
+   "blank_id": 1,
+   "label": "what it shows, in your words",
+   "tiles": [
+    {
+     "text": "the railway moved raw cotton from the port to the mills by steam",
+     "correct": true
+    },
+    {
+     "text": "the railway opened on September 15, 1830, and ran about 30 miles",
+     "correct": false
+    },
+    {
+     "text": "George and Robert Stephenson built a locomotive called the Rocket",
+     "correct": false
+    }
+   ]
+  },
+  {
+   "blank_id": 2,
+   "label": "why it matters",
+   "tiles": [
+    {
+     "text": "Manchester's mills could get cotton cheaply and make more cloth to sell",
+     "correct": true
+    },
+    {
+     "text": "railways were an important kind of transportation at the time",
+     "correct": false
+    },
+    {
+     "text": "Liverpool is a large port city in the northwest of England",
+     "correct": false
+    }
+   ]
+  }
+ ],
+ "correct_sentence": "This shows the railway moved raw cotton from the port to the mills by steam, which matters because Manchester's mills could get cotton cheaply and make more cloth to sell.",
+ "rationale": "The first blank has to be what the evidence means, not the date and the mileage. The second has to reach the mills. Every wrong tile is true, and none of them explains anything.",
+ "hints": [
+  "“Opened on September 15, 1830” is the evidence, not what it shows.",
+  "Why it matters has to matter to Britain's factories."
+ ],
+ "practice_only": true,
+ "submitted_to_teacher": false,
+ "documents": [
+  {
+   "source_document": "Document 10 — The Liverpool and Manchester Railway",
+   "source_citation": "Sources: Encyclopaedia Britannica and Wikipedia, “Liverpool and Manchester Railway” (adapted)",
+   "source_text": "The Liverpool and Manchester Railway opened on September 15, 1830. It ran about 30 miles between the port of Liverpool and the mill town of Manchester. It was the first railway to run scheduled passenger and freight trains pulled only by steam locomotives. Huge loads of raw materials for the textile mills came into Liverpool by ship and went on by rail."
+  }
+ ]
+}
