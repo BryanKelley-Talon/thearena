@@ -34,5 +34,7 @@
   "model_response",
   "intro"
  ],
- "_replaces": "ladder-gs10r-10.3-th-L4-guidedwrite.json (live md5 f1f9d08c)"
+ "_replaces": "ladder-gs10r-10.3-th-L4-guidedwrite.json (live md5 f1f9d08c)",
+ "no_document": true,
+ "_no_document": "No document: the Make the Case question, printed on Casefile A's Make the Case sheet. The prompt carries the question. (Josh's gate, 11/23 12:35; Sam's 11.3A th-L4 shape.)"
 }
