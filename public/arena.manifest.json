@@ -819,6 +819,16 @@
               "opens_at": "C_BEGINS"
             }
           ],
+          "gauge_run": {
+            "slot": "next",
+            "title": "Know Your Next Step",
+            "tag": "BONUS",
+            "skills": ["EX", "OE", "DU", "EI", "HC", "TH"],
+            "opens_at": "DATA_DAY",
+            "opens_label": "{day}",
+            "box": [],
+            "_source": "BK 2026-11-23 09:53-09:55, chat: 'I think KYNS becomes a gauge run bonus (similar to what we did in US after casefile A)'; '1. All Six. 2. KYNS is the name..we can tag that with BONUS beside the name. kids will do data day on 11/30...so they'll indentify gauge to run. we'll do reflection in class. ...and then they can work this bonus until dec 11. Leave it right where KYNS is...' The run holds Door 4's slot and name (slot next), BONUS beside it (tag), all six gauges in Global order, shown only inside this card (gauge_rules.hidden stays true everywhere else). Opens Data Day on BK's push. No sub: the card reads Door 4's own blessed line. box, paste line, call-out, end line, the close on Fri 12/11 and the Level 4-5 box rules wait on Will's package (josh-to-will 2026-11-23 0956, 0957) through BK and Danny. Seal: Door 4's footprints until BK says otherwise. Josh, branch kyns-bonus-10.3."
+          },
           "next_step": {
             "closed": true,
             "_closed": "BK 2026-11-05 15:18 (Danny 1518) and 2026-11-06 07:5x (Leo): closed everywhere, regardless of date or sandbox, until BK reopens it. Content kept.",

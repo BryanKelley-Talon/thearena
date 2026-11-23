@@ -62,7 +62,20 @@ export const runOpen = unit => {
   const r = runOf(unit)
   return !!r && (PREVIEW_DOORS || SANDBOX_HOST || !r.opens_on || todayLocal() >= String(r.opens_on))
 }
-export const gaugesHidden = unit => !!unit?.gauge_rules?.hidden || (!!runOf(unit) && !runOpen(unit))
+// Where the run's card sits: right after its casefile (US 11.3A, BK 2026-11-06 15:15), or in Know Your Next Step's own slot,
+// under that name with a tag beside it (`gauge_run.slot: "next"`, `tag`; Global 10.3, BK 2026-11-23 09:55: "KYNS is the name..we
+// can tag that with BONUS beside the name ... Leave it right where KYNS is"). In that slot the run replaces Door 4's old card.
+export const runInNext = unit => runOf(unit)?.slot === 'next'
+// The run's gauges: its own list in its own order (`gauge_run.skills`; Global 10.3, BK 09:55 "All Six"), else its casefile's scoring page.
+export const runSkills = unit => {
+  const r = runOf(unit)
+  return r?.skills || (unit?.casefiles || []).find(c => c.id === r?.casefile)?.skills || []
+}
+// `inRun`: the gauge is being worked from inside an open run. A unit whose gauges are hidden everywhere (gauge_rules.hidden,
+// Global 10.3, BK 2026-11-06 10:01) still shows them there and only there (BK 2026-11-23 09:55).
+export const gaugesHidden = (unit, inRun = false) => (inRun && runOpen(unit))
+  ? false
+  : !!unit?.gauge_rules?.hidden || (!!runOf(unit) && !runOpen(unit))
 const runLabel = unit => (runOpen(unit) ? W.open : (runOf(unit)?.opens_label ? sayOpens(runOf(unit).opens_label) : W.coming))
 
 const isUS = course => /us11r|^us$/.test(String(course?.id || course || ''))
@@ -116,7 +129,7 @@ const NEXT_PARTS = course => [
   { code: isUS(course) ? 'CP' : 'EI', room: 'read-the-doc', roomName: 'Read the Doc' },
 ]
 
-function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now, badge }) {
+function DoorCard({ id, title, tag, sub, paper, open, label, onOpen, kind, now, badge }) {
   const style = paper ? { '--paper': paper.sheet, '--paper-tint': paper.tint } : undefined
   const cls = `us-door${paper ? ' paper' : ''}${open ? '' : ' shut'}${kind ? ` ${kind}` : ''}${badge ? ' has-badge' : ''}`
   const body = (
@@ -124,7 +137,7 @@ function DoorCard({ id, title, sub, paper, open, label, onOpen, kind, now, badge
       {now && <span className="us-now">{W.now}</span>}
       {/* A card's badge (manifest gauge_run.badge): decorative, the card already says what it is. BK 2026-11-17 10:27 / 10:29, his Gemini art. */}
       {badge && <img className="us-badge" src={`/${badge}`} alt="" aria-hidden="true" />}
-      <span className="us-door-id">{title}</span>
+      <span className="us-door-id">{title}{tag && <span className="us-tag">{tag}</span>}</span>
       {sub && <span className="us-door-sub">{sub}</span>}
       {paper && <span className="us-door-copy"><span className="us-swatch" aria-hidden="true" />{W.copy(paper)}</span>}
       <span className={`flag ${open ? 'live' : 'soon'}`}>{label}</span>
@@ -159,7 +172,7 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
                       label={open ? W.open : cfLabel(cf)}
                       onOpen={() => onOpenCasefile(cf.id)} />,
             // The Gauge Run card sits right after the casefile it runs (BK 15:15: "between Casefile A and Casefile B").
-            run && run.casefile === cf.id && (
+            run && !runInNext(unit) && run.casefile === cf.id && (
               <DoorCard key={`run-${cf.id}`} id="us-card-run" kind="run" title={run.title} sub={run.sub} badge={run.badge || null}
                         open={runOpen(unit)} label={runLabel(unit)} onOpen={onOpenGaugeRun} />
             ),
@@ -170,8 +183,12 @@ export function UnitSplash({ course, unit, maps, testReviewReady, onOpenCasefile
         <DoorCard id="us-card-review" kind="side" title={W.review} sub={W.reviewLine} open={testReviewReady} badge={cb.review || null}
                   label={testReviewReady ? W.open : (unit.test_review?.opens_label ? sayOpens(unit.test_review.opens_label) : W.coming)}
                   onOpen={onOpenTestReview} />
-        <DoorCard id="us-door-next" kind="next side" title={W.next} sub={W.nextLine} open={nextStepOpen(unit)} badge={cb.next || null}
-                  label={nextStepOpen(unit) ? W.open : (unit.next_step?.opens_label ? sayOpens(unit.next_step.opens_label) : W.coming)} onOpen={onOpenNextStep} />
+        {/* Global 10.3: the Bonus run takes Door 4's slot and name (BK 2026-11-23 09:55). Its seal: the run's own, else Door 4's. */}
+        {runInNext(unit)
+          ? <DoorCard id="us-card-run" kind="run next side" title={run.title || W.next} tag={run.tag || null} sub={run.sub || W.nextLine}
+                      badge={run.badge || cb.next || null} open={runOpen(unit)} label={runLabel(unit)} onOpen={onOpenGaugeRun} />
+          : <DoorCard id="us-door-next" kind="next side" title={W.next} sub={W.nextLine} open={nextStepOpen(unit)} badge={cb.next || null}
+                      label={nextStepOpen(unit) ? W.open : (unit.next_step?.opens_label ? sayOpens(unit.next_step.opens_label) : W.coming)} onOpen={onOpenNextStep} />}
       </div>
     </div>
   )
@@ -212,7 +229,7 @@ export function UnitOverviewBody({ pack }) {
 // ── behind a casefile door ──
 export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThreeLabel, onOpenSkill, onOpenDoc, onOpenSet, onOpenGaugeRun }) {
   const run = runOf(unit)
-  const runHere = !!run && run.casefile === cf?.id
+  const runHere = !!run && !runInNext(unit) && run.casefile === cf?.id
   const paper = paperOf(paperMap(unit), cf?.id)
   const docs = daPack ? { ...daPack, tile: null, casefiles: (daPack.casefiles || []).filter(c => c.id === cf?.id) } : null
   const hasDocs = !!docs && docs.casefiles.some(c => c.status === 'open' && (c.docs || []).length)
@@ -270,14 +287,16 @@ export function CasefileRoomBody({ course, unit, cf, prog, daPack, wl, partThree
 // ── the Gauge Run's room: the desk's coaching box (1f), then the gauges its casefile scored ──
 export function GaugeRunBody({ course, unit, prog, onOpenSkill }) {
   const run = runOf(unit)
-  const cf = (unit?.casefiles || []).find(c => c.id === run?.casefile)
-  if (!run || !cf) return null
+  const only = runSkills(unit)
+  if (!run || !only.length) return null
   return (
     <>
-      <article className="run-box" aria-label={run.title}>
-        {(run.box || []).map((p, i) => <p key={i}>{p}</p>)}
-      </article>
-      <div className="cf-gauges"><SkillGauges course={course} unit={unit} prog={prog} only={cf.skills || []} onOpen={onOpenSkill} /></div>
+      {(run.box || []).length > 0 && (
+        <article className="run-box" aria-label={run.title}>
+          {run.box.map((p, i) => <p key={i}>{p}</p>)}
+        </article>
+      )}
+      <div className="cf-gauges"><SkillGauges course={course} unit={unit} prog={prog} only={only} onOpen={onOpenSkill} /></div>
     </>
   )
 }
@@ -311,6 +330,8 @@ export function NextStepBody({ course, unit, prog, onOpenGauge, onOpenLab }) {
 
 export const SPLASH_STYLES = `
 .us-door.run:not(.shut){border-color:var(--gold)}
+/* A card's tag beside its name (gauge_run.tag; BK 2026-11-23 09:55 "tag that with BONUS beside the name"). Navy on gold, 9.6:1. */
+.us-tag{display:inline-block;margin-left:10px;padding:2px 8px;border-radius:5px;background:var(--gold);color:#0B1220;font-family:'Barlow Condensed',sans-serif;font-size:.62em;font-weight:700;letter-spacing:.08em;vertical-align:.18em;line-height:1.3}
 /* The Bonus card's gold seal, top right (BK 2026-11-17). Room is kept on the right so the title never runs under it. */
 .us-door{position:relative}
 .us-door.has-badge{padding-right:78px}

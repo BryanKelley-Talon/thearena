@@ -2566,7 +2566,7 @@ export default function App() {
   else if (station) screen = <StationScreen course={course} station={station}
                                             onOpenDrill={setDrillIndex}
                                             onBack={() => { setStationSlug(null); setDrillIndex(null) }} />
-  else if (unit && skill && level != null && !gaugesHidden(unit)) {
+  else if (unit && skill && level != null && !gaugesHidden(unit, ladderFrom === 'run')) {
     const s = roomSkills(course, unit).find(x => x.code === skill)
     const lv = ladderLevels(s?.ladder).find(l => l.level === level)
     const prevTop = Math.max(0, ...levelsDone(prog, course, unit, skill))
@@ -2575,7 +2575,7 @@ export default function App() {
                           onComplete={() => markDone(course, unit, skill, level)}
                           onBack={() => { setLevel(null); setLevelPack(null); setLevelDocs(null) }} />
   }
-  else if (unit && skill && !gaugesHidden(unit)) {
+  else if (unit && skill && !gaugesHidden(unit, ladderFrom === 'run')) {
     const ladderBack = ladderFrom === 'door' ? course.label : ladderFrom === 'cf' && gaugesCf ? SPLASH_WORDS.casefile(gaugesCf)
       : ladderFrom === 'kyns' ? SPLASH_WORDS.next : ladderFrom === 'run' && runOf(unit) ? runOf(unit).title : unit.label
     screen = (

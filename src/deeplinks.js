@@ -104,7 +104,8 @@ export function parseHash(hash, manifest) {
   }
   if (parts[2] === 'review') return { ...u, at: 'review' }
   // The unit splash's own cards (BK 2026-10-30): Door 4 and the Unit Test Review.
-  if (parts[2] === 'next-step') return { ...u, at: 'kyns' }
+  // Where the Bonus run holds Door 4's slot (Global 10.3, BK 2026-11-23 09:55), Door 4's link opens the run.
+  if (parts[2] === 'next-step') return unit.gauge_run?.slot === 'next' ? { ...u, at: 'gaugerun' } : { ...u, at: 'kyns' }
   // The Gauge Run card (BK 2026-11-06 15:15): #/us/11.3A/gauge-run. A unit without one opens its own room.
   if (parts[2] === 'gauge-run') return unit.gauge_run ? { ...u, at: 'gaugerun' } : u
   if (parts[2] === 'test-review') return { ...u, at: 'testreview' }
