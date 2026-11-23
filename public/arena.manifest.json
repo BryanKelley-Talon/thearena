@@ -213,7 +213,7 @@
         },
         {
           "slug": "outside-evidence",
-          "name": "Outside Evidence",
+          "name": "Outside Information (OI)",
           "tier": null,
           "published": true,
           "blurb": "Named outside knowledge, integrated with the documents",
@@ -978,7 +978,7 @@
           },
           {
             "code": "OE",
-            "label": "Outside Evidence",
+            "label": "Outside Information (OI)",
             "shared": true
           },
           {
