@@ -823,6 +823,8 @@
             "slot": "next",
             "title": "Know Your Next Step",
             "tag": "BONUS",
+            "sub": "Your 10.3 scores are back. Pick the gauge you scored lowest on \u2014 that's where you'll grow fastest.",
+            "_sub": "BK 2026-11-23 10:08 to Will's wording (Will to Josh 10:26). The card does not shut on Fri 12/11: that date is the Classroom due date only; the card moves on BK's word.",
             "skills": ["EX", "OE", "DU", "EI", "HC", "TH"],
             "opens_at": "DATA_DAY",
             "opens_label": "{day}",
@@ -1381,7 +1383,7 @@
         },
         {
           "slug": "outside-evidence",
-          "name": "Outside Information",
+          "name": "Outside Information (OI)",
           "skill_lines": [
             "OE"
           ],
@@ -2675,7 +2677,7 @@
           },
           {
             "code": "OE",
-            "label": "Outside Information",
+            "label": "Outside Information (OI)",
             "shared": true
           },
           {
